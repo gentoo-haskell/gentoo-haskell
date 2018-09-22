@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Memory reinterpretation casts for Float\/Double and Word32\/Word64.
+		
+		The implementations in the @.Internal@ package are different ways to tackle
+		the problem; the @array@ method (current default) is about 5 times faster
+		than the @FFI@ method.
+	</longdescription>
+</pkgmetadata>
