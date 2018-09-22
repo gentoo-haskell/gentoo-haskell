@@ -79,6 +79,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${P}-either-5.patch
+	"${FILESDIR}"/${P}-ghc84.patch
 )
 
 src_configure() {
