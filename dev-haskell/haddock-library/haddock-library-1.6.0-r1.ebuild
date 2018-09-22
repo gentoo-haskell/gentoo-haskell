@@ -42,5 +42,6 @@ src_prepare() {
 	cabal_chdeps \
 		'base-compat   ^>= 0.9.3' 'base-compat   >= 0.9.3' \
 		'base-compat           ^>= 0.9.3' 'base-compat           >= 0.9.3' \
-		'hspec         ^>= 2.4.4' 'hspec         >= 2.4.4'
+		'hspec         ^>= 2.4.4' 'hspec         >= 2.4.4' \
+		'base         >= 4.5     && < 4.12' 'base         >= 4.5'
 }
