@@ -28,6 +28,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base ^>= 4.11.0' 'base >= 4.11.0'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-in-ghc-tree
