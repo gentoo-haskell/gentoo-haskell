@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprin
 	>=dev-haskell/optional-args-1.0:=[profile?] <dev-haskell/optional-args-2.0:=[profile?]
 	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.15:=[profile?]
 	>=dev-haskell/semigroups-0.5.0:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
-	<dev-haskell/stm-2.5:=[profile?]
+	<dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/system-fileio-0.2.1:=[profile?] <dev-haskell/system-fileio-0.4:=[profile?]
 	>=dev-haskell/system-filepath-0.3.1:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	<dev-haskell/temporary-1.4:=[profile?]
