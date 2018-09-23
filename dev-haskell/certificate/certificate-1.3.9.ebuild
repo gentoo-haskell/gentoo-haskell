@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="amd64 x86"
-IUSE="executable test"
+IUSE="executable"
 RESTRICT="test" # due missing tests
 
 RDEPEND=">=dev-haskell/asn1-data-0.7.1:=[profile?] <dev-haskell/asn1-data-0.8.0:=[profile?]
@@ -40,5 +40,5 @@ PATCHES=(
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag executable executable) \
-		$(cabal_flag test test)
+		--flags=-test
 }
