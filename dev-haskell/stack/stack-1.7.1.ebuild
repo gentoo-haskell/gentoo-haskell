@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -99,6 +99,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-2.4.8
 		>=dev-haskell/quickcheck-2.10.1 )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-smallcheck-1.1.4.patch
+)
 
 src_configure() {
 	haskell-cabal_src_configure \
