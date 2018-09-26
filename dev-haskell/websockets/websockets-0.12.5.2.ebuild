@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 	<dev-haskell/bytestring-builder-0.11:=[profile?]
 	>=dev-haskell/case-insensitive-0.3:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/entropy-0.2.1:=[profile?] <dev-haskell/entropy-0.5:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.8:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.9:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/sha-1.5:=[profile?] <dev-haskell/sha-1.7:=[profile?]
 	>=dev-haskell/streaming-commons-0.1:=[profile?] <dev-haskell/streaming-commons-0.3:=[profile?]
@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.7
-		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.12
+		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.13
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
