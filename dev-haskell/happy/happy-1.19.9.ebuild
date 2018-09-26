@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,8 +22,15 @@ RDEPEND=">=dev-haskell/mtl-2.2.1:=
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0 <dev-haskell/cabal-2.4
+	>=dev-haskell/cabal-1.16.0 <dev-haskell/cabal-2.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal <2.2' 'Cabal < 2.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
