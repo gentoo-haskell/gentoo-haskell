@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,5 +30,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'hspec >=2.1.5 && <2.4' 'hspec >=2.1.5' \
-		'vector >=0.10.12.3 && <0.12' 'vector >=0.10.12.3'
+		'vector >=0.10.12.3 && <0.12' 'vector >=0.10.12.3' \
+		'base >=4.9.0.0 && <4.10' 'base >=4.9.0.0' \
+		'stb-image-redux >=0.2.1.0 && <0.3' 'stb-image-redux'
 }
