@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,12 +27,10 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/fast-logger-2.4.5:=[profile?] <dev-haskell/fast-logger-2.5:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
 	dev-haskell/iproute:=[profile?]
-	>=dev-haskell/lifted-base-0.1.2:=[profile?]
 	>=dev-haskell/network-2.6.1.0:=[profile?]
 	>=dev-haskell/old-locale-1.0.0.2:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/resourcet-0.4.6:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
 	>=dev-haskell/streaming-commons-0.2:=[profile?]
-	>=dev-haskell/stringsearch-0.3:=[profile?] <dev-haskell/stringsearch-0.4:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
 	dev-haskell/vault:=[profile?]
