@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.8:= <dev-haskell/ansi-terminal-0.9:=
 	>=dev-haskell/http-client-0.5:= <dev-haskell/http-client-0.6:=
 	>=dev-haskell/http-client-tls-0.3:= <dev-haskell/http-client-tls-0.4:=
 	>=dev-haskell/http-types-0.9:= <dev-haskell/http-types-1.0:=
-	>=dev-haskell/language-glsl-0.0.2:= <dev-haskell/language-glsl-0.3:=
+	>=dev-haskell/language-glsl-0.0.2:=
 	dev-haskell/logict:=
 	>=dev-haskell/mtl-2.2.1:= <dev-haskell/mtl-3:=
 	>=dev-haskell/network-2.4:= <dev-haskell/network-2.7:=
@@ -48,9 +48,16 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2
 "
 
+S=${WORKDIR}/compiler-${PV}
+
+src_prepare() {
+	default
+
+	CABAL_FILE=elm.cabal cabal_chdeps \
+		'language-glsl >= 0.0.2 && < 0.3' 'language-glsl >= 0.0.2'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag dev dev)
 }
-
-S=${WORKDIR}/compiler-${PV}
