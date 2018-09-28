@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=[profile?]
 	dev-haskell/extra:=[profile?]
 	>=dev-haskell/hashtables-1.2.3.1:=[profile?]
 	dev-haskell/hunit:=[profile?]
-	>=dev-haskell/megaparsec-6.4.1:=[profile?]
+	>=dev-haskell/megaparsec-6.4.1:=[profile?] <dev-haskell/megaparsec-7:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/mtl-compat:=[profile?]
 	dev-haskell/old-time:=[profile?]
@@ -55,6 +55,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'megaparsec >=6.4.1' 'megaparsec >=6.4.1 && <7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
