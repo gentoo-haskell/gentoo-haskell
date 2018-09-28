@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=
 	>=dev-haskell/hledger-1.10:= <dev-haskell/hledger-1.11:=
 	>=dev-haskell/hledger-lib-1.10:= <dev-haskell/hledger-lib-1.11:=
 	dev-haskell/hunit:=
-	>=dev-haskell/megaparsec-6.4.1:=
+	>=dev-haskell/megaparsec-6.4.1:= <dev-haskell/megaparsec-7:=
 	>=dev-haskell/microlens-0.4:=
 	>=dev-haskell/microlens-platform-0.2.3.1:=
 	>=dev-haskell/pretty-show-1.6.4:=
@@ -42,6 +42,13 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'megaparsec >=6.4.1' 'megaparsec >=6.4.1 && <7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
