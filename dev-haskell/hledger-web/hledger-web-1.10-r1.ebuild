@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -33,7 +33,7 @@ RDEPEND="dev-haskell/blaze-html:=[profile?]
 	dev-haskell/http-conduit:=[profile?]
 	dev-haskell/hunit:=[profile?]
 	dev-haskell/json:=[profile?]
-	>=dev-haskell/megaparsec-6.4.1:=[profile?]
+	>=dev-haskell/megaparsec-6.4.1:=[profile?] <dev-haskell/megaparsec-7:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	>=dev-haskell/shakespeare-2.0.2.2:=[profile?]
@@ -52,6 +52,13 @@ RDEPEND="dev-haskell/blaze-html:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'megaparsec >=6.4.1' 'megaparsec >=6.4.1 && <7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
