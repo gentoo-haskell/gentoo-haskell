@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -34,8 +34,8 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	<dev-haskell/foundation-0.0.21:=[profile?]
 	>=dev-haskell/glob-0.7:=[profile?] <dev-haskell/glob-0.10:=[profile?]
 	>=dev-haskell/haddock-library-1.6:=[profile?] <dev-haskell/haddock-library-1.7:=[profile?]
-	>=dev-haskell/hslua-0.9.5:=[profile?] <dev-haskell/hslua-0.9.6:=[profile?]
-	>=dev-haskell/hslua-module-text-0.1.2:=[profile?] <dev-haskell/hslua-module-text-0.2:=[profile?]
+	>=dev-haskell/hslua-1.0:=[profile?] <dev-haskell/hslua-1.1:=[profile?]
+	>=dev-haskell/hslua-module-text-0.2:=[profile?] <dev-haskell/hslua-module-text-0.3:=[profile?]
 	>=dev-haskell/hsyaml-0.1.1.1:=[profile?] <dev-haskell/hsyaml-0.2:=[profile?]
 	>=dev-haskell/http-4000.0.5:=[profile?] <dev-haskell/http-4000.4:=[profile?]
 	>=dev-haskell/http-client-0.4.30:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
