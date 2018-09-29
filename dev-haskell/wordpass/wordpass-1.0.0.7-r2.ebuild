@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -34,5 +34,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'vector        >=0.10 && <0.12' 'vector        >=0.10' \
-		'unix-compat   >= 0.4 && <0.5' 'unix-compat   >= 0.4'
+		'unix-compat   >= 0.4 && <0.5' 'unix-compat   >= 0.4' \
+		'base          >=4.4  && <4.10' 'base          >=4.4'
 }
