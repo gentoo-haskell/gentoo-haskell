@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,8 +22,8 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/regex-posix:=[profile?]
 	>=dev-haskell/x11-1.4.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	>=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.15:=[profile?]
-	>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.15:=[profile?]
+	>=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.16:=[profile?]
+	>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.16:=[profile?]
 	alsa? ( >=dev-haskell/alsa-mixer-0.2:=[profile?] )
 	eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?] <dev-haskell/hint-0.9:=[profile?]
 		dev-haskell/network:=[profile?] )
@@ -32,6 +32,14 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2.1
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'xmonad>=0.10 && <0.15' 'xmonad>=0.10 && <0.16' \
+		'xmonad-contrib>=0.10 && <0.15' 'xmonad-contrib>=0.10 && <0.16'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
