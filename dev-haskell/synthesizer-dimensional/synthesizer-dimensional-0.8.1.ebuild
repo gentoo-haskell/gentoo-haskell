@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="buildexamples optimizeadvanced"
+IUSE=""
 
 RDEPEND=">=dev-haskell/event-list-0.1:=[profile?] <dev-haskell/event-list-0.2:=[profile?]
 	>=dev-haskell/non-negative-0.1:=[profile?] <dev-haskell/non-negative-0.2:=[profile?]
@@ -28,15 +28,7 @@ RDEPEND=">=dev-haskell/event-list-0.1:=[profile?] <dev-haskell/event-list-0.2:=[
 	>=dev-haskell/synthesizer-core-0.8.1:=[profile?] <dev-haskell/synthesizer-core-0.9:=[profile?]
 	>=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	buildexamples? ( >=dev-haskell/explicit-exception-0.1.6:=[profile?] <dev-haskell/explicit-exception-0.2:=[profile?]
-				>=dev-haskell/old-time-1.0:=[profile?] <dev-haskell/old-time-2:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag buildexamples buildexamples) \
-		$(cabal_flag optimizeadvanced optimizeadvanced)
-}
