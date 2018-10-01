@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="buildexamples optimizeadvanced"
+IUSE=""
 
 RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[profile?]
 	>=dev-haskell/alsa-pcm-0.6:=[profile?] <dev-haskell/alsa-pcm-0.7:=[profile?]
@@ -38,9 +38,3 @@ RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[pr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag buildexamples buildexamples) \
-		$(cabal_flag optimizeadvanced optimizeadvanced)
-}

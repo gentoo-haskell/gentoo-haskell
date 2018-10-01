@@ -11,8 +11,4 @@
 		that can be used for audio effects.
 		As demonstration there is a keyboard controlled music synthesizer.
 	</longdescription>
-	<use>
-		<flag name="buildexamples">Build example executables</flag>
-		<flag name="optimizeadvanced">Enable advanced optimizations. They slow down compilation considerably.</flag>
-	</use>
 </pkgmetadata>
