@@ -5,6 +5,7 @@
 >=dev-haskell/megaparsec-7
 >=dev-haskell/hspec-megaparsec-2.0.0
 >=dev-haskell/config-ini-0.2.3.0
+>=dev-haskell/cassava-megaparsec-2.0.0
 
 # Jack Todaro <jackmtodaro@gmail.com> (3 Sep 2018)
 # Too many packages depend on <dev-haskell/quickcheck-2.12
