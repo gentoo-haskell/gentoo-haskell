@@ -1,0 +1,10 @@
+Avoid ".Lfoo" style labels on via-C targets.
+--- a/compiler/cmm/CLabel.hs
++++ b/compiler/cmm/CLabel.hs
+@@ -1340,5 +1340,5 @@ instance Outputable ForeignLabelSource where
+ internalNamePrefix :: Name -> SDoc
+ internalNamePrefix name = getPprStyle $ \ sty ->
+-  if codeStyle sty && isRandomGenerated then
++  if asmStyle sty && codeStyle sty && isRandomGenerated then
+     sdocWithPlatform $ \platform ->
+       ptext (asmTempLabelPrefix platform)

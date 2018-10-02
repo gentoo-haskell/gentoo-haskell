@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -531,6 +531,7 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-armv7a-unknown-linux-gnueabihf-target.patch
 		eapply "${FILESDIR}"/${PN}-9999-aarch64_be-unknown-linux-gnu-target.patch
+		eapply "${FILESDIR}"/${PN}-9999-unreg-internal-name.patch
 
 		bump_libs
 
