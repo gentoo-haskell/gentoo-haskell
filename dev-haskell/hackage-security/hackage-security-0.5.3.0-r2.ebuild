@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RESTRICT=test # QC-2.10 finds counterexamples
 
 RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
-	>=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-2.4:=[profile?]
+	>=dev-haskell/cabal-1.14:=[profile?]
 	>=dev-haskell/cryptohash-sha256-0.11:=[profile?] <dev-haskell/cryptohash-sha256-0.12:=[profile?]
 	>=dev-haskell/ed25519-0.0:=[profile?] <dev-haskell/ed25519-0.1:=[profile?]
 	>=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-b
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	>=dev-haskell/old-locale-1.0:=[profile?]
-	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.8:=[profile?]
+	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.9:=[profile?]
 				>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.5:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "
@@ -54,7 +54,9 @@ src_prepare() {
 		'tasty-quickcheck == 0.10.*' 'tasty-quickcheck >= 0.10' \
 		'QuickCheck       == 2.9.*' 'QuickCheck       >= 2.9' \
 		'temporary        == 1.2.*' 'temporary        >= 1.2' \
-		'network     >= 2.6 && < 2.7' 'network     >= 2.6'
+		'network     >= 2.6 && < 2.7' 'network     >= 2.6' \
+		'Cabal             >= 1.14    && < 2.4' 'Cabal             >= 1.14' \
+		'containers        >= 0.4     && < 0.6' 'containers        >= 0.4'
 }
 
 src_configure() {
