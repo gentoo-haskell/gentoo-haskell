@@ -39,6 +39,10 @@ export CFLAGS="-O2 -pipe"
 #   - disable ghci (ghcmakebinary)
 export USE="-binary doc ghcbootstrap ghcmakebinary llvm ${USE}"
 
+# disable docs compression in binpkg. Let user's make.conf decide:
+# https://bugs.gentoo.org/667316
+export PORTAGE_COMPRESS=true
+
 ghcpath
 echo "running:"
 echo "  USE=\"${USE}\" CFLAGS=\"${CFLAGS}\" emerge --buildpkgonly =ghc-$1"
