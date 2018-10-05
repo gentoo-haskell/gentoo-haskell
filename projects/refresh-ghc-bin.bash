@@ -184,6 +184,10 @@ run mkdir "${chroot_temp}"
 
 	# python[sqlite] is needed for sphinx
 	echo 'USE="\${USE} sqlite"' >> /etc/portage/make.conf
+
+	# disable docs compression in binpkg. Let user's make.conf decide:
+	# https://bugs.gentoo.org/667316
+	echo 'PORTAGE_COMPRESS=true' >> /etc/portage/make.conf
 	EOF
 
         cat >refresh-ghc.bash <<-EOF
