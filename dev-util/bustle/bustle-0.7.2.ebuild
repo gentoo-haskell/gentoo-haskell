@@ -68,5 +68,5 @@ src_install() {
 
 	dobin "${S}"/dist/build/bustle-pcap
 	doman bustle-pcap.1
-	dodoc README.md HACKING.md NEWS.md
+	dodoc README.md NEWS.md
 }
