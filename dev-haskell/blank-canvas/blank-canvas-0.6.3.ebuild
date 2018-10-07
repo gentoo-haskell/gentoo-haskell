@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -42,3 +42,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/shake-0.13 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson                 >= 0.7     && < 1.4' 'aeson                 >= 0.7' \
+		'base                  >= 4.7     && < 4.12' 'base                  >= 4.7'
+}
