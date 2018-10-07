@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.4:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?]
 	>=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/http-types-0.11:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
@@ -37,6 +37,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson                >= 0.11  && < 1.4' 'aeson                >= 0.11' \
 		'exceptions           >= 0.8.3 && < 0.10' 'exceptions           >= 0.8.3'
 }
 
