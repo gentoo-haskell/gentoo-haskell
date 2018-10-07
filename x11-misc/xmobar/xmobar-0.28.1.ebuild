@@ -58,14 +58,6 @@ DEPEND="${RDEPEND}
 		~dev-haskell/parsec-numbers-0.1.0 )
 "
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base >= 4.9.1.0 && < 4.12' 'base >= 4.9.1.0 && < 4.13' \
-		'stm >= 2.3 && < 2.5' 'stm >= 2.3 && < 2.6'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-all_extensions \
