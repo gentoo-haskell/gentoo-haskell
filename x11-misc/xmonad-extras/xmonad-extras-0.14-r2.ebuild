@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	>=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.16:=[profile?]
 	>=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.16:=[profile?]
 	alsa? ( >=dev-haskell/alsa-mixer-0.2:=[profile?] )
-	eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?] <dev-haskell/hint-0.9:=[profile?]
+	eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?]
 		dev-haskell/network:=[profile?] )
 	mpd? ( >=dev-haskell/libmpd-0.9:=[profile?] <dev-haskell/libmpd-0.10:=[profile?] )
 "
@@ -38,7 +38,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'xmonad>=0.10 && <0.15' 'xmonad>=0.10 && <0.16' \
-		'xmonad-contrib>=0.10 && <0.15' 'xmonad-contrib>=0.10 && <0.16'
+		'xmonad-contrib>=0.10 && <0.15' 'xmonad-contrib>=0.10 && <0.16' \
+		'hint >= 0.3.3.3 && < 0.9' 'hint >= 0.3.3.3'
 }
 
 src_configure() {
