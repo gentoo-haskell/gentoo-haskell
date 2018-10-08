@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.21:=[profile?]
 	>=dev-haskell/haskell-src-exts-simple-1.18:=[profile?] <dev-haskell/haskell-src-exts-simple-1.21:=[profile?]
-	>=dev-haskell/hint-0.4:=[profile?] <dev-haskell/hint-0.9:=[profile?]
+	>=dev-haskell/hint-0.4:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.17:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -47,8 +47,10 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base-orphans >= 0.3 && < 0.8' 'base-orphans >= 0.3'
+		'base-orphans >= 0.3 && < 0.8' 'base-orphans >= 0.3' \
+		'hint >= 0.4 && < 0.9' 'hint >= 0.4'
 }
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag cairo cairo) \
