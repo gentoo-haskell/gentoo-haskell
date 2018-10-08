@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -34,6 +34,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/path-pieces-0.1.2:=[profile?] <dev-haskell/path-pieces-0.3:=[profile?]
+	>=dev-haskell/primitive-0.6:=[profile?]
 	>=dev-haskell/random-1.0.0.2:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/resourcet-1.2:=[profile?]
 	dev-haskell/rio:=[profile?]
