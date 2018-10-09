@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # fails tests on ghc-8.4 due to minor brackets
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?]
 	>=dev-haskell/multimap-1.2:=[profile?]
