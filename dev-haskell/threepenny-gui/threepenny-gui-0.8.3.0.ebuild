@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,8 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="buildexamples rebug"
 
-RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
-	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
+RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/data-default-0.5.0:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/file-embed-0.0.10:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
@@ -26,14 +25,15 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/snap-core-0.9.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
 	>=dev-haskell/snap-server-0.9.0:=[profile?] <dev-haskell/snap-server-1.2:=[profile?]
-	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?] <dev-haskell/vault-0.4:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-haskell/websockets-0.12.5.0:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
 	>=dev-haskell/websockets-snap-0.8:=[profile?] <dev-haskell/websockets-snap-0.11:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
+	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
+	>=dev-haskell/websockets-0.8:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
