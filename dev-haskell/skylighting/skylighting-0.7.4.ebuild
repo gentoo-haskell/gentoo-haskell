@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -29,14 +29,14 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/regex-pcre:=[profile?]
 	dev-haskell/safe:=[profile?]
-	>=dev-haskell/skylighting-core-0.7.2:=[profile?]
+	>=dev-haskell/skylighting-core-0.7.4:=[profile?] <dev-haskell/skylighting-core-0.7.5:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.10.1:=
 	executable? ( dev-haskell/pretty-show:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22
+	>=dev-haskell/cabal-1.22.2.0
 "
 
 src_configure() {
