@@ -6,12 +6,11 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		 <flag name="maintainer">Enable settings for the package maintainer.</flag>
+		<flag name="maintainer">Enable settings for the package maintainer.</flag>
 	</use>
 	<longdescription>
 		This library provides functions for retrieving metadata
 		from the &lt;http://TheMovieDB.org&gt; API.  Documentation
 		can be found in the &quot;Network.API.TheMovieDB&quot; module.
 	</longdescription>
-	
 </pkgmetadata>
