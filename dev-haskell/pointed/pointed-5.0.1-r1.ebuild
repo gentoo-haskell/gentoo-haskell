@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-de
 	kan-extensions? ( >=dev-haskell/kan-extensions-5:=[profile?] <dev-haskell/kan-extensions-6:=[profile?] )
 	semigroupoids? ( >=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-6:=[profile?] )
 	semigroups? ( >=dev-haskell/semigroups-0.8.3.1:=[profile?] <dev-haskell/semigroups-1:=[profile?] )
-	stm? ( >=dev-haskell/stm-2.1.2.1:=[profile?] <dev-haskell/stm-2.5:=[profile?] )
+	stm? ( >=dev-haskell/stm-2.1.2.1:=[profile?] )
 	tagged? ( >=dev-haskell/tagged-0.5:=[profile?] <dev-haskell/tagged-1:=[profile?] )
 	transformers? ( >=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-1:=[profile?] )
 	unordered-containers? ( >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -32,6 +32,13 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-de
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'stm >= 2.1.2.1 && < 2.5' 'stm >= 2.1.2.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
