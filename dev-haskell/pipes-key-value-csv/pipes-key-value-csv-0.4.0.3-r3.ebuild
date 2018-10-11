@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,11 +25,11 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 	>=dev-haskell/pipes-bytestring-2.1:=[profile?] <dev-haskell/pipes-bytestring-2.2:=[profile?]
 	>=dev-haskell/pipes-group-1.0:=[profile?] <dev-haskell/pipes-group-1.1:=[profile?]
 	>=dev-haskell/pipes-parse-3.0:=[profile?] <dev-haskell/pipes-parse-3.1:=[profile?]
-	>=dev-haskell/pipes-safe-2.2:=[profile?] <dev-haskell/pipes-safe-2.3:=[profile?]
+	>=dev-haskell/pipes-safe-2.2:=[profile?]
 	>=dev-haskell/pipes-text-0.0:=[profile?] <dev-haskell/pipes-text-0.1:=[profile?]
 	>=dev-haskell/reflection-1.5:=[profile?] <dev-haskell/reflection-2.2:=[profile?]
-	>=dev-haskell/semigroupoids-5.0.0:=[profile?] <dev-haskell/semigroupoids-5.3:=[profile?]
-	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/semigroupoids-5.0.0:=[profile?]
+	>=dev-haskell/semigroups-0.18:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vinyl-0.5.2:=[profile?]
 	>=dev-haskell/vinyl-utils-0.2.0.1:=[profile?] <dev-haskell/vinyl-utils-0.4:=[profile?]
@@ -48,7 +48,11 @@ src_prepare() {
 		'QuickCheck      >= 2.8 && < 2.9' 'QuickCheck      >= 2.8' \
 		'lens               >= 4.12    && < 4.16' 'lens               >= 4.12' \
 		'vinyl              >= 0.5.2   && < 0.8' 'vinyl              >= 0.5.2' \
-		'contravariant   >= 1.2 && < 1.5' 'contravariant   >= 1.2'
+		'contravariant   >= 1.2 && < 1.5' 'contravariant   >= 1.2' \
+		'containers         >= 0.5.6   && < 0.6' 'containers         >= 0.5.6' \
+		'pipes-safe         >= 2.2     && < 2.3' 'pipes-safe         >= 2.2' \
+		'semigroupoids      >= 5.0.0   && < 5.3' 'semigroupoids      >= 5.0.0' \
+		'semigroups == 0.18.*' 'semigroups >= 0.18'
 }
 
 src_configure() {
