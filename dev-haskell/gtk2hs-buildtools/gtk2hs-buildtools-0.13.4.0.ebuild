@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,7 +28,8 @@ DEPEND="${RDEPEND}
 	dev-haskell/happy
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.13.1.0-ia64.patch)
+PATCHES=("${FILESDIR}"/${PN}-0.13.1.0-ia64.patch
+		 "${FILESDIR}"/${PN}-0.13.4.0-ghc-8.6.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
