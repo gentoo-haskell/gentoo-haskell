@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -47,6 +47,7 @@ src_prepare() {
 	cabal_chdeps \
 		'base                     >=4.6.0.1   && <4.11' 'base                     >=4.6.0.1' \
 		'aeson                    >=0.7.0.6   && <1.3' 'aeson                    >=0.7.0.6' \
+		'binary                   >=0.5.1.1   && <0.8.6 || ==0.9.0.0' 'binary                   >=0.5.1.1   && <0.8.7 || ==0.9.0.0 || ==0.10.0.0' \
 		'QuickCheck           >=2.10     && <2.11' 'QuickCheck           >=2.10' \
 		'tasty                >=0.10.1.2 && <0.12' 'tasty                >=0.10.1.2' \
 		'tasty-quickcheck     >=0.8.3.2  && <0.10' 'tasty-quickcheck     >=0.8.3'
