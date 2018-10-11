@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/dlist-0.7:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/fmlist-0.8:=[profile?] <dev-haskell/fmlist-0.10:=[profile?]
-	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/semigroups-0.16:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-haskell/vector-0.5:=[profile?] <dev-haskell/vector-0.13:=[profile?]
@@ -36,3 +36,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'containers >= 0.3   && < 0.6' 'containers >= 0.3' \
+		'semigroups >= 0.16 && < 0.19' 'semigroups >= 0.16'
+}
