@@ -1,3 +1,11 @@
+# Mark Wright <gienah@gentoo.org> (11 Oct 2018)
+# Follow ::haskell package mask of >=dev-haskell/quickcheck-2.12
+>=dev-haskell/text-show-3.7.5 test
+
+# Mark Wright <gienah@gentoo.org> (11 Oct 2018)
+# Follow ::haskell package mask of >=dev-haskell/hspec-2.5
+>=dev-haskell/http-api-data-0.3.10 test
+
 # Sergei Trofimovich <slyfox@gentoo.org> (23 Feb 2018)
 # Follow ::gentoo mask bindings for outdated
 #   net-libs/webkit-gtk:2 and net-libs/webkit-gtk:3
