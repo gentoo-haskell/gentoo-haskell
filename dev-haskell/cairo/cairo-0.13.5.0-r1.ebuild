@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,10 +25,17 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 	x11-libs/cairo
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24 <dev-haskell/cabal-2.3
+	>=dev-haskell/cabal-1.24 <dev-haskell/cabal-2.5
 	>=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal >= 1.24 && < 2.3' 'Cabal >= 1.24 && < 2.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
