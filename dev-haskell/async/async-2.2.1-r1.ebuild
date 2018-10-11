@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.1.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+	>=dev-haskell/stm-2.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -33,7 +33,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.3 && < 4.12' 'base >= 4.3'
+		'base >= 4.3 && < 4.12' 'base >= 4.3' \
+		'stm >= 2.2 && < 2.5' 'stm >= 2.2'
 }
 
 src_configure() {
