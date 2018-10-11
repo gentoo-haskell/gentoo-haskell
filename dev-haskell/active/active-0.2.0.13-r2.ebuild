@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.21:=[profile?]
-	>=dev-haskell/semigroupoids-1.2:=[profile?] <dev-haskell/semigroupoids-5.3:=[profile?]
+	>=dev-haskell/semigroupoids-1.2:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -36,5 +36,6 @@ src_prepare() {
 		'QuickCheck >= 2.9 && < 2.10' 'QuickCheck >= 2.9' \
 		'lens >= 4.0 && < 4.16' 'lens >= 4.0' \
 		'base >= 4.0 && < 4.10' 'base >= 4.0' \
-		'base >= 4.0 && < 4.11' 'base >= 4.0'
+		'base >= 4.0 && < 4.11' 'base >= 4.0' \
+		'semigroupoids >= 1.2 && < 5.3' 'semigroupoids >= 1.2'
 }
