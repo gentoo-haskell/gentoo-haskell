@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.5:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
-	<dev-haskell/basement-0.0.8:=[profile?]
+	dev-haskell/basement:=[profile?]
 	>=dev-haskell/blaze-html-0.9:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.8:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/doctemplates-0.2.1:=[profile?] <dev-haskell/doctemplates-0.3:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
-	<dev-haskell/foundation-0.0.21:=[profile?]
+	dev-haskell/foundation:=[profile?]
 	>=dev-haskell/glob-0.7:=[profile?] <dev-haskell/glob-0.10:=[profile?]
 	>=dev-haskell/haddock-library-1.6:=[profile?] <dev-haskell/haddock-library-1.7:=[profile?]
 	>=dev-haskell/hslua-1.0:=[profile?] <dev-haskell/hslua-1.1:=[profile?]
@@ -78,6 +78,15 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'basement < 0.0.8' 'basement' \
+		'foundation < 0.0.21' 'foundation' \
+		'containers >= 0.4.2.1 && < 0.6' 'containers >= 0.4.2.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
