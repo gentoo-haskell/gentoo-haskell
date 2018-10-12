@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -39,7 +39,7 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/regex-applicative-0.2:=[profile?] <dev-haskell/regex-applicative-0.4:=[profile?]
 	>=dev-haskell/regex-compat-tdfa-0.95.1:=[profile?] <dev-haskell/regex-compat-tdfa-0.96:=[profile?]
 	>=dev-haskell/sandi-0.4:=[profile?] <dev-haskell/sandi-0.5:=[profile?]
-	>=dev-haskell/stm-2.1:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+	>=dev-haskell/stm-2.1:=[profile?]
 	>=dev-haskell/tar-0.5:=[profile?] <dev-haskell/tar-0.6:=[profile?]
 	>=dev-haskell/text-1.2.1.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unix-compat-0.4.2:=[profile?] <dev-haskell/unix-compat-0.6:=[profile?]
@@ -64,6 +64,17 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 	curl? ( virtual/pkgconfig )
 "
+
+PATCHES=(${FILESDIR}/${PN}-2.14.1-ghc-8.6.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base              >= 4.9 && < 4.12' 'base              >= 4.9' \
+		'stm               >= 2.1 && < 2.5' 'stm               >= 2.1'
+}
+
 
 src_configure() {
 	haskell-cabal_src_configure \
