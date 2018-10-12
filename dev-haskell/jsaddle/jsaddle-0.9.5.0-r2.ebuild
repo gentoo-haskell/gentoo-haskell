@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,12 +22,12 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
-	>=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.17:=[profile?]
+	>=dev-haskell/lens-3.8.5:=[profile?]
 	>=dev-haskell/primitive-0.6.1.0:=[profile?] <dev-haskell/primitive-0.7:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/ref-tf-0.4.0.1:=[profile?] <dev-haskell/ref-tf-0.5:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+	>=dev-haskell/stm-2.4.4:=[profile?]
 	>=dev-haskell/text-1.2.1.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unliftio-core-0.1:=[profile?] <dev-haskell/unliftio-core-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -38,12 +38,17 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+PATCHES=(${FILESDIR}/${PN}-0.9.5.0-ghc-8.6.patch)
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson >=0.8.0.2 && <1.3' 'aeson >=0.8.0.2' \
+		'containers >=0.5.6.2 && <0.6' 'containers >=0.5.6.2' \
 		'exceptions >=0.8 && <0.9' 'exceptions >=0.8' \
-		'aeson >=0.8.0.2 && <1.3' 'aeson >=0.8.0.2'
+		'lens >=3.8.5 && <4.17' 'lens >=3.8.5' \
+		'stm >=2.4.4 && <2.5' 'stm >=2.4.4'
 }
 
 src_configure() {
