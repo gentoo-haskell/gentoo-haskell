@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.15:=
 	>=dev-haskell/ixset-typed-0.3:=[profile?] <dev-haskell/ixset-typed-0.5:=[profile?]
 	>=dev-haskell/jmacro-0.6.11:=[profile?] <dev-haskell/jmacro-0.7:=[profile?]
 	>=dev-haskell/jwt-0.3:=[profile?] <dev-haskell/jwt-0.8:=[profile?]
-	>=dev-haskell/lens-4.2:=[profile?] <dev-haskell/lens-4.17:=[profile?]
+	>=dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/mime-mail-0.4:=[profile?] <dev-haskell/mime-mail-0.5:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/pwstore-purehaskell-2.1:=[profile?] <dev-haskell/pwstore-purehaskell-2.2:=[profile?]
@@ -56,9 +56,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
+PATCHES=(${FILESDIR}/${PN}-2.3.4.11-ghc-8.6.patch)
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson                        (>= 0.4  && < 0.10) || (>= 0.11 && < 1.3)' 'aeson                        >= 0.11'
+		'aeson                        (>= 0.4  && < 0.10) || (>= 0.11 && < 1.3)' 'aeson                        >= 0.11' \
+		'containers                   >= 0.4  && < 0.6' 'containers                   >= 0.4' \
+		'lens                         >= 4.2  && < 4.17' 'lens                         >= 4.2'
 }
