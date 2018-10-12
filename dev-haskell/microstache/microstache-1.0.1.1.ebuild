@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -34,5 +34,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson                  >=0.11    && < 1.3' 'aeson                  >=0.11'
+		'aeson                  >=0.11    && < 1.3' 'aeson                  >=0.11' \
+		'containers             >=0.4.2.1 && < 0.6' 'containers             >=0.4.2.1'
 }
