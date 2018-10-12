@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/mtl-2.1:= <dev-haskell/mtl-2.3:=
 	>=dev-haskell/parsec-3.1:= <dev-haskell/parsec-3.2:=
 	>=dev-haskell/parsec-numbers-0.1.0:=
 	dev-haskell/regex-compat:=
-	>=dev-haskell/stm-2.3:= <dev-haskell/stm-2.5:=
+	>=dev-haskell/stm-2.3:= <dev-haskell/stm-2.6:=
 	>=dev-haskell/utf8-string-0.3:= <dev-haskell/utf8-string-1.1:=
 	>=dev-haskell/x11-1.6.1:=
 	>=dev-lang/ghc-8.0.2:=
