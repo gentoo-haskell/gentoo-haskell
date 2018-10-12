@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,10 +19,10 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/base-compat-0.10.1:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
 	>=dev-haskell/reducers-3.12.2:=[profile?] <dev-haskell/reducers-3.13:=[profile?]
-	>=dev-haskell/semigroupoids-5.2.2:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
-	>=dev-haskell/semigroups-0.18.4:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/semigroupoids-5.2.2:=[profile?]
+	>=dev-haskell/semigroups-0.18.4:=[profile?]
 	>=dev-haskell/vector-0.12.0.1:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-haskell/vector-algorithms-0.7.0.1:=[profile?] <dev-haskell/vector-algorithms-0.8:=[profile?]
+	>=dev-haskell/vector-algorithms-0.7.0.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -32,3 +32,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.11.0.4 <dev-haskell/tasty-1.2
 		>=dev-haskell/tasty-quickcheck-0.8.4 <dev-haskell/tasty-quickcheck-0.11 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                >=4.7      && <4.12' 'base                >=4.7' \
+		'semigroupoids       >=5.2.2    && <5.4' 'semigroupoids       >=5.2.2' \
+		'semigroups          >=0.18.4   && <0.19' 'semigroups          >=0.18.4' \
+		'vector-algorithms   >=0.7.0.1  && <0.8' 'vector-algorithms   >=0.7.0.1'
+}
