@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,10 +17,17 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+RDEPEND=">=dev-haskell/stm-2.4:=[profile?]
 	>=dev-haskell/time-units-1.0:=[profile?] <dev-haskell/time-units-2.0:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'stm        >= 2.4     && < 2.5' 'stm        >= 2.4'
+}
