@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -37,6 +37,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'async >= 2.0.1 && < 2.2' 'async >= 2.0.1' \
+		'containers >= 0.5 && < 0.6' 'containers >= 0.5' \
 		'lifted-async >= 0.1 && < 0.10' 'lifted-async >= 0.1'
 }
 

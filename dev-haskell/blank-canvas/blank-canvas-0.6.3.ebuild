@@ -48,5 +48,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'aeson                 >= 0.7     && < 1.4' 'aeson                 >= 0.7' \
-		'base                  >= 4.7     && < 4.12' 'base                  >= 4.7'
+		'base                  >= 4.7     && < 4.12' 'base                  >= 4.7' \
+		'containers            == 0.5.*' 'containers            >= 0.5' \
+		'stm                   >= 2.2     && < 2.5' 'stm                   >= 2.2'
 }

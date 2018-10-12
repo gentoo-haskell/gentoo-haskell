@@ -1,0 +1,85 @@
+commit ace10b648cd48d318e322e7f0a87230296d03459
+Author: David Hewson <dev@daveid.co.uk>
+Date:   Sun Jun 10 09:20:15 2018 +0100
+
+    <&> docs fix (#88)
+    
+    `@<&>@`  appears as `&` on the page, which seems wrong
+
+diff --git a/src/Protolude/Functor.hs b/src/Protolude/Functor.hs
+index 5520bb1..766b292 100644
+--- a/src/Protolude/Functor.hs
++++ b/src/Protolude/Functor.hs
+@@ -53,7 +53,7 @@ foreach = flip fmap
+ #if !MIN_VERSION_base(4,11,0)
+ -- | Infix version of foreach.
+ --
+--- @<&>@ is to '<$>' what '&' is to '$'.
++-- '<&>' is to '<$>' what '&' is to '$'.
+ 
+ infixl 1 <&>
+ (<&>) :: Functor f => f a -> (a -> b) -> f b
+
+commit f75c99bda80aec39c908d4e61fe16deabad2086a
+Author: Tony Day <tonyday567@gmail.com>
+Date:   Sun Jul 29 17:04:03 2018 +1000
+
+    Some fixes for ghc-8.6 (#93)
+
+diff --git a/src/Protolude.hs b/src/Protolude.hs
+index 0a2665b..dd3ea31 100644
+--- a/src/Protolude.hs
++++ b/src/Protolude.hs
+@@ -492,8 +492,10 @@ import qualified Control.Exception
+ import Control.Monad.STM as X (
+     STM
+   , atomically
++#if ( __GLASGOW_HASKELL__ < 806 )
+   , always
+   , alwaysSucceeds
++#endif
+   , retry
+   , orElse
+   , check
+diff --git a/src/Protolude/Base.hs b/src/Protolude/Base.hs
+index bda5088..f4cae80 100644
+--- a/src/Protolude/Base.hs
++++ b/src/Protolude/Base.hs
+@@ -122,8 +122,10 @@ import GHC.Records as X (
+ 
+ #if ( __GLASGOW_HASKELL__ >= 800 )
+ import Data.Kind as X (
+-    type (*)
+-  , type Type
++  type Type
++#if ( __GLASGOW_HASKELL__ < 806 )
++  , type (*)
++#endif
+   )
+ #endif
+ 
+
+commit 1b1f82b749b100f48c8f9f91e90177d14791e6c0
+Author: Stephen Diehl <stephen.m.diehl@gmail.com>
+Date:   Fri Aug 3 13:14:31 2018 +0100
+
+    Export groupBy, fixes #91
+
+diff --git a/src/Protolude/List.hs b/src/Protolude/List.hs
+index 364e0d7..edc79bb 100644
+--- a/src/Protolude/List.hs
++++ b/src/Protolude/List.hs
+@@ -7,10 +7,11 @@ module Protolude.List (
+   sortOn,
+   list,
+   product,
+-  sum
++  sum,
++  groupBy,
+ ) where
+ 
+-import Data.List (sortBy)
++import Data.List (sortBy, groupBy)
+ import Data.Maybe (Maybe(..))
+ import Data.Ord (Ord, comparing)
+ import Data.Foldable (Foldable, foldr, foldl')

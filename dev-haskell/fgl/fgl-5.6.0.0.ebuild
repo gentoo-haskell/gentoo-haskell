@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -24,6 +24,9 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.1
 		>=dev-haskell/quickcheck-2.8 )
 "
+
+PATCHES=("${FILESDIR}"/${PN}-5.6.0.0-ghc-8.6.patch)
+
 src_prepare() {
 	default
 

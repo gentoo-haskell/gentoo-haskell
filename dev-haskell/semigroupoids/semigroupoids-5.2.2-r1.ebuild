@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -43,7 +43,6 @@ src_prepare() {
 		'transformers-compat >= 0.5     && < 0.6' 'transformers-compat >= 0.5' \
 		'doctest   >= 0.11.1 && < 0.14' 'doctest   >= 0.11.1'
 }
-
 
 src_configure() {
 	haskell-cabal_src_configure \

@@ -1,0 +1,66 @@
+--- clckwrks-0.24.0.7-orig/Clckwrks/Admin/Template.hs	2018-03-30 03:00:49.000000000 +1100
++++ clckwrks-0.24.0.7/Clckwrks/Admin/Template.hs	2018-10-12 16:01:47.329493494 +1100
+@@ -32,8 +32,8 @@
+ template title headers body = do
+    siteName <- (fromMaybe "Your Site") <$> query GetSiteName
+    p <- plugins <$> get
+-   (Just authShowURL) <- getPluginRouteFn p (pluginName authenticatePlugin)
+-   (Just clckShowURL) <- getPluginRouteFn p "clck"
++   ~(Just authShowURL) <- getPluginRouteFn p (pluginName authenticatePlugin)
++   ~(Just clckShowURL) <- getPluginRouteFn p "clck"
+ --   let passwordShowURL u = authShowURL (Auth (AuthenticationMethods $ Just (passwordAuthenticationMethod, toPathSegments u))) []
+    toResponse <$> (unXMLGenT $ [hsx|
+     <html>
+--- clckwrks-0.24.0.7-orig/Clckwrks/Authenticate/Plugin.hs	2018-03-30 03:00:49.000000000 +1100
++++ clckwrks-0.24.0.7/Clckwrks/Authenticate/Plugin.hs	2018-10-12 16:01:05.729293648 +1100
+@@ -58,7 +58,7 @@
+ addAuthAdminMenu :: ClckT url IO ()
+ addAuthAdminMenu =
+     do p <- plugins <$> get
+-       (Just authShowURL) <- getPluginRouteFn p (pluginName authenticatePlugin)
++       ~(Just authShowURL) <- getPluginRouteFn p (pluginName authenticatePlugin)
+        addAdminMenu ("Authentication", [(Set.fromList [Visitor]      , "Change Password", authShowURL ChangePassword [])])
+        addAdminMenu ("Authentication", [(Set.fromList [Administrator], "OpenId Realm"   , authShowURL OpenIdRealm    [])])
+ 
+@@ -128,7 +128,7 @@
+ getUserId :: (Happstack m) => ClckT url m (Maybe UserId)
+ getUserId =
+   do p <- plugins <$> get
+-     (Just (AcidStateAuthenticate authenticateState)) <- getPluginState p (pluginName authenticatePlugin)
++     ~(Just (AcidStateAuthenticate authenticateState)) <- getPluginState p (pluginName authenticatePlugin)
+      mToken <- getToken authenticateState
+      case mToken of
+        Nothing       -> return Nothing
+--- clckwrks-0.24.0.7-orig/Clckwrks/Server.hs	2018-03-30 03:00:49.000000000 +1100
++++ clckwrks-0.24.0.7/Clckwrks/Server.hs	2018-10-12 18:31:34.450498047 +1100
+@@ -127,7 +127,7 @@
+ 
+ clckSite :: ClckwrksConfig -> ClckState -> ServerPart Response
+ clckSite cc clckState =
+-    do (Just clckShowFn) <- getPluginRouteFn (plugins clckState) (Text.pack "clck")
++    do ~(Just clckShowFn) <- getPluginRouteFn (plugins clckState) (Text.pack "clck")
+        evalClckT clckShowFn clckState (pluginsHandler (plugins clckState))
+ 
+ pluginsHandler :: (Functor m, ServerMonad m, FilterMonad Response m, MonadIO m) =>
+--- clckwrks-0.24.0.7-orig/Clckwrks/Plugin.hs	2018-03-30 03:00:49.000000000 +1100
++++ clckwrks-0.24.0.7/Clckwrks/Plugin.hs	2018-10-12 18:32:26.043742566 +1100
+@@ -35,7 +35,7 @@
+ addClckAdminMenu :: ClckT url IO ()
+ addClckAdminMenu =
+     do p <- plugins <$> get
+-       (Just clckShowURL) <- getPluginRouteFn p (pluginName clckPlugin)
++       ~(Just clckShowURL) <- getPluginRouteFn p (pluginName clckPlugin)
+        addAdminMenu ( "Profile"
+                     , [ (Set.fromList [Administrator, Visitor], "Edit Your Profile"      , clckShowURL (Profile EditProfileData) [])
+                       ]
+--- clckwrks-0.24.0.7-orig/Clckwrks/Authenticate/Route.hs	2018-03-30 03:00:49.000000000 +1100
++++ clckwrks-0.24.0.7/Clckwrks/Authenticate/Route.hs	2018-10-12 16:01:23.460378817 +1100
+@@ -24,7 +24,7 @@
+   case u of
+     (Auth authenticateURL) ->
+       do p <- plugins <$> get
+-         (Just authShowFn) <- getPluginRouteFn p "authenticate"
++         ~(Just authShowFn) <- getPluginRouteFn p "authenticate"
+          lift $ runRouteT routeAuthenticate (authShowFn . Auth) authenticateURL
+     Login          -> loginPage
+     ResetPassword  -> resetPasswordPage

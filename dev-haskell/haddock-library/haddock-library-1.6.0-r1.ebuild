@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -43,5 +43,6 @@ src_prepare() {
 		'base-compat   ^>= 0.9.3' 'base-compat   >= 0.9.3' \
 		'base-compat           ^>= 0.9.3' 'base-compat           >= 0.9.3' \
 		'hspec         ^>= 2.4.4' 'hspec         >= 2.4.4' \
-		'base         >= 4.5     && < 4.12' 'base         >= 4.5'
+		'base         >= 4.5     && < 4.12' 'base         >= 4.5' \
+		'containers   >= 0.4.2.1 && < 0.6' 'containers   >= 0.4.2.1'
 }

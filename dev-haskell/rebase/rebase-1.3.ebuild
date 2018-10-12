@@ -41,3 +41,10 @@ RDEPEND=">=dev-haskell/base-prelude-0.1:=[profile?] <dev-haskell/base-prelude-2:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'containers >= 0.5 && < 0.6' 'containers >= 0.5'
+}

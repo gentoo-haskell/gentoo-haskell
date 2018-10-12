@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -41,7 +41,8 @@ src_prepare() {
 		'QuickCheck >= 2.8.1 && < 2.10' 'QuickCheck >= 2.8.1' \
 		'time >= 1.5 && < 1.7' 'time >= 1.5' \
 		'doctest >= 0.8 && < 0.12' 'doctest >= 0.8' \
-		'exceptions < 0.9' 'exceptions'
+		'exceptions < 0.9' 'exceptions' \
+		'containers < 0.6' 'containers'
 }
 
 src_configure() {

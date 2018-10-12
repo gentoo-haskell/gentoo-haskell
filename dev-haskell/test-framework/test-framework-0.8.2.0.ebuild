@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -39,6 +39,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base-orphans   >= 0.1    && < 0.5' 'base-orphans   >= 0.1' \
+		'containers     >= 0.1    && < 0.6' 'containers     >= 0.1' \
 		'semigroups     >= 0.18   && < 0.19' 'semigroups     >= 0.18' \
 		'QuickCheck     >= 2.3 && < 2.10' 'QuickCheck     >= 2.3'
 }

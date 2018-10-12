@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -46,6 +46,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'bytestring <  0.10.4' 'bytestring' \
+		'containers >= 0.4.2 && < 0.6' 'containers >= 0.4.2' \
 		'HUnit < 1.7' 'HUnit' \
 		'QuickCheck == 2.10.*' 'QuickCheck >= 2.10' \
 		'quickcheck-instances >= 0.3.12 && < 0.4' 'quickcheck-instances >= 0.3.12' \

@@ -64,6 +64,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'containers           >= 0.3      && < 0.6' 'containers           >= 0.3' \
 		'pandoc          >= 2.0.5    && < 2.3' 'pandoc          >= 2.0.5    && < 2.4' \
 		'pandoc    >= 2.0.5 && < 2.3' 'pandoc    >= 2.0.5 && < 2.4'
 }
