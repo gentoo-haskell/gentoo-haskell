@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,3 +26,12 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-sr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+PATCHES=(${FILESDIR}/${PN}-0.14.1.3-ghc-8.6.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >= 2.7  && < 2.14' 'template-haskell >= 2.7'
+}
