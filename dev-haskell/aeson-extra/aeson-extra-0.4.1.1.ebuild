@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -47,5 +47,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'aeson                    >=0.7.0.6 && <1.4' 'aeson                    >=0.7.0.6 && <1.5' \
-		'tasty                 >=0.10  && <1.1' 'tasty                 >=0.10'
+		'base                     >=4.6  && <4.12' 'base                     >=4.6' \
+		'containers               >=0.5  && <0.6' 'containers               >=0.5' \
+		'tasty                 >=0.10  && <1.1' 'tasty                 >=0.10' \
+		'template-haskell         >=2.8  && <2.14' 'template-haskell         >=2.8'
 }
