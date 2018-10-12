@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0:=[profile?]
 	>=dev-haskell/quickcheck-2.8:2=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/semigroups-0.18.2:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
-	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.5:=[profile?]
+	>=dev-haskell/stm-2.4.4:=[profile?]
 	>=dev-haskell/stm-chans-3.0.0.4:=[profile?] <dev-haskell/stm-chans-3.1:=[profile?]
 	>=dev-haskell/stm-containers-0.2.15:=[profile?] <dev-haskell/stm-containers-0.3:=[profile?]
 	>=dev-haskell/temporary-1.2.0:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
@@ -75,5 +75,7 @@ src_prepare() {
 		'lens                       >= 4.14 && < 4.16' 'lens                       >= 4.14' \
 		'lifted-async  >= 0.9.1.1 && < 0.10' 'lifted-async  >= 0.9.1.1' \
 		'text-printer               >= 0.4 && < 0.5' 'text-printer               >= 0.4' \
-		'contravariant              >= 1.4 && < 1.5' 'contravariant              >= 1.4'
+		'contravariant              >= 1.4 && < 1.5' 'contravariant              >= 1.4' \
+		'stm                        >= 2.4.4 && < 2.5' 'stm                        >= 2.4.4' \
+		'containers                 >= 0.5.7 && < 0.6' 'containers                 >= 0.5.7'
 }
