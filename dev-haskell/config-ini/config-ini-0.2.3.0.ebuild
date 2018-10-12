@@ -33,6 +33,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/microlens )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'containers            >=0.5   && <0.6' 'containers            >=0.5'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-enable-doctests
