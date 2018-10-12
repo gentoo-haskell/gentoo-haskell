@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -37,6 +37,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'containers >= 0.2 && < 0.6' 'containers >= 0.2' \
 		'tasty            >= 0.10 && <0.12' 'tasty            >= 0.10' \
 		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8'
 }
