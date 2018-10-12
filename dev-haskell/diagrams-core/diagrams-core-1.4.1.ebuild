@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -38,5 +38,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base >= 4.2 && < 4.12' 'base >= 4.2' \
+		'containers >= 0.4.2 && < 0.6' 'containers >= 0.4.2' \
 		'lens >= 4.0 && < 4.17' 'lens >= 4.0'
 }
