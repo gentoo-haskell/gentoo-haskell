@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -53,6 +53,7 @@ src_prepare() {
 		'aeson                >=1.2.1.0  && <1.3' 'aeson                >=1.2.1.0' \
 		'base                 >=4.7      && <4.11' 'base                 >=4.7' \
 		'base-compat          >=0.9.3    && <0.10' 'base-compat          >=0.9.3' \
+		'containers           >=0.5.5.1  && <0.6' 'containers           >=0.5.5.1' \
 		'QuickCheck           >=2.10.0.1 && <2.11' 'QuickCheck           >=2.10.0.1' \
 		'tasty                >=0.11.2.5 && <1.1' 'tasty                >=0.11.2.5' \
 		'tasty-golden         >=2.3.1.1  && <2.4' 'tasty-golden         >=2.3.1.1' \
