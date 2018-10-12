@@ -29,3 +29,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2
 		dev-haskell/test-framework-smallcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.2 && < 4.12' 'base >= 4.2'
+}
