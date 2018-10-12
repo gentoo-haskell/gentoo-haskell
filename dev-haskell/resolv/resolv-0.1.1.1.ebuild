@@ -31,6 +31,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base              >= 4.5 && <4.11' 'base              >= 4.5' \
+		'containers        >= 0.4.2.1 && < 0.6' 'containers        >= 0.4.2.1' \
 		'tasty         >= 0.11.2  && < 0.12' 'tasty         >= 0.11.2' \
 		'tasty-hunit   >= 0.9.2   && < 0.10' 'tasty-hunit   >= 0.9.2'
 }
