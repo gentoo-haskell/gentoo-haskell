@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/aeson-0.5:=[profile?] dev-haskell/haskell-src-exts:=[profile?] dev-haskell/haskell-src-meta:=[profile?] >dev-haskell/mtl-1.1:=[profile?] dev-haskell/parseargs:=[profile?] >dev-haskell/parsec-3.0:=[profile?] >dev-haskell/regex-posix-0.9:=[profile?] >=dev-haskell/safe-0.2:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/unordered-containers-0.2:=[profile?] >=dev-haskell/vector-0.8:=[profile?] dev-haskell/wl-pprint-text:=[profile?] >=dev-lang/ghc-8.0.1:= benchmarks? ( dev-haskell/criterion:=[profile?] ) >=dev-haskell/cabal-1.24.0.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=QuasiQuotation library for programmatic generation of Javascript code
+EAPI=6
+HOMEPAGE=http://hackage.haskell.org/package/jmacro
+IUSE=benchmarks doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/aeson-0.5:=[profile?] dev-haskell/haskell-src-exts:=[profile?] dev-haskell/haskell-src-meta:=[profile?] >dev-haskell/mtl-1.1:=[profile?] dev-haskell/parseargs:=[profile?] >dev-haskell/parsec-3.0:=[profile?] >dev-haskell/regex-posix-0.9:=[profile?] >=dev-haskell/safe-0.2:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/unordered-containers-0.2:=[profile?] >=dev-haskell/vector-0.8:=[profile?] dev-haskell/wl-pprint-text:=[profile?] >=dev-lang/ghc-8.0.1:= benchmarks? ( dev-haskell/criterion:=[profile?] )
+SLOT=0/0.6.15
+SRC_URI=mirror://hackage/packages/archive/jmacro/0.6.15/jmacro-0.6.15.tar.gz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	d09701e7bf12b1f7be5d1a35c42b524e	haskell-cabal	6e83788192bd26b661998a5156eedf4f	ltprune	08f9e1d9ee0af8f5d9a7854efbcd8c0e	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	f164325a2cdb5b3ea39311d483988861	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	2352c3fc97241f6a02042773c8287748
+_md5_=d257daff927659a21e2a312a45affb4c
