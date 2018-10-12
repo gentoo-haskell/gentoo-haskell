@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -38,6 +38,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'containers >=0.1 && <0.6' 'containers >=0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
