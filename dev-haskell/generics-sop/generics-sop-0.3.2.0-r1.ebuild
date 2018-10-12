@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,5 +28,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'transformers-compat  >= 0.3  && < 0.6' 'transformers-compat  >= 0.3'
+		'transformers-compat  >= 0.3  && < 0.6' 'transformers-compat  >= 0.3' \
+		'template-haskell     >= 2.8  && < 2.14' 'template-haskell     >= 2.8'
 }
