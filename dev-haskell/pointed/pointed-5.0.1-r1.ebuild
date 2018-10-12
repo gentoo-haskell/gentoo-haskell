@@ -37,6 +37,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'containers >= 0.4 && < 0.6' 'containers >= 0.4' \
 		'stm >= 2.1.2.1 && < 2.5' 'stm >= 2.1.2.1'
 }
 
