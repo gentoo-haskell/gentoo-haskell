@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/circle-packing-0.1:=[profile?] <dev-haskell/circle-packin
 	>=dev-haskell/diagrams-solve-0.1:=[profile?] <dev-haskell/diagrams-solve-0.2:=[profile?]
 	>=dev-haskell/force-layout-0.4:=[profile?] <dev-haskell/force-layout-0.5:=[profile?]
 	>=dev-haskell/hashable-0.1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.17:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/linear-1.11.3:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-haskell/mfsolve-0.3:=[profile?] <dev-haskell/mfsolve-0.4:=[profile?]
 	>=dev-haskell/monadrandom-0.1.8:=[profile?] <dev-haskell/monadrandom-0.6:=[profile?]
@@ -49,3 +49,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.2 && < 4.12' 'base >= 4.2' \
+		'containers > 0.4 && < 0.6' 'containers > 0.4' \
+		'lens >= 4.0 && < 4.17' 'lens >= 4.0'
+}
