@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,8 +22,8 @@ RDEPEND="<dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.17:=[profile?]
-	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.6:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
+	>=dev-haskell/monoid-extras-0.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -33,3 +33,13 @@ RDEPEND="<dev-haskell/data-default-class-0.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.2 && < 4.12' 'base >= 4.2' \
+		'containers >= 0.3 && < 0.6' 'containers >= 0.3' \
+		'lens >= 4.0 && < 4.17' 'lens >= 4.0' \
+		'monoid-extras >= 0.3 && < 0.5' 'monoid-extras >= 0.3'
+}
