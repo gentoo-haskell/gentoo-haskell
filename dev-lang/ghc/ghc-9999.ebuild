@@ -80,7 +80,7 @@ fi
 # - riscv support
 # - a few fixes
 # This tarball is done with 'make dist' on top of vanilla libffi git tree
-OVERRIDE_LIBFFI="https://dev.gentoo.org/~slyfox/distfiles/libffi-3.3-rc0_p20180125.tar.gz"
+OVERRIDE_LIBFFI="https://dev.gentoo.org/~slyfox/distfiles/libffi-3.3-rc0_p20180919.tar.gz"
 SRC_URI+=" !binary? ( ${OVERRIDE_LIBFFI} )"
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
