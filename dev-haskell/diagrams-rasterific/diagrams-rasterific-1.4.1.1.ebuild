@@ -23,22 +23,13 @@ RDEPEND=">=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-defa
 	>=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/fontyfruity-0.5:=[profile?] <dev-haskell/fontyfruity-0.6:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
-	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?]
+	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.18:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.15:=[profile?]
-	>=dev-haskell/rasterific-0.6.1:=[profile?] <dev-haskell/rasterific-0.8:=[profile?]
+	>=dev-haskell/rasterific-0.7.4:=[profile?] <dev-haskell/rasterific-0.8:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base >= 4.2 && < 4.12' 'base >= 4.2' \
-		'containers >= 0.5 && < 0.6' 'containers >= 0.5' \
-		'lens >= 4.0 && < 4.17' 'lens >= 4.0'
-}
