@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.15:
 	>=dev-haskell/gd-3000:=[profile?] <dev-haskell/gd-3001:=[profile?]
 	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.6:=[profile?]
 	>=dev-haskell/hsp-0.9:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
-	>=dev-haskell/ixset-1.0:=[profile?] <dev-haskell/ixset-1.1:=[profile?]
+	>=dev-haskell/ixset-1.0:=[profile?]
 	>=dev-haskell/magic-1.0:=[profile?] <dev-haskell/magic-1.2:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/reform-0.2:=[profile?] <dev-haskell/reform-0.4:=[profile?]
@@ -42,3 +42,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 	dev-haskell/hsx2hs
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ixset                  == 1.0.*' 'ixset                  >= 1.0'
+}
