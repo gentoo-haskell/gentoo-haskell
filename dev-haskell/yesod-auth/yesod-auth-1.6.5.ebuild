@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	dev-haskell/memory:=[profile?]
 	>=dev-haskell/nonce-1.0.2:=[profile?] <dev-haskell/nonce-1.1:=[profile?]
-	>=dev-haskell/persistent-2.8:=[profile?] <dev-haskell/persistent-2.9:=[profile?]
+	>=dev-haskell/persistent-2.8:=[profile?] <dev-haskell/persistent-2.10:=[profile?]
 	>=dev-haskell/random-1.0.0.2:=[profile?]
 	dev-haskell/safe:=[profile?]
 	dev-haskell/shakespeare:=[profile?]
