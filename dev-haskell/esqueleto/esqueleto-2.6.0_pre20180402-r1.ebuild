@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RESTRICT=test # tries to access network
 RDEPEND="dev-haskell/blaze-html:=[profile?]
 	>=dev-haskell/conduit-1.3:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
-	>=dev-haskell/persistent-2.8.0:=[profile?] <dev-haskell/persistent-2.9:=[profile?]
+	>=dev-haskell/persistent-2.8.0:=[profile?] <dev-haskell/persistent-2.10:=[profile?]
 	>=dev-haskell/resourcet-1.2:=[profile?]
 	>=dev-haskell/tagged-0.2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -43,6 +43,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/postgresql-libpq
 		dev-haskell/postgresql-simple )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'persistent >=2.8.0 && <2.9' 'persistent >=2.8.0 && <2.10'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-haskell/yaml-0.8.11:=[profile?] <dev-haskell/yaml-0.11:=[profile?]
+	>=dev-haskell/yaml-0.8.11:=[profile?]
 	>=dev-lang/ghc-8.2.1:=
 	buildwebsite? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.4:=[profile?] )
 	checkexternal? ( >=dev-haskell/http-conduit-2.2:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?] )
@@ -66,7 +66,8 @@ src_prepare() {
 	cabal_chdeps \
 		'containers           >= 0.3      && < 0.6' 'containers           >= 0.3' \
 		'pandoc          >= 2.0.5    && < 2.3' 'pandoc          >= 2.0.5    && < 2.4' \
-		'pandoc    >= 2.0.5 && < 2.3' 'pandoc    >= 2.0.5 && < 2.4'
+		'pandoc    >= 2.0.5 && < 2.3' 'pandoc    >= 2.0.5 && < 2.4' \
+		'yaml                 >= 0.8.11   && < 0.11' 'yaml                 >= 0.8.11'
 }
 
 src_configure() {
