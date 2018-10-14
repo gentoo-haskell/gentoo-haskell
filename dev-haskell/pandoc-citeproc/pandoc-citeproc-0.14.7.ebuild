@@ -20,7 +20,7 @@ IUSE="+bibutils debug embed_data_files static test_citeproc unicode_collation"
 
 RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
-RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.4:=[profile?]
+RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.5:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
