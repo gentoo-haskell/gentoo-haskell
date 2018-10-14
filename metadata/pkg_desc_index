@@ -123,7 +123,6 @@ dev-haskell/newtype 0.2: A typeclass and set of functions for working with newty
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
-dev-haskell/pandoc-citeproc 0.10.4.1: Supports using pandoc with citeproc
 dev-haskell/pango 0.12.5.3 0.13.1.1 0.13.3.1: Binding to the Pango text rendering engine
 dev-haskell/patience 0.1.1: Patience diff and longest increasing subsequence
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
