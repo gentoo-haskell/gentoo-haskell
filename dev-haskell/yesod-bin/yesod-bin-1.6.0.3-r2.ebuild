@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -50,7 +50,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=
 	dev-haskell/wai-extra:=
 	>=dev-haskell/warp-1.3.7.5:=
 	>=dev-haskell/warp-tls-3.0.1:=
-	>=dev-haskell/yaml-0.8:= <dev-haskell/yaml-0.11:=
+	>=dev-haskell/yaml-0.8:=
 	>=dev-haskell/zlib-0.5:=
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -62,5 +62,5 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'yaml               >= 0.8          && < 0.9' 'yaml               >= 0.8          && < 0.11'
+		'yaml               >= 0.8          && < 0.9' 'yaml               >= 0.8'
 }
