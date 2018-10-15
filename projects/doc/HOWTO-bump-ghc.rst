@@ -15,26 +15,29 @@ Done! You can safely try to emerge your shiny new ghc!
 Or not quite done (aka final cleanup):
 ======================================
 
-If you really like to expose such ghc to users you'll need to add some
-packages to overlay. Those packages are **the only ones we allow to update**. Now they are:
+If you really want to expose this ghc to users you'll need to add some
+packages to the overlay. Those packages are **the only ones we allow to
+update**. As of ghc-8.6.1, they are:
 
 - binary
 - Cabal
-- extensible-exceptions
 - ghc-api (virtual ebuild)
 - haddock
-- hoopl
-- hpc
-- old-locale
-- old-time
+- haddock-library
+- haddock-api
+- haskeline
+- mtl
+- parsec
+- stm
 - terminfo
+- text
 - transformers
 - xhtml
 
 (wisely) Use `hackport <https://raw.github.com/gentoo-haskell/hackport/master/README.rst>`_ for that!
 
 Chances are high ghc will not be able to build quite a bit of packages. So mask
-your shiny new ghc (and it's libs) in ``profiles/package.mask`` like that:
+your shiny new ghc (and its libs) in ``profiles/package.mask`` like that:
 
 ::
 
@@ -44,7 +47,7 @@ your shiny new ghc (and it's libs) in ``profiles/package.mask`` like that:
     >=dev-haskell/cabal-1.11
     >=dev-haskell/haddock-2.9.2.20110721
 
-At least test it if it's able to to rebuild your whole environment with ``haskell-updater --upgrade``.
+At least test if it's able to rebuild your whole environment with ``haskell-updater --upgrade``.
 If things are fine you can unmask it.
 
 Piece of cake!
