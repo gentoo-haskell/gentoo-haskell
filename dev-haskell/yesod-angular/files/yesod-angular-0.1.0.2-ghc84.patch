@@ -1,0 +1,17 @@
+--- a/src/Yesod/Angular.hs
++++ b/src/Yesod/Angular.hs
+@@ -54,2 +54,3 @@ import           Text.Julius                (JavascriptUrl, juliusFile, rawJS)
+ import           Yesod
++import qualified Data.Semigroup             as S
+ 
+@@ -81,2 +82,10 @@ type AngularT site = WriterT (AngularWriter site) (HandlerT site IO)
+ 
++instance S.Semigroup (AngularWriter site) where
++    AngularWriter a1 a2 a3 a4 a5
++        <> AngularWriter b1 b2 b3 b4 b5 = AngularWriter
++                                                    (mappend a1 b1)
++                                                    (mappend a2 b2)
++                                                    (mappend a3 b3)
++                                                    (mappend a4 b4)
++                                                    (mappend a5 b5)
+ instance Monoid (AngularWriter site) where
