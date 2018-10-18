@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="buildexamples"
 
 RDEPEND=">=dev-haskell/cabal-macosx-0.1:=[profile?] <dev-haskell/cabal-macosx-0.3:=[profile?]
-	>=dev-haskell/reactive-banana-1.1:=[profile?] <dev-haskell/reactive-banana-1.2:=[profile?]
+	>=dev-haskell/reactive-banana-1.1:=[profile?] <dev-haskell/reactive-banana-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/wx-0.90.0.1:3.0=[profile?] <dev-haskell/wx-0.93:3.0=[profile?]
 	>=dev-haskell/wxcore-0.90.0.1:3.0=[profile?] <dev-haskell/wxcore-0.93:3.0=[profile?]
@@ -36,7 +36,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'process >= 1.0 && < 1.4' 'process >= 1.0' \
-		'filepath >= 1.1 && <= 1.4.0.0' 'filepath >= 1.1'
+		'filepath >= 1.1 && <= 1.4.0.0' 'filepath >= 1.1' \
+		'reactive-banana >= 1.1 && < 1.2' 'reactive-banana >= 1.1 && < 1.3'
 }
 
 src_configure() {
