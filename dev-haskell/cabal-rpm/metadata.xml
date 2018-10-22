@@ -5,14 +5,20 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="old-locale">Use old-locale and time < 1.5</flag>
+		<flag name="https">Use http to query Stackage (ghc >= 8.0)</flag>
+	</use>
 	<longdescription>
 		This package provides a RPM packaging tool for Haskell Cabal-based packages.
 		
-		cblrpm has commands to generate a RPM spec file and srpm for a package.
+		cabal-rpm has commands to generate a RPM spec file and srpm for a package.
 		It can rpmbuild packages, yum/dnf install their dependencies, prep packages,
 		and install them. There are commands to list package dependencies and
 		missing dependencies. The diff command compares the current spec file
-		with a freshly generated one and the update command updates the spec file
-		to latest version from Hackage.
+		with a freshly generated one, the update command updates the spec file
+		to latest version from Stackage or Hackage, and the refresh command updates
+		the spec file to the current cabal-rpm packaging. It also handles Hackage
+		revisions of packages.
 	</longdescription>
 </pkgmetadata>
