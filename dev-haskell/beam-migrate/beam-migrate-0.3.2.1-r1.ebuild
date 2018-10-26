@@ -38,9 +38,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
 
-# I don't see a need for this build flag
-#IUSE="werror"
-#src_configure() {
-#	haskell-cabal_src_configure \
-#		$(cabal_flag werror werror)
-#}
+src_prepare() {
+	default
+	cabal_chdeps \
+		'free                 >=4.12    && <5.1' 'free >= 4.12 && <5.2'
+}
