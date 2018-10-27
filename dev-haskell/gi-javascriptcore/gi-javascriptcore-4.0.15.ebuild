@@ -21,6 +21,8 @@ IUSE=""
 RDEPEND=">=dev-haskell/haskell-gi-0.21:=[profile?] <dev-haskell/haskell-gi-0.22:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.21:=[profile?] <dev-haskell/haskell-gi-base-0.22:=[profile?]
 	<dev-haskell/haskell-gi-overloading-1.1:=[profile?]
+	dev-haskell/gi-glib:=[profile?]
+	dev-haskell/gi-gobject:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	net-libs/webkit-gtk:4
@@ -29,3 +31,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	default
+
+	# Add missing depend
+	cabal_chdeps \
+		'base >= 4.7 && <5,' 'base >= 4.7 && <5, gi-gobject, gi-glib,'
+}
