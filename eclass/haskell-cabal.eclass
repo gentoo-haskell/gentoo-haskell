@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: haskell-cabal.eclass
@@ -82,7 +82,7 @@ HASKELL_CABAL_EXPF="pkg_setup src_compile src_test src_install pkg_postinst pkg_
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-hc --with-hc-pkg --with-gcc"
 
 case "${EAPI:-0}" in
-	2|3|4|5|6) HASKELL_CABAL_EXPF+=" src_configure" ;;
+	2|3|4|5|6|7) HASKELL_CABAL_EXPF+=" src_configure" ;;
 	*) ;;
 esac
 
@@ -375,7 +375,7 @@ cabal-configure() {
 	if $(ghc-supports-shared-libraries); then
 		# Experimental support for dynamically linked binaries.
 		# We are enabling it since 7.10.1_rc3
-		if version_is_at_least "7.10.0.20150316" "$(ghc-version)"; then
+		if ver_test "$(ghc-version)" -ge "7.10.0.20150316"; then
 			# we didn't enable it before as it was not stable on all arches
 			cabalconf+=(--enable-shared)
 			# Known to break on ghc-7.8/Cabal-1.18
