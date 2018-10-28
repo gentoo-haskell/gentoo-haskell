@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/circle-packing-0.1:=[profile?] <dev-haskell/circle-packin
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.7
-		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.12
+		>=dev-haskell/quickcheck-2.4
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -56,5 +56,7 @@ src_prepare() {
 	cabal_chdeps \
 		'base >= 4.2 && < 4.12' 'base >= 4.2' \
 		'containers > 0.4 && < 0.6' 'containers > 0.4' \
-		'lens >= 4.0 && < 4.17' 'lens >= 4.0'
+		'containers                 >= 0.3 && < 0.6' 'containers                 >= 0.3' \
+		'lens >= 4.0 && < 4.17' 'lens >= 4.0' \
+		'QuickCheck                 >= 2.4 && < 2.12' 'QuickCheck                 >= 2.4'
 }
