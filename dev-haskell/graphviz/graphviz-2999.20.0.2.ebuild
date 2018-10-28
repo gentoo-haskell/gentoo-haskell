@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,8 +36,15 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/fgl-arbitrary-0.2 <dev-haskell/fgl-arbitrary-0.3
 		>=dev-haskell/hspec-2.1 <dev-haskell/hspec-2.6
 		dev-haskell/hspec-discover
-		>=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.12 )
+		>=dev-haskell/quickcheck-2.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck >= 2.3 && < 2.12' 'QuickCheck >= 2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
