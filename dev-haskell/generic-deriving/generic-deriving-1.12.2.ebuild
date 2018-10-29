@@ -30,5 +30,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'containers       >= 0.1   && < 0.6' 'containers       >= 0.1' \
-		'template-haskell >= 2.4   && < 2.14' 'template-haskell >= 2.4'
+		'template-haskell >= 2.4   && < 2.14' 'template-haskell >= 2.4' \
+		'template-haskell >= 2.4  && < 2.14' 'template-haskell >= 2.4'
 }
