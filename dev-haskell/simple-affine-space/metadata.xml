@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Affine spaces and vector spaces with a few basic instances.
+		
+		This library implements affine spaces and vector spaces. Two instances are
+		provided for affine spaces (points) and two more for vector spaces (vectors).
+		These definitions are strict, implement deepseq, and are designed to have
+		minimal memory overhead.
+	</longdescription>
+</pkgmetadata>
