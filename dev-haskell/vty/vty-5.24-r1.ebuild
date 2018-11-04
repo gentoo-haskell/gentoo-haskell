@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?]
-	dev-haskell/microlens:=[profile?]
+	<dev-haskell/microlens-4.11:=[profile?]
 	dev-haskell/microlens-mtl:=[profile?]
 	dev-haskell/microlens-th:=[profile?]
 	>=dev-haskell/mtl-1.1.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -45,3 +45,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		>=dev-haskell/test-framework-smallcheck-0.2 <dev-haskell/test-framework-smallcheck-0.3 )
 "
+
+PATCHES=( ${FILESDIR}/${P}-microlens-4.10.patch )
