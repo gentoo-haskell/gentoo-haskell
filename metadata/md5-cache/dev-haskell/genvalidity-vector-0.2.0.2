@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/genvalidity-0.5:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-haskell/validity-0.5:=[profile?] >=dev-haskell/validity-vector-0.2:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( dev-haskell/genvalidity-hspec dev-haskell/hspec dev-haskell/vector dev-haskell/genvalidity-hspec ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=GenValidity support for aeson
+EAPI=7
+HOMEPAGE=https://github.com/NorfairKing/validity#readme
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/genvalidity-0.5:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-haskell/validity-0.5:=[profile?] >=dev-haskell/validity-vector-0.2:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.2.0.2
+SRC_URI=mirror://hackage/packages/archive/genvalidity-vector/0.2.0.2/genvalidity-vector-0.2.0.2.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_md5_=d40308455cf4842a2c5e285c7c14079d
