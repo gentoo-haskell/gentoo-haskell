@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,4 +23,4 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-CABAL_CORE_LIB_GHC_PV="PM:8.6.1 PM:9999"
+CABAL_CORE_LIB_GHC_PV="PM:8.6.1 PM:8.6.2 PM:9999"
