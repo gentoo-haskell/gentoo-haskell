@@ -1,0 +1,456 @@
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/end-to-end/bash.sus super-user-spark-0.4.0.1/test_resources/end-to-end/bash.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/end-to-end/bash.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/end-to-end/bash.sus	2018-11-05 20:49:23.236179356 -0700
+@@ -0,0 +1,8 @@
++card bash {
++  into  subdir
++  outof bash
++  
++  .bashrc
++  .bash_aliases
++  .bash_profile
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/end-to-end/bash.sus.res super-user-spark-0.4.0.1/test_resources/end-to-end/bash.sus.res
+--- super-user-spark-0.4.0.1-orig/test_resources/end-to-end/bash.sus.res	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/end-to-end/bash.sus.res	2018-11-05 20:49:23.236179356 -0700
+@@ -0,0 +1,32 @@
++[
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "subdir/.bashrc",
++            "sources": [
++                "bash/.bashrc",
++                "bash/bashrc"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "subdir/.bash_aliases",
++            "sources": [
++                "bash/.bash_aliases",
++                "bash/bash_aliases"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "subdir/.bash_profile",
++            "sources": [
++                "bash/.bash_profile",
++                "bash/bash_profile"
++            ]
++        }
++    }
++]
+\ No newline at end of file
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/alternatives.sus super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/alternatives.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/alternatives.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/alternatives.sus	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,6 @@
++card alternatives {
++  alternatives 1 2 3 4
++  alternatives a b c d
++  
++  file
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/alternatives.sus.res super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/alternatives.sus.res
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/alternatives.sus.res	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/alternatives.sus.res	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,26 @@
++[
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "file",
++            "sources": [
++                "1/a/file",
++                "1/b/file",
++                "1/c/file",
++                "1/d/file",
++                "2/a/file",
++                "2/b/file",
++                "2/c/file",
++                "2/d/file",
++                "3/a/file",
++                "3/b/file",
++                "3/c/file",
++                "3/d/file",
++                "4/a/file",
++                "4/b/file",
++                "4/c/file",
++                "4/d/file"
++            ]
++        }
++    }
++]
+\ No newline at end of file
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/bash.sus super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/bash.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/bash.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/bash.sus	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,7 @@
++card bash {
++  into "~"
++
++  .bashrc
++  .bash_aliases
++  .bash_profile
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/bash.sus.res super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/bash.sus.res
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/bash.sus.res	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/bash.sus.res	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,32 @@
++[
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "~/.bashrc",
++            "sources": [
++                ".bashrc",
++                "bashrc"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "~/.bash_aliases",
++            "sources": [
++                ".bash_aliases",
++                "bash_aliases"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "~/.bash_profile",
++            "sources": [
++                ".bash_profile",
++                "bash_profile"
++            ]
++        }
++    }
++]
+\ No newline at end of file
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/internal_sparkoff.sus super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/internal_sparkoff.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/internal_sparkoff.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/internal_sparkoff.sus	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,27 @@
++card one {
++  spark card two
++  spark card five
++}
++
++card two {
++  two
++  spark card three
++  spark card four
++}
++
++card three {
++  three
++}
++
++card four {
++  four
++}
++
++card five {
++  five
++  spark card six
++}
++
++card six {
++  six
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/internal_sparkoff.sus.res super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/internal_sparkoff.sus.res
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/internal_sparkoff.sus.res	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/internal_sparkoff.sus.res	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,47 @@
++[
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "two",
++            "sources": [
++                "two"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "three",
++            "sources": [
++                "three"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "four",
++            "sources": [
++                "four"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "five",
++            "sources": [
++                "five"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "six",
++            "sources": [
++                "six"
++            ]
++        }
++    }
++]
+\ No newline at end of file
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/nesting.sus super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/nesting.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/nesting.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/nesting.sus	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,18 @@
++card complex {
++  into ~
++  outof complex
++  {
++    into a
++    outof x
++    {
++      into b
++      outof y
++      {
++        into c
++        outof z
++
++        file
++      }
++    }
++  }
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/nesting.sus.res super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/nesting.sus.res
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/nesting.sus.res	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/nesting.sus.res	2018-11-05 20:49:23.237179351 -0700
+@@ -0,0 +1,11 @@
++[
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "~/a/b/c/file",
++            "sources": [
++                "complex/x/y/z/file"
++            ]
++        }
++    }
++]
+\ No newline at end of file
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub/subfile.sus super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub/subfile.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub/subfile.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub/subfile.sus	2018-11-05 20:49:23.238179346 -0700
+@@ -0,0 +1,3 @@
++card subfile {
++  thing.txt
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub/subfile.sus.res super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub/subfile.sus.res
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub/subfile.sus.res	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub/subfile.sus.res	2018-11-05 20:49:23.238179346 -0700
+@@ -0,0 +1,11 @@
++[
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "thing.txt",
++            "sources": [
++                "thing.txt"
++            ]
++        }
++    }
++]
+\ No newline at end of file
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub.sus super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub.sus	2018-11-05 20:49:23.238179346 -0700
+@@ -0,0 +1,8 @@
++card sub {
++  spark file sub/subfile.sus
++  spark card other
++}
++
++card other {
++  file.txt
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub.sus.res super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub.sus.res
+--- super-user-spark-0.4.0.1-orig/test_resources/exact_compile_test_src/sub.sus.res	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/exact_compile_test_src/sub.sus.res	2018-11-05 20:49:23.238179346 -0700
+@@ -0,0 +1,20 @@
++[
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "thing.txt",
++            "sources": [
++                "sub/thing.txt"
++            ]
++        }
++    },
++    {
++        "deployment kind": "link",
++        "directions": {
++            "destination": "file.txt",
++            "sources": [
++                "file.txt"
++            ]
++        }
++    }
++]
+\ No newline at end of file
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/hop_test/hop1dir/hop1.sus super-user-spark-0.4.0.1/test_resources/hop_test/hop1dir/hop1.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/hop_test/hop1dir/hop1.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/hop_test/hop1dir/hop1.sus	2018-11-05 20:49:23.238179346 -0700
+@@ -0,0 +1,7 @@
++card hop1 {
++  into b
++  outof x
++  
++  beta -> one
++  spark file hop2dir/hop2.sus
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/hop_test/hop1dir/hop2dir/hop2.sus super-user-spark-0.4.0.1/test_resources/hop_test/hop1dir/hop2dir/hop2.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/hop_test/hop1dir/hop2dir/hop2.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/hop_test/hop1dir/hop2dir/hop2.sus	2018-11-05 20:49:23.238179346 -0700
+@@ -0,0 +1,7 @@
++card hop2 {
++  into c
++  outof y
++  
++  gamma -> two
++  spark file hop3dir/hop3.sus
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/hop_test/hop1dir/hop2dir/hop3dir/hop3.sus super-user-spark-0.4.0.1/test_resources/hop_test/hop1dir/hop2dir/hop3dir/hop3.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/hop_test/hop1dir/hop2dir/hop3dir/hop3.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/hop_test/hop1dir/hop2dir/hop3dir/hop3.sus	2018-11-05 20:49:23.238179346 -0700
+@@ -0,0 +1,6 @@
++card hop3 {
++  into d
++  outof z
++  
++  delta -> three
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/hop_test/root.sus super-user-spark-0.4.0.1/test_resources/hop_test/root.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/hop_test/root.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/hop_test/root.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1,7 @@
++card root {
++  into a
++  outof u
++
++  alpha -> zero
++  spark file hop1dir/hop1.sus
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/shouldCompile/bash.sus super-user-spark-0.4.0.1/test_resources/shouldCompile/bash.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/shouldCompile/bash.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/shouldCompile/bash.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1,8 @@
++card bash {
++  into ~
++  
++  .bashrc
++  .bash_aliases
++  .bash_profile
++  .profile
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/shouldCompile/complex.sus super-user-spark-0.4.0.1/test_resources/shouldCompile/complex.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/shouldCompile/complex.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/shouldCompile/complex.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1,34 @@
++card main {
++  spark card configs
++  spark card poems
++}
++
++card configs {
++  spark file bash.sus bash
++
++  alternatives super-laptop shared
++  into ~
++
++  {
++    outof zsh
++
++    .zshrc
++    .zshenv
++    .zlogin
++  }
++
++  vim -> .vim
++}
++
++card poems {
++  outof poems
++  into poems
++  {
++    kind copy
++
++    "A windows file with spaces.txt" -> clean
++  }
++  {
++    kind link
++  }
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/shouldNotParse/missing_implementation.sus super-user-spark-0.4.0.1/test_resources/shouldNotParse/missing_implementation.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/shouldNotParse/missing_implementation.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/shouldNotParse/missing_implementation.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1 @@
++card "missing implementation"
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/shouldParse/empty_card.sus super-user-spark-0.4.0.1/test_resources/shouldParse/empty_card.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/shouldParse/empty_card.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/shouldParse/empty_card.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1 @@
++card "empty" {}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/shouldParse/littered_with_comments.sus super-user-spark-0.4.0.1/test_resources/shouldParse/littered_with_comments.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/shouldParse/littered_with_comments.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/shouldParse/littered_with_comments.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1,6 @@
++card [[muhaha]] bash #yadayada
++  { # Wut
++    into [[hehe]] ~
++    out[[xD]]of bash[[files!]]
++    bashrc -[[wut]]> .bashrc
++  } # These comments are annoying, right?
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/shouldParse/short_syntax.sus super-user-spark-0.4.0.1/test_resources/shouldParse/short_syntax.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/shouldParse/short_syntax.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/shouldParse/short_syntax.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1,11 @@
++card "bash" {
++  into ~
++
++  # Without the dot shortcut
++  test.txt
++  file
++  
++  # With the dot shortcut
++  .bashrc
++  .bash_aliases 
++}
+diff -Naur super-user-spark-0.4.0.1-orig/test_resources/shouldParse/with_quotes.sus super-user-spark-0.4.0.1/test_resources/shouldParse/with_quotes.sus
+--- super-user-spark-0.4.0.1-orig/test_resources/shouldParse/with_quotes.sus	1969-12-31 17:00:00.000000000 -0700
++++ super-user-spark-0.4.0.1/test_resources/shouldParse/with_quotes.sus	2018-11-05 20:49:23.239179341 -0700
+@@ -0,0 +1,5 @@
++card name {
++  "a"c->"x"
++  "b"l->"y"
++  "c"->"z"
++}
