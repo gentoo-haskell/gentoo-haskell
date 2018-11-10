@@ -21,6 +21,8 @@ SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux"
 IUSE="+template_haskell"
 
+RESTRICT=test # to avoid test circular depends
+
 RDEPEND="dev-haskell/random:=[profile?]
 	>=dev-haskell/tf-random-0.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
