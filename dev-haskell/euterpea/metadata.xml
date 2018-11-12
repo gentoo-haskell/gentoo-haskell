@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Euterpea is a domain-specific language embedded in Haskell for
+		computer music research, education, and development, providing
+		both note-level and signal-level abstractions.  It is a descendant
+		of Haskore and HasSound, and is intended for both educational purposes
+		as well as serious computer music applications.  Euterpea is a
+		wide-spectrum DSL, suitable for high-level music representation,
+		algorithmic composition, and analysis; mid-level concepts such as
+		MIDI; and low-level audio processing, sound synthesis, and instrument
+		design.  It also includes a &quot;musical user interface,&quot; a set of
+		computer-music specific GUI widgets such as keyboards, pushbuttons,
+		sliders, and so on.  The performance of Euterpea is intended to be
+		as good as any other computer music language, with the goal of being
+		able to develop real-time applications, using both MIDI and a
+		high-performance back-end for real-time audio.
+	</longdescription>
+</pkgmetadata>
