@@ -28,6 +28,7 @@ RDEPEND=">=dev-haskell/juicypixels-3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
+	dev-haskell/hpp
 	>=dev-haskell/cabal-2.0
 "
 
