@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/mtl-2.1:= <dev-haskell/mtl-2.3:=
 	alsa? ( >=dev-haskell/alsa-core-0.5:= <dev-haskell/alsa-core-0.6:=
 		>dev-haskell/alsa-mixer-0.2.0.2:= )
 	dbus? ( >=dev-haskell/dbus-1:= )
-	inotify? ( >=dev-haskell/hinotify-0.3:= <dev-haskell/hinotify-0.4:= )
+	inotify? ( >=dev-haskell/hinotify-0.3:= <dev-haskell/hinotify-0.5:= )
 	mpd? ( >=dev-haskell/libmpd-0.9.0.6:= )
 	mpris? ( >=dev-haskell/dbus-1:= )
 	timezone? ( >=dev-haskell/timezone-olson-0.1:= <dev-haskell/timezone-olson-0.2:=
