@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		This package contains efficient implementations of high-level bit operations
+		missing from Data.Bits. The implementation is based on GCC builtins, which
+		translate to specialized instructions where available.
+		
+		All operations in this package can also be (less efficiently) implemented in
+		terms of Data.Bits operations.
+		
+		/Issues:/ A GCC-provided library, @libgcc_s@, is dynamically linked to
+		provide software fallbacks on architectures without instructions
+		corresponding to specific operations. This is currently only expected to work
+		on Linux systems, and even there can lead to issues with GHCi&#39;s custom
+		linker. A workaround for GHCi on a linux system: @ln -s \/lib\/libgcc_s.so.1
+		\/lib\/libgcc_s.so@.
+		
+		The current plan for broader support is to replace the libgcc dependency with
+		built-in fallbacks in C or Haskell code. This needs to closely follow GCC&#39;s
+		fall-back behaviour for each architecture. Alternative ideas would be
+		appreciated.
+		
+		Relevant Hackage tickets:
+		
+		* &lt;http://hackage.haskell.org/trac/ghc/ticket/3563&gt;
+		
+		* &lt;http://hackage.haskell.org/trac/ghc/ticket/4102&gt;
+		
+		/Changes/:
+		
+		* 0.1.3: Added a first test and tweaked documentation. No functional changes.
+		
+		* 0.1.2: Moved the &#39;Data.Bits.Atomic&#39; module to the package @bits-atomic@.
+		Those operations do not depend on libgcc_s and should work wherever GCC 4.X
+		is available.  Link to @bits-atomic@ on hackage:
+		&lt;http://hackage.haskell.org/package/bits-atomic&gt;
+	</longdescription>
+</pkgmetadata>
