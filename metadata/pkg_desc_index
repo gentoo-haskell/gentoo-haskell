@@ -8,7 +8,6 @@ dev-haskell/arrows 0.4.4.1-r1: Arrow classes and transformers
 dev-haskell/asn1-data 0.7.2: ASN1 data reader and writer in RAW, BER and DER forms
 dev-haskell/attoparsec-enumerator 0.3.4: Pass input from an enumerator to an Attoparsec parser
 dev-haskell/base-orphans 0.5.4: Backwards-compatible orphan instances for base
-dev-haskell/base-unicode-symbols 0.2.2.4: Unicode alternatives for common functions and operators
 dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding for ByteStrings
 dev-haskell/base64-bytestring 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/binary 0.7.6.1: Binary serialisation for Haskell values using lazy ByteStrings
