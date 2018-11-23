@@ -62,8 +62,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-th )
 "
 
-PATCHES=("${FILESDIR}"/${PN}-0.26.0-aeson-1.0.0.patch
-		 "${FILESDIR}"/${PN}-0.26.0-dns-3.0.0.patch)
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.26.0-aeson-1.0.0.patch
+	"${FILESDIR}"/${PN}-0.26.0-dns-3.0.0.patch
+	"${FILESDIR}"/${PN}-0.26.0-ghc84.patch
+)
 
 src_prepare() {
 	default
