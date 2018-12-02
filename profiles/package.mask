@@ -1,3 +1,7 @@
+# Jack Todaro <jackmtodaro@gmail.com> (2 December 2018)
+# Some packages are incompatible with >=dev-haskell/tasty-1.2
+>=dev-haskell/tasty-1.2
+
 # Jack Todaro <jackmtodaro@gmail.com> (10 November 2018)
 # Some packages are incompatible with >=dev-haskell/hoauth2-1.8
 >=dev-haskell/hoauth2-1.8
