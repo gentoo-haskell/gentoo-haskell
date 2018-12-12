@@ -20,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/bindings-glfw-3.2.1.1:=[profile?]
+RDEPEND=">=dev-haskell/bindings-glfw-3.2.1.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
