@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/hspec-2:=[profile?] <dev-haskell/hspec-2.7:=[profile?]
 	>=dev-haskell/hspec-core-2:=[profile?] <dev-haskell/hspec-core-2.7:=[profile?]
 	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-2.13:2=[profile?]
-	>=dev-haskell/tasty-0.8:=[profile?] <dev-haskell/tasty-1.2:=[profile?]
+	>=dev-haskell/tasty-0.8:=[profile?]
 	>=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 	>=dev-haskell/tasty-quickcheck-0.3:=[profile?] <dev-haskell/tasty-quickcheck-0.11:=[profile?]
@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/hspec-2:=[profile?] <dev-haskell/hspec-2.7:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty >= 0.8 && < 1.2' 'tasty >= 0.8'
+}

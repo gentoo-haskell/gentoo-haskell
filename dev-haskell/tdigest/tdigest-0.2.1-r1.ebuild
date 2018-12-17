@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	>=dev-haskell/cabal-doctest-1.0.6 <dev-haskell/cabal-doctest-1.1
 	test? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.17
-		>=dev-haskell/tasty-0.11.0.4 <dev-haskell/tasty-1.2
+		>=dev-haskell/tasty-0.11.0.4
 		>=dev-haskell/tasty-quickcheck-0.8.4 <dev-haskell/tasty-quickcheck-0.11 )
 "
 
@@ -40,5 +40,6 @@ src_prepare() {
 		'base                >=4.7      && <4.12' 'base                >=4.7' \
 		'semigroupoids       >=5.2.2    && <5.4' 'semigroupoids       >=5.2.2' \
 		'semigroups          >=0.18.4   && <0.19' 'semigroups          >=0.18.4' \
-		'vector-algorithms   >=0.7.0.1  && <0.8' 'vector-algorithms   >=0.7.0.1'
+		'vector-algorithms   >=0.7.0.1  && <0.8' 'vector-algorithms   >=0.7.0.1' \
+		'tasty            >=0.11.0.4 && <1.2' 'tasty            >=0.11.0.4'
 }

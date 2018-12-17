@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.5:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/quickcheck-instances-0.3 <dev-haskell/quickcheck-instances-0.4
-		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-1.2
+		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11
 		>=dev-haskell/time-parsers-0.1.0.0 <dev-haskell/time-parsers-0.2 )
