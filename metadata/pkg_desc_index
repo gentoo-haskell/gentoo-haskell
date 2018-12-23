@@ -2,7 +2,6 @@ dev-haskell/adjunctions 4.2.2: Adjunctions and representable functors
 dev-haskell/aeson-pretty 0.8.2: JSON pretty-printing library and command-line tool
 dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/ansi-wl-pprint 0.6.7.3: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
-dev-haskell/appar 0.1.4: A simple applicative parser
 dev-haskell/arrows 0.4.4.1-r1: Arrow classes and transformers
 dev-haskell/asn1-data 0.7.2: ASN1 data reader and writer in RAW, BER and DER forms
 dev-haskell/attoparsec-enumerator 0.3.4: Pass input from an enumerator to an Attoparsec parser
