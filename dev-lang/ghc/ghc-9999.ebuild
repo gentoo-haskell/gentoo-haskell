@@ -70,7 +70,7 @@ SRC_URI="!binary? (
 S="${WORKDIR}"/${GHC_P}
 
 if [[ ${PV} = *9999* ]]; then
-	EGIT_REPO_URI="https://git.haskell.org/ghc.git"
+	EGIT_REPO_URI="https://gitlab.haskell.org/ghc/ghc.git"
 	# Allow binaries to be collected below
 	SRC_URI=""
 fi
