@@ -26,10 +26,6 @@
 # Some packages are incompatible with >=dev-haskell/tasty-1.2
 >=dev-haskell/tasty-1.2
 
-# Jack Todaro <jackmtodaro@gmail.com> (10 November 2018)
-# Some packages are incompatible with >=dev-haskell/hoauth2-1.8
->=dev-haskell/hoauth2-1.8
-
 # Jack Todaro <jackmtodaro@gmail.com> (5 Sep 2018)
 # Too many packages are incompatible with megaparsec-7.
 # Mask packages requiring megaparsec-7 until packages
