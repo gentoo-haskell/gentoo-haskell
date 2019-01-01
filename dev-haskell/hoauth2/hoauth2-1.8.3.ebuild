@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?]
+RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/http-types-0.11:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
@@ -32,14 +32,6 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'aeson                >= 1.0.0.0 && < 1.4' 'aeson                >= 1.0.0.0' \
-		'aeson             >= 1.0.0.0 && < 1.4' 'aeson             >= 1.0.0.0'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
