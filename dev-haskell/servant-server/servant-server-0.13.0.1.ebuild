@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -63,5 +63,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'doctest >= 0.13.0 && <0.16' 'doctest >= 0.13.0'
+		'doctest >= 0.13.0 && <0.16' 'doctest >= 0.13.0' \
+		'aeson               >= 1.2.3.0  && < 1.4' 'aeson               >= 1.2.3.0  && < 1.5'
 }
