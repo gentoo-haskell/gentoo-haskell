@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/cabal-2.4.0:=[profile?] <dev-haskell/cabal-2.5:=[profile?] >=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?] >=dev-haskell/haddock-library-1.7.0:=[profile?] <dev-haskell/haddock-library-1.8:=[profile?] >=dev-haskell/xhtml-3000.2.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?] >=dev-lang/ghc-8.6:=[profile?] <dev-lang/ghc-8.7:=[profile?] >=dev-lang/ghc-8.6.1:= >=dev-haskell/cabal-2.4.0.1 test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.6 >=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.12 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=A documentation-generation tool for Haskell libraries
+EAPI=7
+HOMEPAGE=http://www.haskell.org/haddock/
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
+LICENSE=BSD
+RDEPEND=>=dev-haskell/cabal-2.4.0:=[profile?] <dev-haskell/cabal-2.5:=[profile?] >=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?] >=dev-haskell/haddock-library-1.7.0:=[profile?] <dev-haskell/haddock-library-1.8:=[profile?] >=dev-haskell/xhtml-3000.2.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?] >=dev-lang/ghc-8.6:=[profile?] <dev-lang/ghc-8.7:=[profile?] >=dev-lang/ghc-8.6.1:=
+SLOT=0/2.21.0
+SRC_URI=mirror://hackage/packages/archive/haddock-api/2.21.0/haddock-api-2.21.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_md5_=4f1a1092f4f2edf8412b57969dcd4691
