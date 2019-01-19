@@ -1,3 +1,7 @@
+# Jack Todaro <jackmtodaro@gmail.com>
+# Too many packages depend on lower versions
+>=dev-haskell/http-client-0.6
+
 # Masked due to widespread breakages and lack of binaries
 # to build dev-lang/ghc w/o USE=ghcbootstrap
 # See HOWTO-keyword-ghc.rst
