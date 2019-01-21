@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-core-2.0 <dev-haskell/hspec-core-3.0
 		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-3.0
-		>=dev-haskell/unordered-containers-0.2.5 <dev-haskell/unordered-containers-0.2.10 )
+		>=dev-haskell/unordered-containers-0.2.5 )
 "
 
 src_prepare() {
