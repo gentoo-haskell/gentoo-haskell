@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -22,7 +22,7 @@ RESTRICT=test # missing test files
 RDEPEND=">=dev-haskell/aeson-1.2.4:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.5:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/binary-bits-0.5:=[profile?] <dev-haskell/binary-bits-0.6:=[profile?]
-	>=dev-haskell/http-client-0.5.10:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
+	>=dev-haskell/http-client-0.5.10:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/http-client-tls-0.3.5:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/text-1.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
