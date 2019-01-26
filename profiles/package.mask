@@ -1,4 +1,8 @@
-# Jack Todaro <jackmtodaro@gmail.com>
+# Jack Todaro <jackmtodaro@gmail.com> (27 Jan 2019)
+# Too many packages depend on lower versions
+>=dev-haskell/ansi-terminal-0.9
+
+# Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
 >=dev-haskell/http-client-0.6
 
