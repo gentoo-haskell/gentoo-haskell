@@ -1,4 +1,8 @@
-# Jack Todaro <jackmtodaro@gmail.com>
+# Jack Todaro <jackmtodaro@gmail.com> (27 Jan 2019)
+# Too many packages depend on lower versions
+>=dev-haskell/ansi-terminal-0.9
+
+# Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
 >=dev-haskell/http-client-0.6
 
@@ -53,6 +57,7 @@
 >=dev-haskell/hspec-core-2.5.8
 >=dev-haskell/hspec-discover-2.5.8
 >=dev-haskell/hspec-meta-2.5.6
+>=dev-haskell/unix-time-0.4.5
 
 # Jack Todaro <jackmtodaro@gmail.com> (19 Aug 2018)
 # app-emacs/ghc-mod needs porting to GHC 8.4 and
