@@ -56,6 +56,6 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug-trace-events debug-trace-events) \
 		$(cabal_flag fast-weak fast-weak) \
-		$(cabal_flag reflex-optimizer reflex-optimizer) \
-		$(cabal_flag template-haskell template-haskell)
+		$(cabal_flag reflex-optimizer use-reflex-optimizer) \
+		$(cabal_flag template-haskell use-template-haskell)
 }
