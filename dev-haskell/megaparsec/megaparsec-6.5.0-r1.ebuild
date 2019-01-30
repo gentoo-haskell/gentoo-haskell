@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,14 +31,15 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-expectations-0.5 <dev-haskell/hspec-expectations-0.9
-		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.12 )
+		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.13 )
 "
 src_prepare() {
 	default
 
 	cabal_chdeps \
 		'parser-combinators >= 0.4 && < 1.0' 'parser-combinators >= 0.4' \
-		'build-tools:        hspec-discover >= 2.0 && < 3.0' 'build-depends:        hspec-discover >= 2.0 && < 3.0'
+		'build-tools:        hspec-discover >= 2.0 && < 3.0' 'build-depends:        hspec-discover >= 2.0 && < 3.0' \
+		'QuickCheck   >= 2.7   && < 2.12' 'QuickCheck   >= 2.7'
 }
 
 src_configure() {
