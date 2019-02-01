@@ -5,7 +5,10 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="build-example">Build the example executable</flag>
+	</use>
 	<longdescription>
-		Simple interface to optparse-applicative
+		Please see the README at &lt;https://www.stackage.org/package/optparse-simple&gt;
 	</longdescription>
 </pkgmetadata>
