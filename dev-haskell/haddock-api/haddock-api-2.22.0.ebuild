@@ -27,8 +27,16 @@ RDEPEND=">=dev-haskell/cabal-2.4.0:=[profile?] <dev-haskell/cabal-2.5:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.6
-		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.12 )
+	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.7
+		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.13 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck      ^>= 2.11' 'QuickCheck      >= 2.11' \
+		'hspec           >= 2.4.4 && < 2.6' 'hspec           >= 2.4.4'
+}
 
 S=${WORKDIR}/haddock-haddock-${PV}-release/${PN}
