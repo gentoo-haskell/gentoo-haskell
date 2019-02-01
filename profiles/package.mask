@@ -22,15 +22,6 @@
 # Some packages are incompatible with >=dev-haskell/tasty-1.2
 >=dev-haskell/tasty-1.2
 
-# Jack Todaro <jackmtodaro@gmail.com> (3 Sep 2018)
-# Too many packages depend on <dev-haskell/quickcheck-2.12
->=dev-haskell/quickcheck-2.12
->=dev-haskell/hspec-2.5.8
->=dev-haskell/hspec-core-2.5.8
->=dev-haskell/hspec-discover-2.5.8
->=dev-haskell/hspec-meta-2.5.6
->=dev-haskell/unix-time-0.4.5
-
 # Jack Todaro <jackmtodaro@gmail.com> (19 Aug 2018)
 # app-emacs/ghc-mod needs porting to GHC 8.4 and
 # >=dev-haskell/hlint-2.1. Upstream porting is
