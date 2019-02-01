@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux"
+KEYWORDS="~amd64 ~x86 ~x86-linux ~amd64-linux"
 IUSE="+template_haskell"
 
 RESTRICT=test # to avoid test circular depends
