@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -33,13 +33,16 @@ RDEPEND=">=dev-haskell/async-2.0:=
 	>=dev-haskell/binary-0.5:=
 	>=dev-haskell/bytestring-builder-0.10:=
 	>=dev-haskell/cabal-2.5:=
-	>=dev-haskell/cryptohash-sha256-0.11:= 
+	>=dev-haskell/cryptohash-sha256-0.11:=
+	>=dev-haskell/echo-0.1.3:=
+	>=dev-haskell/edit-distance-0.2.2:=
 	>=dev-haskell/hackage-security-0.5:=
 	>=dev-haskell/hashable-1.0:=
 	>=dev-haskell/http-4000.1.5:=
 	>=dev-haskell/mtl-2.0:=
 	>=dev-haskell/old-time-1:=
 	>=dev-haskell/random-1:=
+	>=dev-haskell/resolv-0.1.1:=
 	>=dev-haskell/stm-2.0:=
 	>=dev-haskell/tar-0.5.0.1:=
 	>=dev-haskell/zlib-0.5.3:=

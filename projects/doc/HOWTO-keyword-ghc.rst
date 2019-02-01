@@ -20,6 +20,7 @@ Minimal requirement of keyworded GHC
    - x11-wm/xmonad
    - dev-vcs/darcs
    - app-text/pandoc
+   - app-portage/hackport
 
    Feel free to add more here.
 
