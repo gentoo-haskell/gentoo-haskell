@@ -36,20 +36,6 @@
 # Some packages are incompatible with >=dev-haskell/tasty-1.2
 >=dev-haskell/tasty-1.2
 
-# Jack Todaro <jackmtodaro@gmail.com> (5 Sep 2018)
-# Too many packages are incompatible with megaparsec-7.
-# Mask packages requiring megaparsec-7 until packages
-# are ported. Last remaining package is dev-lang/idris.
->=dev-haskell/megaparsec-7
->=dev-haskell/hspec-megaparsec-2.0.0
->=dev-haskell/config-ini-0.2.3.0
->=dev-haskell/cassava-megaparsec-2.0.0
->=dev-haskell/dotenv-0.6.0.1
->=dev-haskell/hledger-lib-1.12
->=dev-haskell/hledger-1.12
->=dev-haskell/hledger-ui-1.12
->=dev-haskell/hledger-web-1.12
-
 # Jack Todaro <jackmtodaro@gmail.com> (3 Sep 2018)
 # Too many packages depend on <dev-haskell/quickcheck-2.12
 >=dev-haskell/quickcheck-2.12
