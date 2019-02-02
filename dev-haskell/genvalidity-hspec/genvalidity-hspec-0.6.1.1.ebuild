@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,6 +16,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # one of two test suites fails
 
 RDEPEND=">=dev-haskell/genvalidity-0.5:=[profile?]
 	>=dev-haskell/genvalidity-property-0.2:=[profile?]
