@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,6 +23,13 @@ RDEPEND="dev-haskell/primitive:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.6.0.0 && < 4.12' 'base >= 4.6.0.0 && < 4.13'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
