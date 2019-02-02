@@ -34,10 +34,11 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-2.2:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/ieee754-0.7:=[profile?] <dev-haskell/ieee754-0.9:=[profile?]
-	>=dev-haskell/megaparsec-6.2:=[profile?] <dev-haskell/megaparsec-7:=[profile?]
+	>=dev-haskell/megaparsec-7.0.4:=[profile?] <dev-haskell/megaparsec-8:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/network-2.8:=[profile?]
 	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.15:=[profile?]
+	>=dev-haskell/parser-combinators-1.0.0:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2:=[profile?]
 	>=dev-haskell/safe-0.3.9:=[profile?]
 	<dev-haskell/split-0.3:=[profile?]
@@ -55,17 +56,20 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 		dev-libs/gmp )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.0.0.2 <dev-haskell/cabal-2.3
+	>=dev-haskell/cabal-2.0.0.2 <dev-haskell/cabal-2.5
 	test? ( dev-haskell/tagged
 		>=dev-haskell/tasty-0.8
 		>=dev-haskell/tasty-golden-2.0
 		>=dev-haskell/tasty-rerun-1.0.0 )
 "
 
+PATCHES=( ${FILESDIR}/idris-1.3.1-megaparsec-7.patch )
+
 src_prepare() {
 	default
 
-	cabal_chdeps 'aeson >= 0.6 && < 1.4' 'aeson >= 0.6 && < 1.5'
+	cabal_chdeps 'aeson >= 0.6 && < 1.4' 'aeson >= 0.6' \
+				 'containers >= 0.5 && < 0.6' 'containers >= 0.5'
 
 	# runs dist/build/idris directly and breaks sandboxing
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
