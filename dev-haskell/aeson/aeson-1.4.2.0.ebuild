@@ -46,7 +46,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.13
 		>=dev-haskell/hashable-time-0.2 <dev-haskell/hashable-time-0.3
 		>=dev-haskell/integer-logarithms-1 <dev-haskell/integer-logarithms-1.1
-		>=dev-haskell/quickcheck-2.10.0.1 <dev-haskell/quickcheck-2.12
+		>=dev-haskell/quickcheck-2.10.0.1 <dev-haskell/quickcheck-2.13
 		>=dev-haskell/quickcheck-instances-0.3.16
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
@@ -57,7 +57,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base-orphans >= 0.5.3 && <0.8' 'base-orphans >= 0.5.3'
+		'base-orphans >= 0.5.3 && <0.8' 'base-orphans >= 0.5.3' \
+		'QuickCheck >= 2.10.0.1 && < 2.12' 'QuickCheck >= 2.10.0.1'
 }
 
 src_configure() {

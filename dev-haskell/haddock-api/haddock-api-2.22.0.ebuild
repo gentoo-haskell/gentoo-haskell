@@ -10,10 +10,11 @@ inherit haskell-cabal
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://github.com/haskell/haddock/archive/haddock-${PV}-release.tar.gz -> haddock-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
+# keep in sync with ghc-8.6.3
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
@@ -26,6 +27,16 @@ RDEPEND=">=dev-haskell/cabal-2.4.0:=[profile?] <dev-haskell/cabal-2.5:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.6
-		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.12 )
+	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.7
+		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.13 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck      ^>= 2.11' 'QuickCheck      >= 2.11' \
+		'hspec           >= 2.4.4 && < 2.6' 'hspec           >= 2.4.4'
+}
+
+S=${WORKDIR}/haddock-haddock-${PV}-release/${PN}

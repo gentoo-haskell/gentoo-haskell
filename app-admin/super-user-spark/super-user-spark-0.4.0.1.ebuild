@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # requires porting to hspec-2.6
+
 PATCHES=( "${FILESDIR}/${P}-test-resources.patch" )
 
 RDEPEND="dev-haskell/aeson:=[profile?]
@@ -33,15 +35,16 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
-	test? ( dev-haskell/genvalidity
-		dev-haskell/genvalidity-hspec
-		dev-haskell/genvalidity-hspec-aeson
-		dev-haskell/genvalidity-path
-		>=dev-haskell/hspec-2.2 <dev-haskell/hspec-2.6
-		>=dev-haskell/hspec-core-2.2 <dev-haskell/hspec-core-2.6
-		dev-haskell/quickcheck )
-"
+	>=dev-haskell/cabal-1.24.0.0"
+# 	test? ( dev-haskell/genvalidity
+# 		dev-haskell/genvalidity-hspec
+# 		dev-haskell/genvalidity-hspec-aeson
+# 		dev-haskell/genvalidity-path
+# 		>=dev-haskell/hspec-2.2 <dev-haskell/hspec-2.6
+# 		>=dev-haskell/hspec-core-2.2 <dev-haskell/hspec-core-2.6
+# 		dev-haskell/quickcheck )
+# "
+
 src_prepare() {
 	default
 	cabal_chdeps\

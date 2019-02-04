@@ -6,20 +6,6 @@
 # Too many packages depend on lower versions
 >=dev-haskell/http-client-0.6
 
-# Masked due to widespread breakages and lack of binaries
-# to build dev-lang/ghc w/o USE=ghcbootstrap
-# See HOWTO-keyword-ghc.rst
-# ghc-8.6.3
->=dev-lang/ghc-8.6.3
->=dev-haskell/cabal-2.4.0.1
->=dev-haskell/cabal-install-2.4.0.0
->=dev-haskell/stm-2.5.0.0
->=dev-haskell/haddock-2.21.0
->=dev-haskell/haddock-api-2.21.0
->=dev-haskell/haddock-library-1.7.0
->=dev-haskell/terminfo-0.4.1.2
->=dev-haskell/haskeline-0.7.4.3
-
 # Jack Todaro <jackmtodaro@gmail.com> (21 December 2018)
 # ghc-syb-utils-0.2 is incompatible with ghc-8.4, but is
 # required by ghc-mod which is currently masked for the
@@ -35,15 +21,6 @@
 # Jack Todaro <jackmtodaro@gmail.com> (2 December 2018)
 # Some packages are incompatible with >=dev-haskell/tasty-1.2
 >=dev-haskell/tasty-1.2
-
-# Jack Todaro <jackmtodaro@gmail.com> (3 Sep 2018)
-# Too many packages depend on <dev-haskell/quickcheck-2.12
->=dev-haskell/quickcheck-2.12
->=dev-haskell/hspec-2.5.8
->=dev-haskell/hspec-core-2.5.8
->=dev-haskell/hspec-discover-2.5.8
->=dev-haskell/hspec-meta-2.5.6
->=dev-haskell/unix-time-0.4.5
 
 # Jack Todaro <jackmtodaro@gmail.com> (19 Aug 2018)
 # app-emacs/ghc-mod needs porting to GHC 8.4 and

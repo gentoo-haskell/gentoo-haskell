@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=app-text/pandoc-2.3:=[profile?] <app-text/pandoc-2.5:=[profile?]
+RDEPEND=">=app-text/pandoc-2.3:=[profile?] <app-text/pandoc-2.6:=[profile?]
 	>=dev-haskell/data-accessor-0.2.2.6:=[profile?] <dev-haskell/data-accessor-0.3.0.0:=[profile?]
 	>=dev-haskell/data-accessor-template-0.2.1.12:=[profile?] <dev-haskell/data-accessor-template-0.3.0.0:=[profile?]
 	>=dev-haskell/data-accessor-transformers-0.2.1.6:=[profile?] <dev-haskell/data-accessor-transformers-0.3.0.0:=[profile?]
@@ -38,6 +38,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'pandoc >=2.3 && <2.5' 'pandoc >=2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

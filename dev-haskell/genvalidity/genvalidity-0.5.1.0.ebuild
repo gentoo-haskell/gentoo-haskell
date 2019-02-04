@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,6 +11,8 @@ inherit haskell-cabal
 DESCRIPTION="Testing utilities for the validity library"
 HOMEPAGE="https://github.com/NorfairKing/validity#readme"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+
+RESTRICT=test # slow
 
 LICENSE="MIT"
 SLOT="0/${PV}"

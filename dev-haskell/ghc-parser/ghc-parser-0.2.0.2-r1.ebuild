@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-7.6:=[profile?] <dev-lang/ghc-8.5:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.6:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
@@ -25,3 +25,10 @@ DEPEND="${RDEPEND}
 	dev-haskell/cpphs
 	dev-haskell/happy
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ghc                  >=7.6 && <8.5' 'ghc                  >=7.6'
+}
