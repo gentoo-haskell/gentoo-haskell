@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,7 +27,7 @@ arch_binaries=""
 BIN_PV=${PV}
 # Make live ebuild look more like release ebuild: use latest binary release
 # to bootstrap GHC. This way we get supported bootstrap base.
-[[ ${PV} = *9999* ]] && BIN_PV=8.4.2
+[[ ${PV} = *9999* ]] && BIN_PV=8.6.3
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-arm.tbz2 )"
