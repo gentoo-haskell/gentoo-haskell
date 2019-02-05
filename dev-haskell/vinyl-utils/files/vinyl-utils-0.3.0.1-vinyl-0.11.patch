@@ -1,0 +1,11 @@
+--- vinyl-utils-0.3.0.1-orig/src/Data/Vinyl/Utils/Const.hs	2017-12-29 08:26:46.000000000 +1100
++++ vinyl-utils-0.3.0.1/src/Data/Vinyl/Utils/Const.hs	2019-02-05 14:27:17.585603342 +1100
+@@ -59,7 +59,7 @@
+ -- ^Commute a constant functor with another functor.
+ constCommute (Const a) = Compose $ Const <$> a
+ 
+-rtraverseconst :: Applicative f => Rec (Const (f a)) rs -> f (Rec (Const a) rs)
++rtraverseconst :: (Applicative f, RMap rs) => Rec (Const (f a)) rs -> f (Rec (Const a) rs)
+ -- ^Distribute a functor over a constant type record.
+ rtraverseconst rec = rtraverse1 $ constCommute <<$>> rec
+ 
