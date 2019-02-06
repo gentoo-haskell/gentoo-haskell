@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 
+RESTRICT=test # needs network package to be already installed
+
 RDEPEND=">=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
