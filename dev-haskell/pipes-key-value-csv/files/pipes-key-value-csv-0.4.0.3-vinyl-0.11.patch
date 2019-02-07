@@ -1,0 +1,54 @@
+--- pipes-key-value-csv-0.4.0.3-orig/src/Pipes/KeyValueCsv.hs	2017-12-29 08:15:44.000000000 +1100
++++ pipes-key-value-csv-0.4.0.3/src/Pipes/KeyValueCsv.hs	2019-02-05 17:52:15.604170578 +1100
+@@ -56,6 +56,7 @@
+   :: forall (m :: * -> *) (f :: k -> *) (g :: j -> *) (hs :: [k]) (rs :: [j]) (r :: *)
+    . ( Monad m
+      , Record hs
++     , RecordToList hs
+      )
+   => Options m f g hs rs
+   -> Producer Text m r
+--- pipes-key-value-csv-0.4.0.3-orig/src/Pipes/KeyValueCsv/KeyValue.hs	2017-12-29 08:15:44.000000000 +1100
++++ pipes-key-value-csv-0.4.0.3/src/Pipes/KeyValueCsv/KeyValue.hs	2019-02-05 17:51:49.259142328 +1100
+@@ -42,6 +42,7 @@
+    . ( Given Delimiter
+      , Monad m
+      , Record rs
++     , RecordToList rs
+      )
+   => KeyValueOptions m f rs  -- ^Options
+   -> Lines m r               -- ^Stream of lines
+--- pipes-key-value-csv-0.4.0.3-orig/src/Pipes/KeyValueCsv/IO.hs	2017-12-29 08:15:44.000000000 +1100
++++ pipes-key-value-csv-0.4.0.3/src/Pipes/KeyValueCsv/IO.hs	2019-02-05 17:52:37.963194556 +1100
+@@ -55,6 +55,7 @@
+    . ( MonadIO m
+      , MonadMask m
+      , Record hs
++     , RecordToList hs
+      )
+   => Codec                       -- ^File encoding.
+   -> FilePath                    -- ^Input file.
+--- pipes-key-value-csv-0.4.0.3-orig/test/Test/Common.hs	2017-12-29 08:15:44.000000000 +1100
++++ pipes-key-value-csv-0.4.0.3/test/Test/Common.hs	2019-02-05 17:55:08.371355859 +1100
+@@ -17,7 +17,9 @@
+ type Id = Identity
+ 
+ buildDelimited
+-  :: Buildable rs 
++  :: ( Buildable rs
++     , RecordToList rs
++     )
+   => Char 
+   -> Rec Id rs 
+   -> Builder
+@@ -27,7 +29,9 @@
+   . build
+ 
+ build 
+-  :: Buildable rs 
++  :: ( Buildable rs 
++     , RecordToList rs
++     )
+   => Rec Id rs 
+   -> [Builder]
+ build r = 
