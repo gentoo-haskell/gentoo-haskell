@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,6 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # broken on USE=doc
 
 RDEPEND=">=dev-haskell/base-orphans-0.5:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/semigroups-0.11:=[profile?] <dev-haskell/semigroups-1:=[profile?]
