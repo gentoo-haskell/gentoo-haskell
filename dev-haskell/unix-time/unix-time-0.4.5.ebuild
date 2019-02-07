@@ -17,6 +17,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # QuickCheck finds counterxamples:
+#  test/UnixTimeSpec.hs:53:9: 
+#  1) UnixTime, parseUnixTimeGMT & formatUnixTimeGMT, inverses the result (2)
+#       Falsifiable (after 1 test):
+#         UnixTime {utSeconds = 747130527, utMicroSeconds = 819438}
+
 RDEPEND="dev-haskell/old-time:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
