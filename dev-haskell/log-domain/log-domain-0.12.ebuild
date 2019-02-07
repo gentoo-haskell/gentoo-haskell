@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,6 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+ffi"
+
+RESTRICT=test # broken on USE=doc
 
 RDEPEND=">=dev-haskell/bytes-0.7:=[profile?] <dev-haskell/bytes-1:=[profile?]
 	>=dev-haskell/cereal-0.3.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
