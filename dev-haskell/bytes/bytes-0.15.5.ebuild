@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+test-doctests"
+
+RESTRICT=test # USE=doc breaks doctest as:
+# doctests: <command line>: cannot satisfy -package bytes-0.15.5
+#    (use -v for more information)
 
 RDEPEND=">=dev-haskell/cereal-0.3.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/hashable-1.0.1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
