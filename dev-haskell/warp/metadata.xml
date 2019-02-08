@@ -10,7 +10,7 @@
 	</longdescription>
 	<use>
 		<flag name="allow-sendfilefd">Allow use of sendfileFd (not
-                available on GNU/kFreeBSD).</flag>
+			available on GNU/kFreeBSD).</flag>
 		<flag name="warp-debug">Add additional debuging information</flag>
 	</use>
 	<upstream>
