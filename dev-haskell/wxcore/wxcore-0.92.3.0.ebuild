@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -40,6 +40,9 @@ src_prepare() {
 	sed -e "s@wxdirect@wxdirect-${WX_GTK_VER}@g" \
 		-i "${S}/Setup.hs" \
 		|| die "Could not change Setup.hs for wxdirect slot ${WX_GTK_VER}"
+
+	cabal_chdeps\
+		'containers >= 0.2 && < 0.6' 'containers >=0.2'
 }
 
 src_configure() {
