@@ -66,3 +66,4 @@ dev-haskell/listenbrainz-client
 # hololeap <hololeap@gmail.com> (09 Feb 2019)
 # Masked due to build failure with ghc-8.6.3
 <=dev-haskell/gpipe-2.2.3
+<=dev-haskell/gpipe-glfw-1.4.1.1
