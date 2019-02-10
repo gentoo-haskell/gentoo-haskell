@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="cairo_pdf">Build the PDF backend of Cairo.</flag>
+		<flag name="cairo_ps">Build the PostScript backend of Cairo.</flag>
+		<flag name="cairo_svg">Build the Scalable Vector Graphics (SVG) backend of Cairo.</flag>
+	</use>
+	<longdescription>
+		Cairo is a library to render high quality vector graphics. There
+		exist various backends that allows rendering to Gtk windows, PDF,
+		PS, PNG and SVG documents, amongst others.
+	</longdescription>
+</pkgmetadata>
