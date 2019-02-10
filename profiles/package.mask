@@ -67,3 +67,4 @@ dev-haskell/listenbrainz-client
 # Masked due to build failure with ghc-8.6.3
 <=dev-haskell/gpipe-2.2.3
 <=dev-haskell/gpipe-glfw-1.4.1.1
+<=dev-haskell/distributed-process-0.7.4
