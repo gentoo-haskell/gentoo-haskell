@@ -521,6 +521,10 @@ src_prepare() {
 		pushd "${S}/libraries/Win32"
 			eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 		popd
+		# mingw32 target
+		pushd "${S}/libraries/Cabal"
+			eapply "${FILESDIR}"/${PN}-9999-revert-cabal-host-pass.patch
+		popd
 		eapply "${FILESDIR}"/${PN}-9999-base-mingw32-cross.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-allow-cross-bootstrap.patch
