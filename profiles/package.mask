@@ -85,3 +85,4 @@ games-puzzle/h2048 # Depends on vty-ui
 dev-haskell/webkit                    # Depends on net-libs/webkit-gtk:2
 dev-haskell/webkit-javascriptcore     # Depends on net-libs/webkit-gtk:2
 dev-haskell/webkitgtk3                # Depends on net-libs/webkit-gtk:3
+dev-haskell/webkitgtk3-javascriptcore # Depends on net-libs/webkit-gtk:3
