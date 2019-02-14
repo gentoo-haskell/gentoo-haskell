@@ -83,3 +83,4 @@ games-puzzle/h2048 # Depends on vty-ui
 # These packages depend on slots of net-libs/webkit-gtk which are no longer
 # in the Portage tree.
 dev-haskell/webkit                    # Depends on net-libs/webkit-gtk:2
+dev-haskell/webkit-javascriptcore     # Depends on net-libs/webkit-gtk:2
