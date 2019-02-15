@@ -86,3 +86,7 @@ dev-haskell/webkit                    # Depends on net-libs/webkit-gtk:2
 dev-haskell/webkit-javascriptcore     # Depends on net-libs/webkit-gtk:2
 dev-haskell/webkitgtk3                # Depends on net-libs/webkit-gtk:3
 dev-haskell/webkitgtk3-javascriptcore # Depends on net-libs/webkit-gtk:3
+
+# hololeap <hololeap@gmail.com> (15 Feb 2019)
+# Does not compile with >=dev-haskell/quickcheck-2.12
+<=dev-haskell/chell-quickcheck-0.2.5.1-r1 # No upstream development for over a year
