@@ -17,3 +17,4 @@ app-editors/leksah codemirror
 # Uses masked package, chell-quickcheck, for tests
 <=dev-haskell/gnuidn-0.2.2 test
 <=dev-haskell/system-filepath-0.4.14 test
+<=dev-haskell/dbus-0.10.13 test
