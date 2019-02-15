@@ -12,3 +12,7 @@
 # Dependencies will need to be ported to
 #   dev-haskell/gi-webkit2 and dev-haskell/gi-javascriptcore
 app-editors/leksah codemirror
+
+# hololeap <hololeap@gmail.com> (15 Feb 2019)
+# Uses masked package, chell-quickcheck, for tests
+<=dev-haskell/gnuidn-0.2.2 test
