@@ -36,7 +36,7 @@ src_prepare() {
 
 	# As per http://hackage.haskell.org/package/ekg-0.4.0.15/revisions/
 	cabal_chdeps \
-		'base >= 4.5 && < 4.12' 'base >=4.5 && base <4.13' \
+		'base >= 4.5 && < 4.12' 'base >=4.5 && <4.13' \
 		'aeson >= 0.4 && < 1.3' 'aeson >= 0.4 && <1.5'\
 		'network < 2.7' 'network <2.9'
 }
