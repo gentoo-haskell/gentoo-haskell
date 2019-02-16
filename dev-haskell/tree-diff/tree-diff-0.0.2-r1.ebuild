@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.2.1.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
-	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.9:=[profile?]
+	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?]
 	>=dev-haskell/ansi-wl-pprint-0.6.8.1:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/base-compat-0.9.3:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
 	>=dev-haskell/generics-sop-0.3.1.0:=[profile?] <dev-haskell/generics-sop-0.5:=[profile?]
@@ -50,5 +50,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'ansi-terminal        >=0.6.3.1  && <0.9' 'ansi-terminal        >=0.6.3.1' \
 		'tasty                >=0.11.2.5 && <1.2' 'tasty                >=0.11.2.5'
 }
