@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0:=[profile?]
 	>=dev-haskell/managed-1.0.5:=[profile?] <dev-haskell/managed-1.1:=[profile?]
 	>=dev-haskell/monad-control-1.0.1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/network-2.6.3.1:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	>=dev-haskell/network-2.6.3.1:=[profile?]
 	>=dev-haskell/network-ip-0.3:=[profile?] <dev-haskell/network-ip-0.4:=[profile?]
 	>=dev-haskell/parsers-0.12.4:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
 	>=dev-haskell/pathtype-0.8:=[profile?] <dev-haskell/pathtype-0.9:=[profile?]
@@ -47,7 +47,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0:=[profile?]
 	>=dev-haskell/stm-2.4.4:=[profile?]
 	>=dev-haskell/stm-chans-3.0.0.4:=[profile?] <dev-haskell/stm-chans-3.1:=[profile?]
 	>=dev-haskell/stm-containers-0.2.15:=[profile?] <dev-haskell/stm-containers-0.3:=[profile?]
-	>=dev-haskell/temporary-1.2.0:=[profile?] <dev-haskell/temporary-1.3:=[profile?]
+	>=dev-haskell/temporary-1.2.0:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-printer-0.4:=[profile?]
 	>=dev-haskell/transformers-base-0.4.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
@@ -80,5 +80,7 @@ src_prepare() {
 		'text-printer               >= 0.4 && < 0.5' 'text-printer               >= 0.4' \
 		'contravariant              >= 1.4 && < 1.5' 'contravariant              >= 1.4' \
 		'stm                        >= 2.4.4 && < 2.5' 'stm                        >= 2.4.4' \
-		'containers                 >= 0.5.7 && < 0.6' 'containers                 >= 0.5.7'
+		'containers                 >= 0.5.7 && < 0.6' 'containers                 >= 0.5.7'\
+		'network                    >= 2.6.3.1 && < 2.7' 'network >=2.6.3.1'\
+		'temporary                  >= 1.2.0 && < 1.3' 'temporary >= 1.2.0'
 }
