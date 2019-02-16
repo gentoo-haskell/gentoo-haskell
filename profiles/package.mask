@@ -69,3 +69,4 @@ dev-haskell/listenbrainz-client
 <=dev-haskell/gpipe-glfw-1.4.1.1
 <=dev-haskell/distributed-process-0.7.4
 dev-haskell/distributed-process-tests # Depends on distributed-process
+dev-haskell/distributed-process-simplelocalnet # Depends on distributed-process
