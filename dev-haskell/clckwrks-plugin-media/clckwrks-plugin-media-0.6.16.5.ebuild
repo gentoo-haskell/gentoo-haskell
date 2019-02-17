@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.15:
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/clckwrks-0.21:=[profile?] <dev-haskell/clckwrks-0.25:=[profile?]
-	>=dev-haskell/gd-3000:=[profile?] <dev-haskell/gd-3001:=[profile?]
+	>=dev-haskell/gd-3000:=[profile?,jpeg,png] <dev-haskell/gd-3001:=[profile?,jpeg,png]
 	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.6:=[profile?]
 	>=dev-haskell/hsp-0.9:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
 	>=dev-haskell/ixset-1.0:=[profile?] <dev-haskell/ixset-1.2:=[profile?]
