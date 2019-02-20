@@ -32,3 +32,11 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-byt
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	# As per http://hackage.haskell.org/package/authenticate-oauth-1.6/revisions/
+	cabal_chdeps\
+		'RSA                           >= 2.0      && < 2.3' 'RSA >=2.0 && <2.4'
+}
