@@ -93,7 +93,7 @@ dev-haskell/http-client 0.4.30 0.5.7.0: An HTTP client engine
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
 dev-haskell/http-types 0.8.6: Generic HTTP types for Haskell (for both client and server code)
-dev-haskell/httpd-shed 0.4.0.3: A simple web-server with an interact style API
+dev-haskell/httpd-shed 0.4.0.3-r2: A simple web-server with an interact style API
 dev-haskell/idna 0.2: Implements IDNA (RFC 3490)
 dev-haskell/json 0.9.1: Support for serialising Haskell to and from JSON
 dev-haskell/kan-extensions 4.2.3: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
