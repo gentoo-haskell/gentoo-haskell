@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -27,6 +27,15 @@ RDEPEND=">=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	# As per http://hackage.haskell.org/package/gloss-1.13.0.1/revisions/
+	cabal_chdeps\
+		'base                          >= 4.8 && < 4.12' 'base >=4.8 && <4.13'\
+		'containers                    == 0.5.*' 'containers >=0.5 && <0.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

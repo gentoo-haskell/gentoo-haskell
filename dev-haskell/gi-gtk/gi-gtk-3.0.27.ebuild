@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?
 	<dev-haskell/haskell-gi-overloading-1.1:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	x11-libs/gtk+:3
+	x11-libs/gtk+:3[introspection]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24

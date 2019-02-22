@@ -8,4 +8,8 @@
 	<longdescription>
 		Parsing of ISO 8601 dates, originally from aeson.
 	</longdescription>
+	<use>
+		<flag name="developer">operate in developer mode</flag>
+		<flag name="fast">compile without optimizations</flag>
+	</use>
 </pkgmetadata>

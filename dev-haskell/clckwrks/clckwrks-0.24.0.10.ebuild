@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -56,9 +56,9 @@ RDEPEND=">=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.15:
 	>=dev-haskell/web-routes-th-0.21:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	dev-libs/openssl
+	dev-libs/openssl:0=
 	>=dev-haskell/aeson-0.4:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
-	network-uri? ( >dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.7:=[profile?]
+	network-uri? ( >dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.9:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( <dev-haskell/network-2.6:=[profile?] )
 "
@@ -66,6 +66,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 	dev-haskell/hsx2hs
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps\
+		'network > 2.6      && < 2.7' 'network >2.6 && <2.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
