@@ -67,3 +67,35 @@ dev-haskell/webkitgtk3-javascriptcore
 # Masked as many reverse dependencies depend on older versions.
 # Most of them need to be ported to newer version.
 dev-haskell/listenbrainz-client
+
+# hololeap <hololeap@gmail.com> (09 Feb 2019)
+# Masked due to build failure with ghc-8.6.3
+<=dev-haskell/gpipe-2.2.3
+<=dev-haskell/gpipe-glfw-1.4.1.1
+<=dev-haskell/distributed-process-0.7.4
+dev-haskell/distributed-process-tests # Depends on distributed-process
+dev-haskell/distributed-process-simplelocalnet # Depends on distributed-process
+<=dev-haskell/fluent-logger-0.2.3.1
+dev-haskell/fluent-logger-conduit # Depends on fluent-logger
+
+# hololeap <hololeap@gmail.com> (11 Feb 2019)
+# Depcrecated in favor of dev-haskell/brick
+dev-haskell/vty-ui
+dev-haskell/hach # Depends on vty-ui
+games-puzzle/h2048 # Depends on vty-ui
+
+# hololeap <hololeap@gmail.com> (14 Feb 2019)
+# These packages depend on slots of net-libs/webkit-gtk which are no longer
+# in the Portage tree.
+dev-haskell/webkit                    # Depends on net-libs/webkit-gtk:2
+dev-haskell/webkit-javascriptcore     # Depends on net-libs/webkit-gtk:2
+dev-haskell/webkitgtk3                # Depends on net-libs/webkit-gtk:3
+dev-haskell/webkitgtk3-javascriptcore # Depends on net-libs/webkit-gtk:3
+
+# hololeap <hololeap@gmail.com> (15 Feb 2019)
+# Does not compile with >=dev-haskell/quickcheck-2.12
+<=dev-haskell/chell-quickcheck-0.2.5.1-r1 # No upstream development for over a year
+
+# hololeap <hololeap@gmail.com> (16 Feb 2019)
+# Incompatible with >=Cabal-2.4
+dev-haskell/gf

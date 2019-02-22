@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -37,7 +37,8 @@ src_prepare() {
 	cabal_chdeps \
 		'process >= 1.0 && < 1.4' 'process >= 1.0' \
 		'filepath >= 1.1 && <= 1.4.0.0' 'filepath >= 1.1' \
-		'reactive-banana >= 1.1 && < 1.2' 'reactive-banana >= 1.1 && < 1.3'
+		'reactive-banana >= 1.1 && < 1.2' 'reactive-banana >= 1.1 && < 1.3'\
+		'containers >= 0.3 && < 0.6' 'containers >=0.3'
 }
 
 src_configure() {
