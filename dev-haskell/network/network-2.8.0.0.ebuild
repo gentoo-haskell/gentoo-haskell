@@ -12,6 +12,8 @@ DESCRIPTION="Low-level networking interface"
 HOMEPAGE="https://github.com/haskell/network"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
+RESTRICT=test # requires network to be already installed
+
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
