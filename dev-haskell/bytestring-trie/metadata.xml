@@ -27,7 +27,4 @@
 		contextual mapping, extracting the minimum and
 		maximum keys, etc.)
 	</longdescription>
-	<use>
-		<flag name="usecinternal">use optimized C implementation for indexOfDifference.</flag>
-	</use>
 </pkgmetadata>
