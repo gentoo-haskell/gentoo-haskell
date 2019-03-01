@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/regex-pcre:=[profile?]
 	dev-haskell/safe:=[profile?]
-	>=dev-haskell/skylighting-core-0.7.6:=[profile?] <dev-haskell/skylighting-core-0.7.7:=[profile?]
+	>=dev-haskell/skylighting-core-0.7.7:=[profile?] <dev-haskell/skylighting-core-0.7.8:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
