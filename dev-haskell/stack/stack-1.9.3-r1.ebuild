@@ -42,7 +42,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	>=dev-haskell/open-browser-0.2.1.0:=[profile?] <dev-haskell/open-browser-0.3:=[profile?]
 	>=dev-haskell/optparse-simple-0.1.0:=[profile?] <dev-haskell/optparse-simple-0.2:=[profile?]
 	>=dev-haskell/path-0.6.1:=[profile?] <dev-haskell/path-0.7:=[profile?]
-	>=dev-haskell/persistent-template-2.5.4:=[profile?] <dev-haskell/persistent-template-2.6:=[profile?]
+	>=dev-haskell/persistent-template-2.5.4:=[profile?] <dev-haskell/persistent-template-2.7:=[profile?]
 	>=dev-haskell/project-template-0.2.0.1:=[profile?] <dev-haskell/project-template-0.3:=[profile?]
 	>=dev-haskell/regex-applicative-text-0.1.0.1:=[profile?] <dev-haskell/regex-applicative-text-0.2:=[profile?]
 	>=dev-haskell/rio-0.1.5.0:=[profile?] <dev-haskell/rio-0.2:=[profile?]
@@ -61,7 +61,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	>=dev-haskell/zlib-0.6.2:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-8.2.1:=
 	>=dev-haskell/aeson-1.2.4.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
-	>=dev-haskell/ansi-terminal-0.8.0.4:=[profile?] <dev-haskell/ansi-terminal-0.9:=[profile?]
+	>=dev-haskell/ansi-terminal-0.8.0.4:=[profile?] <dev-haskell/ansi-terminal-0.10:=[profile?]
 	>=dev-haskell/async-2.1.1.1:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/cabal-2.4.0.1:=[profile?] <dev-haskell/cabal-2.5:=[profile?]
 	>=dev-haskell/conduit-1.2.13.1:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
@@ -70,7 +70,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	>=dev-haskell/extra-1.6.9:=[profile?] <dev-haskell/extra-1.7:=[profile?]
 	>=dev-haskell/file-embed-0.0.10.1:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/fsnotify-0.2.1.1:=[profile?] <dev-haskell/fsnotify-0.4:=[profile?]
-	>=dev-haskell/http-client-0.5.13.1:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
+	>=dev-haskell/http-client-0.5.13.1:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/http-conduit-2.3.2:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/http-types-0.12.1:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/memory-0.14.16:=[profile?] <dev-haskell/memory-0.15:=[profile?]
@@ -83,7 +83,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	>=dev-haskell/persistent-sqlite-2.6.4:=[profile?] <dev-haskell/persistent-sqlite-2.10:=[profile?]
 	>=dev-haskell/primitive-0.6.4.0:=[profile?] <dev-haskell/primitive-0.7:=[profile?]
 	>=dev-haskell/resourcet-1.1.11:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
-	>=dev-haskell/retry-0.7.6.3:=[profile?] <dev-haskell/retry-0.8:=[profile?]
+	>=dev-haskell/retry-0.7.6.3:=[profile?] <dev-haskell/retry-0.9:=[profile?]
 	>=dev-haskell/stm-2.4.5.0:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/store-0.4.3.2:=[profile?] <dev-haskell/store-0.6:=[profile?]
 	>=dev-haskell/streaming-commons-0.1.19:=[profile?] <dev-haskell/streaming-commons-0.3:=[profile?]
@@ -100,7 +100,6 @@ DEPEND="${RDEPEND}
 	# 		( >=dev-haskell/hspec-2.5.5 <dev-haskell/hspec-2.7 ) )
 	# 	|| ( ( >=dev-haskell/quickcheck-2.10.1 <dev-haskell/quickcheck-2.11 )
 	# 		( >=dev-haskell/quickcheck-2.11.3 <dev-haskell/quickcheck-2.13 ) ) )
-
 
 src_configure() {
 	haskell-cabal_src_configure \
