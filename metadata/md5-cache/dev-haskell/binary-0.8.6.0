@@ -11,4 +11,4 @@ RESTRICT=test
 SLOT=0/0.8.6.0
 SRC_URI=mirror://hackage/packages/archive/binary/0.8.6.0/binary-0.8.6.0.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
-_md5_=190ed696448436f34c5a206e547b0bee
+_md5_=17e980f4aa12a598c593da40c83e2fc5
