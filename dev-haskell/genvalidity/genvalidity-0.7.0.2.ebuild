@@ -12,12 +12,12 @@ DESCRIPTION="Testing utilities for the validity library"
 HOMEPAGE="https://github.com/NorfairKing/validity#readme"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-RESTRICT=test # slow
-
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # slow
 
 RDEPEND=">=dev-haskell/quickcheck-2.7:2=[profile?]
 	>=dev-haskell/validity-0.9:=[profile?]
