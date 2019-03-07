@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/genvalidity-0.5:=[profile?] >=dev-haskell/genvalidity-property-0.2:=[profile?] dev-haskell/hspec:=[profile?] dev-haskell/hspec-core:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-haskell/validity-0.5:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( dev-haskell/doctest >=dev-haskell/genvalidity-0.7 >=dev-haskell/genvalidity-property-0.3 >=dev-haskell/validity-0.9 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Standard spec's for GenValidity instances
+EAPI=7
+HOMEPAGE=https://github.com/NorfairKing/validity#readme
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/genvalidity-0.5:=[profile?] >=dev-haskell/genvalidity-property-0.2:=[profile?] dev-haskell/hspec:=[profile?] dev-haskell/hspec-core:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-haskell/validity-0.5:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/0.6.2.3
+SRC_URI=mirror://hackage/packages/archive/genvalidity-hspec/0.6.2.3/genvalidity-hspec-0.6.2.3.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_md5_=2e3ea162b6b106d3cf3c4bf937a8d4b8
