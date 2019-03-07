@@ -8,23 +8,22 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Testing utilities for the validity library"
+DESCRIPTION="Standard properties for functions on 'Validity' types"
 HOMEPAGE="https://github.com/NorfairKing/validity#readme"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-
-RESTRICT=test # slow
 
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/quickcheck-2.7:2=[profile?]
+RDEPEND=">=dev-haskell/genvalidity-0.7:=[profile?]
+	>=dev-haskell/hspec-2.1:=[profile?]
+	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/validity-0.9:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( dev-haskell/hspec
-		dev-haskell/hspec-core )
+	test? ( dev-haskell/doctest )
 "
