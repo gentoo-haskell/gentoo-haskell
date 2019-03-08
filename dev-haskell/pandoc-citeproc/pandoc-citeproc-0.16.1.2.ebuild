@@ -16,20 +16,23 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+bibutils debug embed_data_files static test_citeproc unicode_collation"
+IUSE="+bibutils debug embed_data_files static unicode_collation"
 
 RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
-RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.7:=[profile?]
+RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.8:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]
 	dev-haskell/data-default:=[profile?]
+	dev-haskell/libyaml:=[profile?]
 	dev-haskell/mtl:=[profile?]
+	<dev-haskell/network-3.1:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/pandoc-types-1.17.3:=[profile?] <dev-haskell/pandoc-types-1.18:=[profile?]
 	dev-haskell/parsec:=[profile?]
+	dev-haskell/safe:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/setenv-0.1:=[profile?] <dev-haskell/setenv-0.2:=[profile?]
 	dev-haskell/split:=[profile?]
@@ -38,20 +41,19 @@ RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.7:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.9:=[profile?]
-	>=dev-haskell/yaml-0.8.32:=[profile?]
+	>=dev-haskell/yaml-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	bibutils? ( >=dev-haskell/hs-bibutils-6.4:=[profile?] )
 	debug? ( dev-haskell/pretty-show:=[profile?] )
 	embed_data_files? ( >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
-	test_citeproc? ( >=dev-haskell/temporary-1.1:=[profile?]
-				>=dev-haskell/vector-0.10:=[profile?] )
-	!test_citeproc? ( dev-haskell/vector:=[profile?] )
 	unicode_collation? ( dev-haskell/text-icu:=[profile?] )
 	!unicode_collation? ( dev-haskell/rfc5051:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
-	!test_citeproc? ( test? ( >=dev-haskell/temporary-1.1 ) )
+	test? ( >=dev-haskell/temporary-1.1
+		  dev-haskell/vector:=[profile?]
+	 )
 "
 
 src_configure() {
@@ -61,6 +63,6 @@ src_configure() {
 		$(cabal_flag embed_data_files embed_data_files) \
 		--flag=-small_base \
 		$(cabal_flag static static) \
-		$(cabal_flag test_citeproc test_citeproc) \
+		$(cabal_flag test test_citeproc) \
 		$(cabal_flag unicode_collation unicode_collation)
 }
