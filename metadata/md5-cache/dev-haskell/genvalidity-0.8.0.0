@@ -7,8 +7,7 @@ IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=>=dev-haskell/quickcheck-2.7:2=[profile?] >=dev-haskell/validity-0.9:=[profile?] >=dev-lang/ghc-7.8.2:=
-RESTRICT=test
-SLOT=0/0.7.0.2
-SRC_URI=mirror://hackage/packages/archive/genvalidity/0.7.0.2/genvalidity-0.7.0.2.tar.gz
+SLOT=0/0.8.0.0
+SRC_URI=mirror://hackage/packages/archive/genvalidity/0.8.0.0/genvalidity-0.8.0.0.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
-_md5_=a5ce475898d310462677c95cccd76080
+_md5_=6b838e24df3e070d6c5d2d973e866440
