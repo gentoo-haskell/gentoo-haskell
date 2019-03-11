@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Testing utilities for the validity library"
+DESCRIPTION="GenValidity support for aeson"
 HOMEPAGE="https://github.com/NorfairKing/validity#readme"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -17,14 +17,15 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # slow
-
-RDEPEND=">=dev-haskell/quickcheck-2.7:2=[profile?]
-	>=dev-haskell/validity-0.9:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+RDEPEND=">=dev-haskell/genvalidity-0.5:=[profile?]
+	dev-haskell/quickcheck:2=[profile?]
+	>=dev-haskell/validity-0.5:=[profile?]
+	>=dev-haskell/validity-vector-0.1:=[profile?]
+	dev-haskell/vector:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
-	test? ( dev-haskell/hspec
-		dev-haskell/hspec-core )
+	>=dev-haskell/cabal-1.12
+	test? ( dev-haskell/genvalidity-hspec
+		dev-haskell/hspec )
 "
