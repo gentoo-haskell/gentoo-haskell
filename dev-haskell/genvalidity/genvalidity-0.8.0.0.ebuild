@@ -17,8 +17,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # slow
-
 RDEPEND=">=dev-haskell/quickcheck-2.7:2=[profile?]
 	>=dev-haskell/validity-0.9:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
