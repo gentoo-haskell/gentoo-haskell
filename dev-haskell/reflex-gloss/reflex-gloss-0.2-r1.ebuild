@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/dependent-sum-0.3.2.1:=[profile?] <dev-haskell/dependent-sum-0.4:=[profile?]
+RDEPEND=">=dev-haskell/dependent-sum-0.3.2.1:=[profile?] <dev-haskell/dependent-sum-0.5:=[profile?]
 	>=dev-haskell/gloss-1.9.2.1:=[profile?] <dev-haskell/gloss-1.14:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/reflex-0.4:=[profile?] <dev-haskell/reflex-0.6:=[profile?]
@@ -29,8 +29,10 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	cabal_chdeps\
-		'base >=4.6 && <=4.9.2' 'base >=4.6 && <=4.13'\
-		'gloss >= 1.10.2.5 && < 1.11' 'gloss >= 1.10.2.5 && < 1.14'\
-		'transformers >= 0.4.2 && < 0.5.3' 'transformers >= 0.4.2 && < 0.6'
+		'base >=4.6 && <4.9' 'base >=4.6 && <4.13'\
+		'gloss >= 1.9.2.1 && < 1.10' 'gloss >=1.10.2.5 && <1.14'\
+		'transformers >= 0.4.2 && < 0.5' 'transformers >=0.4.2 && <0.6'\
+		'dependent-sum >= 0.3.2.1 && < 0.4' 'dependent-sum >=0.3.2.1 && <0.5'\
+		'reflex >=0.4 && <0.5' 'reflex >=0.4 && <0.6'
 	default
 }
