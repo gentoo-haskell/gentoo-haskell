@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,3 +23,10 @@ RDEPEND=">=dev-haskell/gloss-1.13:=[profile?] <dev-haskell/gloss-1.14:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	cabal_chdeps\
+		'base                          >= 4.8 && < 4.12' 'base >=4.8 && <4.13'\
+		'containers                    == 0.5.*' 'containers >=0.5 && <0.7'
+	default
+}
