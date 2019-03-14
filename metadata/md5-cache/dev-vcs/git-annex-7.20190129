@@ -10,5 +10,5 @@ RDEPEND=dev-haskell/aeson:= dev-haskell/async:= dev-haskell/attoparsec:= dev-has
 RESTRICT=test
 SLOT=0
 SRC_URI=mirror://hackage/packages/archive/git-annex/7.20190129/git-annex-7.20190129.tar.gz
-_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	desktop	b1d22ac8bdd4679ab79c71aca235009d	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_eclasses_=bash-completion-r1	47a7402d95930413ce25ba8d857339bb	desktop	b1d22ac8bdd4679ab79c71aca235009d	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
 _md5_=41fbfbf9f08491b0dc2f8f9abbcad997

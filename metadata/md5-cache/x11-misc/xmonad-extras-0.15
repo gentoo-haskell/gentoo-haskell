@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=dev-haskell/mtl:=[profile?] dev-haskell/regex-posix:=[profile?] >=dev-haskell/x11-1.4.3:=[profile?] >=dev-lang/ghc-7.4.1:= >=x11-wm/xmonad-0.10:=[profile?] <x11-wm/xmonad-0.16:=[profile?] >=x11-wm/xmonad-contrib-0.10:=[profile?] <x11-wm/xmonad-contrib-0.16:=[profile?] alsa? ( >=dev-haskell/alsa-mixer-0.2:=[profile?] ) eval? ( >=dev-haskell/hint-0.3.3.3:=[profile?] <dev-haskell/hint-0.10:=[profile?] dev-haskell/network:=[profile?] ) mpd? ( >=dev-haskell/libmpd-0.9:=[profile?] <dev-haskell/libmpd-0.10:=[profile?] )
 SLOT=0/0.15
 SRC_URI=mirror://hackage/packages/archive/xmonad-extras/0.15/xmonad-extras-0.15.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	f164325a2cdb5b3ea39311d483988861
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
 _md5_=871670550b25d47e86d7b8a63a7248af
