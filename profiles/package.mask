@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (14 Mar 2019)
+# Follow net-libs/adns mask for removal in ::gentoo
+dev-haskell/hsdns
+
 # Sergei Trofimovich <slyfox@gentoo.org> (06 Feb 2019)
 # Not supported upstream. Lags behind in support of
 # many QuickCheck versions.
