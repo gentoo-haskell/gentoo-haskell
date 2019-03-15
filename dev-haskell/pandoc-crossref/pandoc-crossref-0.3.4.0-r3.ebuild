@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=app-text/pandoc-2.3:=[profile?] <app-text/pandoc-2.7:=[profile?]
+RDEPEND=">=app-text/pandoc-2.3:=[profile?] <app-text/pandoc-2.8:=[profile?]
 	>=dev-haskell/data-accessor-0.2.2.6:=[profile?] <dev-haskell/data-accessor-0.3.0.0:=[profile?]
 	>=dev-haskell/data-accessor-template-0.2.1.12:=[profile?] <dev-haskell/data-accessor-template-0.3.0.0:=[profile?]
 	>=dev-haskell/data-accessor-transformers-0.2.1.6:=[profile?] <dev-haskell/data-accessor-transformers-0.3.0.0:=[profile?]
