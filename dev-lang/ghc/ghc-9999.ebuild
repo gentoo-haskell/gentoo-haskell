@@ -126,6 +126,13 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )
 	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
 
+if [[ ${PV} = *9999* ]]; then
+	# git tree has no pregenerated parser
+	DEPEND+="
+		>=dev-haskell/happy-1.19.4
+	"
+fi
+
 PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
