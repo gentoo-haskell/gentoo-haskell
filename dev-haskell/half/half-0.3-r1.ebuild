@@ -21,4 +21,6 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
+	test? ( >=dev-haskell/quickcheck-2.9
+			>=dev-haskell/hspec-2.4 )
 "

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="deverror">Enables `-Werror` for development mode and TravisCI</flag>
+	</use>
+	<longdescription>
+		A type checker plugin for GHC that can solve /equalities/ of types of kind
+		@Nat@, where these types are either:
+		
+		* Type-level naturals
+		
+		* Type variables
+		
+		* Applications of the arithmetic expressions @(+,-,*,^)@.
+		
+		It solves these equalities by normalising them to /sort-of/ @SOP@
+		(Sum-of-Products) form, and then perform a simple syntactic equality.
+		
+		For example, this solver can prove the equality between:
+		
+		@
+		(x + 2)^(y + 2)
+		@
+		
+		and
+		
+		@
+		4*x*(2 + x)^y + 4*(2 + x)^y + (2 + x)^y*x^2
+		@
+		
+		Because the latter is actually the @SOP@ normal form of the former.
+		
+		To use the plugin, add the
+		
+		@
+		OPTIONS_GHC -fplugin GHC.TypeLits.Normalise
+		@
+		
+		Pragma to the header of your file.
+	</longdescription>
+</pkgmetadata>

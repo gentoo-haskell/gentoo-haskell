@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="deverror">Enables `-Werror` for development mode and TravisCI</flag>
+	</use>
+	<longdescription>
+		A type checker plugin for GHC that can derive \&quot;complex\&quot; @KnownNat@
+		constraints from other simple/variable @KnownNat@ constraints. i.e. without
+		this plugin, you must have both a @KnownNat n@ and a @KnownNat (n+2)@
+		constraint in the type signature of the following function:
+		
+		@
+		f :: forall n . (KnownNat n, KnownNat (n+2)) =&gt; Proxy n -&gt; Integer
+		f _ = natVal (Proxy :: Proxy n) + natVal (Proxy :: Proxy (n+2))
+		@
+		
+		Using the plugin you can omit the @KnownNat (n+2)@ constraint:
+		
+		@
+		f :: forall n . KnownNat n =&gt; Proxy n -&gt; Integer
+		f _ = natVal (Proxy :: Proxy n) + natVal (Proxy :: Proxy (n+2))
+		@
+		
+		The plugin can derive @KnownNat@ constraints for types consisting of:
+		
+		* Type variables, when there is a corresponding @KnownNat@ constraint
+		
+		* Type-level naturals
+		
+		* Applications of the arithmetic expression: +,-,*,^
+		
+		* Type functions, when there is either:
+		
+		1. a matching given @KnownNat@ constraint; or
+		
+		2. a corresponding @KnownNat\&lt;N\&gt;@ instance for the type function
+		
+		To use the plugin, add the
+		
+		@
+		OPTIONS_GHC -fplugin GHC.TypeLits.KnownNat.Solver
+		@
+		
+		Pragma to the header of your file.
+	</longdescription>
+</pkgmetadata>

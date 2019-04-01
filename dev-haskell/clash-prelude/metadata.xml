@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="doctests">You can disable testing with doctests using `-f-doctests`.</flag>
+		<flag name="benchmarks">You can disable testing with benchmarks using `-f-benchmarks`.</flag>
+	</use>
+	<longdescription>
+		CλaSH (pronounced 'clash') is a functional hardware description language that
+		borrows both its syntax and semantics from the functional programming language
+		Haskell. The CλaSH compiler transforms these high-level descriptions to
+		low-level synthesizable VHDL, Verilog, or SystemVerilog.
+		
+		Features of CλaSH:
+		
+		* Strongly typed, but with a very high degree of type inference, enabling both
+		safe and fast prototyping using concise descriptions.
+		
+		* Interactive REPL: load your designs in an interpreter and easily test all
+		your component without needing to setup a test bench.
+		
+		* Higher-order functions, with type inference, result in designs that are
+		fully parametric by default.
+		
+		* Synchronous sequential circuit design based on streams of values, called
+		@Signal@s, lead to natural descriptions of feedback loops.
+		
+		* Support for multiple clock domains, with type safe clock domain crossing.
+		
+		
+		This package provides:
+		
+		* Prelude library containing datatypes and functions for circuit design
+		
+		To use the library:
+		
+		* Import &quot;Clash.Prelude&quot;
+		
+		* Alternatively, if you want to explicitly route clock and reset ports,
+		for more straightforward multi-clock designs, you can import the
+		&quot;Clash.Explicit.Prelude&quot; module. Note that you should not import
+		&quot;Clash.Prelude&quot; and &quot;Clash.Explicit.Prelude&quot; at the same time as they
+		have overlapping definitions.
+		
+		A preliminary version of a tutorial can be found in &quot;Clash.Tutorial&quot;, for a
+		general overview of the library you should however check out &quot;Clash.Prelude&quot;.
+		Some circuit examples can be found in &quot;Clash.Examples&quot;.
+	</longdescription>
+</pkgmetadata>
