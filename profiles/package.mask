@@ -1,3 +1,7 @@
+# Jack Todaro <jackmtodaro@gmail.com> (3 Apr 2019)
+# Too many packages depend on <QuickCheck-2.13
+>=dev-haskell/quickcheck-2.13
+
 # Sergei Trofimovich <slyfox@gentoo.org> (14 Mar 2019)
 # Follow net-libs/adns mask for removal in ::gentoo
 dev-haskell/hsdns
