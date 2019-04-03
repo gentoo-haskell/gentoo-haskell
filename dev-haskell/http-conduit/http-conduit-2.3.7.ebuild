@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
+	dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/conduit-1.2:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?]
 	>=dev-haskell/http-client-0.5.13:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
