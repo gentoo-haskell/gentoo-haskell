@@ -22,3 +22,4 @@ app-editors/leksah codemirror
 # hololeap <hololeap@gmail.com> (05 Apr 2019)
 # Tests that use doctests are currently failing to execute
 dev-haskell/servant test
+dev-haskell/lens-aeson test
