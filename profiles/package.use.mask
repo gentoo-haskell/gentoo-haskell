@@ -28,4 +28,4 @@ dev-haskell/linear test
 # hololeap <hololeap@gmail.com> (05 Apr 2019)
 # Tests fail for unknown reasons
 dev-haskell/alex test
-
+dev-haskell/singletons test
