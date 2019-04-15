@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/atomic-primops:=[profile?] dev-haskell/exceptions:=[profile?] dev-haskell/unliftio-core:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 >=dev-haskell/cabal-doctest-1.0.6 test? ( >=dev-haskell/doctest-0.15 dev-haskell/hspec dev-haskell/quickcheck dev-haskell/unliftio ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Work stealing scheduler
+EAPI=7
+HOMEPAGE=https://github.com/lehins/haskell-scheduler
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/atomic-primops:=[profile?] dev-haskell/exceptions:=[profile?] dev-haskell/unliftio-core:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/1.1.0
+SRC_URI=mirror://hackage/packages/archive/scheduler/1.1.0/scheduler-1.1.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
+_md5_=f0f644de2a9d691de4b494683fa4f55b
