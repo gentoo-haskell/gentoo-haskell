@@ -45,7 +45,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	>=dev-haskell/persistent-template-2.5.4:=[profile?] <dev-haskell/persistent-template-2.7:=[profile?]
 	>=dev-haskell/project-template-0.2.0.1:=[profile?] <dev-haskell/project-template-0.3:=[profile?]
 	>=dev-haskell/regex-applicative-text-0.1.0.1:=[profile?] <dev-haskell/regex-applicative-text-0.2:=[profile?]
-	>=dev-haskell/rio-0.1.5.0:=[profile?] <dev-haskell/rio-0.2:=[profile?]
+	>=dev-haskell/rio-0.1.9.2:=[profile?] <dev-haskell/rio-0.2:=[profile?]
 	>=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/split-0.2.3.3:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/store-core-0.4.4:=[profile?] <dev-haskell/store-core-0.5:=[profile?]
@@ -91,7 +91,7 @@ RDEPEND=">=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?] <dev-haskell/annota
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unicode-transforms-0.3.4:=[profile?] <dev-haskell/unicode-transforms-0.4:=[profile?]
 	>=dev-haskell/unix-compat-0.5.0.1:=[profile?] <dev-haskell/unix-compat-0.6:=[profile?]
-	>=dev-haskell/unliftio-0.2.7.0:=[profile?] <dev-haskell/unliftio-0.3:=[profile?]
+	>=dev-haskell/unliftio-0.2.10:=[profile?] <dev-haskell/unliftio-0.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2"
