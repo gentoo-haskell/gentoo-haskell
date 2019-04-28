@@ -56,21 +56,6 @@ dev-haskell/clocked
 dev-haskell/qthaskellc
 dev-haskell/qt
 
-# Sergei Trofimovich <slyfox@gentoo.org> (23 Feb 2018)
-# Follow ::gentoo mask bindings for outdated
-#   net-libs/webkit-gtk:2 and net-libs/webkit-gtk:3
-# Dependencies will need to be ported to
-#   dev-haskell/gi-webkit2 and dev-haskell/gi-javascriptcore
-dev-haskell/webkit
-dev-haskell/webkit-javascriptcore
-dev-haskell/webkitgtk3
-dev-haskell/webkitgtk3-javascriptcore
-<app-editors/leksah-0.16
-<app-editors/leksah-server-0.16
-<dev-haskell/ghcjs-dom-0.3
-<dev-haskell/jsaddle-0.6
-<www-client/hbro-1.8
-
 # Sergei Trofimovich <slyfox@gentoo.org> (06 Jan 2018)
 # Masked as many reverse dependencies depend on older versions.
 # Most of them need to be ported to newer version.

@@ -1,8 +1,0 @@
-diff --git a/library/Hbro/Options.hs b/library/Hbro/Options.hs
-index 92f58e7..e36e5a3 100644
---- a/library/Hbro/Options.hs
-+++ b/library/Hbro/Options.hs
-@@ -32,2 +32,3 @@ import           Options.Applicative.Extra
- import           Options.Applicative.Types
-+import           Data.Monoid
- -- }}}
