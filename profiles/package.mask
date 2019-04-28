@@ -1,10 +1,10 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
+# Follow media-libs/gstreamer:0.10 mask for removal in ::gentoo
+dev-haskell/gstreamer
+
 # Jack Todaro <jackmtodaro@gmail.com> (3 Apr 2019)
 # Too many packages depend on <QuickCheck-2.13
 >=dev-haskell/quickcheck-2.13
-
-# Sergei Trofimovich <slyfox@gentoo.org> (14 Mar 2019)
-# Follow net-libs/adns mask for removal in ::gentoo
-dev-haskell/hsdns
 
 # Sergei Trofimovich <slyfox@gentoo.org> (06 Feb 2019)
 # Not supported upstream. Lags behind in support of
