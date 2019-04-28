@@ -6,10 +6,6 @@ dev-haskell/gstreamer
 # Too many packages depend on <QuickCheck-2.13
 >=dev-haskell/quickcheck-2.13
 
-# Sergei Trofimovich <slyfox@gentoo.org> (14 Mar 2019)
-# Follow net-libs/adns mask for removal in ::gentoo
-dev-haskell/hsdns
-
 # Sergei Trofimovich <slyfox@gentoo.org> (06 Feb 2019)
 # Not supported upstream. Lags behind in support of
 # many QuickCheck versions.
