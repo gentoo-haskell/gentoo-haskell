@@ -1,9 +1,0 @@
-diff --git a/library/Hbro/Prelude.hs b/library/Hbro/Prelude.hs
-index d514c49..2d02e48 100644
---- a/library/Hbro/Prelude.hs
-+++ b/library/Hbro/Prelude.hs
-@@ -96,3 +96,3 @@ doNothing = return ()
- -- | Alias for 'mapMOf'
--withM :: Profunctor p => Over p (WrappedMonad m) s t a b -> p a (m b) -> s -> m t
-+withM :: Over (->) (WrappedMonad m) s t a b -> (a -> (m b)) -> s -> m t
- withM = mapMOf
