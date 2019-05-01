@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/base-orphans-0.1:=[profile?] dev-haskell/bifunctors:=[profile?] dev-haskell/fail:=[profile?] >=dev-haskell/primitive-0.6.1:=[profile?] <dev-haskell/primitive-0.7:=[profile?] >=dev-haskell/semigroups-0.17:=[profile?] dev-haskell/tagged:=[profile?] >=dev-lang/ghc-8.0.1:= aeson? ( >=dev-haskell/aeson-0.9:=[profile?] ) binary-laws? ( >=dev-haskell/quickcheck-2.10.0:2=[profile?] ) semigroupoids? ( dev-haskell/semigroupoids:=[profile?] ) semirings? ( >=dev-haskell/semirings-0.3.1.1:=[profile?] ) unary-laws? ( >=dev-haskell/quickcheck-2.10.0:2=[profile?] ) !unary-laws? ( !binary-laws? ( >=dev-haskell/quickcheck-2.7:2=[profile?] ) ) vector? ( >=dev-haskell/vector-0.12:=[profile?] ) >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/base-orphans-0.5 dev-haskell/tasty dev-haskell/tasty-quickcheck !vector? ( dev-haskell/vector ) ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=QuickCheck common typeclasses
+EAPI=7
+HOMEPAGE=https://github.com/andrewthad/quickcheck-classes#readme
+IUSE=+aeson +binary-laws +semigroupoids +semirings +unary-laws +vector doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/base-orphans-0.1:=[profile?] dev-haskell/bifunctors:=[profile?] dev-haskell/fail:=[profile?] >=dev-haskell/primitive-0.6.1:=[profile?] <dev-haskell/primitive-0.7:=[profile?] >=dev-haskell/semigroups-0.17:=[profile?] dev-haskell/tagged:=[profile?] >=dev-lang/ghc-8.0.1:= aeson? ( >=dev-haskell/aeson-0.9:=[profile?] ) binary-laws? ( >=dev-haskell/quickcheck-2.10.0:2=[profile?] ) semigroupoids? ( dev-haskell/semigroupoids:=[profile?] ) semirings? ( >=dev-haskell/semirings-0.3.1.1:=[profile?] ) unary-laws? ( >=dev-haskell/quickcheck-2.10.0:2=[profile?] ) !unary-laws? ( !binary-laws? ( >=dev-haskell/quickcheck-2.7:2=[profile?] ) ) vector? ( >=dev-haskell/vector-0.12:=[profile?] )
+SLOT=0/0.6.1.0
+SRC_URI=mirror://hackage/packages/archive/quickcheck-classes/0.6.1.0/quickcheck-classes-0.6.1.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
+_md5_=fcb42d319eec2160740dba77caa2559d

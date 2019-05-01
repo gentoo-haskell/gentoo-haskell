@@ -1,13 +1,13 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/clock-0.7:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.18 test? ( >=dev-haskell/quickcheck-2.10 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/clock-0.7:=[profile?] dev-haskell/semigroups:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( >=dev-haskell/quickcheck-2.10 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Extra functions I use
 EAPI=7
 HOMEPAGE=https://github.com/ndmitchell/extra#readme
 IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=>=dev-haskell/clock-0.7:=[profile?] >=dev-lang/ghc-7.4.1:=
-SLOT=2/1.6.14
-SRC_URI=mirror://hackage/packages/archive/extra/1.6.14/extra-1.6.14.tar.gz
+RDEPEND=>=dev-haskell/clock-0.7:=[profile?] dev-haskell/semigroups:=[profile?] >=dev-lang/ghc-7.10.1:=
+SLOT=2/1.6.15
+SRC_URI=mirror://hackage/packages/archive/extra/1.6.15/extra-1.6.15.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
-_md5_=bf4750cd7ff67e396476c8755bc923c6
+_md5_=5a5ba1d4ef3451618c1c99e89b3b1045
