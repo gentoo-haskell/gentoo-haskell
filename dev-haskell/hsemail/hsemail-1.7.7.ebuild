@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -20,6 +20,7 @@ IUSE=""
 RESTRICT=test # multiple packages: parsec-3.1.13.0 parsec1-1.0.0.6
 
 RDEPEND="dev-haskell/mtl:=[profile?]
+		dev-haskell/old-time:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
