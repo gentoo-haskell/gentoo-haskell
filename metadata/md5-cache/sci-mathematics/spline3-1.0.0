@@ -9,5 +9,5 @@ LICENSE=AGPL-3
 RDEPEND=>=dev-haskell/cmdargs-0.10:= >=dev-haskell/missingh-1:= >=dev-haskell/repa-3:= >=dev-haskell/repa-algorithms-3:= >=dev-haskell/repa-io-3:= >=dev-haskell/tasty-0.8:= >=dev-haskell/tasty-hunit-0.8:= >=dev-haskell/tasty-quickcheck-0.8.1:= >=dev-haskell/vector-0.10:= >=dev-lang/ghc-7.4.1:=
 SLOT=0
 SRC_URI=mirror://hackage/packages/archive/spline3/1.0.0/spline3-1.0.0.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	b2f01ad412baf81650c23fcf0975fa33	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
 _md5_=db05210782481a8774ef541a7258780f
