@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,8 +26,15 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/data-default-class
 		>=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
-		>=dev-haskell/temporary-1.1 <dev-haskell/temporary-1.3 )
+		>=dev-haskell/temporary-1.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'temporary        >= 1.1 && < 1.3' 'temporary        >= 1.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
