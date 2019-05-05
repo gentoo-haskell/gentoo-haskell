@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -31,5 +31,6 @@ src_prepare() {
 		'random >= 1.0 && < 1.1' 'random >= 1.0' \
 		'deepseq >= 1.3 && < 1.4' 'deepseq >= 1.3' \
 		'base >=4.5 && < 4.8' 'base >=4.5' \
-		'base >= 4.5 && < 4.8' 'base >= 4.5'
+		'base >= 4.5 && < 4.8' 'base >= 4.5' \
+		'containers >= 0.5 && < 0.6' 'containers >= 0.5'
 }
