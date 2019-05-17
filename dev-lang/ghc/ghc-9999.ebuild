@@ -129,7 +129,7 @@ DEPEND="${RDEPEND}
 if [[ ${PV} = *9999* ]]; then
 	# git tree has no pregenerated parser
 	DEPEND+="
-		>=dev-haskell/happy-1.19.4
+		>=dev-haskell/happy-1.19.10
 	"
 fi
 
