@@ -30,7 +30,10 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	use doc && cd doc && eautoconf
+	if use doc; then
+		cd doc || die
+		eautoconf
+	fi
 }
 
 src_configure() {
@@ -57,14 +60,15 @@ src_compile() {
 
 src_test() {
 	# workaround https://github.com/haskell/cabal/issues/2398
-	emake -k -C tests all || die
+	emake -k -C tests all
 }
 
 src_install() {
 	haskell-cabal_src_install
+
 	if use doc; then
-		cd doc || die
-		dohtml -r happy/*
-		doman "${S}/doc/happy.1"
+		docinto html
+		dodoc -r doc/happy/.
+		doman doc/happy.1
 	fi
 }
