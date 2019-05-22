@@ -1,0 +1,41 @@
+https://gitlab.haskell.org/ghc/ghc/merge_requests/602
+
+From e8b3b907d04eb5d46cbdfdf397e2070fc05c1707 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Wed, 20 Mar 2019 22:40:28 +0000
+Subject: [PATCH 1/2] powerpc32: fix 64-bit comparison (#16465)
+
+On powerpc32 64-bit comparison code generated dangling
+target labels. This caused ghc build failure as:
+
+    $ ./configure --target=powerpc-unknown-linux-gnu && make
+    ...
+    SCCs aren't in reverse dependent order
+    bad blockId n3U
+
+This happened because condIntCode' in PPC codegen generated
+label name but did not place the label into `cmp_lo` code block.
+
+The change adds the `cmp_lo` label into the case of negative
+comparison.
+
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ compiler/nativeGen/PPC/CodeGen.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/compiler/nativeGen/PPC/CodeGen.hs b/compiler/nativeGen/PPC/CodeGen.hs
+index c640ba115f..a259647042 100644
+--- a/compiler/nativeGen/PPC/CodeGen.hs
++++ b/compiler/nativeGen/PPC/CodeGen.hs
+@@ -949,6 +949,7 @@ condIntCode' True cond W64 x y
+                  , BCC LE cmp_lo Nothing
+                  , CMPL II32 x_lo (RIReg y_lo)
+                  , BCC ALWAYS end_lbl Nothing
++                 , NEWBLOCK cmp_lo
+                  , CMPL II32 y_lo (RIReg x_lo)
+                  , BCC ALWAYS end_lbl Nothing
+ 
+-- 
+2.21.0
+
