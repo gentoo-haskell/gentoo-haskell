@@ -547,6 +547,8 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9999-powerpc32-64-bit-cmp.patch
 		eapply "${FILESDIR}"/${PN}-9999-powerpc32-stack-alloc.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-nios2-nogpopt.patch
+
 		bump_libs
 
 		eapply_user
