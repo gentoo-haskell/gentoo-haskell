@@ -543,10 +543,6 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9999-armv7a-unknown-linux-gnueabihf-target.patch
 		eapply "${FILESDIR}"/${PN}-9999-aarch64_be-unknown-linux-gnu-target.patch
 
-		# https://gitlab.haskell.org/ghc/ghc/merge_requests/602
-		eapply "${FILESDIR}"/${PN}-9999-powerpc32-64-bit-cmp.patch
-		eapply "${FILESDIR}"/${PN}-9999-powerpc32-stack-alloc.patch
-
 		eapply "${FILESDIR}"/${PN}-9999-nios2-nogpopt.patch
 
 		bump_libs
