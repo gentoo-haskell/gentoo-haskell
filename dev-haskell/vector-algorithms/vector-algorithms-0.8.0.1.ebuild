@@ -25,6 +25,7 @@ RDEPEND=">=dev-haskell/primitive-0.3:=[profile?] <dev-haskell/primitive-0.7:=[pr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2
 	test? ( properties? ( >dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.13 ) )
+	llvm? ( sys-devel/llvm )
 "
 
 src_configure() {
