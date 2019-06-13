@@ -11,11 +11,12 @@
  ,("x86_64-unknown-linux-gnu", ("e-m:e-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
 --- a/utils/llvm-targets/gen-data-layout.sh
 +++ b/utils/llvm-targets/gen-data-layout.sh
-@@ -26,6 +26,7 @@ TARGETS=(
-     "armv7-unknown-linux-gnueabihf" "armv7a-unknown-linux-gnueabi" "armv7l-unknown-linux-gnueabihf"
-     "armv7a-unknown-linux-gnueabihf"
-     "aarch64-unknown-linux-gnu" "aarch64-unknown-linux"
-+    "aarch64_be-unknown-linux-gnu" "aarch64_be-unknown-linux"
+@@ -42,6 +42,8 @@ TARGETS=(
+     "armv7l-unknown-linux-gnueabihf"
+     "aarch64-unknown-linux-gnu"
+     "aarch64-unknown-linux"
++    "aarch64_be-unknown-linux-gnu"
++    "aarch64_be-unknown-linux"
      # Linux x86
-     "i386-unknown-linux-gnu" "i386-unknown-linux" "x86_64-unknown-linux-gnu" "x86_64-unknown-linux"
-     # Linux Android
+     "i386-unknown-linux-gnu"
+     "i386-unknown-linux"
