@@ -540,7 +540,6 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-unreg-hsinstances.patch
 
-		eapply "${FILESDIR}"/${PN}-9999-armv7a-unknown-linux-gnueabihf-target.patch
 		eapply "${FILESDIR}"/${PN}-9999-aarch64_be-unknown-linux-gnu-target.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-nios2-nogpopt.patch
