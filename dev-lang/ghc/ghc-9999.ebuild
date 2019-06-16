@@ -544,6 +544,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-nios2-nogpopt.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-armv6j-llvm.patch
+
 		bump_libs
 
 		eapply_user
