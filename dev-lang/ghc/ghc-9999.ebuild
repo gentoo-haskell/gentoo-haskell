@@ -546,6 +546,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-armv6j-llvm.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-cross-detect.patch
+
 		bump_libs
 
 		eapply_user

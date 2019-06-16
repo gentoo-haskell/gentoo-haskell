@@ -1,0 +1,11 @@
+Be more precise at detecting cross-compilation case.
+Before the change configuration
+    --host=x86_64-pc-linux-gnu --target=x86_64-gentoo-linux-musl
+was not considered a cross-target. Even though libcs are different.
+--- a/configure.ac
++++ b/configure.ac
+@@ -439,3 +439,3 @@ CrossCompiling=NO
+ # If 'host' and 'target' differ, then this means we are building a cross-compiler.
+-if test "$TargetPlatform" != "$HostPlatform" ; then
++if test "$target" != "$host" ; then
+     CrossCompiling=YES
