@@ -20,7 +20,7 @@ IUSE="unsafe-checks"
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	dev-haskell/primitive:=[profile?]
-	>=dev-haskell/scheduler-1.1.0:=[profile?]
+	>=dev-haskell/scheduler-1.4.0:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
@@ -32,7 +32,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/data-default
 		>=dev-haskell/doctest-0.15
 		dev-haskell/hspec
+		dev-haskell/mersenne-random-pure64
 		dev-haskell/quickcheck
+		dev-haskell/random
+		>=dev-haskell/splitmix-0.0.1
 		dev-haskell/unliftio )
 "
 

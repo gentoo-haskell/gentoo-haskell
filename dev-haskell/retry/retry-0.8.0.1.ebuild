@@ -18,8 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/exceptions-0.5:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
-	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.2:=[profile?]
+RDEPEND=">=dev-haskell/exceptions-0.5:=[profile?]
+	>=dev-haskell/random-1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
