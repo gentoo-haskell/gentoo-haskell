@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( >=dev-haskell/async-2.2.1 <dev-haskell/async-2.3 >=dev-haskell/base-compat-batteries-0.10.5 <dev-haskell/base-compat-batteries-0.11 >=dev-haskell/tf-random-0.5 <dev-haskell/tf-random-0.6 >=dev-haskell/vector-0.11.0.0 <dev-haskell/vector-0.13 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Fast Splittable PRNG
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/splitmix
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.0.2
+SRC_URI=mirror://hackage/packages/archive/splitmix/0.0.2/splitmix-0.0.2.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_md5_=bcf171538097236cd3c00ee9ce248f50
