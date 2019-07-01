@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,4 +36,12 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=test-doctests
+}
+
+src_test() {
+	# workaround USE=doc inplace registration failure:
+	#  doctests: <command line>: cannot satisfy -package lens-action-0.2.3
+	cabal-build
+
+	haskell-cabal_src_test
 }
