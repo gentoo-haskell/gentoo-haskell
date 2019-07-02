@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7.1:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?]
-	dev-haskell/cabal:=[profile?]
+	<dev-haskell/cabal-2.4:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/curl-1.3.8:=[profile?] <dev-haskell/curl-1.4:=[profile?]
 	>=dev-haskell/directory-tree-0.12:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
@@ -39,5 +39,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson          >= 0.7.1   && <1.3' 'aeson          >= 0.7.1'
+		'aeson          >= 0.7.1   && <1.3' 'aeson          >= 0.7.1' \
+		'containers     >= 0.5     && <0.6' 'containers     >= 0.5'
 }
