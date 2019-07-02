@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/text-0.9:=[profile?] >=dev-lang/ghc-7.10.1:= iconv? ( >=dev-haskell/iconv-0.4:=[profile?] <dev-haskell/iconv-0.5:=[profile?] ) >=dev-haskell/cabal-1.22.2.0 test? ( dev-haskell/hspec >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.7 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=EXIF handling library in pure Haskell
+EAPI=7
+HOMEPAGE=https://github.com/emmanueltouzery/hsexif
+IUSE=+iconv doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/text-0.9:=[profile?] >=dev-lang/ghc-7.10.1:= iconv? ( >=dev-haskell/iconv-0.4:=[profile?] <dev-haskell/iconv-0.5:=[profile?] )
+SLOT=0/0.6.1.6
+SRC_URI=mirror://hackage/packages/archive/hsexif/0.6.1.6/hsexif-0.6.1.6.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_md5_=87f99800303d681be6d7fa70d74efbde
