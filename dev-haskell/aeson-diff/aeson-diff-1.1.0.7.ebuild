@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous module name ‘Data.Vector’: it was found in multiple packages: AC-Vector-Fancy-2.4.0 vector-0.12.0.2
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/edit-distance-vector:=[profile?]
 	dev-haskell/hashable:=[profile?]
