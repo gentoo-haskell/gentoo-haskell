@@ -31,14 +31,14 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${P}-cabal22.patch
-	"${FILESDIR}"/${P}-ghc-865.patch
 )
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'regex-compat >=0.71 && <0.95' 'regex-compat >=0.71'
+		'regex-compat >=0.71 && <0.95' 'regex-compat >=0.71' \
+		'containers >=0.4 && <0.6' 'containers >=0.4 && <0.7'
 }
 
 src_configure() {
