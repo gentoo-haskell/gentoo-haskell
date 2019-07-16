@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/text:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Styling and coloring terminal output with ANSI escape sequences
+EAPI=7
+HOMEPAGE=https://github.com/loganmac/pretty-terminal#readme
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/text:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/0.1.0.0
+SRC_URI=mirror://hackage/packages/archive/pretty-terminal/0.1.0.0/pretty-terminal-0.1.0.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_md5_=c22e3d73c3276c388a507fcc865ab6ce
