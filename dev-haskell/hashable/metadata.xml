@@ -5,8 +5,14 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="integer-gmp">Are we using @integer-gmp@ to provide fast Integer instances?</flag>
+		<flag name="sse2">Do we want to assume that a target supports SSE 2?</flag>
+		<flag name="sse41">Do we want to assume that a target supports SSE 4.1?</flag>
+		<flag name="examples">Build example modules</flag>
+	</use>
 	<longdescription>
-		This package defines a class, 'Hashable', for types that
+		This package defines a class, &#39;Hashable&#39;, for types that
 		can be converted to a hash value.  This class
 		exists for the benefit of hashing-based data
 		structures.  The package provides instances for
