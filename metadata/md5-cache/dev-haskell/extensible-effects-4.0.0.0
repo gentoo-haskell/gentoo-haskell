@@ -10,5 +10,5 @@ RDEPEND=>=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1
 RESTRICT=test
 SLOT=0/4.0.0.0
 SRC_URI=mirror://hackage/packages/archive/extensible-effects/4.0.0.0/extensible-effects-4.0.0.0.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
 _md5_=24c0b7655a04a26fd75a5977dd35644b

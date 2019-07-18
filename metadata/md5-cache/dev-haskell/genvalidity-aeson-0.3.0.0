@@ -9,5 +9,5 @@ LICENSE=MIT
 RDEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/genvalidity-0.8:=[profile?] >=dev-haskell/genvalidity-scientific-0.2:=[profile?] >=dev-haskell/genvalidity-text-0.5:=[profile?] >=dev-haskell/genvalidity-unordered-containers-0.2:=[profile?] >=dev-haskell/genvalidity-vector-0.2:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-haskell/validity-0.5:=[profile?] >=dev-haskell/validity-aeson-0.2:=[profile?] >=dev-lang/ghc-7.4.1:=
 SLOT=0/0.3.0.0
 SRC_URI=mirror://hackage/packages/archive/genvalidity-aeson/0.3.0.0/genvalidity-aeson-0.3.0.0.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
 _md5_=76087864031c581065c3557efe55be62

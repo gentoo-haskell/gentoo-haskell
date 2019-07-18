@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=dev-haskell/config-ini:=[profile?] dev-haskell/contravariant:=[profile?] >=dev-haskell/data-clist-0.1:=[profile?] dev-haskell/dlist:=[profile?] >=dev-haskell/microlens-0.3.0.0:=[profile?] dev-haskell/microlens-mtl:=[profile?] dev-haskell/microlens-th:=[profile?] >=dev-haskell/stm-2.4:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/text-zipper-0.7.1:=[profile?] dev-haskell/vector:=[profile?] >=dev-haskell/vty-5.24:=[profile?] >=dev-haskell/word-wrap-0.2:=[profile?] >=dev-lang/ghc-8.0.1:=
 SLOT=0/0.47
 SRC_URI=mirror://hackage/packages/archive/brick/0.47/brick-0.47.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
 _md5_=d39f715f026a888a02949c791c2c5559

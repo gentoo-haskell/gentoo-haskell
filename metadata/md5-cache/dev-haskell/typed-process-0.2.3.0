@@ -9,5 +9,5 @@ LICENSE=MIT
 RDEPEND=dev-haskell/async:=[profile?] dev-haskell/stm:=[profile?] >=dev-lang/ghc-7.10.1:=
 SLOT=0/0.2.3.0
 SRC_URI=mirror://hackage/packages/archive/typed-process/0.2.3.0/typed-process-0.2.3.0.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
 _md5_=232f859239d479c467f0b52ab50c8d7f
