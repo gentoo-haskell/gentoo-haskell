@@ -96,3 +96,9 @@ src_configure() {
 		$(cabal_flag static static) \
 		$(cabal_flag trypandoc trypandoc)
 }
+
+src_install() {
+	default
+
+	doman man/pandoc.1
+}
