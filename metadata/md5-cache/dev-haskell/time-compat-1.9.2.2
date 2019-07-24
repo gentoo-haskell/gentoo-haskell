@@ -1,13 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/base-orphans-0.8.1:=[profile?] <dev-haskell/base-orphans-0.9:=[profile?] >=dev-haskell/fail-4.9.0.0:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/old-locale-1.0.0.2:=[profile?] <dev-haskell/old-locale-1.1:=[profile?] >=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.12 test? ( >=dev-haskell/base-compat-0.10.5 <dev-haskell/base-compat-0.11 >=dev-haskell/quickcheck-2.13 <dev-haskell/quickcheck-2.14 >=dev-haskell/tagged-0.8.6 <dev-haskell/tagged-0.9 >=dev-haskell/tasty-1.2.1 <dev-haskell/tasty-1.3 >=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11 >=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11 || ( ( >=dev-haskell/hunit-1.3.1 <dev-haskell/hunit-1.3.2 ) ( >=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7 ) ) ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/base-orphans-0.8.1:=[profile?] <dev-haskell/base-orphans-0.9:=[profile?] >=dev-haskell/fail-4.9.0.0:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/old-locale-1.0.0.2:=[profile?] <dev-haskell/old-locale-1.1:=[profile?] >=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.12 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Compatibility with old-time for the time package
 EAPI=7
 HOMEPAGE=https://github.com/phadej/time-compat
-IUSE=doc hscolour hoogle profile test
+IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/base-orphans-0.8.1:=[profile?] <dev-haskell/base-orphans-0.9:=[profile?] >=dev-haskell/fail-4.9.0.0:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/old-locale-1.0.0.2:=[profile?] <dev-haskell/old-locale-1.1:=[profile?] >=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-lang/ghc-7.4.1:=
+RESTRICT=test
 SLOT=0/1.9.2.2
 SRC_URI=mirror://hackage/packages/archive/time-compat/1.9.2.2/time-compat-1.9.2.2.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
-_md5_=f3f611d1622cf5e6ec4ffea5b5f5bc4d
+_md5_=5c254e806e93bff3c874a65aa43a549e
