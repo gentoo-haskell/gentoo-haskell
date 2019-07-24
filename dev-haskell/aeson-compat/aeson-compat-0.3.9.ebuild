@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -37,7 +37,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.5:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/base-orphans-0.4.5 <dev-haskell/base-orphans-0.9
-		>=dev-haskell/quickcheck-2.10 <dev-haskell/quickcheck-2.13
+		>=dev-haskell/quickcheck-2.10
 		>=dev-haskell/quickcheck-instances-0.3.16 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
@@ -48,5 +48,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tasty                 >=0.10 && <1.2' 'tasty                 >=0.10'
+		'tasty                 >=0.10 && <1.2' 'tasty                 >=0.10' \
+		'QuickCheck            >=2.10 && <2.13' 'QuickCheck            >=2.10'
 }
