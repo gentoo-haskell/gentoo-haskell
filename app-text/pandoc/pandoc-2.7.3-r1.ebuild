@@ -91,7 +91,7 @@ src_configure() {
 }
 
 src_install() {
-	default
+	haskell-cabal_src_install
 
 	doman man/pandoc.1
 }
