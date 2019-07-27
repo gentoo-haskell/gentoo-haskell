@@ -4,7 +4,8 @@ DESCRIPTION=Mode for editing (and running) Haskell programs in Emacs
 EAPI=6
 HOMEPAGE=http://projects.haskell.org/haskellmode-emacs/ http://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs
 LICENSE=GPL-3+ FDL-1.2+
+PROPERTIES=live
 RDEPEND=virtual/emacs dev-haskell/hasktags >=virtual/emacs-23
 SLOT=0
-_eclasses_=elisp	f8026e46da659669c11e50c306d1aeb8	elisp-common	23f47b2e1de7abf387105eddd1318738	git-r3	0d4635eeb5a96cd5315597a47eba25c9
+_eclasses_=elisp	f8026e46da659669c11e50c306d1aeb8	elisp-common	23f47b2e1de7abf387105eddd1318738	git-r3	562b380fc59ae6a8622171d0acb777d1
 _md5_=8e9ffdf89439dd1f6b9581fbf8ac9dde
