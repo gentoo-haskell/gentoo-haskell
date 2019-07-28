@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,13 +30,21 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/base16-bytestring-0.1 <dev-haskell/base16-bytestring-0.2
 		>=dev-haskell/base64-bytestring-1.0 <dev-haskell/base64-bytestring-1.1
 		>=dev-haskell/fail-4.9.0.0 <dev-haskell/fail-4.10
-		>=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.13
+		>=dev-haskell/quickcheck-2.9
 		>=dev-haskell/scientific-0.3 <dev-haskell/scientific-0.4
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.2
+		>=dev-haskell/tasty-0.11
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11
 		>=dev-haskell/vector-0.10 <dev-haskell/vector-0.13 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck              >= 2.9     && < 2.13' 'QuickCheck              >= 2.9' \
+		'tasty                   >= 0.11    && < 1.2' 'tasty                   >= 0.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
