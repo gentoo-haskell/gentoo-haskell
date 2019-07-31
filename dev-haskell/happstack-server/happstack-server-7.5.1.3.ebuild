@@ -50,6 +50,10 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hunit )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-time-compat-1.9.patch
+)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri) \
