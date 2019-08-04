@@ -44,9 +44,16 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7
 		dev-haskell/markdown-unlit
 		>=dev-haskell/network-2.8.0.0 <dev-haskell/network-3.1
-		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.13
+		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.14
 		>=dev-haskell/servant-server-0.16 <dev-haskell/servant-server-0.17
 		>=dev-haskell/tdigest-0.2 <dev-haskell/tdigest-0.3
 		dev-haskell/wai
 		dev-haskell/warp )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck        >= 2.12.6.1 && < 2.13' 'QuickCheck        >= 2.12.6.1'
+}
