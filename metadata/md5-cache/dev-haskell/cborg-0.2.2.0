@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/half-0.2.2.3:=[profile?] <dev-haskell/half-0.4:=[profile?] >=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.8:=[profile?] >=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/aeson-0.7 <dev-haskell/aeson-1.5 dev-haskell/base-orphans >=dev-haskell/base16-bytestring-0.1 <dev-haskell/base16-bytestring-0.2 >=dev-haskell/base64-bytestring-1.0 <dev-haskell/base64-bytestring-1.1 >=dev-haskell/fail-4.9.0.0 <dev-haskell/fail-4.10 >=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.14 dev-haskell/random >=dev-haskell/scientific-0.3 <dev-haskell/scientific-0.4 >=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.3 >=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11 >=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 >=dev-haskell/vector-0.10 <dev-haskell/vector-0.13 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Concise Binary Object Representation
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/cborg
+IUSE=+optimize-gmp doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/half-0.2.2.3:=[profile?] <dev-haskell/half-0.4:=[profile?] >=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.8:=[profile?] >=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.8.2:=
+SLOT=0/0.2.2.0
+SRC_URI=mirror://hackage/packages/archive/cborg/0.2.2.0/cborg-0.2.2.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
+_md5_=b8983731bcb47f580ece0f4b6c54c06d
