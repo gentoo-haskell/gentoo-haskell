@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A family of combinators for defining webservices APIs"
-HOMEPAGE="http://haskell-servant.readthedocs.org/"
+HOMEPAGE="http://docs.servant.dev/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -22,14 +22,14 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.5:=[profil
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
 	>=dev-haskell/bifunctors-5.5.3:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/case-insensitive-1.2.0.11:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
-	>=dev-haskell/http-api-data-0.4:=[profile?] <dev-haskell/http-api-data-0.4.1:=[profile?]
-	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.8:=[profile?]
+	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.2:=[profile?]
+	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.9:=[profile?]
 	>=dev-haskell/http-types-0.12.2:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/mmorph-1.1.2:=[profile?] <dev-haskell/mmorph-1.2:=[profile?]
 	>=dev-haskell/mtl-2.2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-uri-2.6.1.0:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
-	>=dev-haskell/quickcheck-2.12.6.1:2=[profile?] <dev-haskell/quickcheck-2.13:2=[profile?]
-	>=dev-haskell/singleton-bool-0.1.4:=[profile?] <dev-haskell/singleton-bool-0.1.5:=[profile?]
+	>=dev-haskell/quickcheck-2.12.6.1:2=[profile?] <dev-haskell/quickcheck-2.14:2=[profile?]
+	>=dev-haskell/singleton-bool-0.1.5:=[profile?] <dev-haskell/singleton-bool-0.1.6:=[profile?]
 	>=dev-haskell/string-conversions-0.4.0.1:=[profile?] <dev-haskell/string-conversions-0.5:=[profile?]
 	>=dev-haskell/tagged-0.8.6:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
