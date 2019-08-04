@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.5:=[profile?] >=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?] >=dev-haskell/haskell-src-exts-1.20:=[profile?] <dev-haskell/haskell-src-exts-1.21:=[profile?] >=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/traverse-with-class-1.0.0.0:=[profile?] <dev-haskell/traverse-with-class-1.1:=[profile?] >=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( >=dev-haskell/filemanip-0.3.6.3 <dev-haskell/filemanip-0.4 >=dev-haskell/pretty-show-1.6.1 <dev-haskell/pretty-show-1.10 >=dev-haskell/tasty-0.12 <dev-haskell/tasty-1.3 >=dev-haskell/tasty-golden-2.2.1 <dev-haskell/tasty-golden-2.4 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Name resolution library for Haskell
+EAPI=7
+HOMEPAGE=http://documentup.com/haskell-suite/haskell-names
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.5:=[profile?] >=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?] >=dev-haskell/haskell-src-exts-1.20:=[profile?] <dev-haskell/haskell-src-exts-1.21:=[profile?] >=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/traverse-with-class-1.0.0.0:=[profile?] <dev-haskell/traverse-with-class-1.1:=[profile?] >=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?] >=dev-lang/ghc-7.10.1:=
+SLOT=0/0.9.4
+SRC_URI=mirror://hackage/packages/archive/haskell-names/0.9.4/haskell-names-0.9.4.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
+_md5_=047d532b5322378d6177a999492e7e71
