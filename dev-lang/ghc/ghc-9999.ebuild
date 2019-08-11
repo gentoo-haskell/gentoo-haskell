@@ -92,13 +92,14 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc ghcbootstrap ghcmakebinary +gmp profile test"
+IUSE="doc elfutils ghcbootstrap ghcmakebinary +gmp profile test"
 IUSE+=" binary"
 
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
 	sys-libs/ncurses:0=[unicode]
+	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( virtual/libffi:= )
 "
 
@@ -691,7 +692,9 @@ src_configure() {
 		einfo "Final mk/build.mk:"
 		cat mk/build.mk || die
 
-		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
+		econf ${econf_args[@]} \
+			--enable-bootstrap-with-devel-snapshot \
+			$(use_enable elfutils dwarf-unwind)
 
 		if [[ ${PV} == *9999* ]]; then
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
