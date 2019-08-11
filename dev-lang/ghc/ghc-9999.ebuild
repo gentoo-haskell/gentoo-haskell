@@ -499,7 +499,7 @@ src_prepare() {
 				fi
 
 				# it is autoconf, but we really don't want to give it too
-				# much arguments, in fact we do the make in-place anyway
+				# many arguments, in fact we do the make in-place anyway
 				./configure --prefix="${WORKDIR}"/usr || die
 				make install || die
 				popd > /dev/null
