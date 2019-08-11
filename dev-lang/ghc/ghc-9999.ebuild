@@ -92,7 +92,7 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="doc elfutils ghcbootstrap ghcmakebinary +gmp profile test"
+IUSE="doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
 IUSE+=" binary"
 
 RDEPEND="
@@ -101,6 +101,7 @@ RDEPEND="
 	sys-libs/ncurses:0=[unicode]
 	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( virtual/libffi:= )
+	numa? ( sys-process/numactl )
 "
 
 # This set of dependencies is needed to run
@@ -522,6 +523,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 		eapply "${FILESDIR}"/${PN}-9999-atomic32.patch
 		eapply "${FILESDIR}"/${PN}-9999-boot-failure.patch
+		eapply "${FILESDIR}"/${PN}-8.6.5-numa.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
@@ -694,7 +696,8 @@ src_configure() {
 
 		econf ${econf_args[@]} \
 			--enable-bootstrap-with-devel-snapshot \
-			$(use_enable elfutils dwarf-unwind)
+			$(use_enable elfutils dwarf-unwind) \
+			$(use_enable numa)
 
 		if [[ ${PV} == *9999* ]]; then
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
