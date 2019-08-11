@@ -491,9 +491,11 @@ dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for l
 dev-lang/cryptol:server - Build with the ZeroMQ/JSON cryptol-server executable.
 dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.
+dev-lang/ghc:elfutils - Enable DWARF-based baclktraces using dev-libs/elfutils.
 dev-lang/ghc:ghcbootstrap - Internal: Bootstrap GHC from an existing GHC installation.
 dev-lang/ghc:ghcmakebinary - Internal: Build binary friendly for redistribution.
 dev-lang/ghc:gmp - use dev-libs/gmp for integer operations (works faster, but an external depend).
+dev-lang/ghc:numa - Enable NUMA thread balancing policy using sys-process/numactl.
 dev-lang/idris:ffi - Build support for libffi.
 dev-lang/purescript:release - prevents inclusion of extra info e.g. commit SHA in --version outpu
 dev-util/bustle:interactivetests - Build interactive test programs
