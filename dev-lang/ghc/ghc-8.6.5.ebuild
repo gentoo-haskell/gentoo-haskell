@@ -72,14 +72,16 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc ghcbootstrap ghcmakebinary +gmp profile test"
+IUSE="doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
 IUSE+=" binary"
 
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
 	sys-libs/ncurses:0=[unicode]
+	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( virtual/libffi:= )
+	numa? ( sys-process/numactl )
 "
 
 # This set of dependencies is needed to run
@@ -482,6 +484,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 		eapply "${FILESDIR}"/${PN}-8.4.2-allow-cross-bootstrap.patch
+		eapply "${FILESDIR}"/${PN}-8.6.5-numa.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
@@ -630,7 +633,10 @@ src_configure() {
 		einfo "Final mk/build.mk:"
 		cat mk/build.mk || die
 
-		econf ${econf_args[@]} --enable-bootstrap-with-devel-snapshot
+		econf ${econf_args[@]} \
+			--enable-bootstrap-with-devel-snapshot \
+			$(use_enable elfutils dwarf-unwind) \
+			$(use_enable numa)
 
 		if [[ ${PV} == *9999* ]]; then
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
