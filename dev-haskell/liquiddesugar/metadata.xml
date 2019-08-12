@@ -9,6 +9,6 @@
 		Haskell to GHC Core Desugarar for Liquid Haskell.
 	</longdescription>
 	<use>
-  		<flag name="devel">Turn on stricter error reporting for development.</flag>
+		<flag name="devel">Turn on stricter error reporting for development.</flag>
 	</use>
 </pkgmetadata>
