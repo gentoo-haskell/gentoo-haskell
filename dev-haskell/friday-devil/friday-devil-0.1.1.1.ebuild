@@ -33,4 +33,3 @@ src_prepare() {
 	cabal_chdeps \
 		'transformers            >= 0.3          && < 0.5' 'transformers            >= 0.3'
 }
-

@@ -45,7 +45,6 @@ src_prepare() {
 		'tasty-expected-failure >= 0.11 && < 0.12' 'tasty-expected-failure >= 0.11'
 }
 
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=+allow-unsafe-gc \

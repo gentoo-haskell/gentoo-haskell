@@ -9,6 +9,6 @@
 		Yi editor core library
 	</longdescription>
 	<use>
-	  <flag name="hint">Build with hint (haskell interpreter)</flag>
+		<flag name="hint">Build with hint (haskell interpreter)</flag>
 	</use>
 </pkgmetadata>
