@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	default
-	
+
 	cabal_chdeps \
 		'containers       >= 0.5    && < 0.6' 'containers       >= 0.5' \
 		'temporary        >= 1.1    && < 1.3' 'temporary        >= 1.1'

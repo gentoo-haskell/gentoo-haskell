@@ -5,9 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-    <use>
+	<use>
 		<flag name="example">Build the example program</flag>
-    </use>
+	</use>
 	<longdescription>
 		yesod-static supports generators which run at compile time which create static
 		resources to embed directly into the executable.  This package leverages this to

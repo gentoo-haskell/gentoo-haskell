@@ -6,8 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		 <flag name="maintainer">Enable settings for the package maintainer.</flag>
-		 <flag name="build-examples">Build examples when building the library.</flag>
+		<flag name="maintainer">Enable settings for the package maintainer.</flag>
+		<flag name="build-examples">Build examples when building the library.</flag>
 	</use>
 	<longdescription>
 		Byline simplifies writing interactive terminal applications by
@@ -16,7 +16,7 @@
 		sequences such as colors that are automatically disabled when
 		standard input is a file.  It also means that Byline works on both
 		POSIX-compatible systems and on Windows.
-		
+
 		The primary features of Byline include printing messages, prompting
 		for input, and generating custom menus.  It was inspired by the
 		@highline@ Ruby library and the @terminal@ library by Craig Roche.

@@ -12,7 +12,7 @@ inherit flag-o-matic haskell-cabal pax-utils
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
 #SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
-SRC_URI="http://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
+SRC_URI="https://dev.gentoo.org/~gienah/snapshots/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
