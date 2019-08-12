@@ -18,7 +18,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86 ~x86-linux ~amd64-linux"
+KEYWORDS="~amd64 ~amd64-linux ~x86 ~x86-linux"
 IUSE="+template_haskell"
 
 RESTRICT=test # to avoid test circular depends
