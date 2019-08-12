@@ -38,7 +38,6 @@ src_prepare() {
 		'split >=0.1 && <0.3' 'split >=0.1'
 }
 
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-dev \
