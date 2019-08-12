@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Functional MetaPost"
-HOMEPAGE="http://savannah.nongnu.org/projects/funcmp/"
+HOMEPAGE="https://savannah.nongnu.org/projects/funcmp/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
