@@ -1943,7 +1943,7 @@ dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4 0.6.2: A small compatibility 
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.1 0.2.0.1: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.4 1.0.0.0: Generic applicative traversals
-dev-haskell/tree-diff 0.0.2-r1: Diffing of (expression) trees
+dev-haskell/tree-diff 0.0.2.1: Diffing of (expression) trees
 dev-haskell/trifecta 1.6.2.1-r1 1.7.1.1 2-r1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
