@@ -910,7 +910,7 @@ dev-haskell/hmatrix-gsl 0.17.0.0: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
 dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hnix 0.3.4: Haskell implementation of the Nix language
-dev-haskell/hoauth2 0.5.9 1.5.1 1.8.5: Haskell OAuth2 authentication client
+dev-haskell/hoauth2 0.5.9 1.5.1 1.8.9: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
 dev-haskell/hoodle 0.4.0 0.5: Executable for hoodle
