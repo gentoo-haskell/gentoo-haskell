@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
+RDEPEND=">=dev-haskell/aeson-1.3.0.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/http-types-0.11:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
