@@ -635,7 +635,7 @@ src_configure() {
 
 		econf ${econf_args[@]} \
 			--enable-bootstrap-with-devel-snapshot \
-			$(use_enable elfutils dwarf-unwind) \
+			$(use elfutils && echo --enable-dwarf-unwind) \
 			$(use_enable numa)
 
 		if [[ ${PV} == *9999* ]]; then
