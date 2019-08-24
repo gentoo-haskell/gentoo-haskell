@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -38,7 +38,7 @@ SAMPLE_CONFIG="${PN}.hs"
 
 src_prepare() {
 	default
-	use no-autorepeat-keys && eapply ${FILESDIR}/${PN}-0.14-check-repeat.patch
+	use no-autorepeat-keys && eapply "${FILESDIR}"/${PN}-0.14-check-repeat.patch
 }
 
 src_configure() {
