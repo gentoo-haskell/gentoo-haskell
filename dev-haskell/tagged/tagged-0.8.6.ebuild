@@ -26,6 +26,13 @@ RDEPEND=">=dev-haskell/transformers-compat-0.5:=[profile?] <dev-haskell/transfor
 "
 DEPEND="${RDEPEND}"
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >= 2.8 && < 2.15' 'template-haskell >= 2.8'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=deepseq \
