@@ -1,0 +1,41 @@
+From 8ca84b1e0a0e012144e9bc6bcda8faae21d7c6b6 Mon Sep 17 00:00:00 2001
+From: Ben Gamari <ben@smart-cactus.org>
+Date: Tue, 27 Aug 2019 03:24:27 -0400
+Subject: [PATCH] configure: Don't depend upon alex/happy in source dist build
+
+This fixes #16860 by verifying that the generated sources don't already
+exist before looking for alex and happy executables.
+---
+ configure.ac | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 6f57d3b5ec..b3ba624228 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -873,12 +873,20 @@ FP_PROG_GHC_PKG
+ dnl ** check for installed happy binary + version
+ 
+ AC_ARG_VAR(HAPPY,[Use as the path to happy [default=autodetect]])
+-FPTOOLS_HAPPY
++if [ ! -f compiler/parser/Lexer.hs ]; then
++  dnl Don't depend upon alex/happy if building from source distribution, where
++  dnl the files that they generate should already exist (#16860)
++  FPTOOLS_HAPPY;
++fi
+ 
+ dnl ** check for installed alex binary + version
+ 
+ AC_ARG_VAR(ALEX,[Use as the path to alex [default=autodetect]])
+-FPTOOLS_ALEX
++if [ ! -f compiler/parser/Parser.hs ]; then
++  dnl Don't depend upon alex/happy if building from source distribution, where
++  dnl the files that they generate should already exist (#16860)
++  FPTOOLS_ALEX;
++fi
+ 
+ dnl --------------------------------------------------
+ dnl ### program checking section ends here ###
+-- 
+2.23.0
+
