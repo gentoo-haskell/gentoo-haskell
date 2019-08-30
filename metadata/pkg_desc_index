@@ -113,6 +113,7 @@ dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an 
 dev-haskell/apply-refact 0.3.0.1 0.5.0.0 0.6.0.0: Perform refactorings specified by the refact library
 dev-haskell/argparser 0.3.4: Command line parsing framework for console applications
 dev-haskell/arithmoi 0.7.0.0 0.9.0.0: Efficient basic number-theoretic functions. Primes, powers, integer logarithms
+dev-haskell/arrow-list 0.7: List arrows for Haskell
 dev-haskell/arrows 0.4.4.1-r1 0.4.4.2: Arrow classes and transformers
 dev-haskell/ascii-progress 0.3.3.0: A simple progress bar for the console
 dev-haskell/asn1-data 0.7.2: ASN1 data reader and writer in RAW, BER and DER forms
@@ -1268,6 +1269,7 @@ dev-haskell/monad-journal 0.7.2 0.8.1: Pure logger typeclass and monad transform
 dev-haskell/monad-logger 0.3.30: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.4.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
+dev-haskell/monad-memo 0.5.1: Memoization monad transformer
 dev-haskell/monad-par 0.3.4.8: A library for parallel programming based on a monad
 dev-haskell/monad-par-extras 0.3.3: Combinators and extra features for Par monads
 dev-haskell/monad-parallel 0.7.2.3: Parallel execution of monadic computations
