@@ -108,8 +108,6 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )
 	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
 
-PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
-
 REQUIRED_USE="?? ( ghcbootstrap binary )"
 
 # haskell libraries built with cabal in configure mode, #515354
@@ -122,6 +120,10 @@ is_crosscompile() {
 is_native() {
 	[[ ${CHOST} == ${CBUILD} ]] && [[ ${CHOST} == ${CTARGET} ]]
 }
+
+if ! is_crosscompile; then
+	PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
+fi
 
 # returns tool prefix for crosscompiler.
 # Example:
