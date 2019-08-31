@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 # to make make a crosscompiler use crossdev and symlink ghc tree into
 # cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
@@ -14,7 +14,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs versionator prefix
+inherit multilib multiprocessing pax-utils toolchain-funcs prefix
 inherit check-reqs
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="http://www.haskell.org/ghc/"
@@ -737,6 +737,23 @@ src_install() {
 	# back before uninstalling, or when upgrading.
 	cp -p "${PKGCACHE}"{,.shipped} \
 		|| die "failed to copy package.conf.d/package.cache"
+
+	if is_crosscompile; then
+		# When we build a cross-compiler the layout is the following:
+		#     usr/lib/${CTARGET}-ghc-${VER}/ contains target libraries
+		# but
+		#     usr/lib/${CTARGET}-ghc-${VER}/bin/ directory
+		# containst host binaries (modulo bugs).
+
+		# Portage's stripping mechanism does not skip stripping
+		# foreign binaries. This frequently causes binaries to be
+		# broken.
+		#
+		# Thus below we disable stripping of target libraries and allow
+		# stripping hosts executables.
+		dostrip -x "/usr/$(get_libdir)/$(cross)${GHC_P}"
+		dostrip    "/usr/$(get_libdir)/$(cross)${GHC_P}/bin"
+	fi
 }
 
 pkg_preinst() {
