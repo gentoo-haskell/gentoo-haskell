@@ -26,6 +26,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.9 && < 4.13' 'base >=4.9'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag terminfo terminfo)
