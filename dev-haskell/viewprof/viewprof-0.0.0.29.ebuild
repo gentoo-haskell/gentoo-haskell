@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">dev-haskell/brick-0.26.1:= <dev-haskell/brick-0.48:=
+RDEPEND=">dev-haskell/brick-0.26.1:= <dev-haskell/brick-0.49:=
 	>=dev-haskell/ghc-prof-1.4:= <dev-haskell/ghc-prof-1.5:=
 	>=dev-haskell/lens-4.14:= <dev-haskell/lens-4.18:=
 	>=dev-haskell/scientific-0.3.4.4:= <dev-haskell/scientific-0.4:=
