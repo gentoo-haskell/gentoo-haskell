@@ -217,7 +217,7 @@ dev-haskell/bound 1.0.7-r2 2.0.1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.4 0.1.5: 2D text pretty-printing library
-dev-haskell/brick 0.47: A declarative terminal user interface library
+dev-haskell/brick 0.48: A declarative terminal user interface library
 dev-haskell/bsb-http-chunked 0.0.0.2 0.0.0.4: Chunked HTTP transfer encoding for bytestring builders
 dev-haskell/bson 0.3.2.7: BSON documents are JSON-like objects with a standard binary encoding
 dev-haskell/btrfs 0.1.2.2 0.1.2.3: Bindings to the btrfs API
@@ -497,7 +497,7 @@ dev-haskell/distributed-process 0.5.5.1 0.6.1-r1 0.6.4 0.6.6-r1: Cloud Haskell: 
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2-r1 0.2.3.3: Simple zero-configuration backend for Cloud Haskell
 dev-haskell/distributed-process-tests 0.4.3.3 0.4.5-r1 0.4.6 0.4.7 0.4.11: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
-dev-haskell/distributive 0.5.3: Distributive functors -- Dual to Traversable
+dev-haskell/distributive 0.6.1: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
 dev-haskell/djinn-lib 0.0.1.3: Generate Haskell code from a type. Library extracted from djinn package
@@ -542,7 +542,7 @@ dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding i
 dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an enclosed computation
 dev-haskell/encoding 0.8.2: A library for various character encodings
 dev-haskell/engine-io 1.2.22: A Haskell implementation of Engine.IO
-dev-haskell/entropy 0.3.8 0.4.1.3: A platform independent entropy source
+dev-haskell/entropy 0.3.8 0.4.1.5: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
 dev-haskell/enumset 0.0.4.1: Sets of enumeration values represented by machine words
 dev-haskell/env-locale 1.0.0.1: A (non-forking) interface to the current locale
@@ -895,11 +895,11 @@ dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScr
 dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
 dev-haskell/hjsonpointer 1.3.0-r1: JSON Pointer library
 dev-haskell/hjsonschema 1.7.2 1.8.0: JSON Schema library
-dev-haskell/hledger 1.11.1 1.13.2 1.14.2: Command-line interface for the hledger accounting tool
+dev-haskell/hledger 1.14.2 1.15.2: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.3: computes interest for a given account
-dev-haskell/hledger-lib 1.11.1 1.13.1 1.14.1: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 1.11.1 1.13.1 1.14.2: Curses-style user interface for the hledger accounting tool
-dev-haskell/hledger-web 1.11.1 1.13 1.14.1: Web interface for the hledger accounting tool
+dev-haskell/hledger-lib 1.14.1 1.15.2: Core data types, parsers and functionality for the hledger accounting tools
+dev-haskell/hledger-ui 1.14.2 1.15: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-web 1.14.1 1.15: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.6.0 0.1.7.0: Low-level bindings to Libsass
@@ -1150,7 +1150,7 @@ dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
 dev-haskell/lens 4.11 4.12.3 4.13-r1 4.13.2.1 4.14 4.16.1 4.17 9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.3: Monadic Getters and Folds
-dev-haskell/lens-aeson 1.0.2-r1: Law-abiding lenses for aeson
+dev-haskell/lens-aeson 1.1: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.1 1.2.3: Lens Families
 dev-haskell/lens-family-core 1.2.1 1.2.3: Haskell 98 Lens Families
 dev-haskell/lens-family-th 0.4.1.0: Generate lens-family style lenses
@@ -2044,7 +2044,7 @@ dev-haskell/vector-space 0.10.4 0.15: Vector & affine spaces, linear maps, and d
 dev-haskell/vector-space-points 0.2.1.2-r2: A type for points, as distinct from vectors
 dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vgrep 0.1.4.1 0.2.2.0: A pager for grep
-dev-haskell/viewprof 0.0.0.28: Text-based interactive GHC .prof viewer
+dev-haskell/viewprof 0.0.0.29: Text-based interactive GHC .prof viewer
 dev-haskell/vimeta 0.2.5.0: Frontend for video metadata tagging tools
 dev-haskell/vinyl 0.8.1.1 0.11.0: Extensible Records
 dev-haskell/vinyl-gl 0.3.3 0.3.4: Utilities for working with OpenGL's GLSL shading language and vinyl records
