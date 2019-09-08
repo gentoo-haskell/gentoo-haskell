@@ -635,7 +635,7 @@ dev-haskell/friday-devil 0.1.1.1: Haskell bindings for DevIL C library
 dev-haskell/frisby 0.2.2: Linear time composable parser for PEG grammars
 dev-haskell/from-sum 0.2.1.0: Canonical fromMaybeM and fromEitherM functions
 dev-haskell/frown 0.6.2.3: LALR(k) parser generator
-dev-haskell/fsnotify 0.2.1.2: Cross platform library for file change notification
+dev-haskell/fsnotify 0.2.1.2 0.3.0.1: Cross platform library for file change notification
 dev-haskell/fst 0.10.0.1: Finite state transducers
 dev-haskell/ftgl 1.333 2.1: Portable TrueType font rendering for OpenGL using the Freetype2 library
 dev-haskell/ftphs 1.0.9.2: FTP Client and Server Library
@@ -650,7 +650,7 @@ dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-deriving 1.11.2 1.12.3: Generic programming library for generalised deriving
 dev-haskell/generic-lens 1.1.0.0: Generically derive traversals, lenses and prisms
 dev-haskell/generic-lens-labels 0.1.0.2: GHC.OverloadedLabels.IsLabel instance for lenses from ghc-generics
-dev-haskell/generic-random 1.2.0.0: Generic random generators
+dev-haskell/generic-random 1.3.0.0: Generic random generators
 dev-haskell/generic-trie 0.3.1: A map, where the keys may be complex structured data
 dev-haskell/genericpretty 1.2.1 1.2.2: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.2.4.0 0.3.2.0-r1 0.4.0.1: Generic Programming using True Sums of Products
@@ -882,6 +882,7 @@ dev-haskell/hgdbmi 0.2-r1: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.30 0.1.31.0: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.1: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.1: Generate scaffold for cabal project
+dev-haskell/hi-file-parser 0.1.0.0: Parser for GHC's hi files
 dev-haskell/highlighter 0.2.2: source code highlighting
 dev-haskell/highlighting-kate 0.6.4: Syntax highlighting
 dev-haskell/hinotify 0.3.10 0.4: Haskell binding to inotify
@@ -1222,7 +1223,7 @@ dev-haskell/map-syntax 0.2.0.2 0.3: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.17.1 0.1.17.4: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
-dev-haskell/massiv 0.2.8.0 0.3.5.0: Massiv is an Array Library
+dev-haskell/massiv 0.2.8.0 0.3.5.0 0.4.1.0: Massiv is an Array Library
 dev-haskell/massiv-io 0.1.6.0: Import/export of Image files into massiv Arrays
 dev-haskell/math-functions 0.2.1.0: Special functions and Chebyshev polynomials
 dev-haskell/matrices 0.4.5: native matrix based on vector
@@ -1442,7 +1443,7 @@ dev-haskell/pem 0.1.2 0.2.2: Privacy Enhanced Mail (PEM) format reader and write
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
 dev-haskell/persistable-record 0.4.1.0 0.5.0.1 0.6.0.4: Binding between SQL database values and haskell records
 dev-haskell/persistable-types-hdbc-pg 0.0.1.4: HDBC and Relational-Record instances of PostgreSQL extended types
-dev-haskell/persistent 2.2.4.1 2.6-r1 2.7.3.1 2.9.1: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.2.4.1 2.6-r1 2.7.3.1 2.9.2: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1-r1 2.8.0: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.9.0: Backend for the persistent library using MySQL database server
@@ -1450,7 +1451,7 @@ dev-haskell/persistent-postgresql 2.9.0: Backend for the persistent library usin
 dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
-dev-haskell/persistent-sqlite 2.6.0.1 2.9.2: Backend for the persistent library using sqlite3
+dev-haskell/persistent-sqlite 2.6.0.1 2.9.3: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.5.4 2.6.0: Type-safe, non-relational, multi-backend persistence
 dev-haskell/pgdl 10.9-r1 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
@@ -1636,7 +1637,7 @@ dev-haskell/resourcet 1.1.9 1.1.11 1.2.2: Deterministic allocation and freeing o
 dev-haskell/retry 0.7.6.2 0.7.7.0 0.8.0.1: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.3 0.1.0.3-r1: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
-dev-haskell/rio 0.1.5.0 0.1.9.2: A standard library for Haskell
+dev-haskell/rio 0.1.12.0: A standard library for Haskell
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/roman-numerals 0.5.1.5: Parsing and pretty printing of Roman numerals
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
@@ -1965,7 +1966,7 @@ dev-haskell/type-level 0.3.0: Type-level programming library
 dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using type families
 dev-haskell/type-operators 0.1.0.4: Various type-level operators
 dev-haskell/typecompose 0.9.12: Type composition classes & instances
-dev-haskell/typed-process 0.2.3.0: Run external processes, with strong typing of streams
+dev-haskell/typed-process 0.2.6.0: Run external processes, with strong typing of streams
 dev-haskell/tz 0.1.3.1: Efficient time zone handling
 dev-haskell/tzdata 0.1.20180501.0: Time zone database (as files and as a module)
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
@@ -1989,7 +1990,7 @@ dev-haskell/unix-memory 0.1.2: Unix memory syscalls
 dev-haskell/unix-time 0.4.4 0.4.5: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
-dev-haskell/unliftio 0.2.10: The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)
+dev-haskell/unliftio 0.2.10 0.2.12: The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)
 dev-haskell/unliftio-core 0.1.1.0 0.1.2.0: The MonadUnliftIO typeclass for unlifting monads to IO
 dev-haskell/unordered-containers 0.2.10.0: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
@@ -2157,7 +2158,7 @@ dev-haskell/yesod-bin 1.5.2.5 1.6.0.3-r2: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 0.2 1.1.0 1.2.0 1.3.0.1: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.5: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.4.37.3 1.6.15 1.6.16: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.37.3 1.6.15 1.6.16.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-dsl 0.2.1: DSL for generating Yesod subsite to manage an RDBMS;
 dev-haskell/yesod-elements 1.0 1.1.1: Non template haskell markup building function in the spirit of lucid
