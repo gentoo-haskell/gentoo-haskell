@@ -57,6 +57,14 @@ DEPEND="${RDEPEND}
 # 		dev-haskell/tasty-quickcheck )
 # "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >= 2.7.0.0 && < 2.15' 'template-haskell >= 2.7.0.0' \
+		'time             >= 1.4     && < 1.9' 'time             >= 1.4'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag cffi cffi) \

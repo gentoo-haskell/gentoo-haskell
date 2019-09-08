@@ -16,6 +16,7 @@ dev-haskell/chell-quickcheck
 >=dev-haskell/ansi-terminal-0.9
 >=dev-haskell/tasty-1.2.1
 >=dev-haskell/concurrent-output-1.10.10
+>=dev-haskell/stack-2
 
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
