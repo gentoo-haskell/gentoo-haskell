@@ -62,5 +62,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'yaml               >= 0.8          && < 0.9' 'yaml               >= 0.8'
+		'yaml               >= 0.8          && < 0.9' 'yaml               >= 0.8' \
+		'fsnotify           >= 0.0          && < 0.3' 'fsnotify           >= 0.0          && < 0.4'
 }
