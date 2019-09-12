@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -64,6 +64,7 @@ PATCHES=(
 	"${FILESDIR}"/${P}-ghc-8.4.patch
 	"${FILESDIR}"/${P}-http-conduit-2.3.patch
 	"${FILESDIR}"/${P}-http-reverse-proxy-0.6.0.patch
+	"${FILESDIR}"/${P}-fsnotify-0.3.patch
 )
 
 src_prepare() {
