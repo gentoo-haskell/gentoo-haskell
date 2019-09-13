@@ -9,5 +9,5 @@ LICENSE=MIT
 RDEPEND=dev-haskell/exceptions:=[profile?] dev-haskell/hashable:=[profile?] dev-haskell/microlens:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/primitive:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/typed-process-0.2.5.0:=[profile?] >=dev-haskell/unliftio-0.2.12:=[profile?] dev-haskell/unliftio-core:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-8.2.1:=
 SLOT=0/0.1.12.0
 SRC_URI=mirror://hackage/packages/archive/rio/0.1.12.0/rio-0.1.12.0.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
 _md5_=3d604cb8dbc48f1b7660caba0d2fa668

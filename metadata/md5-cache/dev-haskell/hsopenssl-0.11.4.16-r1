@@ -10,5 +10,5 @@ RDEPEND=>=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-3.1:=[profile
 REQUIRED_USE=fast-bignum? ( !libressl )
 SLOT=0/0.11.4.16
 SRC_URI=mirror://hackage/packages/archive/HsOpenSSL/0.11.4.16/HsOpenSSL-0.11.4.16.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
 _md5_=3e942424c48f60c961f5a1923762741c
