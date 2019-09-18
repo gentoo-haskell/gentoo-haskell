@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
+	>=dev-haskell/base-compat-0.10.5:=[profile?]
 	>=dev-haskell/bifunctors-5.5.3:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/case-insensitive-1.2.0.11:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.2:=[profile?]
@@ -43,3 +43,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.8
 		>=dev-haskell/quickcheck-instances-0.3.19 <dev-haskell/quickcheck-instances-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                   >= 4.9      && < 4.13' 'base                   >= 4.9' \
+		'base-compat            >= 0.10.5   && < 0.11' 'base-compat            >= 0.10.5'
+}

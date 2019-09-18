@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="automatical derivation of querying functions for servant webservices"
-HOMEPAGE="http://haskell-servant.readthedocs.org/"
+HOMEPAGE="http://docs.servant.dev/"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -17,11 +17,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
+RDEPEND=">=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/bifunctors-5.5.3:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-client-0.5.13.1:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
-	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.8:=[profile?]
+	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.9:=[profile?]
 	>=dev-haskell/http-types-0.12.2:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/kan-extensions-5.2:=[profile?] <dev-haskell/kan-extensions-5.3:=[profile?]
 	>=dev-haskell/monad-control-1.0.2.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -43,17 +43,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/http-api-data
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7
 		dev-haskell/markdown-unlit
-		>=dev-haskell/network-2.8.0.0 <dev-haskell/network-3.1
+		>=dev-haskell/network-2.8.0.0 <dev-haskell/network-3.2
 		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.14
 		>=dev-haskell/servant-server-0.16 <dev-haskell/servant-server-0.17
 		>=dev-haskell/tdigest-0.2 <dev-haskell/tdigest-0.3
 		dev-haskell/wai
 		dev-haskell/warp )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'QuickCheck        >= 2.12.6.1 && < 2.13' 'QuickCheck        >= 2.12.6.1'
-}
