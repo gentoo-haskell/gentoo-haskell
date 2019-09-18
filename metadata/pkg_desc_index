@@ -1017,7 +1017,7 @@ dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.2.4 2.3.7.1: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.6.1: HTTP Date parser/formatter
 dev-haskell/http-link-header 1.0.3: An RFC 5988 parser and writer for the HTTP Link header
-dev-haskell/http-media 0.6.4 0.7.1.3: Processing HTTP Content-Type and Accept headers
+dev-haskell/http-media 0.6.4 0.7.1.3 0.8.0.0: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.4.4 0.5.0.1 0.6.0: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.5.5 0.8.6.1: An HTTP client using io-streams
@@ -1683,10 +1683,10 @@ dev-haskell/sendfile 0.7.9: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialise 0.1.0.0 0.2.1.0-r1: A binary serialisation library for Haskell values
 dev-haskell/serialport 0.4.7: Cross platform serial port library
-dev-haskell/servant 0.8.1 0.9.1.1-r3 0.13.0.1 0.14.1 0.16.2: A family of combinators for defining webservices APIs
-dev-haskell/servant-client 0.13.0.1-r1 0.14 0.16: automatical derivation of querying functions for servant webservices
-dev-haskell/servant-client-core 0.13.0.1 0.14.1 0.16: Core functionality and class for client function generation for servant APIs
-dev-haskell/servant-server 0.8.1 0.9.1.1-r2 0.13.0.1 0.14.1 0.16.2: A family of combinators for defining webservices APIs and serving them
+dev-haskell/servant 0.13.0.1 0.14.1 0.16.2-r1: A family of combinators for defining webservices APIs
+dev-haskell/servant-client 0.13.0.1-r1 0.14 0.16.0.1: automatical derivation of querying functions for servant webservices
+dev-haskell/servant-client-core 0.13.0.1 0.14.1 0.16-r1: Core functionality and class for client function generation for servant APIs
+dev-haskell/servant-server 0.13.0.1 0.14.1 0.16.2-r1: A family of combinators for defining webservices APIs and serving them
 dev-haskell/serversession 1.0.1: Secure, modular server-side sessions
 dev-haskell/serversession-backend-redis 1.0.2 1.0.3: Storage backend for serversession using Redis
 dev-haskell/serversession-frontend-yesod 1.0: Yesod bindings for serversession
