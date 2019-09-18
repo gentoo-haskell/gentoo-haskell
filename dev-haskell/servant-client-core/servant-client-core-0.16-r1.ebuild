@@ -18,12 +18,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
-	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
+	>=dev-haskell/base-compat-0.10.5:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/bifunctors-5.5.3:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/free-5.1:=[profile?] <dev-haskell/free-5.2:=[profile?]
-	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.8:=[profile?]
+	>=dev-haskell/http-media-0.7.1.3:=[profile?]
 	>=dev-haskell/http-types-0.12.2:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/network-uri-2.6.1.0:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/safe-0.3.17:=[profile?] <dev-haskell/safe-0.4:=[profile?]
@@ -41,5 +41,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck >= 2.12.6.1 && < 2.13' 'QuickCheck >= 2.12.6.1'
+		'QuickCheck >= 2.12.6.1 && < 2.13' 'QuickCheck >= 2.12.6.1' \
+		'base                  >= 4.9      && < 4.13' 'base                  >= 4.9' \
+		'http-media            >= 0.7.1.3  && < 0.8' 'http-media            >= 0.7.1.3' \
+		'template-haskell      >= 2.11.1.0 && < 2.15' 'template-haskell      >= 2.11.1.0' \
+		'base-compat           >= 0.10.5   && < 0.11' 'base-compat           >= 0.10.5'
 }
