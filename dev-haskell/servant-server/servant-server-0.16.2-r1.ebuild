@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
 RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
-	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
+	>=dev-haskell/base-compat-0.10.5:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.2:=[profile?]
@@ -53,6 +53,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers-compat
 		>=dev-haskell/wai-extra-3.0.24.3 <dev-haskell/wai-extra-3.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                >= 4.9      && < 4.13' 'base                >= 4.9' \
+		'base-compat         >= 0.10.5   && < 0.11' 'base-compat         >= 0.10.5'
+}
 
 src_install() {
 	cabal_src_install
