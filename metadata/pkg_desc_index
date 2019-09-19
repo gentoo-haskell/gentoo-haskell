@@ -1339,7 +1339,7 @@ dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multil
 dev-haskell/netlink 1.0.0.4 1.1.1.0: Netlink communication for Haskell
 dev-haskell/netpbm 1.0.2: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.3: Functional reactive programming library
-dev-haskell/network 2.6.3.6 2.8.0.0: Low-level networking interface
+dev-haskell/network 2.6.3.6 2.8.0.1: Low-level networking interface
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
 dev-haskell/network-data 0.5.3: Library for network data structures and their serialization
 dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets

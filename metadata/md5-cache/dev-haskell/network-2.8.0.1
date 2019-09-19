@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/doctest-0.10.1 dev-haskell/hspec dev-haskell/hunit ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Low-level networking interface
 EAPI=7
 HOMEPAGE=https://github.com/haskell/network
-IUSE=doc hscolour hoogle profile test
+IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux
 LICENSE=BSD
 RDEPEND=>=dev-lang/ghc-7.8.2:=
 RESTRICT=test
-SLOT=0/2.8.0.0
-SRC_URI=mirror://hackage/packages/archive/network/2.8.0.0/network-2.8.0.0.tar.gz
+SLOT=0/2.8.0.1
+SRC_URI=mirror://hackage/packages/archive/network/2.8.0.1/network-2.8.0.1.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
-_md5_=770800e5f65ff53287cd309c779200fd
+_md5_=4e95eeb5757db6e8c50e53c21d894a17
