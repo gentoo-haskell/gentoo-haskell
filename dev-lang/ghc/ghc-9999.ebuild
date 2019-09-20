@@ -525,7 +525,6 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 		eapply "${FILESDIR}"/${PN}-9999-atomic32.patch
 		eapply "${FILESDIR}"/${PN}-9999-boot-failure.patch
-		eapply "${FILESDIR}"/${PN}-8.6.5-numa.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
