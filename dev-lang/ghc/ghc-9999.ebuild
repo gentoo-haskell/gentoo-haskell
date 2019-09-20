@@ -758,7 +758,7 @@ src_install() {
 		# Skip for cross-targets as they all share target location:
 		# /usr/share/doc/ghc-9999/
 		if ! is_crosscompile; then
-			dodoc "distrib/README" "ANNOUNCE" "LICENSE" "VERSION"
+			dodoc "distrib/README" "LICENSE" "VERSION"
 		fi
 
 		# rename ghc-shipped files to avoid collision
