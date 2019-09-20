@@ -287,7 +287,7 @@ ghc_setup_cflags() {
 		# hardened-gcc needs to be disabled, because our prebuilt binaries/libraries
 		# are not built with fPIC, bug #606666
 		gcc-specs-pie && append-ghc-cflags persistent compile link -nopie
-		tc-is-gcc && version_is_at_least 6.3 $(gcc-version) && if ! use ghcbootstrap; then
+		tc-is-gcc && ver_test $(gcc-version) -ge 6.3 && if ! use ghcbootstrap; then
 			# gcc-6.3 has support for -no-pie upstream, but spelling differs from
 			# gentoo-specific '-nopie'. We enable it in non-bootstrap to allow
 			# hardened users try '-pie' in USE=ghcbootstrap mode.
@@ -525,7 +525,6 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
 		eapply "${FILESDIR}"/${PN}-9999-atomic32.patch
 		eapply "${FILESDIR}"/${PN}-9999-boot-failure.patch
-		eapply "${FILESDIR}"/${PN}-8.6.5-numa.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
