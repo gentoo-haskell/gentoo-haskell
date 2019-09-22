@@ -311,7 +311,7 @@ dev-haskell/ltk:gtk3 - Use gtk3
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/microlens-th:inlining - Generate inline pragmas
 dev-haskell/midi-alsa:buildexamples - Build example executables.
-dev-haskell/monad-logger:template_haskell - Enable Template Haskell support.
+dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/monky:ibus - enable ibus example
 dev-haskell/nats:binary - enable binary instances
