@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Functions and data types to write discord bots.
+		Official discord docs &lt;https://discordapp.com/developers/docs/reference&gt;.
+		
+		See the project wiki for quickstart notes
+		&lt;https://github.com/aquarial/discord-haskell/wiki&gt;
+	</longdescription>
+</pkgmetadata>
