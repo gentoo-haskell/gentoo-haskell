@@ -284,16 +284,6 @@ ghc_setup_cflags() {
 	# Skip any gentoo-specific tweaks for cross-case to avoid passing unsupported
 	# options to gcc.
 	if is_native; then
-		# hardened-gcc needs to be disabled, because our prebuilt binaries/libraries
-		# are not built with fPIC, bug #606666
-		gcc-specs-pie && append-ghc-cflags persistent compile link -nopie
-		tc-is-gcc && ver_test $(gcc-version) -ge 6.3 && if ! use ghcbootstrap; then
-			# gcc-6.3 has support for -no-pie upstream, but spelling differs from
-			# gentoo-specific '-nopie'. We enable it in non-bootstrap to allow
-			# hardened users try '-pie' in USE=ghcbootstrap mode.
-			append-ghc-cflags compile link -no-pie
-		fi
-
 		# prevent from failing to build unregisterised ghc:
 		# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
 		use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
