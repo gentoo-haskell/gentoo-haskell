@@ -492,6 +492,7 @@ dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
+dev-haskell/discord-haskell 1.1.2-r1: Write bots for Discord in Haskell
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
 dev-haskell/distributed-process 0.5.5.1 0.6.1-r1 0.6.4 0.6.6-r1: Cloud Haskell: Erlang-style concurrency in Haskell
 dev-haskell/distributed-process-simplelocalnet 0.2.3.2-r1 0.2.3.3: Simple zero-configuration backend for Cloud Haskell
@@ -539,6 +540,7 @@ dev-haskell/ekg-core 0.1.1.6: Tracking of system metrics
 dev-haskell/ekg-json 0.1.0.6-r1: JSON encoding of ekg metrics
 dev-haskell/email-validate 2.2.0 2.3.2.11: Validating an email address string against RFC 5322
 dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding instances for common type classes
+dev-haskell/emoji 0.1.0.2: emoji utility
 dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an enclosed computation
 dev-haskell/encoding 0.8.2: A library for various character encodings
 dev-haskell/engine-io 1.2.22: A Haskell implementation of Engine.IO
