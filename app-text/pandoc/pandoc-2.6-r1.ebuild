@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+derive_json_via_th embed_data_files static trypandoc"
+IUSE="+derive-json-via-th embed-data-files static trypandoc"
 
 RESTRICT=test # fails
 
@@ -66,7 +66,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/zip-archive-0.2.3.4:=[profile?] <dev-haskell/zip-archive-0.5:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	embed_data_files? ( >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
+	embed-data-files? ( >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
 	trypandoc? ( >=dev-haskell/wai-0.3:=[profile?]
 			dev-haskell/wai-extra:=[profile?] )
 "
@@ -91,8 +91,8 @@ src_prepare() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag derive_json_via_th derive_json_via_th) \
-		$(cabal_flag embed_data_files embed_data_files) \
+		$(cabal_flag derive-json-via-th derive_json_via_th) \
+		$(cabal_flag embed-data-files embed_data_files) \
 		$(cabal_flag static static) \
 		$(cabal_flag trypandoc trypandoc)
 }
