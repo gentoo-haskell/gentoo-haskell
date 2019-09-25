@@ -26,8 +26,8 @@ app-forensics/quickfuzz:imgs - support image formats
 app-forensics/quickfuzz:media - support media formats
 app-forensics/quickfuzz:net - support networking formats
 app-forensics/quickfuzz:pki - support PKI formats
-app-text/pandoc:derive_json_via_th - Use Template Haskell instead of GHC Generics to derive ToJSON and FromJSON instances.
-app-text/pandoc:embed_data_files - Embed data files in binary for relocatable executable.
+app-text/pandoc:derive-json-via-th - Use Template Haskell instead of GHC Generics to derive ToJSON and FromJSON instances.
+app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
 app-text/pandoc:https - Enable support for downloading of resources over https.
 app-text/pandoc:network-uri - Get Network.URI from the network-uri package.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
