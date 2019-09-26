@@ -175,7 +175,7 @@ dev-haskell/gi-cairo-render:cairo_ps - Build the PostScript backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
 dev-haskell/github-backup:network-uri - Get Network.URI from the network-uri package
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
-dev-haskell/glib:closure_signals - Use the the GClosure-based signals implementation.
+dev-haskell/glib:closure-signals - Use the the GClosure-based signals implementation.
 dev-haskell/gloss:explicitbackend - Expose versions of 'display' and friends that allow you to choose what window manager backend to use.
 dev-haskell/gloss:glfw - Enable the GLFW backend.
 dev-haskell/gloss:glut - Enable the GLUT backend.
@@ -318,7 +318,7 @@ dev-haskell/nats:binary - enable binary instances
 dev-haskell/nats:hashable - enable hashable instances
 dev-haskell/nats:template-haskell - enable template_haskell
 dev-haskell/netlink:generators - build the generator scripts for constants
-dev-haskell/network-data:small_base - Build the split-up base package.
+dev-haskell/network-data:small-base - Build the split-up base package.
 dev-haskell/oeis:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/onrmt:brick017 - for Brick version 0.17 or later
 dev-haskell/openclwrappers:link - Link against OpenCL library.
