@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-haskell/vector-sized-0.5:=[profile?] <dev-haskell/vector-sized-1.3:=[profile?]
+	>=dev-haskell/vector-sized-0.5:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
@@ -36,6 +36,13 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/tasty
 		dev-haskell/tasty-hunit )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'vector-sized >=0.5     && <1.3' 'vector-sized >=0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
