@@ -155,7 +155,7 @@ dev-haskell/base64-string 0.2: Base64 implementation for String's
 dev-haskell/basement 0.0.7 0.0.8: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.6.1.1 0.7.0: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.11: Haskell bindings to the bcrypt password hash
-dev-haskell/beam-core 0.7.2.2-r1 0.7.2.3 0.8.0.0: Type-safe, feature-complete SQL query and manipulation interface for Haskell
+dev-haskell/beam-core 0.7.2.2-r1 0.7.2.3 0.8.0.0-r1: Type-safe, feature-complete SQL query and manipulation interface for Haskell
 dev-haskell/beam-migrate 0.3.2.1-r1 0.3.2.2 0.4.0.1: SQL DDL support and migrations support library for Beam
 dev-haskell/beam-postgres 0.3.2.2-r1 0.3.2.3 0.4.0.0: Connection layer between beam and postgres
 dev-haskell/beam-sqlite 0.3.2.2 0.3.2.3 0.3.2.4 0.4.0.0: Beam driver for SQLite
@@ -2042,7 +2042,7 @@ dev-haskell/vector-binary-instances 0.2.5.1: Instances of Data.Binary and Data.S
 dev-haskell/vector-builder 0.3.4.1: Vector builder
 dev-haskell/vector-instances 3.3.1 3.4: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
-dev-haskell/vector-sized 1.0.4.0 1.2.0.0: Size tagged vectors
+dev-haskell/vector-sized 1.0.4.0 1.2.0.0 1.4.0.0: Size tagged vectors
 dev-haskell/vector-space 0.10.4 0.15: Vector & affine spaces, linear maps, and derivatives
 dev-haskell/vector-space-points 0.2.1.2-r2: A type for points, as distinct from vectors
 dev-haskell/vector-th-unbox 0.2.1.6: Deriver for Data.Vector.Unboxed using Template Haskell
