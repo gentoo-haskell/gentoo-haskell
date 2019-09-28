@@ -783,6 +783,7 @@ dev-haskell/hakyll 4.9.8.0-r1 4.12.5.2 4.13.0.0: A static website compiler libra
 dev-haskell/hakyll-agda 0.1.10 0.1.10-r1: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.3: Hakyll SASS compiler over hsass
 dev-haskell/half 0.2.2.3 0.3-r1: Half-precision floating-point
+dev-haskell/hamilton 0.1.0.3: Physics on generalized coordinate systems using Hamiltonian Mechanics and AD
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
 dev-haskell/handa-gdata 0.7.0.3: Library and command-line utility for accessing Google services and APIs
 dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
@@ -910,8 +911,9 @@ dev-haskell/hlint 1.9.22 1.9.35 1.9.37 2.0.9-r1 2.0.15 2.1.11 2.1.15: Source cod
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.16.1.5 0.17.0.2 0.19.0.0: Numeric Linear Algebra
-dev-haskell/hmatrix-gsl 0.17.0.0: Numerical computation
+dev-haskell/hmatrix-gsl 0.17.0.0 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.1.3.3 0.2 0.4.1.3: GSL Statistics interface
+dev-haskell/hmatrix-vector-sized 0.1.2.0: Conversions between hmatrix and vector-sized types
 dev-haskell/hmt 0.15: Haskell Music Theory
 dev-haskell/hnix 0.3.4: Haskell implementation of the Nix language
 dev-haskell/hoauth2 0.5.9 1.5.1 1.8.9: Haskell OAuth2 authentication client
@@ -1767,6 +1769,7 @@ dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/spreadsheet 0.1.3.7: Read and write spreadsheets from and to CSV files in a lazy way
 dev-haskell/sql-words 0.1.6.2: Simple idea SQL keywords data constructor into OverloadedString
 dev-haskell/sqlite-simple 0.4.16.0: Mid-Level SQLite client library
+dev-haskell/sqlite-simple-errors 0.6.1.0: Light wrapper around errors from sqlite-simple
 dev-haskell/sr-extra 1.46.3.2: A grab bag of modules
 dev-haskell/srcloc 0.4.1 0.5.1.2: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
@@ -1969,6 +1972,7 @@ dev-haskell/type-level-numbers 0.1.1.1: Type level numbers implemented using typ
 dev-haskell/type-operators 0.1.0.4: Various type-level operators
 dev-haskell/typecompose 0.9.12: Type composition classes & instances
 dev-haskell/typed-process 0.2.6.0: Run external processes, with strong typing of streams
+dev-haskell/typelits-witnesses 0.4.0.0: Existential witnesses, singletons, and classes for operations on GHC TypeLits
 dev-haskell/tz 0.1.3.1: Efficient time zone handling
 dev-haskell/tzdata 0.1.20180501.0: Time zone database (as files and as a module)
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
