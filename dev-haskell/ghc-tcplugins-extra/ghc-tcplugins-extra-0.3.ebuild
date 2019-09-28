@@ -17,12 +17,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="deverror"
 
-RDEPEND=">=dev-lang/ghc-7.10:=[profile?] <dev-lang/ghc-8.7:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.10:=[profile?] <dev-lang/ghc-8.9:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}.patch
+)
 
 src_configure() {
 	haskell-cabal_src_configure \
