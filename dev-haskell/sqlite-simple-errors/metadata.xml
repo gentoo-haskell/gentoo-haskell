@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="project">
+        <email>haskell@gentoo.org</email>
+        <name>Gentoo Haskell</name>
+    </maintainer>
+    <longdescription>
+        Light wrapper around errors from sqlite-simple to make working with constraint errors a bit easier.
+        To have more information go to &lt;https://github.com/caneroj1/sqlite-simple-errors&gt;.
+    </longdescription>
+</pkgmetadata>
