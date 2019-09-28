@@ -420,6 +420,8 @@ dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopens
 dev-haskell/snap-server:portable - no non-haskell unportable code.
 dev-haskell/speculation:optimize - Enable optimizations
 dev-haskell/sphinx:version-1-1-beta - By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1
+dev-haskell/splitmix:optimised-mixer - Use JavaScript for mix32
+dev-haskell/splitmix:random - Providen RandomGen SMGen instance
 dev-haskell/sr-extra:network-uri - use network-uri package
 dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
 dev-haskell/stack:disable-git-info - Disable compile-time inclusion of current git info.
