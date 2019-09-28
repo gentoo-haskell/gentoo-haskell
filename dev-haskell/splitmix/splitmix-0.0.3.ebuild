@@ -15,13 +15,19 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="optimised-mixer +random"
 
 RESTRICT=test # circular deps: dev-haskell/splitmix[test]->dev-haskell/base-compat-batteries->dev-haskell/quickcheck->dev-haskell/splitmix
 
-RDEPEND=">=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-lang/ghc-7.4.1:=
+	random? ( >=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag optimised-mixer optimised-mixer) \
+		$(cabal_flag random random)
+}
