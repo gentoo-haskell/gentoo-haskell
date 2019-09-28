@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		This library contains:
+		
+		*   A small specialized subset of the *singletons* library as it pertains to
+		`Nat` and `Symbol`, for when you need some simple functionality without
+		wanting to invoke the entire *singletons* library.
+		*   Operations for manipulating these singletons and `KnownNat` and
+		`KnownSymbol` instances, such as addition and multiplication of
+		singletons/`KnownNat` instances.
+		*   Operations for the comparison of `Nat`s in a way that works well with
+		*GHC.TypeLits*&#39;s different comparison systems.  This is helpful for
+		bridging together libraries that use different systems; this functionality
+		is not yet provided by *singletons*.
+	</longdescription>
+</pkgmetadata>
