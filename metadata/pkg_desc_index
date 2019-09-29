@@ -561,7 +561,7 @@ dev-haskell/event-list 0.1.2: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.5.0.1: Exact rational multiples of pi (and integer powers of pi)
 dev-haskell/exception-mtl 0.4.0.1: Exception monad transformer instances for mtl classes
 dev-haskell/exception-transformers 0.4.0.6 0.4.0.7-r1: Type classes and monads for unchecked extensible exceptions
-dev-haskell/exceptions 0.6.1 0.8.3-r2 0.9.0 0.10.1: Extensible optionally-pure exceptions
+dev-haskell/exceptions 0.6.1 0.8.3-r2 0.9.0 0.10.1 0.10.3: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3.1: Finding out the full path of the executable
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
 dev-haskell/explicit-exception 0.1.9.2: Exceptions which are explicit in the type signature
