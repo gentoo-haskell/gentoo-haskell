@@ -198,7 +198,7 @@ dev-haskell/hakyll:watchserver - wait for filesystem changes and rebuild pages
 dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
-dev-haskell/happstack-server:template_haskell - Description: Template Haskell is available on this system
+dev-haskell/happstack-server:template-haskell - Description: Template Haskell is available on this system
 dev-haskell/hashed-storage:diff - Provide the Storage.Hashed.Diff module.
 dev-haskell/hashed-storage:hpc - Compile with the profiling ghc flag -fhpc.
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
