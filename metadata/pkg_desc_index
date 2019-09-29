@@ -322,7 +322,7 @@ dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
 dev-haskell/colonnade 0.5 1.1.1-r1 1.2.0.1: Generic types and functions for columnar encoding and decoding
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
-dev-haskell/colour 2.3.3-r1 2.3.4: A model for human colour/color perception
+dev-haskell/colour 2.3.3-r1 2.3.4 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.0.0: Quasiquoters for external commands
 dev-haskell/comonad 4.2.7.2 5.0.4: Comonads
 dev-haskell/comonad-extras 4.0-r4: Exotic comonad transformers
@@ -1010,7 +1010,7 @@ dev-haskell/html-parse 0.2.0.2: A high-performance HTML tokenizer
 dev-haskell/html-tokenizer 0.6.2: An \
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
-dev-haskell/http 4000.3.11 4000.3.12-r2: A library for client-side HTTP
+dev-haskell/http 4000.3.11 4000.3.12-r2 4000.3.14: A library for client-side HTTP
 dev-haskell/http-api-data 0.2.4 0.3.2 0.3.3 0.3.7.1 0.3.10 0.4.1: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.7.0 0.5.13.1 0.6.2: An HTTP client engine
@@ -1855,7 +1855,7 @@ dev-haskell/tagsoup-megaparsec 0.2.0.0: A Tag token parser and Tag specific pars
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
-dev-haskell/tar 0.4.5.0 0.5.0.3 0.5.1.0: Reading, writing and manipulating \
+dev-haskell/tar 0.4.5.0 0.5.0.3 0.5.1.0 0.5.1.1: Reading, writing and manipulating tar files
 dev-haskell/tardis 0.4.1.0: Bidirectional state monad transformer
 dev-haskell/tasty 0.11.2.3 0.12.0.1 1.1.0.4 1.2: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.1.4-r1: Render tasty output to XML for Jenkins
@@ -1865,7 +1865,7 @@ dev-haskell/tasty-hedgehog 0.2.0.0-r2: Integration for tasty and hedgehog
 dev-haskell/tasty-hspec 1.1.5.1-r1: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.10.0.1: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
-dev-haskell/tasty-quickcheck 0.8.4 0.9.2 0.10: QuickCheck support for the Tasty test framework
+dev-haskell/tasty-quickcheck 0.8.4 0.9.2 0.10.1: QuickCheck support for the Tasty test framework
 dev-haskell/tasty-rerun 1.1.13-r1: Run tests by filtering the tests depending on the result of previous runs
 dev-haskell/tasty-silver 3.1.12: A fancy test runner, including support for golden tests
 dev-haskell/tasty-smallcheck 0.8.1: SmallCheck support for the Tasty test framework
@@ -2201,7 +2201,7 @@ dev-haskell/yi-rope 0.7.0.2 0.11: A rope data structure used by Yi
 dev-haskell/zeromq4-haskell 0.7.0: Bindings to ZeroMQ 4.x
 dev-haskell/zip-archive 0.3.3: Library for creating and modifying zip archives
 dev-haskell/zippers 0.2.5: Traversal based zippers
-dev-haskell/zlib 0.5.4.2 0.6.1.2 0.6.2: Compression and decompression in the gzip and zlib formats
+dev-haskell/zlib 0.5.4.2 0.6.1.2 0.6.2 0.6.2.1: Compression and decompression in the gzip and zlib formats
 dev-haskell/zlib-bindings 0.1.1.5: Low-level bindings to the zlib package. (deprecated)
 dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits. (deprecated)
 dev-haskell/zlib-enum 0.2.3.1-r1: Enumerator interface for zlib compression
