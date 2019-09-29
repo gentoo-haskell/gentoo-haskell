@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+network-uri +template_haskell"
+IUSE="+network-uri +template-haskell"
 
 RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
@@ -58,5 +58,5 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri) \
 		--flag=network_2_2_3 \
-		$(cabal_flag template_haskell template_haskell)
+		$(cabal_flag template-haskell template_haskell)
 }
