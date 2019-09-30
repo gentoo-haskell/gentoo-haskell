@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+bibutils debug embed_data_files static unicode_collation"
+IUSE="+bibutils debug embed-data-files static unicode-collation"
 
 RESTRICT=test # execs a process dropping environment (with LD_PRELOAD)
 
@@ -45,9 +45,9 @@ RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	bibutils? ( >=dev-haskell/hs-bibutils-6.4:=[profile?] )
 	debug? ( dev-haskell/pretty-show:=[profile?] )
-	embed_data_files? ( >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
-	unicode_collation? ( dev-haskell/text-icu:=[profile?] )
-	!unicode_collation? ( dev-haskell/rfc5051:=[profile?] )
+	embed-data-files? ( >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
+	unicode-collation? ( dev-haskell/text-icu:=[profile?] )
+	!unicode-collation? ( dev-haskell/rfc5051:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
@@ -60,9 +60,9 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag bibutils bibutils) \
 		$(cabal_flag debug debug) \
-		$(cabal_flag embed_data_files embed_data_files) \
+		$(cabal_flag embed-data-files embed_data_files) \
 		--flag=-small_base \
 		$(cabal_flag static static) \
-		$(cabal_flag test test_citeproc) \
-		$(cabal_flag unicode_collation unicode_collation)
+		$(cabal_flag test test-citeproc) \
+		$(cabal_flag unicode-collation unicode_collation)
 }
