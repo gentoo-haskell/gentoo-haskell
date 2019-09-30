@@ -88,11 +88,11 @@ dev-haskell/cgi:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
 dev-haskell/citeproc-hs:bibutils - use Chris Putnam's app-text/bibutils
-dev-haskell/citeproc-hs:embed_data_files - Embed locale files into the library (needed for windows packaging)
+dev-haskell/citeproc-hs:embed-data-files - Embed locale files into the library (needed for windows packaging)
 dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/xml for XML parsing
 dev-haskell/citeproc-hs:network - use dev-haskell/network and dev-haskell/http to retrieve CSL file from URIs
-dev-haskell/citeproc-hs:small_base - Choose the new smaller, split-up base package.
-dev-haskell/citeproc-hs:unicode_collation - Use Haskell bindings to the dev-libs/icu
+dev-haskell/citeproc-hs:small-base - Choose the new smaller, split-up base package.
+dev-haskell/citeproc-hs:unicode-collation - Use Haskell bindings to the dev-libs/icu
 dev-haskell/clash-prelude:benchmarks - You can disable testing with benchmarks using `-f-benchmarks`.
 dev-haskell/clash-prelude:doctests - You can disable testing with doctests using `-f-doctests`.
 dev-haskell/clckwrks:network-uri - Get Network.URI from the network-uri package
