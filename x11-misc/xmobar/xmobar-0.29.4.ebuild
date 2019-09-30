@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa dbus inotify mpd mpris timezone wifi with_conduit +with_rtsopts with_uvmeter +with_weather xft xpm"
+IUSE="alsa dbus inotify mpd mpris timezone wifi conduit +rtsopts uvmeter +weather xft xpm"
 
 RDEPEND="dev-haskell/async:=
 	>=dev-haskell/extensible-exceptions-0.1:= <dev-haskell/extensible-exceptions-0.2:=
@@ -41,13 +41,13 @@ RDEPEND="dev-haskell/async:=
 			>=dev-haskell/timezone-series-0.1:= <dev-haskell/timezone-series-0.2:= )
 	wifi? ( >=dev-haskell/iwlib-0.1.0:= <dev-haskell/iwlib-0.2:=
 		net-wireless/wireless-tools )
-	with_conduit? ( with_uvmeter? ( dev-haskell/http-conduit:=
+	conduit? ( uvmeter? ( dev-haskell/http-conduit:=
 					dev-haskell/http-types:= )
-			with_weather? ( dev-haskell/http-conduit:=
+			weather? ( dev-haskell/http-conduit:=
 					dev-haskell/http-types:= ) )
-	with_weather? ( >=dev-haskell/http-4000.2.4:= )
-	xft? ( mpris? ( !dbus? ( !with_uvmeter? ( !with_weather? ( >=dev-haskell/x11-xft-0.2:= <dev-haskell/x11-xft-0.4:= ) ) )
-			with_weather? ( >=dev-haskell/x11-xft-0.2:= <dev-haskell/x11-xft-0.4:= ) )
+	weather? ( >=dev-haskell/http-4000.2.4:= )
+	xft? ( mpris? ( !dbus? ( !uvmeter? ( !weather? ( >=dev-haskell/x11-xft-0.2:= <dev-haskell/x11-xft-0.4:= ) ) )
+			weather? ( >=dev-haskell/x11-xft-0.2:= <dev-haskell/x11-xft-0.4:= ) )
 		!mpris? ( >=dev-haskell/x11-xft-0.2:= <dev-haskell/x11-xft-0.4:= ) )
 	xpm? ( x11-libs/libXpm )
 "
@@ -62,18 +62,18 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-all_extensions \
 		$(cabal_flag alsa with_alsa) \
-		$(cabal_flag with_conduit with_conduit) \
+		$(cabal_flag conduit with_conduit) \
 		$(cabal_flag timezone with_datezone) \
 		$(cabal_flag dbus with_dbus) \
 		$(cabal_flag inotify with_inotify) \
 		$(cabal_flag wifi with_iwlib) \
 		$(cabal_flag mpd with_mpd) \
 		$(cabal_flag mpris with_mpris) \
-		$(cabal_flag with_rtsopts with_rtsopts) \
+		$(cabal_flag rtsopts with_rtsopts) \
 		--flag=with_threaded \
 		--flag=with_utf8 \
-		$(cabal_flag with_uvmeter with_uvmeter) \
-		$(cabal_flag with_weather with_weather) \
+		$(cabal_flag uvmeter with_uvmeter) \
+		$(cabal_flag weather with_weather) \
 		$(cabal_flag xft with_xft) \
 		$(cabal_flag xpm with_xpm)
 }
