@@ -326,9 +326,9 @@ dev-haskell/opencv:internal-documentation - Enables documentation generation for
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optparse-simple:build-example - Build the example executable
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
-dev-haskell/pandoc-citeproc:embed_data_files - Embed locale files into the library (needed for windows packaging).
-dev-haskell/pandoc-citeproc:test_citeproc - Build the test-citeproc program
-dev-haskell/pandoc-citeproc:unicode_collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
+dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging).
+dev-haskell/pandoc-citeproc:test-citeproc - Build the test-citeproc program
+dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
 dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Only developers should use this.
