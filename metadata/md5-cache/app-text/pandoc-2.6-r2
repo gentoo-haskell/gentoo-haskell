@@ -11,4 +11,4 @@ RESTRICT=test
 SLOT=0/2.6
 SRC_URI=mirror://hackage/packages/archive/pandoc/2.6/pandoc-2.6.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
-_md5_=1934c8d4866e0ef5ba07f57038745823
+_md5_=2413123095a906f3b6d55478525b3e98
