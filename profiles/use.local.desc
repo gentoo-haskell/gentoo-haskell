@@ -539,13 +539,13 @@ www-apps/gitit:network-uri - Get Network.URI from the network-uri package.
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-servers/mighttpd2:tls - HTTPS support.
 x11-misc/taffybar:network-uri - Get Network.URI from the network-uri package.
+x11-misc/xmobar:conduit - Use conduit to fetch weather data.
 x11-misc/xmobar:mpd - Support mpd plugin
 x11-misc/xmobar:mpris - Enables MPRIS v1, v2 support
+x11-misc/xmobar:rtsopts - Reduce process wakekups frequency to dectease CPU usage.
 x11-misc/xmobar:timezone - Enables localized date support
-x11-misc/xmobar:with_conduit - Use conduit to fetch weather data.
-x11-misc/xmobar:with_rtsopts - Reduce process wakekups frequency to dectease CPU usage.
-x11-misc/xmobar:with_uvmeter - Plugin to show UV data for Australia.
-x11-misc/xmobar:with_weather - Enable weather plugin.
+x11-misc/xmobar:uvmeter - Plugin to show UV data for Australia.
+x11-misc/xmobar:weather - Enable weather plugin.
 x11-misc/xmonad-extras:brightness - Enable brightness control plugin
 x11-misc/xmonad-extras:eval - Enable eval plugin
 x11-misc/xmonad-extras:mpd - Enable mpd plugin
