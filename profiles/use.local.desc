@@ -116,12 +116,8 @@ dev-haskell/criterion:embed-data-files - Embed the data files in the binary for 
 dev-haskell/cron:lib-werror - ghc-options: -Werror
 dev-haskell/crypto-api:all-cpolys - Build all the CMAC polynomes up to 10000 bits instead of just the usual ones.
 dev-haskell/crypto-conduit:conduit11 - Use conduit >= 1.1.
+dev-haskell/cryptonite:cpu-flags-x86-rdrand - allow compilation with RDRAND on system and architecture that supports it
 dev-haskell/cryptonite:integer-gmp - Whether or not to use GMP for some functions
-dev-haskell/cryptonite:support_aesni - allow compilation with AESNI on system and architecture that supports it
-dev-haskell/cryptonite:support_blake2_sse - Use SSE optimized version of BLAKE2
-dev-haskell/cryptonite:support_pclmuldq - Allow compilation with pclmuldq on architecture that supports it
-dev-haskell/cryptonite:support_rdrand - allow compilation with AESNI on system and architecture that supports it
-dev-haskell/cryptonite:support_sse - Use SSE optimized version when existing (BLAKE2, ARGON2)
 dev-haskell/csv-to-qif:threaded - Enable threaded haskell runtime.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-lens-fd:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
