@@ -32,4 +32,7 @@
 		<flag name="cpu-flags-x86-rdrand">allow compilation with RDRAND on system and architecture that supports it</flag>
 		<flag name="integer-gmp">Whether or not to use GMP for some functions</flag>
 	</use>
+	<upstream>
+		<remote-id type="github">haskell-crypto/cryptonite</remote-id>
+	</upstream>
 </pkgmetadata>
