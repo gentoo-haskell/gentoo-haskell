@@ -358,7 +358,7 @@ dev-haskell/pretty-simple:buildexample - Build a small example program showing h
 dev-haskell/pretty-simple:buildexe - Build a small command line program that pretty-prints anything from stdin.
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library
-dev-haskell/quickcheck:template_haskell - Enable additional test modules requiring Template Haskell support.
+dev-haskell/quickcheck:template-haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/quickcheck-classes:aeson - You can disable the use of the `aeson` package using `-f-aeson`. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/quickcheck-classes:binary-laws - Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
 dev-haskell/quickcheck-classes:semigroupoids - You can disable the use of the `semigroupoids` package using `-f-semigroupoids`. This may be useful for accelerating builds in sandboxes for expert users.
