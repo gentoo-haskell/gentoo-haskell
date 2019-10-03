@@ -1201,7 +1201,7 @@ dev-haskell/log-domain 0.10.3.1-r4 0.12: Log-domain arithmetic
 dev-haskell/log-elasticsearch 0.10.0.0: Structured logging solution (Elasticsearch back end)
 dev-haskell/log-postgres 0.7.0.2: Structured logging solution (PostgreSQL back end)
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
-dev-haskell/logging-effect 1.2.5 1.3.3: A mtl-style monad transformer for general purpose & compositional logging
+dev-haskell/logging-effect 1.2.5 1.3.6: A mtl-style monad transformer for general purpose & compositional logging
 dev-haskell/logging-facade 0.1.1: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.6.0.1 0.6.0.2: A backtracking logic-programming monad
 dev-haskell/logict-state 0.1.0.5: Library for logic programming based on haskell package logict
@@ -1957,7 +1957,7 @@ dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.3.6-r2 1.5.13: Shell programming, Haskell-style
+dev-haskell/turtle 1.3.6-r2 1.5.15: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.4.2 0.5: Type equality evidence you can carry around
