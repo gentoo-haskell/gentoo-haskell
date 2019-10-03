@@ -464,7 +464,7 @@ dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-lin
 dev-haskell/dhall 1.0.2-r1: A configuration language guaranteed to terminate
 dev-haskell/dhall-nix 1.0.0-r1: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.8.0.3-r3: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams-builder 0.8.0.4: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.4-r2: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.4.2.1 1.4.3-r1: Collection of user contributions to diagrams EDSL
@@ -589,7 +589,7 @@ dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
 dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
 dev-haskell/feed 0.3.12.0 1.0.0.0: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fficxx 0.3.1: automatic C++ binding generation
-dev-haskell/ffmpeg-light 0.11.3 0.12.1.0: Minimal bindings to the FFmpeg library
+dev-haskell/ffmpeg-light 0.11.3 0.12.2.2: Minimal bindings to the FFmpeg library
 dev-haskell/fft 0.1.8.6: Bindings to the FFTW library
 dev-haskell/fgl 5.5.3.1 5.6.0.0: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.3-r1: QuickCheck support for fgl
@@ -1111,8 +1111,8 @@ dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
-dev-haskell/juicypixels 3.2.9.5: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
-dev-haskell/juicypixels-scale-dct 0.1.2: Scale JuicyPixels images with DCT
+dev-haskell/juicypixels 3.2.9.5 3.3.4: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
+dev-haskell/juicypixels-scale-dct 0.1.2-r1: Scale JuicyPixels images with DCT
 dev-haskell/jupyter 0.9.0: A library for creating and using Jupyter kernels
 dev-haskell/jwt 0.7.2: JSON Web Token (JWT) decoding and encoding
 dev-haskell/kan-extensions 4.2.3 5.2: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
