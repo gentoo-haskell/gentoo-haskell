@@ -19,6 +19,8 @@ IUSE=""
 
 RDEPEND="dev-haskell/base-orphans:=[profile?]
 	dev-haskell/hashable:=[profile?]
+	dev-haskell/lens:=[profile?]
+	dev-haskell/monoidal-containers:=[profile?]
 	dev-haskell/transformers-compat:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
