@@ -324,6 +324,8 @@ dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the libra
 dev-haskell/pandoc-citeproc:test-citeproc - Build the test-citeproc program
 dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
+dev-haskell/parsers:attoparsec - You can disable the use of the `attoparsec` package using `-f-attoparsec`.
+dev-haskell/parsers:parsec - You can disable the use of the `parsec` package using `-f-parsec`.
 dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Only developers should use this.
 dev-haskell/persistent-mongodb:high_precision_date - Use a time storage with nano second precision.
