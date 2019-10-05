@@ -1,7 +1,0 @@
---- a/Language/Java/Pretty.hs
-+++ b/Language/Java/Pretty.hs
-@@ -8,3 +8,3 @@ import Data.List (intersperse)
- import Language.Java.Syntax
--
-+import Prelude hiding ((<>))
- 
