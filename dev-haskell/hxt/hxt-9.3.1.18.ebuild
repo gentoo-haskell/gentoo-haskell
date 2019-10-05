@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="network-uri profile"
+IUSE="+network-uri"
 
 RDEPEND=">=dev-haskell/hxt-charproperties-9.1:=[profile?]
 	>=dev-haskell/hxt-regex-xmlschema-9.2:=[profile?]
@@ -32,6 +32,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag network-uri network-uri) \
-		$(cabal_flag profile profile)
+		$(cabal_flag network-uri network-uri)
 }
