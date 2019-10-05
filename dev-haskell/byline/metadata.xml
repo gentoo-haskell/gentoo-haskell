@@ -5,10 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="maintainer">Enable settings for the package maintainer.</flag>
-		<flag name="build-examples">Build examples when building the library.</flag>
-	</use>
 	<longdescription>
 		Byline simplifies writing interactive terminal applications by
 		building upon @ansi-terminal@ and @haskeline@.  This makes it
