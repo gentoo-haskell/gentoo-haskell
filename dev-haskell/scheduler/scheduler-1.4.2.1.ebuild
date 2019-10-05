@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/atomic-primops:=[profile?]
 	dev-haskell/exceptions:=[profile?]
-	dev-haskell/primitive:=[profile?]
+	>=dev-haskell/primitive-0.5.2.1:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 	>=dev-haskell/cabal-doctest-1.0.6
 	test? ( >=dev-haskell/doctest-0.15
+		dev-haskell/genvalidity-hspec
 		dev-haskell/hspec
 		dev-haskell/mwc-random
 		dev-haskell/quickcheck
