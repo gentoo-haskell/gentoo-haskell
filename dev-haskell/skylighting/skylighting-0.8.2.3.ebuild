@@ -18,22 +18,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="executable"
 
-RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
-	>=dev-haskell/ansi-terminal-0.7:=[profile?]
-	dev-haskell/attoparsec:=[profile?]
-	dev-haskell/base64-bytestring:=[profile?]
-	>=dev-haskell/blaze-html-0.5:=[profile?]
-	dev-haskell/case-insensitive:=[profile?]
-	>=dev-haskell/colour-2.0:=[profile?]
-	dev-haskell/hxt:=[profile?]
-	dev-haskell/mtl:=[profile?]
-	dev-haskell/regex-pcre:=[profile?]
-	dev-haskell/safe:=[profile?]
-	~dev-haskell/skylighting-core-0.8.2:=[profile?]
-	dev-haskell/text:=[profile?]
-	dev-haskell/utf8-string:=[profile?]
+RDEPEND="~dev-haskell/skylighting-core-0.8.2.3:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	executable? ( dev-haskell/pretty-show:=[profile?] )
+	executable? ( >=dev-haskell/blaze-html-0.5:=[profile?]
+			dev-haskell/pretty-show:=[profile?]
+			dev-haskell/text:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
