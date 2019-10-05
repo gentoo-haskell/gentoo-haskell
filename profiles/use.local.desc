@@ -71,8 +71,6 @@ dev-haskell/bloodhound:es5 - Run the test suite against an Elasticsearch 5.x ser
 dev-haskell/bound:template_haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/brick:demos - Build demonstration programs.
 dev-haskell/btrfs:examples - Build examples
-dev-haskell/byline:build-examples - Build examples when building the library.
-dev-haskell/byline:maintainer - Enable settings for the package maintainer.
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/c2hs:regression - run regression tests

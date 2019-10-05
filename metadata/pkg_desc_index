@@ -223,7 +223,7 @@ dev-haskell/bson 0.3.2.7: BSON documents are JSON-like objects with a standard b
 dev-haskell/btrfs 0.1.2.2 0.1.2.3: Bindings to the btrfs API
 dev-haskell/bug 1.0.1: Better alternatives to the "error" function
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
-dev-haskell/byline 0.3.2.0-r1: Library for creating command-line interfaces (colors, menus, etc.)
+dev-haskell/byline 0.3.2.1: Library for creating command-line interfaces (colors, menus, etc.)
 dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
 dev-haskell/byteorder 1.0.4: Exposes the native endianness or byte ordering of the system
