@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/semigroups-0.18.3:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 dev-haskell/happy test? ( dev-haskell/mtl >=dev-haskell/pretty-show-1.6.16 >=dev-haskell/smallcheck-1.0 >=dev-haskell/tasty-0.3 >=dev-haskell/tasty-golden-2.2.2 dev-haskell/tasty-smallcheck ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
+EAPI=7
+HOMEPAGE=https://github.com/haskell-suite/haskell-src-exts
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~ppc ~ppc64 ~sparc ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/semigroups-0.18.3:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/1.21.1
+SRC_URI=mirror://hackage/packages/archive/haskell-src-exts/1.21.1/haskell-src-exts-1.21.1.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=33c3d50bac6992ee35f184400ddce265

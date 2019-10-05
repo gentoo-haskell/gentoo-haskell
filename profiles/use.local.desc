@@ -269,7 +269,6 @@ dev-haskell/jmacro:benchmarks - Build the benchmarks.
 dev-haskell/jose-jwt:doctest - doctest
 dev-haskell/jsaddle:call-stacks - Include HasCallStack constraint on calls unchecked calls
 dev-haskell/jsaddle:check-unchecked - Fail unchecked calls when they are called (rather than when the result is evaluated)
-dev-haskell/json:generic - Add support for generic encoder (dev-haskell/syb)
 dev-haskell/json:mapdict - Encode Haskell maps as JSON dicts
 dev-haskell/json:parsec - Add support for parsing with Parsec
 dev-haskell/json:pretty - Add support for using pretty printing combinators

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=app-emulation/libvirt >=dev-haskell/syb-0.1.0.2:=[profile?] >=dev-lang/ghc-7.4.1:= dev-haskell/c2hs >=dev-haskell/cabal-1.6 virtual/pkgconfig doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=FFI bindings to libvirt virtualization API (http://libvirt.org)
+EAPI=7
+HOMEPAGE=https://github.com/portnov/libvirt-hs
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=app-emulation/libvirt >=dev-haskell/syb-0.1.0.2:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.2.2
+SRC_URI=mirror://hackage/packages/archive/libvirt-hs/0.2.2/libvirt-hs-0.2.2.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=316fbaa8fd29effccf33969b17fea945
