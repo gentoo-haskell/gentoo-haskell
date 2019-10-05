@@ -27,10 +27,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4 )
 "
-
-src_prepare() {
-	default
-
-	# As per http://hackage.haskell.org/package/exception-transformers-0.4.0.7/revisions/
-	cabal_chdeps 'stm                 >= 2.1 && < 2.5' 'stm >=2.1 && <2.6'
-}
