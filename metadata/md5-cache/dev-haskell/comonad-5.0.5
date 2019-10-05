@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/semigroups-0.16.2:=[profile?] <dev-haskell/semigroups-1:=[profile?] >=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-1:=[profile?] >=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-1:=[profile?] >=dev-lang/ghc-7.8.2:= distributive? ( >=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?] ) >=dev-haskell/cabal-1.18.1.3 >=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1 test? ( test-doctests? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.17 ) ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Comonads
+EAPI=7
+HOMEPAGE=https://github.com/ekmett/comonad/
+IUSE=+containers +distributive +test-doctests doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/semigroups-0.16.2:=[profile?] <dev-haskell/semigroups-1:=[profile?] >=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-1:=[profile?] >=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-1:=[profile?] >=dev-lang/ghc-7.8.2:= distributive? ( >=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?] )
+SLOT=0/5.0.5
+SRC_URI=mirror://hackage/packages/archive/comonad/5.0.5/comonad-5.0.5.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=8d56f60b16168b204539eb5cfece44d6

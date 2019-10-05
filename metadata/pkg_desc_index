@@ -228,14 +228,14 @@ dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
 dev-haskell/byteorder 1.0.4: Exposes the native endianness or byte ordering of the system
 dev-haskell/bytes 0.15.5: Sharing code for serialization between binary and cereal
-dev-haskell/bytestring-builder 0.10.8.1.0: The new bytestring builder, packaged outside of GHC
+dev-haskell/bytestring-builder 0.10.8.2.0: The new bytestring builder, packaged outside of GHC
 dev-haskell/bytestring-conversion 0.3.1: Type-classes to convert values to and from ByteString
-dev-haskell/bytestring-handle 0.1.0.5: ByteString-backed Handles
+dev-haskell/bytestring-handle 0.1.0.6: ByteString-backed Handles
 dev-haskell/bytestring-lexing 0.4.3.3 0.5.0.2: Parse and produce literals efficiently from strict or lazy bytestrings
 dev-haskell/bytestring-mmap 0.2.2-r1: mmap support for strict ByteStrings
 dev-haskell/bytestring-nums 0.3.6: Parse numeric literals from ByteStrings
 dev-haskell/bytestring-show 0.3.5.6-r1: Efficient conversion of values into readable byte strings
-dev-haskell/bytestring-strict-builder 0.4.5 0.4.5.1: An efficient strict bytestring builder
+dev-haskell/bytestring-strict-builder 0.4.5.3: An efficient strict bytestring builder
 dev-haskell/bytestring-trie 0.2.5.0: An efficient finite map from (byte)strings to values
 dev-haskell/bzlib 0.5.0.5: Compression and decompression in the bzip2 format
 dev-haskell/c10k 0.5.0: C10k server library using prefork
@@ -263,7 +263,7 @@ dev-haskell/categories 1.0.7: Categories
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
 dev-haskell/cborg 0.1.1.0 0.2.2.0: Concise Binary Object Representation
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
-dev-haskell/cereal 0.5.5.0 0.5.8.0: A binary serialization library
+dev-haskell/cereal 0.5.8.1: A binary serialization library
 dev-haskell/cereal-conduit 0.7.3 0.8.0: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
 dev-haskell/cereal-vector 0.2.0.1: Serialize instances for Data.Vector types
 dev-haskell/certificate 1.3.9: Certificates and Key Reader/Writer
@@ -320,11 +320,11 @@ dev-haskell/code-page 0.1.3: Windows code page library for Haskell
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
-dev-haskell/colonnade 0.5 1.1.1-r1 1.2.0.1: Generic types and functions for columnar encoding and decoding
+dev-haskell/colonnade 0.5 1.1.1-r1 1.2.0.2: Generic types and functions for columnar encoding and decoding
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.3-r1 2.3.4 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.0.0: Quasiquoters for external commands
-dev-haskell/comonad 4.2.7.2 5.0.4: Comonads
+dev-haskell/comonad 4.2.7.2 5.0.5: Comonads
 dev-haskell/comonad-extras 4.0-r4: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
@@ -338,25 +338,25 @@ dev-haskell/concurrent-split 0.0.1.1: MVars and Channels with distinguished inpu
 dev-haskell/concurrent-supply 0.1.8: A fast concurrent unique identifier supply with a pure API
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.13 1.3.1: Streaming data processing library
+dev-haskell/conduit 1.2.13 1.3.1.1: Streaming data processing library
 dev-haskell/conduit-audio 0.2.0.3: Combinators to efficiently slice and dice audio streams
 dev-haskell/conduit-audio-lame 0.1.2.1: conduit-audio interface to the LAME MP3 library
 dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
 dev-haskell/conduit-audio-sndfile 0.1.2.1: conduit-audio interface to the libsndfile audio file library
 dev-haskell/conduit-combinators 1.0.8.3 1.1.1 1.3.0: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.1.17 1.2.3.2 1.3.1.1: Batteries included conduit: adapters for common libraries
-dev-haskell/config-ini 0.1.2.1 0.2.2.0 0.2.3.0: A library for simple INI-based configuration files
+dev-haskell/config-ini 0.1.2.1 0.2.4.0: A library for simple INI-based configuration files
 dev-haskell/config-schema 0.5.0.1-r1: Schema definitions for the config-value package
 dev-haskell/config-value 0.6.3.1: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.2.0.2 0.3.0.0-r1: Configuration management
 dev-haskell/connection 0.2.8: Simple and easy network connections API
-dev-haskell/console-program 0.4.2.2: Interpret the command line and a config file as commands and options
+dev-haskell/console-program 0.4.2.3: Interpret the command line and a config file as commands and options
 dev-haskell/constraints 0.4.1.3 0.8 0.10.1: Constraint manipulation
-dev-haskell/constraints-extras 0.3.0.1: Utility package for constraints
+dev-haskell/constraints-extras 0.3.0.2: Utility package for constraints
 dev-haskell/containers-unicode-symbols 0.3.1.1-r1: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.9.1.1: Continued fractions
-dev-haskell/contravariant 1.3.3 1.4 1.4.1 1.5: Contravariant functors
+dev-haskell/contravariant 1.3.3 1.4 1.4.1 1.5.2: Contravariant functors
 dev-haskell/contravariant-extras 0.3.4: Extras for the \
 dev-haskell/control-monad-exception 0.11.2: Explicitly typed, checked exceptions with stack traces
 dev-haskell/control-monad-free 0.5.3 0.6.2: Free monads and monad transformers
@@ -367,7 +367,7 @@ dev-haskell/conversion 1.2.1: Universal converter between values of different ty
 dev-haskell/conversion-bytestring 1.0.1: "Conversion" instances for the "bytestring" library
 dev-haskell/conversion-text 1.0.1: "Conversion" instances for the "text" library
 dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting between types
-dev-haskell/cookie 0.4.3: HTTP cookie parsing and rendering
+dev-haskell/cookie 0.4.4: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r2: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
 dev-haskell/couchdb 1.2.2: CouchDB interface
@@ -379,7 +379,7 @@ dev-haskell/crack 0.1-r2: A haskell binding to cracklib
 dev-haskell/cracknum 1.9 2.3: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
 dev-haskell/criterion 0.8.1.0 1.0.2.0 1.1.1.0 1.1.4.0 1.4.1.0 1.5.2.0: Robust, reliable performance measurement and analysis
-dev-haskell/criterion-measurement 0.1.1.0: Criterion measurement functionality and associated types
+dev-haskell/criterion-measurement 0.1.2.0: Criterion measurement functionality and associated types
 dev-haskell/crockford 0.2-r1: An implementation of Douglas Crockford's base32 encoding
 dev-haskell/cron 0.5.0: Cron datatypes and Attoparsec parser
 dev-haskell/crypto 4.2.5.1-r1: Collects together existing Haskell cryptographic functions into a package
@@ -412,14 +412,14 @@ dev-haskell/cufft 0.1.0.3 0.1.2.2 0.8.0.0: Haskell bindings for the CUFFT librar
 dev-haskell/curl 1.3.7 1.3.8: Haskell binding to libcurl
 dev-haskell/cyclotomic 0.5.0.0 0.5.1: A subfield of the complex numbers for exact calculation
 dev-haskell/daemons 0.2.1: Daemons in Haskell made fun and easy
-dev-haskell/data-accessor 0.2.2.7 0.2.2.8: Utilities for accessing and manipulating fields of records
+dev-haskell/data-accessor 0.2.3: Utilities for accessing and manipulating fields of records
 dev-haskell/data-accessor-mtl 0.2.0.4: Use Accessor to access state in mtl State monad class
 dev-haskell/data-accessor-template 0.2.1.16: Utilities for accessing and manipulating fields of records
 dev-haskell/data-accessor-transformers 0.2.1.7: Use Accessor to access state in transformers State monad
 dev-haskell/data-binary-ieee754 0.4.3 0.4.4: Parser/Serialiser for IEEE-754 floating-point values
 dev-haskell/data-bword 0.1.0.1: Extra operations on binary words of fixed length
 dev-haskell/data-checked 0.3: Type-indexed runtime-checked properties
-dev-haskell/data-clist 0.1.2.1-r1: Simple functional ring type
+dev-haskell/data-clist 0.1.2.3: Simple functional ring type
 dev-haskell/data-default 0.5.3 0.7.1.1: A class for types with a default value
 dev-haskell/data-default-class 0.0.1 0.1.2.0: A class for types with a default value
 dev-haskell/data-default-instances-base 0.0.1 0.1.0 0.1.0.1: Default instances for types in base
@@ -431,7 +431,7 @@ dev-haskell/data-endian 0.1.1: Endian-sensitive data
 dev-haskell/data-fix 0.0.4: Fixpoint data types
 dev-haskell/data-flags 0.0.3.4: A package for working with bit masks and flags in general
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
-dev-haskell/data-inttrie 0.1.2: A lazy, infinite trie of integers
+dev-haskell/data-inttrie 0.1.4: A lazy, infinite trie of integers
 dev-haskell/data-lens 2.10.7-r3: Used to be Haskell 98 Lenses
 dev-haskell/data-lens-fd 2.0.6: Lenses
 dev-haskell/data-lens-ixset 0.1.4-r3: A Lens for IxSet
@@ -445,9 +445,9 @@ dev-haskell/data-serializer 0.3.4: Common API for serialization libraries
 dev-haskell/data-textual 0.3.0.2: Human-friendly textual representations
 dev-haskell/dataenc 0.14.0.7: Data encoding library
 dev-haskell/date-cache 0.3.0-r1: Date cacher
-dev-haskell/dates 0.2.2.2: Small library for parsing different dates formats
+dev-haskell/dates 0.2.3.0: Small library for parsing different dates formats
 dev-haskell/datetime 0.3.1: Utilities to make Data.Time.* easier to use
-dev-haskell/dav 1.3.1 1.3.2: RFC 4918 WebDAV support
+dev-haskell/dav 1.3.3: RFC 4918 WebDAV support
 dev-haskell/dbus 1.0.1 1.1.1 1.2.1: A client library for the D-Bus IPC system
 dev-haskell/dbus-core 0.9.3-r3: Low-level D-Bus protocol implementation
 dev-haskell/dbus-hslogger 0.1.0.1: Expose a dbus server to control hslogger
@@ -458,9 +458,9 @@ dev-haskell/deepseq-generics 0.1.1.2 0.2.0.0: GHC.Generics-based Control.DeepSeq
 dev-haskell/dependent-map 0.2.4.0: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.3.2.2 0.4: Dependent sum type
 dev-haskell/dependent-sum-template 0.0.0.6: Template Haskell code to generate instances of classes in dependent-sum package
-dev-haskell/derive 2.5.26 2.6.3-r1: A program and library to derive instances for data types
+dev-haskell/derive 2.5.26 2.6.5: A program and library to derive instances for data types
 dev-haskell/deriving-compat 0.3.6 0.5.4: Backports of GHC deriving extensions
-dev-haskell/descriptive 0.9.4: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
+dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/dhall 1.0.2-r1: A configuration language guaranteed to terminate
 dev-haskell/dhall-nix 1.0.0-r1: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
@@ -487,7 +487,7 @@ dev-haskell/digestive-functors-snap 0.6.1.3 0.7.0.1: Snap backend for the digest
 dev-haskell/digits 0.2-r1 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.3: Statically checked physical dimensions, using Type Families and Data Kinds
 dev-haskell/dimensions 0.3.2.0: Safe type-level dimensionality for multidimensional data
-dev-haskell/direct-sqlite 2.3.23: Low-level binding to SQLite3. Includes UTF8 and BLOB support
+dev-haskell/direct-sqlite 2.3.24: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
@@ -515,30 +515,30 @@ dev-haskell/double-conversion 2.0.2.0: Fast conversion between double precision 
 dev-haskell/download-curl 0.1.4-r2: High-level file download based on URLs
 dev-haskell/drbg 0.5.5: Deterministic random bit generator (aka PRNG) based HMACs, Hashes, and Ciphers
 dev-haskell/drift 2.4.2: Program to derive type class instances
-dev-haskell/dsp 0.2.4: Haskell Digital Signal Processing
+dev-haskell/dsp 0.2.5: Haskell Digital Signal Processing
 dev-haskell/dual-tree 0.2.2: Rose trees with cached and accumulating monoidal annotations
 dev-haskell/dump-core 0.1.3.2: A plug-in for rendering GHC core
-dev-haskell/dynamic-graph 0.1.0.12-r1: Draw and update graphs in real time with OpenGL
+dev-haskell/dynamic-graph 0.1.0.13: Draw and update graphs in real time with OpenGL
 dev-haskell/dynamic-state 0.2.2.0 0.3.1: Optionally serializable dynamic state keyed by type
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.2: Cross-platform File handling
-dev-haskell/easyrender 0.1.1.2: User-friendly creation of EPS, PostScript, and PDF files
+dev-haskell/easyrender 0.1.1.4: User-friendly creation of EPS, PostScript, and PDF files
 dev-haskell/easytest 0.2.1 0.3: Simple, expressive testing library
 dev-haskell/echo 0.1.3: A cross-platform, cross-console way to handle echoing terminal input
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
-dev-haskell/ede 0.2.8.7: Templating language with similar syntax and features to Liquid or Jinja2
+dev-haskell/ede 0.2.9: Templating language with similar syntax and features to Liquid or Jinja2
 dev-haskell/edisonapi 1.3.1: A library of efficient, purely-functional data structures (API)
 dev-haskell/edisoncore 1.3.1.1 1.3.2.1: A library of efficent, purely-functional data structures (Core Implementations)
 dev-haskell/edit-distance 0.2.2.1-r1: Levenshtein and restricted Damerau-Levenshtein edit distances
 dev-haskell/edit-distance-vector 1.0.0.4: Calculate edit distances and edit scripts between vectors
 dev-haskell/editline 0.2.1.1 0.2.1.1-r1: Bindings to the editline library (libedit)
-dev-haskell/either 4.4.1.1 4.4.1.1-r1 5: An either monad transformer
+dev-haskell/either 4.4.1.1 4.4.1.1-r1 5.0.1.1: An either monad transformer
 dev-haskell/either-unwrap 1.1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
 dev-haskell/ekg 0.4.0.15-r5: Remote monitoring of processes
 dev-haskell/ekg-core 0.1.1.6: Tracking of system metrics
 dev-haskell/ekg-json 0.1.0.6-r1: JSON encoding of ekg metrics
-dev-haskell/email-validate 2.2.0 2.3.2.11: Validating an email address string against RFC 5322
+dev-haskell/email-validate 2.2.0 2.3.2.12: Validating an email address string against RFC 5322
 dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding instances for common type classes
 dev-haskell/emoji 0.1.0.2: emoji utility
 dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an enclosed computation
@@ -546,9 +546,9 @@ dev-haskell/encoding 0.8.2: A library for various character encodings
 dev-haskell/engine-io 1.2.22: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.3.8 0.4.1.5: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
-dev-haskell/enumset 0.0.4.1: Sets of enumeration values represented by machine words
+dev-haskell/enumset 0.0.5: Sets of enumeration values represented by machine words
 dev-haskell/env-locale 1.0.0.1: A (non-forking) interface to the current locale
-dev-haskell/equivalence 0.3.3: Maintaining an equivalence relation implemented as union-find using STT
+dev-haskell/equivalence 0.3.5: Maintaining an equivalence relation implemented as union-find using STT
 dev-haskell/erd 0.1.3.0 0.2.0.0: An entity-relationship diagram generator from a plain text description
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
@@ -560,11 +560,11 @@ dev-haskell/euterpea 2.0.6-r1: Library for computer music research and education
 dev-haskell/event-list 0.1.2: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.5.0.1: Exact rational multiples of pi (and integer powers of pi)
 dev-haskell/exception-mtl 0.4.0.1: Exception monad transformer instances for mtl classes
-dev-haskell/exception-transformers 0.4.0.6 0.4.0.7-r1: Type classes and monads for unchecked extensible exceptions
+dev-haskell/exception-transformers 0.4.0.8: Type classes and monads for unchecked extensible exceptions
 dev-haskell/exceptions 0.6.1 0.8.3-r2 0.9.0 0.10.1 0.10.3: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3.1: Finding out the full path of the executable
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
-dev-haskell/explicit-exception 0.1.9.2: Exceptions which are explicit in the type signature
+dev-haskell/explicit-exception 0.1.10: Exceptions which are explicit in the type signature
 dev-haskell/extensible-effects 1.11.0.4 3.1.0.2 4.0.0.0: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.4.10 1.5.1 1.6.15: Extra functions I use

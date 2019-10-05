@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/base-prelude-1.2:=[profile?] <dev-haskell/base-prelude-2:=[profile?] >=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/quickcheck-2.8.1 <dev-haskell/quickcheck-3 >=dev-haskell/quickcheck-instances-0.3.11 <dev-haskell/quickcheck-instances-0.4 >=dev-haskell/rerebase-1 <dev-haskell/rerebase-2 >=dev-haskell/tasty-0.12 <dev-haskell/tasty-2 >=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11 >=dev-haskell/tasty-quickcheck-0.9 <dev-haskell/tasty-quickcheck-0.11 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=An efficient strict bytestring builder
+EAPI=7
+HOMEPAGE=https://github.com/nikita-volkov/bytestring-strict-builder
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/base-prelude-1.2:=[profile?] <dev-haskell/base-prelude-2:=[profile?] >=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/0.4.5.3
+SRC_URI=mirror://hackage/packages/archive/bytestring-strict-builder/0.4.5.3/bytestring-strict-builder-0.4.5.3.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=4e6cb92c962ca0e3edaed21a08917567
