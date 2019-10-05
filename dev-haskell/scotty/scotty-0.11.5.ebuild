@@ -28,14 +28,14 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-1.5:=[profil
 	>=dev-haskell/monad-control-1.0.0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.1.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/nats-0.1:=[profile?] <dev-haskell/nats-2:=[profile?]
-	>=dev-haskell/network-2.6.0.2:=[profile?] <dev-haskell/network-3.1:=[profile?]
+	>=dev-haskell/network-2.6.0.2:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/regex-compat-0.95.1:=[profile?] <dev-haskell/regex-compat-0.96:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4.1:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
 	>=dev-haskell/wai-3.0.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/wai-extra-3.0.0:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
-	>=dev-haskell/warp-3.0.13:=[profile?] <dev-haskell/warp-3.3:=[profile?]
+	>=dev-haskell/warp-3.0.13:=[profile?] <dev-haskell/warp-3.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
