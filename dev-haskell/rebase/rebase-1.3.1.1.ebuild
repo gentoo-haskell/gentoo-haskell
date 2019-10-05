@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A more progressive alternative to the \\'base\\' package"
+DESCRIPTION="A more progressive alternative to the \\\\\\\\"
 HOMEPAGE="https://github.com/nikita-volkov/rebase"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/base-prelude-0.1:=[profile?] <dev-haskell/base-prelude-2:
 	>=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semigroupoids-5.2.2:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
-	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/stm-2:=[profile?] <dev-haskell/stm-3:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
