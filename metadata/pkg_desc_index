@@ -2035,7 +2035,7 @@ dev-haskell/validity-text 0.2.0.0 0.3.1.0: Validity instances for text
 dev-haskell/validity-unordered-containers 0.2.0.2: Validity instances for unordered-containers
 dev-haskell/validity-vector 0.2.0.2: Validity instances for vector
 dev-haskell/varying 0.7.1.0: FRP through value streams and monadic splines
-dev-haskell/vault 0.3.1.2: a persistent store for values of arbitrary types
+dev-haskell/vault 0.3.1.3: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
 dev-haskell/vcsgui 0.1.3.0 0.2.2.0-r1: GUI library for source code management systems
 dev-haskell/vcswrapper 0.1.6: Wrapper for source code management systems
@@ -2043,7 +2043,7 @@ dev-haskell/vect 0.4.7: A low-dimensional linear algebra library, tailored to co
 dev-haskell/vector 0.10.12.3 0.11.0.0 0.12.0.2 0.12.0.3: Efficient Arrays
 dev-haskell/vector-algorithms 0.7.0.1-r1 0.8.0.1: Efficient algorithms for vector arrays
 dev-haskell/vector-binary-instances 0.2.5.1: Instances of Data.Binary and Data.Serialize for vector
-dev-haskell/vector-builder 0.3.4.1: Vector builder
+dev-haskell/vector-builder 0.3.8: Vector builder
 dev-haskell/vector-instances 3.3.1 3.4: Orphan Instances for 'Data.Vector'
 dev-haskell/vector-random 0.2: Generate vectors filled with high quality pseudorandom numbers
 dev-haskell/vector-sized 1.0.4.0 1.2.0.0 1.4.0.0: Size tagged vectors
