@@ -2186,7 +2186,7 @@ dev-haskell/yesod-static-angular 0.1.8: Yesod generators for embedding AngularJs
 dev-haskell/yesod-table 2.0.3: HTML tables for Yesod
 dev-haskell/yesod-test 1.5.8 1.6.6 1.6.6.2: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.8 0.1.10: Yesod support for Text.Markdown
-dev-haskell/yesod-websockets 0.2.6 0.3.0.1: WebSockets support for Yesod
+dev-haskell/yesod-websockets 0.2.6 0.3.0.2: WebSockets support for Yesod
 dev-haskell/yesod-worker 0.1.0.0: Initial project template from stack
 dev-haskell/yi-core 0.18.0: Yi editor core library
 dev-haskell/yi-frontend-pango 0.18.0: Pango frontend for Yi editor
