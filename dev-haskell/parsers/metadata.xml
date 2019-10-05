@@ -5,7 +5,15 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="parsec">You can disable the use of the `parsec` package using `-f-parsec`.</flag>
+		<flag name="attoparsec">You can disable the use of the `attoparsec` package using `-f-attoparsec`.</flag>
+	</use>
 	<longdescription>
-		Parsing combinators
+		This library provides convenient combinators for working with and building parsing combinator libraries.
+		
+		Given a few simple instances, e.g. for the class &#39;Text.Parser.Combinators.Parsing&#39; in &quot;Text.Parser.Combinators.Parsing&quot; you
+		get access to a large number of canned definitions. Instances exist for the parsers provided by @parsec@,
+		@attoparsec@ and base’s &quot;Text.Read&quot;.
 	</longdescription>
 </pkgmetadata>
