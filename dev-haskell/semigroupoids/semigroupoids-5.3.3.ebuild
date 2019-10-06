@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+comonad +containers +contravariant +distributive +tagged +unordered-containers"
 
+RESTRICT=test # broken on USE=doc
+
 RDEPEND=">=dev-haskell/base-orphans-0.8:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/bifunctors-5:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
 	>=dev-haskell/semigroups-0.16.2:=[profile?] <dev-haskell/semigroups-1:=[profile?]
