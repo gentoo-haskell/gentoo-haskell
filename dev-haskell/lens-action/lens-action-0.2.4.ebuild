@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # broken on USE=doc
+
 RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/contravariant-1.2.1:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/lens-4.7:=[profile?] <dev-haskell/lens-5:=[profile?]
