@@ -9,6 +9,7 @@
 		Reasonably fast data encoding library.
 	</longdescription>
 	<use>
+		<flag name="conduit">Build with conduit</flag>
 		<flag name="with-conduit">Build with conduit</flag>
 	</use>
 </pkgmetadata>
