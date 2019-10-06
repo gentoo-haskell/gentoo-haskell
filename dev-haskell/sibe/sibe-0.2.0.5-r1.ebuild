@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/chart:=[profile?]
 	dev-haskell/chart-cairo:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	dev-haskell/hmatrix:=[profile?]
-	<dev-haskell/juicypixels-3.3:=[profile?]
+	dev-haskell/juicypixels:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/random-shuffle:=[profile?]
@@ -40,3 +40,10 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-ghc84.patch
 )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'JuicyPixels < 3.3' 'JuicyPixels'
+}
