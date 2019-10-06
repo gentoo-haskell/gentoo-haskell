@@ -1460,7 +1460,7 @@ dev-haskell/persistent-template 2.5.4 2.6.0: Type-safe, non-relational, multi-ba
 dev-haskell/pgdl 10.9-r1 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-readable collection of words
-dev-haskell/picedit 0.2.3.0-r1: simple image manipulation functions
+dev-haskell/picedit 0.2.3.0-r2: simple image manipulation functions
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pid1 0.1.2.0: Do signal handling and orphan reaping for Unix PID1 init processes
 dev-haskell/pipes 4.1.9 4.3.9: Compositional pipelines
@@ -1582,7 +1582,7 @@ dev-haskell/reactive-banana-wx 1.1.1.0-r1: Examples for the reactive-banana libr
 dev-haskell/readable 0.3.1: Reading from Text and ByteString
 dev-haskell/readargs 1.2.3: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0 1.0.3.0-r1: An interface to the GNU readline library
-dev-haskell/rebase 1.2.4 1.3.1.1: A more progressive alternative to the \\\\
+dev-haskell/rebase 1.2.4 1.3.1: A more progressive alternative to the \'base\' package
 dev-haskell/recaptcha 0.1.0.4: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6-r1: A flexible record system
 dev-haskell/recursion-schemes 4.1.2-r1 5.0.2-r1: Generalized bananas, lenses and barbed wire
@@ -1717,7 +1717,7 @@ dev-haskell/shelly 1.6.8.6 1.7.2: shell-like (systems) programming in Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
 dev-haskell/shuffle 0.1.3.3 0.1.4.0: Shuffle tool for UHC
-dev-haskell/sibe 0.2.0.5: Machine Learning algorithms
+dev-haskell/sibe 0.2.0.5-r1: Machine Learning algorithms
 dev-haskell/signal 0.1.0.4: Multiplatform signal support for Haskell
 dev-haskell/silently 1.2.5.1: Prevent or capture writing to stdout and other handles
 dev-haskell/simple-affine-space 0.1: A simple library for affine and vector spaces
@@ -1811,7 +1811,7 @@ dev-haskell/streamproc 1.6.2: Stream Processer Arrow
 dev-haskell/strict 0.3.2: Strict data types and String IO
 dev-haskell/strictify 0.1-r1: Find a local optimum of strictness annotations
 dev-haskell/string-conversions 0.4.0.1: Simplifies dealing with different types for strings
-dev-haskell/string-qq 0.0.4: QuasiQuoter for non-interpolated strings, texts and bytestrings
+dev-haskell/string-qq 0.0.2 0.0.4: QuasiQuoter for non-interpolated strings, texts and bytestrings
 dev-haskell/stringable 0.1.3: A Stringable type class, in the spirit of Foldable and Traversable
 dev-haskell/stringbuilder 0.5.1: A writer monad for multi-line string literals
 dev-haskell/stringprep 0.1.5 1.0.0: Implements the StringPrep algorithm
@@ -2247,7 +2247,7 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.4.7 0.6.0 0.7.0: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.11.1: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r1: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 6.20180529 6.20180626 6.20181011 7.20190122 7.20190129: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game

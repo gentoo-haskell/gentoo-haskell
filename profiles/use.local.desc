@@ -377,6 +377,7 @@ dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
 dev-haskell/rfc5051:mkunicodedata - build codes generator itself
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking executable.
+dev-haskell/sandi:conduit - Build with conduit
 dev-haskell/sandi:with-conduit - Build with conduit
 dev-haskell/scientific:integer-simple - Use the integer-simple package instead of integer-gmp.
 dev-haskell/sdl2:no-linear - Do not depend on dev-haskell/linear library (bundled Vect)
