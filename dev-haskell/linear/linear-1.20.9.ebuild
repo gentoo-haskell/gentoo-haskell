@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+template-haskell"
 
+RESTRICT=test # broken on USE=doc
+
 RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[profile?]
 	>=dev-haskell/base-orphans-0.5:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/bytes-0.15:=[profile?] <dev-haskell/bytes-1:=[profile?]
