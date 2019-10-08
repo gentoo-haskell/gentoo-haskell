@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # broken on USE=doc
+
 RDEPEND="dev-haskell/entropy:=[profile?]
 	>=dev-haskell/primitive-0.4:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-2.0:=[profile?]
