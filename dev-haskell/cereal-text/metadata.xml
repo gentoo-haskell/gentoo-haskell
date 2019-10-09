@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Data.Text instances for the cereal serialization library.
+		
+		Provides instances for Text and lazy Text.
+		Uses UTF-8 encoding for serialization.
+		
+		Use
+		@import Data.Serialize.Text ()@
+		to import instances.
+	</longdescription>
+</pkgmetadata>
