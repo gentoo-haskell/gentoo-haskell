@@ -1323,11 +1323,11 @@ dev-haskell/mutable-containers 0.3.4: Abstactions and concrete implementations o
 dev-haskell/mvc 1.1.6-r1 1.1.7: Model-view-controller
 dev-haskell/mwc-probability 2.1.0: Sampling function-based probability distributions
 dev-haskell/mwc-random 0.13.6.0: Fast, high quality pseudo random number generation
-dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.5: A low-level MySQL client library
+dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.7: A low-level MySQL client library
 dev-haskell/mysql-haskell 0.7.1.0 0.8.3.0: pure haskell MySQL driver
 dev-haskell/mysql-haskell-nem 0.1.0.0: Adds a interface like mysql-simple to mysql-haskell
 dev-haskell/mysql-haskell-openssl 0.7.0.0 0.8.3.0: TLS support for mysql-haskell package using openssl
-dev-haskell/mysql-simple 0.4.0.1 0.4.5: A mid-level MySQL client library
+dev-haskell/mysql-simple 0.4.5: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.2: A name generator written in Haskell
 dev-haskell/names-th 0.2.0.4: Manipulate name strings for TH
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
