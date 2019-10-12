@@ -196,7 +196,7 @@ dev-haskell/bitstringrandommonad 0.2.0.2 1.1.0.2: A library which turns a bytest
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bitwise 0.1.1.1 1.0.0.1: fast multi-dimensional unboxed bit packed Bool arrays
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
-dev-haskell/blank-canvas 0.6.3: HTML5 Canvas Graphics Library
+dev-haskell/blank-canvas 0.7: HTML5 Canvas Graphics Library
 dev-haskell/blasthttp 1.2.1: Libary to interface with the NCBI blast REST interface
 dev-haskell/blastxml 0.3.2: Library for reading Blast XML output
 dev-haskell/blaze-builder 0.3.3.4 0.4.0.2 0.4.1.0: Efficient buffered output
@@ -467,7 +467,7 @@ dev-haskell/dhall-nix 1.0.0-r1: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.4: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1: Cairo backend for diagrams drawing EDSL
-dev-haskell/diagrams-canvas 1.4-r2: HTML5 canvas backend for diagrams drawing EDSL
+dev-haskell/diagrams-canvas 1.4-r3: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.4.2.1 1.4.3-r1: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.3.0.8 1.4.1: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.4: Backend for rendering diagrams directly to GTK windows
