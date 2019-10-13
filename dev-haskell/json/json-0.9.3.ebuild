@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
+PATCHES=( "${FILESDIR}"/${PN}-0.9.3-ghc-8.8.patch )
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag mapdict mapdict) \
