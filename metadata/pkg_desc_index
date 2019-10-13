@@ -152,7 +152,7 @@ dev-haskell/base32-bytestring 0.2.1.0: Fast base32 and base32hex codec for ByteS
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
 dev-haskell/base64-bytestring 0.1.2.0 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
-dev-haskell/basement 0.0.7 0.0.8: Foundation scrap box of array & string
+dev-haskell/basement 0.0.7 0.0.8 0.0.11: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.6.1.1 0.7.0: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.11: Haskell bindings to the bcrypt password hash
 dev-haskell/beam-core 0.7.2.2-r1 0.7.2.3 0.8.0.0-r1: Type-safe, feature-complete SQL query and manipulation interface for Haskell
@@ -627,7 +627,7 @@ dev-haskell/fontyfruity 0.5.3.5: A true type file format loader
 dev-haskell/force-layout 0.4.0.6-r1: Simple force-directed layout
 dev-haskell/foreign-store 0.2: Store a stable pointer in a foreign context to be retrieved later
 dev-haskell/formatting 6.3.7: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.20 0.0.21: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.20 0.0.21 0.0.25: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 4.12.4 5.1.2: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
@@ -1830,7 +1830,7 @@ dev-haskell/svgcairo 0.12.5.2 0.13.0.4 0.13.1.0 0.13.1.1: Binding to the libsvg-
 dev-haskell/svgfonts 1.6.0.3 1.7: Fonts from the SVG-Font format
 dev-haskell/sxml 0.1.0.0: A SXML-parser
 dev-haskell/syb 0.4.4 0.5.1 0.6 0.7: Scrap Your Boilerplate
-dev-haskell/syb-with-class 0.6.1.10: Scrap Your Boilerplate With Class
+dev-haskell/syb-with-class 0.6.1.11: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
 dev-haskell/synthesizer-alsa 0.5.0.5: Control synthesizer effects via ALSA/MIDI
