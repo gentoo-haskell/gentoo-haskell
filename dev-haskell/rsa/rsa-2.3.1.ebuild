@@ -38,6 +38,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+PATCHES=("${FILESDIR}"/${P}-p1-ghc-8.8.patch
+		 "${FILESDIR}"/${P}-p2-ghc-8.8.patch
+		 "${FILESDIR}"/${P}-p3-ghc-8.8.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-buildtestexecutable \
