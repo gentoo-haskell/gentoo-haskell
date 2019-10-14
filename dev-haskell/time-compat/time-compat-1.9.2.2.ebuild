@@ -36,3 +36,10 @@ DEPEND="${RDEPEND}
 # 		|| ( ( >=dev-haskell/hunit-1.3.1 <dev-haskell/hunit-1.3.2 )
 # 			( >=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7 ) ) )
 # "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'time          >=1.2     && <1.3 || >=1.4 && <1.7 || >=1.8 && <1.9 || >=1.9.2 && <1.9.3' 'time          >=1.2     && <1.3 || >=1.4 && <1.7 || >=1.8 && <1.9 || >=1.9.2 && <1.9.4'
+}
