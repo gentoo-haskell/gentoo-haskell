@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -30,7 +30,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'hinotify >= 0.3.6 && < 0.4' 'hinotify >= 0.3.6 && < 0.5'
+		'hinotify >= 0.3.6 && < 0.4' 'hinotify >= 0.3.6 && < 0.5' \
+		'time >= 1.5 && < 1.9' 'time >= 1.5'
 }
 
 src_configure() {
