@@ -19,7 +19,7 @@ IUSE="use-text-show"
 
 RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/attoparsec-iso8601-1.0.1.0:=[profile?] <dev-haskell/attoparsec-iso8601-1.1:=[profile?]
-	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
+	>=dev-haskell/base-compat-0.10.5:=[profile?]
 	>=dev-haskell/cookie-0.4.3:=[profile?] <dev-haskell/cookie-0.4.5:=[profile?]
 	>=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/http-types-0.12.3:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
@@ -43,6 +43,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.13.1 <dev-haskell/quickcheck-2.14
 		>=dev-haskell/quickcheck-instances-0.3.21 <dev-haskell/quickcheck-instances-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                  >= 4.7      && < 4.13' 'base                  >= 4.7' \
+		'base-compat           >= 0.10.5   && < 0.11' 'base-compat           >= 0.10.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
