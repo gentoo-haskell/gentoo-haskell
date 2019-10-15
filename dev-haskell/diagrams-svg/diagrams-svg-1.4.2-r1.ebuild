@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytes
 	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.15:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/semigroups-0.13:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/svg-builder-0.1:=[profile?] <dev-haskell/svg-builder-0.2:=[profile?]
@@ -37,6 +37,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.8.patch)
+
 src_prepare() {
 	default
 
@@ -45,5 +47,6 @@ src_prepare() {
 		'containers           >= 0.3   && < 0.6' 'containers           >= 0.3' \
 		'JuicyPixels          >= 3.1.5 && < 3.3' 'JuicyPixels          >= 3.1.5' \
 		'lens                 >= 4.0   && < 4.17' 'lens                 >= 4.0' \
-		'monoid-extras        >= 0.3   && < 0.5' 'monoid-extras        >= 0.3'
+		'monoid-extras        >= 0.3   && < 0.5' 'monoid-extras        >= 0.3' \
+		'optparse-applicative >= 0.13  && < 0.15' 'optparse-applicative >= 0.13'
 }

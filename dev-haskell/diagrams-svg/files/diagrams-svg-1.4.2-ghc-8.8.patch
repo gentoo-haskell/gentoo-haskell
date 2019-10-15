@@ -1,0 +1,19 @@
+commit 4e55e467d7785067f6eab6db76d03b6ee44e9da0
+Author: Ryan Scott <ryan.gl.scott@gmail.com>
+Date:   Sat Mar 16 08:15:29 2019 -0400
+
+    Adapt to base-4.13.0.0
+
+diff --git a/src/Diagrams/Backend/SVG.hs b/src/Diagrams/Backend/SVG.hs
+index 96d292c..66c7f54 100644
+--- a/src/Diagrams/Backend/SVG.hs
++++ b/src/Diagrams/Backend/SVG.hs
+@@ -397,7 +397,7 @@ instance SVGFloat n => Renderable (DImage n (Native Img)) SVG where
+     mime <- case t of
+           'J' -> return "image/jpeg"
+           'P' -> return "image/png"
+-          _   -> fail   "Unknown mime type while rendering image"
++          _   -> error  "Unknown mime type while rendering image"
+     return $ R.renderDImage di $ R.dataUri mime d
+ 
+ instance Hashable n => Hashable (Options SVG V2 n) where
