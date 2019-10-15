@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?
 	>=dev-haskell/linear-1.20.1:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.6:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.15:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/profunctors-5.0:=[profile?] <dev-haskell/profunctors-6.0:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
@@ -52,6 +52,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.8 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.8.patch)
+
 src_prepare() {
 	default
 
@@ -63,5 +65,6 @@ src_prepare() {
 		'tasty >= 0.10 && < 1.2' 'tasty >= 0.10' \
 		'tasty-hunit >= 0.9.2 && < 0.11' 'tasty-hunit >= 0.9.2' \
 		'tasty-quickcheck >= 0.8 && < 0.11' 'tasty-quickcheck >= 0.8' \
-		'deepseq >= 1.3 && < 1.5' 'deepseq >= 1.3'
+		'deepseq >= 1.3 && < 1.5' 'deepseq >= 1.3' \
+		'optparse-applicative >= 0.11 && < 0.15' 'optparse-applicative >= 0.11'
 }
