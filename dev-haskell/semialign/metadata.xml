@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="semigroupoids">Build with semigroupoids dependency</flag>
+	</use>
+	<longdescription>
+		The major use of @These@ of this is provided by the @align@ member of
+		@Semialign@ class, representing a generalized notion of &quot;zipping with padding&quot;
+		that combines structures without truncating to the size of the smaller input.
+		
+		It turns out that @zip@ operation fits well the @Semialign@ class,
+		forming lattice-like structure.
+	</longdescription>
+</pkgmetadata>
