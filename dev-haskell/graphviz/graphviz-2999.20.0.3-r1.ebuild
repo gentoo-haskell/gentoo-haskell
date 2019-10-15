@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/fgl-5.4:=[profile?] <dev-haskell/fgl-5.8:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
-	>=dev-haskell/polyparse-1.9:=[profile?] <dev-haskell/polyparse-1.13:=[profile?]
+	>=dev-haskell/polyparse-1.9:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/wl-pprint-text-1.2:=[profile?] <dev-haskell/wl-pprint-text-1.3:=[profile?]
@@ -34,9 +34,18 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14
 	test? ( >=dev-haskell/fgl-5.5.0.0
 		>=dev-haskell/fgl-arbitrary-0.2 <dev-haskell/fgl-arbitrary-0.3
-		>=dev-haskell/hspec-2.1 <dev-haskell/hspec-2.7
-		>=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.13 )
+		>=dev-haskell/hspec-2.1
+		>=dev-haskell/quickcheck-2.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec >= 2.1 && < 2.7' 'hspec >= 2.1' \
+		'polyparse >=1.9 && <1.13' 'polyparse >=1.9' \
+		'QuickCheck >= 2.3 && < 2.13' 'QuickCheck >= 2.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
