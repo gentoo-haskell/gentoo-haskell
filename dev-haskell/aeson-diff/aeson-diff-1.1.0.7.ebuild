@@ -38,3 +38,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/quickcheck-instances )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.9 && <4.13' 'base >=4.9'
+}
