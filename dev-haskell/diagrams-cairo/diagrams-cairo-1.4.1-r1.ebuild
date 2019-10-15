@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.14:=[profil
 	>=dev-haskell/juicypixels-3.1.3.2:=[profile?]
 	>=dev-haskell/lens-3.8:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.15:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/pango-0.12.5:=[profile?] <dev-haskell/pango-0.14:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/statestack-0.2:=[profile?] <dev-haskell/statestack-0.3:=[profile?]
@@ -44,5 +44,6 @@ src_prepare() {
 		'base >= 4.2 && < 4.12' 'base >= 4.2' \
 		'containers >= 0.3 && < 0.6' 'containers >= 0.3' \
 		'JuicyPixels >= 3.1.3.2 && < 3.3' 'JuicyPixels >= 3.1.3.2' \
-		'lens >= 3.8 && < 4.17' 'lens >= 3.8'
+		'lens >= 3.8 && < 4.17' 'lens >= 3.8' \
+		'optparse-applicative >= 0.13 && < 0.15' 'optparse-applicative >= 0.13'
 }
