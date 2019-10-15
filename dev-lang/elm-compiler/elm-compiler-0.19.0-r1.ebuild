@@ -54,7 +54,7 @@ src_prepare() {
 	default
 
 	CABAL_FILE=elm.cabal cabal_chdeps \
-		'language-glsl >= 0.0.2 && < 0.3' 'language-glsl >= 0.0.2'
+		'language-glsl >= 0.0.2 && < 0.3' 'language-glsl >= 0.0.2' 'containers >= 0.5.8.2 && < 0.6' 'containers >= 0.5.8.2'
 }
 
 src_configure() {
