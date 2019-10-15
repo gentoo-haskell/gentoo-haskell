@@ -22,8 +22,8 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.5:=[profil
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
-	>=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.18:=[profile?]
-	>=dev-haskell/primitive-0.6.1.0:=[profile?] <dev-haskell/primitive-0.7:=[profile?]
+	>=dev-haskell/lens-3.8.5:=[profile?]
+	>=dev-haskell/primitive-0.6.1.0:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/ref-tf-0.4.0.1:=[profile?] <dev-haskell/ref-tf-0.5:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -37,6 +37,15 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.5:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens >=3.8.5 && <4.18' 'lens >=3.8.5' \
+		'primitive >=0.6.1.0 && <0.7' 'primitive >=0.6.1.0' \
+		'time >=1.5.0.1 && <1.9' 'time >=1.5.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
