@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -33,6 +33,8 @@ RDEPEND=">=dev-haskell/blaze-html-0.6:=[profile?] <dev-haskell/blaze-html-0.10:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-8.8.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
