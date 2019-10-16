@@ -1,0 +1,27 @@
+commit f0e35c783b2d29604a7c5fd8687087dab05d78ca
+Author: Ryan Scott <ryan.gl.scott@gmail.com>
+Date:   Sat Mar 16 08:12:15 2019 -0400
+
+    Adapt to base-4.13.0.0
+
+diff --git a/src/Diagrams/Backend/CmdLine.hs b/src/Diagrams/Backend/CmdLine.hs
+index 1b57a26..230785f 100644
+--- a/src/Diagrams/Backend/CmdLine.hs
++++ b/src/Diagrams/Backend/CmdLine.hs
+@@ -83,6 +83,7 @@ import           Options.Applicative
+ import           Options.Applicative.Types (readerAsk)
+ 
+ import           Control.Monad             (forM_, forever, unless, when)
++import qualified Control.Monad.Fail        as Fail
+ 
+ import           Data.Active               hiding (interval)
+ import           Data.Char                 (isDigit)
+@@ -304,7 +305,7 @@ instance Parseable (AlphaColour Double) where
+ --   example, @\"0xfc4\"@ is the same as @\"0xffcc44\"@.  When eight or six
+ --   digits are given each pair of digits is a color or alpha channel with the
+ --   order being red, green, blue, alpha.
+-readHexColor :: (Applicative m, Monad m) => String -> m (AlphaColour Double)
++readHexColor :: (Applicative m, Fail.MonadFail m) => String -> m (AlphaColour Double)
+ readHexColor cs = case cs of
+   ('0':'x':hs) -> handle hs
+   ('#':hs)     -> handle hs

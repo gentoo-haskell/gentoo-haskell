@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Primitive GHC types with unlifted types inside. There used to
+		be a module named Data.Primitive.UnliftedArray in the
+		primitive library. However, the techniques it used were
+		unsound in the presence of certain FFI calls. This library a
+		successor to that module.
+	</longdescription>
+</pkgmetadata>

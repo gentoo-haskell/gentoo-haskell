@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,6 +25,13 @@ RDEPEND=">=dev-haskell/data-accessor-0.1:=[profile?] <dev-haskell/data-accessor-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >=2.11 && <2.15' 'template-haskell >=2.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

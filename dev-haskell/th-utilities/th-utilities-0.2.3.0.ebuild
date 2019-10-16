@@ -28,3 +28,5 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/vector )
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-8.8.patch)

@@ -28,5 +28,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'binary     >= 0.5.1 && < 0.8.7' 'binary     >= 0.5.1'
+		'binary     >= 0.5.1 && < 0.8.7' 'binary     >= 0.5.1' \
+		'base       >= 4.5   && < 4.13' 'base       >= 4.5'
 }

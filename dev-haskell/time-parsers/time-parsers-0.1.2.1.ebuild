@@ -30,3 +30,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9.2 <dev-haskell/tasty-hunit-0.11
 		dev-haskell/text )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base              >=4.6      && <4.13' 'base              >=4.6' \
+		'template-haskell  >=2.8.0.0  && <2.15' 'template-haskell  >=2.8.0.0' \
+		'time              >=1.4.0.1  && <1.9' 'time              >=1.4.0.1'
+}

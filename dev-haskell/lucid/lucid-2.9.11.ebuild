@@ -33,3 +33,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/hunit
 		dev-haskell/parsec )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                   >=4.8      && <4.13' 'base                   >=4.8'
+}

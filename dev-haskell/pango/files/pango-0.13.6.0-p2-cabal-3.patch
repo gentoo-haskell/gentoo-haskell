@@ -1,0 +1,27 @@
+commit 1e0a14e7b1dd43fe1ecda18a395577eeb6d2cec7
+Author: Ollie Charles <ollie@ocharles.org.uk>
+Date:   Thu Sep 19 10:23:17 2019 +0100
+
+    Update Setup.hs
+
+diff --git a/Setup.hs b/Setup.hs
+index 7c2783ee..d70d92b2 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -14,6 +14,7 @@ import Distribution.Version ( Version(..) )
+ import Distribution.Verbosity
+ import Distribution.Simple.Utils
+ import System.FilePath
++import System.Exit (die)
+ 
+ #if MIN_VERSION_Cabal(2,0,0)
+ import Distribution.Version ( versionNumbers )
+@@ -42,7 +43,7 @@ writePangoVersionHeaderFile verbosity lbi (versionNumbers -> (major:minor:micro:
+ writePangoVersionHeaderFile verbosity lbi (Version (major:minor:micro:_) []) = do
+ #endif
+   createDirectoryIfMissingVerbose verbosity True targetDir
+-  rewriteFile targetFile $ unlines
++  rewriteFileEx verbosity targetFile $ unlines
+     [ "#define PANGO_VERSION_MAJOR " ++ show major
+     , "#define PANGO_VERSION_MINOR " ++ show minor
+     , "#define PANGO_VERSION_MICRO " ++ show micro

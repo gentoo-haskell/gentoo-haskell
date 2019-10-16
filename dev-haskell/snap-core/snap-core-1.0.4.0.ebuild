@@ -53,6 +53,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.7 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-ghc-8.8.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug debug) \

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		A low-level data-structure,
+		which can be used to implement higher-level interfaces like
+		hash-map and hash-set.
+		Such implementations are presented by
+		&lt;http://hackage.haskell.org/package/stm-containers the &quot;stm-containers&quot; library&gt;.
+	</longdescription>
+</pkgmetadata>

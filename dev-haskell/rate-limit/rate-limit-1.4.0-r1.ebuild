@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -29,5 +29,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'stm        >= 2.4     && < 2.5' 'stm        >= 2.4'
+		'stm        >= 2.4     && < 2.5' 'stm        >= 2.4' \
+		'time       >= 1.5.0.1 && < 1.9' 'time       >= 1.5.0.1'
 }

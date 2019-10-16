@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/connection-0.2.6:=[profile?] <dev-haskell/connection-0.4:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.9.0 && <4.13' 'base >=4.9.0'
+}
