@@ -28,6 +28,14 @@ DEPEND="${RDEPEND}
 	test? ( properties? ( >dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.14 ) )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'primitive >=0.3 && <0.7' 'primitive >=0.3 && <0.8' \
+		'QuickCheck > 2.9 && < 2.13' 'QuickCheck > 2.9 && < 2.14'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag bench bench) \
