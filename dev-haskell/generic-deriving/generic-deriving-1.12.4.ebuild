@@ -8,8 +8,8 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Automatic generation of record lenses for microlens"
-HOMEPAGE="https://github.com/monadfix/microlens"
+DESCRIPTION="Generic programming library for generalised deriving"
+HOMEPAGE="https://github.com/dreixel/generic-deriving"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -17,10 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/microlens-0.4.0:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
-	>=dev-haskell/th-abstraction-0.2.1:=[profile?] <dev-haskell/th-abstraction-0.4:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+RDEPEND=">=dev-haskell/th-abstraction-0.2.9:=[profile?] <dev-haskell/th-abstraction-0.4:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-1.10
+	test? ( >=dev-haskell/hspec-2 <dev-haskell/hspec-3 )
 "

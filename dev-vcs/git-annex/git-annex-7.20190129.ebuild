@@ -119,6 +119,7 @@ DEPEND="${DEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-6.20170101-crypto-api.patch
+	"${FILESDIR}"/${PN}-7.20190129-socks-0.6.patch
 )
 
 src_configure() {
