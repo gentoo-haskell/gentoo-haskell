@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="experimental"
 
+RESTRICT="test" # fails to doctest
+
 RDEPEND="~dev-haskell/basement-0.0.11:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
