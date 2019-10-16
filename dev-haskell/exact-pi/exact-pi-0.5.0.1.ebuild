@@ -35,5 +35,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'tasty >=0.10 && <1.2' 'tasty >=0.10' \
-		'QuickCheck >=2.10 && <2.12' 'QuickCheck >=2.10'
+		'QuickCheck >=2.10 && <2.12' 'QuickCheck >=2.10' \
+		'base >=4.7 && <4.13' 'base >=4.7'
 }
