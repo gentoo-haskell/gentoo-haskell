@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		Containers with merging via monoidal accumulation. The &#39;Monoid&#39; instances
 		provided by the @containers@ and @unordered-containers@ packages merge
@@ -21,4 +19,7 @@
 		instance (Ord k, Semigroup a) =&gt; Monoid (MonoidalMap k a)
 		@
 	</longdescription>
+	<use>
+		<flag name="split-these">Use split these/semialign packages</flag>
+	</use>
 </pkgmetadata>
