@@ -32,6 +32,15 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-th-0.2 <dev-haskell/test-framework-th-0.4 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'time               >= 1.2      && < 1.9' 'time               >= 1.2' \
+		'time                       >= 1.2     && < 1.9' 'time                       >= 1.2' \
+		'template-haskell   >= 2.6      && < 2.15' 'template-haskell   >= 2.6'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag template-haskell template-haskell)
