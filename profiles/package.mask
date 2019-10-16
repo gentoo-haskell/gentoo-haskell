@@ -1,3 +1,7 @@
+# Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
+# Too many packages require <dev-haskell/optparse-applicative-0.15
+>=dev-haskell/optparse-applicative-0.15
+
 # Mark Wright <gienah@gentoo.org> (13 Oct 2019)
 # More reverse dependencies of >=dev-haskell/haskell-src-exts-1.21
 >=dev-haskell/haskell-src-exts-simple-1.21.1.0
