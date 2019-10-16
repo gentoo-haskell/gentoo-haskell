@@ -20,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/polyparse-1.12.1:=[profile?] <dev-haskell/polyparse-1.13:=[profile?]
+RDEPEND=">=dev-haskell/polyparse-1.12.1:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -30,3 +30,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base       >= 4.3.1.0  && < 4.13' 'base       >= 4.3.1.0' \
+		'polyparse  >= 1.12.1   && <1.13' 'polyparse  >= 1.12.1'
+}
