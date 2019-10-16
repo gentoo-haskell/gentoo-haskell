@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/wai-extra-3.0:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
-	>=dev-haskell/warp-3.0.11:=[profile?] <dev-haskell/warp-3.3:=[profile?]
+	>=dev-haskell/warp-3.0.11:=[profile?] <dev-haskell/warp-3.4:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -43,6 +43,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/network
 		dev-haskell/temporary )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'warp                      >= 3.0.11   && < 3.3' 'warp                      >= 3.0.11   && < 3.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
