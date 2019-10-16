@@ -1,3 +1,28 @@
+# Mark Wright <gienah@gentoo.org> (13 Oct 2019)
+# More reverse dependencies of >=dev-haskell/haskell-src-exts-1.21
+>=dev-haskell/haskell-src-exts-simple-1.21.1.0
+
+# Mark Wright <gienah@gentoo.org> (13 Oct 2019)
+# Reverse dependencies of >=dev-haskell/primitive-0.7
+dev-haskell/primitive-extras
+dev-haskell/primitive-unlifted
+>=dev-haskell/slave-thread-1.1
+>=dev-haskell/stm-containers-1.1.0.4
+dev-haskell/stm-hamt
+
+# Mark Wright <gienah@gentoo.org> (13 Oct 2019)
+# Reverse dependencies of >=dev-haskell/quickcheck-2.13
+dev-haskell/binary-instances
+>=dev-haskell/binary-orphans-1.0.1
+>=dev-haskell/binary-tagged-0.2
+>=dev-haskell/bytes-0.16
+>=dev-haskell/cassava-0.5.2.0
+>=dev-haskell/doctest-0.16.2
+>=dev-haskell/hspec-2.7.1
+>=dev-haskell/hspec-core-2.7.1
+>=dev-haskell/hspec-discover-2.7.1
+>=dev-haskell/quickcheck-instances-0.3.22
+
 # Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
 # Many packages need porting.
 >=dev-haskell/primitive-0.7
