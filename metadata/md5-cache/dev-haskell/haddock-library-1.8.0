@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?] >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-2.0 test? ( >=dev-haskell/base-compat-0.9.3 <dev-haskell/base-compat-0.11 >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.8 >=dev-haskell/hspec-discover-2.4.4 <dev-haskell/hspec-discover-2.8 >=dev-haskell/optparse-applicative-0.14.0.0 <dev-haskell/optparse-applicative-0.15 >=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.13.2 >=dev-haskell/tree-diff-0.0.0.1 <dev-haskell/tree-diff-0.1 )
+DESCRIPTION=Library exposing some functionality of Haddock
+EAPI=7
+HOMEPAGE=http://www.haskell.org/haddock/
+IUSE=profile test
+LICENSE=BSD
+RDEPEND=>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?] >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.8.2:=
+SLOT=0/1.8.0
+SRC_URI=mirror://hackage/packages/archive/haddock-library/1.8.0/haddock-library-1.8.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=21aada6334da73898be1ff4c17238c2b

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/deferred-folds-0.9:=[profile?] <dev-haskell/deferred-folds-0.10:=[profile?] >=dev-haskell/focus-1:=[profile?] <dev-haskell/focus-1.1:=[profile?] <dev-haskell/hashable-2:=[profile?] >=dev-haskell/list-t-1.0.1:=[profile?] <dev-haskell/list-t-1.1:=[profile?] >=dev-haskell/primitive-0.7:=[profile?] <dev-haskell/primitive-0.8:=[profile?] >=dev-haskell/primitive-extras-0.8:=[profile?] <dev-haskell/primitive-extras-0.9:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/quickcheck-2.8.1 <dev-haskell/quickcheck-3 >=dev-haskell/quickcheck-instances-0.3.11 <dev-haskell/quickcheck-instances-0.4 <dev-haskell/rerebase-2 >=dev-haskell/tasty-0.12 <dev-haskell/tasty-2 >=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11 >=dev-haskell/tasty-quickcheck-0.9 <dev-haskell/tasty-quickcheck-0.11 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=STM-specialised Hash Array Mapped Trie
+EAPI=7
+HOMEPAGE=https://github.com/nikita-volkov/stm-hamt
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/deferred-folds-0.9:=[profile?] <dev-haskell/deferred-folds-0.10:=[profile?] >=dev-haskell/focus-1:=[profile?] <dev-haskell/focus-1.1:=[profile?] <dev-haskell/hashable-2:=[profile?] >=dev-haskell/list-t-1.0.1:=[profile?] <dev-haskell/list-t-1.1:=[profile?] >=dev-haskell/primitive-0.7:=[profile?] <dev-haskell/primitive-0.8:=[profile?] >=dev-haskell/primitive-extras-0.8:=[profile?] <dev-haskell/primitive-extras-0.9:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/1.2.0.4
+SRC_URI=mirror://hackage/packages/archive/stm-hamt/1.2.0.4/stm-hamt-1.2.0.4.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=082d7c42e1b45b305570a5c88a7af3c2

@@ -1,4 +1,4 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=dev-haskell/aeson:=[profile?] dev-haskell/edit-distance-vector:=[profile?] dev-haskell/hashable:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/optparse-applicative:=[profile?] dev-haskell/scientific:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/doctest-0.9 dev-haskell/glob dev-haskell/hlint dev-haskell/quickcheck dev-haskell/quickcheck-instances ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Extract and apply patches to JSON documents
 EAPI=7
@@ -11,4 +11,4 @@ RESTRICT=test
 SLOT=0/1.1.0.7
 SRC_URI=mirror://hackage/packages/archive/aeson-diff/1.1.0.7/aeson-diff-1.1.0.7.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
-_md5_=e41b28b404ccb71e2b3d4c42296415fd
+_md5_=894e9961c51765ca0dd766cbdeafd70b

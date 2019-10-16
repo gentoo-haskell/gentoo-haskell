@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?] dev-haskell/mtl:=[profile?] >=dev-lang/ghc-7.4.1:= dev-libs/glib:2 >=dev-haskell/cabal-1.24 <dev-haskell/cabal-3.1 >=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14 virtual/pkgconfig doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Binding to GIO
+EAPI=7
+HOMEPAGE=http://projects.haskell.org/gtk2hs/
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86
+LICENSE=LGPL-2.1
+RDEPEND=>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?] dev-haskell/mtl:=[profile?] >=dev-lang/ghc-7.4.1:= dev-libs/glib:2
+SLOT=0/0.13.6.0
+SRC_URI=mirror://hackage/packages/archive/gio/0.13.6.0/gio-0.13.6.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=a99cdb04e055d5bf297cdf04f038d47c

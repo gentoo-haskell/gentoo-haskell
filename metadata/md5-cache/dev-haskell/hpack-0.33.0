@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/aeson-1.4.3.0:=[profile?] dev-haskell/bifunctors:=[profile?] >=dev-haskell/cabal-2.2:=[profile?] dev-haskell/cryptonite:=[profile?] >=dev-haskell/glob-0.9.0:=[profile?] dev-haskell/http-client:=[profile?] dev-haskell/http-client-tls:=[profile?] dev-haskell/http-types:=[profile?] >=dev-haskell/infer-license-0.2.0:=[profile?] <dev-haskell/infer-license-0.3:=[profile?] dev-haskell/scientific:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-haskell/yaml-0.10.0:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/hspec-2 <dev-haskell/hspec-3 >=dev-haskell/hunit-1.6.0.0 dev-haskell/interpolate >=dev-haskell/mockery-0.3 dev-haskell/quickcheck dev-haskell/temporary ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=An alternative format for Haskell packages
+EAPI=7
+HOMEPAGE=https://github.com/sol/hpack#readme
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/aeson-1.4.3.0:=[profile?] dev-haskell/bifunctors:=[profile?] >=dev-haskell/cabal-2.2:=[profile?] dev-haskell/cryptonite:=[profile?] >=dev-haskell/glob-0.9.0:=[profile?] dev-haskell/http-client:=[profile?] dev-haskell/http-client-tls:=[profile?] dev-haskell/http-types:=[profile?] >=dev-haskell/infer-license-0.2.0:=[profile?] <dev-haskell/infer-license-0.3:=[profile?] dev-haskell/scientific:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-haskell/yaml-0.10.0:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/0.33.0
+SRC_URI=mirror://hackage/packages/archive/hpack/0.33.0/hpack-0.33.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=3173564a5e9a6a8b0c9876f1c2a1b064

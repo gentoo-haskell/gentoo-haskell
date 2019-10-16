@@ -1,4 +1,4 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/hashable-1.2.6:=[profile?] <dev-haskell/hashable-1.4:=[profile?] >=dev-haskell/semigroups-0.18.2:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/quickcheck-instances-0.3.14 <dev-haskell/quickcheck-instances-0.4 >=dev-haskell/tasty-1.0.0 <dev-haskell/tasty-1.3 >=dev-haskell/tasty-hunit-0.10.0 <dev-haskell/tasty-hunit-0.11 >=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Memory-efficient representation of Unicode text strings
 EAPI=7
@@ -10,4 +10,4 @@ RDEPEND=>=dev-haskell/hashable-1.2.6:=[profile?] <dev-haskell/hashable-1.4:=[pro
 SLOT=0/0.1.3
 SRC_URI=mirror://hackage/packages/archive/text-short/0.1.3/text-short-0.1.3.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
-_md5_=c2c7b4a38e30926b537e9eb12f90af1d
+_md5_=29505cf3edbf47940a07de27842df9b7

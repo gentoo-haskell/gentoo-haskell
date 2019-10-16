@@ -1,4 +1,4 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/connection-0.2.6:=[profile?] <dev-haskell/connection-0.4:=[profile?] >=dev-haskell/websockets-0.9.7:=[profile?] <dev-haskell/websockets-0.13:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/network-2.6.3:=[profile?] <dev-haskell/network-3.2:=[profile?] >=dev-haskell/cabal-1.24.0.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Secure WebSocket (WSS) clients
 EAPI=7
@@ -10,4 +10,4 @@ RDEPEND=>=dev-haskell/connection-0.2.6:=[profile?] <dev-haskell/connection-0.4:=
 SLOT=0/1.1.14
 SRC_URI=mirror://hackage/packages/archive/wuss/1.1.14/wuss-1.1.14.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
-_md5_=738b86a3e2c65b8f93c6f62274431fda
+_md5_=c10c3c61c4f2b8baa14f28ae974638a1

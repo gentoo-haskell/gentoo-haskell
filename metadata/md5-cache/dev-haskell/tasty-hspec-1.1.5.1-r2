@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/hspec-2:=[profile?] >=dev-haskell/hspec-core-2:=[profile?] >=dev-haskell/quickcheck-2.7:2=[profile?] >=dev-haskell/tasty-0.8:=[profile?] >=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/tasty-quickcheck-0.3:=[profile?] <dev-haskell/tasty-quickcheck-0.11:=[profile?] >=dev-haskell/cabal-2.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Hspec support for the Tasty test framework
+EAPI=7
+HOMEPAGE=https://github.com/mitchellwrosen/tasty-hspec
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/hspec-2:=[profile?] >=dev-haskell/hspec-core-2:=[profile?] >=dev-haskell/quickcheck-2.7:2=[profile?] >=dev-haskell/tasty-0.8:=[profile?] >=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/tasty-quickcheck-0.3:=[profile?] <dev-haskell/tasty-quickcheck-0.11:=[profile?]
+SLOT=0/1.1.5.1
+SRC_URI=mirror://hackage/packages/archive/tasty-hspec/1.1.5.1/tasty-hspec-1.1.5.1.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=c07e37c0cad2ec735735e4f6609080ac

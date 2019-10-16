@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/base-orphans-0.8:=[profile?] dev-haskell/contravariant:=[profile?] dev-haskell/show-combinators:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/generic-lens-1.1.0.0 >=dev-haskell/one-liner-1.0 dev-haskell/tasty dev-haskell/tasty-hunit ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Deriving instances with GHC.Generics and related utilities
+EAPI=7
+HOMEPAGE=https://github.com/Lysxia/generic-data#readme
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/base-orphans-0.8:=[profile?] dev-haskell/contravariant:=[profile?] dev-haskell/show-combinators:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/0.7.0.0
+SRC_URI=mirror://hackage/packages/archive/generic-data/0.7.0.0/generic-data-0.7.0.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=abe180ed442f4aa365d8e624014c20ac
