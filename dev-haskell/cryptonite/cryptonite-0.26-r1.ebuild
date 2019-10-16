@@ -18,7 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cpu-flags-x86-rdrand +cpu_flags_x86_aes cpu_flags_x86_sse cpu_flags_x86_sse4_1 +integer-gmp"
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-haskell/basement-0.0.6:=[profile?]
+	>=dev-haskell/memory-0.14.18:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	virtual/libc
 "
 DEPEND="${RDEPEND}
