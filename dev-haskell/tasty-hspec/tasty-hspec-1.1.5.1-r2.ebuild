@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,9 +17,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hspec-2:=[profile?] <dev-haskell/hspec-2.7:=[profile?]
-	>=dev-haskell/hspec-core-2:=[profile?] <dev-haskell/hspec-core-2.7:=[profile?]
-	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-2.13:2=[profile?]
+RDEPEND=">=dev-haskell/hspec-2:=[profile?]
+	>=dev-haskell/hspec-core-2:=[profile?]
+	>=dev-haskell/quickcheck-2.7:2=[profile?]
 	>=dev-haskell/tasty-0.8:=[profile?]
 	>=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
@@ -33,5 +33,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tasty >= 0.8 && < 1.2' 'tasty >= 0.8'
+		'tasty >= 0.8 && < 1.2' 'tasty >= 0.8' \
+		'base ^>= 4.9 || ^>= 4.10 || ^>= 4.11 || ^>= 4.12' 'base ^>= 4.9 || ^>= 4.10 || ^>= 4.11 || ^>= 4.12 || ^>= 4.13' \
+		'hspec >= 2 && < 2.7' 'hspec >= 2' \
+		'hspec-core >= 2 && < 2.7' 'hspec-core >= 2' \
+		'QuickCheck >= 2.7 && < 2.13' 'QuickCheck >= 2.7'
 }
