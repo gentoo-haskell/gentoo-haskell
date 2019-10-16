@@ -1,4 +1,8 @@
 # Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
+# <=dev-haskell/haddock-library-1.8.0 requires <dev-haskell/tree-diff-0.1
+>=dev-haskell/tree-diff-0.1
+
+# Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
 # Too many packages require <dev-haskell/optparse-applicative-0.15
 >=dev-haskell/optparse-applicative-0.15
 
