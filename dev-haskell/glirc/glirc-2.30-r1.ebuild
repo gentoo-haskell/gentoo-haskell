@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/async-2.1:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/lens-4.14:=[profile?] <dev-haskell/lens-4.18:=[profile?]
 	>=dev-haskell/network-2.6.2:=[profile?] <dev-haskell/network-3.1:=[profile?]
 	>=dev-haskell/psqueues-0.2.7:=[profile?] <dev-haskell/psqueues-0.3:=[profile?]
-	>=dev-haskell/regex-tdfa-1.2:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
+	>=dev-haskell/regex-tdfa-1.2:=[profile?]
 	>=dev-haskell/semigroupoids-5.1:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
@@ -46,3 +46,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-2.5
 	test? ( >=dev-haskell/hunit-1.3 <dev-haskell/hunit-1.7 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'regex-tdfa           >=1.2    && <1.3' 'regex-tdfa           >=1.2'
+}
