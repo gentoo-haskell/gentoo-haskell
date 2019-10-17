@@ -1,0 +1,19 @@
+diff -urN editor-open-0.6.0.0-old/editor-open.cabal editor-open-0.6.0.0/editor-open.cabal
+--- editor-open-0.6.0.0-old/editor-open.cabal	2015-05-19 11:00:33.000000000 -0600
++++ editor-open-0.6.0.0/editor-open.cabal	2019-11-04 06:53:40.206861399 -0700
+@@ -65,6 +65,7 @@
+   main-is:             test_yaml_file.hs
+   -- other-modules:       
+   -- other-extensions:    
++  buildable: False
+ 
+ executable editor-open-test_yaml_file_conduit
+    hs-source-dirs:      tests/
+@@ -79,6 +80,7 @@
+    main-is:             test_yaml_file_conduit.hs
+    -- other-modules:       
+    -- other-extensions:    
++   buildable: False
+ 
+ source-repository head 
+   type: git
