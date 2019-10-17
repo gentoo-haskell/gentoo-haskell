@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	dev-haskell/oo-prototypes:=[profile?]
 	>=dev-haskell/pointedlist-0.5:=[profile?]
 	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
-	>=dev-haskell/regex-tdfa-1.1:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
+	>=dev-haskell/regex-tdfa-1.1:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hspec
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'regex-tdfa >= 1.1 && <1.3' 'regex-tdfa >= 1.1'
+}
