@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?]
 	>=dev-haskell/mtl-2.2:=[profile?]
 	>=dev-haskell/parsec-3.0:=[profile?]
-	>=dev-haskell/regex-tdfa-1.2.3:=[profile?] <=dev-haskell/regex-tdfa-1.3:=[profile?]
+	>=dev-haskell/regex-tdfa-1.2.3:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -41,3 +41,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'regex-tdfa >=1.2.3 && <=1.3' 'regex-tdfa >=1.2.3'
+}
