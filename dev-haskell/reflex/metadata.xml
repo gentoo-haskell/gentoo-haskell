@@ -10,6 +10,7 @@
 		<flag name="template-haskell">Use template haskell to generate lenses</flag>
 		<flag name="debug-trace-events">Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!</flag>
 		<flag name="fast-weak">Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default</flag>
+		<flag name="split-these">Use split these/semialign packages</flag>
 	</use>
 	<longdescription>
 		Reflex is a high-performance, deterministic, higher-order Functional Reactive Programming system
