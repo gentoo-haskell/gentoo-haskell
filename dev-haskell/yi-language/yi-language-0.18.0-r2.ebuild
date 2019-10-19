@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	dev-haskell/microlens-platform:=[profile?]
 	dev-haskell/oo-prototypes:=[profile?]
 	>=dev-haskell/pointedlist-0.5:=[profile?]
-	>=dev-haskell/regex-base-0.93:=[profile?] <dev-haskell/regex-base-0.94:=[profile?]
+	>=dev-haskell/regex-base-0.93:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -40,5 +40,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'regex-tdfa >= 1.1 && <1.3' 'regex-tdfa >= 1.1'
+		'regex-tdfa >= 1.1 && <1.3' 'regex-tdfa >= 1.1' \
+		'regex-base ==0.93.*' 'regex-base >= 0.93'
 }
