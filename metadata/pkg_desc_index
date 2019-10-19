@@ -2209,7 +2209,7 @@ dev-haskell/yi-frontend-pango 0.18.0: Pango frontend for Yi editor
 dev-haskell/yi-frontend-vty 0.18.0: Vty frontend for Yi editor
 dev-haskell/yi-keymap-emacs 0.18.0: Emacs keymap for Yi editor
 dev-haskell/yi-keymap-vim 0.18.0: Vim keymap for Yi editor
-dev-haskell/yi-language 0.1.1.0 0.2.1 0.18.0-r1: Collection of language-related Yi libraries
+dev-haskell/yi-language 0.1.1.0 0.2.1 0.18.0-r2: Collection of language-related Yi libraries
 dev-haskell/yi-misc-modes 0.18.0: Yi editor miscellaneous modes
 dev-haskell/yi-mode-haskell 0.18.0: Yi editor haskell mode
 dev-haskell/yi-mode-javascript 0.18.0: Yi editor javascript mode
