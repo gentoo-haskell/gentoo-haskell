@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Unix\/Posix-specific functions for ByteStrings.
+		
+		Provides @ByteString@ file-descriptor based I\/O API, designed
+		loosely after the @String@ file-descriptor based I\/O API in
+		&quot;System.Posix.IO&quot;. The functions here wrap standard C implementations
+		of the functions specified by the ISO\/IEC 9945-1:1990 (``POSIX.1&#39;&#39;)
+		and X\/Open Portability Guide Issue 4, Version 2 (``XPG4.2&#39;&#39;)
+		specifications.
+		
+		Note that this package doesn&#39;t require the @unix@ package as a
+		dependency. But you&#39;ll need it in order to get your hands on
+		an @Fd@, so we&#39;re not offering a complete replacement.
+	</longdescription>
+</pkgmetadata>
