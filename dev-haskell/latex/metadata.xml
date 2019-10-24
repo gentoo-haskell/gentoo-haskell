@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Currently the package only provides
+		conversion between LaTeX escape sequences and Unicode characters.
+		It is used in the @bibtex@ package.
+		
+		In the future we might add support
+		for formatting Haskell values in LaTeX markup
+		for automated report generation.
+		
+		See the packages @HaTeX@ for LaTeX document generation
+		and @pandoc@ for document analysis and generation in multiple markup languages.
+	</longdescription>
+</pkgmetadata>
