@@ -26,9 +26,7 @@ RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
-"
+DEPEND="${RDEPEND}"
 
 src_configure() {
 	local tf3_arg=()
