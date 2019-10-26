@@ -1,0 +1,30 @@
+--- a/src/EasyTest/Internal.hs
++++ b/src/EasyTest/Internal.hs
+@@ -1,6 +1,7 @@
+ {-# LANGUAGE LambdaCase        #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE Rank2Types        #-}
++{-# LANGUAGE CPP               #-}
+ -- |
+ -- Module      : EasyTest.Internal
+ -- Copyright   : (c) Joel Burget, 2018-2019
+@@ -181,11 +182,19 @@ propertyWith = Leaf . Prop
+ bracket :: IO a -> (a -> IO ()) -> (a -> PropertyT IO ()) -> PropertyT IO ()
+ bracket setup teardown test
+   = PropertyT $ TestT $ ExceptT $ WriterT $ GenT $ \size seed ->
++#if MIN_VERSION_hedgehog(1,0,0)
++      HT.TreeT $ MaybeT $ do
++#else
+       HT.Tree $ MaybeT $ do
++#endif
+         a <- setup
+         case test a of
+           PropertyT (TestT (ExceptT (WriterT (GenT innerTest)))) -> Ex.finally
++#if MIN_VERSION_hedgehog(1,0,0)
++            (runMaybeT $ HT.runTreeT $ innerTest size seed)
++#else
+             (runMaybeT $ HT.runTree $ innerTest size seed)
++#endif
+             (teardown a)
+ 
+ -- | A variant of 'bracket' where the return value from the setup step is not
