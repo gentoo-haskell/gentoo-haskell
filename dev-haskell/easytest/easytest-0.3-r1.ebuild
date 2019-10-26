@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/call-stack-0.1:=[profile?]
-	>=dev-haskell/hedgehog-0.6:=[profile?] <dev-haskell/hedgehog-0.7:=[profile?]
+	>=dev-haskell/hedgehog-0.6:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/profunctors:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -31,6 +31,10 @@ RDEPEND=">=dev-haskell/call-stack-0.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-hedgehog-1.patch
+)
 
 src_prepare() {
 	default

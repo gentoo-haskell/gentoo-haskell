@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/blaze-html-0.8:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.7:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/colonnade-1.1:=[profile?] <dev-haskell/colonnade-1.3:=[profile?]
-	>=dev-haskell/profunctors-5.0:=[profile?] <dev-haskell/profunctors-5.5:=[profile?]
+	>=dev-haskell/profunctors-5.0:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -28,3 +28,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( dev-haskell/doctest )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'profunctors >= 5.0 && < 5.5' 'profunctors >= 5.0'
+}

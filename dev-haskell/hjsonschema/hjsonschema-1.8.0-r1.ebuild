@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -43,7 +43,10 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/async
 		>=dev-haskell/hspec-2.2
 		<dev-haskell/wai-app-static-3.2
-		<dev-haskell/warp-3.3 )
+		dev-haskell/warp )
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.4.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.4.patch
+	"${FILESDIR}"/${P}-protolude-0.2.4.patch
+)

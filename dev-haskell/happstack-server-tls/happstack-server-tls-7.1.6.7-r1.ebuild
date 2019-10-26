@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]
 	>=dev-haskell/happstack-server-6.6.4:=[profile?] <dev-haskell/happstack-server-7.6:=[profile?]
-	>=dev-haskell/hslogger-1.1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
+	>=dev-haskell/hslogger-1.1:=[profile?]
 	>=dev-haskell/hsopenssl-0.10:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.9:=[profile?]
 	>=dev-haskell/sendfile-0.7:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
@@ -29,3 +29,10 @@ RDEPEND=">=dev-haskell/extensible-exceptions-0.1:=[profile?] <dev-haskell/extens
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hslogger              >=  1.1 && < 1.3' 'hslogger              >=  1.1'
+}

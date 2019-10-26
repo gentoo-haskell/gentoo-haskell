@@ -25,3 +25,7 @@ RDEPEND=">=dev-haskell/network-2.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+PATCHES=(
+	"${FILESDIR}"/${P}-socks-0.6.patch
+)

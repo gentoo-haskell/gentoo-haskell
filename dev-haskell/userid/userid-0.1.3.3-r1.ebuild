@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/boomerang-1.4:=[profile?] <dev-haskell/boomerang-1.5:=[profile?]
 	>=dev-haskell/cereal-0.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
-	>=dev-haskell/safecopy-0.8:=[profile?] <dev-haskell/safecopy-0.10:=[profile?]
+	>=dev-haskell/safecopy-0.8:=[profile?]
 	>=dev-haskell/web-routes-0.27:=[profile?] <dev-haskell/web-routes-0.28:=[profile?]
 	>=dev-haskell/web-routes-th-0.22:=[profile?] <dev-haskell/web-routes-th-0.23:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'safecopy      >= 0.8  && < 0.10' 'safecopy      >= 0.8'
+}

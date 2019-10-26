@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?]
 	>=dev-haskell/monad-logger-0.3.4:=[profile?]
 	>=dev-haskell/persistent-2.9:=[profile?] <dev-haskell/persistent-3:=[profile?]
 	>=dev-haskell/postgresql-libpq-0.6.1:=[profile?] <dev-haskell/postgresql-libpq-0.10:=[profile?]
-	>=dev-haskell/postgresql-simple-0.4.0:=[profile?] <dev-haskell/postgresql-simple-0.6:=[profile?]
+	>=dev-haskell/postgresql-simple-0.4.0:=[profile?]
 	dev-haskell/resource-pool:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
@@ -33,3 +33,10 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'postgresql-simple     >= 0.4.0    && < 0.6' 'postgresql-simple     >= 0.4.0'
+}

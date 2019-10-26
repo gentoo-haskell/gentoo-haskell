@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,13 +25,13 @@ RDEPEND="dev-haskell/binary-ieee754:=[profile?]
 	>=dev-haskell/bytestring-lexing-0.5:=[profile?] <dev-haskell/bytestring-lexing-0.6:=[profile?]
 	>=dev-haskell/cryptonite-0:=[profile?] <dev-haskell/cryptonite-1:=[profile?]
 	>=dev-haskell/io-streams-1.2:=[profile?] <dev-haskell/io-streams-2.0:=[profile?]
-	>=dev-haskell/memory-0.14.4:=[profile?] <dev-haskell/memory-0.15:=[profile?]
+	>=dev-haskell/memory-0.14.4:=[profile?]
 	>=dev-haskell/monad-loops-0.4:=[profile?] <dev-haskell/monad-loops-0.5:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.0:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/tcp-streams-1.0:=[profile?] <dev-haskell/tcp-streams-1.1:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/tls-1.3.5:=[profile?] <dev-haskell/tls-1.5:=[profile?]
+	>=dev-haskell/tls-1.3.5:=[profile?]
 	>=dev-haskell/vector-0.8:=[profile?]
 	>=dev-haskell/wire-streams-0.1:=[profile?]
 	>=dev-haskell/word24-1.0:=[profile?] <=dev-haskell/word24-3.0:=[profile?]
@@ -47,5 +47,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tasty == 0.11.*' 'tasty >= 0.11'
+		'tasty == 0.11.*' 'tasty >= 0.11' \
+		'tls           >= 1.3.5 && < 1.5' 'tls           >= 1.3.5' \
+		'memory        >= 0.14.4 && < 0.15' 'memory        >= 0.14.4'
 }
