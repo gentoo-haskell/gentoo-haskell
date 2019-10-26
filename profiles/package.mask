@@ -1,4 +1,11 @@
 # Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
+# This package revision contains patches enabling cabal-3
+# support, but it is not backwards compatible. Users
+# experimenting with cabal-3 should unmask this package
+# revision for compatibility.
+=dev-haskell/gtk2hs-buildtools-0.13.5.1-r1
+
+# Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
 # Stack-1.9.3.1 requires lower versions of certain dependencies than
 # what is available in ::haskell
 >=dev-haskell/generic-deriving-1.13

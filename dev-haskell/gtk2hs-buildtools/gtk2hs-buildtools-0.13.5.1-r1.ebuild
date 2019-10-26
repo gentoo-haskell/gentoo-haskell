@@ -28,18 +28,17 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	dev-haskell/happy
 "
-# These patches are available in -r1. Disabled here
-# due to incompatibility with <dev-haskell/cabal-3
-# PATCHES=("${FILESDIR}"/${PN}-0.13.1.0-ia64.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p1-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p2-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p3-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p4-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p5-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p6-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p7-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p8-cabal-3.patch
-# 		 "${FILESDIR}"/${PN}-0.13.5.1-p9-cabal-3.patch)
+
+PATCHES=("${FILESDIR}"/${PN}-0.13.1.0-ia64.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p1-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p2-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p3-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p4-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p5-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p6-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p7-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p8-cabal-3.patch
+		 "${FILESDIR}"/${PN}-0.13.5.1-p9-cabal-3.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
