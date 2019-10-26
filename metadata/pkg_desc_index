@@ -100,7 +100,7 @@ dev-haskell/amazonka-stepfunctions 1.4.5 1.6.0: Amazon Step Functions SDK
 dev-haskell/amazonka-storagegateway 1.4.5 1.6.0: Amazon Storage Gateway SDK
 dev-haskell/amazonka-support 1.4.5 1.6.0: Amazon Support SDK
 dev-haskell/amazonka-test 1.4.5 1.6.0: Common functionality for Amazonka library test-suites
-dev-haskell/amqp 0.14.1 0.18.1: Client library for AMQP servers (currently only RabbitMQ)
+dev-haskell/amqp 0.14.1 0.18.1-r1: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/amqp-worker 0.2.4: High level functions for working with message queues
 dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
@@ -158,7 +158,7 @@ dev-haskell/basement 0.0.7 0.0.8 0.0.11: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.6.1.1 0.7.0: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.11: Haskell bindings to the bcrypt password hash
 dev-haskell/beam-core 0.7.2.2-r1 0.7.2.3 0.8.0.0-r1: Type-safe, feature-complete SQL query and manipulation interface for Haskell
-dev-haskell/beam-migrate 0.3.2.1-r1 0.3.2.2 0.4.0.1: SQL DDL support and migrations support library for Beam
+dev-haskell/beam-migrate 0.3.2.1-r1 0.3.2.2 0.4.0.1-r1: SQL DDL support and migrations support library for Beam
 dev-haskell/beam-postgres 0.3.2.2-r1 0.3.2.3 0.4.0.0: Connection layer between beam and postgres
 dev-haskell/beam-sqlite 0.3.2.2 0.3.2.3 0.3.2.4 0.4.0.0: Beam driver for SQLite
 dev-haskell/bencode 0.6.0.0: Parser and printer for bencoded data
@@ -205,7 +205,7 @@ dev-haskell/blastxml 0.3.2: Library for reading Blast XML output
 dev-haskell/blaze-builder 0.3.3.4 0.4.0.2 0.4.1.0: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
 dev-haskell/blaze-builder-enumerator 0.2.1.0-r1: Enumeratees for the incremental conversion of builders to bytestrings
-dev-haskell/blaze-colonnade 1.1.0 1.2.2.1: Helper functions for using blaze-html with colonnade
+dev-haskell/blaze-colonnade 1.1.0 1.2.2.1-r1: Helper functions for using blaze-html with colonnade
 dev-haskell/blaze-html 0.8.1.3 0.9.1.2: A blazingly fast HTML combinator library for Haskell
 dev-haskell/blaze-markup 0.7.1.1 0.8.2.3: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.6.1: SVG combinator library
@@ -324,7 +324,7 @@ dev-haskell/code-page 0.1.3: Windows code page library for Haskell
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
-dev-haskell/colonnade 0.5 1.1.1-r1 1.2.0.2: Generic types and functions for columnar encoding and decoding
+dev-haskell/colonnade 0.5 1.1.1-r1 1.2.0.2-r1: Generic types and functions for columnar encoding and decoding
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.3-r1 2.3.4 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.0.0: Quasiquoters for external commands
@@ -462,9 +462,9 @@ dev-haskell/deepseq-generics 0.1.1.2 0.2.0.0: GHC.Generics-based Control.DeepSeq
 dev-haskell/deferred-folds 0.9.10.1: Abstractions over deferred folds
 dev-haskell/dependent-map 0.2.4.0 0.3: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.3.2.2 0.4 0.6.2.0: Dependent sum type
-dev-haskell/dependent-sum-template 0.0.0.6: Template Haskell code to generate instances of classes in dependent-sum package
+dev-haskell/dependent-sum-template 0.0.0.6-r1: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/derive 2.5.26 2.6.5: A program and library to derive instances for data types
-dev-haskell/deriving-compat 0.3.6 0.5.4: Backports of GHC deriving extensions
+dev-haskell/deriving-compat 0.3.6 0.5.4 0.5.7: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/dhall 1.0.2-r1: A configuration language guaranteed to terminate
 dev-haskell/dhall-nix 1.0.0-r1: Dhall to Nix compiler
@@ -528,7 +528,7 @@ dev-haskell/dynamic-state 0.2.2.0 0.3.1: Optionally serializable dynamic state k
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.2: Cross-platform File handling
 dev-haskell/easyrender 0.1.1.4: User-friendly creation of EPS, PostScript, and PDF files
-dev-haskell/easytest 0.2.1 0.3: Simple, expressive testing library
+dev-haskell/easytest 0.2.1 0.3-r1: Simple, expressive testing library
 dev-haskell/echo 0.1.3: A cross-platform, cross-console way to handle echoing terminal input
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
 dev-haskell/ede 0.2.9: Templating language with similar syntax and features to Liquid or Jinja2
@@ -733,7 +733,7 @@ dev-haskell/glambda 1.0.2: A simply typed lambda calculus interpreter, written w
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.1 1.4.8.4 3.2.1.1: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.2.2 0.13.3.0 0.13.4.1 0.13.5.0-r1 0.13.6.0-r1 0.13.7.0: Binding to the GLIB library for Gtk2Hs
-dev-haskell/glirc 2.29 2.30-r1: Console IRC client
+dev-haskell/glirc 2.29 2.30-r2: Console IRC client
 dev-haskell/glob 0.7.14 0.9.3: Globbing library
 dev-haskell/gloss 1.10.2.5 1.11.1.1 1.13.0.1-r1: Painless 2D vector graphics, animations and simulations
 dev-haskell/gloss-algorithms 1.10.2.3 1.11.1.1 1.13.0.1-r1: Data structures and algorithms for working with 2D graphics
@@ -803,7 +803,7 @@ dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplat
 dev-haskell/happstack-jmacro 7.0.12.1: Support for using JMacro with Happstack
 dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + reload
 dev-haskell/happstack-server 7.5.3: Web related tools and services
-dev-haskell/happstack-server-tls 7.1.6.5 7.1.6.7: extend happstack-server with https:// support (TLS/SSL)
+dev-haskell/happstack-server-tls 7.1.6.5 7.1.6.7-r1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5 1.19.8 1.19.9 1.19.10 1.19.12: Happy is a parser generator for Haskell
 dev-haskell/hare 0.8.3.0 0.8.4.1: the Haskell Refactorer
 dev-haskell/harp 0.4.3.2: HaRP allows pattern-matching with regular expressions
@@ -904,7 +904,7 @@ dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed sub
 dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
 dev-haskell/hjsonpointer 1.3.0-r1: JSON Pointer library
-dev-haskell/hjsonschema 1.7.2 1.8.0: JSON Schema library
+dev-haskell/hjsonschema 1.7.2 1.8.0-r1: JSON Schema library
 dev-haskell/hledger 1.14.2 1.15.2: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.3: computes interest for a given account
 dev-haskell/hledger-lib 1.14.1 1.15.2: Core data types, parsers and functionality for the hledger accounting tools
@@ -1024,7 +1024,7 @@ dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client wi
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-tls 0.3.5.3: http-client backend using the connection package and tls library
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
-dev-haskell/http-conduit 2.2.4 2.3.7.1: HTTP client package with conduit interface and HTTPS support
+dev-haskell/http-conduit 2.2.4 2.3.7.1-r1: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.8: HTTP Date parser/formatter
 dev-haskell/http-link-header 1.0.3.1: An RFC 5988 parser and writer for the HTTP Link header
 dev-haskell/http-media 0.6.4 0.7.1.3 0.8.0.0: Processing HTTP Content-Type and Accept headers
@@ -1063,7 +1063,7 @@ dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonad
 dev-haskell/indexed-list-literals 0.2.1.1 0.2.1.2: Type safe indexed list literals
 dev-haskell/infer-license 0.2.0: Infer software license from a given license file
 dev-haskell/inflections 0.2.0.1: Inflections library for Haskell
-dev-haskell/influxdb 1.6.1.3: Haskell client library for InfluxDB
+dev-haskell/influxdb 1.6.1.3-r1: Haskell client library for InfluxDB
 dev-haskell/ini 0.3.6: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.6.1 0.6.0.5 0.6.1.0: Write Haskell source files including C code inline. No FFI required
 dev-haskell/inline-c-cpp 0.2.1.0: Lets you embed C++ code into Haskell
@@ -1130,7 +1130,7 @@ dev-haskell/kibro 0.5.0: None (deprecated)
 dev-haskell/kinds 0.0.1.5: Emulation of subkinds and subkind polymorphism
 dev-haskell/knob 0.1.1: Memory-backed handles
 dev-haskell/lambdabot 5.1 5.1.0.1 5.1.0.4: Lambdabot is a development tool and advanced IRC bot
-dev-haskell/lambdabot-core 5.1.0.1 5.1.0.2 5.1.0.4: Lambdabot core functionality
+dev-haskell/lambdabot-core 5.1.0.1 5.1.0.2 5.1.0.4-r1: Lambdabot core functionality
 dev-haskell/lambdabot-haskell-plugins 5.1 5.1.0.1-r1 5.1.0.3 5.1.0.4: Lambdabot Haskell plugins
 dev-haskell/lambdabot-irc-plugins 5.1.0.1 5.1.0.4: IRC plugins for lambdabot
 dev-haskell/lambdabot-misc-plugins 5.1.0.1 5.1.0.4: Lambdabot miscellaneous plugins
@@ -1329,7 +1329,7 @@ dev-haskell/mvc 1.1.6-r1 1.1.7: Model-view-controller
 dev-haskell/mwc-probability 2.1.0: Sampling function-based probability distributions
 dev-haskell/mwc-random 0.13.6.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.1.8 0.1.1.8-r100 0.1.7: A low-level MySQL client library
-dev-haskell/mysql-haskell 0.7.1.0 0.8.3.0: pure haskell MySQL driver
+dev-haskell/mysql-haskell 0.7.1.0 0.8.3.0-r1: pure haskell MySQL driver
 dev-haskell/mysql-haskell-nem 0.1.0.0: Adds a interface like mysql-simple to mysql-haskell
 dev-haskell/mysql-haskell-openssl 0.7.0.0 0.8.3.0: TLS support for mysql-haskell package using openssl
 dev-haskell/mysql-simple 0.4.5: A mid-level MySQL client library
@@ -1459,7 +1459,7 @@ dev-haskell/persistent 2.2.4.1 2.6-r1 2.7.3.1 2.9.2: Type-safe, multi-backend da
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1-r1 2.8.0: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.9.0: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.9.0: Backend for the persistent library using postgresql
+dev-haskell/persistent-postgresql 2.9.0-r1: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
@@ -1535,7 +1535,7 @@ dev-haskell/process-extras 0.7.4: Process extras
 dev-haskell/process-leksah 1.0.1.4: Process libraries
 dev-haskell/process-streaming 0.9.1.2-r1: Streaming interface to system processes
 dev-haskell/product-isomorphic 0.0.3.3: Weaken applicative functor on products
-dev-haskell/product-profunctors 0.7.1.0-r1: product-profunctors
+dev-haskell/product-profunctors 0.7.1.0-r2: product-profunctors
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.4.5.1: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
@@ -1967,7 +1967,7 @@ dev-haskell/transformers-compat 0.4.0.4-r1 0.5.1.4 0.6.2 0.6.5: A small compatib
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.1.0.1 0.2.0.1: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 0.2.0.4 1.0.0.0: Generic applicative traversals
-dev-haskell/tree-diff 0.0.2.1 0.1: Diffing of (expression) trees
+dev-haskell/tree-diff 0.0.2.1-r1 0.1: Diffing of (expression) trees
 dev-haskell/trifecta 1.6.2.1-r1 1.7.1.1 2-r1 2.1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
@@ -2023,7 +2023,7 @@ dev-haskell/uri-encode 1.5.0.5: Unicode aware uri-encoding
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/urlencoded 0.4.2.0: Generate or process x-www-urlencoded data
 dev-haskell/urlpath 5.0.0.1: Painfully simple URL deployment
-dev-haskell/userid 0.1.3.3: The UserId type and useful instances for web development
+dev-haskell/userid 0.1.3.3-r1: The UserId type and useful instances for web development
 dev-haskell/users 0.5.0.0: A library simplifying user management for web applications
 dev-haskell/users-mysql-haskell 0.5.2.0: A mysql-haskell backend for the users library
 dev-haskell/utf8-light 0.4.2: Unicode
@@ -2077,7 +2077,7 @@ dev-haskell/vte 0.12.5.0 0.13.0.3-r1 0.13.1.1: Binding to the VTE library
 dev-haskell/vty 5.11.3 5.12 5.15.1 5.18.1 5.21 5.23.1 5.24-r2 5.26: A simple terminal UI library
 dev-haskell/vty-ui 1.8-r1 1.9: An interactive terminal user interface library for Vty
 dev-haskell/wai 3.0.5.0 3.2.2: Web Application Interface
-dev-haskell/wai-app-file-cgi 3.0.8 3.1.2 3.1.3 3.1.6: File/CGI/Rev Proxy App of WAI
+dev-haskell/wai-app-file-cgi 3.0.8 3.1.2 3.1.3 3.1.6-r1: File/CGI/Rev Proxy App of WAI
 dev-haskell/wai-app-static 3.0.1.1 3.1.6.2 3.1.6.3-r1: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.3: conduit wrappers for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
@@ -2263,7 +2263,7 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.4.7 0.6.0 0.7.0: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.11.1-r1: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r1: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r2: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 6.20180529 6.20180626 6.20181011 7.20190122 7.20190129: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
@@ -2283,7 +2283,7 @@ games-roguelike/scroll 1.20180421: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
 media-fonts/hasklig 0.2 0.4 1.0_beta 1.1: Hasklig - a Haskell code font with monospaced ligatures
 media-sound/hpodder 1.1.6-r2: Podcast Aggregator (downloader)
-media-sound/live-sequencer 0.0.6.2: Live coding of MIDI music
+media-sound/live-sequencer 0.0.6.2-r1: Live coding of MIDI music
 media-sound/vimus 0.2.1: An MPD client with vim-like key bindings
 net-irc/y0l0bot 0.1.1-r1: #plaimi's all-encompassing bot
 net-mail/list-remote-forwards 0.0.1-r2: List all remote forwards for mail accounts stored in a database
@@ -2312,7 +2312,7 @@ www-apps/gitit 0.12.2.1-r1 0.12.3.2: Wiki using happstack, git or darcs, and pan
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
-www-servers/mighttpd2 3.2.9 3.3.1 3.3.5 3.4.3: High performance web server on WAI/warp
+www-servers/mighttpd2 3.2.9 3.3.1 3.3.5 3.4.3-r1: High performance web server on WAI/warp
 x11-misc/taffybar 0.4.6-r1 3.0.0 3.1.1 9999: A desktop bar similar to xmobar, but with more GUI
 x11-misc/xmobar 0.26-r1 0.27 0.28.1 0.29.4 0.30 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1-r4 0.13.0 0.13.3 0.13.4 0.14-r2 0.15 0.15.2: Third party extensions for xmonad with wacky dependencies
