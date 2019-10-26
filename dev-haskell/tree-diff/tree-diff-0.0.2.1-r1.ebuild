@@ -43,5 +43,12 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.11.2.5 <dev-haskell/tasty-1.3
 		>=dev-haskell/tasty-golden-2.3.1.1 <dev-haskell/tasty-golden-2.4
 		>=dev-haskell/tasty-quickcheck-0.9.1 <dev-haskell/tasty-quickcheck-0.11
-		>=dev-haskell/trifecta-1.7.1.1 <dev-haskell/trifecta-2.1 )
+		>=dev-haskell/trifecta-1.7.1.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'trifecta             >=1.7.1.1  && <2.1' 'trifecta             >=1.7.1.1'
+}
