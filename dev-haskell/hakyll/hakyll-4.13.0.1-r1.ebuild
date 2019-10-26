@@ -46,7 +46,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 				>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 				>=dev-haskell/wai-3.2:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 				>=dev-haskell/wai-app-static-3.1:=[profile?] <dev-haskell/wai-app-static-3.2:=[profile?]
-				>=dev-haskell/warp-3.2:=[profile?] <dev-haskell/warp-3.3:=[profile?] )
+				>=dev-haskell/warp-3.2:=[profile?] )
 	!previewserver? ( checkexternal? ( >=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.13:=[profile?] )
 				watchserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.4:=[profile?] ) )
 	usepandoc? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.8:=[profile?]
@@ -64,7 +64,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'regex-tdfa           >= 1.1      && < 1.3' 'regex-tdfa           >= 1.1'
+		'regex-tdfa           >= 1.1      && < 1.3' 'regex-tdfa           >= 1.1' \
+		'warp            >= 3.2   && < 3.3' 'warp            >= 3.2'
 }
 
 src_configure() {
