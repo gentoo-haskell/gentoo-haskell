@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/clock-0.7:=[profile?] <dev-haskell/clock-0.8:=[profile?]
 	>=dev-haskell/http-client-0.5:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
-	>=dev-haskell/lens-4.9:=[profile?] <dev-haskell/lens-4.18:=[profile?]
+	>=dev-haskell/lens-4.9:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.1:=[profile?]
 	>=dev-haskell/optional-args-1.0:=[profile?] <dev-haskell/optional-args-1.1:=[profile?]
 	>=dev-haskell/scientific-0.3.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -42,6 +42,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
 	test? ( >=dev-haskell/doctest-0.11.3 <dev-haskell/doctest-0.17 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens >= 4.9 && < 4.18' 'lens >= 4.9'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
