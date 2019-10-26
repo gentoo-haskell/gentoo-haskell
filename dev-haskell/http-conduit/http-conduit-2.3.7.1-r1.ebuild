@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs network
+
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/conduit-1.2:=[profile?]
@@ -47,6 +49,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/utf8-string
 		>=dev-haskell/wai-3.0 <dev-haskell/wai-3.3
 		dev-haskell/wai-conduit
-		>=dev-haskell/warp-3.0.0.2 <dev-haskell/warp-3.3
+		>=dev-haskell/warp-3.0.0.2
 		dev-haskell/warp-tls )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'warp >= 3.0.0.2 && < 3.3' 'warp >= 3.0.0.2'
+}
