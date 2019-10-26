@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT=test # ambiguous package: AC-Vector-Fancy-2.4.0 vector-0.11.0.0
 
 RDEPEND=">=dev-haskell/contravariant-1.2:=[profile?] <dev-haskell/contravariant-1.6:=[profile?]
-	>=dev-haskell/profunctors-5.0:=[profile?] <dev-haskell/profunctors-5.5:=[profile?]
+	>=dev-haskell/profunctors-5.0:=[profile?]
 	>=dev-haskell/semigroups-0.18.2:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/semigroupoids )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'profunctors >= 5.0 && < 5.4' 'profunctors >= 5.0'
+}
