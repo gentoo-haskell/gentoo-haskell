@@ -1,0 +1,10 @@
+--- a/test/Shared.hs
++++ b/test/Shared.hs
+@@ -1,6 +1,6 @@
+ module Shared where
+ 
+-import           Protolude
++import           Protolude hiding (unlines)
+ 
+ import           Control.Monad (fail)
+ import           Data.Aeson
