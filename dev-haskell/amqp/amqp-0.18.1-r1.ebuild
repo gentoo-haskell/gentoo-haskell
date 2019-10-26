@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,7 @@ IUSE="+network-uri"
 RESTRICT=test # requires network
 
 RDEPEND=">=dev-haskell/clock-0.4.0.1:=[profile?]
-	>=dev-haskell/connection-0.2:=[profile?] <dev-haskell/connection-0.3:=[profile?]
+	>=dev-haskell/connection-0.2:=[profile?]
 	>=dev-haskell/data-binary-ieee754-0.4.2.1:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?]
@@ -38,6 +38,13 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3
 		>=dev-haskell/hspec-expectations-0.3.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'connection == 0.2.*' 'connection >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
