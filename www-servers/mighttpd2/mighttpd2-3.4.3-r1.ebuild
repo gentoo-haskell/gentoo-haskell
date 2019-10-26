@@ -38,7 +38,7 @@ RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/wai-app-file-cgi-3.1.1:=[profile?] <dev-haskell/wai-app-file-cgi-3.2:=[profile?]
 	>=dev-haskell/wai-http2-extra-0.1:=[profile?]
 	>=dev-haskell/wai-logger-2.3.0:=[profile?]
-	>=dev-haskell/warp-3.2.21:=[profile?] <dev-haskell/warp-3.3:=[profile?]
+	>=dev-haskell/warp-3.2.21:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	tls? ( dev-haskell/tls:=[profile?]
 		dev-haskell/tls-session-manager:=[profile?]
@@ -49,17 +49,26 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3 )
 "
 
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag tls tls)
-}
-
 pkg_setup() {
 	ebegin "Creating mighttpd2 user and group"
 	enewgroup ${PN}
 	enewuser ${PN} -1 -1 -1 ${PN}
 	eend $?
 }
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'warp >= 3.2.21 && < 3.3' 'warp >= 3.2.21' \
+		'warp >= 3.2.7 && < 3.3' 'warp >= 3.2.7'
+}
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag tls tls)
+}
+
 
 src_install() {
 	haskell-cabal_src_install
