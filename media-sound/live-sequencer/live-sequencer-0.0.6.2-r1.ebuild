@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[pr
 	gui? ( >=dev-haskell/stm-2.2:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 		>=dev-haskell/wx-0.12.1:=[profile?] <dev-haskell/wx-0.93:=[profile?]
 		>=dev-haskell/wxcore-0.13.2:=[profile?] <dev-haskell/wxcore-0.93:=[profile?]
-		httpserver? ( >=dev-haskell/cgi-3001.1:=[profile?] <dev-haskell/cgi-3001.4:=[profile?]
+		httpserver? ( >=dev-haskell/cgi-3001.1:=[profile?]
 				>=dev-haskell/html-1.0:=[profile?] <dev-haskell/html-1.1:=[profile?]
 				>=dev-haskell/httpd-shed-0.4:=[profile?] <dev-haskell/httpd-shed-0.5:=[profile?]
 				>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.9:=[profile?]
@@ -54,7 +54,8 @@ src_prepare() {
 	cabal_chdeps\
 		'stm >=2.2 && <2.5' 'stm >=2.2 && <2.6'\
 		'network >=2.6 && <2.7' 'network >=2.6 && <2.9'\
-		'containers >=0.3 && <0.6' 'containers >=0.3 && <0.7'
+		'containers >=0.3 && <0.6' 'containers >=0.3 && <0.7' \
+		'cgi >=3001.1 && <3001.4' 'cgi >=3001.1'
 }
 
 src_configure() {
