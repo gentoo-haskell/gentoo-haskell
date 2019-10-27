@@ -1130,7 +1130,7 @@ dev-haskell/kibro 0.5.0: None (deprecated)
 dev-haskell/kinds 0.0.1.5: Emulation of subkinds and subkind polymorphism
 dev-haskell/knob 0.1.1: Memory-backed handles
 dev-haskell/lambdabot 5.1 5.1.0.1 5.1.0.4: Lambdabot is a development tool and advanced IRC bot
-dev-haskell/lambdabot-core 5.1.0.1 5.1.0.2 5.1.0.4-r1: Lambdabot core functionality
+dev-haskell/lambdabot-core 5.1.0.1 5.1.0.2 5.1.0.4-r1 5.1.0.4-r2: Lambdabot core functionality
 dev-haskell/lambdabot-haskell-plugins 5.1 5.1.0.1-r1 5.1.0.3 5.1.0.4: Lambdabot Haskell plugins
 dev-haskell/lambdabot-irc-plugins 5.1.0.1 5.1.0.4: IRC plugins for lambdabot
 dev-haskell/lambdabot-misc-plugins 5.1.0.1 5.1.0.4: Lambdabot miscellaneous plugins
