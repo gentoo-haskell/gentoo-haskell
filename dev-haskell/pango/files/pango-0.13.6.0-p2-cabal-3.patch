@@ -10,7 +10,8 @@ index 7c2783ee..d70d92b2 100644
 +++ b/Setup.hs
 @@ -14,6 +14,7 @@ import Distribution.Version ( Version(..) )
  import Distribution.Verbosity
- import Distribution.Simple.Utils
+-import Distribution.Simple.Utils
++import Distribution.Simple.Utils hiding (die)
  import System.FilePath
 +import System.Exit (die)
  
