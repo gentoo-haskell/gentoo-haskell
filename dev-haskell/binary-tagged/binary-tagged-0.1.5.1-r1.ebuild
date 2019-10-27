@@ -39,6 +39,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-generics-sop-0.5.patch
+)
+
 src_prepare() {
 	default
 
