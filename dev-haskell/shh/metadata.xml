@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Provides a shell scripting environment for Haskell. It
+		helps you use external binaries, and allows you to
+		perform many shell-like functions, such as piping
+		and redirection.
+	</longdescription>
+</pkgmetadata>
