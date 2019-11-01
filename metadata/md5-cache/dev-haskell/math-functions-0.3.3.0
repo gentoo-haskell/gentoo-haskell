@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/data-default-class-0.1.2.0:=[profile?] dev-haskell/primitive:=[profile?] >=dev-haskell/vector-0.7:=[profile?] >=dev-haskell/vector-th-unbox-0.2.1.6:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( dev-haskell/erf >=dev-haskell/quickcheck-2.7 >=dev-haskell/tasty-1.2 >=dev-haskell/tasty-hunit-0.10 >=dev-haskell/tasty-quickcheck-0.10 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Special functions and Chebyshev polynomials
+EAPI=7
+HOMEPAGE=https://github.com/bos/math-functions
+IUSE=+system-erf +system-expm1 doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+RDEPEND=>=dev-haskell/data-default-class-0.1.2.0:=[profile?] dev-haskell/primitive:=[profile?] >=dev-haskell/vector-0.7:=[profile?] >=dev-haskell/vector-th-unbox-0.2.1.6:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.3.3.0
+SRC_URI=mirror://hackage/packages/archive/math-functions/0.3.3.0/math-functions-0.3.3.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=643737e3626be451a680ff80a6499e12

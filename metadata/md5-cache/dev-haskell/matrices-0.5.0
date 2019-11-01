@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/primitive:=[profile?] >=dev-haskell/vector-0.11:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( dev-haskell/tasty dev-haskell/tasty-hunit dev-haskell/tasty-quickcheck ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=native matrix based on vector
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/matrices
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/primitive:=[profile?] >=dev-haskell/vector-0.11:=[profile?] >=dev-lang/ghc-7.10.1:=
+SLOT=0/0.5.0
+SRC_URI=mirror://hackage/packages/archive/matrices/0.5.0/matrices-0.5.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=70f84eba4af8349287fbab7dc5d4faa5

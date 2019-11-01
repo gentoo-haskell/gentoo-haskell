@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/lens-4.0:=[profile?] >=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.21:=[profile?] >=dev-haskell/semigroupoids-1.2:=[profile?] >=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-haskell/vector-0.10:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.18 test? ( >=dev-haskell/quickcheck-2.9 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Abstractions for animation
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/active
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/lens-4.0:=[profile?] >=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.21:=[profile?] >=dev-haskell/semigroupoids-1.2:=[profile?] >=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-haskell/vector-0.10:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.2.0.14
+SRC_URI=mirror://hackage/packages/archive/active/0.2.0.14/active-0.2.0.14.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_md5_=606ff94bfadc89c404f745c36966198d
