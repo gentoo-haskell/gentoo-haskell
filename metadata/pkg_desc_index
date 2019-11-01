@@ -1602,7 +1602,7 @@ dev-haskell/reducers 3.12.3: Semigroups, specialized containers and a general ma
 dev-haskell/ref-tf 0.4.0.2: A type class for monads with references using type families
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 1.5.2.1 2 2.1.2 2.1.4: Reifies arbitrary terms into types that can be reflected back into terms
-dev-haskell/reflex 0.5.0.1 0.6.1: Higher-order Functional Reactive Programming
+dev-haskell/reflex 0.5.0.1 0.6.1 0.6.2.4: Higher-order Functional Reactive Programming
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
 dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
@@ -2265,7 +2265,7 @@ dev-util/shelltestrunner 1.3.5-r1 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.11.1-r1: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r2: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20180529 6.20180626 6.20181011 7.20190122 7.20190129: manage files with git, without checking their contents into git
+dev-vcs/git-annex 6.20180529 6.20180626 6.20181011 7.20190122 7.20190129 7.20191024: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game

@@ -375,6 +375,7 @@ dev-haskell/reflection:template-haskell - Enable template haskell.
 dev-haskell/reflex:debug-trace-events - Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!
 dev-haskell/reflex:fast-weak - Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default
 dev-haskell/reflex:reflex-optimizer - Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.
+dev-haskell/reflex:split-these - Use split these/semialign packages
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
 dev-haskell/rfc5051:mkunicodedata - build codes generator itself
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
