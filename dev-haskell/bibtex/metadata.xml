@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="buildexamples">Build example executables</flag>
+	</use>
+	<longdescription>
+		This package allows parsing, formatting and processing of BibTeX files.
+		BibTeX files are databases for literature for the natbib package
+		of the LaTeX typesetting system.
+		
+		The package contains two examples:
+		
+		* The first example demonstrates the BibTeX parser
+		by generating a publication overview from a @.bib@ file.
+		
+		* The second example demonstrates the BibTeX generation
+		by producing a large @.bib@ file from the tar archive
+		that cabal-install downloads to your local cabal directory.
+		
+		Both examples will be build as stand-alone executable
+		when running
+		
+		&gt; cabal install -fbuildExamples bibtex
+		
+		For the first example see the @publications@ directory of this package.
+		You can start the program and build an example document by running
+		
+		&gt; make pubs
+		
+		Technically the program generates a list of custom @\\nocite@ commands
+		for the LaTeX package @multibib@.
+		You can add the custom bibtex field @subtype@ to BibTeX entries
+		for more detailed categorization of an entry.
+		See &quot;publications/publications.bib&quot; for examples.
+		
+		The second example can be executed using
+		
+		&gt; make hackbib
+		
+		The file @hackage.bib@ is written to the @hackage@ subdirectory.
+		The @hackage-bibtex@ program
+		reads an uncompressed tar archive from standard input
+		and writes the result bibliography file to standard output.
+		
+		Note that @hackage.bib@ exceeds some limits of standard BibTeX and LaTeX:
+		There are currently much more than 5000 versions of packages,
+		the maximum my BibTeX can handle at once.
+		That is, you can use the bibliography file,
+		but you cannot cite all entries with @\\nocite*@.
+		If there are more than 26 uploads by the same author in a year,
+		the BibTeX style @alpha@ generates identifiers including curly braces
+		which interacts badly with LaTeX&#39;s handling of them.
+		If you reduce the Bibliography file to 5000 entries
+		and try to generate an overview of all entries with @\\nocite@,
+		then @pdflatex@ hits its limits:
+		
+		&gt; TeX capacity exceeded, sorry [save size=5000]
+	</longdescription>
+</pkgmetadata>
