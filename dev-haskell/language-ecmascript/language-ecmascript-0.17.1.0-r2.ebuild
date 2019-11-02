@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-3.2.0:=[profile?]
 	>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
-	>=dev-haskell/testing-feat-0.4.0.2:=[profile?] <dev-haskell/testing-feat-0.5:=[profile?]
+	>=dev-haskell/testing-feat-0.4.0.2:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-haskell/wl-pprint-1.2:=[profile?] <dev-haskell/wl-pprint-2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -41,5 +41,6 @@ src_prepare() {
 	cabal_chdeps \
 		'data-default-class >= 0.0.1 && < 0.1' 'data-default-class >= 0.0.1' \
 		'directory >= 1.2 && < 1.3' 'directory >= 1.2' \
-		'HUnit >= 1.2 && < 1.4' 'HUnit >= 1.2'
+		'HUnit >= 1.2 && < 1.4' 'HUnit >= 1.2' \
+		'testing-feat >= 0.4.0.2 && < 0.5' 'testing-feat >= 0.4.0.2'
 }
