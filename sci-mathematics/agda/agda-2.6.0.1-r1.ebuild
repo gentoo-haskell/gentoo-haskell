@@ -45,7 +45,7 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/ieee754-0.7.8:=[profile?] <dev-haskell/ieee754-0.9:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/murmur-hash-0.1:=[profile?] <dev-haskell/murmur-hash-0.2:=[profile?]
-	>=dev-haskell/regex-tdfa-1.2.2:=[profile?] <dev-haskell/regex-tdfa-1.3:=[profile?]
+	>=dev-haskell/regex-tdfa-1.2.2:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
@@ -75,6 +75,10 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	default
+
+	cabal_chdeps \
+		'regex-tdfa >= 1.2.2 && < 1.3' 'regex-tdfa >= 1.2.2'
+
 	if ! use emacs; then
 		sed -e '/.*emacs-mode.*$/d' \
 			-i "${S}/${MY_PN}.cabal" \
