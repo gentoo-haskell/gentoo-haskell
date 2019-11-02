@@ -289,7 +289,7 @@ dev-haskell/chr-core 0.1.0.4: Constraint Handling Rules
 dev-haskell/chr-data 0.1.0.1: Datatypes required for chr library
 dev-haskell/chr-parse 0.1.0.0: Parsing for chr library
 dev-haskell/chr-pretty 0.1.0.0: Pretty printing for chr library
-dev-haskell/chronos 0.4 1.0.1-r1 1.0.4: A performant time library
+dev-haskell/chronos 0.4 1.0.1-r1 1.0.4-r1: A performant time library
 dev-haskell/chunked-data 0.2.0 0.3.0 0.3.1: Typeclasses for dealing with various chunked data representations
 dev-haskell/cipher-aes 0.2.11: Fast AES cipher implementation with advanced mode of operations
 dev-haskell/cipher-aes128 0.7.0.3: AES and common modes using AES-NI when available
@@ -1071,7 +1071,7 @@ dev-haskell/indexed-extras 0.1.1-r5 0.2-r1: Indexed functors, monads and comonad
 dev-haskell/indexed-list-literals 0.2.1.1 0.2.1.2: Type safe indexed list literals
 dev-haskell/infer-license 0.2.0: Infer software license from a given license file
 dev-haskell/inflections 0.2.0.1: Inflections library for Haskell
-dev-haskell/influxdb 1.6.1.3-r1: Haskell client library for InfluxDB
+dev-haskell/influxdb 1.6.1.3-r2: Haskell client library for InfluxDB
 dev-haskell/ini 0.3.6: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.6.1 0.6.0.5 0.6.1.0: Write Haskell source files including C code inline. No FFI required
 dev-haskell/inline-c-cpp 0.2.1.0: Lets you embed C++ code into Haskell
@@ -1426,7 +1426,7 @@ dev-haskell/optparse-generic 1.1.5-r1: Auto-generate a command-line parser for y
 dev-haskell/optparse-simple 0.0.3 0.1.1.2: Simple interface to optparse-applicative
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
-dev-haskell/pandoc-citeproc 0.15.0.1 0.16.2: Supports using pandoc with citeproc
+dev-haskell/pandoc-citeproc 0.15.0.1 0.16.2-r1: Supports using pandoc with citeproc
 dev-haskell/pandoc-crossref 0.2.6.0-r1 0.3.1.0-r1 0.3.4.1: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.2.1.1: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.17.0.4-r1 1.17.4.2 1.17.5.4-r1 1.17.6: Types for representing a structured document
