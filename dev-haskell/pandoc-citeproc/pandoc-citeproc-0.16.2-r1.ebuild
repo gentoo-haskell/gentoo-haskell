@@ -40,7 +40,7 @@ RDEPEND=">=app-text/pandoc-1.16:=[profile?] <app-text/pandoc-2.8:=[profile?]
 	dev-haskell/tagsoup:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-haskell/xml-conduit-1.2:=[profile?] <dev-haskell/xml-conduit-1.9:=[profile?]
+	>=dev-haskell/xml-conduit-1.2:=[profile?]
 	>=dev-haskell/yaml-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	bibutils? ( >=dev-haskell/hs-bibutils-6.4:=[profile?] )
@@ -55,6 +55,13 @@ DEPEND="${RDEPEND}
 		  dev-haskell/vector:=[profile?]
 	 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'xml-conduit >= 1.2 && < 1.9' 'xml-conduit >= 1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
