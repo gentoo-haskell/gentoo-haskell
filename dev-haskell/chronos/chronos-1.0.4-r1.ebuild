@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.1:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/clock-0.7:=[profile?] <dev-haskell/clock-0.8:=[profile?]
+	>=dev-haskell/clock-0.7:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/primitive-0.6:=[profile?] <dev-haskell/primitive-0.7:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -41,5 +41,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson >= 1.1 && < 1.4' 'aeson >= 1.1 && < 1.5'
+		'aeson >= 1.1 && < 1.4' 'aeson >= 1.1 && < 1.5' \
+		'clock >= 0.7 && < 0.8' 'clock >= 0.7'
 }

@@ -21,7 +21,7 @@ RESTRICT=test # requires network connection
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	<dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/clock-0.7:=[profile?] <dev-haskell/clock-0.8:=[profile?]
+	>=dev-haskell/clock-0.7:=[profile?]
 	>=dev-haskell/http-client-0.5:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/lens-4.9:=[profile?]
@@ -47,7 +47,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'lens >= 4.9 && < 4.18' 'lens >= 4.9'
+		'lens >= 4.9 && < 4.18' 'lens >= 4.9' \
+		'clock >= 0.7 && < 0.8' 'clock >= 0.7'
 }
 
 src_configure() {
