@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -33,7 +33,8 @@ src_prepare() {
 	cabal_chdeps \
 		'comonad              >= 4.0     && < 4.3' 'comonad              >= 4.0' \
 		'transformers         >= 0.2.0   && < 0.5' 'transformers         >= 0.2.0' \
-		'semigroupoids        >= 4.0     && < 5.1' 'semigroupoids        >= 4.0'
+		'semigroupoids        >= 4.0     && < 5.1' 'semigroupoids        >= 4.0' \
+		'containers           >= 0.3     && < 0.6' 'containers           >= 0.3'
 }
 
 src_configure() {
