@@ -1,0 +1,96 @@
+--- a/cbits/bitops-gcc.c
++++ b/cbits/bitops-gcc.c
+@@ -1,21 +1,21 @@
+ #include "bitops-gcc.h"
+ 
+-inline unsigned int ffs (unsigned int x) { return __builtin_ffs (x); }
+-inline unsigned int clz (unsigned int x) { return __builtin_clz (x); }
+-inline unsigned int ctz (unsigned int x) { return __builtin_ctz (x); }
+-inline unsigned int popcount (unsigned int x) { return __builtin_popcount (x); }
+-inline unsigned int parity (unsigned int x) { return __builtin_parity (x); }
+-inline unsigned int bswap32 (unsigned int x) { return __builtin_bswap32(x); }
++unsigned int ffs (unsigned int x) { return __builtin_ffs (x); }
++unsigned int clz (unsigned int x) { return __builtin_clz (x); }
++unsigned int ctz (unsigned int x) { return __builtin_ctz (x); }
++unsigned int popcount (unsigned int x) { return __builtin_popcount (x); }
++unsigned int parity (unsigned int x) { return __builtin_parity (x); }
++unsigned int bswap32 (unsigned int x) { return __builtin_bswap32(x); }
+ 
+-inline unsigned int ffsll (unsigned long long x) { return __builtin_ffsll (x); }
+-inline unsigned int clzll (unsigned long long x) { return __builtin_clzll (x); }
+-inline unsigned int ctzll (unsigned long long x) { return __builtin_ctzll (x); }
+-inline unsigned int popcountll (unsigned long long x) { return __builtin_popcountll (x); }
+-inline unsigned int parityll (unsigned long long x) { return __builtin_parityll (x); }
+-inline unsigned long long bswap64 (unsigned long long x) { return __builtin_bswap64(x); }
++unsigned int ffsll (unsigned long long x) { return __builtin_ffsll (x); }
++unsigned int clzll (unsigned long long x) { return __builtin_clzll (x); }
++unsigned int ctzll (unsigned long long x) { return __builtin_ctzll (x); }
++unsigned int popcountll (unsigned long long x) { return __builtin_popcountll (x); }
++unsigned int parityll (unsigned long long x) { return __builtin_parityll (x); }
++unsigned long long bswap64 (unsigned long long x) { return __builtin_bswap64(x); }
+ 
+-inline unsigned int ffsl (unsigned long x) { return __builtin_ffsll (x); }
+-inline unsigned int clzl (unsigned long x) { return __builtin_clzll (x); }
+-inline unsigned int ctzl (unsigned long x) { return __builtin_ctzll (x); }
+-inline unsigned int popcountl (unsigned long x) { return __builtin_popcountll (x); }
+-inline unsigned int parityl (unsigned long x) { return __builtin_parityll (x); }
++unsigned int ffsl (unsigned long x) { return __builtin_ffsll (x); }
++unsigned int clzl (unsigned long x) { return __builtin_clzll (x); }
++unsigned int ctzl (unsigned long x) { return __builtin_ctzll (x); }
++unsigned int popcountl (unsigned long x) { return __builtin_popcountll (x); }
++unsigned int parityl (unsigned long x) { return __builtin_parityll (x); }
+diff --git a/cbits/bitops-gcc.h b/cbits/bitops-gcc.h
+index 781d440..f4fd90e 100644
+--- a/cbits/bitops-gcc.h
++++ b/cbits/bitops-gcc.h
+@@ -1,22 +1,22 @@
+ /* Word-sized */
+-inline unsigned int ffsl (unsigned long);
+-inline unsigned int clzl (unsigned long); 
+-inline unsigned int ctzl (unsigned long);
+-inline unsigned int popcountl (unsigned long);
+-inline unsigned int parityl (unsigned long);
++unsigned int ffsl (unsigned long);
++unsigned int clzl (unsigned long); 
++unsigned int ctzl (unsigned long);
++unsigned int popcountl (unsigned long);
++unsigned int parityl (unsigned long);
+ 
+ /* 32-bit */
+-inline unsigned int ffs (unsigned int);
+-inline unsigned int clz (unsigned int); 
+-inline unsigned int ctz (unsigned int);
+-inline unsigned int popcount (unsigned int);
+-inline unsigned int parity (unsigned int);
+-inline unsigned int bswap32 (unsigned int);
++unsigned int ffs (unsigned int);
++unsigned int clz (unsigned int); 
++unsigned int ctz (unsigned int);
++unsigned int popcount (unsigned int);
++unsigned int parity (unsigned int);
++unsigned int bswap32 (unsigned int);
+ 
+ /* 64-bit */
+-inline unsigned int ffsll (unsigned long long);
+-inline unsigned int clzll (unsigned long long);
+-inline unsigned int ctzll (unsigned long long);
+-inline unsigned int popcountll (unsigned long long);
+-inline unsigned int parityll (unsigned long long);
+-inline unsigned long long bswap64 (unsigned long long);
++unsigned int ffsll (unsigned long long);
++unsigned int clzll (unsigned long long);
++unsigned int ctzll (unsigned long long);
++unsigned int popcountll (unsigned long long);
++unsigned int parityll (unsigned long long);
++unsigned long long bswap64 (unsigned long long);
+--- a/test/test.hs
++++ b/test/test.hs
+@@ -26,7 +26,7 @@ testPattern :: Integral a => a
+ testPattern = 0xdeadbeef
+ 
+ 
+-type PolyTest = (ExtraBits a, Integral a, Bounded a) => a -> Assertion
++type PolyTest = forall a. (ExtraBits a, Integral a, Bounded a) => a -> Assertion
+ 
+ testTypes :: PolyTest -> Assertion
+ testTypes t = do
