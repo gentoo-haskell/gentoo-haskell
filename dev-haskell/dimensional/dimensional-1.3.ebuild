@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous module name ‘Data.Kind’: it was found in multiple packages: base-4.12.0.0 kinds-0.0.1.5
+
 RDEPEND=">=dev-haskell/exact-pi-0.4.1:=[profile?] <dev-haskell/exact-pi-0.6:=[profile?]
 	>=dev-haskell/ieee754-0.7.6:=[profile?]
 	>=dev-haskell/numtype-dk-0.5:=[profile?] <dev-haskell/numtype-dk-1.1:=[profile?]
