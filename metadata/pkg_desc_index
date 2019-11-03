@@ -560,7 +560,7 @@ dev-haskell/erd 0.1.3.0 0.2.0.0: An entity-relationship diagram generator from a
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.1.3 2.2.5 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 2.5.3 2.7.0: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 2.5.3 2.7.0 3.2.2: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.4.1.0 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7: Library for computer music research and education
@@ -1464,11 +1464,11 @@ dev-haskell/pem 0.1.2 0.2.4: Privacy Enhanced Mail (PEM) format reader and write
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
 dev-haskell/persistable-record 0.4.1.0 0.5.0.1 0.6.0.4: Binding between SQL database values and haskell records
 dev-haskell/persistable-types-hdbc-pg 0.0.1.4: HDBC and Relational-Record instances of PostgreSQL extended types
-dev-haskell/persistent 2.2.4.1 2.6-r1 2.7.3.1 2.9.2: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.2.4.1 2.6-r1 2.7.3.1 2.9.2 2.10.4: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1-r1 2.8.0: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.9.0: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.9.0-r1: Backend for the persistent library using postgresql
+dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
