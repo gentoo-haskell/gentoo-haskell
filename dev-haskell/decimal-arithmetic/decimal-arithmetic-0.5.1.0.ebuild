@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing files? error: module ‘Harness’ cannot be found locally
+
 RDEPEND=">=dev-haskell/binary-bits-0.5:=[profile?] <dev-haskell/binary-bits-0.6:=[profile?]
 	>=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
