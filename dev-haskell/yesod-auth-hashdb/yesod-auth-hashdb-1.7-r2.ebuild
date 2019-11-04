@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
-	>=dev-haskell/persistent-2.1:=[profile?] <dev-haskell/persistent-2.10:=[profile?]
+	>=dev-haskell/persistent-2.1:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/yesod-auth-1.4.18:=[profile?] <dev-haskell/yesod-auth-1.7:=[profile?]
 	>=dev-haskell/yesod-core-1.4.19:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?]
@@ -47,5 +47,5 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'persistent              >= 2.1        && < 2.9' 'persistent              >= 2.1        && < 2.10'
+		'persistent              >= 2.1        && < 2.9' 'persistent              >= 2.1'
 }
