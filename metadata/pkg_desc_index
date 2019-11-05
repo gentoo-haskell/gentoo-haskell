@@ -2189,7 +2189,7 @@ dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
 dev-haskell/yesod-auth 1.4.19 1.6.6 1.6.8: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.3: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
-dev-haskell/yesod-auth-hashdb 1.7-r2: Authentication plugin for Yesod
+dev-haskell/yesod-auth-hashdb 1.7.1.1: Authentication plugin for Yesod
 dev-haskell/yesod-auth-nopassword 0.1.1.1: A plugin for Yesod to provide email-only authentication
 dev-haskell/yesod-auth-oauth2 0.4.1.0 0.6.1.2: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.5.2.5 1.6.0.3-r2: The yesod helper executable
