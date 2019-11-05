@@ -30,10 +30,10 @@ dev-haskell/ac-angle 1.0: Angles in degrees and radians
 dev-haskell/ac-ppm 1.1.1: Trivial package for writing PPM images
 dev-haskell/ac-vector 2.3.2: Efficient geometric vectors and transformations
 dev-haskell/ac-vector-fancy 2.4.0: Fancy type-system stuff for AC-Vector
-dev-haskell/accelerate 0.12.2.0 0.14.0.0 0.15.1.0 1.0.0.0: An embedded language for accelerated array processing
+dev-haskell/accelerate 0.15.1.0 1.0.0.0: An embedded language for accelerated array processing
 dev-haskell/accelerate-cuda 0.15.1.1: Accelerate backend for NVIDIA GPUs
 dev-haskell/accelerate-fft 0.15.0.0 0.15.1.0: FFT using the Accelerate library
-dev-haskell/accelerate-io 0.12.1.0 0.14.0.0 0.15.1.0 1.0.0.0: Read and write Accelerate arrays in various formats
+dev-haskell/accelerate-io 0.15.1.0 1.0.0.0: Read and write Accelerate arrays in various formats
 dev-haskell/acid-state 0.14.3: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.14: Abstractions for animation
@@ -57,7 +57,7 @@ dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
 dev-haskell/alsa-mixer 0.1.2-r2 0.2.0.3 0.3.0: Bindings to the ALSA simple mixer API
 dev-haskell/alsa-pcm 0.6.1.1: Binding to the ALSA Library API (PCM audio)
 dev-haskell/alsa-seq 0.6.0.7: Binding to the ALSA Library API (MIDI sequencer)
-dev-haskell/alut 2.2.0.0 2.3.0.2 2.4.0.3: A binding for the OpenAL Utility Toolkit
+dev-haskell/alut 2.4.0.3: A binding for the OpenAL Utility Toolkit
 dev-haskell/amazonka-cloudformation 1.4.5 1.6.0: Amazon CloudFormation SDK
 dev-haskell/amazonka-cloudfront 1.4.5 1.6.0: Amazon CloudFront SDK
 dev-haskell/amazonka-cloudhsm 1.4.5 1.6.0: Amazon CloudHSM SDK
@@ -151,7 +151,7 @@ dev-haskell/base-unicode-symbols 0.2.3: Unicode alternatives for common function
 dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding for ByteStrings
 dev-haskell/base32-bytestring 0.2.1.0: Fast base32 and base32hex codec for ByteStrings
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
-dev-haskell/base64-bytestring 0.1.2.0 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
+dev-haskell/base64-bytestring 1.0.0.1: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
 dev-haskell/basement 0.0.7 0.0.8 0.0.11: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.6.1.1 0.7.0: An enhanced core prelude; a common foundation for alternate preludes
@@ -412,7 +412,7 @@ dev-haskell/css-text 0.1.2.1 0.1.3.0: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/csv-to-qif 0.3.3: A small program that will read csv files and create qif files
 dev-haskell/cubicbezier 0.6.0.6: Efficient manipulating of 2D cubic bezier curves
-dev-haskell/cuda 0.4.1.1 0.5.1.1 0.6.0.0 0.6.5.0 0.7.0.0 0.7.5.1 0.7.5.2 0.9.0.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
+dev-haskell/cuda 0.6.5.0 0.7.5.3 0.9.0.3 0.10.1.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
 dev-haskell/cufft 0.1.0.3 0.1.2.2 0.8.0.0: Haskell bindings for the CUFFT library
 dev-haskell/curl 1.3.7 1.3.8: Haskell binding to libcurl
 dev-haskell/cyclotomic 0.5.0.0 0.5.1: A subfield of the complex numbers for exact calculation
@@ -487,7 +487,7 @@ dev-haskell/dice 0.1: Simplistic D&D style dice-rolling system
 dev-haskell/dictionary-sharing 0.1.0.0: Sharing/memoization of class members
 dev-haskell/diff 0.3.4: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1 0.1.1: DiffArray
-dev-haskell/digest 0.0.1.1 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
+dev-haskell/digest 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
 dev-haskell/digestive-functors 0.8.4.0: A practical formlet library
 dev-haskell/digestive-functors-blaze 0.6.2.0: Blaze frontend for the digestive-functors library
 dev-haskell/digestive-functors-happstack 0.6.1.2: Happstack backend for the digestive-functors library
@@ -907,7 +907,7 @@ dev-haskell/hipmunk 5.2.0.17: A Haskell binding for Chipmunk
 dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.6.3: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
-dev-haskell/hjscript 0.6.1 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
+dev-haskell/hjscript 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.1.5.3 0.2.0.2: Haskell implementation of a javascript minifier
 dev-haskell/hjsonpointer 1.3.0-r1: JSON Pointer library
 dev-haskell/hjsonschema 1.7.2 1.8.0-r1: JSON Schema library
@@ -999,7 +999,7 @@ dev-haskell/hspec-wai 0.6.5 0.6.6 0.9.0: Experimental Hspec support for testing 
 dev-haskell/hspecvariant 0.1.0.1: Spec for testing properties for variant types
 dev-haskell/hspread 0.3.3-r1: A client library for the spread toolkit
 dev-haskell/hsql 1.8.2-r1: Database access from Haskell
-dev-haskell/hsql-mysql 1.8.2 1.8.3: MySQL driver for HSQL
+dev-haskell/hsql-mysql 1.8.2: MySQL driver for HSQL
 dev-haskell/hsql-odbc 1.8.2: A Haskell Interface to ODBC
 dev-haskell/hsql-postgresql 1.8.2: A Haskell Interface to PostgreSQL via the PQ library
 dev-haskell/hsql-sqlite3 1.8.2-r1: SQLite3 driver for HSQL
@@ -1009,7 +1009,7 @@ dev-haskell/hssyck 0.52 0.53: Fast, lightweight YAML loader and dumper
 dev-haskell/hstatistics 0.2.5.4: Statistics
 dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
 dev-haskell/hstringtemplate 0.8.7: StringTemplate implementation in Haskell
-dev-haskell/hsx 0.10.4 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
+dev-haskell/hsx 0.10.5-r1: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsx-jmacro 7.3.8.1: hsp+jmacro support
 dev-haskell/hsx2hs 0.14.1.5: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsyaml 0.1.2.0: Pure Haskell YAML 1.2 parser
@@ -1272,7 +1272,7 @@ dev-haskell/microlens-th 0.4.0.0 0.4.1.0 0.4.1.1 0.4.2.3 0.4.3.2: Automatic gene
 dev-haskell/microstache 1.0.1.1: Mustache templates for Haskell
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2.2: Handling of MIDI messages and files
-dev-haskell/midi-alsa 0.2 0.2.1: Convert between datatypes of the midi and the alsa packages
+dev-haskell/midi-alsa 0.2.1: Convert between datatypes of the midi and the alsa packages
 dev-haskell/mime 0.4.0.2: Working with MIME types
 dev-haskell/mime-mail 0.4.14: Compose MIME email messages
 dev-haskell/mime-string 0.4-r1: MIME implementation for String's
