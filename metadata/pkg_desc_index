@@ -1469,13 +1469,14 @@ dev-haskell/persistable-types-hdbc-pg 0.0.1.4: HDBC and Relational-Record instan
 dev-haskell/persistent 2.2.4.1 2.6-r1 2.7.3.1 2.9.2 2.10.4: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.1.4 2.5 2.5.0.1-r1 2.8.0: Backend for the persistent library using mongoDB
-dev-haskell/persistent-mysql 2.9.0: Backend for the persistent library using MySQL database server
+dev-haskell/persistent-mysql 2.9.0 2.10.2: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
-dev-haskell/persistent-sqlite 2.6.0.1 2.9.3: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.5.4 2.6.0: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-sqlite 2.6.0.1 2.9.3 2.10.5: Backend for the persistent library using sqlite3
+dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-test 2.0.3.0: Tests for Persistent
 dev-haskell/pgdl 10.9-r1 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-readable collection of words
