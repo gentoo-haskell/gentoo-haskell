@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # tests require mysql
+
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	>=dev-haskell/conduit-1.2.12:=[profile?]
