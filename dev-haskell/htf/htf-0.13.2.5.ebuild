@@ -20,6 +20,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # needs stack
+
 RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	dev-haskell/base64-bytestring:=[profile?]
 	>=dev-haskell/cpphs-1.19:=[profile?]

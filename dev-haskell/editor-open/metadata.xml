@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		You know when you run @git commit@, and an editor pops open so you can enter a
+		commit message? This is a Haskell library that does that.
+		
+		This library isn&#39;t very portable. It relies on the @$EDITOR@ environment
+		variable. The concept only exists on *nix systems.
+		
+		CHANGES
+		
+		[0.6.0.0] Support less common @$VISUAL@. @vi@ is the fallback editor now
+		instead of @nano@.
+		
+		[0.5.0.0] Now use conduits on the backend. Support @base\&lt;4.8@
+	</longdescription>
+</pkgmetadata>
