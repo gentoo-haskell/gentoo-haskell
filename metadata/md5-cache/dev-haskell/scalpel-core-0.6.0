@@ -9,5 +9,5 @@ LICENSE=Apache-2.0
 RDEPEND=dev-haskell/data-default:=[profile?] dev-haskell/fail:=[profile?] dev-haskell/pointedlist:=[profile?] dev-haskell/regex-base:=[profile?] dev-haskell/regex-tdfa:=[profile?] >=dev-haskell/tagsoup-0.12.2:=[profile?] dev-haskell/text:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.6.1:=
 SLOT=0/0.6.0
 SRC_URI=mirror://hackage/packages/archive/scalpel-core/0.6.0/scalpel-core-0.6.0.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
 _md5_=d727dcebb1cb76f412de44896556d3fa

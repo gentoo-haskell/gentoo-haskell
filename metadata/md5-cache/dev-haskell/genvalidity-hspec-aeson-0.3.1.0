@@ -9,5 +9,5 @@ LICENSE=MIT
 RDEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/genvalidity-0.5:=[profile?] >=dev-haskell/genvalidity-hspec-0.6:=[profile?] dev-haskell/hspec:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-lang/ghc-8.0.1:=
 SLOT=0/0.3.1.0
 SRC_URI=mirror://hackage/packages/archive/genvalidity-hspec-aeson/0.3.1.0/genvalidity-hspec-aeson-0.3.1.0.tar.gz
-_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	2f8b8f320bee13b71a8a54cc6d09e08a
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
 _md5_=d0f61dcec951e236482fe54f09d57a97
