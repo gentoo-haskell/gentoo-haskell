@@ -180,7 +180,7 @@ dev-haskell/binary-serialise-cbor 0.1.1.0 0.2.1.0: Yet Another Binary Serialisat
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
 dev-haskell/binary-strict 0.4.8.3: Binary deserialisation using strict ByteStrings
-dev-haskell/binary-tagged 0.2: Tagged binary serialisation
+dev-haskell/binary-tagged 0.1.5.1-r1 0.2: Tagged binary serialisation
 dev-haskell/bindings-dsl 1.0.23 1.0.25: FFI domain specific language, on top of hsc2hs
 dev-haskell/bindings-glfw 3.1.2.2 3.2.1.1: Low-level bindings to GLFW OpenGL library
 dev-haskell/bindings-gpgme 0.1.7: Project bindings-* raw interface to gpgme
