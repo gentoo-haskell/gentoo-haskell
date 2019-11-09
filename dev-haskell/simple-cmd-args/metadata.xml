@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		This is a small wrapper over optparse-applicative which
+		allows combining args parsers directly with IO commands.
+		For subcommands this can avoid type boilerplate.
+		It also provides some compact aliases for options with their Mod&#39;s.
+	</longdescription>
+</pkgmetadata>
