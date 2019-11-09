@@ -143,6 +143,7 @@ dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platfor
 dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
 dev-haskell/aws 0.14.1 0.19 0.20 0.21.1: Amazon Web Services (AWS) for Haskell
+dev-haskell/barbies 1.1.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5: base-compat with extra batteries
 dev-haskell/base-orphans 0.5.4 0.6 0.8.1: Backwards-compatible orphan instances for base
@@ -541,6 +542,7 @@ dev-haskell/edit-distance 0.2.2.1-r1: Levenshtein and restricted Damerau-Levensh
 dev-haskell/edit-distance-vector 1.0.0.4: Calculate edit distances and edit scripts between vectors
 dev-haskell/editline 0.2.1.1 0.2.1.1-r1: Bindings to the editline library (libedit)
 dev-haskell/editor-open 0.6.0.0: Open the user's $VISUAL or $EDITOR for text input
+dev-haskell/egison 3.9.1: Programming language with non-linear pattern-matching against non-free data
 dev-haskell/either 4.4.1.1 4.4.1.1-r1 5.0.1.1: An either monad transformer
 dev-haskell/either-unwrap 1.1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
@@ -1121,6 +1123,7 @@ dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 3.3.1: Obtain minified jQuery code
 dev-haskell/jsaddle 0.6.0.1-r2 0.9.5.0-r2 0.9.6.0-r1: High level interface for webkit-javascriptcore
 dev-haskell/jsaddle-warp 0.6.0.1-r2 0.9.5.0-r1 0.9.6.0: Interface for JavaScript that works with GHCJS and GHC
+dev-haskell/jsaddle-wkwebview 0.9.6.0: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/json 0.9.3: Support for serialising Haskell to and from JSON
 dev-haskell/json-ast 0.3.1: Universal JSON AST datastructure
 dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
@@ -1280,6 +1283,7 @@ dev-haskell/mime-types 0.1.0.9: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
 dev-haskell/mintty 0.1.2: A reliable way to detect the presence of a MinTTY console on Windows
 dev-haskell/misfortune 0.1.1.2: fortune-mod clone
+dev-haskell/miso 1.3.0.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
 dev-haskell/missingh 1.4.0.1 1.4.2.1: Large utility library
 dev-haskell/mmap 0.5.8 0.5.9: Memory mapped files for POSIX and Windows
@@ -1714,6 +1718,7 @@ dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.13.0.1 0.14.1 0.16.2-r1: A family of combinators for defining webservices APIs
 dev-haskell/servant-client 0.13.0.1-r1 0.14 0.16.0.1: automatical derivation of querying functions for servant webservices
 dev-haskell/servant-client-core 0.13.0.1 0.14.1 0.16-r1: Core functionality and class for client function generation for servant APIs
+dev-haskell/servant-lucid 0.9: Servant support for lucid
 dev-haskell/servant-server 0.13.0.1 0.14.1 0.16.2-r1: A family of combinators for defining webservices APIs and serving them
 dev-haskell/serversession 1.0.1: Secure, modular server-side sessions
 dev-haskell/serversession-backend-redis 1.0.2 1.0.3: Storage backend for serversession using Redis

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.5:=[profile?] dev-haskell/data-default:=[profile?] >=dev-haskell/jsaddle-0.9.4.0:=[profile?] <dev-haskell/jsaddle-0.10:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Interface for JavaScript that works with GHCJS and GHC
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/jsaddle-wkwebview
+IUSE=+include-app-delegate doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.5:=[profile?] dev-haskell/data-default:=[profile?] >=dev-haskell/jsaddle-0.9.4.0:=[profile?] <dev-haskell/jsaddle-0.10:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-7.10.1:=
+SLOT=0/0.9.6.0
+SRC_URI=mirror://hackage/packages/archive/jsaddle-wkwebview/0.9.6.0/jsaddle-wkwebview-0.9.6.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=519bec4b9252682f5923d4b5de97cf7a

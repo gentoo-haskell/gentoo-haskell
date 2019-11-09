@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/aeson:=[profile?] dev-haskell/http-api-data:=[profile?] dev-haskell/http-types:=[profile?] dev-haskell/network-uri:=[profile?] dev-haskell/servant:=[profile?] dev-haskell/text:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.8.2:= jsaddle? ( dev-haskell/jsaddle:=[profile?] dev-haskell/scientific:=[profile?] dev-haskell/unordered-containers:=[profile?] ios? ( dev-haskell/jsaddle-wkwebview:=[profile?] ) !ios? ( dev-haskell/file-embed:=[profile?] dev-haskell/jsaddle-warp:=[profile?] ) ) !jsaddle? ( dev-haskell/lucid:=[profile?] dev-haskell/servant-lucid:=[profile?] ) >=dev-haskell/cabal-1.22 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=A tasty Haskell front-end framework
+EAPI=7
+HOMEPAGE=https://github.com/dmjio/miso
+IUSE=ios jsaddle tests doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/http-api-data:=[profile?] dev-haskell/http-types:=[profile?] dev-haskell/network-uri:=[profile?] dev-haskell/servant:=[profile?] dev-haskell/text:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.8.2:= jsaddle? ( dev-haskell/jsaddle:=[profile?] dev-haskell/scientific:=[profile?] dev-haskell/unordered-containers:=[profile?] ios? ( dev-haskell/jsaddle-wkwebview:=[profile?] ) !ios? ( dev-haskell/file-embed:=[profile?] dev-haskell/jsaddle-warp:=[profile?] ) ) !jsaddle? ( dev-haskell/lucid:=[profile?] dev-haskell/servant-lucid:=[profile?] )
+SLOT=0/1.3.0.0
+SRC_URI=mirror://hackage/packages/archive/miso/1.3.0.0/miso-1.3.0.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=d763848df8c18cb3a09d438f0d91f4ac
