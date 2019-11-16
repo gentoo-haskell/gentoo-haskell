@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Tools for working with derived 'Show' instances and generic inspection of values"
-HOMEPAGE="http://wiki.github.com/yav/pretty-show"
+HOMEPAGE="https://wiki.github.com/yav/pretty-show"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
