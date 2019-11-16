@@ -53,7 +53,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-lang/ghc-8.2.1:=
 	ffi? ( <dev-haskell/libffi-0.2:=[profile?] )
 	gmp? ( <dev-haskell/libffi-0.2:=[profile?]
-		dev-libs/gmp )
+		dev-libs/gmp:0= )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2 <dev-haskell/cabal-2.5
