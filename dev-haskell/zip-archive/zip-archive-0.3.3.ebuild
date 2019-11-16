@@ -14,7 +14,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
 IUSE="executable"
 
 RDEPEND=">=dev-haskell/digest-0.0.0.1:=[profile?]
