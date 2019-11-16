@@ -5,8 +5,10 @@
 language: python
 python:
     - pypy
+# shard repoman call by arch.
 env:
-    - PORTAGE_VER="2.3.76"
+    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=amd64'
+    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x86'
 before_install:
     - sudo apt-get -qq update
     - pip install lxml pyyaml
@@ -25,9 +27,7 @@ before_script:
     - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /var/cache/distfiles/metadata.dtd
     - ln -s $TRAVIS_BUILD_DIR/portage-portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/repos.conf
     - ln -s /var/db/repos/gentoo/profiles/default/linux/amd64/17.0 /etc/portage/make.profile
-    - SIZE=$(stat -c %s .travis.yml.upstream)
-    - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
     - cd travis-overlay
 script:
-    - ./../spinner.sh "python ../portage-portage-${PORTAGE_VER}/repoman/bin/repoman full"
+    - ./../spinner.sh "python ../portage-portage-${PORTAGE_VER}/repoman/bin/repoman full ${REPOMAN_FLAGS}"
 # You can append own scripts after this line
