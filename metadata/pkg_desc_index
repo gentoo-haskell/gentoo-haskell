@@ -318,7 +318,7 @@ dev-haskell/cli 0.1.2: Command Line Interface
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.7.2 0.8: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/cmark 0.5.6 0.5.6.3 0.6: Fast, accurate CommonMark (Markdown) parser and renderer
-dev-haskell/cmark-gfm 0.1.8 0.2.0: Fast, accurate GitHub Flavored Markdown parser and renderer
+dev-haskell/cmark-gfm 0.1.8 0.2.1: Fast, accurate GitHub Flavored Markdown parser and renderer
 dev-haskell/cmdargs 0.10.18 0.10.20: Command line argument processing
 dev-haskell/cmdlib 0.3.6: a library for command line parsing & online help
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
@@ -1248,7 +1248,7 @@ dev-haskell/markdown 0.1.17.1 0.1.17.4: Convert Markdown to HTML, with XSS prote
 dev-haskell/markdown-unlit 0.4.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
 dev-haskell/massiv 0.2.8.0 0.3.5.0 0.4.1.0: Massiv is an Array Library
-dev-haskell/massiv-io 0.1.6.0: Import/export of Image files into massiv Arrays
+dev-haskell/massiv-io 0.1.6.0 0.1.8.0: Import/export of Image files into massiv Arrays
 dev-haskell/math-functions 0.2.1.0 0.3.3.0: Special functions and Chebyshev polynomials
 dev-haskell/matrices 0.5.0: native matrix based on vector
 dev-haskell/matrix 0.3.5.0 0.3.6.1: A native implementation of matrix operations

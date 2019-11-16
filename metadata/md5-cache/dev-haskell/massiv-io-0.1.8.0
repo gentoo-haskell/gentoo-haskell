@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/data-default-class:=[profile?] >=dev-haskell/juicypixels-3.2.7:=[profile?] >=dev-haskell/massiv-0.1.1:=[profile?] dev-haskell/netpbm:=[profile?] >=dev-haskell/vector-0.10:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Import/export of Image files into massiv Arrays
+EAPI=7
+HOMEPAGE=https://github.com/lehins/massiv
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/data-default-class:=[profile?] >=dev-haskell/juicypixels-3.2.7:=[profile?] >=dev-haskell/massiv-0.1.1:=[profile?] dev-haskell/netpbm:=[profile?] >=dev-haskell/vector-0.10:=[profile?] >=dev-lang/ghc-7.10.1:=
+SLOT=0/0.1.8.0
+SRC_URI=mirror://hackage/packages/archive/massiv-io/0.1.8.0/massiv-io-0.1.8.0.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=d0c9b5e9ac5db2f4a7fb0187bd3eb8ea
