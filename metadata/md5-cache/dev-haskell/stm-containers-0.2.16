@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=<dev-haskell/base-prelude-2:=[profile?] >=dev-haskell/focus-0.1.2:=[profile?] <dev-haskell/focus-0.2:=[profile?] <dev-haskell/hashable-2:=[profile?] >=dev-haskell/list-t-0.2:=[profile?] <dev-haskell/list-t-2:=[profile?] >=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.7:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/free-4.6 <dev-haskell/free-5 >=dev-haskell/htf-0.13 <dev-haskell/htf-0.14 >=dev-haskell/loch-th-0.2 <dev-haskell/loch-th-0.3 >=dev-haskell/mtl-2 <dev-haskell/mtl-3 <dev-haskell/mtl-prelude-3 >=dev-haskell/placeholders-0.1 <dev-haskell/placeholders-0.2 >=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-3 >=dev-haskell/unordered-containers-0.2 <dev-haskell/unordered-containers-0.3 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Containers for STM
+EAPI=7
+HOMEPAGE=https://github.com/nikita-volkov/stm-containers
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=<dev-haskell/base-prelude-2:=[profile?] >=dev-haskell/focus-0.1.2:=[profile?] <dev-haskell/focus-0.2:=[profile?] <dev-haskell/hashable-2:=[profile?] >=dev-haskell/list-t-0.2:=[profile?] <dev-haskell/list-t-2:=[profile?] >=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.7:=[profile?] >=dev-lang/ghc-7.8.2:=
+SLOT=0/0.2.16
+SRC_URI=mirror://hackage/packages/archive/stm-containers/0.2.16/stm-containers-0.2.16.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=92768eccccec7643a32316ac4cefb413
