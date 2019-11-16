@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="profiling">Build with profiling and -auto-all</flag>
+	</use>
 	<longdescription>
 		I get so annoyed when I go to use dmenu, and the three
 		programs I use every day aren't at the beginning of the
