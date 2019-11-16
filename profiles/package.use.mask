@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (16 Nov 2019)
+# Needs masked dev-haskell/slave-thread
+dev-haskell/hedis test
+
 # Mark Wright <gienah@gentoo.org> (11 Oct 2018)
 # Follow ::haskell package mask of >=dev-haskell/quickcheck-2.12
 >=dev-haskell/text-show-3.7.5 test
