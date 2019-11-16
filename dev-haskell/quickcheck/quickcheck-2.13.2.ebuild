@@ -18,7 +18,7 @@ SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux"
 IUSE="+template-haskell"
 
 RDEPEND=">=dev-haskell/random-1.0.1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]

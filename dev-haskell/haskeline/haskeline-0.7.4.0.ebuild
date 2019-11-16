@@ -15,7 +15,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 # keep in sync with ghc-8.2.1
-#KEYWORDS="~amd64 ~x86 ~x86-fbsd ~x86-macos"
+#KEYWORDS="~amd64 ~x86 ~x86-macos"
 IUSE="+terminfo"
 
 RDEPEND=">=dev-lang/ghc-7.8.2:=
