@@ -4,11 +4,11 @@ DESCRIPTION=Primitive memory-related operations
 EAPI=7
 HOMEPAGE=https://github.com/haskell/primitive
 IUSE=doc hscolour hoogle profile
-KEYWORDS=~amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~x86-macos ~x86-solaris
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~x86-macos ~x86-solaris
 LICENSE=BSD
 RDEPEND=>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-lang/ghc-7.8.2:=
 RESTRICT=test
 SLOT=0/0.7.0.0
 SRC_URI=mirror://hackage/packages/archive/primitive/0.7.0.0/primitive-0.7.0.0.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=835f0187c79b05b941daa58b46484244
+_md5_=fcf9184d480562bef8a5d6ff0e89a23f
