@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -66,7 +66,7 @@ RDEPEND+="
 		emacs? ( app-emacs/haskell-mode
 			virtual/emacs )
 "
-PDEPEND="stdlib? ( =sci-mathematics/agda-stdlib-${MY_GENTOO_AGDA_STDLIB_V} )"
+PDEPEND="stdlib? ( ~sci-mathematics/agda-stdlib-${MY_GENTOO_AGDA_STDLIB_V} )"
 DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-1.22.2.0
