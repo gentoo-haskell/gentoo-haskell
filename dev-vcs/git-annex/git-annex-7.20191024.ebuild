@@ -16,7 +16,7 @@ SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="+assistant benchmark +dbus doc debuglocks +magicmime networkbsd +pairing +s3 +torrentparser +webapp +webdav"
+IUSE="+assistant benchmark +dbus doc debuglocks +magicmime +pairing +s3 +torrentparser +webapp +webdav"
 RESTRICT="test"
 
 RDEPEND="dev-haskell/aeson:=
@@ -84,9 +84,7 @@ RDEPEND="dev-haskell/aeson:=
 	dbus? ( >=dev-haskell/dbus-0.10.7:=
 		>=dev-haskell/fdo-notify-0.3:= )
 	magicmime? ( dev-haskell/magic:= )
-	networkbsd? ( >=dev-haskell/network-3.0.0.0:=
-			dev-haskell/network-bsd:= )
-	!networkbsd? ( >=dev-haskell/network-2.6.3.0:= <dev-haskell/network-3.0.0.0:= )
+	>=dev-haskell/network-2.6.3.0:= <dev-haskell/network-3.0.0.0:=
 	pairing? ( dev-haskell/network-info:=
 			dev-haskell/network-multicast:= )
 	s3? ( >=dev-haskell/aws-0.20:= )
@@ -129,7 +127,7 @@ src_configure() {
 		$(cabal_flag dbus dbus) \
 		$(cabal_flag debuglocks debuglocks) \
 		$(cabal_flag magicmime magicmime) \
-		$(cabal_flag networkbsd networkbsd) \
+		--flag=-networkbsd \
 		$(cabal_flag pairing pairing) \
 		--flag=-production \
 		$(cabal_flag s3 s3) \
