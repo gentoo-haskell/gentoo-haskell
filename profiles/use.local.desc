@@ -37,7 +37,6 @@ dev-haskell/abstract-deque:usecas - Enable the reference implementation to use h
 dev-haskell/accelerate:bounds-checks - Enable bounds checking.
 dev-haskell/accelerate:ekg - Enable hooking mechanisp for monitoring via dev-haskell/ekg.
 dev-haskell/accelerate:internal-checks - Enable internal consistency checks.
-dev-haskell/accelerate:llvm - Enable the LLVM backend (sequential).
 dev-haskell/accelerate:more-pp - Enable HTML and Graphviz pretty printing.
 dev-haskell/accelerate:unsafe-checks - Enable bounds checking in unsafe operations.
 dev-haskell/accelerate-cuda:bounds-checks - Enable bounds checking.
@@ -290,9 +289,6 @@ dev-haskell/lens:j - Attempt a parallel build with GHC 7.8.
 dev-haskell/lens:old-inline-pragmas - Some 7.6.1-rc1 users report their TH still uses old style inline pragmas. This lets them turn on inlining.
 dev-haskell/lens:safe - Disallow unsafeCoerce
 dev-haskell/lens:test-doctests - Build and run the doctests test-suite.
-dev-haskell/lens:test-hlint - You can disable the hlint test suite with -f-test-hlint
-dev-haskell/lens:test-hunit - You can disable the hunit test suite with -f-test-hunit
-dev-haskell/lens:test-properties - Build the properties test if we're building tests
 dev-haskell/lens:test-templates - Build the test templates if we're building tests
 dev-haskell/lens:trustworthy - Assert that we are trustworthy when we can
 dev-haskell/libssh2:example-client - build example client
@@ -431,7 +427,6 @@ dev-haskell/splitmix:optimised-mixer - Use JavaScript for mix32
 dev-haskell/splitmix:random - Providen RandomGen SMGen instance
 dev-haskell/sr-extra:network-uri - use network-uri package
 dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
-dev-haskell/stack:disable-git-info - Disable compile-time inclusion of current git info.
 dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
@@ -461,7 +456,6 @@ dev-haskell/uri-encode:tools - Build executables.
 dev-haskell/urlencoded:network-uri - Get Network.URI from the network-uri package
 dev-haskell/uuagc:with-loag - Use dev-haskell/minisat external SAT-solver to schedule all Linear Ordered AGs.
 dev-haskell/validation:small_base - Choose the new, split-up base package.
-dev-haskell/vcsgui:gtk3 - Use Gtk3.
 dev-haskell/vector:boundschecks - Enable bounds checking
 dev-haskell/vector:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty
 dev-haskell/vector:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty

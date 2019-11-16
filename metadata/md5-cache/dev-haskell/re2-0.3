@@ -1,13 +1,13 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.8.2:= sys-devel/gcc[cxx] dev-libs/re2 virtual/libc >=dev-haskell/cabal-1.18.1.3 test? ( dev-haskell/hunit ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.8.2:= dev-libs/re2 >=dev-haskell/cabal-1.18.1.3 test? ( dev-haskell/hunit ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Bindings to the re2 regular expression library
 EAPI=7
 HOMEPAGE=https://github.com/rblaze/haskell-re2#readme
 IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
-RDEPEND=dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.8.2:= sys-devel/gcc[cxx] dev-libs/re2 virtual/libc
+RDEPEND=dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.8.2:= dev-libs/re2
 SLOT=0/0.3
 SRC_URI=mirror://hackage/packages/archive/re2/0.3/re2-0.3.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=6a2bd98374e87b92441b9870b02f3793
+_md5_=61780672c4c3dface6b06ef55f31bf15
