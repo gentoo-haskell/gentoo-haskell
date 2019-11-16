@@ -37,7 +37,6 @@
 		<flag name="bounds-checks">Enable bounds checking.</flag>
 		<flag name="ekg">Enable hooking mechanisp for monitoring via <pkg>dev-haskell/ekg</pkg>.</flag>
 		<flag name="internal-checks">Enable internal consistency checks.</flag>
-		<flag name="llvm">Enable the LLVM backend (sequential).</flag>
 		<flag name="more-pp">Enable HTML and Graphviz pretty printing.</flag>
 		<flag name="unsafe-checks">Enable bounds checking in unsafe operations.</flag>
 	</use>
