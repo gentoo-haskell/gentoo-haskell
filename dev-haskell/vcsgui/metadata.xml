@@ -11,7 +11,4 @@
 		Uses vcswrapper to acces the scm functions.
 		Currently git and SVN are supported.
 	</longdescription>
-	<use>
-		<flag name="gtk3">Use Gtk3.</flag>
-	</use>
 </pkgmetadata>

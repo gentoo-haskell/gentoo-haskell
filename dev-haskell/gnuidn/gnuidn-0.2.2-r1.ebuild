@@ -21,7 +21,7 @@ RESTRICT=test
 
 RDEPEND="dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	net-dns/libidn
+	net-dns/libidn:0=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/c2hs
