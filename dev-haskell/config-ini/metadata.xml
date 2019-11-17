@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="build-examples">Build example applications</flag>
 	</use>
 	<longdescription>
 		The @config-ini@ library is a small monadic language
