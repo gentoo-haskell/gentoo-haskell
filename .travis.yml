@@ -5,44 +5,46 @@
 language: python
 
 # shard repoman call by arch. Generated as:
-# $    cat $(portageq get_repo_path / gentoo)/profiles/arch.list | egrep -v '^#|^$' | while read arch; do echo "    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=${arch}'"; done
+# $    cat $(portageq get_repo_path / gentoo)/profiles/arch.list | egrep -v '^#|^$' | while read arch; do echo "    - TOOL=repoman REPOMAN_FLAGS='--include-arches=${arch}'"; done
 env:
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=alpha'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=amd64'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=arm'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=arm64'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=hppa'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=ia64'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=m68k'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=mips'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=ppc'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=ppc64'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=riscv'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=s390'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=sh'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=sparc'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x86'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=ppc-aix'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=amd64-linux'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=arm-linux'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=arm64-linux'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=ppc64-linux'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x86-linux'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=ppc-macos'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x86-macos'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x64-macos'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=m68k-mint'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=sparc-solaris'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=sparc64-solaris'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x64-solaris'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x86-solaris'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x86-winnt'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x64-cygwin'
-    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=x86-cygwin'
+    - TOOL=pkgcheck
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=alpha'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=amd64'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm64'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=hppa'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ia64'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=m68k'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=mips'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc64'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=riscv'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=s390'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sh'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sparc'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc-aix'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=amd64-linux'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm-linux'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm64-linux'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc64-linux'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-linux'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc-macos'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-macos'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x64-macos'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=m68k-mint'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sparc-solaris'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sparc64-solaris'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x64-solaris'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-solaris'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-winnt'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x64-cygwin'
+    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-cygwin'
 before_install:
-    - sudo apt-get -qq update
     - pip install lxml pyyaml
+    - pip install pkgcheck
 before_script:
+    - PORTAGE_VER='2.3.76'
     - sudo chmod a+rwX /etc/passwd /etc/group /etc /var /var/cache
     - mkdir -p travis-overlay /etc/portage /var/cache/distfiles /var/db/repos/gentoo
     - mv !(travis-overlay) travis-overlay/
@@ -59,5 +61,5 @@ before_script:
     - ln -s /var/db/repos/gentoo/profiles/default/linux/amd64/17.0 /etc/portage/make.profile
     - cd travis-overlay
 script:
-    - ./../spinner.sh "python ../portage-portage-${PORTAGE_VER}/repoman/bin/repoman full ${REPOMAN_FLAGS}"
-# You can append own scripts after this line
+    - if test "${TOOL}" = pkgcheck; then ./../spinner.sh "pkgcheck scan -r ."; else true; fi
+    - if test "${TOOL}" = repoman;  then ./../spinner.sh "python ../portage-portage-${PORTAGE_VER}/repoman/bin/repoman full ${REPOMAN_FLAGS}"; else true; fi
