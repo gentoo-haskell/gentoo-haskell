@@ -61,5 +61,5 @@ before_script:
     - ln -s /var/db/repos/gentoo/profiles/default/linux/amd64/17.0 /etc/portage/make.profile
     - cd travis-overlay
 script:
-    - if test "${TOOL}" = pkgcheck; then ./../spinner.sh "pkgcheck scan -r ."; else true; fi
+    - if test "${TOOL}" = pkgcheck; then ./../spinner.sh "pkgcheck scan -r . --jobs=$(nproc)"; else true; fi
     - if test "${TOOL}" = repoman;  then ./../spinner.sh "python ../portage-portage-${PORTAGE_VER}/repoman/bin/repoman full ${REPOMAN_FLAGS}"; else true; fi
