@@ -3,8 +3,6 @@
 # See https://github.com/mrueg/repoman-travis
 #
 language: python
-python:
-    - pypy
 
 # shard repoman call by arch. Generated as:
 # $    cat $(portageq get_repo_path / gentoo)/profiles/arch.list | egrep -v '^#|^$' | while read arch; do echo "    - PORTAGE_VER='2.3.76' REPOMAN_FLAGS='--include-arches=${arch}'"; done
