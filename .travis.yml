@@ -44,22 +44,30 @@ before_install:
     - pip install lxml pyyaml
     - pip install pkgcheck
 before_script:
-    - PORTAGE_VER='2.3.76'
+    - THIS_REPO=haskell
+    - PORTAGE_VER='2.3.79'
+    - SPINNER=/tmp/spinner.sh
+    - PORTAGE_DIR="/tmp/portage-portage-${PORTAGE_VER}"
+    - echo "Setting up basic directories:"
     - sudo chmod a+rwX /etc/passwd /etc/group /etc /var /var/cache
-    - mkdir -p travis-overlay /etc/portage /var/cache/distfiles /var/db/repos/gentoo
-    - mv !(travis-overlay) travis-overlay/
-    - mv .git travis-overlay/
-    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
-    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh"
-    - wget -qO - "https://github.com/gentoo/portage/archive/portage-${PORTAGE_VER}.tar.gz" | tar xz
-    - wget -qO - "https://github.com/gentoo-mirror/gentoo/archive/master.tar.gz" | tar xz -C /var/db/repos/gentoo --strip-components=1
-    - chmod a+rwx spinner.sh
+    - mkdir -p /etc/portage/repos.conf /var/cache/distfiles /var/db/repos/gentoo
+    - printf "[${THIS_REPO}]\nlocation = $TRAVIS_BUILD_DIR" > /etc/portage/repos.conf/haskell
+    - echo "Installing portage:"
+    - wget -qO - "https://github.com/gentoo/portage/archive/portage-${PORTAGE_VER}.tar.gz" | tar xz -C /tmp
     - echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
     - echo "portage::250:portage,travis" >> /etc/group
-    - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /var/cache/distfiles/metadata.dtd
-    - ln -s $TRAVIS_BUILD_DIR/portage-portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/repos.conf
+    - printf "[gentoo]\nlocation = /var/db/repos/gentoo" > /etc/portage/repos.conf/gentoo
+    - printf "[DEFAULT]\nmain-repo = gentoo" > /etc/portage/repos.conf/default
+    - echo "Unpacking ::gentoo:"
+    - wget -qO - "https://github.com/gentoo-mirror/gentoo/archive/master.tar.gz" | tar xz -C /var/db/repos/gentoo --strip-components=1
     - ln -s /var/db/repos/gentoo/profiles/default/linux/amd64/17.0 /etc/portage/make.profile
-    - cd travis-overlay
+    - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /var/cache/distfiles/metadata.dtd
+    - echo "Grabbing fidget spinner:"
+    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh" -O "${SPINNER}"
+    - chmod a+rwx "${SPINNER}"
+    - echo "Generating metadata cache:"
+    - '"${SPINNER}" "${PORTAGE_DIR}/bin/egencache --repo=${THIS_REPO} --update --jobs=$(nproc)"'
+    - "${PORTAGE_DIR}/bin/emerge --info"
 script:
-    - if test "${TOOL}" = pkgcheck; then ./../spinner.sh "pkgcheck scan -r . --jobs=$(nproc)"; else true; fi
-    - if test "${TOOL}" = repoman;  then ./../spinner.sh "python ../portage-portage-${PORTAGE_VER}/repoman/bin/repoman full ${REPOMAN_FLAGS}"; else true; fi
+    - if test "${TOOL}" = pkgcheck; then "${SPINNER}" "pkgcheck scan --repo=${THIS_REPO} --jobs=$(nproc)"; else true; fi
+    - if test "${TOOL}" = repoman;  then "${SPINNER}" "${PORTAGE_DIR}/repoman/bin/repoman full ${REPOMAN_FLAGS}"; else true; fi
