@@ -5,6 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+	</use>
 	<longdescription>
 		'RDF for Haskell' is a library for working with RDF in Haskell.
 		At present it includes parsers and serializers for RDF in the N-Triples
@@ -12,7 +14,4 @@
 		for triples  containing a particular subject, predicate, or object, or
 		selecting triples that satisfy an arbitrary predicate function.
 	</longdescription>
-	<use>
-		<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
-	</use>
 </pkgmetadata>
