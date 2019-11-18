@@ -15,9 +15,8 @@
 		<flag name="testing">bake-in the self-checks</flag>
 		<flag name="hint">Include hint (haskell interpreter) in yi</flag>
 		<flag name="emacs">Include the emacs keymap</flag>
-                <flag name="gtk">Include the pango (GUI) frontend, this flag is\
- ignored if compiling with ghc >= 8.2</flag>
-                <flag name="vim">Include the vim keymap</flag>
-                <flag name="vty">Include the vty (CLI) frontend</flag>
+		<flag name="gtk">Include the pango (GUI) frontend, this flag is ignored if compiling with ghc >= 8.2</flag>
+		<flag name="vim">Include the vim keymap</flag>
+		<flag name="vty">Include the vty (CLI) frontend</flag>
 	</use>
 </pkgmetadata>
