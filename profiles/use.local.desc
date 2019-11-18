@@ -13,7 +13,7 @@ app-editors/leksah-server:network-uri - Get Network.URI from the network-uri pac
 app-editors/leksah-server:threaded - Enable multithreaded runtime.
 app-editors/yi:emacs - Include the emacs keymap
 app-editors/yi:eventlog - Runtime binary will be compiled with eventlog and RTS options enabled.
-app-editors/yi:gtk - Include the pango (GUI) frontend, this flag is\ ignored if compiling with ghc >= 8.2
+app-editors/yi:gtk - Include the pango (GUI) frontend, this flag is ignored if compiling with ghc >= 8.2
 app-editors/yi:hint - Include hint (haskell interpreter) in yi
 app-editors/yi:profiling - Runtime binary will be compiled with profiling and RTS options enabled.
 app-editors/yi:testing - bake-in the self-checks
@@ -104,7 +104,6 @@ dev-haskell/comonad:contravariant - You can disable the use of the `contravarian
 dev-haskell/comonad:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
 dev-haskell/comonad:test-doctests - Run the doctests test suite
 dev-haskell/concurrent-supply:test-properties - 
-dev-haskell/config-ini:build-examples - Build example applications
 dev-haskell/configfile:buildtests - Build the executable to run unit tests.
 dev-haskell/contravariant:safe - Get Safe guarantees rather than merely Trustworthy, but with worse constant factors.
 dev-haskell/contravariant:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -139,7 +138,6 @@ dev-haskell/dotenv:dev - Turn on development settings.
 dev-haskell/encoding:systemencoding - Provide the getSystemEncoding action to query the locale.
 dev-haskell/entropy:halvm - Build for the HaLVM.
 dev-haskell/ether:disable-tup-instances - Disable auto-generated HasLens instances for tuples.
-dev-haskell/extensible-effects:force-openunion-51 - Force usage of OpenUnion51.hs implementation
 dev-haskell/fastcgi:small_base - Choose the new smaller, split-up base package.
 dev-haskell/ffmpeg-light:builddemo - Build demo executable
 dev-haskell/ffmpeg-light:buildrasterdemo - Build Rasterific demo executable
@@ -222,7 +220,6 @@ dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the syst
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour.
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
-dev-haskell/hmatrix-gsl-stats:mkl - Link with Intel's MKL optimized libraries.
 dev-haskell/hnix:parsec - use dev-haskell/parsec instead of dev-haskell/trifecta
 dev-haskell/hoodle:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:dyre - Support dynamic reconfiguration
@@ -370,7 +367,6 @@ dev-haskell/quickcheck-classes:semirings - You can disable the use of the `semir
 dev-haskell/quickcheck-classes:unary-laws - Include infrastructure for testing class laws of unary type constructors.
 dev-haskell/quickcheck-classes:vector - You can disable the use of the `vector` package using `-f-vector`. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
-dev-haskell/rdf4h:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/reflection:template-haskell - Enable template haskell.
@@ -399,7 +395,6 @@ dev-haskell/semigroups:transformers - provide instances for transformers package
 dev-haskell/semirings:containers - You can disable the use of the `containers` package using `-f-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semirings:hashable - You can disable the use of the `hashable` package using `-f-hashable`. Disabling this may be useful for accelerating builds in sandboxes for expert users. Note: `-f-hashable` implies `-f-unordered-containers`, as we are necessarily not able to supply those instances as well.
 dev-haskell/semirings:unordered-containers - You can disable the use of the `unordered-containers` package using `-f-unordered-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semirings:vector - You can disable the use of the `vector` package using `-f-vector`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
 dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
