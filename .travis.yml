@@ -4,42 +4,88 @@
 #
 language: python
 
-# shard repoman call by arch. Generated as:
-# $    cat $(portageq get_repo_path / gentoo)/profiles/arch.list | egrep -v '^#|^$' | while read arch; do echo "    - TOOL=repoman REPOMAN_FLAGS='--include-arches=${arch}'"; done
+# shard repoman call by profile. Generated as:
+# $    cat $(portageq get_repo_path / gentoo)/profiles/profiles.desc | egrep -v '^#|^$' | awk '$3 == "stable" {print "    - TOOL=repoman REPOMAN_FLAGS=--include-profiles="$2}'
+
 env:
     - TOOL=pkgcheck
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=alpha'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=amd64'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm64'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=hppa'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ia64'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=m68k'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=mips'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc64'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=riscv'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=s390'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sh'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sparc'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc-aix'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=amd64-linux'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm-linux'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=arm64-linux'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc64-linux'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-linux'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=ppc-macos'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-macos'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x64-macos'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=m68k-mint'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sparc-solaris'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=sparc64-solaris'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x64-solaris'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-solaris'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-winnt'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x64-cygwin'
-    - TOOL=repoman REPOMAN_FLAGS='--include-arches=x86-cygwin'
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/alpha/17.0
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/alpha/17.0/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/alpha/17.0/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/alpha/17.0/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/alpha/17.0/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/hardened
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/hardened/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/desktop/plasma
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/desktop/plasma/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/no-multilib
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/no-multilib/hardened
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/no-multilib/hardened/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.0/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/hardened
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/hardened/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/desktop/plasma
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/desktop/plasma/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/no-multilib
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/no-multilib/hardened
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/no-multilib/hardened/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/amd64/17.1/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm/17.0
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/desktop/plasma
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/desktop/plasma/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/desktop/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/arm64/17.0/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/ia64/17.0
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/ia64/17.0/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/ia64/17.0/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/ia64/17.0/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/ia64/17.0/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc32/17.0
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc32/17.0/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc32/17.0/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc32/17.0/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc32/17.0/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/32bit-userland
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/32bit-userland/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/32bit-userland/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/32bit-userland/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/32bit-userland/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/64bit-userland
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/64bit-userland/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/64bit-userland/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/64bit-userland/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/64bit-userland/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/64bit-userland/little-endian
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/powerpc/ppc64/17.0/64bit-userland/little-endian/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/riscv/17.0/rv64gc
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/hardened
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/hardened/selinux
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/desktop
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/desktop/gnome
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/desktop/gnome/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/desktop/plasma
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/desktop/plasma/systemd
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/developer
+    - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/systemd
 before_install:
     - pip install lxml pyyaml
     - pip install pkgcheck
@@ -68,6 +114,9 @@ before_script:
     - echo "Generating metadata cache:"
     - '"${SPINNER}" "${PORTAGE_DIR}/bin/egencache --repo=${THIS_REPO} --update --jobs=$(nproc)"'
     - "${PORTAGE_DIR}/bin/emerge --info"
+    - echo "Applying portage patches:"
+    - wget https://github.com/gentoo/portage/commit/e9bb1e9681685f4e4d7174f51751356fd3f67d0c.patch -O "${PORTAGE_DIR}"/profiles.patch
+    - patch -p1 -d "${PORTAGE_DIR}" <"${PORTAGE_DIR}"/profiles.patch
 script:
     - if test "${TOOL}" = pkgcheck; then "${SPINNER}" "pkgcheck scan --repo=${THIS_REPO} --jobs=$(nproc)"; else true; fi
     - if test "${TOOL}" = repoman;  then "${SPINNER}" "${PORTAGE_DIR}/repoman/bin/repoman full ${REPOMAN_FLAGS}"; else true; fi
