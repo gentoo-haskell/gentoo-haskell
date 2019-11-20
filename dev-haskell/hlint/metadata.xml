@@ -11,5 +11,6 @@
 	<use>
 		<flag name="gpl">Use GPL libraries, specifically hscolour.</flag>
 		<flag name="threaded">Build with support for multithreaded execution</flag>
+		<flag name="ghc-lib">Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported</flag>
 	</use>
 </pkgmetadata>
