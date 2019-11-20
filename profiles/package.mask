@@ -1,3 +1,11 @@
+# P.B. Lecavalier <pbl.ltx@gmail.com> (20 Nov 2019)
+# Packages required for stack-2.1.3.1, which is masked,
+# and in turn require masked packages:
+# pantry needs >=dev-haskell/hpack-0.31.2
+# rio-prettyprint needs >=dev-haskell/ansi-terminal-0.9
+dev-haskell/pantry
+dev-haskell/rio-prettyprint
+
 # Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
 # This package revision contains patches enabling cabal-3
 # support, but it is not backwards compatible. Users
