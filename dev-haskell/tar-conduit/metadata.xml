@@ -5,10 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		See &lt;http://documentup.com/feuerbach/tasty&gt;
-	</longdescription>
 	<use>
-		<flag name="clock">Depend on the clock package for more accurate time measurement</flag>
 	</use>
+	<longdescription>
+		Please see README.md. This is just filler to avoid warnings.
+	</longdescription>
 </pkgmetadata>

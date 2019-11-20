@@ -40,3 +40,11 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ansi-terminal                   >= 0.6        && < 0.10' 'ansi-terminal                   >= 0.6        && < 0.11'
+}
+
