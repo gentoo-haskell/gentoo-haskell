@@ -953,7 +953,7 @@ dev-haskell/hourglass 0.2.12: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hp2any-graph 0.5.4.2: Real-time heap graphing utility and profile stream server
 dev-haskell/hp2any-manager 0.4.6: A utility to visualise and compare heap profiles
-dev-haskell/hpack 0.18.1 0.31.1 0.33.0: An alternative format for Haskell packages
+dev-haskell/hpack 0.18.1 0.31.2 0.33.0: An alternative format for Haskell packages
 dev-haskell/hpath 0.9.2: Support for well-typed paths
 dev-haskell/hpc-coveralls 1.0.10: Coveralls.io support for Haskell
 dev-haskell/hpdf 1.4.10: Generation of PDF documents
