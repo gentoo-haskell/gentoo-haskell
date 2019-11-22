@@ -1,8 +1,6 @@
-diff --git a/compiler/ghc.mk b/compiler/ghc.mk
-index 9bc6b3f278..a5c623f26b 100644
 --- a/compiler/ghc.mk
 +++ b/compiler/ghc.mk
-@@ -382,6 +382,12 @@ compiler/stage1/build/Parser_HC_OPTS += -O0 -fno-ignore-interface-pragmas -fcmm-
+@@ -382,6 +382,13 @@ compiler/stage1/build/Parser_HC_OPTS += -O0 -fno-ignore-interface-pragmas -fcmm-
  compiler/stage2/build/Parser_HC_OPTS += -O0 -fno-ignore-interface-pragmas -fcmm-sink
  compiler/stage3/build/Parser_HC_OPTS += -O0 -fno-ignore-interface-pragmas -fcmm-sink
  
@@ -10,6 +8,7 @@ index 9bc6b3f278..a5c623f26b 100644
 +ifeq "$(GhcUnregisterised)" "NO"
 +else
 +compiler/hsSyn/HsInstances_HC_OPTS   += -O0
++compiler/GHC/Hs/Instances_HC_OPTS    += -O0
 +endif
 +
  ifeq "$(GhcProfiled)" "YES"
