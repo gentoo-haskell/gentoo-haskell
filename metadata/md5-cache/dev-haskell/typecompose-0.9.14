@@ -8,6 +8,6 @@ KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/base-orphans-0.5:=[profile?] >=dev-lang/ghc-8.0.1:=
 SLOT=0/0.9.14
-SRC_URI=mirror://hackage/packages/archive/TypeCompose/0.9.14/TypeCompose-0.9.14.tar.gz
+SRC_URI=https://hackage.haskell.org/package/TypeCompose-0.9.14/TypeCompose-0.9.14.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=cbf0b8ed229b93e421dd6bc2aa3e9454
+_md5_=43c61ec373f32573027859ab29ee59e2

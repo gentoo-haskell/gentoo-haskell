@@ -9,6 +9,6 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/contravariant-1.2:=[profile?] <dev-haskell/contravariant-1.6:=[profile?] >=dev-haskell/profunctors-5.0:=[profile?] >=dev-haskell/semigroups-0.18.2:=[profile?] <dev-haskell/semigroups-0.20:=[profile?] >=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-lang/ghc-7.10.1:=
 RESTRICT=test
 SLOT=0/1.2.0.2
-SRC_URI=mirror://hackage/packages/archive/colonnade/1.2.0.2/colonnade-1.2.0.2.tar.gz
+SRC_URI=https://hackage.haskell.org/package/colonnade-1.2.0.2/colonnade-1.2.0.2.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=994773279a6086959e90c1585b920871
+_md5_=6223cbdcb7907c41a85322eadb9db796

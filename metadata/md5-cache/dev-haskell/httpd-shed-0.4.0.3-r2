@@ -8,6 +8,6 @@ KEYWORDS=~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~ppc-macos ~x86-macos
 LICENSE=BSD
 RDEPEND=>=dev-lang/ghc-7.4.1:= network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.9:=[profile?] >=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] ) !network-uri? ( >=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-2.6:=[profile?] >=dev-haskell/network-uri-2.5:=[profile?] <dev-haskell/network-uri-2.6:=[profile?] )
 SLOT=0/0.4.0.3
-SRC_URI=mirror://hackage/packages/archive/httpd-shed/0.4.0.3/httpd-shed-0.4.0.3.tar.gz
+SRC_URI=https://hackage.haskell.org/package/httpd-shed-0.4.0.3/httpd-shed-0.4.0.3.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=f7a786501bdd261b465c9b18988517a2
+_md5_=6d3372820ff79df9458917337a86888f

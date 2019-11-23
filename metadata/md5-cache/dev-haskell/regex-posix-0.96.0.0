@@ -8,6 +8,6 @@ KEYWORDS=~amd64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-s
 LICENSE=BSD
 RDEPEND=>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?] >=dev-haskell/regex-base-0.94:=[profile?] <dev-haskell/regex-base-0.95:=[profile?] >=dev-lang/ghc-7.4.1:=
 SLOT=0/0.96.0.0
-SRC_URI=mirror://hackage/packages/archive/regex-posix/0.96.0.0/regex-posix-0.96.0.0.tar.gz
+SRC_URI=https://hackage.haskell.org/package/regex-posix-0.96.0.0/regex-posix-0.96.0.0.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=524db08e59fe2a89fe9f2c6e00b2fb39
+_md5_=fd9e560747ff4d26f205d218f9fc243b

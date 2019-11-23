@@ -8,6 +8,6 @@ KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=>=dev-haskell/blaze-html-0.5:=[profile?] >=dev-haskell/blaze-markup-0.5.1:=[profile?] >=dev-haskell/shakespeare-2.0:=[profile?] >=dev-haskell/text-0.9:=[profile?] >=dev-haskell/xml-conduit-1.0:=[profile?] >=dev-haskell/yesod-core-1.6:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?] >=dev-lang/ghc-7.4.1:=
 SLOT=0/1.7.0.0
-SRC_URI=mirror://hackage/packages/archive/yesod-newsfeed/1.7.0.0/yesod-newsfeed-1.7.0.0.tar.gz
+SRC_URI=https://hackage.haskell.org/package/yesod-newsfeed-1.7.0.0/yesod-newsfeed-1.7.0.0.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=3996906b4b7177652a15a112855bbc44
+_md5_=7fa6eea64b1d7c29ffa81e8a53f417bd

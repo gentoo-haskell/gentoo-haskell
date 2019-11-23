@@ -8,6 +8,6 @@ KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/asn1-encoding-0.9:=[profile?] <dev-haskell/asn1-encoding-0.10:=[profile?] >=dev-haskell/asn1-types-0.3:=[profile?] <dev-haskell/asn1-types-0.4:=[profile?] >=dev-haskell/cryptonite-0.24:=[profile?] dev-haskell/data-default-class:=[profile?] dev-haskell/hourglass:=[profile?] dev-haskell/memory:=[profile?] dev-haskell/mtl:=[profile?] >=dev-haskell/pem-0.1:=[profile?] >=dev-haskell/x509-1.7.5:=[profile?] >=dev-haskell/x509-store-1.6:=[profile?] >=dev-lang/ghc-7.4.1:=
 SLOT=0/1.6.11
-SRC_URI=mirror://hackage/packages/archive/x509-validation/1.6.11/x509-validation-1.6.11.tar.gz
+SRC_URI=https://hackage.haskell.org/package/x509-validation-1.6.11/x509-validation-1.6.11.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=b3b5a200c8a68c40292c69a65bf28fd9
+_md5_=a68b1a3c16c2e278a54f6552a81a5911

@@ -8,6 +8,6 @@ KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile?] >=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.3:=[profile?] >=dev-lang/ghc-7.8.2:= examples? ( >=dev-haskell/openglraw-1.0:=[profile?] <dev-haskell/openglraw-3.4:=[profile?] >=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?] )
 SLOT=0/2.7.0.15
-SRC_URI=mirror://hackage/packages/archive/GLUT/2.7.0.15/GLUT-2.7.0.15.tar.gz
+SRC_URI=https://hackage.haskell.org/package/GLUT-2.7.0.15/GLUT-2.7.0.15.tar.gz
 _eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=54e9703b10f97468ebcb07e6eb59a4f8
+_md5_=6520541fe1ba26ed115e1b9fb51b1ad5
