@@ -10,7 +10,7 @@ inherit eutils haskell-cabal
 
 DESCRIPTION="Command-line image paste utility"
 HOMEPAGE="https://bitbucket.org/balta2ar/imagepaste"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

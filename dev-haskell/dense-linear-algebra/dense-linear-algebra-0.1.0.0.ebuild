@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple and incomplete pure haskell implementation of linear algebra"
 HOMEPAGE="http://hackage.haskell.org/package/dense-linear-algebra"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"

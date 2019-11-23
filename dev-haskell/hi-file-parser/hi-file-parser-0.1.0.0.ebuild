@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parser for GHC's hi files"
 HOMEPAGE="https://github.com/commercialhaskell/stack#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="First class type families"
 HOMEPAGE="https://github.com/Lysxia/first-class-families#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

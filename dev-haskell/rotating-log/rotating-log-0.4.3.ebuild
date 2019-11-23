@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Size-limited, concurrent, automatically-rotating log writer"
 HOMEPAGE="https://github.com/Soostone/rotating-log"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

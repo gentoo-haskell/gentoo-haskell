@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Haskell FFI wrapper for the Augeas API"
 HOMEPAGE="http://trac.haskell.org/augeas"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

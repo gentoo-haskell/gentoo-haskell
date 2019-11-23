@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Nicer interface for reified information about data types"
 HOMEPAGE="https://github.com/glguy/th-abstraction"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0/${PV}"

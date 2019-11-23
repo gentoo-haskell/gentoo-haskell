@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Collection of widely reimplemented type families"
 HOMEPAGE="https://github.com/s9gf4ult/type-fun"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

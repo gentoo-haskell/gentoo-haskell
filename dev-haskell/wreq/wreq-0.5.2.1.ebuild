@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An easy-to-use HTTP client library"
 HOMEPAGE="http://www.serpentine.com/wreq"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

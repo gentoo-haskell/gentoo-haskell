@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Classes to handle Prelude style IO functions for different datatypes"
 HOMEPAGE="https://github.com/clintonmead/io-string-like#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A functional image processing library for Haskell"
 HOMEPAGE="https://github.com/RaphaelJ/friday"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0/${PV}"

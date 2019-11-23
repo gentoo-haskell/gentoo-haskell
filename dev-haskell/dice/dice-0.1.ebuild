@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simplistic D&D style dice-rolling system"
 HOMEPAGE="http://hackage.haskell.org/package/dice"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

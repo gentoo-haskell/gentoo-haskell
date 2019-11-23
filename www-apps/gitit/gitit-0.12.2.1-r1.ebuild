@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Wiki using happstack, git or darcs, and pandoc"
 HOMEPAGE="http://gitit.net"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

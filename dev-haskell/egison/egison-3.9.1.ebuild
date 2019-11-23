@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Programming language with non-linear pattern-matching against non-free data"
 HOMEPAGE="http://www.egison.org"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

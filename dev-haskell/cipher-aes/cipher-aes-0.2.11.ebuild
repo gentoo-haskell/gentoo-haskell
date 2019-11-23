@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast AES cipher implementation with advanced mode of operations"
 HOMEPAGE="https://github.com/vincenthz/hs-cipher-aes"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

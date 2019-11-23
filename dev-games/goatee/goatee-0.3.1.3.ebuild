@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A monadic take on a 2,500-year-old board game - library"
 HOMEPAGE="http://khumba.net/projects/goatee"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"

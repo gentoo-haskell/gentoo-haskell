@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Low level bindings to libzip"
 HOMEPAGE="http://bitbucket.org/astanin/hs-libzip/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

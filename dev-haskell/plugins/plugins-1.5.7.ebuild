@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Dynamic linking for Haskell and C objects"
 HOMEPAGE="https://github.com/stepcut/plugins"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

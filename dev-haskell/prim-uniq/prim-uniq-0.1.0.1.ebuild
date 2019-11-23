@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Opaque unique identifiers in primitive state monads"
 HOMEPAGE="https://github.com/mokus0/prim-uniq"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

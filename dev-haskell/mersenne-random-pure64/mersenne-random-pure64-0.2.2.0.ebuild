@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generate high quality pseudorandom numbers purely using a Mersenne Twister"
 HOMEPAGE="http://code.haskell.org/~dons/code/mersenne-random-pure64/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

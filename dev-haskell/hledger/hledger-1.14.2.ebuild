@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Command-line interface for the hledger accounting tool"
 HOMEPAGE="http://hledger.org"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"

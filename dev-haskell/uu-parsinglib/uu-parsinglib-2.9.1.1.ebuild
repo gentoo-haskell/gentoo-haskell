@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Online error-correcting monadic applicative and more parser combinators"
 HOMEPAGE="http://www.cs.uu.nl/wiki/bin/view/HUT/ParserCombinators"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

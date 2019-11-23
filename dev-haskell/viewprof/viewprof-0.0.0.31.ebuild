@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Text-based interactive GHC .prof viewer"
 HOMEPAGE="https://github.com/maoe/viewprof"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

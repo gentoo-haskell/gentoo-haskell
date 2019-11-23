@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Ed25519 cryptographic signatures"
 HOMEPAGE="http://thoughtpolice.github.com/hs-ed25519"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

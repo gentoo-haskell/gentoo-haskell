@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generic programming library with a sum of products view"
 HOMEPAGE="http://www.cs.uu.nl/wiki/GenericProgramming/InstantGenerics"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

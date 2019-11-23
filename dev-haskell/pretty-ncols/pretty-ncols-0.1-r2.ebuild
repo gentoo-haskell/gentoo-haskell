@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A implementation of multi-column layout w/ Text.PrettyPrint"
 HOMEPAGE="http://hackage.haskell.org/package/pretty-ncols"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

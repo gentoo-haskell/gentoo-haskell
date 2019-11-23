@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A simple way to interact with an SMT solver process"
 HOMEPAGE="http://hackage.haskell.org/package/simple-smt"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A desktop bar similar to xmobar, but with more GUI"
 HOMEPAGE="https://github.com/travitch/taffybar"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

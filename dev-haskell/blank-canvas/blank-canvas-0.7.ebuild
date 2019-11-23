@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="HTML5 Canvas Graphics Library"
 HOMEPAGE="https://github.com/ku-fpg/blank-canvas/wiki"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

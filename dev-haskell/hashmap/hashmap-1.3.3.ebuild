@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Persistent containers Map and Set based on hashing"
 HOMEPAGE="https://github.com/foxik/hashmap"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

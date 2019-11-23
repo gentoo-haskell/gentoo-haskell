@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Compression and decompression in the bzip2 format"
 HOMEPAGE="http://hackage.haskell.org/package/bzlib"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

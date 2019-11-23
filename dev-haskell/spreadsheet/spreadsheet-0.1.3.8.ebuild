@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Read and write spreadsheets from and to CSV files in a lazy way"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Spreadsheet"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

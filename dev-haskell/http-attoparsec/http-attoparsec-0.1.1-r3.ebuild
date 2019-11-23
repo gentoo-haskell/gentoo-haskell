@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Attoparsec parsers for http-types"
 HOMEPAGE="https://github.com/tlaitinen/http-attoparsec"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell bindings for the C Wayland library"
 HOMEPAGE="http://hackage.haskell.org/package/hayland"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Tools to build the Gtk2Hs suite of User Interface libraries"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

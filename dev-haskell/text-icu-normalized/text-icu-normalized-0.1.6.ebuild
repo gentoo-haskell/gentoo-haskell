@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Dealing with Strict Text in NFC normalization"
 HOMEPAGE="https://gitlab.com/theunixman/text-icu-normalized"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"

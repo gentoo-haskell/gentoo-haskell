@@ -10,7 +10,7 @@ inherit haskell-cabal games
 
 DESCRIPTION="A game of competitive puzzle-design"
 HOMEPAGE="http://mbays.freeshell.org/intricacy"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

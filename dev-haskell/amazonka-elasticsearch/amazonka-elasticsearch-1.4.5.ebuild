@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Amazon Elasticsearch Service SDK"
 HOMEPAGE="https://github.com/brendanhay/amazonka"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MPL-2.0"
 SLOT="0/${PV}"

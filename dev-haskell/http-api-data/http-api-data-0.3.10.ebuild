@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Converting to/from HTTP API data like URL pieces, headers and query parameters"
 HOMEPAGE="https://github.com/fizruk/http-api-data"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

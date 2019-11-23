@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="data and parsers for Ethernet, TCP, UDP, IPv4, IPv6, ICMP, DHCP, TFTP"
 HOMEPAGE="https://github.com/nh2/network-house"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Support for deriving PathInfo using Template Haskell"
 HOMEPAGE="https://github.com/happstack/web-routes-th"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

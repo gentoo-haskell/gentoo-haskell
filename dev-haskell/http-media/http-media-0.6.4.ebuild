@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Processing HTTP Content-Type and Accept headers"
 HOMEPAGE="https://github.com/zmthy/http-media"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast, pure and practical SHA-256 implementation"
 HOMEPAGE="https://github.com/hvr/cryptohash-sha256"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

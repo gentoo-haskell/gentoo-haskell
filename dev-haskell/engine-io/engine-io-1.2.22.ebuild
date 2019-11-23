@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Haskell implementation of Engine.IO"
 HOMEPAGE="https://github.com/ocharles/engine.io"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

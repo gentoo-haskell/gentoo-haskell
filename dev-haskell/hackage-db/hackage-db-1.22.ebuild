@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="access Hackage's package database via Data.Map"
 HOMEPAGE="https://github.com/peti/hackage-db"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

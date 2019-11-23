@@ -10,7 +10,7 @@ inherit elisp-common haskell-cabal
 
 DESCRIPTION="Structured editing Emacs mode for Haskell"
 HOMEPAGE="https://github.com/chrisdone/structured-haskell-mode"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

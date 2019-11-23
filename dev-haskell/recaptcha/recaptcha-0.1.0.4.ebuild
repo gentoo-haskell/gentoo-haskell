@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Functions for using the reCAPTCHA service in web applications"
 HOMEPAGE="https://github.com/jgm/recaptcha/tree/master"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

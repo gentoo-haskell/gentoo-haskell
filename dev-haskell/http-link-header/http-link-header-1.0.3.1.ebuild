@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An RFC 5988 parser and writer for the HTTP Link header"
 HOMEPAGE="https://github.com/myfreeweb/http-link-header"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

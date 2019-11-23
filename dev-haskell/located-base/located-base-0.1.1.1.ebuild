@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Location-aware variants of partial functions"
 HOMEPAGE="https://github.com/gridaphobe/located-base"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

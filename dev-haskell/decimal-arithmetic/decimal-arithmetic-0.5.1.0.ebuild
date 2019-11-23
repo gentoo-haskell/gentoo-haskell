@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An implementation of the General Decimal Arithmetic Specification"
 HOMEPAGE="https://github.com/verement/decimal-arithmetic#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

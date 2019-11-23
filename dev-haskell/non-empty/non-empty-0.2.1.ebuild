@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="List-like structures with static restrictions on the number of elements"
 HOMEPAGE="http://code.haskell.org/~thielema/non-empty/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

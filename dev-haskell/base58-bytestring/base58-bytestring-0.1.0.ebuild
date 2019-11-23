@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Implementation of BASE58 transcoding for ByteStrings"
 HOMEPAGE="https://bitbucket.org/s9gf4ult/base58-bytestring"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

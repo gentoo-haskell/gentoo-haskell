@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Bindings to the ICU library"
 HOMEPAGE="https://github.com/bos/text-icu"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

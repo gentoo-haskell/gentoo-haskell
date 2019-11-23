@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="yesod recaptcha2"
 HOMEPAGE="https://github.com/ncaq/yesod-recaptcha2#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

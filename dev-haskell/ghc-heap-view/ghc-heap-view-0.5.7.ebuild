@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Extract the heap representation of Haskell values and thunks"
 HOMEPAGE="http://hackage.haskell.org/package/ghc-heap-view"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

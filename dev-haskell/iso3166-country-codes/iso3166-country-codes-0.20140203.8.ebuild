@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A datatype for ISO 3166 country codes"
 HOMEPAGE="http://hackage.haskell.org/package/iso3166-country-codes"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"

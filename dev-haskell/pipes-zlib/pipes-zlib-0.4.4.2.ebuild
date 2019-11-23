@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Zlib and GZip compression and decompression for Pipes streams"
 HOMEPAGE="https://github.com/k0001/pipes-zlib"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

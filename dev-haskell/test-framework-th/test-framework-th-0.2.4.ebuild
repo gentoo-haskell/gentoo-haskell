@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Automagically generate the HUnit and Quickcheck code using Template Haskell"
 HOMEPAGE="https://github.com/finnsson/test-generator"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

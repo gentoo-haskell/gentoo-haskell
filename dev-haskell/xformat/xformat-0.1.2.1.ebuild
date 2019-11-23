@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Extensible, type-safe formatting with scanf- and printf-like functions"
 HOMEPAGE="https://github.com/spl/xformat"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

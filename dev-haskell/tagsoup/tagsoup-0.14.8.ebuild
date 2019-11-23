@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parsing and extracting information from (possibly malformed) HTML/XML documents"
 HOMEPAGE="https://github.com/ndmitchell/tagsoup#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

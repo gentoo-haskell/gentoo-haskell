@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Tag token parser and Tag specific parsing combinators"
 HOMEPAGE="https://github.com/kseo/tagsoup-megaparsec#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

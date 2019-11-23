@@ -10,7 +10,7 @@ inherit eutils haskell-cabal
 
 DESCRIPTION="Whitespace, an esoteric programming language"
 HOMEPAGE="https://github.com/haroldl/whitespace-nd"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

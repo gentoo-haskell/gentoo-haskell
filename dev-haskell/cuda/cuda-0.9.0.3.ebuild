@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="FFI binding to the CUDA interface for programming NVIDIA GPUs"
 HOMEPAGE="https://github.com/tmcdonell/cuda"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

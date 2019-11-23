@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Equation solver and calculator a la metafont"
 HOMEPAGE="http://hackage.haskell.org/package/mfsolve"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

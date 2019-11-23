@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Used to be Haskell 98 Lenses"
 HOMEPAGE="https://github.com/roconnor/data-lens/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

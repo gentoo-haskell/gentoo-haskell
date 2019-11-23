@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="SQL DDL support and migrations support library for Beam"
 HOMEPAGE="https://travis.athougies.net/projects/beam.html"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

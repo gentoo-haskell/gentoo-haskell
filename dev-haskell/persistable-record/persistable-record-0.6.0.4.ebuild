@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Binding between SQL database values and haskell records"
 HOMEPAGE="http://khibino.github.io/haskell-relational-record/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

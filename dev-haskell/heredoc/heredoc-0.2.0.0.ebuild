@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="multi-line string / here document using QuasiQuotes"
 HOMEPAGE="http://hackage.haskell.org/package/heredoc"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

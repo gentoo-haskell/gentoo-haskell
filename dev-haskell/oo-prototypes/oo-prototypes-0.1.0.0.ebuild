@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Support for OO-like prototypes"
 HOMEPAGE="https://github.com/yi-editor/oo-prototypes"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

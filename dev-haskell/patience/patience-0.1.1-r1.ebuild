@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Patience diff and longest increasing subsequence"
 HOMEPAGE="http://hackage.haskell.org/package/patience"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

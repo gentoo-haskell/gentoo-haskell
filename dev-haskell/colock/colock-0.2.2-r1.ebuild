@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="thread-friendly file locks that don't block the entire program"
 HOMEPAGE="http://hackage.haskell.org/package/colock"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"

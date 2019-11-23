@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Parsing of ISO 8601 dates, originally from aeson"
 HOMEPAGE="https://github.com/bos/aeson"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

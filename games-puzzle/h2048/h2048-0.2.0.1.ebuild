@@ -11,7 +11,7 @@ inherit haskell-cabal games
 
 DESCRIPTION="a haskell implementation of Game 2048"
 HOMEPAGE="https://github.com/Javran/h2048"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

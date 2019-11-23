@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A grab bag of functions for use with Template Haskell"
 HOMEPAGE="https://github.com/mokus0/th-extras"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

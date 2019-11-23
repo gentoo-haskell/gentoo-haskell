@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Utilities and combinators for parsing command line options"
 HOMEPAGE="https://github.com/pcapriotti/optparse-applicative"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

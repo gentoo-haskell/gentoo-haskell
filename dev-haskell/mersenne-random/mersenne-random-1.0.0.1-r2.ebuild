@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister"
 HOMEPAGE="http://code.haskell.org/~dons/code/mersenne-random"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

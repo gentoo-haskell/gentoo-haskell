@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A fancy test runner, including support for golden tests"
 HOMEPAGE="https://github.com/phile314/tasty-silver"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

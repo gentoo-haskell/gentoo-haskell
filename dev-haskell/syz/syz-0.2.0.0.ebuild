@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Scrap Your Zippers"
 HOMEPAGE="http://www.cs.indiana.edu/~adamsmd/papers/scrap_your_zippers/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Efficient algorithms for vector arrays"
 HOMEPAGE="http://code.haskell.org/~dolio/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Reexports from \"base\" with a bunch of other standard libraries"
 HOMEPAGE="https://github.com/nikita-volkov/rerebase"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

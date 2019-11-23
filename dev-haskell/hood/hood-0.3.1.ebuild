@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Debugging by observing in place"
 HOMEPAGE="http://ku-fpg.github.io/software/hood"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

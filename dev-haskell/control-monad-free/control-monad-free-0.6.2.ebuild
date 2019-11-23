@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Free monads and monad transformers"
 HOMEPAGE="https://github.com/pepeiborra/control-monad-free"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

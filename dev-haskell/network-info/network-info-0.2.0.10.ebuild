@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Access the local computer's basic network configuration"
 HOMEPAGE="https://github.com/jystic/network-info"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

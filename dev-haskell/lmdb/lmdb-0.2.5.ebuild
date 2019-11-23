@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Lightning MDB bindings"
 HOMEPAGE="https://github.com/dmbarbour/haskell-lmdb"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A 'Symbol' type for fast symbol comparison"
 HOMEPAGE="http://www.cs.drexel.edu/~mainland/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

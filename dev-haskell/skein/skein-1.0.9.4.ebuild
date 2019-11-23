@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Skein, a family of cryptographic hash functions.  Includes Skein-MAC as well"
 HOMEPAGE="https://github.com/meteficha/skein"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

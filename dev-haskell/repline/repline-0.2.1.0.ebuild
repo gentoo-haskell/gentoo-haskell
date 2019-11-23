@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskeline wrapper for GHCi-like REPL interfaces"
 HOMEPAGE="https://github.com/sdiehl/repline"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

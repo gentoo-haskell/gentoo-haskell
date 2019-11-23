@@ -10,7 +10,7 @@ inherit haskell-cabal versionator
 
 DESCRIPTION="A CSV parsing and encoding library"
 HOMEPAGE="https://github.com/hvr/cassava"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

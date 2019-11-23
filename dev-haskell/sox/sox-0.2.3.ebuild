@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Play, write, read, convert audio signals using Sox"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Sox"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues"
 HOMEPAGE="https://github.com/jbapple/priority-queues"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

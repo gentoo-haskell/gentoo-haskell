@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Memoize Strings as Atoms for fast comparison and sorting, with maps and sets"
 HOMEPAGE="https://github.com/audreyt/stringtable-atom/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

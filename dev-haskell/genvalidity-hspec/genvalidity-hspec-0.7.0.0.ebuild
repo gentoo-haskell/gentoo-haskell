@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Standard spec's for GenValidity instances"
 HOMEPAGE="https://github.com/NorfairKing/validity#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

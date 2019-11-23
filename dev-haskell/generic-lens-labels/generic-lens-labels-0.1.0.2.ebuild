@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="GHC.OverloadedLabels.IsLabel instance for lenses from ghc-generics"
 HOMEPAGE="https://github.com/duog/generic-lens-labels"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

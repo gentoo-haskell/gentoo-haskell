@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Expose a dbus server to control hslogger"
 HOMEPAGE="https://github.com/IvanMalison/dbus-hslogger#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

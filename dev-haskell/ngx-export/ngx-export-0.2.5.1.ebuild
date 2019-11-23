@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Helper module for Nginx haskell module"
 HOMEPAGE="https://github.com/lyokha/nginx-haskell-module"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

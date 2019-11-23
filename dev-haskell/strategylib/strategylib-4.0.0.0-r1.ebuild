@@ -13,7 +13,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="attempt to convert Strafunski's StrategyLib to a heirarchical library"
 HOMEPAGE="http://naesten.dyndns.org:8080/repos/StrategyLib"
-SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="freedist" # well, the link license points to is 404
 SLOT="0/${PV}"

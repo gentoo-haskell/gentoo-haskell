@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Create command line interfaces with ease"
 HOMEPAGE="https://github.com/soenkehahn/getopt-generics#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

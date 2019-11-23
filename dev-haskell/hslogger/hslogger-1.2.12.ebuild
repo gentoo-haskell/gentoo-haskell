@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Versatile logging framework"
 HOMEPAGE="http://software.complete.org/hslogger"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

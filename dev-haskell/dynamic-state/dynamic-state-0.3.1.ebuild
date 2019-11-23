@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Optionally serializable dynamic state keyed by type"
 HOMEPAGE="http://hackage.haskell.org/package/dynamic-state"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

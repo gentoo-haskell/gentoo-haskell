@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="sanitize untrusted HTML to prevent XSS attacks"
 HOMEPAGE="https://github.com/yesodweb/haskell-xss-sanitize#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"

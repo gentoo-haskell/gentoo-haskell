@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="reform is a type-safe HTML form generation and validation library"
 HOMEPAGE="http://www.happstack.com/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Tcp streams using openssl for tls support"
 HOMEPAGE="https://github.com/didi-FP/tcp-streams"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

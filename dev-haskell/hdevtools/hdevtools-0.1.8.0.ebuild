@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Persistent GHC powered background server for FAST haskell development tools"
 HOMEPAGE="https://github.com/hdevtools/hdevtools/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Handle sequence locations for bioinformatics"
 HOMEPAGE="http://www.ingolia-lab.org/seqloc-tutorial.html"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

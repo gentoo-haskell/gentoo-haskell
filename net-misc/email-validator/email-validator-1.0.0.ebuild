@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Perform basic syntax and deliverability checks on email addresses"
 HOMEPAGE="http://michael.orlitzky.com/code/email-validator.xhtml"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"

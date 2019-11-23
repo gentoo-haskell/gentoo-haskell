@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Functions for probing and unwrapping values inside of Either"
 HOMEPAGE="https://github.com/gcross/either-unwrap"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

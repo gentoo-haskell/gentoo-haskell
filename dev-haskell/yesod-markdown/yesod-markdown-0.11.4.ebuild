@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Tools for using markdown in a yesod application"
 HOMEPAGE="https://github.com/pbrisbin/yesod-markdown"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

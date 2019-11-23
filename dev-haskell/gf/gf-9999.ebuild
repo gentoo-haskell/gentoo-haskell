@@ -10,7 +10,7 @@ inherit haskell-cabal darcs
 
 DESCRIPTION="Grammatical Framework"
 HOMEPAGE="http://www.grammaticalframework.org/"
-#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+#SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 EDARCS_REPOSITORY="http://www.grammaticalframework.org"
 
 LICENSE="GPL-2 LGPL-2 BSD"

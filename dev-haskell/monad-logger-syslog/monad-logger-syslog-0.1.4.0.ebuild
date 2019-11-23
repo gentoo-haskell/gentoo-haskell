@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="syslog output for monad-logger"
 HOMEPAGE="https://github.com/fpco/monad-logger-syslog"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

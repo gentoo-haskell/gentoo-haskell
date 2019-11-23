@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A client library for the D-Bus IPC system"
 HOMEPAGE="https://github.com/rblaze/haskell-dbus#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

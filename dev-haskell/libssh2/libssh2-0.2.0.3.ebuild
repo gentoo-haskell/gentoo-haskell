@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)"
 HOMEPAGE="https://github.com/portnov/libssh2-hs"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

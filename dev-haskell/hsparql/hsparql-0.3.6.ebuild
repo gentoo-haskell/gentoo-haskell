@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A SPARQL query generator and DSL, and a client to query a SPARQL server"
 HOMEPAGE="https://github.com/robstewart57/hsparql"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

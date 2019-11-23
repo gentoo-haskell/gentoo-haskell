@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Adds a interface like mysql-simple to mysql-haskell"
 HOMEPAGE="https://github.com/lorenzo/mysql-haskell-nem#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Top-level package for the Snap Web Framework"
 HOMEPAGE="http://snapframework.com/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Binding to the libsvg-cairo library"
 HOMEPAGE="http://projects.haskell.org/gtk2hs/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

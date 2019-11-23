@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Raw string literals for Haskell"
 HOMEPAGE="https://github.com/23Skidoo/raw-strings-qq"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

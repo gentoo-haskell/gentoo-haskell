@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Client library for the Redis datastore: supports full command set, pipelining"
 HOMEPAGE="https://github.com/informatikr/hedis"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

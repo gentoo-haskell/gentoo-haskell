@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple reflection of expressions containing variables"
 HOMEPAGE="http://twanvl.nl/blog/haskell/simple-reflection-of-expressions"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

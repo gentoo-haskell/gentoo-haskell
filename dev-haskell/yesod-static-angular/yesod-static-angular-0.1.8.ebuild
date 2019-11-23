@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Yesod generators for embedding AngularJs code into yesod-static at compile time"
 HOMEPAGE="https://bitbucket.org/wuzzeb/yesod-static-angular"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

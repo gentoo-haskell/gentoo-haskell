@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Type equality, coercion/cast and other operations"
 HOMEPAGE="https://github.com/hesselink/type-equality"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell98 indexed functors, monads, comonads"
 HOMEPAGE="https://github.com/reinerp/indexed"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

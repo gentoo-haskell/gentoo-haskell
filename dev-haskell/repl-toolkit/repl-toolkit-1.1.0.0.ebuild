@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Toolkit for quickly whipping up config files and command-line interfaces"
 HOMEPAGE="https://github.com/ombocomp/repl-toolkit"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

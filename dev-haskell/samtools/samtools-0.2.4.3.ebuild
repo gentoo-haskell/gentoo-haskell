@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Binding to the C samtools library"
 HOMEPAGE="http://www.ingolia-lab.org/samtools-tutorial.html"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

@@ -13,7 +13,7 @@ inherit haskell-cabal
 
 DESCRIPTION="An mtl compatible version of the Ghc-Api monads and monad-transformers"
 HOMEPAGE="http://darcsden.com/jcpetruzza/ghc-mtl"
-#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+#SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 EDARCS_REPOSITORY="http://hub.darcs.net/jcpetruzza/ghc-mtl"
 
 LICENSE="BSD"

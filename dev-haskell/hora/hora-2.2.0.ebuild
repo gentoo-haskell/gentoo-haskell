@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="date time"
 HOMEPAGE="https://github.com/ciez/hora"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

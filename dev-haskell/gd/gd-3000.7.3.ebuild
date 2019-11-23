@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Haskell binding to a subset of the GD graphics library"
 HOMEPAGE="http://hackage.haskell.org/package/gd"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Arrows for Pretty Printing"
 HOMEPAGE="http://blog.functorial.com/posts/2013-10-27-Pretty-Printing-Arrows.html"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

@@ -12,7 +12,7 @@ inherit haskell-cabal
 
 DESCRIPTION="helper tool for building wxHaskell"
 HOMEPAGE="https://wiki.haskell.org/WxHaskell"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="${WX_GTK_VER}/${PV}"

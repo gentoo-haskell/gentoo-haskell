@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="High-level, byte-based file and directory path manipulations (deprecated)"
 HOMEPAGE="https://github.com/fpco/haskell-filesystem"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

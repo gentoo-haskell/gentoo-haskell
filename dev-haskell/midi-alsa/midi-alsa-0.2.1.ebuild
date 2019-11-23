@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Convert between datatypes of the midi and the alsa packages"
 HOMEPAGE="http://www.haskell.org/haskellwiki/MIDI"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

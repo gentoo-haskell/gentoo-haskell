@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="dynamic plugin system for web applications"
 HOMEPAGE="https://github.com/clckwrks/web-plugins"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

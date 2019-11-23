@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Limit operations for converging sequences"
 HOMEPAGE="http://hackage.haskell.org/package/converge"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

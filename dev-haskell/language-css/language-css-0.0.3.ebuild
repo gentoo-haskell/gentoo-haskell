@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="CSS 2.1 syntax"
 HOMEPAGE="http://hackage.haskell.org/package/language-css"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

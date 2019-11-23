@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Wrapper for flock(2)"
 HOMEPAGE="https://github.com/hesselink/flock"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0/${PV}"

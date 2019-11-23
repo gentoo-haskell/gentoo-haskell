@@ -10,7 +10,7 @@ inherit git-r3 haskell-cabal
 
 DESCRIPTION="C-to-rust source-to-source transformer"
 HOMEPAGE="http://hackage.haskell.org/package/corrode"
-#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+#SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 EGIT_REPO_URI="https://github.com/jameysharp/corrode.git"
 
 LICENSE="GPL-2"

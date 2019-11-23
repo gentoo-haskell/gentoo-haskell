@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Client library for the XMPP protocol"
 HOMEPAGE="https://john-millikin.com/software/haskell-xmpp/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"

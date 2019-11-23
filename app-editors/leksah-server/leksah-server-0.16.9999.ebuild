@@ -10,7 +10,7 @@ inherit haskell-cabal git-r3
 
 DESCRIPTION="Metadata collection for leksah"
 HOMEPAGE="http://leksah.org"
-#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+#SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 EGIT_REPO_URI="https://github.com/leksah/leksah-server"
 
 LICENSE="GPL-2"

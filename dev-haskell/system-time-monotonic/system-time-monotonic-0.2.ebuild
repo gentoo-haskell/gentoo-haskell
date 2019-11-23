@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple library for using the system's monotonic clock"
 HOMEPAGE="https://github.com/joeyadams/haskell-system-time-monotonic"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

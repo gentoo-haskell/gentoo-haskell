@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A Haskell library for writing FastCGI programs"
 HOMEPAGE="http://hackage.haskell.org/package/fastcgi"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
