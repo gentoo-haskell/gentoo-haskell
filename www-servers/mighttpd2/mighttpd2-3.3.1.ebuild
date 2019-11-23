@@ -10,7 +10,7 @@ inherit haskell-cabal user systemd
 
 DESCRIPTION="High performance web server on WAI/warp"
 HOMEPAGE="http://www.mew.org/~kazu/proj/mighttpd/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

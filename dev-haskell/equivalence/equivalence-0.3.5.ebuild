@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Maintaining an equivalence relation implemented as union-find using STT"
 HOMEPAGE="https://github.com/pa-ba/equivalence"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="PostgreSQL interface with compile-time SQL type checking, optional HDBC backend"
 HOMEPAGE="https://github.com/dylex/postgresql-typed"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

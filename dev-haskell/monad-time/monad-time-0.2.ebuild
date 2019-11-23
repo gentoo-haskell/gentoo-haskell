@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Type class for monads which carry the notion of the current time"
 HOMEPAGE="https://github.com/scrive/monad-time"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

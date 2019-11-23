@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Takes a Haskell source-code file and outputs its modules"
 HOMEPAGE="https://github.com/yamadapc/stack-run-auto"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

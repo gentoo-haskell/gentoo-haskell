@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Sampling function-based probability distributions"
 HOMEPAGE="https://github.com/jtobin/mwc-probability"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Denotative, locally stateful programming DSL & platform"
 HOMEPAGE="https://github.com/mstksg/auto"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

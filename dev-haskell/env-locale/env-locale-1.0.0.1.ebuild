@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A (non-forking) interface to the current locale"
 HOMEPAGE="https://github.com/Ongy/locale-hs"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Integration for tasty and hedgehog"
 HOMEPAGE="https://github.com/qfpl/tasty-hedgehog"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

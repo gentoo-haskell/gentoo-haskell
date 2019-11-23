@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Uniplate-style generic traversals for optionally annotated fixed-point types"
 HOMEPAGE="http://code.haskell.org/~bkomuves/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

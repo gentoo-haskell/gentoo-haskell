@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="http-client backend using the connection package and tls library"
 HOMEPAGE="https://github.com/snoyberg/http-client"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

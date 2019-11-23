@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Pretty printing designed for printing source code"
 HOMEPAGE="https://github.com/mainland/mainland-pretty"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

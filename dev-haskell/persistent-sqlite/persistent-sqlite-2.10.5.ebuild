@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Backend for the persistent library using sqlite3"
 HOMEPAGE="http://www.yesodweb.com/book/persistent"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

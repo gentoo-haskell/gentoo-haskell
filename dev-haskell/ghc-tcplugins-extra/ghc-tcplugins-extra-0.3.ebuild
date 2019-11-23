@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Utilities for writing GHC type-checker plugins"
 HOMEPAGE="https://github.com/clash-lang/ghc-tcplugins-extra"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"

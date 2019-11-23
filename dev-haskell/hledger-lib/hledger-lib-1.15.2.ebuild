@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Core data types, parsers and functionality for the hledger accounting tools"
 HOMEPAGE="http://hledger.org"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"

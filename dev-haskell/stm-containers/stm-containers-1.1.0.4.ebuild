@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Containers for STM"
 HOMEPAGE="https://github.com/nikita-volkov/stm-containers"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

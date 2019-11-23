@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Draw sequence diagrams of D-Bus traffic"
 HOMEPAGE="https://www.freedesktop.org/wiki/Software/Bustle/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2 GPL-2 GPL-3"
 SLOT="0"

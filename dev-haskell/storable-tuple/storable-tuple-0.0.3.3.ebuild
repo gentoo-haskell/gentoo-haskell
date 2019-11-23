@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Storable instance for pairs and triples"
 HOMEPAGE="http://code.haskell.org/~thielema/storable-tuple/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

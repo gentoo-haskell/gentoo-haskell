@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A tool for visualizing time series from log files"
 HOMEPAGE="http://haskell.org/haskellwiki/Timeplot"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

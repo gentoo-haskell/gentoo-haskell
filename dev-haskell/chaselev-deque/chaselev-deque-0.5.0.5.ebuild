@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Chase & Lev work-stealing lock-free double-ended queues (deques)"
 HOMEPAGE="https://github.com/rrnewton/haskell-lockfree/wiki"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

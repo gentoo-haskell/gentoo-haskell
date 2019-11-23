@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="The MonadUnliftIO typeclass for unlifting monads to IO"
 HOMEPAGE="https://github.com/fpco/unliftio/tree/master/unliftio-core#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

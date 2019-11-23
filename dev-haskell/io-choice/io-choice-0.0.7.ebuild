@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Choice for IO and lifted IO"
 HOMEPAGE="http://hackage.haskell.org/package/io-choice"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

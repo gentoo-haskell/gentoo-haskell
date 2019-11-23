@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple State-like monad transformer with saveable and restorable state"
 HOMEPAGE="http://hackage.haskell.org/package/statestack"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

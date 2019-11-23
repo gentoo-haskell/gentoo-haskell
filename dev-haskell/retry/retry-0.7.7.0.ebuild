@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Retry combinators for monadic actions that may fail"
 HOMEPAGE="https://github.com/Soostone/retry"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

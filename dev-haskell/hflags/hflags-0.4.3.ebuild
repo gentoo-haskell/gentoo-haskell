@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Command line flag parser, very similar to Google's gflags"
 HOMEPAGE="https://github.com/errge/hflags"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

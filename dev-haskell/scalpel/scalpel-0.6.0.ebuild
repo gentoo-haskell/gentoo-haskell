@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A high level web scraping library for Haskell"
 HOMEPAGE="https://github.com/fimad/scalpel"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

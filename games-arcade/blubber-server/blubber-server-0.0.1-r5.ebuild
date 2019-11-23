@@ -10,7 +10,7 @@ inherit haskell-cabal games
 
 DESCRIPTION="The blubber server, serves blubber clients"
 HOMEPAGE="https://secure.plaimi.net/games/blubber.html"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="BSON documents are JSON-like objects with a standard binary encoding"
 HOMEPAGE="https://github.com/mongodb-haskell/bson"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

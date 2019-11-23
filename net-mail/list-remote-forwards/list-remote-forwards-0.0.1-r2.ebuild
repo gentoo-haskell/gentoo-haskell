@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="List all remote forwards for mail accounts stored in a database"
 HOMEPAGE="http://hackage.haskell.org/package/list-remote-forwards"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

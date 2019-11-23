@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Be notified when a file gets appended, solely with what was added"
 HOMEPAGE="https://github.com/athanclark/follow-file#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

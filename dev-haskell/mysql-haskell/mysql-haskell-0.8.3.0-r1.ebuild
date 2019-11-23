@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="pure haskell MySQL driver"
 HOMEPAGE="https://github.com/winterland1989/mysql-haskell"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Frontend support for using http-client with conduit (deprecated)"
 HOMEPAGE="https://github.com/snoyberg/http-client"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

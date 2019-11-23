@@ -10,7 +10,7 @@ inherit eutils haskell-cabal
 
 DESCRIPTION="Declarative command-line option parsing and documentation library"
 HOMEPAGE="https://github.com/eli-frey/cmdtheline"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

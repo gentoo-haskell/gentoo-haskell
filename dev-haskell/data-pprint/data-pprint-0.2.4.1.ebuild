@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Prettyprint and compare Data values"
 HOMEPAGE="http://hackage.haskell.org/package/data-pprint"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

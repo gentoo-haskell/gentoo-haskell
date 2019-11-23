@@ -10,7 +10,7 @@ inherit eutils haskell-cabal
 
 DESCRIPTION="Real-time heap graphing utility and profile stream server"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Hp2any"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

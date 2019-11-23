@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast base32 and base32hex codec for ByteStrings"
 HOMEPAGE="https://github.com/pxqr/base32-bytestring"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A sensible and clean way to write WebSocket-capable servers in Haskell"
 HOMEPAGE="http://jaspervdj.be/websockets"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Labeled IO Information Flow Control Library"
 HOMEPAGE="https://github.com/plsyssec/lio"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

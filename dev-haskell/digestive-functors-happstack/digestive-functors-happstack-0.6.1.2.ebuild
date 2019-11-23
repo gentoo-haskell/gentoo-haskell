@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Happstack backend for the digestive-functors library"
 HOMEPAGE="https://github.com/jaspervdj/digestive-functors"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

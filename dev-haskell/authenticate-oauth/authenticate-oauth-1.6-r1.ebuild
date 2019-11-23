@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Library to authenticate with OAuth for Haskell web applications"
 HOMEPAGE="https://github.com/yesodweb/authenticate"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

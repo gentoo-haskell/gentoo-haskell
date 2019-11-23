@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="TCP instantiation of Network.Transport"
 HOMEPAGE="http://haskell-distributed.github.com"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

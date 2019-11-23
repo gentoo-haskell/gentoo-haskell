@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds"
 HOMEPAGE="https://github.com/bergmark/feed"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

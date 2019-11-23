@@ -30,7 +30,7 @@ if [[ -n ${LIVE_EBUILD} ]]; then
 	# Cabal's subdir
 	S="${S}"/${MY_PN}
 else
-	SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+	SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 	KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 	S="${WORKDIR}/${MY_PN}"
 fi

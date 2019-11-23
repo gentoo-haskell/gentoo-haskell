@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Open the user's \$VISUAL or \$EDITOR for text input"
 HOMEPAGE="https://github.com/pharpend/editor-open"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

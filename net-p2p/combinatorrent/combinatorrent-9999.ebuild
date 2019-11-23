@@ -14,7 +14,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A concurrent bittorrent client"
 HOMEPAGE="http://hackage.haskell.org/package/Combinatorrent"
-# SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+# SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 EGIT_REPO_URI="https://github.com/jlouis/combinatorrent.git"
 
 LICENSE="BSD"

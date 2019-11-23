@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Bounded channel for STM that discards old entries when full"
 HOMEPAGE="https://github.com/joeyadams/haskell-rolling-queue"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Tests and test support tools for distributed-process"
 HOMEPAGE="https://github.com/haskell-distributed/distributed-process/tree/master/distributed-process-tests"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

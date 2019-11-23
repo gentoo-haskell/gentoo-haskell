@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Templating language with similar syntax and features to Liquid or Jinja2"
 HOMEPAGE="https://github.com/brendanhay/ede"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MPL-2.0"
 SLOT="0/${PV}"

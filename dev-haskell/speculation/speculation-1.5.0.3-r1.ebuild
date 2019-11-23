@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A framework for safe, programmable, speculative parallelism"
 HOMEPAGE="https://github.com/ekmett/speculation"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

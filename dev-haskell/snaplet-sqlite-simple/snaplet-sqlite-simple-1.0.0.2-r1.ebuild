@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="sqlite-simple snaplet for the Snap Framework"
 HOMEPAGE="https://github.com/nurpax/snaplet-sqlite-simple"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Safe type-level dimensionality for multidimensional data"
 HOMEPAGE="https://github.com/achirkin/easytensor#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Beam driver for SQLite"
 HOMEPAGE="http://tathougies.github.io/beam/user-guide/backends/beam-sqlite/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

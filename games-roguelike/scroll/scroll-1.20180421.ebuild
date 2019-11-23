@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="scroll(6), a roguelike game"
 HOMEPAGE="https://joeyh.name/code/scroll/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

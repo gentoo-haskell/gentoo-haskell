@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Store a stable pointer in a foreign context to be retrieved later"
 HOMEPAGE="https://github.com/chrisdone/foreign-store"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

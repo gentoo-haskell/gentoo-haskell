@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Determine the size of some common image formats"
 HOMEPAGE="https://github.com/silkapp/imagesize-conduit"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

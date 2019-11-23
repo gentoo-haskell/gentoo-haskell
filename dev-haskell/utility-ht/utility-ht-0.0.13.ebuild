@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Various small helper functions for Lists, Maybes, Tuples, Functions"
 HOMEPAGE="http://hackage.haskell.org/package/utility-ht"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Gamma function and related functions"
 HOMEPAGE="https://github.com/mokus0/gamma"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A basic library for defining units of time as types"
 HOMEPAGE="https://github.com/acw/time-units"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

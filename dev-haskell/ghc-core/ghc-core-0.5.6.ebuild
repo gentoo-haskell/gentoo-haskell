@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Display GHC's core and assembly output in a pager"
 HOMEPAGE="https://github.com/shachaf/ghc-core"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

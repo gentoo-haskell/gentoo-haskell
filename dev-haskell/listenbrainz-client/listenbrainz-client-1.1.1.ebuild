@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A client library to the ListenBrainz project"
 HOMEPAGE="https://github.com/ocharles/listenbrainz-client"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="SMT Based Verification: Symbolic Haskell theorem prover using SMT solving"
 HOMEPAGE="http://leventerkok.github.com/sbv/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

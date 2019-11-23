@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Dockerfile Linter JavaScript API"
 HOMEPAGE="https://github.com/hadolint/hadolint"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Existential witnesses, singletons, and classes for operations on GHC TypeLits"
 HOMEPAGE="https://github.com/mstksg/typelits-witnesses"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

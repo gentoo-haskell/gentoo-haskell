@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Exposes the native endianness or byte ordering of the system"
 HOMEPAGE="http://community.haskell.org/~aslatter/code/byteorder"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

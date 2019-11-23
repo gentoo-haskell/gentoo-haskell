@@ -13,7 +13,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Driver (client) for MongoDB, a free, scalable, fast, document DBMS"
 HOMEPAGE="https://github.com/mongodb-haskell/mongodb"
-SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

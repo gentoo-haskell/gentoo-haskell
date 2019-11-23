@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Styling and coloring terminal output with ANSI escape sequences"
 HOMEPAGE="https://github.com/loganmac/pretty-terminal#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

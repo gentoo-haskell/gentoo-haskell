@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Wrapper to integrate literate Agda files with Hakyll"
 HOMEPAGE="https://github.com/bitonic/hakyll-agda"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

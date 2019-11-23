@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Extra utility functions for working with monads"
 HOMEPAGE="https://github.com/jwiegley/monad-extras"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

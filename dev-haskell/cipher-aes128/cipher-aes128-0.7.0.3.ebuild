@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="AES and common modes using AES-NI when available"
 HOMEPAGE="https://github.com/TomMD/cipher-aes128"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

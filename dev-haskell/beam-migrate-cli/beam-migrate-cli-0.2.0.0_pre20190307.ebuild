@@ -13,7 +13,7 @@ HOMEPAGE="https://travis.athougies.net/projects/beam.html"
 EGIT_REPO_URI="https://github.com/tathougies/beam"
 EGIT_BRANCH="master"
 EGIT_COMMIT="66abcad4a824b9ac7f8f5c99b4c9c850c5aa082c"
-#SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+#SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

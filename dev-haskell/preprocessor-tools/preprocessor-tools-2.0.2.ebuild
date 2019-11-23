@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A framework for extending Haskell's syntax via quick-and-dirty preprocessors"
 HOMEPAGE="https://github.com/tov/preprocessor-tools-hs"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

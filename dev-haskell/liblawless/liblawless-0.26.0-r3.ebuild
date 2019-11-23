@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Prelude based on protolude for GHC 8 and beyond"
 HOMEPAGE="https://gitlab.com/theunixman/liblawless"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"

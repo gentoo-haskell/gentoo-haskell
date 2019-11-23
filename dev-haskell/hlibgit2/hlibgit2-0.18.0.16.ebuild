@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Low-level bindings to libgit2"
 HOMEPAGE="http://hackage.haskell.org/package/hlibgit2"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

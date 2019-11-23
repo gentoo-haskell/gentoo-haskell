@@ -10,7 +10,7 @@ inherit eutils haskell-cabal
 
 DESCRIPTION="Convert GHC profiles into GraphViz's dot format"
 HOMEPAGE="http://antiope.com/downloads.html"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

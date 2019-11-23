@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Produces ctags \"tags\" and etags \"TAGS\" files for Haskell programs"
 HOMEPAGE="https://github.com/MarcWeber/hasktags"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Project bindings-* raw interface to gpgme"
 HOMEPAGE="https://github.com/jwiegley/bindings-dsl"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

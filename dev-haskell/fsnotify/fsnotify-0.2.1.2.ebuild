@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Cross platform library for file change notification"
 HOMEPAGE="https://github.com/haskell-fswatch/hfsnotify"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

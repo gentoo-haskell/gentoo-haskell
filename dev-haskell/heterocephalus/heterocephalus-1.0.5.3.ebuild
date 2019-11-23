@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A type-safe template engine for working with popular front end development tools"
 HOMEPAGE="https://github.com/arowM/heterocephalus#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="For creating, comparing, parsing and printing Universally Unique Identifiers"
 HOMEPAGE="https://github.com/hvr/uuid"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

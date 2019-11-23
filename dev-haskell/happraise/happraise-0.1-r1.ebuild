@@ -10,7 +10,7 @@ inherit eutils haskell-cabal
 
 DESCRIPTION="A small program for counting the comments in haskell source"
 HOMEPAGE="http://hackage.haskell.org/package/happraise"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

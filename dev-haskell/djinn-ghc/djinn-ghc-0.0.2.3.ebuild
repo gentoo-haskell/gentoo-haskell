@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generate Haskell code from a type. Bridge from Djinn to GHC API"
 HOMEPAGE="http://hackage.haskell.org/package/djinn-ghc"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

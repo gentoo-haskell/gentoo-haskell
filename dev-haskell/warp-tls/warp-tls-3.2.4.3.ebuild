@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="HTTP over TLS support for Warp via the TLS package"
 HOMEPAGE="https://github.com/yesodweb/wai"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

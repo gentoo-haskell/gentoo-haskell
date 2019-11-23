@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A fully compliant Haskell 98 lexer"
 HOMEPAGE="https://github.com/yav/haskell-lexer"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

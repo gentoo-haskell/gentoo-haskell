@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast non-backtracking incremental combinator parsing for bytestrings"
 HOMEPAGE="https://github.com/Yuras/scanner"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

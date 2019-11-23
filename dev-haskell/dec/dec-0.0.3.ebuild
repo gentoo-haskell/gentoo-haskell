@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Decidable propositions"
 HOMEPAGE="https://github.com/phadej/vec"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="XML parser and renderer with HTML 5 quirks mode"
 HOMEPAGE="https://github.com/snapframework/xmlhtml"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

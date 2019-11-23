@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Encoders and decoders for the PostgreSQL's binary format"
 HOMEPAGE="https://github.com/nikita-volkov/postgresql-binary"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

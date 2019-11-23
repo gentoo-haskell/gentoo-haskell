@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Core functionality and class for client function generation for servant APIs"
 HOMEPAGE="http://haskell-servant.readthedocs.org/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

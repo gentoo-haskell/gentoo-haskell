@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Various type-level operators"
 HOMEPAGE="https://github.com/Shou/type-operators#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

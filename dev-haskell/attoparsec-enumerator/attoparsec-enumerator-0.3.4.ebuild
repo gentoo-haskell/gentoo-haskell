@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Pass input from an enumerator to an Attoparsec parser"
 HOMEPAGE="https://john-millikin.com/software/attoparsec-enumerator/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

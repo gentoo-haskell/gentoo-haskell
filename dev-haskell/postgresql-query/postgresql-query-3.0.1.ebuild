@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Sql interpolating quasiquote plus some kind of primitive ORM using it"
 HOMEPAGE="https://bitbucket.org/s9gf4ult/postgresql-query"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

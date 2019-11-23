@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Creation of type-safe, RESTful web applications"
 HOMEPAGE="http://www.yesodweb.com/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

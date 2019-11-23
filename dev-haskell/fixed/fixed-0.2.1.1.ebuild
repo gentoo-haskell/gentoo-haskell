@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Signed 15.16 precision fixed point arithmetic"
 HOMEPAGE="https://github.com/ekmett/fixed"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

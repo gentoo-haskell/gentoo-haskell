@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Safe wrappers for partial list functions, supporting MonadThrow"
 HOMEPAGE="https://github.com/ombocomp/listsafe"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"

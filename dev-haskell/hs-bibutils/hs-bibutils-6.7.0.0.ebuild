@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell bindings to bibutils, the bibliography conversion utilities"
 HOMEPAGE="https://github.com/wilx/hs-bibutils"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A library for creating and using Jupyter kernels"
 HOMEPAGE="https://github.com/gibiansky/haskell-jupyter"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Library for logic programming based on haskell package logict"
 HOMEPAGE="https://github.com/atzedijkstra/logict-state"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

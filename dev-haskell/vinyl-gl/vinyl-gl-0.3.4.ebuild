@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Utilities for working with OpenGL's GLSL shading language and vinyl records"
 HOMEPAGE="http://hackage.haskell.org/package/vinyl-gl"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

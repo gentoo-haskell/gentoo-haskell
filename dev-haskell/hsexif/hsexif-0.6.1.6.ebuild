@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="EXIF handling library in pure Haskell"
 HOMEPAGE="https://github.com/emmanueltouzery/hsexif"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

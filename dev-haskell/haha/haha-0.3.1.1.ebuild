@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A simple library for creating animated ascii art on ANSI terminals"
 HOMEPAGE="http://hackage.haskell.org/package/haha"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

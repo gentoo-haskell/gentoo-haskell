@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Validating an email address string against RFC 5322"
 HOMEPAGE="https://github.com/Porges/email-validate-hs"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

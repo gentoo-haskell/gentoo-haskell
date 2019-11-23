@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A simple tool for literate programming"
 HOMEPAGE="https://github.com/cdosborn/lit"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -10,7 +10,7 @@ inherit base haskell-cabal
 
 DESCRIPTION="Distributed parallel programming in Haskell using MPI"
 HOMEPAGE="https://github.com/bjpop/haskell-mpi"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

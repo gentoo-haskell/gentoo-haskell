@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Sharing code for serialization between binary and cereal"
 HOMEPAGE="https://github.com/ekmett/bytes"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

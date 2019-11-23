@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Type-level integers, using TypeNats, Data Kinds, and Closed Type Families"
 HOMEPAGE="https://github.com/bjornbm/numtype-dk"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

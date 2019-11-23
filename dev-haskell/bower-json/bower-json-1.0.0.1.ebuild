@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Read bower.json from Haskell"
 HOMEPAGE="https://github.com/hdgarrood/bower-json"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

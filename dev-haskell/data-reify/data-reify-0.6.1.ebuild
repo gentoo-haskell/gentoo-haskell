@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Reify a recursive data structure into an explicit graph"
 HOMEPAGE="http://www.ittc.ku.edu/csdl/fpg/Tools/IOReification"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

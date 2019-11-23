@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Utility functions for testing your attoparsec parsers with hspec"
 HOMEPAGE="https://github.com/alpmestan/hspec-attoparsec"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Generator and shrink functions for testing Unicode-related software"
 HOMEPAGE="https://github.com/bos/quickcheck-unicode"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"

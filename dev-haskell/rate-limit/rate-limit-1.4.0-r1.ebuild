@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A basic library for rate-limiting IO actions"
 HOMEPAGE="https://github.com/acw/rate-limit"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

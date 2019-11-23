@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Backport ieee754 float double combinators to older binary"
 HOMEPAGE="https://github.com/winterland1989/binary-ieee754"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

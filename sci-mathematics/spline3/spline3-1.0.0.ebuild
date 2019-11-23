@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A parallel implementation of the Sorokina/Zeilfelder spline scheme"
 HOMEPAGE="http://michael.orlitzky.com/code/spline3.xhtml"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"

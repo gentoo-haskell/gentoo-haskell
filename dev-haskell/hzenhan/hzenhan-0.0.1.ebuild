@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Zenhan library for Haskell"
 HOMEPAGE="https://github.com/karky7/hzenhan#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

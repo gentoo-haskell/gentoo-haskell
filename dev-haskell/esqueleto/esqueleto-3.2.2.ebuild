@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Type-safe EDSL for SQL queries on persistent backends"
 HOMEPAGE="https://github.com/bitemyapp/esqueleto"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

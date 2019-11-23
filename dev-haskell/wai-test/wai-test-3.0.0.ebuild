@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Unit test framework (built on HUnit) for WAI applications. (deprecated)"
 HOMEPAGE="http://www.yesodweb.com/book/web-application-interface"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

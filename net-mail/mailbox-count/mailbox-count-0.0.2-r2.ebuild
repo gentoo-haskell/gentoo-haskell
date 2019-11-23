@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Count mailboxes in a SQL database"
 HOMEPAGE="http://hackage.haskell.org/package/mailbox-count"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

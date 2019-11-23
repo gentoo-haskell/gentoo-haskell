@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="The error function, erf, and related functions"
 HOMEPAGE="http://hackage.haskell.org/package/erf"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Specify Haskell project templates and generate files"
 HOMEPAGE="https://github.com/fpco/haskell-ide"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

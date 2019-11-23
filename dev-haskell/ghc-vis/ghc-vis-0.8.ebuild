@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Live visualization of data structures in GHCi"
 HOMEPAGE="http://felsin9.de/nnis/ghc-vis"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

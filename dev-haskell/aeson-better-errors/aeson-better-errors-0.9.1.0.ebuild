@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Better error messages when decoding JSON values"
 HOMEPAGE="https://github.com/hdgarrood/aeson-better-errors"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

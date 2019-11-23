@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Libsoup bindings"
 HOMEPAGE="https://github.com/haskell-gi/haskell-gi"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"

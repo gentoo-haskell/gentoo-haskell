@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Stick two binary words together to get a bigger one"
 HOMEPAGE="https://github.com/mvv/data-dword"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

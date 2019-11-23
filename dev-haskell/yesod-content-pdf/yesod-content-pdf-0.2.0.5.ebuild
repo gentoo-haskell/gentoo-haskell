@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="PDF Content Type for Yesod"
 HOMEPAGE="https://github.com/alexkyllo/yesod-content-pdf#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

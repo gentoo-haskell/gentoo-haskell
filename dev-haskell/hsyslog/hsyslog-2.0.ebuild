@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="FFI interface to syslog(3) from POSIX.1-2001"
 HOMEPAGE="https://github.com/peti/hsyslog"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

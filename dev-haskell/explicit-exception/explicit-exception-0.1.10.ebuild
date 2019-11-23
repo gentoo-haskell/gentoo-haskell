@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Exceptions which are explicit in the type signature"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Exception"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

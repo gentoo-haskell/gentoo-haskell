@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Use Accessor to access state in transformers State monad"
 HOMEPAGE="http://www.haskell.org/haskellwiki/Record_access"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

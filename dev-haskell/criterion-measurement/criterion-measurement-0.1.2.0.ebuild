@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Criterion measurement functionality and associated types"
 HOMEPAGE="https://github.com/bos/criterion"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

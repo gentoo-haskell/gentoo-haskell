@@ -19,7 +19,7 @@ inherit check-reqs
 [[ ${PV} = *9999* ]] && inherit git-r3
 
 DESCRIPTION="The Glasgow Haskell Compiler"
-HOMEPAGE="http://www.haskell.org/ghc/"
+HOMEPAGE="https://www.haskell.org/ghc/"
 
 # we don't have any binaries yet
 arch_binaries=""
@@ -63,8 +63,8 @@ GHC_PV=${PV}
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? (
-	http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz
-	test? ( http://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
+	https://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz
+	test? ( https://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
 	${OVERRIDE_LIBFFI}
 )"
 S="${WORKDIR}"/${GHC_P}
@@ -216,7 +216,7 @@ update_SRC_URI() {
 		set -- $p
 		pn=$1 pv=$2
 
-		SRC_URI+=" mirror://hackage/package/${pn}/${pn}-${pv}.tar.gz"
+		SRC_URI+=" https://hackage.haskell.org/package/${pn}-${pv}/${pn}-${pv}.tar.gz"
 	done
 }
 
@@ -285,7 +285,7 @@ ghc_setup_cflags() {
 	# options to gcc.
 	if is_native; then
 		# prevent from failing to build unregisterised ghc:
-		# http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
+		# https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
 		use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
 	fi
 }

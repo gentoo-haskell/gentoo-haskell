@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Provide a classy prelude including common Yesod functionality"
 HOMEPAGE="https://github.com/snoyberg/mono-traversable#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

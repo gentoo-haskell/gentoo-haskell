@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Fast, pure and practical SHA-512 implementation"
 HOMEPAGE="https://github.com/hvr/cryptohash-sha512"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

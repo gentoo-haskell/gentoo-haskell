@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="STCP socket extensions library"
 HOMEPAGE="https://github.com/shlevy/haskell-socket-sctp"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

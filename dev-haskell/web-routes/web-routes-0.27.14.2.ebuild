@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="portable, type-safe URL routing"
 HOMEPAGE="http://www.happstack.com/docs/crashcourse/index.html#web-routes"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

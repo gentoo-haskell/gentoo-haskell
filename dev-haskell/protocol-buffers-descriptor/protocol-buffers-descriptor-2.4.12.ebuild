@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="module and code generated from the Google Protocol Buffer"
 HOMEPAGE="https://github.com/k-bx/protocol-buffers"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

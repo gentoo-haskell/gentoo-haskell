@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="JavaScript parser and pretty-printer library"
 HOMEPAGE="https://github.com/jswebtools/language-ecmascript"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

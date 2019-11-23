@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code"
 HOMEPAGE="https://github.com/seereason/hsx2hs"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

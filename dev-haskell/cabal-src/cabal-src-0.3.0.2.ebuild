@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Alternative install procedure to avoid the diamond dependency issue"
 HOMEPAGE="https://github.com/yesodweb/cabal-src"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

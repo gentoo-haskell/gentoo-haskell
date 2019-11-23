@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="A type inhabited by finitely many values, indexed by type-level naturals"
 HOMEPAGE="https://github.com/mniip/finite-typelits"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

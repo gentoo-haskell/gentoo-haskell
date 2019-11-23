@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Load environment variables from a file"
 HOMEPAGE="https://github.com/pbrisbin/load-env#readme"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

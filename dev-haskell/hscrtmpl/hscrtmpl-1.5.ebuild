@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell shell script template"
 HOMEPAGE="http://hub.darcs.net/dino/hscrtmpl"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"

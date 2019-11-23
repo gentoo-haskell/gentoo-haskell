@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Launch a web app in the default browser"
 HOMEPAGE="http://hackage.haskell.org/package/wai-handler-launch"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"

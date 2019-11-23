@@ -11,7 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Support for writing picture to FLAC metadata blocks with JuicyPixels"
 HOMEPAGE="https://github.com/mrkkrp/flac-picture"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

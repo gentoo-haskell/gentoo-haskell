@@ -10,7 +10,7 @@ inherit flag-o-matic haskell-cabal
 
 DESCRIPTION="Accelerate backend for NVIDIA GPUs"
 HOMEPAGE="https://github.com/AccelerateHS/accelerate-cuda/"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
