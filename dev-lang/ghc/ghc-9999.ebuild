@@ -540,6 +540,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-cross-detect.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-sh4-lra.patch
+
 		bump_libs
 
 		eapply_user
