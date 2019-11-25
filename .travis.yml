@@ -4,6 +4,10 @@
 #
 language: python
 
+cache:
+  directories:
+  - metadata/md5-cache
+
 # shard repoman call by profile. Generated as:
 # $    cat $(portageq get_repo_path / gentoo)/profiles/profiles.desc | egrep -v '^#|^$' | awk '$3 == "stable" {print "    - TOOL=repoman REPOMAN_FLAGS=--include-profiles="$2}'
 
@@ -111,12 +115,12 @@ before_script:
     - echo "Grabbing fidget spinner:"
     - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh" -O "${SPINNER}"
     - chmod a+rwx "${SPINNER}"
-    - echo "Generating metadata cache:"
-    - '"${SPINNER}" "${PORTAGE_DIR}/bin/egencache --repo=${THIS_REPO} --update --jobs=$(nproc)"'
     - "${PORTAGE_DIR}/bin/emerge --info"
     - echo "Applying portage patches:"
     - wget https://github.com/gentoo/portage/commit/e9bb1e9681685f4e4d7174f51751356fd3f67d0c.patch -O "${PORTAGE_DIR}"/profiles.patch
     - patch -p1 -d "${PORTAGE_DIR}" <"${PORTAGE_DIR}"/profiles.patch
 script:
+    - echo "Refreshing metadata cache:"
+    - '"${SPINNER}" "${PORTAGE_DIR}/bin/egencache --repo=${THIS_REPO} --update --jobs=$(nproc)"'
     - if test "${TOOL}" = pkgcheck; then "${SPINNER}" "pkgcheck scan --repo=${THIS_REPO} --jobs=$(nproc)"; else true; fi
     - if test "${TOOL}" = repoman;  then "${SPINNER}" "${PORTAGE_DIR}/repoman/bin/repoman full ${REPOMAN_FLAGS}"; else true; fi
