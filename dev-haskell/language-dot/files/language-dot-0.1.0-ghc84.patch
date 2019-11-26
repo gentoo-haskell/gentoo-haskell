@@ -1,6 +1,0 @@
---- a/src/Language/Dot/Pretty.hs
-+++ b/src/Language/Dot/Pretty.hs
-@@ -13,2 +13,3 @@ import Text.PrettyPrint
- import Language.Dot.Syntax
-+import Prelude hiding ((<>))
- 
