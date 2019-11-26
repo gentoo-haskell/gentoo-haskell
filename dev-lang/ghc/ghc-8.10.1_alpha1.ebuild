@@ -477,6 +477,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-no-relax-everywhere.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
+		eapply "${FILESDIR}"/${PN}-8.10.1-libffi.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
@@ -688,7 +689,7 @@ src_install() {
 		# Skip for cross-targets as they all share target location:
 		# /usr/share/doc/ghc-9999/
 		if ! is_crosscompile; then
-			dodoc "distrib/README" "ANNOUNCE" "LICENSE" "VERSION"
+			dodoc "distrib/README" "LICENSE" "VERSION"
 		fi
 
 		# rename ghc-shipped files to avoid collision
