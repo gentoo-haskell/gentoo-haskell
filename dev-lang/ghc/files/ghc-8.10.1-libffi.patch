@@ -1,0 +1,34 @@
+From 1c1e4f1de676a3bdee651eb34c99f2e302f5bea4 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Mon, 25 Nov 2019 23:53:30 +0000
+Subject: [PATCH] Revert "rts: Drop redundant flags for libffi"
+
+This reverts commit 3ce18700f80a12c48a029b49c6201ad2410071bb.
+---
+ rts/ghc.mk | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+--- a/rts/ghc.mk
++++ b/rts/ghc.mk
+@@ -489,10 +489,15 @@ endif
+ endif
+ 
+ # add CFLAGS for libffi
++ifeq "$(UseSystemLibFFI)" "YES"
++LIBFFI_CFLAGS = $(addprefix -I,$(FFIIncludeDir))
++else
++LIBFFI_CFLAGS =
++endif
+ # ffi.h triggers prototype warnings, so disable them here:
+-rts/Interpreter_CC_OPTS += -Wno-strict-prototypes
+-rts/Adjustor_CC_OPTS    += -Wno-strict-prototypes
+-rts/sm/Storage_CC_OPTS  += -Wno-strict-prototypes
++rts/Interpreter_CC_OPTS += -Wno-strict-prototypes $(LIBFFI_CFLAGS)
++rts/Adjustor_CC_OPTS    += -Wno-strict-prototypes $(LIBFFI_CFLAGS)
++rts/sm/Storage_CC_OPTS  += -Wno-strict-prototypes $(LIBFFI_CFLAGS)
+ # ffi.h triggers undefined macro warnings on PowerPC, disable those:
+ # this matches substrings of powerpc64le, including "powerpc" and "powerpc64"
+ ifneq "$(findstring $(TargetArch_CPP), powerpc64le)" ""
+-- 
+2.24.0
+
