@@ -21,6 +21,8 @@ SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
+RESTRICT="test" # Requires dev-haskell/testpack (deprecated), and this is a problem.
+
 RDEPEND=">=dev-haskell/convertible-1.1.0.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]

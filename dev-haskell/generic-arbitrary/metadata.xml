@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Generic implementations of methods of the &#39;Arbitrary&#39; class from the
+		QuickCheck library. The approach taken here can lead to diverging instances
+		for recursive types but is safe for non-recursive ones and guarantees
+		flat distribution for constructors of sum-types.
+	</longdescription>
+</pkgmetadata>
