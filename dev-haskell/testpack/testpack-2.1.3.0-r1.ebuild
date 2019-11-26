@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="amd64 ~sparc x86"
 IUSE=""
 
-RDEPEND="dev-haskell/hunit:=[profile?]
+RDEPEND="<dev-haskell/hunit-1.3:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/quickcheck-2.1.0.3:2=[profile?]
 	dev-haskell/random:=[profile?]
