@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/quickcheck-2.8:2=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Generic implementation for QuickCheck's Arbitrary
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/generic-arbitrary
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/quickcheck-2.8:2=[profile?] >=dev-lang/ghc-7.10.1:=
+SLOT=0/0.1.0
+SRC_URI=https://hackage.haskell.org/package/generic-arbitrary-0.1.0/generic-arbitrary-0.1.0.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=a5f1a99f0b22089e38c5ca9abaa26cab
