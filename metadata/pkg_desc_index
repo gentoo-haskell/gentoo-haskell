@@ -1296,6 +1296,7 @@ dev-haskell/mmap 0.5.8 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmorph 1.0.9 1.1.3: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/monad-control 1.0.2.3: Lift control operations, like exception catching, through monad transformers
+dev-haskell/monad-control-aligned 0.0.1.1: monad-control altrnative
 dev-haskell/monad-extras 0.5.11: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.7.2 0.8.1: Pure logger typeclass and monad transformer
 dev-haskell/monad-logger 0.3.30: A class of monads which can log messages
