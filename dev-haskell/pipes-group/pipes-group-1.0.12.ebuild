@@ -17,6 +17,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Ambiguous module name ‘Control.Monad.Trans.Free’: it was found in multiple packages: free-5.1.2 transformers-free-1.0.1
+RESTRICT=test
+
 RDEPEND=">=dev-haskell/free-3.2:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/pipes-parse-3.0.0:=[profile?] <dev-haskell/pipes-parse-3.1:=[profile?]
