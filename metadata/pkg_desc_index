@@ -1176,7 +1176,7 @@ dev-haskell/lawless-concurrent-machines 0.3.1: Concurrent networked stream trans
 dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
 dev-haskell/lazy-pbkdf2 2.1.2: Lazy PBKDF2 generator
-dev-haskell/lazysmallcheck 0.6: A library for demand-driven testing of Haskell programs
+dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskell programs
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
 dev-haskell/lens 4.14 4.16.1 4.17 4.18.1 9999: Lenses, Folds and Traversals
