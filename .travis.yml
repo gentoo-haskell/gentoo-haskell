@@ -92,10 +92,10 @@ env:
     - TOOL=repoman REPOMAN_FLAGS=--include-profiles=default/linux/x86/17.0/systemd
 before_install:
     - pip install lxml pyyaml
-    - pip install pkgcheck==0.6.9
+    - pip install pkgcheck
 before_script:
     - THIS_REPO=haskell
-    - PORTAGE_VER='2.3.79'
+    - PORTAGE_VER='2.3.80'
     - SPINNER=/tmp/spinner.sh
     - PORTAGE_DIR="/tmp/portage-portage-${PORTAGE_VER}"
     - echo "Setting up basic directories:"
@@ -116,9 +116,6 @@ before_script:
     - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh" -O "${SPINNER}"
     - chmod a+rwx "${SPINNER}"
     - "${PORTAGE_DIR}/bin/emerge --info"
-    - echo "Applying portage patches:"
-    - wget https://github.com/gentoo/portage/commit/e9bb1e9681685f4e4d7174f51751356fd3f67d0c.patch -O "${PORTAGE_DIR}"/profiles.patch
-    - patch -p1 -d "${PORTAGE_DIR}" <"${PORTAGE_DIR}"/profiles.patch
 script:
     - echo "Refreshing metadata cache:"
     - '"${SPINNER}" "${PORTAGE_DIR}/bin/egencache --repo=${THIS_REPO} --update --jobs=$(nproc)"'
