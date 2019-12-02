@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="buildexamples">Build example executables</flag>
 	</use>
 	<longdescription>
 		This package allows parsing, formatting and processing of BibTeX files.
