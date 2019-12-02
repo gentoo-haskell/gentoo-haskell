@@ -1369,7 +1369,7 @@ dev-haskell/natural-transformation 0.4-r7: A natural transformation package
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
 dev-haskell/neat-interpolation 0.3.2.1: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netlink 1.1.1.0: Netlink communication for Haskell
-dev-haskell/netpbm 1.0.3: Loading PBM, PGM, PPM image files
+dev-haskell/netpbm 1.0.3-r1: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.3: Functional reactive programming library
 dev-haskell/network 2.6.3.6 2.8.0.1: Low-level networking interface
 dev-haskell/network-byte-order 0.1.1.1: Network byte order utilities
