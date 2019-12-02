@@ -130,7 +130,7 @@ dev-haskell/atto-lisp 0.2.2.3: Efficient parsing and serialisation of S-Expressi
 dev-haskell/attobencode 0.3.1.0: Fast Bencode encoding and parsing library
 dev-haskell/attojson 0.5.10-r2: Simple lightweight JSON parser, generator & manipulator based on ByteString
 dev-haskell/attoparsec 0.12.1.6 0.13.2.3: Fast combinator parsing for bytestrings and text
-dev-haskell/attoparsec-binary 0.2: Binary processing extensions to Attoparsec
+dev-haskell/attoparsec-binary 0.2-r1: Binary processing extensions to Attoparsec
 dev-haskell/attoparsec-conduit 1.1.0: Consume attoparsec parsers via conduit. (deprecated)
 dev-haskell/attoparsec-enumerator 0.3.4: Pass input from an enumerator to an Attoparsec parser
 dev-haskell/attoparsec-iso8601 1.0.0.0-r1 1.0.1.0: Parsing of ISO 8601 dates, originally from aeson
