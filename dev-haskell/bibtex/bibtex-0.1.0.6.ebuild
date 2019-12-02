@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 #IUSE="buildexamples"
 
+RESTRICT="buildexamples" #requires unacceptably old verions
+
 RDEPEND=">=dev-haskell/latex-0.1:=[profile?] <dev-haskell/latex-0.2:=[profile?]
 	>=dev-haskell/parsec-2.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
