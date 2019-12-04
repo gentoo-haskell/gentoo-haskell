@@ -6,8 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="doctests">You can disable testing with doctests using `-f-doctests`.</flag>
-		<flag name="benchmarks">You can disable testing with benchmarks using `-f-benchmarks`.</flag>
+		<flag name="doctests">Enable testing with doctests</flag>
+		<flag name="benchmarks">Enable testing with benchmarks</flag>
 	</use>
 	<longdescription>
 		CλaSH (pronounced 'clash') is a functional hardware description language that

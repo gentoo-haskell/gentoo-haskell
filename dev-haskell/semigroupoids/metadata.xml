@@ -39,39 +39,35 @@
 	</longdescription>
 	<use>
 		<flag name="comonad">
-			You can disable the use of the `comonad` package using
-			`-f-comonad`. Disabling this is an unsupported configuration, but it may be
-			useful for accelerating builds in sandboxes for expert users. If disabled we
-			will not supply instances of `Comonad`
+			Enable the use of the `comonad` package. Disabling this is an
+			unsupported configuration, but it may be useful for
+			accelerating builds in sandboxes for expert users. If disabled we
+			will not supply instances of `Comonad`.
 		</flag>
 		<flag name="containers">
-			You can disable the use of the `containers` package
-			using `-f-containers`. Disabing this is an unsupported configuration, but it
-			may be useful for accelerating builds in sandboxes for expert users.
+			Enable the use of the `containers` package. Disabing this is an
+			unsupported configuration, but it may be useful for accelerating
+			builds in sandboxes for expert users.
 		</flag>
 		<flag name="contravariant">
-			You can disable the use of the `contravariant`
-			package using `-f-contravariant`. Disabling this is an unsupported
+			Enable the use of the `contravariant` package. Disabling this is an unsupported
 			configuration, but it may be useful for accelerating builds in sandboxes for
 			expert users. If disabled we will not supply instances of `Contravariant`
 		</flag>
 		<flag name="distributive">
-			You can disable the use of the `distributive`
-			package using `-f-distributive`. Disabling this is an unsupported
+			Enable the use of the `distributive`. Disabling this is an unsupported
 			configuration, but it may be useful for accelerating builds in sandboxes for
 			expert users. If disabled we will not supply instances of `Distributive`
 		</flag>
 		<flag name="tagged">
-			You can disable the use of the `tagged` package
-			using `-f-tagged`. Disabing this is an unsupported
+			Enable the use of the `tagged` package. Disabing this is an unsupported
 			configuration, but it may be useful for accelerating builds in
 			sandboxes for expert users.
 		</flag>
 		<flag name="unordered-containers">
-			You can disable the use of the `unordered-containers`
-			package (and also its dependency `hashable`) using `-f-unordered-containers`. Disabling
-			this is an unsupported configuration, but it may be useful for accelerating builds in
-			sandboxes for expert users.
+			Enable the use of the `unordered-containers` package (and also its
+			dependency `hashable`). Disabling this is an unsupported configuration,
+			but it may be useful for accelerating builds in sandboxes for expert users.
 		</flag>
 	</use>
 </pkgmetadata>

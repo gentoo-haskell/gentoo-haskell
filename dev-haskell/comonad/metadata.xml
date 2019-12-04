@@ -11,21 +11,19 @@
 <use>
 	<flag name="test-doctests">Run the doctests test suite</flag>
 	<flag name="containers">
-		You can disable the use of the `containers` package
-		using `-f-containers`. Disabing this is an unsupported configuration, but it
-		may be useful for accelerating builds in sandboxes for expert users.
+		Enable the use of the `containers` package.  Disabing this is an
+		unsupported configuration, but it may be useful for accelerating
+		builds in sandboxes for expert users.
 	</flag>
 	<flag name="contravariant">
-		You can disable the use of the `contravariant`
-		package using `-f-contravariant`. Disabling this is an unsupported
+		Enable the use of the `contravariant` package. Disabling this is an unsupported
 		configuration, but it may be useful for accelerating builds in sandboxes for
-		expert users. If disabled we will not supply instances of `Contravariant`
+		expert users. If disabled we will not supply instances of `Contravariant`.
 	</flag>
 	<flag name="distributive">
-		You can disable the use of the `distributive`
-		package using `-f-distributive`. Disabling this is an unsupported
+		Enable the use of the `distributive` package. Disabling this is an unsupported
 		configuration, but it may be useful for accelerating builds in sandboxes for
-		expert users. If disabled we will not supply instances of `Distributive`
+		expert users. If disabled we will not supply instances of `Distributive`.
 	</flag>
 </use>
 </pkgmetadata>
