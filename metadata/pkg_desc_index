@@ -138,7 +138,7 @@ dev-haskell/attoparsec-iteratee 0.4.0-r1: An adapter to convert attoparsec Parse
 dev-haskell/attoparsec-path 0.0.0.1: Convenience bindings between path and attoparsec
 dev-haskell/augeas 0.6.1: A Haskell FFI wrapper for the Augeas API
 dev-haskell/authenticate 1.3.4: Authentication methods for Haskell web applications
-dev-haskell/authenticate-kerberos 1.0.0: Authentication methods for Haskell web applications
+dev-haskell/authenticate-kerberos 1.0.0-r1: Authentication methods for Haskell web applications
 dev-haskell/authenticate-oauth 1.6-r1: Library to authenticate with OAuth for Haskell web applications
 dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.4: Efficiently run periodic, on-demand actions
@@ -1005,9 +1005,9 @@ dev-haskell/hspec-wai 0.6.5 0.6.6 0.9.0: Experimental Hspec support for testing 
 dev-haskell/hspecvariant 0.1.0.1: Spec for testing properties for variant types
 dev-haskell/hspread 0.3.3-r1: A client library for the spread toolkit
 dev-haskell/hsql 1.8.2-r1: Database access from Haskell
-dev-haskell/hsql-mysql 1.8.2: MySQL driver for HSQL
+dev-haskell/hsql-mysql 1.8.2-r1: MySQL driver for HSQL
 dev-haskell/hsql-odbc 1.8.2: A Haskell Interface to ODBC
-dev-haskell/hsql-postgresql 1.8.2: A Haskell Interface to PostgreSQL via the PQ library
+dev-haskell/hsql-postgresql 1.8.2-r1: A Haskell Interface to PostgreSQL via the PQ library
 dev-haskell/hsql-sqlite3 1.8.2-r1: SQLite3 driver for HSQL
 dev-haskell/hsqml 0.3.4.1: Haskell binding for Qt Quick
 dev-haskell/hsshellscript 3.4.5: Haskell for Unix shell scripting tasks
@@ -1064,7 +1064,7 @@ dev-haskell/iconv 0.4.1.3: String encoding conversion
 dev-haskell/idiii 0.1.3.3: ID3v2 (tagging standard for MP3 files) library
 dev-haskell/idna 0.2 0.3.0: Implements IDNA (RFC 3490)
 dev-haskell/ieee754 0.7.9: Utilities for dealing with IEEE floating point numbers
-dev-haskell/ifelse 0.85: Anaphoric and miscellaneous useful control-flow
+dev-haskell/ifelse 0.85-r1: Anaphoric and miscellaneous useful control-flow
 dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
 dev-haskell/ihaskell 0.10.0.2: A Haskell backend kernel for the IPython project
 dev-haskell/ihaskell-charts 0.3.0.1: IHaskell display instances for charts types
@@ -1263,7 +1263,7 @@ dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megadeth 9999: Simple project template from stack
 dev-haskell/megaparsec 5.2.0 5.3.1 6.5.0-r1 7.0.4 7.0.5: Monadic parser combinators
-dev-haskell/meldable-heap 2.0.3: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
+dev-haskell/meldable-heap 2.0.3-r1: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memcache 0.2.0.1: A memcached client library
 dev-haskell/memoize 0.8.1: A memoization library
 dev-haskell/memory 0.14.18 0.15.0: memory and related abstraction stuff
@@ -1317,7 +1317,7 @@ dev-haskell/monadcryptorandom 0.7.2.1: A monad for using CryptoRandomGen
 dev-haskell/monadio 0.11.1.0: Overloading of concurrency variables
 dev-haskell/monadlab 0.0.2: Automatically generate layered monads
 dev-haskell/monadlib 3.10: A collection of monad transformers
-dev-haskell/monadlist 0.0.2: Monadic versions of list functions
+dev-haskell/monadlist 0.0.2-r1: Monadic versions of list functions
 dev-haskell/monadloc 0.7.1: A class for monads which can keep a monadic call trace
 dev-haskell/monadplus 1.4.2 1.4.2-r1: Haskell98 partial maps and filters over MonadPlus
 dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
@@ -1458,7 +1458,7 @@ dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsec-numbers 0.1.0: Utilities for parsing numbers from strings
 dev-haskell/parsec-permutation 0.1.2.0: Applicative permutation parser for Parsec (replacement for Text.Parsec.Perm)
 dev-haskell/parsec1 1.0.0.6: Portable monadic parser combinators
-dev-haskell/parsedate 3000.0.0: Data and time parsing for CalendarTime
+dev-haskell/parsedate 3000.0.0-r1: Data and time parsing for CalendarTime
 dev-haskell/parser-combinators 1.0.2: Lightweight package providing commonly useful parser combinators
 dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
@@ -2069,11 +2069,11 @@ dev-haskell/users-mysql-haskell 0.5.2.0: A mysql-haskell backend for the users l
 dev-haskell/utf8-light 0.4.2: Unicode
 dev-haskell/utf8-string 1.0.1.1: Support for reading and writing UTF8 Strings
 dev-haskell/utility-ht 0.0.13 0.0.14: Various small helper functions for Lists, Maybes, Tuples, Functions
-dev-haskell/utilitytm 0.0.4: Utility functions that are missing from the standard library
+dev-haskell/utilitytm 0.0.4-r1: Utility functions that are missing from the standard library
 dev-haskell/uu-interleaved 0.2.0.2: interleaving combinator for use with applicative/alternative style
 dev-haskell/uu-parsinglib 2.9.1.1: Online error-correcting monadic applicative and more parser combinators
 dev-haskell/uuagc 0.9.52.2: Attribute Grammar System of Universiteit Utrecht
-dev-haskell/uuagc-bootstrap 0.9.40.2: Attribute Grammar System of Universiteit Utrecht
+dev-haskell/uuagc-bootstrap 0.9.40.2-r1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-cabal 1.1.0.0: Cabal plugin for the Universiteit Utrecht Attribute Grammar System
 dev-haskell/uuid 1.3.13-r1: For creating, comparing, parsing and printing Universally Unique Identifiers
 dev-haskell/uuid-orphans 1.4.2: Orphan instances for the UUID datatype

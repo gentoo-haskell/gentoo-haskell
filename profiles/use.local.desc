@@ -58,9 +58,8 @@ dev-haskell/attoparsec-iso8601:developer - operate in developer mode
 dev-haskell/attoparsec-iso8601:fast - compile without optimizations
 dev-haskell/authenticate:network-uri - Get Network.URI from the network-uri package
 dev-haskell/beam-migrate-cli:werror - Enable -Werror during development
-dev-haskell/bibtex:buildexamples - Build example executables
-dev-haskell/bifunctors:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/bifunctors:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/bifunctors:semigroups - Enable the use of `semigroups` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/bifunctors:tagged - Enable the use of the `tagged` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/bindings-glfw:exposenative - Whether or not to use the native access functions.
 dev-haskell/biosff:fclip - Build the fclip executable.
 dev-haskell/biosff:flower - Build the flower executable.
@@ -93,22 +92,22 @@ dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/x
 dev-haskell/citeproc-hs:network - use dev-haskell/network and dev-haskell/http to retrieve CSL file from URIs
 dev-haskell/citeproc-hs:small-base - Choose the new smaller, split-up base package.
 dev-haskell/citeproc-hs:unicode-collation - Use Haskell bindings to the dev-libs/icu
-dev-haskell/clash-prelude:benchmarks - You can disable testing with benchmarks using `-f-benchmarks`.
-dev-haskell/clash-prelude:doctests - You can disable testing with doctests using `-f-doctests`.
+dev-haskell/clash-prelude:benchmarks - Enable testing with benchmarks
+dev-haskell/clash-prelude:doctests - Enable testing with doctests
 dev-haskell/clckwrks:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build quote module
 dev-haskell/cmdargs:testprog - Build the test program
-dev-haskell/comonad:containers - You can disable the use of the `containers` package using `-f-containers`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/comonad:contravariant - You can disable the use of the `contravariant` package using `-f-contravariant`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Contravariant`
-dev-haskell/comonad:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
+dev-haskell/comonad:containers - Enable the use of the `containers` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/comonad:contravariant - Enable the use of the `contravariant` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Contravariant`.
+dev-haskell/comonad:distributive - Enable the use of the `distributive` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`.
 dev-haskell/comonad:test-doctests - Run the doctests test suite
 dev-haskell/concurrent-supply:test-properties - 
 dev-haskell/configfile:buildtests - Build the executable to run unit tests.
 dev-haskell/contravariant:safe - Get Safe guarantees rather than merely Trustworthy, but with worse constant factors.
-dev-haskell/contravariant:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/contravariant:statevar - You can disable the use of the `StateVar` package using `-f-StateVar`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/contravariant:tagged - You can disable the use of the `tagged` package on older versons of GHC using `-f-tagged`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/contravariant:semigroups - Enable the use of the `semigroups` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/contravariant:statevar - Enable the use of of the `statevar` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/contravariant:tagged - Enable the use of the `tagged` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/country-codes:generate - Build generate executable?
 dev-haskell/cpu:executable - build 'cpuid' tool
 dev-haskell/criterion:embed-data-files - Embed the data files in the binary for a relocatable executable
@@ -233,7 +232,7 @@ dev-haskell/hoogle:fetchdb-ghc - fetch hoogle db by running: hoogle data ghc (im
 dev-haskell/hoogle:localdb - install hoogle-build-localdb script for building hoogle dbs for installed pkgs
 dev-haskell/hoogle:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hp2any-graph:serveronly - Suppress building the client, thereby removing the dependency on OpenGL.
-dev-haskell/hps:build-exec - Build the `hps-fractals' executable
+dev-haskell/hps:build-exec - Build the `hps-fractals` executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv.
 dev-haskell/hsh:buildtests - Build the executable to run unit tests.
@@ -283,7 +282,7 @@ dev-haskell/ldap:buildtests - Build the executable to run unit tests.
 dev-haskell/lens:benchmark-uniplate - Enable benchmarking against Neil Mitchell's uniplate library for comparative performance analysis. Defaults to being turned off to avoid the extra dependency.
 dev-haskell/lens:dump-splices - Build and run the doctests test-suite.
 dev-haskell/lens:inlining - Generate inline pragmas when using template-haskell. This defaults to enabled, but you can to shut it off to benchmark the relative performance impact, or as last ditch effort to address compile errors resulting from the myriad versions of template-haskell that all purport to be 2.8.
-dev-haskell/lens:j - Attempt a parallel build with GHC 7.8.
+dev-haskell/lens:j - Attempt a parallel build with GHC.
 dev-haskell/lens:old-inline-pragmas - Some 7.6.1-rc1 users report their TH still uses old style inline pragmas. This lets them turn on inlining.
 dev-haskell/lens:safe - Disallow unsafeCoerce
 dev-haskell/lens:test-doctests - Build and run the doctests test-suite.
@@ -294,7 +293,7 @@ dev-haskell/libssh2:gcrypt - add hack that allows to run threaded program when l
 dev-haskell/libyaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
 dev-haskell/lifted-async:monad-control-1 - Use moand-control == 1.*
-dev-haskell/linear:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/linear:template-haskell - Enable the use of the `template-haskell` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/linux-file-extents:examples - Build examples
 dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for development.
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
@@ -326,8 +325,8 @@ dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the libra
 dev-haskell/pandoc-citeproc:test-citeproc - Build the test-citeproc program
 dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
-dev-haskell/parsers:attoparsec - You can disable the use of the `attoparsec` package using `-f-attoparsec`.
-dev-haskell/parsers:parsec - You can disable the use of the `parsec` package using `-f-parsec`.
+dev-haskell/parsers:attoparsec - Enable the use of the `attoparsec` package
+dev-haskell/parsers:parsec - Enable the use of the `parsec` package
 dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Only developers should use this.
 dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nano second precision.
@@ -362,12 +361,12 @@ dev-haskell/pretty-simple:buildexe - Build a small command line program that pre
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library
 dev-haskell/quickcheck:template-haskell - Enable additional test modules requiring Template Haskell support.
-dev-haskell/quickcheck-classes:aeson - You can disable the use of the `aeson` package using `-f-aeson`. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:aeson - Enable the use of the `aeson` package. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/quickcheck-classes:binary-laws - Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
-dev-haskell/quickcheck-classes:semigroupoids - You can disable the use of the `semigroupoids` package using `-f-semigroupoids`. This may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/quickcheck-classes:semirings - You can disable the use of the `semirings` package using `-f-semirings`. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:semigroupoids - Enable the use of the `semigroupoids` package. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:semirings - Enable the use of the `semirings` package. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/quickcheck-classes:unary-laws - Include infrastructure for testing class laws of unary type constructors.
-dev-haskell/quickcheck-classes:vector - You can disable the use of the `vector` package using `-f-vector`. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:vector - Enable the use of the `vector` package. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
@@ -386,17 +385,17 @@ dev-haskell/scientific:integer-simple - Use the integer-simple package instead o
 dev-haskell/sdl2:no-linear - Do not depend on dev-haskell/linear library (bundled Vect)
 dev-haskell/semialign:semigroupoids - Build with semigroupoids dependency
 dev-haskell/semigroupoid-extras:profunctors - You can disable the use of the `profunctors` package using `-f-profunctors`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semigroupoids:comonad - You can disable the use of the `comonad` package using `-f-comonad`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Comonad`
-dev-haskell/semigroupoids:containers - You can disable the use of the `containers` package using `-f-containers`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semigroupoids:contravariant - You can disable the use of the `contravariant` package using `-f-contravariant`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Contravariant`
-dev-haskell/semigroupoids:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
-dev-haskell/semigroupoids:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semigroupoids:unordered-containers - You can disable the use of the `unordered-containers` package (and also its dependency `hashable`) using `-f-unordered-containers`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroupoids:comonad - Enable the use of the `comonad` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Comonad`.
+dev-haskell/semigroupoids:containers - Enable the use of the `containers` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroupoids:contravariant - Enable the use of the `contravariant` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Contravariant`
+dev-haskell/semigroupoids:distributive - Enable the use of the `distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
+dev-haskell/semigroupoids:tagged - Enable the use of the `tagged` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroupoids:unordered-containers - Enable the use of the `unordered-containers` package (and also its dependency `hashable`). Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroups:binary - provide instances for binary package
 dev-haskell/semigroups:transformers - provide instances for transformers package.
-dev-haskell/semirings:containers - You can disable the use of the `containers` package using `-f-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semirings:hashable - You can disable the use of the `hashable` package using `-f-hashable`. Disabling this may be useful for accelerating builds in sandboxes for expert users. Note: `-f-hashable` implies `-f-unordered-containers`, as we are necessarily not able to supply those instances as well.
-dev-haskell/semirings:unordered-containers - You can disable the use of the `unordered-containers` package using `-f-unordered-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semirings:containers - Enable the use of the `containers` package. Disabling this may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semirings:hashable - Enisable the use of the `hashable` package. Disabling this may be useful for accelerating builds in sandboxes for expert users. Note: `-hashable` implies `-unordered-containers`, as we are necessarily not able to supply those instances as well.
+dev-haskell/semirings:unordered-containers - Enable the use of the `unordered-containers` package. Disabling this may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
 dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
@@ -465,7 +464,7 @@ dev-haskell/vector-algorithms:unsafechecks - Enable bounds checking in unsafe op
 dev-haskell/vector-instances:hashable - use dev-haskell/hashable
 dev-haskell/vimeta:maintainer - Enable settings for the package maintainer.
 dev-haskell/vinyl-utils:devel - Development mode (-Werror)
-dev-haskell/void:safe - dissable effective but unsafe coersions
+dev-haskell/void:safe - Disable effective but unsafe coercions
 dev-haskell/vty-ui:demos - Build demonstration programs.
 dev-haskell/vty-ui:no-tests - Skip build of testing executable.
 dev-haskell/wai-app-static:print - print debug info.
@@ -492,7 +491,7 @@ dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for l
 dev-lang/cryptol:server - Build with the ZeroMQ/JSON cryptol-server executable.
 dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.
-dev-lang/ghc:elfutils - Enable DWARF-based baclktraces using dev-libs/elfutils.
+dev-lang/ghc:elfutils - Enable DWARF-based backtraces using dev-libs/elfutils.
 dev-lang/ghc:ghcbootstrap - Internal: Bootstrap GHC from an existing GHC installation.
 dev-lang/ghc:ghcmakebinary - Internal: Build binary friendly for redistribution.
 dev-lang/ghc:gmp - use dev-libs/gmp for integer operations (works faster, but an external depend).
