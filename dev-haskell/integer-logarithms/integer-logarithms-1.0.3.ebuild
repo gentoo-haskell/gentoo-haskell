@@ -18,6 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+integer-gmp"
 
+#circular dependency: scientific -> integer-logarithms -> tasty -> scientific
+RESTRICT="test"
+
 RDEPEND=">=dev-haskell/nats-1.1.2:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	!integer-gmp? ( dev-haskell/integer-simple:=[profile?] )
