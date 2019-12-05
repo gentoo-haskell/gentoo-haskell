@@ -8,7 +8,4 @@
 	<longdescription>
 		This is a Haskell library for writing CGI programs.
 	</longdescription>
-	<use>
-		<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
-	</use>
 </pkgmetadata>
