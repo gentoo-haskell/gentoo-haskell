@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="old-locale">Use old-locale and time less than 1.5</flag>
 		<flag name="https">Use http to query Stackage</flag>
 	</use>
 	<longdescription>
