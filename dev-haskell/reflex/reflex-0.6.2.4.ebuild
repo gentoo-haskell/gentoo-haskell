@@ -52,7 +52,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( dev-haskell/filemanip
-		dev-haskell/split 
+		dev-haskell/split
 		dev-haskell/hlint  )
 	split-these? ( test? ( dev-haskell/these-lens ) )
 	!split-these? ( test? ( dev-haskell/monoidal-containers ) )
