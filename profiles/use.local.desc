@@ -79,11 +79,9 @@ dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri pac
 dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball.
 dev-haskell/cabal-install:parsec - Use parser written in parsec library.
 dev-haskell/cabal-rpm:https - Use http to query Stackage
-dev-haskell/cabal-rpm:old-locale - Use old-locale and time less than 1.5
 dev-haskell/categories:optimize - enable optimizations
 dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
 dev-haskell/certificate:executable - Build the executable
-dev-haskell/cgi:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
 dev-haskell/citeproc-hs:bibutils - use Chris Putnam's app-text/bibutils
@@ -225,7 +223,6 @@ dev-haskell/hoodle:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/hoodle-core:hub - Support communication with hub
-dev-haskell/hoodle-publish:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/hoodle-render:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/hoogle:fetchdb - fetch hoogle db by running: hoogle data
 dev-haskell/hoogle:fetchdb-ghc - fetch hoogle db by running: hoogle data ghc (implies fetchdb)
