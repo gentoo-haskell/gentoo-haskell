@@ -85,8 +85,18 @@ SRC_URI=""
 
 # --- end ebuild-configurable settings ---
 
-DEPEND="dev-vcs/darcs
-	net-misc/rsync"
+PROPERTIES+=" live"
+
+case ${EAPI:-0} in
+	[0-6]) # no need to care about 5-HDEPEND and similar
+		DEPEND="dev-vcs/darcs
+			net-misc/rsync"
+		;;
+	*)
+		BDEPEND="dev-vcs/darcs
+			net-misc/rsync"
+		;;
+esac
 
 # @FUNCTION: darcs_patchcount
 # @DESCRIPTION:
