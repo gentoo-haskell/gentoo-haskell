@@ -13,8 +13,6 @@
 inherit multiprocessing
 
 # Maintain version-testing compatibility with ebuilds not using EAPI 7.
-# The overlay does not contain any ebuilds lower than EAPI 4, so we don't
-# test for that.
 case "${EAPI:-0}" in
 	4|5|6) inherit eapi7-ver ;;
 	*) ;;
