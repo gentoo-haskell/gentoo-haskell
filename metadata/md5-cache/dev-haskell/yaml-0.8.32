@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/aeson-0.11:=[profile?] >=dev-haskell/attoparsec-0.11.3.0:=[profile?] >=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.4:=[profile?] >=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.3:=[profile?] dev-haskell/scientific:=[profile?] dev-haskell/semigroups:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-8.0.2:= !no-examples? ( dev-haskell/raw-strings-qq:=[profile?] )
 SLOT=0/0.8.32
 SRC_URI=https://hackage.haskell.org/package/yaml-0.8.32/yaml-0.8.32.tar.gz
-_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	413fd30804bc16427afb0f37313cc14f	haskell-cabal	1457e55a76099dec54b17e74628e091c	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	6912d05c861a039f372383bdf1363125	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
 _md5_=e69c4dcf81bf5ae2f618ae3c26dac5ba
