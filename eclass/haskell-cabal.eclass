@@ -405,14 +405,14 @@ cabal-configure() {
 		--datasubdir=${P}/ghc-$(ghc-version) \
 		"${cabalconf[@]}" \
 		${CABAL_CONFIGURE_FLAGS} \
-		${CABAL_EXTRA_CONFIGURE_FLAGS} \
-		"$@"
+		"$@" \
+		${CABAL_EXTRA_CONFIGURE_FLAGS}
 	echo ./setup "$@"
 	./setup "$@" || cabal-show-brokens-and-die "setup configure failed"
 }
 
 cabal-build() {
-	set --  build ${CABAL_EXTRA_BUILD_FLAGS} "$@"
+	set --  build "$@" ${CABAL_EXTRA_BUILD_FLAGS}
 	echo ./setup "$@"
 	./setup "$@" \
 		|| die "setup build failed"
@@ -580,8 +580,8 @@ haskell-cabal_src_test() {
 		set -- test \
 			"${cabaltest[@]}" \
 			${CABAL_TEST_FLAGS} \
-			${CABAL_EXTRA_TEST_FLAGS} \
-			"$@"
+			"$@" \
+			${CABAL_EXTRA_TEST_FLAGS}
 		echo ./setup "$@"
 		./setup "$@" || die "cabal test failed"
 	fi
