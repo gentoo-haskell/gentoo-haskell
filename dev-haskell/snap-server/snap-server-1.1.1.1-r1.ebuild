@@ -21,12 +21,12 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/blaze-builder-0.4:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/bytestring-builder-0.10.4:=[profile?] <dev-haskell/bytestring-builder-0.11:=[profile?]
 	>=dev-haskell/case-insensitive-1.1:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
-	>=dev-haskell/clock-0.7.1:=[profile?] <dev-haskell/clock-0.8:=[profile?]
+	>=dev-haskell/clock-0.7.1:=[profile?]
 	>=dev-haskell/io-streams-1.3:=[profile?] <dev-haskell/io-streams-1.6:=[profile?]
 	>=dev-haskell/io-streams-haproxy-1.0:=[profile?] <dev-haskell/io-streams-haproxy-1.1:=[profile?]
 	>=dev-haskell/lifted-base-0.1:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.1:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
@@ -53,6 +53,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/threads-0.5 <dev-haskell/threads-0.6
 		>=dev-haskell/transformers-0.3 <dev-haskell/transformers-0.6 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'network                             >= 2.3      && < 3.1' 'network >=2.3 && <3.2' \
+		'clock                               >= 0.7.1    && < 0.8' 'clock >= 0.7.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
+RESTRICT=test #circular test depend: http-streams -> snap-server -> http-streams
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	dev-haskell/base64-bytestring:=[profile?]
@@ -42,13 +44,20 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec-expectations
 		dev-haskell/hunit
 		dev-haskell/lifted-base
-		>=dev-haskell/snap-core-1.0 <dev-haskell/snap-core-1.1
-		>=dev-haskell/snap-server-1.0 <dev-haskell/snap-server-1.1
+		>=dev-haskell/snap-core-1.0 <dev-haskell/snap-core-1.2
+		>=dev-haskell/snap-server-1.0 <dev-haskell/snap-server-1.2
 		>=dev-haskell/system-fileio-0.3.10 <dev-haskell/system-fileio-0.4
 		>=dev-haskell/system-filepath-0.4.1 <dev-haskell/system-filepath-0.5
 		!network-uri? ( >=dev-haskell/network-2.6
 				>=dev-haskell/network-uri-2.6 ) )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'snap-core       >= 1.0    && < 1.1' 'snap-core       >= 1.0    && < 1.2' \
+		'snap-server     >= 1.0    && < 1.1' 'snap-server     >= 1.0    && < 1.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

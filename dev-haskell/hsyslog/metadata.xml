@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name='install-examples'>Build and install example programs</flag>
+	</use>
 	<longdescription>
 		This library provides FFI bindings to syslog(3) from POSIX.1-2001.
 		See &lt;http://www.opengroup.org/onlinepubs/009695399/basedefs/syslog.h.html&gt; for
