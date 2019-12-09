@@ -6,7 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="portable">Obtain FileTime using portable functions.</flag>
+		<flag name="cloud">Enable cloud build features</flag>
+		<flag name="portable">Obtain FileTime using portable functions</flag>
 	</use>
 	<longdescription>
 		Shake is a Haskell library for writing build systems - designed as a

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		This package bundles the minified &lt;https://github.com/danielgindi/jquery.dgtable jquery.dgtable&gt; code into a Haskell package,
+		so it can be depended upon by Cabal packages. The first three components of
+		the version number match the upstream jquery.dgtable version. The package is designed
+		to meet the redistribution requirements of downstream users (e.g. Debian).
+	</longdescription>
+</pkgmetadata>
