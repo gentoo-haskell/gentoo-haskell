@@ -245,6 +245,7 @@ dev-haskell/hsqml:threadedtestsuite - Build test executable with the threaded RT
 dev-haskell/hsqml:useexithook - Override the OnExitHook symbol to shutdown the Qt framework on exit.
 dev-haskell/hsqml:usepkgconfig - Use pkg-config for libraries instead of the platform default mechanism.
 dev-haskell/hsx:base4 - Use base-4.0.
+dev-haskell/hsyslog:install-examples - Build and install example programs
 dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (for the test suite).
 dev-haskell/http:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/http-api-data:use-text-show - Use text-show library for efficient ToHttpApiData implementations
@@ -396,7 +397,8 @@ dev-haskell/semirings:unordered-containers - Enable the use of the `unordered-co
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
 dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
-dev-haskell/shake:portable - Obtain FileTime using portable functions.
+dev-haskell/shake:cloud - Enable cloud build features
+dev-haskell/shake:portable - Obtain FileTime using portable functions
 dev-haskell/shakespeare:test-coffee - Render tests through coffeescript render function.
 dev-haskell/shakespeare:test-export - Test export.
 dev-haskell/shakespeare:test-roy - Render tests through roy render function.

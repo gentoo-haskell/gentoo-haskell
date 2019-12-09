@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-3.2:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 test? ( >=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.2.4 >=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=indentation sensitive parser-combinators for parsec
+EAPI=7
+HOMEPAGE=https://github.com/jaspervdj/indents
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-3.2:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.5.0.1
+SRC_URI=https://hackage.haskell.org/package/indents-0.5.0.1/indents-0.5.0.1.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	6912d05c861a039f372383bdf1363125	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=01ad7cb8708a06a1c8e697a74c78312d

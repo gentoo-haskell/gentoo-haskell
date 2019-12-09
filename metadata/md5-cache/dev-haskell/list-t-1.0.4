@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/foldl-1:=[profile?] <dev-haskell/foldl-2:=[profile?] >=dev-haskell/mmorph-1:=[profile?] <dev-haskell/mmorph-2:=[profile?] >=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-2:=[profile?] >=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?] >=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( dev-haskell/base-prelude >=dev-haskell/htf-0.13 <dev-haskell/htf-0.14 <dev-haskell/mtl-prelude-3 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=ListT done right
+EAPI=7
+HOMEPAGE=https://github.com/nikita-volkov/list-t
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/foldl-1:=[profile?] <dev-haskell/foldl-2:=[profile?] >=dev-haskell/mmorph-1:=[profile?] <dev-haskell/mmorph-2:=[profile?] >=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-2:=[profile?] >=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?] >=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?] >=dev-lang/ghc-8.0.1:=
+SLOT=0/1.0.4
+SRC_URI=https://hackage.haskell.org/package/list-t-1.0.4/list-t-1.0.4.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	6912d05c861a039f372383bdf1363125	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=6a74c190bfbe2399d5a709e79adff8bd
