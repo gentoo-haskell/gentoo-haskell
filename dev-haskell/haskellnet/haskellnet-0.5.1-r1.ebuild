@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/base64-string:=[profile?]
 	dev-haskell/cryptohash:=[profile?]
-	>=dev-haskell/mime-mail-0.4.7:=[profile?] <dev-haskell/mime-mail-0.5:=[profile?]
+	>=dev-haskell/mime-mail-0.4.7:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/old-time:=[profile?]
@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'mime-mail >= 0.4.7 && < 0.5' 'mime-mail >= 0.4.7'
+}
