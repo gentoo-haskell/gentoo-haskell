@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?]
-	>=dev-haskell/case-insensitive-1.2.0.4:=[profile?] <dev-haskell/case-insensitive-1.2.1:=[profile?]
+	>=dev-haskell/case-insensitive-1.2.0.4:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
 	>=dev-haskell/nats-1:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 	>=dev-haskell/scientific-0.3.3.8:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -51,5 +51,6 @@ src_prepare() {
 		'QuickCheck           >=2.10     && <2.11' 'QuickCheck           >=2.10' \
 		'tasty                >=0.10.1.2 && <0.12' 'tasty                >=0.10.1.2' \
 		'tasty-quickcheck     >=0.8.3.2  && <0.10' 'tasty-quickcheck     >=0.8.3' \
-		'tagged                   >=0.7.3     && <0.8.6' 'tagged                   >=0.7.3     && <0.8.7'
+		'tagged                   >=0.7.3     && <0.8.6' 'tagged                   >=0.7.3     && <0.8.7' \
+		'case-insensitive         >=1.2.0.4   && <1.2.1' 'case-insensitive         >=1.2.0.4'
 }
