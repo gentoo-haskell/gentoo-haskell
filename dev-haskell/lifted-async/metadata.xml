@@ -9,7 +9,4 @@
 		This package provides IO operations from @async@ package lifted to any
 		instance of 'MonadBase' or 'MonadBaseControl'.
 	</longdescription>
-	<use>
-		<flag name="monad-control-1">Use moand-control == 1.*</flag>
-	</use>
 </pkgmetadata>
