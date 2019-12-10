@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/fixed-0.2.1:=[profile?] <dev-haskell/fixed-0.3:=[profile?]
+RDEPEND=">=dev-haskell/fixed-0.2.1:=[profile?] <dev-haskell/fixed-0.4:=[profile?]
 	>=dev-haskell/half-0.2:=[profile?] <dev-haskell/half-0.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	virtual/opengl
@@ -32,8 +32,10 @@ src_prepare() {
 	default
 
 	# As per http://hackage.haskell.org/package/gl-0.8.0/revisions/
-	cabal_chdeps 'half >= 0.2 && < 0.3' 'half >=0.2 && <0.4'\
-		'containers == 0.5.*' 'containers >=0.5 && <0.7'
+	cabal_chdeps \
+		'containers == 0.5.*'		'containers >=0.5 && <0.7' \
+		'fixed >= 0.2.1 && < 0.3'	'fixed >= 0.2.1 && < 0.4' \
+		'half >= 0.2 && < 0.3'		'half >=0.2 && <0.4'
 }
 
 src_configure() {
