@@ -29,7 +29,6 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/stm-2.3:=[profile?]
 	>=dev-haskell/streaming-commons-0.1.0.2:=[profile?] <dev-haskell/streaming-commons-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>dev-haskell/unsupported-ghc-version-1:=[profile?] <dev-haskell/unsupported-ghc-version-1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] )

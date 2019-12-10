@@ -17,6 +17,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+#Ambiguous ‘Language.Haskell.TH’: found in ghc-lib-parser-8.8.1 template-haskell-2.14.0.0
+RESTRICT=test
+
 RDEPEND=">=dev-haskell/async-2.2.1:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/mtl-2.2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/split-0.2.3:=[profile?] <dev-haskell/split-0.3:=[profile?]
