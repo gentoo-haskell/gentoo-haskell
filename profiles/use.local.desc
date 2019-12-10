@@ -290,7 +290,6 @@ dev-haskell/libssh2:example-client - build example client
 dev-haskell/libssh2:gcrypt - add hack that allows to run threaded program when libssh2 is built against gcrypt
 dev-haskell/libyaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
-dev-haskell/lifted-async:monad-control-1 - Use moand-control == 1.*
 dev-haskell/linear:template-haskell - Enable the use of the `template-haskell` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/linux-file-extents:examples - Build examples
 dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for development.
@@ -451,7 +450,6 @@ dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri packag
 dev-haskell/uri-encode:tools - Build executables.
 dev-haskell/urlencoded:network-uri - Get Network.URI from the network-uri package
 dev-haskell/uuagc:with-loag - Use dev-haskell/minisat external SAT-solver to schedule all Linear Ordered AGs.
-dev-haskell/validation:small_base - Choose the new, split-up base package.
 dev-haskell/vector:boundschecks - Enable bounds checking
 dev-haskell/vector:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty
 dev-haskell/vector:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty

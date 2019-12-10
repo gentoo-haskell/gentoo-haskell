@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/direct-sqlite-2.3.5:=[profile?] >=dev-haskell/groundhog-0.10.0:=[profile?] <dev-haskell/groundhog-0.11:=[profile?] >=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?] >=dev-haskell/resource-pool-0.2.1:=[profile?] >=dev-haskell/resourcet-1.1.2:=[profile?] >=dev-haskell/text-0.8:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Sqlite3 backend for the groundhog library
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/groundhog-sqlite
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/direct-sqlite-2.3.5:=[profile?] >=dev-haskell/groundhog-0.10.0:=[profile?] <dev-haskell/groundhog-0.11:=[profile?] >=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?] >=dev-haskell/resource-pool-0.2.1:=[profile?] >=dev-haskell/resourcet-1.1.2:=[profile?] >=dev-haskell/text-0.8:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-7.8.2:=
+SLOT=0/0.10.0
+SRC_URI=https://hackage.haskell.org/package/groundhog-sqlite-0.10.0/groundhog-sqlite-0.10.0.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	6912d05c861a039f372383bdf1363125	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=477dd1d953e387713187121a40bfcb0c
