@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="small_base">Choose the new, split-up base package.</flag>
-	</use>
 	<longdescription>
 		&lt;&lt;http://i.imgur.com/Ns5hntl.jpg&gt;&gt;
 		

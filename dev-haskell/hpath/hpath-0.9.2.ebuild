@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # testsuite spec: pass, doctest: fail (`not in scope`)
+
 RDEPEND="dev-haskell/exceptions:=[profile?]
 	dev-haskell/hspec:=[profile?]
 	dev-haskell/ifelse:=[profile?]

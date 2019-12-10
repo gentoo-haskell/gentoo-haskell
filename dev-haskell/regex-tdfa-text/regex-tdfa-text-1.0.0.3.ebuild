@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-haskell/regex-base:=[profile?]
+RDEPEND="<dev-haskell/regex-base-0.94:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1.1:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -25,3 +25,10 @@ RDEPEND="dev-haskell/regex-base:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'regex-base' 'regex-base < 0.94'
+}
