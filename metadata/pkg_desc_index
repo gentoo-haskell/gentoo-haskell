@@ -1138,6 +1138,7 @@ dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.3.0: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.2.9.5 3.3.4: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
+dev-haskell/juicypixels-extra 0.4.1: Efficiently scale, crop, flip images with JuicyPixels
 dev-haskell/juicypixels-scale-dct 0.1.2-r1: Scale JuicyPixels images with DCT
 dev-haskell/jupyter 0.9.0: A library for creating and using Jupyter kernels
 dev-haskell/jwt 0.7.2: JSON Web Token (JWT) decoding and encoding

@@ -271,6 +271,7 @@ dev-haskell/json:mapdict - Encode Haskell maps as JSON dicts
 dev-haskell/json:parsec - Add support for parsing with Parsec
 dev-haskell/json:pretty - Add support for using pretty printing combinators
 dev-haskell/judy:unsafe - Compile the library without locks. Code may be faster, but not threadsafe.
+dev-haskell/juicypixels-extra:dev - Turn on development settings.
 dev-haskell/keter:system-filepath - Deprecated in favor of filepath
 dev-haskell/lambdabot-misc-plugins:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/lambdabot-reference-plugins:network-uri - Get Network.URI from the network-uri package.
