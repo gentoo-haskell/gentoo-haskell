@@ -7,7 +7,8 @@ IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?] >=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/microlens-0.4.11:=[profile?] dev-haskell/microlens-mtl:=[profile?] dev-haskell/microlens-th:=[profile?] >=dev-haskell/mtl-1.1.1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/parallel-2.2:=[profile?] <dev-haskell/parallel-3.3:=[profile?] >=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-4:=[profile?] >=dev-haskell/semigroups-0.16:=[profile?] dev-haskell/stm:=[profile?] >=dev-haskell/terminfo-0.3:=[profile?] <dev-haskell/terminfo-0.5:=[profile?] >=dev-haskell/text-0.11.3:=[profile?] >=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?] >=dev-haskell/vector-0.7:=[profile?] >=dev-lang/ghc-7.10.1:=
+RESTRICT=!test? ( test )
 SLOT=0/5.24
 SRC_URI=https://hackage.haskell.org/package/vty-5.24/vty-5.24.tar.gz
-_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	6912d05c861a039f372383bdf1363125	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
 _md5_=015cc140bf067def78525e9d8bbf799e

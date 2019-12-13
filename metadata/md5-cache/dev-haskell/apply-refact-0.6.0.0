@@ -7,7 +7,8 @@ IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=dev-haskell/filemanip:=[profile?] >=dev-haskell/ghc-exactprint-0.5.7.0:=[profile?] dev-haskell/mtl:=[profile?] >=dev-haskell/optparse-applicative-0.13:=[profile?] >=dev-haskell/refact-0.2:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/temporary:=[profile?] dev-haskell/unix-compat:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-lang/ghc-8.6.0:=[profile?] <dev-lang/ghc-8.8:=[profile?]
+RESTRICT=!test? ( test )
 SLOT=0/0.6.0.0
 SRC_URI=https://hackage.haskell.org/package/apply-refact-0.6.0.0/apply-refact-0.6.0.0.tar.gz
-_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	6912d05c861a039f372383bdf1363125	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
 _md5_=c1d6a8215c4e82e1fdb01d72e5cbc4a0
