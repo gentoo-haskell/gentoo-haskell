@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+
+die() {
+    echo "ERROR: $@"
+    exit 1
+}
+
+run() {
+    echo "$@"
+    "$@" || die "$?"
+}
+
+verbose=
+vprint() {
+    [[ -n ${verbose} ]] || return 0
+
+    echo "$@"
+}
+
+usage() {
+    echo "A tool to sync package from ::haskell to ::gentoo."
+    echo ""
+    echo "Usage: $0 [ -- verbose ] [ --help ] [ cat/pkg... ]"
+    echo ""
+    echo "Usage examples:"
+    echo " \$ $0 dev-haskell/xss-sanitize"
+    die "no args"
+}
+
+find_prog() {
+    local var_name=$1
+    local prog_name=${!1}
+
+    echo -n "Resolving ${var_name} as ... "
+    type -P "${prog_name}" || die "failed to find '${var_name}=${prog_name}'."
+}
+
+
+# options parser
+while :; do
+    case "$1" in
+        -v | --verbose  ) verbose=1; shift ;;
+        -h | --help     ) usage ;;
+        -c | --continue ) ebuild_needs_regeneration=no; shift ;;
+        -a | --auto     ) autoversion=yes; shift ;;
+        --              ) shift; break ;;
+        *               ) break ;;
+    esac
+done
+
+# defaults, can be ovverided as:
+#    ebuild_prog=~/bin/e $0 <args>
+: ${ebuild_prog:=ebuild}
+: ${repoman_prog:=repoman}
+
+find_prog ebuild_prog
+find_prog repoman_prog
+
+get_latest_pv() {
+    local repo=$1 cp=$2 cpv pv
+    cpv=$(portageq best_visible / "${cp}::${repo}")
+    pv=${cpv#${cp}-}
+    echo "${pv}"
+}
+
+make_ebuild_path() {
+    local repo=$1 cp=$2 pv=$3 pn
+    pn=${cp#*/}
+    echo "$(portageq get_repo_path / "${repo}")/${cp}/${pn}-${pv}.ebuild"
+}
+
+sync_cp() {
+    local cp=$1 haskell_pv gentoo_pv haskell_e gentoo_e new_e
+
+    haskell_pv=$(get_latest_pv 'haskell' "${cp}")
+    gentoo_pv=$(get_latest_pv  'gentoo'  "${cp}")
+
+    haskell_e=$(make_ebuild_path 'haskell' "${cp}" "${haskell_pv}")
+    gentoo_e=$(make_ebuild_path  'gentoo'  "${cp}" "${gentoo_pv}")
+    new_e=$(make_ebuild_path     'gentoo'  "${cp}" "${haskell_pv}")
+
+    git diff --color "${gentoo_e}" "${haskell_e}" | cat
+    run cp "${haskell_e}" "${new_e}"
+
+
+    pushd "$(dirname "${new_e}")"
+    {
+        run $repoman_prog manifest
+        run $repoman_prog full
+
+        FEATURES="strict stricter test ${FEATURES}" \
+            run $ebuild_prog "${new_e}" clean install
+
+        run git add --all .
+        run $repoman_prog commit -m "${cp}: bump up to ${haskell_pv}"
+        git diff --color "${gentoo_e}" "${new_e}" | cat
+    }
+    popd
+
+    run $ebuild_prog "${new_e}" clean
+}
+
+for cp in "$@"; do
+    sync_cp "${cp}"
+done
