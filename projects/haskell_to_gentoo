@@ -82,11 +82,15 @@ sync_cp() {
     git diff --color "${gentoo_e}" "${haskell_e}" | cat
     run cp "${haskell_e}" "${new_e}"
 
-    FEATURES="strict stricter test ${FEATURES}" \
-        run $ebuild_prog "${new_e}" manifest clean install
 
     pushd "$(dirname "${new_e}")"
     {
+        run $repoman_prog manifest
+        run $repoman_prog full
+
+        FEATURES="strict stricter test ${FEATURES}" \
+            run $ebuild_prog "${new_e}" clean install
+
         run git add --all .
         run $repoman_prog commit -m "${cp}: bump up to ${haskell_pv}"
         git diff --color "${gentoo_e}" "${new_e}" | cat
