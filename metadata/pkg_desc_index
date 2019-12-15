@@ -331,7 +331,7 @@ dev-haskell/colonnade 0.5 1.1.1-r1 1.2.0.2-r1: Generic types and functions for c
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.0.0: Quasiquoters for external commands
-dev-haskell/comonad 4.2.7.2 5.0.5: Comonads
+dev-haskell/comonad 4.2.7.2 5.0.5: Haskell 98 compatible comonads
 dev-haskell/comonad-extras 4.0-r4: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
