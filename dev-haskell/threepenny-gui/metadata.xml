@@ -25,7 +25,6 @@
 	</longdescription>
 	<use>
 		<flag name="buildexamples">Build example executables.</flag>
-		<flag name="network-uri">Use network-uri library.</flag>
 		<flag name="rebug">Expose more bugs related to non-determinism.</flag>
 	</use>
 </pkgmetadata>
