@@ -296,7 +296,6 @@ dev-haskell/linux-file-extents:examples - Build examples
 dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for development.
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
 dev-haskell/logfloat:useffi - Use bindings to C libraries
-dev-haskell/ltk:gtk3 - Use gtk3
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/microlens-th:inlining - Generate inline pragmas
 dev-haskell/midi-alsa:buildexamples - Build example executables.
@@ -436,7 +435,6 @@ dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
 dev-haskell/th-extras:base4 - Use base-4.0.
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
 dev-haskell/threepenny-gui:buildexamples - Build example executables.
-dev-haskell/threepenny-gui:network-uri - Use network-uri library.
 dev-haskell/threepenny-gui:rebug - Expose more bugs related to non-determinism.
 dev-haskell/thyme:bug-for-bug - bug-for-bug compatibility with time
 dev-haskell/thyme:lens - use the full lens package
