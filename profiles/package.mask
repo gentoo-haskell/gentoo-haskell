@@ -1,3 +1,7 @@
+# Jack Todaro <jack.todaro@posteo.net> (18 Dec 2019)
+# Some packages require ansi-terminal < 0.10
+>=dev-haskell/ansi-terminal-0.10
+
 # Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
 # This package revision contains patches enabling cabal-3
 # support, but it is not backwards compatible. Users
@@ -64,16 +68,6 @@ dev-haskell/gstreamer
 # Not supported upstream. Lags behind in support of
 # many QuickCheck versions.
 dev-haskell/chell-quickcheck
-
-# Jack Todaro <jackmtodaro@gmail.com> (27 Jan 2019)
-# Too many packages depend on lower versions
->=dev-haskell/ansi-terminal-0.9
->=dev-haskell/tasty-1.2.1
->=dev-haskell/concurrent-output-1.10.10
->=dev-haskell/stack-2
-dev-haskell/rio-prettyprint
-dev-haskell/pantry
-dev-haskell/http-download
 
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
