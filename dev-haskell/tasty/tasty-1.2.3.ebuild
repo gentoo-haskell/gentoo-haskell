@@ -16,7 +16,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+clock"
+IUSE=""
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.9:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?]
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.9:=[profile?]
 	>=dev-haskell/unbounded-delays-0.1:=[profile?]
 	dev-haskell/wcwidth:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	clock? ( >=dev-haskell/clock-0.4.4.0:=[profile?] )
+	>=dev-haskell/clock-0.4.4.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
@@ -35,5 +35,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag clock clock)
+		--flag=clock
 }
