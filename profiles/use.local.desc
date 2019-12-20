@@ -428,7 +428,6 @@ dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
 dev-haskell/tables:test-properties - Enable the properties test-suite.
 dev-haskell/tables:transformers2 - Enable old versions of transformers. Non-developers should never set this.
-dev-haskell/tasty:clock - Depend on the clock package for more accurate time measurement
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'

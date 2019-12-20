@@ -40,7 +40,7 @@ dev-haskell/active 0.2.0.14: Abstractions for animation
 dev-haskell/ad 4.3.6: Automatic Differentiation
 dev-haskell/adjunctions 4.2.2 4.4: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.1-r3 1.1.2.0 1.2.4.0 1.3.1.1 1.4.5.0: Fast JSON parsing and encoding
+dev-haskell/aeson 0.11.2.0-r1 1.0.1.0 1.0.2.1-r3 1.1.2.0 1.2.4.0 1.3.1.1 1.4.6.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.1.0.5: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.9-r1: Compatibility layer for aeson
@@ -105,7 +105,7 @@ dev-haskell/amqp-worker 0.2.4: High level functions for working with message que
 dev-haskell/angel 0.6.2: Process management and supervision daemon
 dev-haskell/annotated-wl-pprint 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
 dev-haskell/annotations 0.2.2: Constructing, analyzing and destructing annotated trees
-dev-haskell/ansi-terminal 0.6.3.1 0.8.2 0.9 0.10.1: Simple ANSI terminal support, with Windows compatibility
+dev-haskell/ansi-terminal 0.6.3.1 0.8.2 0.9.1 0.10.1: Simple ANSI terminal support, with Windows compatibility
 dev-haskell/ansi-wl-pprint 0.6.7.3 0.6.8.2-r1: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
 dev-haskell/api-field-json-th 0.1.0.2: option of aeson's deriveJSON
 dev-haskell/appar 0.1.8: A simple applicative parser
@@ -917,11 +917,11 @@ dev-haskell/hjscript 0.7.0: HJScript is a Haskell EDSL for writing JavaScript pr
 dev-haskell/hjsmin 0.2.0.4: Haskell implementation of a javascript minifier
 dev-haskell/hjsonpointer 1.3.0-r1: JSON Pointer library
 dev-haskell/hjsonschema 1.7.2 1.8.0-r1: JSON Schema library
-dev-haskell/hledger 1.14.2 1.15.2: Command-line interface for the hledger accounting tool
+dev-haskell/hledger 1.14.2 1.15.2 1.16.1: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-interest 1.5.3: computes interest for a given account
-dev-haskell/hledger-lib 1.14.1 1.15.2: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 1.15: Curses-style user interface for the hledger accounting tool
-dev-haskell/hledger-web 1.15: Web interface for the hledger accounting tool
+dev-haskell/hledger-lib 1.14.1 1.15.2 1.16.1: Core data types, parsers and functionality for the hledger accounting tools
+dev-haskell/hledger-ui 1.15 1.16.1: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-web 1.15 1.16.1: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.7.0: Low-level bindings to Libsass
@@ -1916,7 +1916,7 @@ dev-haskell/tasty-expected-failure 0.11.1.1: Mark tasty tests as failure expecte
 dev-haskell/tasty-golden 2.3.2: Golden tests support for tasty
 dev-haskell/tasty-hedgehog 1.0.0.1: Integration for tasty and hedgehog
 dev-haskell/tasty-hspec 1.1.5.1-r2: Hspec support for the Tasty test framework
-dev-haskell/tasty-hunit 0.10.0.1: HUnit support for the Tasty test framework
+dev-haskell/tasty-hunit 0.10.0.1 0.10.0.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
 dev-haskell/tasty-lua 0.2.0.1: Write tests in Lua, integrate into tasty
 dev-haskell/tasty-quickcheck 0.8.4 0.9.2 0.10.1: QuickCheck support for the Tasty test framework
@@ -2123,6 +2123,7 @@ dev-haskell/wai 3.0.5.0 3.2.2: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.1.6-r1: File/CGI/Rev Proxy App of WAI
 dev-haskell/wai-app-static 3.1.6.3-r1: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.3: conduit wrappers for WAI
+dev-haskell/wai-cors 0.2.7: CORS for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
 dev-haskell/wai-extra 3.0.24.3: Provides some basic WAI handlers and middleware
 dev-haskell/wai-handler-launch 3.0.2.4-r1: Launch a web app in the default browser
