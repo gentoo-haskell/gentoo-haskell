@@ -45,7 +45,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3"
 # 	test? ( >=dev-haskell/base-orphans-0.5.3 <dev-haskell/base-orphans-0.9
 # 		dev-haskell/base16-bytestring
-# 		dev-haskell/diff
+# 		>=dev-haskell/diff-0.4 <dev-haskell/diff-0.5
 # 		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.13
 # 		>=dev-haskell/hashable-time-0.2 <dev-haskell/hashable-time-0.3
 # 		>=dev-haskell/integer-logarithms-1 <dev-haskell/integer-logarithms-1.1
