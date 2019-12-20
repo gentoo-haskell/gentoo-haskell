@@ -5,7 +5,12 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+	</use>
 	<longdescription>
-		See &lt;http://documentup.com/feuerbach/tasty&gt;
+		This package provides an implemenation of
+		Cross-Origin resource sharing (CORS) for
+		&lt;http://hackage.haskell.org/package/wai Wai&gt;
+		that aims to be compliant with &lt;http://www.w3.org/TR/cors&gt;.
 	</longdescription>
 </pkgmetadata>

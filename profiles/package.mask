@@ -1,19 +1,13 @@
+# Jack Todaro <jack.todaro@posteo.net> (18 Dec 2019)
+# Some packages require ansi-terminal < 0.10
+>=dev-haskell/ansi-terminal-0.10
+
 # Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
 # This package revision contains patches enabling cabal-3
 # support, but it is not backwards compatible. Users
 # experimenting with cabal-3 should unmask this package
 # revision for compatibility.
 =dev-haskell/gtk2hs-buildtools-0.13.5.1-r1
-
-# Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
-# Stack-1.9.3.1 requires lower versions of certain dependencies than
-# what is available in ::haskell
->=dev-haskell/generic-deriving-1.13
->=dev-haskell/tls-1.5
->=dev-haskell/memory-0.15
->=dev-haskell/cryptonite-0.26
->=dev-haskell/hpack-0.32
->=dev-haskell/tls-debug-0.4.7
 
 # Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
 # <=dev-haskell/haddock-library-1.8.0 requires <dev-haskell/tree-diff-0.1
@@ -64,16 +58,6 @@ dev-haskell/gstreamer
 # Not supported upstream. Lags behind in support of
 # many QuickCheck versions.
 dev-haskell/chell-quickcheck
-
-# Jack Todaro <jackmtodaro@gmail.com> (27 Jan 2019)
-# Too many packages depend on lower versions
->=dev-haskell/ansi-terminal-0.9
->=dev-haskell/tasty-1.2.1
->=dev-haskell/concurrent-output-1.10.10
->=dev-haskell/stack-2
-dev-haskell/rio-prettyprint
-dev-haskell/pantry
-dev-haskell/http-download
 
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
