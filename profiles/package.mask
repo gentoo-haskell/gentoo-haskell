@@ -9,16 +9,6 @@
 # revision for compatibility.
 =dev-haskell/gtk2hs-buildtools-0.13.5.1-r1
 
-# Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
-# Stack-1.9.3.1 requires lower versions of certain dependencies than
-# what is available in ::haskell
->=dev-haskell/generic-deriving-1.13
->=dev-haskell/tls-1.5
->=dev-haskell/memory-0.15
->=dev-haskell/cryptonite-0.26
->=dev-haskell/hpack-0.32
->=dev-haskell/tls-debug-0.4.7
-
 # Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
 # <=dev-haskell/haddock-library-1.8.0 requires <dev-haskell/tree-diff-0.1
 >=dev-haskell/tree-diff-0.1
