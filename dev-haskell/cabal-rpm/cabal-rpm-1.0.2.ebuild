@@ -19,6 +19,7 @@ IUSE="+https"
 
 RDEPEND=">dev-haskell/cabal-1.10:=
 	>=dev-haskell/old-locale-1:= <dev-haskell/old-locale-1.1:=
+	dev-haskell/optparse-applicative:=
 	dev-haskell/semigroups:=
 	>=dev-haskell/simple-cabal-0.1.0:=
 	>=dev-haskell/simple-cmd-0.2.0:=
