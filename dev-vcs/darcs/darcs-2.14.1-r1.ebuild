@@ -75,7 +75,6 @@ src_prepare() {
 		'stm               >= 2.1 && < 2.5' 'stm               >= 2.1'
 }
 
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag curl curl) \

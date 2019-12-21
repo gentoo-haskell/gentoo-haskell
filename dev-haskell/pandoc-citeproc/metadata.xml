@@ -27,7 +27,6 @@
 	<use>
 		<flag name="bibutils">Use Chris Putnam's Bibutils.</flag>
 		<flag name="embed-data-files">Embed locale files into the library (needed for windows packaging).</flag>
-		<flag name="test-citeproc">Build the test-citeproc program</flag>
 		<flag name="unicode-collation">Use Haskell bindings to the International Components for Unicode (ICU) libraries</flag>
 	</use>
 </pkgmetadata>

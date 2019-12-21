@@ -47,4 +47,3 @@ src_prepare() {
 	cabal_chdeps \
 		'ansi-terminal                   >= 0.6        && < 0.10' 'ansi-terminal                   >= 0.6        && < 0.11'
 }
-

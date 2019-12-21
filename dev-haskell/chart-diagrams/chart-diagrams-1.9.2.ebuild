@@ -51,4 +51,3 @@ src_prepare() {
 		'lens >= 3.9 && < 4.18' 'lens >= 3.9' \
 		'SVGFonts >= 1.4 && < 1.8' 'SVGFonts >= 1.4'
 }
-
