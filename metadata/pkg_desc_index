@@ -607,7 +607,7 @@ dev-haskell/fft 0.1.8.6: Bindings to the FFTW library
 dev-haskell/fgl 5.5.3.1 5.6.0.0: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.3-r1: QuickCheck support for fgl
 dev-haskell/fgl-visualize 0.1.0.1: Convert FGL graphs to dot (graphviz) files
-dev-haskell/file-embed 0.0.11: Use Template Haskell to embed file contents directly
+dev-haskell/file-embed 0.0.11.1: Use Template Haskell to embed file contents directly
 dev-haskell/file-location 0.4.9.1: common functions that show file location information
 dev-haskell/file-modules 0.1.2.4: Takes a Haskell source-code file and outputs its modules
 dev-haskell/filelock 0.1.1.3: Portable interface to file locking (flock / LockFileEx)
