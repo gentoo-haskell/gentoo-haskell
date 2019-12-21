@@ -1,9 +1,0 @@
-diff --git a/src/Data/Aeson/Extra/Map.hs b/src/Data/Aeson/Extra/Map.hs
-index a9fe864..eee3df4 100644
---- a/src/Data/Aeson/Extra/Map.hs
-+++ b/src/Data/Aeson/Extra/Map.hs
-@@ -28,3 +28,3 @@ import Prelude.Compat
- import Data.Aeson.Compat
--import Data.Aeson.Types  hiding ((.:?))
-+import Data.Aeson.Types  hiding ((.:?), ToJSONKey, FromJSONKey, toJSONKey)
- import Data.Hashable     (Hashable)

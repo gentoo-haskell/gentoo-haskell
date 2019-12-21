@@ -21,13 +21,14 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.5:=[profil
 	>=dev-haskell/aeson-compat-0.3.0.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?]
 	>=dev-haskell/attoparsec-0.11.3.4:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/attoparsec-iso8601-1.0:=[profile?] <dev-haskell/attoparsec-iso8601-1.1:=[profile?]
-	>=dev-haskell/base-compat-batteries-0.10.1:=[profile?]
+	>=dev-haskell/base-compat-batteries-0.10.1:=[profile?] <dev-haskell/base-compat-batteries-0.12:=[profile?]
+	>=dev-haskell/bifunctors-5.5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
-	>=dev-haskell/hashable-1.2:=[profile?]
+	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/parsec-3.1.9:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/recursion-schemes-4.1.2:=[profile?] <dev-haskell/recursion-schemes-5.2:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/semialign-1:=[profile?] <dev-haskell/semialign-1.1:=[profile?]
+	>=dev-haskell/semialign-1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -36,21 +37,9 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.5:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( dev-haskell/align
-		>=dev-haskell/quickcheck-instances-0.3 <dev-haskell/quickcheck-instances-0.4
+	test? ( >=dev-haskell/quickcheck-instances-0.3 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-1.3
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11
 		>=dev-haskell/time-parsers-0.1.0.0 <dev-haskell/time-parsers-0.2 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base                   >=4.6      && <4.13' 'base                   >=4.6' \
-		'base-compat-batteries  >=0.10.1   && <0.11' 'base-compat-batteries  >=0.10.1' \
-		'hashable               >=1.2      && <1.3' 'hashable               >=1.2' \
-		'template-haskell       >=2.8      && <2.15' 'template-haskell       >=2.8' \
-		'time                   >=1.4.0.1  && <1.9' 'time                   >=1.4.0.1'
-}
