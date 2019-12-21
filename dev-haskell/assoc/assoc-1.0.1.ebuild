@@ -17,16 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/bifunctors-5.5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
+RDEPEND=">=dev-haskell/bifunctors-5.5.5:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
+	>=dev-haskell/tagged-0.8.6:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base        >=4.3   && <4.13' 'base        >=4.3'
-}
