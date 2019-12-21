@@ -39,7 +39,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
-
 src_prepare() {
 	default
 
