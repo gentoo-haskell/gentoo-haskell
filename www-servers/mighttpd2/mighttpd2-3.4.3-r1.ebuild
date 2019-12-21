@@ -69,7 +69,6 @@ src_configure() {
 		$(cabal_flag tls tls)
 }
 
-
 src_install() {
 	haskell-cabal_src_install
 
