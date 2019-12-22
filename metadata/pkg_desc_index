@@ -2187,7 +2187,7 @@ dev-haskell/xcb-types 0.8.0: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
 dev-haskell/xdot 0.3.0.1-r2: Parse Graphviz xdot files and interactively view them using GTK and Cairo
-dev-haskell/xeno 0.3.5.1: A fast event-based XML parser in pure Haskell
+dev-haskell/xeno 0.3.5.2: A fast event-based XML parser in pure Haskell
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1 3000.2.2 3000.2.2.1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
