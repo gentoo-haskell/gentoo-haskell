@@ -40,6 +40,7 @@ dev-haskell/binary-instances
 >=dev-haskell/hspec-2.7.1
 >=dev-haskell/hspec-core-2.7.1
 >=dev-haskell/hspec-discover-2.7.1
+>=dev-haskell/hsyaml-0.2.1.0
 >=dev-haskell/quickcheck-instances-0.3.22
 
 # Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
