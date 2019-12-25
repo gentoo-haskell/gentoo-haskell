@@ -1,3 +1,11 @@
+# Jack Todaro <jack.todaro@posteo.net> (25 Dec 2019)
+# Mask >= pandoc-2.8 and associated conflicting dependencies.
+# >=app-text/pandoc-2.8 requires haddock-1.8.0, which requires
+# >=dev-lang/ghc-8.8.1.
+>=app-text/pandoc-2.8
+>=dev-haskell/pandoc-types-1.20
+>=dev-haskell/texmath-0.12
+
 # Jack Todaro <jack.todaro@posteo.net> (18 Dec 2019)
 # Some packages require ansi-terminal < 0.10
 >=dev-haskell/ansi-terminal-0.10
