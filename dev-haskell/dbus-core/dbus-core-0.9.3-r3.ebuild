@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="" #requires an old version of network
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.4:=[profile?]
