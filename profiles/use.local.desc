@@ -74,10 +74,11 @@ dev-haskell/btrfs:examples - Build examples
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/c2hs:regression - run regression tests
-dev-haskell/cabal-install:native-dns - Enable use of the resolv and windns packages for performing DNS lookups.
-dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball.
-dev-haskell/cabal-install:parsec - Use parser written in parsec library.
+dev-haskell/cabal-install:debug-conflict-sets - Add additional information to ConflictSets
+dev-haskell/cabal-install:native-dns - Enable use of the resolv and windns packages for performing DNS lookups
+dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri package
+dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball
+dev-haskell/cabal-install:parsec - Use parser written in parsec library
 dev-haskell/cabal-rpm:https - Use http to query Stackage
 dev-haskell/categories:optimize - enable optimizations
 dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
@@ -292,8 +293,10 @@ dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the 
 dev-haskell/linear:template-haskell - Enable the use of the `template-haskell` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/linux-file-extents:examples - Build examples
 dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for development.
+dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
 dev-haskell/logfloat:useffi - Use bindings to C libraries
+dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/microlens-th:inlining - Generate inline pragmas
 dev-haskell/midi-alsa:buildexamples - Build example executables.

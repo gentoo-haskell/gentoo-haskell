@@ -246,7 +246,7 @@ dev-haskell/bytestring-trie 0.2.5.0: An efficient finite map from (byte)strings 
 dev-haskell/bzlib 0.5.0.5: Compression and decompression in the bzip2 format
 dev-haskell/c10k 0.5.0: C10k server library using prefork
 dev-haskell/c2hs 0.28.6: C->Haskell FFI tool that gives some cross-language type safety
-dev-haskell/cabal 1.18.1.3 1.20.0.3 1.22.0.0 1.22.2.0 1.22.3.0 1.22.4.0 1.22.5.0 1.22.7.0 1.22.8.0 1.24.0.0 1.24.1.0 1.24.2.0 2.0.0.2 2.0.1.0 2.2.0.1 2.4.0.1 2.5.9999 3.0.0.0: A framework for packaging Haskell software
+dev-haskell/cabal 1.18.1.3 1.20.0.3 1.22.0.0 1.22.2.0 1.22.3.0 1.22.4.0 1.22.5.0 1.22.7.0 1.22.8.0 1.24.0.0 1.24.1.0 1.24.2.0 2.0.0.2 2.0.1.0 2.2.0.1 2.4.0.1 3.0.0.0 3.3.9999: A framework for packaging Haskell software
 dev-haskell/cabal-db 0.1.12: query tools for the local cabal database
 dev-haskell/cabal-doctest 1.0.8: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.6: Template Haskell expressions for reading fields from a project's cabal file
@@ -793,7 +793,7 @@ dev-haskell/gtksourceview2 0.13.3.1: Binding to the GtkSourceView library
 dev-haskell/gtksourceview3 0.13.3.1: Binding to the GtkSourceView library
 dev-haskell/hach 0.1.2: Simple chat
 dev-haskell/hackage-db 1.22 2.0.1: access Hackage's package database via Data.Map
-dev-haskell/hackage-security 0.5.3.0-r3: Hackage security library
+dev-haskell/hackage-security 0.5.3.0-r3 0.6.0.0: Hackage security library
 dev-haskell/haddock 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.2 2.18.1 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 9999: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-api 2.16.1 2.17.3 2.18.1 2.19.0.1 2.20.0-r1 2.22.0 2.23.0: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.2 1.4.4 1.5.0.1 1.6.0-r1 1.7.0 1.8.0: Library exposing some functionality of Haddock
@@ -851,9 +851,9 @@ dev-haskell/haskell-src-exts-util 0.2.5: Helper functions for working with haske
 dev-haskell/haskell-src-meta 0.6.0.14-r2 0.8.4: Parse source to template-haskell abstract syntax
 dev-haskell/haskelldb 2.2.4: A library of combinators for generating and executing SQL statements
 dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
-dev-haskell/haskelldb-hdbc-mysql 0.1.1-r1: HaskellDB support for the HDBC MySQL driver
-dev-haskell/haskelldb-hdbc-odbc 2.1.2: HaskellDB support for the HDBC ODBC driver
-dev-haskell/haskelldb-hdbc-postgresql 2.1.2-r1: HaskellDB support for the HDBC PostgreSQL driver
+dev-haskell/haskelldb-hdbc-mysql 0.1.1-r2: HaskellDB support for the HDBC MySQL driver
+dev-haskell/haskelldb-hdbc-odbc 2.1.2-r1: HaskellDB support for the HDBC ODBC driver
+dev-haskell/haskelldb-hdbc-postgresql 2.1.2-r2: HaskellDB support for the HDBC PostgreSQL driver
 dev-haskell/haskelldb-hdbc-sqlite3 2.1.2-r1: HaskellDB support for the HDBC SQLite driver
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.5.1-r1: Client support for POP3, SMTP, and IMAP
@@ -898,7 +898,7 @@ dev-haskell/hexpat 0.20.13: XML parser/formatter based on expat
 dev-haskell/hflags 0.4.3: Command line flag parser, very similar to Google's gflags
 dev-haskell/hformat 0.3.3.1: Simple Haskell formatting
 dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster grids
-dev-haskell/hgal 2.0.0.2: library for computation automorphism group and canonical labelling of a graph
+dev-haskell/hgal 2.0.0.2-r1: library for computation automorphism group and canonical labelling of a graph
 dev-haskell/hgamer3d 0.9.5: Toolset for the Haskell Game Programmer
 dev-haskell/hgdbmi 0.2-r1: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgettext 0.1.31.0: Bindings to libintl.h (gettext, bindtextdomain)
@@ -1183,7 +1183,7 @@ dev-haskell/lazy-pbkdf2 2.1.2: Lazy PBKDF2 generator
 dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskell programs
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
-dev-haskell/lens 4.14 4.16.1 4.17 4.18.1 9999: Lenses, Folds and Traversals
+dev-haskell/lens 4.14 4.16.1 4.17 4.18.1 4.9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.4: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.1: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.1 1.2.3: Lens Families
@@ -1242,6 +1242,7 @@ dev-haskell/ltk 0.15.0.5-r1 0.16.9999: Leksah tool kit
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
 dev-haskell/lucid 2.9.11: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
+dev-haskell/lukko 0.1.1.1: File locking
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/lz4 0.2.3.1: LZ4 compression for ByteStrings
@@ -1285,7 +1286,7 @@ dev-haskell/microlens-th 0.4.2.3 0.4.3.2: Automatic generation of record lenses 
 dev-haskell/microstache 1.0.1.1: Mustache templates for Haskell
 dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2.2: Handling of MIDI messages and files
-dev-haskell/midi-alsa 0.2.1: Convert between datatypes of the midi and the alsa packages
+dev-haskell/midi-alsa 0.2.1-r1: Convert between datatypes of the midi and the alsa packages
 dev-haskell/mime 0.4.0.2: Working with MIME types
 dev-haskell/mime-mail 0.4.14 0.5.0: Compose MIME email messages
 dev-haskell/mime-string 0.4-r1: MIME implementation for String's
@@ -1309,7 +1310,7 @@ dev-haskell/monad-logger-syslog 0.1.4.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-memo 0.5.1: Memoization monad transformer
 dev-haskell/monad-par 0.3.5: A library for parallel programming based on a monad
-dev-haskell/monad-par-extras 0.3.3: Combinators and extra features for Par monads
+dev-haskell/monad-par-extras 0.3.3-r1: Combinators and extra features for Par monads
 dev-haskell/monad-parallel 0.7.2.3: Parallel execution of monadic computations
 dev-haskell/monad-peel 0.2.1.2: Lift control operations like exception catching through monad transformers
 dev-haskell/monad-products 4.0.1: Monad products
@@ -1380,7 +1381,7 @@ dev-haskell/network 2.6.3.6 2.8.0.1: Low-level networking interface
 dev-haskell/network-byte-order 0.1.1.1: Network byte order utilities
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
 dev-haskell/network-data 0.5.3: Library for network data structures and their serialization
-dev-haskell/network-enumerator 0.1.5: Enumerators for network sockets
+dev-haskell/network-enumerator 0.1.5-r1: Enumerators for network sockets
 dev-haskell/network-fancy 0.2.4: Networking support with a cleaner API
 dev-haskell/network-house 0.1.0.2: data and parsers for Ethernet, TCP, UDP, IPv4, IPv6, ICMP, DHCP, TFTP
 dev-haskell/network-info 0.2.0.10: Access the local computer's basic network configuration
@@ -1608,7 +1609,7 @@ dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
 dev-haskell/random 1.1: random number library
 dev-haskell/random-fu 0.2.7.3: Random number generation
 dev-haskell/random-shuffle 0.0.4: Random shuffle implementation
-dev-haskell/random-source 0.3.0.6: Generic basis for random number generators
+dev-haskell/random-source 0.3.0.6-r1: Generic basis for random number generators
 dev-haskell/ranged-sets 0.3.0: Ranged sets for Haskell
 dev-haskell/ranges 0.2.4-r1: Ranges and various functions on them
 dev-haskell/rank1dynamic 0.3.3.0 0.4.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
@@ -1792,12 +1793,12 @@ dev-haskell/slave-thread 1.1: A principal solution to ghost threads and silent e
 dev-haskell/smallcheck 1.1.5: A property-based testing library
 dev-haskell/smtlib 1.0.9: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.6: Simple email sending via SMTP
-dev-haskell/smtpclient 1.1.0: A simple SMTP client library
+dev-haskell/smtpclient 1.1.0-r1: A simple SMTP client library
 dev-haskell/snap 1.1.2.0: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 0.9.8.0 1.0.4.1: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 1.0.0.1: Snap: A Haskell Web Framework: dynamic loader
 dev-haskell/snap-loader-static 1.0.0.0: Snap static loader
-dev-haskell/snap-server 0.9.5.1-r1 1.1.1.1-r1 9999: A web server for the Snap Framework
+dev-haskell/snap-server 0.9.5.1-r1 1.1.1.1-r1 9999: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 dev-haskell/snap-templates 1.0.0.0: Scaffolding CLI for the Snap Framework
 dev-haskell/snaplet-sqlite-simple 1.0.0.2-r1: sqlite-simple snaplet for the Snap Framework
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
@@ -1914,7 +1915,7 @@ dev-haskell/tar-conduit 0.3.2: Extract and create tar files using conduit for st
 dev-haskell/tardis 0.4.1.0: Bidirectional state monad transformer
 dev-haskell/tasty 0.11.2.3 0.12.0.1 1.1.0.4 1.2 1.2.3: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.1.4-r1: Render tasty output to XML for Jenkins
-dev-haskell/tasty-expected-failure 0.11.1.1: Mark tasty tests as failure expected
+dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.2: Golden tests support for tasty
 dev-haskell/tasty-hedgehog 1.0.0.1: Integration for tasty and hedgehog
 dev-haskell/tasty-hspec 1.1.5.1-r2: Hspec support for the Tasty test framework

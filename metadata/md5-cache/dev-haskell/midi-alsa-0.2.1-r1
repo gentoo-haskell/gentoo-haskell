@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/alsa-seq-0.6:=[profile?] <dev-haskell/alsa-seq-0.7:=[profile?] >=dev-haskell/data-accessor-0.2.1:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?] >=dev-haskell/midi-0.2.1:=[profile?] <dev-haskell/midi-0.3:=[profile?] >=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.6 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Convert between datatypes of the midi and the alsa packages
+EAPI=7
+HOMEPAGE=http://www.haskell.org/haskellwiki/MIDI
+IUSE=buildexamples doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/alsa-seq-0.6:=[profile?] <dev-haskell/alsa-seq-0.7:=[profile?] >=dev-haskell/data-accessor-0.2.1:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?] >=dev-haskell/midi-0.2.1:=[profile?] <dev-haskell/midi-0.3:=[profile?] >=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?] >=dev-lang/ghc-7.4.1:=
+SLOT=0/0.2.1
+SRC_URI=https://hackage.haskell.org/package/midi-alsa-0.2.1/midi-alsa-0.2.1.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=350c66766b209c420ae42f8d696d9da3
