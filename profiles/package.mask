@@ -44,11 +44,13 @@ dev-haskell/binary-instances
 >=dev-haskell/binary-tagged-0.2
 >=dev-haskell/bytes-0.16
 >=dev-haskell/cassava-0.5.2.0
+>=dev-haskell/criterion-1.5.6.0
 >=dev-haskell/doctest-0.16.2
 >=dev-haskell/hspec-2.7.1
 >=dev-haskell/hspec-core-2.7.1
 >=dev-haskell/hspec-discover-2.7.1
 >=dev-haskell/hsyaml-0.2.1.0
+>=dev-haskell/insert-ordered-containers-0.2.3
 >=dev-haskell/quickcheck-instances-0.3.22
 
 # Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
