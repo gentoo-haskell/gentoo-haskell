@@ -112,8 +112,6 @@ dev-haskell/listenbrainz-client
 
 # hololeap <hololeap@gmail.com> (09 Feb 2019)
 # Masked due to build failure with ghc-8.6.3
-<=dev-haskell/gpipe-2.2.3
-<=dev-haskell/gpipe-glfw-1.4.1.1
 <=dev-haskell/distributed-process-0.7.4
 dev-haskell/distributed-process-tests # Depends on distributed-process
 dev-haskell/distributed-process-simplelocalnet # Depends on distributed-process
