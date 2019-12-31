@@ -44,11 +44,13 @@ dev-haskell/binary-instances
 >=dev-haskell/binary-tagged-0.2
 >=dev-haskell/bytes-0.16
 >=dev-haskell/cassava-0.5.2.0
+>=dev-haskell/criterion-1.5.6.0
 >=dev-haskell/doctest-0.16.2
 >=dev-haskell/hspec-2.7.1
 >=dev-haskell/hspec-core-2.7.1
 >=dev-haskell/hspec-discover-2.7.1
 >=dev-haskell/hsyaml-0.2.1.0
+>=dev-haskell/insert-ordered-containers-0.2.3
 >=dev-haskell/quickcheck-instances-0.3.22
 
 # Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
@@ -112,8 +114,6 @@ dev-haskell/listenbrainz-client
 
 # hololeap <hololeap@gmail.com> (09 Feb 2019)
 # Masked due to build failure with ghc-8.6.3
-<=dev-haskell/gpipe-2.2.3
-<=dev-haskell/gpipe-glfw-1.4.1.1
 <=dev-haskell/distributed-process-0.7.4
 dev-haskell/distributed-process-tests # Depends on distributed-process
 dev-haskell/distributed-process-simplelocalnet # Depends on distributed-process
