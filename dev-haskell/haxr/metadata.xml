@@ -9,7 +9,4 @@
 		HaXR is a library for writing XML-RPC
 		client and server applications in Haskell.
 	</longdescription>
-	<use>
-		<flag name="network-uri">use network-uri package</flag>
-	</use>
 </pkgmetadata>
