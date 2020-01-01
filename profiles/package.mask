@@ -1,8 +1,16 @@
+# P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
+# Various unrelated packages and what causes the conflict with newer version.
+>=dev-haskell/hsemail-2              # smptclient-1.1.0
+>=dev-haskell/monoid-subclasses-0.5  # picoparsec-0.1.2.3
+>=dev-haskell/mysql-haskell-0.8.4    # mysql-haskell-openssl-0.8.3.0
+>=dev-haskell/socket-0.8             # socket-sctp-0.3.0.0
+
 # Jack Todaro <jack.todaro@posteo.net> (25 Dec 2019)
 # Mask >= pandoc-2.8 and associated conflicting dependencies.
 # >=app-text/pandoc-2.8 requires haddock-1.8.0, which requires
 # >=dev-lang/ghc-8.8.1.
 >=app-text/pandoc-2.8
+>=dev-haskell/doctemplates-0.3
 >=dev-haskell/pandoc-types-1.20
 >=dev-haskell/texmath-0.12
 
