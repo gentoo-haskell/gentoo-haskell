@@ -53,3 +53,12 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples build-example)
 }
+
+src_prepare() {
+	default
+
+	#as per http://hackage.haskell.org/package/wai-extra-3.0.28/revisions/
+	cabal_chdeps \
+		'fast-logger               >= 2.4.5    && < 2.5' 'fast-logger               >= 2.4.5' \
+		'wai-logger                >= 2.3.2    && < 2.4' 'wai-logger                >= 2.3.2'
+}
