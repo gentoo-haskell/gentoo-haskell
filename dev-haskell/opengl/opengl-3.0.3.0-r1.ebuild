@@ -32,3 +32,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	#as per https://hackage.haskell.org/package/OpenGL-3.0.3.0/revisions/
+	cabal_chdeps \
+		'StateVar     >= 1.1 && < 1.2' 'StateVar     >= 1.1 && < 1.3'
+}
