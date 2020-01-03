@@ -1,3 +1,12 @@
+# P.B. Lecavalier <pbl.ltx@gmail.com> (3 Jan 2020)
+# Many packages require <dev-haskell/network-3
+>=dev-haskell/network-3
+# reverse dependencies
+>=dev-haskell/dbus-1.2.8
+>=dev-haskell/happstack-server-7.6.0
+>=dev-haskell/network-bsd-2.8.1
+>=dev-lang/purescript-0.12.5
+
 # P.B. Lecavalier <pbl.ltx@gmail.com> (2 Jan 2020)
 # Many packages require <dev-haskell/base-compat-0.11
 >=dev-haskell/base-compat-0.11
