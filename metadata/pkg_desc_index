@@ -567,7 +567,7 @@ dev-haskell/erd 0.2.0.0: An entity-relationship diagram generator from a plain t
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.2.5 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 2.7.0 3.2.2: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 2.7.0 3.3.1: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7: Library for computer music research and education
@@ -1497,7 +1497,7 @@ dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persist
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.6.0.1 2.9.3 2.10.5: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3 2.8.0: Type-safe, non-relational, multi-backend persistence
 dev-haskell/persistent-test 2.0.3.0: Tests for Persistent
 dev-haskell/pgdl 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
@@ -2240,7 +2240,7 @@ dev-haskell/yesod-markdown 0.12.6.2: Tools for using markdown in a yesod applica
 dev-haskell/yesod-newsfeed 1.7.0.0: Helper functions and data types for producing News feeds
 dev-haskell/yesod-pagination 2.0.0: Pagination in Yesod
 dev-haskell/yesod-paginator 1.1.0.2: A pagination approach for yesod
-dev-haskell/yesod-persistent 1.6.0.2: Some helpers for using Persistent from Yesod
+dev-haskell/yesod-persistent 1.6.0.4: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-recaptcha2 0.2.4: yesod recaptcha2
 dev-haskell/yesod-routes 1.2.0.7-r2: Efficient routing for Yesod
 dev-haskell/yesod-sitemap 1.6.0: Generate XML sitemaps
