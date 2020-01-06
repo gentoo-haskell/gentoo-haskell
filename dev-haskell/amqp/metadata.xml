@@ -10,7 +10,4 @@
 		
 		Changelog: &lt;https://github.com/hreinhardt/amqp/blob/master/README.md&gt;
 	</longdescription>
-	<use>
-		<flag name="network-uri">use network-uri package</flag>
-	</use>
 </pkgmetadata>
