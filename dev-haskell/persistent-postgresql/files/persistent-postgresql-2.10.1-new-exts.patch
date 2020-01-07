@@ -1,0 +1,58 @@
+--- a/test/ArrayAggTest.hs
++++ b/test/ArrayAggTest.hs
+@@ -7,6 +7,9 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE UndecidableInstances #-} -- FIXME
++{-# LANGUAGE DerivingStrategies #-}
++{-# LANGUAGE GeneralizedNewtypeDeriving #-}
++{-# LANGUAGE StandaloneDeriving #-}
+ 
+ module ArrayAggTest where
+ 
+--- a/test/CustomConstraintTest.hs
++++ b/test/CustomConstraintTest.hs
+@@ -8,6 +8,8 @@
+ {-# LANGUAGE TemplateHaskell            #-}
+ {-# LANGUAGE TypeFamilies               #-}
+ {-# LANGUAGE UndecidableInstances       #-}
++{-# LANGUAGE DerivingStrategies #-}
++{-# LANGUAGE StandaloneDeriving #-}
+ module CustomConstraintTest where
+ 
+ import PgInit
+--- a/test/EquivalentTypeTestPostgres.hs
++++ b/test/EquivalentTypeTestPostgres.hs
+@@ -6,6 +6,8 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE UndecidableInstances #-}
++{-# LANGUAGE DerivingStrategies #-}
++{-# LANGUAGE StandaloneDeriving #-}
+ {-# OPTIONS_GHC -Wno-unused-top-binds #-}
+ 
+ module EquivalentTypeTestPostgres (specs) where
+--- a/test/JSONTest.hs
++++ b/test/JSONTest.hs
+@@ -7,6 +7,9 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE UndecidableInstances #-} -- FIXME
++{-# LANGUAGE DerivingStrategies #-}
++{-# LANGUAGE GeneralizedNewtypeDeriving #-}
++{-# LANGUAGE StandaloneDeriving #-}
+ 
+ module JSONTest where
+ 
+--- a/test/main.hs
++++ b/test/main.hs
+@@ -5,6 +5,9 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE UndecidableInstances #-}
++{-# LANGUAGE DerivingStrategies #-}
++{-# LANGUAGE GeneralizedNewtypeDeriving #-}
++{-# LANGUAGE StandaloneDeriving #-}
+ {-# OPTIONS_GHC -Wno-unused-top-binds #-}
+ 
+ import PgInit
