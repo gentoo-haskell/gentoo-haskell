@@ -51,7 +51,6 @@ dev-haskell/aeson:fast - compile without optimizations
 dev-haskell/aeson-pretty:lib-only - don't build 'aeson-pretty' executable.
 dev-haskell/alsa-pcm:buildexamples - Build example executables
 dev-haskell/alsa-seq:modifyfilter - Use native event filter functions that are provided by newer ALSA versions
-dev-haskell/amqp:network-uri - use network-uri package
 dev-haskell/ansi-terminal:example - Build the example application.
 dev-haskell/ansi-wl-pprint:example - Build the example application.
 dev-haskell/attoparsec-iso8601:developer - operate in developer mode
