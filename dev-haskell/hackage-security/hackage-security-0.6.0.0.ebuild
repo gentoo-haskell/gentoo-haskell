@@ -53,6 +53,6 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		flag=-mtl21 \
-		flag=use-network-uri
+		--flag=-mtl21 \
+		--flag=use-network-uri
 }
