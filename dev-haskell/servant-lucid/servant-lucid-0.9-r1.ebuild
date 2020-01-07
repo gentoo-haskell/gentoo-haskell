@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/http-media-0.6.4:=[profile?] <dev-haskell/http-media-0.9:=[profile?]
+RDEPEND=">=dev-haskell/http-media-0.6.4:=[profile?]
 	>=dev-haskell/lucid-2.9.8:=[profile?] <dev-haskell/lucid-2.10:=[profile?]
 	>=dev-haskell/semigroups-0.18.4:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/servant-0.14:=[profile?] <dev-haskell/servant-0.17:=[profile?]
@@ -35,6 +35,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		', http-media >=0.6.4   && <0.8' ', http-media >=0.6.4' \
-		', servant    >=0.14    && <0.16' ', servant    >=0.14'
+		'http-media >=0.6.4   && <0.8'			'http-media >=0.6.4' \
+		'semigroups >=0.18.4  && <0.19'			'semigroups >=0.18.4  && <0.20' \
+		'servant    >=0.14    && <0.16'			'servant    >=0.14' \
+		'servant-server >=0.14     && <0.16'	'servant-server >=0.14     && <0.17' \
+		'warp           >=3.0.13.1 && <3.3'		'warp           >=3.0.13.1 && <3.4'
 }
