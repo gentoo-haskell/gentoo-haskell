@@ -1379,7 +1379,7 @@ dev-haskell/netpbm 1.0.3-r1: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.3: Functional reactive programming library
 dev-haskell/network 2.6.3.6 2.8.0.1: Low-level networking interface
 dev-haskell/network-bsd 2.8.0.0: Network.BSD
-dev-haskell/network-byte-order 0.1.1.1: Network byte order utilities
+dev-haskell/network-byte-order 0.1.2.0: Network byte order utilities
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
 dev-haskell/network-data 0.5.3: Library for network data structures and their serialization
 dev-haskell/network-enumerator 0.1.5-r1: Enumerators for network sockets
