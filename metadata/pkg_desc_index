@@ -2129,7 +2129,7 @@ dev-haskell/wai-app-static 3.1.6.3-r1: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.3: conduit wrappers for WAI
 dev-haskell/wai-cors 0.2.7: CORS for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
-dev-haskell/wai-extra 3.0.28-r1: Provides some basic WAI handlers and middleware
+dev-haskell/wai-extra 3.0.29: Provides some basic WAI handlers and middleware
 dev-haskell/wai-handler-launch 3.0.2.4-r1: Launch a web app in the default browser
 dev-haskell/wai-http2-extra 0.1.0: WAI utilities for HTTP/2
 dev-haskell/wai-logger 2.3.6: A logging system for WAI
