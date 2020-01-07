@@ -8,7 +8,7 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="It provides the functionality like unix \\"
+DESCRIPTION="Fully concurrent unique identifiers"
 HOMEPAGE="https://github.com/ekmett/unique/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
+RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
+	#as per https://hackage.haskell.org/package/unique-0/revisions/
 	cabal_chdeps \
-		'ghc-prim >= 0.2 && < 0.5' 'ghc-prim >= 0.2'
+		'ghc-prim >= 0.2 && < 0.5' 'ghc-prim >= 0.2' \
+		'hashable >= 1.1 && < 1.3' 'hashable >= 1.1 && < 1.4'
 }
