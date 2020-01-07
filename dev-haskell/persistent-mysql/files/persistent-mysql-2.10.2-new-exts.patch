@@ -1,0 +1,23 @@
+--- a/test/InsertDuplicateUpdate.hs
++++ b/test/InsertDuplicateUpdate.hs
+@@ -5,6 +5,8 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE UndecidableInstances #-}
++{-# LANGUAGE DerivingStrategies #-}
++{-# LANGUAGE StandaloneDeriving #-}
+ 
+ module InsertDuplicateUpdate where
+ 
+--- a/test/main.hs
++++ b/test/main.hs
+@@ -5,6 +5,9 @@
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeFamilies #-}
+ {-# LANGUAGE UndecidableInstances #-}
++{-# LANGUAGE DerivingStrategies #-}
++{-# LANGUAGE GeneralizedNewtypeDeriving #-}
++{-# LANGUAGE StandaloneDeriving #-}
+ {-# OPTIONS_GHC -Wno-unused-top-binds #-}
+ 
+ import MyInit
