@@ -27,6 +27,7 @@
 >=dev-haskell/doctemplates-0.3
 >=dev-haskell/pandoc-types-1.20
 >=dev-haskell/texmath-0.12
+>=dev-haskell/hsyaml-0.2
 
 # Jack Todaro <jack.todaro@posteo.net> (18 Dec 2019)
 # Some packages require ansi-terminal < 0.10
@@ -59,22 +60,6 @@ dev-haskell/primitive-unlifted
 >=dev-haskell/stm-containers-1.1.0.4
 dev-haskell/stm-hamt
 
-# Mark Wright <gienah@gentoo.org> (13 Oct 2019)
-# Reverse dependencies of >=dev-haskell/quickcheck-2.13
-dev-haskell/binary-instances
->=dev-haskell/binary-orphans-1.0.1
->=dev-haskell/binary-tagged-0.2
->=dev-haskell/bytes-0.16
->=dev-haskell/cassava-0.5.2.0
->=dev-haskell/criterion-1.5.6.0
->=dev-haskell/doctest-0.16.2
->=dev-haskell/hspec-2.7.1
->=dev-haskell/hspec-core-2.7.1
->=dev-haskell/hspec-discover-2.7.1
->=dev-haskell/hsyaml-0.2.1.0
->=dev-haskell/insert-ordered-containers-0.2.3
->=dev-haskell/quickcheck-instances-0.3.22
-
 # Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
 # Many packages need porting.
 >=dev-haskell/primitive-0.7
@@ -82,10 +67,6 @@ dev-haskell/binary-instances
 # Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
 # Follow media-libs/gstreamer:0.10 mask for removal in ::gentoo
 dev-haskell/gstreamer
-
-# Jack Todaro <jackmtodaro@gmail.com> (3 Apr 2019)
-# Too many packages depend on <QuickCheck-2.13
->=dev-haskell/quickcheck-2.13
 
 # Sergei Trofimovich <slyfox@gentoo.org> (06 Feb 2019)
 # Not supported upstream. Lags behind in support of
