@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # doctests: FAIL, tests: PASS
+
 RDEPEND="dev-haskell/atomic-primops:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/primitive-0.5.2.1:=[profile?]

@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -28,7 +28,14 @@ RDEPEND=">=dev-haskell/data-binary-ieee754-0.4.4:=[profile?] <dev-haskell/data-b
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/async-2.2 <dev-haskell/async-2.3
-		>=dev-haskell/quickcheck-2.12 <dev-haskell/quickcheck-2.13
+		>=dev-haskell/quickcheck-2.12
 		>=dev-haskell/tasty-1.2 <dev-haskell/tasty-1.3
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck         == 2.12.*' 'QuickCheck         >= 2.12'
+}

@@ -8,7 +8,7 @@ EAPI=6
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="An \\"
+DESCRIPTION="An \"attoparsec\"-based HTML tokenizer"
 HOMEPAGE="https://github.com/nikita-volkov/html-tokenizer"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

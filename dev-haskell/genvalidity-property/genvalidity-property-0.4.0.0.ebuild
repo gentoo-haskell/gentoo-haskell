@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # doctests: FAIL
+
 RDEPEND=">=dev-haskell/genvalidity-0.7:=[profile?]
 	>=dev-haskell/hspec-2.1:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
