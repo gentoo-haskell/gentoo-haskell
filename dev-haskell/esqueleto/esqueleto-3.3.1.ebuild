@@ -49,6 +49,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/vector )
 "
 
+PATCHES=("${FILESDIR}"/${P}-new-exts.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-mysql \
