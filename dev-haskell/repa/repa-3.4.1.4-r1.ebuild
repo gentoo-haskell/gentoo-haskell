@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.13:2=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.8:2=[profile?] <dev-haskell/quickcheck-2.14:2=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -31,5 +31,6 @@ src_prepare() {
 	# Hackage metadata -r1 sets this upper bound to "< 2.13", but we're
 	# just going to be back here tomorrow if we keep going like that.
 	cabal_chdeps \
-		'QuickCheck           >= 2.8 && < 2.12' 'QuickCheck           >= 2.8'
+		'QuickCheck           >= 2.8 && < 2.12' 'QuickCheck           >= 2.8' \
+		'base                 >= 4.8 && < 4.13' 'base                 >= 4.8'
 }
