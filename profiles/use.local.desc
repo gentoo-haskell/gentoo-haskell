@@ -206,7 +206,7 @@ dev-haskell/hexpat:bundled-expat - Use bundled expat instead of dev-libs/expat
 dev-haskell/highlighter:executable - Install a "highlighter" executable
 dev-haskell/highlighting-kate:executable - Build the Highlight executable.
 dev-haskell/highlighting-kate:pcre-light - Use the pcre-light library instead of regex-pcre-builtin.
-dev-haskell/hit:executable - Build the executable
+dev-haskell/hip:disable-chart - Disable Chart-diagrams and Chart for a lighter dependency footprint
 dev-haskell/hledger:terminfo - On POSIX systems, build with the terminfo lib for detecting terminal width.
 dev-haskell/hledger:threaded - Build with support for multithreaded execution.
 dev-haskell/hledger-ui:threaded - Build with support for multithreaded execution.

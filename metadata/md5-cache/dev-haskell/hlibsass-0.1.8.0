@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-lang/ghc-7.8.2:= externallibsass? ( dev-libs/libsass:= ) !externallibsass? ( sys-devel/gcc:=[cxx] ) >=dev-haskell/cabal-1.18.1.3 test? ( dev-haskell/hspec ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Low-level bindings to Libsass
+EAPI=7
+HOMEPAGE=https://github.com/jakubfijalkowski/hlibsass
+IUSE=externallibsass sharedlibsass doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-lang/ghc-7.8.2:= externallibsass? ( dev-libs/libsass:= ) !externallibsass? ( sys-devel/gcc:=[cxx] )
+REQUIRED_USE=externallibsass? ( !sharedlibsass )
+RESTRICT=!test? ( test )
+SLOT=0/0.1.8.0
+SRC_URI=https://hackage.haskell.org/package/hlibsass-0.1.8.0/hlibsass-0.1.8.0.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=a0fe9fd64392e78c389139eb6859aaa0
