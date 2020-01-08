@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -56,7 +56,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/cmdargs-0.10.10 <dev-haskell/cmdargs-0.11
 		>=dev-haskell/findbin-0.0.5 <dev-haskell/findbin-0.1
 		>=dev-haskell/hunit-1.3 <dev-haskell/hunit-1.7
-		>=dev-haskell/quickcheck-2.8.2 <dev-haskell/quickcheck-2.13
+		>=dev-haskell/quickcheck-2.8.2
 		>=dev-haskell/shelly-1.6.8
 		>=dev-haskell/split-0.2.2 <dev-haskell/split-0.3
 		>=dev-haskell/test-framework-0.8.1.1 <dev-haskell/test-framework-0.9
@@ -70,7 +70,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'sandi             >= 0.4 && < 0.5' 'sandi             >= 0.4' \
-		'shelly       >= 1.6.8 && < 1.9' 'shelly       >= 1.6.8'
+		'shelly       >= 1.6.8 && < 1.9' 'shelly       >= 1.6.8' \
+		'QuickCheck   >= 2.8.2 && < 2.13' 'QuickCheck   >= 2.8.2'
 }
 
 src_configure() {
