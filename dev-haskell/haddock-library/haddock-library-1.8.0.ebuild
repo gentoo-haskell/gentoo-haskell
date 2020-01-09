@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -28,6 +28,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.8
 		>=dev-haskell/hspec-discover-2.4.4 <dev-haskell/hspec-discover-2.8
 		>=dev-haskell/optparse-applicative-0.14.0.0 <dev-haskell/optparse-applicative-0.15
-		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.13.2
+		>=dev-haskell/quickcheck-2.11
 		>=dev-haskell/tree-diff-0.0.0.1 <dev-haskell/tree-diff-0.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck   ^>= 2.11  || ^>= 2.13.2' 'QuickCheck   >= 2.11'
+}
