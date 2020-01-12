@@ -328,7 +328,6 @@ dev-haskell/parsers:parsec - Enable the use of the `parsec` package
 dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Only developers should use this.
 dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nano second precision.
-dev-haskell/persistent-mongodb:high_precision_date - Use a time storage with nano second precision.
 dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable
 dev-haskell/persistent-sqlite:full-text-search - Enable full-text search in the vendored SQLite library; has no effect if a system SQLite library is used.
