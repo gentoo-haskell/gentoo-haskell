@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="high_precision_date">Use a time storage with nano second precision.</flag>
 		<flag name="high-precision-date">Use a time storage with nano second precision.</flag>
 	</use>
 	<longdescription>
