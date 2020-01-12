@@ -112,3 +112,5 @@ src_configure() {
 		--flag=-static \
 		--flag=-supported-build
 }
+
+PATCHES=( "${FILESDIR}"/stack-2.1.3.1-ghc-exts-for-persistent-template.patch )
