@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="use-text-show"
+IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/attoparsec-iso8601-1.0.1.0:=[profile?] <dev-haskell/attoparsec-iso8601-1.1:=[profile?]
@@ -32,7 +32,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/uuid-types-1.0.3:=[profile?] <dev-haskell/uuid-types-1.1:=[profile?]
 	>=dev-haskell/void-0.7.3:=[profile?] <dev-haskell/void-0.8:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	use-text-show? ( >=dev-haskell/text-show-3.8.2:=[profile?] <dev-haskell/text-show-3.9:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
@@ -44,5 +43,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag use-text-show use-text-show)
+		--flag=-use-text-show
 }
