@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/aeson-1.0:=[profile?] dev-haskell/blaze-builder:=[profile?] >=dev-haskell/conduit-1.2.12:=[profile?] >=dev-haskell/monad-logger-0.3.25:=[profile?] >=dev-haskell/persistent-2.10:=[profile?] <dev-haskell/persistent-3:=[profile?] >=dev-haskell/postgresql-libpq-0.9.4.2:=[profile?] <dev-haskell/postgresql-libpq-0.10:=[profile?] >=dev-haskell/postgresql-simple-0.6.1:=[profile?] <dev-haskell/postgresql-simple-0.7:=[profile?] dev-haskell/resource-pool:=[profile?] >=dev-haskell/resourcet-1.1.9:=[profile?] >=dev-haskell/text-1.2:=[profile?] dev-haskell/unliftio-core:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( dev-haskell/fast-logger >=dev-haskell/hspec-2.4 dev-haskell/hspec-expectations dev-haskell/hunit dev-haskell/persistent-qq dev-haskell/persistent-template dev-haskell/persistent-test dev-haskell/quickcheck dev-haskell/quickcheck-instances dev-haskell/unordered-containers dev-haskell/vector ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Backend for the persistent library using postgresql
+EAPI=7
+HOMEPAGE=http://www.yesodweb.com/book/persistent
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/aeson-1.0:=[profile?] dev-haskell/blaze-builder:=[profile?] >=dev-haskell/conduit-1.2.12:=[profile?] >=dev-haskell/monad-logger-0.3.25:=[profile?] >=dev-haskell/persistent-2.10:=[profile?] <dev-haskell/persistent-3:=[profile?] >=dev-haskell/postgresql-libpq-0.9.4.2:=[profile?] <dev-haskell/postgresql-libpq-0.10:=[profile?] >=dev-haskell/postgresql-simple-0.6.1:=[profile?] <dev-haskell/postgresql-simple-0.7:=[profile?] dev-haskell/resource-pool:=[profile?] >=dev-haskell/resourcet-1.1.9:=[profile?] >=dev-haskell/text-1.2:=[profile?] dev-haskell/unliftio-core:=[profile?] >=dev-lang/ghc-8.0.1:=
+RESTRICT=test
+SLOT=0/2.10.1.2
+SRC_URI=https://hackage.haskell.org/package/persistent-postgresql-2.10.1.2/persistent-postgresql-2.10.1.2.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=4cda1e1bd66deb8132bcee35e78032ae

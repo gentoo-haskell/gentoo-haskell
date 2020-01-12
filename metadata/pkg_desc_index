@@ -1495,7 +1495,7 @@ dev-haskell/persistent 2.7.3.1 2.9.2 2.10.4: Type-safe, multi-backend data seria
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.8.0 2.9.0: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.9.0 2.10.2: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1: Backend for the persistent library using postgresql
+dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1 2.10.1.2: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
