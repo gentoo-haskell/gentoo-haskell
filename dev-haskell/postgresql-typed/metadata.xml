@@ -6,13 +6,14 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="md5">Enable md5 password authentication method.</flag>
-		<flag name="binary">Use binary protocol encoding via postgresql-binary. This may put additional restrictions on supported PostgreSQL server versions.</flag>
-		<flag name="text">Support Text string values via text (implied by binary).</flag>
-		<flag name="uuid">Support the UUID type via uuid (implied by binary).</flag>
-		<flag name="scientific">Support decoding numeric via scientific (implied by binary).</flag>
 		<flag name="aeson">Support decoding json via aeson.</flag>
+		<flag name="binary">Use binary protocol encoding via postgresql-binary. This may put additional restrictions on supported PostgreSQL server versions.</flag>
 		<flag name="hdbc">Provide an HDBC driver backend using the raw PostgreSQL protocol.</flag>
+		<flag name="md5">Enable md5 password authentication method.</flag>
+		<flag name="scientific">Support decoding numeric via scientific (implied by binary).</flag>
+		<flag name="text">Support Text string values via text (implied by binary).</flag>
+		<flag name="tls">Enable TLS (SSL) support in PostgreSQL server connections.</flag>
+		<flag name="uuid">Support the UUID type via uuid (implied by binary).</flag>
 	</use>
 	<longdescription>
 		Automatically type-check SQL statements at compile time.
