@@ -352,6 +352,7 @@ dev-haskell/postgresql-typed:hdbc - Provide an HDBC driver backend using the raw
 dev-haskell/postgresql-typed:md5 - Enable md5 password authentication method.
 dev-haskell/postgresql-typed:scientific - Support decoding numeric via scientific (implied by binary).
 dev-haskell/postgresql-typed:text - Support Text string values via text (implied by binary).
+dev-haskell/postgresql-typed:tls - Enable TLS (SSL) support in PostgreSQL server connections.
 dev-haskell/postgresql-typed:uuid - Support the UUID type via uuid (implied by binary).
 dev-haskell/pretty-simple:buildexample - Build a small example program showing how to use the pPrint function
 dev-haskell/pretty-simple:buildexe - Build a small command line program that pretty-prints anything from stdin.
@@ -364,6 +365,8 @@ dev-haskell/quickcheck-classes:semigroupoids - Enable the use of the `semigroupo
 dev-haskell/quickcheck-classes:semirings - Enable the use of the `semirings` package. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/quickcheck-classes:unary-laws - Include infrastructure for testing class laws of unary type constructors.
 dev-haskell/quickcheck-classes:vector - Enable the use of the `vector` package. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes-base:binary-laws - Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
+dev-haskell/quickcheck-classes-base:unary-laws - Include infrastructure for testing class laws of unary type constructors.
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
@@ -419,7 +422,8 @@ dev-haskell/speculation:optimize - Enable optimizations
 dev-haskell/sphinx:version-1-1-beta - By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1
 dev-haskell/splitmix:optimised-mixer - Use JavaScript for mix32
 dev-haskell/splitmix:random - Providen RandomGen SMGen instance
-dev-haskell/sr-extra:network-uri - use network-uri package
+dev-haskell/sr-extra:network-uri - Get Network.URI from the network-uri package rather than the full network package.
+dev-haskell/sr-extra:omit-serialize - Omit all the Serialize instances, on the assumption that we will use SafeCopy instances instead.
 dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
 dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/sdl:=[profile?] >=dev-lang/ghc-7.4.1:= media-libs/sdl-mixer:= >=dev-haskell/cabal-1.24 doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Binding to libSDL_mixer
+EAPI=7
+HOMEPAGE=http://hackage.haskell.org/package/SDL-mixer
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/sdl:=[profile?] >=dev-lang/ghc-7.4.1:= media-libs/sdl-mixer:=
+SLOT=0/0.6.3.0
+SRC_URI=https://hackage.haskell.org/package/SDL-mixer-0.6.3.0/SDL-mixer-0.6.3.0.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=f77a75c19fa2e800c2b3006592c0e82a
