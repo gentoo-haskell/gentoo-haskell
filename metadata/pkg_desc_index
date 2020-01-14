@@ -1501,7 +1501,7 @@ dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persist
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.6.0.1 2.9.3 2.10.5: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3 2.8.0: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3 2.8.0.1: Type-safe, non-relational, multi-backend persistence
 dev-haskell/persistent-test 2.0.3.0: Tests for Persistent
 dev-haskell/pgdl 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
