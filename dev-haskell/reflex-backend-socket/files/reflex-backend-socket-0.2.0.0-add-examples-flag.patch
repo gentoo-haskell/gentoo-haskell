@@ -1,0 +1,54 @@
+diff -urN reflex-backend-socket-0.2.0.0/reflex-backend-socket.cabal reflex-backend-socket-0.2.0.0-new/reflex-backend-socket.cabal
+--- reflex-backend-socket-0.2.0.0/reflex-backend-socket.cabal	2001-09-08 19:46:40.000000000 -0600
++++ reflex-backend-socket-0.2.0.0-new/reflex-backend-socket.cabal	2020-01-14 00:09:48.858099505 -0700
+@@ -31,6 +31,10 @@
+ cabal-version:       >=1.10
+ tested-with:         GHC == 8.6.5
+ 
++flag examples
++  description:       Build demonstration programs
++  default:           False
++
+ source-repository    head
+   type:              git
+   location:          git@github.com/qfpl/reflex-backend-socket.git
+@@ -54,7 +58,7 @@
+   ghc-options:         -Wall
+   default-language:    Haskell2010
+ 
+-executable example-server
++executable reflex-backend-socket-server
+   main-is:             Server.hs
+   build-depends:       base              >= 4.12    && < 4.13
+                      , bytestring        >= 0.10    && < 0.11
+@@ -67,8 +71,10 @@
+   hs-source-dirs:      example
+   ghc-options:         -Wall -threaded
+   default-language:    Haskell2010
++  if !flag(examples)
++    buildable:         False
+ 
+-executable example-client
++executable reflex-backend-socket-client
+   main-is:             Client.hs
+   build-depends:       base              >= 4.12    && < 4.13
+                      , bytestring        >= 0.10    && < 0.11
+@@ -79,9 +85,10 @@
+   hs-source-dirs:      example
+   ghc-options:         -Wall -threaded
+   default-language:    Haskell2010
++  if !flag(examples)
++    buildable:         False
+ 
+-
+-executable example-others
++executable reflex-backend-socket-others
+   main-is:             Others.hs
+   build-depends:       base              >= 4.12    && < 4.13
+                      , bytestring        >= 0.10    && < 0.11
+@@ -93,3 +100,5 @@
+   hs-source-dirs:      example
+   ghc-options:         -Wall -threaded
+   default-language:    Haskell2010
++  if !flag(examples)
++    buildable:         False
