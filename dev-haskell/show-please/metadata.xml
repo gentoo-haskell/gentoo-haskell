@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Provides Show instances for various types whose official
+		Show won&#39;t Read. This is particularly intended for exception types,
+		which can appear unexpectedly and be difficult to track down.
+	</longdescription>
+</pkgmetadata>
