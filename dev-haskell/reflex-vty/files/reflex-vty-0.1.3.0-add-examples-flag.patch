@@ -1,0 +1,32 @@
+diff -urN reflex-vty-0.1.2.0/reflex-vty.cabal reflex-vty-0.1.2.0-new/reflex-vty.cabal
+--- reflex-vty-0.1.2.0/reflex-vty.cabal	2020-01-13 13:55:33.641188454 -0700
++++ reflex-vty-0.1.2.0-new/reflex-vty.cabal	2020-01-13 23:50:07.960134397 -0700
+@@ -19,6 +19,10 @@
+                , doc/tasks.png
+ tested-with: GHC ==8.6.5 || ==8.4.4
+ 
++flag examples
++    description:     Build demonstration programs
++    default:         False
++
+ library
+   exposed-modules: Reflex.Vty
+                  , Reflex.Vty.Host
+@@ -52,7 +56,7 @@
+   default-language: Haskell2010
+   ghc-options: -Wall
+ 
+-executable example
++executable reflex-vty-example
+   hs-source-dirs: src-bin
+   main-is: example.hs
+   ghc-options: -threaded
+@@ -66,6 +70,8 @@
+     transformers,
+     vty
+   default-language: Haskell2010
++  if !flag(examples)
++    buildable: False
+ 
+ source-repository head
+   type: git
