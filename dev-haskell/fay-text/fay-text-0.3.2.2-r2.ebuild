@@ -17,8 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/fay-0.21.2:=[profile?]
-	>=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.21:=[profile?]
+RDEPEND=">=dev-haskell/fay-0.21.2:=[profile?] <dev-haskell/fay-0.25:=[profile?]
+	>=dev-haskell/fay-base-0.19.4:=[profile?] <dev-haskell/fay-base-0.22:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -29,6 +29,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
+	#as per https://hackage.haskell.org/package/fay-text-0.3.2.2/revisions/
 	cabal_chdeps \
-		'fay      >= 0.21.2 && < 0.24' 'fay      >= 0.21.2'
+		'fay      >= 0.21.2 && < 0.24' 'fay      >= 0.21.2 && < 0.25' \
+		'fay-base >= 0.19.4 && < 0.21' 'fay-base >= 0.19.4 && < 0.22'
 }
