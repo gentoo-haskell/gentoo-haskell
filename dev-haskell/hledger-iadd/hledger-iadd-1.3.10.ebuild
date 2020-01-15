@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/brick-0.27:=[profile?]
 	>=dev-haskell/free-4.12.4:=[profile?]
 	>=dev-haskell/hledger-lib-1.14:=[profile?] <dev-haskell/hledger-lib-1.17:=[profile?]
-	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-7.1:=[profile?]
+	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-8.1:=[profile?]
 	dev-haskell/microlens:=[profile?]
 	dev-haskell/microlens-th:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
@@ -38,10 +38,3 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/quickcheck )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'hledger-lib >= 1.14 && < 1.15' 'hledger-lib >= 1.14'
-}
