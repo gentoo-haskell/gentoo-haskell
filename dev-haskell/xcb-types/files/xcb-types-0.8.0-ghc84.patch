@@ -1,6 +1,0 @@
---- a/Data/XCB/Pretty.hs
-+++ b/Data/XCB/Pretty.hs
-@@ -22,2 +22,3 @@ import qualified Data.Map as Map
- import Data.Maybe
-+import Prelude hiding ((<>))
- 
