@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="executable">Build executable as well as library</flag>
+	</use>
+	<longdescription>
+		Generate text reports and graphical charts from the benchmark results generated
+		by @gauge@ or @criterion@ and stored in a CSV file. This tool is especially
+		useful when you have many benchmarks or if you want to compare benchmarks
+		across multiple packages. You can generate many interesting reports
+		including:
+		
+		* Show individual reports for all the fields measured e.g. @time taken@, @peak
+		memory usage@, @allocations@, among many other fields measured by @gauge@
+		* Sort benchmark results on a specified criterion e.g. you may want to see the
+		biggest cpu hoggers or biggest memory hoggers on top
+		* Across two benchmark runs (e.g. before and after a change), show all the
+		operations that resulted in a regression of more than x% in descending
+		order, so that we can quickly identify and fix performance problems in our
+		application.
+		* Across two (or more) packages providing similar functionality, show all the
+		operations where the performance differs by more than 10%, so that we can
+		critically analyze the packages and choose the right one.
+		
+		Quick Start: Use @gauge@ or @criterion@ to generate a @results.csv@ file, and
+		then use either the @bench-show@ executable or the library APIs to generate
+		textual or graphical reports.
+		
+		@
+		$ bench-show report results.csv
+		$ bench-show graph results.csv output
+		@
+		
+		@
+		report &quot;results.csv&quot;  Nothing defaultConfig
+		graph  &quot;results.csv&quot; &quot;output&quot; defaultConfig
+		@
+		
+		There are many ways to present the reports, for example, you can show can
+		show % regression from a baseline in descending order textually as follows:
+		
+		@
+		(time)(Median)(Diff using min estimator)
+		Benchmark streamly(0)(μs)(base) streamly(1)(%)(-base)
+		\--------- --------------------- ---------------------
+		zip                      644.33                +23.28
+		map                      653.36                 +7.65
+		fold                     639.96                -15.63
+		@
+		
+		To show the same graphically:
+		
+		&lt;&lt;src/docs/regression-percent-descending-median-time.svg&gt;&gt;
+		
+		See the README and the &quot;BenchShow.Tutorial&quot; module for comprehensive
+		documentation.
+	</longdescription>
+</pkgmetadata>
