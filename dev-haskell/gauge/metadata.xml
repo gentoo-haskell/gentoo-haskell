@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="analysis">Build with statistical analysis support</flag>
+	</use>
+	<longdescription>
+		This library provides a powerful but simple way to measure software
+		performance.  It provides both a framework for executing and
+		analysing benchmarks and a set of driver functions that makes it
+		easy to build and run benchmarks, and to analyse their results.
+	</longdescription>
+</pkgmetadata>
