@@ -885,7 +885,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.4: Heaps in Haskell
 dev-haskell/heaps 0.3.6.1: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/heckle 2.0.2.1: Jekyll in Haskell (feat. LaTeX)
-dev-haskell/hedgehog 0.6.1-r2 1.0.1: Hedgehog will eat all your bugs
+dev-haskell/hedgehog 0.6.1-r2 1.0.2: Hedgehog will eat all your bugs
 dev-haskell/hedis 0.9.6 0.12.10: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/hedis-config 0.0.3: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r1: An Haskell template system supporting both HTML5 and XML
@@ -1924,7 +1924,7 @@ dev-haskell/tasty 0.11.2.3 0.12.0.1 1.1.0.4 1.2 1.2.3: Modern and extensible tes
 dev-haskell/tasty-ant-xml 1.1.6: Render tasty output to XML for Jenkins
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.2: Golden tests support for tasty
-dev-haskell/tasty-hedgehog 1.0.0.1: Integration for tasty and hedgehog
+dev-haskell/tasty-hedgehog 1.0.0.2: Integration for tasty and hedgehog
 dev-haskell/tasty-hspec 1.1.5.1-r2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.10.0.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
