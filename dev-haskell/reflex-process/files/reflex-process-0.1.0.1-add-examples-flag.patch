@@ -1,0 +1,29 @@
+diff -urN reflex-process-0.1.0.1/reflex-process.cabal reflex-process-0.1.0.1-new/reflex-process.cabal
+--- reflex-process-0.1.0.1/reflex-process.cabal	2020-01-17 14:58:36.797865342 -0700
++++ reflex-process-0.1.0.1-new/reflex-process.cabal	2020-01-17 15:01:33.298860127 -0700
+@@ -15,6 +15,10 @@
+                     README.md
+ tested-with: GHC ==8.6.5
+ 
++flag examples
++  description:   Build example shown in README.md
++  default:       False
++
+ library
+   exposed-modules: Reflex.Process
+   build-depends: base >=4.12 && <4.14
+@@ -27,7 +31,7 @@
+   default-language: Haskell2010
+   ghc-options: -Wall
+ 
+-executable readme
++executable reflex-process-example
+   main-is: README.lhs
+   ghc-options: -threaded -optL -q
+   build-depends: base
+@@ -40,3 +44,5 @@
+                , text >= 1.2.3 && < 1.3
+                , vty >= 5.21 && < 5.26
+   default-language: Haskell2010
++  if !flag(examples)
++    buildable:   False
