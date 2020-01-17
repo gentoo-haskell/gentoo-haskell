@@ -38,4 +38,4 @@ src_configure() {
 		$(cabal_flag terminfo terminfo)
 }
 
-CABAL_CORE_LIB_GHC_PV="PM:8.8.1 PM:9999"
+CABAL_CORE_LIB_GHC_PV="PM:8.8.1 PM:8.8.2 PM:9999"
