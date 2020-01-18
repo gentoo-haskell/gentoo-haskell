@@ -1,11 +1,11 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 inherit webapp
 
 DESCRIPTION="A web interface for darcs"
-HOMEPAGE="http://users.auriga.wearlab.de/~alb/darcsweb/"
-SRC_URI="http://users.auriga.wearlab.de/~alb/darcsweb/files/${PV}/${P}.tar.bz2"
+HOMEPAGE="https://blitiri.com.ar/p/darcsweb/"
+SRC_URI="https://blitiri.com.ar/p/darcsweb/files/${PV}/${P}.tar.bz2"
 
 LICENSE="public-domain"
 KEYWORDS="~amd64 ~x86"
