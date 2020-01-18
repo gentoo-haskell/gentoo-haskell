@@ -39,7 +39,8 @@ src_prepare() {
 	cabal_chdeps \
 		'exceptions       >= 0.6    && < 0.11'	'exceptions       >= 0.6' \
 		'containers       >= 0.5    && < 0.7'	'containers       >= 0.5' \
-		'temporary        >= 1.1    && < 1.4'	'temporary        >= 1.1'
+		'temporary        >= 1.1    && < 1.4'	'temporary        >= 1.1' \
+		'wave             >= 0.1.2  && < 0.2'	'wave             >= 0.1.2'
 }
 
 src_configure() {
