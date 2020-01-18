@@ -18,6 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Outdated test: https://github.com/aisamanra/config-ini/issues/22
 RESTRICT=test # hangs on -O0
 
 RDEPEND=">=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-8:=[profile?]
