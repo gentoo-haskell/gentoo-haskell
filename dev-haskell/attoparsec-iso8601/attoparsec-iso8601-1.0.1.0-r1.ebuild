@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,13 +19,19 @@ KEYWORDS="~amd64 ~x86"
 IUSE="developer fast"
 
 RDEPEND=">=dev-haskell/attoparsec-0.13.0.1:=[profile?]
-	>=dev-haskell/base-compat-0.9.1:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
+	>=dev-haskell/base-compat-0.9.1:=[profile?]
 	>=dev-haskell/text-1.1.1.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base-compat >= 0.9.1 && < 0.11' 'base-compat >= 0.9.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
