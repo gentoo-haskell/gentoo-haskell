@@ -897,6 +897,7 @@ dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexml 0.3.4: XML subset DOM parser
 dev-haskell/hexpat 0.20.13: XML parser/formatter based on expat
 dev-haskell/hflags 0.4.3: Command line flag parser, very similar to Google's gflags
+dev-haskell/hfmt 0.2.3.1: Haskell source code formatter
 dev-haskell/hformat 0.3.3.1: Simple Haskell formatting
 dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster grids
 dev-haskell/hgal 2.0.0.2-r1: library for computation automorphism group and canonical labelling of a graph
