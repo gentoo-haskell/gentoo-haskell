@@ -19,7 +19,7 @@ IUSE="emacs"
 
 RDEPEND="dev-haskell/cabal:=[profile?]
 	dev-haskell/exceptions:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.20:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.20:=[profile?] <dev-haskell/haskell-src-exts-1.21:=[profile?]
 	dev-haskell/monad-loops:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
