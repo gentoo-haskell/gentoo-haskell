@@ -534,7 +534,7 @@ dev-haskell/dynamic-state 0.3.1: Optionally serializable dynamic state keyed by 
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.2: Cross-platform File handling
 dev-haskell/easyrender 0.1.1.4: User-friendly creation of EPS, PostScript, and PDF files
-dev-haskell/easytest 0.2.1 0.3-r1: Simple, expressive testing library
+dev-haskell/easytest 0.2.1 0.3-r2: Simple, expressive testing library
 dev-haskell/echo 0.1.3: A cross-platform, cross-console way to handle echoing terminal input
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
 dev-haskell/ede 0.2.9: Templating language with similar syntax and features to Liquid or Jinja2
