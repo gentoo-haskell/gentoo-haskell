@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/call-stack-0.1:=[profile?]
-	>=dev-haskell/hedgehog-0.6:=[profile?]
+	>=dev-haskell/hedgehog-1.0.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/profunctors:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
@@ -34,6 +34,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${P}-hedgehog-1.patch
+	"${FILESDIR}"/${P}-hedgehog-1.0.2.patch
 )
 
 src_prepare() {

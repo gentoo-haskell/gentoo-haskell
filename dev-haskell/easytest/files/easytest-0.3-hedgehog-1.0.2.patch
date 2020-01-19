@@ -1,0 +1,103 @@
+hedgehog-1.0.1 -> 1.0.2 broke a few APIs.
+
+--- a/src/EasyTest/Internal.hs
++++ b/src/EasyTest/Internal.hs
+@@ -264,7 +264,7 @@ mkGroup name props = Group name $ props <&> \(path, ty, test) ->
+         [] -> "(unnamed)"
+         _  -> fromString (intercalate "." path)
+       propConf = case ty of
+-        Unit      -> PropertyConfig 1 1 0 0
++        Unit      -> PropertyConfig 1 0 0 (NoConfidenceTermination defaultMinTests)
+         Prop conf -> conf
+   in (name', Property propConf test)
+ 
+--- a/src/EasyTest/Internal/Hedgehog.hs
++++ b/src/EasyTest/Internal/Hedgehog.hs
+@@ -31,36 +31,36 @@ import           Hedgehog.Internal.Runner    hiding (checkNamed)
+ checkNamed ::
+      MonadIO m
+   => Region
+-  -> Maybe UseColor
++  -> UseColor
+   -> Maybe PropertyName
+   -> Seed
+   -> Property
+   -> m (Report Result)
+-checkNamed region mcolor name seed prop
+-  = checkRegion region mcolor name 0 seed prop
++checkNamed region color name seed prop
++  = checkRegion region color name 0 seed prop
+ 
+ -- | 'Hedgehog.Internal.Runner.updateSummary' exposed.
+-updateSummary :: Region -> TVar Summary -> Maybe UseColor -> (Summary -> Summary) -> IO ()
+-updateSummary sregion svar mcolor f = do
++updateSummary :: Region -> TVar Summary -> UseColor -> (Summary -> Summary) -> IO ()
++updateSummary sregion svar color f = do
+   summary <- atomically (modifyTVar' svar f >> readTVar svar)
+-  setRegion sregion =<< renderSummary mcolor summary
++  setRegion sregion =<< renderSummary color summary
+ 
+ -- | 'Hedgehog.Internal.Runner.checkGroupWith' modified to take a 'Seed'
+ checkGroupWith ::
+      WorkerCount
+   -> Verbosity
+-  -> Maybe UseColor
++  -> UseColor
+   -> Seed
+   -> [(PropertyName, Property)]
+   -> IO Summary
+-checkGroupWith n verbosity mcolor seed props =
++checkGroupWith n verbosity color seed props =
+   displayRegion $ \sregion -> do
+     svar <- atomically . newTVar $ mempty { summaryWaiting = PropertyCount (length props) }
+ 
+     let
+       start (TasksRemaining tasks) _ix (name, prop) =
+         liftIO $ do
+-          updateSummary sregion svar mcolor $ \x -> x {
++          updateSummary sregion svar color $ \x -> x {
+               summaryWaiting =
+                 PropertyCount tasks
+             , summaryRunning =
+@@ -80,7 +80,7 @@ checkGroupWith n verbosity mcolor seed props =
+             pure (name, prop, region)
+ 
+       finish (_name, _prop, _region) =
+-        updateSummary sregion svar mcolor $ \x -> x {
++        updateSummary sregion svar color $ \x -> x {
+             summaryRunning =
+               summaryRunning x - 1
+           }
+@@ -91,12 +91,12 @@ checkGroupWith n verbosity mcolor seed props =
+     summary <-
+       fmap (mconcat . fmap (fromResult . reportStatus)) $
+         runTasks n props start finish finalize $ \(name, prop, region) -> do
+-          result <- checkNamed region mcolor (Just name) seed prop
+-          updateSummary sregion svar mcolor
++          result <- checkNamed region color (Just name) seed prop
++          updateSummary sregion svar color
+             (<> fromResult (reportStatus result))
+           pure result
+ 
+-    updateSummary sregion svar mcolor (const summary)
++    updateSummary sregion svar color (const summary)
+     pure summary
+ 
+ -- | 'Hedgehog.checkSequential' modified to take a seed and exit on failure
+@@ -123,4 +123,4 @@ recheckSeed seed (Group group props) = liftIO $ do
+   putStrLn $ "━━━ " ++ unGroupName group ++ " ━━━"
+ 
+   verbosity <- resolveVerbosity (runnerVerbosity config)
+-  checkGroupWith n verbosity (runnerColor config) seed props
++  checkGroupWith n verbosity (maybe DisableColor id $ runnerColor config) seed props
+--- a/tests/Suite.hs
++++ b/tests/Suite.hs
+@@ -21,7 +21,7 @@ suite1 = tests
+   ]
+ 
+ reverseTest :: Test
+-reverseTest = scope "list reversal" $ propertyWith (defaultConfig { propertyTestLimit = 500 }) $ do
++reverseTest = scope "list reversal" $ propertyWith (defaultConfig) $ do
+   (list :: [Int]) <- forAll $ Gen.list (Range.linear 0 100)
+     (Gen.element [0..100])
+   reverse (reverse list) === list
