@@ -133,7 +133,7 @@ dev-haskell/attoparsec 0.12.1.6 0.13.2.3: Fast combinator parsing for bytestring
 dev-haskell/attoparsec-binary 0.2-r1: Binary processing extensions to Attoparsec
 dev-haskell/attoparsec-conduit 1.1.0: Consume attoparsec parsers via conduit. (deprecated)
 dev-haskell/attoparsec-enumerator 0.3.4: Pass input from an enumerator to an Attoparsec parser
-dev-haskell/attoparsec-iso8601 1.0.1.0: Parsing of ISO 8601 dates, originally from aeson
+dev-haskell/attoparsec-iso8601 1.0.1.0-r1: Parsing of ISO 8601 dates, originally from aeson
 dev-haskell/attoparsec-iteratee 0.4.0-r1: An adapter to convert attoparsec Parsers into blazing-fast Iteratees
 dev-haskell/attoparsec-path 0.0.0.1: Convenience bindings between path and attoparsec
 dev-haskell/augeas 0.6.1: A Haskell FFI wrapper for the Augeas API
@@ -202,7 +202,7 @@ dev-haskell/bitstringrandommonad 1.1.0.2: A library which turns a bytestring int
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bitwise 1.0.0.1: fast multi-dimensional unboxed bit packed Bool arrays
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
-dev-haskell/blank-canvas 0.7: HTML5 Canvas Graphics Library
+dev-haskell/blank-canvas 0.7-r1: HTML5 Canvas Graphics Library
 dev-haskell/blasthttp 1.2.1: Libary to interface with the NCBI blast REST interface
 dev-haskell/blastxml 0.3.2: Library for reading Blast XML output
 dev-haskell/blaze-builder 0.3.3.4 0.4.1.0: Efficient buffered output
@@ -1938,7 +1938,7 @@ dev-haskell/tasty-th 0.1.7: Automatic tasty test case discovery using TH
 dev-haskell/tcache 0.12.1: A Transactional cache with user-defined persistence
 dev-haskell/tcp-streams 1.0.1.1: One stop solution for tcp client and server with tls support
 dev-haskell/tcp-streams-openssl 1.0.1.0: Tcp streams using openssl for tls support
-dev-haskell/tdigest 0.2.1-r1: On-line accumulation of rank-based statistics
+dev-haskell/tdigest 0.2.1-r2: On-line accumulation of rank-based statistics
 dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/temporary 1.2.1.1 1.3: Portable temporary file and directory support for Windows and Unix
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix
@@ -1974,7 +1974,7 @@ dev-haskell/text-postgresql 0.0.3.1: Parser and Printer of PostgreSQL extended t
 dev-haskell/text-printer 0.5.0.1: Abstract interface for text builders/printers
 dev-haskell/text-region 0.3.1.0: Marking text regions
 dev-haskell/text-short 0.1.3: Memory-efficient representation of Unicode text strings
-dev-haskell/text-show 3.7.5 3.8.2: Efficient conversion of values into Text
+dev-haskell/text-show 3.7.5 3.8.2 3.8.3: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/text-zipper 0.10.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
@@ -2171,7 +2171,7 @@ dev-haskell/wl-pprint 1.2.1: The Wadler/Leijen Pretty Printer
 dev-haskell/wl-pprint-annotated 0.1.0.1: Wadler/Leijen pretty printer with annotations and slightly modernized API
 dev-haskell/wl-pprint-extras 3.5.0.5: A free monad based on the Wadler/Leijen pretty printer
 dev-haskell/wl-pprint-terminfo 3.7.1.4: A color pretty printer with terminfo support
-dev-haskell/wl-pprint-text 1.1.1.1 1.2.0.0: A Wadler/Leijen Pretty Printer for Text values
+dev-haskell/wl-pprint-text 1.1.1.1 1.2.0.0-r1: A Wadler/Leijen Pretty Printer for Text values
 dev-haskell/word-trie 0.3.0: Implementation of a finite trie over words
 dev-haskell/word-wrap 0.4.1: A library for word-wrapping
 dev-haskell/word24 2.0.1: 24-bit word and int types for GHC
