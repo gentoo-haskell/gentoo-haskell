@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT=test # uses browser
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
-	>=dev-haskell/base-compat-batteries-0.10:=[profile?] <dev-haskell/base-compat-batteries-0.11:=[profile?]
+	>=dev-haskell/base-compat-batteries-0.10:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/colour-2.2:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
@@ -43,3 +43,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/shake-0.14 )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base-compat-batteries >= 0.10    && < 0.11' 'base-compat-batteries >= 0.10'
+}
