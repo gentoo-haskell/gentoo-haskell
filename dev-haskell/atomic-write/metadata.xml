@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		
+		Atomically write to a file on POSIX-compliant systems while preserving
+		permissions.
+		
+		On most Unix systems, `mv` is an atomic operation. This makes it simple to write
+		to a file atomically just by using the mv operation. However, this will
+		destroy the permissions on the original file. This library does the following
+		to preserve permissions while atomically writing to a file:
+		
+		* If an original file exists, take those permissions and apply them to the
+		temp file before `mv`ing the file into place.
+		
+		* If the original file does not exist, create a following with default
+		permissions (based on the currently-active umask).
+		
+		This way, when the file is `mv`&#39;ed into place, the permissions will be the ones
+		held by the original file.
+		
+		This library is based on similar implementations found in common libraries in
+		Ruby and Python:
+		
+		* &lt;http://apidock.com/rails/File/atomic_write/class Ruby on Rails includes a similar method called atomic_write&gt;
+		
+		* &lt;https://github.com/chef/chef/blob/c4631816132fcfefaba3d123a1d0dfe8bc2866bb/lib/chef/file_content_management/deploy/mv_unix.rb#L23:L71 Chef includes atomic update functionality&gt;
+		
+		* &lt;https://github.com/sashka/atomicfile There is a python library for atomically updating a file&gt;
+		
+		To use `atomic-write`, import the module corresponding to the type you wish to
+		write atomically, e.g., to write a (strict) ByteString atomically:
+		
+		&gt; import System.AtomicWrite.Writer.ByteString
+		
+		Then you can use the atomicWriteFile function that accepts a `FilePath` and a
+		`ByteString`, e.g.:
+		
+		&gt; atomicWriteFile myFilePath myByteString
+	</longdescription>
+</pkgmetadata>
