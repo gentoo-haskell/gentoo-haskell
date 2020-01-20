@@ -126,6 +126,7 @@ dev-haskell/astar 0.3.0.0: General A* search algorithm
 dev-haskell/async 2.1.1.1 2.2.2: Run IO operations asynchronously and wait for their results
 dev-haskell/atomic-file-ops 0.3.0.0: Functions to atomically write to files
 dev-haskell/atomic-primops 0.8.3: A safe approach to CAS and other atomic ops in Haskell
+dev-haskell/atomic-write 0.2.0.7: Atomically write to a file
 dev-haskell/atto-lisp 0.2.2.3: Efficient parsing and serialisation of S-Expressions
 dev-haskell/attobencode 0.3.1.0: Fast Bencode encoding and parsing library
 dev-haskell/attojson 0.5.10-r2: Simple lightweight JSON parser, generator & manipulator based on ByteString
@@ -268,6 +269,7 @@ dev-haskell/cassava-megaparsec 2.0.1: Megaparsec parser of CSV files that plays 
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
 dev-haskell/cborg 0.2.2.1: Concise Binary Object Representation
+dev-haskell/cborg-json 0.2.2.0: A library for encoding JSON as CBOR
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.5.8.1: A binary serialization library
 dev-haskell/cereal-conduit 0.8.0: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
@@ -1820,6 +1822,7 @@ dev-haskell/sourcegraph 0.7.0.7-r1: Static code analysis using graph-theoretic t
 dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.3.1: Play, write, read, convert audio signals using Sox
 dev-haskell/spdx 0.2.2.0: SPDX license expression language
+dev-haskell/special-values 0.1.0.0: Typeclass providing special values
 dev-haskell/speculation 1.5.0.3-r1: A framework for safe, programmable, speculative parallelism
 dev-haskell/sphinx 0.6.0.2: Haskell bindings to the Sphinx full-text searching daemon
 dev-haskell/spintax 0.3.3: Random text generation based on spintax
@@ -1923,6 +1926,7 @@ dev-haskell/tar-conduit 0.3.2-r1: Extract and create tar files using conduit for
 dev-haskell/tardis 0.4.1.0: Bidirectional state monad transformer
 dev-haskell/tasty 0.11.2.3 0.12.0.1 1.1.0.4 1.2 1.2.3: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.1.6: Render tasty output to XML for Jenkins
+dev-haskell/tasty-discover 4.2.1: Test discovery for the tasty framework
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.2: Golden tests support for tasty
 dev-haskell/tasty-hedgehog 1.0.0.2: Integration for tasty and hedgehog
@@ -2370,7 +2374,7 @@ www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
 www-servers/mighttpd2 3.2.9 3.3.1 3.3.5 3.4.3-r1: High performance web server on WAI/warp
 x11-misc/taffybar 0.4.6-r1 3.0.0 3.1.1 9999: A desktop bar similar to xmobar, but with more GUI
-x11-misc/xmobar 0.26-r1 0.27 0.28.1 0.29.4 0.30 9999: A Minimalistic Text Based Status Bar
+x11-misc/xmobar 0.26-r1 0.27 0.28.1 0.29.4 0.30 0.32 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1-r4 0.13.0 0.13.3 0.13.4 0.14-r2 0.15 0.15.2: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-log-applet 2.0.0-r301: Gnome and XFCE applet for displaying XMonad log
 x11-misc/xmonad-utils 0.1.3.3: A small collection of X utilities
