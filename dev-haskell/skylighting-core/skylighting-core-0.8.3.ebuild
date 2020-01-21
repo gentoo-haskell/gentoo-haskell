@@ -45,6 +45,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck )
 "
 
+PATCHES=( "${FILESDIR}"/skylighting-core-0.8.3-idris-keywords-fix.patch )
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag executable executable) \

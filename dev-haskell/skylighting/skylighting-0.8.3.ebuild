@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+PATCHES=( "${FILESDIR}"/skylighting-0.8.3-idris-keywords-fix.patch )
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-bootstrap \
