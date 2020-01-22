@@ -3,7 +3,8 @@
 >=dev-haskell/text-show-3.8.3
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (15 Jan 2020)
-# Reverse dependency of >=http-client-0.6
+# Reverse dependencies of >=http-client-0.6
+>=dev-haskell/discord-haskell-1.2.0
 >=dev-haskell/wreq-0.5.3.2
 
 # Mark Wright <gienah@gentoo.org> (12 Jan 2020)
