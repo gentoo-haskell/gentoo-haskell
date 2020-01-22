@@ -30,3 +30,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.8
 		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.14 )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-2.23.0-ghc-8.8.2.patch
+)

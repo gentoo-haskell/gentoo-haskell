@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -31,4 +31,10 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
-PATCHES=("${FILESDIR}"/${P}-cabal-1.24.patch)
+src_prepare() {
+	default
+	# https://bugs.gentoo.org/702986
+	if has_version "<dev-haskell/cabal-3.0.0.0"; then
+		eapply "${FILESDIR}"/${PN}-0.13.6.1-cabal-1.24.patch
+	fi
+}
