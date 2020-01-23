@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="constraints">Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.</flag>
+		<flag name="debug">Show debug trace info (used only for library development). Note, if you want to see the debug output of the plugin in another project, you may need to manually define a CPP option -DPLUGIN_DEBUG in that project.</flag>
+		<flag name="examples">Whether to build examples</flag>
+	</use>
+	<longdescription>
+		The library provides a plugin to derive class instances programmatically. Please see the README on GitHub at &lt;https://github.com/achirkin/constraints-deriving#readme&gt;
+	</longdescription>
+</pkgmetadata>
