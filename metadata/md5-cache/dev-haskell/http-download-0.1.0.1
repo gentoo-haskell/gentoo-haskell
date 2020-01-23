@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/base64-bytestring:=[profile?] dev-haskell/conduit:=[profile?] dev-haskell/conduit-extra:=[profile?] dev-haskell/cryptonite:=[profile?] dev-haskell/cryptonite-conduit:=[profile?] dev-haskell/exceptions:=[profile?] dev-haskell/http-client:=[profile?] dev-haskell/http-conduit:=[profile?] dev-haskell/http-types:=[profile?] dev-haskell/memory:=[profile?] dev-haskell/path:=[profile?] dev-haskell/path-io:=[profile?] dev-haskell/retry:=[profile?] dev-haskell/rio:=[profile?] dev-haskell/rio-prettyprint:=[profile?] >=dev-lang/ghc-8.2.1:= >=dev-haskell/cabal-2.0.0.2 test? ( dev-haskell/hspec dev-haskell/hspec-discover ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Verified downloads with retries
+EAPI=7
+HOMEPAGE=https://github.com/commercialhaskell/http-download#readme
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-haskell/base64-bytestring:=[profile?] dev-haskell/conduit:=[profile?] dev-haskell/conduit-extra:=[profile?] dev-haskell/cryptonite:=[profile?] dev-haskell/cryptonite-conduit:=[profile?] dev-haskell/exceptions:=[profile?] dev-haskell/http-client:=[profile?] dev-haskell/http-conduit:=[profile?] dev-haskell/http-types:=[profile?] dev-haskell/memory:=[profile?] dev-haskell/path:=[profile?] dev-haskell/path-io:=[profile?] dev-haskell/retry:=[profile?] dev-haskell/rio:=[profile?] dev-haskell/rio-prettyprint:=[profile?] >=dev-lang/ghc-8.2.1:=
+RESTRICT=test
+SLOT=0/0.1.0.1
+SRC_URI=https://hackage.haskell.org/package/http-download-0.1.0.1/http-download-0.1.0.1.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=ca7f1872d91b15bbe0826d8eac8ee978

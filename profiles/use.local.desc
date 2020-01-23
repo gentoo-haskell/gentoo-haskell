@@ -102,6 +102,9 @@ dev-haskell/comonad:distributive - Enable the use of the `distributive` package.
 dev-haskell/comonad:test-doctests - Run the doctests test suite
 dev-haskell/concurrent-supply:test-properties - 
 dev-haskell/configfile:buildtests - Build the executable to run unit tests.
+dev-haskell/constraints-deriving:constraints - Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.
+dev-haskell/constraints-deriving:debug - Show debug trace info (used only for library development). Note, if you want to see the debug output of the plugin in another project, you may need to manually define a CPP option -DPLUGIN_DEBUG in that project.
+dev-haskell/constraints-deriving:examples - Whether to build examples
 dev-haskell/contravariant:semigroups - Enable the use of the `semigroups` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/contravariant:statevar - Enable the use of of the `statevar` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/contravariant:tagged - Enable the use of the `tagged` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -117,13 +120,13 @@ dev-haskell/csv-to-qif:threaded - Enable threaded haskell runtime.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-lens-fd:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-reify:tests - Build test binaries.
-dev-haskell/dav:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/diagrams:canvas - Enable canvas backend.
 dev-haskell/diagrams:postscript - Enable the Haskell-native PostScript backend.
 dev-haskell/diagrams:rasterific - Enable rasterific backend.
 dev-haskell/diagrams-builder:pgf - install PGF-specific builder tool
 dev-haskell/diagrams-builder:ps - Enable postscript backend
 dev-haskell/diagrams-builder:rasterific - Enable rasterific backend
+dev-haskell/dimensions:unsafe-indices - Disable bound checks on Idx and Idxs types
 dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using the bundled sqlite library.
 dev-haskell/direct-sqlite:json1 - Enable json1 extension.
 dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library.
@@ -258,6 +261,7 @@ dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
 dev-haskell/icalendar:network-uri - use network-uri package
 dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/imagemagick:buildexamples - Build examples.
+dev-haskell/inflections:dev - Turn on development settings
 dev-haskell/influxdb:examples - Build examples
 dev-haskell/inline-c:gsl-example - Build GSL example
 dev-haskell/integer-logarithms:integer-gmp - integer-gmp or integer-simple
