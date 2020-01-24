@@ -20,6 +20,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous module name ‘Data.Time’: it was found in multiple packages: pulseaudio-0.0.2.1 time-1.8.0.2
+
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
