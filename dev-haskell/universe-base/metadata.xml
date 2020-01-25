@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		A class for finite and recursively enumerable types and some helper functions for enumerating them.
+		
+		@
+		class Universe a where universe :: [a]
+		class Universe a =&gt; Finite a where universeF :: [a]; universeF = universe
+		@
+		
+		This is slim package definiting only the type-classes and instances
+		for types in GHC boot libraries.
+		For more instances check @universe-instances-*@ packages.
+	</longdescription>
+</pkgmetadata>
