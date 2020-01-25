@@ -6,8 +6,21 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="doctests">Enable testing with doctests</flag>
 		<flag name="benchmarks">Enable testing with benchmarks</flag>
+		<flag name="doctests">Enable testing with doctests</flag>
+		<flag name="multiple-hidden">
+	Allow multiple hidden clocks, resets, and enables to be used. This is an
+	experimental feature, possibly triggering confusing error messages. By
+	default, it is enabled on development versions of Clash and disabled on
+	releases.
+		</flag>
+		<flag name="super-strict">
+	Use `deepseqX` (instead of `seqX`) in register-like constructs. This can
+	help to eliminate space leaks when using lazy data structures in
+	registers-like constructs. This potentially slows down Clash hardware
+	simulation.
+		</flag>
+		<flag name="unittests">You can disable testing with unittests using `-f-unittests`</flag>
 	</use>
 	<longdescription>
 		CλaSH (pronounced 'clash') is a functional hardware description language that
