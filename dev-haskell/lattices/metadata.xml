@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		In mathematics, a lattice is a partially ordered set in which every two
+		elements @x@ and @y@ have a unique supremum (also called a least upper bound, join, or @x /\\ y@)
+		and a unique infimum (also called a greatest lower bound, meet, or @x \\/ y@).
+		
+		This package provide type-classes for different lattice types, as well
+		as a class for the partial order.
+	</longdescription>
+</pkgmetadata>
