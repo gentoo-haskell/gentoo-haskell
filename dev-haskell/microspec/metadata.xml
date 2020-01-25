@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		A tiny (1 module, &lt;500 lines) property-based (and unit) testing library with minimal dependencies.
+		
+		Instead of reinventing the wheel (&lt;https://xkcd.com/927&gt;), we use a
+		RSpec/HSpec-like DSL and run tests with QuickCheck.
+		
+		For many use-cases, microspec is a drop-in replacement for hspec.
+		
+		&gt; import Test.Microspec
+		&gt;
+		&gt; main :: IO ()
+		&gt; main = microspec $ do
+		&gt;    describe &quot;replicate&quot; $ do
+		&gt;       it &quot;doubles with 2&quot; $
+		&gt;          replicate 2 &#39;x&#39; === &quot;xx&quot;
+		&gt;       it &quot;creates a list of the right size&quot; $
+		&gt;          \(Positive n) -&gt; length (replicate n &#39;x&#39;) === n
+		&gt;
+		&gt;    describe &quot;reverse&quot; $ do
+		&gt;       it &quot;reverse . reverse === id&quot; $ \l -&gt;
+		&gt;          reverse (reverse l) === (l :: [Int])
+		&gt;
+		&gt;    describe &quot;tail&quot; $
+		&gt;       it &quot;length is -1&quot; $ \(NonEmpty l) -&gt;
+		&gt;          length (tail l :: [Int]) === length l - 1
+		&gt;
+		&gt;    describe &quot;solve the halting problem&quot; $
+		&gt;       pending
+	</longdescription>
+</pkgmetadata>

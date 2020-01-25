@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		This library allows conversion between the types from @Data.ByteString@
+		(package @bytestring@) and @Data.Vector.Storable@ (package @vector@) without
+		copying the underlying data.  This is useful, for example, when @ByteString@
+		IO produces or consumes vectors of numbers in native byte order.
+		
+		The conversion relies on the fact that @ByteString@ and @Vector@ use their
+		respective @ForeignPtr@s in compatible ways.
+		
+		This library is a fork of the @spool@ package written by Keegan McAllister.
+	</longdescription>
+</pkgmetadata>
