@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="skip-hlint-tester">Do not build the HLint tester</flag>
+	</use>
 	<longdescription>
 		Express properties about Haskell programs and automatically prove them using SMT
 		(Satisfiability Modulo Theories) solvers.
