@@ -519,7 +519,7 @@ dev-haskell/dlist 0.8.0.7: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 3.0.2: DNS library in Haskell
 dev-haskell/doclayout 0.2.0.1: A prettyprinting library for laying out text documents
-dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8: Pandoc-style document templates
+dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8-r1: Pandoc-style document templates
 dev-haskell/doctest 0.11.2 0.13.0 0.15.0 0.16.0.1 0.16.2: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
