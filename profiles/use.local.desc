@@ -91,8 +91,16 @@ dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/x
 dev-haskell/citeproc-hs:network - use dev-haskell/network and dev-haskell/http to retrieve CSL file from URIs
 dev-haskell/citeproc-hs:small-base - Choose the new smaller, split-up base package.
 dev-haskell/citeproc-hs:unicode-collation - Use Haskell bindings to the dev-libs/icu
+dev-haskell/clash-ghc:dynamic - Build Clash binaries with GHC flag `-dynamic`. This flag should only be used for packaging purposes. Installations using cabal should use `--enable-executable-dynamic`!
+dev-haskell/clash-ghc:ghc-paths - Locate the GHC core libraries using the `ghc-paths` package. Note: this flag may make binaries less relocatable, by hard-coding an absolute path to the core libraries.
+dev-haskell/clash-lib:debug - Build a debug compiler
+dev-haskell/clash-lib:history - Emit rewrite history to disk
+dev-haskell/clash-lib:unittests - You can disable testing with unittests using `-f-unittests`
 dev-haskell/clash-prelude:benchmarks - Enable testing with benchmarks
 dev-haskell/clash-prelude:doctests - Enable testing with doctests
+dev-haskell/clash-prelude:multiple-hidden - Allow multiple hidden clocks, resets, and enables to be used. This is an experimental feature, possibly triggering confusing error messages. By default, it is enabled on development versions of Clash and disabled on releases.
+dev-haskell/clash-prelude:super-strict - Use `deepseqX` (instead of `seqX`) in register-like constructs. This can help to eliminate space leaks when using lazy data structures in registers-like constructs. This potentially slows down Clash hardware simulation.
+dev-haskell/clash-prelude:unittests - You can disable testing with unittests using `-f-unittests`
 dev-haskell/clckwrks:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build quote module
@@ -385,6 +393,7 @@ dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking executable.
 dev-haskell/sandi:conduit - Build with conduit
 dev-haskell/sandi:with-conduit - Build with conduit
+dev-haskell/sbv:skip-hlint-tester - Do not build the HLint tester
 dev-haskell/scientific:integer-simple - Use the integer-simple package instead of integer-gmp.
 dev-haskell/sdl2:no-linear - Do not depend on dev-haskell/linear library (bundled Vect)
 dev-haskell/semialign:semigroupoids - Build with semigroupoids dependency
@@ -465,7 +474,6 @@ dev-haskell/vector-algorithms:internalchecks - Enable internal consistency check
 dev-haskell/vector-algorithms:properties - Enable quickcheck tests.
 dev-haskell/vector-algorithms:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty.
 dev-haskell/vector-instances:hashable - use dev-haskell/hashable
-dev-haskell/vimeta:maintainer - Enable settings for the package maintainer.
 dev-haskell/vinyl-utils:devel - Development mode (-Werror)
 dev-haskell/void:safe - Disable effective but unsafe coercions
 dev-haskell/vty-ui:demos - Build demonstration programs.
