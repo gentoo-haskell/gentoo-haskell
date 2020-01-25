@@ -6,6 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="dynamic">Build Clash binaries with GHC flag `-dynamic`. This flag should only be used for packaging purposes. Installations using cabal should use `--enable-executable-dynamic`!</flag>
+		<flag name="ghc-paths">Locate the GHC core libraries using the `ghc-paths` package.  Note: this flag may make binaries less relocatable, by hard-coding an absolute path to the core libraries.</flag>
 	</use>
 	<longdescription>
 		CλaSH (pronounced 'clash') is a functional hardware description language that
