@@ -1,0 +1,30 @@
+diff -urN reflex-backend-wai-0.1.0.0/reflex-backend-wai.cabal reflex-backend-wai-0.1.0.0-new/reflex-backend-wai.cabal
+--- reflex-backend-wai-0.1.0.0/reflex-backend-wai.cabal	2001-09-08 19:46:40.000000000 -0600
++++ reflex-backend-wai-0.1.0.0-new/reflex-backend-wai.cabal	2020-01-14 00:00:42.072115661 -0700
+@@ -34,6 +34,10 @@
+                    , GHC==8.4.3
+                    , GHC==8.6.4
+ 
++flag examples
++  description:     Build demonstration programs
++  default:         False
++
+ library
+   exposed-modules:     Reflex.Backend.Wai
+                      , Reflex.Backend.Warp
+@@ -49,7 +53,7 @@
+   ghc-options:         -Wall
+   default-language:    Haskell2010
+ 
+-executable example
++executable reflex-backend-wai-example
+   main-is:             Main.hs
+   build-depends:       base              >=4.9     && < 4.13
+                      , http-types        >= 0.9.1  && < 0.13
+@@ -59,4 +63,5 @@
+   hs-source-dirs:      exe
+   ghc-options:         -Wall
+   default-language:    Haskell2010
+-  
++  if !flag(examples)
++    buildable:         False

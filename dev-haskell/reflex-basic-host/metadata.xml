@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		&lt;&lt;https://raw.githubusercontent.com/qfpl/assets/master/data61-transparent-bg.png&gt;&gt;
+		
+		reflex-basic-host provides a basic Reflex host for backend work. It
+		provides instances for most of the important Reflex typeclasses.
+		
+		@Reflex.Host.Basic.basicHostWithQuit@ is the main entry point for
+		running FRP code. Use the @TriggerEvent@ instance to construct
+		@Event@s and control when they fire, and use the @PerformEvent@
+		instance to take actions in response to @Event@ firings.
+	</longdescription>
+</pkgmetadata>
