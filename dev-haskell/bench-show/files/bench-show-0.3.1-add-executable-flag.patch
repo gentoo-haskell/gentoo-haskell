@@ -1,0 +1,23 @@
+diff -urN bench-show-0.3.1/bench-show.cabal bench-show-0.3.1-new/bench-show.cabal
+--- bench-show-0.3.1/bench-show.cabal	2001-09-08 19:46:40.000000000 -0600
++++ bench-show-0.3.1-new/bench-show.cabal	2020-01-15 18:16:09.816620791 -0700
+@@ -102,6 +102,10 @@
+     type: git
+     location: https://github.com/composewell/bench-show
+ 
++flag executable
++  description:       Build executable as well as library
++  default:           False
++
+ library
+     hs-source-dirs:   lib
+     exposed-modules:  BenchShow
+@@ -152,6 +156,8 @@
+         , optparse-applicative >= 0.14.2  && < 0.16
+         , optparse-simple      >= 0.1.0   && < 0.2
+         , bench-show
++  if !flag(executable)
++    buildable: False
+ 
+ test-suite test
+     type: exitcode-stdio-1.0

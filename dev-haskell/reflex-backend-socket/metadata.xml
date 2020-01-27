@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		&lt;&lt;https://raw.githubusercontent.com/qfpl/assets/master/data61-transparent-bg.png&gt;&gt;
+		
+		reflex-backend-socket provides functions to handle sockets using
+		Reflex @Event@s. Sending\/receiving\/waiting\/accepting are all
+		performed on background threads.
+		
+		The most important function in this library is
+		@Reflex.Backend.Socket.socket@, which wraps a @Socket@ to process
+		@Event t ByteString@s.
+		
+		That @Socket@ can come from:
+		
+		1. @Reflex.Backend.Socket.Accept.accept@, if you&#39;re making a server;
+		2. @Reflex.Backend.Socket.Connect.connect@, if you&#39;re making a client; or
+		3. Your favourite networking library.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,53 @@
+diff -urN reflex-basic-host-0.2.0.1/reflex-basic-host.cabal reflex-basic-host-0.2.0.1-new/reflex-basic-host.cabal
+--- reflex-basic-host-0.2.0.1/reflex-basic-host.cabal	2001-09-08 19:46:40.000000000 -0600
++++ reflex-basic-host-0.2.0.1-new/reflex-basic-host.cabal	2020-01-14 00:21:23.766078973 -0700
+@@ -32,6 +32,10 @@
+   type:              git
+   location:          git@github.com:qfpl/reflex-basic-host.git
+ 
++flag examples
++  description:       Build demonstration programs
++  default:           False
++
+ library
+   exposed-modules:     Reflex.Host.Basic
+   build-depends:       base >=4.9 && <4.14
+@@ -46,7 +50,7 @@
+   ghc-options:         -Wall
+   default-language:    Haskell2010
+ 
+-executable example
++executable reflex-basic-host-example
+   main-is:             Main.hs
+   build-depends:       base >=4.9 && <4.14
+                      , reflex >= 0.6 && < 0.7
+@@ -54,8 +58,10 @@
+   hs-source-dirs:      example
+   ghc-options:         -Wall
+   default-language:    Haskell2010
++  if !flag(examples)
++    buildable:         False
+ 
+-executable counter
++executable reflex-basic-host-counter
+   main-is:             Counter.hs
+   build-depends:       base >=4.9 && <4.14
+                      , reflex >= 0.6 && < 0.7
+@@ -63,8 +69,10 @@
+   hs-source-dirs:      example
+   ghc-options:         -Wall
+   default-language:    Haskell2010
++  if !flag(examples)
++    buildable:         False
+ 
+-executable multithread
++executable reflex-basic-host-multithread
+   main-is:             Multithread.hs
+   build-depends:       base >=4.9 && <4.14
+                      , lens >= 3.6 && < 4.18
+@@ -74,3 +82,5 @@
+   hs-source-dirs:      example
+   ghc-options:         -Wall
+   default-language:    Haskell2010
++  if !flag(examples)
++    buildable:         False

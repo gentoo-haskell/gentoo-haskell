@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Reflex interface to `wai`.
+		
+		A minimal example:
+		
+		&gt; {-# LANGUAGE OverloadedStrings #-}
+		&gt; module Main where
+		&gt;
+		&gt; import Network.Wai (responseLBS)
+		&gt; import Network.HTTP.Types.Status (status200)
+		&gt;
+		&gt; import Reflex.Backend.Warp (runAppForever)
+		&gt;
+		&gt; main :: IO ()
+		&gt; main =
+		&gt;   runAppForever 8080 $ \eReq -&gt; do
+		&gt;     let eRes = responseLBS status200 [] &quot;Hi&quot; &lt;$ eReq
+		&gt;     pure eRes
+	</longdescription>
+</pkgmetadata>

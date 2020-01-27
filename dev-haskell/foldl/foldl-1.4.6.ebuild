@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # it was found in multiple packages: hashmap-1.3.3 unordered-containers-0.2.10.0
+
 RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	<dev-haskell/contravariant-1.6:=[profile?]
 	<dev-haskell/hashable-1.4:=[profile?]
