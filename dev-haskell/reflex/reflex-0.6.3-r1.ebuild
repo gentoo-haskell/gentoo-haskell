@@ -53,8 +53,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( dev-haskell/filemanip
 		dev-haskell/split
-		|| ( <dev-haskell/hlint-2.1
-			>=dev-haskell/hlint-2.2.2 ) )
+		dev-haskell/hlint )
 	split-these? ( test? ( dev-haskell/these-lens ) )
 	!split-these? ( test? ( dev-haskell/monoidal-containers ) )
 "
@@ -64,7 +63,8 @@ src_prepare() {
 
 	cabal_chdeps\
 		'profunctors >= 5.3 && < 5.5' 'profunctors >= 5.3' \
-		'witherable >= 0.3 && < 0.3.2' 'witherable >= 0.3'
+		'witherable >= 0.3 && < 0.3.2' 'witherable >= 0.3' \
+		'hlint < 2.1 || >= 2.2.2' 'hlint'
 }
 
 src_configure() {
