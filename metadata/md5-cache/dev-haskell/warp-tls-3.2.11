@@ -7,7 +7,7 @@ IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=>=dev-haskell/cryptonite-0.12:=[profile?] >=dev-haskell/data-default-class-0.0.1:=[profile?] >=dev-haskell/network-2.2.1:=[profile?] dev-haskell/streaming-commons:=[profile?] >=dev-haskell/tls-1.5.3:=[profile?] >=dev-haskell/tls-session-manager-0.0.4:=[profile?] >=dev-haskell/wai-3.2:=[profile?] <dev-haskell/wai-3.3:=[profile?] >=dev-haskell/warp-3.3.6:=[profile?] <dev-haskell/warp-3.4:=[profile?] >=dev-lang/ghc-8.2.1:=
-SLOT=0/3.2.10
-SRC_URI=https://hackage.haskell.org/package/warp-tls-3.2.10/warp-tls-3.2.10.tar.gz
+SLOT=0/3.2.11
+SRC_URI=https://hackage.haskell.org/package/warp-tls-3.2.11/warp-tls-3.2.11.tar.gz
 _eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=7d276dba223cad5a10b1206b78f5802b
+_md5_=0ac982db2c63457ec43bae3bc5ccaf12
