@@ -10,7 +10,4 @@
 		cgi package API, making it very easy to port CGI programs to FastCGI.
 		The FastCGI C development kit is required to build this library.
 	</longdescription>
-	<use>
-		<flag name="small_base">Choose the new smaller, split-up base package.</flag>
-	</use>
 </pkgmetadata>

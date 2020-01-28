@@ -17,10 +17,10 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="" # Requires very ancient versions and last release in 2015.
 IUSE=""
 
-RDEPEND=">=dev-haskell/cabal-1.22:=
+RDEPEND=">=dev-haskell/cabal-1.22:= <dev-haskell/cabal-1.23:=
 	>=dev-haskell/fgl-5.5:= <dev-haskell/fgl-5.6:=
 	>=dev-haskell/graphalyze-0.14.1.0:= <dev-haskell/graphalyze-0.15:=
 	>=dev-haskell/graphviz-2999.15.0.0:= <dev-haskell/graphviz-2999.19:=
