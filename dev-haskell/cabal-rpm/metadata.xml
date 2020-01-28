@@ -6,7 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="curl">Use curl library to query Stackage instead of http-client</flag>
 		<flag name="https">Use http to query Stackage</flag>
+		<flag name="old-locale">Use old-locale and time &lt; 1.5</flag>
 	</use>
 	<longdescription>
 		This package provides a RPM packaging tool for Haskell Cabal-based packages.
