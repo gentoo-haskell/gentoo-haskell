@@ -7,6 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="cloud">Enable cloud build features</flag>
+		<flag name="embed-files">Embed data files into the shake library</flag>
 		<flag name="portable">Obtain FileTime using portable functions</flag>
 	</use>
 	<longdescription>
