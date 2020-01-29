@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # src/Chronos.hs:257:1: error: Ambiguous module name ‘Data.Vector’: AC-Vector-Fancy-2.4.0 vector-0.12.0.3
+
 RDEPEND=">=dev-haskell/aeson-1.1:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/clock-0.7:=[profile?] <dev-haskell/clock-0.9:=[profile?]
