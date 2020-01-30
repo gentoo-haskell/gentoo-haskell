@@ -1,0 +1,71 @@
+diff --git a/packages/base/hmatrix.cabal b/packages/base/hmatrix.cabal
+index 4dc62e5..c43d223 100644
+--- a/hmatrix.cabal
++++ b/hmatrix.cabal
+@@ -26,11 +26,6 @@ extra-source-files: THANKS.md CHANGELOG
+ 
+ extra-source-files: src/Internal/C/lapack-aux.h
+ 
+-flag openblas
+-    description:    Link with OpenBLAS (https://github.com/xianyi/OpenBLAS) optimized libraries.
+-    default:        False
+-    manual: True
+-
+ flag disable-default-paths
+     description:    When enabled, don't add default hardcoded include/link dirs by default. Needed for hermetic builds like in nix.
+     default:        False
+@@ -107,53 +102,7 @@ library
+     if flag(no-random_r)
+         cc-options: -DNO_RANDOM_R
+ 
+-    if os(OSX)
+-        if flag(openblas)
+-            if !flag(disable-default-paths)
+-                extra-lib-dirs:     /opt/local/lib/openblas/lib
+-            extra-libraries:    openblas
+-        else
+-            extra-libraries:    blas lapack
+-
+-        if !flag(disable-default-paths)
+-            extra-lib-dirs: /opt/local/lib/
+-            include-dirs: /opt/local/include/
+-            extra-lib-dirs: /usr/local/lib/
+-            include-dirs: /usr/local/include/
+-        if arch(i386)
+-            cc-options: -arch i386
+-        frameworks: Accelerate
+-
+-    if os(freebsd)
+-        if flag(openblas)
+-            if !flag(disable-default-paths)
+-                extra-lib-dirs:     /usr/local/lib/openblas/lib
+-            extra-libraries:    openblas
+-        else
+-            extra-libraries:    blas lapack
+-
+-        if !flag(disable-default-paths)
+-            extra-lib-dirs: /usr/local/lib
+-            include-dirs: /usr/local/include
+-        extra-libraries: gfortran
+-
+-    if os(windows)
+-        if flag(openblas)
+-            extra-libraries:    libopenblas, libgcc_s_seh-1, libgfortran, libquadmath-0
+-        else
+-            extra-libraries:    blas lapack
+-
+-    if os(linux)
+-        if flag(openblas)
+-            if !flag(disable-default-paths)
+-                extra-lib-dirs:     /usr/lib/openblas/lib
+-            extra-libraries:    openblas
+-        else
+-            extra-libraries:    blas lapack
+-
+-        if arch(x86_64)
+-            cc-options: -fPIC
+-
++    pkgconfig-depends: blas, lapack
+ 
+ source-repository head
+     type:     git
