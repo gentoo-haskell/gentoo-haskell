@@ -29,6 +29,7 @@
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
 >=dev-haskell/hsemail-2              # smptclient-1.1.0
+>=dev-haskell/ilist-0.4.0.0          # hsimport-0.11.0
 >=dev-haskell/monoid-subclasses-0.5  # picoparsec-0.1.2.3
 >=dev-haskell/mysql-haskell-0.8.4    # mysql-haskell-openssl-0.8.3.0
 >=dev-haskell/socket-0.8             # socket-sctp-0.3.0.0
