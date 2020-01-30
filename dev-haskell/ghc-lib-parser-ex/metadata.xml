@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="ghc-lib">Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported</flag>
+	</use>
+	<longdescription>
+		Please see the README on GitHub at &lt;https://github.com/shayne-fletcher/ghc-lib-parser-ex#readme&gt;
+	</longdescription>
+</pkgmetadata>
