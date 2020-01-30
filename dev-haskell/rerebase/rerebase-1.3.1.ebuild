@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Reexports from \"base\" with a bunch of other standard libraries"
+DESCRIPTION="Reexports from 'base' with a bunch of other standard libraries"
 HOMEPAGE="https://github.com/nikita-volkov/rerebase"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

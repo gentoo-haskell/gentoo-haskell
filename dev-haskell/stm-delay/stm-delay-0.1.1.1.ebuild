@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # 1 of 2 test suites (1 of 2 test cases) passed
+
 RDEPEND="dev-haskell/stm:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "

@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A more progressive alternative to the \\'base\\' package"
+DESCRIPTION="A more progressive alternative to the 'base' package"
 HOMEPAGE="https://github.com/nikita-volkov/rebase"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
