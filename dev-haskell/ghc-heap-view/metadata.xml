@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="prim-supports-any">The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)</flag>
+	</use>
 	<longdescription>
 		This library provides functions to introspect the Haskell heap, for example
 		to investigate sharing and lazy evaluation.
