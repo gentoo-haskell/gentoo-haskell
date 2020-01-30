@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec
 		>=dev-haskell/hspec-expectations-lens-0.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'containers              >= 0.4.0 && < 0.6' 'containers              >= 0.4'
+}
