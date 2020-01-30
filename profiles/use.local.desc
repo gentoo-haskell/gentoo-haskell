@@ -46,6 +46,7 @@ dev-haskell/accelerate-fft:cuda - Enable support for using CUFFT via the CUDA ba
 dev-haskell/accelerate-io:bounds-checks - Enable bounds checking.
 dev-haskell/accelerate-io:internal-checks - Enable internal consistency checks.
 dev-haskell/accelerate-io:unsafe-checks - Enable bounds checking in unsafe operations.
+dev-haskell/acid-state:skip-state-machine-test - If enabled, do not build/run the state-machine test
 dev-haskell/aeson:cffi - Controls whether to include c-ffi bits or pure haskell. Default to False for security.
 dev-haskell/aeson:fast - compile without optimizations
 dev-haskell/aeson-pretty:lib-only - don't build 'aeson-pretty' executable.
@@ -168,6 +169,8 @@ dev-haskell/gf:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/gf:server - server-mode (HTTP GCI)
 dev-haskell/ghc-api:cabal - fix cabal version
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
+dev-haskell/ghc-heap-view:prim-supports-any - The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)
+dev-haskell/ghc-lib-parser-ex:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/ghc-prof:dump - build 'dump' tool
 dev-haskell/ghc-tcplugins-extra:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghc-typelits-extra:deverror - Enables `-Werror` for development mode and TravisCI
@@ -340,6 +343,7 @@ dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the Inte
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
 dev-haskell/parsers:attoparsec - Enable the use of the `attoparsec` package
 dev-haskell/parsers:parsec - Enable the use of the `parsec` package
+dev-haskell/path:dev - Turn on development settings
 dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Only developers should use this.
 dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nano second precision.
@@ -445,6 +449,7 @@ dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
 dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
+dev-haskell/store-core:force-alignment - No description
 dev-haskell/streamly:benchmark - Benchmark build
 dev-haskell/streamly:debug - Debug build with asserts enabled
 dev-haskell/streamly:dev - Development build

@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/http-media-0.6.4:=[profile?] >=dev-haskell/lucid-2.9.8:=[profile?] <dev-haskell/lucid-2.10:=[profile?] >=dev-haskell/servant-0.17:=[profile?] <dev-haskell/servant-0.18:=[profile?] >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/servant-server-0.14 <dev-haskell/servant-server-0.18 >=dev-haskell/wai-3.0.3.0 <dev-haskell/wai-3.3 >=dev-haskell/warp-3.0.13.1 <dev-haskell/warp-3.4 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Servant support for lucid
+EAPI=7
+HOMEPAGE=http://haskell-servant.readthedocs.org/
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/http-media-0.6.4:=[profile?] >=dev-haskell/lucid-2.9.8:=[profile?] <dev-haskell/lucid-2.10:=[profile?] >=dev-haskell/servant-0.17:=[profile?] <dev-haskell/servant-0.18:=[profile?] >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-lang/ghc-8.0.1:=
+RESTRICT=!test? ( test )
+SLOT=0/0.9.0.1
+SRC_URI=https://hackage.haskell.org/package/servant-lucid-0.9.0.1/servant-lucid-0.9.0.1.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=96fc1f77e2b406ebaa48103b53511eae

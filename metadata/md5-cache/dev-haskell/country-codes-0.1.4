@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/aeson-0.5:=[profile?] >=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?] >=dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.10.1:= generate? ( >=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?] ) >=dev-haskell/cabal-1.22.2.0 test? ( >dev-haskell/htf-0.9 >=dev-haskell/hunit-1.2.5 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=ISO 3166 country codes and i18n names
+EAPI=7
+HOMEPAGE=https://github.com/prowdsponsor/country-codes
+IUSE=generate doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/aeson-0.5:=[profile?] >=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?] >=dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-7.10.1:= generate? ( >=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?] )
+RESTRICT=!test? ( test )
+SLOT=0/0.1.4
+SRC_URI=https://hackage.haskell.org/package/country-codes-0.1.4/country-codes-0.1.4.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=1b98534fc66cb4aaf5f499360353703f
