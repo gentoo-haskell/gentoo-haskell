@@ -2131,7 +2131,7 @@ dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control rev
 dev-haskell/vcsgui 0.2.2.0-r1: GUI library for source code management systems
 dev-haskell/vcswrapper 0.1.6: Wrapper for source code management systems
 dev-haskell/vect 0.4.7: A low-dimensional linear algebra library, tailored to computer graphics
-dev-haskell/vector 0.10.12.3 0.11.0.0 0.12.0.2 0.12.0.3: Efficient Arrays
+dev-haskell/vector 0.11.0.0 0.12.1.2: Efficient Arrays
 dev-haskell/vector-algorithms 0.8.0.3: Efficient algorithms for vector arrays
 dev-haskell/vector-binary-instances 0.2.5.1: Instances of Data.Binary and Data.Serialize for vector
 dev-haskell/vector-builder 0.3.8: Vector builder
