@@ -1409,7 +1409,7 @@ dev-haskell/network-transport 0.4.4.0 0.5.4: Network abstraction layer
 dev-haskell/network-transport-inmemory 0.5.2: In-memory instantiation of Network.Transport
 dev-haskell/network-transport-tcp 0.5.1 0.6.0: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.4.3: Unit tests for Network.Transport implementations
-dev-haskell/network-uri 2.5.0.0 2.6.1.0: URI manipulation
+dev-haskell/network-uri 2.5.0.0 2.6.2.0: URI manipulation
 dev-haskell/newtype 0.2.2.0: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.5.4: A typeclass for working with newtypes, with generics support
 dev-haskell/ngx-export 1.7.1: Helper module for Nginx haskell module
@@ -1502,10 +1502,10 @@ dev-haskell/pem 0.2.4: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5: A library for permutations and combinations
 dev-haskell/persistable-record 0.6.0.4: Binding between SQL database values and haskell records
 dev-haskell/persistable-types-hdbc-pg 0.0.1.4 0.0.3.5: HDBC and Relational-Record instances of PostgreSQL extended types
-dev-haskell/persistent 2.7.3.1 2.9.2 2.10.4: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.7.3.1 2.9.2 2.10.5.1: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.9.0 2.9.0.2: Backend for the persistent library using mongoDB
-dev-haskell/persistent-mysql 2.9.0 2.10.2: Backend for the persistent library using MySQL database server
+dev-haskell/persistent-mysql 2.9.0 2.10.2.3: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1 2.10.1.2: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
@@ -1949,7 +1949,7 @@ dev-haskell/tasty-hspec 1.1.5.1-r2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.10.0.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
 dev-haskell/tasty-lua 0.2.0.1: Write tests in Lua, integrate into tasty
-dev-haskell/tasty-quickcheck 0.8.4 0.9.2 0.10.1: QuickCheck support for the Tasty test framework
+dev-haskell/tasty-quickcheck 0.8.4 0.9.2 0.10.1.1: QuickCheck support for the Tasty test framework
 dev-haskell/tasty-rerun 1.1.17: Run tests by filtering the tests depending on the result of previous runs
 dev-haskell/tasty-silver 3.1.13: A fancy test runner, including support for golden tests
 dev-haskell/tasty-smallcheck 0.8.1: SmallCheck support for the Tasty test framework
@@ -2163,7 +2163,7 @@ dev-haskell/wai-http2-extra 0.1.2: WAI utilities for HTTP/2
 dev-haskell/wai-logger 2.3.6: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
 dev-haskell/wai-websockets 3.0.1.2: Provide a bridge between WAI and the websockets package
-dev-haskell/warp 3.2.26 3.3.8: A fast, light-weight web server for WAI applications
+dev-haskell/warp 3.2.26 3.3.9: A fast, light-weight web server for WAI applications
 dev-haskell/warp-tls 3.2.8 3.2.11: HTTP over TLS support for Warp via the TLS package
 dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web applications in Haskell
 dev-haskell/wave 0.2.0: WAVE audio file IO library
