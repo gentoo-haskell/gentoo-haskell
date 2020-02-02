@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ RESTRICT=test # fails at quoting test
 RDEPEND=">=dev-haskell/html-conduit-1.1:=[profile?] <dev-haskell/html-conduit-1.4:=[profile?]
 	>=dev-haskell/lens-4.0.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/xml-conduit-1.1:=[profile?] <dev-haskell/xml-conduit-1.9:=[profile?]
+	>=dev-haskell/xml-conduit-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -36,5 +36,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'containers              >= 0.4.0 && < 0.6' 'containers              >= 0.4'
+		'containers              >= 0.4.0 && < 0.6' 'containers              >= 0.4' \
+		'xml-conduit             >= 1.1   && < 1.9' 'xml-conduit             >= 1.1'
 }
