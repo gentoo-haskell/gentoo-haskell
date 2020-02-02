@@ -30,6 +30,7 @@ RDEPEND="
 	dev-haskell/extensible-exceptions:=
 	dev-haskell/hashable:=
 	>=dev-haskell/http-4000.0.3:=
+	>=dev-haskell/lukko-0.1:=
 	dev-haskell/missingh:=
 	dev-haskell/mtl:=
 	>=dev-haskell/network-2.6:=
