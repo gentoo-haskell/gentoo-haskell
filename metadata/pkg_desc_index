@@ -2364,7 +2364,7 @@ media-sound/live-sequencer 0.0.6.2-r1: Live coding of MIDI music
 media-sound/vimus 0.2.1: An MPD client with vim-like key bindings
 net-irc/y0l0bot 0.1.1-r1: #plaimi's all-encompassing bot
 net-mail/list-remote-forwards 0.0.1-r2: List all remote forwards for mail accounts stored in a database
-net-mail/mailbox-count 0.0.2-r2: Count mailboxes in a SQL database
+net-mail/mailbox-count 0.0.3: Count mailboxes in a SQL database
 net-mail/mhailist 0.0-r1: Haskell mailing list manager
 net-misc/email-validator 1.0.0: Perform basic syntax and deliverability checks on email addresses
 net-misc/haeredes 0.5.2: Confirm delegation of NS and MX records
