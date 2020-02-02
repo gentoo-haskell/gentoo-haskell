@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/path-0.5:=[profile?] <dev-haskell/path-0.7:=[profile?]
+RDEPEND=">=dev-haskell/path-0.5:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
@@ -28,5 +28,5 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 	cabal_chdeps \
-		'path >=0.5 && <0.6' 'path >=0.5 && <0.7'
+		'path >=0.5 && <0.6' 'path >=0.5'
 }
