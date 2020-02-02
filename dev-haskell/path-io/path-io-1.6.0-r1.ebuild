@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/dlist-0.8:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
-	>=dev-haskell/path-0.6:=[profile?] <dev-haskell/path-0.7:=[profile?]
+	>=dev-haskell/path-0.6:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
 	>=dev-lang/ghc-8.6.1:=
@@ -29,6 +29,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'path         >= 0.6     && < 0.7' 'path         >= 0.6'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
