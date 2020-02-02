@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/cli-0.1.2:=[profile?] <dev-haskell/cli-0.2:=[profile?]
-	>=dev-haskell/hmatrix-0.17.0.2:=[profile?] <dev-haskell/hmatrix-0.20:=[profile?]
+	>=dev-haskell/hmatrix-0.17.0.2:=[profile?]
 	>=dev-haskell/juicypixels-3.2.8:=[profile?]
 	>=dev-haskell/vector-0.11.0.0:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
