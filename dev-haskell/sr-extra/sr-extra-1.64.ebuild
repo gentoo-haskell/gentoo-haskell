@@ -57,6 +57,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.4
 "
 
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.64-network-uril-2.6.2.0.patch
+)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-uri network-uri) \
