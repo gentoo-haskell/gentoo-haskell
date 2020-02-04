@@ -1,0 +1,23 @@
+diff --git a/test/SuperUserSpark/CompilerSpec.hs b/test/SuperUserSpark/CompilerSpec.hs
+index 0743b95..cc1dfed 100644
+--- a/test/SuperUserSpark/CompilerSpec.hs
++++ b/test/SuperUserSpark/CompilerSpec.hs
+@@ -1,5 +1,6 @@
+ {-# LANGUAGE TypeApplications #-}
+ {-# LANGUAGE TemplateHaskell #-}
++{-# LANGUAGE CPP #-}
+ 
+ module SuperUserSpark.CompilerSpec where
+ 
+@@ -379,7 +380,11 @@ exactTests = do
+     describe "exact tests" $ do
+         dir <- runIO $ resolveDir' "test_resources/exact_compile_test_src"
+         forFileInDirss [dir] $ \fp ->
++#if MIN_VERSION_path(0,7,0)
++            if fileExtension fp == Just ".res"
++#else
+             if fileExtension fp == ".res"
++#endif
+                 then return ()
+                 else do
+                     it (toFilePath fp) $ do
