@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="sync">Benchmarks synchronisation primitives used in main
+benchmark</flag>
+		<flag name="threaded">Run benchmarks with threaded backend</flag>
+	</use>
+	<longdescription>
+		__WARNING:__ While the code in this library should be fairly stable and
+		production, the API is something I&#39;m still working on. API changes will
+		follow the PVP, but __expect__ breaking API changes in future versions!
+		
+		A closable, fair, single-wakeup channel that avoids the 0 reader space leak
+		that @&quot;Control.Concurrent.Chan&quot;@ from base suffers from.
+		
+		The @Chan@ type from @&quot;Control.Concurrent.Chan&quot;@ consists of both a read
+		and write end combined into a single value. This means there is always at
+		least 1 read end for a @Chan@, which keeps any values written to it alive.
+		This is a problem for applications/libraries that want to have a channel
+		that can have zero listeners.
+		
+		Suppose we have an library that produces events and we want to let users
+		register to receive events. If we use a channel and write all events to it,
+		we would like to drop and garbage collect any events that take place when
+		there are 0 listeners. The always present read end of @Chan@ from base
+		makes this impossible. We end up with a @Chan@ that forever accumulates
+		more and more events that will never get removed, resulting in a memory
+		leak.
+		
+		@&quot;BroadcastChan&quot;@ splits channels into separate read and write ends. Any
+		message written to a a channel with no existing read end is immediately
+		dropped so it can be garbage collected. Once a read end is created, all
+		messages written to the channel will be accessible to that read end.
+		
+		Once all read ends for a channel have disappeared and been garbage
+		collected, the channel will return to dropping messages as soon as they are
+		written.
+		
+		__Why should I use &quot;BroadcastChan&quot; over &quot;Control.Concurrent.Chan&quot;?__
+		
+		* @&quot;BroadcastChan&quot;@ is closable,
+		
+		* @&quot;BroadcastChan&quot;@ has no 0 reader space leak,
+		
+		* @&quot;BroadcastChan&quot;@ has comparable or better performance.
+		
+		__Why should I use &quot;BroadcastChan&quot; over various (closable) STM channels?__
+		
+		* @&quot;BroadcastChan&quot;@ is single-wakeup,
+		
+		* @&quot;BroadcastChan&quot;@ is fair,
+		
+		* @&quot;BroadcastChan&quot;@ performs better under contention.
+	</longdescription>
+</pkgmetadata>

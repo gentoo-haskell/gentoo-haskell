@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cairo_pdf +cairo_ps +cairo_svg"
 
-RDEPEND=">=dev-haskell/haskell-gi-base-0.21.0:=[profile?] <dev-haskell/haskell-gi-base-0.22:=[profile?]
+RDEPEND=">=dev-haskell/haskell-gi-base-0.21.0:=[profile?] <dev-haskell/haskell-gi-base-1:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
@@ -29,6 +29,14 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	default
+
+	#as per https://hackage.haskell.org/package/gi-cairo-render-0.0.1/revisions/
+	cabal_chdeps \
+		'haskell-gi-base >= 0.21.0 && <0.22'  'haskell-gi-base >= 0.21.0 && <1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
