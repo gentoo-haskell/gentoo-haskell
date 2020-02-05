@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/gi-cairo-1.0:=[profile?] <dev-haskell/gi-cairo-1.1:=[profile?] >=dev-haskell/gi-gdkpixbuf-2.0:=[profile?] <dev-haskell/gi-gdkpixbuf-2.1:=[profile?] >=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?] >=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?] >=dev-haskell/gi-gobject-2.0:=[profile?] <dev-haskell/gi-gobject-2.1:=[profile?] >=dev-haskell/gi-pango-1.0:=[profile?] <dev-haskell/gi-pango-1.1:=[profile?] >=dev-haskell/haskell-gi-0.23.0:=[profile?] <dev-haskell/haskell-gi-0.24:=[profile?] >=dev-haskell/haskell-gi-base-0.23:=[profile?] <dev-haskell/haskell-gi-base-0.24:=[profile?] <dev-haskell/haskell-gi-overloading-1.1:=[profile?] >=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2:=[profile?] >=dev-lang/ghc-7.10.1:= x11-libs/gtk+:3[introspection] >=dev-haskell/cabal-1.24 virtual/pkgconfig doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Gdk bindings
+EAPI=7
+HOMEPAGE=https://github.com/haskell-gi/haskell-gi
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2.1
+RDEPEND=>=dev-haskell/gi-cairo-1.0:=[profile?] <dev-haskell/gi-cairo-1.1:=[profile?] >=dev-haskell/gi-gdkpixbuf-2.0:=[profile?] <dev-haskell/gi-gdkpixbuf-2.1:=[profile?] >=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?] >=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?] >=dev-haskell/gi-gobject-2.0:=[profile?] <dev-haskell/gi-gobject-2.1:=[profile?] >=dev-haskell/gi-pango-1.0:=[profile?] <dev-haskell/gi-pango-1.1:=[profile?] >=dev-haskell/haskell-gi-0.23.0:=[profile?] <dev-haskell/haskell-gi-0.24:=[profile?] >=dev-haskell/haskell-gi-base-0.23:=[profile?] <dev-haskell/haskell-gi-base-0.24:=[profile?] <dev-haskell/haskell-gi-overloading-1.1:=[profile?] >=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2:=[profile?] >=dev-lang/ghc-7.10.1:= x11-libs/gtk+:3[introspection]
+SLOT=0/3.0.22
+SRC_URI=https://hackage.haskell.org/package/gi-gdk-3.0.22/gi-gdk-3.0.22.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=c1a18c91fc2c3137243695f35706fb06

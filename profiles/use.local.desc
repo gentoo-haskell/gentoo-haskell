@@ -71,6 +71,8 @@ dev-haskell/bloodhound:es1 - Run the test suite against an Elasticsearch 1.x ser
 dev-haskell/bloodhound:es5 - Run the test suite against an Elasticsearch 5.x server
 dev-haskell/bound:template_haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/brick:demos - Build demonstration programs.
+dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark
+dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend
 dev-haskell/bson:old-network - Use network-2.x when enabled, else use network-bsd.
 dev-haskell/btrfs:examples - Build examples
 dev-haskell/bytedump:executable - build executable file

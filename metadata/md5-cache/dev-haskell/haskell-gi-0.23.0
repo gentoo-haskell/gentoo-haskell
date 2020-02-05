@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/attoparsec-0.13:=[profile?] >=dev-haskell/cabal-1.24:=[profile?] >=dev-haskell/haskell-gi-base-0.23.0:=[profile?] <dev-haskell/haskell-gi-base-0.24:=[profile?] >=dev-haskell/mtl-2.2:=[profile?] dev-haskell/pretty-show:=[profile?] >=dev-haskell/regex-tdfa-1.2:=[profile?] dev-haskell/safe:=[profile?] >=dev-haskell/text-1.0:=[profile?] dev-haskell/xdg-basedir:=[profile?] >=dev-haskell/xml-conduit-1.3:=[profile?] >=dev-lang/ghc-8.0.1:= dev-libs/glib:2 dev-libs/gobject-introspection >=dev-haskell/cabal-2.0 virtual/pkgconfig test? ( >=dev-haskell/doctest-0.8 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Generate Haskell bindings for GObject Introspection capable libraries
+EAPI=7
+HOMEPAGE=https://github.com/haskell-gi/haskell-gi
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2.1
+RDEPEND=>=dev-haskell/attoparsec-0.13:=[profile?] >=dev-haskell/cabal-1.24:=[profile?] >=dev-haskell/haskell-gi-base-0.23.0:=[profile?] <dev-haskell/haskell-gi-base-0.24:=[profile?] >=dev-haskell/mtl-2.2:=[profile?] dev-haskell/pretty-show:=[profile?] >=dev-haskell/regex-tdfa-1.2:=[profile?] dev-haskell/safe:=[profile?] >=dev-haskell/text-1.0:=[profile?] dev-haskell/xdg-basedir:=[profile?] >=dev-haskell/xml-conduit-1.3:=[profile?] >=dev-lang/ghc-8.0.1:= dev-libs/glib:2 dev-libs/gobject-introspection
+RESTRICT=!test? ( test )
+SLOT=0/0.23.0
+SRC_URI=https://hackage.haskell.org/package/haskell-gi-0.23.0/haskell-gi-0.23.0.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_md5_=0fe5ba82f91ddc5c24433356ee0ac9a5
