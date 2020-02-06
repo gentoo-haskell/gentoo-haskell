@@ -1,3 +1,8 @@
+# P.B. Lecavalier <pbl.ltx@gmail.com> (5 Feb 2020)
+# Many packages require <gtk-0.15 or <gtk3-0.15
+>=dev-haskell/gtk-0.15
+>=dev-haskell/gtk3-0.15
+
 # Mark Wright <gienah@gentoo.org> (13 Oct 2019)
 # Reverse dependencies of >=dev-haskell/base-compat-0.11
 >=dev-haskell/text-show-3.8.3
