@@ -33,6 +33,8 @@
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
+>=dev-haskell/gl-0.9                 # gpipe-2.2.4
+>=dev-haskell/hoauth2-1.9            # gitit-0.12.3.2, yesod-auth-oauth2-0.6.1.2
 >=dev-haskell/hsemail-2              # smptclient-1.1.0
 >=dev-haskell/ilist-0.4.0.0          # hsimport-0.11.0
 >=dev-haskell/monoid-subclasses-0.5  # picoparsec-0.1.2.3
