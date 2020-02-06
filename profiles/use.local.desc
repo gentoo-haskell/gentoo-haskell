@@ -183,6 +183,7 @@ dev-haskell/ghc-vis:graph - Enable graph view using Graphviz
 dev-haskell/gi-cairo-render:cairo_pdf - Build the PDF backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_ps - Build the PostScript backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
+dev-haskell/github:openssl - Use http-client-openssl
 dev-haskell/github-backup:network-uri - Get Network.URI from the network-uri package
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure-signals - Use the the GClosure-based signals implementation.
@@ -268,6 +269,7 @@ dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (
 dev-haskell/http:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/http-api-data:use-text-show - Use text-show library for efficient ToHttpApiData implementations
 dev-haskell/http-client:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/http-client-openssl:test-proxy - Test with http-proxy
 dev-haskell/http-streams:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/httpd-shed:buildexamples - Build example executables.
 dev-haskell/httpd-shed:network-bsd - Get Network.BSD from the network-bsd package.
