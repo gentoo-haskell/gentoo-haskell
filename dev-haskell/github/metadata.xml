@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="openssl">Use http-client-openssl</flag>
+	</use>
 	<longdescription>
 		The Github API provides programmatic access to the full
 		Github Web site, from Issues to Gists to repos down to the underlying git data
