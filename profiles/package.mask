@@ -1,3 +1,8 @@
+# P.B. Lecavalier <pbl.ltx@gmail.com> (5 Feb 2020)
+# Many packages require <gtk-0.15 or <gtk3-0.15
+>=dev-haskell/gtk-0.15
+>=dev-haskell/gtk3-0.15
+
 # Mark Wright <gienah@gentoo.org> (13 Oct 2019)
 # Reverse dependencies of >=dev-haskell/base-compat-0.11
 >=dev-haskell/text-show-3.8.3
@@ -28,6 +33,8 @@
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
+>=dev-haskell/gl-0.9                 # gpipe-2.2.4
+>=dev-haskell/hoauth2-1.9            # gitit-0.12.3.2, yesod-auth-oauth2-0.6.1.2
 >=dev-haskell/hsemail-2              # smptclient-1.1.0
 >=dev-haskell/ilist-0.4.0.0          # hsimport-0.11.0
 >=dev-haskell/monoid-subclasses-0.5  # picoparsec-0.1.2.3
