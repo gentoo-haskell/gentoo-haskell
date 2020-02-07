@@ -1,0 +1,39 @@
+diff --git a/src/Stack/Package.hs b/src/Stack/Package.hs
+index 23cbdd36..073bfb27 100644
+--- a/src/Stack/Package.hs
++++ b/src/Stack/Package.hs
+@@ -463,7 +463,7 @@ makeObjectFilePathFromC
+ makeObjectFilePathFromC cabalDir namedComponent distDir cFilePath = do
+     relCFilePath <- stripProperPrefix cabalDir cFilePath
+     relOFilePath <-
+-        parseRelFile (replaceExtension (toFilePath relCFilePath) "o")
++        parseRelFile (FilePath.replaceExtension (toFilePath relCFilePath) "o")
+     return (componentOutputDir namedComponent distDir </> relOFilePath)
+ 
+ -- | Make the global autogen dir if Cabal version is new enough.
+diff --git a/src/Stack/Script.hs b/src/Stack/Script.hs
+index 28e5c322..54096a3b 100644
+--- a/src/Stack/Script.hs
++++ b/src/Stack/Script.hs
+@@ -21,7 +21,7 @@ import           Distribution.Types.PackageName (mkPackageName)
+ import           Distribution.Types.VersionRange (withinRange)
+ import           Distribution.System        (Platform (..))
+ import qualified Pantry.SHA256 as SHA256
+-import           Path
++import           Path hiding (replaceExtension)
+ import           Path.IO
+ import qualified Stack.Build
+ import           Stack.Build.Installed
+diff --git a/src/Stack/Setup.hs b/src/Stack/Setup.hs
+index 15a0538a..02df2822 100644
+--- a/src/Stack/Setup.hs
++++ b/src/Stack/Setup.hs
+@@ -859,7 +859,7 @@ buildGhcFromSource getSetupInfo' installed (CompilerRepository url) commitId fla
+          (_,files) <- listDir (cwd </> bindistPath)
+          let
+            isBindist p = "ghc-" `isPrefixOf` (toFilePath (filename p))
+-                         && fileExtension (filename p) == ".xz"
++                         && FP.takeExtension (toFilePath (filename p)) == ".xz"
+            mbindist = filter isBindist files
+          case mbindist of
+            [bindist] -> do
