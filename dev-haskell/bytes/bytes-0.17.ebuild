@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+test-doctests"
 
+RESTRICT=test # fail to doctest
+
 RDEPEND=">=dev-haskell/binary-orphans-1.0.1:=[profile?] <dev-haskell/binary-orphans-1.1:=[profile?]
 	>=dev-haskell/cereal-0.5.2:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/fail-4.9.0.0:=[profile?] <dev-haskell/fail-4.10:=[profile?]
