@@ -1095,7 +1095,7 @@ dev-haskell/indexed-list-literals 0.2.1.2: Type safe indexed list literals
 dev-haskell/indexed-profunctors 0.1: Utilities for indexed profunctors
 dev-haskell/infer-license 0.2.0: Infer software license from a given license file
 dev-haskell/inflections 0.4.0.5: Inflections library for Haskell
-dev-haskell/influxdb 1.7.1.1: Haskell client library for InfluxDB
+dev-haskell/influxdb 1.7.1.2: Haskell client library for InfluxDB
 dev-haskell/ini 0.4.1: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.6.1 0.6.1.0: Write Haskell source files including C code inline. No FFI required
 dev-haskell/inline-c-cpp 0.2.1.0: Lets you embed C++ code into Haskell
@@ -1513,7 +1513,7 @@ dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persist
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.6.0.1 2.9.3 2.10.5: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3 2.8.0.1: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3 2.8.2.3: Type-safe, non-relational, multi-backend persistence
 dev-haskell/persistent-test 2.0.3.0: Tests for Persistent
 dev-haskell/pgdl 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
