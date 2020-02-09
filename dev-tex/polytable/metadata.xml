@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+<maintainer type="project">
+		<email>tex@gentoo.org</email>
+		<name>Gentoo TeX Project</name>
+	</maintainer>
 </pkgmetadata>
