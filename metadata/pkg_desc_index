@@ -2327,7 +2327,6 @@ dev-lang/uhc 1.1.9.5 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-libs/libsass 3.4.5: A C/C++ implementation of a Sass compiler
 dev-libs/odpi 2.3.2: Oracle Database Programming Interface for C (ODPI-C)
-dev-tex/polytable 0.8.2: tabular-like environments with named columns
 dev-util/bnfc 2.8.3: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4 0.7.2: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
