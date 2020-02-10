@@ -21,7 +21,7 @@ IUSE=""
 # Outdated test: https://github.com/aisamanra/config-ini/issues/22
 RESTRICT=test # hangs on -O0
 
-RDEPEND=">=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-8:=[profile?]
+RDEPEND=">=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-9:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
@@ -29,6 +29,13 @@ RDEPEND=">=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-8:=[prof
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'megaparsec            >=7     && <8' 'megaparsec            >=7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
