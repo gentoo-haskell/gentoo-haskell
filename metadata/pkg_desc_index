@@ -1856,7 +1856,7 @@ dev-haskell/srcloc 0.5.1.2: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
 dev-haskell/stack 1.5.1-r6 1.7.1 1.9.3.1 2.1.3.1 9.9.9: The Haskell Tool Stack
-dev-haskell/stack-bin 1.5.1 1.6.1 1.7.1: The Haskell Tool Stack (Binary)
+dev-haskell/stack-bin 1.5.1 1.6.1 1.7.1 2.1.3: The Haskell Tool Stack (Binary)
 dev-haskell/stack-run-auto 0.1.1.4: Initial project template from stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5-r1: Simple State-like monad transformer with saveable and restorable state
