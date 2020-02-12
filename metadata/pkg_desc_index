@@ -81,7 +81,7 @@ dev-haskell/amazonka-ec2 1.4.5 1.6.0 1.6.1: Amazon Elastic Compute Cloud SDK
 dev-haskell/amazonka-ecr 1.4.5 1.6.0 1.6.1: Amazon EC2 Container Registry SDK
 dev-haskell/amazonka-elasticache 1.4.5 1.6.0 1.6.1: Amazon ElastiCache SDK
 dev-haskell/amazonka-elasticsearch 1.4.5 1.6.0 1.6.1: Amazon Elasticsearch Service SDK
-dev-haskell/amazonka-elastictranscoder 1.4.5 1.6.0: Amazon Elastic Transcoder SDK
+dev-haskell/amazonka-elastictranscoder 1.4.5 1.6.0 1.6.1: Amazon Elastic Transcoder SDK
 dev-haskell/amazonka-iam 1.4.5 1.6.0 1.6.1: Amazon Identity and Access Management SDK
 dev-haskell/amazonka-kinesis 1.4.5 1.6.0 1.6.1: Amazon Kinesis SDK
 dev-haskell/amazonka-lambda 1.4.5 1.6.0 1.6.1: Amazon Lambda SDK
