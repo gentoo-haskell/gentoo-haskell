@@ -23,11 +23,11 @@ IUSE="high-precision-date"
 RESTRICT="test" # needs running mongodb
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
-	>=dev-haskell/bson-0.3.2:=[profile?] <dev-haskell/bson-0.4:=[profile?]
+	>=dev-haskell/bson-0.3.2:=[profile?] <dev-haskell/bson-0.5:=[profile?]
 	>=dev-haskell/cereal-0.5:=[profile?]
 	>=dev-haskell/conduit-1.2:=[profile?]
 	>=dev-haskell/http-api-data-0.3.7:=[profile?] <dev-haskell/http-api-data-0.5:=[profile?]
-	>=dev-haskell/mongodb-2.3:=[profile?] <dev-haskell/mongodb-2.7:=[profile?]
+	>=dev-haskell/mongodb-2.3:=[profile?] <dev-haskell/mongodb-2.8:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/path-pieces-0.2:=[profile?]
 	>=dev-haskell/persistent-2.8:=[profile?] <dev-haskell/persistent-3:=[profile?]
@@ -49,6 +49,15 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'bson               >= 0.3.2   && < 0.4' 'bson               >= 0.3.2   && < 0.5' \
+		'mongoDB            >= 2.3       && < 2.7' 'mongoDB            >= 2.3       && < 2.8'
+}
+
 
 src_configure() {
 	haskell-cabal_src_configure \
