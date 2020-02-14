@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		This library uses GHC.Generics to derive efficient optics (traversals, lenses and prisms) for algebraic data types in a type-directed way, with a focus on good type inference and error messages when possible.
+		
+		This package is the shared internal logic of the
+		@&lt;https://hackage.haskell.org/package/generic-lens generic-lens&gt;@
+		and
+		@&lt;https://hackage.haskell.org/package/generic-optics generic-optics&gt;@
+		libraries.
+	</longdescription>
+</pkgmetadata>
