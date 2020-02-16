@@ -25,13 +25,13 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/data-ordlist-0.4:=[profile?] <dev-haskell/data-ordlist-0.5:=[profile?]
 	>=dev-haskell/fgl-5.5.2.3:=[profile?] <dev-haskell/fgl-5.8:=[profile?]
 	>=dev-haskell/graphviz-2999.18.1:=[profile?] <dev-haskell/graphviz-2999.20.1:=[profile?]
-	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
+	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/haskeline-0.7.2:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/html-1.0.1.2:=[profile?] <dev-haskell/html-1.1:=[profile?]
 	>=dev-haskell/http-4000.2.20:=[profile?] <dev-haskell/http-4000.4:=[profile?]
 	>=dev-haskell/mmap-0.5.9:=[profile?] <dev-haskell/mmap-0.6:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.9:=[profile?]
+	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/old-time-1.1.0.3:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/parsec-3.1.9:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -71,7 +71,9 @@ src_prepare() {
 	cabal_chdeps \
 		'sandi             >= 0.4 && < 0.5' 'sandi             >= 0.4' \
 		'shelly       >= 1.6.8 && < 1.9' 'shelly       >= 1.6.8' \
-		'QuickCheck   >= 2.8.2 && < 2.13' 'QuickCheck   >= 2.8.2'
+		'QuickCheck   >= 2.8.2 && < 2.13' 'QuickCheck   >= 2.8.2' \
+		'network           >= 2.6 && < 2.9' 'network           >= 2.6' \
+		'hashable          >= 1.2.3.3 && < 1.3' 'hashable          >= 1.2.3.3'
 }
 
 src_configure() {
