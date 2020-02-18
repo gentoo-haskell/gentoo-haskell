@@ -1948,7 +1948,7 @@ dev-haskell/tasty 0.11.2.3 0.12.0.1 1.1.0.4 1.2 1.2.3: Modern and extensible tes
 dev-haskell/tasty-ant-xml 1.1.6: Render tasty output to XML for Jenkins
 dev-haskell/tasty-discover 4.2.1: Test discovery for the tasty framework
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
-dev-haskell/tasty-golden 2.3.2: Golden tests support for tasty
+dev-haskell/tasty-golden 2.3.2.1: Golden tests support for tasty
 dev-haskell/tasty-hedgehog 1.0.0.2: Integration for tasty and hedgehog
 dev-haskell/tasty-hspec 1.1.5.1-r2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.10.0.2: HUnit support for the Tasty test framework
