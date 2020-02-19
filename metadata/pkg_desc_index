@@ -551,7 +551,7 @@ dev-haskell/edit-distance 0.2.2.1-r1: Levenshtein and restricted Damerau-Levensh
 dev-haskell/edit-distance-vector 1.0.0.4: Calculate edit distances and edit scripts between vectors
 dev-haskell/editline 0.2.1.1-r1: Bindings to the editline library (libedit)
 dev-haskell/editor-open 0.6.0.0: Open the user's $VISUAL or $EDITOR for text input
-dev-haskell/egison 3.9.1: Programming language with non-linear pattern-matching against non-free data
+dev-haskell/egison 3.9.1 3.10.3: Programming language with non-linear pattern-matching against non-free data
 dev-haskell/either 5.0.1.1: An either monad transformer
 dev-haskell/either-unwrap 1.1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
@@ -732,7 +732,7 @@ dev-haskell/gi-dbusmenugtk3 0.4.2 0.4.8: DbusmenuGtk bindings
 dev-haskell/gi-gdk 3.0.16 3.0.22: Gdk bindings
 dev-haskell/gi-gdkpixbuf 2.0.16 2.0.23: GdkPixbuf bindings
 dev-haskell/gi-gdkx11 3.0.4 3.0.9: GdkX11 bindings
-dev-haskell/gi-gio 2.0.18 2.0.25: Gio bindings
+dev-haskell/gi-gio 2.0.18 2.0.26: Gio bindings
 dev-haskell/gi-glib 2.0.17 2.0.23: GLib bindings
 dev-haskell/gi-gobject 2.0.16 2.0.22: GObject bindings
 dev-haskell/gi-gtk 3.0.27 3.0.32: Gtk bindings
@@ -1414,7 +1414,7 @@ dev-haskell/network-transport 0.4.4.0 0.5.4: Network abstraction layer
 dev-haskell/network-transport-inmemory 0.5.2: In-memory instantiation of Network.Transport
 dev-haskell/network-transport-tcp 0.5.1 0.6.0: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.4.3: Unit tests for Network.Transport implementations
-dev-haskell/network-uri 2.5.0.0 2.6.2.0: URI manipulation
+dev-haskell/network-uri 2.5.0.0 2.6.3.0: URI manipulation
 dev-haskell/newtype 0.2.2.0: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.5.4: A typeclass for working with newtypes, with generics support
 dev-haskell/ngx-export 1.7.1: Helper module for Nginx haskell module
@@ -1756,7 +1756,7 @@ dev-haskell/semialign 1.1: Align and Zip type-classes from the common Semialign 
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 5.2.2-r1 5.3.4: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.4 0.18.5: Anything that associates
-dev-haskell/semirings 0.5.2: two monoids as one, in holy haskimony
+dev-haskell/semirings 0.5.3: two monoids as one, in holy haskimony
 dev-haskell/semver 0.3.4: Representation, manipulation, and de/serialisation of Semantic Versions
 dev-haskell/sendfile 0.7.11.1: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
