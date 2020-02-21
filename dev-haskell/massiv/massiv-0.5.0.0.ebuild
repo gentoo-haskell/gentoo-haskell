@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="unsafe-checks"
 
-RESTRICT=test # doctests: FAIL
+#RESTRICT=test # doctests: FAIL
 
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
