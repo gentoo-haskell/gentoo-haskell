@@ -62,6 +62,7 @@ dev-haskell/bench-show:executable - Build executable as well as library
 dev-haskell/bifunctors:semigroups - Enable the use of `semigroups` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/bifunctors:tagged - Enable the use of the `tagged` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/bindings-glfw:exposenative - Whether or not to use the native access functions.
+dev-haskell/bindings-glfw:osmesa - Determines whether or not to use the Mesa 3D rendering context.
 dev-haskell/biosff:fclip - Build the fclip executable.
 dev-haskell/biosff:flower - Build the flower executable.
 dev-haskell/biosff:frecover - Build the frecover executable.

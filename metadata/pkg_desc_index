@@ -186,7 +186,7 @@ dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds St
 dev-haskell/binary-strict 0.4.8.3: Binary deserialisation using strict ByteStrings
 dev-haskell/binary-tagged 0.1.5.1-r1 0.2: Tagged binary serialisation
 dev-haskell/bindings-dsl 1.0.25: FFI domain specific language, on top of hsc2hs
-dev-haskell/bindings-glfw 3.2.1.1: Low-level bindings to GLFW OpenGL library
+dev-haskell/bindings-glfw 3.2.1.1 3.3.2.0: Low-level bindings to GLFW OpenGL library
 dev-haskell/bindings-gpgme 0.1.7: Project bindings-* raw interface to gpgme
 dev-haskell/bindings-libzip 1.0.1-r1: Low level bindings to libzip
 dev-haskell/bindings-uname 0.1: Low-level binding to POSIX uname(3)
@@ -755,7 +755,7 @@ dev-haskell/gl 0.8.0-r3 0.9: Complete OpenGL raw bindings
 dev-haskell/glade 0.13.1: Binding to the glade library
 dev-haskell/glambda 1.0.2: A simply typed lambda calculus interpreter, written with GADTs
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
-dev-haskell/glfw-b 1.4.8.4 3.2.1.1: Bindings to GLFW OpenGL library
+dev-haskell/glfw-b 1.4.8.4 3.2.1.1 3.3.0.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.8.0: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glirc 2.34: Console IRC client
 dev-haskell/glob 0.9.3: Globbing library
