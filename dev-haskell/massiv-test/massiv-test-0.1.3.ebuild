@@ -8,36 +8,31 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Massiv is an Array Library"
+DESCRIPTION="Library that contains generators, properties and tests for Massiv Array Library"
 HOMEPAGE="https://github.com/lehins/massiv"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="unsafe-checks"
+IUSE=""
 
-RESTRICT=test # doctests: FAIL
+RESTRICT=test # building the test-suite requires more than 8GB of memory
 
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
+	dev-haskell/hspec:=[profile?]
+	>=dev-haskell/massiv-0.5.0:=[profile?]
 	dev-haskell/primitive:=[profile?]
-	>=dev-haskell/scheduler-1.4.0:=[profile?]
-	dev-haskell/unliftio-core:=[profile?]
+	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/scheduler:=[profile?]
+	dev-haskell/unliftio:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
-	>=dev-haskell/cabal-doctest-1.0.6
-	test? ( >=dev-haskell/doctest-0.15
-		dev-haskell/mersenne-random-pure64
-		dev-haskell/quickcheck
-		dev-haskell/random
-		>=dev-haskell/splitmix-0.0.1 )
+	test? ( dev-haskell/data-default
+		dev-haskell/genvalidity-hspec
+		dev-haskell/mwc-random )
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag unsafe-checks unsafe-checks)
-}
