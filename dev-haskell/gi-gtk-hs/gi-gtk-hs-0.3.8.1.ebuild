@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.11:=[profile?]
+RDEPEND=">=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/gi-gdk-3.0.6:=[profile?] <dev-haskell/gi-gdk-3.1:=[profile?]
 	>=dev-haskell/gi-gdkpixbuf-2.0.6:=[profile?] <dev-haskell/gi-gdkpixbuf-2.1:=[profile?]
 	>=dev-haskell/gi-glib-2.0.6:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?]
