@@ -9,12 +9,13 @@
 		<flag name="benchmark">Benchmark build</flag>
 		<flag name="debug">Debug build with asserts enabled</flag>
 		<flag name="dev">Development build</flag>
+		<flag name="examples">Build including examples</flag>
+		<flag name="examples-sdl">Build including SDL examples</flag>
+		<flag name="fusion-plugin">Use fusion plugin for benchmarks and executables</flag>
 		<flag name="llvm">Use llvm backend for better performance</flag>
 		<flag name="no-charts">Disable chart generation</flag>
 		<flag name="no-fusion">Disable rewrite rules</flag>
 		<flag name="streamk">Use CPS style streams when possible</flag>
-		<flag name="examples">Build including examples</flag>
-		<flag name="examples-sdl">Build including SDL examples</flag>
 	</use>
 	<longdescription>
 		Streamly is a framework for writing programs in a high level, declarative
