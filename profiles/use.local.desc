@@ -460,6 +460,7 @@ dev-haskell/streamly:debug - Debug build with asserts enabled
 dev-haskell/streamly:dev - Development build
 dev-haskell/streamly:examples - Build including examples
 dev-haskell/streamly:examples-sdl - Build including SDL examples
+dev-haskell/streamly:fusion-plugin - Use fusion plugin for benchmarks and executables
 dev-haskell/streamly:llvm - Use llvm backend for better performance
 dev-haskell/streamly:no-charts - Disable chart generation
 dev-haskell/streamly:no-fusion - Disable rewrite rules
