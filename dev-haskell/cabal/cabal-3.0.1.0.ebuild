@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/${PN}-${MY_P}/${MY_PN}"
 PATCHES=("${FILESDIR}"/${PN}-2.0.0.2-no-bootstrap.patch)
 
-CABAL_CORE_LIB_GHC_PV="PM:8.8.2"
+CABAL_CORE_LIB_GHC_PV="PM:8.8.2 PM:8.8.3"
 
 src_configure() {
 	haskell-cabal_src_configure \
