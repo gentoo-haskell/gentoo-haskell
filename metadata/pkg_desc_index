@@ -144,7 +144,7 @@ dev-haskell/authenticate-oauth 1.6.0.1: Library to authenticate with OAuth for H
 dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.6: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
-dev-haskell/aws 0.20 0.21.1: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.20 0.21.1 0.22: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 1.1.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.1: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.1: base-compat with extra batteries
@@ -333,7 +333,7 @@ dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
 dev-haskell/colonnade 1.2.0.2-r1: Generic types and functions for columnar encoding and decoding
-dev-haskell/color 0.1.3.1: Color spaces and conversions between them
+dev-haskell/color 0.1.4: Color spaces and conversions between them
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
@@ -1155,7 +1155,7 @@ dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.4.1: Fast, scalable, mutable dynamic arrays, maps and hashes
-dev-haskell/juicypixels 3.2.9.5 3.3.4: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
+dev-haskell/juicypixels 3.2.9.5 3.3.5: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
 dev-haskell/juicypixels-extra 0.4.1: Efficiently scale, crop, flip images with JuicyPixels
 dev-haskell/juicypixels-scale-dct 0.1.2-r1: Scale JuicyPixels images with DCT
 dev-haskell/jupyter 0.9.0: A library for creating and using Jupyter kernels
@@ -1276,7 +1276,7 @@ dev-haskell/markdown 0.1.17.4: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.5.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
 dev-haskell/massiv 0.5.0.0: Massiv is an Array Library
-dev-haskell/massiv-io 0.2.0.0: Import/export of Image files into massiv Arrays
+dev-haskell/massiv-io 0.2.1.0: Import/export of Image files into massiv Arrays
 dev-haskell/massiv-test 0.1.3: Library that contains generators, properties and tests for Massiv Array Library
 dev-haskell/math-functions 0.3.3.0: Special functions and Chebyshev polynomials
 dev-haskell/matrices 0.5.0: native matrix based on vector
