@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/bimap-0.3.3:=[profile?] <dev-haskell/bimap-0.5:=[profile?
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/text-1.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-icu-0.7:=[profile?] <dev-haskell/text-icu-0.8:=[profile?]
-	>=dev-haskell/vty-5.21:=[profile?] <dev-haskell/vty-5.27:=[profile?]
+	>=dev-haskell/vty-5.21:=[profile?] <dev-haskell/vty-5.28:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
@@ -45,7 +45,7 @@ src_prepare() {
 	default
 	cabal_chdeps\
 		"bimap                             >= 0.3.3 && < 0.4" "bimap >=0.3.3 && <0.5"\
-		"vty                               >= 5.21 && < 5.26" "vty >=5.21 && <5.27"
+		"vty                               >= 5.21 && < 5.26" "vty >=5.21 && <5.28"
 }
 
 src_configure() { cabal_src_configure $(cabal_flag examples); }
