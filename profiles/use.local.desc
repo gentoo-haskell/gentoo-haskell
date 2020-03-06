@@ -239,6 +239,7 @@ dev-haskell/hlint:ghc-lib - Force dependency on ghc-lib-parser even if GHC API i
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour.
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hnix:parsec - use dev-haskell/parsec instead of dev-haskell/trifecta
+dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
 dev-haskell/hoodle:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:gtk3 - Use GTK3 rather than GTK2

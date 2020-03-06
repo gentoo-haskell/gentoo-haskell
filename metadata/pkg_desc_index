@@ -949,6 +949,7 @@ dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
 dev-haskell/hmatrix-vector-sized 0.1.3.0: Conversions between hmatrix and vector-sized types
 dev-haskell/hmt 0.16: Haskell Music Theory
 dev-haskell/hnix 0.3.4: Haskell implementation of the Nix language
+dev-haskell/hnix-store-core 0.1.0.0: Core effects for interacting with the Nix store
 dev-haskell/hoauth2 0.5.9 1.8.9 1.11.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
