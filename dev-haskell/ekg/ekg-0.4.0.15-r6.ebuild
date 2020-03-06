@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.4:=[profile?] <dev-haskell/aeson-1.5:=
 	>=dev-haskell/ekg-core-0.1:=[profile?] <dev-haskell/ekg-core-0.2:=[profile?]
 	>=dev-haskell/ekg-json-0.1:=[profile?] <dev-haskell/ekg-json-0.2:=[profile?]
-	<dev-haskell/network-2.9:=[profile?]
+	<dev-haskell/network-3.2:=[profile?]
 	<dev-haskell/snap-core-1.1:=[profile?]
 	<dev-haskell/snap-server-1.2:=[profile?]
 	<dev-haskell/text-1.3:=[profile?]
@@ -30,13 +30,12 @@ RDEPEND=">=dev-haskell/aeson-0.4:=[profile?] <dev-haskell/aeson-1.5:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
-
 src_prepare() {
 	default
 
 	# As per http://hackage.haskell.org/package/ekg-0.4.0.15/revisions/
 	cabal_chdeps \
-		'base >= 4.5 && < 4.12' 'base >=4.5 && <4.13' \
-		'aeson >= 0.4 && < 1.3' 'aeson >= 0.4 && <1.5'\
-		'network < 2.7' 'network <2.9'
+		'base >= 4.5 && < 4.12'	'base >=4.5 && <4.13' \
+		'aeson >= 0.4 && < 1.3'	'aeson >= 0.4 && <1.5' \
+		'network < 2.7'			'network < 3.2'
 }
