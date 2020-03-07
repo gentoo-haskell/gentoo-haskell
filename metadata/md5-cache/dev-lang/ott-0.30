@@ -1,11 +1,11 @@
 DEFINED_PHASES=compile install
 DEPEND=>=dev-lang/ocaml-3.9
 DESCRIPTION=Ott is a tool for writing definitions of programming languages and calculi.
-EAPI=5
+EAPI=7
 HOMEPAGE=http://www.cl.cam.ac.uk/~pes20/ott/
 KEYWORDS=~amd64
 LICENSE=BSD
 RDEPEND=>=dev-lang/ocaml-3.9
 SLOT=0
-SRC_URI=http://www.cl.cam.ac.uk/~pes20/ott/ott_distro_0.25.tar.gz
-_md5_=06cab471e9bc72358705bfb024313044
+SRC_URI=https://github.com/ott-lang/ott/archive/0.30.tar.gz -> ott-0.30.tar.gz
+_md5_=9b3943ffe571a102a3f8cebbf4386d9e
