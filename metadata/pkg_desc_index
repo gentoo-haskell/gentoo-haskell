@@ -477,8 +477,8 @@ dev-haskell/dependent-sum-template 0.1.0.0: Template Haskell code to generate in
 dev-haskell/derive 2.6.5: A program and library to derive instances for data types
 dev-haskell/deriving-compat 0.3.6 0.5.8: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/dhall 1.0.2-r1: A configuration language guaranteed to terminate
-dev-haskell/dhall-nix 1.0.0-r1: Dhall to Nix compiler
+dev-haskell/dhall 1.0.2-r1 1.30.0: A configuration language guaranteed to terminate
+dev-haskell/dhall-nix 1.0.0-r1 1.1.12: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.4-r1 0.8.0.5: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1: Cairo backend for diagrams drawing EDSL
@@ -948,8 +948,8 @@ dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
 dev-haskell/hmatrix-vector-sized 0.1.3.0: Conversions between hmatrix and vector-sized types
 dev-haskell/hmt 0.16: Haskell Music Theory
-dev-haskell/hnix 0.3.4: Haskell implementation of the Nix language
-dev-haskell/hnix-store-core 0.1.0.0: Core effects for interacting with the Nix store
+dev-haskell/hnix 0.3.4 0.6.1 0.7.1: Haskell implementation of the Nix language
+dev-haskell/hnix-store-core 0.1.0.0-r1: Core effects for interacting with the Nix store
 dev-haskell/hoauth2 0.5.9 1.8.9 1.11.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
@@ -1755,6 +1755,7 @@ dev-haskell/sdl2-mixer 1.1.0: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.10: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/selective 0.3: Selective applicative functors
 dev-haskell/semialign 1.1: Align and Zip type-classes from the common Semialign ancestor
+dev-haskell/semialign-indexed 1.1: SemialignWithIndex, i.e. izipWith and ialignWith
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 5.2.2-r1 5.3.4: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.4 0.18.5: Anything that associates

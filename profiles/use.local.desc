@@ -135,6 +135,8 @@ dev-haskell/csv-to-qif:threaded - Enable threaded haskell runtime.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-lens-fd:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-reify:tests - Build test binaries.
+dev-haskell/dhall:cross - Disable TemplateHaskell to make cross-compiling easier
+dev-haskell/dhall:http - Include support for importing dhall modules from HTTP URLs
 dev-haskell/diagrams:canvas - Enable canvas backend.
 dev-haskell/diagrams:postscript - Enable the Haskell-native PostScript backend.
 dev-haskell/diagrams:rasterific - Enable rasterific backend.
