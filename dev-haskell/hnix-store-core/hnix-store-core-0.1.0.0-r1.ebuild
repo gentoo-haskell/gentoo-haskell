@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/base16-bytestring:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/regex-base:=[profile?]
-	dev-haskell/regex-tdfa-text:=[profile?]
+	>=dev-haskell/regex-tdfa-1.3.1:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
@@ -40,6 +40,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck
 		dev-haskell/temporary )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'regex-tdfa-text' 'regex-tdfa'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
