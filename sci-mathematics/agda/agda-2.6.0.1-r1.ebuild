@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -47,6 +47,7 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/murmur-hash-0.1:=[profile?] <dev-haskell/murmur-hash-0.2:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2.2:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/split-0.2.0.0:=[profile?]
 	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.4:=[profile?]
 	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -77,7 +78,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'regex-tdfa >= 1.2.2 && < 1.3' 'regex-tdfa >= 1.2.2'
+		'regex-tdfa >= 1.2.2 && < 1.3' 'regex-tdfa >= 1.2.2' \
+		'split >= 0.2.0.0 && < 0.2.3.4' 'split >= 0.2.0.0'
 
 	if ! use emacs; then
 		sed -e '/.*emacs-mode.*$/d' \
