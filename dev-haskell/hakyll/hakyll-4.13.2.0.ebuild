@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="buildwebsite +checkexternal +previewserver +usepandoc +watchserver"
 
+RESTRICT=test # fails on non-LANG=C and hangs on 'rev'.
+
 RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/cryptonite-0.25:=[profile?] <dev-haskell/cryptonite-0.27:=[profile?]
