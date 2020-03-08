@@ -1,9 +1,0 @@
-diff --git a/test/test-pandoc-crossref.hs b/test/test-pandoc-crossref.hs
-index 72b5e13..8d478ec 100644
---- a/test/test-pandoc-crossref.hs
-+++ b/test/test-pandoc-crossref.hs
-@@ -3,3 +3,3 @@ import Test.Hspec
- import Text.Pandoc hiding (readMarkdown)
--import Text.Pandoc.Builder
-+import Text.Pandoc.Builder hiding ((<>))
- import Control.Monad.State
