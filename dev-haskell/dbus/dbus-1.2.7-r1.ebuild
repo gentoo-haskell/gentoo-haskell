@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/conduit-1.3.0:=[profile?] <dev-haskell/conduit-1.4:=[prof
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( <dev-haskell/extra-1.7
+	test? ( <dev-haskell/extra-1.8
 		<dev-haskell/quickcheck-2.14
 		<dev-haskell/resourcet-1.3
 		<dev-haskell/tasty-1.3
@@ -55,5 +55,6 @@ src_prepare() {
 	'containers <0.7' 'containers' \
 	'lens <4.18' 'lens' \
 	'template-haskell <2.15' 'template-haskell' \
-	'xml-conduit <1.9' 'xml-conduit <1.10'
+	'xml-conduit <1.9' 'xml-conduit <1.10' \
+	'extra <1.7' 'extra'
 }
