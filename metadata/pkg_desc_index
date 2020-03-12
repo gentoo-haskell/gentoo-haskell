@@ -290,7 +290,7 @@ dev-haskell/chart-unit 0.6.2.0: Native haskell charts
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.7: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.1.1 0.1.1.2: Experimental markdown processor
-dev-haskell/checkers 0.5.2: Check properties on standard classes and data structures
+dev-haskell/checkers 0.5.4: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1 0.4.0.2: A simple and intuitive library for automated testing
 dev-haskell/chell-quickcheck 0.2.5.2: QuickCheck support for the Chell testing library
 dev-haskell/chr-core 0.1.0.4: Constraint Handling Rules
@@ -685,16 +685,16 @@ dev-haskell/genericpretty 1.2.2: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.5.0.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.7.6: Use Template Haskell to generate Uniplate-like functions
-dev-haskell/genvalidity 0.9.1.0: Testing utilities for the validity library
+dev-haskell/genvalidity 0.10.0.1: Testing utilities for the validity library
 dev-haskell/genvalidity-aeson 0.3.0.0: GenValidity support for aeson
-dev-haskell/genvalidity-hspec 0.7.0.3: Standard spec's for GenValidity instances
-dev-haskell/genvalidity-hspec-aeson 0.3.1.0: Standard spec's for aeson-related instances
-dev-haskell/genvalidity-path 0.3.0.3: GenValidity support for Path
+dev-haskell/genvalidity-hspec 0.7.0.4: Standard spec's for GenValidity instances
+dev-haskell/genvalidity-hspec-aeson 0.3.1.1: Standard spec's for aeson-related instances
+dev-haskell/genvalidity-path 0.3.0.4: GenValidity support for Path
 dev-haskell/genvalidity-property 0.5.0.1: Standard properties for functions on 'Validity' types
-dev-haskell/genvalidity-scientific 0.2.1.0: GenValidity support for Scientific
-dev-haskell/genvalidity-text 0.6.0.0: GenValidity support for Text
-dev-haskell/genvalidity-unordered-containers 0.3.0.0: GenValidity support for unordered-containers
-dev-haskell/genvalidity-vector 0.3.0.0: GenValidity support for aeson
+dev-haskell/genvalidity-scientific 0.2.1.1: GenValidity support for Scientific
+dev-haskell/genvalidity-text 0.6.0.0 0.7.0.2: GenValidity support for Text
+dev-haskell/genvalidity-unordered-containers 0.3.0.1: GenValidity support for unordered-containers
+dev-haskell/genvalidity-vector 0.3.0.1: GenValidity support for aeson
 dev-haskell/getopt-generics 0.13.0.4: Create command line interfaces with ease
 dev-haskell/gf 3.7.1 3.8 3.9 9999: Grammatical Framework
 dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.2 8.4.4 8.6.1: The Glasgow Haskell Compiler API (ghc package)
@@ -940,7 +940,7 @@ dev-haskell/hledger-web 1.16.2 1.17: Web interface for the hledger accounting to
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.8.0: Low-level bindings to Libsass
-dev-haskell/hlint 2.0.15 2.1.11 2.1.15 2.2.4 2.2.9: Source code suggestions
+dev-haskell/hlint 2.0.15 2.1.11 2.1.15 2.2.4 2.2.11: Source code suggestions
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
 dev-haskell/hmarkup 3000.0.1: Simple wikitext-like markup format implementation
 dev-haskell/hmatrix 0.17.0.2 0.19.0.0 0.20.0.0: Numeric Linear Algebra
@@ -1580,7 +1580,7 @@ dev-haskell/prettyprinter 1.3.0 1.5.1 1.6.1: A modern, easy to use, well-documen
 dev-haskell/prettyprinter-ansi-terminal 1.1.1.2: ANSI terminal backend for the "prettyprinter" package
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
-dev-haskell/primitive 0.6.4.0 0.7.0.0: Primitive memory-related operations
+dev-haskell/primitive 0.6.4.0 0.7.0.1: Primitive memory-related operations
 dev-haskell/primitive-addr 0.1.0.2: Addresses to unmanaged memory
 dev-haskell/primitive-extras 0.8: Extras for the "primitive" library
 dev-haskell/primitive-unlifted 0.1.2.0 0.1.3.0: Primitive GHC types with unlifted types inside
@@ -2053,7 +2053,7 @@ dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2: Various functions on tuples
 dev-haskell/tuple-th 0.2.5: Generate (non-recursive) utility functions for tuples of statically known size
-dev-haskell/turtle 1.3.6-r2 1.5.16: Shell programming, Haskell-style
+dev-haskell/turtle 1.3.6-r2 1.5.16 1.5.17: Shell programming, Haskell-style
 dev-haskell/txt-sushi 0.6.0: The SQL link in your *NIX chain
 dev-haskell/type-aligned 0.9.6: Various type-aligned sequence data structures
 dev-haskell/type-eq 0.5: Type equality evidence you can carry around
@@ -2126,13 +2126,13 @@ dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
 dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
 dev-haskell/vado 0.0.12: Runs commands on remote machines using ssh
 dev-haskell/validation 1.1: A data-type like Either but with an accumulating Applicative
-dev-haskell/validity 0.9.0.2: Validity typeclass
-dev-haskell/validity-aeson 0.2.0.2: Validity instances for aeson
-dev-haskell/validity-path 0.4.0.0: Validity instances for Path
-dev-haskell/validity-scientific 0.2.0.2: Validity instances for scientific
-dev-haskell/validity-text 0.3.1.0: Validity instances for text
-dev-haskell/validity-unordered-containers 0.2.0.2: Validity instances for unordered-containers
-dev-haskell/validity-vector 0.2.0.2: Validity instances for vector
+dev-haskell/validity 0.9.0.3: Validity typeclass
+dev-haskell/validity-aeson 0.2.0.3: Validity instances for aeson
+dev-haskell/validity-path 0.4.0.1: Validity instances for Path
+dev-haskell/validity-scientific 0.2.0.3: Validity instances for scientific
+dev-haskell/validity-text 0.3.1.1: Validity instances for text
+dev-haskell/validity-unordered-containers 0.2.0.3: Validity instances for unordered-containers
+dev-haskell/validity-vector 0.2.0.3: Validity instances for vector
 dev-haskell/varying 0.8.1.0: FRP through value streams and monadic splines
 dev-haskell/vault 0.3.1.3: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2: Facilities for accessing the version control revision of the current directory
@@ -2228,7 +2228,7 @@ dev-haskell/xcb-types 0.10.0: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
 dev-haskell/xdot 0.3.0.1-r2: Parse Graphviz xdot files and interactively view them using GTK and Cairo
-dev-haskell/xeno 0.3.5.2: A fast event-based XML parser in pure Haskell
+dev-haskell/xeno 0.3.5.2 0.4.1: A fast event-based XML parser in pure Haskell
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1 3000.2.2 3000.2.2.1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators

@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/genvalidity-0.5:=[profile?] >=dev-haskell/genvalidity-hspec-0.6:=[profile?] dev-haskell/hspec:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( dev-haskell/doctest >=dev-haskell/genvalidity-0.7 dev-haskell/genvalidity-aeson >=dev-haskell/genvalidity-property-0.3 dev-haskell/genvalidity-text dev-haskell/text >=dev-haskell/validity-0.9 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/genvalidity-0.5:=[profile?] >=dev-haskell/genvalidity-hspec-0.6:=[profile?] dev-haskell/hspec:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-lang/ghc-8.0.1:= >=dev-haskell/cabal-1.24.0.0 test? ( >=dev-haskell/genvalidity-0.7 dev-haskell/genvalidity-aeson >=dev-haskell/genvalidity-property-0.3 dev-haskell/genvalidity-text dev-haskell/text >=dev-haskell/validity-0.9 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Standard spec's for aeson-related instances
 EAPI=7
 HOMEPAGE=http://cs-syd.eu
@@ -8,7 +8,7 @@ KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/genvalidity-0.5:=[profile?] >=dev-haskell/genvalidity-hspec-0.6:=[profile?] dev-haskell/hspec:=[profile?] dev-haskell/quickcheck:2=[profile?] >=dev-lang/ghc-8.0.1:=
 RESTRICT=!test? ( test )
-SLOT=0/0.3.1.0
-SRC_URI=https://hackage.haskell.org/package/genvalidity-hspec-aeson-0.3.1.0/genvalidity-hspec-aeson-0.3.1.0.tar.gz
+SLOT=0/0.3.1.1
+SRC_URI=https://hackage.haskell.org/package/genvalidity-hspec-aeson-0.3.1.1/genvalidity-hspec-aeson-0.3.1.1.tar.gz
 _eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	fac7ea2deca456f8e70b85a6ebef9e8a	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=5c91174eeeb4870fe69f8164f68a4493
+_md5_=b7a8969b71bd90012c1d470910262bc4
