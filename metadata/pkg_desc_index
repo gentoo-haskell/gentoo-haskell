@@ -19,7 +19,7 @@ app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
 app-text/pandoc 1.19.2.4-r1 2.3.1-r1 2.7.3-r1 2.9.1.1: Conversion between markup formats
-app-text/pdfsplit 0.0.1: split two-column PDFs, so there is one column per page
+app-text/pdfsplit 0.0.1 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
 dev-games/goatee 0.3.1.3: A monadic take on a 2,500-year-old board game - library
@@ -966,7 +966,7 @@ dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimizat
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
 dev-haskell/hora 2.2.0: date time
 dev-haskell/hosc 0.17: Haskell Open Sound Control
-dev-haskell/hostname 1.0: A a cross-platform means of determining the hostname
+dev-haskell/hostname 1.0 1.0-r1: A a cross-platform means of determining the hostname
 dev-haskell/hothasktags 0.3.8-r1: Generates ctags for Haskell, incorporating import lists and qualified imports
 dev-haskell/hourglass 0.2.12: simple performant time related library
 dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
@@ -1897,7 +1897,7 @@ dev-haskell/streaming 0.2.3.0: an elementary streaming prelude and general strea
 dev-haskell/streaming-commons 0.1.19 0.2.1.2: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamly 0.7.0 0.7.1: Beautiful Streaming, Concurrent and Reactive Composition
 dev-haskell/streamproc 1.6.2: Stream Processer Arrow
-dev-haskell/strict 0.3.2: Strict data types and String IO
+dev-haskell/strict 0.3.2 0.3.2-r1: Strict data types and String IO
 dev-haskell/strictify 0.1-r1: Find a local optimum of strictness annotations
 dev-haskell/string-conversions 0.4.0.1: Simplifies dealing with different types for strings
 dev-haskell/string-qq 0.0.4: QuasiQuoter for non-interpolated strings, texts and bytestrings
