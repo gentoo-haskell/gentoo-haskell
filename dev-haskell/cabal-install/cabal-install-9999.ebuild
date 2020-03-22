@@ -20,7 +20,7 @@ if [[ -n ${LIVE_EBUILD} ]]; then
 	S="${S}"/${PN}
 else
 	SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+	KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 fi
 
 LICENSE="BSD"
