@@ -5,6 +5,10 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="docs">build with haddock/hdocs to support scanning docs</flag>
+		<flag name="hlint">build with hlint to support linting</flag>
+	</use>
 	<longdescription>
 		Haskell development library and tool with support of autocompletion, symbol info, go to declaration, find references, hayoo search etc.
 	</longdescription>

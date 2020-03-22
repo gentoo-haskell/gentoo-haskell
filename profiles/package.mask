@@ -110,6 +110,7 @@ dev-haskell/chell-quickcheck
 # Jack Todaro <jackmtodaro@gmail.com> (11 December 2018)
 # Too many packages require <haskell-src-exts-1.21
 >=dev-haskell/haskell-src-exts-1.21
+>=dev-haskell/haskell-names-0.9.5
 >=dev-haskell/hlint-2.1.12
 >=dev-haskell/hoogle-5.0.17.4
 
