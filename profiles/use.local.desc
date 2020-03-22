@@ -537,6 +537,8 @@ dev-lang/idris:ffi - Build support for libffi.
 dev-lang/purescript:release - prevents inclusion of extra info e.g. commit SHA in --version outpu
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with support for multithreaded execution.
+dev-util/hsdev:docs - build with haddock/hdocs to support scanning docs
+dev-util/hsdev:hlint - build with hlint to support linting
 dev-vcs/darcs:diff - Use 'lcs' for diff building.
 dev-vcs/darcs:http - Use the pure Haskell HTTP package for HTTP support.
 dev-vcs/darcs:network-uri - Get Network.URI from the network-uri package.
