@@ -16,8 +16,6 @@ fi
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib multiprocessing pax-utils toolchain-funcs prefix
 inherit check-reqs
-[[ ${PV} = *9999* ]] && inherit git-r3
-
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
@@ -25,20 +23,17 @@ HOMEPAGE="https://www.haskell.org/ghc/"
 arch_binaries=""
 
 BIN_PV=${PV}
-# Make live ebuild look more like release ebuild: use latest binary release
-# to bootstrap GHC. This way we get supported bootstrap base.
-[[ ${PV} = *9999* ]] && BIN_PV=8.6.5 # 8.8.1 can't cross-compile windows targets
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#arch_binaries="$arch_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-arm.tbz2 )"
-#arch_binaries="$arch_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-arm64.tbz2 )"
-arch_binaries="$arch_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${BIN_PV}-x86_64-pc-linux-gnu.tbz2 )"
+#arch_binaries="$arch_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
+#arch_binaries="$arch_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
+#arch_binaries="$arch_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
 #arch_binaries="$arch_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( !big-endian? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tbz2 ) )"
 #arch_binaries="$arch_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#arch_binaries="$arch_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86.tbz2 )"
+#arch_binaries="$arch_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -49,7 +44,7 @@ yet_binary() {
 		#alpha) return 0 ;;
 		#arm64) return 0 ;;
 		#arm) return 0 ;;
-		amd64) return 0 ;;
+		#amd64) return 0 ;;
 		#ia64) return 0 ;;
 		#ppc) return 0 ;;
 		#ppc64)
@@ -63,29 +58,14 @@ yet_binary() {
 }
 
 GHC_PV=${PV}
-#GHC_PV=8.6.0.20180627 # uncomment only for -alpha, -beta, -rc ebuilds
+#GHC_PV=8.10.0.20200123 # uncomment only for -alpha, -beta, -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? (
 	https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-src.tar.xz
 	test? ( https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
-	${OVERRIDE_LIBFFI}
 )"
 S="${WORKDIR}"/${GHC_P}
-
-if [[ ${PV} = *9999* ]]; then
-	EGIT_REPO_URI="https://gitlab.haskell.org/ghc/ghc.git"
-	# Allow binaries to be collected below
-	SRC_URI=""
-fi
-
-# Existing bundled libffi release has a few missing things:
-# - s390 private header
-# - riscv support
-# - a few fixes
-# This tarball is done with 'make dist' on top of vanilla libffi git tree
-OVERRIDE_LIBFFI="https://dev.gentoo.org/~slyfox/distfiles/libffi-3.3-rc0_p20180919.tar.gz"
-SRC_URI+=" !binary? ( ${OVERRIDE_LIBFFI} )"
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
@@ -133,14 +113,6 @@ DEPEND="${RDEPEND}
 		>=dev-libs/libxslt-1.1.2 )
 	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
 
-if [[ ${PV} = *9999* ]]; then
-	# git tree has no pregenerated parser
-	DEPEND+="
-		>=dev-haskell/alex-3.1.7
-		>=dev-haskell/happy-1.19.12
-	"
-fi
-
 REQUIRED_USE="?? ( ghcbootstrap binary )"
 
 # haskell libraries built with cabal in configure mode, #515354
@@ -157,6 +129,7 @@ is_native() {
 if ! is_crosscompile; then
 	PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
 fi
+
 # returns tool prefix for crosscompiler.
 # Example:
 #  CTARGET=armv7a-unknown-linux-gnueabi
@@ -405,8 +378,6 @@ pkg_setup() {
 }
 
 src_unpack() {
-	[[ ${PV} == *9999* ]] && git-r3_src_unpack
-
 	# Create the ${S} dir if we're using the binary version
 	use binary && mkdir "${S}"
 
@@ -416,16 +387,7 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
-	# USE=ghcbootstrap live ebuild will contain empty SRC_URI
-	[[ -n ${ONLYA} ]] && unpack ${ONLYA}
-
-	if ! use binary; then
-		# Override default tarball.
-		if [[ -n ${OVERRIDE_LIBFFI} ]]; then
-			rm -v "${S}"/libffi-tarballs/libffi-*.tar.gz || die
-			cp -v "${DISTDIR}/${OVERRIDE_LIBFFI##*/}" "${S}"/libffi-tarballs/ || die
-		fi
-	fi
+	unpack ${ONLYA}
 }
 
 src_prepare() {
@@ -515,35 +477,20 @@ src_prepare() {
 		cd "${S}" # otherwise eapply will break
 
 		eapply "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
+		eapply "${FILESDIR}"/${PN}-8.2.1-darwin.patch
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
-		eapply "${FILESDIR}"/${PN}-9999-prim-libm.patch
-		eapply "${FILESDIR}"/${PN}-8.0.2-no-relax-everywhere.patch
-		eapply "${FILESDIR}"/${PN}-9999-atomic32.patch
-		eapply "${FILESDIR}"/${PN}-9999-boot-failure.patch
+		eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
+		eapply "${FILESDIR}"/${PN}-8.10.1-no-relax-everywhere.patch
+		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
 
-		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
+		# a bunch of crosscompiler patches
+		# needs newer version:
+		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
 			eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 		popd
-		# mingw32 target
-		pushd "${S}/libraries/Cabal"
-			eapply "${FILESDIR}"/${PN}-9999-revert-cabal-host-pass.patch
-		popd
-		eapply "${FILESDIR}"/${PN}-9999-base-mingw32-cross.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-allow-cross-bootstrap.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-gentoo-gmp-ABI.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-unreg-hsinstances.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-aarch64_be-unknown-linux-gnu-target.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-nios2-nogpopt.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-sh4-lra.patch
 
 		bump_libs
 
@@ -621,11 +568,6 @@ src_configure() {
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
-
-		if [[ ${PV} == *9999* ]]; then
-			echo ./boot
-			./boot || die "./boot failed"
-		fi
 
 		local econf_args=()
 
