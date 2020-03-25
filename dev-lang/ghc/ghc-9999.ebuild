@@ -67,8 +67,8 @@ GHC_PV=${PV}
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
 SRC_URI="!binary? (
-	https://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-src.tar.xz
-	test? ( https://downloads.haskell.org/~ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
+	https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-src.tar.xz
+	test? ( https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
 	${OVERRIDE_LIBFFI}
 )"
 S="${WORKDIR}"/${GHC_P}
