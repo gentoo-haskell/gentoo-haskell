@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-libs/gmp-5:0=
-	virtual/libffi:="
+	dev-libs/libffi:="
 DEPEND="${RDEPEND}
 	>=dev-lang/ghc-7.4.1
 	>=dev-haskell/cabal-1.6
