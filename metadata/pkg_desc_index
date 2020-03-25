@@ -2318,7 +2318,7 @@ dev-lang/elm-package 0.18.0-r2: Package manager for Elm libraries
 dev-lang/elm-reactor 0.18.0-r1: Interactive development tool for Elm programs
 dev-lang/elm-repl 0.18.0: a REPL for Elm
 dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
-dev-lang/ghc 7.8.4 7.8.4-r5 7.10.3 8.0.2 8.4.4 8.6.5 8.8.1 8.8.2 8.8.3 8.10.1_alpha1 8.10.1_alpha2 8.10.1_rc1 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 7.8.4 7.8.4-r5 7.10.3 8.0.2 8.4.4 8.6.5 8.8.1 8.8.2 8.8.3 8.10.1 9999: The Glasgow Haskell Compiler
 dev-lang/haste-compiler 0.5.4.2: Haskell To ECMAScript compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
