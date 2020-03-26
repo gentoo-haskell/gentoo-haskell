@@ -40,7 +40,7 @@ dev-haskell/active 0.2.0.14: Abstractions for animation
 dev-haskell/ad 4.4: Automatic Differentiation
 dev-haskell/adjunctions 4.4: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 0.11.2.0-r1 1.1.2.0 1.4.6.0: Fast JSON parsing and encoding
+dev-haskell/aeson 0.11.2.0-r1 1.1.2.0 1.4.7.1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.2.0.0: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.9-r2: Compatibility layer for aeson
@@ -494,7 +494,7 @@ dev-haskell/diagrams-solve 0.1.1: Pure Haskell solver routines used by diagrams
 dev-haskell/diagrams-svg 1.4.3: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1.0.1: Simplistic D&D style dice-rolling system
 dev-haskell/dictionary-sharing 0.1.0.0: Sharing/memoization of class members
-dev-haskell/diff 0.3.4: O(ND) diff algorithm in haskell
+dev-haskell/diff 0.3.4 0.4.0: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1.1: DiffArray
 dev-haskell/digest 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
 dev-haskell/digestive-functors 0.8.4.0: A practical formlet library
@@ -597,7 +597,7 @@ dev-haskell/fast-logger 2.4.13 3.0.1: A fast logging system
 dev-haskell/fast-math 1.0.2: Non IEEE-754 compliant compile-time floating-point optimisations
 dev-haskell/fastcgi 3001.0.2.5: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.24.0.3 0.24.0.5: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.24.1.0: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.21.1.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1-r1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -621,7 +621,7 @@ dev-haskell/file-modules 0.1.2.4: Takes a Haskell source-code file and outputs i
 dev-haskell/filelock 0.1.1.4: Portable interface to file locking (flock / LockFileEx)
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
 dev-haskell/filepattern 0.1.2: File path glob-like matching
-dev-haskell/filestore 0.6.3.4: Interface for versioning file stores
+dev-haskell/filestore 0.6.4: Interface for versioning file stores
 dev-haskell/findbin 0.0.5-r1: Locate directory of original program
 dev-haskell/fingertree 0.1.4.2: Generic finger-tree structure, with example instances
 dev-haskell/finite-field 0.9.0: Finite Fields
@@ -1184,7 +1184,7 @@ dev-haskell/language-c-quote 0.12.2.1: C/CUDA/OpenCL/Objective-C quasiquoting li
 dev-haskell/language-css 0.0.3: CSS 2.1 syntax
 dev-haskell/language-docker 8.0.2: Dockerfile parser, pretty-printer and embedded DSL
 dev-haskell/language-dot 0.1.1: A library for the analysis and creation of Graphviz DOT files
-dev-haskell/language-ecmascript 0.17.1.0-r2 0.19: JavaScript parser and pretty-printer library
+dev-haskell/language-ecmascript 0.17.1.0-r2 0.19.1.0: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.1-r1 0.3.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.9: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
@@ -1260,7 +1260,7 @@ dev-haskell/ltk 0.15.0.5-r1 0.16.9999: Leksah tool kit
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
 dev-haskell/lucid 2.9.12: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
-dev-haskell/lukko 0.1.1.1: File locking
+dev-haskell/lukko 0.1.1.2: File locking
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/lz4 0.2.3.1: LZ4 compression for ByteStrings
@@ -1511,7 +1511,7 @@ dev-haskell/persistable-record 0.6.0.4: Binding between SQL database values and 
 dev-haskell/persistable-types-hdbc-pg 0.0.1.4 0.0.3.5: HDBC and Relational-Record instances of PostgreSQL extended types
 dev-haskell/persistent 2.7.3.1 2.9.2 2.10.5.2: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
-dev-haskell/persistent-mongodb 2.9.0 2.9.0.2-r1: Backend for the persistent library using mongoDB
+dev-haskell/persistent-mongodb 2.9.0.2-r1 2.10.0.0: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.9.0 2.10.2.3: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1 2.10.1.2: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
