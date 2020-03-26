@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="deverror"
 
-RDEPEND=">=dev-lang/ghc-7.10:=[profile?] <dev-lang/ghc-8.12:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.10:=[profile?] <dev-lang/ghc-8.9:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
