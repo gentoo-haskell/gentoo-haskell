@@ -341,6 +341,7 @@ dev-haskell/comonad 5.0.6: Haskell 98 compatible comonads
 dev-haskell/comonad-extras 4.0.1: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
+dev-haskell/compact 0.1.0.1: Non-GC'd, contiguous storage for immutable data structures
 dev-haskell/compact-string-fix 0.3.2: Same as compact-string except with a small fix so it builds on ghc-6.12
 dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
@@ -714,7 +715,7 @@ dev-haskell/ghc-pkg-lib 0.3.1: Provide library support for ghc-pkg information
 dev-haskell/ghc-prof 1.4.1.6: Library for parsing GHC time and allocation profiling reports
 dev-haskell/ghc-simple 0.3 0.4: Simplified interface to the GHC API
 dev-haskell/ghc-syb-utils 0.2.3.3 0.3.0.0: Scrap Your Boilerplate utilities for the GHC API
-dev-haskell/ghc-tcplugins-extra 0.4: Utilities for writing GHC type-checker plugins
+dev-haskell/ghc-tcplugins-extra 0.3 0.4: Utilities for writing GHC type-checker plugins
 dev-haskell/ghc-typelits-extra 0.3.3: Additional type-level operations on GHC.TypeLits.Nat
 dev-haskell/ghc-typelits-knownnat 0.7.2: Derive KnownNat constraints from other KnownNat constraints
 dev-haskell/ghc-typelits-natnormalise 0.7.1: GHC typechecker plugin for types of kind GHC.TypeLits.Nat
@@ -1554,6 +1555,9 @@ dev-haskell/pointful 1.0.9 1.1.0.0: Pointful refactoring tool
 dev-haskell/poll 0.0.0.1: Bindings to poll.h
 dev-haskell/polynomial 0.7.3: Polynomials
 dev-haskell/polyparse 1.12.1 1.13: A variety of alternative parser combinator libraries
+dev-haskell/polysemy 1.3.0.0: Higher-order, low-boilerplate, zero-cost free monads
+dev-haskell/polysemy-plugin 0.2.5.0: Disambiguate obvious uses of effects
+dev-haskell/polysemy-zoo 0.7.0.0: Experimental, user-contributed effects and interpreters for polysemy
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
 dev-haskell/poppler 0.14.1 0.14.2: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
@@ -2060,6 +2064,7 @@ dev-haskell/type-eq 0.5: Type equality evidence you can carry around
 dev-haskell/type-equality 1: Type equality, coercion/cast and other operations
 dev-haskell/type-equality-check 0.0.0.4: Type equality check
 dev-haskell/type-errors 0.2.0.0: Tools for writing better type errors
+dev-haskell/type-errors-pretty 0.0.1.0: Combinators for writing pretty type errors easily
 dev-haskell/type-fun 0.1.1: Collection of widely reimplemented type families
 dev-haskell/type-functions 0.2.0.4: Emulation of type-level functions
 dev-haskell/type-hint 0.1: Guide type inference with proxy values
@@ -2074,6 +2079,7 @@ dev-haskell/tzdata 0.1.20190911.0: Time zone database (as files and as a module)
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
 dev-haskell/uhc-light 1.1.10.0: Part of UHC packaged as cabal/hackage installable library
 dev-haskell/uhc-util 0.1.6.7 0.1.7.0: UHC utilities
+dev-haskell/unagi-chan 0.4.1.3: Fast concurrent queues with a Chan-like API, and more
 dev-haskell/unamb 0.2.7: Unambiguous choice
 dev-haskell/unbound 0.5.1.1: Generic support for programming with names and binders
 dev-haskell/unbound-generics 0.3.4 0.4.0: Support for programming with names and binders using GHC Generics
