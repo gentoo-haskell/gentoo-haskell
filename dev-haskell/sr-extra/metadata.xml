@@ -9,8 +9,8 @@
 		A hodge-podge of functions and modules that do not have a better home
 	</longdescription>
 	<use>
-		<flag name="network-uri">Get Network.URI from the network-uri package rather than the
-   full network package.</flag>
+		<flag name="network-uri">Get Network.URI from the network-uri package rather than the full network package.</flag>
+		<flag name="omit-data">Omit all Data instances</flag>
 		<flag name="omit-serialize">Omit all the Serialize instances, on the assumption that we will use SafeCopy instances instead.</flag>
 	</use>
 </pkgmetadata>
