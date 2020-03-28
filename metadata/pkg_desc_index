@@ -120,7 +120,7 @@ dev-haskell/ascii-progress 0.3.3.0: A simple progress bar for the console
 dev-haskell/asn1-data 0.7.2: ASN1 data reader and writer in RAW, BER and DER forms
 dev-haskell/asn1-encoding 0.9.6: ASN1 data reader and writer in RAW, BER and DER forms
 dev-haskell/asn1-parse 0.9.5: Simple monadic parser for ASN1 stream types
-dev-haskell/asn1-types 0.3.3: ASN.1 types
+dev-haskell/asn1-types 0.3.4: ASN.1 types
 dev-haskell/assoc 1.0.1: swap and assoc: Symmetric and Semigroupy Bifunctors
 dev-haskell/astar 0.3.0.0: General A* search algorithm
 dev-haskell/async 2.1.1.1 2.2.2: Run IO operations asynchronously and wait for their results
@@ -175,7 +175,7 @@ dev-haskell/binary-bits 0.5: Bit parsing/writing on top of binary
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.3.1: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
-dev-haskell/binary-instances 1: Orphan instances for binary
+dev-haskell/binary-instances 1.0.0.1: Orphan instances for binary
 dev-haskell/binary-orphans 0.1.8.0-r3 1.0.1: Orphan instances for binary
 dev-haskell/binary-parser 0.5.5: A highly-efficient but limited parser API specialised for bytestrings
 dev-haskell/binary-parsers 0.2.4.0: Extends binary with parsec/attoparsec style parsing combinators
@@ -627,7 +627,7 @@ dev-haskell/findbin 0.0.5-r1: Locate directory of original program
 dev-haskell/fingertree 0.1.4.2: Generic finger-tree structure, with example instances
 dev-haskell/finite-field 0.9.0: Finite Fields
 dev-haskell/finite-typelits 0.1.4.2: A type inhabited by finitely many values, indexed by type-level naturals
-dev-haskell/first-class-families 0.7.0.0: First class type families
+dev-haskell/first-class-families 0.8.0.0: First class type families
 dev-haskell/fix-agda-whitespace 0.0.4: Fixes whitespace issues for Agda sources
 dev-haskell/fixed 0.3: Signed 15.16 precision fixed point arithmetic
 dev-haskell/fixed-vector 0.8.1.0 1.2.0.0: Generic vectors with statically known size
@@ -675,12 +675,12 @@ dev-haskell/gconf 0.13.1.0: Binding to the GNOME configuration database system
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library
 dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-arbitrary 0.1.0: Generic implementation for QuickCheck's Arbitrary
-dev-haskell/generic-data 0.8.0.0: Deriving instances with GHC.Generics and related utilities
+dev-haskell/generic-data 0.8.1.0: Deriving instances with GHC.Generics and related utilities
 dev-haskell/generic-deriving 1.11.2 1.12.4 1.13.1: Generic programming library for generalised deriving
 dev-haskell/generic-lens 1.2.0.1 2.0.0.0: Generically derive traversals, lenses and prisms
 dev-haskell/generic-lens-core 2.0.0.0: Generically derive traversals, lenses and prisms
 dev-haskell/generic-lens-labels 0.1.0.2: GHC.OverloadedLabels.IsLabel instance for lenses from ghc-generics
-dev-haskell/generic-random 1.3.0.0: Generic random generators
+dev-haskell/generic-random 1.3.0.1: Generic random generators
 dev-haskell/generic-trie 0.3.1: A map, where the keys may be complex structured data
 dev-haskell/genericpretty 1.2.2: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.5.0.0: Generic Programming using True Sums of Products
@@ -961,7 +961,7 @@ dev-haskell/hoodle-parser 0.4: Hoodle file parser
 dev-haskell/hoodle-publish 0.2.1: publish hoodle files as a static web site
 dev-haskell/hoodle-render 0.5.0 0.6: Hoodle file renderer
 dev-haskell/hoodle-types 0.4: Data types for programs for hoodle file format
-dev-haskell/hoogle 4.2.43-r1 5.0.1 5.0.4 5.0.13 5.0.17.3 5.0.17.4: Haskell API Search
+dev-haskell/hoogle 4.2.43-r1 5.0.1 5.0.4 5.0.13 5.0.17.3 5.0.17.4 5.0.17.11: Haskell API Search
 dev-haskell/hookup 0.3.1.0: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
@@ -994,7 +994,7 @@ dev-haskell/hscurses 1.4.2.0: NCurses bindings for Haskell
 dev-haskell/hse-cpp 0.2: Preprocess+parse haskell code
 dev-haskell/hsemail 1.7.7 2.2.0: Internet Message Parsers
 dev-haskell/hset 2.2.0: Primitive list with elements of unique types
-dev-haskell/hsexif 0.6.1.6: EXIF handling library in pure Haskell
+dev-haskell/hsexif 0.6.1.7: EXIF handling library in pure Haskell
 dev-haskell/hsh 2.1.3: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.11.0: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.12 1.3.1.0: Versatile logging framework
@@ -1315,7 +1315,7 @@ dev-haskell/mime-types 0.1.0.9: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
 dev-haskell/mintty 0.1.2: A reliable way to detect the presence of a MinTTY console on Windows
 dev-haskell/misfortune 0.1.1.2: fortune-mod clone
-dev-haskell/miso 1.4.0.0: A tasty Haskell front-end framework
+dev-haskell/miso 1.5.0.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
 dev-haskell/missingh 1.4.2.1: Large utility library
 dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
@@ -1383,7 +1383,7 @@ dev-haskell/mysql-haskell-nem 0.1.0.0: Adds a interface like mysql-simple to mys
 dev-haskell/mysql-haskell-openssl 0.8.3.0: TLS support for mysql-haskell package using openssl
 dev-haskell/mysql-simple 0.4.5: A mid-level MySQL client library
 dev-haskell/namegenerator 0.0.2: A name generator written in Haskell
-dev-haskell/names-th 0.3.0.0: Manipulate name strings for TH
+dev-haskell/names-th 0.3.0.1: Manipulate name strings for TH
 dev-haskell/nano-md5 0.1.2: Efficient, ByteString bindings to OpenSSL
 dev-haskell/nanomsg 0.1.1: nanomsg - scalability protocols library
 dev-haskell/nanomsg-haskell 0.2.4: Bindings to the nanomsg library
@@ -1446,7 +1446,7 @@ dev-haskell/oeis 0.3.10: Interface to the Online Encyclopedia of Integer Sequenc
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/one-liner 1.0: Constraint-based generics
-dev-haskell/onetuple 0.2.2: Singleton Tuple
+dev-haskell/onetuple 0.2.2.1: Singleton Tuple
 dev-haskell/only 0.1: The 1-tuple type or single-value "collection"
 dev-haskell/onrmt 1.0.0.0: Text UI library for performing parallel remote SSH operations
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
@@ -1697,10 +1697,10 @@ dev-haskell/regex-with-pcre 1.0.1.3 1.1.0.0: Toolkit for regex-base
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/reinterpret-cast 0.1.0: Memory reinterpretation casts for Float/Double and Word32/Word64
-dev-haskell/relational-query 0.12.2.2: Typeful, Modular, Relational, algebraic query engine
+dev-haskell/relational-query 0.12.2.3: Typeful, Modular, Relational, algebraic query engine
 dev-haskell/relational-query-hdbc 0.6.2.0 0.7.2.0: HDBC instance of relational-query and typed query interface for HDBC
 dev-haskell/relational-record 0.1.8.0 0.2.2.0: Meta package of Relational Record
-dev-haskell/relational-schemas 0.1.7.0: RDBMSs' schema templates for relational-query
+dev-haskell/relational-schemas 0.1.8.0: RDBMSs' schema templates for relational-query
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
 dev-haskell/repa 3.4.1.4-r1: High performance, regular, shape polymorphic parallel arrays
@@ -1801,7 +1801,7 @@ dev-haskell/shelly 1.6.8.6 1.7.2 1.9.0: shell-like (systems) programming in Hask
 dev-haskell/shh 0.7.0.7: Simple shell scripting from Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
-dev-haskell/show-combinators 0.1.1.0: Combinators to write Show instances
+dev-haskell/show-combinators 0.2.0.0: Combinators to write Show instances
 dev-haskell/show-please 0.5.5: A wrapper type V with improved Show instances
 dev-haskell/shuffle 0.1.4.0: Shuffle tool for UHC
 dev-haskell/sibe 0.2.0.5-r1: Machine Learning algorithms
@@ -1810,7 +1810,7 @@ dev-haskell/silently 1.2.5.1: Prevent or capture writing to stdout and other han
 dev-haskell/simple-affine-space 0.1: A simple library for affine and vector spaces
 dev-haskell/simple-cabal 0.1.1: Cabal file wrapper library
 dev-haskell/simple-cmd 0.2.1: Simple String-based process commands
-dev-haskell/simple-cmd-args 0.1.5: Simple command args parsing and execution
+dev-haskell/simple-cmd-args 0.1.6: Simple command args parsing and execution
 dev-haskell/simple-log 0.9.12: Simple log for Haskell
 dev-haskell/simple-neural-networks 0.2.0.1: Simple parallel neural networks implementation
 dev-haskell/simple-reflect 0.3.3: Simple reflection of expressions containing variables
@@ -1861,7 +1861,7 @@ dev-haskell/spreadsheet 0.1.3.8: Read and write spreadsheets from and to CSV fil
 dev-haskell/sql-words 0.1.6.4: Simple idea SQL keywords data constructor into OverloadedString
 dev-haskell/sqlite-simple 0.4.18.0: Mid-Level SQLite client library
 dev-haskell/sqlite-simple-errors 0.6.1.0: Light wrapper around errors from sqlite-simple
-dev-haskell/sr-extra 1.46.3.2 1.64: A grab bag of modules
+dev-haskell/sr-extra 1.46.3.2 1.64 1.72.3: A grab bag of modules
 dev-haskell/srcloc 0.5.1.2: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
@@ -2011,6 +2011,7 @@ dev-haskell/text-zipper 0.10.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
 dev-haskell/th-abstraction 0.2.11.0 0.3.2.0: Nicer interface for reified information about data types
+dev-haskell/th-constraint-compat 0.0.1.0: Compatibility for type constraint template
 dev-haskell/th-data-compat 0.1.0.0: Compatibility for data definition template of TH
 dev-haskell/th-desugar 1.5.5 1.6 1.8 1.9: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.4.5.0: Expands type synonyms in Template Haskell ASTs
@@ -2085,6 +2086,7 @@ dev-haskell/unbound 0.5.1.1: Generic support for programming with names and bind
 dev-haskell/unbound-generics 0.3.4 0.4.0: Support for programming with names and binders using GHC Generics
 dev-haskell/unbounded-delays 0.1.1.0: Unbounded thread delays and timeouts
 dev-haskell/unexceptionalio 0.3.0 0.5.0: IO without any non-error, synchronous exceptions
+dev-haskell/unexceptionalio-trans 0.5.1: A wrapper around UnexceptionalIO using monad transformers
 dev-haskell/unicode-transforms 0.3.6: Unicode normalization
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
 dev-haskell/union-find 0.2: Efficient union and equivalence testing of sets
