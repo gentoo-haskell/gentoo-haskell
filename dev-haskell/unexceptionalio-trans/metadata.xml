@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		UnexceptionalIO provides a basic type to witness having caught all
+		exceptions you can safely handle.  This library builds on that with
+		transformers like ExceptT to provide a more ergonomic tool for many
+		cases.
+		
+		It is intended that you use qualified imports with this library.
+		
+		&gt; import UnexceptionalIO.Trans (UIO)
+		&gt; import qualified UnexceptionalIO.Trans as UIO
+	</longdescription>
+</pkgmetadata>
