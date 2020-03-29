@@ -1,0 +1,7 @@
+--- a/Freedesktop/Trash.hs
++++ b/Freedesktop/Trash.hs
+@@ -29,3 +29,3 @@ import Data.Either(partitionEithers)
+ import Control.Monad(when)
+-import Data.Algorithm.Diff(getDiff,Diff(..))
++import Data.Algorithm.Diff
+ import Data.List(sort)
