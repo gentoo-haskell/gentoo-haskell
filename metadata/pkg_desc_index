@@ -1326,7 +1326,7 @@ dev-haskell/monad-control 1.0.2.3: Lift control operations, like exception catch
 dev-haskell/monad-control-aligned 0.0.1.1: monad-control altrnative
 dev-haskell/monad-extras 0.6.0: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.8.1: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.31: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.31 0.3.32: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.4.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-memo 0.5.1: Memoization monad transformer
