@@ -518,7 +518,6 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		eapply "${FILESDIR}"/${PN}-9999-prim-libm.patch
 		eapply "${FILESDIR}"/${PN}-9999-no-relax-everywhere.patch
-		eapply "${FILESDIR}"/${PN}-9999-atomic32.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
@@ -543,6 +542,8 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9999-nios2-nogpopt.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-sh4-lra.patch
+
+		eapply "${FILESDIR}"/${PN}-9999-win32-nanosleep.patch
 
 		bump_libs
 
