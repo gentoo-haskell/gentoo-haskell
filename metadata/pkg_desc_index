@@ -225,7 +225,7 @@ dev-haskell/bound 2.0.1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.5: 2D text pretty-printing library
-dev-haskell/brick 0.52: A declarative terminal user interface library
+dev-haskell/brick 0.52.1: A declarative terminal user interface library
 dev-haskell/broadcast-chan 0.2.1: Closable, fair, single-wakeup channel type that avoids 0 reader space leaks
 dev-haskell/bsb-http-chunked 0.0.0.4: Chunked HTTP transfer encoding for bytestring builders
 dev-haskell/bson 0.3.2.8 0.4.0.0: BSON documents are JSON-like objects with a standard binary encoding
@@ -525,7 +525,7 @@ dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 3.0.2: DNS library in Haskell
 dev-haskell/doclayout 0.2.0.1: A prettyprinting library for laying out text documents
 dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8-r1: Pandoc-style document templates
-dev-haskell/doctest 0.11.2 0.13.0 0.15.0 0.16.0.1 0.16.2: Test interactive Haskell examples
+dev-haskell/doctest 0.11.2 0.13.0 0.15.0 0.16.0.1 0.16.3: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
 dev-haskell/dotenv 0.5.2.5 0.8.0.4: Loads environment variables from dotenv files
