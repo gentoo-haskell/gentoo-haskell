@@ -281,9 +281,14 @@ ghc-install-pkg() {
 
 	mkdir -p "${hint_db}" || die
 	for pkg_config_file in "$@"; do
-		local pkg_name="gentoo-${CATEGORY}-${PF}-"$(basename "${pkg_config_file}")
-		cp "${pkg_config_file}" "${hint_db}/${pkg_name}" || die
-		chmod 0644 "${hint_db}/${pkg_name}" || die
+		# 'haskell-updater' relies on '.conf' presence when scans gentoo/.
+		# Passed files can either already have .conf (single-file style DB)
+		# or not have a .conf suffix (directory-stype).
+		# Here we always normalize file names to have single .conf suffix.
+		local base_name=$(basename "${pkg_config_file}")
+		local pkg_name="gentoo-${CATEGORY}-${PF}-${base_name%.conf}"
+		cp "${pkg_config_file}" "${hint_db}/${pkg_name}.conf" || die
+		chmod 0644 "${hint_db}/${pkg_name}.conf" || die
 	done
 }
 
