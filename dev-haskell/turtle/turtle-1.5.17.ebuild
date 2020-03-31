@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # ambiguous package: pulseaudio time
+
 RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	>=dev-haskell/async-2.0.0.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/clock-0.4.1.2:=[profile?] <dev-haskell/clock-0.9:=[profile?]
