@@ -27,7 +27,7 @@ arch_binaries=""
 BIN_PV=${PV}
 # Make live ebuild look more like release ebuild: use latest binary release
 # to bootstrap GHC. This way we get supported bootstrap base.
-[[ ${PV} = *9999* ]] && BIN_PV=8.6.5 # 8.8.1 can't cross-compile windows targets
+[[ ${PV} = *9999* ]] && BIN_PV=8.8.2
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-arm.tbz2 )"
