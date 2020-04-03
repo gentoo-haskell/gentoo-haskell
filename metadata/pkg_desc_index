@@ -1718,7 +1718,7 @@ dev-haskell/resourcet 1.1.11 1.2.3: Deterministic allocation and freeing of scar
 dev-haskell/retry 0.7.7.0 0.8.1.0: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.4: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
-dev-haskell/rio 0.1.14.0 0.1.14.1: A standard library for Haskell
+dev-haskell/rio 0.1.14.1 0.1.15.0: A standard library for Haskell
 dev-haskell/rio-orphans 0.1.1.0: Orphan instances for the RIO type in the rio package
 dev-haskell/rio-prettyprint 0.1.0.0: Pretty-printing for RIO
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
