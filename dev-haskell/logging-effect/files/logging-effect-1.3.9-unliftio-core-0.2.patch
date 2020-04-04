@@ -1,0 +1,22 @@
+diff --git a/src/Control/Monad/Log.hs b/src/Control/Monad/Log.hs
+index 4182ff2..1272fe1 100644
+--- a/src/Control/Monad/Log.hs
++++ b/src/Control/Monad/Log.hs
+@@ -384,10 +384,17 @@ instance MonadBaseControl b m => MonadBaseControl b (LoggingT message m) where
+   restoreM st = LoggingT (ReaderT (\_ -> restoreM st))
+ 
+ instance MonadUnliftIO m => MonadUnliftIO (LoggingT msg m) where
++#if MIN_VERSION_unliftio_core(0,2,0)
++  withRunInIO inner =
++    LoggingT . ReaderT $ \h ->
++      withRunInIO $ \run ->
++        inner (run . flip runLoggingT h)
++#else
+   askUnliftIO =
+     LoggingT . ReaderT $ \h ->
+       withUnliftIO $ \u ->
+         return (UnliftIO (unliftIO u . flip runLoggingT h))
++#endif
+ 
+ -- | Given a 'Handler' for a given @message@, interleave this 'Handler' into the
+ -- underlying @m@ computation whenever 'logMessage' is called.

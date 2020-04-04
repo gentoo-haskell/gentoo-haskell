@@ -28,9 +28,17 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/stm-delay-0.1.1.1:=[profile?] <dev-haskell/stm-delay-0.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-haskell/unliftio-core-0.1.1.0:=[profile?] <dev-haskell/unliftio-core-0.2:=[profile?]
+	>=dev-haskell/unliftio-core-0.1.1.0:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+PATCHES=("${FILESDIR}"/${PN}-1.3.9-unliftio-core-0.2.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'unliftio-core >= 0.1.1.0 && < 0.2' 'unliftio-core >= 0.1.1.0'
+}
