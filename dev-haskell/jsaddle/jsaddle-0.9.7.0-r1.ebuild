@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.5:=[profil
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/text-1.2.1.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/unliftio-core-0.1:=[profile?] <dev-haskell/unliftio-core-0.2:=[profile?]
+	>=dev-haskell/unliftio-core-0.1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
@@ -44,7 +44,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'lens >=3.8.5 && <4.19' 'lens >=3.8.5' \
-		'time >=1.5.0.1 && <1.10' 'time >=1.5.0.1'
+		'time >=1.5.0.1 && <1.10' 'time >=1.5.0.1' \
+		'unliftio-core >=0.1 && < 0.2' 'unliftio-core >=0.1'
 }
 
 src_configure() {
