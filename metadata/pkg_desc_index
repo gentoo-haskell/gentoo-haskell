@@ -2353,7 +2353,7 @@ dev-util/hadolint 1.17.3: Dockerfile Linter JavaScript API
 dev-util/hdocs 0.5.3.0 0.5.4.0: Haskell docs tool
 dev-util/hsdev 0.2.0.0 0.3.3.6: Haskell development library
 dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependencies
-dev-util/shellcheck 0.7.0: Shell script analysis tool
+dev-util/shellcheck 0.7.0 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.11.1-r1 0.2.12: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r3: a distributed, interactive, smart revision control system
