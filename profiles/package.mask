@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (04 Apr 2020)
+# yesod and others need a port to new typeclass API
+>=dev-haskell/unliftio-core-0.2
+
 # P.B. Lecavalier <pbl.ltx@gmail.com> (5 Feb 2020)
 # Many packages require <gtk-0.15 or <gtk3-0.15
 >=dev-haskell/gtk-0.15
