@@ -2179,7 +2179,7 @@ dev-haskell/wai-http2-extra 0.1.2: WAI utilities for HTTP/2
 dev-haskell/wai-logger 2.3.6: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
 dev-haskell/wai-websockets 3.0.1.2: Provide a bridge between WAI and the websockets package
-dev-haskell/warp 3.2.26 3.3.9: A fast, light-weight web server for WAI applications
+dev-haskell/warp 3.2.26 3.3.10: A fast, light-weight web server for WAI applications
 dev-haskell/warp-tls 3.2.8 3.2.11: HTTP over TLS support for Warp via the TLS package
 dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web applications in Haskell
 dev-haskell/wave 0.2.0: WAVE audio file IO library
