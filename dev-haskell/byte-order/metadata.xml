@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		This library provides an interface to portably work with byte
+		arrays whose contents are known to be of a fixed endianness.
+		There are two ways to use this module. See the `System.ByteOrder`
+		module for more documentation.
+	</longdescription>
+</pkgmetadata>
