@@ -30,7 +30,6 @@ RDEPEND="app-portage/repoman
 	>=dev-haskell/hashable-1.0:=
 	>=dev-haskell/http-4000.1.5:=
 	>=dev-haskell/lukko-0.1:=
-	>=dev-haskell/missingh-1.0:=
 	>=dev-haskell/mtl-2.1:=
 	>=dev-haskell/network-2.6:=
 	>=dev-haskell/network-uri-2.6:=
