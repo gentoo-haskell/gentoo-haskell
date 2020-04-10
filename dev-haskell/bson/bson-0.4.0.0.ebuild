@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+old-network"
+IUSE="old-network"
 
 RDEPEND=">=dev-haskell/cryptohash-md5-0.11:=[profile?] <dev-haskell/cryptohash-md5-0.12:=[profile?]
 	dev-haskell/data-binary-ieee754:=[profile?]

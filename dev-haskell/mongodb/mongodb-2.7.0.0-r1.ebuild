@@ -18,7 +18,7 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""  #"+old-network"
+IUSE="old-network"
 
 RESTRICT=test # needs running mongodb
 
@@ -49,11 +49,10 @@ RDEPEND=">=dev-haskell/base16-bytestring-0.1.1.6:=[profile?]
 	>=dev-haskell/transformers-base-0.4.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	<dev-haskell/network-2.9:=[profile?]
+	old-network? ( <dev-haskell/network-2.9:=[profile?] )
+	!old-network? ( >=dev-haskell/network-3.0:=[profile?]
+				>=dev-haskell/network-bsd-2.7:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?] )
 "
-## allow !old-network once network-3 is unmasked
-#	old-network? ( <dev-haskell/network-2.9:=[profile?] )
-#	!old-network? ( >=dev-haskell/network-3.0:=[profile?]
-#				>=dev-haskell/network-bsd-2.7:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?] )
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hspec-2
@@ -64,6 +63,5 @@ S="${WORKDIR}/${MY_P}"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=_old-network
-#		$(cabal_flag old-network _old-network)
+		$(cabal_flag old-network _old-network)
 }

@@ -35,7 +35,7 @@ RDEPEND="<dev-haskell/cereal-0.6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( <dev-haskell/extra-1.8
-		<dev-haskell/quickcheck-2.14
+		<dev-haskell/quickcheck-2.15
 		<dev-haskell/resourcet-1.3
 		<dev-haskell/tasty-1.3
 		<dev-haskell/tasty-hunit-0.11
