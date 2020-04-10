@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/async-2.0:= <dev-haskell/async-2.3:=
 	>=dev-haskell/hashable-1.0:= <dev-haskell/hashable-2:=
 	>=dev-haskell/http-4000.1.5:= <dev-haskell/http-4000.4:=
 	>=dev-haskell/mtl-2.0:= <dev-haskell/mtl-2.3:=
-	>=dev-haskell/network-2.6:= <dev-haskell/network-2.9:=
+	>=dev-haskell/network-2.6:= <dev-haskell/network-3.2:=
 	>=dev-haskell/network-uri-2.6.0.2:= <dev-haskell/network-uri-2.7:=
 	>=dev-haskell/parsec-3.1.13.0:= <dev-haskell/parsec-3.2:=
 	>=dev-haskell/random-1:= <dev-haskell/random-1.2:=
@@ -62,7 +62,7 @@ src_prepare() {
 		'process    >= 1.1.0.2  && < 1.7' 'process >=1.2.3.0 && <1.7'\
 		'stm        >= 2.0      && < 3' 'stm >=2.0 && <2.6'\
 		'time       >= 1.4      && < 1.10' 'time >=1.5.0.1 && <1.10'\
-		'network    >= 2.6      && < 2.8' 'network >=2.6 && <2.9'
+		'network    >= 2.6      && < 2.8' 'network >=2.6 && <3.2'
 
 	#if use noprefs; then
 	#	epatch "${FILESDIR}/${PN}"-0.13.3-nopref.patch
