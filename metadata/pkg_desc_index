@@ -1380,7 +1380,7 @@ dev-haskell/mvc 1.1.7: Model-view-controller
 dev-haskell/mwc-probability 2.1.0 2.2.0: Sampling function-based probability distributions
 dev-haskell/mwc-random 0.14.0.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.7: A low-level MySQL client library
-dev-haskell/mysql-haskell 0.8.3.0-r1 0.8.4.2: pure haskell MySQL driver
+dev-haskell/mysql-haskell 0.8.3.0-r2 0.8.4.2: pure haskell MySQL driver
 dev-haskell/mysql-haskell-nem 0.1.0.0: Adds a interface like mysql-simple to mysql-haskell
 dev-haskell/mysql-haskell-openssl 0.8.3.0: TLS support for mysql-haskell package using openssl
 dev-haskell/mysql-simple 0.4.5: A mid-level MySQL client library
@@ -1971,7 +1971,7 @@ dev-haskell/tasty-smallcheck 0.8.1: SmallCheck support for the Tasty test framew
 dev-haskell/tasty-th 0.1.7: Automatic tasty test case discovery using TH
 dev-haskell/tcache 0.12.1: A Transactional cache with user-defined persistence
 dev-haskell/tcp-streams 1.0.1.1: One stop solution for tcp client and server with tls support
-dev-haskell/tcp-streams-openssl 1.0.1.0: Tcp streams using openssl for tls support
+dev-haskell/tcp-streams-openssl 1.0.1.0-r1: Tcp streams using openssl for tls support
 dev-haskell/tdigest 0.2.1-r2: On-line accumulation of rank-based statistics
 dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/temporary 1.2.1.1 1.3: Portable temporary file and directory support for Windows and Unix
