@@ -501,7 +501,7 @@ dev-haskell/diffarray 0.1.1: DiffArray
 dev-haskell/digest 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
 dev-haskell/digestive-functors 0.8.4.0: A practical formlet library
 dev-haskell/digestive-functors-blaze 0.6.2.0: Blaze frontend for the digestive-functors library
-dev-haskell/digestive-functors-happstack 0.6.1.2: Happstack backend for the digestive-functors library
+dev-haskell/digestive-functors-happstack 0.6.1.2-r1: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.7.0.1: Snap backend for the digestive-functors library
 dev-haskell/digits 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.3: Statically checked physical dimensions, using Type Families and Data Kinds
