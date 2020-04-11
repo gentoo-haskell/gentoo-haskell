@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+maxcount"
 
+RESTRICT=test # requires mercurial
+
 RDEPEND=">=dev-haskell/diff-0.4:=[profile?] <dev-haskell/diff-0.5:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
