@@ -963,7 +963,7 @@ dev-haskell/hoodle-parser 0.4: Hoodle file parser
 dev-haskell/hoodle-publish 0.2.1: publish hoodle files as a static web site
 dev-haskell/hoodle-render 0.5.0 0.6: Hoodle file renderer
 dev-haskell/hoodle-types 0.4: Data types for programs for hoodle file format
-dev-haskell/hoogle 4.2.43-r1 5.0.1 5.0.4 5.0.13 5.0.17.3 5.0.17.4 5.0.17.11: Haskell API Search
+dev-haskell/hoogle 4.2.43-r1 5.0.1 5.0.4 5.0.13 5.0.17.3 5.0.17.11: Haskell API Search
 dev-haskell/hookup 0.3.1.0: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
