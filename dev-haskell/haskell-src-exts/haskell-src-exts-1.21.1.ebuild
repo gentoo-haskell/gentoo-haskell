@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell-suite/haskell-src-exts"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0/${PV}"
+SLOT="1.21/${PV}"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
