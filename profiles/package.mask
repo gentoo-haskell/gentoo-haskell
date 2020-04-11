@@ -1,3 +1,14 @@
+# Jack Todaro <solpeth@posteo.org> (12 April 2020)
+# Mask haskell-src-exts-1.22 and reverse dependencies
+>=dev-haskell/haskell-src-exts-1.22
+>=dev-haskell/haskell-src-exts-simple-1.22
+>=dev-haskell/hoogle-5.0.17.12
+
+# Jack Todaro <solpeth@posteo.org> (12 April 2020)
+# Mask hlint-2.2 due to ghc-lib-parser dependency failing
+# to build
+>=dev-haskell/hlint-2.2
+
 # Jack Todaro <solpeth@posteo.org> (10 Apr 2020)
 # Mask >=dev-haskell/network-3.1 due to reverse dependency
 # breakages (e.g. purescript)
@@ -34,13 +45,13 @@
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
 >=dev-haskell/gl-0.9                 # gpipe-2.2.4
->=dev-haskell/hoauth2-1.9            # gitit-0.12.3.2, yesod-auth-oauth2-0.6.1.2
+>=dev-haskell/hoauth2-1.9            # yesod-auth-oauth2-0.6.1.2
 >=dev-haskell/hsemail-2              # smptclient-1.1.0
 >=dev-haskell/ilist-0.4.0.0          # hsimport-0.11.0
 >=dev-haskell/monoid-subclasses-0.5  # picoparsec-0.1.2.3
 >=dev-haskell/mysql-haskell-0.8.4    # mysql-haskell-openssl-0.8.3.0
 >=dev-haskell/socket-0.8             # socket-sctp-0.3.0.0
->=dev-haskell/zip-archive-0.4        # cabal-instal-2.4.0.0
+>=dev-haskell/zip-archive-0.4        # cabal-install-2.4.0.0
 
 # Jack Todaro <jack.todaro@posteo.net> (25 Dec 2019)
 # Mask packages requiring >=dev-lang/ghc-8.8.1, or any of its
@@ -73,10 +84,6 @@
 >=dev-haskell/optparse-applicative-0.15
 
 # Mark Wright <gienah@gentoo.org> (13 Oct 2019)
-# More reverse dependencies of >=dev-haskell/haskell-src-exts-1.21
->=dev-haskell/haskell-src-exts-simple-1.21.1.0
-
-# Mark Wright <gienah@gentoo.org> (13 Oct 2019)
 # Reverse dependencies of >=dev-haskell/primitive-0.7
 dev-haskell/primitive-extras
 dev-haskell/primitive-unlifted
@@ -106,13 +113,6 @@ dev-haskell/chell-quickcheck
 # required by ghc-mod which is currently masked for the
 # same reason.
 <dev-haskell/ghc-syb-utils-0.3
-
-# Jack Todaro <jackmtodaro@gmail.com> (11 December 2018)
-# Too many packages require <haskell-src-exts-1.21
->=dev-haskell/haskell-src-exts-1.21
->=dev-haskell/haskell-names-0.9.5
->=dev-haskell/hlint-2.1.12
->=dev-haskell/hoogle-5.0.17.4
 
 # Jack Todaro <jackmtodaro@gmail.com> (19 Aug 2018)
 # app-emacs/ghc-mod needs porting to GHC 8.4 and
