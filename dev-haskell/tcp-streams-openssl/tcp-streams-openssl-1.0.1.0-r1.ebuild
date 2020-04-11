@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,7 +22,7 @@ RESTRICT=test # needs network
 RDEPEND=">=dev-haskell/hsopenssl-0.10.3:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/hsopenssl-x509-system-0.1:=[profile?] <dev-haskell/hsopenssl-x509-system-0.2:=[profile?]
 	>=dev-haskell/io-streams-1.2:=[profile?] <dev-haskell/io-streams-2.0:=[profile?]
-	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.0:=[profile?]
+	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-4.0:=[profile?]
 	>=dev-haskell/tcp-streams-1.0:=[profile?] <dev-haskell/tcp-streams-1.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -32,3 +32,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'network        >=2.3  && < 3.0' 'network        >=2.3'
+}
