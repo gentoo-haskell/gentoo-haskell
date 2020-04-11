@@ -1,0 +1,19 @@
+diff --git a/src/Network/StatsD.hs b/src/Network/StatsD.hs
+index ab4058b..dff0852 100644
+--- a/src/Network/StatsD.hs
++++ b/src/Network/StatsD.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE RecordWildCards #-}
++{-# LANGUAGE CPP #-}
+ module Network.StatsD
+     ( StatsD
+     , mkStatsD, openStatsD, closeStatsD
+@@ -70,4 +71,8 @@ fmtMany prefix = map (T.encodeUtf8 . fmt prefix)
+ 
+ push statsd = mapM_ (BL.sendAll (connection statsd)) . segment . fmtMany (prefix statsd)
+ 
++#if MIN_VERSION_network(3,0,0)
++closeStatsD = close . connection
++#else
+ closeStatsD = sClose . connection
++#endif
