@@ -22,11 +22,11 @@ RDEPEND=">=app-text/pandoc-2.2:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/configfile-1:=[profile?] <dev-haskell/configfile-1.2:=[profile?]
-	>=dev-haskell/feed-1.0:=[profile?] <dev-haskell/feed-1.1:=[profile?]
+	>=dev-haskell/feed-1.0:=[profile?] <dev-haskell/feed-1.4:=[profile?]
 	>=dev-haskell/filestore-0.6:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
-	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.6:=[profile?]
-	>=dev-haskell/hoauth2-1.3.0:=[profile?] <dev-haskell/hoauth2-1.9:=[profile?]
-	>=dev-haskell/hslogger-1:=[profile?] <dev-haskell/hslogger-1.3:=[profile?]
+	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.7:=[profile?]
+	>=dev-haskell/hoauth2-1.3.0:=[profile?] <dev-haskell/hoauth2-1.12:=[profile?]
+	>=dev-haskell/hslogger-1:=[profile?] <dev-haskell/hslogger-1.4:=[profile?]
 	>=dev-haskell/hstringtemplate-0.6:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
 	>=dev-haskell/http-4000.0:=[profile?] <dev-haskell/http-4000.4:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
@@ -41,7 +41,7 @@ RDEPEND=">=app-text/pandoc-2.2:=[profile?]
 	>=dev-haskell/recaptcha-0.1:=[profile?]
 	dev-haskell/safe:=[profile?]
 	>dev-haskell/sha-1:=[profile?] <dev-haskell/sha-1.7:=[profile?]
-	>=dev-haskell/skylighting-0.7.4:=[profile?] <dev-haskell/skylighting-0.8:=[profile?]
+	>=dev-haskell/skylighting-0.7.4:=[profile?] <dev-haskell/skylighting-0.9:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
 	>=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
@@ -53,11 +53,14 @@ RDEPEND=">=app-text/pandoc-2.2:=[profile?]
 	dev-haskell/xhtml:=[profile?]
 	>=dev-haskell/xml-1.3.5:=[profile?]
 	>=dev-haskell/xml-conduit-1.5:=[profile?] <dev-haskell/xml-conduit-1.9:=[profile?]
+	>=dev-haskell/xml-types-0.3:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
-	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
-			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
+	network-uri? (
+		>=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2:=[profile?]
+		>=dev-haskell/network-bsd-2.8.1:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?]
+		>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 	plugins? ( dev-haskell/ghc-paths:=[profile?]
 			dev-lang/ghc:=[profile?] )
@@ -65,6 +68,23 @@ RDEPEND=">=app-text/pandoc-2.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	eapply "${FILESDIR}/${P}-network-3.patch"
+	eapply "${FILESDIR}/${P}-hoauth-1.11.patch"
+	eapply "${FILESDIR}/${P}-feed-1.3-1.patch"
+	eapply "${FILESDIR}/${P}-feed-1.3-2.patch"
+	eapply "${FILESDIR}/${P}-filestore-0.6.4.patch"
+
+	cabal_chdeps 'happstack-server >= 7.0 && < 7.6' 'happstack-server >= 7.0' \
+				 'skylighting >= 0.7.4 && < 0.8' 'skylighting >= 0.7.4' \
+				 'hslogger >= 1 && < 1.3' 'hslogger >= 1' \
+				 'hoauth2 >= 1.3.0 && < 1.9' 'hoauth2 >= 1.3.0' \
+				 'feed >= 1.0 && < 1.1' 'feed >= 1.0, xml-types >= 0.3' \
+				 'network >= 2.6' 'network >= 3, network-bsd >= 2.8.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
