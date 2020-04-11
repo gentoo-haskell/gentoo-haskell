@@ -2405,7 +2405,7 @@ sci-mathematics/cvc4 1.6: automatic theorem prover for Satisfiability Modulo The
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 1.1: A web interface for darcs
-www-apps/gitit 0.12.2.1-r1 0.12.3.2: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.12.2.1-r1 0.12.3.2 0.12.3.2-r1: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
