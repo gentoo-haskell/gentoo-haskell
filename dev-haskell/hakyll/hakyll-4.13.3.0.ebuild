@@ -17,8 +17,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="buildwebsite +checkexternal +previewserver +usepandoc +watchserver"
 
-RESTRICT=test # fails on non-LANG=C and hangs on 'rev'.
-
 RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/cryptonite-0.25:=[profile?] <dev-haskell/cryptonite-0.27:=[profile?]
@@ -47,11 +45,11 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 				>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 				>=dev-haskell/wai-3.2:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 				>=dev-haskell/wai-app-static-3.1:=[profile?] <dev-haskell/wai-app-static-3.2:=[profile?]
-				>=dev-haskell/warp-3.2:=[profile?] )
+				>=dev-haskell/warp-3.2:=[profile?] <dev-haskell/warp-3.4:=[profile?] )
 	!previewserver? ( checkexternal? ( >=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.13:=[profile?] )
 				watchserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.4:=[profile?] ) )
 	usepandoc? ( >=app-text/pandoc-2.0.5:=[profile?] <app-text/pandoc-2.10:=[profile?]
-			>=dev-haskell/pandoc-citeproc-0.14:=[profile?] <dev-haskell/pandoc-citeproc-0.17:=[profile?] )
+			>=dev-haskell/pandoc-citeproc-0.14:=[profile?] <dev-haskell/pandoc-citeproc-0.18:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
@@ -60,13 +58,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'warp            >= 3.2   && < 3.3' 'warp            >= 3.2'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
