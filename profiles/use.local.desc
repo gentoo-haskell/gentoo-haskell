@@ -540,7 +540,8 @@ dev-lang/ghc:binary - Install the binary version directly, rather than using it 
 dev-lang/ghc:elfutils - Enable DWARF-based backtraces using dev-libs/elfutils.
 dev-lang/ghc:ghcbootstrap - Internal: Bootstrap GHC from an existing GHC installation.
 dev-lang/ghc:ghcmakebinary - Internal: Build binary friendly for redistribution.
-dev-lang/ghc:gmp - use dev-libs/gmp for integer operations (works faster, but an external depend).
+dev-lang/ghc:gmp - Use dev-libs/gmp for integer operations (works faster, but an external depend).
+dev-lang/ghc:llvm - Enable LLVM backend via sys-devel/llvm.
 dev-lang/ghc:numa - Enable NUMA thread balancing policy using sys-process/numactl.
 dev-lang/idris:ffi - Build support for libffi.
 dev-lang/purescript:release - prevents inclusion of extra info e.g. commit SHA in --version outpu
