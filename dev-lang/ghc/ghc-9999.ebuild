@@ -15,7 +15,7 @@ fi
 
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib multiprocessing pax-utils toolchain-funcs prefix
-inherit check-reqs
+inherit check-reqs llvm
 [[ ${PV} = *9999* ]] && inherit git-r3
 
 DESCRIPTION="The Glasgow Haskell Compiler"
@@ -96,7 +96,7 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
+IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
@@ -125,6 +125,15 @@ PREBUILT_BINARY_RDEPENDS="${PREBUILT_BINARY_DEPENDS}
 
 RDEPEND+="binary? ( ${PREBUILT_BINARY_RDEPENDS} )"
 
+# On arm ghc requires llvm backend.
+# On ghc-8.11 does not support anything except llvm-9 today.
+# See 'configure.ac:LlvmVersion=9' handling.
+LLVM_MAX_SLOT=9
+
+RDEPEND+="
+	llvm? ( sys-devel/llvm:${LLVM_MAX_SLOT} )
+"
+
 DEPEND="${RDEPEND}
 	doc? ( app-text/docbook-xml-dtd:4.2
 		app-text/docbook-xml-dtd:4.5
@@ -142,6 +151,7 @@ if [[ ${PV} = *9999* ]]; then
 fi
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
+REQUIRED_USE+=" arm? ( llvm )"
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
@@ -379,6 +389,13 @@ ghc-check-reqs() {
 
 pkg_pretend() {
 	ghc-check-reqs check-reqs_pkg_pretend
+	# sanity check target sthat require llvm backend
+	if ! use llvm; then
+		case ${CTARGET} in
+			arm*)
+				die "CTARGET=${CTARGET} requires USE=llvm."
+		esac
+	fi
 }
 
 pkg_setup() {
@@ -402,6 +419,9 @@ pkg_setup() {
 			die "No binary available for '${ARCH}' arch yet, USE=ghcbootstrap"
 		fi
 	fi
+
+	# populate LLVM path
+	use llvm && llvm_pkg_setup
 }
 
 src_unpack() {
@@ -666,6 +686,13 @@ src_configure() {
 			# It does, but does not distinct --host= value
 			# for stage1 and stage2 compiler.
 			econf_args+=(--host=${CBUILD})
+		fi
+
+		if use llvm; then
+			econf_args+=(
+				OPT=$(type -P opt)
+				LLC=$(type -P llc)
+			)
 		fi
 
 		if use ghcmakebinary; then

@@ -10,7 +10,8 @@
 		<flag name="elfutils">Enable DWARF-based backtraces using <pkg>dev-libs/elfutils</pkg>.</flag>
 		<flag name="ghcbootstrap">Internal: Bootstrap GHC from an existing GHC installation.</flag>
 		<flag name="ghcmakebinary">Internal: Build binary friendly for redistribution.</flag>
-		<flag name="gmp">use <pkg>dev-libs/gmp</pkg> for integer operations (works faster, but an external depend).</flag>
+		<flag name="gmp">Use <pkg>dev-libs/gmp</pkg> for integer operations (works faster, but an external depend).</flag>
+		<flag name="llvm">Enable LLVM backend via <pkg>sys-devel/llvm</pkg>.</flag>
 		<flag name="numa">Enable NUMA thread balancing policy using <pkg>sys-process/numactl</pkg>.</flag>
 	</use>
 </pkgmetadata>
