@@ -688,7 +688,7 @@ dev-haskell/genericpretty 1.2.2: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.5.0.0: Generic Programming using True Sums of Products
 dev-haskell/geniplate 0.6.0.5: Use Template Haskell to generate Uniplate-like functions
 dev-haskell/geniplate-mirror 0.7.6: Use Template Haskell to generate Uniplate-like functions
-dev-haskell/genvalidity 0.10.0.1: Testing utilities for the validity library
+dev-haskell/genvalidity 0.10.0.2: Testing utilities for the validity library
 dev-haskell/genvalidity-aeson 0.3.0.0: GenValidity support for aeson
 dev-haskell/genvalidity-hspec 0.7.0.4: Standard spec's for GenValidity instances
 dev-haskell/genvalidity-hspec-aeson 0.3.1.1: Standard spec's for aeson-related instances
