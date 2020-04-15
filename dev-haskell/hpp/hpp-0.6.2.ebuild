@@ -24,3 +24,10 @@ RDEPEND=">=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.8 && < 4.14' 'base >=4.8'
+}
