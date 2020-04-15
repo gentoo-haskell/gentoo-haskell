@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6 <dev-haskell/cabal-3.1
+	>=dev-haskell/cabal-1.6 <dev-haskell/cabal-3.3
 "
 
 src_prepare() {
@@ -29,6 +29,9 @@ src_prepare() {
 	# ghc-patch it has awfully unportable (across cabal versions) ghc detection code
 	# but in gentoo we install it to fixed patch, so remove Setup.hs detection code
 	cabal-mksetup
+
+	cabal_chdeps \
+		'Cabal >= 1.6 && <3.1' 'Cabal >= 1.6 && <3.3'
 
 	# and use gentoo's hardcoded one:
 	# a few things we need to replace, and example values
