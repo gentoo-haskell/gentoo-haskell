@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # tests/Splices.hs:69:77: error: Not in scope: data constructor ‘Extension.QuantifiedConstraints’
 
-RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.23:=[profile?]
+RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/th-orphans-0.12:=[profile?] <dev-haskell/th-orphans-0.14:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
@@ -27,3 +27,10 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-sr
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haskell-src-exts >= 1.18 && < 1.23' 'haskell-src-exts >= 1.18 && < 1.24'
+}
