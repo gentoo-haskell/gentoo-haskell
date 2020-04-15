@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,6 +25,13 @@ RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base       >= 4.3 && < 4.14' 'base       >= 4.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
