@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -32,10 +32,17 @@ RDEPEND=">=dev-db/postgresql-7:*
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.8 <dev-haskell/cabal-3.1
+	>=dev-haskell/cabal-1.8 <dev-haskell/cabal-3.3
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal >= 1.8 && < 3.1' 'Cabal >= 1.8 && < 3.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
