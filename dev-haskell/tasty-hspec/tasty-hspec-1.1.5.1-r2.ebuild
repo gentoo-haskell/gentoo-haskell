@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -34,7 +34,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'tasty >= 0.8 && < 1.2' 'tasty >= 0.8' \
-		'base ^>= 4.9 || ^>= 4.10 || ^>= 4.11 || ^>= 4.12' 'base ^>= 4.9 || ^>= 4.10 || ^>= 4.11 || ^>= 4.12 || ^>= 4.13' \
+		'base ^>= 4.9 || ^>= 4.10 || ^>= 4.11 || ^>= 4.12' 'base ^>= 4.9 || ^>= 4.10 || ^>= 4.11 || ^>= 4.12 || ^>= 4.13 || ^>= 4.14' \
 		'hspec >= 2 && < 2.7' 'hspec >= 2' \
 		'hspec-core >= 2 && < 2.7' 'hspec-core >= 2' \
 		'QuickCheck >= 2.7 && < 2.13' 'QuickCheck >= 2.7'
