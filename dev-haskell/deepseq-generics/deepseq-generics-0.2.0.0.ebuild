@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -30,5 +30,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.5 && < 4.10' 'base >= 4.5'
+		'base >= 4.5 && < 4.10' 'base >= 4.5' \
+		'ghc-prim >= 0.2 && < 0.6' 'ghc-prim >= 0.2'
 }
