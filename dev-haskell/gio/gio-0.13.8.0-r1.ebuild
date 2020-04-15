@@ -23,7 +23,14 @@ RDEPEND=">=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profil
 	dev-libs/glib:2
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24 <dev-haskell/cabal-3.1
+	>=dev-haskell/cabal-1.24 <dev-haskell/cabal-3.3
 	>=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal >= 1.24 && < 3.1' 'Cabal >= 1.24 && < 3.3'
+}
