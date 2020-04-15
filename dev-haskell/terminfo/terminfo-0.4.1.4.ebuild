@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# keep in sync with ghc-8.8
+# keep in sync with ghc-8.8 and ghc 8.10
 # KEYWORDS="~amd64 ~x86"
 IUSE=""
 
