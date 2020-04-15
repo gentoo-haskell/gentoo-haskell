@@ -30,6 +30,13 @@ DEPEND="${RDEPEND}
 			( >=dev-haskell/hunit-1.6 <dev-haskell/hunit-1.7 ) ) )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base       >= 4.3 && < 4.14' 'base       >= 4.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-buildtests \
