@@ -351,6 +351,7 @@ dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/opencv:internal-documentation - Enables documentation generation for internal modules.
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optparse-simple:build-example - Build the example executable
+dev-haskell/ormolu:dev - Turn on development settings.
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
 dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging).
 dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
