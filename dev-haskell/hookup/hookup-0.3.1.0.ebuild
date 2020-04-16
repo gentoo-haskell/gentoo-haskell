@@ -26,3 +26,10 @@ RDEPEND=">=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                  >=4.11 && <4.14' 'base                  >=4.11'
+}

@@ -25,3 +25,10 @@ RDEPEND="<dev-haskell/groups-0.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.3 && < 4.14' 'base >= 4.3'
+}

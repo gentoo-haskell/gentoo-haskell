@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -36,6 +36,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'binary        >=0.5.1.0 && <0.6 || >=0.7.1.0 && <0.8 || >=0.8.3.0 && <0.8.7' 'binary        >=0.5.1.0 && <0.6 || >=0.7.1.0 && <0.8 || >=0.8.3.0 && <0.8.8' \
+		'base          >=4.5     && <4.14' 'base          >=4.5' \
+		'binary        >=0.5.1.0 && <0.6 || >=0.7.1.0 && <0.8 || >=0.8.3.0 && <0.8.7' 'binary        >=0.5.1.0 && <0.6 || >=0.7.1.0 && <0.8 || >=0.8.3.0 && <0.8.9' \
 		'semigroups >=0.18.5 && <0.19.1' 'semigroups >=0.18.5'
 }

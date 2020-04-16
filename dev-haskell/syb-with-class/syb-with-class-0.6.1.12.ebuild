@@ -23,3 +23,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 	test? ( dev-haskell/hunit )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >= 2.4 && < 2.16' 'template-haskell >= 2.4'
+}

@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/config-value-0.7:=[profile?] <dev-haskell/config-value-0.
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base           >=4.8   && <4.14' 'base           >=4.8'
+}

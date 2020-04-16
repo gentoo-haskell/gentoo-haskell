@@ -24,3 +24,11 @@ RDEPEND="<dev-haskell/text-1.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.6 && < 4.14' 'base >= 4.6' \
+		'ghc-prim < 0.6' 'ghc-prim'
+}

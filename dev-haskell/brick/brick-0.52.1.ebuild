@@ -38,6 +38,13 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/quickcheck )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base <= 4.13.0.0' 'base'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag demos demos)
