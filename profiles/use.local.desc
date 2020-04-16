@@ -93,6 +93,7 @@ dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
 dev-haskell/certificate:executable - Build the executable
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
+dev-haskell/chimera:representable - Define Representable instance from adjunctions package
 dev-haskell/citeproc-hs:bibutils - use Chris Putnam's app-text/bibutils
 dev-haskell/citeproc-hs:embed-data-files - Embed locale files into the library (needed for windows packaging)
 dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/xml for XML parsing
@@ -333,6 +334,7 @@ dev-haskell/miso:ios - Cross compile to iOS
 dev-haskell/miso:jsaddle - Compile with JSaddle
 dev-haskell/miso:tests - Builds Miso's tests
 dev-haskell/missingh:network-3 - Use network-3
+dev-haskell/mod:semirings - Derive semiring instances
 dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/mongodb:old-network - Enforce <dev-haskell/network-2.9
