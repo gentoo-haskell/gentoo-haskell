@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/arithmoi-0.5:=[profile?]
+RDEPEND=">=dev-haskell/arithmoi-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -29,6 +29,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2
 		dev-haskell/test-framework-smallcheck )
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-1.0.1-arithmoi-0.11.patch )
 
 src_prepare() {
 	default
