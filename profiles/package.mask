@@ -35,6 +35,8 @@
 # Mark Wright <gienah@gentoo.org> (12 Jan 2020)
 # More reverse dependencies of >=app-text/pandoc-2.8,
 # >=dev-haskell/haddock-1.8.0 and >=dev-lang/ghc-8.8.1
+dev-haskell/base-noprelude
+>=app-text/pandoc-2.9.2.1
 >=dev-haskell/pandoc-citeproc-0.16.4.1
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (2 Jan 2020)
