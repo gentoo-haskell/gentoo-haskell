@@ -18,7 +18,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.19.2.4-r1 2.3.1-r1 2.7.3-r1 2.9.1.1: Conversion between markup formats
+app-text/pandoc 1.19.2.4-r1 2.3.1-r1 2.7.3-r1 2.9.1.1 2.9.2.1: Conversion between markup formats
 app-text/pdfsplit 0.0.1 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -148,6 +148,7 @@ dev-haskell/aws 0.20 0.21.1 0.22-r1: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 1.1.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.1: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.1: base-compat with extra batteries
+dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
 dev-haskell/base-orphans 0.5.4 0.8.2: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.3: The most complete prelude formed solely from the \
 dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functions and operators
@@ -525,8 +526,8 @@ dev-haskell/djinn-lib 0.0.1.3: Generate Haskell code from a type. Library extrac
 dev-haskell/dlist 0.8.0.7: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 3.0.2: DNS library in Haskell
-dev-haskell/doclayout 0.2.0.1: A prettyprinting library for laying out text documents
-dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8-r1: Pandoc-style document templates
+dev-haskell/doclayout 0.2.0.1 0.3: A prettyprinting library for laying out text documents
+dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8-r1 0.8.2: Pandoc-style document templates
 dev-haskell/doctest 0.11.2 0.13.0 0.15.0 0.16.0.1 0.16.3: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
@@ -1146,7 +1147,7 @@ dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.1.1.1: Efficient relational queries on Haskell sets
 dev-haskell/ixset-typed 0.4.0.1 0.5: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
-dev-haskell/jira-wiki-markup 1.0.0: Parse jira wiki text into an abstract syntax tree
+dev-haskell/jira-wiki-markup 1.0.0 1.1.4: Parse jira wiki text into an abstract syntax tree
 dev-haskell/jmacro 0.6.17: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/jose-jwt 0.8.0: JSON Object Signing and Encryption Library
 dev-haskell/js-dgtable 0.5.2: Obtain minified jquery.dgtable code
@@ -1995,7 +1996,7 @@ dev-haskell/test-framework-th-prime 0.0.9: Template Haskell for test framework
 dev-haskell/testing-feat 1.1.0.0: Functional Enumeration of Algebraic Types
 dev-haskell/testing-type-modifiers 0.1.0.1: Data type modifiers for property based testing
 dev-haskell/testpack 2.1.3.0-r1: Test Utililty Pack for HUnit and QuickCheck (unmaintained)
-dev-haskell/texmath 0.9.4.2 0.11.3 0.12: Conversion between formats used to represent mathematics
+dev-haskell/texmath 0.9.4.2 0.11.3 0.12.0.1: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.2-r2: Functions for running Tex from Haskell
 dev-haskell/text 1.2.3.0 1.2.3.1 1.2.3.2 1.2.4.0: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
