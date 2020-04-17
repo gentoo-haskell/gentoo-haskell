@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-1.4.2.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/hashable-1.2.6.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-4.19:=[profile?]
+	>=dev-haskell/lens-4.17:=[profile?]
 	>=dev-haskell/optics-core-0.2:=[profile?] <dev-haskell/optics-core-0.3:=[profile?]
 	>=dev-haskell/optics-extra-0.2:=[profile?] <dev-haskell/optics-extra-0.3:=[profile?]
 	>=dev-haskell/semigroupoids-5.3.2:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
@@ -35,3 +35,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-1.3
 		>=dev-haskell/tasty-quickcheck-0.8.3.2 <dev-haskell/tasty-quickcheck-0.11 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens                  >=4.17    && <4.19' 'lens                  >=4.17'
+}
