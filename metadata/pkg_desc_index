@@ -1108,7 +1108,7 @@ dev-haskell/influxdb 1.7.1.2: Haskell client library for InfluxDB
 dev-haskell/ini 0.4.1: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.5.6.1 0.6.1.0: Write Haskell source files including C code inline. No FFI required
 dev-haskell/inline-c-cpp 0.2.1.0: Lets you embed C++ code into Haskell
-dev-haskell/insert-ordered-containers 0.2.1.0 0.2.3: Associative containers retaining insertion order for traversals
+dev-haskell/insert-ordered-containers 0.2.1.0 0.2.3-r1: Associative containers retaining insertion order for traversals
 dev-haskell/inspection-testing 0.4.2.4: GHC plugin to do inspection testing
 dev-haskell/instant-generics 0.6: Generic programming library with a sum of products view
 dev-haskell/integer-logarithms 1.0.3: Integer logarithms
