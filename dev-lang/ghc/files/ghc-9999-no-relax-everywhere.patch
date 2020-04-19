@@ -6,7 +6,7 @@ Allow users to specify -W,--relax externally and pass
 Reported-by: wmyrda
 --- a/compiler/GHC/Driver/Pipeline.hs
 +++ b/compiler/GHC/Driver/Pipeline.hs
-@@ -2144,9 +2144,7 @@ joinObjectFiles dflags o_files output_fn = do
+@@ -2155,9 +2155,7 @@ joinObjectFiles dflags o_files output_fn = do
                          -- gcc on sparc sets -Wl,--relax implicitly, but
                          -- -r and --relax are incompatible for ld, so
                          -- disable --relax explicitly.
@@ -14,6 +14,6 @@ Reported-by: wmyrda
 -                                `elem` [ArchSPARC, ArchSPARC64]
 -                         && ldIsGnuLd
 +                     ++ (if ldIsGnuLd
-                             then [SysTools.Option "-Wl,-no-relax"]
+                             then [GHC.SysTools.Option "-Wl,-no-relax"]
                              else [])
                          -- See Note [Produce big objects on Windows]
