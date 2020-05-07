@@ -17,8 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
+# RDEPEND="<dev-haskell/lens-4.19:=[profile?]"
+
 RDEPEND=">=dev-haskell/dependent-sum-0.4:=[profile?] <dev-haskell/dependent-sum-0.7:=[profile?]
-	>=dev-haskell/lens-3.6:=[profile?] <dev-haskell/lens-4.19:=[profile?]
+	>=dev-haskell/lens-3.6:=[profile?]
 	>=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/primitive-0.6:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/ref-tf-0.4:=[profile?] <dev-haskell/ref-tf-0.5:=[profile?]
@@ -34,7 +36,9 @@ DEPEND="${RDEPEND}
 PATCHES=( "${FILESDIR}/${P}-add-examples-flag.patch" )
 
 src_prepare() {
-	cabal_chdeps "lens >= 3.6 && < 4.18" "lens >= 3.6 && < 4.19"
+	cabal_chdeps\
+		"lens >= 3.6 && < 4.19" "lens >= 3.6"\
+		"lens >= 3.6 && < 4.18" "lens >= 3.6"
 	default
 }
 
