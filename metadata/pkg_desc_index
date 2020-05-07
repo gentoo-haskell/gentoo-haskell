@@ -1674,7 +1674,7 @@ dev-haskell/reflection 2.1.5: Reifies arbitrary terms into types that can be ref
 dev-haskell/reflex 0.6.1 0.6.3-r1: Higher-order Functional Reactive Programming
 dev-haskell/reflex-backend-socket 0.2.0.0: Reflex bindings for TCP sockets
 dev-haskell/reflex-backend-wai 0.1.0.0: Reflex interface to 'wai'
-dev-haskell/reflex-basic-host 0.2.0.1: A basic Reflex host for backend work
+dev-haskell/reflex-basic-host 0.2.0.1-r1: A basic Reflex host for backend work
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
 dev-haskell/reflex-process 0.1.0.1: reflex-frp interface for running shell commands
 dev-haskell/reflex-vty 0.1.3.0-r1: Reflex FRP host and widgets for vty applications
