@@ -1,0 +1,11 @@
+--- a/Network/SMTP/Client.hs
++++ b/Network/SMTP/Client.hs
+@@ -114,7 +114,7 @@ sendSMTP' log mStatuses domain addrs messages = do
+         eHandle <- try . foldl1' mplus . map (
+                 \addr -> bracketOnError
+                     (socket (addrFamily addr) (addrSocketType addr) (addrProtocol addr))
+-                    sClose
++                    close
+                     (\sock -> do
+                             connect sock (addrAddress addr)
+                             socketToHandle sock ReadWriteMode
