@@ -153,9 +153,3 @@ dev-haskell/distributed-process-tests # Depends on distributed-process
 dev-haskell/distributed-process-simplelocalnet # Depends on distributed-process
 <=dev-haskell/fluent-logger-0.2.3.1
 dev-haskell/fluent-logger-conduit # Depends on fluent-logger
-
-# hololeap <hololeap@gmail.com> (11 Feb 2019)
-# Depcrecated in favor of dev-haskell/brick
-dev-haskell/vty-ui
-dev-haskell/hach # Depends on vty-ui
-games-puzzle/h2048 # Depends on vty-ui
