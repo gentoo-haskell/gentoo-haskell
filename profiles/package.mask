@@ -128,11 +128,6 @@ dev-haskell/chell-quickcheck
 app-emacs/ghc-mod
 dev-haskell/hare
 
-# Jack Todaro <jackmtodaro@gmail.com> (6 Aug 2018)
-# tagsoup-megaparsec is incompatible with megaparsec-6.0
-# https://github.com/gentoo-haskell/gentoo-haskell/pull/762
-dev-haskell/tagsoup-megaparsec
-
 # hololeap <hololeap@gmail.com> (09 Feb 2019)
 # Masked due to build failure with ghc-8.6.3
 <=dev-haskell/distributed-process-0.7.4
