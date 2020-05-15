@@ -105,11 +105,6 @@ dev-haskell/stm-hamt
 # Follow media-libs/gstreamer:0.10 mask for removal in ::gentoo
 dev-haskell/gstreamer
 
-# Sergei Trofimovich <slyfox@gentoo.org> (06 Feb 2019)
-# Not supported upstream. Lags behind in support of
-# many QuickCheck versions.
-dev-haskell/chell-quickcheck
-
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
 >=dev-haskell/http-client-0.6
