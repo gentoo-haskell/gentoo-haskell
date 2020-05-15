@@ -1,0 +1,14 @@
+--- a/Monky/MPD.hs
++++ b/Monky/MPD.hs
+@@ -217,7 +217,11 @@ getMPDSocket host port = do
+ 
+ -- |Get the raw 'Fd' from the 'MPDSocket' for eventing api
+ getMPDFd :: MPDSocket -> IO Fd
++#if MIN_VERSION_network(3,0,0)
++getMPDFd (MPDSocket s) = Fd <$> fdSocket s
++#else
+ getMPDFd (MPDSocket s) = return . Fd $fdSocket s
++#endif
+ 
+ 
+ recvMessage :: MPDSock -> ExceptT String IO [Text]
