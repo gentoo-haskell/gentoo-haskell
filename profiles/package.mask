@@ -133,14 +133,6 @@ dev-haskell/hare
 # https://github.com/gentoo-haskell/gentoo-haskell/pull/762
 dev-haskell/tagsoup-megaparsec
 
-# Sergei Trofimovich <slyfox@gentoo.org> (01 July 2018)
-# Follow ::gentoo's mask of qt:4
-# qt4 was removed in ::gentoo as:
-#    https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=e3f107efa567d5bd91410ec0828e01b68d3ef7ec
-dev-haskell/clocked
-dev-haskell/qthaskellc
-dev-haskell/qt
-
 # hololeap <hololeap@gmail.com> (09 Feb 2019)
 # Masked due to build failure with ghc-8.6.3
 <=dev-haskell/distributed-process-0.7.4
