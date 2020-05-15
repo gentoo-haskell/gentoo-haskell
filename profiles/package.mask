@@ -120,14 +120,6 @@ dev-haskell/chell-quickcheck
 # same reason.
 <dev-haskell/ghc-syb-utils-0.3
 
-# Jack Todaro <jackmtodaro@gmail.com> (19 Aug 2018)
-# app-emacs/ghc-mod needs porting to GHC 8.4 and
-# >=dev-haskell/hlint-2.1. Upstream porting is
-# currently underway.
-# https://github.com/DanielG/ghc-mod/issues/931
-app-emacs/ghc-mod
-dev-haskell/hare
-
 # hololeap <hololeap@gmail.com> (09 Feb 2019)
 # Masked due to build failure with ghc-8.6.3
 <=dev-haskell/distributed-process-0.7.4

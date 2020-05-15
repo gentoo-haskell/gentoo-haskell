@@ -1,8 +1,0 @@
-diff --git a/src/Language/Haskell/Refact/Utils/TypeSyn.hs b/src/Language/Haskell/Refact/Utils/TypeSyn.hs
-index 32e8b40..a1503b6 100644
---- a/src/Language/Haskell/Refact/Utils/TypeSyn.hs
-+++ b/src/Language/Haskell/Refact/Utils/TypeSyn.hs
-@@ -2,2 +2,3 @@
- {-# LANGUAGE FlexibleInstances #-}
-+{-# LANGUAGE OverlappingInstances #-}
- {-# LANGUAGE CPP #-}
