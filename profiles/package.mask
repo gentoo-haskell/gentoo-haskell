@@ -141,11 +141,6 @@ dev-haskell/clocked
 dev-haskell/qthaskellc
 dev-haskell/qt
 
-# Sergei Trofimovich <slyfox@gentoo.org> (06 Jan 2018)
-# Masked as many reverse dependencies depend on older versions.
-# Most of them need to be ported to newer version.
-dev-haskell/listenbrainz-client
-
 # hololeap <hololeap@gmail.com> (09 Feb 2019)
 # Masked due to build failure with ghc-8.6.3
 <=dev-haskell/distributed-process-0.7.4
