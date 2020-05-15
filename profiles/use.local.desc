@@ -150,8 +150,6 @@ dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using th
 dev-haskell/direct-sqlite:json1 - Enable json1 extension.
 dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library.
 dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library.
-dev-haskell/distributed-process:template_haskell - Enable additional test modules requiring Template Haskell support.
-dev-haskell/distributed-process-tests:tcp - Run TCP tests.
 dev-haskell/dotenv:dev - Turn on development settings.
 dev-haskell/encoding:systemencoding - Provide the getSystemEncoding action to query the locale.
 dev-haskell/entropy:halvm - Build for the HaLVM.

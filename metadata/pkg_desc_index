@@ -5,7 +5,6 @@ app-admin/super-user-spark 0.4.0.3: Configure your dotfile deployment with a DSL
 app-editors/leksah 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.16.9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r2 0.18.0: The Haskell-Scriptable Editor
-app-emacs/ghc-mod 5.8.0.0-r2 9999: Happy Haskell Programming
 app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/hindent 4.5.7 4.6.1 4.6.3 4.6.4 5.2.3 5.2.5 5.2.7 5.3.1: Extensible Haskell pretty printer
 app-emacs/idris-mode 0.9.18 9999: Idris syntax highlighting and (eventually) other things for emacs
@@ -294,7 +293,6 @@ dev-haskell/chasingbottoms 1.3.1.8: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.1.1 0.1.1.2: Experimental markdown processor
 dev-haskell/checkers 0.5.4: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.1 0.4.0.2: A simple and intuitive library for automated testing
-dev-haskell/chell-quickcheck 0.2.5.2: QuickCheck support for the Chell testing library
 dev-haskell/chimera 0.3.1.0: Lazy infinite streams with O(1) indexing
 dev-haskell/chr-core 0.1.0.4: Constraint Handling Rules
 dev-haskell/chr-data 0.1.0.1: Datatypes required for chr library
@@ -515,9 +513,6 @@ dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with u
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/discord-haskell 1.1.2-r1 1.4.0: Write bots for Discord in Haskell
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
-dev-haskell/distributed-process 0.6.6-r1: Cloud Haskell: Erlang-style concurrency in Haskell
-dev-haskell/distributed-process-simplelocalnet 0.2.3.3: Simple zero-configuration backend for Cloud Haskell
-dev-haskell/distributed-process-tests 0.4.11: Tests and test support tools for distributed-process
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.6.1: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
@@ -643,8 +638,6 @@ dev-haskell/flexible-defaults 0.0.3: Generate default function implementations f
 dev-haskell/floatinghex 0.4: Read and write hexadecimal floating point numbers
 dev-haskell/flock 0.3.1.8-r1: Wrapper for flock(2)
 dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagrams from plain text source
-dev-haskell/fluent-logger 0.2.3.1: A structured logger for Fluentd (Haskell)
-dev-haskell/fluent-logger-conduit 0.3.0.0: Conduit interface for fluent-logger
 dev-haskell/fmlist 0.9.3: FoldMap lists
 dev-haskell/focus 0.1.5.2 1.0.1.3: A general abstraction for manipulating elements of container data structures
 dev-haskell/foldl 1.3.7-r1 1.4.6: Composable, streaming, and efficient left folds
@@ -717,7 +710,7 @@ dev-haskell/ghc-paths 0.1.0.9 0.1.0.12-r1: Knowledge of GHC's installation direc
 dev-haskell/ghc-pkg-lib 0.3.1: Provide library support for ghc-pkg information
 dev-haskell/ghc-prof 1.4.1.7: Library for parsing GHC time and allocation profiling reports
 dev-haskell/ghc-simple 0.3 0.4: Simplified interface to the GHC API
-dev-haskell/ghc-syb-utils 0.2.3.3 0.3.0.0: Scrap Your Boilerplate utilities for the GHC API
+dev-haskell/ghc-syb-utils 0.3.0.0: Scrap Your Boilerplate utilities for the GHC API
 dev-haskell/ghc-tcplugins-extra 0.3 0.4: Utilities for writing GHC type-checker plugins
 dev-haskell/ghc-typelits-extra 0.3.3: Additional type-level operations on GHC.TypeLits.Nat
 dev-haskell/ghc-typelits-knownnat 0.7.2: Derive KnownNat constraints from other KnownNat constraints
@@ -795,7 +788,6 @@ dev-haskell/groundhog-th 0.7.0.1 0.10.2: Type-safe datatype-database mapping lib
 dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
 dev-haskell/groups 0.4.1.0: Haskell 98 groups
 dev-haskell/gsasl 0.3.7: Bindings for GNU libgsasl
-dev-haskell/gstreamer 0.12.8: Binding to the GStreamer open source multimedia framework
 dev-haskell/gtk 0.13.9 0.14.10-r3 0.15.4: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-sni-tray 0.1.6.0: A standalone StatusNotifierItem/AppIndicator tray
@@ -833,7 +825,6 @@ dev-haskell/happstack-plugins 7.0.2-r3: The haskell application server stack + r
 dev-haskell/happstack-server 7.5.3 7.6.0: Web related tools and services
 dev-haskell/happstack-server-tls 7.1.6.7-r1 7.2.1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.5 1.19.12: Happy is a parser generator for Haskell
-dev-haskell/hare 0.8.4.1: the Haskell Refactorer
 dev-haskell/harp 0.4.3.3: HaRP allows pattern-matching with regular expressions
 dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hascas 1.2.0: Cassandra driver for haskell
@@ -1237,7 +1228,6 @@ dev-haskell/liquiddesugar 9999: Haskell to GHC Core Desugarar for Liquid Haskell
 dev-haskell/liquidhaskell 0.8.0.0 0.8.6.2 9999: Liquid Types for Haskell
 dev-haskell/list 0.6.2: List monad transformer and class
 dev-haskell/list-t 1.0.1 1.0.4: ListT done right
-dev-haskell/listenbrainz-client 1.1.1: A client library to the ListenBrainz project
 dev-haskell/listlike 4.6.3: Generic support for list-like structures
 dev-haskell/listsafe 0.1.0.1: Safe wrappers for partial list functions, supporting MonadThrow
 dev-haskell/listzipper 1.2.0.2-r1: Simple zipper for lists
@@ -1950,7 +1940,6 @@ dev-haskell/tagged 0.8.6: Haskell 98 phantom types to avoid unsafely passing dum
 dev-haskell/tagged-transformer 0.8.1: Provides newtype wrappers for phantom types
 dev-haskell/tagshare 0.0: TagShare - explicit sharing with tags
 dev-haskell/tagsoup 0.14.8: Parsing and extracting information from (possibly malformed) HTML/XML documents
-dev-haskell/tagsoup-megaparsec 0.2.0.0: A Tag token parser and Tag specific parsing combinators
 dev-haskell/tagsoup-parsec 0.0.8: Tokenizes Tag, so [ Tag ] can be used as parser input
 dev-haskell/tagstream-conduit 0.5.5.3: streamlined html tag parser
 dev-haskell/takusen 0.8.7: Database library with left-fold interface, for PostgreSQL, Oracle, SQLite, ODBC
