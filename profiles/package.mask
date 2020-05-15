@@ -113,9 +113,3 @@ dev-haskell/chell-quickcheck
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
 >=dev-haskell/http-client-0.6
-
-# Jack Todaro <jackmtodaro@gmail.com> (21 December 2018)
-# ghc-syb-utils-0.2 is incompatible with ghc-8.4, but is
-# required by ghc-mod which is currently masked for the
-# same reason.
-<dev-haskell/ghc-syb-utils-0.3
