@@ -1,9 +1,0 @@
-diff --git a/test/src/Tests/Instances.hs b/test/src/Tests/Instances.hs
-index 752d0bd..2a1cca0 100644
---- a/test/src/Tests/Instances.hs
-+++ b/test/src/Tests/Instances.hs
-@@ -10,3 +10,3 @@ import Graphics.Vty.Widgets.Util
- 
--instance (Show a, Arbitrary a, Eq a) => Arbitrary (MaybeDefault a) where
-+instance (Show a, Arbitrary a, Eq a, Read a) => Arbitrary (MaybeDefault a) where
-     arbitrary = oneof [ pure Default

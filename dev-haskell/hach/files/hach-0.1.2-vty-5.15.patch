@@ -1,9 +1,0 @@
-diff --git a/nclient/NClient/GUI.hs b/nclient/NClient/GUI.hs
-index 5cb0256..f9b2cad 100644
---- a/nclient/NClient/GUI.hs
-+++ b/nclient/NClient/GUI.hs
-@@ -7,3 +7,3 @@ import Control.Monad (forever, forM_, void)
- import Data.IORef (newIORef, atomicModifyIORef)
--import Graphics.Vty hiding (Input, Output)
-+import Graphics.Vty hiding (Input, Output, regionWidth)
- import Graphics.Vty.Widgets.All

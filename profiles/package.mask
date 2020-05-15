@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (15 May 2020)
+# Was never tweake for ghc-7.10. Needs a network-3 port.
+dev-haskell/hp2any-graph
+
 # Jack Todaro <solpeth@posteo.org> (12 April 2020)
 # Mask haskell-src-exts-1.22 and reverse dependencies
 >=dev-haskell/haskell-src-exts-1.22
@@ -149,21 +153,3 @@ dev-haskell/distributed-process-tests # Depends on distributed-process
 dev-haskell/distributed-process-simplelocalnet # Depends on distributed-process
 <=dev-haskell/fluent-logger-0.2.3.1
 dev-haskell/fluent-logger-conduit # Depends on fluent-logger
-
-# hololeap <hololeap@gmail.com> (11 Feb 2019)
-# Depcrecated in favor of dev-haskell/brick
-dev-haskell/vty-ui
-dev-haskell/hach # Depends on vty-ui
-games-puzzle/h2048 # Depends on vty-ui
-
-# hololeap <hololeap@gmail.com> (14 Feb 2019)
-# These packages depend on slots of net-libs/webkit-gtk which are no longer
-# in the Portage tree.
-dev-haskell/webkit                    # Depends on net-libs/webkit-gtk:2
-dev-haskell/webkit-javascriptcore     # Depends on net-libs/webkit-gtk:2
-dev-haskell/webkitgtk3                # Depends on net-libs/webkit-gtk:3
-dev-haskell/webkitgtk3-javascriptcore # Depends on net-libs/webkit-gtk:3
-
-# hololeap <hololeap@gmail.com> (16 Feb 2019)
-# Incompatible with >=Cabal-2.4
-dev-haskell/gf
