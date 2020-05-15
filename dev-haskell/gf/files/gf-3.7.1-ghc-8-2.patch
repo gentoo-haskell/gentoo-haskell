@@ -1,9 +1,0 @@
-diff --git a/src/compiler/GF/Command/Commands.hs b/src/compiler/GF/Command/Commands.hs
-index 488d8cb..3161318 100644
---- a/src/compiler/GF/Command/Commands.hs
-+++ b/src/compiler/GF/Command/Commands.hs
-@@ -46,3 +46,3 @@ class (Functor m,Monad m,MonadSIO m) => HasPGFEnv m where getPGFEnv :: m PGFEnv
- 
--instance HasPGFEnv m => TypeCheckArg m where
-+instance (Monad m, HasPGFEnv m) => TypeCheckArg m where
-   typeCheckArg e = (either (fail . render . ppTcError) (return . fst)

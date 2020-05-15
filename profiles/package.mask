@@ -167,7 +167,3 @@ dev-haskell/webkit                    # Depends on net-libs/webkit-gtk:2
 dev-haskell/webkit-javascriptcore     # Depends on net-libs/webkit-gtk:2
 dev-haskell/webkitgtk3                # Depends on net-libs/webkit-gtk:3
 dev-haskell/webkitgtk3-javascriptcore # Depends on net-libs/webkit-gtk:3
-
-# hololeap <hololeap@gmail.com> (16 Feb 2019)
-# Incompatible with >=Cabal-2.4
-dev-haskell/gf

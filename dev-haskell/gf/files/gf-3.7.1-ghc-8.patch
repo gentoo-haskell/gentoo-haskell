@@ -1,9 +1,0 @@
-diff --git a/Setup.hs b/Setup.hs
-index fea8a69..efbccd5 100644
---- a/Setup.hs
-+++ b/Setup.hs
-@@ -374,3 +374,3 @@ default_gf lbi = buildDir lbi </> exeName' </> exeNameReal
-     exeName' = "gf"
--    exeNameReal = exeName' <.> exeExtension
-+    exeNameReal = exeName' <.> System.Directory.exeExtension
-     {- --old solution, could pick the wrong executable if there is more than one
