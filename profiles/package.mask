@@ -101,10 +101,6 @@ dev-haskell/stm-hamt
 # Many packages need porting.
 >=dev-haskell/primitive-0.7
 
-# Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
-# Follow media-libs/gstreamer:0.10 mask for removal in ::gentoo
-dev-haskell/gstreamer
-
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
 >=dev-haskell/http-client-0.6
