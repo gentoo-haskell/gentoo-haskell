@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (20 May 2020)
+# Was never tweaked for modern haskell-src-exts.
+dev-haskell/hothasktags
+
 # Sergei Trofimovich <slyfox@gentoo.org> (15 May 2020)
 # Was never tweaked for ghc-7.10. Needs a network-3 port.
 dev-haskell/hp2any-graph
