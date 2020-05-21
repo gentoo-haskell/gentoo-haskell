@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.17:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/clckwrks-0.25:=[profile?] <dev-haskell/clckwrks-0.26:=[profile?]
+	>=dev-haskell/clckwrks-0.25:=[profile?] <dev-haskell/clckwrks-0.27:=[profile?]
 	>=dev-haskell/happstack-hsp-7.2:=[profile?] <dev-haskell/happstack-hsp-7.5:=[profile?]
 	>=dev-haskell/happstack-server-7.0:=[profile?] <dev-haskell/happstack-server-7.7:=[profile?]
 	>=dev-haskell/hsp-0.9:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
