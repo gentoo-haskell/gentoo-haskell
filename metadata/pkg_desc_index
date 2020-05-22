@@ -318,8 +318,8 @@ dev-haskell/classy-prelude-yesod 1.5.0: Provide a classy prelude including commo
 dev-haskell/clay 0.13.1 0.13.3: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.24.0.10 0.25.4 0.26.0: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.2.17.2 0.3.0.1 0.3.0.3: a command-line interface for adminstrating some aspects of clckwrks
-dev-haskell/clckwrks-plugin-media 0.6.16.8: media plugin for clckwrks
-dev-haskell/clckwrks-plugin-page 0.4.3.19 0.4.3.21: support for CMS/Blogging in clckwrks
+dev-haskell/clckwrks-plugin-media 0.6.16.8 0.6.16.9: media plugin for clckwrks
+dev-haskell/clckwrks-plugin-page 0.4.3.19 0.4.3.22: support for CMS/Blogging in clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/cli 0.1.2: Command Line Interface
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
@@ -816,7 +816,7 @@ dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
 dev-haskell/hans 3.0.1: Network Stack
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
-dev-haskell/happstack-authenticate 2.3.4.15 2.4.0.2: Happstack Authentication Library
+dev-haskell/happstack-authenticate 2.3.4.15 2.4.0.3: Happstack Authentication Library
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
 dev-haskell/happstack-hsp 7.3.7.4: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
