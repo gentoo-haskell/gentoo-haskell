@@ -535,8 +535,6 @@ src_prepare() {
 		cd "${S}" # otherwise eapply will break
 
 		eapply "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
-		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
-		eapply "${FILESDIR}"/${PN}-9999-prim-libm.patch
 		eapply "${FILESDIR}"/${PN}-9999-no-relax-everywhere.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
