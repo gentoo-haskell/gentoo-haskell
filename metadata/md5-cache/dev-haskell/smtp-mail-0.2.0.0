@@ -9,5 +9,5 @@ LICENSE=BSD
 RDEPEND=dev-haskell/base16-bytestring:=[profile?] dev-haskell/base64-bytestring:=[profile?] dev-haskell/connection:=[profile?] dev-haskell/cryptohash:=[profile?] >=dev-haskell/mime-mail-0.5:=[profile?] <dev-haskell/mime-mail-0.6:=[profile?] dev-haskell/network:=[profile?] dev-haskell/network-bsd:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-8.4.3:=
 SLOT=0/0.2.0.0
 SRC_URI=https://hackage.haskell.org/package/smtp-mail-0.2.0.0/smtp-mail-0.2.0.0.tar.gz
-_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	342893d4182b8bbfeae3913e56c74637	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	797cda3549becfe50afdfa35192ca137	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	c5182eb7e501132153f9710aa822d170	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	797cda3549becfe50afdfa35192ca137	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
 _md5_=fef7be02043d1d6850279282ff8a5317
