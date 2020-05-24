@@ -1,9 +1,0 @@
-diff --git a/libraries/ghc-prim/ghc-prim.cabal b/libraries/ghc-prim/ghc-prim.cabal
-index 85a150d42d..4d601b38e8 100644
---- a/libraries/ghc-prim/ghc-prim.cabal
-+++ b/libraries/ghc-prim/ghc-prim.cabal
-@@ -71,3 +71,3 @@ Library
-     -- but ghc itself does not add '-lm'
--    extra-libraries: m
-+    extra-libraries: m, atomic
- 
