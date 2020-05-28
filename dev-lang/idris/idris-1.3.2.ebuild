@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -7,7 +7,7 @@ EAPI=7
 #hackport: flags: +release,-freestanding,-ci,-execonly
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit haskell-cabal toolchain-funcs
 
 DESCRIPTION="Functional Programming Language with Dependent Types"
 HOMEPAGE="http://www.idris-lang.org/"
@@ -76,6 +76,8 @@ src_prepare() {
 	[[ $(ghc-version) == 7.8.* ]] && replace-hcflags -O[2-9] -O1
 	[[ $(ghc-version) == 7.10.* ]] && replace-hcflags -O[2-9] -O1
 	replace-hcflags -g ''
+
+	tc-export AR CC RANLIB
 }
 
 src_configure() {
