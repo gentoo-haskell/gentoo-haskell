@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -24,7 +24,8 @@ IUSE=""
 RDEPEND=">=dev-haskell/connection-0.2.7:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/haskellnet-0.3:=[profile?]
-	>=dev-haskell/network-2.4:=[profile?]
+	>=dev-haskell/network-2.7:=[profile?] <dev-haskell/network-3.2:=[profile?]
+	>=dev-haskell/network-bsd-2.7:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?]
 	>=dev-haskell/tls-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -34,7 +35,16 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'network >= 2.4' 'network >= 2.7, network-bsd >= 2.7'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=noupperbounds
 }
+
+PATCHES=( "${FILESDIR}/${P}-network-3.patch" )
