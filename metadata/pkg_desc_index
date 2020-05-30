@@ -862,8 +862,8 @@ dev-haskell/haskelldb-hdbc-odbc 2.1.2-r1: HaskellDB support for the HDBC ODBC dr
 dev-haskell/haskelldb-hdbc-postgresql 2.1.2-r2: HaskellDB support for the HDBC PostgreSQL driver
 dev-haskell/haskelldb-hdbc-sqlite3 2.1.2-r1: HaskellDB support for the HDBC SQLite driver
 dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
-dev-haskell/haskellnet 0.5.1-r1: Client support for POP3, SMTP, and IMAP
-dev-haskell/haskellnet-ssl 0.3.4.1: Helpers to connect to SSL/TLS mail servers with HaskellNet
+dev-haskell/haskellnet 0.5.1-r2: Client support for POP3, SMTP, and IMAP
+dev-haskell/haskellnet-ssl 0.3.4.1-r1: Helpers to connect to SSL/TLS mail servers with HaskellNet
 dev-haskell/haskey 0.3.1.0: A transactional, ACID compliant, embeddable key-value store
 dev-haskell/haskey-btree 0.3.0.1: B+-tree implementation in Haskell
 dev-haskell/hasktags 0.71.2-r1 9999: Produces ctags "tags" and etags "TAGS" files for Haskell programs
