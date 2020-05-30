@@ -18,11 +18,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/clock-0.7:=[profile?]
-	dev-haskell/semigroups:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-1.24.0.0
 	test? ( >=dev-haskell/quickcheck-2.10
 		>=dev-haskell/quickcheck-instances-0.3.17 )
 "
