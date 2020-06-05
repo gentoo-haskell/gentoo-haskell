@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous modules: byte-order-0.1.2.0 byteorder-1.0.4
+
 RDEPEND="dev-haskell/appar:=[profile?]
 	dev-haskell/byteorder:=[profile?]
 	dev-haskell/network:=[profile?]
