@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -9,7 +9,7 @@ EAPI=6
 #     gentoo bug #303665
 #     gentoo bug #240036
 
-inherit flag-o-matic versionator
+inherit flag-o-matic versionator autotools
 
 IUSE="X opengl openal doc"
 
@@ -71,7 +71,14 @@ PATCHES=(
 	"${FILESDIR}"/hugs98-2005.3-conditional-doc.patch
 	"${FILESDIR}"/hugs98-2006.9-gcc-6.patch
 	"${FILESDIR}"/hugs98-2006.9-no-oasis.patch
+	"${FILESDIR}"/hugs98-2006.9-ld.patch
 )
+
+src_prepare() {
+	default
+
+	eautoconf
+}
 
 src_configure() {
 	# Strip -O? from CFLAGS because of bugs

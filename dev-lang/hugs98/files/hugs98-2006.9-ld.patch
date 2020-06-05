@@ -1,0 +1,11 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -263,7 +263,7 @@ RM="$RM -f"
+ AC_PATH_PROG(CP,cp)
+ fi
+ 
+-AC_CHECK_PROG(LD,ld,ld)
++AC_CHECK_TOOL(LD,ld)
+ 
+ AC_CHECK_PROGS(PERL,perl)  dnl should test for perl5
+ AC_PROG_MAKE_SET
