@@ -78,6 +78,8 @@ src_prepare() {
 	default
 
 	eautoconf
+
+	tc-export CC
 }
 
 src_configure() {
