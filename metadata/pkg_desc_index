@@ -2219,7 +2219,7 @@ dev-haskell/wuss 1.1.16: Secure WebSocket (WSS) clients
 dev-haskell/wx 0.92.3.0: wxHaskell
 dev-haskell/wxc 0.92.3.0: wxHaskell C++ wrapper
 dev-haskell/wxcore 0.92.3.0: wxHaskell core
-dev-haskell/wxdirect 0.92.3.0: helper tool for building wxHaskell
+dev-haskell/wxdirect 0.92.3.0 0.92.3.0-r1: helper tool for building wxHaskell
 dev-haskell/x11 1.6.1.2 1.7 1.8-r1 1.9.1: A binding to the X11 graphics library
 dev-haskell/x11-xft 0.3.1-r1: Bindings to the Xft, X Free Type interface library, and some Xrender parts
 dev-haskell/x509 1.7.5: X509 reader and writer
