@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,6 +16,8 @@ LICENSE="LGPL-2.1"
 SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+PATCHES=("${FILESDIR}"/${PN}-0.13.1.1-glib-2.62.patch)
 
 RDEPEND=">=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/gtk-0.14.3:=[profile?] <dev-haskell/gtk-0.15:=[profile?]
