@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/gtk2hs-buildtools-0.13.2.0:0= <dev-haskell/gtk2hs-buildtools-0.14:0=
 	virtual/pkgconfig
 "
+
+PATCHES=("${FILESDIR}"/${PN}-0.13.1-glib-2.62.patch)
 
 src_prepare() {
 	default
