@@ -34,6 +34,8 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
+PATCHES=("${FILESDIR}"/${PN}-0.14.10-glib-2.62.patch)
+
 src_prepare() {
 	default
 
