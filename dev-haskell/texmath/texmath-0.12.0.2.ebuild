@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="executable +network-uri"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-	>=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.21:=[profile?]
+	>=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.22:=[profile?]
 	>=dev-haskell/parsec-3:=[profile?]
 	>=dev-haskell/syb-0.4.2:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	dev-haskell/text:=[profile?]
