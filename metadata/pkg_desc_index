@@ -147,7 +147,7 @@ dev-haskell/aws 0.20 0.21.1 0.22-r1: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 1.1.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.1: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.1: base-compat with extra batteries
-dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
+dev-haskell/base-noprelude 4.12.0.0 4.13.0.0: "base" package sans "Prelude" module
 dev-haskell/base-orphans 0.5.4 0.8.2: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.3: The most complete prelude formed solely from the \
 dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functions and operators
@@ -925,12 +925,12 @@ dev-haskell/hjscript 0.7.0: HJScript is a Haskell EDSL for writing JavaScript pr
 dev-haskell/hjsmin 0.2.0.4: Haskell implementation of a javascript minifier
 dev-haskell/hjsonpointer 1.3.0-r1: JSON Pointer library
 dev-haskell/hjsonschema 1.8.0-r1: JSON Schema library
-dev-haskell/hledger 1.16.2 1.17.1.1: Command-line interface for the hledger accounting tool
+dev-haskell/hledger 1.17.1.1 1.18: Command-line interface for the hledger accounting tool
 dev-haskell/hledger-iadd 1.3.10: A terminal UI as drop-in replacement for hledger add
 dev-haskell/hledger-interest 1.5.3: computes interest for a given account
-dev-haskell/hledger-lib 1.16.2 1.17.1: Core data types, parsers and functionality for the hledger accounting tools
-dev-haskell/hledger-ui 1.16.2 1.17.1.1: Curses-style user interface for the hledger accounting tool
-dev-haskell/hledger-web 1.16.2 1.17.1: Web interface for the hledger accounting tool
+dev-haskell/hledger-lib 1.17.1 1.18: Core data types, parsers and functionality for the hledger accounting tools
+dev-haskell/hledger-ui 1.17.1.1 1.18: Curses-style user interface for the hledger accounting tool
+dev-haskell/hledger-web 1.17.1 1.18: Web interface for the hledger accounting tool
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.8.0: Low-level bindings to Libsass
@@ -1710,11 +1710,11 @@ dev-haskell/req 2.1.0: Easy-to-use, type-safe, expandable, high-level HTTP libra
 dev-haskell/rerebase 1.3.1 1.4.1: Reexports from 'base' with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
-dev-haskell/resourcet 1.1.11 1.2.3: Deterministic allocation and freeing of scarce resources
+dev-haskell/resourcet 1.1.11 1.2.4.1: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.7.0 0.8.1.1: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.4: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
-dev-haskell/rio 0.1.14.1 0.1.15.0: A standard library for Haskell
+dev-haskell/rio 0.1.15.0 0.1.16.0: A standard library for Haskell
 dev-haskell/rio-orphans 0.1.1.0: Orphan instances for the RIO type in the rio package
 dev-haskell/rio-prettyprint 0.1.0.0: Pretty-printing for RIO
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
@@ -1777,7 +1777,7 @@ dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment var
 dev-haskell/setlocale 1.0.0.9: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
 dev-haskell/sha 1.6.4.4: Implementations of the SHA suite of message digest functions
-dev-haskell/shake 0.16.4 0.18.4: Build system library, like Make, but more accurate dependencies
+dev-haskell/shake 0.16.4 0.18.4 0.19.1: Build system library, like Make, but more accurate dependencies
 dev-haskell/shakespeare 2.0.24: A toolkit for making compile-time interpolated templates
 dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at compile time. (deprecated)
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
@@ -1984,7 +1984,7 @@ dev-haskell/test-framework-th-prime 0.0.9: Template Haskell for test framework
 dev-haskell/testing-feat 1.1.0.0: Functional Enumeration of Algebraic Types
 dev-haskell/testing-type-modifiers 0.1.0.1: Data type modifiers for property based testing
 dev-haskell/testpack 2.1.3.0-r1: Test Utililty Pack for HUnit and QuickCheck (unmaintained)
-dev-haskell/texmath 0.9.4.2 0.11.3 0.12.0.1: Conversion between formats used to represent mathematics
+dev-haskell/texmath 0.9.4.2 0.11.3 0.12.0.2: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.2-r2: Functions for running Tex from Haskell
 dev-haskell/text 1.2.3.0 1.2.3.1 1.2.3.2 1.2.4.0: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
