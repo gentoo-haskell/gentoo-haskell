@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (10 June 2020)
+# Unmaintained since 2010, requires old version of
+# dev-haskell/gtk (no longer available in ::haskell)
+dev-haskell/gtkimageview
+
 # Sergei Trofimovich <slyfox@gentoo.org> (20 May 2020)
 # Was never tweaked for modern haskell-src-exts.
 dev-haskell/hothasktags
