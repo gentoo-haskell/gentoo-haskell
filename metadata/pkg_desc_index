@@ -1805,7 +1805,7 @@ dev-haskell/signal 0.1.0.4: Multiplatform signal support for Haskell
 dev-haskell/silently 1.2.5.1: Prevent or capture writing to stdout and other handles
 dev-haskell/simple-affine-space 0.1: A simple library for affine and vector spaces
 dev-haskell/simple-cabal 0.1.1: Cabal file wrapper library
-dev-haskell/simple-cmd 0.2.1: Simple String-based process commands
+dev-haskell/simple-cmd 0.2.1 0.2.2: Simple String-based process commands
 dev-haskell/simple-cmd-args 0.1.6: Simple command args parsing and execution
 dev-haskell/simple-log 0.9.12: Simple log for Haskell
 dev-haskell/simple-neural-networks 0.2.0.1: Simple parallel neural networks implementation
