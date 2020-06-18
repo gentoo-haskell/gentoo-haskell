@@ -2354,7 +2354,7 @@ dev-util/shelltestrunner 1.3.5-r1 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.11.1-r1 0.2.12 0.2.13: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r3: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
-dev-vcs/git-annex 6.20180529 6.20180626 6.20181011 7.20190122 7.20190129 7.20191024 8.20200330: manage files with git, without checking their contents into git
+dev-vcs/git-annex 7.20191024 8.20200330 8.20200617: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-action/nikki 9999: Nikki and the robots game
