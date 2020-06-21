@@ -25,8 +25,8 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.3:=
 	dev-haskell/data-default:=
 	>=dev-haskell/extra-1.6.3:=
 	>=dev-haskell/fsnotify-0.2.1.2:= <dev-haskell/fsnotify-0.4:=
-	>=dev-haskell/hledger-1.18:= <dev-haskell/hledger-1.19:=
-	>=dev-haskell/hledger-lib-1.18:= <dev-haskell/hledger-lib-1.19:=
+	>=dev-haskell/hledger-1.18.1:= <dev-haskell/hledger-1.19:=
+	>=dev-haskell/hledger-lib-1.18.1:= <dev-haskell/hledger-lib-1.19:=
 	>=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-8.1:=
 	>=dev-haskell/microlens-0.4:=
 	>=dev-haskell/microlens-platform-0.2.3.1:=
