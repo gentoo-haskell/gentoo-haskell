@@ -573,7 +573,7 @@ dev-haskell/erd 0.2.0.0 0.2.1.0: An entity-relationship diagram generator from a
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.2.5 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 2.7.0 3.3.3.1: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 2.7.0 3.3.3.2: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7: Library for computer music research and education
@@ -2289,7 +2289,7 @@ dev-haskell/yesod-sitemap 1.6.0: Generate XML sitemaps
 dev-haskell/yesod-static 1.5.3.1 1.6.0.1: Static file serving subsite for Yesod Web Framework
 dev-haskell/yesod-static-angular 0.1.8: Yesod generators for embedding AngularJs code into yesod-static at compile time
 dev-haskell/yesod-table 2.0.3: HTML tables for Yesod
-dev-haskell/yesod-test 1.5.8 1.6.9 1.6.9.1: integration testing for WAI/Yesod Applications
+dev-haskell/yesod-test 1.5.8 1.6.10: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.10: Yesod support for Text.Markdown
 dev-haskell/yesod-websockets 0.3.0.2: WebSockets support for Yesod
 dev-haskell/yesod-worker 0.1.0.0: Initial project template from stack
