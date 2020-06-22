@@ -37,7 +37,7 @@ DEPEND="${RDEPEND}
 	test? ( <dev-haskell/extra-1.8
 		<dev-haskell/quickcheck-2.15
 		<dev-haskell/resourcet-1.3
-		<dev-haskell/tasty-1.3
+		<dev-haskell/tasty-1.4
 		<dev-haskell/tasty-hunit-0.11
 		<dev-haskell/tasty-quickcheck-0.11 )
 "
