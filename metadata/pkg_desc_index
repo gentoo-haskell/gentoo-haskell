@@ -353,7 +353,7 @@ dev-haskell/concurrent-split 0.0.1.1: MVars and Channels with distinguished inpu
 dev-haskell/concurrent-supply 0.1.8: A fast concurrent unique identifier supply with a pure API
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.13 1.3.1.2: Streaming data processing library
+dev-haskell/conduit 1.2.13 1.3.2: Streaming data processing library
 dev-haskell/conduit-audio 0.2.0.3: Combinators to efficiently slice and dice audio streams
 dev-haskell/conduit-audio-lame 0.1.2.1: conduit-audio interface to the LAME MP3 library
 dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
@@ -2174,8 +2174,8 @@ dev-haskell/wai-http2-extra 0.1.2: WAI utilities for HTTP/2
 dev-haskell/wai-logger 2.3.6: A logging system for WAI
 dev-haskell/wai-test 3.0.0: Unit test framework (built on HUnit) for WAI applications. (deprecated)
 dev-haskell/wai-websockets 3.0.1.2: Provide a bridge between WAI and the websockets package
-dev-haskell/warp 3.2.26 3.3.10: A fast, light-weight web server for WAI applications
-dev-haskell/warp-tls 3.2.8 3.2.11: HTTP over TLS support for Warp via the TLS package
+dev-haskell/warp 3.2.26 3.3.13: A fast, light-weight web server for WAI applications
+dev-haskell/warp-tls 3.2.12: HTTP over TLS support for Warp via the TLS package
 dev-haskell/washngo 2.12.0.1: WASH is a family of EDSLs for programming Web applications in Haskell
 dev-haskell/wave 0.2.0: WAVE audio file IO library
 dev-haskell/wavy 0.1.0.0: Process WAVE files in Haskell
