@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (25 June 2020)
+# Depends on dev-tex/polytable, which is masked for
+# deletion. Also doesn't build with ghc-8.6.5.
+<dev-haskell/lhs2tex-1.20
+
 # Jack Todaro <solpeth@posteo.org> (10 June 2020)
 # Unmaintained since 2010, requires old version of
 # dev-haskell/gtk (no longer available in ::haskell)
