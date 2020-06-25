@@ -1205,7 +1205,7 @@ dev-haskell/lens-family-th 0.5.0.2: Generate lens-family style lenses
 dev-haskell/lens-simple 0.1.0.9: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.8: Simple Functional Lenses
 dev-haskell/leveldb-haskell 0.6.5: Haskell bindings to LevelDB
-dev-haskell/lhs2tex 1.19-r1: Preprocessor for typesetting Haskell sources with LaTeX
+dev-haskell/lhs2tex 1.19-r1 1.24: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.7.0: Lastfm API interface
 dev-haskell/liblawless 0.26.0-r3: Prelude based on protolude for GHC 8 and beyond
