@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/quickcheck-2.10:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/syb-0.1.0.2:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
 "
