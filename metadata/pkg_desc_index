@@ -334,7 +334,7 @@ dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
 dev-haskell/colonnade 1.2.0.2-r1: Generic types and functions for columnar encoding and decoding
-dev-haskell/color 0.1.4: Color spaces and conversions between them
+dev-haskell/color 0.1.4 0.2.0: Color spaces and conversions between them
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
@@ -1270,8 +1270,8 @@ dev-haskell/map-syntax 0.3: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.17.4: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.5.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
-dev-haskell/massiv 0.5.0.0: Massiv is an Array Library
-dev-haskell/massiv-io 0.2.1.0: Import/export of Image files into massiv Arrays
+dev-haskell/massiv 0.5.2.0: Massiv is an Array Library
+dev-haskell/massiv-io 0.2.1.0 0.3.0.1: Import/export of Image files into massiv Arrays
 dev-haskell/massiv-test 0.1.3: Library that contains generators, properties and tests for Massiv Array Library
 dev-haskell/math-functions 0.3.3.0: Special functions and Chebyshev polynomials
 dev-haskell/matrices 0.5.0: native matrix based on vector
