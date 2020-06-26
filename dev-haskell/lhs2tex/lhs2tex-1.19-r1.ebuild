@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -15,10 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-# dev-texlive/texlive-mathextra contains 'stmaryrd' font used
+# dev-texlive/texlive-mathscience contains 'stmaryrd' font used
 # for guide generation
-RDEPEND=">=dev-tex/polytable-0.8.2
-	|| ( dev-texlive/texlive-mathscience dev-texlive/texlive-mathextra )"
+# dev-texlive/texlive-latexextra for polytable
+RDEPEND="dev-texlive/texlive-latexextra
+	dev-texlive/texlive-mathscience"
 
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.10
