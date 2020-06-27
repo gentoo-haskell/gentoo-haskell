@@ -27,7 +27,6 @@ RDEPEND="dev-haskell/data-default-class:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
-	>=dev-haskell/cabal-doctest-1.0.6
 	test? ( >=dev-haskell/doctest-0.15
 		dev-haskell/mersenne-random-pure64
 		dev-haskell/quickcheck
