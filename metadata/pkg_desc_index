@@ -1887,7 +1887,7 @@ dev-haskell/storable-complex 0.2.3.0: Storable instance for Complex
 dev-haskell/storable-record 0.0.4.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.3: Storable instance for pairs and triples
 dev-haskell/storablevector 0.2.13: Fast, packed, strict storable arrays with a list interface like ByteString
-dev-haskell/store 0.4.3.2: Fast binary serialization
+dev-haskell/store 0.4.3.2 0.7.4: Fast binary serialization
 dev-haskell/store-core 0.4.4.2: Fast and lightweight binary serialization
 dev-haskell/strafunski-strategylib 5.0.1.0: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
