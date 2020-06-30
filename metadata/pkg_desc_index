@@ -298,7 +298,7 @@ dev-haskell/chr-core 0.1.0.4: Constraint Handling Rules
 dev-haskell/chr-data 0.1.0.1: Datatypes required for chr library
 dev-haskell/chr-parse 0.1.0.0: Parsing for chr library
 dev-haskell/chr-pretty 0.1.0.0: Pretty printing for chr library
-dev-haskell/chronos 1.0.4-r1 1.1: A performant time library
+dev-haskell/chronos 1.0.4-r1 1.1.1: A performant time library
 dev-haskell/chunked-data 0.3.1: Typeclasses for dealing with various chunked data representations
 dev-haskell/cipher-aes 0.2.11: Fast AES cipher implementation with advanced mode of operations
 dev-haskell/cipher-aes128 0.7.0.5-r1: AES and common modes using AES-NI when available
@@ -640,7 +640,7 @@ dev-haskell/flock 0.3.1.8-r1: Wrapper for flock(2)
 dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagrams from plain text source
 dev-haskell/fmlist 0.9.3: FoldMap lists
 dev-haskell/focus 0.1.5.2 1.0.1.3: A general abstraction for manipulating elements of container data structures
-dev-haskell/foldl 1.3.7-r1 1.4.6: Composable, streaming, and efficient left folds
+dev-haskell/foldl 1.3.7-r1 1.4.7: Composable, streaming, and efficient left folds
 dev-haskell/follow-file 0.0.3: Be notified when a file gets appended, solely with what was added
 dev-haskell/fontyfruity 0.5.3.5: A true type file format loader
 dev-haskell/force-layout 0.4.0.6-r1: Simple force-directed layout
@@ -652,7 +652,7 @@ dev-haskell/free 5.1.3: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
 dev-haskell/freer-effects 0.3.0.1: Implementation of effect system for Haskell
 dev-haskell/fresco-binding 0.3.0: Fresco binding for Haskell
-dev-haskell/friday 0.2.3.1: A functional image processing library for Haskell
+dev-haskell/friday 0.2.3.1-r1: A functional image processing library for Haskell
 dev-haskell/friday-devil 0.1.1.1: Haskell bindings for DevIL C library
 dev-haskell/frisby 0.2.3: Linear time composable parser for PEG grammars
 dev-haskell/from-sum 0.2.3.0: Canonical fromMaybeM and fromEitherM functions
@@ -1579,7 +1579,7 @@ dev-haskell/prettyprinter 1.3.0 1.5.1 1.6.1: A modern, easy to use, well-documen
 dev-haskell/prettyprinter-ansi-terminal 1.1.1.2: ANSI terminal backend for the "prettyprinter" package
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
-dev-haskell/primitive 0.6.4.0 0.7.0.1: Primitive memory-related operations
+dev-haskell/primitive 0.6.4.0 0.7.1.0: Primitive memory-related operations
 dev-haskell/primitive-addr 0.1.0.2: Addresses to unmanaged memory
 dev-haskell/primitive-extras 0.8: Extras for the "primitive" library
 dev-haskell/primitive-unaligned 0.1.1.1: Unaligned access to primitive arrays
@@ -1665,7 +1665,7 @@ dev-haskell/reflex-backend-wai 0.1.0.0: Reflex interface to 'wai'
 dev-haskell/reflex-basic-host 0.2.0.1-r1: A basic Reflex host for backend work
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
 dev-haskell/reflex-process 0.1.0.1: reflex-frp interface for running shell commands
-dev-haskell/reflex-vty 0.1.3.0-r1: Reflex FRP host and widgets for vty applications
+dev-haskell/reflex-vty 0.1.3.0-r1 0.1.4.0: Reflex FRP host and widgets for vty applications
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
 dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.3: Happstack support for reform
