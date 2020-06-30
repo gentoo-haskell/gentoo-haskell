@@ -19,7 +19,7 @@ IUSE="buildwebsite +checkexternal +previewserver +usepandoc +watchserver"
 
 RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
-	>=dev-haskell/cryptonite-0.25:=[profile?] <dev-haskell/cryptonite-0.27:=[profile?]
+	>=dev-haskell/cryptonite-0.25:=[profile?] <dev-haskell/cryptonite-0.28:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/file-embed-0.0.10.1:=[profile?] <dev-haskell/file-embed-0.0.12:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.3:=[profile?]
@@ -54,7 +54,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.14
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.3
+		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.4
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
 "
