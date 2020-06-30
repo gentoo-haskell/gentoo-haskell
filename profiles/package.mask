@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (30 June 2020)
+# Unmaintained since 2016, dependencies need updating.
+# Masked for deletion.
+dev-haskell/yarr
+
 # Jack Todaro <solpeth@posteo.org> (25 June 2020)
 # Depends on dev-tex/polytable, which is masked for
 # deletion. Also doesn't build with ghc-8.6.5.
