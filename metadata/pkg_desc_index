@@ -48,7 +48,7 @@ dev-haskell/aeson-extra 0.4.1.3: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.8.8: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.2 0.8.3: JSON quasiquoter for Haskell
-dev-haskell/alex 3.2.4: Alex is a tool for generating lexical analysers in Haskell
+dev-haskell/alex 3.2.4 3.2.5: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/alex-tools 0.4: A set of functions for a common use case of Alex
 dev-haskell/algebra 4.3.1: Constructive abstract algebra
 dev-haskell/align 0.1.1.2: Sequence alignment algorithms
@@ -479,8 +479,8 @@ dev-haskell/dependent-sum-template 0.1.0.0: Template Haskell code to generate in
 dev-haskell/derive 2.6.5: A program and library to derive instances for data types
 dev-haskell/deriving-compat 0.3.6 0.5.8: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/dhall 1.0.2-r1 1.30.0: A configuration language guaranteed to terminate
-dev-haskell/dhall-nix 1.0.0-r1 1.1.12: Dhall to Nix compiler
+dev-haskell/dhall 1.0.2-r1 1.30.0 1.33.0: A configuration language guaranteed to terminate
+dev-haskell/dhall-nix 1.0.0-r1 1.1.12 1.1.15: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.4-r1 0.8.0.5: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1: Cairo backend for diagrams drawing EDSL
@@ -830,7 +830,7 @@ dev-haskell/harpy 0.6.0.2: Runtime code generation for x86 machine code
 dev-haskell/hascas 1.2.0: Cassandra driver for haskell
 dev-haskell/hashable 1.2.7.0: A class for types that can be converted to a hash value
 dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
-dev-haskell/hashable-time 0.2.0.2: Hashable instances for Data.Time
+dev-haskell/hashable-time 0.2.0.2-r1: Hashable instances for Data.Time
 dev-haskell/hashed-storage 0.5.11: Hashed file storage support code
 dev-haskell/hashing 0.1.0.1: A pure haskell library implements several hash algorithms
 dev-haskell/hashmap 1.3.3: Persistent containers Map and Set based on hashing
@@ -867,7 +867,7 @@ dev-haskell/haskellnet-ssl 0.3.4.1-r1: Helpers to connect to SSL/TLS mail server
 dev-haskell/haskey 0.3.1.0: A transactional, ACID compliant, embeddable key-value store
 dev-haskell/haskey-btree 0.3.0.1: B+-tree implementation in Haskell
 dev-haskell/hasktags 0.71.2-r1 9999: Produces ctags "tags" and etags "TAGS" files for Haskell programs
-dev-haskell/hasmin 1.0.2: CSS Minifier
+dev-haskell/hasmin 1.0.2-r1: CSS Minifier
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.22.1.0: The Haskell LaTeX library
