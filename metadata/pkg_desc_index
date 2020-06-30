@@ -12,7 +12,7 @@ app-emacs/structured-haskell-mode 1.0.20-r2 1.1.0: Structured editing Emacs mode
 app-forensics/quickfuzz 0.1_p20160920 9999: An experimental grammar fuzzer in Haskell using QuickCheck
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/fquery 0.2.3 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
-app-portage/hackport 0.6 0.6.1 0.6.2 0.6.3 0.6.4-r1 9999: Hackage and Portage integration tool
+app-portage/hackport 0.6.3 0.6.4-r1 0.6.5 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
@@ -805,7 +805,7 @@ dev-haskell/haddock 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.2 2.18.1 2.19.0.1 
 dev-haskell/haddock-api 2.16.1 2.17.3 2.18.1 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.2 1.4.4 1.5.0.1 1.6.0-r1 1.7.0 1.8.0 1.9.0: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.9.8.0-r1 4.12.5.2 4.13.3.0: A static website compiler library
+dev-haskell/hakyll 4.9.8.0-r1 4.12.5.2 4.13.4.0: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10-r1: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.3: Hakyll SASS compiler over hsass
 dev-haskell/half 0.3-r1: Half-precision floating-point
