@@ -48,6 +48,9 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	default
+
+	cabal_chdeps \
+		'base       >= 4.8      && < 4.13' 'base       >= 4.8'
 	#if use noprefs; then
 	#	epatch "${FILESDIR}/${PN}"-0.13.3-nopref.patch
 	#fi
