@@ -58,47 +58,47 @@ dev-haskell/alsa-mixer 0.3.0: Bindings to the ALSA simple mixer API
 dev-haskell/alsa-pcm 0.6.1.1: Binding to the ALSA Library API (PCM audio)
 dev-haskell/alsa-seq 0.6.0.7: Binding to the ALSA Library API (MIDI sequencer)
 dev-haskell/alut 2.4.0.3: A binding for the OpenAL Utility Toolkit
-dev-haskell/amazonka-cloudformation 1.4.5 1.6.0 1.6.1: Amazon CloudFormation SDK
-dev-haskell/amazonka-cloudfront 1.4.5 1.6.0 1.6.1: Amazon CloudFront SDK
-dev-haskell/amazonka-cloudhsm 1.4.5 1.6.0 1.6.1: Amazon CloudHSM SDK
-dev-haskell/amazonka-cloudsearch 1.4.5 1.6.0 1.6.1: Amazon CloudSearch SDK
-dev-haskell/amazonka-cloudsearch-domains 1.4.5 1.6.0 1.6.1: Amazon CloudSearch Domain SDK
-dev-haskell/amazonka-cloudtrail 1.4.5 1.6.0 1.6.1: Amazon CloudTrail SDK
-dev-haskell/amazonka-cloudwatch 1.4.5 1.6.0 1.6.1: Amazon CloudWatch SDK
-dev-haskell/amazonka-codedeploy 1.4.5 1.6.0 1.6.1: Amazon CodeDeploy SDK
-dev-haskell/amazonka-cognito-identity 1.4.5 1.6.0 1.6.1: Amazon Cognito Identity SDK
-dev-haskell/amazonka-cognito-sync 1.4.5 1.6.0 1.6.1: Amazon Cognito Sync SDK
-dev-haskell/amazonka-config 1.4.5 1.6.0 1.6.1: Amazon Config SDK
-dev-haskell/amazonka-core 1.4.5 1.6.0-r1 1.6.1: Core data types and functionality for Amazonka libraries
-dev-haskell/amazonka-datapipeline 1.4.5 1.6.0 1.6.1: Amazon Data Pipeline SDK
-dev-haskell/amazonka-devicefarm 1.4.5 1.6.0 1.6.1: Amazon Device Farm SDK
-dev-haskell/amazonka-directconnect 1.4.5 1.6.0 1.6.1: Amazon Direct Connect SDK
-dev-haskell/amazonka-discovery 1.4.5 1.6.0 1.6.1: Amazon Application Discovery Service SDK
-dev-haskell/amazonka-dms 1.4.5 1.6.0 1.6.1: Amazon Database Migration Service SDK
-dev-haskell/amazonka-dynamodb 1.4.5 1.6.0 1.6.1: Amazon DynamoDB SDK
-dev-haskell/amazonka-ec2 1.4.5 1.6.0 1.6.1: Amazon Elastic Compute Cloud SDK
-dev-haskell/amazonka-ecr 1.4.5 1.6.0 1.6.1: Amazon EC2 Container Registry SDK
-dev-haskell/amazonka-elasticache 1.4.5 1.6.0 1.6.1: Amazon ElastiCache SDK
-dev-haskell/amazonka-elasticsearch 1.4.5 1.6.0 1.6.1: Amazon Elasticsearch Service SDK
-dev-haskell/amazonka-elastictranscoder 1.4.5 1.6.0 1.6.1: Amazon Elastic Transcoder SDK
-dev-haskell/amazonka-iam 1.4.5 1.6.0 1.6.1: Amazon Identity and Access Management SDK
-dev-haskell/amazonka-kinesis 1.4.5 1.6.0 1.6.1: Amazon Kinesis SDK
-dev-haskell/amazonka-lambda 1.4.5 1.6.0 1.6.1: Amazon Lambda SDK
-dev-haskell/amazonka-marketplace-analytics 1.4.5 1.6.0 1.6.1: Amazon Marketplace Commerce Analytics SDK
-dev-haskell/amazonka-opsworks 1.4.5 1.6.0 1.6.1: Amazon OpsWorks SDK
-dev-haskell/amazonka-redshift 1.4.5 1.6.0 1.6.1: Amazon Redshift SDK
-dev-haskell/amazonka-route53 1.4.5 1.6.0 1.6.1: Amazon Route 53 SDK
-dev-haskell/amazonka-route53-domains 1.4.5 1.6.0 1.6.1: Amazon Route 53 Domains SDK
-dev-haskell/amazonka-s3 1.4.5 1.6.0 1.6.1: Amazon Simple Storage Service SDK
-dev-haskell/amazonka-sdb 1.4.5 1.6.0 1.6.1: Amazon SimpleDB SDK
-dev-haskell/amazonka-ses 1.4.5 1.6.0 1.6.1: Amazon Simple Email Service SDK
-dev-haskell/amazonka-shield 1.4.5 1.6.0 1.6.1: Amazon Shield SDK
-dev-haskell/amazonka-sms 1.4.5 1.6.0 1.6.1: Amazon Server Migration Service SDK
-dev-haskell/amazonka-sns 1.4.5 1.6.0 1.6.1: Amazon Simple Notification Service SDK
-dev-haskell/amazonka-stepfunctions 1.4.5 1.6.0 1.6.1: Amazon Step Functions SDK
-dev-haskell/amazonka-storagegateway 1.4.5 1.6.0 1.6.1: Amazon Storage Gateway SDK
-dev-haskell/amazonka-support 1.4.5 1.6.0 1.6.1: Amazon Support SDK
-dev-haskell/amazonka-test 1.4.5 1.6.0 1.6.1: Common functionality for Amazonka library test-suites
+dev-haskell/amazonka-cloudformation 1.4.5 1.6.1: Amazon CloudFormation SDK
+dev-haskell/amazonka-cloudfront 1.4.5 1.6.1: Amazon CloudFront SDK
+dev-haskell/amazonka-cloudhsm 1.4.5 1.6.1: Amazon CloudHSM SDK
+dev-haskell/amazonka-cloudsearch 1.4.5 1.6.1: Amazon CloudSearch SDK
+dev-haskell/amazonka-cloudsearch-domains 1.4.5 1.6.1: Amazon CloudSearch Domain SDK
+dev-haskell/amazonka-cloudtrail 1.4.5 1.6.1: Amazon CloudTrail SDK
+dev-haskell/amazonka-cloudwatch 1.4.5 1.6.1: Amazon CloudWatch SDK
+dev-haskell/amazonka-codedeploy 1.4.5 1.6.1: Amazon CodeDeploy SDK
+dev-haskell/amazonka-cognito-identity 1.4.5 1.6.1: Amazon Cognito Identity SDK
+dev-haskell/amazonka-cognito-sync 1.4.5 1.6.1: Amazon Cognito Sync SDK
+dev-haskell/amazonka-config 1.4.5 1.6.1: Amazon Config SDK
+dev-haskell/amazonka-core 1.4.5 1.6.1: Core data types and functionality for Amazonka libraries
+dev-haskell/amazonka-datapipeline 1.4.5 1.6.1: Amazon Data Pipeline SDK
+dev-haskell/amazonka-devicefarm 1.4.5 1.6.1: Amazon Device Farm SDK
+dev-haskell/amazonka-directconnect 1.4.5 1.6.1: Amazon Direct Connect SDK
+dev-haskell/amazonka-discovery 1.4.5 1.6.1: Amazon Application Discovery Service SDK
+dev-haskell/amazonka-dms 1.4.5 1.6.1: Amazon Database Migration Service SDK
+dev-haskell/amazonka-dynamodb 1.4.5 1.6.1: Amazon DynamoDB SDK
+dev-haskell/amazonka-ec2 1.4.5 1.6.1: Amazon Elastic Compute Cloud SDK
+dev-haskell/amazonka-ecr 1.4.5 1.6.1: Amazon EC2 Container Registry SDK
+dev-haskell/amazonka-elasticache 1.4.5 1.6.1: Amazon ElastiCache SDK
+dev-haskell/amazonka-elasticsearch 1.4.5 1.6.1: Amazon Elasticsearch Service SDK
+dev-haskell/amazonka-elastictranscoder 1.4.5 1.6.1: Amazon Elastic Transcoder SDK
+dev-haskell/amazonka-iam 1.4.5 1.6.1: Amazon Identity and Access Management SDK
+dev-haskell/amazonka-kinesis 1.4.5 1.6.1: Amazon Kinesis SDK
+dev-haskell/amazonka-lambda 1.4.5 1.6.1: Amazon Lambda SDK
+dev-haskell/amazonka-marketplace-analytics 1.4.5 1.6.1: Amazon Marketplace Commerce Analytics SDK
+dev-haskell/amazonka-opsworks 1.4.5 1.6.1: Amazon OpsWorks SDK
+dev-haskell/amazonka-redshift 1.4.5 1.6.1: Amazon Redshift SDK
+dev-haskell/amazonka-route53 1.4.5 1.6.1: Amazon Route 53 SDK
+dev-haskell/amazonka-route53-domains 1.4.5 1.6.1: Amazon Route 53 Domains SDK
+dev-haskell/amazonka-s3 1.4.5 1.6.1: Amazon Simple Storage Service SDK
+dev-haskell/amazonka-sdb 1.4.5 1.6.1: Amazon SimpleDB SDK
+dev-haskell/amazonka-ses 1.4.5 1.6.1: Amazon Simple Email Service SDK
+dev-haskell/amazonka-shield 1.4.5 1.6.1: Amazon Shield SDK
+dev-haskell/amazonka-sms 1.4.5 1.6.1: Amazon Server Migration Service SDK
+dev-haskell/amazonka-sns 1.4.5 1.6.1: Amazon Simple Notification Service SDK
+dev-haskell/amazonka-stepfunctions 1.4.5 1.6.1: Amazon Step Functions SDK
+dev-haskell/amazonka-storagegateway 1.4.5 1.6.1: Amazon Storage Gateway SDK
+dev-haskell/amazonka-support 1.4.5 1.6.1: Amazon Support SDK
+dev-haskell/amazonka-test 1.4.5 1.6.1: Common functionality for Amazonka library test-suites
 dev-haskell/amqp 0.19.1: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/amqp-worker 0.3.2: High level functions for working with message queues
 dev-haskell/angel 0.6.2: Process management and supervision daemon
@@ -763,7 +763,7 @@ dev-haskell/gloss-examples 1.13.0.2: Examples using the gloss library
 dev-haskell/gloss-juicy 0.2.3: Load any image supported by Juicy.Pixels in your gloss application
 dev-haskell/gloss-raster 1.13.1.1: Parallel rendering of raster images
 dev-haskell/gloss-rendering 1.13.1.1: Gloss picture data types and rendering functions
-dev-haskell/glpk-hs 0.5: Comprehensive GLPK linear programming bindings
+dev-haskell/glpk-hs 0.5 0.7: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.4: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.7.0.15: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.10.3: Miscellaneous OpenGL utilities
@@ -1630,7 +1630,7 @@ dev-haskell/quickcheck-unicode 1.0.1.0: Generator and shrink functions for testi
 dev-haskell/quickcheckvariant 0.2.0.0: Generator of "valid" and "invalid" data in a type class
 dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
 dev-haskell/random 1.1: random number library
-dev-haskell/random-fu 0.2.7.3: Random number generation
+dev-haskell/random-fu 0.2.7.4: Random number generation
 dev-haskell/random-shuffle 0.0.4: Random shuffle implementation
 dev-haskell/random-source 0.3.0.6-r1: Generic basis for random number generators
 dev-haskell/ranged-sets 0.3.0 0.4.0: Ranged sets for Haskell
@@ -2341,7 +2341,7 @@ dev-tex/polytable 0.8.2-r1: tabular-like environments with named columns
 dev-util/bnfc 2.8.3: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4 0.7.2: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
-dev-util/codex 0.5.1.2-r2 0.5.2.0: A ctags file generator for cabal project dependencies
+dev-util/codex 0.5.1.2-r2 0.5.2.0 0.6.0.0: A ctags file generator for cabal project dependencies
 dev-util/corrode 9999: C-to-rust source-to-source transformer
 dev-util/darcs-graph 1.0: Generate graphs of darcs repository activity
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
