@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (30 June 2020)
+# Unmaintained since 2017, dependencies need updating.
+# Masked for deletion.
+dev-haskell/liblawless
+
+# Jack Todaro <solpeth@posteo.org> (30 June 2020)
 # Unmaintained since 2016, dependencies need updating.
 # Masked for deletion.
 dev-haskell/yarr
