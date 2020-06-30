@@ -1,0 +1,9 @@
+diff --git a/Setup.hs b/Setup.hs
+deleted file mode 100644
+index 656d14b..0000000
+--- a/Setup.hs
++++ /dev/null
+@@ -1,3 +0,0 @@
+-#!/usr/bin/env runhaskell
+-import Distribution.Simple
+-main = defaultMainWithHooks defaultUserHooks
