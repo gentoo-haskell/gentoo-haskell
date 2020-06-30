@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hashable-1.2.3.3:=[profile?] <=dev-haskell/hashable-1.3:=[profile?]
+RDEPEND=">=dev-haskell/hashable-1.2.3.3:=[profile?] <=dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -29,5 +29,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >=4.7 && <4.13' 'base >=4.7'
+		'base >=4.7 && <4.13' 'base >=4.7' \
+		'hashable >=1.2.3.3 && <=1.3' 'hashable >=1.2.3.3'
 }
