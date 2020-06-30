@@ -147,7 +147,7 @@ dev-haskell/aws 0.20 0.21.1 0.22-r1: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 1.1.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.1: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.1: base-compat with extra batteries
-dev-haskell/base-noprelude 4.12.0.0 4.13.0.0: "base" package sans "Prelude" module
+dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
 dev-haskell/base-orphans 0.5.4 0.8.2: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.3: The most complete prelude formed solely from the \
 dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functions and operators
@@ -1819,8 +1819,8 @@ dev-haskell/singleton-bool 0.1.5-r1: Type level booleans
 dev-haskell/singletons 1.1.2.1 2.1 2.2 2.4.1 2.5.1: A framework for generating singleton types
 dev-haskell/size-based 0.1.2.0: Sized functors, for size-based enumerations
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.4.3.2 0.7.7 0.8.3.4: syntax highlighting library
-dev-haskell/skylighting-core 0.7.7 0.8.3.4: syntax highlighting library
+dev-haskell/skylighting 0.4.3.2 0.7.7 0.8.5: syntax highlighting library
+dev-haskell/skylighting-core 0.7.7 0.8.5: syntax highlighting library
 dev-haskell/slave-thread 1.1: A principal solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.1.5: A property-based testing library
 dev-haskell/smtlib 1.1: A library for working with the SMTLIB format
@@ -2352,7 +2352,7 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.7.0 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.11.1-r1 0.2.12 0.2.13: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r3: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r3 2.14.4: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 7.20191024 8.20200330 8.20200617: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
