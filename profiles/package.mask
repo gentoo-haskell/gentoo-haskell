@@ -1,3 +1,13 @@
+# Jack Todaro <solpeth@posteo.org> (30 June 2020)
+# Unmaintained since 2017, dependencies need updating.
+# Masked for deletion.
+dev-haskell/liblawless
+
+# Jack Todaro <solpeth@posteo.org> (30 June 2020)
+# Unmaintained since 2016, dependencies need updating.
+# Masked for deletion.
+dev-haskell/yarr
+
 # Jack Todaro <solpeth@posteo.org> (25 June 2020)
 # Depends on dev-tex/polytable, which is masked for
 # deletion. Also doesn't build with ghc-8.6.5.
@@ -104,18 +114,6 @@ dev-haskell/base-noprelude
 # Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
 # Too many packages require <dev-haskell/optparse-applicative-0.15
 >=dev-haskell/optparse-applicative-0.15
-
-# Mark Wright <gienah@gentoo.org> (13 Oct 2019)
-# Reverse dependencies of >=dev-haskell/primitive-0.7
-dev-haskell/primitive-extras
-dev-haskell/primitive-unlifted
->=dev-haskell/slave-thread-1.1
->=dev-haskell/stm-containers-1.1.0.4
-dev-haskell/stm-hamt
-
-# Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
-# Many packages need porting.
->=dev-haskell/primitive-0.7
 
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
