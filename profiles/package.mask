@@ -1,4 +1,16 @@
 # Jack Todaro <solpeth@posteo.org> (30 June 2020)
+# Requires Cabal-3.0
+>=dev-util/codex-0.6
+
+# Jack Todaro <solpeth@posteo.org> (30 June 2020)
+# Unmaintained since 2018, requires porting to
+# optparse-applicative-0.15. csv-to-qif is a
+# reverse dependency of spreadsheet
+dev-haskell/spreadsheet
+dev-haskell/csv-to-qif
+dev-haskell/wordpass
+
+# Jack Todaro <solpeth@posteo.org> (30 June 2020)
 # Unmaintained since 2017, dependencies need updating.
 # Masked for deletion.
 dev-haskell/liblawless
