@@ -110,18 +110,6 @@ dev-haskell/base-noprelude
 # Too many packages require <dev-haskell/optparse-applicative-0.15
 >=dev-haskell/optparse-applicative-0.15
 
-# Mark Wright <gienah@gentoo.org> (13 Oct 2019)
-# Reverse dependencies of >=dev-haskell/primitive-0.7
-dev-haskell/primitive-extras
-dev-haskell/primitive-unlifted
->=dev-haskell/slave-thread-1.1
->=dev-haskell/stm-containers-1.1.0.4
-dev-haskell/stm-hamt
-
-# Sergei Trofimovich <slyfox@gentoo.org> (28 Apr 2019)
-# Many packages need porting.
->=dev-haskell/primitive-0.7
-
 # Jack Todaro <jackmtodaro@gmail.com> (19 Jan 2019)
 # Too many packages depend on lower versions
 >=dev-haskell/http-client-0.6
