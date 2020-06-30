@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="executable"
 
-RDEPEND="~dev-haskell/skylighting-core-0.8.3.4:=[profile?]
+RDEPEND="~dev-haskell/skylighting-core-0.8.5:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 	executable? ( >=dev-haskell/blaze-html-0.5:=[profile?]
 			dev-haskell/pretty-show:=[profile?]
