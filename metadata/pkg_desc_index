@@ -1,6 +1,6 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.12 1.3.1 1.3.2 9999: Rebuild Haskell dependencies in Gentoo
-app-admin/propellor 5.10.1: property-based host configuration management in haskell
+app-admin/propellor 5.10.2: property-based host configuration management in haskell
 app-admin/super-user-spark 0.4.0.3: Configure your dotfile deployment with a DSL
 app-editors/leksah 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.16.9999: Metadata collection for leksah
@@ -611,7 +611,7 @@ dev-haskell/feed 0.3.12.0 1.0.0.0 1.3.0.1: Interfacing with RSS (v 0.9x, 2.x, 1.
 dev-haskell/fficxx 0.3.1: automatic C++ binding generation
 dev-haskell/ffmpeg-light 0.12.2.2: Minimal bindings to the FFmpeg library
 dev-haskell/fft 0.1.8.6: Bindings to the FFTW library
-dev-haskell/fgl 5.5.3.1 5.6.0.0: Martin Erwig's Functional Graph Library
+dev-haskell/fgl 5.5.3.1 5.6.0.0 5.7.0.2: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.5: QuickCheck support for fgl
 dev-haskell/fgl-visualize 0.1.0.1: Convert FGL graphs to dot (graphviz) files
 dev-haskell/file-embed 0.0.11.2: Use Template Haskell to embed file contents directly
@@ -781,10 +781,10 @@ dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connec
 dev-haskell/graphviz 2999.18.1.2 2999.20.0.4: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2.1: Pretty printing for well-behaved Show instances
-dev-haskell/groundhog 0.7.0.3-r1 0.10.0: Type-safe datatype-database mapping library
-dev-haskell/groundhog-postgresql 0.7.0.2-r2 0.10: PostgreSQL backend for the groundhog library
-dev-haskell/groundhog-sqlite 0.7.0.1 0.10.0: Sqlite3 backend for the groundhog library
-dev-haskell/groundhog-th 0.7.0.1 0.10.2: Type-safe datatype-database mapping library
+dev-haskell/groundhog 0.7.0.3-r1 0.10.0 0.11.0: Type-safe datatype-database mapping library
+dev-haskell/groundhog-postgresql 0.7.0.2-r2 0.10 0.11: PostgreSQL backend for the groundhog library
+dev-haskell/groundhog-sqlite 0.7.0.1 0.10.0 0.11.0: Sqlite3 backend for the groundhog library
+dev-haskell/groundhog-th 0.7.0.1 0.10.2 0.11: Type-safe datatype-database mapping library
 dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
 dev-haskell/groups 0.4.1.0: Haskell 98 groups
 dev-haskell/gsasl 0.3.7: Bindings for GNU libgsasl
