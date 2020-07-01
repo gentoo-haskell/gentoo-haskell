@@ -1,7 +1,7 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.12 1.3.1 1.3.2 9999: Rebuild Haskell dependencies in Gentoo
 app-admin/propellor 5.10.2: property-based host configuration management in haskell
-app-admin/super-user-spark 0.4.0.3: Configure your dotfile deployment with a DSL
+app-admin/super-user-spark 0.4.0.3 0.4.0.4: Configure your dotfile deployment with a DSL
 app-editors/leksah 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.16.9999: Metadata collection for leksah
 app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r2 0.18.0: The Haskell-Scriptable Editor
@@ -272,7 +272,7 @@ dev-haskell/cassava 0.5.1.0 0.5.2.0: A CSV parsing and encoding library
 dev-haskell/cassava-megaparsec 2.0.1: Megaparsec parser of CSV files that plays nicely with Cassava
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
-dev-haskell/cborg 0.2.2.1: Concise Binary Object Representation
+dev-haskell/cborg 0.2.3.0: Concise Binary Object Representation
 dev-haskell/cborg-json 0.2.2.0: A library for encoding JSON as CBOR
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.5.8.1: A binary serialization library
@@ -1579,7 +1579,7 @@ dev-haskell/prettyprinter 1.3.0 1.5.1 1.6.1: A modern, easy to use, well-documen
 dev-haskell/prettyprinter-ansi-terminal 1.1.1.2: ANSI terminal backend for the "prettyprinter" package
 dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
-dev-haskell/primitive 0.6.4.0 0.7.1.0: Primitive memory-related operations
+dev-haskell/primitive 0.6.4.0 0.7.0.1 0.7.1.0: Primitive memory-related operations
 dev-haskell/primitive-addr 0.1.0.2: Addresses to unmanaged memory
 dev-haskell/primitive-extras 0.8: Extras for the "primitive" library
 dev-haskell/primitive-unaligned 0.1.1.1: Unaligned access to primitive arrays
@@ -1763,7 +1763,7 @@ dev-haskell/semirings 0.5.3: two monoids as one, in holy haskimony
 dev-haskell/semver 0.3.4: Representation, manipulation, and de/serialisation of Semantic Versions
 dev-haskell/sendfile 0.7.11.1: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
-dev-haskell/serialise 0.2.2.0: A binary serialisation library for Haskell values
+dev-haskell/serialise 0.2.3.0: A binary serialisation library for Haskell values
 dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.14.1 0.17: A family of combinators for defining webservices APIs
 dev-haskell/servant-client 0.14 0.17: automatical derivation of querying functions for servant webservices
