@@ -101,3 +101,9 @@ src_configure() {
 		$(cabal_flag static static) \
 		$(cabal_flag trypandoc trypandoc)
 }
+
+src_install() {
+	haskell-cabal_src_install
+
+	doman "${S}/man/${PN}.1"
+}
