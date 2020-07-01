@@ -1,4 +1,8 @@
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
+# Unmaintained since 2015
+dev-haskell/herbieplugin
+
+# Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Unmaintained since 2014, fails to build with
 # ghc-8.8.3. Masked for deletion.
 dev-haskell/haskelldb
