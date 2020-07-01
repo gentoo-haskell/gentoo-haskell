@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.11.1:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	>=dev-haskell/http-client-0.4.30:=[profile?] <dev-haskell/http-client-0.6:=[profile?]
+	>=dev-haskell/http-client-0.4.30:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/mtl-1.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
@@ -41,7 +41,10 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	default
-	cabal_chdeps 'containers       >= 0.5.0.0 && <0.6' 'containers >= 0.5 && <0.7'
+
+	cabal_chdeps \
+		'containers       >= 0.5.0.0 && <0.6' 'containers >= 0.5 && <0.7' \
+		'http-client      >= 0.4.30  && <0.6' 'http-client      >= 0.4.30'
 }
 
 src_configure() {
