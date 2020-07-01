@@ -1,4 +1,19 @@
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
+# Unmaintained since 2015
+dev-haskell/herbieplugin
+
+# Jack Todaro <solpeth@posteo.org> (1 July 2020)
+# Unmaintained since 2014, fails to build with
+# ghc-8.8.3. Masked for deletion.
+dev-haskell/haskelldb
+dev-haskell/haskelldb-hdbc
+dev-haskell/haskelldb-hdbc-mysql
+dev-haskell/haskelldb-hdbc-odbc
+dev-haskell/haskelldb-hdbc-postgresql
+dev-haskell/haskelldb-hdbc-sqlite3
+dev-haskell/haskelldb-th
+
+# Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # <=dev-haskell/cborg-0.2.3.0 fails to build with
 # >=dev-haskell/primitive-0.7.1
 >=dev-haskell/primitive-0.7.1
@@ -122,13 +137,6 @@ dev-haskell/base-noprelude
 # Jack Todaro <jack.todaro@posteo.net> (18 Dec 2019)
 # Some packages require ansi-terminal < 0.10
 >=dev-haskell/ansi-terminal-0.10
-
-# Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
-# This package revision contains patches enabling cabal-3
-# support, but it is not backwards compatible. Users
-# experimenting with cabal-3 should unmask this package
-# revision for compatibility.
-=dev-haskell/gtk2hs-buildtools-0.13.5.1-r1
 
 # Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
 # <=dev-haskell/haddock-library-1.8.0 requires <dev-haskell/tree-diff-0.1
