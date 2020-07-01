@@ -44,7 +44,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'containers       >= 0.5.0.0 && <0.6' 'containers >= 0.5 && <0.7' \
-		'http-client      >= 0.4.30  && <0.6' 'http-client      >= 0.4.30'
+		'http-client      >= 0.4.30  && <0.6' 'http-client      >= 0.4.30' \
+		'time             >= 1.4     && <1.9' 'time             >= 1.4'
 }
 
 src_configure() {

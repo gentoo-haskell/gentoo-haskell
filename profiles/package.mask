@@ -1,4 +1,29 @@
 # Jack Todaro <solpeth@posteo.org> (2 July 2020)
+# Requires porting to newer base
+dev-haskell/wl-pprint-extras
+dev-haskell/wl-pprint-terminfo
+
+# Jack Todaro <solpeth@posteo.org> (2 July 2020)
+# Masked for deletion
+dev-lang/elm-repl
+dev-lang/elm-reactor
+dev-lang/elm-make
+dev-lang/elm-package
+<dev-lang/elm-compiler-0.19
+<dev-lang/elm-0.19
+
+# Jack Todaro <solpeth@posteo.org> (2 July 2020)
+# Needs porting to base-4.13
+dev-haskell/bloodhound
+dev-haskell/log
+dev-haskell/log-elasticsearch
+
+# Jack Todaro <solpeth@posteo.org> (2 July 2020)
+# Unmaintained since 2012-2014. Masked for deletion
+dev-haskell/vacuum
+dev-haskell/vacuum-graphviz
+
+# Jack Todaro <solpeth@posteo.org> (2 July 2020)
 # Unmaintained, requires porting to newer gtk dep
 dev-haskell/glade
 dev-haskell/gt-tools
@@ -23,6 +48,7 @@ dev-haskell/stack-run-auto
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Unmaintained/abandoned since 2015-2018
 dev-haskell/hipmunk
+dev-haskell/hipmunkplayground
 games-action/nikki
 
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
