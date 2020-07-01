@@ -154,7 +154,7 @@ dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functi
 dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding for ByteStrings
 dev-haskell/base32-bytestring 0.2.1.0: Fast base32 and base32hex codec for ByteStrings
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
-dev-haskell/base64-bytestring 1.0.0.2: Fast base64 encoding and decoding for ByteStrings
+dev-haskell/base64-bytestring 1.0.0.3: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
 dev-haskell/basement 0.0.7 0.0.11: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.7.0: An enhanced core prelude; a common foundation for alternate preludes
@@ -215,7 +215,7 @@ dev-haskell/blaze-html 0.8.1.3 0.9.1.2: A blazingly fast HTML combinator library
 dev-haskell/blaze-markup 0.7.1.1 0.8.2.4: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.6.1: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
-dev-haskell/bloodhound 0.16.0.0-r1: ElasticSearch client library for Haskell
+dev-haskell/bloodhound 0.16.0.0-r2: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.4: Generalized booleans and numbers
@@ -266,6 +266,8 @@ dev-haskell/call-stack 0.1.0 0.2.0: Use GHC call-stacks in a backward compatible
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/capri 0.1-r1: A simple wrapper over cabal-install to operate in project-private mode
 dev-haskell/carray 0.1.6.8: A C-compatible array library
+dev-haskell/casa-client 0.0.1: Client for Casa
+dev-haskell/casa-types 0.0.1: Types for Casa
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.2.0.11 1.2.1.0: Case insensitive string comparison
 dev-haskell/cassava 0.5.1.0 0.5.2.0: A CSV parsing and encoding library
@@ -867,7 +869,7 @@ dev-haskell/haskellnet-ssl 0.3.4.1-r1: Helpers to connect to SSL/TLS mail server
 dev-haskell/haskey 0.3.1.0: A transactional, ACID compliant, embeddable key-value store
 dev-haskell/haskey-btree 0.3.0.1: B+-tree implementation in Haskell
 dev-haskell/hasktags 0.71.2-r1 9999: Produces ctags "tags" and etags "TAGS" files for Haskell programs
-dev-haskell/hasmin 1.0.2-r1: CSS Minifier
+dev-haskell/hasmin 1.0.3: CSS Minifier
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hastache 0.6.1: Haskell implementation of Mustache templates
 dev-haskell/hatex 3.22.1.0: The Haskell LaTeX library
@@ -1043,7 +1045,7 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.14: A library for client-side HTTP
 dev-haskell/http-api-data 0.3.10 0.4.1.1: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
-dev-haskell/http-client 0.4.30 0.5.14 0.6.4: An HTTP client engine
+dev-haskell/http-client 0.4.30 0.5.14 0.6.4.1: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-openssl 0.3.0.0: http-client backend using the OpenSSL library
@@ -1051,7 +1053,7 @@ dev-haskell/http-client-tls 0.3.5.3: http-client backend using the connection pa
 dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.2.4 2.3.7.3: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.8: HTTP Date parser/formatter
-dev-haskell/http-download 0.1.0.1: Verified downloads with retries
+dev-haskell/http-download 0.1.0.1 0.2.0.0: Verified downloads with retries
 dev-haskell/http-link-header 1.0.3.1: An RFC 5988 parser and writer for the HTTP Link header
 dev-haskell/http-media 0.7.1.3 0.8.0.0: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
@@ -1388,7 +1390,7 @@ dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/natural-sort 0.1.2: User-friendly text collation
 dev-haskell/natural-transformation 0.4-r7: A natural transformation package
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
-dev-haskell/neat-interpolation 0.3.2.1 0.3.2.5: A quasiquoter for neat and simple multiline text interpolation
+dev-haskell/neat-interpolation 0.3.2.1 0.3.2.6: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netlink 1.1.1.0: Netlink communication for Haskell
 dev-haskell/netpbm 1.0.3-r1: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.3: Functional reactive programming library
@@ -1472,7 +1474,7 @@ dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, imag
 dev-haskell/pandoc-types 1.17.6 1.20: Types for representing a structured document
 dev-haskell/pango 0.13.8.1: Binding to the Pango text rendering engine
 dev-haskell/panic 0.4.0.1: A convenient way to panic
-dev-haskell/pantry 0.2.0.0: Content addressable Haskell package management
+dev-haskell/pantry 0.2.0.0 0.5.1.1: Content addressable Haskell package management
 dev-haskell/parallel 3.2.2.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r3: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.2.0.9: Full-featured command-line argument parsing library
@@ -1826,11 +1828,11 @@ dev-haskell/smallcheck 1.1.5: A property-based testing library
 dev-haskell/smtlib 1.1: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.6 0.2.0.0: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0-r1: A simple SMTP client library
-dev-haskell/snap 1.1.2.0: Top-level package for the Snap Web Framework
+dev-haskell/snap 1.1.2.0 1.1.3.0: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 0.9.8.0 1.0.4.1: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 1.0.0.1: Snap: A Haskell Web Framework: dynamic loader
 dev-haskell/snap-loader-static 1.0.0.0: Snap static loader
-dev-haskell/snap-server 0.9.5.1-r1 1.1.1.1-r1 9999: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
+dev-haskell/snap-server 0.9.5.1-r1 1.1.1.1-r1 1.1.1.2 9999: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 dev-haskell/snap-templates 1.0.0.2: Scaffolding CLI for the Snap Framework
 dev-haskell/snaplet-sqlite-simple 1.0.0.2-r1: sqlite-simple snaplet for the Snap Framework
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
@@ -1861,7 +1863,7 @@ dev-haskell/sr-extra 1.46.3.2 1.64 1.72.3: A grab bag of modules
 dev-haskell/srcloc 0.5.1.2: Data types for managing source code locations
 dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
-dev-haskell/stack 2.1.3.1 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 2.1.3.1 2.3.1 9.9.9: The Haskell Tool Stack
 dev-haskell/stack-bin 1.5.1 1.6.1 1.7.1 2.1.3: The Haskell Tool Stack (Binary)
 dev-haskell/stack-run-auto 0.1.1.4: Initial project template from stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
