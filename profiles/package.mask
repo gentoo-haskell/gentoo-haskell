@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (2 July 2020)
+# Unmaintained since 2012-2014. Masked for deletion
+dev-haskell/vacuum
+dev-haskell/vacuum-graphviz
+
+# Jack Todaro <solpeth@posteo.org> (2 July 2020)
 # Unmaintained, requires porting to newer gtk dep
 dev-haskell/glade
 dev-haskell/gt-tools
