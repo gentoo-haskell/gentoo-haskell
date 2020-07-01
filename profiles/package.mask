@@ -134,13 +134,6 @@ dev-haskell/base-noprelude
 # Some packages require ansi-terminal < 0.10
 >=dev-haskell/ansi-terminal-0.10
 
-# Jack Todaro <jack.todaro@posteo.net> (26 Oct 2019)
-# This package revision contains patches enabling cabal-3
-# support, but it is not backwards compatible. Users
-# experimenting with cabal-3 should unmask this package
-# revision for compatibility.
-=dev-haskell/gtk2hs-buildtools-0.13.5.1-r1
-
 # Jack Todaro <jack.todaro@posteo.net> (16 Oct 2019)
 # <=dev-haskell/haddock-library-1.8.0 requires <dev-haskell/tree-diff-0.1
 >=dev-haskell/tree-diff-0.1
