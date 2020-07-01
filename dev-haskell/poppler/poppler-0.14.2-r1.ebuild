@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,9 +25,9 @@ RDEPEND="app-text/poppler[cairo]
 	>=dev-lang/ghc-7.4.1:=
 	x11-libs/cairo
 	x11-libs/pango
-	gtk3? ( >=dev-haskell/gtk3-0.14.3:=[profile?] <dev-haskell/gtk3-0.15:=[profile?]
+	gtk3? ( >=dev-haskell/gtk3-0.14.3:=[profile?] <dev-haskell/gtk3-0.16:=[profile?]
 		x11-libs/gtk+:3 )
-	!gtk3? ( >=dev-haskell/gtk-0.14.3:=[profile?] <dev-haskell/gtk-0.15:=[profile?]
+	!gtk3? ( >=dev-haskell/gtk-0.14.3:=[profile?] <dev-haskell/gtk-0.16:=[profile?]
 			dev-libs/glib:2
 			x11-libs/gtk+:2 )
 "
@@ -41,7 +41,9 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'Cabal >= 1.24 && < 2.1' 'Cabal >= 1.24'
+		'Cabal >= 1.24 && < 2.1' 'Cabal >= 1.24' \
+		'gtk >= 0.14.3 && < 0.15' 'gtk >= 0.14.3' \
+		'gtk3 >= 0.14.3 && < 0.15' 'gtk3 >= 0.14.3'
 }
 
 src_configure() {
