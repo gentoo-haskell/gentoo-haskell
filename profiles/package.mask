@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (2 July 2020)
+# Requires Cabal-3
+>=dev-haskell/stack-2.3
+>=dev-haskell/pantry-0.5
+
+# Jack Todaro <solpeth@posteo.org> (2 July 2020)
 # Unmaintained and deprecated since 2015
 dev-haskell/tables
 
