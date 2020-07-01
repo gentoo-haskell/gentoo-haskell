@@ -1,9 +1,9 @@
 --- a/mk/config.mk.in
 +++ b/mk/config.mk.in
 @@ -934,3 +934,11 @@ endif
- # on core-i7 for 'compiler/hsSyn/HsExpr.hs') and sometimes not compile
- # at all: powerpc64 overflows TOC section on 'compiler/hsSyn/HsExpr.hs'
- #         ia64 overflows short data section on 'compiler/main/DynFlags.hs'
+ # on core-i7 for 'compiler/GHC/Hs/Expr.hs') and sometimes not compile
+ # at all: powerpc64 overflows TOC section on 'compiler/GHC/Hs/Expr.hs'
+ #         ia64 overflows short data section on 'compiler/GHC/Driver/Session.hs'
 +
 +# bytestring overflows gp addressing. Disable GP optimisations.
 +ifeq "$(TargetArch_CPP)" "nios2"
