@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
+# Unmaintained/abandoned since 2015-2018
+dev-haskell/hipmunk
+games-action/nikki
+
+# Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Unmaintained since 2015
 dev-haskell/herbieplugin
 
