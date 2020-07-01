@@ -1,3 +1,9 @@
+# Jack Todaro <solpeth@posteo.org> (1 July 2020)
+# Needs porting to newer Cabal versions. Also mask
+# revdeps.
+dev-haskell/hgettext
+dev-haskell/bustle
+
 # Jack Todaro <solpeth@posteo.org> (30 June 2020)
 # Requires Cabal-3.0
 >=dev-util/codex-0.6
