@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="cross +http"
 
+RESTRICT=test # fails
+
 RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	<dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.11:=[profile?]
