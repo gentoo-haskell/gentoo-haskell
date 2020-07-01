@@ -1,4 +1,15 @@
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
+# Unmaintained since 2014, fails to build with
+# ghc-8.8.3. Masked for deletion.
+dev-haskell/haskelldb
+dev-haskell/haskelldb-hdbc
+dev-haskell/haskelldb-hdbc-mysql
+dev-haskell/haskelldb-hdbc-odbc
+dev-haskell/haskelldb-hdbc-postgresql
+dev-haskell/haskelldb-hdbc-sqlite3
+dev-haskell/haskelldb-th
+
+# Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # <=dev-haskell/cborg-0.2.3.0 fails to build with
 # >=dev-haskell/primitive-0.7.1
 >=dev-haskell/primitive-0.7.1
