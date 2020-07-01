@@ -694,7 +694,7 @@ dev-haskell/genvalidity-text 0.6.0.0 0.7.0.2: GenValidity support for Text
 dev-haskell/genvalidity-unordered-containers 0.3.0.1: GenValidity support for unordered-containers
 dev-haskell/genvalidity-vector 0.3.0.1: GenValidity support for aeson
 dev-haskell/getopt-generics 0.13.0.4: Create command line interfaces with ease
-dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.2 8.4.4 8.6.1: The Glasgow Haskell Compiler API (ghc package)
+dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.2 8.4.4 8.6.1 8.8.3: The Glasgow Haskell Compiler API (ghc package)
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.12.0 0.13.0: Library and tool for parsing .eventlog files from GHC
@@ -702,8 +702,8 @@ dev-haskell/ghc-exactprint 0.6.2: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.5.7 0.6.1: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.8.1 8.8.2: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser 8.8.1 8.8.2: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser-ex 8.8.5.3: Algorithms on GHC parse trees
+dev-haskell/ghc-lib-parser 8.8.1 8.8.2 8.8.3.20200412.1: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-lib-parser-ex 8.8.5.3 8.8.6.0: Algorithms on GHC parse trees
 dev-haskell/ghc-mtl 1.2.1.0: An mtl compatible version of the Ghc-Api monads and monad-transformers
 dev-haskell/ghc-parser 0.2.1.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.9 0.1.0.12-r1: Knowledge of GHC's installation directories
