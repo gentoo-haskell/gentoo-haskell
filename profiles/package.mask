@@ -1,4 +1,8 @@
 # Jack Todaro <solpeth@posteo.org> (2 July 2020)
+# Unmaintained and deprecated since 2015
+dev-haskell/tables
+
+# Jack Todaro <solpeth@posteo.org> (2 July 2020)
 # Unmaintained since 2015, incompatible with >= Cabal-2
 dev-haskell/extract-dependencies
 dev-haskell/stack-run-auto
