@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
+# <=dev-haskell/cborg-0.2.3.0 fails to build with
+# >=dev-haskell/primitive-0.7.1
+>=dev-haskell/primitive-0.7.1
+
+# Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Needs porting to newer Cabal versions. Also mask
 # revdeps.
 dev-haskell/hgettext
