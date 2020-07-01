@@ -489,7 +489,7 @@ dev-haskell/diagrams-cairo 1.4.1.1: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.4.1: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.4.4: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.4.2: Core libraries for diagrams EDSL
-dev-haskell/diagrams-gtk 1.4: Backend for rendering diagrams directly to GTK windows
+dev-haskell/diagrams-gtk 1.4-r1: Backend for rendering diagrams directly to GTK windows
 dev-haskell/diagrams-lib 1.4.3: Embedded domain-specific language for declarative graphics
 dev-haskell/diagrams-pgf 1.4.1.1: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.4.1-r1: Postscript backend for diagrams drawing EDSL
@@ -797,7 +797,7 @@ dev-haskell/gtk-strut 0.1.3.0: Libary for creating strut windows with gi-gtk
 dev-haskell/gtk-traymanager 0.1.6 1.0.1: A wrapper around the eggtraymanager library for Linux system trays
 dev-haskell/gtk2hs-buildtools 0.13.5.1 0.13.8.0: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.9 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
-dev-haskell/gtkglext 0.13.2.0-r1: Binding to the GTK+ OpenGL Extension
+dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
 dev-haskell/gtksourceview2 0.13.3.1: Binding to the GtkSourceView library
 dev-haskell/gtksourceview3 0.13.3.1: Binding to the GtkSourceView library
@@ -1556,7 +1556,7 @@ dev-haskell/polysemy 1.3.0.0: Higher-order, low-boilerplate, zero-cost free mona
 dev-haskell/polysemy-plugin 0.2.5.0: Disambiguate obvious uses of effects
 dev-haskell/polysemy-zoo 0.7.0.0: Experimental, user-contributed effects and interpreters for polysemy
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
-dev-haskell/poppler 0.14.1 0.14.2: Binding to the Poppler
+dev-haskell/poppler 0.14.1 0.14.2-r1: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.2.0.0: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-binary 0.12.2: Encoders and decoders for the PostgreSQL's binary format
@@ -2363,7 +2363,7 @@ games-action/nikki 9999: Nikki and the robots game
 games-arcade/blubber 0.0.1-r1: The blubber client; connects to the blubber server
 games-arcade/blubber-server 0.0.1-r5: The blubber server, serves blubber clients
 games-arcade/shu-thing 1.1.4: A vector shooter game
-games-board/goatee-gtk 0.3.1.2: A monadic take on a 2,500-year-old board game - GTK+ UI
+games-board/goatee-gtk 0.3.1.2 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
 games-fps/frag 1.1.2-r1: A 3-D First Person Shooter Game
 games-puzzle/bloxorz 0.1.2: OpenGL Logic Game
 games-puzzle/intricacy 0.6.1 0.6.2 0.7.1.1: A game of competitive puzzle-design
