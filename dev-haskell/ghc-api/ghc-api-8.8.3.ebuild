@@ -9,7 +9,7 @@ HOMEPAGE="http://www.haskell.org/ghc"
 LICENSE="BSD"
 SLOT="0/${PV}"
 #keep in sync with ghc-8.8.3
-#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 # The easiest way to fetch libraries 'ghc' package depends on
