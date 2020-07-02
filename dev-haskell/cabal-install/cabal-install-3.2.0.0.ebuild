@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="debug-conflict-sets debug-expensive-assertions debug-tracetree +native-dns"
 
 RDEPEND=">=dev-haskell/async-2.0:= <dev-haskell/async-2.3:=
