@@ -46,6 +46,23 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base       >= 4.8      && < 4.14' 'base       >= 4.8'
+	#if use noprefs; then
+	#	epatch "${FILESDIR}/${PN}"-0.13.3-nopref.patch
+	#fi
+
+	# no chance to link to -threaded on ppc64, alpha and others
+	# who use UNREG, not only ARM
+	if ! ghc-supports-threaded-runtime; then
+		cabal_chdeps '-threaded' ' '
+	fi
+	eapply_user
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug-conflict-sets debug-conflict-sets) \
