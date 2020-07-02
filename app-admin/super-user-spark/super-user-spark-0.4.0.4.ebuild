@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # hangs
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	dev-haskell/hashable:=[profile?]
