@@ -40,3 +40,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec-core
 		dev-haskell/quickcheck )
 "
+
+PATCHES=( "${FILESDIR}/${P}-optparse-applicative-0.15.patch" )
