@@ -27,15 +27,12 @@ RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-b
 	>=dev-haskell/tar-0.5:=[profile?] <dev-haskell/tar-0.6:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	|| ( ( >=dev-haskell/cabal-1.14:=[profile?] <dev-haskell/cabal-1.26:=[profile?] )
-		|| ( ( >=dev-haskell/cabal-2.0:=[profile?] <dev-haskell/cabal-2.6:=[profile?] )
-			( >=dev-haskell/cabal-3.0:=[profile?] <dev-haskell/cabal-3.5:=[profile?] ) ) )
+	<dev-haskell/cabal-3.5:=[profile?]
 	mtl21? ( >=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.2:=[profile?]
 			>=dev-haskell/mtl-compat-0.2:=[profile?] <dev-haskell/mtl-compat-0.3:=[profile?] )
 	!mtl21? ( >=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?] )
 	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
-			|| ( ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.9:=[profile?] )
-				( >=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2:=[profile?] ) ) )
+			>=dev-haskell/network-2.6:=[profile?]  <dev-haskell/network-3.2:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.5:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
