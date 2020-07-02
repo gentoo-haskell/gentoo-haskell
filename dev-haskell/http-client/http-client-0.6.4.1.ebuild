@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
+RESTRICT=test # requires network access
+
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/case-insensitive-1.0:=[profile?]
 	dev-haskell/cookie:=[profile?]

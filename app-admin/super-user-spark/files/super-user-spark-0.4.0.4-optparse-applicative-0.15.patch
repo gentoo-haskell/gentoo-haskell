@@ -1,0 +1,61 @@
+From 3c286a52a0b81e083c0e6d39f6f2b02aa9bb9231 Mon Sep 17 00:00:00 2001
+From: Tom Sydney Kerckhove <syd@cs-syd.eu>
+Date: Fri, 10 Apr 2020 22:13:10 +0200
+Subject: [PATCH] started converting to lts-15
+
+---
+ src/SuperUserSpark/OptParse.hs      | 5 ++---
+ test/SuperUserSpark/CompilerSpec.hs | 6 +++---
+ 3 files changed, 7 insertions(+), 8 deletions(-)
+
+diff --git a/src/SuperUserSpark/OptParse.hs b/src/SuperUserSpark/OptParse.hs
+index 5f3a1340..e1eb79d7 100644
+--- a/src/SuperUserSpark/OptParse.hs
++++ b/src/SuperUserSpark/OptParse.hs
+@@ -5,6 +5,7 @@ module SuperUserSpark.OptParse
+ 
+ import Import
+ 
++import Options.Applicative.Types
+ import Options.Applicative
+ import System.Environment (getArgs)
+ 
+@@ -20,13 +21,11 @@ runOptionsParser :: [String] -> ParserResult Dispatch
+ runOptionsParser strs = execParserPure prefs_ optionsParser strs
+   where
+     prefs_ =
+-        ParserPrefs
++        defaultPrefs
+         { prefMultiSuffix = ""
+         , prefDisambiguate = True
+         , prefShowHelpOnError = True
+         , prefShowHelpOnEmpty = True
+-        , prefBacktrack = True
+-        , prefColumns = 80
+         }
+ 
+ optionsParser :: ParserInfo Dispatch
+diff --git a/test/SuperUserSpark/CompilerSpec.hs b/test/SuperUserSpark/CompilerSpec.hs
+index 0743b958..a719d8b6 100644
+--- a/test/SuperUserSpark/CompilerSpec.hs
++++ b/test/SuperUserSpark/CompilerSpec.hs
+@@ -51,7 +51,7 @@ cleanContentSpec = do
+         it "doesn't report an emty card name" $ do
+             "" `shouldSatisfy` cleanBy cleanCardName
+         it "reports card names with newlines" $ do
+-            forAll (genValid `suchThat` containsNewlineCharacter) $ \s ->
++            forAll (sequenceA [genValid, pure '\n', genValid]) $ \s ->
+                 s `shouldNotSatisfy` cleanBy cleanCardName
+     describe "cleanDeclaration" $ do
+         describe "Deploy" $ do
+@@ -378,8 +378,8 @@ exactTests :: Spec
+ exactTests = do
+     describe "exact tests" $ do
+         dir <- runIO $ resolveDir' "test_resources/exact_compile_test_src"
+-        forFileInDirss [dir] $ \fp ->
+-            if fileExtension fp == ".res"
++        forFileInDirss [dir] $ \fp -> do
++            if fileExtension fp == Just ".res"
+                 then return ()
+                 else do
+                     it (toFilePath fp) $ do
