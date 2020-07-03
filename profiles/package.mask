@@ -158,7 +158,3 @@ dev-haskell/hp2any-manager
 >=dev-haskell/monoid-subclasses-0.5  # picoparsec-0.1.2.3
 >=dev-haskell/mysql-haskell-0.8.4    # mysql-haskell-openssl-0.8.3.0
 >=dev-haskell/socket-0.8             # socket-sctp-0.3.0.0
-
-# Jack Todaro <jack.todaro@posteo.net> (18 Dec 2019)
-# Some packages require ansi-terminal < 0.10
->=dev-haskell/ansi-terminal-0.10

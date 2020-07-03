@@ -18,9 +18,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-4.19:=[profile?]
+	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-4.20:=[profile?]
 	>=dev-haskell/semialign-1.1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
-	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.1:=[profile?]
+	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]
 	>=dev-haskell/transformers-compat-0.6.5:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.8.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12.0.2:=[profile?] <dev-haskell/vector-0.13:=[profile?]
@@ -29,3 +29,12 @@ RDEPEND=">=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.4:=[
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base        >=4.5.1.0 && <4.14' 'base        >=4.5.1.0' \
+		'these      >=1   && <1.1' 'these      >=1' \
+		'lens                  >=4.17     && <4.19' 'lens                  >=4.17'
+}

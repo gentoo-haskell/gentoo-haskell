@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		Use this package if you want to convert between Dhall expressions and JSON
+		or YAML. You can use this package as a library or an executable:
+		
+		* See the &quot;Dhall.JSON&quot; or &quot;Dhall.JSONToDhall&quot; modules if you want to use
+		this package as a library
+		
+		* Use the @dhall-to-json@, @dhall-to-yaml@, or @json-to-dhall@ programs from
+		this package if you want an executable
+		
+		The &quot;Dhall.JSON&quot; and &quot;Dhall.JSONToDhall&quot; modules also contains instructions
+		for how to use this package
+	</longdescription>
+</pkgmetadata>
