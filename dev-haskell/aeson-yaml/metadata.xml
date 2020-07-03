@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="build-binaries">Build the binaries</flag>
+	</use>
+	<longdescription>
+		This library exposes functions for encoding any Aeson value as YAML. There
+		is also support for encoding multiple values into YAML &quot;documents&quot;.
+		
+		This library is pure Haskell, and does not depend on C FFI with libyaml. It
+		is also licensed under the BSD3 license.
+	</longdescription>
+</pkgmetadata>
