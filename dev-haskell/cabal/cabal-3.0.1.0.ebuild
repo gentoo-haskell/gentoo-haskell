@@ -11,12 +11,11 @@ CABAL_FEATURES+=" nocabaldep" # in case installed Cabal is broken
 inherit haskell-cabal
 
 MY_PN="Cabal"
-MY_PV="v3.0.1.0-rc2"
-MY_P="${MY_PN}-${MY_PV}"
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
-SRC_URI="https://github.com/haskell/${PN}/archive/${MY_P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -35,7 +34,7 @@ RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 "
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${PN}-${MY_P}/${MY_PN}"
+S="${WORKDIR}/${MY_P}"
 PATCHES=("${FILESDIR}"/${PN}-2.0.0.2-no-bootstrap.patch)
 
 CABAL_CORE_LIB_GHC_PV="PM:8.8.2 PM:8.8.3"
