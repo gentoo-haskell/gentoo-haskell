@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="parsec">use <pkg>dev-haskell/parsec</pkg> instead of <pkg>dev-haskell/trifecta</pkg></flag>
 	</use>
 	<longdescription>
 		Haskell implementation of the Nix language.
