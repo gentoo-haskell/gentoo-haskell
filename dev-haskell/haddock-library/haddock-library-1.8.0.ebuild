@@ -30,3 +30,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/base-compat-0.9.3 <dev-haskell/base-compat-0.12
 		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.14 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base-compat  ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >= 0.9.3' \
+		'base-compat           ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >= 0.9.3'
+}
