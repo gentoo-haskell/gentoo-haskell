@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="newtype-unsafe">Use implementation using @newtype@ and unsafe @Any@, instead of GADT</flag>
+	</use>
+	<longdescription>
+		This library defines an existential type &#39;Some&#39;.
+		
+		@
+		data Some f where
+		\    Some :: f a -&gt; Some f
+		@
+		
+		in few variants, and utilities to work with it.
+		
+		If you are unsure which variant to use, use the one in &quot;Data.Some&quot; module.
+	</longdescription>
+</pkgmetadata>
