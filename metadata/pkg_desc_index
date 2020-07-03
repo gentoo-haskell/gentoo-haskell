@@ -17,7 +17,7 @@ app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 1.19.2.4-r1 2.3.1-r1 2.7.3-r1 2.9.1.1 2.9.2.1: Conversion between markup formats
+app-text/pandoc 2.7.3-r1 2.9.2.1: Conversion between markup formats
 app-text/pdfsplit 0.0.1 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -48,6 +48,7 @@ dev-haskell/aeson-extra 0.4.1.3: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.8.8: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.2 0.8.3: JSON quasiquoter for Haskell
+dev-haskell/aeson-yaml 1.1.0.0: Output any Aeson value as YAML (pure Haskell library)
 dev-haskell/alex 3.2.4 3.2.5: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/alex-tools 0.4: A set of functions for a common use case of Alex
 dev-haskell/algebra 4.3.1: Constructive abstract algebra
@@ -481,8 +482,9 @@ dev-haskell/dependent-sum-template 0.1.0.0: Template Haskell code to generate in
 dev-haskell/derive 2.6.5: A program and library to derive instances for data types
 dev-haskell/deriving-compat 0.3.6 0.5.8: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/dhall 1.0.2-r1 1.30.0 1.33.0: A configuration language guaranteed to terminate
-dev-haskell/dhall-nix 1.0.0-r1 1.1.12 1.1.15: Dhall to Nix compiler
+dev-haskell/dhall 1.33.0: A configuration language guaranteed to terminate
+dev-haskell/dhall-json 1.7.0: Convert between Dhall and JSON or YAML
+dev-haskell/dhall-nix 1.1.15: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.4-r1 0.8.0.5: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1: Cairo backend for diagrams drawing EDSL
@@ -807,7 +809,7 @@ dev-haskell/haddock 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.2 2.18.1 2.19.0.1 
 dev-haskell/haddock-api 2.16.1 2.17.3 2.18.1 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.1.1 1.2.1 1.4.2 1.4.4 1.5.0.1 1.6.0-r1 1.7.0 1.8.0 1.9.0: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.9.8.0-r1 4.12.5.2 4.13.4.0: A static website compiler library
+dev-haskell/hakyll 4.12.5.2 4.13.4.0: A static website compiler library
 dev-haskell/hakyll-agda 0.1.10-r1: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.3: Hakyll SASS compiler over hsass
 dev-haskell/half 0.3-r1: Half-precision floating-point
@@ -944,8 +946,8 @@ dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
 dev-haskell/hmatrix-vector-sized 0.1.3.0: Conversions between hmatrix and vector-sized types
 dev-haskell/hmt 0.16: Haskell Music Theory
-dev-haskell/hnix 0.3.4 0.6.1 0.7.1: Haskell implementation of the Nix language
-dev-haskell/hnix-store-core 0.1.0.0-r1: Core effects for interacting with the Nix store
+dev-haskell/hnix 0.7.1 0.8.0: Haskell implementation of the Nix language
+dev-haskell/hnix-store-core 0.1.0.0-r1 0.2.0.0: Core effects for interacting with the Nix store
 dev-haskell/hoauth2 0.5.9 1.8.9 1.11.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
@@ -1730,6 +1732,7 @@ dev-haskell/safe 0.3.18: Library of safe (exception free) functions
 dev-haskell/safe-exceptions 0.1.7.0: Safe, consistent, and easy exception handling
 dev-haskell/safecopy 0.9.4.2 0.10.3: Binary serialization with version control
 dev-haskell/safesemaphore 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
+dev-haskell/saltine 0.1.1.0: Cryptography that's easy to digest (NaCl/libsodium bindings)
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4.1: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/samtools 0.2.4.3: Binding to the C samtools library
@@ -1757,7 +1760,7 @@ dev-haskell/sdl2-mixer 1.1.0: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.10: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/selective 0.3: Selective applicative functors
 dev-haskell/semialign 1 1.1: Align and Zip type-classes from the common Semialign ancestor
-dev-haskell/semialign-indexed 1.1: SemialignWithIndex, i.e. izipWith and ialignWith
+dev-haskell/semialign-indexed 1.1-r1: SemialignWithIndex, i.e. izipWith and ialignWith
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 5.2.2-r1 5.3.4: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.4 0.18.5: Anything that associates
@@ -1841,6 +1844,7 @@ dev-haskell/socket-io 1.3.11: This library provides an implementation of Socket.
 dev-haskell/socket-sctp 0.3.0.0: STCP socket extensions library
 dev-haskell/socks 0.6.1: Socks proxy (version 5) implementation
 dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell School of Expression"
+dev-haskell/some 1.0.1: Existential type: Some
 dev-haskell/sop-core 0.5.0.1: True Sums of Products
 dev-haskell/sourcegraph 0.7.0.7-r1: Static code analysis using graph-theoretic techniques
 dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google and Mozilla

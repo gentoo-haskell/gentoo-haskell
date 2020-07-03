@@ -29,10 +29,7 @@ app-forensics/quickfuzz:net - support networking formats
 app-forensics/quickfuzz:pki - support PKI formats
 app-text/pandoc:derive-json-via-th - Use Template Haskell instead of GHC Generics to derive ToJSON and FromJSON instances.
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
-app-text/pandoc:https - Enable support for downloading of resources over https.
-app-text/pandoc:network-uri - Get Network.URI from the network-uri package.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
-app-text/pandoc:weigh-pandoc - Build weigh-pandoc to measure memory usage.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/accelerate:bounds-checks - Enable bounds checking.
 dev-haskell/accelerate:ekg - Enable hooking mechanisp for monitoring via dev-haskell/ekg.
@@ -50,6 +47,7 @@ dev-haskell/acid-state:skip-state-machine-test - If enabled, do not build/run th
 dev-haskell/aeson:cffi - Controls whether to include c-ffi bits or pure haskell. Default to False for security.
 dev-haskell/aeson:fast - compile without optimizations
 dev-haskell/aeson-pretty:lib-only - don't build 'aeson-pretty' executable.
+dev-haskell/aeson-yaml:build-binaries - Build the binaries
 dev-haskell/alsa-pcm:buildexamples - Build example executables
 dev-haskell/alsa-seq:modifyfilter - Use native event filter functions that are provided by newer ALSA versions
 dev-haskell/ansi-terminal:example - Build the example application.
@@ -237,7 +235,6 @@ dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if 
 dev-haskell/hlint:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour.
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
-dev-haskell/hnix:parsec - use dev-haskell/parsec instead of dev-haskell/trifecta
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
 dev-haskell/hoodle:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:dyre - Support dynamic reconfiguration
@@ -452,6 +449,7 @@ dev-haskell/snap-core:portable - No non-haskell unportable code.
 dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"
 dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopenssl
 dev-haskell/snap-server:portable - no non-haskell unportable code.
+dev-haskell/some:newtype-unsafe - Use implementation using @newtype@ and unsafe @Any@, instead of GADT
 dev-haskell/speculation:optimize - Enable optimizations
 dev-haskell/sphinx:version-1-1-beta - By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1
 dev-haskell/splitmix:optimised-mixer - Use JavaScript for mix32
