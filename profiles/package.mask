@@ -1,3 +1,9 @@
+# Jack Todaro <solpeth@posteo.org> (3 July 2020)
+# Mask dev-haskell/random-1.2 and reverse dependencies
+>=dev-haskell/random-1.2
+>=dev-haskell/random-fu-0.2.7.6
+>=dev-haskell/random-source-0.3.0.10
+
 # Jack Todaro <solpeth@posteo.org> (2 July 2020)
 # Needs porting to Cabal-3
 dev-lang/purescript
