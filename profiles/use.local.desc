@@ -320,6 +320,7 @@ dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
 dev-haskell/logfloat:useffi - Use bindings to C libraries
 dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
+dev-haskell/megaparsec-tests:dev - Turn on development settings.
 dev-haskell/microlens-th:inlining - Generate inline pragmas
 dev-haskell/midi-alsa:buildexamples - Build example executables.
 dev-haskell/miso:ios - Cross compile to iOS

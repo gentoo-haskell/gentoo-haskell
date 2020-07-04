@@ -1012,7 +1012,7 @@ dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1: A Testing Framework for Ha
 dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.7.2 0.8.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
-dev-haskell/hspec-megaparsec 1.1.0 2.0.0: Utility functions for testing Megaparsec parsers with Hspec
+dev-haskell/hspec-megaparsec 1.1.0 2.0.0 2.1.0: Utility functions for testing Megaparsec parsers with Hspec
 dev-haskell/hspec-meta 2.6.0: A version of Hspec which is used to test Hspec itself
 dev-haskell/hspec-smallcheck 0.5.2: SmallCheck support for the Hspec testing framework
 dev-haskell/hspec-wai 0.9.0 0.10.1: Experimental Hspec support for testing WAI applications
@@ -1284,7 +1284,8 @@ dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
 dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megadeth 9999: Simple project template from stack
-dev-haskell/megaparsec 5.2.0 5.3.1 6.5.0-r1 7.0.4 7.0.5: Monadic parser combinators
+dev-haskell/megaparsec 5.2.0 5.3.1 6.5.0-r1 7.0.4 7.0.5 8.0.0: Monadic parser combinators
+dev-haskell/megaparsec-tests 8.0.0: Test utilities and the test suite of Megaparsec
 dev-haskell/meldable-heap 2.0.3-r1: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memcache 0.2.0.1: A memcached client library
 dev-haskell/memoize 0.8.1: A memoization library
@@ -1487,6 +1488,7 @@ dev-haskell/parsec-permutation 0.1.2.0: Applicative permutation parser for Parse
 dev-haskell/parsec1 1.0.0.6: Portable monadic parser combinators
 dev-haskell/parsedate 3000.0.0-r1: Data and time parsing for CalendarTime
 dev-haskell/parser-combinators 1.0.2 1.2.1: Lightweight package providing commonly useful parser combinators
+dev-haskell/parser-combinators-tests 1.2.1: Test suite of parser-combinators
 dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/path 0.6.1 0.7.0: Support for well-typed paths
