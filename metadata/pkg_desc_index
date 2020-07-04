@@ -2195,7 +2195,7 @@ dev-haskell/web-routes-hsp 0.24.6.1: Adds XMLGenerator instance for RouteT monad
 dev-haskell/web-routes-th 0.22.6.5: Support for deriving PathInfo using Template Haskell
 dev-haskell/webdriver 0.8.5 0.9.0.1: a Haskell client for the Selenium WebDriver protocol
 dev-haskell/webserver 0.7.1.1: HTTP server library
-dev-haskell/websockets 0.9.7.0 0.12.7.0: A sensible and clean way to write WebSocket-capable servers in Haskell
+dev-haskell/websockets 0.12.7.1: A sensible and clean way to write WebSocket-capable servers in Haskell
 dev-haskell/websockets-snap 0.10.3.1: Snap integration for the websockets library
 dev-haskell/weeder 1.0.8: Detect dead code
 dev-haskell/weigh 0.0.12 0.0.16: Measure allocations of a Haskell functions/values
@@ -2338,7 +2338,7 @@ dev-lang/idris 0.12.2 0.12.3 1.0-r1 1.1.0-r1 1.3.1-r3 1.3.2 1.3.3: Functional Pr
 dev-lang/jhc 0.8.2 9999: jhc is a haskell compiler
 dev-lang/omega 1.5.2-r1: A purely functional programming language and a proof system
 dev-lang/ott 0.30 0.31: Ott is a tool for writing definitions of programming languages and calculi.
-dev-lang/purescript 0.10.2-r1 0.10.3 0.10.7 0.11.7-r2 0.12.0 0.13.6 9999: PureScript Programming Language Compiler
+dev-lang/purescript 0.12.0 0.13.6 9999: PureScript Programming Language Compiler
 dev-lang/uhc 1.1.9.5 9999: an Utrecht University haskell compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-libs/libsass 3.4.5: A C/C++ implementation of a Sass compiler
