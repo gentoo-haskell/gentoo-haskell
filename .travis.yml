@@ -95,7 +95,7 @@ before_install:
     - pip install pkgcheck
 before_script:
     - THIS_REPO=haskell
-    - PORTAGE_VER='2.3.80'
+    - PORTAGE_VER='2.3.103'
     - SPINNER=/tmp/spinner.sh
     - PORTAGE_DIR="/tmp/portage-portage-${PORTAGE_VER}"
     - echo "Setting up basic directories:"
