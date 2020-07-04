@@ -530,7 +530,7 @@ dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8-r1 0.8.2: Pandoc-style document tem
 dev-haskell/doctest 0.11.2 0.13.0 0.15.0 0.16.0.1 0.16.3: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
-dev-haskell/dotenv 0.5.2.5 0.8.0.4: Loads environment variables from dotenv files
+dev-haskell/dotenv 0.8.0.4: Loads environment variables from dotenv files
 dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
 dev-haskell/double-conversion 2.0.2.0: Fast conversion between double precision floating point and text
 dev-haskell/download-curl 0.1.4-r2: High-level file download based on URLs
@@ -1012,7 +1012,7 @@ dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1: A Testing Framework for Ha
 dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.7.2 0.8.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
-dev-haskell/hspec-megaparsec 1.1.0 2.0.0 2.1.0: Utility functions for testing Megaparsec parsers with Hspec
+dev-haskell/hspec-megaparsec 2.0.0 2.1.0: Utility functions for testing Megaparsec parsers with Hspec
 dev-haskell/hspec-meta 2.6.0: A version of Hspec which is used to test Hspec itself
 dev-haskell/hspec-smallcheck 0.5.2: SmallCheck support for the Hspec testing framework
 dev-haskell/hspec-wai 0.9.0 0.10.1: Experimental Hspec support for testing WAI applications
@@ -1284,7 +1284,7 @@ dev-haskell/maybet 0.1.2-r1: MaybeT monad transformer
 dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megadeth 9999: Simple project template from stack
-dev-haskell/megaparsec 5.2.0 5.3.1 6.5.0-r1 7.0.4 7.0.5 8.0.0: Monadic parser combinators
+dev-haskell/megaparsec 7.0.5 8.0.0: Monadic parser combinators
 dev-haskell/megaparsec-tests 8.0.0: Test utilities and the test suite of Megaparsec
 dev-haskell/meldable-heap 2.0.3-r1: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/memcache 0.2.0.1: A memcached client library
