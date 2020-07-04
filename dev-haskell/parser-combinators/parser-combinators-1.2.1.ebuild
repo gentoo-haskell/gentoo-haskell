@@ -16,12 +16,18 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
+
+RESTRICT="!test? ( test )"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
+"
+# avoid circular dependencies
+# parser-combinators -> parser-combinators-tests -> parser-combinators
+PDEPEND="test? ( ~dev-haskell/parser-combinators-tests-${PV} )
 "
 
 src_configure() {
