@@ -12,6 +12,8 @@
 	</longdescription>
 	<use>
 		<flag name="debug-conflict-sets">Add additional information to ConflictSets</flag>
+		<flag name="debug-expensive-assertions">Enable expensive assertions for testing or debugging</flag>
+		<flag name="debug-tracetree">Compile in support for tracetree (used to debug the solver)</flag>
 		<flag name="native-dns">Enable use of the resolv and windns
 		packages for performing DNS lookups</flag>
 		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
