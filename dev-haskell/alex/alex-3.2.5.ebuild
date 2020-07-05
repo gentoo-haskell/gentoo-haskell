@@ -68,6 +68,7 @@ src_install() {
 
 	if use doc; then
 		doman "${S}/doc/alex.1"
-		dohtml -r "${S}/doc/alex/"
+		docinto html
+		dodoc -r "${S}/doc/alex/"
 	fi
 }
