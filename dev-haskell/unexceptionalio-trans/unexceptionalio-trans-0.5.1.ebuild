@@ -17,9 +17,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="~dev-haskell/unexceptionalio-0.5.0:=[profile?]
+RDEPEND="=dev-haskell/unexceptionalio-0.5*:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+			'unexceptionalio == 0.5.0' 'unexceptionalio == 0.5.*'
+}
