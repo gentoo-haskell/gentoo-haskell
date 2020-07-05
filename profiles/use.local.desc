@@ -29,6 +29,7 @@ app-forensics/quickfuzz:net - support networking formats
 app-forensics/quickfuzz:pki - support PKI formats
 app-text/pandoc:derive-json-via-th - Use Template Haskell instead of GHC Generics to derive ToJSON and FromJSON instances.
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
+app-text/pandoc:optimize - Enable -O1 optimizations (requires ~16GiB memory)
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/accelerate:bounds-checks - Enable bounds checking.
@@ -198,6 +199,7 @@ dev-haskell/gtk:gio - Depend on GIO package, thereby enabling certain features.
 dev-haskell/gtk2hs-buildtools:closuresignals - Use the the GClosure-based signals implementation.
 dev-haskell/gtk3:fmode-binary - Set the default file translation mode for file I/O operations to _O_BINARY.
 dev-haskell/gtk3:gio - Depend on GIO package, thereby enabling certain features.
+dev-haskell/hackage-security:mtl21 - Build against mtl-2.1
 dev-haskell/hackage-security:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hakyll:buildwebsite - Build the hakyll website
 dev-haskell/hakyll:checkexternal - Include external link checking
