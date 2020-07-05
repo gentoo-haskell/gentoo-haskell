@@ -44,7 +44,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11
 		>=dev-haskell/temporary-1.2 <dev-haskell/temporary-1.4
 		>=dev-haskell/unordered-containers-0.2.8.0 <dev-haskell/unordered-containers-0.3
-		>=dev-haskell/vector-0.12 <dev-haskell/vector-0.13
+		>=dev-haskell/vector-0.12 <dev-haskell/vector-0.13 )
 "
 
 src_configure() {
