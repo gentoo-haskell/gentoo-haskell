@@ -2136,7 +2136,7 @@ dev-haskell/uuid-types 1.0.3: Type definitions for Universally Unique Identifier
 dev-haskell/uulib 0.9.24: Haskell Utrecht Tools Library
 dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
 dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
-dev-haskell/vado 0.0.12: Runs commands on remote machines using ssh
+dev-haskell/vado 0.0.13: Runs commands on remote machines using ssh
 dev-haskell/validation 1.1: A data-type like Either but with an accumulating Applicative
 dev-haskell/validity 0.9.0.3: Validity typeclass
 dev-haskell/validity-aeson 0.2.0.3: Validity instances for aeson
