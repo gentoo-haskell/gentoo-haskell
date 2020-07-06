@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=>=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?] >=dev-haskell/network-2.6.2:=[profile?] >=dev-haskell/network-transport-0.5:=[profile?] <dev-haskell/network-transport-0.6:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( >=dev-haskell/network-transport-tests-0.2.1.0 <dev-haskell/network-transport-tests-0.3 ) doc? ( || ( dev-haskell/haddock >=dev-lang/ghc-7.10.2 ) ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?] >=dev-haskell/network-2.6.2:=[profile?] >=dev-haskell/network-transport-0.5:=[profile?] <dev-haskell/network-transport-0.6:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.10 test? ( >=dev-haskell/network-transport-tests-0.2.1.0 <dev-haskell/network-transport-tests-0.3 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=TCP instantiation of Network.Transport
 EAPI=7
 HOMEPAGE=http://haskell-distributed.github.com
@@ -10,5 +10,5 @@ RDEPEND=>=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-0
 RESTRICT=!test? ( test )
 SLOT=0/0.6.0
 SRC_URI=https://hackage.haskell.org/package/network-transport-tcp-0.6.0/network-transport-tcp-0.6.0.tar.gz
-_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	c5182eb7e501132153f9710aa822d170	haskell-cabal	d4efcf0c9adfbc5ccd46ca9586078c60	multilib	2477ebe553d3e4d2c606191fe6c33602	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	c5182eb7e501132153f9710aa822d170	haskell-cabal	c107e202f6f24b4f9e946cb8f7c0668c	multilib	2477ebe553d3e4d2c606191fe6c33602	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=86921ef7de7bdd7a4e556cfdcd3104f9
