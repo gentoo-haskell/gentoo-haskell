@@ -54,6 +54,9 @@ PATCHES=(
 src_prepare() {
 	default
 
+	# Setup.hs is not compatible to cabal-3
+	rm Setup.hs || die
+
 	cabal_chdeps \
 		'dependent-map           == 0.2.*' 'dependent-map           >= 0.2' \
 		'dependent-sum           >= 0.3 && < 0.6' 'dependent-sum           >= 0.3'
