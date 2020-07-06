@@ -67,3 +67,9 @@ src_configure() {
 		$(cabal_flag usepandoc usepandoc) \
 		$(cabal_flag watchserver watchserver)
 }
+
+src_test() {
+	# unixFilter test expects 'option' output in error message
+	# But it's a localized string that.
+	LANGUAGE=en haskell-cabal_src_test
+}
