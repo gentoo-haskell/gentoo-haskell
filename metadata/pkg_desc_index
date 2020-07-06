@@ -275,7 +275,7 @@ dev-haskell/cassava 0.5.1.0 0.5.2.0: A CSV parsing and encoding library
 dev-haskell/cassava-megaparsec 2.0.1: Megaparsec parser of CSV files that plays nicely with Cassava
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
-dev-haskell/cborg 0.2.3.0: Concise Binary Object Representation
+dev-haskell/cborg 0.2.4.0: Concise Binary Object Representation
 dev-haskell/cborg-json 0.2.2.0: A library for encoding JSON as CBOR
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.5.8.1: A binary serialization library
