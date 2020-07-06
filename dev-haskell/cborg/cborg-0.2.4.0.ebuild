@@ -19,7 +19,7 @@ IUSE="+optimize-gmp"
 
 RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/half-0.2.2.3:=[profile?] <dev-haskell/half-0.4:=[profile?]
-	>=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.7.1.0:=[profile?]
+	>=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
