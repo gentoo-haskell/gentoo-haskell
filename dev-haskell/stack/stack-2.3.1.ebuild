@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # requires network access
+
 RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?]
 	>=dev-haskell/annotated-wl-pprint-0.7.0:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9.1:=[profile?]
@@ -60,7 +62,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?]
 	>=dev-haskell/open-browser-0.2.1.0:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.3.0:=[profile?]
 	>=dev-haskell/optparse-simple-0.1.1.2:=[profile?]
-	>=dev-haskell/pantry-0.4.0.1:=[profile?]
+	>=dev-haskell/pantry-0.4.0.1:=[profile?] <dev-haskell/pantry-0.5:=[profile?]
 	>=dev-haskell/path-0.6.1:=[profile?]
 	>=dev-haskell/path-io-1.4.2:=[profile?]
 	>=dev-haskell/persistent-2.9.2:=[profile?]
@@ -100,6 +102,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/raw-strings-qq-1.1
 		>=dev-haskell/smallcheck-1.1.5 )
 "
+
+src_prepare() {
+	default
+	# not compatible with pantry-0.5. See
+	# https://github.com/commercialhaskell/stack/issues/5298
+	cabal_chdeps \
+		'pantry >=0.4.0.1' 'pantry >=0.4.0.1 && <0.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
