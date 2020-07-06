@@ -70,6 +70,7 @@ src_configure() {
 
 src_test() {
 	# unixFilter test expects 'option' output in error message
-	# But it's a localized string that.
+	# But it's a localized string that:
+	# https://github.com/jaspervdj/hakyll/issues/607
 	LANGUAGE=en haskell-cabal_src_test
 }
