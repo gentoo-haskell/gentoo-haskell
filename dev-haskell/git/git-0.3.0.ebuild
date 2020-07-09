@@ -37,3 +37,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
 "
+
+PATCHES=( "${FILESDIR}/${P}-monadfail.patch" )
