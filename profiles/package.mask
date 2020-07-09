@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (10 July 2020)
+# Unmaintained since 2015. Masked and scheduled for
+# deletion.
+dev-haskell/ghc-pkg-lib
+
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
