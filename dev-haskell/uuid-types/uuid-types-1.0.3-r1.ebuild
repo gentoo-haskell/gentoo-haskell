@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.9:=[profile?]
-	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/hashable-1.1.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
@@ -40,5 +40,6 @@ src_prepare() {
 		'HUnit >=1.2 && < 1.4' 'HUnit >=1.2' \
 		'tasty >= 0.10 && < 0.12' 'tasty >= 0.10' \
 		'tasty-hunit == 0.9.*' 'tasty-hunit >= 0.9' \
-		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8'
+		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8' \
+		'random >= 1.0.1 && < 1.2' 'random >= 1.0.1'
 }
