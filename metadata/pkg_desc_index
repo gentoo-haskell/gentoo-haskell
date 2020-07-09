@@ -113,7 +113,7 @@ dev-haskell/applicative-numbers 0.1.3: Applicative-based numeric instances
 dev-haskell/applicative-quoters 0.1.0.8: Quasiquoters for idiom brackets and an applicative do-notation
 dev-haskell/apply-refact 0.3.0.1 0.5.0.0 0.6.0.0 0.8.1.0: Perform refactorings specified by the refact library
 dev-haskell/argparser 0.3.4: Command line parsing framework for console applications
-dev-haskell/arithmoi 0.11.0.0: Efficient basic number-theoretic functions. Primes, powers, integer logarithms
+dev-haskell/arithmoi 0.11.0.1: Efficient basic number-theoretic functions. Primes, powers, integer logarithms
 dev-haskell/arrow-list 0.7: List arrows for Haskell
 dev-haskell/arrows 0.4.4.2: Arrow classes and transformers
 dev-haskell/ascii-progress 0.3.3.0: A simple progress bar for the console
@@ -1829,11 +1829,11 @@ dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Incl
 dev-haskell/skylighting 0.4.3.2 0.7.7 0.8.5: syntax highlighting library
 dev-haskell/skylighting-core 0.7.7 0.8.5: syntax highlighting library
 dev-haskell/slave-thread 1.1: A principal solution to ghost threads and silent exceptions
-dev-haskell/smallcheck 1.1.5: A property-based testing library
+dev-haskell/smallcheck 1.1.5 1.2.0: A property-based testing library
 dev-haskell/smtlib 1.1: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.6 0.2.0.0: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0-r1: A simple SMTP client library
-dev-haskell/snap 1.1.2.0 1.1.3.0: Top-level package for the Snap Web Framework
+dev-haskell/snap 1.1.3.0: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 0.9.8.0 1.0.4.1: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 1.0.0.1: Snap: A Haskell Web Framework: dynamic loader
 dev-haskell/snap-loader-static 1.0.0.0: Snap static loader
