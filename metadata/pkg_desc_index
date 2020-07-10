@@ -2162,7 +2162,7 @@ dev-haskell/vector-space 0.16: Vector & affine spaces, linear maps, and derivati
 dev-haskell/vector-space-points 0.2.1.2-r2: A type for points, as distinct from vectors
 dev-haskell/vector-th-unbox 0.2.1.7: Deriver for Data.Vector.Unboxed using Template Haskell
 dev-haskell/vgrep 0.2.2.0: A pager for grep
-dev-haskell/viewprof 0.0.0.32-r1: Text-based interactive GHC .prof viewer
+dev-haskell/viewprof 0.0.0.33: Text-based interactive GHC .prof viewer
 dev-haskell/vimeta 0.2.5.1: Frontend for video metadata tagging tools
 dev-haskell/vinyl 0.12.1 0.13.0: Extensible Records
 dev-haskell/vinyl-gl 0.3.4: Utilities for working with OpenGL's GLSL shading language and vinyl records
