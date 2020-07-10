@@ -637,7 +637,7 @@ src_configure() {
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
 
-		echo "INTEGER_LIBRARY = $(usex gmp integer-gmp integer-simple)" >> mk/build.mk
+		echo "BIGNUM_BACKEND = $(usex gmp gmp native)" >> mk/build.mk
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
