@@ -476,8 +476,8 @@ dev-haskell/decimal-arithmetic 0.5.1.0: An implementation of the General Decimal
 dev-haskell/deepseq-generics 0.2.0.0: GHC.Generics-based Control.DeepSeq.rnf implementation
 dev-haskell/deferred-folds 0.9.10.1: Abstractions over deferred folds
 dev-haskell/dense-linear-algebra 0.1.0.0: Simple and incomplete pure haskell implementation of linear algebra
-dev-haskell/dependent-map 0.2.4.0 0.3: Dependent finite maps (partial dependent products)
-dev-haskell/dependent-sum 0.4 0.6.2.0: Dependent sum type
+dev-haskell/dependent-map 0.2.4.0 0.3 0.3.1.0: Dependent finite maps (partial dependent products)
+dev-haskell/dependent-sum 0.4 0.6.2.0 0.7.1.0: Dependent sum type
 dev-haskell/dependent-sum-template 0.1.0.0 0.1.0.3: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/derive 2.6.5: A program and library to derive instances for data types
 dev-haskell/deriving-compat 0.3.6 0.5.8: Backports of GHC deriving extensions
@@ -1168,15 +1168,15 @@ dev-haskell/keys 3.12.3: Keyed functors and containers
 dev-haskell/kibro 0.5.0: None (deprecated)
 dev-haskell/kinds 0.0.1.5: Emulation of subkinds and subkind polymorphism
 dev-haskell/knob 0.1.1: Memory-backed handles
-dev-haskell/lambdabot 5.1.0.4 5.2: Lambdabot is a development tool and advanced IRC bot
-dev-haskell/lambdabot-core 5.1.0.4-r1 5.1.0.4-r2 5.2-r2 5.2-r3: Lambdabot core functionality
-dev-haskell/lambdabot-haskell-plugins 5.1.0.4 5.2: Lambdabot Haskell plugins
-dev-haskell/lambdabot-irc-plugins 5.1.0.4 5.2: IRC plugins for lambdabot
-dev-haskell/lambdabot-misc-plugins 5.1.0.4 5.2: Lambdabot miscellaneous plugins
-dev-haskell/lambdabot-novelty-plugins 5.1.0.4 5.2: Novelty plugins for Lambdabot
-dev-haskell/lambdabot-reference-plugins 5.1.0.4 5.2: Lambdabot reference plugins
-dev-haskell/lambdabot-social-plugins 5.1.0.4 5.2: Social plugins for Lambdabot
-dev-haskell/lambdabot-trusted 5.1.0.4 5.2: Lambdabot trusted code
+dev-haskell/lambdabot 5.1.0.4 5.2 5.3: Lambdabot is a development tool and advanced IRC bot
+dev-haskell/lambdabot-core 5.1.0.4-r1 5.1.0.4-r2 5.2-r2 5.2-r3 5.3: Lambdabot core functionality
+dev-haskell/lambdabot-haskell-plugins 5.1.0.4 5.2 5.3: Lambdabot Haskell plugins
+dev-haskell/lambdabot-irc-plugins 5.1.0.4 5.2 5.3: IRC plugins for lambdabot
+dev-haskell/lambdabot-misc-plugins 5.1.0.4 5.2 5.3: Lambdabot miscellaneous plugins
+dev-haskell/lambdabot-novelty-plugins 5.1.0.4 5.2 5.3: Novelty plugins for Lambdabot
+dev-haskell/lambdabot-reference-plugins 5.1.0.4 5.2 5.3: Lambdabot reference plugins
+dev-haskell/lambdabot-social-plugins 5.1.0.4 5.2 5.3: Social plugins for Lambdabot
+dev-haskell/lambdabot-trusted 5.1.0.4 5.2 5.3: Lambdabot trusted code
 dev-haskell/language-bash 0.9.0: Parsing and pretty-printing Bash shell scripts
 dev-haskell/language-c 0.6.1 0.8.3: Analysis and generation of C code
 dev-haskell/language-c-quote 0.12.2.1: C/CUDA/OpenCL/Objective-C quasiquoting library
@@ -1583,7 +1583,7 @@ dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
 dev-haskell/prettyprinter 1.3.0 1.5.1 1.6.1: A modern, easy to use, well-documented, extensible pretty-printer
 dev-haskell/prettyprinter-ansi-terminal 1.1.1.2: ANSI terminal backend for the "prettyprinter" package
-dev-haskell/prim-uniq 0.1.0.1: Opaque unique identifiers in primitive state monads
+dev-haskell/prim-uniq 0.1.0.1 0.2: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
 dev-haskell/primitive 0.6.4.0 0.7.0.1 0.7.1.0: Primitive memory-related operations
 dev-haskell/primitive-addr 0.1.0.2: Addresses to unmanaged memory
