@@ -25,6 +25,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+			'base     >=4.3     && <4.14'	'base     >=4.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag newtype-unsafe newtype-unsafe)
