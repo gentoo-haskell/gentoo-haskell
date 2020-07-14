@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/aeson-compat-0.3.0.0:=[profile?] <dev-haskell/aeson-compat-0.4:=[profile?]
 	>=dev-haskell/attoparsec-0.11.3.4:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/attoparsec-iso8601-1.0:=[profile?] <dev-haskell/attoparsec-iso8601-1.1:=[profile?]
@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-1.5:=[profil
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semialign-1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.1:=[profile?]
+	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -49,5 +49,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base                   >=4.6      && <4.14' 'base                   >=4.6' \
-		'template-haskell       >=2.8      && <2.16' 'template-haskell       >=2.8'
+		'template-haskell       >=2.8      && <2.16' 'template-haskell       >=2.8' \
+		'aeson                  >=0.7.0.6  && <1.5' 'aeson                  >=0.7.0.6' \
+		'these                  >=1        && <1.1' 'these                  >=1'
 }
