@@ -591,7 +591,7 @@ dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
 dev-haskell/explicit-exception 0.1.10: Exceptions which are explicit in the type signature
 dev-haskell/extensible-effects 5.0.0.1: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
-dev-haskell/extra 1.5.1 1.6.21 1.7.3: Extra functions I use
+dev-haskell/extra 1.5.1 1.6.21 1.7.4: Extra functions I use
 dev-haskell/extract-dependencies 0.2.0.1: Given a hackage package outputs the list of its dependencies
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
