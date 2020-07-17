@@ -36,6 +36,6 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag curl curl)
+		$(cabal_flag curl curl) \
 		$(cabal_flag old-locale old-locale)
 }
