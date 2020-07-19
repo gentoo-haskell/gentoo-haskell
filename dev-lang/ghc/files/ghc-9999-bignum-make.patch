@@ -1,0 +1,45 @@
+From af48032e8d2893baf0d8083de01c4ba070391a15 Mon Sep 17 00:00:00 2001
+From: Sergei Trofimovich <slyfox@gentoo.org>
+Date: Sun, 19 Jul 2020 10:33:32 +0100
+Subject: [PATCH] ghc/mk: don't build gmp packages for BIGNUM_BACKEND=native
+
+Before this change make-based `BIGNUM_BACKEND=native` build was failing as:
+
+```
+x86_64-pc-linux-gnu-gcc: error: libraries/ghc-bignum/gmp/objs/*.o: No such file or directory
+```
+
+This happens because ghc.mk was pulling in gmp-dependent haskell
+libraries unconditionally. The change avoid building such libraries.
+
+Bug: https://gitlab.haskell.org/ghc/ghc/-/issues/18437
+Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+---
+ ghc.mk | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+--- a/ghc.mk
++++ b/ghc.mk
+@@ -456,7 +456,9 @@ PACKAGES_STAGE1 += parsec
+ PACKAGES_STAGE1 += Cabal/Cabal
+ PACKAGES_STAGE1 += ghc-compact
+ PACKAGES_STAGE1 += ghc-heap
++ifeq "$(BIGNUM_BACKEND)" "gmp"
+ PACKAGES_STAGE1 += integer-gmp # compat library
++endif
+ 
+ ifeq "$(HADDOCK_DOCS)" "YES"
+ PACKAGES_STAGE1 += xhtml
+@@ -656,7 +658,9 @@ BUILD_DIRS += $(patsubst %, libraries/%, $(PACKAGES_STAGE1))
+ BUILD_DIRS += $(patsubst %, libraries/%, $(filter-out $(PACKAGES_STAGE1),$(PACKAGES_STAGE0)))
+ endif
+ 
++ifeq "$(BIGNUM_BACKEND)" "gmp"
+ BUILD_DIRS += libraries/ghc-bignum/gmp
++endif
+ BUILD_DIRS += utils/haddock
+ BUILD_DIRS += utils/haddock/doc
+ BUILD_DIRS += compiler
+-- 
+2.27.0
+
