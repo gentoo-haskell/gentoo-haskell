@@ -18,8 +18,6 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RESTRICT=test # tests are broken: need path to ebuild tree
-
 RDEPEND="app-portage/repoman
 	>=dev-haskell/async-2.0:=
 	>=dev-haskell/base16-bytestring-0.1.1:=
@@ -46,7 +44,8 @@ RDEPEND="app-portage/repoman
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( dev-haskell/hunit )
+	test? ( >=dev-haskell/doctest-0.8
+		>=dev-haskell/hspec-2.0 )
 "
 
 src_prepare() {
