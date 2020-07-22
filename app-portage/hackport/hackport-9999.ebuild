@@ -13,7 +13,7 @@ inherit git-r3 haskell-cabal
 DESCRIPTION="Hackage and Portage integration tool"
 HOMEPAGE="https://github.com/gentoo-haskell/hackport"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
@@ -45,7 +45,8 @@ RDEPEND="app-portage/repoman
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/doctest-0.8
-		>=dev-haskell/hspec-2.0 )
+		>=dev-haskell/hspec-2.0
+		dev-haskell/quickcheck )
 "
 
 src_prepare() {
