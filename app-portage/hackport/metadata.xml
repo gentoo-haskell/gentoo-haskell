@@ -5,6 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+	</use>
 	<longdescription>
 		A command line tool to manage an overlay of Gentoo ebuilds
 		that are generated from a hackage repo of Cabal packages.
