@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="shared-llvm">link against llvm shared rather than static library</flag>
+		<flag name="debug">compile C(++) shims with debug info for ease of troubleshooting</flag>
+	</use>
+	<longdescription>
+		llvm-hs is a set of Haskell bindings for LLVM &lt;http://llvm.org/&gt;. Unlike other current Haskell bindings,
+		it uses an ADT to represent LLVM IR (&lt;http://llvm.org/docs/LangRef.html&gt;), and so offers two advantages: it
+		handles almost all of the stateful complexities of using the LLVM API to build IR; and it supports moving IR not
+		only from Haskell into LLVM C++ objects, but the other direction - from LLVM C++ into Haskell.
+	</longdescription>
+</pkgmetadata>
