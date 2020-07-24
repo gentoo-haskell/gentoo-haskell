@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		llvm-hs-pure is a set of pure Haskell types and functions for interacting with LLVM &lt;http://llvm.org/&gt;.
+		It includes an ADT to represent LLVM IR (&lt;http://llvm.org/docs/LangRef.html&gt;). The llvm-hs package
+		builds on this one with FFI bindings to LLVM, but llvm-hs-pure does not require LLVM to be available.
+	</longdescription>
+</pkgmetadata>
