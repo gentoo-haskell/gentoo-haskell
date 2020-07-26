@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -38,5 +38,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'network     >= 2.6 && < 2.9' 'network     >= 2.6 && < 2.9 || >= 3.0 && < 3.2'
+		'network     >= 2.6 && < 2.9' 'network     >= 2.6 && < 2.9 || >= 3.0 && < 3.2' \
+		'base       >= 4.3    && < 4.13' 'base       >= 4.3' \
+		'time       >= 1.5   && < 1.9' 'time       >= 1.5'
 }
