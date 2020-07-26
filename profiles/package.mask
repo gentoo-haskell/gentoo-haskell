@@ -1,6 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (26 July 2020)
 # Abandoned and did not see fixes for many ghc generations.
+# Masked for removal.
 dev-haskell/washngo
+dev-haskell/eithert
 
 # Jack Todaro <solpeth@posteo.org> (10 July 2020)
 # Unmaintained since 2015. Masked and scheduled for
