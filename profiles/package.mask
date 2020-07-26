@@ -3,6 +3,7 @@
 # Masked for removal.
 dev-haskell/washngo
 dev-haskell/eithert
+dev-haskell/avltree
 
 # Jack Todaro <solpeth@posteo.org> (10 July 2020)
 # Unmaintained since 2015. Masked and scheduled for
