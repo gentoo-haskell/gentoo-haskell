@@ -40,13 +40,13 @@ RDEPEND="app-portage/repoman
 	>=dev-haskell/text-1.2.3.0:=
 	>=dev-haskell/xml-1.3.7:=
 	>=dev-haskell/zlib-0.5.3:=
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-1.24.0.0
 	test? ( >=dev-haskell/doctest-0.8
 		>=dev-haskell/hspec-2.0
-		dev-haskell/quickcheck )
+		>=dev-haskell/quickcheck-2.0 )
 "
 
 src_prepare() {
