@@ -30,6 +30,7 @@ app-forensics/quickfuzz:pki - support PKI formats
 app-text/pandoc:derive-json-via-th - Use Template Haskell instead of GHC Generics to derive ToJSON and FromJSON instances.
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
 app-text/pandoc:optimize - Enable -O1 optimizations (requires ~16GiB memory)
+app-text/pandoc:static - Use static linking for pandoc executable.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/accelerate:bounds-checks - Enable bounds checking.
@@ -253,6 +254,7 @@ dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag wi
 dev-haskell/hsh:buildtests - Build the executable to run unit tests.
 dev-haskell/hslogger:network-3 - Use network-3
 dev-haskell/hslua:apicheck - Compile Lua with -DLUA_USE_APICHECK..
+dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but Use hard coded values for instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those do not expose the necessary information in the @lauxlib.h@ header file.
 dev-haskell/hslua:luajit - Use luajit instead of lua.
 dev-haskell/hslua:system-lua - Use the system-wide lua instead of the bundled copy.
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP
@@ -347,7 +349,9 @@ dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optparse-simple:build-example - Build the example executable
 dev-haskell/ormolu:dev - Turn on development settings.
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
-dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging).
+dev-haskell/pandoc-citeproc:debug - Turn on debug tracing.
+dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging)
+dev-haskell/pandoc-citeproc:static - Use static linking.
 dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
 dev-haskell/parsers:attoparsec - Enable the use of the `attoparsec` package
