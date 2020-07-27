@@ -12,7 +12,7 @@ app-emacs/structured-haskell-mode 1.0.20-r2 1.1.0: Structured editing Emacs mode
 app-forensics/quickfuzz 0.1_p20160920 9999: An experimental grammar fuzzer in Haskell using QuickCheck
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/fquery 0.2.3 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
-app-portage/hackport 0.6.3 0.6.4-r1 0.6.5 9999: Hackage and Portage integration tool
+app-portage/hackport 0.6.3 0.6.4-r1 0.6.5 0.6.6 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
 app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
