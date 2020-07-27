@@ -1,3 +1,12 @@
+# Jack Todaro <solpeth@posteo.org> (27 July 2020)
+# dev-haskell/hakyll and www-apps/gitit require
+# <app-text/pandoc-2.10
+>=app-text/pandoc-2.10
+>=dev-haskell/pandoc-crossref-0.3.7
+>=dev-haskell/jira-wiki-markup-1.3
+>=dev-haskell/hslua-1.1.2
+>=dev-haskell/pandoc-types-1.21
+
 # Sergei Trofimovich <slyfox@gentoo.org> (26 July 2020)
 # Abandoned and did not see fixes for many ghc generations.
 # Masked for removal.

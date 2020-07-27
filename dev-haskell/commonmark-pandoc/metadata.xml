@@ -8,7 +8,7 @@
 	<use>
 	</use>
 	<longdescription>
-		Parse jira wiki text into an abstract syntax tree for easy
-		transformation to other formats.
+		This library provides typeclasses for rendering
+		commonmark to Pandoc types.
 	</longdescription>
 </pkgmetadata>
