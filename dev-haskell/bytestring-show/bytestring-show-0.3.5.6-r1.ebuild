@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
+	# Use default for compatibility with Cabal-3
+	rm Setup.lhs || die
 	cabal_chdeps \
 		'binary < 0.8' 'binary' \
 		'containers < 0.6' 'containers'
