@@ -559,7 +559,7 @@ dev-haskell/editline 0.2.1.1-r1: Bindings to the editline library (libedit)
 dev-haskell/editor-open 0.6.0.0: Open the user's $VISUAL or $EDITOR for text input
 dev-haskell/egison 3.9.1 3.10.3: Programming language with non-linear pattern-matching against non-free data
 dev-haskell/either 5.0.1.1: An either monad transformer
-dev-haskell/either-unwrap 1.1: Functions for probing and unwrapping values inside of Either
+dev-haskell/either-unwrap 1.1-r1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
 dev-haskell/ekg 0.4.0.15-r6: Remote monitoring of processes
 dev-haskell/ekg-core 0.1.1.7: Tracking of system metrics
