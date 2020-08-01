@@ -1452,7 +1452,7 @@ dev-haskell/onetuple 0.2.2.1: Singleton Tuple
 dev-haskell/only 0.1: The 1-tuple type or single-value "collection"
 dev-haskell/onrmt 1.0.0.0: Text UI library for performing parallel remote SSH operations
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
-dev-haskell/opaleye 0.5.3.0-r1 0.6.7004.1: An SQL-generating DSL targeting PostgreSQL
+dev-haskell/opaleye 0.6.7004.1 0.6.7005.0: An SQL-generating DSL targeting PostgreSQL
 dev-haskell/open-browser 0.2.1.0-r1: Open a web browser from Haskell
 dev-haskell/openal 1.6.0.1 1.7.0.5: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
@@ -1469,7 +1469,7 @@ dev-haskell/optics-th 0.2: Optics construction using TemplateHaskell
 dev-haskell/optional-args 1.0.2: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.13.2.0 0.14.3.0 0.15.1.0: Utilities and combinators for parsing command line options
-dev-haskell/optparse-generic 1.1.5-r1 1.3.1 1.4.1: Auto-generate a command-line parser for your datatype
+dev-haskell/optparse-generic 1.4.1 1.4.2: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.1.1.2: Simple interface to optparse-applicative
 dev-haskell/ormolu 0.0.3.1: A formatter for Haskell source code
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
@@ -1775,11 +1775,11 @@ dev-haskell/sendfile 0.7.11.1: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialise 0.2.3.0: A binary serialisation library for Haskell values
 dev-haskell/serialport 0.4.7: Cross platform serial port library
-dev-haskell/servant 0.14.1 0.17: A family of combinators for defining webservices APIs
-dev-haskell/servant-client 0.14 0.17: automatical derivation of querying functions for servant webservices
-dev-haskell/servant-client-core 0.14.1 0.17: Core functionality and class for client function generation for servant APIs
+dev-haskell/servant 0.14.1 0.17 0.18: A family of combinators for defining webservices APIs
+dev-haskell/servant-client 0.14 0.17 0.18: automatical derivation of querying functions for servant webservices
+dev-haskell/servant-client-core 0.14.1 0.17 0.18: Core functionality and class for client function generation for servant APIs
 dev-haskell/servant-lucid 0.9.0.1: Servant support for lucid
-dev-haskell/servant-server 0.14.1 0.17: A family of combinators for defining webservices APIs and serving them
+dev-haskell/servant-server 0.14.1 0.17 0.18: A family of combinators for defining webservices APIs and serving them
 dev-haskell/serversession 1.0.1: Secure, modular server-side sessions
 dev-haskell/serversession-backend-redis 1.0.3: Storage backend for serversession using Redis
 dev-haskell/serversession-frontend-yesod 1.0: Yesod bindings for serversession
@@ -1898,7 +1898,7 @@ dev-haskell/storable-complex 0.2.3.0: Storable instance for Complex
 dev-haskell/storable-record 0.0.4.1: Elegant definition of Storable instances for records
 dev-haskell/storable-tuple 0.0.3.3: Storable instance for pairs and triples
 dev-haskell/storablevector 0.2.13: Fast, packed, strict storable arrays with a list interface like ByteString
-dev-haskell/store 0.4.3.2 0.7.4: Fast binary serialization
+dev-haskell/store 0.4.3.2 0.7.5: Fast binary serialization
 dev-haskell/store-core 0.4.4.2: Fast and lightweight binary serialization
 dev-haskell/strafunski-strategylib 5.0.1.0: Library for strategic programming
 dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib to a heirarchical library
