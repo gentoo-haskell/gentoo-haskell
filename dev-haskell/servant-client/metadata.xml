@@ -5,8 +5,14 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+	</use>
 	<longdescription>
 		This library lets you derive automatically Haskell functions that
-		let you query each endpoint of a <pkg>dev-haskell/servant</pkg> webservice.
+		let you query each endpoint of a &lt;http://hackage.haskell.org/package/servant servant&gt; webservice.
+		
+		See &lt;http://docs.servant.dev/en/stable/tutorial/Client.html the client section of the tutorial&gt;.
+		
+		&lt;https://github.com/haskell-servant/servant/blob/master/servant-client/CHANGELOG.md CHANGELOG&gt;
 	</longdescription>
 </pkgmetadata>

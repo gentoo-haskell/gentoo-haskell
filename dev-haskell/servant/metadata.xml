@@ -5,10 +5,12 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+	</use>
 	<longdescription>
 		A family of combinators for defining webservices APIs and serving them
 		
-		You can learn about the basics in the &lt;http://haskell-servant.github.io/tutorial tutorial&gt;.
+		You can learn about the basics in the &lt;http://docs.servant.dev/en/stable/tutorial/index.html tutorial&gt;.
 		
 		&lt;https://github.com/haskell-servant/servant/blob/master/servant/CHANGELOG.md CHANGELOG&gt;
 	</longdescription>

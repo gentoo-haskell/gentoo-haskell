@@ -5,6 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+	</use>
 	<longdescription>
 		This library auto-generates an @optparse-applicative@-compatible
 		@Parser@ from any data type that derives the @Generic@ interface.
