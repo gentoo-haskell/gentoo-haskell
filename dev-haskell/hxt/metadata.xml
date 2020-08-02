@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="profile">turn profiling on</flag>
+	</use>
 	<longdescription>
 		The Haskell XML Toolbox bases on the ideas of HaXml and HXML,
 		but introduces a more general approach for processing XML with Haskell.
@@ -16,11 +19,52 @@
 		The library makes extensive use of the arrow approach for processing XML.
 		Since version 9 the toolbox is partitioned into various (sub-)packages.
 		This package contains the core functionality,
-		hxt-curl, hxt-tagsoup, hxt-relaxng, hxt-xpath, hxt-xslt, hxt-regex-xmlschema contain the extensions.
+		hxt-curl, hxt-tagsoup, hxt-relaxng, hxt-xpath, hxt-xslt,
+		hxt-regex-xmlschema contain the extensions.
 		hxt-unicode contains encoding and decoding functions,
 		hxt-charproperties char properties for unicode and XML.
+		
+		Changes from 9.3.1.15: Bug in quoting PI instructions in showXmlTrees fixed
+		
+		Changes from 9.3.1.14: For ghc-7.10 network-uri is automatically selected
+		
+		Changes from 9.3.1.13: ghc-7.10 compatibility
+		
+		Changes from 9.3.1.12: Bug when unpickling an empty attribute value removed
+		
+		Changes from 9.3.1.11: Bug fix in haddock comments
+		
+		Changes from 9.3.1.10: Bug in DTD validation, space and time leak in delta removed
+		
+		Changes from 9.3.1.9: lower bound of mtl dependency lowered to 2.0.1
+		
+		Changes from 9.3.1.8: Bug in hread removed
+		
+		Changes from 9.3.1.7: Foldable and Traversable instances for NTree added
+		Control.Except used instead of deprecated Control.Error
+		
+		Changes from 9.3.1.6: canonicalize added in hread and hreadDoc
+		
+		Changes from 9.3.1.4: conditionally (no default)
+		dependency from networt changed to network-uri with flag &quot;network-uri&quot;
+		
+		Changes from 9.3.1.3: warnings from ghc-7.8.1 removed
+		
+		Changes from 9.3.1.2: https as protocol added
+		
+		Changes from 9.3.1.1: new parser xreadDoc
+		
+		Changes from 9.3.1.0: in readString all input decoding switched off
+		
+		Changes from 9.3.0.1: lower bound for network set to be &gt;= 2.4
+		
+		Changes from 9.3.0: upper bound for network set to be &lt; 2.4
+		(URI signatures changed in 2.4)
+		
+		Changes from 9.2.2: XMLSchema validation integrated
+		
+		Changes from 9.2.1: user defined mime type handlers added
+		
+		Changes from 9.2.0: New warnings from ghc-7.4 removed
 	</longdescription>
-	<use>
-		<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
-	</use>
 </pkgmetadata>
