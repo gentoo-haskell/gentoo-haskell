@@ -276,7 +276,7 @@ dev-haskell/http-streams:network-uri - Get Network.URI from the network-uri pack
 dev-haskell/httpd-shed:buildexamples - Build example executables.
 dev-haskell/httpd-shed:network-bsd - Get Network.BSD from the network-bsd package.
 dev-haskell/httpd-shed:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/hxt:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/hxt:profile - turn profiling on
 dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
 dev-haskell/icalendar:network-uri - use network-uri package
 dev-haskell/ignore:without-pcre - Disable pcre support
