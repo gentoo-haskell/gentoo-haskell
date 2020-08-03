@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+bibutils debug embed-data-files static unicode-collation"
 
-RESTRICT=test # fails
-
 RDEPEND=">=app-text/pandoc-2.8:=[profile?] <app-text/pandoc-2.11:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
@@ -50,7 +48,7 @@ RDEPEND=">=app-text/pandoc-2.8:=[profile?] <app-text/pandoc-2.11:=[profile?]
 	debug? ( dev-haskell/pretty-show:=[profile?] )
 	embed-data-files? ( >=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
 	unicode-collation? ( dev-haskell/text-icu:=[profile?] )
-	!unicode-collation? ( dev-haskell/rfc5051:=[profile?] )
+	!unicode-collation? ( >=dev-haskell/rfc5051-0.2:=[profile?] <dev-haskell/rfc5051-0.3:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
