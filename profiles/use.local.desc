@@ -532,7 +532,8 @@ dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri packag
 dev-haskell/yesod-static-angular:example - Build the example program
 dev-haskell/yi-core:hint - Build with hint (haskell interpreter)
 dev-haskell/zip-archive:executable - Build the Zip executable.
-dev-haskell/zlib:non-blocking-ffi - Execute FFI calls in the context of haskell thread.
+dev-haskell/zlib:bundled-c-zlib - Use the bundled zlib C sources. Requires pkg-config to be False. For windows, this is the default.
+dev-haskell/zlib:non-blocking-ffi - The (de)compression calls can sometimes take a long time, which prevents other Haskell threads running. Enabling this flag avoids this unfairness, but with greater overall cost.
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
 dev-lang/cryptol:server - Build with the ZeroMQ/JSON cryptol-server executable.
 dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors
