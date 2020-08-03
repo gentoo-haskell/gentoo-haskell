@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="dev-util/pkgcheck
+RDEPEND="app-portage/repoman
+	dev-util/pkgcheck
 	>=dev-haskell/async-2.0:=
 	>=dev-haskell/base16-bytestring-0.1.1:=
 	>=dev-haskell/base64-bytestring-1.0:=
