@@ -56,47 +56,12 @@ dev-haskell/log
 dev-haskell/log-elasticsearch
 
 # Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Unmaintained since 2012-2014. Masked for deletion
-dev-haskell/vacuum
-dev-haskell/vacuum-graphviz
-
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
 # Unmaintained, requires porting to newer gtk dep
 dev-haskell/glade
 dev-haskell/gt-tools
 dev-haskell/gtksourceview2
 dev-haskell/gtksourceview3
 dev-haskell/vte
-
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Unmaintained and deprecated since 2015
-dev-haskell/tables
-
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Unmaintained since 2015, incompatible with >= Cabal-2
-dev-haskell/extract-dependencies
-dev-haskell/stack-run-auto
-
-# Jack Todaro <solpeth@posteo.org> (1 July 2020)
-# Unmaintained/abandoned since 2015-2018
-dev-haskell/hipmunk
-dev-haskell/hipmunkplayground
-games-action/nikki
-
-# Jack Todaro <solpeth@posteo.org> (1 July 2020)
-# Unmaintained since 2015
-dev-haskell/herbieplugin
-
-# Jack Todaro <solpeth@posteo.org> (1 July 2020)
-# Unmaintained since 2014, fails to build with
-# ghc-8.8.3. Masked for deletion.
-dev-haskell/haskelldb
-dev-haskell/haskelldb-hdbc
-dev-haskell/haskelldb-hdbc-mysql
-dev-haskell/haskelldb-hdbc-odbc
-dev-haskell/haskelldb-hdbc-postgresql
-dev-haskell/haskelldb-hdbc-sqlite3
-dev-haskell/haskelldb-th
 
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Needs porting to newer Cabal versions. Also mask
@@ -112,25 +77,10 @@ dev-haskell/spreadsheet
 dev-haskell/csv-to-qif
 dev-haskell/wordpass
 
-# Jack Todaro <solpeth@posteo.org> (30 June 2020)
-# Unmaintained since 2017, dependencies need updating.
-# Masked for deletion.
-dev-haskell/liblawless
-
-# Jack Todaro <solpeth@posteo.org> (30 June 2020)
-# Unmaintained since 2016, dependencies need updating.
-# Masked for deletion.
-dev-haskell/yarr
-
 # Jack Todaro <solpeth@posteo.org> (25 June 2020)
 # Depends on dev-tex/polytable, which is masked for
 # deletion. Also doesn't build with ghc-8.6.5.
 <dev-haskell/lhs2tex-1.20
-
-# Jack Todaro <solpeth@posteo.org> (10 June 2020)
-# Unmaintained since 2010, requires old version of
-# dev-haskell/gtk (no longer available in ::haskell)
-dev-haskell/gtkimageview
 
 # Sergei Trofimovich <slyfox@gentoo.org> (20 May 2020)
 # Was never tweaked for modern haskell-src-exts.
