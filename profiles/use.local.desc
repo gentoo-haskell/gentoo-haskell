@@ -478,8 +478,6 @@ dev-haskell/streamly:no-fusion - Disable rewrite rules
 dev-haskell/streamly:streamk - Use CPS style streams when possible
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
-dev-haskell/tables:test-properties - Enable the properties test-suite.
-dev-haskell/tables:transformers2 - Enable old versions of transformers. Non-developers should never set this.
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
@@ -567,7 +565,6 @@ dev-vcs/git-annex:s3 - Enable S3 support
 dev-vcs/git-annex:torrentparser - Use haskell torrent library to parse torrent files
 dev-vcs/git-annex:webapp - Enable git-annex webapp
 dev-vcs/git-annex:webdav - Enable WebDAV support
-games-action/nikki:devel - Build without optimizations and executable stripping.
 games-puzzle/intricacy:curses - Enables curses user interface
 games-puzzle/intricacy:sdl - Enables SDL user interface
 games-puzzle/intricacy:server - Builds game server

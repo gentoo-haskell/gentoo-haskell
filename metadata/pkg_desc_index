@@ -595,7 +595,6 @@ dev-haskell/explicit-exception 0.1.10: Exceptions which are explicit in the type
 dev-haskell/extensible-effects 5.0.0.1: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.5.1 1.6.21 1.7.4: Extra functions I use
-dev-haskell/extract-dependencies 0.2.0.1: Given a hackage package outputs the list of its dependencies
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
 dev-haskell/fast-builder 0.1.2.0: Fast ByteString Builder
@@ -804,7 +803,6 @@ dev-haskell/gtk-traymanager 0.1.6 1.0.1: A wrapper around the eggtraymanager lib
 dev-haskell/gtk2hs-buildtools 0.13.5.1 0.13.8.0: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.9 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
-dev-haskell/gtkimageview 0.12.0-r3: Binding to the GtkImageView library
 dev-haskell/gtksourceview2 0.13.3.1: Binding to the GtkSourceView library
 dev-haskell/gtksourceview3 0.13.3.1: Binding to the GtkSourceView library
 dev-haskell/hackage-db 1.22 2.0.1: access Hackage's package database via Data.Map
@@ -863,13 +861,6 @@ dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1 1.18.2 1.19.1 1.2
 dev-haskell/haskell-src-exts-simple 1.19.0.0 1.20.0.0 1.21.1.0 1.22.0.0 1.23.0.0: A simplified view on the haskell-src-exts AST
 dev-haskell/haskell-src-exts-util 0.2.5: Helper functions for working with haskell-src-exts trees
 dev-haskell/haskell-src-meta 0.6.0.14-r2 0.8.5-r1: Parse source to template-haskell abstract syntax
-dev-haskell/haskelldb 2.2.4: A library of combinators for generating and executing SQL statements
-dev-haskell/haskelldb-hdbc 2.2.4: HaskellDB support for HDBC
-dev-haskell/haskelldb-hdbc-mysql 0.1.1-r2: HaskellDB support for the HDBC MySQL driver
-dev-haskell/haskelldb-hdbc-odbc 2.1.2-r1: HaskellDB support for the HDBC ODBC driver
-dev-haskell/haskelldb-hdbc-postgresql 2.1.2-r2: HaskellDB support for the HDBC PostgreSQL driver
-dev-haskell/haskelldb-hdbc-sqlite3 2.1.2-r1: HaskellDB support for the HDBC SQLite driver
-dev-haskell/haskelldb-th 2.1.0-r1: Template Haskell utilities for HaskellDB
 dev-haskell/haskellnet 0.5.1-r2: Client support for POP3, SMTP, and IMAP
 dev-haskell/haskellnet-ssl 0.3.4.1-r1: Helpers to connect to SSL/TLS mail servers with HaskellNet
 dev-haskell/haskey 0.3.1.0: A transactional, ACID compliant, embeddable key-value store
@@ -902,7 +893,6 @@ dev-haskell/hedgehog 0.6.1-r2 1.0.2-r1: Hedgehog will eat all your bugs
 dev-haskell/hedis 0.9.6 0.12.13: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/hedis-config 0.0.3: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r1: An Haskell template system supporting both HTML5 and XML
-dev-haskell/herbieplugin 0.2.0.0: automatically improve your code's numeric stability
 dev-haskell/here 1.2.13: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
 dev-haskell/heterocephalus 1.0.5.3: A type-safe template engine for working with popular front end development tools
@@ -925,8 +915,6 @@ dev-haskell/highlighting-kate 0.6.4: Syntax highlighting
 dev-haskell/hinotify 0.3.10 0.4: Haskell binding to inotify
 dev-haskell/hint 0.7.0 0.8.0 0.9.0.2 0.9.0.3 9999: Runtime Haskell interpreter (GHC API wrapper)
 dev-haskell/hip 1.5.4.0: Haskell Image Processing (HIP) Library
-dev-haskell/hipmunk 5.2.0.17: A Haskell binding for Chipmunk
-dev-haskell/hipmunkplayground 5.2.1.1: A playground for testing Hipmunk
 dev-haskell/hit 0.7.0: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
@@ -1217,7 +1205,6 @@ dev-haskell/leveldb-haskell 0.6.5: Haskell bindings to LevelDB
 dev-haskell/lhs2tex 1.19-r1 1.24: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.7.0: Lastfm API interface
-dev-haskell/liblawless 0.26.0-r3: Prelude based on protolude for GHC 8 and beyond
 dev-haskell/libmpd 0.9.1.0: An MPD client library
 dev-haskell/libnotify 0.2.1: Bindings to libnotify library
 dev-haskell/libssh2 0.2.0.3: FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)
@@ -1876,7 +1863,6 @@ dev-haskell/ssh 0.3.2: A pure-Haskell SSH server library
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
 dev-haskell/stack 2.1.3.1 2.3.1 9.9.9: The Haskell Tool Stack
 dev-haskell/stack-bin 1.5.1 1.6.1 1.7.1 2.1.3 2.3.1: The Haskell Tool Stack (Binary)
-dev-haskell/stack-run-auto 0.1.1.4: Initial project template from stack
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5-r1: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.2: State variables
@@ -1946,7 +1932,6 @@ dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect 
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
 dev-haskell/system-uuid 2.1.1: Bindings to system UUID functions
 dev-haskell/syz 0.2.0.0: Scrap Your Zippers
-dev-haskell/tables 0.4.1.1-r3: In-memory storage with multiple keys using lenses and traversals
 dev-haskell/tabular 0.2.2.7: Two-dimensional data tables with rendering functions
 dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bits used by GHC
 dev-haskell/tagged 0.8.6: Haskell 98 phantom types to avoid unsafely passing dummy arguments
@@ -2139,8 +2124,6 @@ dev-haskell/uuid 1.3.13-r1: For creating, comparing, parsing and printing Univer
 dev-haskell/uuid-orphans 1.4.4: Orphan instances for the UUID datatype
 dev-haskell/uuid-types 1.0.3-r1: Type definitions for Universally Unique Identifiers
 dev-haskell/uulib 0.9.24: Haskell Utrecht Tools Library
-dev-haskell/vacuum 2.2.0.0: Graph representation of the GHC heap
-dev-haskell/vacuum-graphviz 2.1.0.1: A library for transforming vacuum graphs into GraphViz output
 dev-haskell/vado 0.0.13: Runs commands on remote machines using ssh
 dev-haskell/validation 1.1: A data-type like Either but with an accumulating Applicative
 dev-haskell/validity 0.9.0.3: Validity typeclass
@@ -2269,7 +2252,6 @@ dev-haskell/xxhash-ffi 0.2.0.0: Bindings to the C implementation the xxHash algo
 dev-haskell/yaml 0.8.32 0.11.2.0: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yampa 0.13.1: Library for programming hybrid systems
-dev-haskell/yarr 1.4.0.2: Yet another array library
 dev-haskell/yesod 1.6.0.2: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
 dev-haskell/yesod-auth 1.4.19 1.6.8 1.6.9: Authentication for Yesod
@@ -2369,7 +2351,6 @@ dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 8.20200617 8.20200720.1: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
-games-action/nikki 9999: Nikki and the robots game
 games-arcade/blubber 0.0.1-r1: The blubber client; connects to the blubber server
 games-arcade/blubber-server 0.0.1-r5: The blubber server, serves blubber clients
 games-arcade/shu-thing 1.1.4: A vector shooter game
