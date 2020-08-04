@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.4:=[profile?] <dev-haskell/aeson-1.5:=
+RDEPEND=">=dev-haskell/aeson-0.4:=[profile?] <dev-haskell/aeson-1.6:=
 	>=dev-haskell/ekg-core-0.1:=[profile?] <dev-haskell/ekg-core-0.2:=[profile?]
 	>=dev-haskell/ekg-json-0.1:=[profile?] <dev-haskell/ekg-json-0.2:=[profile?]
 	<dev-haskell/network-3.2:=[profile?]
@@ -35,7 +35,8 @@ src_prepare() {
 
 	# As per http://hackage.haskell.org/package/ekg-0.4.0.15/revisions/
 	cabal_chdeps \
-		'base >= 4.5 && < 4.12'	'base >=4.5 && <4.13' \
-		'aeson >= 0.4 && < 1.3'	'aeson >= 0.4 && <1.5' \
-		'network < 2.7'			'network < 3.2'
+		'base >= 4.5 && < 4.12'	'base >=4.5' \
+		'aeson >= 0.4 && < 1.3'	'aeson >= 0.4' \
+		'network < 2.7'			'network' \
+		'time < 1.9'            'time'
 }
