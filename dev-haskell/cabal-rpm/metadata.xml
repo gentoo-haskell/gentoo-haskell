@@ -8,7 +8,6 @@
 	<use>
 		<flag name="curl">Use curl library to query Stackage instead of http-client</flag>
 		<flag name="https">Use http to query Stackage</flag>
-		<flag name="old-locale">Use old-locale and time &lt; 1.5</flag>
 	</use>
 	<longdescription>
 		This package provides a RPM packaging tool for Haskell Cabal-based packages.
@@ -16,10 +15,10 @@
 		cabal-rpm has commands to generate a RPM spec file and srpm for a package.
 		It can rpmbuild packages, yum/dnf install their dependencies, prep packages,
 		and install them. There are commands to list package dependencies and
-		missing dependencies. The diff command compares the current spec file
-		with a freshly generated one, the update command updates the spec file
-		to latest version from Stackage or Hackage, and the refresh command updates
-		the spec file to the current cabal-rpm packaging. It also handles Hackage
-		revisions of packages.
+		missing dependencies. The diff command compares the current spec file with
+		a freshly generated one, the update command updates the spec file to latest
+		version from Stackage or Hackage, and the refresh command updates the spec
+		file to the current cabal-rpm packaging. It also handles Hackage revisions of
+		packages. Standalone packages can also be made, built with cabal-install.
 	</longdescription>
 </pkgmetadata>
