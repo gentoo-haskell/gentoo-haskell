@@ -21,7 +21,6 @@
 	</longdescription>
 	<use>
 		<flag name="compat">Accept SSLv2 compatible handshake.</flag>
-		<flag name="hans">Use the Haskell Network Stack (HaNS).</flag>
 		<flag name="network">Use the base network library.</flag>
 	</use>
 </pkgmetadata>
