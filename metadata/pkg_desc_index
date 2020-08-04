@@ -144,7 +144,7 @@ dev-haskell/authenticate-oauth 1.6.0.1: Library to authenticate with OAuth for H
 dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.6: Efficiently run periodic, on-demand actions
 dev-haskell/avltree 4.2-r1: Balanced binary trees using the AVL algorithm
-dev-haskell/aws 0.20 0.21.1 0.22-r1: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.22-r1: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 1.1.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.1: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.1: base-compat with extra batteries
@@ -561,7 +561,7 @@ dev-haskell/egison 3.9.1 3.10.3: Programming language with non-linear pattern-ma
 dev-haskell/either 5.0.1.1: An either monad transformer
 dev-haskell/either-unwrap 1.1-r1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
-dev-haskell/ekg 0.4.0.15-r6: Remote monitoring of processes
+dev-haskell/ekg 0.4.0.15-r7: Remote monitoring of processes
 dev-haskell/ekg-core 0.1.1.7: Tracking of system metrics
 dev-haskell/ekg-json 0.1.0.6-r1: JSON encoding of ekg metrics
 dev-haskell/email-validate 2.3.2.12: Validating an email address string against RFC 5322
@@ -2413,7 +2413,7 @@ www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
 www-servers/mighttpd2 3.2.9 3.3.1 3.3.5 3.4.3-r1 3.4.6: High performance web server on WAI/warp
-x11-misc/taffybar 0.4.6-r1 3.0.0 3.1.1 3.2.1 3.2.2 9999: A desktop bar similar to xmobar, but with more GUI
+x11-misc/taffybar 3.2.2 9999: A desktop bar similar to xmobar, but with more GUI
 x11-misc/xmobar 0.34 0.35.1 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.12.1-r4 0.13.0 0.13.3 0.13.4 0.14-r2 0.15 0.15.2: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-utils 0.1.3.3: A small collection of X utilities
