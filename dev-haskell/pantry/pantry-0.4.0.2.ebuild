@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT="test" # seems related to http-download, requiring network access
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/cabal-3:=[profile?] <dev-haskell/cabal-3.3:=[profile?]
