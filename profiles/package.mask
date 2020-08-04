@@ -1,3 +1,13 @@
+# Jack Todaro <solpeth@posteo.org> (2020-08-04)
+# Deprecated in favour of dev-haskell/dbus.
+# Scheduled for deletion in 30 days.
+dev-haskell/dbus-core
+
+# Jack Todaro <solpeth@posteo.org> (2020-08-04)
+# Dead upstream, requires porting to MonadFail.
+# Scheduled for deletion in 30 days.
+dev-haskell/hans
+
 # Jack Todaro <solpeth@posteo.org> (2 Aug 2020)
 # dev-haskell/stack-2.3.1 requires < pantry-0.5
 >=dev-haskell/pantry-0.5
