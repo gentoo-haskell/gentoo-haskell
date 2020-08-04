@@ -1,7 +1,0 @@
---- a/Source/Machine.hs
-+++ b/Source/Machine.hs
-@@ -10,3 +10,3 @@ module Machine (
- 
--import Lawless hiding ((<~))
-+import Lawless hiding ((<~), (↢), (↣))
- import Data.Machine.Concurrent
