@@ -1712,9 +1712,9 @@ dev-haskell/resourcet 1.1.11 1.2.4.2: Deterministic allocation and freeing of sc
 dev-haskell/retry 0.7.7.0 0.8.1.1: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.1.0.4 0.2: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
-dev-haskell/rio 0.1.15.0 0.1.17.0: A standard library for Haskell
+dev-haskell/rio 0.1.18.0: A standard library for Haskell
 dev-haskell/rio-orphans 0.1.1.0: Orphan instances for the RIO type in the rio package
-dev-haskell/rio-prettyprint 0.1.0.0: Pretty-printing for RIO
+dev-haskell/rio-prettyprint 0.1.1.0: Pretty-printing for RIO
 dev-haskell/rolling-queue 0.1: Bounded channel for STM that discards old entries when full
 dev-haskell/roman-numerals 0.5.1.5: Parsing and pretty printing of Roman numerals
 dev-haskell/rosezipper 0.2: Generic zipper implementation for Data.Tree
@@ -2099,7 +2099,7 @@ dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like op
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
 dev-haskell/unliftio 0.2.12.1: The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)
 dev-haskell/unliftio-core 0.1.2.0 0.2.0.1: The MonadUnliftIO typeclass for unlifting monads to IO
-dev-haskell/unordered-containers 0.2.10.0: Efficient hashing-based container types
+dev-haskell/unordered-containers 0.2.12.0: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
 dev-haskell/uri-bytestring 0.3.2.2: Haskell URI parsing as ByteStrings

@@ -494,6 +494,7 @@ dev-haskell/transformers-base:orphaninstances - Build instances for orphan datat
 dev-haskell/tz:template-haskell - Enable and use template haskell support.
 dev-haskell/unagi-chan:compare-benchmarks - 
 dev-haskell/unix-compat:old-time - build against old-time package
+dev-haskell/unordered-containers:debug - Enable debug support
 dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/uri-encode:tools - Build executables.
 dev-haskell/urlencoded:network-uri - Get Network.URI from the network-uri package
