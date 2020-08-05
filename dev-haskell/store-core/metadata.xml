@@ -6,9 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="force-alignment">No description</flag>
+		<flag name="force-alignment"></flag>
 	</use>
-	<longdescription>
-		Fast and lightweight binary serialization
-	</longdescription>
 </pkgmetadata>
