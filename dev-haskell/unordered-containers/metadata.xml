@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="debug">Enable debug support</flag>
+	</use>
 	<longdescription>
 		Efficient hashing-based container types.  The containers have been
 		optimized for performance critical use, both in terms of large data
