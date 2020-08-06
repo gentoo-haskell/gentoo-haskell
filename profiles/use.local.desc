@@ -460,6 +460,7 @@ dev-haskell/sr-extra:network-uri - Get Network.URI from the network-uri package 
 dev-haskell/sr-extra:omit-data - Omit all Data instances
 dev-haskell/sr-extra:omit-serialize - Omit all the Serialize instances, on the assumption that we will use SafeCopy instances instead.
 dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
+dev-haskell/stack:developer-mode - By default, should extra developer information be output?
 dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
