@@ -535,7 +535,6 @@ src_prepare() {
 		cd "${S}" # otherwise eapply will break
 
 		eapply "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
-		eapply "${FILESDIR}"/${PN}-9999-no-relax-everywhere.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-less-O2-hack.patch
 
@@ -564,8 +563,6 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9999-win32-nanosleep.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-prim-atomic.patch
-
-		eapply "${FILESDIR}"/${PN}-9999-bignum-make.patch
 
 		bump_libs
 
