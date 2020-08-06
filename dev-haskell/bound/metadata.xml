@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="template_haskell">Enable additional test modules requiring Template Haskell support.</flag>
+		<flag name="template-haskell">Enable additional test modules requiring Template Haskell support.</flag>
 	</use>
 	<longdescription>
 		We represent the target language itself as an ideal monad supplied by the
