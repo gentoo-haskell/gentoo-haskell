@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND=">=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.10:=[profile?]
+RDEPEND=">=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.11:=[profile?]
 	>=dev-haskell/microlens-platform-0.3.8.0:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
@@ -32,7 +32,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'microlens-platform >= 0.3.8.0 && < 0.4' 'microlens-platform >= 0.3.8.0'
+		'microlens-platform >= 0.3.8.0 && < 0.4' 'microlens-platform >= 0.3.8.0' \
+		'json >= 0.5 && < 0.10' 'json >= 0.5'
 }
 
 src_configure() {
