@@ -222,7 +222,7 @@ dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.4: Generalized booleans and numbers
 dev-haskell/boomerang 1.4.5.7: Library for invertible parsing and printing
 dev-haskell/bootstrap-types 0.3: Bootstrap CSS Framework type-safe interface
-dev-haskell/bound 2.0.1: Making de Bruijn Succ Less
+dev-haskell/bound 2.0.1-r1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.5: 2D text pretty-printing library
@@ -668,7 +668,7 @@ dev-haskell/fst 0.10.0.1-r1: Finite state transducers
 dev-haskell/ftgl 2.1: Portable TrueType font rendering for OpenGL using the Freetype2 library
 dev-haskell/ftphs 1.0.9.2: FTP Client and Server Library
 dev-haskell/funcmp 1.9: Functional MetaPost
-dev-haskell/functor-classes-compat 1: Data.Functor.Classes instances for core packages
+dev-haskell/functor-classes-compat 1-r1: Data.Functor.Classes instances for core packages
 dev-haskell/functor-monadic 0.1.0.3: Monad-style combinators for functors
 dev-haskell/fusion-plugin-types 0.1.0: Types for the fusion-plugin package
 dev-haskell/gamma 0.9.0.2 0.10.0.0: Gamma function and related functions
