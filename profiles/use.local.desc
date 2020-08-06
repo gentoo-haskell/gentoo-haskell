@@ -290,8 +290,8 @@ dev-haskell/jsaddle:call-stacks - Include HasCallStack constraint on calls unche
 dev-haskell/jsaddle:check-unchecked - Fail unchecked calls when they are called (rather than when the result is evaluated)
 dev-haskell/jsaddle-wkwebview:include-app-delegate - Include default AppDelegate C sources.
 dev-haskell/json:mapdict - Encode Haskell maps as JSON dicts
-dev-haskell/json:parsec - Add support for parsing with Parsec
-dev-haskell/json:pretty - Add support for using pretty printing combinators
+dev-haskell/json:parsec - Add support for parsing with Parsec.
+dev-haskell/json:pretty - Add support for using pretty printing combinators.
 dev-haskell/judy:unsafe - Compile the library without locks. Code may be faster, but not threadsafe.
 dev-haskell/juicypixels-extra:dev - Turn on development settings.
 dev-haskell/keter:system-filepath - Deprecated in favor of filepath
@@ -581,7 +581,6 @@ sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the
 sci-mathematics/cvc4:cln - Use sci-libs/cln as a bignum backend.
 sci-mathematics/cvc4:compat - Install CVC3 compatibility modules.
 sci-mathematics/cvc4:glpk - Use sci-mathematics/glpk as a linear backend.
-www-apps/gitit:network-uri - Get Network.URI from the network-uri package.
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-servers/mighttpd2:tls - HTTPS support.
 x11-misc/taffybar:network-uri - Get Network.URI from the network-uri package.
