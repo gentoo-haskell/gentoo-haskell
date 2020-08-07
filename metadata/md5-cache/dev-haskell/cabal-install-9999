@@ -11,4 +11,4 @@ RDEPEND=>=dev-haskell/async-2.0:= >=dev-haskell/base16-bytestring-0.1.1:= >=dev-
 RESTRICT=!test? ( test )
 SLOT=0
 _eclasses_=bash-completion-r1	e5f9c3faab3ab3d1e7e007daa8c736ef	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	c5182eb7e501132153f9710aa822d170	git-r3	8ec5b53812bce105ae7943930e4660f8	haskell-cabal	c107e202f6f24b4f9e946cb8f7c0668c	multilib	2477ebe553d3e4d2c606191fe6c33602	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
-_md5_=2d1c7f08353606cb47daebf17e8ad7e4
+_md5_=f8489f5979d6f145d49f9fcb1c862842
