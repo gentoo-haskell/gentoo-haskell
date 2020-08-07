@@ -36,6 +36,7 @@ RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/retry-0.8:=[profile?] <dev-haskell/retry-0.9:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
+	>=dev-haskell/unliftio-core-0.1.1:=[profile?] <dev-haskell/unliftio-core-0.3:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
@@ -43,15 +44,8 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-core-2.0 <dev-haskell/hspec-core-3.0
 		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-3.0
-		>=dev-haskell/unordered-containers-0.2.5 <dev-haskell/unordered-containers-0.3 )
+		>=dev-haskell/unordered-containers-0.2.5 <dev-haskell/unordered-containers-0.2.13 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'unordered-containers >=0.2.5 && <0.2.12' 'unordered-containers >=0.2.5'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
