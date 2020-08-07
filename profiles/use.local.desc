@@ -327,6 +327,7 @@ dev-haskell/miso:jsaddle - Compile with JSaddle
 dev-haskell/miso:tests - Builds Miso's tests
 dev-haskell/missingh:network-3 - Use network-3
 dev-haskell/mod:semirings - Derive semiring instances
+dev-haskell/modern-uri:dev - Turn on development settings.
 dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/mongodb:old-network - Enforce <dev-haskell/network-2.9

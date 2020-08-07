@@ -518,7 +518,7 @@ dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
 dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with useful IO functions
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
-dev-haskell/discord-haskell 1.1.2-r1 1.4.0: Write bots for Discord in Haskell
+dev-haskell/discord-haskell 1.7.0: Write bots for Discord in Haskell
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.6.1: Distributive functors -- Dual to Traversable
@@ -1312,6 +1312,7 @@ dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmorph 1.0.9 1.1.3: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/mod 0.1.1.0: Fast type-safe modular arithmetic
+dev-haskell/modern-uri 0.3.2.0: Modern library for working with URIs
 dev-haskell/modular-arithmetic 1.2.1.5: A type for integers modulo some constant
 dev-haskell/monad-control 1.0.2.3: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-control-aligned 0.0.1.1: monad-control altrnative
@@ -1704,7 +1705,7 @@ dev-haskell/repa-io 3.4.1.1-r1: Read and write Repa arrays in various formats
 dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
 dev-haskell/replib 0.5.4.1: Generic programming library with representation types
 dev-haskell/repline 0.2.2.0: Haskeline wrapper for GHCi-like REPL interfaces
-dev-haskell/req 2.1.0: Easy-to-use, type-safe, expandable, high-level HTTP library
+dev-haskell/req 3.4.0: Easy-to-use, type-safe, expandable, high-level HTTP library
 dev-haskell/rerebase 1.3.1 1.4.1: Reexports from 'base' with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
