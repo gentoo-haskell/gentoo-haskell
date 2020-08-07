@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Easy-to-use, type-safe, expandable, high-level HTTP library.
-	</longdescription>
 </pkgmetadata>
