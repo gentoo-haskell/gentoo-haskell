@@ -578,9 +578,6 @@ sci-mathematics/agda:enable-cluster-counting - Count extended grapheme clusters 
 sci-mathematics/agda:stdlib - Install the standard library.
 sci-mathematics/agda:uhc - Add support for the uhc backend.
 sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the MAlonzo backend
-sci-mathematics/cvc4:cln - Use sci-libs/cln as a bignum backend.
-sci-mathematics/cvc4:compat - Install CVC3 compatibility modules.
-sci-mathematics/cvc4:glpk - Use sci-mathematics/glpk as a linear backend.
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-servers/mighttpd2:tls - HTTPS support.
 x11-misc/taffybar:network-uri - Get Network.URI from the network-uri package.

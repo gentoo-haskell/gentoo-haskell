@@ -2386,7 +2386,6 @@ sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
 sci-mathematics/agda 2.4.2.5-r2 2.5.1-r4 2.5.1.1-r1 2.5.1.2 2.5.2-r1 2.5.3-r1 2.5.4 2.6.0.1-r1 9999: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
 sci-mathematics/agda-stdlib 2.4.2.5 2.5.1.0.12 2.5.2.0.13 2.5.3.0.14 2.5.4.0.16 2.6.0.1.1.0.1 9999: Agda standard library
-sci-mathematics/cvc4 1.6: automatic theorem prover for Satisfiability Modulo Theories (SMT) problems
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 1.1: A web interface for darcs
