@@ -1705,7 +1705,7 @@ dev-haskell/repa-io 3.4.1.1-r1: Read and write Repa arrays in various formats
 dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
 dev-haskell/replib 0.5.4.1: Generic programming library with representation types
 dev-haskell/repline 0.2.2.0: Haskeline wrapper for GHCi-like REPL interfaces
-dev-haskell/req 3.4.0: Easy-to-use, type-safe, expandable, high-level HTTP library
+dev-haskell/req 3.5.0: Easy-to-use, type-safe, expandable, high-level HTTP library
 dev-haskell/rerebase 1.3.1 1.4.1: Reexports from 'base' with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
