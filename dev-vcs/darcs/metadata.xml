@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<maintainer type="project">
-  <email>haskell@gentoo.org</email>
-</maintainer>
-<use>
-  <flag name="diff">Use 'lcs' for diff building.</flag>
-  <flag name="http">Use the pure Haskell HTTP package for HTTP support.</flag>
-  <flag name="network-uri">Get Network.URI from the network-uri package.</flag>
-  <flag name="terminfo">Use the terminfo package for enhanced console support.</flag>
-  <flag name="threaded">Use threading and SMP support.</flag>
-</use>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="curl">Use libcurl for HTTP support.</flag>
+		<flag name="diff">Use 'lcs' for diff building.</flag>
+		<flag name="http">Use the pure Haskell HTTP package for HTTP support.</flag>
+		<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
+		<flag name="terminfo">Use the terminfo package for enhanced console support.</flag>
+		<flag name="threaded">Use threading and SMP support.</flag>
+	</use>
+	<longdescription>
+		Darcs is a free, open source revision control
+		system. It is:
+		
+		* Distributed: Every user has access to the full
+		command set, removing boundaries between server and
+		client or committer and non-committers.
+		
+		* Interactive: Darcs is easy to learn and efficient to
+		use because it asks you questions in response to
+		simple commands, giving you choices in your work
+		flow. You can choose to record one change in a file,
+		while ignoring another. As you update from upstream,
+		you can review each patch name, even the full &quot;diff&quot;
+		for interesting patches.
+		
+		* Smart: Originally developed by physicist David
+		Roundy, darcs is based on a unique algebra of
+		patches.
+		
+		This smartness lets you respond to changing demands
+		in ways that would otherwise not be possible. Learn
+		more about spontaneous branches with darcs.
+		
+		* Please note that hackage does not correctly display
+		the license. It is meant to be &quot;GPL-2.0-or-later&quot;.
+	</longdescription>
 </pkgmetadata>
