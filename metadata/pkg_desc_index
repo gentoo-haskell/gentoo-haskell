@@ -2346,7 +2346,7 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.7.0 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.3.5-r1 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.11.1-r1 0.2.12 0.2.13: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.10.3-r1 2.12.0-r1 2.12.4 2.12.5 2.14.0 2.14.1-r1 2.14.2-r3 2.14.4: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.14.5: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 8.20200617 8.20200720.1: manage files with git, without checking their contents into git
 games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
