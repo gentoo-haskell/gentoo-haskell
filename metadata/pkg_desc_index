@@ -2251,7 +2251,7 @@ dev-haskell/xxhash-ffi 0.2.0.0: Bindings to the C implementation the xxHash algo
 dev-haskell/yaml 0.8.32 0.11.2.0: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yampa 0.13.1: Library for programming hybrid systems
-dev-haskell/yesod 1.6.0.2: Creation of type-safe, RESTful web applications
+dev-haskell/yesod 1.6.1.0: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
 dev-haskell/yesod-auth 1.4.19 1.6.8 1.6.9: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.3: An account authentication plugin for Yesod
