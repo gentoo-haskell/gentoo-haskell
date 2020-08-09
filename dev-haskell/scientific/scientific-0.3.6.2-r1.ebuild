@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="integer-simple"
+IUSE=""
 
 RESTRICT=test # circular depends
 
@@ -25,13 +25,7 @@ RDEPEND=">=dev-haskell/bytestring-builder-0.10.4:=[profile?] <dev-haskell/bytest
 	>=dev-haskell/primitive-0.1:=[profile?]
 	>=dev-haskell/text-0.8:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	integer-simple? ( dev-haskell/integer-simple:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag integer-simple integer-simple)
-}
