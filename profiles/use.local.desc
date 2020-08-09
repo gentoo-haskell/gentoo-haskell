@@ -280,7 +280,6 @@ dev-haskell/imagemagick:buildexamples - Build examples.
 dev-haskell/inflections:dev - Turn on development settings
 dev-haskell/influxdb:examples - Build examples
 dev-haskell/inline-c:gsl-example - Build GSL example
-dev-haskell/integer-logarithms:integer-gmp - integer-gmp or integer-simple
 dev-haskell/intervals:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/jmacro:benchmarks - Build the benchmarks.
 dev-haskell/jose-jwt:doctest - doctest
@@ -414,7 +413,6 @@ dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking execut
 dev-haskell/sandi:conduit - Build with conduit
 dev-haskell/sandi:with-conduit - Build with conduit
 dev-haskell/sbv:skip-hlint-tester - Do not build the HLint tester
-dev-haskell/scientific:integer-simple - Use the integer-simple package instead of integer-gmp.
 dev-haskell/sdl2:no-linear - Do not depend on dev-haskell/linear library (bundled Vect)
 dev-haskell/semialign:semigroupoids - Build with semigroupoids dependency
 dev-haskell/semigroupoid-extras:profunctors - You can disable the use of the `profunctors` package using `-f-profunctors`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.

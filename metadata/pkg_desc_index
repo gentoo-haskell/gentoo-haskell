@@ -1097,9 +1097,8 @@ dev-haskell/inline-c-cpp 0.2.1.0: Lets you embed C++ code into Haskell
 dev-haskell/insert-ordered-containers 0.2.1.0 0.2.3-r1: Associative containers retaining insertion order for traversals
 dev-haskell/inspection-testing 0.4.2.4: GHC plugin to do inspection testing
 dev-haskell/instant-generics 0.6: Generic programming library with a sum of products view
-dev-haskell/integer-logarithms 1.0.3: Integer logarithms
+dev-haskell/integer-logarithms 1.0.3-r1: Integer logarithms
 dev-haskell/integer-roots 1.0: Integer roots and perfect powers
-dev-haskell/integer-simple 0.1.1.1: Simple Integer library
 dev-haskell/integration 0.2.1: Fast robust numeric integration via tanh-sinh quadrature
 dev-haskell/interlude 0.1.2: Replaces some Prelude functions for enhanced error reporting
 dev-haskell/intern 0.9.2: Efficient hash-consing for arbitrary data types
@@ -1739,7 +1738,7 @@ dev-haskell/scalpel 0.6.1: A high level web scraping library for Haskell
 dev-haskell/scalpel-core 0.6.1: A high level web scraping library for Haskell
 dev-haskell/scanner 0.3.1: Fast non-backtracking incremental combinator parsing for bytestrings
 dev-haskell/scheduler 1.4.2.3: Work stealing scheduler
-dev-haskell/scientific 0.3.6.2: Numbers represented using scientific notation
+dev-haskell/scientific 0.3.6.2-r1: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.11.5: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scotty-hastache 0.2.1: Easy Mustache templating support for Scotty
