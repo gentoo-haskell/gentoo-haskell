@@ -131,3 +131,11 @@ dev-haskell/hp2any-manager
 >=dev-haskell/monoid-subclasses-0.5  # picoparsec-0.1.2.3
 >=dev-haskell/mysql-haskell-0.8.4    # mysql-haskell-openssl-0.8.3.0
 >=dev-haskell/socket-0.8             # socket-sctp-0.3.0.0
+
+
+# Sergei Trofimovich <slyfox@gentoo.org> (09 Aug 2020)
+# integer-simple should never be installed explicitly.
+# It's part of ghc winthoug GMP backend. Normally
+# dependency on integer-simple should be automatically
+# detected.
+dev-haskell/integer-simple
