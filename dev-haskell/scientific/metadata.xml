@@ -19,8 +19,4 @@
 		scientific notation they can be efficiently
 		parsed to a @Scientific@ number.
 	</longdescription>
-	<use>
-		<flag name="integer-simple">Use the integer-simple package instead
-		of integer-gmp.</flag>
-	</use>
 </pkgmetadata>
