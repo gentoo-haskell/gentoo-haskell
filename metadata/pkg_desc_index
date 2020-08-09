@@ -1171,7 +1171,7 @@ dev-haskell/lambdabot-reference-plugins 5.1.0.4 5.2 5.3: Lambdabot reference plu
 dev-haskell/lambdabot-social-plugins 5.1.0.4 5.2 5.3: Social plugins for Lambdabot
 dev-haskell/lambdabot-trusted 5.1.0.4 5.2 5.3: Lambdabot trusted code
 dev-haskell/language-bash 0.9.0: Parsing and pretty-printing Bash shell scripts
-dev-haskell/language-c 0.6.1 0.8.3: Analysis and generation of C code
+dev-haskell/language-c 0.6.1 0.8.3 0.8.3-r1: Analysis and generation of C code
 dev-haskell/language-c-quote 0.12.2.1: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-css 0.0.3: CSS 2.1 syntax
 dev-haskell/language-docker 8.0.2: Dockerfile parser, pretty-printer and embedded DSL
