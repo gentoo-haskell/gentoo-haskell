@@ -16,14 +16,13 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+integer-gmp"
+IUSE=""
 
 #circular dependency: scientific -> integer-logarithms -> tasty -> scientific
 RESTRICT="test"
 
 RDEPEND=">=dev-haskell/nats-1.1.2:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	!integer-gmp? ( dev-haskell/integer-simple:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
@@ -39,6 +38,5 @@ src_prepare() {
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=-check-bounds \
-		$(cabal_flag integer-gmp integer-gmp)
+		--flag=-check-bounds
 }

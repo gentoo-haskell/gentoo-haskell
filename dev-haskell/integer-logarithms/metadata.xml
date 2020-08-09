@@ -13,7 +13,4 @@
 		&quot;Math.NumberTheory.Power.Natural&quot; modules, as well as some
 		additional functions in migrated modules.
 	</longdescription>
-	<use>
-		<flag name="integer-gmp">integer-gmp or integer-simple</flag>
-	</use>
 </pkgmetadata>
