@@ -33,6 +33,5 @@ CABAL_CORE_LIB_GHC_PV="PM:8.8.1 PM:8.8.2 PM:8.8.3 PM:8.8.4 PM:9999"
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-bytestring-builder \
-		--flag=-developer \
-		--flag=-integer-simple
+		--flag=-developer
 }
