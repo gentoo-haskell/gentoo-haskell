@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+bibutils debug embed-data-files static unicode-collation"
 
+RESTRICT=test # tests fail when system already has pandoc-citeproc installed
+
 RDEPEND=">=app-text/pandoc-2.8:=[profile?] <app-text/pandoc-2.11:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?]
