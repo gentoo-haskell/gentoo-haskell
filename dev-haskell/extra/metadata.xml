@@ -5,7 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<upstream>
-		<remote-id type="github">ndmitchell/extra</remote-id>
-	</upstream>
+	<longdescription>
+		A library of extra functions for the standard Haskell libraries. Most functions are simple additions, filling out missing functionality. A few functions are available in later versions of GHC, but this package makes them available back to GHC 7.2.
+		
+		The module &quot;Extra&quot; documents all functions provided by this library. Modules such as &quot;Data.List.Extra&quot; provide extra functions over &quot;Data.List&quot; and also reexport &quot;Data.List&quot;. Users are recommended to replace &quot;Data.List&quot; imports with &quot;Data.List.Extra&quot; if they need the extra functionality.
+	</longdescription>
 </pkgmetadata>
