@@ -800,7 +800,7 @@ dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-sni-tray 0.1.6.0: A standalone StatusNotifierItem/AppIndicator tray
 dev-haskell/gtk-strut 0.1.3.0: Libary for creating strut windows with gi-gtk
 dev-haskell/gtk-traymanager 0.1.6 1.0.1: A wrapper around the eggtraymanager library for Linux system trays
-dev-haskell/gtk2hs-buildtools 0.13.5.1 0.13.8.0: Tools to build the Gtk2Hs suite of User Interface libraries
+dev-haskell/gtk2hs-buildtools 0.13.5.1 0.13.8.0 0.13.8.0-r1: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.9 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/gtksourceview2 0.13.3.1: Binding to the GtkSourceView library
