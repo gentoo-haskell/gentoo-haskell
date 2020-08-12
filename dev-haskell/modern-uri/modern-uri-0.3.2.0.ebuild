@@ -34,6 +34,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-megaparsec-2.0 <dev-haskell/hspec-megaparsec-3.0 )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >= 2.10 && < 2.16' 'template-haskell >= 2.10'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag dev dev)
