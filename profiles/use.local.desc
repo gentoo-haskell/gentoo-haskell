@@ -80,11 +80,14 @@ dev-haskell/btrfs:examples - Build examples
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/c2hs:regression - run regression tests
+dev-haskell/cabal-helper:dev - Build development components
 dev-haskell/cabal-install:debug-conflict-sets - Add additional information to ConflictSets
 dev-haskell/cabal-install:native-dns - Enable use of the resolv and windns packages for performing DNS lookups
 dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball
 dev-haskell/cabal-install:parsec - Use parser written in parsec library
+dev-haskell/cabal-plan:license-report - Enable @license-report@ sub-command (only relevant when the @exe@ flag is active)
+dev-haskell/cabal-plan:underline - Enable underlining of primary unit-ids
 dev-haskell/cabal-rpm:curl - Use curl library to query Stackage instead of http-client
 dev-haskell/categories:optimize - enable optimizations
 dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
@@ -554,7 +557,6 @@ dev-vcs/git-annex:debuglocks - Debug location of MVar/STM deadlocks
 dev-vcs/git-annex:gitlfs - Build with git-lfs library (rather than vendored copy)
 dev-vcs/git-annex:httpclientrestricted - Build with http-client-restricted library (rather than vendored copy)
 dev-vcs/git-annex:magicmime - Use libmagic to determine file MIME types
-dev-vcs/git-annex:network-3 - Use network-3
 dev-vcs/git-annex:networkbsd - Build with network-3.0 which split out network-bsd
 dev-vcs/git-annex:pairing - Enable pairing
 dev-vcs/git-annex:s3 - Enable S3 support
