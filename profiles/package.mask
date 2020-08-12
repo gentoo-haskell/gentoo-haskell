@@ -1,3 +1,11 @@
+# Jack Todaro <solpeth@posteo.org> (2020-08-12)
+# Many packages require QuickCheck < 2.14. Mask
+# QuickCheck >= 2.14 and its reverse dependencies
+>=dev-haskell/quickcheck-2.14
+>=dev-haskell/hspec-discover-2.7.2
+>=dev-haskell/hspec-core-2.7.2
+>=dev-haskell/hspec-2.7.2
+
 # Jack Todaro <solpeth@posteo.org> (2020-08-04)
 # Deprecated in favour of dev-haskell/dbus.
 # Scheduled for deletion in 30 days.
