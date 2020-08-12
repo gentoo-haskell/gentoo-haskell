@@ -8,7 +8,4 @@
 	<use>
 		<flag name="template-haskell">Enable Template Haskell support</flag>
 	</use>
-	<longdescription>
-		See README and Haddocks at &lt;https://www.stackage.org/package/monad-logger&gt;
-	</longdescription>
 </pkgmetadata>
