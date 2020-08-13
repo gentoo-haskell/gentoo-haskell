@@ -748,7 +748,7 @@ dev-haskell/gi-pango 1.0.16 1.0.22: Pango bindings
 dev-haskell/gi-soup 2.4.16 2.4.22: Libsoup bindings
 dev-haskell/gi-webkit2 4.0.19 4.0.25: WebKit2 bindings
 dev-haskell/gi-xlib 2.0.2 2.0.8: xlib bindings
-dev-haskell/gifcurry 2.1.0.0: Create animated GIFs, overlaid with optional text, from video files
+dev-haskell/gifcurry 2.1.0.0-r1: Create animated GIFs, overlaid with optional text, from video files
 dev-haskell/ginger 0.9.1.0 0.10.0.5: An implementation of the Jinja2 template language in Haskell
 dev-haskell/gio 0.13.8.1: Binding to GIO
 dev-haskell/git 0.3.0: Git operations in haskell
