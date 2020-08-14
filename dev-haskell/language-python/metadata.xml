@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		language-python is a Haskell library for lexical analysis, parsing
-		and pretty printing Python code. It supports versions 2.x and 3.x of Python.
-	</longdescription>
 </pkgmetadata>
