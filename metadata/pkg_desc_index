@@ -1182,7 +1182,7 @@ dev-haskell/language-haskell-extract 0.2.4 0.2.4-r1: Module to automatically ext
 dev-haskell/language-java 0.2.9: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/language-javascript 0.5.14.5 0.6.0.14 0.7.1.0: Parser for JavaScript
 dev-haskell/language-lua 0.11.0.1: Lua parser and pretty-printer
-dev-haskell/language-python 0.5.4: Parsing and pretty printing of Python code
+dev-haskell/language-python 0.5.4 0.5.8: Parsing and pretty printing of Python code
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/latex 0.1.0.4: Parse, format and process LaTeX files
 dev-haskell/lattices 2.0.2: Fine-grained library for constructing and manipulating lattices
