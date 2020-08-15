@@ -2,7 +2,7 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-app-admin/propellor:type-errors - Build with dev-haskell/type-errors for better error messages.
+app-admin/propellor:type-errors - Build with type-errors library for better error messages
 app-editors/leksah:codemirror - Experimental codemirror editor
 app-editors/leksah:dyre - Experimental Yi dyre support
 app-editors/leksah:loc - Experimental localization support
