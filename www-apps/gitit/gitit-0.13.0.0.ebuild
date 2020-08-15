@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Wiki using happstack, git or darcs, and pandoc"
-HOMEPAGE="http://hackage.haskell.org/package/gitit"
+HOMEPAGE="https://hackage.haskell.org/package/gitit"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -62,7 +62,7 @@ RDEPEND=">=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-2.10:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 	plugins? ( dev-haskell/ghc-paths:=[profile?]
-			dev-lang/ghc:=[profile?] )
+			>=dev-lang/ghc-8.0.1:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
