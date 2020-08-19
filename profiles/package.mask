@@ -1,4 +1,12 @@
 # Jack Todaro <solpeth@posteo.org> (2020-08-19)
+# Depends on old versions of yesod-* packages.
+# Masked for removal.
+dev-haskell/shakespeare-sass
+dev-haskell/yesod-auth-bcrypt
+dev-haskell/yesod-auth-nopassword
+dev-haskell/yesod-static-angular
+
+# Jack Todaro <solpeth@posteo.org> (2020-08-19)
 # Unmaintained since 2015, has no reverse dependencies.
 dev-haskell/blaze-builder-enumerator
 
