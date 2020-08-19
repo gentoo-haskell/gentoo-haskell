@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		An SQL-generating DSL targeting PostgreSQL.  Allows
-		Postgres queries to be written within Haskell in a
-		typesafe and composable fashion.
-	</longdescription>
 </pkgmetadata>
