@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.92.3.0-cabal-2.2.patch
+	"${FILESDIR}"/${PN}-0.92.3.0-cabal-3.patch
 )
 
 src_prepare() {
