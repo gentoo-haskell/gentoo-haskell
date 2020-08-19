@@ -1,9 +1,0 @@
-diff --git a/XMonad/Layout/Groups/Helpers.hs b/XMonad/Layout/Groups/Helpers.hs
-index 4bafdd3..fd81bf9 100644
---- a/XMonad/Layout/Groups/Helpers.hs
-+++ b/XMonad/Layout/Groups/Helpers.hs
-@@ -180,3 +180,3 @@ focusFloatDown = focusHelper id id
- wrap :: G.ModifySpec -> X ()
--wrap = sendMessage . G.Modify
-+wrap x = sendMessage (G.Modify x)
- 

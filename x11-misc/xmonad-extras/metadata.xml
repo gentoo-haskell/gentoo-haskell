@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="volume">Enable Volume plugin</flag>
 		<flag name="mpd">Enable mpd plugin</flag>
 		<flag name="eval">Enable eval plugin</flag>
 		<flag name="brightness">Enable brightness control plugin</flag>
