@@ -8,7 +8,4 @@
 	<use>
 		<flag name="build-example">Build the example executable</flag>
 	</use>
-	<longdescription>
-		Please see the README at &lt;https://www.stackage.org/package/optparse-simple&gt;
-	</longdescription>
 </pkgmetadata>
