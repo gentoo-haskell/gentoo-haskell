@@ -595,7 +595,6 @@ x11-misc/xmobar:xpm - Enable usage of xpm for icons
 x11-misc/xmonad-extras:brightness - Enable brightness control plugin
 x11-misc/xmonad-extras:eval - Enable eval plugin
 x11-misc/xmonad-extras:mpd - Enable mpd plugin
-x11-misc/xmonad-extras:volume - Enable Volume plugin
 x11-misc/yeganesh:profiling - Build with profiling and -auto-all
 x11-wm/xmonad:default-term - Pull terminal specified in default xmonad config to be a bit less hostile by default.
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
