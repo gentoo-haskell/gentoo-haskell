@@ -521,7 +521,7 @@ dev-haskell/wreq:httpbin - Install client
 dev-haskell/x11:screensaver - whether to build XScreenSaver.
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
 dev-haskell/yaml:no-examples - don't build the examples
-dev-haskell/yaml:no-exe - don't install the yaml2json executable
+dev-haskell/yaml:no-exe - don't install the yaml2json or json2yaml executables
 dev-haskell/yaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/yaml:system-libyaml - Use system libyaml instead on generic one
 dev-haskell/yesod-auth:network-uri - Get Network.URI from the network-uri package
