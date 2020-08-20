@@ -8,4 +8,7 @@
 	<use>
 		<flag name="splitbase">Choose the new smaller, split-up package.</flag>
 	</use>
+	<upstream>
+		<remote-id type="github">hdbc/hdbc-sqlite3</remote-id>
+	</upstream>
 </pkgmetadata>
