@@ -119,7 +119,6 @@ dev-haskell/comonad:containers - Enable the use of the `containers` package. Dis
 dev-haskell/comonad:distributive - Enable the use of the `distributive` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`.
 dev-haskell/comonad:test-doctests - Run the doctests test suite
 dev-haskell/concurrent-supply:test-properties - 
-dev-haskell/configfile:buildtests - Build the executable to run unit tests.
 dev-haskell/constraints-deriving:constraints - Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.
 dev-haskell/constraints-deriving:debug - Show debug trace info (used only for library development). Note, if you want to see the debug output of the plugin in another project, you may need to manually define a CPP option -DPLUGIN_DEBUG in that project.
 dev-haskell/constraints-deriving:examples - Whether to build examples
