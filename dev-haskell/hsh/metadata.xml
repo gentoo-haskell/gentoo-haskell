@@ -12,7 +12,4 @@
 		to and from other shell commands and arbitrary Haskell functions at will.
 		Category: System
 	</longdescription>
-	<use>
-		<flag name="buildtests">Build the executable to run unit tests.</flag>
-	</use>
 </pkgmetadata>
