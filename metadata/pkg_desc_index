@@ -907,7 +907,7 @@ dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster g
 dev-haskell/hgal 2.0.0.2-r1: library for computation automorphism group and canonical labelling of a graph
 dev-haskell/hgamer3d 0.9.5: Toolset for the Haskell Game Programmer
 dev-haskell/hgdbmi 0.2-r1: GDB Machine Interface: program-driven control of GDB
-dev-haskell/hgettext 0.1.31.0: Bindings to libintl.h (gettext, bindtextdomain)
+dev-haskell/hgettext 0.1.31.0-r1: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.2: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.2: Generate scaffold for cabal project
 dev-haskell/hi-file-parser 0.1.0.0: Parser for GHC's hi files
