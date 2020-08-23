@@ -14,7 +14,7 @@ HOMEPAGE="http://projects.haskell.org/gtk2hs/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
-SLOT="0/${PV}"
+SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+deprecated +fmode-binary +gio"
 
