@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/cabal:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.21:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18:=[profile?]
 	>=dev-haskell/setlocale-0.0.3:=[profile?] <dev-haskell/setlocale-1.1:=[profile?]
 	>=dev-haskell/uniplate-1.6.12:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -33,5 +33,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base             >=4.5    && <4.11' 'base             >=4.5' \
-		'Cabal            >=1.14   && <1.25 || == 2.0.*' 'Cabal            >=1.14   && <1.25 || >= 2.0'
+		'Cabal            >=1.14   && <1.25 || == 2.0.*' 'Cabal            >=1.14   && <1.25 || >= 2.0' \
+		'containers       >=0.4.2  && <0.6' 'containers       >=0.4.2' \
+		'haskell-src-exts >=1.18   && <1.21' 'haskell-src-exts >=1.18'
 }
