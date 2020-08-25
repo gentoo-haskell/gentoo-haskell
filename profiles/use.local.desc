@@ -514,7 +514,6 @@ dev-haskell/wcwidth:cli - Enable command line tool
 dev-haskell/wl-pprint-terminfo:cursed - Use curses to determine window width..
 dev-haskell/wreq:aws - Enable AWS tests
 dev-haskell/wreq:httpbin - Install client
-dev-haskell/x11:screensaver - whether to build XScreenSaver.
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
 dev-haskell/yaml:no-examples - don't build the examples
 dev-haskell/yaml:no-exe - don't install the yaml2json or json2yaml executables
@@ -575,19 +574,19 @@ sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-servers/mighttpd2:tls - HTTPS support.
 x11-misc/taffybar:network-uri - Get Network.URI from the network-uri package.
-x11-misc/xmobar:alsa - Use alsa-mixer to get the volume from soundcards
-x11-misc/xmobar:dbus - Publish a service on the session bus for controlling xmobar
-x11-misc/xmobar:inotify - inotify support (modern Linux only). Required for the Mail and MBox plugins
-x11-misc/xmobar:iwlib - Wireless info support via Wext ioctls (deprecated)
-x11-misc/xmobar:mpd - Support mpd plugin
-x11-misc/xmobar:mpris - Enables MPRIS v1, v2 support
-x11-misc/xmobar:rtsopts - Reduce process wakekups frequency to decrease CPU usage
+x11-misc/xmobar:alsa - Use alsa-mixer to get the volume from soundcards.
+x11-misc/xmobar:dbus - Publish a service on the session bus for controlling xmobar.
+x11-misc/xmobar:inotify - inotify support (modern Linux only). Required for the Mail and MBox plugins.
+x11-misc/xmobar:iwlib - Wireless info support via Wext ioctls (deprecated). Required for the Wireless plugin, needs iwlib installed.
+x11-misc/xmobar:mpd - MPD support. Needs libmpd installed.
+x11-misc/xmobar:mpris - MPRIS v1, v2 support.
+x11-misc/xmobar:rtsopts - Use -with-rtsopts=-V0 to reduce wakeups.
 x11-misc/xmobar:timezone - Enables localized date support
-x11-misc/xmobar:uvmeter - Plugin to show UV data for Australia
-x11-misc/xmobar:weather - Enable weather plugin
+x11-misc/xmobar:uvmeter - UVMeter only useful to australians.
+x11-misc/xmobar:weather - Enable weather plugin.
 x11-misc/xmobar:wifi - Wireless info support via nl80211. Required for the Wireless plugin on systems running Linux
-x11-misc/xmobar:xft - Use Xft to render text. UTF-8 support included
-x11-misc/xmobar:xpm - Enable usage of xpm for icons
+x11-misc/xmobar:xft - Use Xft to render text. UTF-8 support included.
+x11-misc/xmobar:xpm - Enable usage of xpm for icons.
 x11-misc/xmonad-extras:brightness - Enable brightness control plugin
 x11-misc/xmonad-extras:eval - Enable eval plugin
 x11-misc/xmonad-extras:mpd - Enable mpd plugin
