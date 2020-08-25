@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="screensaver">whether to build XScreenSaver.</flag>
-	</use>
 	<longdescription>
 		A Haskell binding to the X11 graphics library. The binding is a direct
 		translation of the C binding; for documentation of these calls, refer
