@@ -85,14 +85,6 @@ dev-haskell/bloodhound
 dev-haskell/log
 dev-haskell/log-elasticsearch
 
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Unmaintained, requires porting to newer gtk dep
-dev-haskell/glade
-dev-haskell/gt-tools
-dev-haskell/gtksourceview2
-dev-haskell/gtksourceview3
-dev-haskell/vte
-
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Needs porting to newer Cabal versions. Also mask
 # revdeps.

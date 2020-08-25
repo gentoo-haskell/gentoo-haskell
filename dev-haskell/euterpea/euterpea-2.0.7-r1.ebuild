@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -21,9 +21,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/arrows-0.4:=[profile?] <dev-haskell/arrows-0.5:=[profile?]
-	~dev-haskell/hcodecs-0.5.1:=[profile?]
+	>=dev-haskell/hcodecs-0.5.1:=[profile?]
 	>=dev-haskell/heap-1.0:=[profile?] <dev-haskell/heap-2.0:=[profile?]
-	~dev-haskell/portmidi-0.2.0.0:=[profile?]
+	>=dev-haskell/portmidi-0.2.0.0:=[profile?]
 	>=dev-haskell/random-1.0.1.1:=[profile?] <=dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -33,3 +33,12 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'HCodecs == 0.5.1' 'HCodecs >= 0.5.1' \
+		'PortMidi==0.2.0.0' 'PortMidi >= 0.2.0.0' \
+		'bytestring>=0.10.4.0 && <= 0.10.9' 'bytestring>=0.10.4.0'
+}
