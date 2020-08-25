@@ -1,9 +1,0 @@
---- a/vte.cabal
-+++ b/vte.cabal
-@@ -70,5 +70,6 @@ Library
-         x-c2hs-Header:  vte/vte.h
-         include-dirs:   Graphics/UI/Gtk/Vte/
-         pkgconfig-depends: vte >= 0.20.5
-+        cpp-options: -D__attribute__(A)=
-         if os(darwin)
-           cpp-options: -U__BLOCKS__ -D__attribute__(A)= -D_Nullable= -D_Nonnull=
