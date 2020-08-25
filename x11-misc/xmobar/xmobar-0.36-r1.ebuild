@@ -91,3 +91,9 @@ src_configure() {
 		$(cabal_flag xft with_xft) \
 		$(cabal_flag xpm with_xpm)
 }
+
+src_install() {
+	cabal_src_install
+
+	dodoc examples/xmobar.config examples/xmobar.hs readme.md changelog.md
+}
