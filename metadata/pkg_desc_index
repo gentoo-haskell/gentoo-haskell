@@ -15,7 +15,6 @@ app-portage/fquery 0.2.3 0.2.3-r1 9999: Installed package query tool for Gentoo 
 app-portage/hackport 0.6.3 0.6.4-r1 0.6.5 0.6.6 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-shells/lambdashell 0.9.3: Simple shell for evaluating lambda expressions
-app-text/gt-tools 0.2.1: Console and GUI interface for Google Translate service
 app-text/lit 0.1.10.0: A simple tool for literate programming
 app-text/pandoc 2.7.3-r1 2.9.2.1 2.10.1: Conversion between markup formats
 app-text/pdfsplit 0.0.1 0.0.1-r1: split two-column PDFs, so there is one column per page
@@ -584,7 +583,7 @@ dev-haskell/errors 2.2.5 2.3.0: Simplified error-handling
 dev-haskell/esqueleto 2.7.0 3.3.3.2: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
-dev-haskell/euterpea 2.0.7: Library for computer music research and education
+dev-haskell/euterpea 2.0.7-r1: Library for computer music research and education
 dev-haskell/event-list 0.1.2: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.5.0.1: Exact rational multiples of pi (and integer powers of pi)
 dev-haskell/exception-mtl 0.4.0.1: Exception monad transformer instances for mtl classes
@@ -804,8 +803,6 @@ dev-haskell/gtk-traymanager 0.1.6 1.0.1: A wrapper around the eggtraymanager lib
 dev-haskell/gtk2hs-buildtools 0.13.5.1 0.13.8.0 0.13.8.0-r1: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.13.9 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
-dev-haskell/gtksourceview2 0.13.3.1: Binding to the GtkSourceView library
-dev-haskell/gtksourceview3 0.13.3.1: Binding to the GtkSourceView library
 dev-haskell/hackage-db 1.22 2.0.1: access Hackage's package database via Data.Map
 dev-haskell/hackage-security 0.5.3.0-r3 0.6.0.1: Hackage security library
 dev-haskell/haddock 2.14.3.0.7.8.3 2.14.3.0.7.8.4 2.16.1 2.17.2 2.18.1 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0 9999: A documentation-generation tool for Haskell libraries
@@ -2157,7 +2154,6 @@ dev-haskell/vinyl 0.12.1 0.13.0: Extensible Records
 dev-haskell/vinyl-gl 0.3.4: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/vinyl-utils 0.3.0.1-r3: Utilities for vinyl
 dev-haskell/void 0.7.3: A Haskell 98 logically uninhabited data type
-dev-haskell/vte 0.13.1.1: Binding to the VTE library
 dev-haskell/vty 5.24-r2 5.27: A simple terminal UI library
 dev-haskell/wai 3.2.2.1: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.1.9: File/CGI/Rev Proxy App of WAI
