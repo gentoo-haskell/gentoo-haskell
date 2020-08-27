@@ -379,7 +379,7 @@ dev-haskell/constraints-extras 0.3.0.2: Utility package for constraints
 dev-haskell/containers-unicode-symbols 0.3.1.1-r1: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.10.0.2: Continued fractions
 dev-haskell/contravariant 1.5.2: Contravariant functors
-dev-haskell/contravariant-extras 0.3.5.1: Extras for the \\
+dev-haskell/contravariant-extras 0.3.5.2: Extras for the "contravariant" package
 dev-haskell/control-monad-exception 0.11.2: Explicitly typed, checked exceptions with stack traces
 dev-haskell/control-monad-free 0.6.2: Free monads and monad transformers
 dev-haskell/control-monad-loop 0.1: Simple monad transformer for imperative-style loops
@@ -1961,7 +1961,7 @@ dev-haskell/tcp-streams 1.0.1.1: One stop solution for tcp client and server wit
 dev-haskell/tcp-streams-openssl 1.0.1.0-r1: Tcp streams using openssl for tls support
 dev-haskell/tdigest 0.2.1-r2: On-line accumulation of rank-based statistics
 dev-haskell/template 0.2.0.10: Simple string substitution
-dev-haskell/template-haskell-compat-v0208 0.1.2.1: A backwards compatibility layer for Template Haskell newer than 2.8
+dev-haskell/template-haskell-compat-v0208 0.1.4: A backwards compatibility layer for Template Haskell newer than 2.8
 dev-haskell/temporary 1.2.1.1 1.3: Portable temporary file and directory support for Windows and Unix
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix
 dev-haskell/tensor 1.1.0.2: Tensor data types
