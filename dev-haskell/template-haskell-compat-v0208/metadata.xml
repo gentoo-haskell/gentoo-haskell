@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		A backwards compatibility layer for Template Haskell newer than 2.8
-	</longdescription>
 </pkgmetadata>
