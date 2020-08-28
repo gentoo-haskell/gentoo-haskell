@@ -1,3 +1,11 @@
+# Jack Todaro <solpeth@posteo.org> (2020-08-28)
+# Mask reverse dependencies of masked package
+# dev-haskell/bio
+sci-biology/clustertools
+sci-biology/estreps
+sci-biology/flower
+sci-biology/trimpolya
+
 # Jack Todaro <solpeth@posteo.org> (2020-08-25)
 # Needs porting to modern libraries, has no
 # reverse dependencies. Masked for removal in
