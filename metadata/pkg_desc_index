@@ -1026,7 +1026,7 @@ dev-haskell/hsyaml 0.1.2.0 0.2.1.0: Pure Haskell YAML 1.2 parser
 dev-haskell/hsyaml-aeson 0.2.0.0: JSON to YAML Adapter
 dev-haskell/hsyslog 5.0.2: FFI interface to syslog(3) from POSIX.1-2001
 dev-haskell/htaglib 1.2.0: Bindings to TagLib, audio meta-data library
-dev-haskell/htf 0.13.2.5: The Haskell Test Framework
+dev-haskell/htf 0.14.0.3: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.3.2.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/html-entities 1.1.4.3: A codec library for HTML-escaped text and HTML-entities
@@ -1221,7 +1221,7 @@ dev-haskell/liquid-fixpoint 0.6.0.1 0.8.0.2 9999: Predicate Abstraction-based Ho
 dev-haskell/liquiddesugar 9999: Haskell to GHC Core Desugarar for Liquid Haskell
 dev-haskell/liquidhaskell 0.8.0.0 0.8.6.2 9999: Liquid Types for Haskell
 dev-haskell/list 0.6.2: List monad transformer and class
-dev-haskell/list-t 1.0.1 1.0.4: ListT done right
+dev-haskell/list-t 1.0.4: ListT done right
 dev-haskell/listlike 4.6.3: Generic support for list-like structures
 dev-haskell/listsafe 0.1.0.1: Safe wrappers for partial list functions, supporting MonadThrow
 dev-haskell/listzipper 1.2.0.2-r1: Simple zipper for lists
@@ -1384,7 +1384,7 @@ dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/natural-sort 0.1.2: User-friendly text collation
 dev-haskell/natural-transformation 0.4-r7: A natural transformation package
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
-dev-haskell/neat-interpolation 0.3.2.1 0.3.2.6: A quasiquoter for neat and simple multiline text interpolation
+dev-haskell/neat-interpolation 0.3.2.6: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netlink 1.1.1.0: Netlink communication for Haskell
 dev-haskell/netpbm 1.0.3-r1: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.3: Functional reactive programming library
@@ -1873,7 +1873,7 @@ dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.4.1 2.4.5.0 2.5.0.0: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
 dev-haskell/stm-conduit 4.0.1: Introduces conduits to channels, and promotes using conduits concurrently
-dev-haskell/stm-containers 0.2.16 1.1.0.4: Containers for STM
+dev-haskell/stm-containers 1.1.0.4: Containers for STM
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
 dev-haskell/stm-hamt 1.2.0.4: STM-specialised Hash Array Mapped Trie
 dev-haskell/stm-linkedlist 0.1.0.0: Mutable, doubly linked lists for STM
