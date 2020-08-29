@@ -627,7 +627,7 @@ dev-haskell/filelock 0.1.1.5: Portable interface to file locking (flock / LockFi
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
 dev-haskell/filepath-bytestring 1.4.2.1.6: Library for manipulating RawFilePaths in a cross platform way
 dev-haskell/filepattern 0.1.2: File path glob-like matching
-dev-haskell/filestore 0.6.4: Interface for versioning file stores
+dev-haskell/filestore 0.6.5: Interface for versioning file stores
 dev-haskell/findbin 0.0.5-r1: Locate directory of original program
 dev-haskell/fingertree 0.1.4.2: Generic finger-tree structure, with example instances
 dev-haskell/finite-field 0.9.0: Finite Fields
