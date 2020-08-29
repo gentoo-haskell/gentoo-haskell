@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Tag-stream is a library for parsing HTML//XML to a token stream.
-		It can parse unstructured and malformed HTML from the web.
-		It also provides an Enumeratee which can parse streamline html, which means it consumes constant memory.
-		You can start from the `tests/Tests.hs` module to see what it can do.
-	</longdescription>
 </pkgmetadata>
