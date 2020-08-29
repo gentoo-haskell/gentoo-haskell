@@ -98,10 +98,6 @@ dev-haskell/wordpass
 # deletion. Also doesn't build with ghc-8.6.5.
 <dev-haskell/lhs2tex-1.20
 
-# Sergei Trofimovich <slyfox@gentoo.org> (20 May 2020)
-# Was never tweaked for modern haskell-src-exts.
-dev-haskell/hothasktags
-
 # Jack Todaro <solpeth@posteo.org> (12 April 2020)
 # Mask haskell-src-exts-1.22 and reverse dependencies
 >=dev-haskell/haskell-src-exts-1.22
