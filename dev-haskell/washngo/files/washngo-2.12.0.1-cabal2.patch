@@ -1,6 +1,0 @@
---- a/WashNGo.cabal
-+++ b/WashNGo.cabal
-@@ -114,3 +114,2 @@ Executable wash2hs
-           WASHExpression
--          WASHMain
-           WASHParser

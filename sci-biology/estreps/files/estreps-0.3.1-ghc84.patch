@@ -1,7 +1,0 @@
---- a/src/RSelect.lhs
-+++ b/src/RSelect.lhs
-@@ -10,3 +10,3 @@ module Main where
- 
--import Data.Set hiding (partition)
-+import Data.Set hiding (partition, drop, take)
- import System.Environment (getArgs)

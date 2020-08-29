@@ -1,11 +1,3 @@
-# Jack Todaro <solpeth@posteo.org> (2020-08-28)
-# Mask reverse dependencies of masked package
-# dev-haskell/bio
-sci-biology/clustertools
-sci-biology/estreps
-sci-biology/flower
-sci-biology/trimpolya
-
 # Jack Todaro <solpeth@posteo.org> (2020-08-25)
 # Needs porting to modern libraries, has no
 # reverse dependencies. Masked for removal in
@@ -22,10 +14,6 @@ dev-haskell/yesod-auth-bcrypt
 dev-haskell/yesod-auth-nopassword
 dev-haskell/yesod-static-angular
 
-# Jack Todaro <solpeth@posteo.org> (2020-08-19)
-# Unmaintained since 2015, has no reverse dependencies.
-dev-haskell/blaze-builder-enumerator
-
 # Jack Todaro <solpeth@posteo.org> (2020-08-12)
 # Many packages require QuickCheck < 2.14. Mask
 # QuickCheck >= 2.14 and its reverse dependencies
@@ -33,16 +21,6 @@ dev-haskell/blaze-builder-enumerator
 >=dev-haskell/hspec-discover-2.7.2
 >=dev-haskell/hspec-core-2.7.2
 >=dev-haskell/hspec-2.7.2
-
-# Jack Todaro <solpeth@posteo.org> (2020-08-04)
-# Deprecated in favour of dev-haskell/dbus.
-# Scheduled for deletion in 30 days.
-dev-haskell/dbus-core
-
-# Jack Todaro <solpeth@posteo.org> (2020-08-04)
-# Dead upstream, requires porting to MonadFail.
-# Scheduled for deletion in 30 days.
-dev-haskell/hans
 
 # Jack Todaro <solpeth@posteo.org> (2 Aug 2020)
 # dev-haskell/stack-2.3.1 requires < pantry-0.5
@@ -57,19 +35,6 @@ dev-haskell/hans
 >=dev-haskell/hslua-1.1.2
 >=dev-haskell/pandoc-types-1.21
 dev-haskell/commonmark-pandoc
-
-# Sergei Trofimovich <slyfox@gentoo.org> (26 July 2020)
-# Abandoned and did not see fixes for many ghc generations.
-# Masked for removal.
-dev-haskell/washngo
-dev-haskell/eithert
-dev-haskell/avltree
-dev-haskell/process-leksah
-
-# Jack Todaro <solpeth@posteo.org> (10 July 2020)
-# Unmaintained since 2015. Masked and scheduled for
-# deletion.
-dev-haskell/ghc-pkg-lib
 
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
@@ -107,28 +72,10 @@ dev-haskell/log-elasticsearch
 dev-haskell/hgettext
 dev-haskell/bustle
 
-# Jack Todaro <solpeth@posteo.org> (30 June 2020)
-# Unmaintained since 2018, requires porting to
-# optparse-applicative-0.15. csv-to-qif is a
-# reverse dependency of spreadsheet
-dev-haskell/spreadsheet
-dev-haskell/csv-to-qif
-dev-haskell/wordpass
-
 # Jack Todaro <solpeth@posteo.org> (25 June 2020)
 # Depends on dev-tex/polytable, which is masked for
 # deletion. Also doesn't build with ghc-8.6.5.
 <dev-haskell/lhs2tex-1.20
-
-# Sergei Trofimovich <slyfox@gentoo.org> (20 May 2020)
-# Was never tweaked for modern haskell-src-exts.
-dev-haskell/hothasktags
-
-# Sergei Trofimovich <slyfox@gentoo.org> (15 May 2020)
-# Was never tweaked for ghc-7.10. Needs a network-3 port.
-dev-haskell/hp2any-graph
-# depends on dev-haskell/hp2any-graph
-dev-haskell/hp2any-manager
 
 # Jack Todaro <solpeth@posteo.org> (12 April 2020)
 # Mask haskell-src-exts-1.22 and reverse dependencies

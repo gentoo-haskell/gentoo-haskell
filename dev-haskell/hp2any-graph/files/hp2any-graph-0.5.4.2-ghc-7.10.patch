@@ -1,8 +1,0 @@
-diff --git a/src/Graph.hs b/src/Graph.hs
-index c3d753f..d1c3d7e 100644
---- a/src/Graph.hs
-+++ b/src/Graph.hs
-@@ -1,2 +1,3 @@
-+{-# LANGUAGE FlexibleContexts #-}
- {-# OPTIONS_GHC -fno-warn-name-shadowing -fno-warn-missing-signatures #-}
- 

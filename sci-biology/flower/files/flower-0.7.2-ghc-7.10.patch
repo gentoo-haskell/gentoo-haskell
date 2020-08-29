@@ -1,7 +1,0 @@
-diff --git a/src/Flower.hs b/src/Flower.hs
-index 9424222..498c345 100644
---- a/src/Flower.hs
-+++ b/src/Flower.hs
-@@ -1 +1,2 @@
-+{-# LANGUAGE FlexibleContexts #-}
- -- FlowEr - FLOWgram ExtractoR

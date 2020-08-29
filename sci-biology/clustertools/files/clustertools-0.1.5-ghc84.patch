@@ -1,7 +1,0 @@
---- a/src/Xcerpt.lhs
-+++ b/src/Xcerpt.lhs
-@@ -7,3 +7,3 @@ module Main where
- 
--import Data.Set hiding (null,filter,partition)
-+import Data.Set hiding (null,filter,partition,drop)
- import System.Environment (getArgs)
