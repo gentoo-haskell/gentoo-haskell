@@ -68,7 +68,6 @@ dev-haskell/biosff:fclip - Build the fclip executable.
 dev-haskell/biosff:flower - Build the flower executable.
 dev-haskell/biosff:frecover - Build the frecover executable.
 dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
-dev-haskell/blaze-builder-enumerator:newbuilder - use bytestring-builder instead of blaze-builder-0.3
 dev-haskell/bloodhound:es1 - Run the test suite against an Elasticsearch 1.x server
 dev-haskell/bloodhound:es5 - Run the test suite against an Elasticsearch 5.x server
 dev-haskell/bound:template-haskell - Enable additional test modules requiring Template Haskell support.
@@ -80,7 +79,6 @@ dev-haskell/btrfs:examples - Build examples
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/c2hs:regression - run regression tests
-dev-haskell/cabal-helper:dev - Build development components
 dev-haskell/cabal-install:debug-conflict-sets - Add additional information to ConflictSets
 dev-haskell/cabal-install:native-dns - Enable use of the resolv and windns packages for performing DNS lookups
 dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri package
@@ -91,16 +89,9 @@ dev-haskell/cabal-plan:underline - Enable underlining of primary unit-ids
 dev-haskell/cabal-rpm:curl - Use curl library to query Stackage instead of http-client
 dev-haskell/categories:optimize - enable optimizations
 dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
-dev-haskell/certificate:executable - Build the executable
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
 dev-haskell/chimera:representable - Define Representable instance from adjunctions package
-dev-haskell/citeproc-hs:bibutils - use Chris Putnam's app-text/bibutils
-dev-haskell/citeproc-hs:embed-data-files - Embed locale files into the library (needed for windows packaging)
-dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/xml for XML parsing
-dev-haskell/citeproc-hs:network - use dev-haskell/network and dev-haskell/http to retrieve CSL file from URIs
-dev-haskell/citeproc-hs:small-base - Choose the new smaller, split-up base package.
-dev-haskell/citeproc-hs:unicode-collation - Use Haskell bindings to the dev-libs/icu
 dev-haskell/clash-ghc:dynamic - Build Clash binaries with GHC flag `-dynamic`. This flag should only be used for packaging purposes. Installations using cabal should use `--enable-executable-dynamic`!
 dev-haskell/clash-ghc:ghc-paths - Locate the GHC core libraries using the `ghc-paths` package. Note: this flag may make binaries less relocatable, by hard-coding an absolute path to the core libraries.
 dev-haskell/clash-lib:debug - Build a debug compiler
@@ -130,10 +121,8 @@ dev-haskell/cpu:executable - build 'cpuid' tool
 dev-haskell/criterion:embed-data-files - Embed the data files in the binary for a relocatable executable
 dev-haskell/cron:lib-werror - ghc-options: -Werror
 dev-haskell/crypto-api:all-cpolys - Build all the CMAC polynomes up to 10000 bits instead of just the usual ones.
-dev-haskell/crypto-conduit:conduit11 - Use conduit >= 1.1.
 dev-haskell/cryptonite:cpu-flags-x86-rdrand - allow compilation with RDRAND on system and architecture that supports it
 dev-haskell/cryptonite:integer-gmp - Whether or not to use GMP for some functions
-dev-haskell/csv-to-qif:threaded - Enable threaded haskell runtime.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-lens-fd:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-reify:tests - Build test binaries.
@@ -208,8 +197,6 @@ dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri pack
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
 dev-haskell/happstack-server:template-haskell - Description: Template Haskell is available on this system
-dev-haskell/hashed-storage:diff - Provide the Storage.Hashed.Diff module.
-dev-haskell/hashed-storage:hpc - Compile with the profiling ghc flag -fhpc.
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
 dev-haskell/hashtables:portable - if on, use only pure Haskell code and no GHC extensions.
@@ -243,7 +230,6 @@ dev-haskell/hoogle:fetchdb - fetch hoogle db by running: hoogle data
 dev-haskell/hoogle:fetchdb-ghc - fetch hoogle db by running: hoogle data ghc (implies fetchdb)
 dev-haskell/hoogle:localdb - install hoogle-build-localdb script for building hoogle dbs for installed pkgs
 dev-haskell/hoogle:network-uri - Get Network.URI from the network-uri package
-dev-haskell/hp2any-graph:serveronly - Suppress building the client, thereby removing the dependency on OpenGL.
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv.
