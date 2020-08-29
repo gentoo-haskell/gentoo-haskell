@@ -36,14 +36,6 @@ dev-haskell/yesod-static-angular
 >=dev-haskell/pandoc-types-1.21
 dev-haskell/commonmark-pandoc
 
-# Sergei Trofimovich <slyfox@gentoo.org> (26 July 2020)
-# Abandoned and did not see fixes for many ghc generations.
-# Masked for removal.
-dev-haskell/washngo
-dev-haskell/eithert
-dev-haskell/avltree
-dev-haskell/process-leksah
-
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
