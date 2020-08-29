@@ -85,14 +85,6 @@ dev-haskell/log-elasticsearch
 dev-haskell/hgettext
 dev-haskell/bustle
 
-# Jack Todaro <solpeth@posteo.org> (30 June 2020)
-# Unmaintained since 2018, requires porting to
-# optparse-applicative-0.15. csv-to-qif is a
-# reverse dependency of spreadsheet
-dev-haskell/spreadsheet
-dev-haskell/csv-to-qif
-dev-haskell/wordpass
-
 # Jack Todaro <solpeth@posteo.org> (25 June 2020)
 # Depends on dev-tex/polytable, which is masked for
 # deletion. Also doesn't build with ghc-8.6.5.
