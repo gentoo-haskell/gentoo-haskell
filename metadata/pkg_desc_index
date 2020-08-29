@@ -569,7 +569,7 @@ dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding i
 dev-haskell/emoji 0.1.0.2: emoji utility
 dev-haskell/emojis 0.1: Conversion between emoji characters and their names.
 dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an enclosed computation
-dev-haskell/encoding 0.8.2: A library for various character encodings
+dev-haskell/encoding 0.8.2 0.8.5: A library for various character encodings
 dev-haskell/engine-io 1.2.22: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.3.8 0.4.1.6: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
