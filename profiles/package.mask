@@ -102,12 +102,6 @@ dev-haskell/wordpass
 # Was never tweaked for modern haskell-src-exts.
 dev-haskell/hothasktags
 
-# Sergei Trofimovich <slyfox@gentoo.org> (15 May 2020)
-# Was never tweaked for ghc-7.10. Needs a network-3 port.
-dev-haskell/hp2any-graph
-# depends on dev-haskell/hp2any-graph
-dev-haskell/hp2any-manager
-
 # Jack Todaro <solpeth@posteo.org> (12 April 2020)
 # Mask haskell-src-exts-1.22 and reverse dependencies
 >=dev-haskell/haskell-src-exts-1.22
