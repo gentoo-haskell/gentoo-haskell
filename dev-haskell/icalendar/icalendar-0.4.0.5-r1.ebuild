@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -30,9 +30,9 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-byt
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-2.9:=[profile?]
+	network-uri? ( >=dev-haskell/network-2.6:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] )
-	!network-uri? ( >=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.6:=[profile?] )
+	!network-uri? ( >=dev-haskell/network-2.4:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
@@ -43,9 +43,9 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	default
 
-	cabal_chdeps\
-		'containers >= 0.5 && < 0.6' 'containers >= 0.5 && < 0.7'\
-		'network >= 2.6 && < 2.7' 'network >= 2.6 && < 2.9'
+	cabal_chdeps \
+		'containers >= 0.5 && < 0.6' 'containers >= 0.5' \
+		'network >= 2.6 && < 2.7' 'network >= 2.6'
 }
 
 src_configure() {
