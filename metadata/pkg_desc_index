@@ -856,7 +856,7 @@ dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modify
 dev-haskell/hcodecs 0.5.2: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
 dev-haskell/hdaemonize 0.5.6: Library to handle the details of writing daemons for UNIX
 dev-haskell/hdbc 2.4.0.3: Haskell Database Connectivity
-dev-haskell/hdbc-mysql 0.7.1.0: MySQL driver for HDBC
+dev-haskell/hdbc-mysql 0.7.1.0-r1: MySQL driver for HDBC
 dev-haskell/hdbc-odbc 2.6.0.0: ODBC driver for HDBC
 dev-haskell/hdbc-postgresql 2.3.2.7-r1: PostgreSQL driver for HDBC
 dev-haskell/hdbc-session 0.1.2.0: Bracketed connection for HDBC
