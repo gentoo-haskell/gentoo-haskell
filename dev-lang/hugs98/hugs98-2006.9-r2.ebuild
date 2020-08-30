@@ -80,6 +80,8 @@ src_prepare() {
 	eautoconf
 
 	tc-export CC
+
+	sed -e 's/default_compiler = "gcc"/default_compiler = "'$CHOST'-gcc"/' -i hsc2hs/Main.hs || die
 }
 
 src_configure() {
