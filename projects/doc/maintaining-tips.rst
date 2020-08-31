@@ -1,7 +1,7 @@
 Haskell ebuild maintaining tips
 *******************************
 
-Check `Gentoo devmanuall <https://devmanual.gentoo.org/>`_ for general
+Check `Gentoo devmanual <https://devmanual.gentoo.org/>`_ for general
 guidance on ebuild writing. This doc is about haskell-specific aspects of it.
 
 Slot operator dependencies
@@ -13,7 +13,7 @@ time `dev-haskell/foo` updates. It requires `EAPI=5` and upper.
 
 The rebuild is needed as GHC haskell ABI is very precise(or fragile :):
 package changes ABI every time package's version, interface hashes
-(`.hi` files) or detendency packages change.
+(`.hi` files) or dependency packages change.
 
 The `:=` is not enough to make sure system does not get into a broken state.
 Consider an example: user has 3 packages installed depending on one another:
@@ -155,5 +155,51 @@ I am using plain ``emerge`` to do it. Here is my setup:
    Note: running ``emerge`` does not require you to build anything
    but just runs portage's resolver.
 
-In case on unresolvable depends you will get conflicts
+In case on unsolvable depends you will get conflicts
 similar to ``dev-haskell/data-default-0.7`` case above.
+
+On problems with slotting haskell libraries
+===========================================
+
+Tl;DR: don't slot haskell libraries.
+
+Haskell libraries frequently introduce API incompatibilities
+(running example is a **network-2.8** -> **network-3.0**).
+
+It is tempting to put each incompatible library into it's own **SLOT**
+(say, SLOT="2.8/${PV}" and SLOT="3.0/${PV}") and allow libraries to be
+installed in parallel.
+
+Unfortunately it usually does not work. The problem with
+slotting is that each reverse dependency could only be
+built against one of slots available at the same time
+(not both at the same time).
+
+Diamond-style dependencies can't be satisfied if different branches
+of dependencies use different slots.
+
+Example build failure on **recaptcha** package:
+
+  Warning:
+    This package indirectly depends on multiple versions of the same package. This is very likely to cause a compile failure.
+      package HTTP (HTTP-4000.3.14-AEcNM29soen35eXUQLVKbP) requires network-2.5.0.0-29nVNbJNyFb6jv23r63a7a
+      package recaptcha (recaptcha-0.1.0.4) requires network-3.0.1.1-Cv4xwaYSk3qLs0kTRkld1f
+
+  Network/Captcha/ReCaptcha.hs:74:31: error:
+    • Couldn't match expected type ‘network-2.5.0.0:Network.URI.URI’
+                  with actual type ‘URI’
+      NB: ‘URI’
+            is defined in ‘Network.URI’ in package ‘network-uri-2.6.3.0’
+          ‘network-2.5.0.0:Network.URI.URI’
+            is defined in ‘Network.URI’ in package ‘network-2.5.0.0’
+
+Note: here **Network.URI.URI** type is not consistent across different
+packages it comes from and type checker can't resolve them.
+
+The only sure way to avoid this kind of library mix is to install only
+one version of any library at a time. For API breaking changes is usually
+involves a bit of upstream porting work to a new version.
+
+Note: **cabal install** does not usually encounter this problem as it
+rebuilds every dependency anew each time something changes in the dependency
+graph.
