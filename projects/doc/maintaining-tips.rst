@@ -180,20 +180,18 @@ of dependencies use different slots.
 
 Example build failure on **recaptcha** package:
 
-```
-Warning:
+  Warning:
     This package indirectly depends on multiple versions of the same package. This is very likely to cause a compile failure.
       package HTTP (HTTP-4000.3.14-AEcNM29soen35eXUQLVKbP) requires network-2.5.0.0-29nVNbJNyFb6jv23r63a7a
       package recaptcha (recaptcha-0.1.0.4) requires network-3.0.1.1-Cv4xwaYSk3qLs0kTRkld1f
-...
-Network/Captcha/ReCaptcha.hs:74:31: error:
+
+  Network/Captcha/ReCaptcha.hs:74:31: error:
     • Couldn't match expected type ‘network-2.5.0.0:Network.URI.URI’
                   with actual type ‘URI’
       NB: ‘URI’
             is defined in ‘Network.URI’ in package ‘network-uri-2.6.3.0’
           ‘network-2.5.0.0:Network.URI.URI’
             is defined in ‘Network.URI’ in package ‘network-2.5.0.0’
-```
 
 Note: here **Network.URI.URI** type is not consistent across different
 packages it comes from and type checker can't resolve them.
