@@ -1095,7 +1095,7 @@ dev-haskell/ipynb 0.1: Data structure for working with Jupyter notebooks (ipynb)
 dev-haskell/ipython-kernel 0.10.1.0: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
 dev-haskell/irc-core 2.7.2: IRC core library for glirc
-dev-haskell/ircbot 0.6.5.3: A library for writing IRC bots
+dev-haskell/ircbot 0.6.5.3 0.6.5.3-r1 0.6.6: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.8: A datatype for ISO 3166 country codes
 dev-haskell/iso8601-time 0.1.5: Convert to/from the ISO 8601 time format
