@@ -9,7 +9,7 @@ CABAL_FEATURES=""
 inherit haskell-cabal
 
 DESCRIPTION="A generator of nix files"
-HOMEPAGE="http://hackage.haskell.org/package/styx"
+HOMEPAGE="https://hackage.haskell.org/package/styx"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

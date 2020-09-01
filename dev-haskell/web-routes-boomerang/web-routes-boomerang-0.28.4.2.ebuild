@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Use boomerang for type-safe URL parsers/printers"
-HOMEPAGE="http://hackage.haskell.org/package/web-routes-boomerang"
+HOMEPAGE="https://hackage.haskell.org/package/web-routes-boomerang"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

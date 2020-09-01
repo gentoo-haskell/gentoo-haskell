@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Ways to write a file cautiously, reducing chances of data loss due to crashes"
-HOMEPAGE="http://hackage.haskell.org/package/cautious-file"
+HOMEPAGE="https://hackage.haskell.org/package/cautious-file"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

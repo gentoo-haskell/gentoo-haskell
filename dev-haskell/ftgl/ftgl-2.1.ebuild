@@ -12,7 +12,7 @@ MY_PN="FTGL"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Portable TrueType font rendering for OpenGL using the Freetype2 library"
-HOMEPAGE="http://hackage.haskell.org/package/FTGL"
+HOMEPAGE="https://hackage.haskell.org/package/FTGL"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

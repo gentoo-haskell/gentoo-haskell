@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A haskell binding to cracklib"
-HOMEPAGE="http://hackage.haskell.org/package/crack"
+HOMEPAGE="https://hackage.haskell.org/package/crack"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

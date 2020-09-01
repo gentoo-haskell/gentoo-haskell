@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Unit tests for the plaform's Posix regex library"
-HOMEPAGE="http://hackage.haskell.org/package/regex-posix-unittest"
+HOMEPAGE="https://hackage.haskell.org/package/regex-posix-unittest"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

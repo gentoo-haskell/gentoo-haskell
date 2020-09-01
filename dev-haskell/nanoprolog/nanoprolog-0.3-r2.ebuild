@@ -12,7 +12,7 @@ MY_PN="NanoProlog"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Very small  interpreter for a Prolog-like language"
-HOMEPAGE="http://hackage.haskell.org/package/NanoProlog"
+HOMEPAGE="https://hackage.haskell.org/package/NanoProlog"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

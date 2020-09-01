@@ -12,7 +12,7 @@ MY_PN="Lazy-Pbkdf2"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Lazy PBKDF2 generator"
-HOMEPAGE="http://hackage.haskell.org/package/Lazy-Pbkdf2"
+HOMEPAGE="https://hackage.haskell.org/package/Lazy-Pbkdf2"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="MIT"

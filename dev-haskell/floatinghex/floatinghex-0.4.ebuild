@@ -12,7 +12,7 @@ MY_PN="FloatingHex"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Read and write hexadecimal floating point numbers"
-HOMEPAGE="http://hackage.haskell.org/package/FloatingHex"
+HOMEPAGE="https://hackage.haskell.org/package/FloatingHex"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

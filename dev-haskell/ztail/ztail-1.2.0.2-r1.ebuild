@@ -9,7 +9,7 @@ CABAL_FEATURES=""
 inherit haskell-cabal
 
 DESCRIPTION="Multi-file, colored, filtered log tailer"
-HOMEPAGE="http://hackage.haskell.org/package/ztail"
+HOMEPAGE="https://hackage.haskell.org/package/ztail"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

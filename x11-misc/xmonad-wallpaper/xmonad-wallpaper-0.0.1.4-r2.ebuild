@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="xmonad wallpaper extension"
-HOMEPAGE="http://hackage.haskell.org/package/xmonad-wallpaper"
+HOMEPAGE="https://hackage.haskell.org/package/xmonad-wallpaper"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-3"

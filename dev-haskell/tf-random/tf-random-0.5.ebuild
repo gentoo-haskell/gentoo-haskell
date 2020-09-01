@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile" # non-ASCII in .cabal: haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="High-quality splittable pseudorandom number generator"
-HOMEPAGE="http://hackage.haskell.org/package/tf-random"
+HOMEPAGE="https://hackage.haskell.org/package/tf-random"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

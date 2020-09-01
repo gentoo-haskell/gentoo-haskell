@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Reflex FRP host and widgets for vty applications"
-HOMEPAGE="http://hackage.haskell.org/package/reflex-vty"
+HOMEPAGE="https://hackage.haskell.org/package/reflex-vty"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

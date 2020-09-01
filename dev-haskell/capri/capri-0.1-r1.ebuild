@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit eutils haskell-cabal
 
 DESCRIPTION="A simple wrapper over cabal-install to operate in project-private mode"
-HOMEPAGE="http://hackage.haskell.org/package/capri"
+HOMEPAGE="https://hackage.haskell.org/package/capri"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

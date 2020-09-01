@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="bindings to imagemagick library"
-HOMEPAGE="http://hackage.haskell.org/package/imagemagick"
+HOMEPAGE="https://hackage.haskell.org/package/imagemagick"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="imagemagick"

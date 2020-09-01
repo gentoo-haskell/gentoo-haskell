@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Generate Haskell code from a type"
-HOMEPAGE="http://hackage.haskell.org/package/djinn"
+HOMEPAGE="https://hackage.haskell.org/package/djinn"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

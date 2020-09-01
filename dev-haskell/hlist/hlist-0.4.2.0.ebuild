@@ -12,7 +12,7 @@ MY_PN="HList"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Heterogeneous lists"
-HOMEPAGE="http://hackage.haskell.org/package/HList"
+HOMEPAGE="https://hackage.haskell.org/package/HList"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="MIT"

@@ -12,7 +12,7 @@ MY_PN="Annotations"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Constructing, analyzing and destructing annotated trees"
-HOMEPAGE="http://hackage.haskell.org/package/Annotations"
+HOMEPAGE="https://hackage.haskell.org/package/Annotations"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

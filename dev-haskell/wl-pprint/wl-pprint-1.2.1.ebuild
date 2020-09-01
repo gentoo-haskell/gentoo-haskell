@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="The Wadler/Leijen Pretty Printer"
-HOMEPAGE="http://hackage.haskell.org/package/wl-pprint"
+HOMEPAGE="https://hackage.haskell.org/package/wl-pprint"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

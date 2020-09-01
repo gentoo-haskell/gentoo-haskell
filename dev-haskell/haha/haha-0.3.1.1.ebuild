@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A simple library for creating animated ascii art on ANSI terminals"
-HOMEPAGE="http://hackage.haskell.org/package/haha"
+HOMEPAGE="https://hackage.haskell.org/package/haha"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

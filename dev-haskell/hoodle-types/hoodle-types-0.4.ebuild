@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Data types for programs for hoodle file format"
-HOMEPAGE="http://hackage.haskell.org/package/hoodle-types"
+HOMEPAGE="https://hackage.haskell.org/package/hoodle-types"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Execute a set of actions (e.g. parsers) in each possible order"
-HOMEPAGE="http://hackage.haskell.org/package/action-permutations"
+HOMEPAGE="https://hackage.haskell.org/package/action-permutations"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

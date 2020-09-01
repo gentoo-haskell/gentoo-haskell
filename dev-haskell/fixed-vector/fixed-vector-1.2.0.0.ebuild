@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Generic vectors with statically known size"
-HOMEPAGE="http://hackage.haskell.org/package/fixed-vector"
+HOMEPAGE="https://hackage.haskell.org/package/fixed-vector"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

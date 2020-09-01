@@ -12,7 +12,7 @@ CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
 DESCRIPTION="Concrete functor and monad transformers"
-HOMEPAGE="http://hackage.haskell.org/package/transformers"
+HOMEPAGE="https://hackage.haskell.org/package/transformers"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

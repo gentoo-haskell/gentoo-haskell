@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Compatibility for type constraint template"
-HOMEPAGE="http://hackage.haskell.org/package/th-constraint-compat"
+HOMEPAGE="https://hackage.haskell.org/package/th-constraint-compat"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

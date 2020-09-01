@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Bootstrap CSS Framework type-safe interface"
-HOMEPAGE="http://hackage.haskell.org/package/bootstrap-types"
+HOMEPAGE="https://hackage.haskell.org/package/bootstrap-types"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

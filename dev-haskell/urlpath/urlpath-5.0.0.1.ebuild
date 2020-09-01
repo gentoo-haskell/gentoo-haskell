@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Painfully simple URL deployment"
-HOMEPAGE="http://hackage.haskell.org/package/urlpath"
+HOMEPAGE="https://hackage.haskell.org/package/urlpath"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

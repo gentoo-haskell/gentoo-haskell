@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Sets of enumeration values represented by machine words"
-HOMEPAGE="http://hackage.haskell.org/package/enumset"
+HOMEPAGE="https://hackage.haskell.org/package/enumset"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A convenient way to panic"
-HOMEPAGE="http://hackage.haskell.org/package/panic"
+HOMEPAGE="https://hackage.haskell.org/package/panic"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="ISC"

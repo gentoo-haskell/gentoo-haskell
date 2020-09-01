@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Tiny helper for pretty-printing values in ghci console"
-HOMEPAGE="http://hackage.haskell.org/package/ipprint"
+HOMEPAGE="https://hackage.haskell.org/package/ipprint"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

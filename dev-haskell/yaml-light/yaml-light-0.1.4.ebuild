@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A light-weight wrapper with utility functions around HsSyck"
-HOMEPAGE="http://hackage.haskell.org/package/yaml-light"
+HOMEPAGE="https://hackage.haskell.org/package/yaml-light"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

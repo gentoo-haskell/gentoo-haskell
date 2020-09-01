@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Interfacing pipes with foldl folds"
-HOMEPAGE="http://hackage.haskell.org/package/pipes-transduce"
+HOMEPAGE="https://hackage.haskell.org/package/pipes-transduce"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

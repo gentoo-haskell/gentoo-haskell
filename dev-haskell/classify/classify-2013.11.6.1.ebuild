@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Library for classification of media files"
-HOMEPAGE="http://hackage.haskell.org/package/classify"
+HOMEPAGE="https://hackage.haskell.org/package/classify"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Type level numbers implemented using type families"
-HOMEPAGE="http://hackage.haskell.org/package/type-level-numbers"
+HOMEPAGE="https://hackage.haskell.org/package/type-level-numbers"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

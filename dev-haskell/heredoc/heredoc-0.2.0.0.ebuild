@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="multi-line string / here document using QuasiQuotes"
-HOMEPAGE="http://hackage.haskell.org/package/heredoc"
+HOMEPAGE="https://hackage.haskell.org/package/heredoc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"

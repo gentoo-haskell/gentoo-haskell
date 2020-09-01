@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Bindings to the FFTW library"
-HOMEPAGE="http://hackage.haskell.org/package/fft"
+HOMEPAGE="https://hackage.haskell.org/package/fft"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Launch a web app in the default browser"
-HOMEPAGE="http://hackage.haskell.org/package/wai-handler-launch"
+HOMEPAGE="https://hackage.haskell.org/package/wai-handler-launch"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Monadic versions of list functions"
-HOMEPAGE="http://hackage.haskell.org/package/monadlist"
+HOMEPAGE="https://hackage.haskell.org/package/monadlist"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

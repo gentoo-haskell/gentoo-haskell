@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit eutils haskell-cabal
 
 DESCRIPTION="#plaimi's all-encompassing bot"
-HOMEPAGE="http://hackage.haskell.org/package/y0l0bot"
+HOMEPAGE="https://hackage.haskell.org/package/y0l0bot"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="AGPL-3"

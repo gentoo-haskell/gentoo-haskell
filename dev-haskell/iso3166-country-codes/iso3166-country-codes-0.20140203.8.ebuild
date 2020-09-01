@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A datatype for ISO 3166 country codes"
-HOMEPAGE="http://hackage.haskell.org/package/iso3166-country-codes"
+HOMEPAGE="https://hackage.haskell.org/package/iso3166-country-codes"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="TMVars, TVars and TChans with distinguished input and output side"
-HOMEPAGE="http://hackage.haskell.org/package/stm-split"
+HOMEPAGE="https://hackage.haskell.org/package/stm-split"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

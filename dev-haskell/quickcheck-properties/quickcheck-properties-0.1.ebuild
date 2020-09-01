@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="QuickCheck properties for standard type classes"
-HOMEPAGE="http://hackage.haskell.org/package/quickcheck-properties"
+HOMEPAGE="https://hackage.haskell.org/package/quickcheck-properties"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

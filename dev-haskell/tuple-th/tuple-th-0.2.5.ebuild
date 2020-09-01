@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Generate (non-recursive) utility functions for tuples of statically known size"
-HOMEPAGE="http://hackage.haskell.org/package/tuple-th"
+HOMEPAGE="https://hackage.haskell.org/package/tuple-th"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

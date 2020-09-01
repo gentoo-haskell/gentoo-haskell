@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell bindings for the C Wayland library"
-HOMEPAGE="http://hackage.haskell.org/package/hayland"
+HOMEPAGE="https://hackage.haskell.org/package/hayland"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

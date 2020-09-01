@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Persistent instances for types in iproute"
-HOMEPAGE="http://hackage.haskell.org/package/persistent-instances-iproute"
+HOMEPAGE="https://hackage.haskell.org/package/persistent-instances-iproute"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

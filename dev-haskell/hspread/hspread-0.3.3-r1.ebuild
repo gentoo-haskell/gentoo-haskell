@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="A client library for the spread toolkit"
-HOMEPAGE="http://hackage.haskell.org/package/hspread"
+HOMEPAGE="https://hackage.haskell.org/package/hspread"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

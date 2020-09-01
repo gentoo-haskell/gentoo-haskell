@@ -12,7 +12,7 @@ MY_PN="EitherT"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="EitherT monad transformer"
-HOMEPAGE="http://hackage.haskell.org/package/EitherT"
+HOMEPAGE="https://hackage.haskell.org/package/EitherT"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A type for points, as distinct from vectors"
-HOMEPAGE="http://hackage.haskell.org/package/vector-space-points"
+HOMEPAGE="https://hackage.haskell.org/package/vector-space-points"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

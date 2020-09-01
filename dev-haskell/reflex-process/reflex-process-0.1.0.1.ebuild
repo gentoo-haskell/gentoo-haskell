@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="reflex-frp interface for running shell commands"
-HOMEPAGE="http://hackage.haskell.org/package/reflex-process"
+HOMEPAGE="https://hackage.haskell.org/package/reflex-process"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

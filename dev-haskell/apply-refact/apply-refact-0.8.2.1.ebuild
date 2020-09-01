@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Perform refactorings specified by the refact library"
-HOMEPAGE="http://hackage.haskell.org/package/apply-refact"
+HOMEPAGE="https://hackage.haskell.org/package/apply-refact"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A simple web-server with an interact style API"
-HOMEPAGE="http://hackage.haskell.org/package/httpd-shed"
+HOMEPAGE="https://hackage.haskell.org/package/httpd-shed"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	# As per http://hackage.haskell.org/package/httpd-shed-0.4.0.3/revisions/
+	# As per https://hackage.haskell.org/package/httpd-shed-0.4.0.3/revisions/
 	cabal_chdeps 'network >=2.3     && <2.7' 'network >=2.3 && <2.9'
 }
 

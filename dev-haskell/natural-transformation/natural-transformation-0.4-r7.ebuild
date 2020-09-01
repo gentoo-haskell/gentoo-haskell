@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	# As per http://hackage.haskell.org/package/natural-transformation-0.4/revisions/
+	# As per https://hackage.haskell.org/package/natural-transformation-0.4/revisions/
 	cabal_chdeps \
 		'tasty                  >= 0.8 && < 0.12' 'tasty >=0.8 && <1.3'\
 		'tasty-quickcheck       >= 0.8 && < 0.9' 'tasty-quickcheck >=0.8 && <0.11'\

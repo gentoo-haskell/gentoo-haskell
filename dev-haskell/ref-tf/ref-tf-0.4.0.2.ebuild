@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A type class for monads with references using type families"
-HOMEPAGE="http://hackage.haskell.org/package/ref-tf"
+HOMEPAGE="https://hackage.haskell.org/package/ref-tf"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Concurrent actions that may fail with a value"
-HOMEPAGE="http://hackage.haskell.org/package/conceit"
+HOMEPAGE="https://hackage.haskell.org/package/conceit"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

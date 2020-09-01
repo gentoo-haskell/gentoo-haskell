@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Automatic generation of hslogger functions"
-HOMEPAGE="http://hackage.haskell.org/package/hslogger-template"
+HOMEPAGE="https://hackage.haskell.org/package/hslogger-template"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"

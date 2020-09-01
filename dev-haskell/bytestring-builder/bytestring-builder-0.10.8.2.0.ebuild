@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile"
 inherit haskell-cabal
 
 DESCRIPTION="The new bytestring builder, packaged outside of GHC"
-HOMEPAGE="http://hackage.haskell.org/package/bytestring-builder"
+HOMEPAGE="https://hackage.haskell.org/package/bytestring-builder"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

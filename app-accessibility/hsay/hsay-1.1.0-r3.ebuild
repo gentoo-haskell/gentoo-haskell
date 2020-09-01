@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="(ab)Use Google Translate as a speech synthesiser"
-HOMEPAGE="http://hackage.haskell.org/package/hsay"
+HOMEPAGE="https://hackage.haskell.org/package/hsay"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"

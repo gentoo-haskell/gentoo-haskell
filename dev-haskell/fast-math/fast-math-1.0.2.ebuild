@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Non IEEE-754 compliant compile-time floating-point optimisations"
-HOMEPAGE="http://hackage.haskell.org/package/fast-math"
+HOMEPAGE="https://hackage.haskell.org/package/fast-math"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Concurrency for the pipes ecosystem"
-HOMEPAGE="http://hackage.haskell.org/package/pipes-concurrency"
+HOMEPAGE="https://hackage.haskell.org/package/pipes-concurrency"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

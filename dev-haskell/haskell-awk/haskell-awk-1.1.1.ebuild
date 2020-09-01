@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Transform text from the command-line using Haskell expressions"
-HOMEPAGE="http://hackage.haskell.org/package/haskell-awk"
+HOMEPAGE="https://hackage.haskell.org/package/haskell-awk"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"

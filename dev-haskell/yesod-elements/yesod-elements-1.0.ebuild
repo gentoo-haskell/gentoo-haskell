@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Non template haskell markup building function in the spirit of lucid"
-HOMEPAGE="http://hackage.haskell.org/package/yesod-elements"
+HOMEPAGE="https://hackage.haskell.org/package/yesod-elements"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

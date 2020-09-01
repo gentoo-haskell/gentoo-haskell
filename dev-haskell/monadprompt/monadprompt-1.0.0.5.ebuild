@@ -12,7 +12,7 @@ MY_PN="MonadPrompt"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="MonadPrompt, implementation & examples"
-HOMEPAGE="http://hackage.haskell.org/package/MonadPrompt"
+HOMEPAGE="https://hackage.haskell.org/package/MonadPrompt"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

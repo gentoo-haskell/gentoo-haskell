@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Simple State-like monad transformer with saveable and restorable state"
-HOMEPAGE="http://hackage.haskell.org/package/statestack"
+HOMEPAGE="https://hackage.haskell.org/package/statestack"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

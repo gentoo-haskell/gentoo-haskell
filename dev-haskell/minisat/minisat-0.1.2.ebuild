@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A Haskell bundle of the Minisat SAT solver"
-HOMEPAGE="http://hackage.haskell.org/package/minisat"
+HOMEPAGE="https://hackage.haskell.org/package/minisat"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

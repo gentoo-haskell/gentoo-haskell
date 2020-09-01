@@ -12,7 +12,7 @@ MY_PN="Imlib"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Haskell binding for Imlib 2"
-HOMEPAGE="http://hackage.haskell.org/package/Imlib"
+HOMEPAGE="https://hackage.haskell.org/package/Imlib"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="An MPD client with vim-like key bindings"
-HOMEPAGE="http://hackage.haskell.org/package/vimus"
+HOMEPAGE="https://hackage.haskell.org/package/vimus"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

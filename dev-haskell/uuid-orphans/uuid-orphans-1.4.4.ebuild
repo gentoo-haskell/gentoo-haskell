@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Orphan instances for the UUID datatype"
-HOMEPAGE="http://hackage.haskell.org/package/uuid-orphans"
+HOMEPAGE="https://hackage.haskell.org/package/uuid-orphans"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

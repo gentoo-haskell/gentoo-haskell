@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Allow QuickCheck-style property testing within doctest"
-HOMEPAGE="http://hackage.haskell.org/package/doctest-prop"
+HOMEPAGE="https://hackage.haskell.org/package/doctest-prop"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

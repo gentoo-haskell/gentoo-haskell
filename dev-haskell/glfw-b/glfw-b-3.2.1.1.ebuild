@@ -12,7 +12,7 @@ MY_PN="GLFW-b"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Bindings to GLFW OpenGL library"
-HOMEPAGE="http://hackage.haskell.org/package/GLFW-b"
+HOMEPAGE="https://hackage.haskell.org/package/GLFW-b"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Obtain the host MAC address on *NIX and Windows"
-HOMEPAGE="http://hackage.haskell.org/package/maccatcher"
+HOMEPAGE="https://hackage.haskell.org/package/maccatcher"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

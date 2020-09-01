@@ -12,7 +12,7 @@ MY_PN="SourceGraph"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Static code analysis using graph-theoretic techniques"
-HOMEPAGE="http://hackage.haskell.org/package/SourceGraph"
+HOMEPAGE="https://hackage.haskell.org/package/SourceGraph"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"

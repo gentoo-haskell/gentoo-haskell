@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Ranges and various functions on them"
-HOMEPAGE="http://hackage.haskell.org/package/ranges"
+HOMEPAGE="https://hackage.haskell.org/package/ranges"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

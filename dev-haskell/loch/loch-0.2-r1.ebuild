@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="Support for precise error locations in source files"
-HOMEPAGE="http://hackage.haskell.org/package/loch"
+HOMEPAGE="https://hackage.haskell.org/package/loch"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

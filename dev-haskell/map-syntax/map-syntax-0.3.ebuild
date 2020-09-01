@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Syntax sugar for defining maps"
-HOMEPAGE="http://hackage.haskell.org/package/map-syntax"
+HOMEPAGE="https://hackage.haskell.org/package/map-syntax"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

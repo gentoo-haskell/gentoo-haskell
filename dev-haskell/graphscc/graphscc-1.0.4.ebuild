@@ -12,7 +12,7 @@ MY_PN="GraphSCC"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Tarjan's algorithm for computing the strongly connected components of a graph"
-HOMEPAGE="http://hackage.haskell.org/package/GraphSCC"
+HOMEPAGE="https://hackage.haskell.org/package/GraphSCC"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

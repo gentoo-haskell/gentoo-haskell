@@ -12,7 +12,7 @@ MY_PN="Codec-Image-DevIL"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="An FFI interface to the DevIL library"
-HOMEPAGE="http://hackage.haskell.org/package/Codec-Image-DevIL"
+HOMEPAGE="https://hackage.haskell.org/package/Codec-Image-DevIL"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -7,7 +7,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Interfacing with the MediaWiki API"
-HOMEPAGE="http://hackage.haskell.org/package/mediawiki"
+HOMEPAGE="https://hackage.haskell.org/package/mediawiki"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

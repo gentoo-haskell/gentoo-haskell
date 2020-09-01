@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="automatic C++ binding generation"
-HOMEPAGE="http://hackage.haskell.org/package/fficxx"
+HOMEPAGE="https://hackage.haskell.org/package/fficxx"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

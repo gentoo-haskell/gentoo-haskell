@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="native matrix based on vector"
-HOMEPAGE="http://hackage.haskell.org/package/matrices"
+HOMEPAGE="https://hackage.haskell.org/package/matrices"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Bindings to libnotify library"
-HOMEPAGE="http://hackage.haskell.org/package/libnotify"
+HOMEPAGE="https://hackage.haskell.org/package/libnotify"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

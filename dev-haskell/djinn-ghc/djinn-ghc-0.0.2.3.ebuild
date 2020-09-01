@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Generate Haskell code from a type. Bridge from Djinn to GHC API"
-HOMEPAGE="http://hackage.haskell.org/package/djinn-ghc"
+HOMEPAGE="https://hackage.haskell.org/package/djinn-ghc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

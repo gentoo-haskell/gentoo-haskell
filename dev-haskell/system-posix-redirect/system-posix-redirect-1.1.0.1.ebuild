@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A toy module to temporarily redirect a program's stdout"
-HOMEPAGE="http://hackage.haskell.org/package/system-posix-redirect"
+HOMEPAGE="https://hackage.haskell.org/package/system-posix-redirect"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

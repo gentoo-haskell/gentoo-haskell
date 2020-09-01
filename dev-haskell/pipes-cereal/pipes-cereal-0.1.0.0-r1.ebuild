@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Encode and decode binary streams using the pipes and cereal libraries"
-HOMEPAGE="http://hackage.haskell.org/package/pipes-cereal"
+HOMEPAGE="https://hackage.haskell.org/package/pipes-cereal"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

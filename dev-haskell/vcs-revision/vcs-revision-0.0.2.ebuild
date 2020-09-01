@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Facilities for accessing the version control revision of the current directory"
-HOMEPAGE="http://hackage.haskell.org/package/vcs-revision"
+HOMEPAGE="https://hackage.haskell.org/package/vcs-revision"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

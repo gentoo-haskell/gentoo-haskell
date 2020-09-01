@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Preprocesses a file, adding blobs from files as string literals"
-HOMEPAGE="http://hackage.haskell.org/package/hsb2hs"
+HOMEPAGE="https://hackage.haskell.org/package/hsb2hs"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

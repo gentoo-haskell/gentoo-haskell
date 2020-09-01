@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Display keywording for ebuilds"
-HOMEPAGE="http://hackage.haskell.org/package/keyword-stat"
+HOMEPAGE="https://hackage.haskell.org/package/keyword-stat"
 SRC_URI="https://github.com/gentoo-haskell/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"

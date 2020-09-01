@@ -12,7 +12,7 @@ MY_PN="AC-Vector-Fancy"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Fancy type-system stuff for AC-Vector"
-HOMEPAGE="http://hackage.haskell.org/package/AC-Vector-Fancy"
+HOMEPAGE="https://hackage.haskell.org/package/AC-Vector-Fancy"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

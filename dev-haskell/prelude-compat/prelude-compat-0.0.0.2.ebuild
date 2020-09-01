@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Provide Prelude and Data.List with fixed content across GHC versions"
-HOMEPAGE="http://hackage.haskell.org/package/prelude-compat"
+HOMEPAGE="https://hackage.haskell.org/package/prelude-compat"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

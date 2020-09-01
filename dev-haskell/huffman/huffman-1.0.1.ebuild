@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Pure Haskell implementation of the Huffman encoding algorithm"
-HOMEPAGE="http://hackage.haskell.org/package/huffman"
+HOMEPAGE="https://hackage.haskell.org/package/huffman"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

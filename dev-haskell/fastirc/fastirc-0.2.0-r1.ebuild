@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="Fast Internet Relay Chat (IRC) library"
-HOMEPAGE="http://hackage.haskell.org/package/fastirc"
+HOMEPAGE="https://hackage.haskell.org/package/fastirc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

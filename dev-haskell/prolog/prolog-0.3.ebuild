@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A Prolog interpreter written in Haskell"
-HOMEPAGE="http://hackage.haskell.org/package/prolog"
+HOMEPAGE="https://hackage.haskell.org/package/prolog"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"

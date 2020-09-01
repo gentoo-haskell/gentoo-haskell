@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="The error function, erf, and related functions"
-HOMEPAGE="http://hackage.haskell.org/package/erf"
+HOMEPAGE="https://hackage.haskell.org/package/erf"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

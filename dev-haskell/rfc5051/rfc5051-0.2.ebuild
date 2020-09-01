@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Simple unicode collation as per RFC5051"
-HOMEPAGE="http://hackage.haskell.org/package/rfc5051"
+HOMEPAGE="https://hackage.haskell.org/package/rfc5051"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

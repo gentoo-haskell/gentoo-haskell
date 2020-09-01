@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="TagShare - explicit sharing with tags"
-HOMEPAGE="http://hackage.haskell.org/package/tagshare"
+HOMEPAGE="https://hackage.haskell.org/package/tagshare"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

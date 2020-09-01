@@ -12,7 +12,7 @@ MY_PN="SVGFonts"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Fonts from the SVG-Font format"
-HOMEPAGE="http://hackage.haskell.org/package/SVGFonts"
+HOMEPAGE="https://hackage.haskell.org/package/SVGFonts"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

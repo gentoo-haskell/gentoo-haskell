@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Interface to the Online Encyclopedia of Integer Sequences (OEIS)"
-HOMEPAGE="http://hackage.haskell.org/package/oeis"
+HOMEPAGE="https://hackage.haskell.org/package/oeis"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

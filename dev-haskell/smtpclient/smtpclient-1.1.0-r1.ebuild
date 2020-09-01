@@ -12,7 +12,7 @@ MY_PN="SMTPClient"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A simple SMTP client library"
-HOMEPAGE="http://hackage.haskell.org/package/SMTPClient"
+HOMEPAGE="https://hackage.haskell.org/package/SMTPClient"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

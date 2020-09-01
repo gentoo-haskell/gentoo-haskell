@@ -13,7 +13,7 @@ MY_PN="Rasterific"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A pure haskell drawing engine"
-HOMEPAGE="http://hackage.haskell.org/package/Rasterific"
+HOMEPAGE="https://hackage.haskell.org/package/Rasterific"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

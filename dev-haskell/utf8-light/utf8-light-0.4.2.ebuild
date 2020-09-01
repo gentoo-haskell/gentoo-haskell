@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Unicode"
-HOMEPAGE="http://hackage.haskell.org/package/utf8-light"
+HOMEPAGE="https://hackage.haskell.org/package/utf8-light"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Generic first-order unification"
-HOMEPAGE="http://hackage.haskell.org/package/monad-unify"
+HOMEPAGE="https://hackage.haskell.org/package/monad-unify"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

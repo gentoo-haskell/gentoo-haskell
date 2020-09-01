@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="HTTP client with pipes interface"
-HOMEPAGE="http://hackage.haskell.org/package/pipes-http"
+HOMEPAGE="https://hackage.haskell.org/package/pipes-http"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

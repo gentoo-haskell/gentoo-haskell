@@ -12,7 +12,7 @@ MY_PN="HGL"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A simple graphics library based on X11 or Win32"
-HOMEPAGE="http://hackage.haskell.org/package/HGL"
+HOMEPAGE="https://hackage.haskell.org/package/HGL"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

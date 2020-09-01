@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Optional function arguments"
-HOMEPAGE="http://hackage.haskell.org/package/optional-args"
+HOMEPAGE="https://hackage.haskell.org/package/optional-args"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Generate graphs of darcs repository activity"
-HOMEPAGE="http://hackage.haskell.org/package/darcs-graph"
+HOMEPAGE="https://hackage.haskell.org/package/darcs-graph"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

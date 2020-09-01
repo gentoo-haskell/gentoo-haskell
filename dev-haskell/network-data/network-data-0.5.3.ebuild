@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Library for network data structures and their serialization"
-HOMEPAGE="http://hackage.haskell.org/package/network-data"
+HOMEPAGE="https://hackage.haskell.org/package/network-data"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile"
 inherit haskell-cabal
 
 DESCRIPTION="None (deprecated)"
-HOMEPAGE="http://hackage.haskell.org/package/kibro"
+HOMEPAGE="https://hackage.haskell.org/package/kibro"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

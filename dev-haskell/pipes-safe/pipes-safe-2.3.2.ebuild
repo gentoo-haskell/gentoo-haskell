@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Safety for the pipes ecosystem"
-HOMEPAGE="http://hackage.haskell.org/package/pipes-safe"
+HOMEPAGE="https://hackage.haskell.org/package/pipes-safe"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

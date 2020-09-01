@@ -40,7 +40,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	#as per http://hackage.haskell.org/package/log-postgres-0.7.1.1/revisions/
+	#as per https://hackage.haskell.org/package/log-postgres-0.7.1.1/revisions/
 	cabal_chdeps \
 		'hpqtypes             ^>= 1.7' 'hpqtypes             ^>= 1.7 || ^>= 1.8'
 }

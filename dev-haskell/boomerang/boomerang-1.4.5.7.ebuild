@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Library for invertible parsing and printing"
-HOMEPAGE="http://hackage.haskell.org/package/boomerang"
+HOMEPAGE="https://hackage.haskell.org/package/boomerang"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -13,7 +13,7 @@ MY_PN="SHA"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Implementations of the SHA suite of message digest functions"
-HOMEPAGE="http://hackage.haskell.org/package/SHA"
+HOMEPAGE="https://hackage.haskell.org/package/SHA"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Parse Graphviz xdot files and interactively view them using GTK and Cairo"
-HOMEPAGE="http://hackage.haskell.org/package/xdot"
+HOMEPAGE="https://hackage.haskell.org/package/xdot"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

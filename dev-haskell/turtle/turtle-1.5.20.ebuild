@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Shell programming, Haskell-style"
-HOMEPAGE="http://hackage.haskell.org/package/turtle"
+HOMEPAGE="https://hackage.haskell.org/package/turtle"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

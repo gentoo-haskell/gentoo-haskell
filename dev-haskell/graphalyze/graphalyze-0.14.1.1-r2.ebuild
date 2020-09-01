@@ -12,7 +12,7 @@ MY_PN="Graphalyze"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Graph-Theoretic Analysis library"
-HOMEPAGE="http://hackage.haskell.org/package/Graphalyze"
+HOMEPAGE="https://hackage.haskell.org/package/Graphalyze"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD-2"

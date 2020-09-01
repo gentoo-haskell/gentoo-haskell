@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Template Haskell for test framework"
-HOMEPAGE="http://hackage.haskell.org/package/test-framework-th-prime"
+HOMEPAGE="https://hackage.haskell.org/package/test-framework-th-prime"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

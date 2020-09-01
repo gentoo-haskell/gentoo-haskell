@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Interface for JavaScript that works with GHCJS and GHC"
-HOMEPAGE="http://hackage.haskell.org/package/jsaddle-wkwebview"
+HOMEPAGE="https://hackage.haskell.org/package/jsaddle-wkwebview"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
