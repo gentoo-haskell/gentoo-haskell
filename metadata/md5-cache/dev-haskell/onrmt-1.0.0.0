@@ -2,7 +2,7 @@ DEFINED_PHASES=compile configure install postinst postrm setup test
 DEPEND=dev-haskell/async:=[profile?] >=dev-haskell/brick-0.13:=[profile?] dev-haskell/conduit:=[profile?] dev-haskell/conduit-extra:=[profile?] dev-haskell/control-monad-loop:=[profile?] dev-haskell/data-default:=[profile?] >=dev-haskell/itemfield-1.2.0.0:=[profile?] dev-haskell/listsafe:=[profile?] dev-haskell/microlens:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/old-locale:=[profile?] dev-haskell/repl-toolkit:=[profile?] dev-haskell/ssh-known-hosts:=[profile?] dev-haskell/string-conversions:=[profile?] dev-haskell/text:=[profile?] dev-haskell/text-zipper:=[profile?] dev-haskell/vector:=[profile?] dev-haskell/void:=[profile?] dev-haskell/vty:=[profile?] >=dev-lang/ghc-7.10.1:= >=dev-haskell/cabal-1.22.2.0 test? ( dev-haskell/hunit dev-haskell/test-framework dev-haskell/test-framework-hunit ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Text UI library for performing parallel remote SSH operations
 EAPI=6
-HOMEPAGE=http://hackage.haskell.org/package/OnRmt
+HOMEPAGE=https://hackage.haskell.org/package/OnRmt
 IUSE=+brick017 doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
@@ -11,4 +11,4 @@ RESTRICT=!test? ( test )
 SLOT=0/1.0.0.0
 SRC_URI=https://hackage.haskell.org/package/OnRmt-1.0.0.0/OnRmt-1.0.0.0.tar.gz
 _eclasses_=desktop	7fd20552ce4cc97e8acb132a499a7dd8	eapi7-ver	f9ec87e93172b25ce65a85303dc06964	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ghc-package	c5182eb7e501132153f9710aa822d170	haskell-cabal	c107e202f6f24b4f9e946cb8f7c0668c	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	multiprocessing	cac3169468f893670dac3e7cb940e045	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
-_md5_=88e529940de76e4cc56490fd565cc282
+_md5_=64c9d15a69b9aff2b33ea1eda187099f
