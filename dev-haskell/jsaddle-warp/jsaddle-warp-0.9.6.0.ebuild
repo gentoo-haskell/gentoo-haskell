@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Interface for JavaScript that works with GHCJS and GHC"
-HOMEPAGE="http://hackage.haskell.org/package/jsaddle-warp"
+HOMEPAGE="https://hackage.haskell.org/package/jsaddle-warp"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Low-level bindings to libgit2"
-HOMEPAGE="http://hackage.haskell.org/package/hlibgit2"
+HOMEPAGE="https://hackage.haskell.org/package/hlibgit2"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

@@ -12,7 +12,7 @@ MY_PN="Crypto"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Collects together existing Haskell cryptographic functions into a package"
-HOMEPAGE="http://hackage.haskell.org/package/Crypto"
+HOMEPAGE="https://hackage.haskell.org/package/Crypto"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD GPL-2"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Library and tool for parsing .eventlog files from GHC"
-HOMEPAGE="http://hackage.haskell.org/package/ghc-events"
+HOMEPAGE="https://hackage.haskell.org/package/ghc-events"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

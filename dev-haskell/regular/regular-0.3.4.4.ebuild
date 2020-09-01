@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Generic programming library for regular datatypes"
-HOMEPAGE="http://hackage.haskell.org/package/regular"
+HOMEPAGE="https://hackage.haskell.org/package/regular"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

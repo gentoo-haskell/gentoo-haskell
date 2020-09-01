@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # Outdated test-suite: Coul
 inherit haskell-cabal
 
 DESCRIPTION="A mysql-haskell backend for the users library"
-HOMEPAGE="http://hackage.haskell.org/package/users-mysql-haskell"
+HOMEPAGE="https://hackage.haskell.org/package/users-mysql-haskell"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

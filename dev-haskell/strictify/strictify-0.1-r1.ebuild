@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Find a local optimum of strictness annotations"
-HOMEPAGE="http://hackage.haskell.org/package/strictify"
+HOMEPAGE="https://hackage.haskell.org/package/strictify"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

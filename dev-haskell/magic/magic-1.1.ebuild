@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Interface to C file/magic library"
-HOMEPAGE="http://hackage.haskell.org/package/magic"
+HOMEPAGE="https://hackage.haskell.org/package/magic"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

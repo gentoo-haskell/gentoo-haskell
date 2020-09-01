@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A zipper-like comonad which works as a list, tracking a position"
-HOMEPAGE="http://hackage.haskell.org/package/pointedlist"
+HOMEPAGE="https://hackage.haskell.org/package/pointedlist"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

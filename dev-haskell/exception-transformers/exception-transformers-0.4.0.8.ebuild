@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Type classes and monads for unchecked extensible exceptions"
-HOMEPAGE="http://hackage.haskell.org/package/exception-transformers"
+HOMEPAGE="https://hackage.haskell.org/package/exception-transformers"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

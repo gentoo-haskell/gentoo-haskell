@@ -12,7 +12,7 @@ MY_PN="RefSerialize"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Write to and read from ByteStrings maintaining internal memory references"
-HOMEPAGE="http://hackage.haskell.org/package/RefSerialize"
+HOMEPAGE="https://hackage.haskell.org/package/RefSerialize"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

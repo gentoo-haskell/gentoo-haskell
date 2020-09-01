@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Java .class files assembler/disassembler"
-HOMEPAGE="http://hackage.haskell.org/package/hs-java"
+HOMEPAGE="https://hackage.haskell.org/package/hs-java"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

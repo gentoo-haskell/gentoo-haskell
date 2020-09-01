@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Abstractions for animation"
-HOMEPAGE="http://hackage.haskell.org/package/active"
+HOMEPAGE="https://hackage.haskell.org/package/active"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

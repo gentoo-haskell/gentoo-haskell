@@ -12,7 +12,7 @@ MY_PN="SDL-mixer"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Binding to libSDL_mixer"
-HOMEPAGE="http://hackage.haskell.org/package/SDL-mixer"
+HOMEPAGE="https://hackage.haskell.org/package/SDL-mixer"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

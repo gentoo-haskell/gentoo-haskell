@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell 98 groups"
-HOMEPAGE="http://hackage.haskell.org/package/groups"
+HOMEPAGE="https://hackage.haskell.org/package/groups"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

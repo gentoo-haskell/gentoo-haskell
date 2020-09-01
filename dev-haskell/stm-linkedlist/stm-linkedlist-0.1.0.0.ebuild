@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Mutable, doubly linked lists for STM"
-HOMEPAGE="http://hackage.haskell.org/package/stm-linkedlist"
+HOMEPAGE="https://hackage.haskell.org/package/stm-linkedlist"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

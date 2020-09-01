@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Simple text formatting library"
-HOMEPAGE="http://hackage.haskell.org/package/text-format-simple"
+HOMEPAGE="https://hackage.haskell.org/package/text-format-simple"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

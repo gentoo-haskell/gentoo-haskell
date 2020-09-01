@@ -12,7 +12,7 @@ MY_PN="HJavaScript"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="HJavaScript is an abstract syntax for a typed subset of JavaScript"
-HOMEPAGE="http://hackage.haskell.org/package/HJavaScript"
+HOMEPAGE="https://hackage.haskell.org/package/HJavaScript"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

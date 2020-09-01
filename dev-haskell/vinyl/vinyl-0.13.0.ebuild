@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Extensible Records"
-HOMEPAGE="http://hackage.haskell.org/package/vinyl"
+HOMEPAGE="https://hackage.haskell.org/package/vinyl"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

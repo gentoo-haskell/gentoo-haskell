@@ -12,7 +12,7 @@ MY_PN="stickyKeysHotKey"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="get and set STICKYKEYS.SKF_HOTKEYACTIVE"
-HOMEPAGE="http://hackage.haskell.org/package/stickyKeysHotKey"
+HOMEPAGE="https://hackage.haskell.org/package/stickyKeysHotKey"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Pretty print the standard output of default 'Show' instances"
-HOMEPAGE="http://hackage.haskell.org/package/nicify-lib"
+HOMEPAGE="https://hackage.haskell.org/package/nicify-lib"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Cross platform library for the sendfile system call"
-HOMEPAGE="http://hackage.haskell.org/package/simple-sendfile"
+HOMEPAGE="https://hackage.haskell.org/package/simple-sendfile"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # Broken test-suite: Could 
 inherit haskell-cabal
 
 DESCRIPTION="Implementation of source maps as proposed by Google and Mozilla"
-HOMEPAGE="http://hackage.haskell.org/package/sourcemap"
+HOMEPAGE="https://hackage.haskell.org/package/sourcemap"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # Broken test-suite: missin
 inherit haskell-cabal
 
 DESCRIPTION="A simple api for matchers"
-HOMEPAGE="http://hackage.haskell.org/package/rematch"
+HOMEPAGE="https://hackage.haskell.org/package/rematch"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

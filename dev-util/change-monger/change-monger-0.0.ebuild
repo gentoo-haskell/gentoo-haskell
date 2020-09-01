@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Parse VCS changelogs into ChangeLogs"
-HOMEPAGE="http://hackage.haskell.org/package/change-monger"
+HOMEPAGE="https://hackage.haskell.org/package/change-monger"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

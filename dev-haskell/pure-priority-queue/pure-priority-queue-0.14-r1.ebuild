@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A pure priority queue"
-HOMEPAGE="http://hackage.haskell.org/package/pure-priority-queue"
+HOMEPAGE="https://hackage.haskell.org/package/pure-priority-queue"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

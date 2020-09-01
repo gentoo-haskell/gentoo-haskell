@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Concurrent networked stream transducers"
-HOMEPAGE="http://hackage.haskell.org/package/lawless-concurrent-machines"
+HOMEPAGE="https://hackage.haskell.org/package/lawless-concurrent-machines"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

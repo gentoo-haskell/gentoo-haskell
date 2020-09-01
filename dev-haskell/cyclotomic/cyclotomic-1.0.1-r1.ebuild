@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A subfield of the complex numbers for exact calculation"
-HOMEPAGE="http://hackage.haskell.org/package/cyclotomic"
+HOMEPAGE="https://hackage.haskell.org/package/cyclotomic"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"

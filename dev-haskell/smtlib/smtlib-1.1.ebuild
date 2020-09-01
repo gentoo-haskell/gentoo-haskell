@@ -12,7 +12,7 @@ MY_PN="smtLib"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A library for working with the SMTLIB format"
-HOMEPAGE="http://hackage.haskell.org/package/smtLib"
+HOMEPAGE="https://hackage.haskell.org/package/smtLib"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Library and utility for processing cabal's plan.json file"
-HOMEPAGE="http://hackage.haskell.org/package/cabal-plan"
+HOMEPAGE="https://hackage.haskell.org/package/cabal-plan"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2+"

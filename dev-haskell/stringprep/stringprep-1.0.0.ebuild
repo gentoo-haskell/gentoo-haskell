@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Implements the "StringPrep" algorithm"
-HOMEPAGE="http://hackage.haskell.org/package/stringprep"
+HOMEPAGE="https://hackage.haskell.org/package/stringprep"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

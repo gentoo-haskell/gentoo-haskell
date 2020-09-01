@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Generic finger-tree structure, with example instances"
-HOMEPAGE="http://hackage.haskell.org/package/fingertree"
+HOMEPAGE="https://hackage.haskell.org/package/fingertree"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

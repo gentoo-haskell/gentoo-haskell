@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Combinatorial algorithms over multisets"
-HOMEPAGE="http://hackage.haskell.org/package/multiset-comb"
+HOMEPAGE="https://hackage.haskell.org/package/multiset-comb"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

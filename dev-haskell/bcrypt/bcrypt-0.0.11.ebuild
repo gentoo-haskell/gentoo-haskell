@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell bindings to the bcrypt password hash"
-HOMEPAGE="http://hackage.haskell.org/package/bcrypt"
+HOMEPAGE="https://hackage.haskell.org/package/bcrypt"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

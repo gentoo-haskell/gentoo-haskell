@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit flag-o-matic haskell-cabal
 
 DESCRIPTION="OpenGL Logic Game"
-HOMEPAGE="http://hackage.haskell.org/package/bloxorz"
+HOMEPAGE="https://hackage.haskell.org/package/bloxorz"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

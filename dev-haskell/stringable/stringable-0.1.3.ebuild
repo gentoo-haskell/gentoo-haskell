@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A Stringable type class, in the spirit of Foldable and Traversable"
-HOMEPAGE="http://hackage.haskell.org/package/stringable"
+HOMEPAGE="https://hackage.haskell.org/package/stringable"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

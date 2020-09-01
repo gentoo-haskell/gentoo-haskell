@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="library for computation automorphism group and canonical labelling of a graph"
-HOMEPAGE="http://hackage.haskell.org/package/hgal"
+HOMEPAGE="https://hackage.haskell.org/package/hgal"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

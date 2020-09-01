@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit git-r3 haskell-cabal
 
 DESCRIPTION="C-to-rust source-to-source transformer"
-HOMEPAGE="http://hackage.haskell.org/package/corrode"
+HOMEPAGE="https://hackage.haskell.org/package/corrode"
 #SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 EGIT_REPO_URI="https://github.com/jameysharp/corrode.git"
 

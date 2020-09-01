@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Get terminal window height and width"
-HOMEPAGE="http://hackage.haskell.org/package/terminal-size"
+HOMEPAGE="https://hackage.haskell.org/package/terminal-size"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

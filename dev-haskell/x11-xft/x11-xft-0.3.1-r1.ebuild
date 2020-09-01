@@ -12,7 +12,7 @@ MY_PN="X11-xft"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Bindings to the Xft, X Free Type interface library, and some Xrender parts"
-HOMEPAGE="http://hackage.haskell.org/package/X11-xft"
+HOMEPAGE="https://hackage.haskell.org/package/X11-xft"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"

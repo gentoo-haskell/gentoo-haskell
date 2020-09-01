@@ -12,7 +12,7 @@ MY_PN="SDL-ttf"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Binding to libSDL_ttf"
-HOMEPAGE="http://hackage.haskell.org/package/SDL-ttf"
+HOMEPAGE="https://hackage.haskell.org/package/SDL-ttf"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

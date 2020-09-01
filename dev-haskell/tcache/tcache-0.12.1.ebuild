@@ -12,7 +12,7 @@ MY_PN="TCache"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A Transactional cache with user-defined persistence"
-HOMEPAGE="http://hackage.haskell.org/package/TCache"
+HOMEPAGE="https://hackage.haskell.org/package/TCache"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

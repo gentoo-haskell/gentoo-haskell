@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Write Haskell source files including C code inline. No FFI required"
-HOMEPAGE="http://hackage.haskell.org/package/inline-c"
+HOMEPAGE="https://hackage.haskell.org/package/inline-c"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

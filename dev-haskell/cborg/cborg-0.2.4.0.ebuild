@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Concise Binary Object Representation"
-HOMEPAGE="http://hackage.haskell.org/package/cborg"
+HOMEPAGE="https://hackage.haskell.org/package/cborg"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

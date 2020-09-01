@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Applicative permutation parser for Parsec (replacement for Text.Parsec.Perm)"
-HOMEPAGE="http://hackage.haskell.org/package/parsec-permutation"
+HOMEPAGE="https://hackage.haskell.org/package/parsec-permutation"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

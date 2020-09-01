@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="text builder for hoodle file format"
-HOMEPAGE="http://hackage.haskell.org/package/hoodle-builder"
+HOMEPAGE="https://hackage.haskell.org/package/hoodle-builder"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

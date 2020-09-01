@@ -12,7 +12,7 @@ MY_PN="QuickCheck-safe"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Safe reimplementation of QuickCheck's core"
-HOMEPAGE="http://hackage.haskell.org/package/QuickCheck-safe"
+HOMEPAGE="https://hackage.haskell.org/package/QuickCheck-safe"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="MIT"

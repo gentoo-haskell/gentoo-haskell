@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Interpret the command line and a config file as commands and options"
-HOMEPAGE="http://hackage.haskell.org/package/console-program"
+HOMEPAGE="https://hackage.haskell.org/package/console-program"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

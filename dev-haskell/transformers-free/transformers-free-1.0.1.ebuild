@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Free monad transformers"
-HOMEPAGE="http://hackage.haskell.org/package/transformers-free"
+HOMEPAGE="https://hackage.haskell.org/package/transformers-free"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

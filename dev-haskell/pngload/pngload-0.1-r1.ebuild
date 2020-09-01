@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Pure Haskell loader for PNG images"
-HOMEPAGE="http://hackage.haskell.org/package/pngload"
+HOMEPAGE="https://hackage.haskell.org/package/pngload"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

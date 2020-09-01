@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Efficient relational queries on Haskell sets"
-HOMEPAGE="http://hackage.haskell.org/package/ixset-typed"
+HOMEPAGE="https://hackage.haskell.org/package/ixset-typed"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

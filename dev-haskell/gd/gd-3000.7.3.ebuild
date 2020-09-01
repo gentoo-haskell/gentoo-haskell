@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A Haskell binding to a subset of the GD graphics library"
-HOMEPAGE="http://hackage.haskell.org/package/gd"
+HOMEPAGE="https://hackage.haskell.org/package/gd"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Various functions on tuples"
-HOMEPAGE="http://hackage.haskell.org/package/tuple"
+HOMEPAGE="https://hackage.haskell.org/package/tuple"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

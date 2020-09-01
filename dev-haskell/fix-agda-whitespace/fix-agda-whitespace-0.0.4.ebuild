@@ -12,7 +12,7 @@ AGDA_PV=2.5.2
 AGDA_P=agda-${AGDA_PV}
 
 DESCRIPTION="Fixes whitespace issues for Agda sources"
-HOMEPAGE="http://hackage.haskell.org/package/fix-agda-whitespace"
+HOMEPAGE="https://hackage.haskell.org/package/fix-agda-whitespace"
 SRC_URI="https://github.com/agda/agda/archive/v${AGDA_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"

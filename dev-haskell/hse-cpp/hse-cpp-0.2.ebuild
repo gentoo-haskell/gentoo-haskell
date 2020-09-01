@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Preprocess+parse haskell code"
-HOMEPAGE="http://hackage.haskell.org/package/hse-cpp"
+HOMEPAGE="https://hackage.haskell.org/package/hse-cpp"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

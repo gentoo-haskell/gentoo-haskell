@@ -10,7 +10,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Encapsulate multiple web encoding in a single package. (deprecated)"
-HOMEPAGE="http://hackage.haskell.org/package/web-encodings"
+HOMEPAGE="https://hackage.haskell.org/package/web-encodings"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

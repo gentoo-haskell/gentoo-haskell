@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Serialization/deserialization using Python Pickle format"
-HOMEPAGE="http://hackage.haskell.org/package/python-pickle"
+HOMEPAGE="https://hackage.haskell.org/package/python-pickle"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

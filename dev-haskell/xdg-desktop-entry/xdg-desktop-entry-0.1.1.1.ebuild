@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Parse files conforming to the xdg desktop entry spec"
-HOMEPAGE="http://hackage.haskell.org/package/xdg-desktop-entry"
+HOMEPAGE="https://hackage.haskell.org/package/xdg-desktop-entry"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

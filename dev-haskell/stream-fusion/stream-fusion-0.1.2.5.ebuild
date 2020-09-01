@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Faster Haskell lists using stream fusion"
-HOMEPAGE="http://hackage.haskell.org/trac/ghc/ticket/915"
+HOMEPAGE="https://hackage.haskell.org/trac/ghc/ticket/915"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

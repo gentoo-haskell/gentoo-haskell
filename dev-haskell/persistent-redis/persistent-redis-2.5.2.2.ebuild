@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Backend for persistent library using Redis"
-HOMEPAGE="http://hackage.haskell.org/package/persistent-redis"
+HOMEPAGE="https://hackage.haskell.org/package/persistent-redis"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

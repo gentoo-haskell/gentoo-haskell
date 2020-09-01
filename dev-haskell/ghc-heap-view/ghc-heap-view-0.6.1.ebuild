@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Extract the heap representation of Haskell values and thunks"
-HOMEPAGE="http://hackage.haskell.org/package/ghc-heap-view"
+HOMEPAGE="https://hackage.haskell.org/package/ghc-heap-view"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

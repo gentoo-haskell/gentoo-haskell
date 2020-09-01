@@ -49,7 +49,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	# As per http://hackage.haskell.org/package/cabal-install-2.4.0.0/revisions/
+	# As per https://hackage.haskell.org/package/cabal-install-2.4.0.0/revisions/
 	cabal_chdeps 'Cabal      == 2.4.*' 'Cabal >=2.4.0.1 && <2.5'\
 		'async      >= 2.0      && < 3' 'async >=2.0 && <2.3'\
 		'base       >= 4.6      && < 5' 'base >=4.8 && <4.13'\

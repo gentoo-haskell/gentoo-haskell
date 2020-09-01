@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Default instances for types in containers"
-HOMEPAGE="http://hackage.haskell.org/package/data-default-instances-containers"
+HOMEPAGE="https://hackage.haskell.org/package/data-default-instances-containers"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

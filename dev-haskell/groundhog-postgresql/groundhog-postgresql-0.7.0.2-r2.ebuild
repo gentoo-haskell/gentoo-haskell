@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="PostgreSQL backend for the groundhog library"
-HOMEPAGE="http://hackage.haskell.org/package/groundhog-postgresql"
+HOMEPAGE="https://hackage.haskell.org/package/groundhog-postgresql"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

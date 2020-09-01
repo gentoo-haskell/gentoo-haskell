@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite broken: Expect
 inherit haskell-cabal
 
 DESCRIPTION="Directory layout DSL"
-HOMEPAGE="http://hackage.haskell.org/package/directory-layout"
+HOMEPAGE="https://hackage.haskell.org/package/directory-layout"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

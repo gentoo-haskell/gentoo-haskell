@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Tool for refactoring expressions into pointfree form"
-HOMEPAGE="http://hackage.haskell.org/package/pointfree"
+HOMEPAGE="https://hackage.haskell.org/package/pointfree"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

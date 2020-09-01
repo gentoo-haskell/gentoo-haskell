@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="cpp-style built-in macros using Template Haskell"
-HOMEPAGE="http://hackage.haskell.org/package/pseudomacros"
+HOMEPAGE="https://hackage.haskell.org/package/pseudomacros"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

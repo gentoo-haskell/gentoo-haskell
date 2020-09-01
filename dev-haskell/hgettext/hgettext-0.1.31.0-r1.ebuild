@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Bindings to libintl.h (gettext, bindtextdomain)"
-HOMEPAGE="http://hackage.haskell.org/package/hgettext"
+HOMEPAGE="https://hackage.haskell.org/package/hgettext"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

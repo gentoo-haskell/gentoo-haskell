@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Simple shell scripting from Haskell"
-HOMEPAGE="http://hackage.haskell.org/package/shh"
+HOMEPAGE="https://hackage.haskell.org/package/shh"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

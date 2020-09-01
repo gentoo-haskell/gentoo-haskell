@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Parse process information for Linux"
-HOMEPAGE="http://hackage.haskell.org/package/proc"
+HOMEPAGE="https://hackage.haskell.org/package/proc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"

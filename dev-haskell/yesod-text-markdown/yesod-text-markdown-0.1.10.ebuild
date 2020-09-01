@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Yesod support for Text.Markdown"
-HOMEPAGE="http://hackage.haskell.org/package/yesod-text-markdown"
+HOMEPAGE="https://hackage.haskell.org/package/yesod-text-markdown"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

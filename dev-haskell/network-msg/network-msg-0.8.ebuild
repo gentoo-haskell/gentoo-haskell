@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Recvmsg and sendmsg bindings"
-HOMEPAGE="http://hackage.haskell.org/package/network-msg"
+HOMEPAGE="https://hackage.haskell.org/package/network-msg"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="WTFPL-2"

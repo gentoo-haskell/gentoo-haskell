@@ -10,7 +10,7 @@ EGIT_REPO_URI="https://github.com/gentoo-haskell/${PN}.git"
 inherit git-r3 haskell-cabal
 
 DESCRIPTION="Installed package query tool for Gentoo Linux"
-HOMEPAGE="http://hackage.haskell.org/package/fquery"
+HOMEPAGE="https://hackage.haskell.org/package/fquery"
 
 LICENSE="ZLIB"
 SLOT="0"

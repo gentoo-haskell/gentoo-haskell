@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit autotools haskell-cabal
 
 DESCRIPTION="An interface to the GNU readline library"
-HOMEPAGE="http://hackage.haskell.org/package/readline"
+HOMEPAGE="https://hackage.haskell.org/package/readline"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

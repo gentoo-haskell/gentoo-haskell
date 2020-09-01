@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Model-view-controller"
-HOMEPAGE="http://hackage.haskell.org/package/mvc"
+HOMEPAGE="https://hackage.haskell.org/package/mvc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

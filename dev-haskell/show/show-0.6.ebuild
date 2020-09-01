@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="'Show' instances for Lambdabot"
-HOMEPAGE="http://hackage.haskell.org/package/show"
+HOMEPAGE="https://hackage.haskell.org/package/show"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

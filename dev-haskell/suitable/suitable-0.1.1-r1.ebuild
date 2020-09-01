@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="Abstract over the constraints on the parameters to type constructors"
-HOMEPAGE="http://hackage.haskell.org/package/suitable"
+HOMEPAGE="https://hackage.haskell.org/package/suitable"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

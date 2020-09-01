@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="MIME implementation for String's"
-HOMEPAGE="http://hackage.haskell.org/package/mime-string"
+HOMEPAGE="https://hackage.haskell.org/package/mime-string"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="|| ( BSD GPL-2 )"

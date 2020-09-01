@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal git-r3
 
 DESCRIPTION="Automatic Prover of Logical Predicates"
-HOMEPAGE="http://hackage.haskell.org/package/prover"
+HOMEPAGE="https://hackage.haskell.org/package/prover"
 EGIT_REPO_URI="https://github.com/ucsd-progsys/prover.git"
 EGIT_BRANCH="develop"
 

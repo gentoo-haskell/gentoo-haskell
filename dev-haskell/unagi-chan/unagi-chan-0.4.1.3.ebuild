@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Fast concurrent queues with a Chan-like API, and more"
-HOMEPAGE="http://hackage.haskell.org/package/unagi-chan"
+HOMEPAGE="https://hackage.haskell.org/package/unagi-chan"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

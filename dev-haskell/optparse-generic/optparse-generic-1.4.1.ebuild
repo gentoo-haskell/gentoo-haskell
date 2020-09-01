@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Auto-generate a command-line parser for your datatype"
-HOMEPAGE="http://hackage.haskell.org/package/optparse-generic"
+HOMEPAGE="https://hackage.haskell.org/package/optparse-generic"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

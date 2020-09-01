@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Comprehensive GLPK linear programming bindings"
-HOMEPAGE="http://hackage.haskell.org/package/glpk-hs"
+HOMEPAGE="https://hackage.haskell.org/package/glpk-hs"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

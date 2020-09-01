@@ -12,7 +12,7 @@ MY_PN="MaybeT"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="MaybeT monad transformer"
-HOMEPAGE="http://hackage.haskell.org/package/MaybeT"
+HOMEPAGE="https://hackage.haskell.org/package/MaybeT"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

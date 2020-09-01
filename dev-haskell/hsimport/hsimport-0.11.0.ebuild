@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A command line program for extending the import list of a Haskell source file"
-HOMEPAGE="http://hackage.haskell.org/package/hsimport"
+HOMEPAGE="https://hackage.haskell.org/package/hsimport"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

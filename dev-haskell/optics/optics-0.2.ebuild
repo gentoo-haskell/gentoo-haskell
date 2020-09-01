@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Optics as an abstract interface"
-HOMEPAGE="http://hackage.haskell.org/package/optics"
+HOMEPAGE="https://hackage.haskell.org/package/optics"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

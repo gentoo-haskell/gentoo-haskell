@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="High level interface for webkit-javascriptcore"
-HOMEPAGE="http://hackage.haskell.org/package/jsaddle"
+HOMEPAGE="https://hackage.haskell.org/package/jsaddle"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

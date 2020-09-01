@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Parsing infrastructure for the pipes ecosystem"
-HOMEPAGE="http://hackage.haskell.org/package/pipes-parse"
+HOMEPAGE="https://hackage.haskell.org/package/pipes-parse"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

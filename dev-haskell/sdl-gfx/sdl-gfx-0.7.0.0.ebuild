@@ -12,7 +12,7 @@ MY_PN="SDL-gfx"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Binding to libSDL_gfx"
-HOMEPAGE="http://hackage.haskell.org/package/SDL-gfx"
+HOMEPAGE="https://hackage.haskell.org/package/SDL-gfx"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

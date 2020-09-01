@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="thread-friendly file locks that don't block the entire program"
-HOMEPAGE="http://hackage.haskell.org/package/colock"
+HOMEPAGE="https://hackage.haskell.org/package/colock"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"

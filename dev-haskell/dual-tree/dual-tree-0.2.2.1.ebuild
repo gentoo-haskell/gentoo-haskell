@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Rose trees with cached and accumulating monoidal annotations"
-HOMEPAGE="http://hackage.haskell.org/package/dual-tree"
+HOMEPAGE="https://hackage.haskell.org/package/dual-tree"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

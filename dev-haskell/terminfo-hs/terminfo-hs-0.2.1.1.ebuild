@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A pure-Haskell (no FFI) module for accessing terminfo databases"
-HOMEPAGE="http://hackage.haskell.org/package/terminfo-hs"
+HOMEPAGE="https://hackage.haskell.org/package/terminfo-hs"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

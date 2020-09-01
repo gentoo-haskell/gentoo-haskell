@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Set and bag operations on ordered lists"
-HOMEPAGE="http://hackage.haskell.org/package/data-ordlist"
+HOMEPAGE="https://hackage.haskell.org/package/data-ordlist"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

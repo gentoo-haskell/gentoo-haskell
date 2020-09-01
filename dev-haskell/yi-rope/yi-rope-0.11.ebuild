@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A rope data structure used by Yi"
-HOMEPAGE="http://hackage.haskell.org/package/yi-rope"
+HOMEPAGE="https://hackage.haskell.org/package/yi-rope"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

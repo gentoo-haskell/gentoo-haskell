@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="swap and assoc: Symmetric and Semigroupy Bifunctors"
-HOMEPAGE="http://hackage.haskell.org/package/assoc"
+HOMEPAGE="https://hackage.haskell.org/package/assoc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

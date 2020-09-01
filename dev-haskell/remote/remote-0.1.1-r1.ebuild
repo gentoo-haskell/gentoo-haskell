@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit base haskell-cabal
 
 DESCRIPTION="Cloud Haskell"
-HOMEPAGE="http://hackage.haskell.org/package/remote"
+HOMEPAGE="https://hackage.haskell.org/package/remote"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

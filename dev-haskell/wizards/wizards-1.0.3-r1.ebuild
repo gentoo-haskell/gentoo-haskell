@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="High level, generic library for interrogative user interfaces"
-HOMEPAGE="http://hackage.haskell.org/package/wizards"
+HOMEPAGE="https://hackage.haskell.org/package/wizards"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

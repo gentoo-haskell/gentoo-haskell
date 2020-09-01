@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A plug-in for rendering GHC core"
-HOMEPAGE="http://hackage.haskell.org/package/dump-core"
+HOMEPAGE="https://hackage.haskell.org/package/dump-core"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="ISC"

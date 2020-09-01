@@ -12,7 +12,7 @@ MY_PN="GLUtil"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Miscellaneous OpenGL utilities"
-HOMEPAGE="http://hackage.haskell.org/package/GLUtil"
+HOMEPAGE="https://hackage.haskell.org/package/GLUtil"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # Broken test-suite: missin
 inherit haskell-cabal
 
 DESCRIPTION="Command line parsing framework for console applications"
-HOMEPAGE="http://hackage.haskell.org/package/argparser"
+HOMEPAGE="https://hackage.haskell.org/package/argparser"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

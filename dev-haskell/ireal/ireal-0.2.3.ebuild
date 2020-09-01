@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Real numbers and intervals with relatively efficient exact arithmetic"
-HOMEPAGE="http://hackage.haskell.org/package/ireal"
+HOMEPAGE="https://hackage.haskell.org/package/ireal"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

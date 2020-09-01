@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="Simple CLI RPN calculator"
-HOMEPAGE="http://hackage.haskell.org/package/clac"
+HOMEPAGE="https://hackage.haskell.org/package/clac"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"

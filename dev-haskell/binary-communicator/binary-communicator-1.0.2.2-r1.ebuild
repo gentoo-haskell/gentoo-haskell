@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Flexible way to ease transmission of binary data"
-HOMEPAGE="http://hackage.haskell.org/package/binary-communicator"
+HOMEPAGE="https://hackage.haskell.org/package/binary-communicator"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

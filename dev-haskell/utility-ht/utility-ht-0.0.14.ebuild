@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Various small helper functions for Lists, Maybes, Tuples, Functions"
-HOMEPAGE="http://hackage.haskell.org/package/utility-ht"
+HOMEPAGE="https://hackage.haskell.org/package/utility-ht"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

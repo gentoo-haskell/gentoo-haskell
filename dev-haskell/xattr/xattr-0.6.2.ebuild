@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell extended file attributes interface"
-HOMEPAGE="http://hackage.haskell.org/package/xattr"
+HOMEPAGE="https://hackage.haskell.org/package/xattr"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

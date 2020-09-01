@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Complete OpenGL raw bindings"
-HOMEPAGE="http://hackage.haskell.org/package/gl"
+HOMEPAGE="https://hackage.haskell.org/package/gl"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	# As per http://hackage.haskell.org/package/gl-0.8.0/revisions/
+	# As per https://hackage.haskell.org/package/gl-0.8.0/revisions/
 	cabal_chdeps \
 		'containers == 0.5.*'		'containers >=0.5 && <0.7' \
 		'fixed >= 0.2.1 && < 0.3'	'fixed >= 0.2.1 && < 0.4' \

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Implements IDNA (RFC 3490)"
-HOMEPAGE="http://hackage.haskell.org/package/idna"
+HOMEPAGE="https://hackage.haskell.org/package/idna"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

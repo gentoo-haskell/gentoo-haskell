@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Snap integration for the websockets library"
-HOMEPAGE="http://hackage.haskell.org/package/websockets-snap"
+HOMEPAGE="https://hackage.haskell.org/package/websockets-snap"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

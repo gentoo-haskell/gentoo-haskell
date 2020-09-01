@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Default instances for types in dlist"
-HOMEPAGE="http://hackage.haskell.org/package/data-default-instances-dlist"
+HOMEPAGE="https://hackage.haskell.org/package/data-default-instances-dlist"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

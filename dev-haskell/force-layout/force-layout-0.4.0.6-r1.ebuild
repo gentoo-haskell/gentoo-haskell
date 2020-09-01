@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Simple force-directed layout"
-HOMEPAGE="http://hackage.haskell.org/package/force-layout"
+HOMEPAGE="https://hackage.haskell.org/package/force-layout"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

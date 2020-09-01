@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Word8 library"
-HOMEPAGE="http://hackage.haskell.org/package/word8"
+HOMEPAGE="https://hackage.haskell.org/package/word8"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Specify refactorings to perform with apply-refact"
-HOMEPAGE="http://hackage.haskell.org/package/refact"
+HOMEPAGE="https://hackage.haskell.org/package/refact"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

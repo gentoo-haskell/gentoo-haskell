@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="DiffArray"
-HOMEPAGE="http://hackage.haskell.org/package/diffarray"
+HOMEPAGE="https://hackage.haskell.org/package/diffarray"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

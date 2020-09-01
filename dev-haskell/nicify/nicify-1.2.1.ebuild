@@ -9,7 +9,7 @@ CABAL_FEATURES=""
 inherit haskell-cabal
 
 DESCRIPTION="Pretty print the standard output of default 'Show' instances"
-HOMEPAGE="http://hackage.haskell.org/package/nicify"
+HOMEPAGE="https://hackage.haskell.org/package/nicify"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

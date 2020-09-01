@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Lastfm API interface"
-HOMEPAGE="http://hackage.haskell.org/package/liblastfm"
+HOMEPAGE="https://hackage.haskell.org/package/liblastfm"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

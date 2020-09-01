@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Limit operations for converging sequences"
-HOMEPAGE="http://hackage.haskell.org/package/converge"
+HOMEPAGE="https://hackage.haskell.org/package/converge"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"

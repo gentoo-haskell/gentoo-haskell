@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Some miscellaneous basic string parsers"
-HOMEPAGE="http://hackage.haskell.org/package/parsec-extra"
+HOMEPAGE="https://hackage.haskell.org/package/parsec-extra"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -34,6 +34,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	# as per http://hackage.haskell.org/package/smtp-mail-0.2.0.0/revisions/
+	# as per https://hackage.haskell.org/package/smtp-mail-0.2.0.0/revisions/
 	cabal_chdeps 'base >= 4.5 && < 5' 'base >= 4.11 && < 5'
 }

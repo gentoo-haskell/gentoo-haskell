@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Calculate the crc16-ccitt"
-HOMEPAGE="http://hackage.haskell.org/package/crc16"
+HOMEPAGE="https://hackage.haskell.org/package/crc16"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

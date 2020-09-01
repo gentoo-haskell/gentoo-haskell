@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hscolour hoogle"
 inherit haskell-cabal
 
 DESCRIPTION="A Haskell Interface to ODBC"
-HOMEPAGE="http://hackage.haskell.org/package/hsql-odbc"
+HOMEPAGE="https://hackage.haskell.org/package/hsql-odbc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

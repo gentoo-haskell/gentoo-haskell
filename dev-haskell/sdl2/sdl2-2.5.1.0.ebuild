@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Both high- and low-level bindings to the SDL library (version 2.0.4+)"
-HOMEPAGE="http://hackage.haskell.org/package/sdl2"
+HOMEPAGE="https://hackage.haskell.org/package/sdl2"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

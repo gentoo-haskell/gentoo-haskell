@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Optionally serializable dynamic state keyed by type"
-HOMEPAGE="http://hackage.haskell.org/package/dynamic-state"
+HOMEPAGE="https://hackage.haskell.org/package/dynamic-state"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

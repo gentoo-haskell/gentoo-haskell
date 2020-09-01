@@ -12,7 +12,7 @@ MY_PN="AC-PPM"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Trivial package for writing PPM images"
-HOMEPAGE="http://hackage.haskell.org/package/AC-PPM"
+HOMEPAGE="https://hackage.haskell.org/package/AC-PPM"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

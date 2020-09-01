@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Simple heuristic for packing discs of varying radii in a circle"
-HOMEPAGE="http://hackage.haskell.org/package/circle-packing"
+HOMEPAGE="https://hackage.haskell.org/package/circle-packing"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

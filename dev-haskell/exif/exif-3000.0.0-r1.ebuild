@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A Haskell binding to a subset of libexif"
-HOMEPAGE="http://hackage.haskell.org/package/exif"
+HOMEPAGE="https://hackage.haskell.org/package/exif"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

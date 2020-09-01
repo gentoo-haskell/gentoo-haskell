@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Generic applicative traversals"
-HOMEPAGE="http://hackage.haskell.org/package/traverse-with-class"
+HOMEPAGE="https://hackage.haskell.org/package/traverse-with-class"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

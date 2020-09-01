@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A small library for parsing IRC messages"
-HOMEPAGE="http://hackage.haskell.org/package/irc"
+HOMEPAGE="https://hackage.haskell.org/package/irc"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

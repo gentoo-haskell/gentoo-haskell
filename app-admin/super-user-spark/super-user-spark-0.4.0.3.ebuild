@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Configure your dotfile deployment with a DSL"
-HOMEPAGE="http://hackage.haskell.org/package/super-user-spark"
+HOMEPAGE="https://hackage.haskell.org/package/super-user-spark"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

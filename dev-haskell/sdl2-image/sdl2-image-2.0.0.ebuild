@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Bindings to SDL2_image"
-HOMEPAGE="http://hackage.haskell.org/package/sdl2-image"
+HOMEPAGE="https://hackage.haskell.org/package/sdl2-image"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
