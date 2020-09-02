@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		hledger is a library and set of user tools for working
-		with financial data (or anything that can be tracked in a
-		double-entry accounting ledger.) It is a haskell port and
-		friendly fork of John Wiegley's Ledger. hledger provides
-		command-line, curses and web interfaces, and aims to be a
-		reliable, practical tool for daily use.
-	</longdescription>
 </pkgmetadata>
