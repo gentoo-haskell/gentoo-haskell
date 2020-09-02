@@ -16,7 +16,7 @@ MY_PN="Cabal"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for packaging Haskell software"
-HOMEPAGE="http://www.haskell.org/cabal/"
+HOMEPAGE="https://www.haskell.org/cabal/"
 EGIT_REPO_URI="https://github.com/haskell/cabal.git"
 
 LICENSE="BSD"

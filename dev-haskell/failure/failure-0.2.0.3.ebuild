@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A simple type class for success/failure computations. (deprecated)"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Failure"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Failure"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

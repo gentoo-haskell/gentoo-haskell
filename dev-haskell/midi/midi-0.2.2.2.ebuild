@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Handling of MIDI messages and files"
-HOMEPAGE="http://www.haskell.org/haskellwiki/MIDI"
+HOMEPAGE="https://www.haskell.org/haskellwiki/MIDI"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

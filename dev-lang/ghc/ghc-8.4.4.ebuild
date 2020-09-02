@@ -17,7 +17,7 @@ inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib pax-utils toolchain-funcs versionator prefix
 inherit check-reqs
 DESCRIPTION="The Glasgow Haskell Compiler"
-HOMEPAGE="http://www.haskell.org/ghc/"
+HOMEPAGE="https://www.haskell.org/ghc/"
 
 # we don't have any binaries yet
 arch_binaries=""

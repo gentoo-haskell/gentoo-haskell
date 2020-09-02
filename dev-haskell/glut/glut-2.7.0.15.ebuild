@@ -13,7 +13,7 @@ MY_PN="GLUT"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A binding for the OpenGL Utility Toolkit"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Opengl"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Opengl"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"

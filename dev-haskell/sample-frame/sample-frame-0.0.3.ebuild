@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Handling of samples in an (audio) signal"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Synthesizer"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Synthesizer"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

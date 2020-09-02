@@ -4,7 +4,7 @@
 EAPI=6
 
 DESCRIPTION="The Glasgow Haskell Compiler API (ghc package)"
-HOMEPAGE="http://www.haskell.org/ghc"
+HOMEPAGE="https://www.haskell.org/ghc"
 
 LICENSE="BSD"
 SLOT="0/${PV}"

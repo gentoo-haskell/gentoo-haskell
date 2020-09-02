@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Fast, packed, strict storable arrays with a list interface like ByteString"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Storable_Vector"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Storable_Vector"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

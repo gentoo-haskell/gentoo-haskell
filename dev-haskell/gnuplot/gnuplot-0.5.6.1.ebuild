@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="2D and 3D plots using gnuplot"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Gnuplot"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Gnuplot"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

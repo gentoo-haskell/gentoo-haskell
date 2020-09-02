@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Render audio signals from MIDI files or realtime messages"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Synthesizer"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Synthesizer"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

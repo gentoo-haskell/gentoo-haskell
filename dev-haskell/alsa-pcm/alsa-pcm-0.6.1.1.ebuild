@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Binding to the ALSA Library API (PCM audio)"
-HOMEPAGE="http://www.haskell.org/haskellwiki/ALSA"
+HOMEPAGE="https://www.haskell.org/haskellwiki/ALSA"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

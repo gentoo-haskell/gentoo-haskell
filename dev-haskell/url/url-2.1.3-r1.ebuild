@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="A library for working with URLs"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Url"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Url"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

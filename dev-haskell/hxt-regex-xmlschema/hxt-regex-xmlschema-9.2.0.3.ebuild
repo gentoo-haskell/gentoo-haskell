@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A regular expression library for W3C XML Schema regular expressions"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Regular_expressions_for_XML_Schema"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Regular_expressions_for_XML_Schema"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

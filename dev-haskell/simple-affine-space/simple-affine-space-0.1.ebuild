@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A simple library for affine and vector spaces"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Yampa"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Yampa"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

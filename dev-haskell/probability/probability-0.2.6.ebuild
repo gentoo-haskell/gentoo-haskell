@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Probabilistic Functional Programming"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Probabilistic_Functional_Programming"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Probabilistic_Functional_Programming"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

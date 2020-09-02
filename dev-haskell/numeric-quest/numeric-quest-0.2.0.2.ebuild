@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Math and quantum mechanics"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Numeric_Quest"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Numeric_Quest"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

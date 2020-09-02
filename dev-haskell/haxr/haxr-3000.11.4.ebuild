@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="XML-RPC client and server library"
-HOMEPAGE="http://www.haskell.org/haskellwiki/HaXR"
+HOMEPAGE="https://www.haskell.org/haskellwiki/HaXR"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

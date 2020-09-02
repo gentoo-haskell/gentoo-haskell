@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Audio signal processing with static physical dimensions"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Synthesizer"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Synthesizer"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

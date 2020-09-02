@@ -12,7 +12,7 @@ inherit haskell-cabal bash-completion-r1 eutils git-r3
 LIVE_EBUILD=yes
 
 DESCRIPTION="The command-line interface for Cabal and Hackage"
-HOMEPAGE="http://www.haskell.org/cabal/"
+HOMEPAGE="https://www.haskell.org/cabal/"
 EGIT_REPO_URI="https://github.com/haskell/cabal.git"
 
 if [[ -n ${LIVE_EBUILD} ]]; then

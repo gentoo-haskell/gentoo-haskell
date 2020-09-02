@@ -9,7 +9,7 @@ CABAL_FEATURES=""
 inherit haskell-cabal
 
 DESCRIPTION="A graphical tool for profiling parallel Haskell programs"
-HOMEPAGE="http://www.haskell.org/haskellwiki/ThreadScope"
+HOMEPAGE="https://www.haskell.org/haskellwiki/ThreadScope"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

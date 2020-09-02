@@ -9,7 +9,7 @@ CABAL_FEATURES="bin lib profile haddock hoogle hscolour test-suite"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Haskell API Search"
-HOMEPAGE="http://www.haskell.org/hoogle/"
+HOMEPAGE="https://www.haskell.org/hoogle/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

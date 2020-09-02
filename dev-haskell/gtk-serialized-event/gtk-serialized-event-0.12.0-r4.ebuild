@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="GTK+ Serialized event"
-HOMEPAGE="http://www.haskell.org/gtk2hs/"
+HOMEPAGE="https://www.haskell.org/gtk2hs/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"

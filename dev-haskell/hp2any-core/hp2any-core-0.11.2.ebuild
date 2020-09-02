@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit eutils haskell-cabal
 
 DESCRIPTION="Heap profiling helper library"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Hp2any"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Hp2any"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
