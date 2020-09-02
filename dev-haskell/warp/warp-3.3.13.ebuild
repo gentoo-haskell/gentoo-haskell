@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+allow-sendfilefd warp-debug"
 
+RESTRICT=test # requires network
+
 RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/auto-update-0.1.3:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
 	<dev-haskell/bsb-http-chunked-0.1:=[profile?]
