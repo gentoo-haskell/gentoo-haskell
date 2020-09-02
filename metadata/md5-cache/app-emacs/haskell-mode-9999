@@ -2,10 +2,10 @@ DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpa
 DEPEND=virtual/emacs dev-haskell/hasktags >=app-editors/emacs-23.1:* >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Mode for editing (and running) Haskell programs in Emacs
 EAPI=6
-HOMEPAGE=http://projects.haskell.org/haskellmode-emacs/ http://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs
+HOMEPAGE=http://projects.haskell.org/haskellmode-emacs/ https://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs
 LICENSE=GPL-3+ FDL-1.2+
 PROPERTIES=live
 RDEPEND=virtual/emacs dev-haskell/hasktags >=app-editors/emacs-23.1:*
 SLOT=0
 _eclasses_=eapi7-ver	f9ec87e93172b25ce65a85303dc06964	elisp	00840e1f4eb277c757dbfa5abf73c4c7	elisp-common	cae18e9c43c86703b074d0b15dcdb9e2	git-r3	8ec5b53812bce105ae7943930e4660f8
-_md5_=8e9ffdf89439dd1f6b9581fbf8ac9dde
+_md5_=f99734d08bf2410fa6d31cd1a7a2b697
