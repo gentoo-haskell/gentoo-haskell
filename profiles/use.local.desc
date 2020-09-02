@@ -211,9 +211,9 @@ dev-haskell/highlighting-kate:executable - Build the Highlight executable.
 dev-haskell/highlighting-kate:pcre-light - Use the pcre-light library instead of regex-pcre-builtin.
 dev-haskell/hip:disable-chart - Disable Chart-diagrams and Chart for a lighter dependency footprint
 dev-haskell/hledger:terminfo - On POSIX systems, build with the terminfo lib for detecting terminal width.
-dev-haskell/hledger:threaded - Build with support for multithreaded execution.
-dev-haskell/hledger-ui:threaded - Build with support for multithreaded execution.
-dev-haskell/hledger-web:library-only - Build for use with "yesod devel.
+dev-haskell/hledger:threaded - Build with support for multithreaded execution
+dev-haskell/hledger-ui:threaded - Build with support for multithreaded execution
+dev-haskell/hledger-web:library-only - Build for use with "yesod devel"
 dev-haskell/hledger-web:threaded - Build with support for multithreaded execution.
 dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the system
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
