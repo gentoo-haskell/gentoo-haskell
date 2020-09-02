@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Live coding of MIDI music"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Live-Sequencer"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Live-Sequencer"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

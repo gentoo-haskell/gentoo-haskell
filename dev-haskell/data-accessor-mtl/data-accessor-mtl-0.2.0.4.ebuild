@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Use Accessor to access state in mtl State monad class"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Record_access"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Record_access"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Haskell Digital Signal Processing"
-HOMEPAGE="http://www.haskell.org/haskellwiki/DSP"
+HOMEPAGE="https://www.haskell.org/haskellwiki/DSP"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

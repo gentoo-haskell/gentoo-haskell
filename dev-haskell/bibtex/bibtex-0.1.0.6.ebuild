@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Parse, format and processing BibTeX files"
-HOMEPAGE="http://www.haskell.org/haskellwiki/BibTeX"
+HOMEPAGE="https://www.haskell.org/haskellwiki/BibTeX"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

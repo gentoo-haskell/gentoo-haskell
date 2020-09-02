@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Convert between datatypes of the midi and the alsa packages"
-HOMEPAGE="http://www.haskell.org/haskellwiki/MIDI"
+HOMEPAGE="https://www.haskell.org/haskellwiki/MIDI"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

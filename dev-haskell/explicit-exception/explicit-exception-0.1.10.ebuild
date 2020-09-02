@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Exceptions which are explicit in the type signature"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Exception"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Exception"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

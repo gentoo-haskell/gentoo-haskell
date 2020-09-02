@@ -10,7 +10,7 @@ CABAL_FEATURES="" # broken test-suite
 inherit haskell-cabal
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
-HOMEPAGE="http://www.haskell.org/haddock/"
+HOMEPAGE="https://www.haskell.org/haddock/"
 SRC_URI="https://github.com/haskell/${PN}/archive/${P}-release.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"

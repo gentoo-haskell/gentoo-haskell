@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="An experimental alternative hierarchy of numeric type classes"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Numeric_Prelude"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Numeric_Prelude"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"

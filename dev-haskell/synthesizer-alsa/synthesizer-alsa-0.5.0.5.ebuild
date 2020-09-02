@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Control synthesizer effects via ALSA/MIDI"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Synthesizer"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Synthesizer"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"

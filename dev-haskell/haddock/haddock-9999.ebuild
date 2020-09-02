@@ -10,7 +10,7 @@ CABAL_FEATURES="bin test-suite"
 inherit eutils git-r3 haskell-cabal pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
-HOMEPAGE="http://www.haskell.org/haddock/"
+HOMEPAGE="https://www.haskell.org/haddock/"
 EGIT_REPO_URI="http://darcs.haskell.org/haddock.git https://github.com/ghc/haddock.git"
 
 LICENSE="BSD"

@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # Drop test-suite: circular
 inherit haskell-cabal
 
 DESCRIPTION="A model for human colour/color perception"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Colour"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Colour"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"

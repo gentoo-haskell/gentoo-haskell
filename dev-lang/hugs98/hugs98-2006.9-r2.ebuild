@@ -50,7 +50,7 @@ MY_P="${PN}-plus-${MY_PV}"
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="The Hugs98 Haskell interpreter"
 SRC_URI="https://www.haskell.org/hugs/downloads/${MY_PV0}/${MY_P}.tar.gz"
-HOMEPAGE="http://www.haskell.org/hugs/"
+HOMEPAGE="https://www.haskell.org/hugs/"
 
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~mips ~x86"

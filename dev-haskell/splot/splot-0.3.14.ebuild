@@ -9,7 +9,7 @@ CABAL_FEATURES="bin"
 inherit haskell-cabal
 
 DESCRIPTION="A tool for visualizing the lifecycle of many concurrent multi-staged processes"
-HOMEPAGE="http://www.haskell.org/haskellwiki/Splot"
+HOMEPAGE="https://www.haskell.org/haskellwiki/Splot"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
