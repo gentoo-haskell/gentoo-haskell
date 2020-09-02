@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # requires network
+
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/auto-update:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
