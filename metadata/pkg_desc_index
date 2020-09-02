@@ -2230,7 +2230,7 @@ dev-haskell/yesod-bin 1.6.0.6: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 1.3.0.1: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.5: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.4.37.3 1.6.17 1.6.17.2: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.37.3 1.6.17 1.6.17.2 1.6.18: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-dsl 0.2.1: DSL for generating Yesod subsite to manage an RDBMS;
 dev-haskell/yesod-elements 1.0 1.1.1: Non template haskell markup building function in the spirit of lucid
