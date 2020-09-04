@@ -5,26 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This is a terminal UI as drop-in replacement for hledger add.
-		
-		It improves in the following ways on hledger&#39;s add command:
-		
-		* Interactive as-you-type completion for
-		account names and descriptions with optional
-		fuzzy matching.
-		
-		* Integrated calculator: Amounts can be written
-		as simple sums with real-time feedback on the
-		result.
-		
-		* All actions while entering a transaction can
-		be undone
-		
-		* Configurable format for date input. Instead
-		of @y\/m\/d@ it is also possible to use other
-		formats like the german @d.m.y@.
-	</longdescription>
 </pkgmetadata>
