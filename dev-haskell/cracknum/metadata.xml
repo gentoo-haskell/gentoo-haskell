@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Crack HP, SP and DP floats and 8, 16, 32, 64 bit words and integers.
-		
-		For details, please see: &lt;http://github.com/LeventErkok/crackNum/&gt;
-	</longdescription>
 </pkgmetadata>

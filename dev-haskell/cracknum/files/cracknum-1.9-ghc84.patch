@@ -1,7 +1,0 @@
---- a/Data/Numbers/CrackNum.hs
-+++ b/Data/Numbers/CrackNum.hs
-@@ -30,3 +30,3 @@ import Data.Maybe (isJust, fromJust, fromMaybe, catMaybes)
- 
--import Numeric
-+import Numeric hiding (showHFloat)
- import Numeric.IEEE
