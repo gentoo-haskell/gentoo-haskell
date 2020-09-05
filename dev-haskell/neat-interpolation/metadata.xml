@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A quasiquoter for producing Text values with support for
-		a simple interpolation of input values.
-		It removes the excessive indentation from the input and
-		accurately manages the indentation of all lines of the interpolated variables.
-	</longdescription>
 </pkgmetadata>
