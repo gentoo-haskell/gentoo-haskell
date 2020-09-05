@@ -150,7 +150,11 @@ if [[ ${PV} = *9999* ]]; then
 	"
 fi
 
-REQUIRED_USE="?? ( ghcbootstrap binary )"
+# we build binaries without profiling support
+REQUIRED_USE="
+	?? ( ghcbootstrap binary )
+	?? ( profile binary )
+"
 REQUIRED_USE+=" arm? ( llvm )"
 
 # haskell libraries built with cabal in configure mode, #515354
