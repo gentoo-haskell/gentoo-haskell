@@ -506,6 +506,7 @@ dev-haskell/yaml:no-exe - don't install the yaml2json or json2yaml executables
 dev-haskell/yaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/yaml:system-libyaml - Use system libyaml instead on generic one
 dev-haskell/yesod-auth:network-uri - Get Network.URI from the network-uri package
+dev-haskell/yesod-auth-oauth2:examples - Build the example application
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
 dev-haskell/yesod-static-angular:example - Build the example program
 dev-haskell/yi-core:hint - Build with hint (haskell interpreter)

@@ -917,7 +917,7 @@ dev-haskell/hmatrix-vector-sized 0.1.3.0: Conversions between hmatrix and vector
 dev-haskell/hmt 0.16: Haskell Music Theory
 dev-haskell/hnix 0.7.1 0.8.0: Haskell implementation of the Nix language
 dev-haskell/hnix-store-core 0.1.0.0-r1 0.2.0.0: Core effects for interacting with the Nix store
-dev-haskell/hoauth2 0.5.9 1.8.9 1.11.0: Haskell OAuth2 authentication client
+dev-haskell/hoauth2 1.11.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
 dev-haskell/hoodle 0.4.0 0.5: Executable for hoodle
@@ -1360,7 +1360,7 @@ dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/natural-sort 0.1.2: User-friendly text collation
 dev-haskell/natural-transformation 0.4-r7: A natural transformation package
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
-dev-haskell/neat-interpolation 0.3.2.6: A quasiquoter for neat and simple multiline text interpolation
+dev-haskell/neat-interpolation 0.5.1.2: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netlink 1.1.1.0: Netlink communication for Haskell
 dev-haskell/netpbm 1.0.3-r1: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.3: Functional reactive programming library
@@ -2225,7 +2225,7 @@ dev-haskell/yesod-auth-account 1.4.3: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-bcrypt 0.2.0: BCrypt salted and hashed passwords in a database as auth for yesod
 dev-haskell/yesod-auth-hashdb 1.7.1.2: Authentication plugin for Yesod
 dev-haskell/yesod-auth-nopassword 0.1.1.1: A plugin for Yesod to provide email-only authentication
-dev-haskell/yesod-auth-oauth2 0.6.1.3: OAuth 2.0 authentication plugins
+dev-haskell/yesod-auth-oauth2 0.6.1.5: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.6.0.6: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 1.3.0.1: Helper functions for using yesod with colonnade
