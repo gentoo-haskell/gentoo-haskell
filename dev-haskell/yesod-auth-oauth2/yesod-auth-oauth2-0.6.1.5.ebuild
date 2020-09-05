@@ -21,7 +21,7 @@ IUSE="examples"
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	dev-haskell/cryptonite:=[profile?]
 	dev-haskell/errors:=[profile?]
-	>=dev-haskell/hoauth2-1.7.0:=[profile?] <dev-haskell/hoauth2-1.15:=[profile?]
+	>=dev-haskell/hoauth2-1.11.0:=[profile?] <dev-haskell/hoauth2-1.15:=[profile?]
 	>=dev-haskell/http-client-0.4.0:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/http-conduit-2.0:=[profile?] <dev-haskell/http-conduit-3.0:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
