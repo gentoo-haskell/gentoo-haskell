@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="usecas">Enable the reference implementation to use hardware compare-and-swap.</flag>
+	</use>
 	<longdescription>
 		An abstract interface to highly-parameterizable queues/deques.
 		
@@ -23,9 +26,6 @@
 		requirements (using type families).
 		
 		This package also includes a simple reference implementation based
-		on 'IORef' and "Data.Sequence".
+		on &#39;IORef&#39; and &quot;Data.Sequence&quot;.
 	</longdescription>
-	<use>
-		<flag name="usecas">Enable the reference implementation to use hardware compare-and-swap.</flag>
-	</use>
 </pkgmetadata>
