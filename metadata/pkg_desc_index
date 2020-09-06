@@ -389,7 +389,7 @@ dev-haskell/cpphs 1.20.8 1.20.9: A liberalised re-implementation of cpp, the C p
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r2: A haskell binding to cracklib
-dev-haskell/cracknum 2.3: Crack various integer, floating-point data formats
+dev-haskell/cracknum 2.4: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
 dev-haskell/criterion 1.5.6.2: Robust, reliable performance measurement and analysis
 dev-haskell/criterion-measurement 0.1.2.0: Criterion measurement functionality and associated types
@@ -1703,8 +1703,8 @@ dev-haskell/sample-frame-np 0.0.4.1: Orphan instances for types from sample-fram
 dev-haskell/samtools 0.2.4.3: Binding to the C samtools library
 dev-haskell/sandi 0.3.6 0.5: Data encoding library
 dev-haskell/say 0.1.0.1: Initial project template from stack
-dev-haskell/sbv 8.1 8.6: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
-dev-haskell/sbvplugin 0.7 0.10: Formally prove properties of Haskell programs using SBV/SMT
+dev-haskell/sbv 8.8: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
+dev-haskell/sbvplugin 0.12: Formally prove properties of Haskell programs using SBV/SMT
 dev-haskell/scalpel 0.6.1: A high level web scraping library for Haskell
 dev-haskell/scalpel-core 0.6.1: A high level web scraping library for Haskell
 dev-haskell/scanner 0.3.1: Fast non-backtracking incremental combinator parsing for bytestrings
