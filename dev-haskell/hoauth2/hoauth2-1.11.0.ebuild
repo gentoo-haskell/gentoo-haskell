@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.3.0.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
+	>=dev-haskell/binary-0.8.3.0:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-conduit-2.1:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/http-types-0.11:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
@@ -32,6 +33,13 @@ RDEPEND=">=dev-haskell/aeson-1.3.0.0:=[profile?] <dev-haskell/aeson-1.5:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'binary               >= 0.8.3.0 && < 0.8.8' 'binary               >= 0.8.3.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
