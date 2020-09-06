@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		GHC plugin for proving properties over Haskell functions using SMT solvers, based
-		on the &lt;http://hackage.haskell.org/package/sbv SBV&gt; package.
-		
-		See "Data.SBV.Plugin" for a quick example, or the modules under 'Data.SBV.Plugin.Examples'
-		for more details.
-	</longdescription>
 </pkgmetadata>
