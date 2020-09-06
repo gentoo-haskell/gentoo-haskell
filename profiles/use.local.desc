@@ -89,6 +89,7 @@ dev-haskell/cabal-plan:underline - Enable underlining of primary unit-ids
 dev-haskell/cabal-rpm:curl - Use curl library to query Stackage instead of http-client
 dev-haskell/categories:optimize - enable optimizations
 dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
+dev-haskell/chaselev-deque:debug - Enable the extra internal checks.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
 dev-haskell/chimera:representable - Define Representable instance from adjunctions package
