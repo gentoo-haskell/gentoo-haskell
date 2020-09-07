@@ -9,7 +9,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Easy-to-use, type-safe, expandable, high-level HTTP library"
+DESCRIPTION="Easy-to-use, type-safe, expandable, high-level HTTP client library"
 HOMEPAGE="https://github.com/mrkkrp/req"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
