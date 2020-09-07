@@ -199,6 +199,7 @@ dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
 dev-haskell/happstack-server:template-haskell - Description: Template Haskell is available on this system
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
+dev-haskell/hashtables:debug - if on, spew debugging output to stdout
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
 dev-haskell/hashtables:portable - if on, use only pure Haskell code and no GHC extensions.
 dev-haskell/hashtables:unsafe-tricks - turn on unsafe GHC tricks
@@ -267,6 +268,8 @@ dev-haskell/inflections:dev - Turn on development settings
 dev-haskell/influxdb:examples - Build examples
 dev-haskell/inline-c:gsl-example - Build GSL example
 dev-haskell/intervals:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
+dev-haskell/io-streams:network - Include network support
+dev-haskell/io-streams:zlib - Include zlib support
 dev-haskell/jmacro:benchmarks - Build the benchmarks.
 dev-haskell/jose-jwt:doctest - doctest
 dev-haskell/jsaddle:call-stacks - Include HasCallStack constraint on calls unchecked calls
