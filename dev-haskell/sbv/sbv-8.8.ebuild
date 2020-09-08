@@ -17,6 +17,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="skip-hlint-tester"
 
+# SBVConnections: Unable to locate executable for ABC
+RESTRICT=test
+
 RDEPEND="dev-haskell/async:=[profile?]
 	dev-haskell/cracknum:=[profile?]
 	dev-haskell/mtl:=[profile?]
