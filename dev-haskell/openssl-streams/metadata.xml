@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The openssl-streams library contains io-streams routines for secure
-		networking using OpenSSL (by way of HsOpenSSL).
-		
-		/ChangeLog/
-		
-		[@1.1.0.0@] Updated @openssl-streams@ to work with @io-streams@ 1.1.0.0.
-	</longdescription>
 </pkgmetadata>
