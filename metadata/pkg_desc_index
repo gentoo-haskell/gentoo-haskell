@@ -819,7 +819,7 @@ dev-haskell/hashable-time 0.2.0.2-r1: Hashable instances for Data.Time
 dev-haskell/hashing 0.1.0.1: A pure haskell library implements several hash algorithms
 dev-haskell/hashmap 1.3.3: Persistent containers Map and Set based on hashing
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
-dev-haskell/hashtables 1.2.4.0: Mutable hash tables in the ST monad
+dev-haskell/hashtables 1.2.4.1: Mutable hash tables in the ST monad
 dev-haskell/haskakafka 1.2.0: Kafka bindings for Haskell
 dev-haskell/haskeline 0.7.2.1 0.7.2.2 0.7.2.3 0.7.4.0 0.7.4.2 0.7.4.3 0.7.5.0 0.8.0.0 0.8.0.1: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
