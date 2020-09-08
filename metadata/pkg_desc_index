@@ -1424,7 +1424,7 @@ dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-pa
 dev-haskell/opencv 0.0.2.1: Haskell binding to OpenCV-3.x
 dev-haskell/opengl 3.0.3.0-r1: A binding for the OpenGL graphics system
 dev-haskell/openglraw 3.3.4.0: A raw binding for the OpenGL graphics system
-dev-haskell/openssl-streams 1.2.2.0: OpenSSL network support for io-streams
+dev-haskell/openssl-streams 1.2.3.0: OpenSSL network support for io-streams
 dev-haskell/operational 0.2.3.5: Implementation of difficult monads made easy with operational semantics
 dev-haskell/optics 0.2: Optics as an abstract interface
 dev-haskell/optics-core 0.2: Optics as an abstract interface: core definitions
