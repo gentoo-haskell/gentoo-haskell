@@ -5,25 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Tabular provides a Haskell representation of two-dimensional
-		data tables, the kind that you might find in a spreadsheet or
-		or a research report.  It also comes with some default
-		rendering functions for turning those tables into ASCII art,
-		simple text with an arbitrary delimiter, CSV, HTML or LaTeX.
-		
-		Below is an example of the kind of output this library produces.
-		The tabular package can group rows and columns, each group
-		having one of three separators (no line, single line, double line)
-		between its members.
-		
-		&gt;     || memtest 1 | memtest 2 ||  time test  | time test 2
-		&gt; ====++===========+===========++=============+============
-		&gt; A 1 ||       hog |  terrible ||        slow |      slower
-		&gt; A 2 ||       pig |   not bad ||        fast |     slowest
-		&gt; ----++-----------+-----------++-------------+------------
-		&gt; B 1 ||      good |     awful || intolerable |    bearable
-		&gt; B 2 ||    better | no chance ||    crawling |     amazing
-		&gt; B 3 ||       meh |   well... ||  worst ever |          ok
-	</longdescription>
 </pkgmetadata>
