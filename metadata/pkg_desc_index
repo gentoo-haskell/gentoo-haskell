@@ -1901,7 +1901,7 @@ dev-haskell/system-posix-redirect 1.1.0.1: A toy module to temporarily redirect 
 dev-haskell/system-time-monotonic 0.2: Simple library for using the system's monotonic clock
 dev-haskell/system-uuid 2.1.1: Bindings to system UUID functions
 dev-haskell/syz 0.2.0.0: Scrap Your Zippers
-dev-haskell/tabular 0.2.2.7: Two-dimensional data tables with rendering functions
+dev-haskell/tabular 0.2.2.8: Two-dimensional data tables with rendering functions
 dev-haskell/tag-bits 0.1.1.2: Provides access to the dynamic pointer tagging bits used by GHC
 dev-haskell/tagged 0.8.6: Haskell 98 phantom types to avoid unsafely passing dummy arguments
 dev-haskell/tagged-transformer 0.8.1: Provides newtype wrappers for phantom types
