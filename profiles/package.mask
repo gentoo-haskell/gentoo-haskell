@@ -1,3 +1,9 @@
+# Jack Todaro <solpeth@posteo.org> (2020-09-10)
+# Upstream needs to make a new release. Last release
+# was in 2017, but the upstream source repo is still
+# active.
+<dev-haskell/ltk-0.16
+
 # Jack Todaro <solpeth@posteo.org> (2020-08-25)
 # Needs porting to modern libraries, has no
 # reverse dependencies. Masked for removal in

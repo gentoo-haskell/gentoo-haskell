@@ -5,7 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		UI Framework used by leksah
-	</longdescription>
+	<use>
+		<flag name="check-gtk-version">This flag can be used to disable the pkgconfig-depends as they can cause problems on macOS when using nix.</flag>
+		<flag name="gtk-320">GTK+ is 3.20 or later</flag>
+	</use>
 </pkgmetadata>
