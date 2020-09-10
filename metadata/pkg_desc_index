@@ -311,8 +311,8 @@ dev-haskell/classy-prelude 1.5.0: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 1.5.0: conduit instances for classy-prelude
 dev-haskell/classy-prelude-yesod 1.5.0: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.13.1 0.13.3: CSS preprocessor as embedded Haskell
-dev-haskell/clckwrks 0.24.0.10 0.25.4 0.26.0: A secure, reliable content management system (CMS) and blogging platform
-dev-haskell/clckwrks-cli 0.2.17.2 0.3.0.1 0.3.0.3: a command-line interface for adminstrating some aspects of clckwrks
+dev-haskell/clckwrks 0.25.4 0.26.0: A secure, reliable content management system (CMS) and blogging platform
+dev-haskell/clckwrks-cli 0.3.0.3: a command-line interface for adminstrating some aspects of clckwrks
 dev-haskell/clckwrks-plugin-media 0.6.16.8 0.6.16.9: media plugin for clckwrks
 dev-haskell/clckwrks-plugin-page 0.4.3.19 0.4.3.22: support for CMS/Blogging in clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
@@ -801,7 +801,7 @@ dev-haskell/handa-gdata 0.7.0.3: Library and command-line utility for accessing 
 dev-haskell/handsomesoup 0.4.2: Work with HTML more easily in HXT
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
-dev-haskell/happstack-authenticate 2.3.4.15 2.4.0.3: Happstack Authentication Library
+dev-haskell/happstack-authenticate 2.4.0.3: Happstack Authentication Library
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
 dev-haskell/happstack-hsp 7.3.7.4: Support for using HSP templates in Happstack
 dev-haskell/happstack-hstringtemplate 7.0.4-r2: Support for using HStringTemplate in Happstack
@@ -1167,7 +1167,7 @@ dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskel
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
 dev-haskell/leancheck 0.9.3: Enumerative property-based testing
-dev-haskell/lens 4.14 4.16.1 4.17 4.18.1 4.19.1 4.9999: Lenses, Folds and Traversals
+dev-haskell/lens 4.18.1 4.19.1 4.9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.4: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.1: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.1 1.2.3: Lens Families

@@ -305,6 +305,8 @@ dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for developme
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
 dev-haskell/logfloat:useffi - Use bindings to C libraries
+dev-haskell/ltk:check-gtk-version - This flag can be used to disable the pkgconfig-depends as they can cause problems on macOS when using nix.
+dev-haskell/ltk:gtk-320 - GTK+ is 3.20 or later
 dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/megaparsec-tests:dev - Turn on development settings.
