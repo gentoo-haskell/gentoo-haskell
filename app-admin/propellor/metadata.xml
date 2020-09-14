@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="type-errors">Build with type-errors library for better error messages</flag>
+		<flag name="type-errors">Build with type-errors library for better error messages and less memory use</flag>
 	</use>
 	<longdescription>
 		Propellor ensures that the system it&#39;s run in satisfies a list of
