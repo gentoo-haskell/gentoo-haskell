@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,7 +25,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/haskell-src-exts-1.16 <dev-haskell/haskell-src-exts-1.18
 	dev-haskell/text
 	>=dev-lang/ghc-7.4.1
-	emacs? ( virtual/emacs app-emacs/hindent )
+	emacs? (
+		app-emacs/hindent
+		>=app-editors/emacs-23.1:* )
 "
 SITEFILE="50${PN}-gentoo.el"
 
