@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -63,8 +63,9 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?]
 		>=dev-haskell/uulib-0.9.20:=[profile?] )
 "
 RDEPEND+="
-		emacs? ( app-emacs/haskell-mode
-			virtual/emacs )
+		emacs? (
+			>=app-editors/emacs-23.1:*
+			app-emacs/haskell-mode )
 "
 PDEPEND="stdlib? ( ~sci-mathematics/agda-stdlib-${MY_GENTOO_AGDA_STDLIB_V} )"
 DEPEND="${RDEPEND}

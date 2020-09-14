@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -44,8 +44,9 @@ RDEPEND=">=dev-haskell/binary-0.7.2.1:=[profile?] <dev-haskell/binary-0.8:=[prof
 	>=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.5:=[profile?]
 "
 RDEPEND+="
-		emacs? ( app-emacs/haskell-mode
-			virtual/emacs )
+		emacs? (
+			app-emacs/haskell-mode
+			>=app-editors/emacs-23.1:* )
 "
 PDEPEND="stdlib? ( ~sci-mathematics/agda-stdlib-${PV} )"
 DEPEND="${RDEPEND}

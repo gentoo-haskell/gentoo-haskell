@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -51,8 +51,9 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.2:=[profile?
 	enable-cluster-counting? ( >=dev-haskell/text-icu-0.7:=[profile?] <dev-haskell/text-icu-0.8:=[profile?] )
 "
 RDEPEND+="
-	emacs? ( app-emacs/haskell-mode
-		virtual/emacs )
+	emacs? (
+		>=app-editors/emacs-23.1:*
+		app-emacs/haskell-mode )
 "
 PDEPEND="stdlib? ( ~sci-mathematics/agda-stdlib-${PV} )"
 DEPEND="${RDEPEND}

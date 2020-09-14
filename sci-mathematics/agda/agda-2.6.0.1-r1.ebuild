@@ -59,8 +59,9 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	enable-cluster-counting? ( >=dev-haskell/text-icu-0.7:=[profile?] <dev-haskell/text-icu-0.8:=[profile?] )
 "
 RDEPEND+="
-	emacs? ( app-emacs/haskell-mode
-		virtual/emacs )
+	emacs? (
+		>=app-editors/emacs-23.1:*
+		app-emacs/haskell-mode )
 "
 PDEPEND="stdlib? ( ~sci-mathematics/agda-stdlib-${MY_GENTOO_AGDA_STDLIB_V} )"
 DEPEND="${RDEPEND}
