@@ -16,6 +16,5 @@
 		packages for performing DNS lookups</flag>
 		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
 		<flag name="noprefs">Ignore 'preferred-versions' file from hackage's tarball</flag>
-		<flag name="parsec">Use parser written in parsec library</flag>
 	</use>
 </pkgmetadata>
