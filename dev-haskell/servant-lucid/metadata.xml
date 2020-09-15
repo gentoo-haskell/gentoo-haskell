@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Servant support for lucid.
-		
-		&#39;HTML&#39; content type which will use `ToHtml` class.
-		
-		Lucid.Servant uses `Link` rather than `Text` for safe &#39;href&#39; attributes.
-	</longdescription>
 </pkgmetadata>
