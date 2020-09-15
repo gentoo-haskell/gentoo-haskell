@@ -83,7 +83,6 @@ dev-haskell/cabal-install:debug-conflict-sets - Add additional information to Co
 dev-haskell/cabal-install:native-dns - Enable use of the resolv and windns packages for performing DNS lookups
 dev-haskell/cabal-install:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball
-dev-haskell/cabal-install:parsec - Use parser written in parsec library
 dev-haskell/cabal-plan:license-report - Enable @license-report@ sub-command (only relevant when the @exe@ flag is active)
 dev-haskell/cabal-plan:underline - Enable underlining of primary unit-ids
 dev-haskell/cabal-rpm:curl - Use curl library to query Stackage instead of http-client
