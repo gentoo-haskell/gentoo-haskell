@@ -1279,7 +1279,7 @@ dev-haskell/mime-types 0.1.0.9: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
 dev-haskell/mintty 0.1.2: A reliable way to detect the presence of a MinTTY console on Windows
 dev-haskell/misfortune 0.1.1.2: fortune-mod clone
-dev-haskell/miso 1.5.0.0: A tasty Haskell front-end framework
+dev-haskell/miso 1.7.1.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
 dev-haskell/missingh 1.4.2.1 1.4.3.0: Large utility library
 dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
@@ -1701,7 +1701,7 @@ dev-haskell/saltine 0.1.1.0: Cryptography that's easy to digest (NaCl/libsodium 
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4.1: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/samtools 0.2.4.3: Binding to the C samtools library
-dev-haskell/sandi 0.3.6 0.5: Data encoding library
+dev-haskell/sandi 0.5: Data encoding library
 dev-haskell/say 0.1.0.1: Initial project template from stack
 dev-haskell/sbv 8.8: SMT Based Verification: Symbolic Haskell theorem prover using SMT solving
 dev-haskell/sbvplugin 0.12: Formally prove properties of Haskell programs using SBV/SMT
@@ -1738,7 +1738,7 @@ dev-haskell/serialport 0.4.7: Cross platform serial port library
 dev-haskell/servant 0.18: A family of combinators for defining webservices APIs
 dev-haskell/servant-client 0.18: automatical derivation of querying functions for servant webservices
 dev-haskell/servant-client-core 0.18: Core functionality and class for client function generation for servant APIs
-dev-haskell/servant-lucid 0.9.0.1: Servant support for lucid
+dev-haskell/servant-lucid 0.9.0.2: Servant support for lucid
 dev-haskell/servant-server 0.18: A family of combinators for defining webservices APIs and serving them
 dev-haskell/serversession 1.0.1: Secure, modular server-side sessions
 dev-haskell/serversession-backend-redis 1.0.3: Storage backend for serversession using Redis
@@ -1762,7 +1762,7 @@ dev-haskell/shellac-compatline 0.9.9: "compatline" backend module for Shellac
 dev-haskell/shellac-editline 0.9.9: Editline backend module for Shellac
 dev-haskell/shellac-readline 0.9.9: Readline backend module for Shellac
 dev-haskell/shellmate 0.2.3-r2 0.3.4.3: Simple interface for shell scripting in Haskell
-dev-haskell/shelly 1.6.8.6 1.7.2 1.9.0: shell-like (systems) programming in Haskell
+dev-haskell/shelly 1.7.2 1.9.0: shell-like (systems) programming in Haskell
 dev-haskell/shh 0.7.0.7: Simple shell scripting from Haskell
 dev-haskell/should-not-typecheck 2.1.0: A HUnit/hspec assertion library to verify that an expression does not typecheck
 dev-haskell/show 0.6: 'Show' instances for Lambdabot
