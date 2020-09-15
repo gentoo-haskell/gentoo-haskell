@@ -1,9 +1,0 @@
-diff --git a/src/Servant/Server/Internal.hs b/src/Servant/Server/Internal.hs
-index fc91267..9c0e96a 100644
---- a/src/Servant/Server/Internal.hs
-+++ b/src/Servant/Server/Internal.hs
-@@ -43,3 +43,3 @@ import           Network.Wai                (Application, Request, Response,
- import           Prelude                    ()
--import           Prelude.Compat
-+import           Prelude.Compat             hiding ((<>))
- import           Web.HttpApiData            (FromHttpApiData, parseHeaderMaybe,

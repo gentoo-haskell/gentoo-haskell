@@ -1,3 +1,12 @@
+# Jack Todaro <solpeth@posteo.org> (2020-09-15)
+# Requires porting of its dependencies to newer
+# versions and/or dead upstream. Removal in 30 days.
+dev-haskell/html-tokenizer
+dev-haskell/keter
+dev-haskell/shellmate
+dev-lang/haste-compiler
+dev-util/packunused
+
 # Jack Todaro <solpeth@posteo.org> (2020-09-10)
 # Upstream needs to make a new release. Last release
 # was in 2017, but the upstream source repo is still
