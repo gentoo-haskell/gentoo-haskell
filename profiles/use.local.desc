@@ -498,6 +498,7 @@ dev-haskell/vector-instances:hashable - use dev-haskell/hashable
 dev-haskell/vinyl-utils:devel - Development mode (-Werror)
 dev-haskell/void:safe - Disable effective but unsafe coercions
 dev-haskell/wai-app-static:print - print debug info
+dev-haskell/wai-extra:examples - Build example executable.
 dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GNU/kFreeBSD).
 dev-haskell/warp:warp-debug - Add additional debuging information
 dev-haskell/wcwidth:cli - Enable command line tool

@@ -311,7 +311,7 @@ dev-haskell/classy-prelude 1.5.0: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 1.5.0: conduit instances for classy-prelude
 dev-haskell/classy-prelude-yesod 1.5.0: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.13.1 0.13.3: CSS preprocessor as embedded Haskell
-dev-haskell/clckwrks 0.25.4 0.26.0: A secure, reliable content management system (CMS) and blogging platform
+dev-haskell/clckwrks 0.25.4 0.26.1: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.3.0.3: a command-line interface for adminstrating some aspects of clckwrks
 dev-haskell/clckwrks-plugin-media 0.6.16.8 0.6.16.9: media plugin for clckwrks
 dev-haskell/clckwrks-plugin-page 0.4.3.19 0.4.3.22: support for CMS/Blogging in clckwrks
@@ -565,7 +565,7 @@ dev-haskell/erd 0.2.0.0 0.2.1.0: An entity-relationship diagram generator from a
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.2.5 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 2.7.0 3.3.3.2: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 2.7.0 3.3.3.2 3.3.4.0: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7-r1: Library for computer music research and education
@@ -1483,7 +1483,7 @@ dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types
 dev-haskell/persistent-mongodb 2.9.0.2-r1 2.10.0.0: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.9.0 2.10.2.3: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1 2.10.1.2: Backend for the persistent library using postgresql
-dev-haskell/persistent-qq 2.9.0: Provides a quasi-quoter for raw SQL for persistent
+dev-haskell/persistent-qq 2.9.2: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.6.0.1 2.9.3 2.10.5 2.10.6.2: Backend for the persistent library using sqlite3
@@ -1795,7 +1795,7 @@ dev-haskell/smallcheck 1.1.5 1.2.0: A property-based testing library
 dev-haskell/smtlib 1.1: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.1.4.6 0.2.0.0: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0-r1: A simple SMTP client library
-dev-haskell/snap 1.1.3.0: Top-level package for the Snap Web Framework
+dev-haskell/snap 1.1.3.1: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 1.0.4.2: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 1.0.0.1: Snap: A Haskell Web Framework: dynamic loader
 dev-haskell/snap-loader-static 1.0.0.0: Snap static loader
@@ -2132,7 +2132,7 @@ dev-haskell/wai-app-static 3.1.7.2: WAI application for static serving
 dev-haskell/wai-conduit 3.0.0.4: conduit wrappers for WAI
 dev-haskell/wai-cors 0.2.7: CORS for WAI
 dev-haskell/wai-eventsource 3.0.0: WAI support for server-sent events (deprecated)
-dev-haskell/wai-extra 3.0.29.1: Provides some basic WAI handlers and middleware
+dev-haskell/wai-extra 3.0.31: Provides some basic WAI handlers and middleware
 dev-haskell/wai-handler-launch 3.0.3.1: Launch a web app in the default browser
 dev-haskell/wai-http2-extra 0.1.2: WAI utilities for HTTP/2
 dev-haskell/wai-logger 2.3.6: A logging system for WAI
