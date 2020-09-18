@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Please see README and API docs at &lt;http://www.stackage.org/package/persistent&gt;.
-	</longdescription>
 </pkgmetadata>
