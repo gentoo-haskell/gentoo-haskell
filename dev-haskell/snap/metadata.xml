@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Snap Framework project starter executable and glue code library
-	</longdescription>
 </pkgmetadata>
