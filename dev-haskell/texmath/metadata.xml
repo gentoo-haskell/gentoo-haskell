@@ -5,21 +5,41 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="executable">Compile test executable.</flag>
+		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
+	</use>
 	<longdescription>
-		The texmathml library provides functions to convert LaTeX
-		math formulas to presentation MathML. It supports
-		basic LaTeX and AMS extensions, and it can parse and
-		apply LaTeX macros.
+		The texmath library provides functions to read and
+		write TeX math, presentation MathML, and OMML (Office
+		Math Markup Language, used in Microsoft Office).
+		Support is also included for converting math formats
+		to Gnu eqn and to pandoc&#39;s native format (allowing
+		conversion, via pandoc, to a variety of different
+		markup formats).  The TeX reader supports basic LaTeX
+		and AMS extensions, and it can parse and apply LaTeX
+		macros.  (See &lt;http://johnmacfarlane.net/texmath here&gt;
+		for a live demo of bidirectional conversion between LaTeX
+		and MathML.)
 		
-		Use the @test@ flag to install a standalone executable,
-		@texmath@, that reads a LaTeX formula from @stdin@ and
-		writes MathML to @stdout@.
+		The package also includes several utility modules which
+		may be useful for anyone looking to manipulate either
+		TeX math or MathML.  For example, a copy of the MathML
+		operator dictionary is included.
 		
-		Use the @cgi@ flag to install a cgi script,
-		@texmath-cgi@.
+		Use the @executable@ flag to install a standalone
+		executable, @texmath@, that by default reads a LaTeX
+		formula from @stdin@ and writes MathML to @stdout@.
+		With flags all the functionality exposed by
+		&#39;Text.TeXMath&#39; can be accessed through this executable.
+		(Use the @--help@ flag for a description of all
+		functionality)
+		
+		The @texmath@ executable can also be used as a CGI
+		script, when renamed as @texmath-cgi@.
+		It will expect query parameters for @from@, @to@,
+		@input@, and optionally @inline@, and return a JSON
+		object with either @error@ and a message or
+		@success@ and the converted result.
 	</longdescription>
-<use>
-	<flag name="executable">Compile test executable.</flag>
-	<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
-</use>
 </pkgmetadata>
