@@ -466,7 +466,7 @@ dev-haskell/streamly:streamk - Use CPS style streams when possible
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
 dev-haskell/texmath:executable - Compile test executable.
-dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
 dev-haskell/th-extras:base4 - Use base-4.0.
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.

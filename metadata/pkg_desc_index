@@ -1641,7 +1641,7 @@ dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.3: Happstack support for reform
 dev-haskell/reform-hsp 0.2.7.2: Add support for using HSP with Reform
 dev-haskell/refserialize 0.4.0: Write to and read from ByteStrings maintaining internal memory references
-dev-haskell/regex 1.0.1.3 1.0.2.0 1.1.0.0: Toolkit for regex-base
+dev-haskell/regex 1.1.0.0: Toolkit for regex-base
 dev-haskell/regex-applicative 0.3.3.1: Regex-based parsing with applicative interface
 dev-haskell/regex-applicative-text 0.1.0.1: regex-applicative on text
 dev-haskell/regex-base 0.93.2-r1 0.94.0.0: Replaces/Enhances Text.Regex
@@ -1651,14 +1651,14 @@ dev-haskell/regex-dfa 0.91-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-do 3.2.2: PCRE wrapper
 dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre 0.94.4-r1 0.95.0.0: Replaces/Enhances Text.Regex
-dev-haskell/regex-pcre-builtin 0.94.4.8.8.35 0.95.1.1.8.43: Replaces/Enhances Text.Regex
+dev-haskell/regex-pcre-builtin 0.95.1.2.8.43: PCRE Backend for "Text.Regex" (regex-base)
 dev-haskell/regex-pcre-text 0.94.0.1: Text-based PCRE API for regex-base
 dev-haskell/regex-posix 0.96.0.0: Replaces/Enhances Text.Regex
 dev-haskell/regex-posix-unittest 1.1: Unit tests for the plaform's Posix regex library
 dev-haskell/regex-tdfa 1.2.3.2 1.3.1.0: Replaces/Enhances Text.Regex
 dev-haskell/regex-tdfa-text 1.0.0.3: Text interface for regex-tdfa
 dev-haskell/regex-tre 0.91-r1: Replaces/Enhances Text.Regex
-dev-haskell/regex-with-pcre 1.0.1.3 1.1.0.0: Toolkit for regex-base
+dev-haskell/regex-with-pcre 1.1.0.0: Toolkit for regex-base
 dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/reinterpret-cast 0.1.0: Memory reinterpretation casts for Float/Double and Word32/Word64
@@ -1951,7 +1951,7 @@ dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit and Quickc
 dev-haskell/test-framework-th-prime 0.0.9: Template Haskell for test framework
 dev-haskell/testing-feat 1.1.0.0: Functional Enumeration of Algebraic Types
 dev-haskell/testing-type-modifiers 0.1.0.1: Data type modifiers for property based testing
-dev-haskell/texmath 0.11.3 0.12.0.2: Conversion between formats used to represent mathematics
+dev-haskell/texmath 0.11.3 0.12.0.3: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.2-r2: Functions for running Tex from Haskell
 dev-haskell/text 1.2.3.0 1.2.3.1 1.2.3.2 1.2.4.0: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
