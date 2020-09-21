@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2020-09-21)
+# Dead upstream, depends on old package versions.
+# Removal in 30 days.
+dev-haskell/regex-pcre-text
+
 # Jack Todaro <solpeth@posteo.org> (2020-09-15)
 # Requires porting of its dependencies to newer
 # versions and/or dead upstream. Removal in 30 days.
@@ -8,7 +13,6 @@ dev-haskell/keter
 dev-haskell/shellmate
 dev-lang/haste-compiler
 dev-util/packunused
-
 
 # Jack Todaro <solpeth@posteo.org> (2020-09-10)
 # Upstream needs to make a new release. Last release
