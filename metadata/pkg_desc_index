@@ -142,7 +142,7 @@ dev-haskell/authenticate-oauth 1.6.0.1: Library to authenticate with OAuth for H
 dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.6: Efficiently run periodic, on-demand actions
 dev-haskell/aws 0.22-r1: Amazon Web Services (AWS) for Haskell
-dev-haskell/barbies 1.1.3.0: Classes for working with types that can change clothes
+dev-haskell/barbies 1.1.3.0 2.0.2.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.1: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.1: base-compat with extra batteries
 dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
@@ -577,6 +577,7 @@ dev-haskell/exceptions 0.9.0 0.10.4: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3.1: Finding out the full path of the executable
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
 dev-haskell/explicit-exception 0.1.10: Exceptions which are explicit in the type signature
+dev-haskell/extensible 0.8: Extensible, efficient, optics-friendly data types and effects
 dev-haskell/extensible-effects 5.0.0.1: An Alternative to Monad Transformers
 dev-haskell/extensible-exceptions 0.1.1.4: Extensible exceptions
 dev-haskell/extra 1.7.8: Extra functions I use
@@ -1253,6 +1254,7 @@ dev-haskell/megadeth 9999: Simple project template from stack
 dev-haskell/megaparsec 7.0.5 8.0.0: Monadic parser combinators
 dev-haskell/megaparsec-tests 8.0.0: Test utilities and the test suite of Megaparsec
 dev-haskell/meldable-heap 2.0.3-r1: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
+dev-haskell/membership 0: Indices for type level lists
 dev-haskell/memcache 0.2.0.1: A memcached client library
 dev-haskell/memoize 0.8.1: A memoization library
 dev-haskell/memory 0.14.18 0.15.0: memory and related abstraction stuff
@@ -1301,6 +1303,7 @@ dev-haskell/monad-par-extras 0.3.3-r1: Combinators and extra features for Par mo
 dev-haskell/monad-parallel 0.7.2.3: Parallel execution of monadic computations
 dev-haskell/monad-peel 0.2.1.2: Lift control operations like exception catching through monad transformers
 dev-haskell/monad-products 4.0.1: Monad products
+dev-haskell/monad-skeleton 0.1.5: Monads of program skeleta
 dev-haskell/monad-time 0.3.1.0: Type class for monads which carry the notion of the current time
 dev-haskell/monad-unify 0.2.2: Generic first-order unification
 dev-haskell/monad-unlift 0.2.0: Typeclasses for representing monad transformer unlifting
