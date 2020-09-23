@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -23,3 +23,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2.0"
 
 PATCHES=("${FILESDIR}"/${PN}-0.1-ghc-7.8.patch)
+
+src_prepare() {
+	default
+
+	rm Setup.lhs || die
+}
