@@ -1,4 +1,12 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-23)
+# No update since 2014. A compat package without revdeps.
+dev-haskell/compact-string-fix
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-23)
+# No update since 2010. Obsoleted by dev-haskell/cabal-install.
+dev-haskell/capri
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-23)
 # Needs porting to MonadFail: https://github.com/silkapp/arrow-list/issues/2
 # No updates since 2016.
 dev-haskell/arrow-list

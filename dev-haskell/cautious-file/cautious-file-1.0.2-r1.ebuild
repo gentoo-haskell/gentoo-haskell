@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -25,6 +25,9 @@ RESTRICT=test # requires library already already installed
 
 src_prepare() {
 	default
+
+	# Not compatible to Cabal-3
+	rm Setup.lhs || die
 
 	cabal_chdeps \
 		'filepath >= 1.2, filepath < 1.4' 'filepath >= 1.2' \

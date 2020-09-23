@@ -5,23 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package defines a simple parser for a subset of Haskell expressions and patterns to the TemplateHaskell AST.
-		
-		It provides a very lightweight alternative to the functions @parseExp@ and @parsePat@ from &lt;http://hackage.haskell.org/package/haskell-src-meta&gt;.
-		
-		The following expressions are currently supported:
-		
-		* Variables
-		
-		* Integer and string literals
-		
-		* Prefix function application
-		
-		* Lists and tuples
-		
-		The following patterns are currently supported:
-		
-		* Variables
-	</longdescription>
 </pkgmetadata>
