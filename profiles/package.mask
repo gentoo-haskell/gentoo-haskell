@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-23)
+# Needs porting to MonadFail: https://github.com/silkapp/arrow-list/issues/2
+# No updates since 2016.
+dev-haskell/arrow-list
+
 # Jack Todaro <solpeth@posteo.org> (2020-09-21)
 # Dead upstream, depends on old package versions.
 # Removal in 30 days.
