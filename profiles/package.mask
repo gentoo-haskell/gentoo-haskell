@@ -169,11 +169,6 @@ dev-haskell/log-elasticsearch
 dev-haskell/hgettext
 dev-haskell/bustle
 
-# Jack Todaro <solpeth@posteo.org> (25 June 2020)
-# Depends on dev-tex/polytable, which is masked for
-# deletion. Also doesn't build with ghc-8.6.5.
-<dev-haskell/lhs2tex-1.20
-
 # Jack Todaro <solpeth@posteo.org> (12 April 2020)
 # Mask haskell-src-exts-1.22 and reverse dependencies
 >=dev-haskell/haskell-src-exts-1.22
