@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to MonadFail. No homepage.
+dev-haskell/lru
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to MonadFail.
 dev-haskell/permutation
 dev-haskell/hmt
