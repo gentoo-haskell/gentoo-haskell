@@ -1,4 +1,36 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to Cabal-3. No homepage.
+dev-haskell/crockford
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to MonadFail. No homepage.
+dev-haskell/lru
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to MonadFail.
+dev-haskell/permutation
+dev-haskell/hmt
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to ghc-7.10.
+games-sports/freekick2
+dev-haskell/pngload
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to ghc-7. No revdeps.
+net-mail/mhailist
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to ghc-8.8. No homepage.
+# No revdeps.
+dev-haskell/hmarkup
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to ghc-8.8: https://github.com/hdevtools/hdevtools/issues/94
+# No revdeps.
+dev-haskell/hdevtools
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to MonadFail: https://github.com/mgrabmueller/harpy/issues/2
 # No revdeps.
 dev-haskell/harpy
@@ -136,11 +168,6 @@ dev-haskell/log-elasticsearch
 # revdeps.
 dev-haskell/hgettext
 dev-haskell/bustle
-
-# Jack Todaro <solpeth@posteo.org> (25 June 2020)
-# Depends on dev-tex/polytable, which is masked for
-# deletion. Also doesn't build with ghc-8.6.5.
-<dev-haskell/lhs2tex-1.20
 
 # Jack Todaro <solpeth@posteo.org> (12 April 2020)
 # Mask haskell-src-exts-1.22 and reverse dependencies
