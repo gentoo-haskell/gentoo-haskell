@@ -1,4 +1,9 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to MonadFail.
+dev-haskell/permutation
+dev-haskell/hmt
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to ghc-7.10.
 games-sports/freekick2
 dev-haskell/pngload
