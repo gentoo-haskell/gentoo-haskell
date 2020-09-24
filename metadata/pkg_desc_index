@@ -1177,7 +1177,7 @@ dev-haskell/lens-family-th 0.5.1.0: Generate lens-family style lenses
 dev-haskell/lens-simple 0.1.0.9: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.8: Simple Functional Lenses
 dev-haskell/leveldb-haskell 0.6.5: Haskell bindings to LevelDB
-dev-haskell/lhs2tex 1.19-r1 1.24: Preprocessor for typesetting Haskell sources with LaTeX
+dev-haskell/lhs2tex 1.24: Preprocessor for typesetting Haskell sources with LaTeX
 dev-haskell/libffi 0.1: A binding to libffi
 dev-haskell/liblastfm 0.7.0: Lastfm API interface
 dev-haskell/libmpd 0.9.1.0: An MPD client library
@@ -1571,7 +1571,7 @@ dev-haskell/profiteur 0.4.5.1: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
 dev-haskell/profunctors 5.2.2-r1 5.5.1: Profunctors
 dev-haskell/project-template 0.2.0.1: Specify Haskell project templates and generate files
-dev-haskell/prolog 0.3: A Prolog interpreter written in Haskell
+dev-haskell/prolog 0.3.2: A Prolog interpreter written in Haskell
 dev-haskell/protocol-buffers 2.4.13: Parse Google Protocol Buffer specifications
 dev-haskell/protocol-buffers-descriptor 2.4.13: module and code generated from the Google Protocol Buffer
 dev-haskell/protolude 0.2.3 0.2.4: A sensible set of defaults for writing custom Preludes
