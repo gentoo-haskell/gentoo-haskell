@@ -1,4 +1,9 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
+# Needs port to MonadFail. Does not compile against ghc-8.8.
+# No revdeps.
+dev-haskell/network-house
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Was never ported upstream to split Applicative.
 # No revdeps.
 dev-haskell/maybet
