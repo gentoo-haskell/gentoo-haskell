@@ -2327,7 +2327,6 @@ games-fps/frag 1.1.2-r1: A 3-D First Person Shooter Game
 games-puzzle/bloxorz 0.1.2: OpenGL Logic Game
 games-puzzle/intricacy 0.6.1 0.6.2 0.7.1.1: A game of competitive puzzle-design
 games-puzzle/raincat 1.2.1: A puzzle game written in Haskell with a cat in lead role
-games-roguelike/mazesofmonad 1.0.9-r2: Console-based roguelike Role Playing Game similar to nethack
 games-roguelike/scroll 1.20180421: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
 media-fonts/hasklig 0.2 0.4 1.0_beta 1.1: Hasklig - a Haskell code font with monospaced ligatures
