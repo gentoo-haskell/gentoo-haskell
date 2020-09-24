@@ -5,22 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The /Labeled IO/ (LIO) library provides information flow
-		control for incorporating untrusted code within Haskell
-		applications.  Most code should import module "LIO" and
-		whichever label type the application is using (e.g.,
-		"LIO.DCLabel").  The core functionality of the library is
-		documented in "LIO.TCB".  LIO was implemented by David
-		Mazieres (&lt;http://www.scs.stanford.edu/~dm/&gt;), Deian Stefan
-		(&lt;http://www.scs.stanford.edu/~deian/&gt;), Alejandro Russo
-		(&lt;http://www.cse.chalmers.se/~russo/&gt;) and John C. Mitchell
-		(&lt;http://www.stanford.edu/~jcm/&gt;).
-		The extended version of our paper, that includes the proofs
-		is available here:
-		&lt;http://www.scs.stanford.edu/~deian/pubs/stefan:2011:flexible-ext.pdf&gt;.
-		The library depends on the @DCLabel@ module. You can read more on
-		DC Labels here:
-		&lt;http://www.scs.stanford.edu/~deian/dclabels/&gt;.
-	</longdescription>
 </pkgmetadata>
