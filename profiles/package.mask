@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
+# Needs port to Cabal-3: https://github.com/bsl/hslogger-template/issues/2
+# No revdeps.
+dev-haskell/hslogger-template
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to Cabal-3. No homepage.
 dev-haskell/crockford
