@@ -371,7 +371,7 @@ dev-haskell/containers-unicode-symbols 0.3.1.1-r1: Unicode alternatives for comm
 dev-haskell/continued-fractions 0.10.0.2: Continued fractions
 dev-haskell/contravariant 1.5.2: Contravariant functors
 dev-haskell/contravariant-extras 0.3.5.2: Extras for the "contravariant" package
-dev-haskell/control-monad-exception 0.11.2: Explicitly typed, checked exceptions with stack traces
+dev-haskell/control-monad-exception 0.11.4: Explicitly typed, checked exceptions with stack traces
 dev-haskell/control-monad-free 0.6.2: Free monads and monad transformers
 dev-haskell/control-monad-loop 0.1: Simple monad transformer for imperative-style loops
 dev-haskell/control-timeout 0.1.2-r1: Timeout handling
