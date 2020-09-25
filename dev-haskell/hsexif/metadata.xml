@@ -6,11 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="iconv">Enable encoding conversion of the User Comment tag with iconv.</flag>
+		<flag name="iconv">Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.</flag>
 	</use>
-	
-	<longdescription>
-		The hsexif library provides functions for working with EXIF data
-		contained in JPEG files. Currently it only supports reading the data.
-	</longdescription>
 </pkgmetadata>
