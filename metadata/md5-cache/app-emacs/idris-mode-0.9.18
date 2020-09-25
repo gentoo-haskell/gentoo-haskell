@@ -9,5 +9,5 @@ RDEPEND=app-emacs/haskell-mode >=app-editors/emacs-23.1:*
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/idris-hackers/idris-mode/archive/0.9.18.tar.gz -> idris-mode-0.9.18.tar.gz
-_eclasses_=eapi7-ver	f9ec87e93172b25ce65a85303dc06964	elisp	00840e1f4eb277c757dbfa5abf73c4c7	elisp-common	848a95b01913ff6374bcb5eae09c52ba
+_eclasses_=eapi7-ver	f9ec87e93172b25ce65a85303dc06964	elisp	00840e1f4eb277c757dbfa5abf73c4c7	elisp-common	34cc2b6f6d8914019a353fe39cff43ce
 _md5_=5b8f3837c3f80b73e7f57230481691c9
