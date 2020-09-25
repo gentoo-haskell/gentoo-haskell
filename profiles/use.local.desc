@@ -235,7 +235,7 @@ dev-haskell/hoogle:localdb - install hoogle-build-localdb script for building ho
 dev-haskell/hoogle:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv.
+dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.
 dev-haskell/hslogger:network-3 - Use network-3
 dev-haskell/hslua:apicheck - Compile Lua with -DLUA_USE_APICHECK..
 dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but Use hard coded values for instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those do not expose the necessary information in the @lauxlib.h@ header file.
