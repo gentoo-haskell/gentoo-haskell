@@ -1,7 +1,0 @@
---- a/Control/Monad/Exception/Pure.hs
-+++ b/Control/Monad/Exception/Pure.hs
-@@ -76,3 +76,3 @@ module Control.Monad.Exception.Pure (
- -- * Reexports
--    Exception(..), SomeException(..), Typeable1,
-+    Exception(..), SomeException(..),
-     Failure(..),
