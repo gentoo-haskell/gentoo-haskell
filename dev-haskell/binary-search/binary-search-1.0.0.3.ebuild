@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -28,3 +28,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-1.3
 		>=dev-haskell/quickcheck-2.5 )
 "
+
+src_prepare() {
+	default
+
+	rm Setup.hs || die
+}
