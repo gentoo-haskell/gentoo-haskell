@@ -1,0 +1,3 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
+# dev-haskell/dump-core needs a port to ghc-8.8 and above: https://github.com/yav/dump-core/pull/9
+dump-core
