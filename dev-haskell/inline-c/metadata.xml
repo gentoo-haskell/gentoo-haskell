@@ -8,7 +8,4 @@
 	<use>
 		<flag name="gsl-example">Build GSL example</flag>
 	</use>
-	<longdescription>
-		See &lt;https://github.com/fpco/inline-c/blob/master/README.md&gt;.
-	</longdescription>
 </pkgmetadata>
