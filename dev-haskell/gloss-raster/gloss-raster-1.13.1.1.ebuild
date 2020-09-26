@@ -27,6 +27,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base                          >= 4.8 && < 4.13' 'base                          >= 4.8'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-llvm
