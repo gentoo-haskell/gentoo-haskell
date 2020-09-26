@@ -52,3 +52,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'http-client          >= 0.4 && < 0.6' 'http-client          >= 0.4'
+}
