@@ -394,7 +394,7 @@ dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
 dev-haskell/criterion 1.5.6.2: Robust, reliable performance measurement and analysis
 dev-haskell/criterion-measurement 0.1.2.0: Criterion measurement functionality and associated types
 dev-haskell/crockford 0.2-r1: An implementation of Douglas Crockford's base32 encoding
-dev-haskell/cron 0.5.0: Cron datatypes and Attoparsec parser
+dev-haskell/cron 0.7.0: Cron datatypes and Attoparsec parser
 dev-haskell/crypto 4.2.5.1-r1: Collects together existing Haskell cryptographic functions into a package
 dev-haskell/crypto-api 0.13.3: A generic interface for cryptographic operations
 dev-haskell/crypto-api-tests 0.3-r1: A test framework and KATs for cryptographic operations
@@ -2049,7 +2049,7 @@ dev-haskell/uhc-util 0.1.6.7 0.1.7.0: UHC utilities
 dev-haskell/unagi-chan 0.4.1.3: Fast concurrent queues with a Chan-like API, and more
 dev-haskell/unamb 0.2.7: Unambiguous choice
 dev-haskell/unbound 0.5.1.1: Generic support for programming with names and binders
-dev-haskell/unbound-generics 0.3.4 0.4.0: Support for programming with names and binders using GHC Generics
+dev-haskell/unbound-generics 0.4.1: Support for programming with names and binders using GHC Generics
 dev-haskell/unbounded-delays 0.1.1.0: Unbounded thread delays and timeouts
 dev-haskell/unexceptionalio 0.3.0 0.5.0 0.5.1: IO without any non-error, synchronous exceptions
 dev-haskell/unexceptionalio-trans 0.5.1: A wrapper around UnexceptionalIO using monad transformers
