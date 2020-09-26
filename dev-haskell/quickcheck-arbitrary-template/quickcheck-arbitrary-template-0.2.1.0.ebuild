@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -28,3 +28,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell >=2.11 && <2.15' 'template-haskell >=2.11'
+}
