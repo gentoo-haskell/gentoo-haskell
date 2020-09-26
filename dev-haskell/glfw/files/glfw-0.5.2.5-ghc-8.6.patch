@@ -1,0 +1,11 @@
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -258,7 +258,7 @@ instance (Functor m, Monad m) => Monad (StateT s m) where
+     m >>= k  = StateT $ \s -> do
+         ~(a, s') <- runStateT m s
+         runStateT (k a) s'
+-    fail str = StateT $ \_ -> fail str
++    -- fail str = StateT $ \_ -> fail str
+ 
+ instance MonadTrans (StateT s) where
+     lift m = StateT $ \s -> do
