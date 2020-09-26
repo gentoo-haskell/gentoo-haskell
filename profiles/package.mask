@@ -1,4 +1,11 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
+# Needs a port to ghc-8, unmaintained: https://github.com/bmillwood/applicative-quoters/pull/5
+dev-haskell/applicative-quoters
+app-emacs/hindent
+app-emacs/structured-haskell-mode
+dev-haskell/hfmt
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # Needs a port to ghc-8.8: https://github.com/winterland1989/mysql-haskell/pull/37
 dev-haskell/mysql-haskell
 dev-haskell/mysql-haskell-nem
