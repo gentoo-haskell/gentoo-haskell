@@ -1,4 +1,13 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
+# Needs porting to MonadFail, last update in 2014.
+# No revdeps.
+dev-haskell/happstack-hstringtemplate
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
+# dump-core needs a port to ghc-8.8 and above: https://github.com/yav/dump-core/pull/9
+dev-haskell/dump-core
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # beam-core needs a hackage release: https://github.com/haskell-beam/beam/issues/460
 # Mask with revdeps.
 dev-haskell/beam-core
