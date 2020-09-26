@@ -1,4 +1,13 @@
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
+# beam-core needs a hackage release: https://github.com/haskell-beam/beam/issues/460
+# Mask with revdeps.
+dev-haskell/beam-core
+dev-haskell/beam-migrate
+dev-haskell/beam-migrate-cli
+dev-haskell/beam-postgres
+dev-haskell/beam-sqlite
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # pdf-toolbox needs a hackage release: https://github.com/Yuras/pdf-toolbox/issues/63
 # Mask with revdeps.
 dev-haskell/pdf-toolbox-content
