@@ -1,4 +1,11 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
+# Needs a port to ghc-8.8: https://github.com/winterland1989/mysql-haskell/pull/37
+dev-haskell/mysql-haskell
+dev-haskell/mysql-haskell-nem
+dev-haskell/mysql-haskell-openssl
+dev-haskell/users-mysql-haskell
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # Needs a new release: https://github.com/facebook/Haxl/issues/124
 # No revdeps.
 dev-haskell/haxl
