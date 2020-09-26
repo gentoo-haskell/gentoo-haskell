@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="lib-werror">ghc-options: -Werror</flag>
+		<flag name="lib-werror"></flag>
 	</use>
 	<longdescription>
 		Cron data structure and Attoparsec parser. The idea is to embed it in larger

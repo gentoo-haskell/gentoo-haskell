@@ -5,19 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Specify the binding structure of your data type with an
-		expressive set of type combinators, and unbound-generics
-		handles the rest!  Automatically derives
-		alpha-equivalence, free variable calculation,
-		capture-avoiding substitution, and more. See
-		@Unbound.Generics.LocallyNameless@ to get started.
-		
-		This is an independent re-implementation of &lt;http://hackage.haskell.org/package/unbound Unbound&gt;
-		but using &lt;https://hackage.haskell.org/package/base/docs/GHC-Generics.html GHC.Generics&gt;
-		instead of &lt;http://hackage.haskell.org/package/RepLib RepLib&gt;.
-		See the accompanying README for some porting notes.
-	</longdescription>
 </pkgmetadata>
