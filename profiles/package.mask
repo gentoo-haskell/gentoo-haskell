@@ -1,4 +1,18 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
+# pdf-toolbox needs a hackage release: https://github.com/Yuras/pdf-toolbox/issues/63
+# Mask with revdeps.
+dev-haskell/pdf-toolbox-content
+dev-haskell/pdf-toolbox-core
+dev-haskell/pdf-toolbox-document
+dev-haskell/hoodle
+dev-haskell/hoodle-builder
+dev-haskell/hoodle-core
+dev-haskell/hoodle-parser
+dev-haskell/hoodle-publish
+dev-haskell/hoodle-render
+dev-haskell/hoodle-types
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
 # Needs port to ghc-8.8: https://github.com/kazu-yamamoto/io-choice/issues/7
 # Mask with single revdep.
 dev-haskell/io-choice
