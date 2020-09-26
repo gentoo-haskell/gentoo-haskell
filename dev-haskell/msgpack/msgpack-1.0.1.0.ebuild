@@ -37,5 +37,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck         == 2.12.*' 'QuickCheck         >= 2.12'
+		'QuickCheck         == 2.12.*' 'QuickCheck         >= 2.12' \
+		'base                 >= 4.7     && < 4.13' 'base                 >= 4.7'
 }
