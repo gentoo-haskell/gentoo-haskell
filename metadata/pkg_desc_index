@@ -1275,7 +1275,7 @@ dev-haskell/microtimer 0.0.1.2: A tiny library for benchmarking IO actions
 dev-haskell/midi 0.2.2.2: Handling of MIDI messages and files
 dev-haskell/midi-alsa 0.2.1-r1: Convert between datatypes of the midi and the alsa packages
 dev-haskell/mime 0.4.0.2: Working with MIME types
-dev-haskell/mime-mail 0.4.14 0.5.0: Compose MIME email messages
+dev-haskell/mime-mail 0.5.0: Compose MIME email messages
 dev-haskell/mime-string 0.4-r1: MIME implementation for String's
 dev-haskell/mime-types 0.1.0.9: Basic mime-type handling types and functions
 dev-haskell/minisat 0.1.2: A Haskell bundle of the Minisat SAT solver
@@ -1283,7 +1283,7 @@ dev-haskell/mintty 0.1.2: A reliable way to detect the presence of a MinTTY cons
 dev-haskell/misfortune 0.1.1.2: fortune-mod clone
 dev-haskell/miso 1.7.1.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
-dev-haskell/missingh 1.4.2.1 1.4.3.0: Large utility library
+dev-haskell/missingh 1.4.3.0: Large utility library
 dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmorph 1.0.9 1.1.3: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
@@ -1294,7 +1294,7 @@ dev-haskell/monad-control 1.0.2.3: Lift control operations, like exception catch
 dev-haskell/monad-control-aligned 0.0.1.1: monad-control altrnative
 dev-haskell/monad-extras 0.6.0: Extra utility functions for working with monads
 dev-haskell/monad-journal 0.8.1: Pure logger typeclass and monad transformer
-dev-haskell/monad-logger 0.3.31 0.3.32 0.3.35: A class of monads which can log messages
+dev-haskell/monad-logger 0.3.35: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.4.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-memo 0.5.1: Memoization monad transformer
@@ -1315,16 +1315,16 @@ dev-haskell/monadlab 0.0.2: Automatically generate layered monads
 dev-haskell/monadlib 3.10: A collection of monad transformers
 dev-haskell/monadlist 0.0.2-r1: Monadic versions of list functions
 dev-haskell/monadloc 0.7.1: A class for monads which can keep a monadic call trace
-dev-haskell/monadplus 1.4.2 1.4.2-r1: Haskell98 partial maps and filters over MonadPlus
+dev-haskell/monadplus 1.4.2-r1: Haskell98 partial maps and filters over MonadPlus
 dev-haskell/monadprompt 1.0.0.5: MonadPrompt, implementation & examples
 dev-haskell/monadrandom 0.5.1.2: Random-number generation monad
 dev-haskell/monads-tf 0.1.0.3: Monad classes, using type families
-dev-haskell/mongodb 2.6.0.0-r1 2.7.0.0-r1: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
+dev-haskell/mongodb 2.7.0.0-r1: Driver (client) for MongoDB, a free, scalable, fast, document DBMS
 dev-haskell/monky 2.2.1.0: A system state collecting library and application
 dev-haskell/mono-traversable 1.0.15.1: Type classes for mapping, folding, and traversing monomorphic containers
 dev-haskell/mono-traversable-instances 0.1.0.0: Extra typeclass instances for mono-traversable
 dev-haskell/monoid-extras 0.5.1: Various extra monoid-related definitions and utilities
-dev-haskell/monoid-subclasses 0.4.6.1 1.0 1.0.1: Subclasses of Monoid
+dev-haskell/monoid-subclasses 0.4.6.1 1.0.1: Subclasses of Monoid
 dev-haskell/monoid-transformer 0.0.4: Monoid counterparts to some ubiquitous monad transformers
 dev-haskell/monoidal-containers 0.4.0.0 0.6.0.1: Containers with monoidal accumulation
 dev-haskell/morsecode 0.0.5: Morse code
@@ -1344,7 +1344,7 @@ dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
 dev-haskell/mustache 2.3.1: A mustache template parser library
 dev-haskell/mutable-containers 0.3.4: Abstactions and concrete implementations of mutable containers
 dev-haskell/mvc 1.1.7: Model-view-controller
-dev-haskell/mwc-probability 2.1.0 2.2.0: Sampling function-based probability distributions
+dev-haskell/mwc-probability 2.2.0: Sampling function-based probability distributions
 dev-haskell/mwc-random 0.14.0.0: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.1.7: A low-level MySQL client library
 dev-haskell/mysql-haskell 0.8.3.0-r2 0.8.4.2: pure haskell MySQL driver
@@ -1368,8 +1368,8 @@ dev-haskell/netlink 1.1.1.0: Netlink communication for Haskell
 dev-haskell/netpbm 1.0.3-r1: Loading PBM, PGM, PPM image files
 dev-haskell/netwire 5.0.3: Functional reactive programming library
 dev-haskell/network 2.6.3.6 2.8.0.1 3.0.1.1 3.1.1.1: Low-level networking interface
-dev-haskell/network-bsd 2.8.0.0 2.8.1.0: Network.BSD
-dev-haskell/network-byte-order 0.1.2.0 0.1.4.0: Network byte order utilities
+dev-haskell/network-bsd 2.8.1.0: Network.BSD
+dev-haskell/network-byte-order 0.1.4.0: Network byte order utilities
 dev-haskell/network-conduit 1.1.0: Stream socket data using conduits. (deprecated)
 dev-haskell/network-data 0.5.3: Library for network data structures and their serialization
 dev-haskell/network-enumerator 0.1.5-r1: Enumerators for network sockets
@@ -1378,13 +1378,13 @@ dev-haskell/network-house 0.1.0.2: data and parsers for Ethernet, TCP, UDP, IPv4
 dev-haskell/network-info 0.2.0.10: Access the local computer's basic network configuration
 dev-haskell/network-ip 0.3.0.3: Internet Protocol data structures
 dev-haskell/network-msg 0.8: Recvmsg and sendmsg bindings
-dev-haskell/network-multicast 0.1.1 0.3.2: Simple multicast library
-dev-haskell/network-protocol-xmpp 0.4.8 0.4.9: Client library for the XMPP protocol
-dev-haskell/network-simple 0.4.3 0.4.5: Simple network sockets usage patterns
+dev-haskell/network-multicast 0.3.2: Simple multicast library
+dev-haskell/network-protocol-xmpp 0.4.9: Client library for the XMPP protocol
+dev-haskell/network-simple 0.4.5: Simple network sockets usage patterns
 dev-haskell/network-socket-options 0.2.0.1: Type-safe, portable alternative to getSocketOption/setSocketOption
 dev-haskell/network-transport 0.4.4.0 0.5.4: Network abstraction layer
 dev-haskell/network-transport-inmemory 0.5.2: In-memory instantiation of Network.Transport
-dev-haskell/network-transport-tcp 0.5.1 0.6.0: TCP instantiation of Network.Transport
+dev-haskell/network-transport-tcp 0.6.0: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.4.3: Unit tests for Network.Transport implementations
 dev-haskell/network-uri 2.5.0.0 2.6.3.0: URI manipulation
 dev-haskell/newtype 0.2.2.0: A typeclass and set of functions for working with newtypes
@@ -1419,9 +1419,9 @@ dev-haskell/onetuple 0.2.2.1: Singleton Tuple
 dev-haskell/only 0.1: The 1-tuple type or single-value "collection"
 dev-haskell/onrmt 1.0.0.0: Text UI library for performing parallel remote SSH operations
 dev-haskell/oo-prototypes 0.1.0.0: Support for OO-like prototypes
-dev-haskell/opaleye 0.6.7006.1 0.7.0.0: An SQL-generating DSL targeting PostgreSQL
+dev-haskell/opaleye 0.7.0.0: An SQL-generating DSL targeting PostgreSQL
 dev-haskell/open-browser 0.2.1.0-r1: Open a web browser from Haskell
-dev-haskell/openal 1.6.0.1 1.7.0.5: A binding to the OpenAL cross-platform 3D audio API
+dev-haskell/openal 1.7.0.5: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
 dev-haskell/openclwrappers 0.1.0.3: The OpenCL Standard for heterogenous data-parallel computing
 dev-haskell/opencv 0.0.2.1: Haskell binding to OpenCV-3.x
@@ -1436,7 +1436,7 @@ dev-haskell/optics-th 0.2: Optics construction using TemplateHaskell
 dev-haskell/optional-args 1.0.2: Optional function arguments
 dev-haskell/options 1.2.1.1: A powerful and easy-to-use command-line option parser
 dev-haskell/optparse-applicative 0.13.2.0 0.14.3.0 0.15.1.0: Utilities and combinators for parsing command line options
-dev-haskell/optparse-generic 1.4.1 1.4.2: Auto-generate a command-line parser for your datatype
+dev-haskell/optparse-generic 1.4.2: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.1.1.3: Simple interface to optparse-applicative
 dev-haskell/ormolu 0.0.3.1: A formatter for Haskell source code
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
