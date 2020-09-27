@@ -1,9 +1,0 @@
-diff --git a/test/Spec.hs b/test/Spec.hs
-index 24130ac..7957ea8 100644
---- a/test/Spec.hs
-+++ b/test/Spec.hs
-@@ -10,3 +10,3 @@ import Data.List                            (intercalate)
- import Test.QuickCheck                      (Gen, Arbitrary(..), choose, arbitraryBoundedEnum, genericShrink, elements)
--import Test.QuickCheck.Property             (failed,succeeded,Result(..))
-+import Test.QuickCheck.Property             (failed,succeeded,Result(reason, theException))
- import Test.Framework                       (defaultMain, defaultMainWithOpts, testGroup, Test)
