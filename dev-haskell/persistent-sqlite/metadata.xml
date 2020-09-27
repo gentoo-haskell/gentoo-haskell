@@ -6,14 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="system-sqlite">Use the system-wide sqlite library</flag>
 		<flag name="build-sanity-exe">Build a sanity check test executable</flag>
-		<flag name="full-text-search">Enable full-text search in the vendored SQLite library; has no effect if a system SQLite library is used.</flag>
-		<flag name="uri-filenames">Enable URI filenames in the vendored SQLite library; has no effect if a system SQLite library is used.</flag>
-		<flag name="have-usleep">Enable usleep in the vendored SQLite library; has no effect if a system SQLite library is used.</flag>
-		<flag name="json1">Enable json1 in the vendored SQLite library; has no effect if a system SQLite library is used.</flag>
 	</use>
-	<longdescription>
-		This package includes a thin sqlite3 wrapper based on the direct-sqlite package, as well as the entire C library, so there are no system dependencies.
-	</longdescription>
 </pkgmetadata>
