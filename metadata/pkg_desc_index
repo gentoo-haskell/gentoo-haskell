@@ -266,7 +266,7 @@ dev-haskell/casa-client 0.0.1: Client for Casa
 dev-haskell/casa-types 0.0.1: Types for Casa
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.2.0.11 1.2.1.0: Case insensitive string comparison
-dev-haskell/cassava 0.5.1.0 0.5.2.0: A CSV parsing and encoding library
+dev-haskell/cassava 0.5.2.0: A CSV parsing and encoding library
 dev-haskell/cassava-megaparsec 2.0.1: Megaparsec parser of CSV files that plays nicely with Cassava
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
@@ -287,15 +287,15 @@ dev-haskell/chart-gtk 1.9.3: Utility functions for using the chart library with 
 dev-haskell/chart-unit 0.6.2.0: Native haskell charts
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.9: For testing partial and infinite values
-dev-haskell/cheapskate 0.1.1.1 0.1.1.2: Experimental markdown processor
+dev-haskell/cheapskate 0.1.1.2: Experimental markdown processor
 dev-haskell/checkers 0.5.4: Check properties on standard classes and data structures
-dev-haskell/chell 0.4.0.1 0.4.0.2: A simple and intuitive library for automated testing
+dev-haskell/chell 0.4.0.2: A simple and intuitive library for automated testing
 dev-haskell/chimera 0.3.1.0: Lazy infinite streams with O(1) indexing
 dev-haskell/chr-core 0.1.0.4: Constraint Handling Rules
 dev-haskell/chr-data 0.1.0.1: Datatypes required for chr library
 dev-haskell/chr-parse 0.1.0.0: Parsing for chr library
 dev-haskell/chr-pretty 0.1.0.0: Pretty printing for chr library
-dev-haskell/chronos 1.0.4-r1 1.1.1: A performant time library
+dev-haskell/chronos 1.1.1: A performant time library
 dev-haskell/chunked-data 0.3.1: Typeclasses for dealing with various chunked data representations
 dev-haskell/cipher-aes 0.2.11: Fast AES cipher implementation with advanced mode of operations
 dev-haskell/cipher-aes128 0.7.0.5-r1: AES and common modes using AES-NI when available
@@ -310,25 +310,25 @@ dev-haskell/classify 2013.11.6.1: Library for classification of media files
 dev-haskell/classy-prelude 1.5.0: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 1.5.0: conduit instances for classy-prelude
 dev-haskell/classy-prelude-yesod 1.5.0: Provide a classy prelude including common Yesod functionality
-dev-haskell/clay 0.13.1 0.13.3: CSS preprocessor as embedded Haskell
-dev-haskell/clckwrks 0.25.4 0.26.1: A secure, reliable content management system (CMS) and blogging platform
+dev-haskell/clay 0.13.3: CSS preprocessor as embedded Haskell
+dev-haskell/clckwrks 0.26.1: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.3.0.3: a command-line interface for adminstrating some aspects of clckwrks
-dev-haskell/clckwrks-plugin-media 0.6.16.8 0.6.16.9: media plugin for clckwrks
-dev-haskell/clckwrks-plugin-page 0.4.3.19 0.4.3.22: support for CMS/Blogging in clckwrks
+dev-haskell/clckwrks-plugin-media 0.6.16.9: media plugin for clckwrks
+dev-haskell/clckwrks-plugin-page 0.4.3.22: support for CMS/Blogging in clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/cli 0.1.2: Command Line Interface
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.7.2 0.8: High-resolution clock functions: monotonic, realtime, cputime
-dev-haskell/cmark 0.5.6.3 0.6: Fast, accurate CommonMark (Markdown) parser and renderer
-dev-haskell/cmark-gfm 0.1.8 0.2.1: Fast, accurate GitHub Flavored Markdown parser and renderer
+dev-haskell/cmark 0.6: Fast, accurate CommonMark (Markdown) parser and renderer
+dev-haskell/cmark-gfm 0.2.1: Fast, accurate GitHub Flavored Markdown parser and renderer
 dev-haskell/cmdargs 0.10.20: Command line argument processing
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
-dev-haskell/code-page 0.1.3 0.2: Windows code page library for Haskell
+dev-haskell/code-page 0.2: Windows code page library for Haskell
 dev-haskell/codec-compression-lzf 0.2-r1: LZF compression bindings
 dev-haskell/codec-image-devil 0.2.4: An FFI interface to the DevIL library
 dev-haskell/colock 0.2.2-r1: thread-friendly file locks that don't block the entire program
 dev-haskell/colonnade 1.2.0.2-r1: Generic types and functions for columnar encoding and decoding
-dev-haskell/color 0.1.4 0.2.0: Color spaces and conversions between them
+dev-haskell/color 0.2.0: Color spaces and conversions between them
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
@@ -345,7 +345,7 @@ dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/conceit 0.4.0.0: Concurrent actions that may fail with a value
 dev-haskell/concurrent-extra 0.7.0.12: Extra concurrency primitives
-dev-haskell/concurrent-output 1.7.9-r3 1.10.11: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.10.11: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.1.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrent-supply 0.1.8: A fast concurrent unique identifier supply with a pure API
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
@@ -385,7 +385,7 @@ dev-haskell/cordering 2.3-r2: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
 dev-haskell/couchdb 1.2.2: CouchDB interface
 dev-haskell/country-codes 0.1.4: ISO 3166 country codes and i18n names
-dev-haskell/cpphs 1.20.8 1.20.9: A liberalised re-implementation of cpp, the C pre-processor
+dev-haskell/cpphs 1.20.9: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r2: A haskell binding to cracklib
@@ -417,7 +417,7 @@ dev-haskell/cryptonite-conduit 0.2.2: cryptonite conduit
 dev-haskell/css-text 0.1.3.0: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/cubicbezier 0.6.0.6: Efficient manipulating of 2D cubic bezier curves
-dev-haskell/cuda 0.6.5.0 0.7.5.3 0.9.0.3 0.10.1.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
+dev-haskell/cuda 0.10.1.0: FFI binding to the CUDA interface for programming NVIDIA GPUs
 dev-haskell/cufft 0.8.0.0: Haskell bindings for the CUFFT library
 dev-haskell/curl 1.3.8: Haskell binding to libcurl
 dev-haskell/cyclotomic 1.0.1-r1: A subfield of the complex numbers for exact calculation
@@ -743,7 +743,7 @@ dev-haskell/gitrev 1.3.1: Compile git revision info into Haskell projects
 dev-haskell/gl 0.8.0-r3 0.9: Complete OpenGL raw bindings
 dev-haskell/glambda 1.0.2: A simply typed lambda calculus interpreter, written with GADTs
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
-dev-haskell/glfw-b 1.4.8.4 3.2.1.1 3.3.0.0: Bindings to GLFW OpenGL library
+dev-haskell/glfw-b 1.4.8.4 3.3.0.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.8.1: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glirc 2.35: Console IRC client
 dev-haskell/glob 0.9.3: Globbing library
