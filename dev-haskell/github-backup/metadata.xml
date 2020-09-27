@@ -5,14 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
-	</use>
-	<longdescription>
-		github-backup is a simple tool you run in a git repository you cloned from
-		Github. It backs up everything Github knows about the repository, including
-		other forks, issues, comments, milestones, pull requests, and watchers.
-		Also includes gitriddance, which can be used to close all open issues and
-		pull requests.
-	</longdescription>
 </pkgmetadata>
