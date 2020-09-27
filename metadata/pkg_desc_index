@@ -1107,7 +1107,7 @@ dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.1.1.1: Efficient relational queries on Haskell sets
 dev-haskell/ixset-typed 0.5: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
-dev-haskell/jira-wiki-markup 1.0.0 1.1.4 1.3.2: Parse jira wiki text into an abstract syntax tree
+dev-haskell/jira-wiki-markup 1.1.4 1.3.2: Parse jira wiki text into an abstract syntax tree
 dev-haskell/jmacro 0.6.17: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/jose-jwt 0.8.0: JSON Object Signing and Encryption Library
 dev-haskell/js-dgtable 0.5.2: Obtain minified jquery.dgtable code
@@ -1116,17 +1116,17 @@ dev-haskell/js-jquery 3.3.1: Obtain minified jQuery code
 dev-haskell/jsaddle 0.9.7.0-r1: High level interface for webkit-javascriptcore
 dev-haskell/jsaddle-warp 0.9.6.0: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/jsaddle-wkwebview 0.9.6.0: Interface for JavaScript that works with GHCJS and GHC
-dev-haskell/json 0.9.3 0.10: Support for serialising Haskell to and from JSON
+dev-haskell/json 0.10: Support for serialising Haskell to and from JSON
 dev-haskell/json-ast 0.3.1: Universal JSON AST datastructure
 dev-haskell/json-bytes-builder 0.5: Direct-to-bytes JSON Builder
 dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.4.1: Fast, scalable, mutable dynamic arrays, maps and hashes
-dev-haskell/juicypixels 3.2.9.5 3.3.5: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
+dev-haskell/juicypixels 3.3.5: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
 dev-haskell/juicypixels-extra 0.4.1: Efficiently scale, crop, flip images with JuicyPixels
 dev-haskell/juicypixels-scale-dct 0.1.2-r1: Scale JuicyPixels images with DCT
 dev-haskell/jupyter 0.9.0: A library for creating and using Jupyter kernels
-dev-haskell/jwt 0.7.2 0.10.0: JSON Web Token (JWT) decoding and encoding
+dev-haskell/jwt 0.10.0: JSON Web Token (JWT) decoding and encoding
 dev-haskell/kan-extensions 5.2: Kan extensions, lifts, forms of the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r5: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keenser 0.1.0.0: Initial project template from stack
@@ -1135,15 +1135,15 @@ dev-haskell/keys 3.12.3: Keyed functors and containers
 dev-haskell/kibro 0.5.0: None (deprecated)
 dev-haskell/kinds 0.0.1.5: Emulation of subkinds and subkind polymorphism
 dev-haskell/knob 0.1.1: Memory-backed handles
-dev-haskell/lambdabot 5.1.0.4 5.2 5.3: Lambdabot is a development tool and advanced IRC bot
-dev-haskell/lambdabot-core 5.1.0.4-r1 5.1.0.4-r2 5.2-r2 5.2-r3 5.3: Lambdabot core functionality
-dev-haskell/lambdabot-haskell-plugins 5.1.0.4 5.2 5.3: Lambdabot Haskell plugins
-dev-haskell/lambdabot-irc-plugins 5.1.0.4 5.2 5.3: IRC plugins for lambdabot
-dev-haskell/lambdabot-misc-plugins 5.1.0.4 5.2 5.3: Lambdabot miscellaneous plugins
-dev-haskell/lambdabot-novelty-plugins 5.1.0.4 5.2 5.3: Novelty plugins for Lambdabot
-dev-haskell/lambdabot-reference-plugins 5.1.0.4 5.2 5.3: Lambdabot reference plugins
-dev-haskell/lambdabot-social-plugins 5.1.0.4 5.2 5.3: Social plugins for Lambdabot
-dev-haskell/lambdabot-trusted 5.1.0.4 5.2 5.3: Lambdabot trusted code
+dev-haskell/lambdabot 5.3: Lambdabot is a development tool and advanced IRC bot
+dev-haskell/lambdabot-core 5.3: Lambdabot core functionality
+dev-haskell/lambdabot-haskell-plugins 5.3: Lambdabot Haskell plugins
+dev-haskell/lambdabot-irc-plugins 5.3: IRC plugins for lambdabot
+dev-haskell/lambdabot-misc-plugins 5.3: Lambdabot miscellaneous plugins
+dev-haskell/lambdabot-novelty-plugins 5.3: Novelty plugins for Lambdabot
+dev-haskell/lambdabot-reference-plugins 5.3: Lambdabot reference plugins
+dev-haskell/lambdabot-social-plugins 5.3: Social plugins for Lambdabot
+dev-haskell/lambdabot-trusted 5.3: Lambdabot trusted code
 dev-haskell/language-bash 0.9.0: Parsing and pretty-printing Bash shell scripts
 dev-haskell/language-c 0.6.1 0.8.3 0.8.3-r1: Analysis and generation of C code
 dev-haskell/language-c-quote 0.12.2.1: C/CUDA/OpenCL/Objective-C quasiquoting library
@@ -1156,7 +1156,7 @@ dev-haskell/language-haskell-extract 0.2.4 0.2.4-r1: Module to automatically ext
 dev-haskell/language-java 0.2.9: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/language-javascript 0.5.14.5 0.6.0.14 0.7.1.0: Parser for JavaScript
 dev-haskell/language-lua 0.11.0.1: Lua parser and pretty-printer
-dev-haskell/language-python 0.5.4 0.5.8: Parsing and pretty printing of Python code
+dev-haskell/language-python 0.5.8: Parsing and pretty printing of Python code
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/latex 0.1.0.4: Parse, format and process LaTeX files
 dev-haskell/lattices 2.0.2: Fine-grained library for constructing and manipulating lattices
@@ -1171,8 +1171,8 @@ dev-haskell/leancheck 0.9.3: Enumerative property-based testing
 dev-haskell/lens 4.18.1 4.19.1 4.9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.4: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.1: Law-abiding lenses for aeson
-dev-haskell/lens-family 1.2.1 1.2.3: Lens Families
-dev-haskell/lens-family-core 1.2.1 1.2.3: Haskell 98 Lens Families
+dev-haskell/lens-family 1.2.3: Lens Families
+dev-haskell/lens-family-core 1.2.3: Haskell 98 Lens Families
 dev-haskell/lens-family-th 0.5.1.0: Generate lens-family style lenses
 dev-haskell/lens-simple 0.1.0.9: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.8: Simple Functional Lenses
@@ -1194,9 +1194,9 @@ dev-haskell/lifted-base 0.2.3.12: lifted IO operations from the base library
 dev-haskell/linear 1.20.9: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
 dev-haskell/lio 0.11.7.1: Labeled IO Information Flow Control Library
-dev-haskell/liquid-fixpoint 0.6.0.1 0.8.0.2 9999: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
+dev-haskell/liquid-fixpoint 0.8.0.2 9999: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
 dev-haskell/liquiddesugar 9999: Haskell to GHC Core Desugarar for Liquid Haskell
-dev-haskell/liquidhaskell 0.8.0.0 0.8.6.2 9999: Liquid Types for Haskell
+dev-haskell/liquidhaskell 0.8.6.2 9999: Liquid Types for Haskell
 dev-haskell/list 0.6.2: List monad transformer and class
 dev-haskell/list-t 1.0.4: ListT done right
 dev-haskell/listlike 4.6.3: Generic support for list-like structures
@@ -1212,7 +1212,7 @@ dev-haskell/log 0.9.0.1: Structured logging solution with multiple backends
 dev-haskell/log-base 0.8.0.0: Structured logging solution (base package)
 dev-haskell/log-domain 0.13: Log-domain arithmetic
 dev-haskell/log-elasticsearch 0.10.2.0: Structured logging solution (Elasticsearch back end)
-dev-haskell/log-postgres 0.7.0.2 0.7.1.1: Structured logging solution (PostgreSQL back end)
+dev-haskell/log-postgres 0.7.1.1: Structured logging solution (PostgreSQL back end)
 dev-haskell/logfloat 0.13.3.3: Log-domain floating point numbers
 dev-haskell/logging-effect 1.3.9-r1: A mtl-style monad transformer for general purpose & compositional logging
 dev-haskell/logging-facade 0.3.0: Simple logging abstraction that allows multiple back-ends
@@ -1242,7 +1242,7 @@ dev-haskell/markdown 0.1.17.4: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.5.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
 dev-haskell/massiv 0.5.3.2: Massiv is an Array Library
-dev-haskell/massiv-io 0.2.1.0 0.3.0.1: Import/export of Image files into massiv Arrays
+dev-haskell/massiv-io 0.3.0.1: Import/export of Image files into massiv Arrays
 dev-haskell/massiv-test 0.1.3.1: Library that contains generators, properties and tests for Massiv Array Library
 dev-haskell/math-functions 0.3.3.0: Special functions and Chebyshev polynomials
 dev-haskell/matrices 0.5.0: native matrix based on vector
