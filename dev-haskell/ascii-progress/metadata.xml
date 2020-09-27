@@ -12,4 +12,7 @@
 		
 		&lt;https://github.com/yamadapc/haskell-ascii-progress github&gt;
 	</longdescription>
+	<upstream>
+		<remote-id type="github">yamadapc/haskell-ascii-progress</remote-id>
+	</upstream>
 </pkgmetadata>

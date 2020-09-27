@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Extensible Haskell pretty printer
-	</longdescription>
-	<use>
-		<flag name="vim">
-			Install a vim plugin allowing hindent to be used as the formatter by `gq`
-		</flag>
-	</use>
 </pkgmetadata>
