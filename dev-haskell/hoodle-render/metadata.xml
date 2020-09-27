@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="gtk3">Use GTK3 rather than GTK2</flag>
-	</use>
-	<longdescription>
-		Rendering library using cairo for hoodle file format
-	</longdescription>
 </pkgmetadata>
