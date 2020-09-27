@@ -431,7 +431,6 @@ dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
 dev-haskell/store-core:force-alignment - 
-dev-haskell/streamly:benchmark - Benchmark build
 dev-haskell/streamly:debug - Debug build with asserts enabled
 dev-haskell/streamly:dev - Development build
 dev-haskell/streamly:examples - Build including examples
