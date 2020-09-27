@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="dyre">Support dynamic reconfiguration</flag>
-		<flag name="gtk3">Use GTK3 rather than GTK2</flag>
 		<flag name="hub">Support communication with hub</flag>
 	</use>
 	<longdescription>
