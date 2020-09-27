@@ -656,7 +656,7 @@ dev-haskell/funcmp 1.9: Functional MetaPost
 dev-haskell/functor-classes-compat 1-r1: Data.Functor.Classes instances for core packages
 dev-haskell/functor-monadic 0.1.0.3: Monad-style combinators for functors
 dev-haskell/fusion-plugin-types 0.1.0: Types for the fusion-plugin package
-dev-haskell/gamma 0.9.0.2 0.10.0.0: Gamma function and related functions
+dev-haskell/gamma 0.10.0.0: Gamma function and related functions
 dev-haskell/gasp 1.2.0.0: A framework of algebraic classes
 dev-haskell/gauge 0.2.5: small framework for performance measurement and analysis
 dev-haskell/gconf 0.13.1.0: Binding to the GNOME configuration database system
@@ -664,8 +664,8 @@ dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics librar
 dev-haskell/gdiff 1.1: Generic diff and patch
 dev-haskell/generic-arbitrary 0.1.0: Generic implementation for QuickCheck's Arbitrary
 dev-haskell/generic-data 0.8.1.0: Deriving instances with GHC.Generics and related utilities
-dev-haskell/generic-deriving 1.11.2 1.12.4 1.13.1: Generic programming library for generalised deriving
-dev-haskell/generic-lens 1.2.0.1 2.0.0.0: Generically derive traversals, lenses and prisms
+dev-haskell/generic-deriving 1.13.1: Generic programming library for generalised deriving
+dev-haskell/generic-lens 2.0.0.0: Generically derive traversals, lenses and prisms
 dev-haskell/generic-lens-core 2.0.0.0: Generically derive traversals, lenses and prisms
 dev-haskell/generic-lens-labels 0.1.0.2: GHC.OverloadedLabels.IsLabel instance for lenses from ghc-generics
 dev-haskell/generic-random 1.3.0.1: Generic random generators
@@ -681,7 +681,7 @@ dev-haskell/genvalidity-hspec-aeson 0.3.1.1: Standard spec's for aeson-related i
 dev-haskell/genvalidity-path 0.3.0.4: GenValidity support for Path
 dev-haskell/genvalidity-property 0.5.0.1: Standard properties for functions on 'Validity' types
 dev-haskell/genvalidity-scientific 0.2.1.1: GenValidity support for Scientific
-dev-haskell/genvalidity-text 0.6.0.0 0.7.0.2: GenValidity support for Text
+dev-haskell/genvalidity-text 0.7.0.2: GenValidity support for Text
 dev-haskell/genvalidity-unordered-containers 0.3.0.1: GenValidity support for unordered-containers
 dev-haskell/genvalidity-vector 0.3.0.1: GenValidity support for aeson
 dev-haskell/getopt-generics 0.13.0.4: Create command line interfaces with ease
@@ -689,17 +689,17 @@ dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.2 8.4.4 8.6.1 8.8.3: The Glasgow H
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.12.0 0.13.0: Library and tool for parsing .eventlog files from GHC
-dev-haskell/ghc-exactprint 0.6.2 0.6.3.1 0.6.3.2: ExactPrint for GHC
+dev-haskell/ghc-exactprint 0.6.3.2: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
-dev-haskell/ghc-heap-view 0.5.7 0.6.1: Extract the heap representation of Haskell values and thunks
-dev-haskell/ghc-lib 8.8.1 8.8.2 8.8.4.20200716: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser 8.8.1 8.8.2 8.8.3.20200412.1 8.8.4.20200716: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-heap-view 0.6.1: Extract the heap representation of Haskell values and thunks
+dev-haskell/ghc-lib 8.8.4.20200716: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-lib-parser 8.8.1 8.8.4.20200716: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser-ex 8.8.5.3 8.8.6.0: Algorithms on GHC parse trees
 dev-haskell/ghc-mtl 1.2.1.0: An mtl compatible version of the Ghc-Api monads and monad-transformers
 dev-haskell/ghc-parser 0.2.1.0: Haskell source parser from GHC
-dev-haskell/ghc-paths 0.1.0.9 0.1.0.12-r1: Knowledge of GHC's installation directories
+dev-haskell/ghc-paths 0.1.0.12-r1: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.7: Library for parsing GHC time and allocation profiling reports
-dev-haskell/ghc-simple 0.3 0.4: Simplified interface to the GHC API
+dev-haskell/ghc-simple 0.4: Simplified interface to the GHC API
 dev-haskell/ghc-syb-utils 0.3.0.0: Scrap Your Boilerplate utilities for the GHC API
 dev-haskell/ghc-tcplugins-extra 0.3 0.4: Utilities for writing GHC type-checker plugins
 dev-haskell/ghc-typelits-extra 0.3.3: Additional type-level operations on GHC.TypeLits.Nat
@@ -711,34 +711,34 @@ dev-haskell/ghci-ng 10.0.0: Next generation GHCi
 dev-haskell/ghci-pretty 0.0.2: colored pretty-printing within ghci
 dev-haskell/ghcid 0.6.6: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.2: Installs CodeMirror JavaScript files
-dev-haskell/gi-atk 2.0.15 2.0.21: Atk bindings
-dev-haskell/gi-cairo 1.0.17 1.0.23: Cairo bindings
+dev-haskell/gi-atk 2.0.21: Atk bindings
+dev-haskell/gi-cairo 1.0.23: Cairo bindings
 dev-haskell/gi-cairo-connector 0.0.1: GI friendly Binding to the Cairo library
 dev-haskell/gi-cairo-render 0.0.1-r1: GI friendly Binding to the Cairo library
-dev-haskell/gi-dbusmenu 0.4.1 0.4.7: Dbusmenu bindings
-dev-haskell/gi-dbusmenugtk3 0.4.2 0.4.8: DbusmenuGtk bindings
-dev-haskell/gi-gdk 3.0.16 3.0.22: Gdk bindings
-dev-haskell/gi-gdkpixbuf 2.0.16 2.0.23: GdkPixbuf bindings
-dev-haskell/gi-gdkx11 3.0.4 3.0.9: GdkX11 bindings
-dev-haskell/gi-gio 2.0.18 2.0.26: Gio bindings
-dev-haskell/gi-glib 2.0.17 2.0.23: GLib bindings
-dev-haskell/gi-gobject 2.0.16 2.0.22: GObject bindings
-dev-haskell/gi-gtk 3.0.27 3.0.32: Gtk bindings
-dev-haskell/gi-gtk-hs 0.3.6.3 0.3.8.1: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
-dev-haskell/gi-gtksource 3.0.16 3.0.22: GtkSource bindings
-dev-haskell/gi-javascriptcore 4.0.15 4.0.21: JavaScriptCore bindings
-dev-haskell/gi-pango 1.0.16 1.0.22: Pango bindings
-dev-haskell/gi-soup 2.4.16 2.4.22: Libsoup bindings
-dev-haskell/gi-webkit2 4.0.19 4.0.25: WebKit2 bindings
-dev-haskell/gi-xlib 2.0.2 2.0.8: xlib bindings
+dev-haskell/gi-dbusmenu 0.4.7: Dbusmenu bindings
+dev-haskell/gi-dbusmenugtk3 0.4.8: DbusmenuGtk bindings
+dev-haskell/gi-gdk 3.0.22: Gdk bindings
+dev-haskell/gi-gdkpixbuf 2.0.23: GdkPixbuf bindings
+dev-haskell/gi-gdkx11 3.0.9: GdkX11 bindings
+dev-haskell/gi-gio 2.0.26: Gio bindings
+dev-haskell/gi-glib 2.0.23: GLib bindings
+dev-haskell/gi-gobject 2.0.22: GObject bindings
+dev-haskell/gi-gtk 3.0.32: Gtk bindings
+dev-haskell/gi-gtk-hs 0.3.8.1: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
+dev-haskell/gi-gtksource 3.0.22: GtkSource bindings
+dev-haskell/gi-javascriptcore 4.0.21: JavaScriptCore bindings
+dev-haskell/gi-pango 1.0.22: Pango bindings
+dev-haskell/gi-soup 2.4.22: Libsoup bindings
+dev-haskell/gi-webkit2 4.0.25: WebKit2 bindings
+dev-haskell/gi-xlib 2.0.8: xlib bindings
 dev-haskell/gifcurry 2.1.0.0-r1: Create animated GIFs, overlaid with optional text, from video files
-dev-haskell/ginger 0.9.1.0 0.10.0.5: An implementation of the Jinja2 template language in Haskell
+dev-haskell/ginger 0.10.0.5: An implementation of the Jinja2 template language in Haskell
 dev-haskell/gio 0.13.8.1: Binding to GIO
 dev-haskell/git 0.3.0: Git operations in haskell
 dev-haskell/git-lfs 1.1.0: git-lfs protocol
 dev-haskell/githash 0.1.3.3: Compile git revision info into Haskell projects
-dev-haskell/github 0.18-r2 0.23: Access to the Github API, v3
-dev-haskell/github-backup 1.20171126 1.20191219: backs up everything github knows about a repository, to the repository
+dev-haskell/github 0.23: Access to the Github API, v3
+dev-haskell/github-backup 1.20191219: backs up everything github knows about a repository, to the repository
 dev-haskell/gitrev 1.3.1: Compile git revision info into Haskell projects
 dev-haskell/gl 0.8.0-r3 0.9: Complete OpenGL raw bindings
 dev-haskell/glambda 1.0.2: A simply typed lambda calculus interpreter, written with GADTs
@@ -753,7 +753,7 @@ dev-haskell/gloss-examples 1.13.0.2: Examples using the gloss library
 dev-haskell/gloss-juicy 0.2.3: Load any image supported by Juicy.Pixels in your gloss application
 dev-haskell/gloss-raster 1.13.1.1: Parallel rendering of raster images
 dev-haskell/gloss-rendering 1.13.1.1: Gloss picture data types and rendering functions
-dev-haskell/glpk-hs 0.5 0.7: Comprehensive GLPK linear programming bindings
+dev-haskell/glpk-hs 0.7: Comprehensive GLPK linear programming bindings
 dev-haskell/gluraw 2.0.0.4: A raw binding for the OpenGL graphics system
 dev-haskell/glut 2.7.0.15: A binding for the OpenGL Utility Toolkit
 dev-haskell/glutil 0.10.3: Miscellaneous OpenGL utilities
@@ -771,10 +771,10 @@ dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connec
 dev-haskell/graphviz 2999.18.1.2 2999.20.0.4: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2.1: Pretty printing for well-behaved Show instances
-dev-haskell/groundhog 0.7.0.3-r1 0.10.0 0.11.0: Type-safe datatype-database mapping library
-dev-haskell/groundhog-postgresql 0.7.0.2-r2 0.10 0.11: PostgreSQL backend for the groundhog library
-dev-haskell/groundhog-sqlite 0.7.0.1 0.10.0 0.11.0: Sqlite3 backend for the groundhog library
-dev-haskell/groundhog-th 0.7.0.1 0.10.2 0.11: Type-safe datatype-database mapping library
+dev-haskell/groundhog 0.11.0: Type-safe datatype-database mapping library
+dev-haskell/groundhog-postgresql 0.11: PostgreSQL backend for the groundhog library
+dev-haskell/groundhog-sqlite 0.11.0: Sqlite3 backend for the groundhog library
+dev-haskell/groundhog-th 0.11: Type-safe datatype-database mapping library
 dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
 dev-haskell/groups 0.4.1.0: Haskell 98 groups
 dev-haskell/gsasl 0.3.7: Bindings for GNU libgsasl
@@ -782,9 +782,9 @@ dev-haskell/gtk 0.13.9 0.14.10-r3 0.15.5-r1: Binding to the Gtk+ graphical user 
 dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-sni-tray 0.1.6.0: A standalone StatusNotifierItem/AppIndicator tray
 dev-haskell/gtk-strut 0.1.3.0: Libary for creating strut windows with gi-gtk
-dev-haskell/gtk-traymanager 0.1.6 1.0.1: A wrapper around the eggtraymanager library for Linux system trays
-dev-haskell/gtk2hs-buildtools 0.13.5.1 0.13.8.0 0.13.8.0-r1: Tools to build the Gtk2Hs suite of User Interface libraries
-dev-haskell/gtk3 0.13.9 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
+dev-haskell/gtk-traymanager 1.0.1: A wrapper around the eggtraymanager library for Linux system trays
+dev-haskell/gtk2hs-buildtools 0.13.8.0-r1: Tools to build the Gtk2Hs suite of User Interface libraries
+dev-haskell/gtk3 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/hackage-db 1.22 2.0.1: access Hackage's package database via Data.Map
 dev-haskell/hackage-security 0.5.3.0-r3 0.6.0.1: Hackage security library
