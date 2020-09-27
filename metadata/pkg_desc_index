@@ -438,7 +438,7 @@ dev-haskell/data-default-instances-dlist 0.0.1: Default instances for types in d
 dev-haskell/data-default-instances-old-locale 0.0.1: Default instances for types in old-locale
 dev-haskell/data-dword 0.3.2: Stick two binary words together to get a bigger one
 dev-haskell/data-endian 0.1.1: Endian-sensitive data
-dev-haskell/data-fix 0.0.4 0.2.0: Fixpoint data types
+dev-haskell/data-fix 0.2.0: Fixpoint data types
 dev-haskell/data-flags 0.0.3.4: A package for working with bit masks and flags in general
 dev-haskell/data-hash 0.2.0.1: Combinators for building fast hashing functions
 dev-haskell/data-inttrie 0.1.4: A lazy, infinite trie of integers
@@ -466,17 +466,17 @@ dev-haskell/decimal-arithmetic 0.5.1.0: An implementation of the General Decimal
 dev-haskell/deepseq-generics 0.2.0.0: GHC.Generics-based Control.DeepSeq.rnf implementation
 dev-haskell/deferred-folds 0.9.10.1: Abstractions over deferred folds
 dev-haskell/dense-linear-algebra 0.1.0.0: Simple and incomplete pure haskell implementation of linear algebra
-dev-haskell/dependent-map 0.2.4.0 0.3 0.3.1.0: Dependent finite maps (partial dependent products)
+dev-haskell/dependent-map 0.3.1.0: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.4 0.6.2.0 0.7.1.0: Dependent sum type
-dev-haskell/dependent-sum-template 0.1.0.0 0.1.0.3: Template Haskell code to generate instances of classes in dependent-sum package
+dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/derive 2.6.5: A program and library to derive instances for data types
-dev-haskell/deriving-compat 0.3.6 0.5.8: Backports of GHC deriving extensions
+dev-haskell/deriving-compat 0.5.8: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/dhall 1.33.0: A configuration language guaranteed to terminate
 dev-haskell/dhall-json 1.7.0: Convert between Dhall and JSON or YAML
 dev-haskell/dhall-nix 1.1.15: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.8.0.4-r1 0.8.0.5: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams-builder 0.8.0.5: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.4.1: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.4.4: Collection of user contributions to diagrams EDSL
@@ -499,7 +499,7 @@ dev-haskell/digestive-functors-happstack 0.6.1.2-r1: Happstack backend for the d
 dev-haskell/digestive-functors-snap 0.7.0.1: Snap backend for the digestive-functors library
 dev-haskell/digits 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.3: Statically checked physical dimensions, using Type Families and Data Kinds
-dev-haskell/dimensions 0.3.2.0 2.1.0.0: Safe type-level dimensionality for multidimensional data
+dev-haskell/dimensions 2.1.0.0: Safe type-level dimensionality for multidimensional data
 dev-haskell/direct-sqlite 2.3.26: Low-level binding to SQLite3. Includes UTF8 and BLOB support
 dev-haskell/directory-layout 0.7.4.1: Directory layout DSL
 dev-haskell/directory-listing-webpage-parser 0.1.1.0: directory listing webpage parser
@@ -514,7 +514,7 @@ dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Dj
 dev-haskell/djinn-lib 0.0.1.3: Generate Haskell code from a type. Library extracted from djinn package
 dev-haskell/dlist 0.8.0.7: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
-dev-haskell/dns 3.0.2 4.0.1: DNS library in Haskell
+dev-haskell/dns 4.0.1: DNS library in Haskell
 dev-haskell/doclayout 0.2.0.1 0.3: A prettyprinting library for laying out text documents
 dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8-r1 0.8.2: Pandoc-style document templates
 dev-haskell/doctest 0.11.2 0.13.0 0.15.0 0.16.0.1 0.16.3: Test interactive Haskell examples
@@ -533,7 +533,7 @@ dev-haskell/dynamic-state 0.3.1: Optionally serializable dynamic state keyed by 
 dev-haskell/dyre 0.8.12: Dynamic reconfiguration in Haskell
 dev-haskell/easy-file 0.2.2: Cross-platform File handling
 dev-haskell/easyrender 0.1.1.4: User-friendly creation of EPS, PostScript, and PDF files
-dev-haskell/easytest 0.2.1 0.3-r2: Simple, expressive testing library
+dev-haskell/easytest 0.3-r2: Simple, expressive testing library
 dev-haskell/echo 0.1.3: A cross-platform, cross-console way to handle echoing terminal input
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
 dev-haskell/ede 0.2.9: Templating language with similar syntax and features to Liquid or Jinja2
@@ -543,7 +543,7 @@ dev-haskell/edit-distance 0.2.2.1-r1: Levenshtein and restricted Damerau-Levensh
 dev-haskell/edit-distance-vector 1.0.0.4: Calculate edit distances and edit scripts between vectors
 dev-haskell/editline 0.2.1.1-r1: Bindings to the editline library (libedit)
 dev-haskell/editor-open 0.6.0.0: Open the user's $VISUAL or $EDITOR for text input
-dev-haskell/egison 3.9.1 3.10.3: Programming language with non-linear pattern-matching against non-free data
+dev-haskell/egison 3.10.3: Programming language with non-linear pattern-matching against non-free data
 dev-haskell/either-unwrap 1.1-r1: Functions for probing and unwrapping values inside of Either
 dev-haskell/eithert 0.2.0-r1: EitherT monad transformer
 dev-haskell/ekg 0.4.0.15-r7: Remote monitoring of processes
@@ -554,18 +554,18 @@ dev-haskell/emailaddress 0.2.0.0: Wrapper around email-validate library adding i
 dev-haskell/emoji 0.1.0.2: emoji utility
 dev-haskell/emojis 0.1: Conversion between emoji characters and their names.
 dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an enclosed computation
-dev-haskell/encoding 0.8.2 0.8.5: A library for various character encodings
+dev-haskell/encoding 0.8.5: A library for various character encodings
 dev-haskell/engine-io 1.2.22: A Haskell implementation of Engine.IO
-dev-haskell/entropy 0.3.8 0.4.1.6: A platform independent entropy source
+dev-haskell/entropy 0.4.1.6: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
 dev-haskell/enumset 0.0.5: Sets of enumeration values represented by machine words
 dev-haskell/env-locale 1.0.0.1: A (non-forking) interface to the current locale
 dev-haskell/equivalence 0.3.5: Maintaining an equivalence relation implemented as union-find using STT
-dev-haskell/erd 0.2.0.0 0.2.1.0: An entity-relationship diagram generator from a plain text description
+dev-haskell/erd 0.2.1.0: An entity-relationship diagram generator from a plain text description
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
-dev-haskell/errors 2.2.5 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 2.7.0 3.3.3.2 3.3.4.0: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/errors 2.3.0: Simplified error-handling
+dev-haskell/esqueleto 3.3.4.0: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7-r1: Library for computer music research and education
@@ -573,7 +573,7 @@ dev-haskell/event-list 0.1.2: Event lists with relative or absolute time stamps
 dev-haskell/exact-pi 0.5.0.1: Exact rational multiples of pi (and integer powers of pi)
 dev-haskell/exception-mtl 0.4.0.1: Exception monad transformer instances for mtl classes
 dev-haskell/exception-transformers 0.4.0.8: Type classes and monads for unchecked extensible exceptions
-dev-haskell/exceptions 0.9.0 0.10.4: Extensible optionally-pure exceptions
+dev-haskell/exceptions 0.10.4: Extensible optionally-pure exceptions
 dev-haskell/executable-path 0.0.3.1: Finding out the full path of the executable
 dev-haskell/exif 3000.0.0-r1: A Haskell binding to a subset of libexif
 dev-haskell/explicit-exception 0.1.10: Exceptions which are explicit in the type signature
@@ -584,7 +584,7 @@ dev-haskell/extra 1.7.8: Extra functions I use
 dev-haskell/fail 4.9.0.0: Forward-compatible MonadFail class
 dev-haskell/failure 0.2.0.3: A simple type class for success/failure computations. (deprecated)
 dev-haskell/fast-builder 0.1.2.0: Fast ByteString Builder
-dev-haskell/fast-logger 2.4.13 3.0.1: A fast logging system
+dev-haskell/fast-logger 3.0.1: A fast logging system
 dev-haskell/fast-math 1.0.2: Non IEEE-754 compliant compile-time floating-point optimisations
 dev-haskell/fastcgi 3001.0.2.5: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
@@ -599,7 +599,7 @@ dev-haskell/fclabels 2.0.4: First class accessor labels implemented as lenses
 dev-haskell/fdo-notify 0.3.1: Desktop Notifications client
 dev-haskell/fdo-trash 0.0.0.2: Utilities related to freedesktop Trash standard
 dev-haskell/fec 0.1.1-r1: Forward error correction of ByteStrings
-dev-haskell/feed 0.3.12.0 1.0.0.0 1.3.0.1: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
+dev-haskell/feed 1.3.0.1: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fficxx 0.3.1: automatic C++ binding generation
 dev-haskell/ffmpeg-light 0.12.2.2: Minimal bindings to the FFmpeg library
 dev-haskell/fft 0.1.8.6: Bindings to the FFTW library
@@ -621,7 +621,7 @@ dev-haskell/finite-typelits 0.1.4.2: A type inhabited by finitely many values, i
 dev-haskell/first-class-families 0.8.0.0: First class type families
 dev-haskell/fix-agda-whitespace 0.0.4: Fixes whitespace issues for Agda sources
 dev-haskell/fixed 0.3: Signed 15.16 precision fixed point arithmetic
-dev-haskell/fixed-vector 0.8.1.0 1.2.0.0: Generic vectors with statically known size
+dev-haskell/fixed-vector 1.2.0.0: Generic vectors with statically known size
 dev-haskell/fixed-vector-hetero 0.5.0.0: Generic heterogeneous vectors
 dev-haskell/fixplate 0.1.8: Uniplate-style generic traversals for optionally annotated fixed-point types
 dev-haskell/flac 0.2.0: Complete high-level binding to libFLAC
@@ -638,7 +638,7 @@ dev-haskell/fontyfruity 0.5.3.5: A true type file format loader
 dev-haskell/force-layout 0.4.0.6-r1: Simple force-directed layout
 dev-haskell/foreign-store 0.2: Store a stable pointer in a foreign context to be retrieved later
 dev-haskell/formatting 6.3.7: Combinator-based type-safe formatting (like printf() or FORMAT)
-dev-haskell/foundation 0.0.20 0.0.25: Alternative prelude with batteries and no dependencies
+dev-haskell/foundation 0.0.25: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 5.1.3: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
@@ -1632,7 +1632,7 @@ dev-haskell/reducers 3.12.3: Semigroups, specialized containers and a general ma
 dev-haskell/ref-tf 0.4.0.2: A type class for monads with references using type families
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 2.1.5: Reifies arbitrary terms into types that can be reflected back into terms
-dev-haskell/reflex 0.6.1 0.6.3-r1: Higher-order Functional Reactive Programming
+dev-haskell/reflex 0.6.3-r1: Higher-order Functional Reactive Programming
 dev-haskell/reflex-backend-socket 0.2.0.0: Reflex bindings for TCP sockets
 dev-haskell/reflex-backend-wai 0.1.0.0: Reflex interface to 'wai'
 dev-haskell/reflex-basic-host 0.2.0.1-r1: A basic Reflex host for backend work
