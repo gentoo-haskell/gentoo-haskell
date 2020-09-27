@@ -1,12 +1,12 @@
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.2.12 1.3.1 1.3.2 9999: Rebuild Haskell dependencies in Gentoo
 app-admin/propellor 5.12: property-based host configuration management in haskell
-app-admin/super-user-spark 0.4.0.3 0.4.0.4: Configure your dotfile deployment with a DSL
+app-admin/super-user-spark 0.4.0.4: Configure your dotfile deployment with a DSL
 app-editors/leksah 0.16.9999: Haskell IDE written in Haskell
 app-editors/leksah-server 0.16.9999: Metadata collection for leksah
-app-editors/yi 0.11.1-r1 0.12.5 0.12.6-r2 0.18.0: The Haskell-Scriptable Editor
+app-editors/yi 0.12.6-r2 0.18.0: The Haskell-Scriptable Editor
 app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell programs in Emacs
-app-emacs/hindent 4.5.7 4.6.1 4.6.3 4.6.4 5.2.3 5.2.5 5.2.7 5.3.1: Extensible Haskell pretty printer
+app-emacs/hindent 5.3.1: Extensible Haskell pretty printer
 app-emacs/idris-mode 0.9.18 9999: Idris syntax highlighting and (eventually) other things for emacs
 app-emacs/structured-haskell-mode 1.0.20-r2 1.1.0: Structured editing Emacs mode for Haskell
 app-forensics/quickfuzz 0.1_p20160920 9999: An experimental grammar fuzzer in Haskell using QuickCheck

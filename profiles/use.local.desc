@@ -19,7 +19,6 @@ app-editors/yi:profiling - Runtime binary will be compiled with profiling and RT
 app-editors/yi:testing - bake-in the self-checks
 app-editors/yi:vim - Include the vim keymap
 app-editors/yi:vty - Include the vty (CLI) frontend
-app-emacs/hindent:vim - Install a vim plugin allowing hindent to be used as the formatter by `gq`
 app-forensics/quickfuzz:archs - support archive formats
 app-forensics/quickfuzz:codes - support cource code formats
 app-forensics/quickfuzz:docs - support document formats
