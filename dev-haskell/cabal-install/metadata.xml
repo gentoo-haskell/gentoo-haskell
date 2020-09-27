@@ -14,7 +14,5 @@
                 <flag name="debug-conflict-sets">Add additional information to ConflictSets</flag>
 		<flag name="native-dns">Enable use of the resolv and windns
 		packages for performing DNS lookups</flag>
-		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
-		<flag name="noprefs">Ignore 'preferred-versions' file from hackage's tarball</flag>
 	</use>
 </pkgmetadata>
