@@ -221,24 +221,14 @@ dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
 dev-haskell/hoodle:dyre - Support dynamic reconfiguration
 dev-haskell/hoodle-core:dyre - Support dynamic reconfiguration
-dev-haskell/hoodle-core:gtk3 - Use GTK3 rather than GTK2
 dev-haskell/hoodle-core:hub - Support communication with hub
-dev-haskell/hoodle-render:gtk3 - Use GTK3 rather than GTK2
-dev-haskell/hoogle:fetchdb - fetch hoogle db by running: hoogle data
-dev-haskell/hoogle:fetchdb-ghc - fetch hoogle db by running: hoogle data ghc (implies fetchdb)
-dev-haskell/hoogle:localdb - install hoogle-build-localdb script for building hoogle dbs for installed pkgs
-dev-haskell/hoogle:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.
 dev-haskell/hslogger:network-3 - Use network-3
-dev-haskell/hslua:apicheck - Compile Lua with -DLUA_USE_APICHECK..
 dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but Use hard coded values for instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those do not expose the necessary information in the @lauxlib.h@ header file.
-dev-haskell/hslua:luajit - Use luajit instead of lua.
-dev-haskell/hslua:system-lua - Use the system-wide lua instead of the bundled copy.
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP
 dev-haskell/hsp:base4 - Use base-4.0.
-dev-haskell/hspec-megaparsec:dev - Turn on development settings.
 dev-haskell/hsqml:enableqmldebugging - Allow the QML debug server to be enabled via Qt arguments.
 dev-haskell/hsqml:forceghcilib - Force enable GHCi workaround library if not using shared libraries.
 dev-haskell/hsqml:threadedtestsuite - Build test executable with the threaded RTS.
