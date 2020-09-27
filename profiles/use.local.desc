@@ -332,11 +332,6 @@ dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Onl
 dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nano second precision.
 dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable
-dev-haskell/persistent-sqlite:full-text-search - Enable full-text search in the vendored SQLite library; has no effect if a system SQLite library is used.
-dev-haskell/persistent-sqlite:have-usleep - Enable usleep in the vendored SQLite library; has no effect if a system SQLite library is used.
-dev-haskell/persistent-sqlite:json1 - Enable json1 in the vendored SQLite library; has no effect if a system SQLite library is used.
-dev-haskell/persistent-sqlite:system-sqlite - Use the system-wide sqlite library
-dev-haskell/persistent-sqlite:uri-filenames - Enable URI filenames in the vendored SQLite library; has no effect if a system SQLite library is used.
 dev-haskell/pipes-key-value-csv:devel - Development mode (-Werror)
 dev-haskell/pointed:comonad - optional instances
 dev-haskell/pointed:containers - optional instances
@@ -381,7 +376,6 @@ dev-haskell/reflex:fast-weak - Use the primitive implementation of FastWeak in G
 dev-haskell/reflex:reflex-optimizer - Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.
 dev-haskell/reflex:split-these - Use split these/semialign packages
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
-dev-haskell/rfc5051:mkunicodedata - build codes generator itself
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking executable.
 dev-haskell/sandi:conduit - Build with conduit

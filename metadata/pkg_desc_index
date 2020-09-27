@@ -1442,12 +1442,12 @@ dev-haskell/ormolu 0.0.3.1: A formatter for Haskell source code
 dev-haskell/package-description-remote 0.2.0.0: Fetches a 'GenericPackageDescription' from Hackage
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.17.0.2: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.3.1.0-r1 0.3.4.2 0.3.6.2 0.3.7.0: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.3.6.2 0.3.7.0: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.17.6 1.20 1.21: Types for representing a structured document
 dev-haskell/pango 0.13.8.1: Binding to the Pango text rendering engine
 dev-haskell/panic 0.4.0.1: A convenient way to panic
-dev-haskell/pantry 0.2.0.0 0.4.0.2 0.5.1.1: Content addressable Haskell package management
+dev-haskell/pantry 0.4.0.2 0.5.1.1: Content addressable Haskell package management
 dev-haskell/parallel 3.2.2.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r3: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.2.0.9: Full-featured command-line argument parsing library
@@ -1455,15 +1455,15 @@ dev-haskell/parsec 3.1.13.0-r1 3.1.14.0: Monadic parser combinators
 dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsec-numbers 0.1.0: Utilities for parsing numbers from strings
 dev-haskell/parsec-permutation 0.1.2.0: Applicative permutation parser for Parsec (replacement for Text.Parsec.Perm)
-dev-haskell/parsec1 1.0.0.6 1.0.0.7: Portable monadic parser combinators
+dev-haskell/parsec1 1.0.0.7: Portable monadic parser combinators
 dev-haskell/parsedate 3000.0.0-r1: Data and time parsing for CalendarTime
-dev-haskell/parser-combinators 1.0.2 1.2.1: Lightweight package providing commonly useful parser combinators
+dev-haskell/parser-combinators 1.2.1: Lightweight package providing commonly useful parser combinators
 dev-haskell/parser-combinators-tests 1.2.1: Test suite of parser-combinators
 dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
-dev-haskell/path 0.6.1 0.7.0: Support for well-typed paths
+dev-haskell/path 0.7.0: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
-dev-haskell/path-io 1.4.2 1.6.0-r1: Interface to 'directory' package for users of 'path'
+dev-haskell/path-io 1.6.0-r1: Interface to 'directory' package for users of 'path'
 dev-haskell/path-pieces 0.2.1: Components of paths
 dev-haskell/pathtype 0.8.1: Type-safe replacement for System.FilePath etc
 dev-haskell/patience 0.1.1-r1: Patience diff and longest increasing subsequence
@@ -1471,7 +1471,7 @@ dev-haskell/pattern-arrows 0.0.2: Arrows for Pretty Printing
 dev-haskell/pcap 0.4.5.2-r1: A system-independent interface for user-level packet capture
 dev-haskell/pcg-random 0.1.3.6: Haskell bindings to the PCG random number generator
 dev-haskell/pcre-heavy 1.0.0.2: A regexp library on top of pcre-light you can actually use
-dev-haskell/pcre-light 0.4.0.4 0.4.1.0: Portable regex library for Perl 5 compatible regular expressions
+dev-haskell/pcre-light 0.4.1.0: Portable regex library for Perl 5 compatible regular expressions
 dev-haskell/pdf-toolbox-content 0.0.5.1: A collection of tools for processing PDF files
 dev-haskell/pdf-toolbox-core 0.0.4.1: A collection of tools for processing PDF files
 dev-haskell/pdf-toolbox-document 0.0.7.1: A collection of tools for processing PDF files
@@ -1480,17 +1480,17 @@ dev-haskell/peggy 0.3.2-r2: The Parser Generator for Haskell
 dev-haskell/pem 0.2.4: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/permutation 0.5.0.5-r1: A library for permutations and combinations
 dev-haskell/persistable-record 0.6.0.4: Binding between SQL database values and haskell records
-dev-haskell/persistable-types-hdbc-pg 0.0.1.4 0.0.3.5: HDBC and Relational-Record instances of PostgreSQL extended types
-dev-haskell/persistent 2.7.3.1 2.9.2 2.10.5.2: Type-safe, multi-backend data serialization
+dev-haskell/persistable-types-hdbc-pg 0.0.3.5: HDBC and Relational-Record instances of PostgreSQL extended types
+dev-haskell/persistent 2.10.5.2: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
-dev-haskell/persistent-mongodb 2.9.0.2-r1 2.10.0.0: Backend for the persistent library using mongoDB
-dev-haskell/persistent-mysql 2.9.0 2.10.2.3: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.9.0-r1 2.10.1 2.10.1.2: Backend for the persistent library using postgresql
+dev-haskell/persistent-mongodb 2.10.0.0: Backend for the persistent library using mongoDB
+dev-haskell/persistent-mysql 2.10.2.3: Backend for the persistent library using MySQL database server
+dev-haskell/persistent-postgresql 2.10.1.2: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.2: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
-dev-haskell/persistent-relational-record 0.1.1.0 0.3.0: relational-record on persisten backends
-dev-haskell/persistent-sqlite 2.6.0.1 2.9.3 2.10.5 2.10.6.2: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.5.4 2.6.0 2.7.3 2.8.2.3: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-relational-record 0.3.0: relational-record on persisten backends
+dev-haskell/persistent-sqlite 2.10.6.2: Backend for the persistent library using sqlite3
+dev-haskell/persistent-template 2.8.2.3: Type-safe, non-relational, multi-backend persistence
 dev-haskell/persistent-test 2.0.3.0: Tests for Persistent
 dev-haskell/pgdl 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
@@ -1498,7 +1498,7 @@ dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-read
 dev-haskell/picedit 0.2.3.0-r3: simple image manipulation functions
 dev-haskell/picoparsec 0.1.2.3: Fast combinator parsing for bytestrings and text
 dev-haskell/pid1 0.1.2.0: Do signal handling and orphan reaping for Unix PID1 init processes
-dev-haskell/pipes 4.1.9 4.3.14: Compositional pipelines
+dev-haskell/pipes 4.3.14: Compositional pipelines
 dev-haskell/pipes-attoparsec 0.5.1.5: Attoparsec and Pipes integration
 dev-haskell/pipes-binary 0.4.2: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.6: ByteString support for pipes
@@ -1522,7 +1522,7 @@ dev-haskell/pngload 0.1-r1: Pure Haskell loader for PNG images
 dev-haskell/pointed 5.0.1-r1: Pointed and copointed data
 dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, tracking a position
 dev-haskell/pointfree 1.1.1.6: Tool for refactoring expressions into pointfree form
-dev-haskell/pointful 1.0.9 1.1.0.0: Pointful refactoring tool
+dev-haskell/pointful 1.1.0.0: Pointful refactoring tool
 dev-haskell/poll 0.0.0.1: Bindings to poll.h
 dev-haskell/polynomial 0.7.3: Polynomials
 dev-haskell/polyparse 1.12.1 1.13: A variety of alternative parser combinator libraries
@@ -1530,13 +1530,13 @@ dev-haskell/polysemy 1.3.0.0: Higher-order, low-boilerplate, zero-cost free mona
 dev-haskell/polysemy-plugin 0.2.5.0: Disambiguate obvious uses of effects
 dev-haskell/polysemy-zoo 0.7.0.0: Experimental, user-contributed effects and interpreters for polysemy
 dev-haskell/pop3-client 0.1.4: POP3 Client Library
-dev-haskell/poppler 0.14.1 0.14.2-r1: Binding to the Poppler
+dev-haskell/poppler 0.14.2-r1: Binding to the Poppler
 dev-haskell/portaudio 0.2.4: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.2.0.0: A binding for PortMedia/PortMidi
 dev-haskell/postgresql-binary 0.12.2: Encoders and decoders for the PostgreSQL's binary format
 dev-haskell/postgresql-libpq 0.9.4.2-r2: low-level binding to libpq
 dev-haskell/postgresql-query 3.7.0: Sql interpolating quasiquote plus some kind of primitive ORM using it
-dev-haskell/postgresql-simple 0.5.3.0 0.6.2: Mid-Level PostgreSQL client library
+dev-haskell/postgresql-simple 0.6.2: Mid-Level PostgreSQL client library
 dev-haskell/postgresql-simple-migration 0.1.15.0: PostgreSQL Schema Migrations
 dev-haskell/postgresql-typed 0.6.1.0: PostgreSQL interface with compile-time SQL type checking, optional HDBC backend
 dev-haskell/pqueue 1.4.1.3: Reliable, persistent, fast priority queues
@@ -1551,7 +1551,7 @@ dev-haskell/pretty-simple 3.2.2.0: pretty printer for data types with a 'Show' i
 dev-haskell/pretty-terminal 0.1.0.0: Styling and coloring terminal output with ANSI escape sequences
 dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0: Pretty printing class similar to Show
-dev-haskell/prettyprinter 1.3.0 1.5.1 1.6.1: A modern, easy to use, well-documented, extensible pretty-printer
+dev-haskell/prettyprinter 1.6.1: A modern, easy to use, well-documented, extensible pretty-printer
 dev-haskell/prettyprinter-ansi-terminal 1.1.1.2: ANSI terminal backend for the "prettyprinter" package
 dev-haskell/prim-uniq 0.1.0.1 0.2: Opaque unique identifiers in primitive state monads
 dev-haskell/primes 0.2.1.0: Efficient, purely functional generation of prime numbers
@@ -1559,13 +1559,13 @@ dev-haskell/primitive 0.6.4.0 0.7.0.1 0.7.1.0: Primitive memory-related operatio
 dev-haskell/primitive-addr 0.1.0.2: Addresses to unmanaged memory
 dev-haskell/primitive-extras 0.8: Extras for the "primitive" library
 dev-haskell/primitive-unaligned 0.1.1.1: Unaligned access to primitive arrays
-dev-haskell/primitive-unlifted 0.1.2.0 0.1.3.0: Primitive GHC types with unlifted types inside
+dev-haskell/primitive-unlifted 0.1.3.0: Primitive GHC types with unlifted types inside
 dev-haskell/probability 0.2.6: Probabilistic Functional Programming
 dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-extras 0.7.4: Process extras
 dev-haskell/process-streaming 0.9.3.0: Streaming interface to system processes
 dev-haskell/product-isomorphic 0.0.3.3: Weaken applicative functor on products
-dev-haskell/product-profunctors 0.7.1.0-r2 0.10.0.0: product-profunctors
+dev-haskell/product-profunctors 0.10.0.0: product-profunctors
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.4.5.1: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
@@ -1577,7 +1577,7 @@ dev-haskell/protocol-buffers-descriptor 2.4.13: module and code generated from t
 dev-haskell/protolude 0.2.3 0.2.4: A sensible set of defaults for writing custom Preludes
 dev-haskell/prover 9999: Automatic Prover of Logical Predicates
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
-dev-haskell/psqueue 1.1-r2 1.1.0.1: Priority Search Queue
+dev-haskell/psqueue 1.1.0.1: Priority Search Queue
 dev-haskell/psqueues 0.2.7.2: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
 dev-haskell/pulseaudio 0.0.2.1: A low-level (incomplete) wrapper around the pulseaudio client asynchronous api
@@ -1593,7 +1593,7 @@ dev-haskell/quickcheck-arbitrary-template 0.2.1.0: Generate QuickCheck Gen for S
 dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-classes 0.6.4.0: QuickCheck common typeclasses
 dev-haskell/quickcheck-classes-base 0.6.0.0: QuickCheck common typeclasses from 'base'
-dev-haskell/quickcheck-instances 0.3.12-r1 0.3.19 0.3.22: Common quickcheck instances
+dev-haskell/quickcheck-instances 0.3.22: Common quickcheck instances
 dev-haskell/quickcheck-io 0.2.0: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.6: Safe reimplementation of QuickCheck's core
@@ -1606,13 +1606,13 @@ dev-haskell/random 1.1: random number library
 dev-haskell/random-fu 0.2.7.4: Random number generation
 dev-haskell/random-shuffle 0.0.4: Random shuffle implementation
 dev-haskell/random-source 0.3.0.6-r1: Generic basis for random number generators
-dev-haskell/ranged-sets 0.3.0 0.4.0: Ranged sets for Haskell
+dev-haskell/ranged-sets 0.4.0: Ranged sets for Haskell
 dev-haskell/ranges 0.2.4-r1: Ranges and various functions on them
 dev-haskell/rank1dynamic 0.3.3.0 0.4.0: Like Data.Dynamic/Data.Typeable but with support for rank-1 polymorphic types
 dev-haskell/rasterific 0.7.5.1: A pure haskell drawing engine
 dev-haskell/rate-limit 1.4.2: A basic library for rate-limiting IO actions
 dev-haskell/ratio-int 0.1.2: Fast specialisation of Data.Ratio for Int
-dev-haskell/rattletrap 6.2.3 9.0.10: Parse and generate Rocket League replays
+dev-haskell/rattletrap 9.0.10: Parse and generate Rocket League replays
 dev-haskell/raw-strings-qq 1.1: Raw string literals for Haskell
 dev-haskell/rdf4h 3.1.1: A library for RDF processing in Haskell
 dev-haskell/rdtsc 1.3.0.1: Binding for the rdtsc machine instruction
@@ -1622,8 +1622,8 @@ dev-haskell/reactive-banana-gi-gtk 0.4.0.2: Simple reactive programming with GTK
 dev-haskell/reactive-banana-wx 1.1.1.0-r1: Examples for the reactive-banana library, using wxHaskell
 dev-haskell/readable 0.3.1: Reading from Text and ByteString
 dev-haskell/readargs 1.2.3: Simple command line argument parsing
-dev-haskell/readline 1.0.3.0 1.0.3.0-r1: An interface to the GNU readline library
-dev-haskell/rebase 1.2.4 1.3.1 1.4.1: A more progressive alternative to the 'base' package
+dev-haskell/readline 1.0.3.0-r1: An interface to the GNU readline library
+dev-haskell/rebase 1.3.1 1.4.1: A more progressive alternative to the 'base' package
 dev-haskell/recaptcha 0.1.0.4: Functions for using the reCAPTCHA service in web applications
 dev-haskell/records 0.1.1.6-r1: A flexible record system
 dev-haskell/recursion-schemes 5.1.3: Generalized bananas, lenses and barbed wire
@@ -1638,7 +1638,7 @@ dev-haskell/reflex-backend-wai 0.1.0.0: Reflex interface to 'wai'
 dev-haskell/reflex-basic-host 0.2.0.1-r1: A basic Reflex host for backend work
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
 dev-haskell/reflex-process 0.1.0.1: reflex-frp interface for running shell commands
-dev-haskell/reflex-vty 0.1.3.0-r1 0.1.4.0: Reflex FRP host and widgets for vty applications
+dev-haskell/reflex-vty 0.1.4.0: Reflex FRP host and widgets for vty applications
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
 dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.3: Happstack support for reform
@@ -1648,12 +1648,12 @@ dev-haskell/regex 1.1.0.0: Toolkit for regex-base
 dev-haskell/regex-applicative 0.3.3.1: Regex-based parsing with applicative interface
 dev-haskell/regex-applicative-text 0.1.0.1: regex-applicative on text
 dev-haskell/regex-base 0.93.2-r1 0.94.0.0: Replaces/Enhances Text.Regex
-dev-haskell/regex-compat 0.95.1-r1 0.95.2.0: Replaces/Enhances Text.Regex
+dev-haskell/regex-compat 0.95.2.0: Replaces/Enhances Text.Regex
 dev-haskell/regex-compat-tdfa 0.95.1.4: Unicode Support version of Text.Regex, using regex-tdfa
 dev-haskell/regex-dfa 0.91-r1: Replaces/Enhances Text.Regex
 dev-haskell/regex-do 3.2.2: PCRE wrapper
 dev-haskell/regex-parsec 0.90: Replaces/Enhances Text.Regex
-dev-haskell/regex-pcre 0.94.4-r1 0.95.0.0: Replaces/Enhances Text.Regex
+dev-haskell/regex-pcre 0.95.0.0: Replaces/Enhances Text.Regex
 dev-haskell/regex-pcre-builtin 0.95.1.2.8.43: PCRE Backend for "Text.Regex" (regex-base)
 dev-haskell/regex-pcre-text 0.94.0.1: Text-based PCRE API for regex-base
 dev-haskell/regex-posix 0.96.0.0: Replaces/Enhances Text.Regex
@@ -1666,8 +1666,8 @@ dev-haskell/regexpr 0.5.4-r1: regular expression like Perl/Ruby in Haskell
 dev-haskell/regular 0.3.4.4: Generic programming library for regular datatypes
 dev-haskell/reinterpret-cast 0.1.0: Memory reinterpretation casts for Float/Double and Word32/Word64
 dev-haskell/relational-query 0.12.2.3: Typeful, Modular, Relational, algebraic query engine
-dev-haskell/relational-query-hdbc 0.6.2.0 0.7.2.0: HDBC instance of relational-query and typed query interface for HDBC
-dev-haskell/relational-record 0.1.8.0 0.2.2.0: Meta package of Relational Record
+dev-haskell/relational-query-hdbc 0.7.2.0: HDBC instance of relational-query and typed query interface for HDBC
+dev-haskell/relational-record 0.2.2.0: Meta package of Relational Record
 dev-haskell/relational-schemas 0.1.8.0: RDBMSs' schema templates for relational-query
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
 dev-haskell/remote 0.1.1-r1: Cloud Haskell
@@ -1679,12 +1679,12 @@ dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files a
 dev-haskell/replib 0.5.4.1: Generic programming library with representation types
 dev-haskell/repline 0.2.2.0: Haskeline wrapper for GHCi-like REPL interfaces
 dev-haskell/req 3.6.0: Easy-to-use, type-safe, expandable, high-level HTTP client library
-dev-haskell/rerebase 1.3.1 1.4.1: Reexports from 'base' with a bunch of other standard libraries
+dev-haskell/rerebase 1.4.1: Reexports from 'base' with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.11 1.2.4.2: Deterministic allocation and freeing of scarce resources
 dev-haskell/retry 0.7.7.0 0.8.1.1: Retry combinators for monadic actions that may fail
-dev-haskell/rfc5051 0.1.0.4 0.2: Simple unicode collation as per RFC5051
+dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
 dev-haskell/rio 0.1.18.0: A standard library for Haskell
 dev-haskell/rio-orphans 0.1.1.0: Orphan instances for the RIO type in the rio package
