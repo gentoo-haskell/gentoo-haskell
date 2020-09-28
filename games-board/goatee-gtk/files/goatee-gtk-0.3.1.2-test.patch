@@ -1,6 +1,0 @@
---- a/goatee-gtk.cabal
-+++ b/goatee-gtk.cabal
-@@ -94,3 +94,2 @@ test-suite test-goatee-gtk
-         Game.Goatee.Ui.Gtk.LatchTest
--        Test
-     type: exitcode-stdio-1.0
