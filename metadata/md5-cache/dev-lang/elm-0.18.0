@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=Meta package for all Elm packages
-EAPI=6
-HOMEPAGE=https://github.com/elm-lang
-KEYWORDS=~amd64 ~x86
-LICENSE=metapackage
-RDEPEND=~dev-lang/elm-compiler-0.18.0 ~dev-lang/elm-make-0.18.0 ~dev-lang/elm-package-0.18.0 ~dev-lang/elm-reactor-0.18.0 ~dev-lang/elm-repl-0.18.0
-SLOT=0/0.18.0
-_md5_=50ef3b85985313bbb0b643cdbf1ccaf8
