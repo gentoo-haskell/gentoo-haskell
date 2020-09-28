@@ -2303,22 +2303,22 @@ dev-util/packunused 0.1.1.4: Tool for detecting redundant Cabal package dependen
 dev-util/shellcheck 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.13: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.14.5 2.16.2: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.16.2: a distributed, interactive, smart revision control system
 dev-vcs/darcswatch 0.4.4-r1: Track application of Darcs patches
 dev-vcs/git-annex 8.20200810: manage files with git, without checking their contents into git
-games-action/edge 0.9.0.2 0.9.1.1: Top view space combat arcade game
+games-action/edge 0.9.1.1: Top view space combat arcade game
 games-action/monadius 0.99: 2-D arcade scroller
 games-arcade/blubber 0.0.1-r1: The blubber client; connects to the blubber server
 games-arcade/blubber-server 0.0.1-r5: The blubber server, serves blubber clients
 games-arcade/shu-thing 1.1.4: A vector shooter game
-games-board/goatee-gtk 0.3.1.2 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
+games-board/goatee-gtk 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
 games-fps/frag 1.1.2-r1: A 3-D First Person Shooter Game
 games-puzzle/bloxorz 0.1.2: OpenGL Logic Game
-games-puzzle/intricacy 0.6.1 0.6.2 0.7.1.1: A game of competitive puzzle-design
+games-puzzle/intricacy 0.7.1.1: A game of competitive puzzle-design
 games-puzzle/raincat 1.2.1: A puzzle game written in Haskell with a cat in lead role
 games-roguelike/scroll 1.20180421: scroll(6), a roguelike game
 games-sports/freekick2 0.1.2: A soccer game
-media-fonts/hasklig 0.2 0.4 1.0_beta 1.1: Hasklig - a Haskell code font with monospaced ligatures
+media-fonts/hasklig 1.1: Hasklig - a Haskell code font with monospaced ligatures
 media-sound/hpodder 1.1.6-r2: Podcast Aggregator (downloader)
 media-sound/live-sequencer 0.0.6.2-r1: Live coding of MIDI music
 media-sound/vimus 0.2.1: An MPD client with vim-like key bindings
@@ -2335,7 +2335,7 @@ sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-biology/rarecoal 1.2.1: tools to process and analyse genome sequencing data
 sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
 sci-mathematics/agda 2.4.2.5-r2 2.5.1-r4 2.5.1.1-r1 2.5.1.2 2.5.2-r1 2.5.3-r1 2.5.4 2.6.0.1-r1 9999: A dependently typed functional programming language and proof assistant
-sci-mathematics/agda-lib-ffi 0.0.2-r1 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
+sci-mathematics/agda-lib-ffi 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
 sci-mathematics/agda-stdlib 2.4.2.5 2.5.1.0.12 2.5.2.0.13 2.5.3.0.14 2.5.4.0.16 2.6.0.1.1.0.1 9999: Agda standard library
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
