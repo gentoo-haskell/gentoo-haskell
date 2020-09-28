@@ -10,6 +10,5 @@
 	</longdescription>
 	<use>
 		<flag name="relocatable">Don't use the Cabal-provided data directory for looking up Cryptol libraries.</flag>
-		<flag name="server">Build with the ZeroMQ/JSON cryptol-server executable.</flag>
 	</use>
 </pkgmetadata>
