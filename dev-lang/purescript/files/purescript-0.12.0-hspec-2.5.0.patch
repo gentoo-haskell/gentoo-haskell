@@ -1,7 +1,0 @@
---- a/tests/TestCoreFn.hs
-+++ b/tests/TestCoreFn.hs
-@@ -24,3 +24,3 @@ import Language.PureScript.PSString
- import Test.Tasty
--import Test.Tasty.Hspec
-+import Test.Tasty.Hspec hiding (Success)
- 
