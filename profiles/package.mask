@@ -186,14 +186,6 @@ dev-haskell/scotty-hastache
 dev-lang/jhc
 dev-lang/ajhc
 
-# Jack Todaro <solpeth@posteo.org> (2020-08-19)
-# Depends on old versions of yesod-* packages.
-# Masked for removal.
-dev-haskell/shakespeare-sass
-dev-haskell/yesod-auth-bcrypt
-dev-haskell/yesod-auth-nopassword
-dev-haskell/yesod-static-angular
-
 # Jack Todaro <solpeth@posteo.org> (2020-08-12)
 # Many packages require QuickCheck < 2.14. Mask
 # QuickCheck >= 2.14 and its reverse dependencies
