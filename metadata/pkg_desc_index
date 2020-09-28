@@ -2051,7 +2051,7 @@ dev-haskell/unamb 0.2.7: Unambiguous choice
 dev-haskell/unbound 0.5.1.1: Generic support for programming with names and binders
 dev-haskell/unbound-generics 0.4.1: Support for programming with names and binders using GHC Generics
 dev-haskell/unbounded-delays 0.1.1.0: Unbounded thread delays and timeouts
-dev-haskell/unexceptionalio 0.3.0 0.5.0 0.5.1: IO without any non-error, synchronous exceptions
+dev-haskell/unexceptionalio 0.5.1: IO without any non-error, synchronous exceptions
 dev-haskell/unexceptionalio-trans 0.5.1: A wrapper around UnexceptionalIO using monad transformers
 dev-haskell/unicode-transforms 0.3.7: Unicode normalization
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
@@ -2355,7 +2355,7 @@ www-apps/gitit 0.13.0.0: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
-www-servers/mighttpd2 3.2.9 3.3.1 3.3.5 3.4.3-r1 3.4.6: High performance web server on WAI/warp
+www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp
 x11-misc/taffybar 3.2.2 9999: A desktop bar similar to xmobar, but with more GUI
 x11-misc/xmobar 0.36 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.15.2: Third party extensions for xmonad with wacky dependencies
