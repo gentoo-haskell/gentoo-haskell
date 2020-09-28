@@ -178,14 +178,6 @@ dev-util/packunused
 # active.
 <dev-haskell/ltk-0.16
 
-# Jack Todaro <solpeth@posteo.org> (2020-08-25)
-# Needs porting to modern libraries, has no
-# reverse dependencies. Masked for removal in
-# 30 days.
-dev-haskell/scotty-hastache
-dev-lang/jhc
-dev-lang/ajhc
-
 # Jack Todaro <solpeth@posteo.org> (2020-08-12)
 # Many packages require QuickCheck < 2.14. Mask
 # QuickCheck >= 2.14 and its reverse dependencies
