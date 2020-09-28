@@ -534,7 +534,6 @@ net-p2p/combinatorrent:threadscope - Build with -eventlog.
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
 sci-mathematics/agda:enable-cluster-counting - Count extended grapheme clusters when generating LaTeX.
 sci-mathematics/agda:stdlib - Install the standard library.
-sci-mathematics/agda:uhc - Add support for the uhc backend.
 sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the MAlonzo backend
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-servers/mighttpd2:tls - HTTPS support.
@@ -556,6 +555,4 @@ x11-misc/xmonad-extras:brightness - Enable brightness control plugin
 x11-misc/xmonad-extras:eval - Enable eval plugin
 x11-misc/xmonad-extras:mpd - Enable mpd plugin
 x11-misc/yeganesh:profiling - Build with profiling and -auto-all
-x11-wm/xmonad:default-term - Pull terminal specified in default xmonad config to be a bit less hostile by default.
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
-x11-wm/xmonad-contrib:testing - Build in testing mode.
