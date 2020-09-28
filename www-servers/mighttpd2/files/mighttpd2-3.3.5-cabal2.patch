@@ -1,8 +1,0 @@
---- a/mighttpd2.cabal
-+++ b/mighttpd2.cabal
-@@ -90,4 +90,3 @@ Executable mighty
-                       , warp-tls >= 3.2 && < 3.3
--  Other-Modules:        Mighty
--                        Server
-+  Other-Modules:        Server
-                         WaiApp

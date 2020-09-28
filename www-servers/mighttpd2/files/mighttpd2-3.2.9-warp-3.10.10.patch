@@ -1,9 +1,0 @@
-diff --git a/src/Server.hs b/src/Server.hs
-index ccb5fb3..aedb995 100644
---- a/src/Server.hs
-+++ b/src/Server.hs
-@@ -12,3 +12,3 @@ import qualified Network.HTTP.Client as H
- import Network.Wai.Application.Classic hiding ((</>), (+++))
--import Network.Wai.Handler.Warp
-+import Network.Wai.Handler.Warp hiding (getFileInfo)
- import Network.Wai.Logger
