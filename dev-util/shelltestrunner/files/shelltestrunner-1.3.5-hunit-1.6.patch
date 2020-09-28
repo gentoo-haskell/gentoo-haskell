@@ -1,9 +1,0 @@
-diff --git a/shelltest.hs b/shelltest.hs
-index 19e261b..f989af6 100644
---- a/shelltest.hs
-+++ b/shelltest.hs
-@@ -278,3 +278,3 @@ testFileParseToHUnitTest :: Args -> Either ParseError [ShellTest] -> Test.HUnit.
- testFileParseToHUnitTest args (Right ts) = TestList $ map (shellTestToHUnitTest args) ts
--testFileParseToHUnitTest _ (Left e) = ("parse error in " ++ (sourceName $ errorPos e)) ~: assertFailure $ show e
-+testFileParseToHUnitTest _ (Left e) = ("parse error in " ++ (sourceName $ errorPos e)) ~: (assertFailure $ show e :: IO ())
- 
