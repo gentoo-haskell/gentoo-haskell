@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		
-		This is a small library for working with changes to JSON documents. It
-		includes a library and two command-line executables in the style of the
-		diff(1) and patch(1) commands available on many systems.
-		
-	</longdescription>
 </pkgmetadata>
