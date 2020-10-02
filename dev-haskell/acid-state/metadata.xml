@@ -8,7 +8,4 @@
 	<use>
 		<flag name="skip-state-machine-test">If enabled, do not build/run the state-machine test</flag>
 	</use>
-	<longdescription>
-		Use regular Haskell data structures as your database and get stronger ACID guarantees than most RDBMS offer.
-	</longdescription>
 </pkgmetadata>
