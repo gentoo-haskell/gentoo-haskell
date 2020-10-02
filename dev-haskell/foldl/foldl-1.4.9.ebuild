@@ -30,7 +30,6 @@ RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?
 	>=dev-haskell/text-0.11.2.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	<dev-haskell/vector-builder-0.4:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
