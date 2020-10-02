@@ -254,7 +254,7 @@ dev-haskell/cabal-file-th 0.2.7: Template Haskell expressions for reading fields
 dev-haskell/cabal-install 3.0.0.0 3.2.0.0 9999: The command-line interface for Cabal and Hackage
 dev-haskell/cabal-macosx 0.2.4.2: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
-dev-haskell/cabal-plan 0.7.0.0: Library and utility for processing cabal's plan.json file
+dev-haskell/cabal-plan 0.7.1.0: Library and utility for processing cabal's plan.json file
 dev-haskell/cabal-rpm 2.0.6: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
 dev-haskell/cairo 0.13.8.1: Binding to the Cairo library
@@ -267,7 +267,7 @@ dev-haskell/casa-types 0.0.1: Types for Casa
 dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.2.0.11 1.2.1.0: Case insensitive string comparison
 dev-haskell/cassava 0.5.2.0: A CSV parsing and encoding library
-dev-haskell/cassava-megaparsec 2.0.1: Megaparsec parser of CSV files that plays nicely with Cassava
+dev-haskell/cassava-megaparsec 2.0.2: Megaparsec parser of CSV files that plays nicely with Cassava
 dev-haskell/categories 1.0.7: Categories
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
 dev-haskell/cborg 0.2.4.0: Concise Binary Object Representation
@@ -288,7 +288,7 @@ dev-haskell/chart-unit 0.6.2.0: Native haskell charts
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.9: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.1.2: Experimental markdown processor
-dev-haskell/checkers 0.5.4: Check properties on standard classes and data structures
+dev-haskell/checkers 0.5.6: Check properties on standard classes and data structures
 dev-haskell/chell 0.4.0.2: A simple and intuitive library for automated testing
 dev-haskell/chimera 0.3.1.0: Lazy infinite streams with O(1) indexing
 dev-haskell/chr-core 0.1.0.4: Constraint Handling Rules
@@ -320,7 +320,7 @@ dev-haskell/cli 0.1.2: Command Line Interface
 dev-haskell/clientsession 0.9.1.2: Securely store session data in a client-side cookie
 dev-haskell/clock 0.7.2 0.8: High-resolution clock functions: monotonic, realtime, cputime
 dev-haskell/cmark 0.6: Fast, accurate CommonMark (Markdown) parser and renderer
-dev-haskell/cmark-gfm 0.2.1: Fast, accurate GitHub Flavored Markdown parser and renderer
+dev-haskell/cmark-gfm 0.2.2: Fast, accurate GitHub Flavored Markdown parser and renderer
 dev-haskell/cmdargs 0.10.20: Command line argument processing
 dev-haskell/cmdtheline 0.2.3-r2: Declarative command-line option parsing and documentation library
 dev-haskell/code-page 0.2: Windows code page library for Haskell
@@ -345,18 +345,18 @@ dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/conceit 0.4.0.0: Concurrent actions that may fail with a value
 dev-haskell/concurrent-extra 0.7.0.12: Extra concurrency primitives
-dev-haskell/concurrent-output 1.10.11: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.10.12: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.1.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrent-supply 0.1.8: A fast concurrent unique identifier supply with a pure API
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.2.13 1.3.2: Streaming data processing library
+dev-haskell/conduit 1.2.13 1.3.2.1: Streaming data processing library
 dev-haskell/conduit-audio 0.2.0.3: Combinators to efficiently slice and dice audio streams
 dev-haskell/conduit-audio-lame 0.1.2.1: conduit-audio interface to the LAME MP3 library
 dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
 dev-haskell/conduit-audio-sndfile 0.1.2.2: conduit-audio interface to the libsndfile audio file library
 dev-haskell/conduit-combinators 1.3.0: Commonly used conduit functions, for both chunked and unchunked data
-dev-haskell/conduit-extra 1.1.17 1.3.4: Batteries included conduit: adapters for common libraries
+dev-haskell/conduit-extra 1.1.17 1.3.5: Batteries included conduit: adapters for common libraries
 dev-haskell/config-ini 0.2.4.0-r1: A library for simple INI-based configuration files
 dev-haskell/config-schema 1.2.0.0: Schema definitions for the config-value package
 dev-haskell/config-value 0.7.0.1: Simple, layout-based value language similar to YAML or JSON
@@ -365,9 +365,9 @@ dev-haskell/configurator 0.3.0.0-r1: Configuration management
 dev-haskell/connection 0.3.1: Simple and easy network connections API
 dev-haskell/console-program 0.4.2.3-r1: Interpret the command line and a config file as commands and options
 dev-haskell/constraints 0.11.2: Constraint manipulation
-dev-haskell/constraints-deriving 1.1.1.0: Manipulating constraints and deriving class instances programmatically
+dev-haskell/constraints-deriving 1.1.1.1: Manipulating constraints and deriving class instances programmatically
 dev-haskell/constraints-extras 0.3.0.2: Utility package for constraints
-dev-haskell/containers-unicode-symbols 0.3.1.1-r1: Unicode alternatives for common functions and operators
+dev-haskell/containers-unicode-symbols 0.3.1.2: Unicode alternatives for common functions and operators
 dev-haskell/continued-fractions 0.10.0.2: Continued fractions
 dev-haskell/contravariant 1.5.2: Contravariant functors
 dev-haskell/contravariant-extras 0.3.5.2: Extras for the "contravariant" package
@@ -383,15 +383,15 @@ dev-haskell/convertible 1.1.1.0: Typeclasses and instances for converting betwee
 dev-haskell/cookie 0.4.4 0.4.5: HTTP cookie parsing and rendering
 dev-haskell/cordering 2.3-r2: An algebraic data type similar to Prelude Ordering
 dev-haskell/coroutine-object 0.3.0: Object-oriented programming realization using coroutine
-dev-haskell/couchdb 1.2.2: CouchDB interface
+dev-haskell/couchdb 1.2.3: CouchDB interface
 dev-haskell/country-codes 0.1.4: ISO 3166 country codes and i18n names
-dev-haskell/cpphs 1.20.9: A liberalised re-implementation of cpp, the C pre-processor
+dev-haskell/cpphs 1.20.9.1: A liberalised re-implementation of cpp, the C pre-processor
 dev-haskell/cprng-aes 0.6.1: Crypto Pseudo Random Number Generator using AES in counter mode
 dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r2: A haskell binding to cracklib
 dev-haskell/cracknum 2.4: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
-dev-haskell/criterion 1.5.6.2: Robust, reliable performance measurement and analysis
+dev-haskell/criterion 1.5.7.0: Robust, reliable performance measurement and analysis
 dev-haskell/criterion-measurement 0.1.2.0: Criterion measurement functionality and associated types
 dev-haskell/crockford 0.2-r1: An implementation of Douglas Crockford's base32 encoding
 dev-haskell/cron 0.7.0: Cron datatypes and Attoparsec parser
@@ -450,7 +450,7 @@ dev-haskell/data-lens-template 2.1.9: Utilities for Data.Lens
 dev-haskell/data-memocombinators 0.5.1: Combinators for building memo tables
 dev-haskell/data-ordlist 0.4.7.0: Set and bag operations on ordered lists
 dev-haskell/data-pprint 0.2.4.1: Prettyprint and compare Data values
-dev-haskell/data-reify 0.6.1: Reify a recursive data structure into an explicit graph
+dev-haskell/data-reify 0.6.2: Reify a recursive data structure into an explicit graph
 dev-haskell/data-serializer 0.3.4.1: Common API for serialization libraries
 dev-haskell/data-textual 0.3.0.3: Human-friendly textual representations
 dev-haskell/dataenc 0.14.0.7: Data encoding library
@@ -486,16 +486,16 @@ dev-haskell/diagrams-lib 1.4.3: Embedded domain-specific language for declarativ
 dev-haskell/diagrams-pgf 1.4.1.1: PGF backend for diagrams drawing EDSL
 dev-haskell/diagrams-postscript 1.4.1-r1: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.4.2: Rasterific backend for diagrams
-dev-haskell/diagrams-solve 0.1.1: Pure Haskell solver routines used by diagrams
+dev-haskell/diagrams-solve 0.1.2: Pure Haskell solver routines used by diagrams
 dev-haskell/diagrams-svg 1.4.3: SVG backend for diagrams drawing EDSL
 dev-haskell/dice 0.1.0.1: Simplistic D&D style dice-rolling system
 dev-haskell/dictionary-sharing 0.1.0.0: Sharing/memoization of class members
 dev-haskell/diff 0.3.4 0.4.0: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1.1: DiffArray
 dev-haskell/digest 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
-dev-haskell/digestive-functors 0.8.4.0: A practical formlet library
+dev-haskell/digestive-functors 0.8.4.2: A practical formlet library
 dev-haskell/digestive-functors-blaze 0.6.2.0: Blaze frontend for the digestive-functors library
-dev-haskell/digestive-functors-happstack 0.6.1.2-r1: Happstack backend for the digestive-functors library
+dev-haskell/digestive-functors-happstack 0.6.1.3: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.7.0.1: Snap backend for the digestive-functors library
 dev-haskell/digits 0.3.1: Converts integers to lists of digits and back
 dev-haskell/dimensional 1.3: Statically checked physical dimensions, using Type Families and Data Kinds
@@ -508,7 +508,7 @@ dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/discord-haskell 1.7.0: Write bots for Discord in Haskell
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
 dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
-dev-haskell/distributive 0.6.1: Distributive functors -- Dual to Traversable
+dev-haskell/distributive 0.6.2: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
 dev-haskell/djinn-lib 0.0.1.3: Generate Haskell code from a type. Library extracted from djinn package
@@ -520,12 +520,12 @@ dev-haskell/doctemplates 0.1.0.2 0.2.2.1 0.8-r1 0.8.2: Pandoc-style document tem
 dev-haskell/doctest 0.11.2 0.13.0 0.15.0 0.16.0.1 0.16.3: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
 dev-haskell/doctest-prop 0.2.0.1: Allow QuickCheck-style property testing within doctest
-dev-haskell/dotenv 0.8.0.4: Loads environment variables from dotenv files
-dev-haskell/dotgen 0.4.2: A simple interface for building .dot graph files
+dev-haskell/dotenv 0.8.0.7: Loads environment variables from dotenv files
+dev-haskell/dotgen 0.4.3: A simple interface for building .dot graph files
 dev-haskell/double-conversion 2.0.2.0: Fast conversion between double precision floating point and text
 dev-haskell/download-curl 0.1.4-r2: High-level file download based on URLs
 dev-haskell/drbg 0.5.5: Deterministic random bit generator (aka PRNG) based HMACs, Hashes, and Ciphers
-dev-haskell/dsp 0.2.5: Haskell Digital Signal Processing
+dev-haskell/dsp 0.2.5.1: Haskell Digital Signal Processing
 dev-haskell/dual-tree 0.2.2.1: Rose trees with cached and accumulating monoidal annotations
 dev-haskell/dump-core 0.1.3.2: A plug-in for rendering GHC core
 dev-haskell/dynamic-graph 0.1.0.13: Draw and update graphs in real time with OpenGL

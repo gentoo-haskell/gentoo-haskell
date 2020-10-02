@@ -115,14 +115,14 @@ dev-haskell/contravariant:statevar - Enable the use of of the `statevar` package
 dev-haskell/contravariant:tagged - Enable the use of the `tagged` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/country-codes:generate - Build generate executable?
 dev-haskell/cpu:executable - build 'cpuid' tool
-dev-haskell/criterion:embed-data-files - Embed the data files in the binary for a relocatable executable
+dev-haskell/criterion:embed-data-files - Embed the data files in the binary for a relocatable executable. (Warning: This will increase the executable size significantly.)
 dev-haskell/cron:lib-werror - 
 dev-haskell/crypto-api:all-cpolys - Build all the CMAC polynomes up to 10000 bits instead of just the usual ones.
 dev-haskell/cryptonite:cpu-flags-x86-rdrand - allow compilation with RDRAND on system and architecture that supports it
 dev-haskell/cryptonite:integer-gmp - Whether or not to use GMP for some functions
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-lens-fd:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
-dev-haskell/data-reify:tests - Build test binaries.
+dev-haskell/data-reify:tests - Enable full development tree
 dev-haskell/dhall:cross - Disable TemplateHaskell to make cross-compiling easier
 dev-haskell/dhall:http - Include support for importing dhall modules from HTTP URLs
 dev-haskell/diagrams:canvas - Enable canvas backend.
@@ -137,6 +137,7 @@ dev-haskell/direct-sqlite:json1 - Enable json1 extension.
 dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library.
 dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library.
 dev-haskell/dotenv:dev - Turn on development settings.
+dev-haskell/dotenv:static - Creates static binary.
 dev-haskell/encoding:systemencoding - Provide the getSystemEncoding action to query the locale.
 dev-haskell/entropy:halvm - Build for the HaLVM.
 dev-haskell/ether:disable-tup-instances - Disable auto-generated HasLens instances for tuples.
