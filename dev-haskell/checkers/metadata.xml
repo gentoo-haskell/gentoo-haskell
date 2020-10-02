@@ -5,16 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		''Checkers'' wraps up the expected properties associated with various
-		standard type classes as QuickCheck properties.  Also some morphism
-		properties.  It also provides arbitrary instances and generator combinators
-		for common data types.
-		
-		Project wiki page: &lt;http://haskell.org/haskellwiki/checkers&gt;
-		
-		&amp;#169; 2008 by Conal Elliott; BSD3 license.
-		
-		Contributions from: Thomas Davie.
-	</longdescription>
 </pkgmetadata>
