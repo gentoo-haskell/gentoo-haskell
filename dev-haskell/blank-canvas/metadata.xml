@@ -5,32 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		blank-canvas is a Haskell binding to the complete
-		HTML5 Canvas API. blank-canvas allows Haskell
-		users to write, in Haskell, interactive images
-		onto their web browsers. blank-canvas gives the
-		user a single full-window canvas, and provides
-		many well-documented functions for rendering
-		images.
-		
-		@
-		&amp;#123;-&amp;#35; LANGUAGE OverloadedStrings &amp;#35;-&amp;#125;
-		module Main where
-		import Graphics.Blank                     -- import the blank canvas
-		
-		main = blankCanvas 3000 $ \\ context -&gt; do -- start blank canvas on port 3000
-		&amp;#32;&amp;#32;send context $ do                       -- send commands to this specific context
-		&amp;#32;&amp;#32;&amp;#32;&amp;#32;moveTo(50,50)
-		&amp;#32;&amp;#32;&amp;#32;&amp;#32;lineTo(200,100)
-		&amp;#32;&amp;#32;&amp;#32;&amp;#32;lineWidth 10
-		&amp;#32;&amp;#32;&amp;#32;&amp;#32;strokeStyle "red"
-		&amp;#32;&amp;#32;&amp;#32;&amp;#32;stroke()                              -- this draws the ink into the canvas
-		@
-		
-		&lt;&lt;https://github.com/ku-fpg/blank-canvas/wiki/images/Red_Line.png&gt;&gt;
-		
-		For more details, read the &lt;https://github.com/ku-fpg/blank-canvas/wiki blank-canvas wiki&gt;.
-		
-	</longdescription>
 </pkgmetadata>
