@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Pure Haskell solver routines used by the diagrams
-		project.  Currently includes finding real roots
-		of low-degree (n &lt; 5) polynomials, and solving
-		tridiagonal and cyclic tridiagonal linear
-		systems.
-	</longdescription>
 </pkgmetadata>
