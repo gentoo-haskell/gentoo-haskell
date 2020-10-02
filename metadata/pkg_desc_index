@@ -175,7 +175,7 @@ dev-haskell/binary-conduit 1.3.1: data serialization/deserialization conduit lib
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
 dev-haskell/binary-instances 1.0.0.1: Orphan instances for binary
 dev-haskell/binary-orphans 0.1.8.0-r3 1.0.1: Orphan instances for binary
-dev-haskell/binary-parser 0.5.5: A highly-efficient but limited parser API specialised for bytestrings
+dev-haskell/binary-parser 0.5.6: A highly-efficient but limited parser API specialised for bytestrings
 dev-haskell/binary-parsers 0.2.4.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
 dev-haskell/binary-serialise-cbor 0.2.1.0: Yet Another Binary Serialisation Library (compatibility shim)
@@ -201,21 +201,21 @@ dev-haskell/bitstringrandommonad 1.1.0.2: A library which turns a bytestring int
 dev-haskell/bitsyntax 0.3.2.1: A module to aid in the (de)serialisation of binary data
 dev-haskell/bitwise 1.0.0.1: fast multi-dimensional unboxed bit packed Bool arrays
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
-dev-haskell/blank-canvas 0.7.1: HTML5 Canvas Graphics Library
+dev-haskell/blank-canvas 0.7.2: HTML5 Canvas Graphics Library
 dev-haskell/blasthttp 1.2.1: Libary to interface with the NCBI blast REST interface
 dev-haskell/blastxml 0.3.2: Library for reading Blast XML output
 dev-haskell/blaze-builder 0.4.1.0: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
 dev-haskell/blaze-colonnade 1.2.2.1-r1: Helper functions for using blaze-html with colonnade
 dev-haskell/blaze-html 0.9.1.2: A blazingly fast HTML combinator library for Haskell
-dev-haskell/blaze-markup 0.8.2.4: A blazingly fast markup combinator library for Haskell
+dev-haskell/blaze-markup 0.8.2.7: A blazingly fast markup combinator library for Haskell
 dev-haskell/blaze-svg 0.3.6.1: SVG combinator library
 dev-haskell/blaze-textual 0.2.1.0: Fast rendering of common datatypes
 dev-haskell/bloodhound 0.16.0.0-r2: ElasticSearch client library for Haskell
 dev-haskell/bloomfilter 2.0.1.0: Pure and impure Bloom Filter implementations
 dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.4: Generalized booleans and numbers
-dev-haskell/boomerang 1.4.5.7: Library for invertible parsing and printing
+dev-haskell/boomerang 1.4.6: Library for invertible parsing and printing
 dev-haskell/bootstrap-types 0.3: Bootstrap CSS Framework type-safe interface
 dev-haskell/bound 2.0.1-r1: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
