@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		An efficient implementation of ByteString builder. It should be faster than
-		the standard implementation in most cases.
-		
-		In many benchmarks, the performance improvement is 2x-10x.
-	</longdescription>
 </pkgmetadata>
