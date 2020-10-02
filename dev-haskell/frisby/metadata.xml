@@ -5,18 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		frisby is a parser library that can parse arbitrary PEG
-		grammars in linear time. Unlike other parsers of PEG grammars,
-		frisby need not be supplied with all possible rules up front,
-		allowing composition of smaller parsers.
-		
-		PEG parsers are never ambiguous and allow infinite lookahead
-		with no backtracking penalty. Since PEG parsers can look ahead
-		arbitrarily, they can easily express rules such as the maximal
-		munch rule used in lexers, meaning no separate lexer is needed.
-		
-		In addition to many standard combinators, frisby provides
-		routines to translate standard regex syntax into frisby parsers.
-	</longdescription>
 </pkgmetadata>
