@@ -6,16 +6,20 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="embed-data-files">Embed the data files in the binary for a relocatable executable</flag>
+		<flag name="embed-data-files">Embed the data files in the binary for a relocatable executable. (Warning: This will increase the executable size significantly.)</flag>
 	</use>
 	<longdescription>
-		This library provides a powerful but simple way to measure the
-		performance of Haskell code.  It provides both a framework for
-		executing and analysing benchmarks and a set of driver functions
-		that makes it easy to build and run benchmarks, and to analyse their
-		results.
+		This library provides a powerful but simple way to measure software
+		performance.  It provides both a framework for executing and
+		analysing benchmarks and a set of driver functions that makes it
+		easy to build and run benchmarks, and to analyse their results.
 		
-		The fastest way to get started is to read the documentation and
-		examples in the Criterion.Main module.
+		The fastest way to get started is to read the
+		&lt;http://www.serpentine.com/criterion/tutorial.html online tutorial&gt;,
+		followed by the documentation and examples in the &quot;Criterion.Main&quot;
+		module.
+		
+		For examples of the kinds of reports that criterion generates, see
+		&lt;http://www.serpentine.com/criterion the home page&gt;.
 	</longdescription>
 </pkgmetadata>

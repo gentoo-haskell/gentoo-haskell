@@ -5,33 +5,22 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="tests">Enable full development tree</flag>
+	</use>
 	<longdescription>
-		'data-reify' provided the ability to turn recursive structures into explicit graphs.
+		&#39;data-reify&#39; provided the ability to turn recursive structures into explicit graphs.
 		Many (implicitly or explicitly) recursive data structure can be given this ability, via
-		a type class instance. This gives an alternative to using 'Ref' for observable sharing.
+		a type class instance. This gives an alternative to using &#39;Ref&#39; for observable sharing.
 		
 		Observable sharing in general is unsafe, so we use the IO monad to bound this effect,
-		but can be used safely even with 'unsafePerformIO' if some simple conditions are met.
-		Typically this package will be used to tie the knot with DSL's that depend of
+		but can be used safely even with &#39;unsafePerformIO&#39; if some simple conditions are met.
+		Typically this package will be used to tie the knot with DSL&#39;s that depend of
 		observable sharing, like Lava.
 		
-		Providing an instance for 'MuRef' is the mechanism for allowing a structure to be
+		Providing an instance for &#39;MuRef&#39; is the mechanism for allowing a structure to be
 		reified into a graph, and several examples of this are provided.
-		
-		History:
-		Version 0.1 used unsafe pointer compares.
-		Version 0.2 of 'data-reify' used 'StableName's, and was much faster.
-		Version 0.3 provided two versions of 'MuRef', the mono-typed version,
-		for trees of a single type,
-		and the dynamic-typed version, for trees of different types.
-		Version 0.4 used 'Int' as a synonym for 'Unique' rather than 'Data.Unique'
-		for node ids, by popular demand.
-		Version 0.5 merged the mono-typed and dynamic version again, by using
-		'DynStableName', an unphantomized version of StableName.
 		
 		&amp;#169; 2009 Andy Gill; BSD3 license.
 	</longdescription>
-	<use>
-		<flag name="tests">Build test binaries.</flag>
-	</use>
 </pkgmetadata>

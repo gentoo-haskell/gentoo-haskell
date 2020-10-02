@@ -5,22 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Digestive functors is a library inspired by formlets:
-		
-		&lt;http://groups.inf.ed.ac.uk/links/formlets/&gt;
-		
-		It is intended to be an improvement of the Haskell formlets library, with as
-		main advantages:
-		
-		* better error handling, so a web page can display input errors right next
-		to the corresponding fields;
-		
-		* the ability to easily add @\&lt;label\&gt;@ elements;
-		
-		* separation of the validation model and the HTML output.
-		
-		Tutorial:
-		&lt;http://github.com/jaspervdj/digestive-functors/blob/master/examples/tutorial.lhs&gt;
-	</longdescription>
 </pkgmetadata>
