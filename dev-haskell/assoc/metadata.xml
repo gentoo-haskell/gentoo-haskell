@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Provides generalisations of
-		@swap :: (a,b) -&gt; (b,a)@ and
-		@assoc :: ((a,b),c) -&gt; (a,(b,c))@
-		to
-		@Bifunctor@s supporting similar operations (e.g. @Either@, @These@).
-	</longdescription>
 </pkgmetadata>
