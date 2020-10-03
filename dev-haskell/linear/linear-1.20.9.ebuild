@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -46,6 +46,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8
 		>=dev-haskell/test-framework-hunit-0.3 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-base-orphans-0.8.3.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
