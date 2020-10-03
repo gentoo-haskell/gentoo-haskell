@@ -690,13 +690,13 @@ dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.12.0 0.13.0: Library and tool for parsing .eventlog files from GHC
 dev-haskell/ghc-exactprint 0.6.3.2: ExactPrint for GHC
-dev-haskell/ghc-gc-tune 0.3: Graph performance of Haskell programs with different GC flags
+dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.6.1: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.8.4.20200716: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser 8.8.1 8.8.4.20200716: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser-ex 8.8.5.3 8.8.6.0: Algorithms on GHC parse trees
 dev-haskell/ghc-mtl 1.2.1.0: An mtl compatible version of the Ghc-Api monads and monad-transformers
-dev-haskell/ghc-parser 0.2.1.0: Haskell source parser from GHC
+dev-haskell/ghc-parser 0.2.2.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.12-r1: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.7: Library for parsing GHC time and allocation profiling reports
 dev-haskell/ghc-simple 0.4: Simplified interface to the GHC API
@@ -704,7 +704,7 @@ dev-haskell/ghc-syb-utils 0.3.0.0: Scrap Your Boilerplate utilities for the GHC 
 dev-haskell/ghc-tcplugins-extra 0.3 0.4: Utilities for writing GHC type-checker plugins
 dev-haskell/ghc-typelits-extra 0.3.3: Additional type-level operations on GHC.TypeLits.Nat
 dev-haskell/ghc-typelits-knownnat 0.7.2: Derive KnownNat constraints from other KnownNat constraints
-dev-haskell/ghc-typelits-natnormalise 0.7.1: GHC typechecker plugin for types of kind GHC.TypeLits.Nat
+dev-haskell/ghc-typelits-natnormalise 0.7.2: GHC typechecker plugin for types of kind GHC.TypeLits.Nat
 dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
