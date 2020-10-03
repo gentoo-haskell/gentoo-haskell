@@ -21,14 +21,16 @@ RDEPEND=">=dev-haskell/text-1.2.0.4:=[profile?] <dev-haskell/text-1.3:=[profile?
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/alex-3.2.4 <dev-haskell/alex-3.3
+	>=dev-haskell/alex-3.2.4
 	>=dev-haskell/cabal-2.2
-	>=dev-haskell/happy-1.19 <dev-haskell/happy-1.20
+	>=dev-haskell/happy-1.19
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base       >= 4.8     && < 4.14' 'base       >= 4.8'
+		'base       >= 4.8     && < 4.14' 'base       >= 4.8' \
+		'happy:happy ^>= 1.19.12' 'happy:happy >= 1.19.12' \
+		'alex:alex   ^>= 3.2.4' 'alex:alex   >= 3.2.4'
 }
