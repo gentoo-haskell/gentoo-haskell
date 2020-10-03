@@ -5,27 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		ghc-gc-tune runs your compiled Haskell program with
-		different GC flags, and generates a graph of time as
-		those GC settings vary. ghc-gc-tune lets your automate
-		the task of finding good GC flags for your program, in
-		order to get the best performance from it.
-		
-		Graphs are rendered with gnuplot, so make sure that is
-		installed.
-		
-		Example use:
-		
-		&gt; ghc -O2 --make binarytrees.hs
-		&gt; ghc-gc-tune -t svg binarytrees 12
-		
-		Example output:
-		
-		&lt;http://haskell.org/haskellwiki/Ghc-gc-tune&gt;
-		
-		For more information on GHC garbage collector settings,
-		see &lt;http://haskell.org/ghc/docs/6.12.1/html/users_guide/runtime-control.html#rts-options-gc&gt;
-		
-	</longdescription>
 </pkgmetadata>

@@ -9,8 +9,8 @@
 		<flag name="deverror">Enables `-Werror` for development mode and TravisCI</flag>
 	</use>
 	<longdescription>
-		A type checker plugin for GHC that can solve /equalities/ of types of kind
-		@Nat@, where these types are either:
+		A type checker plugin for GHC that can solve /equalities/ and /inequalities/
+		of types of kind @Nat@, where these types are either:
 		
 		* Type-level naturals
 		
