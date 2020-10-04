@@ -11,4 +11,7 @@
 	<longdescription>
 		Lowlevel cpu routines to get basic properties of the cpu platform, like endianness and architecture.
 	</longdescription>
+	<upstream>
+		<remote-id type="github">vincenthz/hs-cpu</remote-id>
+	</upstream>
 </pkgmetadata>
