@@ -5,7 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Comonad transformers
-	</longdescription>
+	<upstream>
+		<remote-id type="github">ekmett/comonad-transformers</remote-id>
+	</upstream>
 </pkgmetadata>
