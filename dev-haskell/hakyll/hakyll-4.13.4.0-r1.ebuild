@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/cryptonite-0.25:=[profile?] <dev-haskell/cryptonite-0.28:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
-	>=dev-haskell/file-embed-0.0.10.1:=[profile?] <dev-haskell/file-embed-0.0.12:=[profile?]
+	>=dev-haskell/file-embed-0.0.10.1:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.3:=[profile?]
 	>=dev-haskell/memory-0.14.18:=[profile?] <dev-haskell/memory-0.16:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -58,6 +58,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'file-embed           >= 0.0.10.1 && < 0.0.12' 'file-embed           >= 0.0.10.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
