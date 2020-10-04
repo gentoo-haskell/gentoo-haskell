@@ -5,7 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Comonad transformers using functional dependencies
-	</longdescription>
+	<upstream>
+		<remote-id type="github">ekmett/comonads-fd</remote-id>
+	</upstream>
 </pkgmetadata>

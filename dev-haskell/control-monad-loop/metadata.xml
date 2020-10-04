@@ -5,8 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A library of looping constructs with @continue@ and @exit@ control flow
-		statements.
-	</longdescription>
+	<upstream>
+		<remote-id type="github">joeyadams/haskell-control-monad-loop</remote-id>
+	</upstream>
 </pkgmetadata>
