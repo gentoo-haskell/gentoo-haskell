@@ -763,7 +763,7 @@ dev-haskell/gnutls 0.2: Bindings for GNU libgnutls
 dev-haskell/goa 3.3: GHCi bindings to lambdabot
 dev-haskell/googlesuggest 0.0.4: Interface to Google Suggest API
 dev-haskell/googletranslate 0.0.5-r1: Interface to Google Translate API
-dev-haskell/gpipe 2.2.4: Typesafe functional GPU graphics programming
+dev-haskell/gpipe 2.2.5: Typesafe functional GPU graphics programming
 dev-haskell/gpipe-glfw 1.4.1.2: GLFW OpenGL context creation for GPipe
 dev-haskell/graphalyze 0.14.1.1-r2: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.4.4: Present the module dependencies of a program as a "dot" graph
