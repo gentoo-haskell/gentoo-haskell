@@ -740,7 +740,7 @@ dev-haskell/githash 0.1.3.3: Compile git revision info into Haskell projects
 dev-haskell/github 0.23: Access to the Github API, v3
 dev-haskell/github-backup 1.20191219: backs up everything github knows about a repository, to the repository
 dev-haskell/gitrev 1.3.1: Compile git revision info into Haskell projects
-dev-haskell/gl 0.8.0-r3 0.9: Complete OpenGL raw bindings
+dev-haskell/gl 0.8.0-r3 0.9-r1: Complete OpenGL raw bindings
 dev-haskell/glambda 1.0.2: A simply typed lambda calculus interpreter, written with GADTs
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.4 3.3.0.0: Bindings to GLFW OpenGL library
