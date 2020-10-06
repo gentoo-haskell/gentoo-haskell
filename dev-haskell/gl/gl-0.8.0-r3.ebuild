@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24
 	>=dev-haskell/hxt-9.3 <dev-haskell/hxt-9.4
 "
+
+PATCHES=("${FILESDIR}"/${P}-cabal-3-no-sdist.patch)
 
 src_prepare() {
 	default
