@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/fixed-0.2.1:=[profile?] <dev-haskell/fixed-0.4:=[profile?]
+RDEPEND=">=dev-haskell/fixed-0.2.1:=[profile?]
 	>=dev-haskell/half-0.2:=[profile?] <dev-haskell/half-0.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	virtual/opengl
@@ -26,6 +26,13 @@ RDEPEND=">=dev-haskell/fixed-0.2.1:=[profile?] <dev-haskell/fixed-0.4:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'fixed >= 0.2.1 && < 0.3' 'fixed >= 0.2.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

@@ -1,0 +1,14 @@
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -35,11 +35,4 @@ main :: IO ()
+ main = defaultMainWithHooks simpleUserHooks
+   { buildHook = \p l h f -> generateAPI l >> buildHook simpleUserHooks p l h f
+   , haddockHook = \p l h f -> generateAPI l >> haddockHook simpleUserHooks p l h f
+-  , sDistHook = \p ml h f -> case ml of
+-     Nothing -> fail "No local buildinfo available. configure first"
+-     Just l -> do
+-       let editlib lib = lib { libBuildInfo = editBuildInfo (libBuildInfo lib) }
+-           editBuildInfo bi = bi { hsSourceDirs = (buildDir l </> "autogen") : hsSourceDirs bi }
+-           p' = p { library = fmap editlib (library p) }
+-       generateAPI l >> sDistHook simpleUserHooks p' ml h f
+   }
