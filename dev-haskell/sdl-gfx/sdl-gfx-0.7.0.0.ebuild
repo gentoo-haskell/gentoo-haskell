@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/sdl:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	media-libs/sdl-gfx
+	media-libs/sdl-gfx:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24
