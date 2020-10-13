@@ -538,7 +538,7 @@ dev-haskell/echo 0.1.3: A cross-platform, cross-console way to handle echoing te
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
 dev-haskell/ede 0.2.9: Templating language with similar syntax and features to Liquid or Jinja2
 dev-haskell/edisonapi 1.3.1-r1: A library of efficient, purely-functional data structures (API)
-dev-haskell/edisoncore 1.3.1.1 1.3.2.1-r1: A library of efficent, purely-functional data structures (Core Implementations)
+dev-haskell/edisoncore 1.3.2.1-r1: A library of efficent, purely-functional data structures (Core Implementations)
 dev-haskell/edit-distance 0.2.2.1-r1: Levenshtein and restricted Damerau-Levenshtein edit distances
 dev-haskell/edit-distance-vector 1.0.0.4: Calculate edit distances and edit scripts between vectors
 dev-haskell/editline 0.2.1.1-r1: Bindings to the editline library (libedit)
