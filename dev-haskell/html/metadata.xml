@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package contains a combinator library for constructing
-		HTML documents.
-	</longdescription>
 </pkgmetadata>
