@@ -176,6 +176,7 @@ dev-haskell/glib:closure-signals - Use the the GClosure-based signals implementa
 dev-haskell/gloss:explicitbackend - Expose versions of 'display' and friends that allow you to choose what window manager backend to use.
 dev-haskell/gloss:glfw - Enable the GLFW backend.
 dev-haskell/gloss:glut - Enable the GLUT backend.
+dev-haskell/glutil:demos - Build demonstration programs
 dev-haskell/gnuplot:buildexamples - Build test executables.
 dev-haskell/gnuplot:executepipe - Avoid a temporary script by running with runInteractiveProcess.
 dev-haskell/gnuplot:executeshell - Avoid a temporary script by calling via a UNIX shell and its piping syntax.
