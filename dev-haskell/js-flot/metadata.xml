@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package bundles the minified &lt;http://www.flotcharts.org/ Flot&gt; code
-		(a jQuery plotting library) into a Haskell package,
-		so it can be depended upon by Cabal packages. The first three components of
-		the version number match the upstream flot version. The package is designed
-		to meet the redistribution requirements of downstream users (e.g. Debian).
-	</longdescription>
 </pkgmetadata>
