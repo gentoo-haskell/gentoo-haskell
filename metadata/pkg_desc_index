@@ -1020,7 +1020,7 @@ dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-c
 dev-haskell/http-client-openssl 0.3.0.0: http-client backend using the OpenSSL library
 dev-haskell/http-client-restricted 0.0.3: restricting the servers that http-client will use
 dev-haskell/http-client-tls 0.3.5.3: http-client backend using the connection package and tls library
-dev-haskell/http-common 0.8.2.0: Common types for HTTP clients and servers
+dev-haskell/http-common 0.8.2.1: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.2.4 2.3.7.3: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.8: HTTP Date parser/formatter
 dev-haskell/http-download 0.2.0.0: Verified downloads with retries
