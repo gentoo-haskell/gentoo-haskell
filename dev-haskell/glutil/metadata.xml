@@ -5,8 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Helpers for working with shaders, buffer objects, and
-		textures in OpenGL.
-	</longdescription>
+	<use>
+		<flag name="demos">Build demonstration programs</flag>
+	</use>
 </pkgmetadata>
