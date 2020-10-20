@@ -631,7 +631,7 @@ dev-haskell/floatinghex 0.4: Read and write hexadecimal floating point numbers
 dev-haskell/flock 0.3.1.8-r1: Wrapper for flock(2)
 dev-haskell/flow2dot 0.9.0.3: Library and binary to generate sequence/flow diagrams from plain text source
 dev-haskell/fmlist 0.9.4: FoldMap lists
-dev-haskell/focus 0.1.5.2 1.0.1.3: A general abstraction for manipulating elements of container data structures
+dev-haskell/focus 0.1.5.2 1.0.1.4: A general abstraction for manipulating elements of container data structures
 dev-haskell/foldl 1.4.9: Composable, streaming, and efficient left folds
 dev-haskell/follow-file 0.0.3: Be notified when a file gets appended, solely with what was added
 dev-haskell/fontyfruity 0.5.3.5: A true type file format loader
@@ -1847,7 +1847,7 @@ dev-haskell/stickykeyshotkey 0.1.0.2: get and set STICKYKEYS.SKF_HOTKEYACTIVE
 dev-haskell/stm 2.4.5.0 2.5.0.0: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
 dev-haskell/stm-conduit 4.0.1: Introduces conduits to channels, and promotes using conduits concurrently
-dev-haskell/stm-containers 1.1.0.4: Containers for STM
+dev-haskell/stm-containers 1.1.0.5: Containers for STM
 dev-haskell/stm-delay 0.1.1.1: Updatable one-shot timer polled with STM
 dev-haskell/stm-hamt 1.2.0.4: STM-specialised Hash Array Mapped Trie
 dev-haskell/stm-linkedlist 0.1.0.0: Mutable, doubly linked lists for STM
@@ -2230,7 +2230,7 @@ dev-haskell/yesod-bin 1.6.0.6: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 1.3.0.1: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.5: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.4.37.3 1.6.18: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.4.37.3 1.6.18.5: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-dsl 0.2.1: DSL for generating Yesod subsite to manage an RDBMS;
 dev-haskell/yesod-elements 1.1.1: Non template haskell markup building function in the spirit of lucid
