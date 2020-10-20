@@ -152,6 +152,7 @@ dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functi
 dev-haskell/base16-bytestring 0.1.1.6: Fast base16 (hex) encoding and decoding for ByteStrings
 dev-haskell/base32-bytestring 0.2.1.0: Fast base32 and base32hex codec for ByteStrings
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
+dev-haskell/base64 0.4.2.2: Fast RFC 4648-compliant Base64 encoding
 dev-haskell/base64-bytestring 1.0.0.3: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
 dev-haskell/basement 0.0.7 0.0.11: Foundation scrap box of array & string
@@ -686,6 +687,7 @@ dev-haskell/genvalidity-unordered-containers 0.3.0.1: GenValidity support for un
 dev-haskell/genvalidity-vector 0.3.0.1: GenValidity support for aeson
 dev-haskell/getopt-generics 0.13.0.4: Create command line interfaces with ease
 dev-haskell/ghc-api 7.8.4 7.8.4-r5 7.10.3 8.0.2 8.4.4 8.6.1 8.8.3: The Glasgow Haskell Compiler API (ghc package)
+dev-haskell/ghc-byteorder 4.11.0.0.10: "GHC.ByteOrder" API Compatibility Layer
 dev-haskell/ghc-core 0.5.6: Display GHC's core and assembly output in a pager
 dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's memory
 dev-haskell/ghc-events 0.12.0 0.13.0: Library and tool for parsing .eventlog files from GHC
@@ -1462,6 +1464,7 @@ dev-haskell/parser-combinators 1.2.1: Lightweight package providing commonly use
 dev-haskell/parser-combinators-tests 1.2.1: Test suite of parser-combinators
 dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
+dev-haskell/password 2.0.1.1: Hashing and checking of passwords
 dev-haskell/path 0.7.0: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.6.0-r1: Interface to 'directory' package for users of 'path'
@@ -1604,6 +1607,7 @@ dev-haskell/quickcheck-unicode 1.0.1.0: Generator and shrink functions for testi
 dev-haskell/quickcheckvariant 0.2.0.0: Generator of "valid" and "invalid" data in a type class
 dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
 dev-haskell/random 1.1: random number library
+dev-haskell/random-bytestring 0.1.3.2: Efficient generation of random bytestrings
 dev-haskell/random-fu 0.2.7.4: Random number generation
 dev-haskell/random-shuffle 0.0.4: Random shuffle implementation
 dev-haskell/random-source 0.3.0.6-r1: Generic basis for random number generators
@@ -1717,6 +1721,7 @@ dev-haskell/scientific 0.3.6.2-r1: Numbers represented using scientific notation
 dev-haskell/scion-browser 0.2.19-r1: Command-line interface for browsing and searching packages documentation
 dev-haskell/scotty 0.11.5: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scrape-changes 0.1.0.5: Scrape websites for changes
+dev-haskell/scrypt 0.5.0: Stronger password hashing via sequential memory-hard functions
 dev-haskell/sdl 0.6.7.0: Binding to libSDL
 dev-haskell/sdl-gfx 0.7.0.0: Binding to libSDL_gfx
 dev-haskell/sdl-image 0.6.2.0: Binding to libSDL_image
