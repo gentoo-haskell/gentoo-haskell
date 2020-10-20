@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		RFC 4648-compliant padded and unpadded base64 and base64url encoding and decoding. This library provides
+		performant encoding and decoding primitives, as well as support for textual values.
+	</longdescription>
+</pkgmetadata>
