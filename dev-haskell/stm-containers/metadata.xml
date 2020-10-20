@@ -5,15 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This library is based on an STM-specialized implementation of a
-		Hash Array Mapped Trie.
-		It provides efficient implementations of @Map@, @Set@
-		and other data structures,
-		which are slightly slower than their counterparts from \&quot;unordered-containers\&quot;,
-		but scale very well on concurrent access patterns.
-		
-		For details on performance of the library see
-		&lt;http://nikita-volkov.github.io/stm-containers/ this blog post&gt;.
-	</longdescription>
 </pkgmetadata>
