@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+	</use>
+	<longdescription>
+		This package provides bindings to Colin Percival&#39;s `scrypt`
+		implementation (&lt;http://www.tarsnap.com/scrypt.html&gt;). Scrypt is a key
+		derivation function designed to be far more secure against hardware
+		brute-force attacks than alternative functions such as PBKDF2 or bcrypt.
+		
+		Details of the scrypt key derivation function are given in a paper by
+		Colin Percival, Stronger Key Derivation via Sequential Memory-Hard
+		Functions: &lt;http://www.tarsnap.com/scrypt/scrypt.pdf&gt;.
+	</longdescription>
+</pkgmetadata>
