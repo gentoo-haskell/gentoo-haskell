@@ -1176,6 +1176,7 @@ dev-haskell/lens-aeson 1.1: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.3: Lens Families
 dev-haskell/lens-family-core 1.2.3: Haskell 98 Lens Families
 dev-haskell/lens-family-th 0.5.1.0: Generate lens-family style lenses
+dev-haskell/lens-filesystem 0.1.0.1: Lens interface for your filesystem; still a bit experimental
 dev-haskell/lens-simple 0.1.0.9: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.8: Simple Functional Lenses
 dev-haskell/leveldb-haskell 0.6.5: Haskell bindings to LevelDB
