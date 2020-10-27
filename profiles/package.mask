@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-10-27)
+# Needs a fix to build against new headers location:
+# https://github.com/qnikst/imagemagick/issues/46
+dev-haskell/imagemagick
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # Needs a port to MonadFail. Very old package.
 dev-util/darcs-graph
