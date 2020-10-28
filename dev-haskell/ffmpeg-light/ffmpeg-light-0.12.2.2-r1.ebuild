@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/either:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/vector-0.10.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
-	virtual/ffmpeg
+	media-video/ffmpeg
 	buildrasterdemo? ( >=dev-haskell/juicypixels-3.2:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
 				>=dev-haskell/rasterific-0.3:=[profile?] )
 	!buildrasterdemo? ( >=dev-haskell/juicypixels-3.1:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?] )
