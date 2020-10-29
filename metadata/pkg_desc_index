@@ -2277,6 +2277,7 @@ dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits
 dev-haskell/zlib-enum 0.2.3.1-r1: Enumerator interface for zlib compression
 dev-haskell/zmidi-core 0.9.0: Read and write MIDI files
 dev-haskell/ztail 1.2.0.2-r1: Multi-file, colored, filtered log tailer
+dev-haskell/zxcvbn-hs 0.3.0.0: Password strength estimation based on zxcvbn
 dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
 dev-lang/elm 0.19.0: Meta package for Elm
