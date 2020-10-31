@@ -5,14 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package implements functions, analogous
-		to those from Data.List, to create and manipulate
-		infinite lists: @data Stream a = Cons a (Stream a)@.
-		It provides alternative definitions for those
-		Prelude functions that make sense for such streams.
-		Note that this package has (almost)
-		nothing to do with the work on /Stream Fusion/ by
-		Duncan Coutts, Roman Leshchinskiy, and Don Stewart.
-	</longdescription>
 </pkgmetadata>
