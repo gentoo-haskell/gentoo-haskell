@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -14,8 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#ghc-8.8.1, cabal-3 without KEYWORDS
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
@@ -23,5 +22,12 @@ RDEPEND=">=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
-	>=dev-haskell/happy-1.19 <dev-haskell/happy-1.20
+	>=dev-haskell/happy-1.19
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'happy:happy == 1.19.*' 'happy:happy >= 1.19'
+}
