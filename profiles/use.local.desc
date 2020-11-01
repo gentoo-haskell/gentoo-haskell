@@ -466,7 +466,7 @@ dev-haskell/unordered-containers:debug - Enable debug support
 dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/uri-encode:tools - Build executables.
 dev-haskell/urlencoded:network-uri - Get Network.URI from the network-uri package
-dev-haskell/uuagc:with-loag - Use dev-haskell/minisat external SAT-solver to schedule all Linear Ordered AGs.
+dev-haskell/uuagc:loag - Use MiniSat as external SAT-solver to schedule all Linear Ordered AGs
 dev-haskell/vector:boundschecks - Enable bounds checking
 dev-haskell/vector:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty
 dev-haskell/vector:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty

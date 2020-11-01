@@ -2088,13 +2088,13 @@ dev-haskell/urlpath 5.0.0.1: Painfully simple URL deployment
 dev-haskell/userid 0.1.3.5: The UserId type and useful instances for web development
 dev-haskell/users 0.5.0.0: A library simplifying user management for web applications
 dev-haskell/users-mysql-haskell 0.5.2.0: A mysql-haskell backend for the users library
-dev-haskell/utf8-light 0.4.2: Unicode
+dev-haskell/utf8-light 0.4.2: Lightweight UTF8 handling
 dev-haskell/utf8-string 1.0.1.1: Support for reading and writing UTF8 Strings
 dev-haskell/utility-ht 0.0.14: Various small helper functions for Lists, Maybes, Tuples, Functions
 dev-haskell/utilitytm 0.0.4-r1: Utility functions that are missing from the standard library
 dev-haskell/uu-interleaved 0.2.0.2: interleaving combinator for use with applicative/alternative style
 dev-haskell/uu-parsinglib 2.9.1.1: Online error-correcting monadic applicative and more parser combinators
-dev-haskell/uuagc 0.9.52.2: Attribute Grammar System of Universiteit Utrecht
+dev-haskell/uuagc 0.9.53.1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-bootstrap 0.9.40.2-r1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-cabal 1.2.0.0: Cabal plugin for UUAGC
 dev-haskell/uuid 1.3.13-r1: For creating, comparing, parsing and printing Universally Unique Identifiers
