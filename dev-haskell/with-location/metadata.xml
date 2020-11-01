@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Use ImplicitParams-based source locations in a backward compatible way
-	</longdescription>
 </pkgmetadata>
