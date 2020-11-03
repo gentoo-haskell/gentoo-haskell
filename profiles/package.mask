@@ -4,13 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
-# Needs a port to ghc-8.8: https://github.com/winterland1989/mysql-haskell/pull/37
-dev-haskell/mysql-haskell
-dev-haskell/mysql-haskell-nem
-dev-haskell/mysql-haskell-openssl
-dev-haskell/users-mysql-haskell
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # pdf-toolbox needs a hackage release: https://github.com/Yuras/pdf-toolbox/issues/63
 # Mask with revdeps.
 dev-haskell/pdf-toolbox-content
