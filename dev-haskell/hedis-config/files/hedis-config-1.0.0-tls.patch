@@ -1,0 +1,50 @@
+diff --git a/hedis-config.cabal b/hedis-config.cabal
+index 21b50db..65cb2e7 100644
+--- a/hedis-config.cabal
++++ b/hedis-config.cabal
+@@ -43,6 +43,7 @@ library
+                      , scientific
+                      , text
+                      , time
++                     , tls          >= 1.5
+ 
+   exposed-modules:     Database.Redis.Config
+ 
+diff --git a/src/Database/Redis/Config.hs b/src/Database/Redis/Config.hs
+index 316575f..ef7cfed 100644
+--- a/src/Database/Redis/Config.hs
++++ b/src/Database/Redis/Config.hs
+@@ -8,6 +8,7 @@ import Data.Aeson
+ import Data.Scientific
+ import Data.Time
+ import Database.Redis
++import Network.TLS
+ 
+ import qualified Data.Aeson.Types as A
+ import qualified Data.ByteString.Char8 as BS
+@@ -45,7 +46,6 @@ parsePort o =
+     optional
+     $   fmap (\a -> PortNumber $ floor (a :: Scientific)) (o .: "port")
+     <|> fmap UnixSocket (o .: "socket")
+-    <|> fmap Service (o .: "service")
+ 
+ parsePassword :: Object -> A.Parser (Maybe BS.ByteString)
+ parsePassword o = do
+@@ -55,6 +55,9 @@ parsePassword o = do
+     Just "" -> Nothing
+     Just ps -> Just $ T.encodeUtf8 ps
+ 
++parseClientParams :: Object -> A.Parser (Maybe (Maybe ClientParams))
++parseClientParams _ = return Nothing
++
+ realToFrac' :: Scientific -> NominalDiffTime
+ realToFrac' = realToFrac
+ 
+@@ -73,6 +76,7 @@ instance FromJSON RedisConfig where
+             <*> o .:? "max-connections" .!= connectMaxConnections defaultConnectInfo
+             <*> fmap (fmap realToFrac') (o .:? "max-idle-time") .!= connectMaxIdleTime defaultConnectInfo
+             <*> parseTimeout o .!= connectTimeout defaultConnectInfo
++            <*> parseClientParams o .!= connectTLSParams defaultConnectInfo
+ 
+ -- | Open redis connection
+ connectRedis :: RedisConfig -> IO Connection
