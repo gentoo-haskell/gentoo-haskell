@@ -3,11 +3,6 @@
 # https://github.com/qnikst/imagemagick/issues/46
 dev-haskell/imagemagick
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
-# Was never ported upstream to base-4. Nowadays GHC
-# supports source-location extension. No revdeps.
-dev-haskell/loch
-
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-23)
 # No update since 2014. A compat package without revdeps.
 dev-haskell/compact-string-fix
