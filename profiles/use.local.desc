@@ -57,7 +57,6 @@ dev-haskell/attoparsec-iso8601:developer - operate in developer mode
 dev-haskell/attoparsec-iso8601:fast - compile without optimizations
 dev-haskell/authenticate:network-uri - Get Network.URI from the network-uri package
 dev-haskell/aws:network-3 - Use network-3
-dev-haskell/beam-migrate-cli:werror - Enable -Werror during development
 dev-haskell/bench-show:executable - Build executable as well as library
 dev-haskell/bifunctors:semigroups - Enable the use of `semigroups` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/bifunctors:tagged - Enable the use of the `tagged` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -222,9 +221,6 @@ dev-haskell/hlint:ghc-lib - Force dependency on ghc-lib-parser even if GHC API i
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour.
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
-dev-haskell/hoodle:dyre - Support dynamic reconfiguration
-dev-haskell/hoodle-core:dyre - Support dynamic reconfiguration
-dev-haskell/hoodle-core:hub - Support communication with hub
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.
@@ -269,7 +265,6 @@ dev-haskell/json:parsec - Add support for parsing with Parsec.
 dev-haskell/json:pretty - Add support for using pretty printing combinators.
 dev-haskell/judy:unsafe - Compile the library without locks. Code may be faster, but not threadsafe.
 dev-haskell/juicypixels-extra:dev - Turn on development settings.
-dev-haskell/keter:system-filepath - Deprecated in favor of filepath
 dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes
 dev-haskell/language-dot:executable - Build the `ppdot' executable
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
@@ -408,7 +403,6 @@ dev-haskell/shakespeare:test-coffee - Render tests through coffeescript render f
 dev-haskell/shakespeare:test-export - Test export.
 dev-haskell/shakespeare:test-roy - Render tests through roy render function.
 dev-haskell/shellac-compatline:editline - Use editline instead of readline backend.
-dev-haskell/shellmate:download-extras - Build Control.Shell.Download with extras for parsing downloaded HTML, XML, RSS and Atom feeds.
 dev-haskell/shelly:lifted - run the tests against Shelly.Lifted
 dev-haskell/shuffle:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/simple-sendfile:allow-bsd - Allow use of BSD sendfile (disable on GNU/kFreeBSD)
