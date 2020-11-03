@@ -4,11 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
-# Was never ported upstream to split Applicative.
-# No revdeps.
-dev-haskell/maybet
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Was never ported upstream to base-4. Nowadays GHC
 # supports source-location extension. No revdeps.
 dev-haskell/loch
