@@ -1,9 +1,0 @@
-diff --git a/Main.hs b/Main.hs
-index 3372b67..dacc005 100644
---- a/Main.hs
-+++ b/Main.hs
-@@ -25,3 +25,3 @@ import System.Process
- import System.Environment
--import System.Exit
-+import System.Exit hiding (die)
- import Control.Monad
