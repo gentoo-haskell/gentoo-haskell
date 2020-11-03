@@ -4,10 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
-# Needs port to ghc-7. No revdeps.
-net-mail/mhailist
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to ghc-8.8. No homepage.
 # No revdeps.
 dev-haskell/hmarkup
