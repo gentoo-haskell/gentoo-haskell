@@ -5,6 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+	</use>
 	<longdescription>
 		Datatype to parse redis connection settings from file like
 		
@@ -16,5 +18,6 @@
 		&gt; database: 0                     # database number to connect to
 		&gt; max-connections: 5              # max connections in pool
 		&gt; max-idle-time: 30               # keep connection open for 30 seconds
+		&gt; timeout: 30                     # connection timeout
 	</longdescription>
 </pkgmetadata>
