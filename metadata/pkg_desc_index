@@ -850,7 +850,7 @@ dev-haskell/heaps 0.3.6.1: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/heckle 2.0.2.1: Jekyll in Haskell (feat. LaTeX)
 dev-haskell/hedgehog 1.0.2-r1: Hedgehog will eat all your bugs
 dev-haskell/hedis 0.9.6 0.12.14: Client library for the Redis datastore: supports full command set, pipelining
-dev-haskell/hedis-config 0.0.3: Easy trivial configuration for Redis
+dev-haskell/hedis-config 0.0.3 1.0.0: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r1: An Haskell template system supporting both HTML5 and XML
 dev-haskell/here 1.2.13: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0: multi-line string / here document using QuasiQuotes
