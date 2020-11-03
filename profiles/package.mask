@@ -11,11 +11,6 @@ dev-haskell/mysql-haskell-openssl
 dev-haskell/users-mysql-haskell
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
-# Needs a new release: https://github.com/facebook/Haxl/issues/124
-# No revdeps.
-dev-haskell/haxl
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # Needs porting to MonadFail, last update in 2014.
 # No revdeps.
 dev-haskell/happstack-hstringtemplate
