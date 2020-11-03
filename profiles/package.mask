@@ -4,12 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
-# Needs port to ghc-8.8: https://github.com/kazu-yamamoto/io-choice/issues/7
-# Mask with single revdep.
-dev-haskell/io-choice
-<www-servers/mighttpd2-3.4.4
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
 # Needs port to MonadFail: https://github.com/nominolo/atto-lisp/issues/24
 dev-haskell/atto-lisp
 
