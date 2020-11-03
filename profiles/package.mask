@@ -4,10 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
-# Needs a port to ghc-8.8. No revdeps.
-dev-haskell/socket-io
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # Needs a port to ghc-8, unmaintained: https://github.com/bmillwood/applicative-quoters/pull/5
 dev-haskell/applicative-quoters
 app-emacs/hindent
