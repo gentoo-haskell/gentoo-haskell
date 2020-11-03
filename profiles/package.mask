@@ -4,13 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
-# binary-bits needs port to ghc-8.8: https://github.com/kolmodin/binary-bits/issues/14
-# Masked with revdeps.
-dev-haskell/binary-bits
-dev-haskell/decimal-arithmetic
-dev-haskell/rattletrap
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-25)
 # Needs port to Cabal-3: https://github.com/bsl/hslogger-template/issues/2
 # No revdeps.
 dev-haskell/hslogger-template
