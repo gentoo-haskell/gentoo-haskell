@@ -4,10 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
-# Needs a port to MonadFail. Very old package.
-dev-util/darcs-graph
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-26)
 # Needs a port to ghc-8.8. No revdeps.
 dev-haskell/socket-io
 
