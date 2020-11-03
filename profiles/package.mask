@@ -4,11 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
-# Needs port to MonadFail: https://github.com/mgrabmueller/harpy/issues/2
-# No revdeps.
-dev-haskell/harpy
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to MonadFail: https://github.com/peti/streamproc/issues/1
 # No revdeps.
 dev-haskell/streamproc
