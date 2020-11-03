@@ -4,11 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
-# Needs port to ghc-7.10.
-games-sports/freekick2
-dev-haskell/pngload
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to ghc-7. No revdeps.
 net-mail/mhailist
 
