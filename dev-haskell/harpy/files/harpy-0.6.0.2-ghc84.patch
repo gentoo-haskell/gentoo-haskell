@@ -1,7 +1,0 @@
---- a/Harpy/CodeGenMonad.hs
-+++ b/Harpy/CodeGenMonad.hs
-@@ -96,3 +96,3 @@ import Control.Monad.Trans
- import Language.Haskell.TH.Syntax
--
-+import Prelude hiding ((<>))
- 

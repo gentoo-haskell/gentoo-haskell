@@ -1,8 +1,0 @@
-diff --git a/Harpy/CodeGenMonad.hs b/Harpy/CodeGenMonad.hs
-index d827565..c0888fe 100644
---- a/Harpy/CodeGenMonad.hs
-+++ b/Harpy/CodeGenMonad.hs
-@@ -37,2 +37,3 @@ module Harpy.CodeGenMonad(
-           CodeGenConfig(..),
-+          firstBuffer,
-           defaultCodeGenConfig,
