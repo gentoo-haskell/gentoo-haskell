@@ -1,7 +1,0 @@
---- a/src/Hoodle/Coroutine/File.hs
-+++ b/src/Hoodle/Coroutine/File.hs
-@@ -96,3 +96,3 @@ import           Hoodle.Type.Synchronization
- --
--import Prelude hiding (readFile,concat,mapM,mapM_)
-+import Prelude hiding (readFile,concat,mapM,mapM_,(<>))
- 
