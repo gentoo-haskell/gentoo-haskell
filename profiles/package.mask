@@ -4,11 +4,6 @@
 dev-haskell/imagemagick
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
-# Needs port to MonadFail. Does not compile against ghc-7.10 and above.
-# No revdeps.
-dev-haskell/stream-fusion
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-09-24)
 # Needs port to MonadFail. Does not compile against ghc-8.8.
 # No revdeps.
 dev-haskell/network-house
