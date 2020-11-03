@@ -3,11 +3,6 @@
 # https://github.com/qnikst/imagemagick/issues/46
 dev-haskell/imagemagick
 
-# Jack Todaro <solpeth@posteo.org> (2020-09-21)
-# Dead upstream, depends on old package versions.
-# Removal in 30 days.
-dev-haskell/regex-pcre-text
-
 # Jack Todaro <solpeth@posteo.org> (2020-09-15)
 # Requires porting of its dependencies to newer
 # versions and/or dead upstream. Removal in 30 days.
