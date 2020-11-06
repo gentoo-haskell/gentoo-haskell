@@ -25,6 +25,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
+RESTRICT=test # deadlocks under load
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag compare-benchmarks compare-benchmarks)
