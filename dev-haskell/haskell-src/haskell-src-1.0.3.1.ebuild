@@ -29,5 +29,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'happy:happy == 1.19.*' 'happy:happy >= 1.19'
+		'happy:happy == 1.19.*' 'happy:happy >= 1.19' \
+		'base   ^>= 4.13.0.0' 'base   >= 4.13.0.0'
 }
