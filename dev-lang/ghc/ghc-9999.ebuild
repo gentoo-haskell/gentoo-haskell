@@ -128,7 +128,7 @@ RDEPEND+="binary? ( ${PREBUILT_BINARY_RDEPENDS} )"
 # On arm ghc requires llvm backend.
 # On ghc-8.11 does not support anything except llvm-9 today.
 # See 'configure.ac:LlvmVersion=9' handling.
-LLVM_MAX_SLOT=9
+LLVM_MAX_SLOT=10
 
 RDEPEND+="
 	llvm? ( sys-devel/llvm:${LLVM_MAX_SLOT} )
