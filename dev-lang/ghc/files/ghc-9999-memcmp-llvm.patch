@@ -1,0 +1,32 @@
+https://gitlab.haskell.org/ghc/ghc/-/commit/143b1da05bf14050374e8a099a53af5cc78ad202.patch
+
+From 143b1da05bf14050374e8a099a53af5cc78ad202 Mon Sep 17 00:00:00 2001
+From: Ben Gamari <ben@smart-cactus.org>
+Date: Sat, 17 Oct 2020 15:20:46 -0400
+Subject: [PATCH] CmmToLlvm: Declare signature for memcmp
+
+Otherwise `opt` fails with:
+
+    error: use of undefined value '@memcmp$def'
+
+Fixes #18857.
+---
+ compiler/GHC/CmmToLlvm/Base.hs | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/compiler/GHC/CmmToLlvm/Base.hs b/compiler/GHC/CmmToLlvm/Base.hs
+index 43eaab424e..1c83c18c6c 100644
+--- a/compiler/GHC/CmmToLlvm/Base.hs
++++ b/compiler/GHC/CmmToLlvm/Base.hs
+@@ -476,6 +476,8 @@ ghcInternalFunctions :: LlvmM ()
+ ghcInternalFunctions = do
+     platform <- getPlatform
+     let w = llvmWord platform
++        cint = LMInt $ widthInBits $ cIntWidth platform
++    mk "memcmp" cint [i8Ptr, i8Ptr, w]
+     mk "memcpy" i8Ptr [i8Ptr, i8Ptr, w]
+     mk "memmove" i8Ptr [i8Ptr, i8Ptr, w]
+     mk "memset" i8Ptr [i8Ptr, w, w]
+-- 
+2.25.4
+
