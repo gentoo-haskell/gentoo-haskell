@@ -25,3 +25,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	dev-haskell/happy
 "
+
+PATCHES=("${FILESDIR}"/${P}-ghc-8.8.patch)
