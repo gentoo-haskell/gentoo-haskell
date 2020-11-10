@@ -1,3 +1,10 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-10)
+# Needs a port to haskell-src-exts compatible with ghc-8.8.
+# https://github.com/ndmitchell/derive/pull/37
+dev-haskell/derive
+app-forensics/quickfuzz
+dev-haskell/scion-browser
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-09)
 # Needs a port to haskell-src-exts compatible with ghc-8.8.
 # https://github.com/bmillwood/pointfree/issues/34
