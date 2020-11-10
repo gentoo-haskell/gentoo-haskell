@@ -1,0 +1,12 @@
+diff --git a/mustache.cabal b/mustache.cabal
+index 5763035..c5c2e8f 100644
+--- a/mustache.cabal
++++ b/mustache.cabal
+@@ -48,7 +48,6 @@ library
+     , bytestring
+     , containers
+     , directory
+-    , either
+     , filepath
+     , mtl >=2.2.1
+     , parsec
