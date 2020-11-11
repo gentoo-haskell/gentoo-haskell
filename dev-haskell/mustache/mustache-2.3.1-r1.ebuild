@@ -21,7 +21,6 @@ RESTRICT=test # tries to access network
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/cmdargs:=[profile?]
-	dev-haskell/either:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/scientific:=[profile?]
@@ -42,3 +41,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/wreq
 		dev-haskell/zlib )
 "
+
+PATCHES=(
+	"${FILESDIR}"/${PF}-either.patch
+)
