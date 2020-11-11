@@ -1195,7 +1195,7 @@ dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haske
 dev-haskell/lvmlib 1.1: The Lazy Virtual Machine (LVM)
 dev-haskell/lz4 0.2.3.1: LZ4 compression for ByteStrings
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
-dev-haskell/machines 0.6.4 0.7: Networked stream transducers
+dev-haskell/machines 0.6.4 0.7.1: Networked stream transducers
 dev-haskell/machines-directory 0.2.1.0: Directory (system) utilities for the machines library
 dev-haskell/machines-io 0.2.0.13: IO utilities for the machines library
 dev-haskell/mackerel-client 0.2.0: An API client library for Mackerel
@@ -1930,7 +1930,7 @@ dev-haskell/tga 0.2: Reading and writing of tga image files
 dev-haskell/th-abstraction 0.2.11.0 0.3.2.0: Nicer interface for reified information about data types
 dev-haskell/th-constraint-compat 0.0.1.0: Compatibility for type constraint template
 dev-haskell/th-data-compat 0.1.0.0: Compatibility for data definition template of TH
-dev-haskell/th-desugar 1.9: Functions to desugar Template Haskell
+dev-haskell/th-desugar 1.9 1.11: Functions to desugar Template Haskell
 dev-haskell/th-expand-syns 0.4.6.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.8.1: Derive Template Haskell's Lift class for datatypes
