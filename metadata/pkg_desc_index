@@ -1305,7 +1305,7 @@ dev-haskell/multirec 0.7.9: Generic programming for families of recursive dataty
 dev-haskell/multiset 0.3.4.3: The Data.MultiSet container type
 dev-haskell/multiset-comb 0.2.4.1: Combinatorial algorithms over multisets
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
-dev-haskell/mustache 2.3.1: A mustache template parser library
+dev-haskell/mustache 2.3.1-r1: A mustache template parser library
 dev-haskell/mutable-containers 0.3.4: Abstactions and concrete implementations of mutable containers
 dev-haskell/mvc 1.1.7: Model-view-controller
 dev-haskell/mwc-probability 2.2.0: Sampling function-based probability distributions
