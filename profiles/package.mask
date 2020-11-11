@@ -80,12 +80,6 @@ dev-lang/purescript
 dev-haskell/wl-pprint-extras
 dev-haskell/wl-pprint-terminfo
 
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Needs porting to base-4.13
-dev-haskell/bloodhound
-dev-haskell/log
-dev-haskell/log-elasticsearch
-
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Needs porting to newer Cabal versions. Also mask
 # revdeps.
