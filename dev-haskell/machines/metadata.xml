@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Networked stream transducers
-		
-		Runar Bjarnasons talk on machines can be downloaded from:
-		&lt;https://dl.dropbox.com/u/4588997/Machines.pdf&gt;
-	</longdescription>
 </pkgmetadata>
