@@ -17,6 +17,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="unsafe-checks"
 
+# Ambiguous module name ‘Data.Vector’:
+#   it was found in multiple packages:
+#   AC-Vector-Fancy-2.4.0 vector-0.12.1.2
+RESTRICT=test
+
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	dev-haskell/primitive:=[profile?]
