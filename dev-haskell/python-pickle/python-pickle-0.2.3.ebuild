@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -38,5 +38,6 @@ src_prepare() {
 	cabal_chdeps \
 		'directory == 1.2.*' 'directory >= 1.2' \
 		'process == 1.4.*' 'process >= 1.4' \
-		'HUnit == 1.3.*' 'HUnit >= 1.3'
+		'HUnit == 1.3.*' 'HUnit >= 1.3' \
+		'containers == 0.5.*' 'containers >= 0.5'
 }
