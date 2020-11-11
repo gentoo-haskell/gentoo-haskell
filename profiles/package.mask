@@ -1,4 +1,10 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-11)
+# Deprecated and not ported to ghc-8.8.
+# Alternatives are listed on https://github.com/chrisdone/intero.
+# Masked for removal.
+dev-haskell/intero
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-11)
 # Needs a port to MonadFail. Did not have releases since 2014.
 # Masked for removal.
 app-shells/lambdashell
