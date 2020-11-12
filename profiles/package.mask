@@ -1,4 +1,10 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
+# No stable releases. No development in past 2 years.
+# Needs a tweak for Cabal-3.
+# Masked for removal
+net-p2p/combinatorrent
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
 # Needs a tweak for ghc-8.8. Had no release on 5 years.
 # Masked for removal
 sci-calculators/clac
