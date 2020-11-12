@@ -1,3 +1,19 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
+# No stable releases. No development in past 2 years.
+# Needs a tweak for Cabal-3.
+# Masked for removal
+net-p2p/combinatorrent
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
+# Needs a tweak for ghc-8.8. Had no release on 5 years.
+# Masked for removal
+sci-calculators/clac
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
+# Needs a port to network-3. Upstrem is not active for a long time.
+# Masked for removal
+www-misc/urlcheck
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-11)
 # No release since 2011. Needs port to network-3.
 # Masked for removal
@@ -79,12 +95,6 @@ dev-lang/purescript
 # Requires porting to newer base
 dev-haskell/wl-pprint-extras
 dev-haskell/wl-pprint-terminfo
-
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Needs porting to base-4.13
-dev-haskell/bloodhound
-dev-haskell/log
-dev-haskell/log-elasticsearch
 
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Needs porting to newer Cabal versions. Also mask

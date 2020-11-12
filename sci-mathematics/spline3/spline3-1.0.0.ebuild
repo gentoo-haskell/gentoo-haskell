@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,6 +16,8 @@ LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+RESTRICT=test # Ambiguous module name ‘Data.Vector’
 
 RDEPEND=">=dev-haskell/cmdargs-0.10:=
 	>=dev-haskell/missingh-1:=
