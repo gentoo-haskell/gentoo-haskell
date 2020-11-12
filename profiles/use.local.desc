@@ -67,8 +67,6 @@ dev-haskell/biosff:flower - Build the 'flower' executable.
 dev-haskell/biosff:frecover - Build the 'frecover' executable.
 dev-haskell/bits-atomic:test - Build test program.
 dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
-dev-haskell/bloodhound:es1 - Run the test suite against an Elasticsearch 1.x server
-dev-haskell/bloodhound:es5 - Run the test suite against an Elasticsearch 5.x server
 dev-haskell/bound:template-haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/brick:demos - Build demonstration programs.
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark
