@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -30,3 +30,10 @@ RDEPEND=">=dev-haskell/blaze-html-0.8:=[profile?] <dev-haskell/blaze-html-0.10:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.9.1.0 && < 4.12' 'base >= 4.9.1.0'
+}
