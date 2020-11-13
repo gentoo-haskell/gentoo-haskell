@@ -1,3 +1,78 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# No upstream page. Does not build against modern yesod.
+# Masked for removal.
+dev-haskell/yesod-auth-account
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Needs a port to yesod-1.6. Was done in master, never released.
+# Masked for removal.
+dev-haskell/yesod-bootstrap
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Not ported to Cabal-3. Development stopped 4 years ago.
+# Masked for removal.
+dev-haskell/yesod-dsl
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# No new releases on hackage. Needs a fix for new yesod.
+# Masked for removal.
+dev-haskell/yesod-pagination
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# No new releases on hackage. Needs a fix for new yesod.
+# Masked for removal.
+dev-haskell/yesod-worker
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# The development stopped: https://github.com/yi-editor/yi/issues/1114
+# Not buildable with ghc-8.8.
+# Masked for removal.
+dev-haskell/yi-core
+dev-haskell/yi-frontend-pango
+dev-haskell/yi-frontend-vty
+dev-haskell/yi-keymap-emacs
+dev-haskell/yi-keymap-vim
+dev-haskell/yi-misc-modes
+dev-haskell/yi-mode-haskell
+dev-haskell/yi-mode-javascript
+app-editors/yi
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# No releases, depends on hoopl.
+# Masked for removal.
+dev-lang/hnc
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Not fetchable, no releases, no pome page.
+# Masked for removal.
+dev-lang/hope
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Does not compile against ghc-8.8.
+# Had no releases in past 7 years.
+# Masked for removal
+dev-lang/omega
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Does not compile against ghc-8.8.
+# Masked for removal
+dev-haskell/chr-core
+dev-haskell/uhc-util
+dev-haskell/shuffle
+dev-haskell/uhc-light
+dev-lang/uhc
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Stopped development 2 years ago. No releases.
+# Does not compile against ghc-8.8.
+# Masked for removal
+dev-util/corrode
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Needs port to a new pandoc. Not really maintained.
+# Masked for removal
+www-apps/blogliterately
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
 # virtual ebuild to pin ghc package versions. Not used nowadays.
 # Masked for removal.

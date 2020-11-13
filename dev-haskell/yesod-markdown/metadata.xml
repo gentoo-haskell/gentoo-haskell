@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A subset of pandoc functionality useful for markdown processing in yesod applications
-	</longdescription>
 </pkgmetadata>

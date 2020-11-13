@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		All functions for parsing, printing and writting Dockerfiles are exported through @Language.Docker@. For more fine-grained operations look for specific modules that implement a certain functionality.
-		See the &lt;https://github.com/hadolint/language-docker GitHub project&gt; for the source-code and examples.
-	</longdescription>
 </pkgmetadata>
