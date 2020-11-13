@@ -1,4 +1,9 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Needs a port to yesod-1.6. Was done in master, never released.
+# Masked for removal.
+dev-haskell/yesod-bootstrap
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # Not ported to Cabal-3. Development stopped 4 years ago.
 # Masked for removal.
 dev-haskell/yesod-dsl
