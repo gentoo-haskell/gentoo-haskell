@@ -770,7 +770,7 @@ dev-haskell/gtk-traymanager 1.0.1: A wrapper around the eggtraymanager library f
 dev-haskell/gtk2hs-buildtools 0.13.8.0-r1: Tools to build the Gtk2Hs suite of User Interface libraries
 dev-haskell/gtk3 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
-dev-haskell/hackage-db 2.0.1: access Hackage's package database via Data.Map
+dev-haskell/hackage-db 2.1.0: Access cabal-install's Hackage database via Data.Map
 dev-haskell/hackage-security 0.5.3.0-r3 0.6.0.1: Hackage security library
 dev-haskell/haddock 2.17.2 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0 9999: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-api 2.17.3 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0: A documentation-generation tool for Haskell libraries
@@ -1113,7 +1113,7 @@ dev-haskell/language-bash 0.9.0: Parsing and pretty-printing Bash shell scripts
 dev-haskell/language-c 0.6.1 0.8.3 0.8.3-r1: Analysis and generation of C code
 dev-haskell/language-c-quote 0.12.2.1: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-css 0.0.3: CSS 2.1 syntax
-dev-haskell/language-docker 8.0.2: Dockerfile parser, pretty-printer and embedded DSL
+dev-haskell/language-docker 8.0.2 9.1.2: Dockerfile parser, pretty-printer and embedded DSL
 dev-haskell/language-dot 0.1.1: A library for the analysis and creation of Graphviz DOT files
 dev-haskell/language-ecmascript 0.17.1.0-r2 0.19.1.0: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.1-r1 0.3.0: GLSL abstract syntax tree, parser, and pretty-printer
@@ -2185,7 +2185,7 @@ dev-haskell/yesod-fay 0.10.0: Utilities for using the Fay Haskell-to-JS compiler
 dev-haskell/yesod-form 1.6.7: Form handling support for Yesod Web Framework
 dev-haskell/yesod-gitrepo 0.3.0: Host content provided by a Git repo
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
-dev-haskell/yesod-markdown 0.12.6.2: Tools for using markdown in a yesod application
+dev-haskell/yesod-markdown 0.12.6.3: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.7.0.0: Helper functions and data types for producing News feeds
 dev-haskell/yesod-pagination 2.0.0: Pagination in Yesod
 dev-haskell/yesod-paginator 1.1.0.2: A pagination approach for yesod
@@ -2222,7 +2222,6 @@ dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
 dev-lang/elm 0.19.0: Meta package for Elm
 dev-lang/elm-compiler 0.19.0-r1: The 'elm' command line interface
-dev-lang/epic 0.9.3.3-r1: Compiler for a simple functional language
 dev-lang/ghc 8.0.2 8.4.4 8.6.5 8.8.3 8.8.4 8.10.1 8.10.2 9999: The Glasgow Haskell Compiler
 dev-lang/helium 1.8.1: The Helium Compiler
 dev-lang/hnc 9999: source-to-source translator of a variant of ML core into C++
