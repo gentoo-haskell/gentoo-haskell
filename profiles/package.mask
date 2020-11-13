@@ -1,4 +1,13 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Does not compile against ghc-8.8.
+# Masked for removal
+dev-haskell/chr-core
+dev-haskell/uhc-util
+dev-haskell/shuffle
+dev-haskell/uhc-light
+dev-lang/uhc
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # Stopped development 2 years ago. No releases.
 # Does not compile against ghc-8.8.
 # Masked for removal
