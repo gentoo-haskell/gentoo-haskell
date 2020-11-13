@@ -1,5 +1,11 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # Does not compile against ghc-8.8.
+# Had no releases in past 7 years.
+# Masked for removal
+dev-lang/omega
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
+# Does not compile against ghc-8.8.
 # Masked for removal
 dev-haskell/chr-core
 dev-haskell/uhc-util
