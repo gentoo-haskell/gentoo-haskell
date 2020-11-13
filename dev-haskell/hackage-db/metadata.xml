@@ -5,28 +5,13 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="install-examples">Build and install example programs.</flag>
+	</use>
 	<longdescription>
-		This module provides simple access to the Hackage database by means
-		of @Data.Map@. Suppose you wanted to implement a utility that queries
-		the set of available versions for a given package, the following
-		program would do the trick:
-		
-		&gt; import qualified Distribution.Hackage.DB as DB
-		&gt; import Distribution.Text ( display )
-		&gt; import System.Environment ( getArgs )
-		&gt;
-		&gt; main :: IO ()
-		&gt; main = do
-		&gt;   pkgs &lt;- getArgs
-		&gt;   db &lt;- DB.readHackage
-		&gt;   let getVersions name = maybe [] DB.keys (DB.lookup name db)
-		&gt;   mapM_ (putStrLn . unwords . map display . getVersions) pkgs
-		
-		When run, it would produce the following output:
-		
-		&gt; ./a.out containers deepseq cabal-install
-		&gt; 0.1.0.0 0.1.0.1 0.2.0.0 0.2.0.1 0.3.0.0 0.4.0.0
-		&gt; 1.0.0.0 1.1.0.0 1.1.0.1 1.1.0.2
-		&gt; 0.4.0 0.5.0 0.5.1 0.5.2 0.6.0 0.6.2 0.6.4 0.8.0 0.8.2 0.10.0 0.10.2
+		This library provides convenient access to the local copy of the Hackage
+		database that \&quot;cabal update\&quot; creates. Check out
+		&lt;https://github.com/peti/hackage-db/tree/master/example/&gt; for a collection
+		of simple example programs that demonstrate how to use this code.
 	</longdescription>
 </pkgmetadata>
