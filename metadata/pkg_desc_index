@@ -684,7 +684,6 @@ dev-haskell/ghc-parser 0.2.2.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.12-r1: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.7: Library for parsing GHC time and allocation profiling reports
 dev-haskell/ghc-simple 0.4: Simplified interface to the GHC API
-dev-haskell/ghc-syb-utils 0.3.0.0: Scrap Your Boilerplate utilities for the GHC API
 dev-haskell/ghc-tcplugins-extra 0.3 0.4: Utilities for writing GHC type-checker plugins
 dev-haskell/ghc-typelits-extra 0.3.3: Additional type-level operations on GHC.TypeLits.Nat
 dev-haskell/ghc-typelits-knownnat 0.7.2: Derive KnownNat constraints from other KnownNat constraints
