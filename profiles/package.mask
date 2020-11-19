@@ -1,4 +1,10 @@
 # Jack Todaro <solpeth@posteo.org> (2020-11-20)
+# Package depends on masked or removed package versions.
+# Masked for removal.
+dev-haskell/ghc-vis
+dev-haskell/layers
+
+# Jack Todaro <solpeth@posteo.org> (2020-11-20)
 # Depends on old version of yesod-core. Upstream repo
 # has some development, but hackage has no new release
 # since 2015.
