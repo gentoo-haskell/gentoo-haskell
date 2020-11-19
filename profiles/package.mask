@@ -1,3 +1,9 @@
+# Jack Todaro <solpeth@posteo.org> (2020-11-20)
+# Depends on old version of yesod-core. Upstream repo
+# has some development, but hackage has no new release
+# since 2015.
+dev-haskell/serversession-frontend-yesod
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # No upstream page. Does not build against modern yesod.
 # Masked for removal.
