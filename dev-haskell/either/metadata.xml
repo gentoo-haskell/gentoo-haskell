@@ -5,7 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Support for computations with informative failures.
-	</longdescription>
+	<upstream>
+		<remote-id type="github">ekmett/either</remote-id>
+	</upstream>
 </pkgmetadata>
