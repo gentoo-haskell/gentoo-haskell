@@ -8,8 +8,8 @@
 	<use>
 		<flag name="builddemo">Build demo executable</flag>
 		<flag name="buildrasterdemo">Build Rasterific demo executable</flag>
-		<flag name="buildvplaydemo">Build video player demo executable</flag>
 		<flag name="buildtranscodedemo">Build transcode demo executable</flag>
+		<flag name="buildvplaydemo">Build video player demo executable</flag>
 	</use>
 	<longdescription>
 		Stream frames from an encoded video, or stream frames to
@@ -25,6 +25,6 @@
 		&gt; go = do (getFrame, cleanup) &lt;- imageReader &quot;myVideo.mov&quot;
 		&gt;         (fmap ImageRGB8 &lt;$&gt; getFrame) &lt;* cleanup
 		
-		Tested with FFmpeg 2.7 - 3.0
+		Tested with FFmpeg 3.1 - 4.3.1
 	</longdescription>
 </pkgmetadata>

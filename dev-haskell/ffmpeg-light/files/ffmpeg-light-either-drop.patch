@@ -1,0 +1,12 @@
+diff --git a/ffmpeg-light.cabal b/ffmpeg-light.cabal
+index 89d31c6..fd128ba 100644
+--- a/ffmpeg-light.cabal
++++ b/ffmpeg-light.cabal
+@@ -68,7 +68,6 @@ library
+                        Codec.FFmpeg.Internal.Linear
+   build-tools:         hsc2hs
+   build-depends:       base >=4.6 && < 5,
+-                       either,
+                        exceptions,
+                        vector >= 0.10.9 && < 0.13,
+                        transformers >= 0.4.1 && < 0.6,
