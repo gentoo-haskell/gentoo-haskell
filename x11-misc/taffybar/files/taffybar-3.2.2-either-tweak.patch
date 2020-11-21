@@ -1,0 +1,54 @@
+diff --git a/src/System/Taffybar/Information/SafeX11.hs b/src/System/Taffybar/Information/SafeX11.hs
+index 5783602..8459d2c 100644
+--- a/src/System/Taffybar/Information/SafeX11.hs
++++ b/src/System/Taffybar/Information/SafeX11.hs
+@@ -22,7 +22,7 @@ import Control.Exception
+ import Control.Monad
+ import Control.Monad.Trans.Class
+ import Control.Monad.Trans.Maybe (MaybeT(..))
+-import Data.Either.Combinators
++import System.Taffybar.Util
+ import Data.Typeable
+ import Foreign hiding (void)
+ import Foreign.C.Types
+diff --git a/src/System/Taffybar/Util.hs b/src/System/Taffybar/Util.hs
+index c306b98..46c2cf2 100644
+--- a/src/System/Taffybar/Util.hs
++++ b/src/System/Taffybar/Util.hs
+@@ -21,7 +21,6 @@ import           Control.Monad.IO.Class
+ import           Control.Monad.Trans.Class
+ import           Control.Monad.Trans.Maybe
+ import           Control.Monad.Trans.Reader
+-import           Data.Either.Combinators
+ import           Data.GI.Base.GError
+ import qualified Data.GI.Gtk.Threading as Gtk
+ import qualified Data.Text as T
+@@ -139,6 +138,16 @@ getPixbufFromFilePath filepath = do
+             printf "Failed to load icon from filepath %s" filepath
+   return $ rightToMaybe result
+ 
++isLeft :: Either a b -> Bool
++isLeft (Left _) = True
++isLeft _ = False
++
++rightToMaybe :: Either a b -> Maybe b
++rightToMaybe = either (\_ -> Nothing) Just
++
++fromRight :: b -> Either a b -> b
++fromRight b = either (\_ -> b) id
++
+ postGUIASync :: IO () -> IO ()
+ postGUIASync = Gtk.postGUIASync
+ 
+diff --git a/taffybar.cabal b/taffybar.cabal
+index 3cbc997..7fd87dd 100644
+--- a/taffybar.cabal
++++ b/taffybar.cabal
+@@ -46,7 +46,6 @@ library
+                , dbus-hslogger >= 0.1.0.1 && < 0.2.0.0
+                , directory
+                , dyre >= 0.8.6 && < 0.9
+-               , either >= 4.0.0.0
+                , enclosed-exceptions >= 1.0.0.1
+                , filepath
+                , gi-cairo

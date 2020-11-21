@@ -23,7 +23,6 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/dbus-1.2.11:=[profile?] <dev-haskell/dbus-2.0.0:=[profile?]
 	>=dev-haskell/dbus-hslogger-0.1.0.1:=[profile?] <dev-haskell/dbus-hslogger-0.2.0.0:=[profile?]
 	>=dev-haskell/dyre-0.8.6:=[profile?] <dev-haskell/dyre-0.9:=[profile?]
-	>=dev-haskell/either-4.0.0.0:=[profile?]
 	>=dev-haskell/enclosed-exceptions-1.0.0.1:=[profile?]
 	dev-haskell/gi-cairo:=[profile?]
 	dev-haskell/gi-cairo-connector:=[profile?]
@@ -74,3 +73,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	virtual/pkgconfig
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-either-tweak.patch"
+)
