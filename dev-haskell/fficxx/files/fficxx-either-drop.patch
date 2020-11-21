@@ -1,0 +1,12 @@
+diff --git a/fficxx.cabal b/fficxx.cabal
+index 6d74bd4..8189461 100644
+--- a/fficxx.cabal
++++ b/fficxx.cabal
+@@ -24,7 +24,6 @@ Library
+                , containers
+                , data-default
+                , directory
+-               , either
+                , errors
+                , filepath>1
+                , hashable
