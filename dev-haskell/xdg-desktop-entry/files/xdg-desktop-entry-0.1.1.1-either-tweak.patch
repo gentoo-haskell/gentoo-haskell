@@ -1,0 +1,32 @@
+diff --git a/src/System/Environment/XDG/DesktopEntry.hs b/src/System/Environment/XDG/DesktopEntry.hs
+index e0d200a..c989d16 100644
+--- a/src/System/Environment/XDG/DesktopEntry.hs
++++ b/src/System/Environment/XDG/DesktopEntry.hs
+@@ -40,7 +40,6 @@ import           Control.Monad.Trans.Except
+ import           Data.Char
+ import qualified Data.ConfigFile as CF
+ import           Data.Either
+-import           Data.Either.Combinators
+ import qualified Data.MultiMap as MM
+ import           Data.List
+ import           Data.Maybe
+@@ -159,6 +158,7 @@ getDirectoryEntry :: [FilePath] -> String -> IO (Maybe DesktopEntry)
+ getDirectoryEntry dirs name = do
+   exFiles <- filterM doesFileExist $ map ((</> name) . normalise) dirs
+   join . (fmap rightToMaybe) <$> traverse readDesktopEntry (headMay exFiles)
++  where rightToMaybe = either (\_ -> Nothing) Just
+
+ -- | Get a desktop entry with a specific name from the default directory entry
+ -- locations.
+diff --git a/xdg-desktop-entry.cabal b/xdg-desktop-entry.cabal
+index 1a28493..83bb0d2 100644
+--- a/xdg-desktop-entry.cabal
++++ b/xdg-desktop-entry.cabal
+@@ -21,6 +21,5 @@ library
+   build-depends:       base >=4.12 && < 5,
+                        ConfigFile,
+                        directory,
+-                       either,
+                        filepath,
+                        multimap,
+                        transformers,

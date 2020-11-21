@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/configfile:=[profile?]
-	dev-haskell/either:=[profile?]
 	dev-haskell/multimap:=[profile?]
 	dev-haskell/safe:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
@@ -26,3 +25,7 @@ RDEPEND="dev-haskell/configfile:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-either-tweak.patch"
+)
