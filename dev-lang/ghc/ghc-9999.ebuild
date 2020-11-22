@@ -568,6 +568,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-prim-atomic.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-llvm-memcmp.patch
+
 		bump_libs
 
 		eapply_user

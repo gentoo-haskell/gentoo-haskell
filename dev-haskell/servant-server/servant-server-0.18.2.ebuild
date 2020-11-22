@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.2:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
-	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.2:=[profile?]
+	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.3:=[profile?]
 	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.9:=[profile?]
 	>=dev-haskell/http-types-0.12.2:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/monad-control-1.0.2.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -29,7 +29,8 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/network-2.8:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/network-uri-2.6.1.0:=[profile?] <dev-haskell/network-uri-2.8:=[profile?]
 	>=dev-haskell/resourcet-1.2.2:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
-	>=dev-haskell/servant-0.18:=[profile?] <dev-haskell/servant-0.19.1:=[profile?]
+	>=dev-haskell/servant-0.18.2:=[profile?] <dev-haskell/servant-0.18.3:=[profile?]
+	>=dev-haskell/sop-core-0.4.0.0:=[profile?] <dev-haskell/sop-core-0.6:=[profile?]
 	>=dev-haskell/string-conversions-0.4.0.1:=[profile?] <dev-haskell/string-conversions-0.5:=[profile?]
 	>=dev-haskell/tagged-0.8.6:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -43,11 +44,11 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.2.0
 	test? ( >=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.8
-		>=dev-haskell/hspec-wai-0.10.1 <dev-haskell/hspec-wai-0.11
-		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.14
+		>=dev-haskell/hspec-wai-0.10.1 <dev-haskell/hspec-wai-0.12
+		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.15
 		dev-haskell/safe
 		>=dev-haskell/should-not-typecheck-2.1.0 <dev-haskell/should-not-typecheck-2.2
 		>=dev-haskell/temporary-1.3 <dev-haskell/temporary-1.4
 		dev-haskell/transformers-compat
-		>=dev-haskell/wai-extra-3.0.24.3 <dev-haskell/wai-extra-3.1 )
+		>=dev-haskell/wai-extra-3.0.24.3 <dev-haskell/wai-extra-3.2 )
 "

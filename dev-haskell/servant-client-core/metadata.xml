@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This library provides backend-agnostic generation of client functions. For
-		more information, see the README.
-	</longdescription>
 </pkgmetadata>
