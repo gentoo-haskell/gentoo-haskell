@@ -1690,11 +1690,11 @@ dev-haskell/sendfile 0.7.11.1: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/serialise 0.2.3.0: A binary serialisation library for Haskell values
 dev-haskell/serialport 0.4.7: Cross platform serial port library
-dev-haskell/servant 0.18: A family of combinators for defining webservices APIs
-dev-haskell/servant-client 0.18: automatical derivation of querying functions for servant webservices
-dev-haskell/servant-client-core 0.18: Core functionality and class for client function generation for servant APIs
+dev-haskell/servant 0.18.2: A family of combinators for defining webservices APIs
+dev-haskell/servant-client 0.18.2: Automatic derivation of querying functions for servant
+dev-haskell/servant-client-core 0.18.2: Core functionality and class for client function generation for servant APIs
 dev-haskell/servant-lucid 0.9.0.2: Servant support for lucid
-dev-haskell/servant-server 0.18: A family of combinators for defining webservices APIs and serving them
+dev-haskell/servant-server 0.18.2: A family of combinators for defining webservices APIs and serving them
 dev-haskell/serversession 1.0.1: Secure, modular server-side sessions
 dev-haskell/serversession-backend-redis 1.0.3: Storage backend for serversession using Redis
 dev-haskell/serversession-frontend-yesod 1.0: Yesod bindings for serversession
