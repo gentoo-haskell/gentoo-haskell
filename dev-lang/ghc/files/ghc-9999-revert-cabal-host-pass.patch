@@ -10,10 +10,8 @@ Bug: https://github.com/haskell/cabal/issues/5887
  Cabal/Distribution/Simple.hs | 5 +----
  1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/Cabal/Distribution/Simple.hs b/Cabal/Distribution/Simple.hs
-index 6399f7696..fe48ab208 100644
---- a/Cabal/Distribution/Simple.hs
-+++ b/Cabal/Distribution/Simple.hs
+--- a/Cabal/src/Distribution/Simple.hs
++++ b/Cabal/src//Distribution/Simple.hs
 @@ -93,7 +93,6 @@ import Language.Haskell.Extension
  import Distribution.Version
  import Distribution.License
