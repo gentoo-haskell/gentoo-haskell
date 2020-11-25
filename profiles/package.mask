@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2020-11-25)
+# No release since 2018-01. Depends on old package
+# versions. Masked for removal.
+dev-haskell/pgdl
+
 # Jack Todaro <solpeth@posteo.org> (2020-11-20)
 # Package depends on masked or removed package versions.
 # Masked for removal.
