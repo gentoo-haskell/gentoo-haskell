@@ -1,0 +1,328 @@
+From 1a2d627a5807cde657ab1277234e9521008e8114 Mon Sep 17 00:00:00 2001
+From: Simon Jakobi <simon.jakobi@gmail.com>
+Date: Tue, 4 Aug 2020 06:25:57 +0200
+Subject: [PATCH] Use prettyprinter-1.7.0
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Changelog:
+http://hackage.haskell.org/package/prettyprinter-1.7.0/changelog
+
+hnix is likely to be affected by this change:
+
+> Use floor instead of round to compute ribbon width.
+
+…due to its use of custom `LayoutOptions`.
+---
+ default.nix               | 28 ++++++++++++++++++++++++++++
+ main/Main.hs              |  4 ++--
+ main/Repl.hs              | 33 +++++++++++++++++----------------
+ src/Nix/Effects/Basic.hs  |  2 +-
+ src/Nix/Exec.hs           |  2 +-
+ src/Nix/Parser.hs         |  6 +++---
+ src/Nix/Pretty.hs         |  2 +-
+ src/Nix/Render.hs         |  2 +-
+ src/Nix/Render/Frame.hs   |  2 +-
+ tests/ParserTests.hs      |  4 ++--
+ tests/PrettyParseTests.hs |  2 +-
+ 12 files changed, 59 insertions(+), 30 deletions(-)
+
+diff --git a/default.nix b/default.nix
+index f683f9ba..f98d36dd 100644
+--- a/default.nix
++++ b/default.nix
+@@ -228,6 +228,34 @@ let
+           description = "Fixpoint data types";
+           license = stdenv.lib.licenses.bsd3;
+         }) {};
++
++      # 2020-08-04 hnix uses custom LayoutOptions and therefore is
++      # likely to be affected by the change in the ribbon width
++      # calculation in prettyprinter-1.7.0.
++      prettyprinter = haskellPackages.callPackage
++       ({ mkDerivation, ansi-wl-pprint, base, base-compat, bytestring
++        , containers, deepseq, doctest, gauge, mtl, pgp-wordlist
++        , QuickCheck, quickcheck-instances, random, tasty, tasty-hunit
++        , tasty-quickcheck, text, transformers, stdenv
++        }:
++        mkDerivation {
++          pname = "prettyprinter";
++          version = "1.7.0";
++          sha256 = "19z04sn0kqxgwcyfn5igjmbxw13xsb3mdhdidkb3kzswib78f6sr";
++          isLibrary = true;
++          isExecutable = true;
++          libraryHaskellDepends = [ base text ];
++          testHaskellDepends = [
++            base bytestring doctest pgp-wordlist QuickCheck
++            quickcheck-instances tasty tasty-hunit tasty-quickcheck text
++          ];
++          benchmarkHaskellDepends = [
++            ansi-wl-pprint base base-compat containers deepseq gauge mtl
++            QuickCheck random text transformers
++          ];
++          description = "A modern, easy to use, well-documented, extensible pretty-printer";
++          license = stdenv.lib.licenses.bsd2;
++        }) {};
+     };
+ 
+     modifier = drv: pkgs.haskell.lib.overrideCabal drv (attrs: {
+diff --git a/main/Main.hs b/main/Main.hs
+index 05701c80..d7ab15b3 100644
+--- a/main/Main.hs
++++ b/main/Main.hs
+@@ -26,8 +26,6 @@ import           Data.Time
+ import qualified Data.Text                     as Text
+ import qualified Data.Text.IO                  as Text
+ import qualified Data.Text.Lazy.IO             as TL
+-import           Data.Text.Prettyprint.Doc
+-import           Data.Text.Prettyprint.Doc.Render.Text
+ import           Nix
+ import           Nix.Convert
+ import qualified Nix.Eval                      as Eval
+@@ -43,6 +41,8 @@ import           Nix.Utils
+ import           Nix.Var
+ import           Nix.Value.Monad
+ import           Options.Applicative     hiding ( ParserResult(..) )
++import           Prettyprinter
++import           Prettyprinter.Render.Text
+ import qualified Repl
+ import           System.FilePath
+ import           System.IO
+diff --git a/main/Repl.hs b/main/Repl.hs
+index 4834fcff..24744725 100644
+--- a/main/Repl.hs
++++ b/main/Repl.hs
+@@ -36,9 +36,6 @@ import qualified Data.HashMap.Lazy
+ import           Data.Text                      (Text)
+ import qualified Data.Text
+ import qualified Data.Text.IO
+-import           Data.Text.Prettyprint.Doc      (Doc, (<+>))
+-import qualified Data.Text.Prettyprint.Doc
+-import qualified Data.Text.Prettyprint.Doc.Render.Text
+ import           Data.Version                   ( showVersion )
+ import           Paths_hnix                     ( version )
+ 
+@@ -47,6 +44,10 @@ import           Control.Monad.Identity
+ import           Control.Monad.Reader
+ import           Control.Monad.State.Strict
+ 
++import           Prettyprinter                  (Doc, (<+>))
++import qualified Prettyprinter
++import qualified Prettyprinter.Render.Text
++
+ import           System.Console.Haskeline.Completion
+                                                 ( Completion(isFinished)
+                                                 , completeWordWithPrev
+@@ -456,9 +457,9 @@ helpOptions =
+       "set"
+       ""
+       (    "Set REPL option"
+-        <> Data.Text.Prettyprint.Doc.line
++        <> Prettyprinter.line
+         <> "Available options:"
+-        <> Data.Text.Prettyprint.Doc.line
++        <> Prettyprinter.line
+         <> (renderSetOptions helpSetOptions)
+       )
+       setConfig
+@@ -508,14 +509,14 @@ helpSetOptions =
+ 
+ renderSetOptions :: [HelpSetOption] -> Doc ()
+ renderSetOptions so =
+-  Data.Text.Prettyprint.Doc.indent 4
+-    $ Data.Text.Prettyprint.Doc.vsep
++  Prettyprinter.indent 4
++    $ Prettyprinter.vsep
+     $ flip map so
+     $ \h ->
+-             Data.Text.Prettyprint.Doc.pretty (helpSetOptionName h)
++             Prettyprinter.pretty (helpSetOptionName h)
+          <+> helpSetOptionSyntax h
+-         <>  Data.Text.Prettyprint.Doc.line
+-         <>  Data.Text.Prettyprint.Doc.indent 4 (helpSetOptionDoc h)
++         <>  Prettyprinter.line
++         <>  Prettyprinter.indent 4 (helpSetOptionDoc h)
+ 
+ help :: (MonadNix e t f m, MonadIO m)
+      => HelpOptions e t f m
+@@ -526,14 +527,14 @@ help hs _ = do
+   forM_ hs $ \h ->
+       liftIO
+     . Data.Text.IO.putStrLn
+-    . Data.Text.Prettyprint.Doc.Render.Text.renderStrict
+-    . Data.Text.Prettyprint.Doc.layoutPretty
+-        Data.Text.Prettyprint.Doc.defaultLayoutOptions
++    . Prettyprinter.Render.Text.renderStrict
++    . Prettyprinter.layoutPretty
++        Prettyprinter.defaultLayoutOptions
+     $     ":"
+-       <>  Data.Text.Prettyprint.Doc.pretty (helpOptionName h)
++       <>  Prettyprinter.pretty (helpOptionName h)
+        <+> helpOptionSyntax h
+-       <>  Data.Text.Prettyprint.Doc.line
+-       <>  Data.Text.Prettyprint.Doc.indent 4 (helpOptionDoc h)
++       <>  Prettyprinter.line
++       <>  Prettyprinter.indent 4 (helpOptionDoc h)
+ 
+ options
+   :: (MonadNix e t f m, MonadIO m)
+diff --git a/src/Nix/Effects/Basic.hs b/src/Nix/Effects/Basic.hs
+index b9c62b14..d3bef19a 100644
+--- a/src/Nix/Effects/Basic.hs
++++ b/src/Nix/Effects/Basic.hs
+@@ -23,7 +23,6 @@ import           Data.List.Split
+ import           Data.Maybe                     ( maybeToList )
+ import           Data.Text                      ( Text )
+ import qualified Data.Text                     as Text
+-import           Data.Text.Prettyprint.Doc
+ import           Nix.Atoms
+ import           Nix.Convert
+ import           Nix.Effects
+@@ -44,6 +43,7 @@ import           Nix.String.Coerce
+ import           Nix.Utils
+ import           Nix.Value
+ import           Nix.Value.Monad
++import           Prettyprinter
+ import           System.FilePath
+ 
+ #ifdef MIN_VERSION_ghc_datasize
+diff --git a/src/Nix/Exec.hs b/src/Nix/Exec.hs
+index 291fe0b9..13da1c18 100644
+--- a/src/Nix/Exec.hs
++++ b/src/Nix/Exec.hs
+@@ -39,7 +39,6 @@ import           Data.List
+ import qualified Data.List.NonEmpty            as NE
+ import           Data.Text                      ( Text )
+ import qualified Data.Text                     as Text
+-import           Data.Text.Prettyprint.Doc
+ import           Data.Typeable
+ import           Nix.Atoms
+ import           Nix.Cited
+@@ -59,6 +58,7 @@ import           Nix.Utils
+ import           Nix.Value
+ import           Nix.Value.Equal
+ import           Nix.Value.Monad
++import           Prettyprinter
+ #ifdef MIN_VERSION_pretty_show
+ import qualified Text.Show.Pretty as PS
+ #endif
+diff --git a/src/Nix/Parser.hs b/src/Nix/Parser.hs
+index 06c2606c..9099b0d4 100644
+--- a/src/Nix/Parser.hs
++++ b/src/Nix/Parser.hs
+@@ -71,9 +71,6 @@ import           Data.Text               hiding ( map
+                                                 , concatMap
+                                                 , zipWith
+                                                 )
+-import           Data.Text.Prettyprint.Doc      ( Doc
+-                                                , pretty
+-                                                )
+ import           Data.Text.Encoding
+ import           Data.Typeable                  ( Typeable )
+ import           Data.Void
+@@ -81,6 +78,9 @@ import           GHC.Generics            hiding ( Prefix )
+ import           Nix.Expr                hiding ( ($>) )
+ import           Nix.Expr.Strings
+ import           Nix.Render
++import           Prettyprinter                  ( Doc
++                                                , pretty
++                                                )
+ import           Text.Megaparsec
+ import           Text.Megaparsec.Char
+ import qualified Text.Megaparsec.Char.Lexer    as L
+diff --git a/src/Nix/Pretty.hs b/src/Nix/Pretty.hs
+index 9f904952..c8127caa 100644
+--- a/src/Nix/Pretty.hs
++++ b/src/Nix/Pretty.hs
+@@ -36,7 +36,6 @@ import           Data.Text                      ( pack
+                                                 , strip
+                                                 )
+ import qualified Data.Text                     as Text
+-import           Data.Text.Prettyprint.Doc
+ import           Nix.Atoms
+ import           Nix.Cited
+ import           Nix.Expr
+@@ -52,6 +51,7 @@ import           Nix.Utils               hiding ( (<$>) )
+ #endif
+ import           Nix.Value
+ import           Prelude                 hiding ( (<$>) )
++import           Prettyprinter
+ import           Text.Read                      ( readMaybe )
+ 
+ -- | This type represents a pretty printed nix expression
+diff --git a/src/Nix/Render.hs b/src/Nix/Render.hs
+index 127ead9d..6beed95c 100644
+--- a/src/Nix/Render.hs
++++ b/src/Nix/Render.hs
+@@ -22,9 +22,9 @@ import qualified Data.ByteString               as BS
+ import qualified Data.Set                      as Set
+ import qualified Data.Text                     as T
+ import qualified Data.Text.Encoding            as T
+-import           Data.Text.Prettyprint.Doc
+ import           Data.Void
+ import           Nix.Expr.Types.Annotated
++import           Prettyprinter
+ import qualified System.Directory              as S
+ import qualified System.Posix.Files            as S
+ import           Text.Megaparsec.Error
+diff --git a/src/Nix/Render/Frame.hs b/src/Nix/Render/Frame.hs
+index 0ea71475..63d02773 100644
+--- a/src/Nix/Render/Frame.hs
++++ b/src/Nix/Render/Frame.hs
+@@ -16,7 +16,6 @@ module Nix.Render.Frame where
+ import           Control.Monad.Reader
+ import           Data.Fix
+ import           Data.Typeable
+-import           Data.Text.Prettyprint.Doc
+ import           Nix.Eval
+ import           Nix.Exec
+ import           Nix.Expr
+@@ -28,6 +27,7 @@ import           Nix.Render
+ import           Nix.Thunk
+ import           Nix.Utils
+ import           Nix.Value
++import           Prettyprinter
+ import           Text.Megaparsec.Pos
+ #ifdef MIN_VERSION_pretty_show
+ import qualified Text.Show.Pretty as PS
+diff --git a/tests/ParserTests.hs b/tests/ParserTests.hs
+index 64f566ba..12ca7225 100644
+--- a/tests/ParserTests.hs
++++ b/tests/ParserTests.hs
+@@ -11,13 +11,13 @@ module ParserTests (tests) where
+ import Data.Fix
+ import Data.List.NonEmpty (NonEmpty(..))
+ import Data.Text (Text, unpack)
+-import Data.Text.Prettyprint.Doc
+-import Data.Text.Prettyprint.Doc.Render.Text
+ import NeatInterpolation (text)
+ import Nix.Atoms
+ import Nix.Expr
+ import Nix.Parser
+ import Nix.Pretty
++import Prettyprinter
++import Prettyprinter.Render.Text
+ import Test.Tasty
+ import Test.Tasty.HUnit
+ import Test.Tasty.TH
+diff --git a/tests/PrettyParseTests.hs b/tests/PrettyParseTests.hs
+index d27e1911..0589edf3 100644
+--- a/tests/PrettyParseTests.hs
++++ b/tests/PrettyParseTests.hs
+@@ -19,7 +19,6 @@ import qualified Data.List.NonEmpty            as NE
+ import           Data.Text                      ( Text
+                                                 , pack
+                                                 )
+-import           Data.Text.Prettyprint.Doc
+ import           Hedgehog
+ import qualified Hedgehog.Gen                  as Gen
+ import qualified Hedgehog.Range                as Range
+@@ -27,6 +26,7 @@ import           Nix.Atoms
+ import           Nix.Expr
+ import           Nix.Parser
+ import           Nix.Pretty
++import           Prettyprinter
+ import           Test.Tasty
+ import           Test.Tasty.Hedgehog
+ import           Text.Megaparsec                ( Pos )

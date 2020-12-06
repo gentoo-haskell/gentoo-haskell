@@ -6,8 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="http">Include support for importing dhall modules from HTTP URLs</flag>
 		<flag name="cross">Disable TemplateHaskell to make cross-compiling easier</flag>
+		<flag name="http">Include support for importing dhall modules from HTTP URLs</flag>
 	</use>
 	<longdescription>
 		Dhall is an explicitly typed configuration language that is not Turing

@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/dhall-1.33.0:=[profile?] <dev-haskell/dhall-1.34:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.16:=[profile?]
-	>=dev-haskell/prettyprinter-1.5.1:=[profile?] <dev-haskell/prettyprinter-1.7:=[profile?]
+	>=dev-haskell/prettyprinter-1.5.1:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?]
 	>=dev-haskell/scientific-0.3.0.0:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -38,3 +38,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.2
 		>=dev-haskell/tasty-silver-3.0 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson-yaml                >= 1.0.6    && < 1.1' 'aeson-yaml                >= 1.0.6' \
+		'prettyprinter             >= 1.5.1    && < 1.7' 'prettyprinter             >= 1.5.1'
+}

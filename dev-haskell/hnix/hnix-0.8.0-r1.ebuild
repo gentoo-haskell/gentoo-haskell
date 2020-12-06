@@ -48,7 +48,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?
 	dev-haskell/optparse-applicative:=[profile?]
 	>=dev-haskell/parser-combinators-1.0.1:=[profile?] <dev-haskell/parser-combinators-1.3:=[profile?]
 	>=dev-haskell/pretty-show-1.9.5:=[profile?] <dev-haskell/pretty-show-1.11:=[profile?]
-	>=dev-haskell/prettyprinter-1.2.1:=[profile?] <dev-haskell/prettyprinter-1.7:=[profile?]
+	>=dev-haskell/prettyprinter-1.7:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
 	>=dev-haskell/ref-tf-0.4.0:=[profile?] <dev-haskell/ref-tf-0.5:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2.3:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	dev-haskell/repline:=[profile?]
@@ -83,6 +83,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck
 		dev-haskell/tasty-th )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'prettyprinter >= 1.2.1 && < 1.7' 'prettyprinter'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
