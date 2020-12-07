@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=
-	>=dev-haskell/hledger-lib-1.19:= <dev-haskell/hledger-lib-1.20:=
+	>=dev-haskell/hledger-lib-1.19:= <dev-haskell/hledger-lib-1.21:=
 	dev-haskell/mtl:=
 	dev-haskell/text:=
 	>=dev-lang/ghc-7.4.1:=
@@ -27,3 +27,10 @@ RDEPEND="dev-haskell/cabal:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hledger-lib == 1.19.*' 'hledger-lib >= 1.19'
+}
