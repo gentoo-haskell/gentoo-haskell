@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/free-4.12.1:=[profile?] <dev-haskell/free-5.2:=[profile?]
 	>=dev-haskell/monad-control-1.0.0.4:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/prettyprinter-1.2:=[profile?] <dev-haskell/prettyprinter-1.7:=[profile?]
+	>=dev-haskell/prettyprinter-1.2:=[profile?]
 	>=dev-haskell/semigroups-0.16.2.2:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/stm-2.4.4.1:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/stm-delay-0.1.1.1:=[profile?] <dev-haskell/stm-delay-0.2:=[profile?]
@@ -40,5 +40,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'prettyprinter >= 1.2 && < 1.7' 'prettyprinter >= 1.2' \
 		'unliftio-core >= 0.1.1.0 && < 0.2' 'unliftio-core >= 0.1.1.0'
 }
