@@ -18,6 +18,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Tests fail as:
+#    Ambiguous module name ‘Control.Monad.Extra’:
+#      it was found in multiple packages: extra-1.7.7 monad-extras-0.6.0
+RESTRICT=test
+
 RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
