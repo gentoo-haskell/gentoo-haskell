@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="examples">Build the example server</flag>
+	</use>
 	<longdescription>
 		This library allows you to write WebSocket-capable servers.
 		
