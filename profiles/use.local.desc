@@ -473,6 +473,7 @@ dev-haskell/wai-extra:examples - Build example executable.
 dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GNU/kFreeBSD).
 dev-haskell/warp:warp-debug - Add additional debuging information
 dev-haskell/wcwidth:cli - Enable command line tool
+dev-haskell/websockets:examples - Build the example server
 dev-haskell/wl-pprint-terminfo:cursed - Use curses to determine window width..
 dev-haskell/wreq:aws - Enable AWS tests
 dev-haskell/wreq:httpbin - Install client
