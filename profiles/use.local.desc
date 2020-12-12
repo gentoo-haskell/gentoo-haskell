@@ -164,6 +164,9 @@ dev-haskell/ghc-typelits-knownnat:deverror - Enables `-Werror` for development m
 dev-haskell/ghc-typelits-natnormalise:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghc-vis:full - Full ghc-vis window: decorations, buttons, legend
 dev-haskell/ghc-vis:graph - Enable graph view using Graphviz
+dev-haskell/gi-cairo-render:cairo-pdf - Build the PDF backend of Cairo.
+dev-haskell/gi-cairo-render:cairo-ps - Build the PostScript backend of Cairo.
+dev-haskell/gi-cairo-render:cairo-svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_pdf - Build the PDF backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_ps - Build the PostScript backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
