@@ -6,6 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="cairo-pdf">Build the PDF backend of Cairo.</flag>
+		<flag name="cairo-ps">Build the PostScript backend of Cairo.</flag>
+		<flag name="cairo-svg">Build the Scalable Vector Graphics (SVG) backend of Cairo.</flag>
 		<flag name="cairo_pdf">Build the PDF backend of Cairo.</flag>
 		<flag name="cairo_ps">Build the PostScript backend of Cairo.</flag>
 		<flag name="cairo_svg">Build the Scalable Vector Graphics (SVG) backend of Cairo.</flag>
