@@ -36,7 +36,7 @@ dev-haskell/active 0.2.0.14: Abstractions for animation
 dev-haskell/ad 4.4: Automatic Differentiation
 dev-haskell/adjunctions 4.4: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 0.11.2.0-r1 1.1.2.0 1.4.7.1: Fast JSON parsing and encoding
+dev-haskell/aeson 1.1.2.0 1.4.7.1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.2.0.0: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.9-r2: Compatibility layer for aeson
@@ -140,7 +140,7 @@ dev-haskell/barbies 2.0.2.0: Classes for working with types that can change clot
 dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.2: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.2: base-compat with extra batteries
 dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
-dev-haskell/base-orphans 0.5.4 0.8.3: Backwards-compatible orphan instances for base
+dev-haskell/base-orphans 0.8.4: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.3: The most complete prelude formed solely from the \
 dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functions and operators
 dev-haskell/base16-bytestring 0.1.1.7: Fast base16 (hex) encoding and decoding for ByteStrings
@@ -848,7 +848,7 @@ dev-haskell/hdfa 0.0.2: A simple library for representing and minimising DFAs
 dev-haskell/heap 1.0.4: Heaps in Haskell
 dev-haskell/heaps 0.3.6.1: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/heckle 2.0.2.1: Jekyll in Haskell (feat. LaTeX)
-dev-haskell/hedgehog 1.0.2-r1: Hedgehog will eat all your bugs
+dev-haskell/hedgehog 1.0.4: Release with confidence
 dev-haskell/hedis 0.9.6 0.12.14: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/hedis-config 0.0.3 1.0.0: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r1: An Haskell template system supporting both HTML5 and XML
@@ -1869,7 +1869,7 @@ dev-haskell/tasty-ant-xml 1.1.6: Render tasty output to XML for Jenkins
 dev-haskell/tasty-discover 4.2.1: Test discovery for the tasty framework
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.2.1: Golden tests support for tasty
-dev-haskell/tasty-hedgehog 1.0.0.2: Integration for tasty and hedgehog
+dev-haskell/tasty-hedgehog 1.0.0.2-r1: Integration for tasty and hedgehog
 dev-haskell/tasty-hspec 1.1.5.1-r2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.10.0.2: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
@@ -2021,7 +2021,7 @@ dev-haskell/unliftio-core 0.1.2.0 0.2.0.1: The MonadUnliftIO typeclass for unlif
 dev-haskell/unordered-containers 0.2.12.0: Efficient hashing-based container types
 dev-haskell/unsafe 0.0: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
-dev-haskell/uri-bytestring 0.3.2.2: Haskell URI parsing as ByteStrings
+dev-haskell/uri-bytestring 0.3.3.0: Haskell URI parsing as ByteStrings
 dev-haskell/uri-bytestring-aeson 0.1.0.7: Aeson instances for URI Bytestring
 dev-haskell/uri-encode 1.5.0.5: Unicode aware uri-encoding
 dev-haskell/url 2.1.3-r1: A library for working with URLs
@@ -2171,7 +2171,7 @@ dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
 dev-haskell/yesod-auth 1.6.9: Authentication for Yesod
 dev-haskell/yesod-auth-account 1.4.3: An account authentication plugin for Yesod
 dev-haskell/yesod-auth-hashdb 1.7.1.2: Authentication plugin for Yesod
-dev-haskell/yesod-auth-oauth2 0.6.1.5: OAuth 2.0 authentication plugins
+dev-haskell/yesod-auth-oauth2 0.6.1.6: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.6.0.6: The yesod helper executable
 dev-haskell/yesod-bootstrap 0.4: Bootstrap widgets for yesod
 dev-haskell/yesod-colonnade 1.3.0.1: Helper functions for using yesod with colonnade
