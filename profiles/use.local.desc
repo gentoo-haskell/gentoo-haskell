@@ -536,7 +536,6 @@ sci-mathematics/agda:stdlib - Install the standard library.
 sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the MAlonzo backend
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-servers/mighttpd2:tls - HTTPS support.
-x11-misc/taffybar:network-uri - Get Network.URI from the network-uri package.
 x11-misc/xmobar:alsa - Use alsa-mixer to get the volume from soundcards.
 x11-misc/xmobar:dbus - Publish a service on the session bus for controlling xmobar.
 x11-misc/xmobar:inotify - inotify support (modern Linux only). Required for the Mail and MBox plugins.

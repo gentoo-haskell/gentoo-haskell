@@ -699,7 +699,7 @@ dev-haskell/gi-cairo 1.0.24: Cairo bindings
 dev-haskell/gi-cairo-connector 0.0.1 0.1.0: GI friendly Binding to the Cairo library
 dev-haskell/gi-cairo-render 0.0.1-r1 0.1.0: GI friendly Binding to the Cairo library
 dev-haskell/gi-dbusmenu 0.4.8: Dbusmenu bindings
-dev-haskell/gi-dbusmenugtk3 0.4.8: DbusmenuGtk bindings
+dev-haskell/gi-dbusmenugtk3 0.4.9: DbusmenuGtk bindings
 dev-haskell/gi-gdk 3.0.23: Gdk bindings
 dev-haskell/gi-gdkpixbuf 2.0.24: GdkPixbuf bindings
 dev-haskell/gi-gdkx11 3.0.10: GdkX11 bindings
@@ -708,13 +708,13 @@ dev-haskell/gi-glib 2.0.24: GLib bindings
 dev-haskell/gi-gobject 2.0.25: GObject bindings
 dev-haskell/gi-graphene 1.0.2: Graphene bindings
 dev-haskell/gi-gtk 3.0.36: Gtk bindings
-dev-haskell/gi-gtk-hs 0.3.8.1: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
-dev-haskell/gi-gtksource 3.0.22: GtkSource bindings
+dev-haskell/gi-gtk-hs 0.3.9: A wrapper for gi-gtk, adding a few more idiomatic API parts on top
+dev-haskell/gi-gtksource 3.0.22-r1 3.0.23: GtkSource bindings
 dev-haskell/gi-harfbuzz 0.0.3: HarfBuzz bindings
-dev-haskell/gi-javascriptcore 4.0.21: JavaScriptCore bindings
+dev-haskell/gi-javascriptcore 4.0.22: JavaScriptCore bindings
 dev-haskell/gi-pango 1.0.23: Pango bindings
 dev-haskell/gi-soup 2.4.23: Libsoup bindings
-dev-haskell/gi-webkit2 4.0.25: WebKit2 bindings
+dev-haskell/gi-webkit2 4.0.26: WebKit2 bindings
 dev-haskell/gi-xlib 2.0.9: xlib bindings
 dev-haskell/gifcurry 2.1.0.0-r1: Create animated GIFs, overlaid with optional text, from video files
 dev-haskell/ginger 0.10.0.5: An implementation of the Jinja2 template language in Haskell
@@ -1573,7 +1573,7 @@ dev-haskell/rdf4h 3.1.1: A library for RDF processing in Haskell
 dev-haskell/rdtsc 1.3.0.1: Binding for the rdtsc machine instruction
 dev-haskell/re2 0.3: Bindings to the re2 regular expression library
 dev-haskell/reactive-banana 1.2.1.0: Library for functional reactive programming (FRP)
-dev-haskell/reactive-banana-gi-gtk 0.4.0.2: Simple reactive programming with GTK GObject Introspection
+dev-haskell/reactive-banana-gi-gtk 0.4.1.0: Simple reactive programming with GTK GObject Introspection
 dev-haskell/reactive-banana-wx 1.1.1.0-r1: Examples for the reactive-banana library, using wxHaskell
 dev-haskell/readable 0.3.1: Reading from Text and ByteString
 dev-haskell/readargs 1.2.3: Simple command line argument parsing
@@ -2286,7 +2286,7 @@ www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-misc/urlcheck 0.1.1-r1: Parallel link checker
 www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp
-x11-misc/taffybar 3.2.2 9999: A desktop bar similar to xmobar, but with more GUI
+x11-misc/taffybar 3.2.2 3.2.3: A desktop bar similar to xmobar, but with more GUI
 x11-misc/xmobar 0.36 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.15.2: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-utils 0.1.3.3: A small collection of X utilities
