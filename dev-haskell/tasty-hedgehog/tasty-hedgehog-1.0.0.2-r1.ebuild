@@ -17,19 +17,21 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hedgehog-1.0.2:=[profile?] <dev-haskell/hedgehog-1.0.3:=[profile?]
+RDEPEND=">=dev-haskell/hedgehog-1.0.2:=[profile?] <dev-haskell/hedgehog-1.1:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/tasty-0.11:=[profile?] <dev-haskell/tasty-1.3:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/tasty-expected-failure-0.11 <dev-haskell/tasty-expected-failure-0.12 )
+	test? ( >=dev-haskell/tasty-expected-failure-0.11 <dev-haskell/tasty-expected-failure-0.13 )
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.8 && <4.14' 'base >= 4.8'
+		'base >= 4.8 && <4.14' 'base >= 4.8' \
+		'tasty-expected-failure >= 0.11 && < 0.12' 'tasty-expected-failure >= 0.11' \
+		'hedgehog >= 1.0.2 && < 1.0.3' 'hedgehog >= 1.0.2'
 }
