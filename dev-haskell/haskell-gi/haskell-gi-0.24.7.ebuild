@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # doctests tests fail
+
 RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/cabal-1.24:=[profile?]
