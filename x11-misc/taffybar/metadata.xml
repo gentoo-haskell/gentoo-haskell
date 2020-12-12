@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
-	</use>
 	<longdescription>
 		Taffybar is a gtk+3 (through gi-gtk) based desktop information bar, intended
 		primarily for use with XMonad, though it can also function alongside other EWMH
