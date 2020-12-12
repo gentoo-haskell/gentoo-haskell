@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This library contains glue code used to interconnect Haskell GI and Cairo
-	</longdescription>
 </pkgmetadata>
