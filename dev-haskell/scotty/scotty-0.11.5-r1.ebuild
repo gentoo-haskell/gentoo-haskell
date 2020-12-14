@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-1.5:=[profil
 	>=dev-haskell/transformers-base-0.4.1:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
 	>=dev-haskell/wai-3.0.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
-	>=dev-haskell/wai-extra-3.0.0:=[profile?] <dev-haskell/wai-extra-3.1:=[profile?]
+	>=dev-haskell/wai-extra-3.0.0:=[profile?] <dev-haskell/wai-extra-3.2:=[profile?]
 	>=dev-haskell/warp-3.0.13:=[profile?] <dev-haskell/warp-3.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
@@ -45,6 +45,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-wai-0.6.3
 		dev-haskell/lifted-base )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'wai-extra           >= 3.0.0    && < 3.1' 'wai-extra           >= 3.0.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
