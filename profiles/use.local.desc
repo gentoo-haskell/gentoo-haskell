@@ -101,8 +101,6 @@ dev-haskell/clckwrks:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build quote module
 dev-haskell/cmdargs:testprog - Build the test program
-dev-haskell/comonad:containers - Enable the use of the `containers` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/comonad:distributive - Enable the use of the `distributive` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`.
 dev-haskell/comonad:test-doctests - Run the doctests test suite
 dev-haskell/concurrent-supply:test-properties - 
 dev-haskell/constraints-deriving:constraints - Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.
