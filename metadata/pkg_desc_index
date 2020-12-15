@@ -884,7 +884,7 @@ dev-haskell/hledger-iadd 1.3.12-r1: A terminal UI as drop-in replacement for hle
 dev-haskell/hledger-interest 1.6.0-r1: computes interest for a given account
 dev-haskell/hledger-lib 1.19.1 1.20: A reusable library providing the core functionality of hledger
 dev-haskell/hledger-ui 1.19.1 1.20: Curses-style terminal interface for the hledger accounting system
-dev-haskell/hledger-web 1.19.1 1.20: Web-based user interface for the hledger accounting system
+dev-haskell/hledger-web 1.19.1 1.20 1.20.1: Web-based user interface for the hledger accounting system
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
