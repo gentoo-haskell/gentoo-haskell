@@ -34,6 +34,7 @@ RDEPEND="app-portage/repoman
 	>=dev-haskell/network-uri-2.6:=
 	>=dev-haskell/old-locale-1.0:=
 	>=dev-haskell/parsec-3.1.13:=
+	>=dev-haskell/parallel-3.2.1.0:=
 	>=dev-haskell/random-1.0:=
 	dev-haskell/split:=
 	>=dev-haskell/stm-2.0:=
