@@ -2276,9 +2276,9 @@ sci-biology/bamstats 0.4: A program to extract various information from BAM alig
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
 sci-biology/rarecoal 1.2.1: tools to process and analyse genome sequencing data
 sci-calculators/clac 0.5.0-r1: Simple CLI RPN calculator
-sci-mathematics/agda 2.6.0.1-r1: A dependently typed functional programming language and proof assistant
+sci-mathematics/agda 2.6.1.2: A dependently typed functional programming language and proof assistant
 sci-mathematics/agda-lib-ffi 0.0.2-r2: Auxiliary Haskell code used by Agda's standard library
-sci-mathematics/agda-stdlib 2.6.0.1.1.0.1: Agda standard library
+sci-mathematics/agda-stdlib 2.6.1.2.1.4: Agda standard library
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/blogliterately 9999: A tool for posting Haskelly articles to blogs
 www-apps/darcsweb 1.1: A web interface for darcs

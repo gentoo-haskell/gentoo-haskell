@@ -530,9 +530,9 @@ media-sound/live-sequencer:httpserver - Enable access to modules via a web brows
 net-p2p/combinatorrent:threaded - Build with -threaded.
 net-p2p/combinatorrent:threadscope - Build with -eventlog.
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
-sci-mathematics/agda:enable-cluster-counting - Count extended grapheme clusters when generating LaTeX.
+sci-mathematics/agda:debug - Enable debugging features that may slow Agda down.
+sci-mathematics/agda:enable-cluster-counting - Enable the --count-clusters flag. (If enable-cluster-counting is False, then the --count-clusters flag triggers an error message.)
 sci-mathematics/agda:stdlib - Install the standard library.
-sci-mathematics/agda-stdlib:ffi - Install agda-lib-ffi for compilation using the MAlonzo backend
 www-apps/gitit:plugins - enables optional plugin runtime loader
 www-servers/mighttpd2:tls - HTTPS support.
 x11-misc/xmobar:alsa - Use alsa-mixer to get the volume from soundcards.
