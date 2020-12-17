@@ -5,9 +5,45 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="assoc">Build with assoc dependency</flag>
+	</use>
 	<longdescription>
 		This package provides strict versions of some standard Haskell data
-		types (pairs, Maybe and Either). It also contains strict IO
-		operations.
+		types (pairs, Maybe and Either). It also contains strict IO operations.
+		
+		It is common knowledge that lazy datastructures can lead to space-leaks.
+		This problem is particularly prominent, when using lazy datastructures to
+		store the state of a long-running application in memory. One common
+		solution to this problem is to use @seq@ and its variants in every piece of
+		code that updates your state. However a much easier solution is to use
+		fully strict types to store such state values. By \&quot;fully strict types\&quot; we
+		mean types for whose values it holds that, if they are in weak-head normal
+		form, then they are also in normal form. Intuitively, this means that
+		values of fully strict types cannot contain unevaluated thunks.
+		
+		To define a fully strict datatype, one typically uses the following recipe.
+		
+		1. Make all fields of every constructor strict; i.e., add a bang to
+		all fields.
+		
+		2. Use only strict types for the fields of the constructors.
+		
+		The second requirement is problematic as it rules out the use of
+		the standard Haskell &#39;Maybe&#39;, &#39;Either&#39;, and pair types. This library
+		solves this problem by providing strict variants of these types and their
+		corresponding standard support functions and type-class instances.
+		
+		Note that this library does currently not provide fully strict lists.
+		They can be added if they are really required. However, in many cases one
+		probably wants to use unboxed or strict boxed vectors from the &#39;vector&#39;
+		library (&lt;http://hackage.haskell.org/package/vector&gt;) instead of strict
+		lists.  Moreover, instead of @String@s one probably wants to use strict
+		@Text@ values from the @text@ library
+		(&lt;http://hackage.haskell.org/package/text&gt;).
+		
+		This library comes with batteries included; i.e., mirror functions and
+		instances of the lazy versions in @base@. It also includes instances for
+		type-classes from the @deepseq@, @binary@, and @hashable@ packages.
 	</longdescription>
 </pkgmetadata>
