@@ -101,7 +101,7 @@ dev-haskell/clckwrks:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build quote module
 dev-haskell/cmdargs:testprog - Build the test program
-dev-haskell/comonad:test-doctests - Run the doctests test suite
+dev-haskell/comonad:indexed-traversable - You can disable the use of the `indexed-traversable` package using `-f-indexed-traversable`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `FunctorWithIndex`
 dev-haskell/concurrent-supply:test-properties - 
 dev-haskell/constraints-deriving:constraints - Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.
 dev-haskell/constraints-deriving:debug - Show debug trace info (used only for library development). Note, if you want to see the debug output of the plugin in another project, you may need to manually define a CPP option -DPLUGIN_DEBUG in that project.
@@ -290,7 +290,6 @@ dev-haskell/ltk:gtk-320 - GTK+ is 3.20 or later
 dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/megaparsec-tests:dev - Turn on development settings.
-dev-haskell/microlens-th:inlining - Generate inline pragmas
 dev-haskell/midi-alsa:buildexamples - Build example executables.
 dev-haskell/miso:ios - Cross compile to iOS
 dev-haskell/miso:jsaddle - Compile with JSaddle
@@ -353,7 +352,8 @@ dev-haskell/pretty-simple:buildexample - Build a small example program showing h
 dev-haskell/pretty-simple:buildexe - Build a small command line program that pretty-prints anything from stdin.
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library
-dev-haskell/quickcheck:template-haskell - Enable additional test modules requiring Template Haskell support.
+dev-haskell/quickcheck:old-random - Build against a pre-1.2.0 version of the random package.
+dev-haskell/quickcheck:template-haskell - Build Test.QuickCheck.All, which uses Template Haskell.
 dev-haskell/quickcheck-classes:aeson - Enable the use of the `aeson` package. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/quickcheck-classes:binary-laws - Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
 dev-haskell/quickcheck-classes:semigroupoids - Enable the use of the `semigroupoids` package. This may be useful for accelerating builds in sandboxes for expert users.
@@ -434,6 +434,7 @@ dev-haskell/streamly:llvm - Use llvm backend for better performance
 dev-haskell/streamly:no-charts - Disable chart generation
 dev-haskell/streamly:no-fusion - Disable rewrite rules
 dev-haskell/streamly:streamk - Use CPS style streams when possible
+dev-haskell/strict:assoc - Build with assoc dependency
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
 dev-haskell/texmath:executable - Compile test executable.
@@ -441,6 +442,7 @@ dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
 dev-haskell/th-extras:base4 - Use base-4.0.
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
+dev-haskell/these:assoc - Build with assoc dependency
 dev-haskell/threepenny-gui:buildexamples - Build example executables.
 dev-haskell/threepenny-gui:rebug - Expose more bugs related to non-determinism.
 dev-haskell/thyme:bug-for-bug - bug-for-bug compatibility with time
