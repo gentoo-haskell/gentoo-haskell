@@ -6,8 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name='optimised-mixer'>Use JavaScript for mix32</flag>
-		<flag name='random'>Providen RandomGen SMGen instance</flag>
+		<flag name="optimised-mixer">Use JavaScript for mix32</flag>
+		<flag name="random">Providen RandomGen SMGen instance</flag>
 	</use>
 	<longdescription>
 		Pure Haskell implementation of SplitMix described in

@@ -1,3 +1,18 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-16)
+# Too many packages require <dev-haskell/aeson-1.5.
+# The following package versions are masked until
+# aeson-1.5 is possible:
+>=dev-haskell/aeson-1.5
+>=dev-haskell/data-fix-0.3
+>=dev-haskell/free-5.1.4
+>=dev-haskell/random-1.2
+>=dev-haskell/splitmix-0.1
+>=dev-haskell/strict-0.4
+>=dev-haskell/th-abstraction-0.4
+>=dev-haskell/these-1.1
+>=dev-haskell/quickcheck-2.14
+>=dev-haskell/quickcheck-instances-0.3.23
+
 # Jack Todaro <solpeth@posteo.org> (2020-11-25)
 # No release since 2018-01. Depends on old package
 # versions. Masked for removal.
