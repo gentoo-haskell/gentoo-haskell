@@ -2193,7 +2193,7 @@ dev-haskell/yesod-paginator 1.1.0.2: A pagination approach for yesod
 dev-haskell/yesod-persistent 1.6.0.4: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-recaptcha2 0.3.0: yesod recaptcha2
 dev-haskell/yesod-sitemap 1.6.0: Generate XML sitemaps
-dev-haskell/yesod-static 1.6.0.1: Static file serving subsite for Yesod Web Framework
+dev-haskell/yesod-static 1.6.1.0: Static file serving subsite for Yesod Web Framework
 dev-haskell/yesod-table 2.0.3: HTML tables for Yesod
 dev-haskell/yesod-test 1.6.12: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.10: Yesod support for Text.Markdown
