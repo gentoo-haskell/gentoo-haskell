@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-17)
+# Package no longer works. Has not been kept up
+# to date. Masked for removal.
+sci-mathematics/agda-lib-ffi
+
 # Jack Todaro <solpeth@posteo.org> (2020-12-16)
 # Too many packages require <dev-haskell/aeson-1.5.
 # The following package versions are masked until
