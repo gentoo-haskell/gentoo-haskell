@@ -1,9 +1,9 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES="profile"
 inherit haskell-cabal elisp-common
 
 ## shared with sci-mathematics/agda
@@ -13,26 +13,25 @@ inherit haskell-cabal elisp-common
 # As Agda-stdlib is tied to Agda version we encode
 # both versions in gentoo version.
 ##
-MY_UPSTREAM_AGDA_STDLIB_V="1.0.1"
+MY_UPSTREAM_AGDA_STDLIB_V="1.4"
 MY_GENTOO_AGDA_STDLIB_V="${PV}.${MY_UPSTREAM_AGDA_STDLIB_V}"
 MY_UPSTREAM_AGDA_V="${PV%.${MY_UPSTREAM_AGDA_STDLIB_V}}"
 
 DESCRIPTION="Agda standard library"
-HOMEPAGE="http://wiki.portal.chalmers.se/agda/"
+HOMEPAGE="https://wiki.portal.chalmers.se/agda/"
 SRC_URI="https://github.com/agda/${PN}/archive/v${MY_UPSTREAM_AGDA_STDLIB_V}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="profile +ffi"
+IUSE=""
 
 RDEPEND=">=sci-mathematics/agda-${MY_UPSTREAM_AGDA_V}:=[profile?]
-	ffi? ( sci-mathematics/agda-lib-ffi )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
+	>=dev-haskell/cabal-1.24.2.0
 	>=dev-haskell/filemanip-0.3.6.2[profile?] <dev-haskell/filemanip-0.4[profile?]
-	>=dev-lang/ghc-7.6.3
+	>=dev-lang/ghc-8.0.2
 "
 
 S=${WORKDIR}/${PN}-${MY_UPSTREAM_AGDA_STDLIB_V}
