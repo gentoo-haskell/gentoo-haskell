@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Fixpoint types and recursion schemes. If you define your AST as
-		fixpoint type, you get fold and unfold operations for free.
-	</longdescription>
 </pkgmetadata>
