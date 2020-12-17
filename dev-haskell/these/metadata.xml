@@ -5,17 +5,27 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="assoc">Build with assoc dependency</flag>
+	</use>
 	<longdescription>
 		This package provides a data type @These a b@ which can hold a value of either
 		type or values of each type. This is usually thought of as an &quot;inclusive or&quot;
 		type (contrasting @Either a b@ as &quot;exclusive or&quot;) or as an &quot;outer join&quot; type
 		(contrasting @(a, b)@ as &quot;inner join&quot;).
 		
-		The major use case of this is provided by the @Align@ class, representing a
-		generalized notion of &quot;zipping with padding&quot; that combines structures without
-		truncating to the size of the smaller input.
+		@
+		data These a b = This a | That b | These a b
+		@
 		
-		Also included is @ChronicleT@, a monad transformer based on the Monad instance
-		for @These a@, along with the usual monad transformer bells and whistles.
+		Since version 1, this package was split into parts:
+		
+		* &lt;https://hackage.haskell.org/package/semialign semialign&gt; For @Align@ and @Zip@ type-classes.
+		
+		* &lt;https://hackage.haskell.org/package/semialign-indexed semialign-indexed&gt; For @SemialignWithIndex@ class, providing @ialignWith@ and @izipWith@.
+		
+		* &lt;https://hackage.haskell.org/package/these-lens these-lens&gt; For lens combinators.
+		
+		* &lt;http://hackage.haskell.org/package/monad-chronicle monad-chronicle&gt; For transformers variant of @These@.
 	</longdescription>
 </pkgmetadata>
