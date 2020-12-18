@@ -20,7 +20,6 @@ sci-mathematics/agda-lib-ffi
 >=dev-haskell/strict-0.4
 >=dev-haskell/th-abstraction-0.4
 >=dev-haskell/these-1.1
->=dev-haskell/quickcheck-2.14
 >=dev-haskell/quickcheck-instances-0.3.23
 
 # Jack Todaro <solpeth@posteo.org> (2020-11-25)
