@@ -819,7 +819,7 @@ dev-haskell/haskell-packages 0.3: Haskell suite library for package management a
 dev-haskell/haskell-platform 2014.2.0.0-r1: The Haskell Platform
 dev-haskell/haskell-qrencode 1.0.4: Haskell bindings for libqrencode
 dev-haskell/haskell-src 1.0.3.1: Support for manipulating Haskell source code
-dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1 1.18.2 1.19.1 1.20.2 1.20.3 1.21.1 1.22.0 1.23.0: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
+dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1 1.18.2 1.19.1 1.20.2 1.20.3 1.21.1 1.22.0 1.23.0 1.23.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/haskell-src-exts-simple 1.19.0.0 1.20.0.0 1.21.1.0 1.22.0.0 1.23.0.0: A simplified view on the haskell-src-exts AST
 dev-haskell/haskell-src-exts-util 0.2.5: Helper functions for working with haskell-src-exts trees
 dev-haskell/haskell-src-meta 0.8.5-r1: Parse source to template-haskell abstract syntax
@@ -899,7 +899,7 @@ dev-haskell/hnix-store-core 0.2.0.0: Core effects for interacting with the Nix s
 dev-haskell/hoauth2 1.11.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
-dev-haskell/hoogle 5.0.17.11: Haskell API Search
+dev-haskell/hoogle 5.0.17.11 5.0.18: Haskell API Search
 dev-haskell/hookup 0.3.1.0: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
