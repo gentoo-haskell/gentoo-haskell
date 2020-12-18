@@ -47,11 +47,6 @@ dev-haskell/serversession-frontend-yesod
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # No new releases on hackage. Needs a fix for new yesod.
 # Masked for removal.
-dev-haskell/yesod-pagination
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
-# No new releases on hackage. Needs a fix for new yesod.
-# Masked for removal.
 dev-haskell/yesod-worker
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
