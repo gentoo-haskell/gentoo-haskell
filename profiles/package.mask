@@ -44,11 +44,6 @@ dev-haskell/layers
 # since 2015.
 dev-haskell/serversession-frontend-yesod
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
-# Needs port to a new pandoc. Not really maintained.
-# Masked for removal
-www-apps/blogliterately
-
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
 # virtual ebuild to pin ghc package versions. Not used nowadays.
 # Masked for removal.
