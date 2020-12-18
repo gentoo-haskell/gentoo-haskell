@@ -3,29 +3,6 @@
 # * generated automatically using pmaint *
 
 app-admin/propellor:type-errors - Build with type-errors library for better error messages and less memory use
-app-editors/leksah:codemirror - Experimental codemirror editor
-app-editors/leksah:dyre - Experimental Yi dyre support
-app-editors/leksah:loc - Experimental localization support
-app-editors/leksah:network-uri - Get Network.URI from the network-uri package
-app-editors/leksah:threaded - Use threaded runtime.
-app-editors/leksah:yi - Experimental Yi support
-app-editors/leksah-server:network-uri - Get Network.URI from the network-uri package
-app-editors/leksah-server:threaded - Enable multithreaded runtime.
-app-editors/yi:emacs - Include the emacs keymap
-app-editors/yi:eventlog - Runtime binary will be compiled with eventlog and RTS options enabled.
-app-editors/yi:gtk - Include the pango (GUI) frontend, this flag is ignored if compiling with ghc >= 8.2
-app-editors/yi:hint - Include hint (haskell interpreter) in yi
-app-editors/yi:profiling - Runtime binary will be compiled with profiling and RTS options enabled.
-app-editors/yi:testing - bake-in the self-checks
-app-editors/yi:vim - Include the vim keymap
-app-editors/yi:vty - Include the vty (CLI) frontend
-app-forensics/quickfuzz:archs - support archive formats
-app-forensics/quickfuzz:codes - support cource code formats
-app-forensics/quickfuzz:docs - support document formats
-app-forensics/quickfuzz:imgs - support image formats
-app-forensics/quickfuzz:media - support media formats
-app-forensics/quickfuzz:net - support networking formats
-app-forensics/quickfuzz:pki - support PKI formats
 app-text/pandoc:derive-json-via-th - Use Template Haskell instead of GHC Generics to derive ToJSON and FromJSON instances.
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
 app-text/pandoc:optimize - Enable -O1 optimizations (requires ~16GiB memory)
@@ -151,7 +128,6 @@ dev-haskell/freer-effects:pedantic - Pass additional warning flags and -Werror t
 dev-haskell/freer-effects:test-hlint - Enable test suite that checks sources using HLint.
 dev-haskell/ftphs:buildtests - Build the executable to run unit tests.
 dev-haskell/gauge:analysis - Build with statistical analysis support
-dev-haskell/ghc-api:cabal - fix cabal version
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
 dev-haskell/ghc-heap-view:prim-supports-any - The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)
 dev-haskell/ghc-lib-parser-ex:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
@@ -246,7 +222,6 @@ dev-haskell/hxt:profile - turn profiling on
 dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
 dev-haskell/icalendar:network-uri - use network-uri package
 dev-haskell/ignore:without-pcre - Disable pcre support
-dev-haskell/imagemagick:buildexamples - Build examples.
 dev-haskell/inflections:dev - Turn on development settings
 dev-haskell/influxdb:examples - Build examples
 dev-haskell/inline-c:gsl-example - Build GSL example
@@ -275,8 +250,6 @@ dev-haskell/lens:safe - Disallow unsafeCoerce
 dev-haskell/lens:test-doctests - Build and run the doctests test-suite.
 dev-haskell/lens:test-templates - Build the test templates if we're building tests
 dev-haskell/lens:trustworthy - Assert that we are trustworthy when we can
-dev-haskell/libssh2:example-client - build example client
-dev-haskell/libssh2:gcrypt - add hack that allows to run threaded program when libssh2 is built against gcrypt
 dev-haskell/libyaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
 dev-haskell/linear:template-haskell - Enable the use of the `template-haskell` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -285,8 +258,6 @@ dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for developme
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
 dev-haskell/logfloat:useffi - Use bindings to C libraries
-dev-haskell/ltk:check-gtk-version - This flag can be used to disable the pkgconfig-depends as they can cause problems on macOS when using nix.
-dev-haskell/ltk:gtk-320 - GTK+ is 3.20 or later
 dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/megaparsec-tests:dev - Turn on development settings.
@@ -476,7 +447,6 @@ dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GN
 dev-haskell/warp:warp-debug - Add additional debuging information
 dev-haskell/wcwidth:cli - Enable command line tool
 dev-haskell/websockets:examples - Build the example server
-dev-haskell/wl-pprint-terminfo:cursed - Use curses to determine window width..
 dev-haskell/wreq:aws - Enable AWS tests
 dev-haskell/wreq:httpbin - Install client
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
@@ -485,7 +455,6 @@ dev-haskell/yaml:no-exe - don't install the yaml2json or json2yaml executables
 dev-haskell/yesod-auth:network-uri - Get Network.URI from the network-uri package
 dev-haskell/yesod-auth-oauth2:examples - Build the example application
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
-dev-haskell/yi-core:hint - Build with hint (haskell interpreter)
 dev-haskell/zip-archive:executable - Build the Zip executable.
 dev-haskell/zlib:bundled-c-zlib - Use the bundled zlib C sources. Requires pkg-config to be False. For windows, this is the default.
 dev-haskell/zlib:non-blocking-ffi - The (de)compression calls can sometimes take a long time, which prevents other Haskell threads running. Enabling this flag avoids this unfairness, but with greater overall cost.
@@ -527,8 +496,6 @@ games-puzzle/intricacy:server - Builds game server
 games-puzzle/intricacy:sound - Enables sound in SDL user interface
 media-sound/live-sequencer:gui - Build the wxWidgets GUI for the sequencer.
 media-sound/live-sequencer:httpserver - Enable access to modules via a web browser.
-net-p2p/combinatorrent:threaded - Build with -threaded.
-net-p2p/combinatorrent:threadscope - Build with -eventlog.
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
 sci-mathematics/agda:debug - Enable debugging features that may slow Agda down.
 sci-mathematics/agda:enable-cluster-counting - Enable the --count-clusters flag. (If enable-cluster-counting is False, then the --count-clusters flag triggers an error message.)
