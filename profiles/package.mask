@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-18)
+# Needs port to ghc-8.8: https://github.com/jyp/glpk-hs/issues/15
+dev-haskell/glpk-hs
+
 # Jack Todaro <solpeth@posteo.org> (2020-12-18)
 # Unmaintained and declared dead upstream. Masked for
 # removal.
