@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/cairo-0.12:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	>=dev-haskell/graphviz-2999.16:=[profile?]
-	>=dev-haskell/gtk3-0.12:=[profile?] <dev-haskell/gtk3-0.15:=[profile?]
+	>=dev-haskell/gtk3-0.12:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/polyparse-1.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -35,5 +35,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'graphviz >= 2999.16 && < 2999.19' 'graphviz >= 2999.16' \
-		'polyparse >= 1.8 && < 1.13' 'polyparse >= 1.8'
+		'polyparse >= 1.8 && < 1.13' 'polyparse >= 1.8' \
+		'gtk3 >= 0.12 && < 0.15' 'gtk3 >= 0.12'
 }
