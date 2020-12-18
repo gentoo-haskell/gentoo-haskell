@@ -7,7 +7,7 @@ EAPI=7
 
 RESTRICT="test" # hspec-hedgehog removed from the gentoo-haskell overlay?
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Lighweight pure data validation based on Applicative and Selective functors"
