@@ -1,8 +1,0 @@
-diff --git a/Common.hs b/Common.hs
-index 5eaad8d..555348c 100644
---- a/Common.hs
-+++ b/Common.hs
-@@ -31,2 +31,3 @@ replaceAt a b c
- 
-+allTrue :: [Bool] -> Bool
- allTrue = all id

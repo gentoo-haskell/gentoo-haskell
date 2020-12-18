@@ -1,4 +1,0 @@
---- a/src/System/Console/CmdTheLine/Manpage.hs
-+++ b/src/System/Console/CmdTheLine/Manpage.hs
-@@ -0,0 +1 @@
-+{-# LANGUAGE FlexibleContexts #-}
