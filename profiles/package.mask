@@ -45,11 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-11)
-# No release since 2011. Needs port to network-3.
-# Masked for removal
-dev-haskell/remote
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-11)
 # Needs a port to network3: https://github.com/portnov/libssh2-hs/issues/57
 # Masked for removal
 dev-haskell/libssh2
