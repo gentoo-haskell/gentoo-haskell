@@ -44,11 +44,6 @@ dev-haskell/layers
 # since 2015.
 dev-haskell/serversession-frontend-yesod
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-09)
-# Needs a port to haskell-src-exts compatible with ghc-8.8.
-# https://github.com/bmillwood/pointfree/issues/34
-dev-haskell/pointfree
-
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-10-27)
 # Needs a fix to build against new headers location:
 # https://github.com/qnikst/imagemagick/issues/46
