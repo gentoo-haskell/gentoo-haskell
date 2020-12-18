@@ -76,11 +76,6 @@ dev-haskell/commonmark-pandoc
 # Needs porting to Cabal-3
 dev-lang/purescript
 
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Requires porting to newer base
-dev-haskell/wl-pprint-extras
-dev-haskell/wl-pprint-terminfo
-
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Needs porting to newer Cabal versions. Also mask
 # revdeps.
