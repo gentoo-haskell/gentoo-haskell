@@ -45,11 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
-# Not ported to Cabal-3. Development stopped 4 years ago.
-# Masked for removal.
-dev-haskell/yesod-dsl
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # No new releases on hackage. Needs a fix for new yesod.
 # Masked for removal.
 dev-haskell/yesod-pagination
