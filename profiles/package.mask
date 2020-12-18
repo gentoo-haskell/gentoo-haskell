@@ -45,12 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
-# Stopped development 2 years ago. No releases.
-# Does not compile against ghc-8.8.
-# Masked for removal
-dev-util/corrode
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # Needs port to a new pandoc. Not really maintained.
 # Masked for removal
 www-apps/blogliterately
