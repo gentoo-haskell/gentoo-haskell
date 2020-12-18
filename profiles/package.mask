@@ -45,13 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
-# virtual ebuild to pin ghc package versions. Not used nowadays.
-# Masked for removal.
-dev-haskell/ghc-api
-dev-haskell/ghc-mtl
-dev-haskell/ghc-simple
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
 # Needs a port to ghc-8.8. Had no release in past 7 years.
 # Masked for removal
 dev-haskell/cmdtheline
