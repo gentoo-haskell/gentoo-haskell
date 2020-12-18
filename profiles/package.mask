@@ -45,11 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
-# No upstream page. Does not build against modern yesod.
-# Masked for removal.
-dev-haskell/yesod-auth-account
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # Needs a port to yesod-1.6. Was done in master, never released.
 # Masked for removal.
 dev-haskell/yesod-bootstrap
