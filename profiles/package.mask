@@ -45,11 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
-# Needs a tweak for network-3. Had no release in past 6 years.
-# Masked for removal
-net-irc/y0l0bot
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
 # No stable releases. No development in past 2 years.
 # Needs a tweak for Cabal-3.
 # Masked for removal
