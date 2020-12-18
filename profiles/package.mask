@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-18)
+# Unmaintained and declared dead upstream. Masked for
+# removal.
+app-admin/super-user-spark
+
 # Jack Todaro <solpeth@posteo.org> (2020-12-17)
 # Required only by dev-lang/purescript, which remains
 # masked until it bumps its dependency upper bounds.
