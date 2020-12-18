@@ -45,12 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-11)
-# Needs a port to network3: https://github.com/portnov/libssh2-hs/issues/57
-# Masked for removal
-dev-haskell/libssh2
-dev-haskell/ssh
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-11)
 # Deprecated and not ported to ghc-8.8.
 # Alternatives are listed on https://github.com/chrisdone/intero.
 # Masked for removal.
