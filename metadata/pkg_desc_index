@@ -1932,7 +1932,7 @@ dev-haskell/time-manager 0.0.0: Scalable timer
 dev-haskell/time-parsers 0.1.2.1: Parsers for types in 'time'
 dev-haskell/time-units 1.0.0: A basic library for defining units of time as types
 dev-haskell/timeit 2.0: Time a computation
-dev-haskell/timeplot 1.0.32: A tool for visualizing time series from log files
+dev-haskell/timeplot 1.0.33: A tool for visualizing time series from log files
 dev-haskell/timespan 0.3.0.0: Useful timespan datatype and functions
 dev-haskell/timezone-olson 0.1.9: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.9: Enhanced timezone handling for Data.Time
@@ -2123,7 +2123,7 @@ dev-haskell/xcb-types 0.10.0: Parses XML files used by the XCB project
 dev-haskell/xdg-basedir 0.2.2: A basic implementation of the XDG Base Directory specification
 dev-haskell/xdg-desktop-entry 0.1.1.1: Parse files conforming to the xdg desktop entry spec
 dev-haskell/xdg-userdirs 0.1.0.2: Basic implementation of XDG user directories specification
-dev-haskell/xdot 0.3.0.1-r2: Parse Graphviz xdot files and interactively view them using GTK and Cairo
+dev-haskell/xdot 0.3.0.1-r3: Parse Graphviz xdot files and interactively view them using GTK and Cairo
 dev-haskell/xeno 0.4.1: A fast event-based XML parser in pure Haskell
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
 dev-haskell/xhtml 3000.2.1-r1 3000.2.2.1: An XHTML combinator library
