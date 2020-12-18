@@ -6,7 +6,7 @@ app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell prog
 app-emacs/idris-mode 0.9.18 9999: Idris syntax highlighting and (eventually) other things for emacs
 app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
-app-portage/hackport 0.6.6 9999: Hackage and Portage integration tool
+app-portage/hackport 0.6.6 0.6.7 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-text/lit 0.1.10.0: A simple tool for literate programming
 app-text/pandoc 2.7.3-r1 2.9.2.1 2.10.1: Conversion between markup formats
