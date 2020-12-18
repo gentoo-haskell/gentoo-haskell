@@ -45,11 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
-# No releases, depends on hoopl.
-# Masked for removal.
-dev-lang/hnc
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # Not fetchable, no releases, no pome page.
 # Masked for removal.
 dev-lang/hope
