@@ -45,20 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
-# The development stopped: https://github.com/yi-editor/yi/issues/1114
-# Not buildable with ghc-8.8.
-# Masked for removal.
-dev-haskell/yi-core
-dev-haskell/yi-frontend-pango
-dev-haskell/yi-frontend-vty
-dev-haskell/yi-keymap-emacs
-dev-haskell/yi-keymap-vim
-dev-haskell/yi-misc-modes
-dev-haskell/yi-mode-haskell
-dev-haskell/yi-mode-javascript
-app-editors/yi
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-13)
 # No releases, depends on hoopl.
 # Masked for removal.
 dev-lang/hnc
