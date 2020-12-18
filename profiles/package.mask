@@ -45,11 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
-# Needs a tweak for ghc-8.8. Had no release on 5 years.
-# Masked for removal
-sci-calculators/clac
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
 # Needs a port to network-3. Upstrem is not active for a long time.
 # Masked for removal
 www-misc/urlcheck
