@@ -44,11 +44,6 @@ dev-haskell/layers
 # since 2015.
 dev-haskell/serversession-frontend-yesod
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-10-27)
-# Needs a fix to build against new headers location:
-# https://github.com/qnikst/imagemagick/issues/46
-dev-haskell/imagemagick
-
 # Jack Todaro <solpeth@posteo.org> (2020-08-12)
 # Many packages require QuickCheck < 2.14. Mask
 # QuickCheck >= 2.14 and its reverse dependencies
