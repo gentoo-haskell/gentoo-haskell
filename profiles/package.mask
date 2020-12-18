@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-18)
+# Needs a port to MonadFail. Has no homepage.
+dev-haskell/picoparsec
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-18)
 # Needs port to new gtk. Does not compile. Last commit in 2015.
 # Use dev-haskell/timeplot instead.
 dev-haskell/splot
