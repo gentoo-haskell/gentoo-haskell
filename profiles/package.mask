@@ -45,12 +45,6 @@ dev-haskell/layers
 dev-haskell/serversession-frontend-yesod
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
-# Needs a tweak for network-3. Had no release in past 6 years.
-# Masked for removal
-games-arcade/blubber
-games-arcade/blubber-server
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-11-12)
 # Needs a port to ghc-8.8. Had no release in past 5 years.
 # Masked for removal
 media-sound/vimus
