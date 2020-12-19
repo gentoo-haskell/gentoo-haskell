@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Random text generation based on spintax with nested alternatives and empty options.
-	</longdescription>
 </pkgmetadata>
