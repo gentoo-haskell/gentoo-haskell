@@ -6,7 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="no-linear">Do not depend on <pkg>dev-haskell/linear</pkg> library (bundled Vect)</flag>
+		<flag name="examples">Build opengl-example</flag>
+		<flag name="no-linear">Do not depend on 'linear' library</flag>
 	</use>
 	<longdescription>
 		This package contains bindings to the SDL 2 library, in both high- and
@@ -19,5 +20,7 @@
 		Haskell FFI calls. As such, this does not contain sum types nor error
 		checking. Thus this namespace is suitable for building your own abstraction
 		over SDL, but is not recommended for day-to-day programming.
+		
+		Read &quot;SDL&quot; for a getting started guide.
 	</longdescription>
 </pkgmetadata>
