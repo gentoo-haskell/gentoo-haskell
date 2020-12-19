@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# Not up to date with ghc-8: https://github.com/tanakh/Peggy/issues/11
+dev-haskell/peggy
+
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Dead upstream. Depends on old transformers. Masked
 # for removal.
