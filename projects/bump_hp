@@ -116,4 +116,5 @@ c=$(basename "$(dirname "$(pwd)")")
 run git add --all .
 run $repoman_prog commit -m "${c}/${pn}: bump up to ${pv}"
 run git show -C -M -D
-run $ebuild_prog "${current_e}" clean
+echo "Cleaning in the background"
+run $ebuild_prog "${current_e}" clean >/dev/null 2>&1 &
