@@ -1458,7 +1458,7 @@ dev-haskell/pipes-transduce 0.4.4.0: Interfacing pipes with foldl folds
 dev-haskell/pipes-zlib 0.4.4.2: Zlib and GZip compression and decompression for Pipes streams
 dev-haskell/placeholders 0.1: Placeholders for use while developing Haskell code
 dev-haskell/plailude 0.6.0-r1: plaimi's prelude
-dev-haskell/plugins 1.5.7: Dynamic linking for Haskell and C objects
+dev-haskell/plugins 1.6.1: Dynamic linking for Haskell and C objects
 dev-haskell/plugins-auto 0.0.4: Automatic recompilation and reloading of haskell modules
 dev-haskell/pointed 5.0.2: Pointed and copointed data
 dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, tracking a position
