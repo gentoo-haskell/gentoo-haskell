@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		For a high-level overview of this package,
-		see &lt;http://documentup.com/haskell-suite/haskell-names&gt;
-	</longdescription>
 </pkgmetadata>
