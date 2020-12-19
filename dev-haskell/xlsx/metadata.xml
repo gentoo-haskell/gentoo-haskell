@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="microlens">Use microlens instead of lens</flag>
+	</use>
 	<longdescription>
 		This library can help you to get some data read and written in Office
 		Open XML xlsx format. Small subset of xlsx format is supported.
