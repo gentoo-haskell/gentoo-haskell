@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Generates sequence diagrams from textual descriptions with help of Graphviz graph drawing tool.
-		Check out &lt;http://adept.linux.kiev.ua:8080/repos/flow2dot/sample.flow&gt; (source)
-		and &lt;http://adept.linux.kiev.ua:8080/repos/flow2dot/sample.png&gt; (output).
-	</longdescription>
 </pkgmetadata>
