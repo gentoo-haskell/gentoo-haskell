@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="network-bsd">Use network-bsd</flag>
+	</use>
 	<longdescription>
 		This package provides client support for the POP3,
 		SMTP, and IMAP protocols.  NOTE: this package will be
