@@ -5,28 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Memoization monad transformer supporting most of the standard monad transformers and a range of memoization cache types: from default pure maps to extremely fast mutable vectors
-		
-		To add memoization behaviour to a monadic function:
-		
-		1) Add &#39;Control.Monad.Memo.memo&#39; combinator at the point when memoization is required (i.e. recursive call)
-		
-		&gt;import Control.Monad.Memo
-		&gt;
-		&gt;fibm 0 = return 0
-		&gt;fibm 1 = return 1
-		&gt;fibm n = do
-		&gt;  n1 &lt;- memo fibm (n-1)
-		&gt;  n2 &lt;- memo fibm (n-2)
-		&gt;  return (n1+n2)
-		
-		2) Use approprite /*eval*/ or /*run*/ function to evaluate resulting `MonadMemo` monad:
-		
-		&gt;startEvalMemo (fibm 100)
-		
-		See detailed description and examples: &quot;Control.Monad.Memo&quot;
-	</longdescription>
 </pkgmetadata>
