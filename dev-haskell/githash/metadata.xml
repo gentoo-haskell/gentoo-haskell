@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Please see the README and documentation at &lt;https://www.stackage.org/package/githash&gt;
-	</longdescription>
 </pkgmetadata>
