@@ -1,4 +1,9 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# No homepage, no release over past 4 years. No port to
+# modern haskell-src-exts.
+dev-haskell/hsx
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
 # No homepage, no release over past 9 years. No port to
 # ghc-7+.
 dev-haskell/takusen
