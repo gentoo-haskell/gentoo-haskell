@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Dynamic linking and runtime evaluation of Haskell,
-		and C, including dependency chasing and package resolution.
-		
-		Described in the papers:
-		* /Plugging Haskell In/, &lt;http://www.cse.unsw.edu.au/~dons/papers/PSSC04.html&gt;
-		* /Dynamic Applications from the Ground Up/, &lt;http://www.cse.unsw.edu.au/~dons/papers/SC05.html&gt;
-		* /Dynamic Extension of Typed Functional Languages/.
-	</longdescription>
 </pkgmetadata>
