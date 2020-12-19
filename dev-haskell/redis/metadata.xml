@@ -5,34 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This library is deprecated in favour of the hedis package,
-		but minor patches to keep it building etc will be applied.
-		
-		
-		Redis (&lt;http://redis.io&gt;) is an open source, BSD licensed, advanced
-		key-value store. It is often referred as a data structure server
-		since keys can contain different data structures, such as strings,
-		hashes, lists, sets and sorted sets.
-		
-		This library is a Haskell driver for Redis. It&#39;s tested with
-		current git version and with v2.4.6 of redis server. It also
-		tested with v2.2 and basic functions are works correctly
-		but not all of them.
-		
-		You can use Test module from the source package to run unit
-		tests. Try /runhaskell Test.hs --help/ for usage info. Caution! Do not
-		run tests on your working database - test database will be
-		flushed.
-		
-		There are simple benchmark module included: Benchmark.hs. It shows
-		me about two times less requests per second than redis-benchmark
-		from server distribution.
-		
-		Please let me know if tests or benchmark goes terribly wrong.
-		
-		Changes from v0.12:
-		
-		- nothing here
-	</longdescription>
 </pkgmetadata>
