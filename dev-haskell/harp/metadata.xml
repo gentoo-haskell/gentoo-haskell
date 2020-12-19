@@ -5,15 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		HaRP, or Haskell Regular Patterns, is a Haskell extension
-		that extends the normal pattern matching facility with
-		the power of regular expressions. This expressive power
-		is highly useful in a wide range of areas, including text parsing
-		and XML processing. Regular expression patterns in HaRP work over
-		ordinary Haskell lists ([]) of arbitrary type. We have implemented
-		HaRP as a pre-processor to ordinary Haskell.
-		
-		For details on usage, please see the website.
-	</longdescription>
 </pkgmetadata>
