@@ -23,8 +23,8 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 # break cyclic dependencies, test suite requires porting to >=QC-2.11
 RESTRICT=test
-
-RDEPEND=">=dev-lang/ghc-7.8.2:="
+# ghc-8.10 requires text-1.2.3.2. Try to force the downgrade here.
+RDEPEND=">=dev-lang/ghc-8.8:= <dev-lang/ghc-8.10:="
 
 DEPEND="${RDEPEND}
 "
