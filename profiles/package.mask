@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
+# Dead upstream. Depends on old transformers. Masked
+# for removal.
+dev-haskell/data-lens-fd
+
+# Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
 # years. Masked for removal.
