@@ -5,18 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This package provides user-facing APIs for working with
-		&quot;compact regions&quot;, which hold a fully evaluated Haskell object graph.
-		These regions maintain the invariant that no pointers live inside the struct
-		that point outside it, which ensures efficient garbage collection without
-		ever reading the structure contents (effectively, it works as a manually
-		managed &quot;oldest generation&quot; which is never freed until the whole is
-		released).
-		This package is currently highly experimental, but we hope it may
-		be useful to some people.  It is GHC 8.2 only.  The bare-bones library
-		that ships with GHC is ghc-compact.
-	</longdescription>
 </pkgmetadata>

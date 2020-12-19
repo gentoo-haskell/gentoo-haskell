@@ -1,3 +1,25 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# No development in past 9 years. Needs a port to network-3.
+dev-haskell/pop3-client
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# Deprecated and obsolete. No revdeps.
+dev-haskell/iorefcas
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# No homepage, no release over past 4 years. No port to
+# modern haskell-src-exts.
+dev-haskell/hsx
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# No homepage, no release over past 9 years. No port to
+# ghc-7+.
+dev-haskell/takusen
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# Not up to date with ghc-8: https://github.com/tanakh/Peggy/issues/11
+dev-haskell/peggy
+
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Dead upstream. Depends on old transformers. Masked
 # for removal.
