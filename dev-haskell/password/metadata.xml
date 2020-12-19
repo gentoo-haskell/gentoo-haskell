@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		A library providing functionality for working with plain-text and hashed passwords with different types of algorithms.
-	</longdescription>
 </pkgmetadata>
