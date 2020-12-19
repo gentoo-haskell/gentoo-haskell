@@ -9,8 +9,14 @@
 		<flag name="old-network">Use network-2.x when enabled, else use network-bsd.</flag>
 	</use>
 	<longdescription>
-		A BSON Document is an untyped (dynamically type-checked) record. I.e. it is a list of name-value pairs, where a Value is a single sum type with constructors for basic types (Bool, Int, Float, String, and Time), compound types (List, and (embedded) Document), and special types (Binary, Javascript, ObjectId, RegEx, and a few others).
-		
-		A BSON Document is serialized to a standard binary encoding defined at &lt;http://bsonspec.org&gt;. This implements version 1 of that spec.
+		A BSON Document is an untyped (dynamically type-checked) record.
+		I.e. it is a list of name-value pairs, where a Value is a single
+		sum type with constructors for basic types (Bool, Int, Float,
+		String, and Time), compound types (List, and (embedded) Document),
+		and special types (Binary, Javascript, ObjectId, RegEx, and a few
+		others).
+		A BSON Document is serialized to a standard binary encoding
+		defined at &lt;http://bsonspec.org&gt;. This implements version 1 of
+		that spec.
 	</longdescription>
 </pkgmetadata>
