@@ -1,4 +1,9 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
+# No development in past 5 years. Needs a port to
+# modern ghc.
+dev-haskell/type-eq
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
 # Needs porting to modern conduit: https://github.com/eggzilla/BlastHTTP/issues/1
 dev-haskell/blasthttp
 
