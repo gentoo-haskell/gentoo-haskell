@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides an EDSL for calling JavaScript that
-		can be used both from GHCJS and GHC.  When using GHC
-		the application is run using Warp and WebSockets to
-		drive a small JavaScipt helper.
-	</longdescription>
 </pkgmetadata>
