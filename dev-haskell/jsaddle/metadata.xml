@@ -5,13 +5,14 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides an EDSL for calling JavaScript code using
-		the JavaScriptCore engine and low level Haskell bindings
-		in the webkit-javascriptcore library &lt;https://github.com/ghcjs/webkit-javascriptcore&gt;.
-	</longdescription>
 	<use>
 		<flag name="call-stacks">Include HasCallStack constraint on calls unchecked calls</flag>
 		<flag name="check-unchecked">Fail unchecked calls when they are called (rather than when the result is evaluated)</flag>
 	</use>
+	<longdescription>
+		This package provides an EDSL for calling JavaScript that
+		can be used both from GHCJS and GHC.  When using GHC
+		the application is run using Warp and WebSockets to
+		drive a small JavaScipt helper.
+	</longdescription>
 </pkgmetadata>

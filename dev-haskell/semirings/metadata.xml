@@ -6,20 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="hashable">
-			Enisable the use of the `hashable` package. Disabling this may be useful
-			for accelerating builds in sandboxes for expert users.
-			Note: `-hashable` implies `-unordered-containers`, as we are necessarily
-			not able to supply those instances as well.
-		</flag>
-		<flag name="containers">
-			Enable the use of the `containers` package. Disabling this may be useful
-			for accelerating builds in sandboxes for expert users.
-		</flag>
-		<flag name="unordered-containers">
-			Enable the use of the `unordered-containers` package. Disabling this may
-			be useful for accelerating builds in sandboxes for expert users.
-		</flag>
+		<flag name="containers">You can disable the use of the `containers` package using `-f-containers`.  Disabling this may be useful for accelerating builds in sandboxes for expert users.</flag>
+		<flag name="hashable">You can disable the use of the `hashable` package using `-f-hashable`.  Disabling this may be useful for accelerating builds in sandboxes for expert users.  Note: `-f-hashable` implies `-f-unordered-containers`, as we are necessarily not able to supply those instances as well.</flag>
+		<flag name="unordered-containers">You can disable the use of the `unordered-containers` package using `-f-unordered-containers`.  Disabling this may be useful for accelerating builds in sandboxes for expert users.</flag>
 	</use>
 	<longdescription>
 		Haskellers are usually familiar with monoids and semigroups. A monoid has an appending operation `&lt;&gt;` (or `mappend`),

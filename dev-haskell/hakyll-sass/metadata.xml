@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Hakyll compiler which indirectly uses libsass to compile SASS and SCSS to CSS.
-		The Ruby SASS compiler is not required. For documentation, see the
-		&lt;https://github.com/meoblast001/hakyll-sass/blob/master/README.md README&gt;.
-	</longdescription>
 </pkgmetadata>

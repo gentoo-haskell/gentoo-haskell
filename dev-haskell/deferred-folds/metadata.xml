@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This library is in an experimental state.
-		Users should be prepared for frequent updates.
-	</longdescription>
 </pkgmetadata>

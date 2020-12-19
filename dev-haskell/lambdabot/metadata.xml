@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Lambdabot is an IRC bot written over several years by
-		those on the #haskell IRC channel.
-		
-		It operates as a command line tool, embedded in an editor,
-		embedded in GHCi, via internet relay chat and on the web.
-	</longdescription>
 </pkgmetadata>

@@ -5,18 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Parse Graphviz xdot files and interactively view them using
-		GTK and Cairo.
-		
-		Currently not all xdot features are supported. Nodes and
-		edges can be highlighted by hovering them and clicked.
-		
-		For an example of using this library try the accompanying
-		@Demo.hs@ with the dot-files in @dot-examples/@.
-		
-		This library was originally written as part of ghc-vis, but
-		is now a seperate project, in case anyone else may have a
-		use for it.
-	</longdescription>
 </pkgmetadata>

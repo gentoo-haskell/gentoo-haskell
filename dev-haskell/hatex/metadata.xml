@@ -5,17 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The LaTeX project site states: \"LaTeX is a high-quality typesetting system\". This library provides
-		a bridge between that system and Haskell (i.e. it is a LaTeX DSL).
-		
-		Write LaTeX documents with all the advantages you already have in Haskell (recursion,
-		type system, high order functions, ...), create a LaTeX backend for your own program,
-		make analysis of LaTeX code through its Abstract Syntax Tree (AST), find another way
-		to pretty-printing values, ...
-		
-		See the @examples@ directory in the source distribution to look some simple examples.
-		It would be good to get you started. HaTeX User's Guide is available at
-		&lt;https://github.com/Daniel-Diaz/HaTeX-Guide&gt;.
-	</longdescription>
 </pkgmetadata>

@@ -6,10 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="dev">Turn on development settings</flag>
+		<flag name="dev">Turn on development settings.</flag>
 	</use>
-	<longdescription>
-		Inflections provides methods for singularization, pluralization,
-		dasherizing, etc. The library is based on Rails&#39; inflections library.
-	</longdescription>
 </pkgmetadata>

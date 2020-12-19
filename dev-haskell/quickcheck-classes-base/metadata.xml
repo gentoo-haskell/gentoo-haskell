@@ -6,10 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="binary-laws">Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.</flag>
 		<flag name="unary-laws">Include infrastructure for testing class laws of unary type constructors.</flag>
-		<flag name="binary-laws">Include infrastructure for testing class laws of binary type constructors.
-Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported
-configuration.</flag>
 	</use>
 	<longdescription>
 		This libary is a minimal variant of `quickcheck-classes` that

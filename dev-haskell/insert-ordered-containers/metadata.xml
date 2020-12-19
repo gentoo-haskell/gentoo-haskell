@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Associative containers retaining insertion order for traversals.
-		
-		The implementation is based on `unordered-containers`.
-	</longdescription>
 </pkgmetadata>

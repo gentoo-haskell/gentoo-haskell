@@ -5,21 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Fast, packed, strict storable arrays
-		with a list interface,
-		a chunky lazy list interface with variable chunk size
-		and an interface for write access via the @ST@ monad.
-		This is much like @bytestring@ and @binary@
-		but can be used for every 'Foreign.Storable.Storable' type.
-		See also package
-		&lt;http://hackage.haskell.org/package/vector&gt;
-		with a similar intention.
-		
-		We do not provide advanced fusion optimization,
-		since especially for lazy vectors
-		this would either be incorrect or not applicable.
-		However we provide fusion with lazy lists in the package
-		&lt;http://hackage.haskell.org/package/storablevector-streamfusion&gt;.
-	</longdescription>
 </pkgmetadata>

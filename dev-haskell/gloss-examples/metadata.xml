@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Examples using the gloss graphics library.
-		A mixed bag of fractals, particle simulations and cellular automata.
-	</longdescription>
 </pkgmetadata>

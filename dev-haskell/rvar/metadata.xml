@@ -5,23 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Random number generation based on modeling random
-		variables by an abstract type ('RVar') which can be
-		composed and manipulated monadically and sampled in
-		either monadic or \"pure\" styles.
-		
-		The primary purpose of this library is to support
-		defining and sampling a wide variety of high quality
-		random variables.  Quality is prioritized over speed,
-		but performance is an important goal too.
-		
-		In my testing, I have found it capable of speed
-		comparable to other Haskell libraries, but still
-		a fair bit slower than straight C implementations of
-		the same algorithms.
-		
-		Changes in 0.2.0.1:  Version bump for transformers
-		dependency.
-	</longdescription>
 </pkgmetadata>

@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		"Data.Typeable" and "Data.Dynamic" only support monomorphic types.
-		In this package we provide similar functionality but with
-		support for rank-1 polymorphic types.
-	</longdescription>
 </pkgmetadata>

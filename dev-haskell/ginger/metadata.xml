@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Ginger is Jinja, minus the most blatant pythonisms. Wants
-		to be feature complete, but isn&#39;t quite there yet.
-	</longdescription>
 </pkgmetadata>

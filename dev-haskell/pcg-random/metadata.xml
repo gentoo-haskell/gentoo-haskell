@@ -5,20 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		PCG is a family of simple fast space-efficient statistically good
-		algorithms for random number generation with better-than-typical
-		cryptographic security. See http://http://www.pcg-random.org for more
-		information.
-		
-		This library implements bindings to the standard C implementation.
-		This includes the standard, unique, fast and single variants in the
-		pcg family. There is a pure implementation that can be used as a
-		generator with the random package as well as a faster primitive api
-		that includes functions for generating common types.
-		
-		The generators in this module are suitable for use in parallel but
-		make sure threads don't share the same generator or things will go
-		horribly wrong.
-	</longdescription>
 </pkgmetadata>

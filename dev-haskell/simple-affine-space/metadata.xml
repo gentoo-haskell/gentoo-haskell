@@ -6,6 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="test-doc-coverage">Enable haddock coverage test suite</flag>
+		<flag name="test-hlint">Enable hlint test suite</flag>
 	</use>
 	<longdescription>
 		Affine spaces and vector spaces with a few basic instances.

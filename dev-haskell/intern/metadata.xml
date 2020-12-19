@@ -5,28 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Changes from 0.8 to 0.9
-		
-		* Removed &#39;identity&#39; from the Interned class, to support applications where the identity is obtained by other means (e.g. a unique Ptr value)
-		
-		Changes from 0.7 to 0.8
-		
-		* Disabled cache removal as it was causing problems on large data sets. There is no good way to ensure that both references remain alive long enough to finish comparisons.
-		* Switched to IORef from MVar
-		
-		Changes from 0.6 to 0.7
-		
-		* Fixed problem where comparisons could happen between data structures while one was still a thunk, leading to equal structures comparing as inequal in limited circumstances, by appropriately using strictness annotations.
-		
-		Efficient hash-consing for arbitrary data types
-		
-		Changes from 0.5.2 to 0.6
-		
-		* Widened the caches so they don&#39;t go through a single MVar per type. This has made a dramatic impact on performance. However, this broke the previous invariant that newer entries always had higher Ids than older entries.
-		
-		Changes from 0.5.1 to 0.5.2
-		
-		* Added Data.Interned.IntSet
-	</longdescription>
 </pkgmetadata>

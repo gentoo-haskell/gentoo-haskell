@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Building Sum Type arbitrary instance is kind of a pain. This tool helps automate the process.
-	</longdescription>
 </pkgmetadata>

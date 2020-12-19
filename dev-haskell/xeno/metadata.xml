@@ -8,7 +8,4 @@
 	<use>
 		<flag name="libxml2">Include libxml2 in the benchmarks</flag>
 	</use>
-	<longdescription>
-		Please see README.md
-	</longdescription>
 </pkgmetadata>

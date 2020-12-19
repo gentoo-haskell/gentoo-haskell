@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		An API for encoding of arbitrary data-structures into JSON byte-arrays,
-		which is faster and simpler than \&quot;aeson\&quot;.
-		
-		Check out
-		&lt;http://hackage.haskell.org/package/json-bytes-builder-0.3/src/demo/Main.hs the demo&gt;.
-	</longdescription>
 </pkgmetadata>
