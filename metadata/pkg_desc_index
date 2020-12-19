@@ -666,7 +666,7 @@ dev-haskell/ghc-datasize 0.2.0: Determine the size of data structures in GHC's m
 dev-haskell/ghc-events 0.12.0 0.13.0: Library and tool for parsing .eventlog files from GHC
 dev-haskell/ghc-exactprint 0.6.3.2: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with different GC flags
-dev-haskell/ghc-heap-view 0.6.1: Extract the heap representation of Haskell values and thunks
+dev-haskell/ghc-heap-view 0.6.1 0.6.2: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.8.4.20200716: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser 8.8.1 8.8.4.20200716: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser-ex 8.8.5.3 8.8.6.0: Algorithms on GHC parse trees
@@ -1210,6 +1210,7 @@ dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbe
 dev-haskell/mersenne-random-pure64 0.2.2.0: Generate high quality pseudorandom numbers purely using a Mersenne Twister
 dev-haskell/messagepack 0.5.4-r2: Serialize instance for Message Pack Object
 dev-haskell/mfsolve 0.3.2.0: Equation solver and calculator a la metafont
+dev-haskell/microaeson 0.1.0.0: A tiny JSON library with light dependency footprint
 dev-haskell/microlens 0.4.10 0.4.11.2: A tiny lens library with no dependencies
 dev-haskell/microlens-aeson 2.3.0.4: Law-abiding lenses for Aeson, using microlens
 dev-haskell/microlens-ghc 0.4.10 0.4.12: microlens + array, bytestring, containers, transformers
