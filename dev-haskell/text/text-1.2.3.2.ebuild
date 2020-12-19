@@ -19,12 +19,12 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0/${PV}"
 # keep in sync with ghc-8.10
-# KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 # break cyclic dependencies, test suite requires porting to >=QC-2.11
 RESTRICT=test
 
-RDEPEND=">=dev-lang/ghc-7.8.2:="
+RDEPEND=">=dev-lang/ghc-8.10:="
 
 DEPEND="${RDEPEND}
 "
