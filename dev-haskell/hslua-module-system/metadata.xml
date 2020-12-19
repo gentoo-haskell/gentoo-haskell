@@ -5,15 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Provides access to system information and functionality
-		to Lua scripts via Haskell&#39;s `System` module.
-		
-		Intended usage for this package is to preload it by adding
-		the loader function to `package.preload`. Note that the
-		Lua `package` library must have already been loaded before
-		the loader can be added.
-	</longdescription>
 </pkgmetadata>
