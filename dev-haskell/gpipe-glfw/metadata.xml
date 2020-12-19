@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		GPipe-GLFW is a utility library to enable the use of GLFW as
-		the OpenGL window and context handler for GPipe. GPipe is a
-		typesafe functional API based on the conceptual model of
-		OpenGL, but without the imperative state machine.
-	</longdescription>
 </pkgmetadata>
