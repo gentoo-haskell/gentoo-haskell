@@ -6,9 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="sync">Benchmarks synchronisation primitives used in main
-benchmark</flag>
-		<flag name="threaded">Run benchmarks with threaded backend</flag>
+		<flag name="sync">Benchmarks synchronisation primitives used in main benchmark.</flag>
+		<flag name="threaded">Run benchmarks with threaded backend.</flag>
 	</use>
 	<longdescription>
 		__WARNING:__ While the code in this library should be fairly stable and
