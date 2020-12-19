@@ -5,21 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code.
-		The trhsx preprocessor translates .hsx source files into ordinary .hs files. Literal
-		XML syntax is translated into function calls for creating XML values of the appropriate
-		forms.
-		trhsx transforms literal XML syntax into a series of function calls. Any project
-		can make use of the syntax by providing definitions for those functions, and the
-		XML values produced will be of the types specified. This works for any types, since
-		trhsx doesn't make any assumptions, or inserts any information depending on types.
-		XMLGenerator defines a few typeclasses that together cover the functions injected by the
-		preprocessor. A project that uses these classes to provide the semantics for the injected
-		syntax will be able to use any functions written in terms of these, allowing better code
-		reusability than if each project defines its own semantics for the XML syntax. Also, the classes
-		makes it possible to use the literal syntax at different types within the same module.
-		Achieving that is not as simple as it may seem, but the XMLGenerator module provides all the
-		necessary machinery.
-	</longdescription>
 </pkgmetadata>
