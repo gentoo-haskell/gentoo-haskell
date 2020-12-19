@@ -101,11 +101,6 @@ dev-haskell/bustle
 >=dev-haskell/haskell-src-exts-simple-1.22
 >=dev-haskell/hoogle-5.0.17.12
 
-# Jack Todaro <solpeth@posteo.org> (12 April 2020)
-# Mask hlint-2.2 due to ghc-lib-parser dependency failing
-# to build
->=dev-haskell/hlint-2.2
-
 # Jack Todaro <solpeth@posteo.org> (10 Apr 2020)
 # Mask >=dev-haskell/network-3.1 due to reverse dependency
 # breakages (e.g. purescript)
