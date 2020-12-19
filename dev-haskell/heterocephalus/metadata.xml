@@ -5,16 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Recent front end development tools and languages are growing fast and have
-		quite a complicated ecosystem. Few front end developers want to be forced
-		use Shakespeare templates. Instead, they would rather use @node@ friendly
-		engines such that @pug@, @slim@, and @haml@. However, in using these
-		template engines, we lose the compile-time variable interpolation and type
-		checking from Shakespeare.
-		
-		Heterocephalus is intended for use with another feature rich template
-		engine and provides a way to interpolate server side variables into a
-		precompiled template file with @forall@ and @if@ statements.
-	</longdescription>
 </pkgmetadata>
