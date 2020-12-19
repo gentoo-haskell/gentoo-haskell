@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="template-haskell">Enable and use template haskell support.</flag>
+		<flag name="template-haskell">Enable the use of and export Template Haskell functionality. (Might need to disable this for cross-compiling.)</flag>
 	</use>
 	<longdescription>
 		The goal of this package is to provide a library that can read time
