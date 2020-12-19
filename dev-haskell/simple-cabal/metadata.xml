@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Find and read .cabal files, and
-		a Cabal dependency compatibility layer.
-	</longdescription>
 </pkgmetadata>
