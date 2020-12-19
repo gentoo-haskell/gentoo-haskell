@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		ipynb defines a data structure for representing Jupyter
-		notebooks, along with ToJSON and FromJSON instances
-		for conversion to and from JSON .ipynb files.
-	</longdescription>
 </pkgmetadata>
