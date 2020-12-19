@@ -5,34 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		@hpp@ is a Haskell pre-processor that is also a
-		C89/C90-compatible pre-processor (with the addition of a
-		@--cpp@ flag). It is packaged as both a library and
-		an executable.
-		
-		To use as a Haskell preprocessor for resolving @#ifdef@
-		conditionals and simple macro expansion while still
-		allowing multi-line string literals, an invocation might
-		look like,
-		
-		@
-		hpp -DDEBUG Foo.hs
-		@
-		
-		To use as a C preprocessor, an invocation might look
-		like,
-		
-		@
-		hpp -DDEBUG --cpp foo.c
-		@
-		
-		To have GHC use @hpp@ as the C pre-processor, add this
-		line to the top of a Haskell source file that makes use
-		of the @CPP@ @LANGUAGE@ pragma.
-		
-		@
-		&amp;#123;-\# OPTIONS_GHC -cpp -pgmPhpp -optP\-\-cpp \#-&amp;#125;
-		@
-	</longdescription>
 </pkgmetadata>
