@@ -30,6 +30,7 @@ dev-haskell/alsa-pcm:buildexamples - Build example executables
 dev-haskell/alsa-seq:modifyfilter - Use native event filter functions that are provided by newer ALSA versions
 dev-haskell/ansi-terminal:example - Build the example application.
 dev-haskell/ansi-wl-pprint:example - Build the example application.
+dev-haskell/atomic-primops:debug - Enable extra internal checks.
 dev-haskell/attoparsec-iso8601:developer - operate in developer mode
 dev-haskell/attoparsec-iso8601:fast - compile without optimizations
 dev-haskell/authenticate:network-uri - Get Network.URI from the network-uri package
@@ -46,13 +47,13 @@ dev-haskell/bits-atomic:test - Build test program.
 dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
 dev-haskell/bound:template-haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/brick:demos - Build demonstration programs.
-dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark
-dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend
+dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
+dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
 dev-haskell/bson:old-network - Use network-2.x when enabled, else use network-bsd.
 dev-haskell/btrfs:examples - Build examples
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
-dev-haskell/c2hs:regression - run regression tests
+dev-haskell/c2hs:regression - Enable regression suite build.
 dev-haskell/cabal-install:debug-conflict-sets - Add additional information to ConflictSets
 dev-haskell/cabal-install:native-dns - Enable use of the resolv and windns packages for performing DNS lookups
 dev-haskell/cabal-plan:license-report - Enable @license-report@ sub-command (only relevant when the @exe@ flag is active)
@@ -147,9 +148,8 @@ dev-haskell/gi-cairo-render:cairo_svg - Build the Scalable Vector Graphics (SVG)
 dev-haskell/github:openssl - Use http-client-openssl
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure-signals - Use the the GClosure-based signals implementation.
-dev-haskell/gloss:explicitbackend - Expose versions of 'display' and friends that allow you to choose what window manager backend to use.
-dev-haskell/gloss:glfw - Enable the GLFW backend.
-dev-haskell/gloss:glut - Enable the GLUT backend.
+dev-haskell/gloss:glfw - Enable the GLFW backend
+dev-haskell/gloss:glut - Enable the GLUT backend
 dev-haskell/glutil:demos - Build demonstration programs
 dev-haskell/gnuplot:buildexamples - Build test executables.
 dev-haskell/gnuplot:executepipe - Avoid a temporary script by running with runInteractiveProcess.
@@ -178,6 +178,8 @@ dev-haskell/hashtables:detailed-profiling - add detailed profiling information t
 dev-haskell/hashtables:portable - if on, use only pure Haskell code and no GHC extensions.
 dev-haskell/hashtables:unsafe-tricks - turn on unsafe GHC tricks
 dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
+dev-haskell/haskellnet:network-bsd - Use network-bsd
+dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hexpat:bundled-expat - Use bundled expat instead of dev-libs/expat
 dev-haskell/highlighter:executable - Install a "highlighter" executable
@@ -209,8 +211,9 @@ dev-haskell/hsqml:useexithook - Override the OnExitHook symbol to shutdown the Q
 dev-haskell/hsqml:usepkgconfig - Use pkg-config for libraries instead of the platform default mechanism.
 dev-haskell/hsx:base4 - Use base-4.0.
 dev-haskell/hsyslog:install-examples - Build and install example programs
-dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (for the test suite).
-dev-haskell/http:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (for the test suite)
+dev-haskell/http:network-uri - Get Network.URI from the network-uri package
+dev-haskell/http-api-data:text-show - Use text-show library for efficient ToHttpApiData implementations.
 dev-haskell/http-api-data:use-text-show - Use text-show library for efficient ToHttpApiData implementations
 dev-haskell/http-client:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/http-client-openssl:test-proxy - Test with http-proxy
@@ -222,12 +225,13 @@ dev-haskell/hxt:profile - turn profiling on
 dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
 dev-haskell/icalendar:network-uri - use network-uri package
 dev-haskell/ignore:without-pcre - Disable pcre support
-dev-haskell/inflections:dev - Turn on development settings
+dev-haskell/inflections:dev - Turn on development settings.
 dev-haskell/influxdb:examples - Build examples
 dev-haskell/inline-c:gsl-example - Build GSL example
 dev-haskell/intervals:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/io-streams:network - Include network support
 dev-haskell/io-streams:zlib - Include zlib support
+dev-haskell/ipython-kernel:examples - Build example programs
 dev-haskell/jmacro:benchmarks - Build the benchmarks.
 dev-haskell/jose-jwt:doctest - doctest
 dev-haskell/jsaddle:call-stacks - Include HasCallStack constraint on calls unchecked calls
@@ -241,15 +245,15 @@ dev-haskell/juicypixels-extra:dev - Turn on development settings.
 dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes
 dev-haskell/language-dot:executable - Build the `ppdot' executable
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
-dev-haskell/lens:benchmark-uniplate - Enable benchmarking against Neil Mitchell's uniplate library for comparative performance analysis. Defaults to being turned off to avoid the extra dependency.
-dev-haskell/lens:dump-splices - Build and run the doctests test-suite.
-dev-haskell/lens:inlining - Generate inline pragmas when using template-haskell. This defaults to enabled, but you can to shut it off to benchmark the relative performance impact, or as last ditch effort to address compile errors resulting from the myriad versions of template-haskell that all purport to be 2.8.
-dev-haskell/lens:j - Attempt a parallel build with GHC.
-dev-haskell/lens:old-inline-pragmas - Some 7.6.1-rc1 users report their TH still uses old style inline pragmas. This lets them turn on inlining.
-dev-haskell/lens:safe - Disallow unsafeCoerce
-dev-haskell/lens:test-doctests - Build and run the doctests test-suite.
-dev-haskell/lens:test-templates - Build the test templates if we're building tests
-dev-haskell/lens:trustworthy - Assert that we are trustworthy when we can
+dev-haskell/lens:benchmark-uniplate - 
+dev-haskell/lens:dump-splices - 
+dev-haskell/lens:inlining - 
+dev-haskell/lens:j - 
+dev-haskell/lens:old-inline-pragmas - 
+dev-haskell/lens:safe - 
+dev-haskell/lens:test-doctests - 
+dev-haskell/lens:test-templates - 
+dev-haskell/lens:trustworthy - 
 dev-haskell/libyaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
 dev-haskell/linear:template-haskell - Enable the use of the `template-haskell` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -267,6 +271,7 @@ dev-haskell/miso:jsaddle - Compile with JSaddle
 dev-haskell/miso:tests - Builds Miso's tests
 dev-haskell/missingh:network-3 - Use network-3
 dev-haskell/mod:semirings - Derive semiring instances
+dev-haskell/mod:vector - Derive unboxed and primitive vector instances
 dev-haskell/modern-uri:dev - Turn on development settings.
 dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
@@ -298,15 +303,15 @@ dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nan
 dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable
 dev-haskell/pipes-key-value-csv:devel - Development mode (-Werror)
-dev-haskell/pointed:comonad - optional instances
-dev-haskell/pointed:containers - optional instances
-dev-haskell/pointed:kan-extensions - optional instances
-dev-haskell/pointed:semigroupoids - optional instances
-dev-haskell/pointed:semigroups - optional instances
-dev-haskell/pointed:stm - optional instances
-dev-haskell/pointed:tagged - optional instances
-dev-haskell/pointed:transformers - optional instances
-dev-haskell/pointed:unordered-containers - optional instances
+dev-haskell/pointed:comonad - You can disable the use of the `comonad` package using `-f-transformers`.
+dev-haskell/pointed:containers - You can disable the use of the `containers` package using `-f-containers`.
+dev-haskell/pointed:kan-extensions - You can disable the use of the `kan-extensions` package using `-f-kan-extensions`.
+dev-haskell/pointed:semigroupoids - You can disable the use of the `semigroupoids` package using `-f-semigroupoids`.
+dev-haskell/pointed:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`.
+dev-haskell/pointed:stm - You can disable the use of the `stm` package using `-f-stm`.
+dev-haskell/pointed:tagged - You can disable the use of the `tagged` package using `-f-tagged`.
+dev-haskell/pointed:transformers - You can disable the use of the `transformers` package using `-f-transformers`.
+dev-haskell/pointed:unordered-containers - You can disable the use of the `unordered-containers` package using `-f-unordered-containers`.
 dev-haskell/polysemy:dump-core - Dump HTML for the core generated by GHC during compilation
 dev-haskell/polysemy:error-messages - Provide custom error messages
 dev-haskell/polysemy-plugin:corelint - Perform the corelint tests
@@ -337,17 +342,19 @@ dev-haskell/random-bytestring:pcg - compile with support for PCG from pcg-random
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/reflection:template-haskell - Enable template haskell.
+dev-haskell/reflection:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/reflex:debug-trace-events - Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!
 dev-haskell/reflex:fast-weak - Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default
 dev-haskell/reflex:reflex-optimizer - Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.
 dev-haskell/reflex:split-these - Use split these/semialign packages
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
+dev-haskell/retry:lib-werror - 
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking executable.
 dev-haskell/sandi:conduit - Build with conduit
 dev-haskell/sbv:skip-hlint-tester - Do not build the HLint tester
-dev-haskell/sdl2:no-linear - Do not depend on dev-haskell/linear library (bundled Vect)
+dev-haskell/sdl2:examples - Build opengl-example
+dev-haskell/sdl2:no-linear - Do not depend on 'linear' library
 dev-haskell/semialign:semigroupoids - Build with semigroupoids dependency
 dev-haskell/semigroupoid-extras:profunctors - You can disable the use of the `profunctors` package using `-f-profunctors`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroupoids:comonad - Enable the use of the `comonad` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Comonad`.
@@ -358,20 +365,22 @@ dev-haskell/semigroupoids:tagged - Enable the use of the `tagged` package. Disab
 dev-haskell/semigroupoids:unordered-containers - Enable the use of the `unordered-containers` package (and also its dependency `hashable`). Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroups:binary - provide instances for binary package
 dev-haskell/semigroups:transformers - provide instances for transformers package.
-dev-haskell/semirings:containers - Enable the use of the `containers` package. Disabling this may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semirings:hashable - Enisable the use of the `hashable` package. Disabling this may be useful for accelerating builds in sandboxes for expert users. Note: `-hashable` implies `-unordered-containers`, as we are necessarily not able to supply those instances as well.
-dev-haskell/semirings:unordered-containers - Enable the use of the `unordered-containers` package. Disabling this may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semirings:containers - You can disable the use of the `containers` package using `-f-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semirings:hashable - You can disable the use of the `hashable` package using `-f-hashable`. Disabling this may be useful for accelerating builds in sandboxes for expert users. Note: `-f-hashable` implies `-f-unordered-containers`, as we are necessarily not able to supply those instances as well.
+dev-haskell/semirings:unordered-containers - You can disable the use of the `unordered-containers` package using `-f-unordered-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
 dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
 dev-haskell/shake:cloud - Enable cloud build features
 dev-haskell/shake:embed-files - Embed data files into the shake library
 dev-haskell/shake:portable - Obtain FileTime using portable functions
-dev-haskell/shakespeare:test-coffee - Render tests through coffeescript render function.
-dev-haskell/shakespeare:test-export - Test export.
-dev-haskell/shakespeare:test-roy - Render tests through roy render function.
+dev-haskell/shakespeare:test-coffee - render tests through coffeescript render function
+dev-haskell/shakespeare:test-export - 
+dev-haskell/shakespeare:test-roy - render tests through roy render function
 dev-haskell/shellac-compatline:editline - Use editline instead of readline backend.
 dev-haskell/shelly:lifted - run the tests against Shelly.Lifted
+dev-haskell/simple-affine-space:test-doc-coverage - Enable haddock coverage test suite
+dev-haskell/simple-affine-space:test-hlint - Enable hlint test suite
 dev-haskell/simple-sendfile:allow-bsd - Allow use of BSD sendfile (disable on GNU/kFreeBSD)
 dev-haskell/skein:big-endian - When manually selecting the endianness, use big-endian (default is little-endian).
 dev-haskell/skein:force-endianness - Use a manually selected endian when compiling (see flag 'big-endian').
@@ -435,10 +444,10 @@ dev-haskell/uuagc:loag - Use MiniSat as external SAT-solver to schedule all Line
 dev-haskell/vector:boundschecks - Enable bounds checking
 dev-haskell/vector:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty
 dev-haskell/vector:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty
-dev-haskell/vector-algorithms:bench - Build a benchmarking program.
-dev-haskell/vector-algorithms:boundschecks - Enable bounds checking.
+dev-haskell/vector-algorithms:bench - Build a benchmarking program to test vector-algorithms performance
+dev-haskell/vector-algorithms:boundschecks - Enable bounds checking
 dev-haskell/vector-algorithms:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty.
-dev-haskell/vector-algorithms:properties - Enable quickcheck tests.
+dev-haskell/vector-algorithms:properties - Enable the quickcheck tests
 dev-haskell/vector-algorithms:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty.
 dev-haskell/vector-instances:hashable - use dev-haskell/hashable
 dev-haskell/vinyl-utils:devel - Development mode (-Werror)
@@ -452,11 +461,13 @@ dev-haskell/websockets:examples - Build the example server
 dev-haskell/wreq:aws - Enable AWS tests
 dev-haskell/wreq:httpbin - Install client
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
+dev-haskell/xlsx:microlens - Use microlens instead of lens
 dev-haskell/yaml:no-examples - don't build the examples
 dev-haskell/yaml:no-exe - don't install the yaml2json or json2yaml executables
 dev-haskell/yesod-auth:network-uri - Get Network.URI from the network-uri package
 dev-haskell/yesod-auth-oauth2:examples - Build the example application
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
+dev-haskell/yesod-paginator:examples - Build the examples
 dev-haskell/zip-archive:executable - Build the Zip executable.
 dev-haskell/zlib:bundled-c-zlib - Use the bundled zlib C sources. Requires pkg-config to be False. For windows, this is the default.
 dev-haskell/zlib:non-blocking-ffi - The (de)compression calls can sometimes take a long time, which prevents other Haskell threads running. Enabling this flag avoids this unfairness, but with greater overall cost.
