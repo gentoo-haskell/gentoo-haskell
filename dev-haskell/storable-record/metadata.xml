@@ -5,49 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		With this package
-		you can build a Storable instance of a record type
-		from Storable instances of its elements in an elegant way.
-		It does not do any magic,
-		just a bit arithmetic to compute the right offsets,
-		that would be otherwise done manually
-		or by a preprocessor like C2HS.
-		I cannot promise that the generated memory layout
-		is compatible with that of a corresponding C struct.
-		However, the module generates the smallest layout
-		that is possible with respect to the alignment of the record elements.
-		If you encounter, that a record does not have a compatible layout,
-		we should fix that.
-		But also without C compatibility this package is useful
-		e.g. in connection with StorableVector.
-		
-		We provide Storable instance support for several cases:
-		
-		* If you wrap a type in a @newtype@,
-		then you can lift its 'Storable' instance to that @newtype@
-		with the module "Foreign.Storable.Newtype".
-		This way you do not need the @GeneralizedNewtypeDeriving@ feature of GHC.
-		
-		* If you have a type that is an instance of 'Traversable',
-		you can use that feature for implementation of 'Storable' methods.
-		The module "Foreign.Storable.Traversable"
-		allows manipulation of the portion of your type,
-		that is accessible by 'Traversable' methods.
-		For instance with the type
-		@data T a = Cons Int [a]@
-		and an according 'Traversable' implementation,
-		you can load and store the elements of the contained list.
-		This may be part of a 'Storable' implementation of the whole type.
-		
-		* If you have a record containing elements of various types,
-		then you need module "Foreign.Storable.Record".
-		
-		Note however that the Storable instances
-		defined with this package are quite slow in (up to) GHC-6.12.1.
-		I'm afraid this is due to incomplete inlining,
-		but we have still to investigate the problem.
-		
-		For examples see packages @storable-tuple@ and @sample-frame@.
-	</longdescription>
 </pkgmetadata>
