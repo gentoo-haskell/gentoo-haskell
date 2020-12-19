@@ -5,12 +5,10 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		HLint gives suggestions on how to improve your source code.
-	</longdescription>
 	<use>
-		<flag name="gpl">Use GPL libraries, specifically hscolour.</flag>
-		<flag name="threaded">Build with support for multithreaded execution</flag>
 		<flag name="ghc-lib">Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported</flag>
+		<flag name="gpl">Use GPL libraries, specifically hscolour</flag>
+		<flag name="hsyaml">Use HsYAML instead of yaml</flag>
+		<flag name="threaded">Build with support for multithreaded execution</flag>
 	</use>
 </pkgmetadata>
