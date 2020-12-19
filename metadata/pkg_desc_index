@@ -668,8 +668,8 @@ dev-haskell/ghc-exactprint 0.6.3.2: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.6.1 0.6.2: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.8.4.20200716: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser 8.8.1 8.8.4.20200716: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser-ex 8.8.5.3 8.8.6.0: Algorithms on GHC parse trees
+dev-haskell/ghc-lib-parser 8.8.1 8.8.4.20200716 8.10.2.20200916: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-lib-parser-ex 8.8.5.3 8.8.6.0 8.10.0.16: Algorithms on GHC parse trees
 dev-haskell/ghc-parser 0.2.2.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.12-r1: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.7: Library for parsing GHC time and allocation profiling reports
@@ -877,7 +877,7 @@ dev-haskell/hledger-web 1.19.1 1.20 1.20.1: Web-based user interface for the hle
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
-dev-haskell/hlint 2.1.17-r1 2.2.4 2.2.11: Source code suggestions
+dev-haskell/hlint 2.1.17-r1 2.2.4 2.2.11 3.2.3: Source code suggestions
 dev-haskell/hlist 0.4.2.0: Heterogeneous lists
 dev-haskell/hmatrix 0.20.0.0: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
@@ -2204,8 +2204,8 @@ dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/hadolint 1.17.3: Dockerfile Linter JavaScript API
-dev-util/hdocs 0.5.4.0: Haskell docs tool
-dev-util/hsdev 0.3.3.6: Haskell development library
+dev-util/hdocs 0.5.4.0 0.5.5.0: Haskell docs tool
+dev-util/hsdev 0.3.3.6 0.3.4.0: Haskell development library
 dev-util/shellcheck 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.13: A graphical tool for profiling parallel Haskell programs

@@ -194,7 +194,8 @@ dev-haskell/hledger-web:threaded - Build with support for multithreaded executio
 dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the system
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
 dev-haskell/hlint:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
-dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour.
+dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
+dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
