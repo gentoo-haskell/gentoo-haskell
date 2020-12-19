@@ -31,3 +31,10 @@ RDEPEND="<dev-haskell/cairo-0.14:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'template-haskell < 2.16' 'template-haskell'
+}

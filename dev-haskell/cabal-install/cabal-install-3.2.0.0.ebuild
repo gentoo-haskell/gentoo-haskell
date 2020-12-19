@@ -46,6 +46,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
 
+PATCHES=( "${FILESDIR}"/${P}-rankntypes.patch )
+
 src_prepare() {
 	default
 

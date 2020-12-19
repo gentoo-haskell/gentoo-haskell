@@ -11,7 +11,7 @@
 		and installation of Haskell libraries and programs.
 	</longdescription>
 	<use>
-                <flag name="debug-conflict-sets">Add additional information to ConflictSets</flag>
+		<flag name="debug-conflict-sets">Add additional information to ConflictSets</flag>
 		<flag name="native-dns">Enable use of the resolv and windns
 		packages for performing DNS lookups</flag>
 	</use>
