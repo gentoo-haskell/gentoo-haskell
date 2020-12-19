@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Optimised list functions for doing index-related things. They&#39;re faster than common idioms in all cases, and sometimes they fuse better as well.
-	</longdescription>
 </pkgmetadata>
