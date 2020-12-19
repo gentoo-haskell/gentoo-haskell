@@ -319,7 +319,7 @@ dev-haskell/comonad 5.0.7: Haskell package providing comonads
 dev-haskell/comonad-extras 4.0.1: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
-dev-haskell/compact 0.1.0.1: Non-GC'd, contiguous storage for immutable data structures
+dev-haskell/compact 0.2.0.0: Non-GC'd, contiguous storage for immutable data structures
 dev-haskell/composition 1.0.2.1: Combinators for unorthodox function composition
 dev-haskell/concatenative 1.0.1: A library for postfix control flow
 dev-haskell/conceit 0.4.0.0: Concurrent actions that may fail with a value
