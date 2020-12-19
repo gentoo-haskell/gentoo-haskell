@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This package provides Prism and Traversals for @These@.
-	</longdescription>
 </pkgmetadata>
