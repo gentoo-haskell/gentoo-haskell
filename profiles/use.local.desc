@@ -379,9 +379,11 @@ dev-haskell/skein:reference - Use the reference implementation instead of the op
 dev-haskell/skylighting:executable - Build the skylighting executable.
 dev-haskell/skylighting-core:executable - Build the skylighting executable.
 dev-haskell/snap-core:portable - No non-haskell unportable code.
-dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"
-dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopenssl
-dev-haskell/snap-server:portable - no non-haskell unportable code.
+dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"? Normally useful only for benchmarks.
+dev-haskell/snap-server:build-testserver - Build the blackbox testserver?
+dev-haskell/snap-server:debug - Enable support for debugging.
+dev-haskell/snap-server:openssl - Enable https support using the HsOpenSSL library.
+dev-haskell/snap-server:portable - Compile in cross-platform mode. No platform-specific code or optimizations such as C routines will be used.
 dev-haskell/some:newtype-unsafe - Use implementation using @newtype@ and unsafe @Any@, instead of GADT
 dev-haskell/speculation:optimize - Enable optimizations
 dev-haskell/sphinx:version-1-1-beta - By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1
@@ -415,14 +417,14 @@ dev-haskell/th-extras:base4 - Use base-4.0.
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
 dev-haskell/these:assoc - Build with assoc dependency
 dev-haskell/threepenny-gui:buildexamples - Build example executables.
-dev-haskell/threepenny-gui:rebug - Expose more bugs related to non-determinism.
+dev-haskell/threepenny-gui:rebug - The library uses some techniques that are highly non-deterministic, for example garbage collection and concurrency. Bugs in these subsystems are harder to find. Activating this flag will expose more of them.
 dev-haskell/thyme:bug-for-bug - bug-for-bug compatibility with time
 dev-haskell/thyme:lens - use the full lens package
 dev-haskell/thyme:show-internal - instance Show of internal representation
 dev-haskell/tls:compat - Accept SSLv2 compatible handshake.
 dev-haskell/tls:network - Use the base network library.
 dev-haskell/transformers-base:orphaninstances - Build instances for orphan datatypes.
-dev-haskell/tz:template-haskell - Enable and use template haskell support.
+dev-haskell/tz:template-haskell - Enable the use of and export Template Haskell functionality. (Might need to disable this for cross-compiling.)
 dev-haskell/unagi-chan:compare-benchmarks - 
 dev-haskell/unix-compat:old-time - build against old-time package
 dev-haskell/unordered-containers:debug - Enable debug support

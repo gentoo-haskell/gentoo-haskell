@@ -1735,9 +1735,9 @@ dev-haskell/smtp-mail 0.2.0.0: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0-r1: A simple SMTP client library
 dev-haskell/snap 1.1.3.1: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 1.0.4.2: Snap: A Haskell Web Framework (core interfaces and types)
-dev-haskell/snap-loader-dynamic 1.0.0.1: Snap: A Haskell Web Framework: dynamic loader
-dev-haskell/snap-loader-static 1.0.0.0: Snap static loader
-dev-haskell/snap-server 1.1.1.2 9999: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
+dev-haskell/snap-loader-dynamic 1.0.0.2: Snap dynamic loader
+dev-haskell/snap-loader-static 1.0.0.1: Snap static loader
+dev-haskell/snap-server 1.1.2.0 9999: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 dev-haskell/snap-templates 1.0.0.2: Scaffolding CLI for the Snap Framework
 dev-haskell/snaplet-sqlite-simple 1.0.0.2-r1: sqlite-simple snaplet for the Snap Framework
 dev-haskell/sockaddr 0.0.0: Printing SockAddr
@@ -1923,7 +1923,7 @@ dev-haskell/themoviedb 1.1.5.2: Haskell API bindings for http://themoviedb.org
 dev-haskell/these 0.7.5 1.0.1 1.1.1.1: An either-or-both data type
 dev-haskell/these-lens 1.0.0.1: Lenses for These
 dev-haskell/threads 0.5.1.6: Fork threads and wait for their result
-dev-haskell/threepenny-gui 0.8.3.1: GUI framework that uses the web browser as a display
+dev-haskell/threepenny-gui 0.9.0.0: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
 dev-haskell/tidal 1.4.8: Pattern language for improvised music
 dev-haskell/time-compat 1.9.5: Compatibility package for time
@@ -1973,8 +1973,8 @@ dev-haskell/type-operators 0.2.0.0: Various type-level operators
 dev-haskell/typecompose 0.9.14: Type composition classes & instances
 dev-haskell/typed-process 0.2.6.0: Run external processes, with strong typing of streams
 dev-haskell/typelits-witnesses 0.4.0.0: Existential witnesses, singletons, and classes for operations on GHC TypeLits
-dev-haskell/tz 0.1.3.3: Efficient time zone handling
-dev-haskell/tzdata 0.1.20190911.0: Time zone database (as files and as a module)
+dev-haskell/tz 0.1.3.5: Efficient time zone handling
+dev-haskell/tzdata 0.2.20201021.0: Time zone database (as files and as a module)
 dev-haskell/uglymemo 0.1.0.1: A simple (but internally ugly) memoization function
 dev-haskell/unagi-chan 0.4.1.3: Fast concurrent queues with a Chan-like API, and more
 dev-haskell/unamb 0.2.7: Unambiguous choice
