@@ -5,22 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The goal of this package is to distribute the standard Time Zone
-		Database in a cabal package, so that it can be used in Haskell
-		programs uniformly on all platforms.
-		
-		This package currently ships the @2018c@ version of the time zone
-		database.  The version of the time zone database shipped is always
-		reflected in the version of this package: @x.y.YYYYMMDD.z@, then
-		@YYYYMMDD@ is the official release date of time zone database.
-		
-		See: &lt;http://www.iana.org/time-zones&gt; for more info about the time
-		zone database.
-		
-		See also the @tz@ package &lt;http://hackage.haskell.org/package/tz&gt; or
-		the @timezone-olson@ and @timezone-series@ packages that provide
-		facilities to /use/ the data shipped here. (The @tz@ package
-		automatically installs this package.)
-	</longdescription>
 </pkgmetadata>

@@ -5,17 +5,21 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="buildexamples">Build example executables.</flag>
+		<flag name="rebug">The library uses some techniques that are highly non-deterministic, for example garbage collection and concurrency. Bugs in these subsystems are harder to find. Activating this flag will expose more of them.</flag>
+	</use>
 	<longdescription>
 		Threepenny-GUI is a GUI framework that uses the web browser as a display.
 		
-		It's cheap and easy to install because everyone has a web browser installed.
+		It&#39;s very easy to install because everyone has a web browser installed.
 		
-		Internally, the library implements a small web server
-		that serves a HTML/JavaScript page with the GUI elements.
-		You can freely manipulate the HTML DOM and handle browser events
+		A program written with Threepenny is essentially a small web server that
+		displays the user interface as a web page to any browser that connects to it.
+		You can freely manipulate the HTML DOM and handle JavaScript events
 		from your Haskell code.
 		
-		Stability forecast: This is an experimental release! Send us your feedback!
+		Stability forecast: This is an experimental release! Send me your feedback!
 		Significant API changes are likely in future versions.
 		
 		NOTE: This library contains examples, but they are not built by default.
@@ -23,8 +27,4 @@
 		
 		@cabal install threepenny-gui -fbuildExamples@
 	</longdescription>
-	<use>
-		<flag name="buildexamples">Build example executables.</flag>
-		<flag name="rebug">Expose more bugs related to non-determinism.</flag>
-	</use>
 </pkgmetadata>
