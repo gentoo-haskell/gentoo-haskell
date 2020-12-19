@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Simple module useful to generate blog posts from literate
-		Agda files.  See &lt;http://mazzo.li/posts/agda-hakyll.html&gt;
-		for more info.
-	</longdescription>
 </pkgmetadata>
