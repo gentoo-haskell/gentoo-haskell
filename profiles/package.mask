@@ -1,4 +1,17 @@
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
+# Packages have not been maintained in ::haskell
+# for many years, and have not built for many
+# years. Masked for removal.
+dev-haskell/accelerate
+dev-haskell/accelerate-cuda
+dev-haskell/accelerate-fft
+dev-haskell/accelerate-io
+
+# Jack Todaro <solpeth@posteo.org> (2020-12-19)
+# Requires ghc-8.10
+>=dev-haskell/ghc-heap-view-0.6.2
+
+# Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Unmaintained, deprecated and/or dead upstream. Masked
 # for removal
 app-text/lit
