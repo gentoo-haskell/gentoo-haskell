@@ -1505,7 +1505,7 @@ dev-haskell/proc 0.0.9: Parse process information for Linux
 dev-haskell/process-extras 0.7.4: Process extras
 dev-haskell/process-streaming 0.9.3.0: Streaming interface to system processes
 dev-haskell/product-isomorphic 0.0.3.3: Weaken applicative functor on products
-dev-haskell/product-profunctors 0.10.0.0: product-profunctors
+dev-haskell/product-profunctors 0.11.0.1: product-profunctors haskell library
 dev-haskell/prof2dot 0.4.1-r1: Convert GHC profiles into GraphViz's dot format
 dev-haskell/profiteur 0.4.5.1: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
