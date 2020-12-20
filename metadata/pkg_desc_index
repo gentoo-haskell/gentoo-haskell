@@ -1690,7 +1690,7 @@ dev-haskell/shakespeare-css 1.1.0: Stick your haskell variables into css at comp
 dev-haskell/shakespeare-i18n 1.1.0: A type-based approach to internationalization. (deprecated)
 dev-haskell/shakespeare-js 1.3.0: Stick your haskell variables into javascript/coffeescript at compile time
 dev-haskell/shakespeare-text 1.1.0: Interpolation with quasi-quotation: put variables strings (deprecated)
-dev-haskell/shell-conduit 4.7.0: Write shell scripts with Conduit
+dev-haskell/shell-conduit 5.0.0: Write shell scripts with Conduit
 dev-haskell/shell-escape 0.2.0: Shell escaping library
 dev-haskell/shell-utility 0.0: Utility functions for writing command-line programs
 dev-haskell/shellac 0.9.9-r1: A framework for creating shell envinronments
