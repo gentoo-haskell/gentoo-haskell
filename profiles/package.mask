@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-20)
+# Needs porting to ghc-prim-0.6. Fails to build on
+# ghc-8.10.2.
+dev-haskell/encoding
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
 # No development in past 4 years. Needs a port to
 # modern dependencies.
