@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="embed">Embed data in library binary (Warning: This increases the executable size by about 1Mb unless unneeded language data files are manually removed from the "data" directory before compiling)</flag>
+	</use>
+	<longdescription>
+		Configurable Knuth-Liang hyphenation
+		
+		Uses the UTF8 encoded hyphenation patterns provided by
+		hyph-utf8 from
+		&lt;http://www.ctan.org/tex-archive/language/hyph-utf8&gt;
+		
+		Usage:
+		
+		&gt;&gt;&gt; hyphenate english_US &quot;supercalifragilisticexpialadocious&quot;
+		[&quot;su&quot;,&quot;per&quot;,&quot;cal&quot;,&quot;ifrag&quot;,&quot;ilis&quot;,&quot;tic&quot;,&quot;ex&quot;,&quot;pi&quot;,&quot;al&quot;,&quot;ado&quot;,&quot;cious&quot;]
+		
+		&gt;&gt;&gt; hyphenate english_US &quot;hyphenation&quot;
+		[&quot;hy&quot;,&quot;phen&quot;,&quot;ation&quot;]
+		
+		&gt;&gt;&gt; hyphenate icelandic &quot;va\240lahei\240avegavinnuverkf\230rageymslusk\250r&quot;
+		[&quot;va\240la&quot;,&quot;hei\240a&quot;,&quot;vega&quot;,&quot;vinnu&quot;,&quot;verk&quot;,&quot;f\230ra&quot;,&quot;geymslu&quot;,&quot;sk\250r&quot;]
+	</longdescription>
+</pkgmetadata>
