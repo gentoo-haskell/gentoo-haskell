@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
+# No release since 2016. Masked for removal.
+dev-haskell/friday
+dev-haskell/friday-devil
+
+# Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # Needs porting to ghc-prim-0.6. Fails to build on
 # ghc-8.10.2.
 dev-haskell/encoding
