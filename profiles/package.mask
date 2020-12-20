@@ -26,6 +26,9 @@ dev-haskell/hlist
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # Needs a port to modern ghc: https://hub.darcs.net/shelarcy/regex-tdfa-text/issue/1
 dev-haskell/regex-tdfa-text
+dev-haskell/regex-dfa
+dev-haskell/regex-parsec
+dev-haskell/regex-posix-unittest
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # Needs a port to MonadFail.
