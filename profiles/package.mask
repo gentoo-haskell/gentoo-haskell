@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
+# No development in past 6 years. Needs a port to MonadFail.
+dev-haskell/stringtable-atom
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # Needs a port to cabal-3.
 dev-haskell/hsql-postgresql
 
