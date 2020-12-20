@@ -1,0 +1,20 @@
+--- a/src/Data/Massiv/Array/IO/Image.hs
++++ b/src/Data/Massiv/Array/IO/Image.hs
+@@ -73,7 +73,7 @@ encodeImageM
+   -> m BL.ByteString
+ encodeImageM formats path img = do
+   let ext' = P.map toLower . takeExtension $ path
+-  case dropWhile (not . isFormat ext') formats of
++  case P.dropWhile (not . isFormat ext') formats of
+     []    -> throwM $ EncodeError $ "File format is not supported: " ++ ext'
+     (f:_) -> encodeM f () img
+ 
+@@ -138,7 +138,7 @@ decodeImageM
+   -> m (Image r cs e)
+ decodeImageM formats path bs = do
+   let ext' = P.map toLower . takeExtension $ path
+-  case dropWhile (not . isFormat ext') formats of
++  case P.dropWhile (not . isFormat ext') formats of
+     []    -> throwM $ DecodeError $ "File format is not supported: " ++ ext'
+     (f:_) -> decodeM f bs
+ 
