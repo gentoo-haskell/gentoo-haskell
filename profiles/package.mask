@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
+# Needs a port to modern ghc: https://hub.darcs.net/shelarcy/regex-tdfa-text/issue/1
+dev-haskell/regex-tdfa-text
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # Needs a port to MonadFail.
 dev-haskell/regex-tre
 
