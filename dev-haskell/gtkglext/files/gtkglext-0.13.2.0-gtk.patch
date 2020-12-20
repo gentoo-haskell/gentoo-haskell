@@ -1,0 +1,12 @@
+--- a/gtkglext.cabal
++++ b/gtkglext.cabal
+@@ -54,8 +54,7 @@ Library
+           cpp-options: -DHAVE_QUARTZ_GTK
+         if flag(use-deprecated)
+           cpp-options:  -DUSE_DEPRECATED_PANGO
+-        if os(darwin)
+-          cpp-options: -U__BLOCKS__ -D__attribute__(A)= -D_Nullable= -D_Nonnull=
++        cpp-options: -U__BLOCKS__ -D__attribute__(A)= -D_Nullable= -D_Nonnull=
+ 
+         build-tools:    gtk2hsC2hs >= 0.13.9,
+                         gtk2hsHookGenerator, gtk2hsTypeGen
