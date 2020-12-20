@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
+# Needs a port to MonadFail.
+dev-haskell/regex-tre
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # Needs a port to ghc-8.8.
 dev-haskell/vgrep
 
