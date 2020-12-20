@@ -677,7 +677,6 @@ dev-haskell/ghc-tcplugins-extra 0.3 0.4: Utilities for writing GHC type-checker 
 dev-haskell/ghc-typelits-extra 0.3.3: Additional type-level operations on GHC.TypeLits.Nat
 dev-haskell/ghc-typelits-knownnat 0.7.3: Derive KnownNat constraints from other KnownNat constraints
 dev-haskell/ghc-typelits-natnormalise 0.7.2: GHC typechecker plugin for types of kind GHC.TypeLits.Nat
-dev-haskell/ghc-vis 0.8: Live visualization of data structures in GHCi
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
 dev-haskell/ghci-pretty 0.0.2: colored pretty-printing within ghci
@@ -1115,7 +1114,6 @@ dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/latex 0.1.0.4: Parse, format and process LaTeX files
 dev-haskell/lattices 2.0.2: Fine-grained library for constructing and manipulating lattices
 dev-haskell/lawless-concurrent-machines 0.3.1: Concurrent networked stream transducers
-dev-haskell/layers 0.1-r1: Modular type class machinery for monad transformer stacks
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
 dev-haskell/lazy-pbkdf2 3.1.1: Lazy PBKDF2 generator
 dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskell programs
@@ -1434,7 +1432,6 @@ dev-haskell/persistent-relational-record 0.3.0: relational-record on persisten b
 dev-haskell/persistent-sqlite 2.10.6.2: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.8.2.3: Type-safe, non-relational, multi-backend persistence
 dev-haskell/persistent-test 2.0.3.0: Tests for Persistent
-dev-haskell/pgdl 10.10: browse directory listing webpages and download files from them
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-readable collection of words
 dev-haskell/picedit 0.2.3.0-r3: simple image manipulation functions
@@ -1683,7 +1680,6 @@ dev-haskell/servant-lucid 0.9.0.2: Servant support for lucid
 dev-haskell/servant-server 0.18.2: A family of combinators for defining webservices APIs and serving them
 dev-haskell/serversession 1.0.1: Secure, modular server-side sessions
 dev-haskell/serversession-backend-redis 1.0.3: Storage backend for serversession using Redis
-dev-haskell/serversession-frontend-yesod 1.0: Yesod bindings for serversession
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.9: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
