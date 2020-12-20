@@ -667,7 +667,7 @@ dev-haskell/ghc-events 0.12.0 0.13.0: Library and tool for parsing .eventlog fil
 dev-haskell/ghc-exactprint 0.6.3.2: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.6.1 0.6.2: Extract the heap representation of Haskell values and thunks
-dev-haskell/ghc-lib 8.8.4.20200716: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-lib 8.8.4.20200716 8.10.2.20200916: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser 8.8.1 8.8.4.20200716 8.10.2.20200916: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser-ex 8.8.5.3 8.8.6.0 8.10.0.16: Algorithms on GHC parse trees
 dev-haskell/ghc-parser 0.2.2.0: Haskell source parser from GHC
