@@ -1759,7 +1759,7 @@ dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
 dev-haskell/sql-words 0.1.6.4: Simple idea SQL keywords data constructor into OverloadedString
 dev-haskell/sqlite-simple 0.4.18.0: Mid-Level SQLite client library
 dev-haskell/sqlite-simple-errors 0.6.1.0: Light wrapper around errors from sqlite-simple
-dev-haskell/sr-extra 1.72.3: A grab bag of modules
+dev-haskell/sr-extra 1.85.1: Module limbo
 dev-haskell/srcloc 0.5.1.2: Data types for managing source code locations
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
 dev-haskell/stack 2.3.3 9.9.9: The Haskell Tool Stack
