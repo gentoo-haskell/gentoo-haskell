@@ -63,7 +63,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'file-embed           >= 0.0.10.1 && < 0.0.12' 'file-embed           >= 0.0.10.1'
+		'file-embed           >= 0.0.10.1 && < 0.0.12' 'file-embed           >= 0.0.10.1' \
+		'template-haskell     >= 2.14     && < 2.16' 'template-haskell     >= 2.14'
 }
 
 src_configure() {
