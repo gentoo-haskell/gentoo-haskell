@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
+# Needs a port to ghc-8.8.
+dev-haskell/vgrep
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # Development stopped 5 years ago. Needs port to Cabal-3.
 dev-haskell/cabal-db
 
