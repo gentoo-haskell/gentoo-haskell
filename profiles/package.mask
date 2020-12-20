@@ -1,4 +1,9 @@
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
+# No release since 2014. Does not build with ghc-8.10.
+# Masked for removal.
+dev-haskell/ghci-lib
+
+# Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2016. Masked for removal.
 dev-haskell/gconf
 
