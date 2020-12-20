@@ -38,6 +38,8 @@ src_prepare() {
 	default
 
 	rm Setup.hs || die
+	cabal_chdeps \
+		'Executable test' 'Executable bits-extras-test'
 }
 
 src_configure() {
