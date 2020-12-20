@@ -20,6 +20,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Disable tests for ambiiguous modules:
+#    Ambiguous module name ‘Data.Kind’:
+#      it was found in multiple packages: base-4.13.0.0 kinds-0.0.1.5
+RESTRICT=test
+
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
