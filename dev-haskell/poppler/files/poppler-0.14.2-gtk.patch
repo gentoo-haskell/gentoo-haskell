@@ -1,0 +1,14 @@
+--- a/poppler.cabal
++++ b/poppler.cabal
+@@ -61,9 +61,8 @@ Library
+           build-depends: gtk >= 0.14.3
+         build-tools:    gtk2hsC2hs, gtk2hsHookGenerator, gtk2hsTypeGen
+ 
+-        cpp-options:     -U__BLOCKS__
+-        if os(darwin) || os(freebsd)
+-          cpp-options: -D__attribute__(A)= -D_Nullable= -D_Nonnull=
++        cpp-options:     -U__BLOCKS__ -U_FORTIFY_SOURCE
++        cpp-options: -D__attribute__(A)= -D_Nullable= -D_Nonnull=
+         if os(windows)
+           cpp-options: -D__USE_MINGW_ANSI_STDIO=1
+ 
