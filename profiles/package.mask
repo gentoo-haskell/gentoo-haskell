@@ -1,5 +1,10 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # No development in past 4 years. Needs porting to network-3.
+dev-haskell/c10k
+dev-haskell/webserver
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
+# No development in past 4 years. Needs porting to network-3.
 dev-haskell/memcache
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
