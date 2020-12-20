@@ -37,6 +37,8 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
+PATCHES=("${FILESDIR}"/${P}-gtk.patch)
+
 src_prepare() {
 	default
 
