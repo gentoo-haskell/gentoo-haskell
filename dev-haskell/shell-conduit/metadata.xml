@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Write shell scripts with Conduit. See "Data.Conduit.Shell" for documentation.
-	</longdescription>
 </pkgmetadata>
