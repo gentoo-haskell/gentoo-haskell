@@ -35,3 +35,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/random )
 "
+
+PATCHES=("${FILESDIR}"/${P}-massiv-0.5.patch)
