@@ -1,4 +1,13 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
+# needs port to ghc-8.8
+dev-haskell/multirec
+dev-haskell/annotations
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
+# needs a port to network-3. No update since 2017.
+dev-haskell/hascas
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # Needs a port to ghc-7. Very old package.
 dev-haskell/monadlab
 
