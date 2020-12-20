@@ -899,7 +899,7 @@ dev-haskell/hp2any-core 0.11.2: Heap profiling helper library
 dev-haskell/hpack 0.33.0: An alternative format for Haskell packages
 dev-haskell/hpath 0.9.2: Support for well-typed paths
 dev-haskell/hpc-coveralls 1.0.10: Coveralls.io support for Haskell
-dev-haskell/hpdf 1.4.10: Generation of PDF documents
+dev-haskell/hpdf 1.5.1: Generation of PDF documents
 dev-haskell/hpp 0.6.3: A Haskell pre-processor
 dev-haskell/hpqtypes 1.8.0.1: Haskell bindings to libpqtypes
 dev-haskell/hprotoc 2.4.13: Parse Google Protocol Buffer specifications
@@ -998,6 +998,7 @@ dev-haskell/hxt-http 9.1.5.2: Interface to native Haskell HTTP package HTTP
 dev-haskell/hxt-regex-xmlschema 9.2.0.3: A regular expression library for W3C XML Schema regular expressions
 dev-haskell/hxt-unicode 9.0.2.4: Unicode en-/decoding functions for utf8, iso-latin-* and other encodings
 dev-haskell/hxt-xpath 9.1.2.2: The XPath modules for HXT
+dev-haskell/hyphenation 0.8: Configurable Knuth-Liang hyphenation
 dev-haskell/hzenhan 0.0.4: Zenhan library for Haskell
 dev-haskell/ibus-hs 0.0.0.1: A simple uncomplete ibus api
 dev-haskell/icalendar 0.4.0.5-r1: iCalendar data types, parser, and printer

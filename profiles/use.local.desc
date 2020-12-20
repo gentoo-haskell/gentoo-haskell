@@ -222,6 +222,7 @@ dev-haskell/httpd-shed:network-bsd - Get Network.BSD from the network-bsd packag
 dev-haskell/httpd-shed:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hxt:profile - turn profiling on
 dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
+dev-haskell/hyphenation:embed - Embed data in library binary (Warning: This increases the executable size by about 1Mb unless unneeded language data files are manually removed from the "data" directory before compiling)
 dev-haskell/icalendar:network-uri - use network-uri package
 dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/inflections:dev - Turn on development settings.
