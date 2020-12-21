@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # missing files
+
 RDEPEND="dev-haskell/lens:=[profile?]
 	dev-haskell/lens-action:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
