@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
+# Needs port to MonadError. No revdeps.
+dev-haskell/urlencoded
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
 # No release since 2017. Needs fixes for modern 'brick' API.
 dev-haskell/itemfield
 dev-haskell/onrmt
