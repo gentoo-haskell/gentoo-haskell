@@ -6,8 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="license-report">Enable @license-report@ sub-command (only relevant when the @exe@ flag is active)</flag>
 		<flag name="underline">Enable underlining of primary unit-ids</flag>
+		<flag name="exe">Enable @exe:cabal-plan@ component</flag>
+		<flag name="license-report">Enable @license-report@ sub-command (only relevant when the @exe@ flag is active)</flag>
 	</use>
 	<longdescription>
 		This package provides a library (see &quot;Cabal.Plan&quot;) for decoding @plan.json@ files as
