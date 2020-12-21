@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
+# No release since 2017. Needs fixes for modern 'brick' API.
+dev-haskell/itemfield
+dev-haskell/onrmt
+
 # Jack Todaro <solpeth@posteo.org> (2020-12-21)
 # No release since 2017. Hangs when compiling with ghc-8.10.2.
 # Also mask revdep darcswatch, which has had no release since
