@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -13,14 +13,12 @@ DESCRIPTION="Lenses, Folds and Traversals"
 HOMEPAGE="https://github.com/ekmett/lens/"
 EGIT_REPO_URI="https://github.com/ekmett/lens/"
 
-LIVE_EBUILD=yes
-
 LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="benchmark-uniplate dump-splices +inlining j old-inline-pragmas safe +test-doctests +test-templates +trustworthy"
 
-RESTRICT="test"
+RESTRICT=test # broken on USE=doc
 
 RDEPEND=">=dev-haskell/base-orphans-0.5.2:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/bifunctors-5.1:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
