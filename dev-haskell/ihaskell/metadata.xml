@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		IHaskell is a Haskell backend kernel for the IPython project. This allows using Haskell via
-		a console or notebook interface. Additional packages may be installed to provide richer data visualizations.
-	</longdescription>
 </pkgmetadata>
