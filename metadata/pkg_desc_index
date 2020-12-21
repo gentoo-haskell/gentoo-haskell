@@ -1008,7 +1008,7 @@ dev-haskell/idna 0.3.0: Implements IDNA (RFC 3490)
 dev-haskell/ieee754 0.8.0: Utilities for dealing with IEEE floating point numbers
 dev-haskell/ifelse 0.85-r1: Anaphoric and miscellaneous useful control-flow
 dev-haskell/ignore 0.1.1.0: Handle ignore files of different VCSes
-dev-haskell/ihaskell 0.10.0.2: A Haskell backend kernel for the IPython project
+dev-haskell/ihaskell 0.10.1.2: A Haskell backend kernel for the IPython project
 dev-haskell/ihaskell-charts 0.3.0.1: IHaskell display instances for charts types
 dev-haskell/ihaskell-diagrams 0.3.2.1: IHaskell display instances for diagram types
 dev-haskell/ihaskell-hatex 0.2.1.1: IHaskell display instances for hatex
