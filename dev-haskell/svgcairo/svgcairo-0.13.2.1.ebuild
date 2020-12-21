@@ -25,7 +25,13 @@ RDEPEND=">=dev-haskell/cairo-0.13.0.0:= <dev-haskell/cairo-0.14:=
 	gnome-base/librsvg
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24 <dev-haskell/cabal-3.1
+	>=dev-haskell/cabal-1.24
 	>=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14
 	virtual/pkgconfig
 "
+
+src_prepare(){
+	default
+
+	cabal_chdeps 'Cabal >= 1.24 && < 3.1' 'Cabal >= 1.24'
+}
