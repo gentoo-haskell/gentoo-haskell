@@ -1,3 +1,10 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-21)
+# No release since 2017. Hangs when compiling with ghc-8.10.2.
+# Also mask revdep darcswatch, which has had no release since
+# 2011. Masked for removal.
+dev-haskell/mime-string
+dev-vcs/darcswatch
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
 # needs port to ghc-8.8
 dev-haskell/multirec
