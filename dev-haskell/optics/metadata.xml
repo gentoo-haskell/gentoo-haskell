@@ -5,19 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This package makes it possible to define and use Lenses, Traversals, Prisms
-		and other optics, using an abstract interface. See the main module &quot;Optics&quot;
-		for the documentation.
-		
-		This is the &quot;batteries-included&quot; variant with many dependencies; see the
-		@&lt;https://hackage.haskell.org/package/optics-core optics-core&gt;@ package and
-		other @optics-*@ dependencies if you need a more limited dependency footprint.
-		
-		Note: Hackage does not yet display documentation for reexported-modules,
-		but you can start from the &quot;Optics&quot; module documentation or see the module
-		list in @&lt;https://hackage.haskell.org/package/optics-core optics-core&gt;@.
-	</longdescription>
 </pkgmetadata>

@@ -5,14 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This package makes it possible to define and use Lenses, Traversals, Prisms
-		and other optics, using an abstract interface.
-		
-		This variant provides core definitions with a minimal dependency footprint.
-		See the @&lt;https://hackage.haskell.org/package/optics optics&gt;@ package (and its
-		dependencies) for documentation and the &quot;batteries-included&quot; variant.
-	</longdescription>
 </pkgmetadata>

@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This package is part of the @&lt;https://hackage.haskell.org/package/optics optics&gt;@
-		package family.  It provides machinery to construct optics using @TemplateHaskell@.
-		
-		See the @template-haskell-optics@ package for optics to work with @template-haskell@ types.
-	</longdescription>
 </pkgmetadata>
