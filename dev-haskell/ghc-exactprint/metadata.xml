@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="roundtrip">Build roundtripping executables</flag>
+	</use>
 	<longdescription>
 		Using the API Annotations available from GHC 7.10.2, this
 		library provides a means to round trip any code that can
@@ -22,10 +25,10 @@
 		* Print - converts an AST and its annotations to
 		properly formatted source text.
 		
+		* Pretty - adds annotations to an AST (fragment) so that
+		the output can be parsed back to the same AST.
+		
 		
 		Note: requires GHC 7.10.2 or later
 	</longdescription>
-	<use>
-		<flag name="roundtrip">Build roundtripping executables</flag>
-	</use>
 </pkgmetadata>
