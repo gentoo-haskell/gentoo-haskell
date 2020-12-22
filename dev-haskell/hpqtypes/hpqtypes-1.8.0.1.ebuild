@@ -36,7 +36,7 @@ RDEPEND=">=dev-db/postgresql-7
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0 <dev-haskell/cabal-3.1
+	>=dev-haskell/cabal-1.24.0.0
 	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.5
 		>=dev-haskell/random-1.0
@@ -45,3 +45,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3
 		dev-haskell/unordered-containers )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal >= 1.24 && < 3.1' 'Cabal >= 1.24'
+}
