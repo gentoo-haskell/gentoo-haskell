@@ -5,14 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides ShowQ, ShowFun, and SimpleReflect.
-		
-		ShowFun gives us Typeable instances for neutering IO expressions.
-		
-		ShowQ adds SmallCheck &amp; QuickCheck support.
-		
-		And SimpleReflect allows us to literally see how functions 'expand',
-		through appropriate Show magic. See &lt;http://twan.home.fmf.nl/blog/haskell/simple-reflection-of-expressions.details&gt;.
-	</longdescription>
 </pkgmetadata>
