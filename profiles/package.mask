@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
+# Needs update to optparse-applciative and newer containers: https://github.com/MichaelXavier/Angel/issues/52
+dev-haskell/angel
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs porting to modern machines package.
 dev-haskell/machines-io
 
