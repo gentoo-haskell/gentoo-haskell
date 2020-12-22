@@ -449,7 +449,7 @@ dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate in
 dev-haskell/deriving-compat 0.5.8: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/dhall 1.37.1: A configuration language guaranteed to terminate
-dev-haskell/dhall-json 1.7.0-r1: Convert between Dhall and JSON or YAML
+dev-haskell/dhall-json 1.7.4: Convert between Dhall and JSON or YAML
 dev-haskell/dhall-nix 1.1.19: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.5: hint-based build service for the diagrams graphics EDSL
