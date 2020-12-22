@@ -1,4 +1,12 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
+# Some packages still need older versions: https://github.com/gentoo-haskell/gentoo-haskell/issues/1105
+>=dev-haskell/config-value-0.8
+>=dev-haskell/config-schema-1.2.1.0
+>=dev-haskell/glirc-2.37
+>=dev-haskell/hookup-0.5
+>=dev-haskell/irc-core-2.9
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs update to optparse-applciative and newer containers: https://github.com/MichaelXavier/Angel/issues/52
 dev-haskell/angel
 
