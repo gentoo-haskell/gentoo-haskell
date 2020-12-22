@@ -67,7 +67,7 @@ src_compile() {
 
 src_test() {
 	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}:${LD_LIBRARY_PATH}"
-	${S}/dist/build/hlint/hlint --datadir=${S}/data --test || die
+	"${S}"/dist/build/hlint/hlint --datadir="${S}"/data --test || die
 }
 
 src_install() {
