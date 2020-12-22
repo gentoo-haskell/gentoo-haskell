@@ -5,14 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Use this package if you want to compile Dhall expressions to the Nix language.
-		You can use this package as a library or an executable:
-		
-		* See the &quot;Dhall.Nix&quot; module if you want to use this package as a library
-		
-		* Use the @dhall-to-nix@ program from this package if you want an executable
-		
-		The &quot;Dhall.Nix&quot; module also contains instructions for how to use this package
-	</longdescription>
 </pkgmetadata>
