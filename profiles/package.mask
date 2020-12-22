@@ -230,7 +230,6 @@ sci-mathematics/agda-lib-ffi
 # The following package versions are masked until
 # aeson-1.5 is possible:
 >=dev-haskell/aeson-1.5
->=dev-haskell/data-fix-0.3
 >=dev-haskell/free-5.1.4
 >=dev-haskell/random-1.2
 >=dev-haskell/splitmix-0.1
