@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="brittany-dev-lib">set buildable false for anything but lib</flag>
+		<flag name="brittany-test-perf">determines if performance test suite is enabled</flag>
+	</use>
+	<longdescription>
+		See &lt;https://github.com/lspitzner/brittany/blob/master/README.md the README&gt;.
+		
+		If you are interested in the implementation, have a look at &lt;https://github.com/lspitzner/brittany/blob/master/doc/implementation/theory.md this document&gt;;
+		
+		The implementation is documented in more detail &lt;https://github.com/lspitzner/brittany/blob/master/doc/implementation/index.md here&gt;.
+	</longdescription>
+</pkgmetadata>
