@@ -5,6 +5,7 @@ dev-haskell/angel
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs porting to modern machines package.
 dev-haskell/machines-io
+dev-haskell/machines-directory
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs porting to modern machines and time packages.
