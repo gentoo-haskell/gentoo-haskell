@@ -1,4 +1,12 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
+# Needs non-trivial(?) porting to ghc-8.10: https://github.com/s9gf4ult/type-fun/issues/4
+dev-haskell/type-fun
+dev-haskell/hset
+dev-haskell/hreader
+dev-haskell/records
+dev-haskell/postgresql-query
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs non-trivial(?) porting to ghc-8.10: https://github.com/sweirich/replib/issues/49
 dev-haskell/replib
 dev-haskell/unbound
