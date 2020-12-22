@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
+# Needs a port to Cabal-3. No homepage.
+dev-haskell/augeas
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
 # Needs port to modern QuickCheck, No revdeps. No development
 # since 2015.
 dev-haskell/doctest-prop
