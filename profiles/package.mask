@@ -1,6 +1,11 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
+# Needs update to optparse-applciative and newer containers: https://github.com/MichaelXavier/Angel/issues/52
+dev-haskell/angel
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs porting to modern machines package.
 dev-haskell/machines-io
+dev-haskell/machines-directory
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs porting to modern machines and time packages.
@@ -177,10 +182,6 @@ dev-haskell/accelerate
 dev-haskell/accelerate-cuda
 dev-haskell/accelerate-fft
 dev-haskell/accelerate-io
-
-# Jack Todaro <solpeth@posteo.org> (2020-12-19)
-# Requires ghc-8.10
->=dev-haskell/ghc-heap-view-0.6.2
 
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Unmaintained, deprecated and/or dead upstream. Masked
