@@ -6,8 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="optimize">Enable all optimization flags</flag>
+		<flag name="profiling">Enable profiling</flag>
 	</use>
-	<longdescription>
-		Haskell implementation of the Nix language.
-	</longdescription>
 </pkgmetadata>
