@@ -280,6 +280,7 @@ dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/monky:ibus - enable ibus example
 dev-haskell/monoidal-containers:split-these - Use split these/semialign packages
+dev-haskell/multistate:build-example - Build the MultiState-example example program
 dev-haskell/nats:binary - enable binary instances
 dev-haskell/nats:hashable - enable hashable instances
 dev-haskell/nats:template-haskell - enable template_haskell
@@ -486,6 +487,8 @@ dev-lang/ghc:llvm - Enable LLVM backend via sys-devel/llvm.
 dev-lang/ghc:numa - Enable NUMA thread balancing policy using sys-process/numactl.
 dev-lang/idris:ffi - Build support for libffi.
 dev-lang/purescript:release - prevents inclusion of extra info e.g. commit SHA in --version outpu
+dev-util/brittany:brittany-dev-lib - set buildable false for anything but lib
+dev-util/brittany:brittany-test-perf - determines if performance test suite is enabled
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with support for multithreaded execution.
 dev-util/hsdev:docs - build with haddock/hdocs to support scanning docs
