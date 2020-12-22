@@ -17,6 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# Reported as: https://github.com/nkpart/cabal-file-th/issues/12
 #test/Test.hs:15:95: error:
 #    Couldn't match type ‘Distribution.Utils.ShortText.ShortText’
 #                   with ‘[Char]’
