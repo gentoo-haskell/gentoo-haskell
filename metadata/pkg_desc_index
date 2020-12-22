@@ -448,9 +448,9 @@ dev-haskell/dependent-sum 0.4 0.6.2.0 0.7.1.0: Dependent sum type
 dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/deriving-compat 0.5.8: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/dhall 1.33.0-r1: A configuration language guaranteed to terminate
+dev-haskell/dhall 1.37.1: A configuration language guaranteed to terminate
 dev-haskell/dhall-json 1.7.0-r1: Convert between Dhall and JSON or YAML
-dev-haskell/dhall-nix 1.1.15: Dhall to Nix compiler
+dev-haskell/dhall-nix 1.1.19: Dhall to Nix compiler
 dev-haskell/diagrams 1.4: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.5: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1: Cairo backend for diagrams drawing EDSL
@@ -882,7 +882,7 @@ dev-haskell/hmatrix 0.20.0.0: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
 dev-haskell/hmatrix-vector-sized 0.1.3.0: Conversions between hmatrix and vector-sized types
-dev-haskell/hnix 0.8.0-r1: Haskell implementation of the Nix language
+dev-haskell/hnix 0.11.1: Haskell implementation of the Nix language
 dev-haskell/hnix-store-core 0.2.0.0: Core effects for interacting with the Nix store
 dev-haskell/hoauth2 1.11.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
@@ -1614,7 +1614,7 @@ dev-haskell/repa-devil 0.3.2.6-r1: Support for image reading and writing of Repa
 dev-haskell/repa-io 3.4.1.1-r1: Read and write Repa arrays in various formats
 dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files and command-line interfaces
 dev-haskell/replib 0.5.4.1: Generic programming library with representation types
-dev-haskell/repline 0.2.2.0: Haskeline wrapper for GHCi-like REPL interfaces
+dev-haskell/repline 0.4.0.0: Haskeline wrapper for GHCi-like REPL interfaces
 dev-haskell/req 3.6.0: Easy-to-use, type-safe, expandable, high-level HTTP client library
 dev-haskell/rerebase 1.4.1: Reexports from 'base' with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
