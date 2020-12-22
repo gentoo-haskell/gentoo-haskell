@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This package provides extra definitions and instances that extend the
-		@&lt;https://hackage.haskell.org/package/optics-core optics-core&gt;@ package,
-		without incurring too many dependencies.  See the
-		@&lt;https://hackage.haskell.org/package/optics optics&gt;@ package for more
-		documentation.
-	</longdescription>
 </pkgmetadata>
