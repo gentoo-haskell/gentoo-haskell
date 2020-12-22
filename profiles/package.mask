@@ -1,3 +1,7 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
+# Needs a port to modern template haskell. No homepage.
+dev-haskell/instant-generics
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
 # Needs a port to Cabal-3. No homepage.
 dev-haskell/augeas
