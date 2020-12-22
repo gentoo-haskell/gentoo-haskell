@@ -23,13 +23,18 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 # break cyclic dependencies, test suite requires porting to >=QC-2.11
 RESTRICT=test
-# ghc-8.10 requires text-1.2.3.2. Try to force the downgrade here.
-RDEPEND=">=dev-lang/ghc-8.8:= <dev-lang/ghc-8.10:="
+RDEPEND=">=dev-lang/ghc-8.8:="
 
 DEPEND="${RDEPEND}
 "
 
 CABAL_CORE_LIB_GHC_PV="PM:8.8.1 PM:8.8.2 PM:8.8.3 PM:8.8.4 PM:9999"
+# This is a lie: 8.10.2 provides text-1.2.3.2, but that would mean
+# text version downgrade. portage can't figure out what is more
+# important to hold back on an old version: ghc or text.
+# Let's keep a lie until ghc-8.10.3 is ready.
+CABAL_CORE_LIB_GHC_PV+=" PM:8.10.2"
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-bytestring-builder \
