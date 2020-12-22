@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/code-page-0.1:=[profile?] <dev-haskell/code-page-0.3:=[profile?]
 	>=dev-haskell/fingertree-0.1.4.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.4:=[profile?]
-	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.8:=[profile?]
+	>=dev-haskell/haskeline-0.8:=[profile?]
 	>=dev-haskell/ieee754-0.7:=[profile?] <dev-haskell/ieee754-0.9:=[profile?]
 	>=dev-haskell/megaparsec-7.0.4:=[profile?] <dev-haskell/megaparsec-9:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -63,6 +63,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-rerun-1.0.0 )
 "
 
+PATCHES=( "${FILESDIR}"/${P}-haskeline-0.8.patch )
+
 src_prepare() {
 	default
 	# runs dist/build/idris directly and breaks sandboxing
@@ -76,7 +78,8 @@ src_prepare() {
 	tc-export AR CC RANLIB
 
 	cabal_chdeps \
-		'Cabal >= 2.4 && < 3.1' 'Cabal >= 2.4'
+		'Cabal >= 2.4 && < 3.1' 'Cabal >= 2.4' \
+		'haskeline >= 0.7 && < 0.8' 'haskeline >= 0.8'
 }
 
 src_configure() {
