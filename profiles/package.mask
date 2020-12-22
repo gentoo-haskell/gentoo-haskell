@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-22)
+# Upstream not touched since March 2019. Needs porting
+# to haskeline-0.8. Masked for removal.
+dev-haskell/console-program
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Some packages still need older versions: https://github.com/gentoo-haskell/gentoo-haskell/issues/1105
 >=dev-haskell/config-value-0.8
