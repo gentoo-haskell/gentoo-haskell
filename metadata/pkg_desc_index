@@ -511,7 +511,7 @@ dev-haskell/easyrender 0.1.1.4: User-friendly creation of EPS, PostScript, and P
 dev-haskell/easytest 0.3-r2: Simple, expressive testing library
 dev-haskell/echo 0.1.3: A cross-platform, cross-console way to handle echoing terminal input
 dev-haskell/ed25519 0.0.5.0: Ed25519 cryptographic signatures
-dev-haskell/ede 0.2.9: Templating language with similar syntax and features to Liquid or Jinja2
+dev-haskell/ede 0.3.2.0: Templating language with similar syntax and features to Liquid or Jinja2
 dev-haskell/edisonapi 1.3.1-r1: A library of efficient, purely-functional data structures (API)
 dev-haskell/edisoncore 1.3.2.1-r1: A library of efficent, purely-functional data structures (Core Implementations)
 dev-haskell/edit-distance 0.2.2.1-r1: Levenshtein and restricted Damerau-Levenshtein edit distances
