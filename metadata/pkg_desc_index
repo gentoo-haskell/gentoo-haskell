@@ -337,8 +337,8 @@ dev-haskell/conduit-audio-sndfile 0.1.2.2: conduit-audio interface to the libsnd
 dev-haskell/conduit-combinators 1.3.0: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.3.5: Batteries included conduit: adapters for common libraries
 dev-haskell/config-ini 0.2.4.0-r1: A library for simple INI-based configuration files
-dev-haskell/config-schema 1.2.0.0: Schema definitions for the config-value package
-dev-haskell/config-value 0.7.0.1: Simple, layout-based value language similar to YAML or JSON
+dev-haskell/config-schema 1.2.0.0 1.2.1.0: Schema definitions for the config-value package
+dev-haskell/config-value 0.7.0.1 0.8.1: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
 dev-haskell/configurator 0.3.0.0-r1: Configuration management
 dev-haskell/connection 0.3.1: Simple and easy network connections API
@@ -680,7 +680,7 @@ dev-haskell/ghc-typelits-natnormalise 0.7.2: GHC typechecker plugin for types of
 dev-haskell/ghci-lib 0.1.0.0: A library for interactively evaluating Haskell code
 dev-haskell/ghci-ng 10.0.0: Next generation GHCi
 dev-haskell/ghci-pretty 0.0.2: colored pretty-printing within ghci
-dev-haskell/ghcid 0.6.6: GHCi based bare bones IDE
+dev-haskell/ghcid 0.6.6 0.8.7: GHCi based bare bones IDE
 dev-haskell/ghcjs-codemirror 0.0.0.2: Installs CodeMirror JavaScript files
 dev-haskell/gi-atk 2.0.22: Atk bindings
 dev-haskell/gi-cairo 1.0.24: Cairo bindings
@@ -718,7 +718,7 @@ dev-haskell/glambda 1.0.2: A simply typed lambda calculus interpreter, written w
 dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.4 3.3.0.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.8.1: Binding to the GLIB library for Gtk2Hs
-dev-haskell/glirc 2.35: Console IRC client
+dev-haskell/glirc 2.35 2.37: Console IRC client
 dev-haskell/glob 0.9.3: Globbing library
 dev-haskell/gloss 1.13.2.1: Painless 2D vector graphics, animations and simulations
 dev-haskell/gloss-algorithms 1.13.0.2: Data structures and algorithms for working with 2D graphics
@@ -888,7 +888,7 @@ dev-haskell/hoauth2 1.11.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
 dev-haskell/hoogle 5.0.17.11 5.0.18: Haskell API Search
-dev-haskell/hookup 0.3.1.0: Abstraction over creating network connections with SOCKS5 and TLS
+dev-haskell/hookup 0.3.1.0 0.5: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
 dev-haskell/hora 2.2.0: date time
@@ -1051,7 +1051,7 @@ dev-haskell/ipv6addr 1.1.5: Library to deal with IPv6 address text representatio
 dev-haskell/ipynb 0.1.0.1: Data structure for working with Jupyter notebooks (ipynb)
 dev-haskell/ipython-kernel 0.10.2.1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0: A small library for parsing IRC messages
-dev-haskell/irc-core 2.7.2: IRC core library for glirc
+dev-haskell/irc-core 2.7.2 2.9: IRC core library for glirc
 dev-haskell/ircbot 0.6.6: A library for writing IRC bots
 dev-haskell/ireal 0.2.3: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.8: A datatype for ISO 3166 country codes
@@ -1806,7 +1806,7 @@ dev-haskell/stringprep 1.0.0: Implements the "StringPrep" algorithm
 dev-haskell/stringsearch 0.3.6.6-r1: Fast searching, splitting and replacing of ByteStrings
 dev-haskell/stringtable-atom 0.0.7: Memoize Strings as Atoms for fast comparison and sorting, with maps and sets
 dev-haskell/strptime 1.0.10: Efficient parsing of LocalTime using a binding to C's strptime
-dev-haskell/stylish-haskell 0.9.4.4: Haskell code prettifier
+dev-haskell/stylish-haskell 0.9.4.4 0.12.2.0: Haskell code prettifier
 dev-haskell/styx 1.3.1: A generator of nix files
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
@@ -1884,7 +1884,7 @@ dev-haskell/testing-feat 1.1.0.0: Functional Enumeration of Algebraic Types
 dev-haskell/testing-type-modifiers 0.1.0.1: Data type modifiers for property based testing
 dev-haskell/texmath 0.11.3 0.12.0.3: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.2-r2: Functions for running Tex from Haskell
-dev-haskell/text 1.2.3.0 1.2.3.1 1.2.3.2 1.2.4.0: An efficient packed Unicode text type
+dev-haskell/text 1.2.3.0 1.2.3.1 1.2.3.2 1.2.4.0-r1: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
 dev-haskell/text-builder 0.5.4.3 0.6.5.1 0.6.6.1: An efficient strict text builder
 dev-haskell/text-conversions 0.3.1: Safe conversions between textual types
@@ -2198,11 +2198,11 @@ dev-libs/odpi 2.3.2: Oracle Database Programming Interface for C (ODPI-C)
 dev-util/bnfc 2.8.4: A compiler front-end generator
 dev-util/bustle 0.4.7-r1 0.5.4 0.7.2: Draw sequence diagrams of D-Bus traffic
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
-dev-util/codex 0.6.0.0: A ctags file generator for cabal project dependencies
+dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/hadolint 1.17.3: Dockerfile Linter JavaScript API
 dev-util/hdocs 0.5.4.0 0.5.5.0: Haskell docs tool
-dev-util/hsdev 0.3.3.6 0.3.4.0: Haskell development library
+dev-util/hsdev 0.3.3.6 0.3.4.0 0.3.4.0-r1: Haskell development library
 dev-util/shellcheck 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.13: A graphical tool for profiling parallel Haskell programs
