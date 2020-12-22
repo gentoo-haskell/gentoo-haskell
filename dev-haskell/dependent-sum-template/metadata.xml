@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Template Haskell code to generate instances of classes in dependent-sum package, such as 'GEq' and 'GCompare'.
-	</longdescription>
 </pkgmetadata>
