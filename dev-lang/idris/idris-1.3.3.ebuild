@@ -56,7 +56,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 		dev-libs/gmp )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.4 <dev-haskell/cabal-3.1
+	>=dev-haskell/cabal-2.4
 	test? ( dev-haskell/tagged
 		>=dev-haskell/tasty-0.8
 		>=dev-haskell/tasty-golden-2.0
@@ -74,6 +74,9 @@ src_prepare() {
 	replace-hcflags -g ''
 
 	tc-export AR CC RANLIB
+
+	cabal_chdeps \
+		'Cabal >= 2.4 && < 3.1' 'Cabal >= 2.4'
 }
 
 src_configure() {

@@ -14,9 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0/${PV}"
-# random-1.2.0 is currently masked due to some aeson thing. This requires
-# >=random-1.2.0
-# KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
