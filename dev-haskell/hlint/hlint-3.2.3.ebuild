@@ -47,6 +47,8 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/apply-refact )
 "
 
+SITEFILE="60${PN}-gentoo.el"
+
 S="${WORKDIR}/hlint-${COMMIT}"
 
 src_configure() {
@@ -61,6 +63,11 @@ src_compile() {
 	cabal_src_compile
 
 	use emacs && elisp-compile data/hs-lint.el
+}
+
+src_test() {
+	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}:${LD_LIBRARY_PATH}"
+	${S}/dist/build/hlint/hlint --datadir=${S}/data --test || die
 }
 
 src_install() {
@@ -79,7 +86,7 @@ pkg_postinst() {
 	use emacs && elisp-site-regen
 }
 
-src_test() {
-	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}:${LD_LIBRARY_PATH}"
-	${S}/dist/build/hlint/hlint --datadir=${S}/data --test || die
+pkg_postrm() {
+	haskell-cabal_pkg_postrm
+	use emacs && elisp-site-regen
 }
