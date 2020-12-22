@@ -8,6 +8,7 @@
 	<use>
 		<flag name="cross">Disable TemplateHaskell to make cross-compiling easier</flag>
 		<flag name="http">Include support for importing dhall modules from HTTP URLs</flag>
+		<flag name="http-client-tls">Use http-client-tls for resolving HTTP imports by default (requires with-http to be enabled)</flag>
 	</use>
 	<longdescription>
 		Dhall is an explicitly typed configuration language that is not Turing
