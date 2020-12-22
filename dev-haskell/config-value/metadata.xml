@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package implments a language similar to YAML or JSON but
-		with fewer special cases and fewer dependencies. It emphasizes
-		layout structure for sections and lists, and requires quotes
-		around strings.
-	</longdescription>
 </pkgmetadata>
