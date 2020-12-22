@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		First class type families,
-		eval-style defunctionalization
-		
-		See &quot;Fcf&quot;.
-	</longdescription>
 </pkgmetadata>
