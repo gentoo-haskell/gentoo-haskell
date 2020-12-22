@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
+# Needs porting to modern machines and time packages.
+dev-haskell/lawless-concurrent-machines
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Deprecated upstream. Masked for removal.
 dev-haskell/ghci-ng
 
