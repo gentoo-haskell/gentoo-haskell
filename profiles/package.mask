@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
+# Needs non-trivial(?) porting to ghc-8.10: https://github.com/sweirich/replib/issues/49
+dev-haskell/replib
+dev-haskell/unbound
+
 # Jack Todaro <solpeth@posteo.org> (2020-12-22)
 # Upstream not touched since March 2019. Needs porting
 # to haskeline-0.8. Masked for removal.
