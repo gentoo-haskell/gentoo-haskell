@@ -138,7 +138,7 @@ dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
 dev-haskell/base-orphans 0.8.4: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.3: The most complete prelude formed solely from the \
 dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functions and operators
-dev-haskell/base16-bytestring 0.1.1.7: Fast base16 (hex) encoding and decoding for ByteStrings
+dev-haskell/base16-bytestring 0.1.1.7 1.0.1.0: RFC 4648-compliant Base16 encodings for ByteStrings
 dev-haskell/base32-bytestring 0.2.1.0: Fast base32 and base32hex codec for ByteStrings
 dev-haskell/base58-bytestring 0.1.0: Implementation of BASE58 transcoding for ByteStrings
 dev-haskell/base64 0.4.2.2: Fast RFC 4648-compliant Base64 encoding
@@ -231,14 +231,15 @@ dev-haskell/bytestring-trie 0.2.5.0: An efficient finite map from (byte)strings 
 dev-haskell/bzlib 0.5.1.0: Compression and decompression in the bzip2 format
 dev-haskell/c10k 0.5.0: C10k server library using prefork
 dev-haskell/c2hs 0.28.7: C->Haskell FFI tool that gives some cross-language type safety
-dev-haskell/cabal 1.24.2.0 2.2.0.1 2.4.0.1 3.0.0.0 3.0.1.0 3.2.0.0 3.3.9999: A framework for packaging Haskell software
+dev-haskell/cabal 1.24.2.0 2.2.0.1 2.4.0.1 3.0.0.0 3.0.1.0 3.2.0.0 3.2.1.0 3.3.9999: A framework for packaging Haskell software
 dev-haskell/cabal-db 0.1.12: query tools for the local cabal database
 dev-haskell/cabal-doctest 1.0.8-r1: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.7: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-install 3.0.0.0 3.2.0.0 9999: The command-line interface for Cabal and Hackage
+dev-haskell/cabal-install-parsers 0.3.0.1 0.4: Utilities to work with cabal-install files
 dev-haskell/cabal-macosx 0.2.4.2: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-meta 0.4.1.3: build multiple packages at once
-dev-haskell/cabal-plan 0.7.2.0: Library and utility for processing cabal's plan.json file
+dev-haskell/cabal-plan 0.7.2.0 0.7.2.0-r1: Library and utility for processing cabal's plan.json file
 dev-haskell/cabal-rpm 2.0.6: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
 dev-haskell/cairo 0.13.8.1: Binding to the Cairo library
@@ -1726,7 +1727,7 @@ dev-haskell/simpleaes 0.4.2: Fast AES encryption/decryption for bytestrings
 dev-haskell/simpleargs 0.2.1: Provides a more flexible getArgs function with better error reporting
 dev-haskell/simpleirc 0.3.1: Simple IRC Library
 dev-haskell/singleton-bool 0.1.5-r1: Type level booleans
-dev-haskell/singletons 2.5.1: A framework for generating singleton types
+dev-haskell/singletons 2.5.1 2.7: A framework for generating singleton types
 dev-haskell/size-based 0.1.2.0: Sized functors, for size-based enumerations
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
 dev-haskell/skylighting 0.10.2: syntax highlighting library
@@ -1946,6 +1947,7 @@ dev-haskell/tls-debug 0.4.8: Set of programs for TLS testing and debugging
 dev-haskell/tls-session-manager 0.0.4: In-memory TLS session manager
 dev-haskell/tomland 1.3.1.0: Bidirectional TOML serialization
 dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compiler
+dev-haskell/topograph 1.0.0.1: Directed acyclic graphs
 dev-haskell/torrent 10000.1.1: BitTorrent file parser and generater
 dev-haskell/torsor 0.1: Torsor Typeclass
 dev-haskell/transformers 0.5.2.0 0.5.5.0 0.5.6.2: Concrete functor and monad transformers
