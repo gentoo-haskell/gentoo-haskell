@@ -22,7 +22,6 @@
 		<flag name='curses'>Enables curses user interface</flag>
 		<flag name='sdl'>Enables SDL user interface</flag>
 		<flag name='sound'>Enables sound in SDL user interface</flag>
-		<flag name='server'>Builds game server</flag>
 	</use>
 
 </pkgmetadata>

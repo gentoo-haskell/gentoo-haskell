@@ -16,7 +16,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+curses +sdl server +sound"
+IUSE="+curses +sdl +sound"
 
 RDEPEND=">=dev-haskell/cryptonite-0.16:=
 	>=dev-haskell/exceptions-0.8.3:=
@@ -34,18 +34,7 @@ RDEPEND=">=dev-haskell/cryptonite-0.16:=
 		>=dev-haskell/sdl-gfx-0.6:=
 		>=dev-haskell/sdl-ttf-0.6:=
 		sound? ( >=dev-haskell/random-1.0:=
-			>=dev-haskell/sdl-mixer-0.6:= )
-		!sound? ( server? ( >=dev-haskell/random-1.0:= ) ) )
-	!sdl? ( server? ( >=dev-haskell/random-1.0:= ) )
-	server? ( >=dev-haskell/argon2-1.3:=
-			>=dev-haskell/email-validate-1.0:=
-			>=dev-haskell/feed-1.1:=
-			>=dev-haskell/pipes-4:=
-			>=dev-haskell/smtp-mail-0.1.4.1:=
-			>=dev-haskell/mime-mail.0.4.4:=
-			dev-haskell/text:=
-			dev-haskell/text-short:=
-			>=dev-haskell/xml-conduit-1.0:= )
+			>=dev-haskell/sdl-mixer-0.6:= ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
@@ -56,6 +45,5 @@ src_configure() {
 		$(cabal_flag curses curses) \
 		--flag=game \
 		$(cabal_flag sdl sdl) \
-		$(cabal_flag server server) \
 		$(cabal_flag sound sound)
 }
