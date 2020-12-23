@@ -3,6 +3,8 @@
 # See https://github.com/mrueg/repoman-travis
 #
 language: python
+python:
+  - "3.8"
 
 cache:
   directories:
