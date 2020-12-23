@@ -510,7 +510,6 @@ dev-vcs/git-annex:webapp - Enable git-annex webapp
 dev-vcs/git-annex:webdav - Enable WebDAV support
 games-puzzle/intricacy:curses - Enables curses user interface
 games-puzzle/intricacy:sdl - Enables SDL user interface
-games-puzzle/intricacy:server - Builds game server
 games-puzzle/intricacy:sound - Enables sound in SDL user interface
 media-sound/live-sequencer:gui - Build the wxWidgets GUI for the sequencer.
 media-sound/live-sequencer:httpserver - Enable access to modules via a web browser.

@@ -724,7 +724,7 @@ dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.4 3.3.0.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.8.1: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glirc 2.35 2.37: Console IRC client
-dev-haskell/glob 0.9.3: Globbing library
+dev-haskell/glob 0.9.3 0.10.1: Globbing library
 dev-haskell/gloss 1.13.2.1: Painless 2D vector graphics, animations and simulations
 dev-haskell/gloss-algorithms 1.13.0.2: Data structures and algorithms for working with 2D graphics
 dev-haskell/gloss-examples 1.13.0.3: Examples using the gloss library
@@ -2205,6 +2205,7 @@ dev-libs/odpi 2.3.2: Oracle Database Programming Interface for C (ODPI-C)
 dev-util/bnfc 2.8.4: A compiler front-end generator
 dev-util/brittany 0.13.1.0: Haskell source code formatter
 dev-util/bustle 0.4.7-r1 0.5.4 0.7.2: Draw sequence diagrams of D-Bus traffic
+dev-util/cabal-fmt 0.1.5.1: Format .cabal files
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
@@ -2222,7 +2223,7 @@ games-arcade/shu-thing 1.1.4: A vector shooter game
 games-board/goatee-gtk 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
 games-fps/frag 1.1.2-r1: A 3-D First Person Shooter Game
 games-puzzle/bloxorz 0.1.2: OpenGL Logic Game
-games-puzzle/intricacy 0.7.2.3: A game of competitive puzzle-design
+games-puzzle/intricacy 0.8.0.1: A game of competitive puzzle-design
 games-puzzle/raincat 1.2.1: A puzzle game written in Haskell with a cat in lead role
 games-roguelike/scroll 1.20180421: scroll(6), a roguelike game
 media-fonts/hasklig 1.2: Hasklig - a Haskell code font with monospaced ligatures
