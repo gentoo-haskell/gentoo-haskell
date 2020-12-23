@@ -30,5 +30,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'haskell-src-exts-simple >= 1.18 && < 1.21' 'haskell-src-exts-simple >= 1.18'
+		'haskell-src-exts-simple >= 1.18 && < 1.21' 'haskell-src-exts-simple >= 1.18' \
+		'base                    >= 4.7  && < 4.13 || ^>= 4.13' 'base                    >= 4.7'
 }
