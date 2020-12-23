@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="executable">Build the skylighting executable.</flag>
+		<flag name="executable">Build skylighting-extract tool</flag>
 	</use>
 	<longdescription>
 		Skylighting is a syntax highlighting library.
