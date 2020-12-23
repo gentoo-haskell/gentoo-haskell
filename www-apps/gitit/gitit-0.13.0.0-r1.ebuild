@@ -17,16 +17,16 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+plugins"
 
-RDEPEND=">=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-2.10:=[profile?]
-	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
+RDEPEND=">=app-text/pandoc-2.9:=[profile?]
+	>=dev-haskell/aeson-0.7:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/configfile-1:=[profile?]
 	>=dev-haskell/doctemplates-0.7.1:=[profile?]
 	>=dev-haskell/feed-1.0:=[profile?] <dev-haskell/feed-1.4:=[profile?]
 	>=dev-haskell/filestore-0.6.4:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
-	>=dev-haskell/happstack-server-7.5:=[profile?] <dev-haskell/happstack-server-7.7:=[profile?]
-	>=dev-haskell/hoauth2-1.3.0:=[profile?] <dev-haskell/hoauth2-1.12:=[profile?]
+	>=dev-haskell/happstack-server-7.5:=[profile?]
+	>=dev-haskell/hoauth2-1.3.0:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?]
 	>=dev-haskell/hstringtemplate-0.6:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
 	>=dev-haskell/http-4000.0:=[profile?]
@@ -39,13 +39,13 @@ RDEPEND=">=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-2.10:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/old-time:=[profile?]
-	>=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.21:=[profile?]
+	>=dev-haskell/pandoc-types-1.20:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/recaptcha-0.1:=[profile?]
 	dev-haskell/safe:=[profile?]
 	>dev-haskell/sha-1:=[profile?]
-	>=dev-haskell/skylighting-0.8.2.3:=[profile?] <dev-haskell/skylighting-0.9:=[profile?]
+	>=dev-haskell/skylighting-0.8.2.3:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
 	>=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
@@ -67,6 +67,18 @@ RDEPEND=">=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-2.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson >= 0.7 && < 1.5' 'aeson >= 0.7' \
+		'pandoc >= 2.9 && < 2.10' 'pandoc >= 2.9' \
+		'pandoc-types >= 1.20 && < 1.21' 'pandoc-types >= 1.20' \
+		'skylighting >= 0.8.2.3 && < 0.9' 'skylighting >= 0.8.2.3' \
+		'hoauth2 >= 1.3.0 && < 1.12' 'hoauth2 >= 1.3.0' \
+		'happstack-server >= 7.5 && < 7.7' 'happstack-server >= 7.5'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
