@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+template-haskell"
 
+RESTRICT=test # USE=doc breaks tests
+
 RDEPEND=">=dev-haskell/bifunctors-3:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
 	>=dev-haskell/bytes-0.4:=[profile?] <dev-haskell/bytes-1:=[profile?]
 	>=dev-haskell/cereal-0.3.5.2:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
