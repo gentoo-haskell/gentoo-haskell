@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		pandoc-crossref is a pandoc filter for numbering figures, equations, tables and cross-references to them.
-	</longdescription>
 </pkgmetadata>
