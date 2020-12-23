@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # USE=doc breaks tests
+
 RDEPEND=">=dev-haskell/base64-0.3:=[profile?] <dev-haskell/base64-0.5:=[profile?]
 	>=dev-haskell/cryptonite-0.15.1:=[profile?] <dev-haskell/cryptonite-0.28:=[profile?]
 	>=dev-haskell/memory-0.14:=[profile?] <dev-haskell/memory-0.16:=[profile?]
