@@ -38,6 +38,13 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.3 && < 4.14' 'base >= 4.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag network-bsd network-bsd)

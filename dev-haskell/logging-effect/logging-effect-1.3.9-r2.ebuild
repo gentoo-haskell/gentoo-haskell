@@ -41,5 +41,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'prettyprinter >= 1.2 && < 1.7' 'prettyprinter >= 1.2' \
-		'unliftio-core >= 0.1.1.0 && < 0.2' 'unliftio-core >= 0.1.1.0'
+		'unliftio-core >= 0.1.1.0 && < 0.2' 'unliftio-core >= 0.1.1.0' \
+		'base >=4.8 && <4.14' 'base >=4.8'
 }
