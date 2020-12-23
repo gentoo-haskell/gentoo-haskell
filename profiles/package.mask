@@ -3,6 +3,7 @@
 # Until more of the reverse-dependencies update to the newer version, this will
 # remain masked
 >=dev-haskell/base16-bytestring-1.0.1.0
+>=dev-haskell/cabal-install-parsers-0.4
 
 # Jack Todaro <solpeth@posteo.org> (2020-12-23)
 # Deprecated in favour of dev-haskell/citeproc.
