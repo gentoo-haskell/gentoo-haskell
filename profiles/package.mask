@@ -1,3 +1,12 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-23)
+# Deprecated in favour of dev-haskell/citeproc.
+# Has no reverse dependencies. Masked for removal.
+dev-haskell/pandoc-citeproc
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-23)
+# Needs porting to ghc-8.10 template haskell: https://github.com/joecrayne/hs-bitsyntax/issues/1
+dev-haskell/bitsyntax
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # Needs non-trivial(?) porting to ghc-8.10: https://github.com/s9gf4ult/type-fun/issues/4
 dev-haskell/type-fun
@@ -267,16 +276,6 @@ sci-mathematics/agda-lib-ffi
 # Jack Todaro <solpeth@posteo.org> (2 Aug 2020)
 # dev-haskell/stack-2.3.1 requires < pantry-0.5
 >=dev-haskell/pantry-0.5
-
-# Jack Todaro <solpeth@posteo.org> (27 July 2020)
-# dev-haskell/hakyll and www-apps/gitit require
-# <app-text/pandoc-2.10
->=app-text/pandoc-2.10
->=dev-haskell/pandoc-crossref-0.3.7
->=dev-haskell/jira-wiki-markup-1.3
->=dev-haskell/hslua-1.1.2
->=dev-haskell/pandoc-types-1.21
-dev-haskell/commonmark-pandoc
 
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies

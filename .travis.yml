@@ -3,8 +3,6 @@
 # See https://github.com/mrueg/repoman-travis
 #
 language: python
-python:
-  - "3.8"
 
 cache:
   directories:
@@ -59,7 +57,7 @@ before_install:
     - pip install pkgcheck
 before_script:
     - THIS_REPO=haskell
-    - PORTAGE_VER='3.0.8'
+    - PORTAGE_VER='2.3.103'
     - SPINNER=/tmp/spinner.sh
     - PORTAGE_DIR="/tmp/portage-portage-${PORTAGE_VER}"
     - echo "Setting up basic directories:"

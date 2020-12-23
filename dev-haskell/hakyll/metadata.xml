@@ -7,10 +7,10 @@
 	</maintainer>
 	<use>
 		<flag name="buildwebsite">Build the hakyll website</flag>
-		<flag name="previewserver">Include the preview server</flag>
 		<flag name="checkexternal">Include external link checking</flag>
-		<flag name="watchserver">wait for filesystem changes and rebuild pages</flag>
+		<flag name="previewserver">Include the preview server</flag>
 		<flag name="usepandoc">Include Pandoc support</flag>
+		<flag name="watchserver">Include the watch server</flag>
 	</use>
 	<longdescription>
 		Hakyll is a static website compiler library. It provides you with the tools to
@@ -20,13 +20,13 @@
 		
 		* &lt;http://jaspervdj.be/hakyll&gt;
 		
-		If you seek assistance, there's:
+		If you seek assistance, there&#39;s:
 		
 		* A google group: &lt;http://groups.google.com/group/hakyll&gt;
 		
 		* An IRC channel, @#hakyll@ on freenode
 		
-		Additionally, there's the Haddock documentation in the different modules,
+		Additionally, there&#39;s the Haddock documentation in the different modules,
 		meant as a reference.
 	</longdescription>
 </pkgmetadata>

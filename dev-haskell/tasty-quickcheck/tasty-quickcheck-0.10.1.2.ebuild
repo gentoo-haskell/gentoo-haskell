@@ -26,4 +26,6 @@ RDEPEND="dev-haskell/optparse-applicative:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
+	test? ( dev-haskell/pcre-light
+		dev-haskell/tasty-hunit )
 "

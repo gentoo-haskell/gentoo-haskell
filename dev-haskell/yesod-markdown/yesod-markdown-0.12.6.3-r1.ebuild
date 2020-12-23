@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=app-text/pandoc-2.0:=[profile?] <app-text/pandoc-2.10:=[profile?]
+RDEPEND=">=app-text/pandoc-2.0:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/persistent-0.9:=[profile?]
@@ -32,3 +32,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( dev-haskell/hspec )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'pandoc >=2.0 && <2.10' 'pandoc >=2.0'
+}
