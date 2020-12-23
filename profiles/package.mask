@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2020-12-23)
+# Deprecated in favour of dev-haskell/citeproc.
+# Has no reverse dependencies. Masked for removal.
+dev-haskell/pandoc-citeproc
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-23)
 # Needs porting to ghc-8.10 template haskell: https://github.com/joecrayne/hs-bitsyntax/issues/1
 dev-haskell/bitsyntax
