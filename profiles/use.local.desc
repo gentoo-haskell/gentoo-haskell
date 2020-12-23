@@ -3,10 +3,8 @@
 # * generated automatically using pmaint *
 
 app-admin/propellor:type-errors - Build with type-errors library for better error messages and less memory use
-app-text/pandoc:derive-json-via-th - Use Template Haskell instead of GHC Generics to derive ToJSON and FromJSON instances.
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
 app-text/pandoc:optimize - Enable -O1 optimizations (requires ~16GiB memory)
-app-text/pandoc:static - Use static linking for pandoc executable.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/accelerate:bounds-checks - Enable bounds checking.
@@ -65,6 +63,8 @@ dev-haskell/chaselev-deque:debug - Enable the extra internal checks.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
 dev-haskell/chell:color-output - use colors in program output
 dev-haskell/chimera:representable - Define Representable instance from adjunctions package
+dev-haskell/citeproc:executable - Build citeproc executable
+dev-haskell/citeproc:icu - Use Haskell bindings to the ICU library
 dev-haskell/clash-ghc:dynamic - Build Clash binaries with GHC flag `-dynamic`. This flag should only be used for packaging purposes. Installations using cabal should use `--enable-executable-dynamic`!
 dev-haskell/clash-ghc:ghc-paths - Locate the GHC core libraries using the `ghc-paths` package. Note: this flag may make binaries less relocatable, by hard-coding an absolute path to the core libraries.
 dev-haskell/clash-lib:debug - Build a debug compiler
@@ -166,11 +166,10 @@ dev-haskell/hakyll:buildwebsite - Build the hakyll website
 dev-haskell/hakyll:checkexternal - Include external link checking
 dev-haskell/hakyll:previewserver - Include the preview server
 dev-haskell/hakyll:usepandoc - Include Pandoc support
-dev-haskell/hakyll:watchserver - wait for filesystem changes and rebuild pages
+dev-haskell/hakyll:watchserver - Include the watch server
 dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
-dev-haskell/happstack-server:template-haskell - Description: Template Haskell is available on this system
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
 dev-haskell/hashtables:debug - if on, spew debugging output to stdout
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
@@ -389,8 +388,8 @@ dev-haskell/simple-sendfile:allow-bsd - Allow use of BSD sendfile (disable on GN
 dev-haskell/skein:big-endian - When manually selecting the endianness, use big-endian (default is little-endian).
 dev-haskell/skein:force-endianness - Use a manually selected endian when compiling (see flag 'big-endian').
 dev-haskell/skein:reference - Use the reference implementation instead of the optimized one.
-dev-haskell/skylighting:executable - Build the skylighting executable.
-dev-haskell/skylighting-core:executable - Build the skylighting executable.
+dev-haskell/skylighting:executable - Whether to build the skylighting program
+dev-haskell/skylighting-core:executable - Build skylighting-extract tool
 dev-haskell/snap-core:portable - No non-haskell unportable code.
 dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"? Normally useful only for benchmarks.
 dev-haskell/snap-server:build-testserver - Build the blackbox testserver?
