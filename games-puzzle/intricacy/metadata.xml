@@ -6,16 +6,17 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<longdescription>
-		A networked game with client-server architecture. The core game is a
-		lockpicking-themed turn-based puzzle game on a hex grid. Players design
-		puzzles (locks) and solve those designed by others. A metagame encourages
-		the design of maximally difficult puzzles, within tight size constraints.
-		The client supports Curses and SDL, with all graphics in SDL mode drawn by
-		code using SDL-gfx. The network protocol is based on the &#39;binary&#39; package,
-		and is intended to be reasonably efficient. TVars are used to give
-		transparent local caching and background network operations. Also
-		incorporates an implementation of a graph 5-colouring algorithm (see
-		GraphColouring.hs).
+		A lockpicking-themed turn-based puzzle game on a hex grid. A series of
+		preset puzzles serves as an extended single-player introduction, after
+		which players enter a multi-player game with a client-server architecture,
+		in which players design puzzles (locks) and solve those designed by
+		others. A metagame encourages the design of maximally difficult puzzles,
+		within tight size constraints. The client supports Curses and SDL, with
+		all graphics in SDL mode drawn by code using SDL-gfx. The network protocol
+		is based on the 'binary' package, and is intended to be reasonably
+		efficient. TVars are used to give transparent local caching and background
+		network operations. Also incorporates an implementation of a graph
+		5-colouring algorithm (see GraphColouring.hs).
 	</longdescription>
 	<use>
 		<flag name='curses'>Enables curses user interface</flag>
