@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="dev"
 
-RDEPEND=">=dev-haskell/ansi-terminal-0.8:=
+RDEPEND=" !dev-lang/elm-compiler-bin[symlink]
+	>=dev-haskell/ansi-terminal-0.8:=
 	>=dev-haskell/ansi-wl-pprint-0.6.8:= <dev-haskell/ansi-wl-pprint-0.7:=
 	>=dev-haskell/edit-distance-0.2:= <dev-haskell/edit-distance-0.3:=
 	dev-haskell/file-embed:=
