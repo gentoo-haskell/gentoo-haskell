@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		This package implements the bijection between JSON and
-		CBOR defined in the CBOR specification, RFC 7049.
-	</longdescription>
 </pkgmetadata>
