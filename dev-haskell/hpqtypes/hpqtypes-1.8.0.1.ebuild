@@ -50,5 +50,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'Cabal >= 1.24 && < 3.1' 'Cabal >= 1.24'
+		'Cabal >= 1.24 && < 3.1' 'Cabal >= 1.24' \
+		'base  >= 4.9  && < 4.14' 'base  >= 4.9' \
+		'base              >= 4.9     && < 4.14' 'base              >= 4.9' \
+		'base >= 4.9 && < 4.14' 'base >= 4.9'
 }
