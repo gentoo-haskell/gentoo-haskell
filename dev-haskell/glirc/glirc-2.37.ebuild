@@ -45,6 +45,5 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-4
-	dev-haskell/hsc2hs
 	test? ( >=dev-haskell/hunit-1.6 <dev-haskell/hunit-1.7 )
 "
