@@ -478,6 +478,7 @@ dev-haskell/zlib:non-blocking-ffi - The (de)compression calls can sometimes take
 dev-haskell/zxcvbn-hs:tools - Build the data processing tools (i.e. dictionary compilers)
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
 dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors
+dev-lang/elm-compiler-bin:symlink - Create a symlink to "elm", instead of just installing "elm-bin" binary
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.
 dev-lang/ghc:elfutils - Enable DWARF-based backtraces using dev-libs/elfutils.
 dev-lang/ghc:ghcbootstrap - Internal: Bootstrap GHC from an existing GHC installation.

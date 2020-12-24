@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare
+DESCRIPTION=The 'elm' command line interface (binary)
+EAPI=7
+HOMEPAGE=http://elm-lang.org
+IUSE=+symlink
+KEYWORDS=~amd64
+LICENSE=BSD
+RDEPEND=symlink? ( !dev-lang/elm-compiler )
+SLOT=0/0.19.1
+SRC_URI=https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz -> 0.19.1.gz
+_md5_=60674bdc13790a596b8446e9dd6266f6
