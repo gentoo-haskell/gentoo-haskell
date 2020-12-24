@@ -46,3 +46,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-4
 	test? ( >=dev-haskell/hunit-1.3 <dev-haskell/hunit-1.7 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base     >=4.12 && <4.14' 'base     >=4.12' \
+		'base                 >=4.11   && <4.14' 'base                 >=4.11' \
+		'template-haskell     >=2.11   && <2.16' 'template-haskell     >=2.11'
+}
