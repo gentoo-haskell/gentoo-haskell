@@ -8,9 +8,4 @@
 	<use>
 		<flag name="examples">Build examples</flag>
 	</use>
-	<longdescription>
-		@influxdb@ is a Haskell client library for InfluxDB.
-		
-		See &quot;Database.InfluxDB&quot; for a quick start guide.
-	</longdescription>
 </pkgmetadata>
