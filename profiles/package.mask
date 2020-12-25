@@ -1,4 +1,16 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Does not support recent cabal. https://github.com/killy971/hpc-coveralls/issues/75
+dev-haskell/hpc-coveralls
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Fails to build against recent `validation`. No development since 2017.
+dev-haskell/scrape-changes
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Fails to build with ghc-8.10 (ald probably way older ones): https://github.com/dreixel/regular/issues/3
+dev-haskell/regular
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
 # No development since 2016. Needs porting to network-3.
 dev-haskell/cabal-src
 
