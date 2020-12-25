@@ -53,7 +53,6 @@ S="${WORKDIR}/hlint-${COMMIT}"
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flags=ghc-lib \
 		$(cabal_flag gpl gpl) \
 		$(cabal_flag hsyaml hsyaml) \
 		$(cabal_flag threaded threaded)
