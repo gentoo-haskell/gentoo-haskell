@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Fails to build with ghc-8.10 (ald probably way older ones): https://github.com/dreixel/regular/issues/3
+dev-haskell/regular
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
 # No development since 2016. Needs porting to network-3.
 dev-haskell/cabal-src
 
