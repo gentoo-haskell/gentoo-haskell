@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	# ghc-8.10 uses huge amount of RAM on instances.
+	# ghc-8.10 uses huge amount of RAM on instances:
+	#     https://gitlab.haskell.org/ghc/ghc/-/issues/19121
 	[[ $(ghc-version) == 8.10.* ]] && HCFLAGS="${HCFLAGS} -O0"
 }
