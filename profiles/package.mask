@@ -1,36 +1,41 @@
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
+# Relies on outdated writer-cps-transformers. No revdeps.
+dev-haskell/transformers-lift
+dev-haskell/ether
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # No homepage. Needs a port to network-3.
 dev-haskell/hspread
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Needs a port to cabal-3: No homepage.
 dev-haskell/package-description-remote
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Needs a port to cabal-3: https://github.com/haskell-suite/haskell-packages/issues/25
 dev-haskell/haskell-packages
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Needs porting to modern shelly.
 dev-haskell/cabal-meta
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Needs a port to modern http-conduit. No homepage.
 dev-haskell/handa-gdata
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Does not support recent cabal. https://github.com/killy971/hpc-coveralls/issues/75
 dev-haskell/hpc-coveralls
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Fails to build against recent `validation`. No development since 2017.
 dev-haskell/scrape-changes
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Fails to build with ghc-8.10 (ald probably way older ones): https://github.com/dreixel/regular/issues/3
 dev-haskell/regular
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # No development since 2016. Needs porting to network-3.
 dev-haskell/cabal-src
 
