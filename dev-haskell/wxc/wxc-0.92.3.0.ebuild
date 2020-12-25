@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.92.3.0-cabal-2.2.patch
 	"${FILESDIR}"/${PN}-0.92.3.0-cabal-3.patch
+	"${FILESDIR}"/${PN}-0.92.3.0-cabal-3.2.patch
 )
 
 src_prepare() {
