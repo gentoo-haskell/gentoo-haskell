@@ -23,3 +23,5 @@ RDEPEND="~dev-haskell/protocol-buffers-2.4.13:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+PATCHES=("${FILESDIR}"/${P}-force-O0.patch)
