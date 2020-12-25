@@ -24,4 +24,9 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
 
-PATCHES=("${FILESDIR}"/${P}-force-O0.patch)
+src_prepare() {
+	default
+
+	# ghc-8.10 uses huge amount of RAM on instances.
+	[[ $(ghc-version) == 8.10.* ]] && HCFLAGS="${HCFLAGS} -O0"
+}
