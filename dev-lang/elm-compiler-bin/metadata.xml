@@ -6,9 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-        <flag name="symlink">
-            Create a symlink to "elm", instead of just installing "elm-bin"
-            binary
-        </flag>
+		<flag name="symlink">Create a symlink to "elm", instead of just installing "elm-bin" binary.</flag>
 	</use>
 </pkgmetadata>
