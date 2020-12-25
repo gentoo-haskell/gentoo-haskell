@@ -1,0 +1,26 @@
+--- a/Monky/Version.hs
++++ b/Monky/Version.hs
+@@ -28,8 +28,10 @@ Portability : Linux
+ module Monky.Version
+ where
+ 
+-import Monky.VersionTH
++import qualified Paths_monky
++import Data.Version
+ 
+ -- |The current version as 4tupel
+ getVersion :: (Int, Int, Int, Int)
+-getVersion = $versionTH
++getVersion = (a,b,c,d)
++    where (Version [a,b,c,d] _) = Paths_monky.version
+--- a/monky.cabal
++++ b/monky.cabal
+@@ -151,7 +151,7 @@ library
+   exposed-modules: Monky.Examples.Modify Monky.IP Monky.IP.Raw
+ 
+   exposed-modules: Monky.Outputs.Unicode Monky.Examples.Images
+-  other-modules: Monky.Template Monky.VersionTH Monky.CUtil
++  other-modules: Monky.Template Monky.CUtil Paths_monky
+ 
+ 
+   build-depends:       base >=4.6.0.1 && <=5, directory, time, old-time

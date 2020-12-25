@@ -44,6 +44,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-formatting-6.patch
 	"${FILESDIR}"/${P}-network-3.patch
+	"${FILESDIR}"/${P}-no-th.patch
 )
 
 src_configure() {
