@@ -10,7 +10,7 @@ SRC_URI="https://github.com/elm/compiler/releases/download/${PV}/binary-for-linu
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="+symlink"
+IUSE="symlink"
 
 RDEPEND=" symlink? ( !dev-lang/elm-compiler )"
 
