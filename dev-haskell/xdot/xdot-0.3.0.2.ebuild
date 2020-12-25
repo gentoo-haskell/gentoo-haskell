@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/cairo-0.12:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.9.1 && < 4.14' 'base >= 4.9.1'
+}
