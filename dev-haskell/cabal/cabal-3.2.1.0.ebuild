@@ -19,7 +19,6 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# keep in sync with ghc-8.10
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux" # ~ppc ~ppc64 ~ppc-macos ~x86-macos ~x86-solaris
 IUSE=""
 
@@ -35,6 +34,17 @@ RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	default
+
+	# Cabal bootstraps with 'ghc --make' without package cleanup in environment.
+	# That causes module collisions at build:
+	# - pulseaudio: Distribution/Utils/Structured.hs:98:1: error: Ambiguous module name ‘Data.Time’: it was found in multiple packages: pulseaudio-0.0.2.1 time-1.9.3
+	# - kinds: Distribution/Utils/Structured.hs:106:1: error: Ambiguous module name ‘Data.Kind’: it was found in multiple packages: base-4.14.1.0 kinds-0.0.1.5
+	HCFLAGS="${HCFLAGS} -ignore-package=pulseaudio"
+	HCFLAGS="${HCFLAGS} -ignore-package=kinds"
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
