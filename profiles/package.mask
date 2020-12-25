@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
+# Fails to build against recent `validation`. No development since 2017.
+dev-haskell/scrape-changes
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25
 # Fails to build with ghc-8.10 (ald probably way older ones): https://github.com/dreixel/regular/issues/3
 dev-haskell/regular
 
