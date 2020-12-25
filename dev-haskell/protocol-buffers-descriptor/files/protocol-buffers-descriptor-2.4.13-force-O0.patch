@@ -1,0 +1,10 @@
+On ghc-8.10.2 -O2 (and even -O1) does not fit into 32GB RAM.
+--- a/src-auto-generated/Text/DescriptorProtos/FieldOptions.hs
++++ b/src-auto-generated/Text/DescriptorProtos/FieldOptions.hs
+@@ -1,5 +1,6 @@
+ {-# LANGUAGE BangPatterns, DeriveDataTypeable, DeriveGeneric, FlexibleInstances, MultiParamTypeClasses #-}
+ {-# OPTIONS_GHC  -fno-warn-unused-imports #-}
++{-# OPTIONS_GHC  -O0 #-}
+ module Text.DescriptorProtos.FieldOptions (FieldOptions(..)) where
+ import Prelude ((+), (/), (==), (<=), (&&))
+ import qualified Prelude as Prelude'
