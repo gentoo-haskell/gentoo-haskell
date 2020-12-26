@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/quickcheck-2.13.1 <dev-haskell/quickcheck-2.14
+	test? ( >=dev-haskell/quickcheck-2.13.1
 		>=dev-haskell/quickcheck-instances-0.3.21 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/tagged-0.8.6 <dev-haskell/tagged-0.8.7
 		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-1.3
@@ -38,5 +38,6 @@ src_prepare() {
 	cabal_chdeps \
 		'base          >=4.5     && <4.14' 'base          >=4.5' \
 		'binary        >=0.5.1.0 && <0.6 || >=0.7.1.0 && <0.8 || >=0.8.3.0 && <0.8.7' 'binary        >=0.5.1.0 && <0.6 || >=0.7.1.0 && <0.8 || >=0.8.3.0 && <0.8.9' \
-		'semigroups >=0.18.5 && <0.19.1' 'semigroups >=0.18.5'
+		'semigroups >=0.18.5 && <0.19.1' 'semigroups >=0.18.5' \
+		'QuickCheck            >=2.13.1   && <2.14' 'QuickCheck >=2.13.1'
 }
