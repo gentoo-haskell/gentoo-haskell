@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="dump-core +error-messages"
 
+RESTRICT=test # broken on USE=doc
+
 RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
 	>=dev-haskell/first-class-families-0.5.0.0:=[profile?] <dev-haskell/first-class-families-0.9:=[profile?]
 	>=dev-haskell/mtl-2.2.2:=[profile?] <dev-haskell/mtl-3:=[profile?]
