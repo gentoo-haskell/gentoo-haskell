@@ -1,4 +1,8 @@
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-26)
+# Needs a port to network-3.
+dev-haskell/hp2any-core
+
+# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-26)
 # Needs a port to new path-extra. No development since 2018.
 # No revdeps.
 dev-haskell/urlpath
