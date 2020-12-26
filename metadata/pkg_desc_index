@@ -489,7 +489,7 @@ dev-haskell/directory-tree 0.12.1: A simple directory-like tree datatype, with u
 dev-haskell/disassembler 0.2.0.1: Disassembler for X86 & AMD64 machine code
 dev-haskell/discord-haskell 1.7.0: Write bots for Discord in Haskell
 dev-haskell/disk-free-space 0.1.0.1: Retrieve information about disk space usage
-dev-haskell/distributed-static 0.3.5.0: Compositional, type-safe, polymorphic static values and closures
+dev-haskell/distributed-static 0.3.9: Compositional, type-safe, polymorphic static values and closures
 dev-haskell/distributive 0.6.2: Distributive functors -- Dual to Traversable
 dev-haskell/djinn 2014.9.7: Generate Haskell code from a type
 dev-haskell/djinn-ghc 0.0.2.3: Generate Haskell code from a type. Bridge from Djinn to GHC API
