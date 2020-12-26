@@ -7,7 +7,8 @@ EAPI=7
 #hackport: flags: -bundled-binary-generic
 
 # Drop test-suite due to "circular" dependencies with quickcheck
-CABAL_FEATURES="lib profile haddock hoogle hscolour nocabaldep"
+CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES+=" nocabaldep" # in case installed Cabal is broken
 inherit haskell-cabal
 
 MY_PN="Cabal"
@@ -50,3 +51,5 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-bundled-binary-generic
 }
+
+CABAL_CORE_LIB_GHC_PV="PM:8.10.3 PM:9999"
