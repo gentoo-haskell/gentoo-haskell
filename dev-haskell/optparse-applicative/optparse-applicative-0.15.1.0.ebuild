@@ -25,5 +25,12 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6.8:=[profile?] <dev-haskell/ansi-wl-ppr
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.14 )
+	test? ( >=dev-haskell/quickcheck-2.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck                      >= 2.8 && < 2.14' 'QuickCheck >= 2.8'
+}
