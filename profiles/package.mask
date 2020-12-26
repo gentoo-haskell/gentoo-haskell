@@ -137,7 +137,7 @@ dev-haskell/augeas
 dev-haskell/doctest-prop
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
-# Needs port to MonadError. No revdeps.
+# Needs port to MonadError. No revdeps. Also requires quickcheck <2.14
 dev-haskell/urlencoded
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-21)
