@@ -8,7 +8,4 @@
 	<use>
 		<flag name="dev">Turn on development settings.</flag>
 	</use>
-	<longdescription>
-		A formatter for Haskell source code.
-	</longdescription>
 </pkgmetadata>
