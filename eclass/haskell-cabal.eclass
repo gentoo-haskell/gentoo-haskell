@@ -29,6 +29,12 @@
 #                  only used for packages that use libghc internally and _must_
 #                  not pull upper versions
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
+#   rebuild-after-doc-workaround -- When `./setup haddock` is run in a package
+#									with `build-type: Custom`, files are deleted
+#									which cause the test-suite to fail. This
+#									FEATURE is a workaround to address this
+#									shortcoming, until the upstrea issue can be
+#									resolved - https://github.com/haskell/cabal/issues/7213
 
 inherit eutils ghc-package multilib toolchain-funcs
 
@@ -99,6 +105,7 @@ for feature in ${CABAL_FEATURES}; do
 		nocabaldep) CABAL_FROM_GHC=yes;;
 		ghcdeps)    CABAL_GHC_CONSTRAINT=yes;;
 		test-suite) CABAL_TEST_SUITE=yes;;
+		rebuild-after-doc-workaround) CABAL_DOCTEST_FIX=yes;;
 
 		# does nothing, removed 2016-09-04
 		bin)        ;;
@@ -527,6 +534,17 @@ cabal_src_compile() {
 				# just haddock
 				cabal-haddock
 			fi
+		fi
+		if [[ -n "${CABAL_DOCTEST_FIX}" ]]; then
+			# A bug has been filed upstream
+			# (https://github.com/haskell/cabal/issues/7213) to try to resolve
+			# this. In the meantime, if we do not rerun the build, there will be
+			# files missing due to the `cabal-haddock` invokation above, causing
+			# the test suite to fail.
+			ewarn "rebuild-after-doc-workaround is enabled. This is a"
+			ewarn "temporary worakround to deal with https://github.com/haskell/cabal/issues/7213"
+			ewarn "until the upstream issue can be resolved."
+			cabal-build
 		fi
 	else
 		if [[ -n "${CABAL_USE_HSCOLOUR}" ]] && use hscolour; then
