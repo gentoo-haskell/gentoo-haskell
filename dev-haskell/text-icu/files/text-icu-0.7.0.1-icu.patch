@@ -1,4 +1,14 @@
 icu-68 disable TRUE/FALSE by default.
+--- a/include/hs_text_icu.h
++++ b/include/hs_text_icu.h
+@@ -14,6 +14,7 @@
+ #include "unicode/ustring.h"
+ 
+ #include <stdint.h>
++#include <stdbool.h>
+ 
+ /* ubrk.h */
+ 
 --- a/cbits/text_icu.c
 +++ b/cbits/text_icu.c
 @@ -305,7 +305,7 @@ int32_t __hs_u_strFoldCase(UChar *dest, int32_t destCapacity,
