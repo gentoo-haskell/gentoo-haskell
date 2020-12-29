@@ -81,6 +81,9 @@ src_prepare() {
 			-i "${S}/${MY_PN}.cabal" \
 			|| die "Could not remove agda-mode from ${MY_PN}.cabal"
 	fi
+
+	cabal_chdeps \
+		'if impl(ghc >= 8.6.4) && impl(ghc < 8.10.3)' 'if impl(ghc >= 8.6.4) && impl(ghc < 8.11.0)'
 }
 
 src_configure() {
