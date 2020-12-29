@@ -1,0 +1,36 @@
+From 2c88cb631fdcb5c0d3a8bc936e1e63835800be9b Mon Sep 17 00:00:00 2001
+From: adithyaov <adi.obilisetty@gmail.com>
+Date: Sat, 27 Jun 2020 20:41:51 +0530
+Subject: [PATCH] Fix primitive version bounds for when primitive is >= 0.7.1
+
+Fix duplicate NFData instance
+---
+ src/Streamly/Internal/Data/Array.hs | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/Streamly/Internal/Data/Array.hs b/src/Streamly/Internal/Data/Array.hs
+index af9b65df3..4244b4cbc 100644
+--- a/src/Streamly/Internal/Data/Array.hs
++++ b/src/Streamly/Internal/Data/Array.hs
+@@ -47,7 +47,9 @@ module Streamly.Internal.Data.Array
+ where
+ 
+ import Prelude hiding (foldr, length, read)
++#if !MIN_VERSION_primitive(0,7,1)
+ import Control.DeepSeq (NFData(..))
++#endif
+ import Control.Monad (when)
+ import Control.Monad.IO.Class (liftIO, MonadIO)
+ import GHC.IO (unsafePerformIO)
+@@ -160,9 +162,11 @@ fromListN n xs = unsafePerformIO $ fromStreamDN n $ D.fromList xs
+ fromList :: [a] -> Array a
+ fromList xs = unsafePerformIO $ fromStreamD $ D.fromList xs
+ 
++#if !MIN_VERSION_primitive(0,7,1)
+ instance NFData a => NFData (Array a) where
+     {-# INLINE rnf #-}
+     rnf = foldl' (\_ x -> rnf x) ()
++#endif
+ 
+ {-# INLINE fromStreamN #-}
+ fromStreamN :: MonadIO m => Int -> SerialT m a -> m (Array a)
