@@ -29,12 +29,15 @@
 #                  only used for packages that use libghc internally and _must_
 #                  not pull upper versions
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
-#   rebuild-after-doc-workaround -- When `./setup haddock` is run in a package
-#									with `build-type: Custom`, files are deleted
-#									which cause the test-suite to fail. This
-#									FEATURE is a workaround to address this
-#									shortcoming, until the upstrea issue can be
-#									resolved - https://github.com/haskell/cabal/issues/7213
+#   rebuild-after-doc-workaround -- enable doctest test failue workaround.
+#                  Symptom: when `./setup haddock` is run in a `build-type: Custom`
+#                  package it might cause cause the test-suite to fail with
+#                  errors like:
+#                  > <command line>: cannot satisfy -package-id singletons-2.7-3Z7pnljD8tU1NrslJodXmr
+#                  Workaround re-reginsters the package to avoid the failure
+#                  (and rebuilds changes).
+#                  FEATURE can be removed once https://github.com/haskell/cabal/issues/7213
+#                  is fixed.
 
 inherit eutils ghc-package multilib toolchain-funcs
 
@@ -105,7 +108,7 @@ for feature in ${CABAL_FEATURES}; do
 		nocabaldep) CABAL_FROM_GHC=yes;;
 		ghcdeps)    CABAL_GHC_CONSTRAINT=yes;;
 		test-suite) CABAL_TEST_SUITE=yes;;
-		rebuild-after-doc-workaround) CABAL_DOCTEST_FIX=yes;;
+		rebuild-after-doc-workaround) CABAL_REBUILD_AFTER_DOC_WORKAROUND=yes;;
 
 		# does nothing, removed 2016-09-04
 		bin)        ;;
@@ -559,12 +562,7 @@ cabal_src_compile() {
 				cabal-haddock
 			fi
 		fi
-		if [[ -n "${CABAL_DOCTEST_FIX}" ]]; then
-			# A bug has been filed upstream
-			# (https://github.com/haskell/cabal/issues/7213) to try to resolve
-			# this. In the meantime, if we do not rerun the build, there will be
-			# files missing due to the `cabal-haddock` invokation above, causing
-			# the test suite to fail.
+		if [[ -n "${CABAL_REBUILD_AFTER_DOC_WORKAROUND}" ]]; then
 			ewarn "rebuild-after-doc-workaround is enabled. This is a"
 			ewarn "temporary worakround to deal with https://github.com/haskell/cabal/issues/7213"
 			ewarn "until the upstream issue can be resolved."
