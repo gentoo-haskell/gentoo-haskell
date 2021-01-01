@@ -490,7 +490,7 @@ dev-lang/purescript:release - prevents inclusion of extra info e.g. commit SHA i
 dev-util/brittany:brittany-dev-lib - set buildable false for anything but lib
 dev-util/brittany:brittany-test-perf - determines if performance test suite is enabled
 dev-util/bustle:interactivetests - Build interactive test programs
-dev-util/bustle:threaded - Build with support for multithreaded execution.
+dev-util/bustle:threaded - Build with the multi-threaded runtime
 dev-util/hsdev:docs - build with haddock/hdocs to support scanning docs
 dev-util/hsdev:hlint - build with hlint to support linting
 dev-vcs/darcs:curl - Use libcurl for HTTP support.

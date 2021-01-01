@@ -858,7 +858,6 @@ dev-haskell/hfov 1.0.2: Field-of-view calculation for low-resolution 2D raster g
 dev-haskell/hgal 2.0.0.2-r1: library for computation automorphism group and canonical labelling of a graph
 dev-haskell/hgamer3d 0.9.5: Toolset for the Haskell Game Programmer
 dev-haskell/hgdbmi 0.2-r1: GDB Machine Interface: program-driven control of GDB
-dev-haskell/hgettext 0.1.31.0-r1: Bindings to libintl.h (gettext, bindtextdomain)
 dev-haskell/hgl 3.2.3.2: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.2: Generate scaffold for cabal project
 dev-haskell/hi-file-parser 0.1.0.0: Parser for GHC's hi files
@@ -2205,7 +2204,7 @@ dev-libs/libsass 3.4.5: A C/C++ implementation of a Sass compiler
 dev-libs/odpi 2.3.2: Oracle Database Programming Interface for C (ODPI-C)
 dev-util/bnfc 2.8.4: A compiler front-end generator
 dev-util/brittany 0.13.1.0: Haskell source code formatter
-dev-util/bustle 0.4.7-r1 0.5.4 0.7.2: Draw sequence diagrams of D-Bus traffic
+dev-util/bustle 0.8.0: Draw sequence diagrams of D-Bus traffic
 dev-util/cabal-fmt 0.1.5.1: Format .cabal files
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project dependencies
