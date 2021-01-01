@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="interactivetests">Build interactive test programs</flag>
-		<flag name="nls">Enable translations. Since there are no translations this is currently rather pointless.</flag>
 		<flag name="threaded">Build with the multi-threaded runtime</flag>
 	</use>
 	<longdescription>
