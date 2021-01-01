@@ -358,7 +358,7 @@ dev-lang/purescript
 
 # Jack Todaro <solpeth@posteo.org> (1 July 2020)
 # Needs porting to newer Cabal versions. Also mask
-# revdeps.
+# revdeps: https://github.com/haskell-hvr/hgettext/issues/15
 dev-haskell/hgettext
 dev-haskell/bustle
 
