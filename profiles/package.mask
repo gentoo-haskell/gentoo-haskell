@@ -356,12 +356,6 @@ sci-mathematics/agda-lib-ffi
 # Needs porting to Cabal-3
 dev-lang/purescript
 
-# Jack Todaro <solpeth@posteo.org> (1 July 2020)
-# Needs porting to newer Cabal versions. Also mask
-# revdeps: https://github.com/haskell-hvr/hgettext/issues/15
-dev-haskell/hgettext
-dev-haskell/bustle
-
 # Jack Todaro <solpeth@posteo.org> (12 April 2020)
 # Mask haskell-src-exts-1.22 and reverse dependencies
 >=dev-haskell/haskell-src-exts-1.22
