@@ -340,7 +340,6 @@ sci-mathematics/agda-lib-ffi
 # QuickCheck >= 2.14 and its reverse dependencies
 >=dev-haskell/quickcheck-2.14
 >=dev-haskell/hspec-discover-2.7.2
->=dev-haskell/hspec-core-2.7.2
 >=dev-haskell/hspec-2.7.2
 
 # Jack Todaro <solpeth@posteo.org> (2 Aug 2020)
