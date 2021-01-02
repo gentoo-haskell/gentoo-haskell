@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # fails with pandoc-2
+# RESTRICT=test # fails with pandoc-2
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
@@ -48,7 +48,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
-		>=dev-haskell/transformers-compat-0.3 <dev-haskell/transformers-compat-0.7 )
+		>=dev-haskell/transformers-compat-0.3 <dev-haskell/transformers-compat-0.7
+		app-text/pandoc
+	)
 "
 
 src_prepare() {
