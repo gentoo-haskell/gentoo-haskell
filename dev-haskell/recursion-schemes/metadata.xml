@@ -5,31 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Generalized bananas, lenses and barbed wire
-		
-		/Changes since 0.4.2/:
-		
-		* Added futumorphisms
-		
-		/Changes since 0.2.2/:
-		
-		* Split distHisto from distGHisto
-		
-		* Added zygohistomorphic prepromorphisms
-		
-		/Changes since 0.2.1/:
-		
-		* Added (generalized) prepro- and postpro- morphisms
-		
-		/Changes since 0.2/:
-		
-		* Added Elgot (co)algebras
-		
-		/Changes since 0.1/:
-		
-		* Removed dependency on Foldable from Mendler-style recursion schemes
-		
-		* Added Lambek's Lemma
-	</longdescription>
 </pkgmetadata>
