@@ -19,7 +19,7 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="old-random +template-haskell"
+IUSE="+old-random +template-haskell"
 
 RDEPEND=">=dev-haskell/splitmix-0.1:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
