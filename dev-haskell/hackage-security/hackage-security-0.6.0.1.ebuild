@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test
-
 RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.2:=[profile?]
 	>=dev-haskell/cryptohash-sha256-0.11:=[profile?] <dev-haskell/cryptohash-sha256-0.12:=[profile?]
@@ -46,6 +44,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/unordered-containers-0.2.8.0 <dev-haskell/unordered-containers-0.3
 		>=dev-haskell/vector-0.12 <dev-haskell/vector-0.13 )
 "
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck       >= 2.11 && <2.14' 'QuickCheck >= 2.11'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
