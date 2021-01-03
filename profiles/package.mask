@@ -328,7 +328,6 @@ sci-mathematics/agda-lib-ffi
 >=dev-haskell/aeson-1.5
 >=dev-haskell/free-5.1.4
 >=dev-haskell/random-1.2
->=dev-haskell/splitmix-0.1
 >=dev-haskell/strict-0.4
 >=dev-haskell/th-abstraction-0.4
 >=dev-haskell/these-1.1
@@ -338,7 +337,6 @@ sci-mathematics/agda-lib-ffi
 # Jack Todaro <solpeth@posteo.org> (2020-08-12)
 # Many packages require QuickCheck < 2.14. Mask
 # QuickCheck >= 2.14 and its reverse dependencies
->=dev-haskell/quickcheck-2.14
 >=dev-haskell/hspec-discover-2.7.2
 >=dev-haskell/hspec-2.7.2
 
