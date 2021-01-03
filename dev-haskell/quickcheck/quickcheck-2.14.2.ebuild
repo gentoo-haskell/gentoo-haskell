@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,12 +19,10 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="2/${PV}"
 KEYWORDS="~amd64 ~x86 ~amd64-linux"
-IUSE="+old-random +template-haskell"
+IUSE="+template-haskell"
 
 RDEPEND=">=dev-haskell/splitmix-0.1:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	old-random? ( >=dev-haskell/random-1.0.1.0:=[profile?] <dev-haskell/random-1.2.0:=[profile?] )
-	!old-random? ( >=dev-haskell/random-1.2.0:=[profile?] <dev-haskell/random-1.3:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
@@ -36,6 +34,6 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-base3 \
 		--flag=base4 \
-		$(cabal_flag old-random old-random) \
+		--flag=old-random \
 		$(cabal_flag template-haskell templatehaskell)
 }
