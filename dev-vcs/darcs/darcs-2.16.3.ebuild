@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="curl +terminfo +threaded"
 
-RESTRICT=test # conflict-fight-failure (Darcs3) (PatienceDiff): [Failed]
-
 RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/attoparsec-0.13.0.1:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.7:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
@@ -63,7 +61,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hunit-1.3 <dev-haskell/hunit-1.7
 		>=dev-haskell/leancheck-0.9 <dev-haskell/leancheck-0.10
 		>=dev-haskell/monad-control-0.3.2 <dev-haskell/monad-control-1.1
-		>=dev-haskell/quickcheck-2.13 <dev-haskell/quickcheck-2.14
+		>=dev-haskell/quickcheck-2.13
 		<dev-haskell/system-fileio-0.4
 		>=dev-haskell/system-filepath-0.4.7 <dev-haskell/system-filepath-0.5
 		>=dev-haskell/test-framework-0.8.1.1 <dev-haskell/test-framework-0.9
@@ -73,6 +71,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers-base )
 	curl? ( virtual/pkgconfig )
 "
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck   >= 2.13 && < 2.14' 'QuickCheck >= 2.13'
+}
+
 
 src_configure() {
 	haskell-cabal_src_configure \
