@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/case-insensitive-1.0:=[profile?] <dev-haskell/case-insens
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
-	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.14
+	test? ( >=dev-haskell/quickcheck-2.8
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 "
@@ -34,5 +34,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base             >= 4.7  && < 4.13' 'base             >= 4.8' \
-		'base                       >= 4.7  && < 4.13' 'base                       >= 4.7'
+		'base                       >= 4.7  && < 4.13' 'base >= 4.7' \
+		'QuickCheck                 >= 2.8  && < 2.14' 'QuickCheck >= 2.8'
 }
