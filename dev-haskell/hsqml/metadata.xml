@@ -13,7 +13,8 @@
 		<flag name="usepkgconfig">Use pkg-config for libraries instead of the platform default mechanism.</flag>
 	</use>
 	<longdescription>
-		A Haskell binding for Qt Quick.
-		General documentation is present in the 'Graphics.QML' module.
+		A Haskell binding for Qt Quick, a cross-platform framework for creating
+		graphical user interfaces. For further information on installing and using
+		this library, please see the project&#39;s web site.
 	</longdescription>
 </pkgmetadata>
