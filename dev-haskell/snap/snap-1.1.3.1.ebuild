@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT="test" # requires network access
+
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
@@ -50,7 +52,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/async-2.0.1.5 <dev-haskell/async-2.3
 		>=dev-haskell/http-streams-0.7.1.1 <dev-haskell/http-streams-0.9
 		>=dev-haskell/hunit-1.2.5.2 <dev-haskell/hunit-1.7
-		>=dev-haskell/quickcheck-2.4.2 <dev-haskell/quickcheck-2.14
+		>=dev-haskell/quickcheck-2.4.2
 		>=dev-haskell/smallcheck-1.1.1 <dev-haskell/smallcheck-1.3
 		dev-haskell/syb
 		>=dev-haskell/test-framework-0.8.0.3 <dev-haskell/test-framework-0.9
@@ -58,6 +60,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.3 <dev-haskell/test-framework-quickcheck2-0.4
 		>=dev-haskell/test-framework-smallcheck-0.2 <dev-haskell/test-framework-smallcheck-0.3 )
 "
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'QuickCheck                 >= 2.4.2    && < 2.14' 'QuickCheck >= 2.4.2'
+}
+
 
 src_configure() {
 	haskell-cabal_src_configure \
