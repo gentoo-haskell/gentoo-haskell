@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="old-random">Build against a pre-1.2.0 version of the random package.</flag>
 		<flag name="template-haskell">Build Test.QuickCheck.All, which uses Template Haskell.</flag>
 	</use>
 	<longdescription>
