@@ -333,6 +333,7 @@ sci-mathematics/agda-lib-ffi
 >=dev-haskell/th-abstraction-0.4
 >=dev-haskell/these-1.1
 >=dev-haskell/quickcheck-instances-0.3.23
+>=dev-haskell/binary-instances-1.0.1
 
 # Jack Todaro <solpeth@posteo.org> (2020-08-12)
 # Many packages require QuickCheck < 2.14. Mask
