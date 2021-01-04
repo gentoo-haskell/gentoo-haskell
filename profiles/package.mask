@@ -1,3 +1,7 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-02)
+# Last release in 2018, package does not appear to compile properly.
+dev-haskell/hsqml
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-26)
 # Needs a port to network-3.
 dev-haskell/hp2any-core
