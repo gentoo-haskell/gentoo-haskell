@@ -339,18 +339,6 @@ app-admin/super-user-spark
 # to date. Masked for removal.
 sci-mathematics/agda-lib-ffi
 
-# Jack Todaro <solpeth@posteo.org> (2020-12-16)
-# Too many packages require <dev-haskell/aeson-1.5.
-# The following package versions are masked until
-# aeson-1.5 is possible:
->=dev-haskell/random-1.2
->=dev-haskell/strict-0.4
->=dev-haskell/th-abstraction-0.4
->=dev-haskell/these-1.1
->=dev-haskell/quickcheck-instances-0.3.23
->=dev-haskell/binary-instances-1.0.1
->=dev-haskell/hspec-core-2.7.2
-
 # Jack Todaro <solpeth@posteo.org> (2020-08-12)
 # Many packages require QuickCheck < 2.14. Mask
 # QuickCheck >= 2.14 and its reverse dependencies
