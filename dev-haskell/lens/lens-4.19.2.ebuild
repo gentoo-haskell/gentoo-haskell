@@ -59,6 +59,13 @@ DEPEND="${RDEPEND}
 					( >=dev-haskell/doctest-0.13 <dev-haskell/doctest-0.18 ) ) ) )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'th-abstraction            >= 0.3      && < 0.4' 'th-abstraction >= 0.3'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag benchmark-uniplate benchmark-uniplate) \
