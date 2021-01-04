@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+PATCHES="${FILESDIR}/${PN}-1.4.3-optparse-applicative.patch"
+
 RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?]
 	>=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:=[profile?]
 	>=dev-haskell/cereal-0.4.1.1:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
@@ -37,7 +39,7 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?
 	>=dev-haskell/linear-1.20.1:=[profile?] <dev-haskell/linear-1.21:=[profile?]
 	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.6:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.16:=[profile?]
+	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/profunctors-5.0:=[profile?] <dev-haskell/profunctors-6.0:=[profile?]
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
@@ -65,5 +67,6 @@ src_prepare() {
 		'tasty >= 0.10 && < 1.3' 'tasty >= 0.10' \
 		'tasty-hunit >= 0.9.2 && < 0.11' 'tasty-hunit >= 0.9.2' \
 		'tasty-quickcheck >= 0.8 && < 0.11' 'tasty-quickcheck >= 0.8' \
-		'deepseq >= 1.3 && < 1.5' 'deepseq >= 1.3'
+		'deepseq >= 1.3 && < 1.5' 'deepseq >= 1.3' \
+		'optparse-applicative >= 0.11 && < 0.16' 'optparse-applicative >= 0.11'
 }
