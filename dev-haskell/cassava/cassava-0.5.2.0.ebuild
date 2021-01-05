@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.11.3.0:=[profile?] <dev-haskell/attoparsec-0
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( <dev-haskell/hunit-1.7
-		>=dev-haskell/quickcheck-2.13 <dev-haskell/quickcheck-2.14
+		>=dev-haskell/quickcheck-2.13
 		>=dev-haskell/quickcheck-instances-0.3.12 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
@@ -44,5 +44,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.5 && < 4.14' 'base >= 4.5'
+		'base >= 4.5 && < 4.14' 'base >= 4.5' \
+		'QuickCheck == 2.13.*' 'QuickCheck >= 2.13'
 }
