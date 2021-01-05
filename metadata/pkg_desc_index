@@ -843,6 +843,7 @@ dev-haskell/heap 1.0.4: Heaps in Haskell
 dev-haskell/heaps 0.3.6.1: Asymptotically optimal Brodal/Okasaki heaps
 dev-haskell/heckle 2.0.2.1: Jekyll in Haskell (feat. LaTeX)
 dev-haskell/hedgehog 1.0.4: Release with confidence
+dev-haskell/hedgehog-fn 1.0: Function generation for 'hedgehog'
 dev-haskell/hedis 0.9.6 0.12.14: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/hedis-config 0.0.3 1.0.0: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r1: An Haskell template system supporting both HTML5 and XML
@@ -1344,6 +1345,8 @@ dev-haskell/nicify-lib 1.0.1: Pretty print the standard output of default 'Show'
 dev-haskell/non-empty 0.3.2: List-like structures with static restrictions on the number of elements
 dev-haskell/non-negative 0.1.2: Non-negative numbers
 dev-haskell/nonce 1.0.7: Generate cryptographic nonces
+dev-haskell/nonempty-containers 0.3.4.1: Non-empty variants of containers data types, with full API
+dev-haskell/nonempty-vector 0.2.1.0: Non-empty vectors
 dev-haskell/normaldistribution 1.1.0.3: Minimum fuss normally distributed random values
 dev-haskell/numbers 3000.2.0.2: Various number types
 dev-haskell/numbersieves 0.1.2: Number Theoretic Sieves: primes, factorization, and Euler's Totient

@@ -180,6 +180,7 @@ dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
 dev-haskell/haskellnet:network-bsd - Use network-bsd
 dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
+dev-haskell/hedgehog-fn:build-examples - Build the example executables
 dev-haskell/hexpat:bundled-expat - Use bundled expat instead of dev-libs/expat
 dev-haskell/highlighter:executable - Install a "highlighter" executable
 dev-haskell/highlighting-kate:executable - Build the Highlight executable.
