@@ -334,14 +334,6 @@ sci-mathematics/agda-lib-ffi
 >=dev-haskell/these-1.1
 >=dev-haskell/quickcheck-instances-0.3.23
 
-# Jack Todaro <solpeth@posteo.org> (2020-08-12)
-# Many packages require QuickCheck < 2.14. Mask
-# QuickCheck >= 2.14 and its reverse dependencies
->=dev-haskell/quickcheck-2.14
->=dev-haskell/hspec-discover-2.7.2
->=dev-haskell/hspec-core-2.7.2
->=dev-haskell/hspec-2.7.2
-
 # Jack Todaro <solpeth@posteo.org> (2 Aug 2020)
 # dev-haskell/stack-2.3.1 requires < pantry-0.5
 >=dev-haskell/pantry-0.5
