@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -27,7 +27,7 @@ arch_binaries=""
 BIN_PV=${PV}
 # Make live ebuild look more like release ebuild: use latest binary release
 # to bootstrap GHC. This way we get supported bootstrap base.
-[[ ${PV} = *9999* ]] && BIN_PV=8.10.1
+[[ ${PV} = *9999* ]] && BIN_PV=8.10.3
 # sorted!
 #arch_binaries="$arch_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 #arch_binaries="$arch_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-arm.tbz2 )"
@@ -567,6 +567,8 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9999-win32-nanosleep.patch
 
 		eapply "${FILESDIR}"/${PN}-9999-prim-atomic.patch
+
+		eapply "${FILESDIR}"/${PN}-9999-C99-typo-ac270.patch
 
 		bump_libs
 
