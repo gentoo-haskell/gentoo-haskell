@@ -416,9 +416,10 @@ dev-haskell/streamly:dev - Development build
 dev-haskell/streamly:examples - Build including examples
 dev-haskell/streamly:examples-sdl - Build including SDL examples
 dev-haskell/streamly:fusion-plugin - Use fusion plugin for benchmarks and executables
+dev-haskell/streamly:has-llvm - Use llvm backend for code generation
 dev-haskell/streamly:llvm - Use llvm backend for better performance
 dev-haskell/streamly:no-charts - Disable chart generation
-dev-haskell/streamly:no-fusion - Disable rewrite rules
+dev-haskell/streamly:no-fusion - Disable rewrite rules for stream fusion
 dev-haskell/streamly:streamk - Use CPS style streams when possible
 dev-haskell/strict:assoc - Build with assoc dependency
 dev-haskell/synthesizer-midi:buildexamples - Build example executables

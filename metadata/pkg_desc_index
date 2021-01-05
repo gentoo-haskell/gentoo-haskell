@@ -411,7 +411,7 @@ dev-haskell/data-accessor-transformers 0.2.1.7: Use Accessor to access state in 
 dev-haskell/data-binary-ieee754 0.4.4: Parser/Serialiser for IEEE-754 floating-point values
 dev-haskell/data-bword 0.1.0.1: Extra operations on binary words of fixed length
 dev-haskell/data-checked 0.3: Type-indexed runtime-checked properties
-dev-haskell/data-clist 0.1.2.3: Simple functional ring type
+dev-haskell/data-clist 0.1.2.3 0.1.2.3-r1: Simple functional ring type
 dev-haskell/data-default 0.7.1.1: A class for types with a default value
 dev-haskell/data-default-class 0.1.2.0: A class for types with a default value
 dev-haskell/data-default-instances-base 0.1.0.1: Default instances for types in base
@@ -1119,7 +1119,7 @@ dev-haskell/language-lua 0.11.0.1: Lua parser and pretty-printer
 dev-haskell/language-python 0.5.8: Parsing and pretty printing of Python code
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/latex 0.1.0.4: Parse, format and process LaTeX files
-dev-haskell/lattices 2.0.2: Fine-grained library for constructing and manipulating lattices
+dev-haskell/lattices 2.0.2 2.0.2-r1: Fine-grained library for constructing and manipulating lattices
 dev-haskell/lawless-concurrent-machines 0.3.1: Concurrent networked stream transducers
 dev-haskell/lazy-csv 0.5.1: Efficient lazy parsers for CSV (comma-separated values)
 dev-haskell/lazy-pbkdf2 3.1.1: Lazy PBKDF2 generator
@@ -1542,7 +1542,7 @@ dev-haskell/quickcheck-classes-base 0.6.1.0: QuickCheck common typeclasses from 
 dev-haskell/quickcheck-instances 0.3.22 0.3.25.1: Common quickcheck instances
 dev-haskell/quickcheck-io 0.2.0: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
-dev-haskell/quickcheck-safe 0.1.0.6: Safe reimplementation of QuickCheck's core
+dev-haskell/quickcheck-safe 0.1.0.6 0.1.0.6-r1: Safe reimplementation of QuickCheck's core
 dev-haskell/quickcheck-simple 0.1.1.1: Test properties and default-mains for QuickCheck
 dev-haskell/quickcheck-text 0.1.2.1: Alternative arbitrary instance for Text
 dev-haskell/quickcheck-unicode 1.0.1.0: Generator and shrink functions for testing Unicode-related software
@@ -1615,7 +1615,7 @@ dev-haskell/relational-query-hdbc 0.7.2.0: HDBC instance of relational-query and
 dev-haskell/relational-record 0.2.2.0: Meta package of Relational Record
 dev-haskell/relational-schemas 0.1.8.0: RDBMSs' schema templates for relational-query
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
-dev-haskell/repa 3.4.1.4-r1: High performance, regular, shape polymorphic parallel arrays
+dev-haskell/repa 3.4.1.4-r1 3.4.1.4-r2: High performance, regular, shape polymorphic parallel arrays
 dev-haskell/repa-algorithms 3.4.1.3: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.6-r1: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.4.1.1-r1: Read and write Repa arrays in various formats
@@ -1802,7 +1802,7 @@ dev-haskell/strategylib 4.0.0.0-r1: attempt to convert Strafunski's StrategyLib 
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/streaming 0.2.3.0: an elementary streaming prelude and general stream type
 dev-haskell/streaming-commons 0.1.19 0.2.2.1: Common lower-level functions needed by various streaming data libraries
-dev-haskell/streamly 0.7.1: Beautiful Streaming, Concurrent and Reactive Composition
+dev-haskell/streamly 0.7.1 0.7.2: Beautiful Streaming, Concurrent and Reactive Composition
 dev-haskell/strict 0.3.2-r1 0.4.0.1: Strict data types and String IO
 dev-haskell/strict-list 0.1.5: Strict linked list
 dev-haskell/strictify 0.1-r1: Find a local optimum of strictness annotations
@@ -1956,7 +1956,7 @@ dev-haskell/transformers-compat 0.6.6: A small compatibility shim for the transf
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.2.0.2: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 1.0.1.0: Generic applicative traversals
-dev-haskell/tree-diff 0.0.2.1-r1 0.1: Diffing of (expression) trees
+dev-haskell/tree-diff 0.0.2.1-r1 0.1 0.1-r1: Diffing of (expression) trees
 dev-haskell/trifecta 2.1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
