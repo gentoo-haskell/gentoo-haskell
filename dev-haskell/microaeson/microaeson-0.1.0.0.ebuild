@@ -23,10 +23,10 @@ RDEPEND=">=dev-haskell/text-1.2.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?
 DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-2.0
-	test? ( >=dev-haskell/aeson-1.3.1.0 <dev-haskell/aeson-1.4
-		>=dev-haskell/quickcheck-2.11.3 <dev-haskell/quickcheck-2.12
+	test? ( >=dev-haskell/aeson-1.3.1.0
+		>=dev-haskell/quickcheck-2.11.3
 		>=dev-haskell/quickcheck-instances-0.3.16 <dev-haskell/quickcheck-instances-0.4
-		>=dev-haskell/tasty-1.0.1.1 <dev-haskell/tasty-1.1
+		>=dev-haskell/tasty-1.0.1.1
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11
 		>=dev-haskell/unordered-containers-0.2.8.0 <dev-haskell/unordered-containers-0.3
 		>=dev-haskell/vector-0.12.0.1 <dev-haskell/vector-0.13 )
@@ -37,5 +37,8 @@ src_prepare() {
 
 	cabal_chdeps\
 		'base       ^>= 4.8.0.0' 'base       >= 4.8.0.0' \
-		'containers ^>= 0.5.6.2' 'containers >= 0.5.6.2'
+		'containers ^>= 0.5.6.2' 'containers >= 0.5.6.2' \
+		'QuickCheck           ^>= 2.11.3' 'QuickCheck >= 2.11.3' \
+		'aeson                ^>= 1.3.1.0' 'aeson >= 1.3.1.0' \
+		'tasty                ^>= 1.0.1.1' 'tasty >= 1.0.1.1'
 }

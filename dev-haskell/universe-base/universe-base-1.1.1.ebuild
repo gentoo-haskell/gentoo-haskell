@@ -26,12 +26,13 @@ RDEPEND=">=dev-haskell/nats-1.1.2:=[profile?] <dev-haskell/nats-1.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
-	test? ( >=dev-haskell/quickcheck-2.8.2 <dev-haskell/quickcheck-2.14 )
+	test? ( >=dev-haskell/quickcheck-2.8.2 )
 "
 
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base          >=4.3     && <4.13' 'base          >=4.3'
+		'base          >=4.3     && <4.13' 'base          >=4.3' \
+		'QuickCheck     >=2.8.2 && <2.14' 'QuickCheck >= 2.8.2'
 }

@@ -25,7 +25,15 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	test? ( >=dev-haskell/ghc-paths-0.1.0.12 <dev-haskell/ghc-paths-0.2
 		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.8
-		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.14 )
+		>=dev-haskell/quickcheck-2.11
+		)
 "
 
 PATCHES=("${FILESDIR}"/${P}-ghc-8.10.2.patch )
+
+src_prepare () {
+	default
+
+	cabal_chdeps \
+		'QuickCheck      >= 2.11  && < 2.14' 'QuickCheck >= 2.11'
+}
