@@ -570,6 +570,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-C99-typo-ac270.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-or1k-cpu.patch
+
 		bump_libs
 
 		eapply_user

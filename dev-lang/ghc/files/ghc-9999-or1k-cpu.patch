@@ -1,0 +1,21 @@
+--- a/aclocal.m4
++++ b/aclocal.m4
+@@ -229,7 +229,7 @@ AC_DEFUN([FPTOOLS_SET_HASKELL_PLATFORM_VARS],
+         mipsel)
+             test -z "[$]2" || eval "[$]2=ArchMipsel"
+             ;;
+-        hppa|hppa1_1|ia64|m68k|nios2|riscv32|riscv64|rs6000|s390|sh4|vax)
++        hppa|hppa1_1|ia64|m68k|nios2|or1k|riscv32|riscv64|rs6000|s390|sh4|vax)
+             test -z "[$]2" || eval "[$]2=ArchUnknown"
+             ;;
+         *)
+@@ -2019,6 +2019,9 @@ case "$1" in
+   nios2)
+     $2="nios2"
+     ;;
++  or1k)
++    $2="or1k"
++    ;;
+   powerpc64le*)
+     $2="powerpc64le"
+     ;;
