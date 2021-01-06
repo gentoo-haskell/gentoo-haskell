@@ -1,3 +1,8 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
+# Due to the large number of affected packages, this newer semigroups will
+# remain masked for now.
+>=dev-haskell/semigroups-0.19
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05))
 # There are quite a few packages that have not updated their
 # optparse-applicative upperbound yet, including executables such as idris,
