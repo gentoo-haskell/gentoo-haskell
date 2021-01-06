@@ -1,3 +1,8 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-05)
+# The last commit was 2017-01-17. This package has very old upper bound
+# dependencies and appears to be abandoned. Masking for removal
+dev-haskell/hashable-extras
+
 # Wolfgang E. Sanyre <WolfgangESanyer@gmail.com> (2021-01-05)
 # Per upstream[1], hjsonpointer has been deprecated. Masking it and its revdeps
 # for removal
