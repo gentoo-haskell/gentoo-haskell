@@ -1,3 +1,8 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-04)
+# This package is not currently maintained, and does not work with the latest
+# version of dev-haskell/github https://github-backup.branchable.com/todo/new_maintainer_needed/
+dev-haskell/github-backup
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-26)
 # Needs a port to network-3.
 dev-haskell/hp2any-core
