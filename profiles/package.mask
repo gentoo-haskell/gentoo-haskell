@@ -387,6 +387,7 @@ sci-mathematics/agda-lib-ffi
 >=dev-haskell/bifunctors-5.5.9
 >=dev-haskell/profunctors-5.6.1
 >=dev-haskell/rebase-1.10.0.1
+>=dev-haskell/rerebase-1.10.0.1
 >=dev-haskell/semigroups-0.19.1
 >=dev-haskell/dlist-1.0
 >=dev-haskell/selective-0.4.1.1
