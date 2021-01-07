@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		/NaCl/ (pronounced \&quot;salt\&quot;) is a new easy-to-use high-speed software
 		library for network communication, encryption, decryption,
