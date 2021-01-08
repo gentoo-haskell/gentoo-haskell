@@ -396,6 +396,7 @@ sci-mathematics/agda-lib-ffi
 >=dev-haskell/vimeta-0.3.0.1
 >=dev-haskell/persistent-2.11.0.2
 >=dev-haskell/persistent-template-2.9.1.0
+>=dev-haskell/persistent-test-2.0.3.5
 >=dev-haskell/web-plugins-0.4
 >=dev-haskell/clckwrks-0.26.3
 >=dev-haskell/clckwrks-plugin-page-0.4.3.24
