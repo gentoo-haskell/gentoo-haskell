@@ -85,9 +85,9 @@ dev-haskell/concurrent-supply:test-properties -
 dev-haskell/constraints-deriving:constraints - Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.
 dev-haskell/constraints-deriving:debug - Show debug trace info (used only for library development). Note, if you want to see the debug output of the plugin in another project, you may need to manually define a CPP option -DPLUGIN_DEBUG in that project.
 dev-haskell/constraints-deriving:examples - Whether to build examples
-dev-haskell/contravariant:semigroups - Enable the use of the `semigroups` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/contravariant:statevar - Enable the use of of the `statevar` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/contravariant:tagged - Enable the use of the `tagged` package. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/contravariant:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/contravariant:statevar - You can disable the use of the `StateVar` package using `-f-StateVar`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/contravariant:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/country-codes:generate - Build generate executable?
 dev-haskell/cpu:executable - build 'cpuid' tool
 dev-haskell/criterion:embed-data-files - Embed the data files in the binary for a relocatable executable. (Warning: This will increase the executable size significantly.)
@@ -280,7 +280,6 @@ dev-haskell/modern-uri:dev - Turn on development settings.
 dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/monky:ibus - enable ibus example
-dev-haskell/monoidal-containers:split-these - Use split these/semialign packages
 dev-haskell/multistate:build-example - Build the MultiState-example example program
 dev-haskell/nats:binary - enable binary instances
 dev-haskell/nats:hashable - enable hashable instances
