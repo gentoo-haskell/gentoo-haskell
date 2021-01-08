@@ -1,13 +1,3 @@
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-13)
-# As discussed in #1127, dev-haskell/mysql does not merge due to a missing
-# dependency. PR #1128 attempts to resolve this issue. Until this PR is merged,
-# mysql and its revdeps will be masked
->=dev-haskell/mysql-0.1.7.2
->=dev-haskell/esqueleto-3.3.4.0
->=dev-haskell/persistent-mysql-2.10.2.3
->=dev-haskell/persistent-relational-record-0.3.0
->=dev-haskell/mysql-simple-0.4.5
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-04)
 # This package is not currently maintained, and does not work with the latest
 # version of dev-haskell/github https://github-backup.branchable.com/todo/new_maintainer_needed/

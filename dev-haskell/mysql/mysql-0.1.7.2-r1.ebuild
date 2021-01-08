@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,8 @@ IUSE=""
 
 RESTRICT=test # needs local mysql
 
-RDEPEND=">=dev-haskell/semigroups-0.11:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+RDEPEND="dev-db/mysql:=
+	>=dev-haskell/semigroups-0.11:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
