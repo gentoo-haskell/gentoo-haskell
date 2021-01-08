@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A Haskell implementation of MessagePack &lt;http://msgpack.org/&gt;
-	</longdescription>
 </pkgmetadata>

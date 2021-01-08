@@ -18,10 +18,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/binary-0.4:=[profile?] <dev-haskell/binary-0.9:=[profile?]
-	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
+	>=dev-haskell/random-1.0.1:=[profile?]
 	>=dev-haskell/text-1:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	>=dev-haskell/hashable-1.1.1.0:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
+	>=dev-haskell/hashable-1.1.1.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
@@ -41,5 +41,6 @@ src_prepare() {
 		'tasty >= 0.10 && < 0.12' 'tasty >= 0.10' \
 		'tasty-hunit == 0.9.*' 'tasty-hunit >= 0.9' \
 		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8' \
-		'random >= 1.0.1 && < 1.2' 'random >= 1.0.1'
+		'random >= 1.0.1 && < 1.2' 'random >= 1.0.1' \
+		'hashable (>= 1.1.1.0 && < 1.2.0) || (>= 1.2.1 && < 1.3)' 'hashable >=1.1.1.0'
 }

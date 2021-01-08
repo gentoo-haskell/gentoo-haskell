@@ -19,7 +19,4 @@
 		instance (Ord k, Semigroup a) =&gt; Monoid (MonoidalMap k a)
 		@
 	</longdescription>
-	<use>
-		<flag name="split-these">Use split these/semialign packages</flag>
-	</use>
 </pkgmetadata>
