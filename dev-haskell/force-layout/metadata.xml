@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Simulation engine for doing simple force-based layout,
-		/e.g./ for trees or graphs.  See the diagrams-contrib package
-		for usage examples.
-	</longdescription>
 </pkgmetadata>
