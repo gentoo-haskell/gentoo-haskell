@@ -17,9 +17,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.3:=[profile?]
+RDEPEND=">=dev-haskell/hashable-1.1:=[profile?]
 	>=dev-haskell/pqueue-1.0:=[profile?] <dev-haskell/pqueue-1.5:=[profile?]
-	>=dev-haskell/semigroups-0.13:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/semigroups-0.13:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.1.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?] <dev-haskell/vault-0.4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
@@ -31,3 +31,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hashable >= 1.1 && < 1.3' 'hashable >= 1.1' \
+		'semigroups >= 0.13 && < 0.19' 'semigroups >= 0.13'
+}
