@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/boolean-0.2:=[profile?] <dev-haskell/boolean-0.3:=[profil
 	>=dev-haskell/exception-transformers-0.3:=[profile?] <dev-haskell/exception-transformers-0.5:=[profile?]
 	>=dev-haskell/gl-0.8:=[profile?]
 	>=dev-haskell/hashtables-1.2:=[profile?] <dev-haskell/hashtables-1.3:=[profile?]
-	>=dev-haskell/linear-1.18:=[profile?] <dev-haskell/linear-1.21:=[profile?]
+	>=dev-haskell/linear-1.18:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
@@ -37,5 +37,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'gl >= 0.8 && <= 0.9' 'gl >= 0.8'
+		'gl >= 0.8 && <= 0.9' 'gl >= 0.8' \
+		'linear >= 1.18 && < 1.21' 'linear >= 1.18'
 }
