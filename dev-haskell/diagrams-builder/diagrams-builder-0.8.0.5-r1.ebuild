@@ -32,11 +32,11 @@ RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-0.
 	cairo? ( >=dev-haskell/diagrams-cairo-1.4:=[profile?] <dev-haskell/diagrams-cairo-1.5:=[profile?] )
 	pgf? ( >=dev-haskell/diagrams-pgf-1.4:=[profile?] <dev-haskell/diagrams-pgf-1.5:=[profile?]
 		dev-haskell/texrunner:=[profile?] )
-	postscript? ( >=dev-haskell/diagrams-postscript-1.4:=[profile?] <dev-haskell/diagrams-postscript-1.5:=[profile?] )
-	ps? ( >=dev-haskell/diagrams-postscript-1.4:=[profile?] <dev-haskell/diagrams-postscript-1.5:=[profile?] )
+	postscript? ( >=dev-haskell/diagrams-postscript-1.4:=[profile?] )
+	ps? ( >=dev-haskell/diagrams-postscript-1.4:=[profile?] )
 	rasterific? ( >=dev-haskell/diagrams-rasterific-1.4:=[profile?] <dev-haskell/diagrams-rasterific-1.5:=[profile?]
 			>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?] )
-	svg? ( >=dev-haskell/diagrams-svg-1.4:=[profile?] <dev-haskell/diagrams-svg-1.5:=[profile?]
+	svg? ( >=dev-haskell/diagrams-svg-1.4:=[profile?]
 		>=dev-haskell/svg-builder-0.1:=[profile?] <dev-haskell/svg-builder-0.2:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -48,7 +48,9 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base >= 4.10 && < 4.14' 'base >= 4.10 && < 5' \
-		'lens >= 4.0 && < 4.19' 'lens >= 4.0'
+		'lens >= 4.0 && < 4.19' 'lens >= 4.0' \
+		'diagrams-postscript >= 1.4 && < 1.5' 'diagrams-postscript >= 1.4' \
+		'diagrams-svg >= 1.4 && < 1.5' 'diagrams-svg >= 1.4'
 }
 
 src_configure() {
