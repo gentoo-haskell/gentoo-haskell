@@ -34,8 +34,8 @@ dev-haskell/attoparsec-iso8601:fast - compile without optimizations
 dev-haskell/authenticate:network-uri - Get Network.URI from the network-uri package
 dev-haskell/aws:network-3 - Use network-3
 dev-haskell/bench-show:executable - Build executable as well as library
-dev-haskell/bifunctors:semigroups - Enable the use of `semigroups` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/bifunctors:tagged - Enable the use of the `tagged` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/bifunctors:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/bifunctors:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/bindings-glfw:exposenative - Whether or not to use the native access functions.
 dev-haskell/bindings-glfw:osmesa - Determines whether or not to use the Mesa 3D rendering context.
 dev-haskell/biosff:fclip - Build the 'fclip' executable.
@@ -49,6 +49,7 @@ dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in 
 dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
 dev-haskell/bson:old-network - Use network-2.x when enabled, else use network-bsd.
 dev-haskell/btrfs:examples - Build examples
+dev-haskell/byline:examples - Build examples when building the library.
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/bytes:test-doctests - Enable the doctest suite when using the enable-tests option for cabal.
 dev-haskell/c2hs:regression - Enable regression suite build.
@@ -70,18 +71,20 @@ dev-haskell/clash-ghc:dynamic - Build Clash binaries with GHC flag `-dynamic`. T
 dev-haskell/clash-ghc:ghc-paths - Locate the GHC core libraries using the `ghc-paths` package. Note: this flag may make binaries less relocatable, by hard-coding an absolute path to the core libraries.
 dev-haskell/clash-lib:debug - Build a debug compiler
 dev-haskell/clash-lib:history - Emit rewrite history to disk
-dev-haskell/clash-lib:unittests - You can disable testing with unittests using `-f-unittests`
-dev-haskell/clash-prelude:benchmarks - Enable testing with benchmarks
-dev-haskell/clash-prelude:doctests - Enable testing with doctests
+dev-haskell/clash-lib:unittests - You can disable testing with unittests using `-f-unittests`.
+dev-haskell/clash-prelude:benchmarks - You can disable testing with benchmarks using `-f-benchmarks`.
+dev-haskell/clash-prelude:doctests - You can disable testing with doctests using `-f-doctests`.
+dev-haskell/clash-prelude:large-tuples - Generate instances for classes such as `NFDataX` and `BitPack` for tuples up to and including 62 elements - the GHC imposed maximum. This greatly increases compile times for `clash-prelude` and therefore mostly impacts the Clash developers themselves. Hence its default is set to disabled on development versions and enabled on releases.
 dev-haskell/clash-prelude:multiple-hidden - Allow multiple hidden clocks, resets, and enables to be used. This is an experimental feature, possibly triggering confusing error messages. By default, it is enabled on development versions of Clash and disabled on releases.
+dev-haskell/clash-prelude:strict-mapsignal - Use `seqX` in 'mapSignal#'. This can help to eliminate space leaks in long running simulations.
 dev-haskell/clash-prelude:super-strict - Use `deepseqX` (instead of `seqX`) in register-like constructs. This can help to eliminate space leaks when using lazy data structures in registers-like constructs. This potentially slows down Clash hardware simulation.
-dev-haskell/clash-prelude:unittests - You can disable testing with unittests using `-f-unittests`
+dev-haskell/clash-prelude:unittests - You can disable testing with unittests using `-f-unittests`.
 dev-haskell/clckwrks:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build quote module
 dev-haskell/cmdargs:testprog - Build the test program
 dev-haskell/comonad:indexed-traversable - You can disable the use of the `indexed-traversable` package using `-f-indexed-traversable`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `FunctorWithIndex`
-dev-haskell/concurrent-supply:test-properties - 
+dev-haskell/concurrent-supply:test-properties - used to enable tests
 dev-haskell/constraints-deriving:constraints - Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.
 dev-haskell/constraints-deriving:debug - Show debug trace info (used only for library development). Note, if you want to see the debug output of the plugin in another project, you may need to manually define a CPP option -DPLUGIN_DEBUG in that project.
 dev-haskell/constraints-deriving:examples - Whether to build examples
@@ -112,6 +115,7 @@ dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using th
 dev-haskell/direct-sqlite:json1 - Enable json1 extension.
 dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library.
 dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library.
+dev-haskell/dlist:werror - Enable -Werror
 dev-haskell/dotenv:dev - Turn on development settings.
 dev-haskell/dotenv:static - Creates static binary.
 dev-haskell/encoding:systemencoding - Provide the getSystemEncoding action to query the locale.
@@ -145,7 +149,7 @@ dev-haskell/gi-cairo-render:cairo-svg - Build the Scalable Vector Graphics (SVG)
 dev-haskell/gi-cairo-render:cairo_pdf - Build the PDF backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_ps - Build the PostScript backend of Cairo.
 dev-haskell/gi-cairo-render:cairo_svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
-dev-haskell/github:openssl - Use http-client-openssl
+dev-haskell/github:openssl - "Use http-client-openssl"
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure-signals - Use the the GClosure-based signals implementation.
 dev-haskell/gloss:glfw - Enable the GLFW backend
@@ -171,6 +175,8 @@ dev-haskell/hakyll:watchserver - Include the watch server
 dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
+dev-haskell/hashable:examples - Build example modules
+dev-haskell/hashable:gmp - Are we using @integer-gmp@ to provide fast Integer instances?
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
 dev-haskell/hashtables:debug - if on, spew debugging output to stdout
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
@@ -281,15 +287,16 @@ dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/monky:ibus - enable ibus example
 dev-haskell/multistate:build-example - Build the MultiState-example example program
-dev-haskell/nats:binary - enable binary instances
-dev-haskell/nats:hashable - enable hashable instances
-dev-haskell/nats:template-haskell - enable template_haskell
+dev-haskell/nats:binary - You can disable the use of the `binary` package using `-f-binary`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Binary`.
+dev-haskell/nats:hashable - You can disable the use of the `hashable` package using `-f-hashable`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Hashable`.
+dev-haskell/nats:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Lift`.
 dev-haskell/netlink:generators - build the generator scripts for constants
 dev-haskell/network-data:small-base - Build the split-up base package.
 dev-haskell/oeis:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/onrmt:brick017 - for Brick version 0.17 or later
 dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
+dev-haskell/optparse-applicative:process - Depend on the process package for Bash autocompletion
 dev-haskell/optparse-simple:build-example - Build the example executable
 dev-haskell/ormolu:dev - Turn on development settings.
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
@@ -331,7 +338,6 @@ dev-haskell/pretty-simple:buildexample - Build a small example program showing h
 dev-haskell/pretty-simple:buildexe - Build a small command line program that pretty-prints anything from stdin.
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library
-dev-haskell/quickcheck:old-random - Build against a pre-1.2.0 version of the random package.
 dev-haskell/quickcheck:template-haskell - Build Test.QuickCheck.All, which uses Template Haskell.
 dev-haskell/quickcheck-classes:aeson - Enable the use of the `aeson` package. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/quickcheck-classes:binary-laws - Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
@@ -366,8 +372,9 @@ dev-haskell/semigroupoids:contravariant - Enable the use of the `contravariant` 
 dev-haskell/semigroupoids:distributive - Enable the use of the `distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
 dev-haskell/semigroupoids:tagged - Enable the use of the `tagged` package. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroupoids:unordered-containers - Enable the use of the `unordered-containers` package (and also its dependency `hashable`). Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semigroups:binary - provide instances for binary package
-dev-haskell/semigroups:transformers - provide instances for transformers package.
+dev-haskell/semigroups:binary - You can disable the use of the `binary` package using `-f-binary`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroups:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroups:transformers - You can disable the use of the `transformers` and `transformers-compat` packages using `-f-transformers`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semirings:containers - You can disable the use of the `containers` package using `-f-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semirings:hashable - You can disable the use of the `hashable` package using `-f-hashable`. Disabling this may be useful for accelerating builds in sandboxes for expert users. Note: `-f-hashable` implies `-f-unordered-containers`, as we are necessarily not able to supply those instances as well.
 dev-haskell/semirings:unordered-containers - You can disable the use of the `unordered-containers` package using `-f-unordered-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
