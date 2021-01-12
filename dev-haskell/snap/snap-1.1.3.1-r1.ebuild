@@ -20,13 +20,13 @@ IUSE=""
 
 RESTRICT="test" # requires network access
 
-RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/clientsession-0.8:=[profile?] <dev-haskell/clientsession-0.10:=[profile?]
 	>=dev-haskell/configurator-0.1:=[profile?] <dev-haskell/configurator-0.4:=[profile?]
 	>=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
-	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
+	>=dev-haskell/dlist-0.5:=[profile?]
 	>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/hashable-1.2.0.6:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/heist-1.1:=[profile?] <dev-haskell/heist-1.2:=[profile?]
@@ -64,9 +64,10 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck                 >= 2.4.2    && < 2.14' 'QuickCheck >= 2.4.2'
+		'QuickCheck                 >= 2.4.2    && < 2.14' 'QuickCheck >= 2.4.2' \
+		'dlist                     >= 0.5      && < 0.9' 'dlist >= 0.5' \
+		'aeson                     >= 0.6      && < 1.5' 'aeson >= 0.6'
 }
-
 
 src_configure() {
 	haskell-cabal_src_configure \
