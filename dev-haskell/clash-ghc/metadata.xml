@@ -10,12 +10,12 @@
 		<flag name="ghc-paths">Locate the GHC core libraries using the `ghc-paths` package.  Note: this flag may make binaries less relocatable, by hard-coding an absolute path to the core libraries.</flag>
 	</use>
 	<longdescription>
-		CλaSH (pronounced 'clash') is a functional hardware description language that
-		borrows both its syntax and semantics from the functional programming language
-		Haskell. The CλaSH compiler transforms these high-level descriptions to
-		low-level synthesizable VHDL, Verilog, or SystemVerilog.
+		Clash is a functional hardware description language that borrows both its
+		syntax and semantics from the functional programming language Haskell. The
+		Clash compiler transforms these high-level descriptions to low-level
+		synthesizable VHDL, Verilog, or SystemVerilog.
 		
-		Features of CλaSH:
+		Features of Clash:
 		
 		* Strongly typed, but with a very high degree of type inference, enabling both
 		safe and fast prototyping using concise descriptions.
@@ -34,9 +34,9 @@
 		
 		This package provides:
 		
-		* CλaSH Compiler binary using GHC/Haskell as a frontend
+		* Clash Compiler binary using GHC/Haskell as a frontend
 		
 		
-		Prelude library: &lt;http://hackage.haskell.org/package/clash-prelude&gt;
+		Prelude library: &lt;https://hackage.haskell.org/package/clash-prelude&gt;
 	</longdescription>
 </pkgmetadata>

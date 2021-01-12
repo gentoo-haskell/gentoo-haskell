@@ -5,16 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides a modular backend for rendering
-		diagrams created with the diagrams EDSL using Postscript.
-		
-		* "Diagrams.Backend.Postscript.CmdLine" - Provides
-		the "defaultMain" interface to render a diagram
-		based on command line options.
-		
-		* "Diagrams.Backend.Postscript" - Provides the
-		general API for rendering diagrams using the
-		Postscript backend.
-	</longdescription>
 </pkgmetadata>

@@ -8,15 +8,15 @@
 	<use>
 		<flag name="debug">Build a debug compiler</flag>
 		<flag name="history">Emit rewrite history to disk</flag>
-		<flag name="unittests">You can disable testing with unittests using `-f-unittests`</flag>
+		<flag name="unittests">You can disable testing with unittests using `-f-unittests`.</flag>
 	</use>
 	<longdescription>
-		CλaSH (pronounced 'clash') is a functional hardware description language that
-		borrows both its syntax and semantics from the functional programming language
-		Haskell. The CλaSH compiler transforms these high-level descriptions to
-		low-level synthesizable VHDL, Verilog, or SystemVerilog.
+		Clash is a functional hardware description language that borrows both its
+		syntax and semantics from the functional programming language Haskell. The
+		Clash compiler transforms these high-level descriptions to low-level
+		synthesizable VHDL, Verilog, or SystemVerilog.
 		
-		Features of CλaSH:
+		Features of Clash:
 		
 		* Strongly typed, but with a very high degree of type inference, enabling both
 		safe and fast prototyping using concise descriptions.
@@ -45,11 +45,11 @@
 		
 		Front-ends (for: parsing, typecheck, etc.) are provided by separate packages:
 		
-		* &lt;http://hackage.haskell.org/package/clash-ghc GHC/Haskell Frontend&gt;
+		* &lt;https://hackage.haskell.org/package/clash-ghc GHC/Haskell Frontend&gt;
 		
 		* &lt;https://github.com/christiaanb/Idris-dev Idris Frontend&gt;
 		
 		
-		Prelude library: &lt;http://hackage.haskell.org/package/clash-prelude&gt;
+		Prelude library: &lt;https://hackage.haskell.org/package/clash-prelude&gt;
 	</longdescription>
 </pkgmetadata>
