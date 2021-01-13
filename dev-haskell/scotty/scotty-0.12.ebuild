@@ -11,7 +11,9 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp"
 HOMEPAGE="https://github.com/scotty-web/scotty"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="
+	https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/2.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -46,6 +48,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-wai-0.6.3
 		dev-haskell/lifted-base )
 "
+
+src_prepare() {
+	default
+
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
