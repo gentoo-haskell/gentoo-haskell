@@ -20,7 +20,7 @@ IUSE=""
 
 RESTRICT=test # needs local mysql
 
-RDEPEND="dev-db/mysql:=
+RDEPEND="dev-db/mysql-connector-c:=
 	>=dev-haskell/semigroups-0.11:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
