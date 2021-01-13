@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
 	>=dev-haskell/numinstances-1.0:=[profile?] <dev-haskell/numinstances-1.5:=[profile?]
 	>=dev-haskell/optparse-applicative-0.13:=[profile?]
-	>=dev-haskell/statestack-0.2:=[profile?] <dev-haskell/statestack-0.3:=[profile?]
+	>=dev-haskell/statestack-0.2:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
@@ -42,5 +42,6 @@ src_prepare() {
 		'base >= 4.6 && < 4.12' 'base >= 4.6' \
 		'lens >= 4.0 && < 4.17' 'lens >= 4.0' \
 		'containers >= 0.3 && < 0.6' 'containers >= 0.3' \
-		'blank-canvas >= 0.5 && < 0.7' 'blank-canvas >= 0.5'
+		'blank-canvas >= 0.5 && < 0.7' 'blank-canvas >= 0.5' \
+		'statestack >= 0.2 && <0.3' 'statestack >= 0.2'
 }
