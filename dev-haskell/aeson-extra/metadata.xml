@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The package motivation is twofold:
-		
-		* provide compatibility layer for @aeson@
-		
-		* provide extra combinators
-	</longdescription>
 </pkgmetadata>

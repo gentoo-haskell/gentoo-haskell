@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -10,12 +10,16 @@ inherit haskell-cabal
 
 DESCRIPTION="Console IRC client"
 HOMEPAGE="https://github.com/glguy/irc-core"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="
+	https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/1.cabal -> ${PF}.cabal"
 
 LICENSE="ISC"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+PATCHES="${FILESDIR}/${PN}-2.37-allow-older-random.patch"
 
 RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
@@ -32,7 +36,7 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/lens-4.14:=[profile?] <dev-haskell/lens-4.20:=[profile?]
 	>=dev-haskell/network-2.6.2:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/psqueues-0.2.7:=[profile?] <dev-haskell/psqueues-0.3:=[profile?]
-	>=dev-haskell/random-1.2:=[profile?] <dev-haskell/random-1.3:=[profile?]
+	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/regex-tdfa-1.3.1:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	>=dev-haskell/semigroupoids-5.1:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
@@ -47,3 +51,21 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-4
 	test? ( >=dev-haskell/hunit-1.6 <dev-haskell/hunit-1.7 )
 "
+
+src_prepare() {
+	default
+
+	# pull upstream cabal file
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# This was updated in upstream [549cc0c][1]
+	# [1]: https://github.com/glguy/irc-core/commit/549cc0ca549e6d8d161704dd5a199b4dddc608d8
+	cabal_chdeps \
+		'random               >=1.2    && <1.3' 'random >= 1.1'
+}
+
+src_install() {
+	cabal_src_install
+
+	doman "${S}/glirc.1"
+}

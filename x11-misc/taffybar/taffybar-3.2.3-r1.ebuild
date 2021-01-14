@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -51,7 +51,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/rate-limit-1.1.1:=[profile?]
 	dev-haskell/regex-compat:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-1:=[profile?]
-	>=dev-haskell/scotty-0.11.0:=[profile?] <dev-haskell/scotty-0.12.0:=[profile?]
+	>=dev-haskell/scotty-0.11.0:=[profile?]
 	>=dev-haskell/split-0.1.4.2:=[profile?]
 	>=dev-haskell/status-notifier-item-0.3.0.5:=[profile?]
 	dev-haskell/stm:=[profile?]
@@ -74,3 +74,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'scotty >= 0.11.0 && < 0.12.0' 'scotty >= 0.11.0'
+}
