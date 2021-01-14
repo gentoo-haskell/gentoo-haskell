@@ -1,0 +1,38 @@
+diff -urN gargoyle-postgresql-nix-0.3.0.0/gargoyle-postgresql-nix.cabal gargoyle-postgresql-nix-0.3.0.0-new/gargoyle-postgresql-nix.cabal
+--- gargoyle-postgresql-nix-0.3.0.0/gargoyle-postgresql-nix.cabal	2001-09-08 19:46:40.000000000 -0600
++++ gargoyle-postgresql-nix-0.3.0.0-new/gargoyle-postgresql-nix.cabal	2021-01-13 22:32:17.599713752 -0700
+@@ -12,6 +12,10 @@
+ description:
+   Like <https://hackage.haskell.org/package/gargoyle-postgresql gargoyle-postgresql> but it uses nix to find the locations of PostgreSQL executables.
+ 
++flag executables
++  description: Install executables
++  default: False
++
+ extra-source-files:
+   README.md
+   ChangeLog.md
+@@ -44,6 +48,8 @@
+     , gargoyle-postgresql
+     , gargoyle-postgresql-nix
+     , which
++  if !flag(executables)
++    buildable: False
+ 
+ executable gargoyle-nix-pg-run
+   main-is:          gargoyle-nix-pg-run.hs
+@@ -56,6 +62,8 @@
+     , gargoyle
+     , gargoyle-postgresql
+     , gargoyle-postgresql-nix
++  if !flag(executables)
++    buildable: False
+ 
+ executable gargoyle-nix-postgres-monitor
+   main-is:          gargoyle-nix-postgres-monitor.hs
+@@ -67,3 +75,5 @@
+       base
+     , gargoyle
+     , gargoyle-postgresql-nix
++  if !flag(executables)
++    buildable: False
