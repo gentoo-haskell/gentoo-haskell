@@ -2,7 +2,7 @@ pipeline {
     agent any
     stage('Test') {
         steps {
-            pkgcheck scan
+            sh 'pkgcheck scan'
         }
     }
 }
