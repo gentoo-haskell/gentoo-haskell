@@ -1,0 +1,45 @@
+diff -urN gargoyle-postgresql-0.2.0.1-old/gargoyle-postgresql.cabal gargoyle-postgresql-0.2.0.1/gargoyle-postgresql.cabal
+--- gargoyle-postgresql-0.2.0.1-old/gargoyle-postgresql.cabal	2001-09-08 19:46:40.000000000 -0600
++++ gargoyle-postgresql-0.2.0.1/gargoyle-postgresql.cabal	2021-01-13 23:01:16.396740818 -0700
+@@ -37,9 +37,14 @@
+ 
+ -- Requires postgres to be in the environment to run
+ flag enable-psql-test
++  description: Enable gargoyle-psql-test test-suite
+   default: False
+   manual:  True
+ 
++flag executables
++  description: Install executables
++  default: False
++
+ library
+   exposed-modules:  Gargoyle.PostgreSQL
+   ghc-options:      -Wall
+@@ -72,6 +77,8 @@
+     , process
+     , text
+     , unix
++  if !flag(executables)
++    buildable: False
+ 
+ executable gargoyle-pg-run
+   main-is:          gargoyle-pg-run.hs
+@@ -83,6 +90,8 @@
+       base
+     , gargoyle
+     , gargoyle-postgresql
++  if !flag(executables)
++    buildable: False
+ 
+ executable gargoyle-postgres-monitor
+   main-is:          gargoyle-postgres-monitor.hs
+@@ -97,6 +106,8 @@
+     , gargoyle-postgresql
+     , process
+     , text
++  if !flag(executables)
++    buildable: False
+ 
+ test-suite gargoyle-psql-test
+   type:             exitcode-stdio-1.0
