@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/aeson-0.6:= <dev-haskell/aeson-1.5:=
+RDEPEND=">=dev-haskell/aeson-0.6:=
 	>=dev-haskell/ghc-prof-1.3:= <dev-haskell/ghc-prof-1.5:=
 	>=dev-haskell/js-jquery-3.1:= <dev-haskell/js-jquery-3.4:=
 	>=dev-haskell/scientific-0.3:= <dev-haskell/scientific-0.4:=
@@ -29,3 +29,10 @@ RDEPEND=">=dev-haskell/aeson-0.6:= <dev-haskell/aeson-1.5:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'aeson                >= 0.6  && < 1.5' 'aeson >= 0.6'
+}

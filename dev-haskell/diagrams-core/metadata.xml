@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The core modules underlying diagrams,
-		an embedded domain-specific language
-		for compositional, declarative drawing.
-	</longdescription>
 </pkgmetadata>

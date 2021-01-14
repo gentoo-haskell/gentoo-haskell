@@ -10,7 +10,9 @@ inherit haskell-cabal
 
 DESCRIPTION="Structured logging solution (PostgreSQL back end)"
 HOMEPAGE="https://github.com/scrive/log"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="
+	https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/1.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -31,8 +33,19 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 	>=dev-haskell/http-client-0.5:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
-	>=dev-haskell/text-show-3.7:=[profile?] <dev-haskell/text-show-3.9:=[profile?]
+	>=dev-haskell/text-show-3.7:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
 "
+
+src_prepare() {
+	default
+
+	# new aeson upperbound from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# They haven't relaxed text-show yet
+	cabal_chdeps \
+		'text-show             >= 3.7  && < 3.8  || ^>= 3.8' 'text-show >= 3.7'
+}

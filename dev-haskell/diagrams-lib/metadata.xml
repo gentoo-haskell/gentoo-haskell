@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Diagrams is a flexible, extensible EDSL for creating
-		graphics of many types.  Graphics can be created
-		in arbitrary vector spaces and rendered with
-		multiple backends.  diagrams-lib provides a
-		standard library of primitives and operations for
-		creating diagrams.  To get started using it, see
-		"Diagrams.Prelude".
-	</longdescription>
 </pkgmetadata>

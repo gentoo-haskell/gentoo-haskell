@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<longdescription>
+		Data structures for describing changes to other data structures.
+		
+		In this library, a patch is something which can be applied, analogous to a
+		function, and which distinguishes returning the argument it was provided from
+		returning something else.
+	</longdescription>
+</pkgmetadata>
