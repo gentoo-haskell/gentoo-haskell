@@ -1,3 +1,10 @@
+# Wolfgang E. Sanyre <WolfgangESanyer@gmail.com> (2021-01-05)
+# Per upstream[1], hjsonpointer has been deprecated. Masking it and its revdeps
+# for removal
+# [1]: https://hackage.haskell.org/package/hjsonpointer
+dev-haskell/hjsonpointer
+dev-haskell/hjsonschema
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-02)
 # Last release in 2018. Needs a port to Cabal-3.
 dev-haskell/hsqml
