@@ -1,3 +1,7 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-02)
+# Last release in 2018. Needs a port to Cabal-3.
+dev-haskell/hsqml
+
 # Jack Todaro <solpeth@posteo.org> (2021-01-15)
 # Dead upstream, has no reverse dependencies.
 # Masked for removal in 30 days.
