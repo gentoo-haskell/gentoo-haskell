@@ -5,18 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		The @config-ini@ library is a small monadic language
-		for writing simple configuration languages with convenient,
-		human-readable error messages.
-		
-		&gt; parseConfig :: IniParser (Text, Int, Bool)
-		&gt; parseConfig = section &quot;NETWORK&quot; $ do
-		&gt;   user &lt;- field        &quot;user&quot;
-		&gt;   port &lt;- fieldOf      &quot;port&quot; number
-		&gt;   enc  &lt;- fieldFlagDef &quot;encryption&quot; True
-		&gt;   return (user, port, enc)
-	</longdescription>
 </pkgmetadata>
