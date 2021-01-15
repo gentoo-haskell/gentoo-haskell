@@ -572,6 +572,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-or1k-cpu.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-llvm-shift.patch
+
 		bump_libs
 
 		eapply_user
