@@ -1647,7 +1647,7 @@ dev-haskell/safe 0.3.19: Library of safe (exception free) functions
 dev-haskell/safe-exceptions 0.1.7.1: Safe, consistent, and easy exception handling
 dev-haskell/safecopy 0.10.3: Binary serialization with version control
 dev-haskell/safesemaphore 0.10.1: Much safer replacement for QSemN, QSem, and SampleVar
-dev-haskell/saltine 0.1.1.0: Cryptography that's easy to digest (NaCl/libsodium bindings)
+dev-haskell/saltine 0.1.1.0 0.1.1.1: Cryptography that's easy to digest (NaCl/libsodium bindings)
 dev-haskell/sample-frame 0.0.3: Handling of samples in an (audio) signal
 dev-haskell/sample-frame-np 0.0.4.1: Orphan instances for types from sample-frame and numericprelude
 dev-haskell/samtools 0.2.4.3: Binding to the C samtools library
