@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2021-01-15)
+# Dead upstream, has no reverse dependencies.
+# Masked for removal in 30 days.
+dev-haskell/network-transport-inmemory
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-04)
 # This package is not currently maintained, and does not work with the latest
 # version of dev-haskell/github https://github-backup.branchable.com/todo/new_maintainer_needed/
