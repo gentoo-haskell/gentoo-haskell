@@ -16,8 +16,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-# See [issue upstream][1] for resolving circular dependency
-# [1]: https://github.com/faylang/fay/issues/473
+
+# Tests currently fail due to a missing `fay-base` dependency. This was taken
+# out by upstream to resolve a circular-dependency issue. See issue 473 upstream
+# for more information and steps being taken to resolve this.
 RESTRICT="test"
 
 RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
@@ -65,6 +67,7 @@ src_test() {
 		--num-threads=$(nproc)
 		-random 20
 	)
+	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}:${LD_LIBRARY_PATH}"
 	echo "${fay_tests[@]}"
 	"${fay_tests[@]}" || die "fay-tests failed somehow"
 }
