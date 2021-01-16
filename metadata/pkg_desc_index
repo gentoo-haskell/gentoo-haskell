@@ -339,7 +339,7 @@ dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the lib
 dev-haskell/conduit-audio-sndfile 0.1.2.2: conduit-audio interface to the libsndfile audio file library
 dev-haskell/conduit-combinators 1.3.0: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.3.5: Batteries included conduit: adapters for common libraries
-dev-haskell/config-ini 0.2.4.0-r1: A library for simple INI-based configuration files
+dev-haskell/config-ini 0.2.4.0-r2: A library for simple INI-based configuration files
 dev-haskell/config-schema 1.2.0.0 1.2.1.0: Schema definitions for the config-value package
 dev-haskell/config-value 0.7.0.1 0.8.1: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
@@ -546,7 +546,7 @@ dev-haskell/erd 0.2.1.0: An entity-relationship diagram generator from a plain t
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 3.3.4.0: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 3.3.4.0 3.4.0.1: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7-r1: Library for computer music research and education
@@ -569,7 +569,7 @@ dev-haskell/fast-logger 3.0.2: A fast logging system
 dev-haskell/fast-math 1.0.2: Non IEEE-754 compliant compile-time floating-point optimisations
 dev-haskell/fastcgi 3001.0.2.5: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.24.1.0: A compiler for Fay, a Haskell subset that compiles to JavaScript
+dev-haskell/fay 0.24.1.0 0.24.2.0: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-haskell/fay-base 0.21.1.1: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1-r1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0: jQuery bindings for Fay
@@ -1150,7 +1150,7 @@ dev-haskell/libyaml 0.1.2: Low-level, streaming YAML interface
 dev-haskell/libzip 1.0.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.10.0.6: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.12: lifted IO operations from the base library
-dev-haskell/linear 1.20.9: Linear Algebra
+dev-haskell/linear 1.20.9 1.21.3: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
 dev-haskell/lio 0.11.7.1: Labeled IO Information Flow Control Library
 dev-haskell/liquid-fixpoint 0.8.0.2 9999: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
@@ -1204,7 +1204,7 @@ dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megadeth 9999: Simple project template from stack
 dev-haskell/megaparsec 7.0.5 8.0.0: Monadic parser combinators
-dev-haskell/megaparsec-tests 8.0.0: Test utilities and the test suite of Megaparsec
+dev-haskell/megaparsec-tests 8.0.0-r1: Test utilities and the test suite of Megaparsec
 dev-haskell/meldable-heap 2.0.3-r1: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/membership 0: Indices for type level lists
 dev-haskell/memcache 0.2.0.1: A memcached client library
@@ -1776,7 +1776,7 @@ dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
 dev-haskell/stack 2.3.3 9.9.9: The Haskell Tool Stack
 dev-haskell/stack-bin 2.3.1: The Haskell Tool Stack (Binary)
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
-dev-haskell/statestack 0.2.0.5-r1: Simple State-like monad transformer with saveable and restorable state
+dev-haskell/statestack 0.2.0.5-r1 0.3: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.2 1.2.1: State variables
 dev-haskell/static-hash 0.0.1: Immutable hash
 dev-haskell/statistics 0.15.2.0: A library of statistical types, data, and functions
