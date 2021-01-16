@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Simple State-like monad transformer where states can be saved to
-		and restored from an internal stack.
-	</longdescription>
 </pkgmetadata>

@@ -5,54 +5,21 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="test">Build the fay-tests executable</flag>
+	</use>
 	<longdescription>
-		Fay is a proper subset of Haskell which can be compiled (type-checked)
-		with GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,
-		an FFI, tail-recursion optimization (experimental). It implements no type
-		system, for type-checking you should use GHC.
+		Fay is a proper subset of Haskell which is type-checked
+		with GHC, and compiled to JavaScript. It is lazy, pure, has a Fay monad,
+		an FFI, tail-recursion optimization (experimental), and support for cabal packages.
 		
 		/Documentation/
 		
-		See documentation at &lt;http://fay-lang.org/&gt; or build your own documentation with:
-		
-		&gt; $ cabal unpack fay
-		&gt; $ cd fay-*
-		&gt; $ cabal install
-		&gt; $ dist/build/fay-docs/fay-docs
-		
+		See &lt;https://github.com/faylang/fay/wiki&gt;
 		
 		/Examples/
 		
-		See &lt;http://fay-lang.org/#examples&gt;.
+		See the examples directory and &lt;https://github.com/faylang/fay/wiki#fay-in-the-wild&gt;
 		
-		/Release Notes/
-		
-		* Enable strict list for arithmetic sequences optimisation only when compiler optimise flag set.
-		
-		* Add print and putStrLn to the Prelude
-		
-		* Add list utility functions from the standard Prelude
-		
-		* Test optimized as well as unoptimized builds.
-		
-		* Standard precendence and associativity for infix operators
-		
-		* Add function utilities from Prelude, including seq
-		
-		* Add math functions in Prelude
-		
-		* Add support for sections (desugaring to lambdas)
-		
-		* Added example of the ContT and Deferred monad, sleep and readFile.
-		
-		* Add more of the prelude, including error and a lot of math stuff.
-		
-		* Remove needs for module declarations in modules that define main.
-		
-		* Support enumThen ([1,2..]) style lists.
-		
-		* Add support for enumFromThenTo ([1,2..10]) lists.
-		
-		See full history at: &lt;https://github.com/faylang/fay/commits&gt;
 	</longdescription>
 </pkgmetadata>

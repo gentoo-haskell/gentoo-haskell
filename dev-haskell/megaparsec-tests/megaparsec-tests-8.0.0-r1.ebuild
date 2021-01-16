@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/hspec-2.0:=[profile?] <dev-haskell/hspec-3.0:=[profile?]
 	>=dev-haskell/hspec-megaparsec-2.0:=[profile?] <dev-haskell/hspec-megaparsec-3.0:=[profile?]
 	~dev-haskell/megaparsec-8.0.0:=[profile?]
 	>=dev-haskell/mtl-2.2.2:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
-	>=dev-haskell/quickcheck-2.10:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.10:2=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
@@ -32,6 +32,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/parser-combinators-1.0 <dev-haskell/parser-combinators-2.0
 		>=dev-haskell/scientific-0.3.1 <dev-haskell/scientific-0.4 )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps\
+		'QuickCheck   >= 2.10  && < 2.14' 'QuickCheck >= 2.10'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
