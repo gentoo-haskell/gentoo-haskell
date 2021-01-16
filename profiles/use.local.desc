@@ -33,6 +33,8 @@ dev-haskell/attoparsec-iso8601:developer - operate in developer mode
 dev-haskell/attoparsec-iso8601:fast - compile without optimizations
 dev-haskell/authenticate:network-uri - Get Network.URI from the network-uri package
 dev-haskell/aws:network-3 - Use network-3
+dev-haskell/beam-automigrate:examples - Install example executables
+dev-haskell/beam-automigrate:ghcipretty - Enable pretty-show for pretty-printing purposes
 dev-haskell/bench-show:executable - Build executable as well as library
 dev-haskell/bifunctors:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/bifunctors:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -135,6 +137,8 @@ dev-haskell/foundation:experimental - enable building experimental features, kno
 dev-haskell/freer-effects:pedantic - Pass additional warning flags and -Werror to GHC.
 dev-haskell/freer-effects:test-hlint - Enable test suite that checks sources using HLint.
 dev-haskell/ftphs:buildtests - Build the executable to run unit tests.
+dev-haskell/gargoyle-postgresql:executables - Install executables
+dev-haskell/gargoyle-postgresql-nix:executables - Install executables
 dev-haskell/gauge:analysis - Build with statistical analysis support
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
 dev-haskell/ghc-heap-view:prim-supports-any - The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)
