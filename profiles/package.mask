@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2021-01-17)
+# Fails to build against modern dependds: https://github.com/stschiff/rarecoal/issues/3
+# Due to OverloadedStrings it's hard to say where API mismatch is.
+sci-biology/rarecoal
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-05)
 # The last commit was 2017-01-17. This package has very old upper bound
 # dependencies and appears to be abandoned. Masking for removal
