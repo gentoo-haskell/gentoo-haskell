@@ -2236,7 +2236,7 @@ dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project depe
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/hadolint 1.17.3: Dockerfile Linter JavaScript API
 dev-util/hdocs 0.5.4.0 0.5.5.0: Haskell docs tool
-dev-util/hsdev 0.3.3.6 0.3.4.0 0.3.4.0-r1: Haskell development library
+dev-util/hsdev 0.3.3.6 0.3.4.0 0.3.4.0-r2: Haskell development library
 dev-util/shellcheck 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.13: A graphical tool for profiling parallel Haskell programs
