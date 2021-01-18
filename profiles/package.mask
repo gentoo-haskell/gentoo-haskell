@@ -1,3 +1,17 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
+# Due to the large number of affected packages, this newer semigroups will
+# remain masked for now.
+>=dev-haskell/semigroups-0.19
+
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05))
+# There are quite a few packages that have not updated their
+# optparse-applicative upperbound yet, including executables such as idris,
+# turtle, and  hsdev. In order to keep these available, the newer
+# optparse-applicative and its dependencies are being masked.
+>=dev-haskell/optparse-applicative-0.16
+>=dev-haskell/byline-1.1.0.1
+>=dev-haskell/vimeta-0.3.0.1
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-01-18)
 # No homepage. Fals to build with ghc-8.8 or above.
 dev-haskell/vinyl-utils
