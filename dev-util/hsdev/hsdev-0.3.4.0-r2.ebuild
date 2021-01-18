@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -53,9 +53,9 @@ RDEPEND=">=dev-haskell/aeson-1.2.4.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/uniplate-1.6.12:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.8.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.11.0.0:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.0.2:=[profile?] <dev-lang/ghc-8.10.0:=[profile?]
+	>=dev-lang/ghc-8.0.2:=[profile?]
 	docs? ( >=dev-haskell/haddock-api-2.23:=[profile?]
-		>=dev-haskell/haddock-library-1.4.3:=[profile?] <dev-haskell/haddock-library-1.10:=[profile?]
+		>=dev-haskell/haddock-library-1.4.3:=[profile?]
 		>=dev-util/hdocs-0.5.3:=[profile?] )
 	hlint? ( >=dev-haskell/ghc-lib-parser-8.10:=[profile?] <dev-haskell/ghc-lib-parser-8.11:=[profile?]
 			>=dev-haskell/hlint-3.0.0:=[profile?] <dev-haskell/hlint-3.3.0:=[profile?] )
