@@ -4,6 +4,13 @@
 # [1]: https://github.com/reflex-frp/reflex/pull/444
 =dev-haskell/reflex-0.8.0.0
 
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-05)
+# Both of these are produced by the same developer, both github repositories
+# have their latest commit in early 2018. These projects seem abandoned and
+# depend on older aeson, which causes many conflicts.
+dev-haskell/pipes-transduce
+dev-haskell/process-streaming
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
 # remain masked for now.
