@@ -1421,7 +1421,7 @@ dev-haskell/parsec1 1.0.0.7: Portable monadic parser combinators
 dev-haskell/parsec3-numbers 0.1.0: Utilities for parsing numbers from Char sequences
 dev-haskell/parsedate 3000.0.0-r1: Data and time parsing for CalendarTime
 dev-haskell/parser-combinators 1.2.1: Lightweight package providing commonly useful parser combinators
-dev-haskell/parser-combinators-tests 1.2.1: Test suite of parser-combinators
+dev-haskell/parser-combinators-tests 1.2.1-r1: Test suite of parser-combinators
 dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/password 2.1.0.0: Hashing and checking of passwords
