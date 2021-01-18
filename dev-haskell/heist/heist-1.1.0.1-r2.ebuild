@@ -17,27 +17,25 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RESTRICT=test # fails with pandoc-2
-
+# Minimum ghc set to 8.0 in order to drop semigroups dependency.
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
-	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-0.9:=[profile?]
+	>=dev-haskell/dlist-0.5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/map-syntax-0.3:=[profile?] <dev-haskell/map-syntax-0.4:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/random-1.0.1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
-	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/xmlhtml-0.2.3.5:=[profile?] <dev-haskell/xmlhtml-0.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-8.0:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
@@ -48,8 +46,12 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
-		>=dev-haskell/transformers-compat-0.3 <dev-haskell/transformers-compat-0.7 )
+		>=dev-haskell/transformers-compat-0.3 <dev-haskell/transformers-compat-0.7
+	)
 "
+
+# not declared as a dependency in `.cabal` file
+DEPEND="${DEPEND} test? ( app-text/pandoc )"
 
 src_prepare() {
 	default
@@ -59,5 +61,6 @@ src_prepare() {
 		'hashable                   >= 1.1     && < 1.3' 'hashable                   >= 1.1' \
 		'lens                       >= 4.3      && < 4.18' 'lens                       >= 4.3' \
 		'QuickCheck                 >= 2        && < 2.13' 'QuickCheck                 >= 2' \
-		'aeson                      >= 0.6     && < 1.5' 'aeson >= 0.6'
+		'aeson                      >= 0.6     && < 1.5' 'aeson >= 0.6' \
+		'dlist                      >= 0.5     && < 0.9' 'dlist >= 0.5'
 }
