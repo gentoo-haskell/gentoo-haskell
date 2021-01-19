@@ -44,3 +44,8 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-dev
 }
+
+# nothing to install.
+src_install() {
+	return
+}
