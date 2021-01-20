@@ -312,7 +312,7 @@ dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the Inte
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
 dev-haskell/parsers:attoparsec - Enable the use of the `attoparsec` package
 dev-haskell/parsers:parsec - Enable the use of the `parsec` package
-dev-haskell/path:dev - Turn on development settings
+dev-haskell/path:dev - Turn on development settings.
 dev-haskell/peggy:build-example - Build an example executable.
 dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nano second precision.
 dev-haskell/persistent-relational-record:test-examples - Test examples

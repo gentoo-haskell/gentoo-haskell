@@ -1426,7 +1426,7 @@ dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/password 2.1.0.0: Hashing and checking of passwords
 dev-haskell/patch 0.0.3.2: Data structures for describing changes to other data structures
-dev-haskell/path 0.7.0: Support for well-typed paths
+dev-haskell/path 0.7.0 0.8.0: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.6.2: Interface to directory package for users of path
 dev-haskell/path-pieces 0.2.1: Components of paths
