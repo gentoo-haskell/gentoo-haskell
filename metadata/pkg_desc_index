@@ -1789,7 +1789,7 @@ dev-haskell/sr-extra 1.85.1: Module limbo
 dev-haskell/srcloc 0.5.1.2: Data types for managing source code locations
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
 dev-haskell/stack 2.3.3 9.9.9: The Haskell Tool Stack
-dev-haskell/stack-bin 2.3.1: The Haskell Tool Stack (Binary)
+dev-haskell/stack-bin 2.3.1 2.5.1: The Haskell Tool Stack (Binary)
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5-r1 0.3: Simple State-like monad transformer with saveable and restorable state
 dev-haskell/statevar 1.2 1.2.1: State variables
