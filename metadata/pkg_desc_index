@@ -248,7 +248,7 @@ dev-haskell/cabal-plan 0.7.2.0 0.7.2.0-r1: Library and utility for processing ca
 dev-haskell/cabal-rpm 2.0.6: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-src 0.3.0.2: Alternative install procedure to avoid the diamond dependency issue
 dev-haskell/cairo 0.13.8.1: Binding to the Cairo library
-dev-haskell/call-stack 0.2.0: Use GHC call-stacks in a backward compatible way
+dev-haskell/call-stack 0.2.0 0.3.0: Use GHC call-stacks in a backward compatible way
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/carray 0.1.6.8: A C-compatible array library
 dev-haskell/casa-client 0.0.1: Client for Casa
@@ -1006,7 +1006,7 @@ dev-haskell/http-types 0.9.1 0.12.3: Generic HTTP types for Haskell (for both cl
 dev-haskell/http2 1.6.5 2.0.5: HTTP/2 library
 dev-haskell/httpd-shed 0.4.1.1: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
-dev-haskell/hunit 1.3.1.2 1.6.1.0: A unit testing framework for Haskell
+dev-haskell/hunit 1.3.1.2 1.6.1.0 1.6.2.0: A unit testing framework for Haskell
 dev-haskell/hunit-approx 1.1.1.1: Approximate equality for floating point numbers with HUnit
 dev-haskell/hxt 9.3.1.18: A collection of tools for processing XML with Haskell
 dev-haskell/hxt-charproperties 9.4.0.0: Character properties and classes for XML and Unicode
@@ -1137,7 +1137,7 @@ dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskel
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
 dev-haskell/leancheck 0.9.3: Enumerative property-based testing
-dev-haskell/lens 4.18.1 4.19.2 4.9999: Lenses, Folds and Traversals
+dev-haskell/lens 4.18.1 4.19.2-r1 4.9999: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.4: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.1-r1: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.3: Lens Families
