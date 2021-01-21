@@ -950,7 +950,7 @@ dev-haskell/hspec 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5: A Testing Framework
 dev-haskell/hspec-attoparsec 0.1.0.2: Utility functions for testing your attoparsec parsers with hspec
 dev-haskell/hspec-contrib 0.5.1: Contributed functionality for Hspec
 dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5: A Testing Framework for Haskell
-dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5: Automatically discover and run Hspec tests
+dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.6 2.7.8: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.7.2 0.8.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
 dev-haskell/hspec-megaparsec 2.1.0: Utility functions for testing Megaparsec parsers with Hspec
