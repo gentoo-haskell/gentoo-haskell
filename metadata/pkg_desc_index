@@ -946,11 +946,11 @@ dev-haskell/hsopenssl 0.11.4.17: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.4: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.3.6: A SPARQL query generator and DSL, and a client to query a SPARQL server
-dev-haskell/hspec 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5: A Testing Framework for Haskell
+dev-haskell/hspec 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: A Testing Framework for Haskell
 dev-haskell/hspec-attoparsec 0.1.0.2: Utility functions for testing your attoparsec parsers with hspec
 dev-haskell/hspec-contrib 0.5.1: Contributed functionality for Hspec
-dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5: A Testing Framework for Haskell
-dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.6 2.7.8: Automatically discover and run Hspec tests
+dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: A Testing Framework for Haskell
+dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.7.2 0.8.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
 dev-haskell/hspec-megaparsec 2.1.0: Utility functions for testing Megaparsec parsers with Hspec
@@ -1200,7 +1200,7 @@ dev-haskell/mackerel-client 0.2.0: An API client library for Mackerel
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.7.0.1: Pretty printing designed for printing source code
 dev-haskell/managed 1.0.8: A monad for managed values
-dev-haskell/map-syntax 0.3: Syntax sugar for defining maps
+dev-haskell/map-syntax 0.3-r1: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.17.4: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.5.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
