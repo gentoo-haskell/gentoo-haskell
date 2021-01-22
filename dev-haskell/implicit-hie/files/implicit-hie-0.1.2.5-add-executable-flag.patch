@@ -1,0 +1,17 @@
+diff -urN implicit-hie-0.1.2.5/implicit-hie.cabal implicit-hie-0.1.2.5-new/implicit-hie.cabal
+--- implicit-hie-0.1.2.5/implicit-hie.cabal	2001-09-08 19:46:40.000000000 -0600
++++ implicit-hie-0.1.2.5-new/implicit-hie.cabal	2021-01-22 14:34:34.131858938 -0700
+@@ -61,7 +61,13 @@
+ 
+   default-language: Haskell2010
+ 
++flag executable
++  descritption: Build the gen-hie executable
++  default: False
++
+ executable gen-hie
++  if !flag(executable)
++    buildable: False
+   main-is:          Main.hs
+   other-modules:    Paths_implicit_hie
+   autogen-modules:  Paths_implicit_hie
