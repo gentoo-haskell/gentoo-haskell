@@ -784,7 +784,7 @@ dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on AN
 dev-haskell/hakyll 4.13.4.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.12: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.4: Hakyll SASS compiler over hsass
-dev-haskell/half 0.3-r1: Half-precision floating-point
+dev-haskell/half 0.3-r1 0.3.1: Half-precision floating-point
 dev-haskell/hamilton 0.1.0.3: Physics on generalized coordinate systems using Hamiltonian Mechanics and AD
 dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked (deprecated)
 dev-haskell/handa-gdata 0.7.0.3: Library and command-line utility for accessing Google services and APIs
