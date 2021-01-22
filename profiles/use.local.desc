@@ -171,6 +171,7 @@ dev-haskell/gtk2hs-buildtools:closuresignals - Use the the GClosure-based signal
 dev-haskell/gtk3:fmode-binary - Set the default file translation mode for file I/O operations to _O_BINARY.
 dev-haskell/gtk3:gio - Depend on GIO package, thereby enabling certain features.
 dev-haskell/hackage-db:install-examples - Build and install example programs.
+dev-haskell/hackage-security:lukko - Use @lukko@ for file-locking, otherwise use @GHC.IO.Handle.Lock@
 dev-haskell/hackage-security:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hakyll:buildwebsite - Build the hakyll website
 dev-haskell/hakyll:checkexternal - Include external link checking
@@ -357,6 +358,8 @@ dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/reflection:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/reflex:debug-cycles - Enable debugging of event cycles
+dev-haskell/reflex:debug-propagation - Enable debugging of spider internals
 dev-haskell/reflex:debug-trace-events - Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!
 dev-haskell/reflex:fast-weak - Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default
 dev-haskell/reflex:reflex-optimizer - Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.
@@ -498,7 +501,8 @@ dev-lang/ghc:ghcmakebinary - Internal: Build binary friendly for redistribution.
 dev-lang/ghc:gmp - Use dev-libs/gmp for integer operations (works faster, but an external depend).
 dev-lang/ghc:llvm - Enable LLVM backend via sys-devel/llvm.
 dev-lang/ghc:numa - Enable NUMA thread balancing policy using sys-process/numactl.
-dev-lang/idris:ffi - Build support for libffi.
+dev-lang/idris:ffi - Build support for libffi
+dev-lang/idris:gmp - Use GMP for Integers
 dev-lang/purescript:release - prevents inclusion of extra info e.g. commit SHA in --version outpu
 dev-util/brittany:brittany-dev-lib - set buildable false for anything but lib
 dev-util/brittany:brittany-test-perf - determines if performance test suite is enabled

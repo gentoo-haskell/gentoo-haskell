@@ -302,7 +302,7 @@ dev-haskell/classy-prelude-yesod 1.5.0: Provide a classy prelude including commo
 dev-haskell/clay 0.13.3: CSS preprocessor as embedded Haskell
 dev-haskell/clckwrks 0.26.1 0.26.3: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.3.0.3: a command-line interface for adminstrating some aspects of clckwrks
-dev-haskell/clckwrks-plugin-media 0.6.16.9: media plugin for clckwrks
+dev-haskell/clckwrks-plugin-media 0.6.16.9 0.6.17: media plugin for clckwrks
 dev-haskell/clckwrks-plugin-page 0.4.3.22 0.4.3.24: support for CMS/Blogging in clckwrks
 dev-haskell/clevercss 0.2.4-r2: A CSS preprocessor
 dev-haskell/cli 0.1.2: Command Line Interface
@@ -344,7 +344,7 @@ dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the lib
 dev-haskell/conduit-audio-sndfile 0.1.2.2: conduit-audio interface to the libsndfile audio file library
 dev-haskell/conduit-combinators 1.3.0: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-extra 1.3.5: Batteries included conduit: adapters for common libraries
-dev-haskell/config-ini 0.2.4.0-r1: A library for simple INI-based configuration files
+dev-haskell/config-ini 0.2.4.0 0.2.4.0-r2: A library for simple INI-based configuration files
 dev-haskell/config-schema 1.2.0.0 1.2.1.0: Schema definitions for the config-value package
 dev-haskell/config-value 0.7.0.1 0.8.1: Simple, layout-based value language similar to YAML or JSON
 dev-haskell/configfile 1.1.4: Configuration file reading & writing
@@ -551,7 +551,7 @@ dev-haskell/erd 0.2.1.0: An entity-relationship diagram generator from a plain t
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 3.3.4.0 3.4.0.1: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 3.4.0.1: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/ether 0.5.1.0: Monad transformers and classes
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7-r1: Library for computer music research and education
@@ -776,7 +776,7 @@ dev-haskell/gtk2hs-buildtools 0.13.8.0-r1: Tools to build the Gtk2Hs suite of Us
 dev-haskell/gtk3 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/hackage-db 2.1.0: Access cabal-install's Hackage database via Data.Map
-dev-haskell/hackage-security 0.5.3.0-r3 0.6.0.1: Hackage security library
+dev-haskell/hackage-security 0.5.3.0-r3 0.6.0.1-r1: Hackage security library
 dev-haskell/haddock 2.17.2 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0 9999: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-api 2.17.3 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.4.4 1.5.0.1 1.6.0-r1 1.7.0 1.8.0 1.9.0: Library exposing some functionality of Haddock
@@ -953,7 +953,7 @@ dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: A Testin
 dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.7.2 0.8.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0: Hspec expectations for the lens stuff
-dev-haskell/hspec-megaparsec 2.1.0: Utility functions for testing Megaparsec parsers with Hspec
+dev-haskell/hspec-megaparsec 2.1.0 2.2.0: Utility functions for testing Megaparsec parsers with Hspec
 dev-haskell/hspec-meta 2.6.0: A version of Hspec which is used to test Hspec itself
 dev-haskell/hspec-smallcheck 0.5.2: SmallCheck support for the Hspec testing framework
 dev-haskell/hspec-wai 0.10.1: Experimental Hspec support for testing WAI applications
@@ -1160,7 +1160,7 @@ dev-haskell/libyaml 0.1.2: Low-level, streaming YAML interface
 dev-haskell/libzip 1.0.1: Bindings to libzip, a library for manipulating zip archives
 dev-haskell/lifted-async 0.10.0.6: Run lifted IO operations asynchronously and wait for their results
 dev-haskell/lifted-base 0.2.3.12: lifted IO operations from the base library
-dev-haskell/linear 1.20.9 1.21.3: Linear Algebra
+dev-haskell/linear 1.21.3: Linear Algebra
 dev-haskell/linux-file-extents 0.2.0.0: Retrieve file fragmentation information under Linux
 dev-haskell/lio 0.11.7.1: Labeled IO Information Flow Control Library
 dev-haskell/liquid-fixpoint 0.8.0.2 9999: Predicate Abstraction-based Horn-Clause/Implication Constraint Solver
@@ -1213,8 +1213,8 @@ dev-haskell/matrix 0.3.6.1: A native implementation of matrix operations
 dev-haskell/mecab 0.4.0-r1: A Haskell binding to MeCab
 dev-haskell/mediawiki 0.2.6: Interfacing with the MediaWiki API
 dev-haskell/megadeth 9999: Simple project template from stack
-dev-haskell/megaparsec 7.0.5 8.0.0: Monadic parser combinators
-dev-haskell/megaparsec-tests 8.0.0-r1: Test utilities and the test suite of Megaparsec
+dev-haskell/megaparsec 7.0.5 8.0.0 9.0.1: Monadic parser combinators
+dev-haskell/megaparsec-tests 8.0.0-r1 9.0.1: Test utilities and the test suite of Megaparsec
 dev-haskell/meldable-heap 2.0.3-r1: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/membership 0: Indices for type level lists
 dev-haskell/memcache 0.2.0.1: A memcached client library
@@ -1445,14 +1445,14 @@ dev-haskell/persistable-types-hdbc-pg 0.0.3.5: HDBC and Relational-Record instan
 dev-haskell/persistent 2.10.5.2 2.11.0.2: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.10.0.0: Backend for the persistent library using mongoDB
-dev-haskell/persistent-mysql 2.10.2.3: Backend for the persistent library using MySQL database server
-dev-haskell/persistent-postgresql 2.10.1.2: Backend for the persistent library using postgresql
+dev-haskell/persistent-mysql 2.10.3.1: Backend for the persistent library using MySQL database server
+dev-haskell/persistent-postgresql 2.11.0.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.9.2.1: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.3.0: relational-record on persisten backends
-dev-haskell/persistent-sqlite 2.10.6.2: Backend for the persistent library using sqlite3
+dev-haskell/persistent-sqlite 2.11.0.0: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.8.2.3 2.9.1.0: Type-safe, non-relational, multi-backend persistence
-dev-haskell/persistent-test 2.0.3.0: Tests for Persistent
+dev-haskell/persistent-test 2.0.3.5: Tests for Persistent
 dev-haskell/pgm 0.1.4: Pure Haskell implementation of PGM image format
 dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-readable collection of words
 dev-haskell/picedit 0.2.3.0-r3: simple image manipulation functions
@@ -1555,7 +1555,7 @@ dev-haskell/quickcheck-arbitrary-template 0.2.1.1: Generate QuickCheck Gen for S
 dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-classes 0.6.4.0: QuickCheck common typeclasses
 dev-haskell/quickcheck-classes-base 0.6.1.0: QuickCheck common typeclasses from 'base'
-dev-haskell/quickcheck-instances 0.3.22 0.3.25.1: Common quickcheck instances
+dev-haskell/quickcheck-instances 0.3.22 0.3.25.1 0.3.25.2: Common quickcheck instances
 dev-haskell/quickcheck-io 0.2.0: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.6 0.1.0.6-r1: Safe reimplementation of QuickCheck's core
@@ -1594,7 +1594,7 @@ dev-haskell/reducers 3.12.3-r1: Semigroups, specialized containers and a general
 dev-haskell/ref-tf 0.4.0.2: A type class for monads with references using type families
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/reflection 2.1.6: Reifies arbitrary terms into types that can be reflected back into terms
-dev-haskell/reflex 0.6.3-r1: Higher-order Functional Reactive Programming
+dev-haskell/reflex 0.6.3-r1 0.8.0.0: Higher-order Functional Reactive Programming
 dev-haskell/reflex-backend-socket 0.2.0.0: Reflex bindings for TCP sockets
 dev-haskell/reflex-backend-wai 0.1.0.0: Reflex interface to 'wai'
 dev-haskell/reflex-basic-host 0.2.0.1-r1: A basic Reflex host for backend work
@@ -1640,7 +1640,7 @@ dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files a
 dev-haskell/replib 0.5.4.1: Generic programming library with representation types
 dev-haskell/repline 0.4.0.0: Haskeline wrapper for GHCi-like REPL interfaces
 dev-haskell/req 3.6.0 3.8.0: Easy-to-use, type-safe, expandable, high-level HTTP client library
-dev-haskell/rerebase 1.4.1: Reexports from 'base' with a bunch of other standard libraries
+dev-haskell/rerebase 1.4.1 1.10.0.1: Reexports from "base" with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.11 1.2.4.2: Deterministic allocation and freeing of scarce resources
@@ -2221,7 +2221,7 @@ dev-lang/elm-compiler 0.19.0-r1 0.19.1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
 dev-lang/ghc 8.0.2 8.4.4 8.6.5 8.8.3 8.8.4 8.10.1 8.10.2 8.10.3 9999: The Glasgow Haskell Compiler
 dev-lang/hugs98 2006.9-r2: The Hugs98 Haskell interpreter
-dev-lang/idris 1.3.3-r1: Functional Programming Language with Dependent Types
+dev-lang/idris 1.3.3-r2: Functional Programming Language with Dependent Types
 dev-lang/ott 0.31: Ott is a tool for writing definitions of programming languages and calculi.
 dev-lang/purescript 0.13.6 9999: PureScript Programming Language Compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
