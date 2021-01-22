@@ -1137,7 +1137,7 @@ dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskel
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
 dev-haskell/leancheck 0.9.3: Enumerative property-based testing
-dev-haskell/lens 4.18.1 4.19.2-r1 4.9999: Lenses, Folds and Traversals
+dev-haskell/lens 4.18.1 4.19.2-r1: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.4: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.1-r1: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.3: Lens Families
