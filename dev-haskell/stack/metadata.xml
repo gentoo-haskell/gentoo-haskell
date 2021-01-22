@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="developer-mode">By default, should extra developer information be output?</flag>
 		<flag name="integration-tests">Run the integration test suite.</flag>
 	</use>
 	<longdescription>
