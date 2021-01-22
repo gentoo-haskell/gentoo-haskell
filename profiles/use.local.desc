@@ -205,7 +205,6 @@ dev-haskell/hledger-web:library-only - Build for use with "yesod devel"
 dev-haskell/hledger-web:threaded - Build with support for multithreaded execution.
 dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the system
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
-dev-haskell/hlint:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
@@ -420,7 +419,6 @@ dev-haskell/sr-extra:network-uri - Get Network.URI from the network-uri package 
 dev-haskell/sr-extra:omit-data - Omit all Data instances
 dev-haskell/sr-extra:omit-serialize - Omit all the Serialize instances, on the assumption that we will use SafeCopy instances instead.
 dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
-dev-haskell/stack:developer-mode - By default, should extra developer information be output?
 dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
