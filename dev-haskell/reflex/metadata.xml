@@ -6,13 +6,24 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="reflex-optimizer">Use the GHC plugin Reflex.Optimizer on some of the modules in the package.  This is still experimental.</flag>
-		<flag name="template-haskell">Use template haskell to generate lenses</flag>
+		<flag name="debug-cycles">Enable debugging of event cycles</flag>
+		<flag name="debug-propagation">Enable debugging of spider internals</flag>
 		<flag name="debug-trace-events">Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!</flag>
 		<flag name="fast-weak">Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default</flag>
+		<flag name="reflex-optimizer">Use the GHC plugin Reflex.Optimizer on some of the modules in the package.  This is still experimental.</flag>
 		<flag name="split-these">Use split these/semialign packages</flag>
+		<flag name="template-haskell">Use template haskell to generate lenses</flag>
 	</use>
 	<longdescription>
-		Reflex is a high-performance, deterministic, higher-order Functional Reactive Programming system
+		Interactive programs without callbacks or side-effects.
+		Functional Reactive Programming (FRP) uses composable events and time-varying
+		values to describe interactive systems as pure functions.
+		Just like other pure functional code, functional reactive code is easier
+		to get right on the first try, maintain, and reuse.
+		
+		Reflex is a fully-deterministic, higher-order Functional Reactive Programming
+		interface and an engine that efficiently implements that interface.
+		
+		&lt;https://reflex-frp.org&gt;
 	</longdescription>
 </pkgmetadata>

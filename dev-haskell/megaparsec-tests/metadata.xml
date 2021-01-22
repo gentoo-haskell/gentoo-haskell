@@ -8,7 +8,4 @@
 	<use>
 		<flag name="dev">Turn on development settings.</flag>
 	</use>
-	<longdescription>
-		Test utilities and the test suite of Megaparsec.
-	</longdescription>
 </pkgmetadata>

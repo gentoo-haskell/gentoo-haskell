@@ -6,30 +6,34 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="ffi">Build support for libffi.</flag>
+		<flag name="ffi">Build support for libffi</flag>
+		<flag name="gmp">Use GMP for Integers</flag>
 	</use>
 	<longdescription>
 		Idris is a general purpose language with full dependent types.
 		It is compiled, with eager evaluation.
 		Dependent types allow types to be predicated on values,
-		meaning that some aspects of a program's behaviour can be
+		meaning that some aspects of a program&#39;s behaviour can be
 		specified precisely in the type. The language is closely
-		related to Epigram and Agda. There is a tutorial at &lt;http://www.idris-lang.org/documentation&gt;.
+		related to Epigram and Agda. There is a tutorial at
+		&lt;https://www.idris-lang.org/documentation&gt;.
 		Features include:
 		
-		* Full dependent types with dependent pattern matching
+		* Full, first class, dependent types with dependent pattern matching
 		
-		* where clauses, with rule, simple case expressions,
+		* where clauses, with rule, case expressions,
 		pattern matching let and lambda bindings
 		
-		* Type classes, monad comprehensions
+		* Interfaces (similar to type classes), monad comprehensions
 		
 		* do notation, idiom brackets, syntactic conveniences for lists,
 		tuples, dependent pairs
 		
-		* Indentation significant syntax, extensible syntax
+		* Totality checking
 		
-		* Tactic based theorem proving (influenced by Coq)
+		* Coinductive types
+		
+		* Indentation significant syntax, extensible syntax
 		
 		* Cumulative universes
 		
