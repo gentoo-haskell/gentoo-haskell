@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,8 +16,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-RESTRICT=test #seems related to http-download, requiring network access
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/ansi-terminal:=[profile?]
@@ -60,13 +58,15 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/vector:=[profile?]
 	dev-haskell/yaml:=[profile?]
 	dev-haskell/zip-archive:=[profile?]
-	>=dev-lang/ghc-8.2.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.0.0.2
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/exceptions
 		dev-haskell/hedgehog
 		dev-haskell/hspec
 		dev-haskell/quickcheck
 		dev-haskell/raw-strings-qq )
 "
+
+PATCHES=( "${FILESDIR}/${PN}-0.5.1.4-disable-network-tests.patch" )
