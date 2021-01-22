@@ -60,3 +60,11 @@ src_configure() {
 		$(cabal_flag terminfo terminfo) \
 		$(cabal_flag threaded threaded)
 }
+
+src_install() {
+	haskell-cabal_src_install
+
+	doman embeddedfiles/*.1
+	doman embeddedfiles/*.5
+	doinfo embeddedfiles/*.info
+}
