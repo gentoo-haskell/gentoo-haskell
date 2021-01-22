@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="ghc-lib">build against ghc-lib instead of the ghc package</flag>
+	</use>
+	<longdescription>
+		Backports for HIE files to GHC 8.6, along with a few other backports
+		of HIE file related fixes for ghcide.
+		THIS DOES NOT LET YOU READ HIE FILES WITH MISMATCHED VERSIONS OF GHC
+	</longdescription>
+</pkgmetadata>
