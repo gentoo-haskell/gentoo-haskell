@@ -62,7 +62,7 @@ src_configure() {
 }
 
 src_install() {
-	default
+	haskell-cabal_src_install
 
 	doman embeddedfiles/*.1
 	doman embeddedfiles/*.5
