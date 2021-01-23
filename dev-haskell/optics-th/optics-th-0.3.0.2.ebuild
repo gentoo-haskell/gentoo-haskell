@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,3 +26,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 	test? ( dev-haskell/tagged )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'th-abstraction         >= 0.2.1     && <0.4' 'th-abstraction         >= 0.2.1'
+}
