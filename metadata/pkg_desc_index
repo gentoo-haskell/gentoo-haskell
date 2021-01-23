@@ -824,7 +824,7 @@ dev-haskell/haskell-platform 2014.2.0.0-r1: The Haskell Platform
 dev-haskell/haskell-qrencode 1.0.4: Haskell bindings for libqrencode
 dev-haskell/haskell-src 1.0.3.1: Support for manipulating Haskell source code
 dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1 1.16.0.1 1.17.1 1.18.2 1.19.1 1.20.2 1.20.3 1.21.1 1.22.0 1.23.0 1.23.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/haskell-src-exts-simple 1.19.0.0 1.20.0.0 1.21.1.0 1.22.0.0 1.23.0.0: A simplified view on the haskell-src-exts AST
+dev-haskell/haskell-src-exts-simple 1.21.1.0 1.22.0.0 1.23.0.0: A simplified view on the haskell-src-exts AST
 dev-haskell/haskell-src-exts-util 0.2.5: Helper functions for working with haskell-src-exts trees
 dev-haskell/haskell-src-meta 0.8.5-r1: Parse source to template-haskell abstract syntax
 dev-haskell/haskellnet 0.5.2: Client support for POP3, SMTP, and IMAP
@@ -2236,7 +2236,7 @@ dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project depe
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/hadolint 1.17.3: Dockerfile Linter JavaScript API
 dev-util/hdocs 0.5.4.0 0.5.5.0: Haskell docs tool
-dev-util/hsdev 0.3.3.6 0.3.4.0 0.3.4.0-r2: Haskell development library
+dev-util/hsdev 0.3.4.0-r2: Haskell development library
 dev-util/shellcheck 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.13: A graphical tool for profiling parallel Haskell programs
