@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -41,5 +41,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base                        >=4.6      && <4.14' 'base                        >=4.6'
+		'base                        >=4.6      && <4.14' 'base                        >=4.6' \
+		'QuickCheck                  >=2.12.6.1 && <2.14' 'QuickCheck                  >=2.12.6.1'
 }
