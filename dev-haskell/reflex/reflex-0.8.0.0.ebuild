@@ -63,6 +63,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/these-lens )
 "
 
+PATCHES=( "${FILESDIR}/${PN}-0.8.0.0-add-ghc-8.10-support.patch" )
+
 src_prepare() {
 	default
 
