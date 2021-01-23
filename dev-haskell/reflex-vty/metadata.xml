@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Host and widget library for Reflex-based FRP applications
-		
-		&lt;&lt;https://i.imgur.com/FULQNtu.gif&gt;&gt;
-		
-	</longdescription>
 </pkgmetadata>
