@@ -8,12 +8,6 @@ dev-haskell/reflex-basic-host
 dev-haskell/reflex-backend-socket
 dev-haskell/reflex-backend-wai
 
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-10)
-# this version of reflex is not currently compatible with ghc 8.10.x, but there
-# [is an pull request][1] open upstream to resolve this.
-# [1]: https://github.com/reflex-frp/reflex/pull/444
-=dev-haskell/reflex-0.8.0.0
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-05)
 # Both of these are produced by the same developer, both github repositories
 # have their latest commit in early 2018. These projects seem abandoned and
