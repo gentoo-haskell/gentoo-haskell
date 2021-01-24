@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,10 +23,10 @@ RDEPEND=">=dev-haskell/base-compat-0.10.5:=[profile?]
 	>=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/transformers-compat-0.6.5:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	>=dev-haskell/aeson-1.4.2.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?]
+	>=dev-haskell/aeson-1.4.2.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.8.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/assoc-1:=[profile?] <dev-haskell/assoc-1.1:=[profile?]
-	>=dev-haskell/quickcheck-2.12.6.1:2=[profile?] <dev-haskell/quickcheck-2.14:2=[profile?]
+	>=dev-haskell/quickcheck-2.12.6.1:2=[profile?]
 	>=dev-haskell/semigroupoids-5.3.2:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
 "
 DEPEND="${RDEPEND}
@@ -37,8 +37,10 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'aeson                 >=1.4.2.0 && <1.5' 'aeson                 >=1.4.2.0' \
 		'base     >=4.5.1.0 && <4.13' 'base     >=4.5.1.0' \
-		'base-compat  >=0.10.5  && <0.11' 'base-compat  >=0.10.5'
+		'base-compat  >=0.10.5  && <0.11' 'base-compat  >=0.10.5' \
+		'QuickCheck >=2.12.6.1 && <2.14' 'QuickCheck >=2.12.6.1'
 }
 
 src_configure() {
