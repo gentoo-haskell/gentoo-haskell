@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -48,6 +48,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck )
 "
 
+PATCHES=("${FILESDIR}"/${P}-persistent-2.11.patch)
+
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
@@ -57,7 +59,6 @@ src_prepare() {
 		'bson               >= 0.3.2   && < 0.4' 'bson               >= 0.3.2   && < 0.5' \
 		'mongoDB            >= 2.3       && < 2.7' 'mongoDB            >= 2.3       && < 2.8'
 }
-
 
 src_configure() {
 	haskell-cabal_src_configure \
