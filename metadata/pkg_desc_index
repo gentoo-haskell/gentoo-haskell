@@ -9,7 +9,7 @@ app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.6.6 0.6.7 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-text/lit 0.1.10.0: A simple tool for literate programming
-app-text/pandoc 2.11.3.1: Conversion between markup formats
+app-text/pandoc 2.11.4: Conversion between markup formats
 app-text/pdfsplit 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -320,7 +320,7 @@ dev-haskell/color 0.2.0: Color spaces and conversions between them
 dev-haskell/colorize-haskell 1.0.1: Highligt Haskell source
 dev-haskell/colour 2.3.5: A model for human colour/color perception
 dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
-dev-haskell/commonmark 0.1.1.2: Pure Haskell commonmark parser
+dev-haskell/commonmark 0.1.1.3: Pure Haskell commonmark parser
 dev-haskell/commonmark-extensions 0.2.0.4: Pure Haskell commonmark parser
 dev-haskell/commonmark-pandoc 0.2.0.1: Bridge between commonmark and pandoc AST
 dev-haskell/comonad 5.0.7 5.0.8: Comonads
@@ -1910,7 +1910,7 @@ dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit and Quickc
 dev-haskell/test-framework-th-prime 0.0.10: Template Haskell for test framework
 dev-haskell/testing-feat 1.1.0.0: Functional Enumeration of Algebraic Types
 dev-haskell/testing-type-modifiers 0.1.0.1: Data type modifiers for property based testing
-dev-haskell/texmath 0.12.0.3: Conversion between formats used to represent mathematics
+dev-haskell/texmath 0.12.1: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.2-r2: Functions for running Tex from Haskell
 dev-haskell/text 1.2.3.0 1.2.3.1 1.2.3.2 1.2.4.0-r1 1.2.4.1_rc1: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
