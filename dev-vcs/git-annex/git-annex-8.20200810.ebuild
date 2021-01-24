@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -119,6 +119,8 @@ DEPEND="${RDEPEND}
 DEPEND+=" dev-lang/perl
 	doc? ( www-apps/ikiwiki net-misc/rsync )
 "
+
+PATCHES=("${FILESDIR}"/${P}-persistent-2.11.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
