@@ -10,13 +10,16 @@ inherit haskell-cabal
 
 DESCRIPTION="A performant time library"
 HOMEPAGE="https://github.com/andrewthad/chronos"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/1.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# To run manually, try `ghc-pkg hide AC-Vector-Fancy` first. Currently, the test
+# suite fails due to https://github.com/andrewthad/chronos/issues/62
 RESTRICT=test # src/Chronos.hs:257:1: error: Ambiguous module name ‘Data.Vector’: AC-Vector-Fancy-2.4.0 vector-0.12.0.3
 
 RDEPEND=">=dev-haskell/aeson-1.1:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
@@ -43,6 +46,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	cabal_chdeps \
-		'aeson >= 1.1 && < 1.5' 'aeson >= 1.1'
+	# Pull revised cabal file from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
 }
