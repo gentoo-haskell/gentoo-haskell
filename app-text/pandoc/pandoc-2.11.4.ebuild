@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,13 +26,12 @@ RESTRICT=test
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.5:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/base-compat-0.9:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.2:=[profile?]
 	>=dev-haskell/blaze-html-0.9:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.8:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
-	>=dev-haskell/citeproc-0.3.0.1:=[profile?] <dev-haskell/citeproc-0.4:=[profile?]
-	>=dev-haskell/commonmark-0.1.1.2:=[profile?] <dev-haskell/commonmark-0.2:=[profile?]
+	>=dev-haskell/citeproc-0.3.0.5:=[profile?] <dev-haskell/citeproc-0.4:=[profile?]
+	>=dev-haskell/commonmark-0.1.1.3:=[profile?] <dev-haskell/commonmark-0.2:=[profile?]
 	>=dev-haskell/commonmark-extensions-0.2.0.4:=[profile?] <dev-haskell/commonmark-extensions-0.3:=[profile?]
 	>=dev-haskell/commonmark-pandoc-0.2:=[profile?] <dev-haskell/commonmark-pandoc-0.3:=[profile?]
 	>=dev-haskell/connection-0.3.1:=[profile?]
@@ -70,7 +69,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/tagsoup-0.14.6:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
-	>=dev-haskell/texmath-0.12.0.2:=[profile?] <dev-haskell/texmath-0.13:=[profile?]
+	>=dev-haskell/texmath-0.12.1:=[profile?] <dev-haskell/texmath-0.13:=[profile?]
 	>=dev-haskell/text-1.1.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-conversions-0.3:=[profile?] <dev-haskell/text-conversions-0.4:=[profile?]
 	>=dev-haskell/unicode-transforms-0.3:=[profile?] <dev-haskell/unicode-transforms-0.4:=[profile?]
@@ -78,12 +77,12 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/xml-1.3.12:=[profile?] <dev-haskell/xml-1.4:=[profile?]
 	>=dev-haskell/zip-archive-0.2.3.4:=[profile?] <dev-haskell/zip-archive-0.5:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 	trypandoc? ( >=dev-haskell/wai-0.3:=[profile?]
 			dev-haskell/wai-extra:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/diff-0.2 <dev-haskell/diff-0.5
 		>=dev-haskell/executable-path-0.0 <dev-haskell/executable-path-0.1
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.15
