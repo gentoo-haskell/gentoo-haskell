@@ -1,0 +1,23 @@
+Disambiguate `unit`:
+
+tasty/Main/DB.hs:5:3: error:
+    Ambiguous occurrence ‘unit’
+    It could refer to
+       either ‘Main.Prelude.unit’,
+              imported from ‘Main.Prelude’ at tasty/Main/DB.hs:11:1-19
+              (and originally defined in ‘profunctors-5.6.1:Data.Profunctor.Adjunction’)
+           or ‘Main.DB.unit’, defined at tasty/Main/DB.hs:38:1
+  |
+5 |   unit,
+  |   ^^^^
+--- a/tasty/Main/DB.hs
++++ b/tasty/Main/DB.hs
+@@ -2,7 +2,7 @@ module Main.DB
+ (
+   session,
+   oneRow,
+-  unit,
++  Main.DB.unit,
+   integerDatetimes,
+   serverVersion,
+ )
