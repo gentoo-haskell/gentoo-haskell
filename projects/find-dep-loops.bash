@@ -40,11 +40,12 @@ for p in "${pkgs[@]}"; do
             # $ portageq mass_best_visible / ebuild '>=dev-lang/ghc-8.8.4[test?]'
             # >=dev-lang/ghc-8.8.4[test?]:dev-lang/ghc-8.8.4
             #
-            # We dumt warnings as we don't handle 'foo? ( atoms.. )' correctly.
+            # We dump warnings as we don't handle 'foo? ( atoms.. )' correctly.
             # But resolution of 'atoms...' itself is good enough.
             portageq mass_best_visible / ebuild `egrep '^'${dtype}'=' -- "$p" | sed -e 's/^[^=]*=//'` 2>/dev/null |
             sed -e 's/.*://g' |
-            # don't include ghc itself
+            # Don't include ghc itself. It's a know and very common circular depend
+            # for certain USE-flags.
             grep -v 'dev-lang/ghc-[[:digit:]]'
         ))
       # construct depends
