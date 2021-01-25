@@ -132,7 +132,7 @@ dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platfor
 dev-haskell/auto-update 0.1.6: Efficiently run periodic, on-demand actions
 dev-haskell/aws 0.22-r1: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 2.0.2.0: Classes for working with types that can change clothes
-dev-haskell/base-compat 0.9.3 0.10.1 0.10.5 0.11.2: A compatibility layer for base
+dev-haskell/base-compat 0.10.1 0.10.5 0.11.2: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.2: base-compat with extra batteries
 dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
 dev-haskell/base-orphans 0.8.4: Backwards-compatible orphan instances for base
@@ -453,7 +453,7 @@ dev-haskell/decimal 0.5.1: Decimal numbers with variable precision
 dev-haskell/deepseq-generics 0.2.0.0: GHC.Generics-based Control.DeepSeq.rnf implementation
 dev-haskell/deferred-folds 0.9.15: Abstractions over deferred folds
 dev-haskell/dense-linear-algebra 0.1.0.0: Simple and incomplete pure haskell implementation of linear algebra
-dev-haskell/dependent-map 0.3.1.0: Dependent finite maps (partial dependent products)
+dev-haskell/dependent-map 0.3.1.0 0.4.0.0: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.4 0.6.2.0 0.7.1.0: Dependent sum type
 dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/deque 0.4.3: Double-ended queues
@@ -463,7 +463,7 @@ dev-haskell/dhall 1.37.1: A configuration language guaranteed to terminate
 dev-haskell/dhall-json 1.7.4: Convert between Dhall and JSON or YAML
 dev-haskell/dhall-nix 1.1.19: Dhall to Nix compiler
 dev-haskell/diagrams 1.4-r1: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.8.0.5-r1: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams-builder 0.8.0.5-r2: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.4.1-r1: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.4.4-r1: Collection of user contributions to diagrams EDSL
@@ -918,7 +918,7 @@ dev-haskell/hpc-coveralls 1.0.10: Coveralls.io support for Haskell
 dev-haskell/hpdf 1.5.1: Generation of PDF documents
 dev-haskell/hpp 0.6.3: A Haskell pre-processor
 dev-haskell/hpqtypes 1.9.1.0: Haskell bindings to libpqtypes
-dev-haskell/hprotoc 2.4.13: Parse Google Protocol Buffer specifications
+dev-haskell/hprotoc 2.4.13 2.4.17: Parse Google Protocol Buffer specifications
 dev-haskell/hps 0.15: Haskell Postscript
 dev-haskell/hreader 1.1.0: Generalization of MonadReader and ReaderT using hset
 dev-haskell/hs-bibutils 6.8.0.0: Haskell bindings to bibutils, the bibliography conversion utilities
@@ -1534,8 +1534,8 @@ dev-haskell/profunctor-extras 4.0: This package has been absorbed into profuncto
 dev-haskell/profunctors 5.2.2-r1 5.5.1 5.6.1: Profunctors
 dev-haskell/project-template 0.2.1.0: Specify Haskell project templates and generate files
 dev-haskell/prolog 0.3.2: A Prolog interpreter written in Haskell
-dev-haskell/protocol-buffers 2.4.13: Parse Google Protocol Buffer specifications
-dev-haskell/protocol-buffers-descriptor 2.4.13: module and code generated from the Google Protocol Buffer
+dev-haskell/protocol-buffers 2.4.13 2.4.17: Parse Google Protocol Buffer specifications
+dev-haskell/protocol-buffers-descriptor 2.4.13 2.4.17: Haskell implementation of the Google Protocol Buffer specification
 dev-haskell/protolude 0.2.3 0.2.4: A sensible set of defaults for writing custom Preludes
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1.0.1: Priority Search Queue
@@ -1599,8 +1599,8 @@ dev-haskell/reflex-backend-socket 0.2.0.0: Reflex bindings for TCP sockets
 dev-haskell/reflex-backend-wai 0.1.0.0: Reflex interface to 'wai'
 dev-haskell/reflex-basic-host 0.2.0.1-r1: A basic Reflex host for backend work
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
-dev-haskell/reflex-process 0.1.0.1: reflex-frp interface for running shell commands
-dev-haskell/reflex-vty 0.1.4.0: Reflex FRP host and widgets for vty applications
+dev-haskell/reflex-process 0.1.0.1 0.3.1.0: Reflex FRP interface for running system processes
+dev-haskell/reflex-vty 0.1.4.0 0.1.4.1: Reflex FRP host and widgets for VTY applications
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
 dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.4: Happstack support for reform
