@@ -1555,7 +1555,7 @@ dev-haskell/quickcheck-arbitrary-template 0.2.1.1: Generate QuickCheck Gen for S
 dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-classes 0.6.4.0: QuickCheck common typeclasses
 dev-haskell/quickcheck-classes-base 0.6.1.0: QuickCheck common typeclasses from 'base'
-dev-haskell/quickcheck-instances 0.3.22 0.3.25.1 0.3.25.2: Common quickcheck instances
+dev-haskell/quickcheck-instances 0.3.25.2: Common quickcheck instances
 dev-haskell/quickcheck-io 0.2.0: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1: QuickCheck properties for standard type classes
 dev-haskell/quickcheck-safe 0.1.0.6 0.1.0.6-r1: Safe reimplementation of QuickCheck's core
@@ -1778,7 +1778,7 @@ dev-haskell/speculation 1.5.0.3-r1: A framework for safe, programmable, speculat
 dev-haskell/sphinx 0.6.0.2: Haskell bindings to the Sphinx full-text searching daemon
 dev-haskell/spintax 0.3.5: Random text generation based on spintax
 dev-haskell/split 0.2.3.4: Combinator library for splitting lists
-dev-haskell/splitmix 0.0.4 0.1.0.3: Fast Splittable PRNG
+dev-haskell/splitmix 0.1.0.3: Fast Splittable PRNG
 dev-haskell/splot 0.3.14: A tool for visualizing the lifecycle of many concurrent multi-staged processes
 dev-haskell/spool 0.1: Convert between ByteString and Vector.Storable without copying
 dev-haskell/spoon 0.3.1: Catch errors thrown from pure computations
