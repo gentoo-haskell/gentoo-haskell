@@ -1,0 +1,39 @@
+# This patch is associated with upstream pull request 444
+
+From d230632427fc1b7031163567c97f20050610c122 Mon Sep 17 00:00:00 2001
+From: Hamish Mackenzie <Hamish.K.Mackenzie@gmail.com>
+Date: Sun, 18 Oct 2020 21:11:20 +1300
+Subject: [PATCH] Fixes for ghc 8.10
+
+---
+ src/Reflex/Profiled.hs        | 2 +-
+ src/Reflex/Spider/Internal.hs | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/Reflex/Profiled.hs b/src/Reflex/Profiled.hs
+index 86821507..68181a9e 100644
+--- a/src/Reflex/Profiled.hs
++++ b/src/Reflex/Profiled.hs
+@@ -147,7 +147,7 @@ instance Reflex t => Reflex (ProfiledTimeline t) where
+   pushCheap f (Event_Profiled e) = coerce $ pushCheap (coerce f) $ profileEvent e
+   pull = Behavior_Profiled . pull . coerce
+   fanG (Event_Profiled e) = EventSelectorG $ coerce $ selectG (fanG $ profileEvent e)
+-  mergeG :: forall (k :: z -> *) q v. GCompare k
++  mergeG :: forall z (k :: z -> *) q v. GCompare k
+     => (forall a. q a -> Event (ProfiledTimeline t) (v a))
+     -> DMap k q -> Event (ProfiledTimeline t) (DMap k v)
+   mergeG nt = Event_Profiled #. mergeG (coerce nt)
+diff --git a/src/Reflex/Spider/Internal.hs b/src/Reflex/Spider/Internal.hs
+index 68527c86..26fd5f18 100644
+--- a/src/Reflex/Spider/Internal.hs
++++ b/src/Reflex/Spider/Internal.hs
+@@ -2775,7 +2775,7 @@ instance HasSpiderTimeline x => R.Reflex (SpiderTimeline x) where
+   fanG e = R.EventSelectorG $ SpiderEvent . selectG (fanG (unSpiderEvent e))
+   {-# INLINABLE mergeG #-}
+   mergeG
+-    :: forall (k :: k2 -> *) q (v :: k2 -> *). GCompare k
++    :: forall k2 (k :: k2 -> *) q (v :: k2 -> *). GCompare k
+     => (forall a. q a -> R.Event (SpiderTimeline x) (v a))
+     -> DMap k q
+     -> R.Event (SpiderTimeline x) (DMap k v)
+

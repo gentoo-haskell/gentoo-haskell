@@ -22,8 +22,8 @@ RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-0.
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/exceptions-0.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-	>=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.23:=[profile?]
-	>=dev-haskell/haskell-src-exts-simple-1.18:=[profile?] <dev-haskell/haskell-src-exts-simple-1.23:=[profile?]
+	>=dev-haskell/haskell-src-exts-1.18:=[profile?]
+	>=dev-haskell/haskell-src-exts-simple-1.18:=[profile?]
 	>=dev-haskell/hint-0.4:=[profile?] <dev-haskell/hint-0.10:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -50,7 +50,9 @@ src_prepare() {
 		'base >= 4.10 && < 4.14' 'base >= 4.10 && < 5' \
 		'lens >= 4.0 && < 4.19' 'lens >= 4.0' \
 		'diagrams-postscript >= 1.4 && < 1.5' 'diagrams-postscript >= 1.4' \
-		'diagrams-svg >= 1.4 && < 1.5' 'diagrams-svg >= 1.4'
+		'diagrams-svg >= 1.4 && < 1.5' 'diagrams-svg >= 1.4' \
+		'haskell-src-exts >= 1.18 && < 1.23' 'haskell-src-exts >= 1.18' \
+		'haskell-src-exts-simple >= 1.18 && < 1.23' 'haskell-src-exts-simple >= 1.18'
 }
 
 src_configure() {

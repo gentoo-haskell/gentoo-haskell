@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
-	<longdescription>
-		Run shell commands from within reflex applications and interact with them over a functional-reactive interface
-	</longdescription>
 </pkgmetadata>
