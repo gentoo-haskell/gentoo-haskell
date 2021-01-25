@@ -32,14 +32,12 @@ RDEPEND=">=dev-haskell/atomic-primops-0.8:=[profile?] <dev-haskell/atomic-primop
 	examples? ( >=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 			>=dev-haskell/http-conduit-2.2.2:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 			>=dev-haskell/random-1.0.0:=[profile?] <dev-haskell/random-2:=[profile?]
-			<dev-haskell/unliftio-core-0.2:=[profile?]
 			>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 			>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.13:=[profile?] )
 	examples-sdl? ( >=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 			>=dev-haskell/http-conduit-2.2.2:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 			>=dev-haskell/random-1.0.0:=[profile?] <dev-haskell/random-2:=[profile?]
 			>=dev-haskell/sdl-0.6.5:=[profile?] <dev-haskell/sdl-0.7:=[profile?]
-			<dev-haskell/unliftio-core-0.2:=[profile?]
 			>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 			>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.13:=[profile?] )
 "
