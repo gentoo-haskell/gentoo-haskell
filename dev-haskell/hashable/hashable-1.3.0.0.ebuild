@@ -29,9 +29,7 @@ RESTRICT=test # circular deps: hashable[test]->quickcheck->semigroups->hashable
 RDEPEND=">=dev-haskell/text-0.12:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.12
-"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	default
