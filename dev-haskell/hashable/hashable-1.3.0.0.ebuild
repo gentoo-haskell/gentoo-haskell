@@ -9,6 +9,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 # break circular dependencies:
 # https://github.com/gentoo-haskell/gentoo-haskell/issues/810
+# hashable → cabal → parsec → semigroups → hashable
 CABAL_FEATURES="${CABAL_FEATURES} nocabaldep"
 inherit haskell-cabal
 
