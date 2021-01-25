@@ -31,7 +31,7 @@ dev-haskell/active 0.2.0.14-r1: Abstractions for animation
 dev-haskell/ad 4.4.1: Automatic Differentiation
 dev-haskell/adjunctions 4.4: Adjunctions and representable functors
 dev-haskell/aes 0.2.9: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 1.1.2.0 1.4.7.1 1.5.4.1: Fast JSON parsing and encoding
+dev-haskell/aeson 1.5.4.1: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.2.0.0: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.9-r3: Compatibility layer for aeson
@@ -726,7 +726,7 @@ dev-haskell/gio 0.13.8.1: Binding to GIO
 dev-haskell/git 0.3.0: Git operations in haskell
 dev-haskell/git-lfs 1.1.1: git-lfs protocol
 dev-haskell/githash 0.1.5.0: Compile git revision info into Haskell projects
-dev-haskell/github 0.23 0.26: Access to the GitHub API, v3
+dev-haskell/github 0.26: Access to the GitHub API, v3
 dev-haskell/github-backup 1.20200721: backs up everything github knows about a repository, to the repository
 dev-haskell/gitrev 1.3.1: Compile git revision info into Haskell projects
 dev-haskell/gl 0.8.0-r3 0.9-r1: Complete OpenGL raw bindings
@@ -757,7 +757,7 @@ dev-haskell/gpipe-glfw 1.4.1.4: GLFW OpenGL context creation for GPipe
 dev-haskell/graphalyze 0.14.1.1-r2: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.4.4: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
-dev-haskell/graphviz 2999.18.1.2 2999.20.1.0: Bindings to Graphviz for graph visualisation
+dev-haskell/graphviz 2999.20.1.0: Bindings to Graphviz for graph visualisation
 dev-haskell/gravatar 0.8.0: Generate Gravatar image URLs
 dev-haskell/groom 0.1.2.1: Pretty printing for well-behaved Show instances
 dev-haskell/groundhog 0.11.0: Type-safe datatype-database mapping library
@@ -777,9 +777,9 @@ dev-haskell/gtk3 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interfac
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/hackage-db 2.1.0: Access cabal-install's Hackage database via Data.Map
 dev-haskell/hackage-security 0.5.3.0-r3 0.6.0.1-r1: Hackage security library
-dev-haskell/haddock 2.17.2 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0 9999: A documentation-generation tool for Haskell libraries
-dev-haskell/haddock-api 2.17.3 2.19.0.1 2.20.0-r1 2.22.0 2.23.0 2.23.1 2.24.0: A documentation-generation tool for Haskell libraries
-dev-haskell/haddock-library 1.4.4 1.5.0.1 1.6.0-r1 1.7.0 1.8.0 1.9.0: Library exposing some functionality of Haddock
+dev-haskell/haddock 2.23.1 2.24.0 9999: A documentation-generation tool for Haskell libraries
+dev-haskell/haddock-api 2.23.1 2.24.0: A documentation-generation tool for Haskell libraries
+dev-haskell/haddock-library 1.8.0 1.9.0: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1: A simple library for creating animated ascii art on ANSI terminals
 dev-haskell/hakyll 4.13.4.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.12: Wrapper to integrate literate Agda files with Hakyll
@@ -946,7 +946,7 @@ dev-haskell/hsopenssl 0.11.4.17: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.4: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.3.6: A SPARQL query generator and DSL, and a client to query a SPARQL server
-dev-haskell/hspec 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: A Testing Framework for Haskell
+dev-haskell/hspec 2.7.8: A Testing Framework for Haskell
 dev-haskell/hspec-attoparsec 0.1.0.2: Utility functions for testing your attoparsec parsers with hspec
 dev-haskell/hspec-contrib 0.5.1: Contributed functionality for Hspec
 dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: A Testing Framework for Haskell
@@ -1687,7 +1687,7 @@ dev-haskell/sdl2-image 2.0.0: Bindings to SDL2_image
 dev-haskell/sdl2-mixer 1.1.0: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.10: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/selective 0.3 0.4.1.1: Selective applicative functors
-dev-haskell/semialign 1 1.1.0.1: Align and Zip type-classes from the common Semialign ancestor
+dev-haskell/semialign 1.1.0.1: Align and Zip type-classes from the common Semialign ancestor
 dev-haskell/semialign-indexed 1.1-r1: SemialignWithIndex, i.e. izipWith and ialignWith
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 5.3.4: Semigroupoids: Category sans id
@@ -1769,7 +1769,6 @@ dev-haskell/socks 0.6.1: Socks proxy (version 5) implementation
 dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell School of Expression"
 dev-haskell/some 1.0.1: Existential type: Some
 dev-haskell/sop-core 0.5.0.1: True Sums of Products
-dev-haskell/sourcegraph 0.7.0.7-r1: Static code analysis using graph-theoretic techniques
 dev-haskell/sourcemap 0.1.6: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.3.1: Play, write, read, convert audio signals using Sox
 dev-haskell/spdx 0.2.2.0: SPDX license expression language
@@ -1893,7 +1892,7 @@ dev-haskell/tcp-streams-openssl 1.0.1.0-r1: Tcp streams using openssl for tls su
 dev-haskell/tdigest 0.2.1-r2: On-line accumulation of rank-based statistics
 dev-haskell/template 0.2.0.10: Simple string substitution
 dev-haskell/template-haskell-compat-v0208 0.1.5: A backwards compatibility layer for Template Haskell newer than 2.8
-dev-haskell/temporary 1.2.1.1 1.3: Portable temporary file and directory support for Windows and Unix
+dev-haskell/temporary 1.3: Portable temporary file and directory support for Windows and Unix
 dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support for Windows and Unix
 dev-haskell/tensor 1.1.0.2: Tensor data types
 dev-haskell/terminal-progress-bar 0.4.1: A simple progress bar in the terminal
@@ -1927,7 +1926,7 @@ dev-haskell/text-postgresql 0.0.3.1: Parser and Printer of PostgreSQL extended t
 dev-haskell/text-printer 0.5.0.1: Abstract interface for text builders/printers
 dev-haskell/text-region 0.3.1.0: Marking text regions
 dev-haskell/text-short 0.1.3: Memory-efficient representation of Unicode text strings
-dev-haskell/text-show 3.7.5 3.8.5 3.9: Efficient conversion of values into Text
+dev-haskell/text-show 3.8.5 3.9: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/text-zipper 0.10.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
@@ -1945,7 +1944,7 @@ dev-haskell/th-reify-compat 0.0.1.5: Compatibility for the result type of TH rei
 dev-haskell/th-reify-many 0.1.9: Recurseively reify template haskell datatype info
 dev-haskell/th-utilities 0.2.4.1: Collection of useful functions for use with Template Haskell
 dev-haskell/themoviedb 1.2.0.1: Haskell API bindings for http://themoviedb.org
-dev-haskell/these 0.7.5 1.0.1-r1 1.1.1.1: An either-or-both data type
+dev-haskell/these 1.0.1-r1 1.1.1.1: An either-or-both data type
 dev-haskell/these-lens 1.0.1.1: Lenses for These
 dev-haskell/threads 0.5.1.6: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.9.0.0: GUI framework that uses the web browser as a display
@@ -1977,7 +1976,7 @@ dev-haskell/transformers-compat 0.6.6: A small compatibility shim for the transf
 dev-haskell/transformers-free 1.0.1: Free monad transformers
 dev-haskell/transformers-lift 0.2.0.2: Ad-hoc type classes for lifting
 dev-haskell/traverse-with-class 1.0.1.0: Generic applicative traversals
-dev-haskell/tree-diff 0.0.2.1-r1 0.1-r2: Diffing of (expression) trees
+dev-haskell/tree-diff 0.1-r2: Diffing of (expression) trees
 dev-haskell/trifecta 2.1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1: Contention-free STM hash map
@@ -2235,7 +2234,7 @@ dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/hadolint 1.17.3: Dockerfile Linter JavaScript API
-dev-util/hdocs 0.5.4.0 0.5.5.0: Haskell docs tool
+dev-util/hdocs 0.5.5.0: Haskell docs tool
 dev-util/hsdev 0.3.4.0-r2: Haskell development library
 dev-util/shellcheck 0.7.1: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
