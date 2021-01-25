@@ -29,6 +29,10 @@ def print_edges(source, target, edge):
     if target.endswith("?"):
         return
 
+    # Ignore blockers like !a/b
+    if portage.dep.Atom(target).blocker:
+        return
+
     # hack: ignore dev-lang/ghc's depends. Assume it has no circular deps.
     if source == 'dev-lang/ghc':
         return
