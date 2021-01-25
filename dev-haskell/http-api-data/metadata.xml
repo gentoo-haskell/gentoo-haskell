@@ -7,6 +7,5 @@
 	</maintainer>
 	<use>
 		<flag name="text-show">Use text-show library for efficient ToHttpApiData implementations.</flag>
-		<flag name="use-text-show">Use text-show library for efficient ToHttpApiData implementations</flag>
 	</use>
 </pkgmetadata>
