@@ -985,7 +985,7 @@ dev-haskell/html-parse 0.2.0.2: A high-performance HTML tokenizer
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.15: A library for client-side HTTP
-dev-haskell/http-api-data 0.3.10 0.4.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
+dev-haskell/http-api-data 0.4.2: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
 dev-haskell/http-client 0.4.30 0.5.14 0.6.4.1: An HTTP client engine, intended as a base layer for more user-friendly packages
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
