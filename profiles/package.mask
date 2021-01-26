@@ -322,10 +322,6 @@ dev-haskell/hsx
 # ghc-7+.
 dev-haskell/takusen
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
-# Not up to date with ghc-8: https://github.com/tanakh/Peggy/issues/11
-dev-haskell/peggy
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
