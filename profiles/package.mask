@@ -69,10 +69,6 @@ dev-haskell/github-backup
 dev-haskell/test-framework-th-prime
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
-# Needs porting to modern shelly.
-dev-haskell/cabal-meta
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Needs a port to modern http-conduit. No homepage.
 dev-haskell/handa-gdata
 
