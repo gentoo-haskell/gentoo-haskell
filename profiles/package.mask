@@ -346,10 +346,6 @@ dev-haskell/accelerate-io
 app-text/lit
 dev-haskell/highlighting-kate
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-18)
-# Needs a port to MonadFail. Has no homepage.
-dev-haskell/picoparsec
-
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
