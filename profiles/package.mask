@@ -291,11 +291,6 @@ dev-haskell/encoding
 # modern dependencies.
 dev-haskell/emailaddress
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
-# No development in past 5 years. Needs a port to
-# modern ghc.
-dev-haskell/type-eq
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
