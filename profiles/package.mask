@@ -235,10 +235,6 @@ dev-haskell/stringtable-atom
 # Needs a port to cabal-3.
 dev-haskell/hsql-postgresql
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
-# Needs a port to modern ghc: https://bitbucket.org/HList/hlist/issues/3/support-base-412
-dev-haskell/hlist
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
