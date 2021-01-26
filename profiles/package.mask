@@ -312,11 +312,6 @@ dev-haskell/pop3-client
 # Deprecated and obsolete. No revdeps.
 dev-haskell/iorefcas
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
-# No homepage, no release over past 4 years. No port to
-# modern haskell-src-exts.
-dev-haskell/hsx
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
