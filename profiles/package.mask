@@ -296,10 +296,6 @@ dev-haskell/emailaddress
 # modern ghc.
 dev-haskell/type-eq
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
-# Needs porting to modern conduit: https://github.com/eggzilla/BlastHTTP/issues/1
-dev-haskell/blasthttp
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
