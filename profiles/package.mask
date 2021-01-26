@@ -369,11 +369,6 @@ app-admin/super-user-spark
 # masked until it bumps its dependency upper bounds.
 <dev-haskell/microlens-platform-0.4
 
-# Jack Todaro <solpeth@posteo.org> (2020-12-17)
-# Package no longer works. Has not been kept up
-# to date. Masked for removal.
-sci-mathematics/agda-lib-ffi
-
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
