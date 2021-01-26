@@ -281,11 +281,6 @@ dev-haskell/ftphs
 dev-haskell/friday
 dev-haskell/friday-devil
 
-# Jack Todaro <solpeth@posteo.org> (2020-12-20)
-# Needs porting to ghc-prim-0.6. Fails to build on
-# ghc-8.10.2.
-dev-haskell/encoding
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
