@@ -69,10 +69,6 @@ dev-haskell/github-backup
 dev-haskell/test-framework-th-prime
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
-# Needs a port to cabal-3: No homepage.
-dev-haskell/package-description-remote
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Needs a port to cabal-3: https://github.com/haskell-suite/haskell-packages/issues/25
 dev-haskell/haskell-packages
 
