@@ -80,10 +80,6 @@ dev-haskell/test-framework-th-prime
 dev-haskell/bitsyntax
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
-# Deprecated upstream. Masked for removal.
-dev-haskell/ghci-ng
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-22)
 # No revdeps. Needs tweaks for ghc-8.4+.
 dev-haskell/pure-priority-queue
 
