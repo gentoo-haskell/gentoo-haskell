@@ -246,10 +246,6 @@ dev-haskell/regex-dfa
 dev-haskell/regex-parsec
 dev-haskell/regex-posix-unittest
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
-# Needs a port to MonadFail.
-dev-haskell/regex-tre
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
