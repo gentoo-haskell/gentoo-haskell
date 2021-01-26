@@ -79,13 +79,6 @@ dev-haskell/test-framework-th-prime
 # Needs porting to ghc-8.10 template haskell: https://github.com/joecrayne/hs-bitsyntax/issues/1
 dev-haskell/bitsyntax
 
-# Jack Todaro <solpeth@posteo.org> (2020-12-21)
-# No release since 2017. Hangs when compiling with ghc-8.10.2.
-# Also mask revdep darcswatch, which has had no release since
-# 2011. Masked for removal.
-dev-haskell/mime-string
-dev-vcs/darcswatch
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
