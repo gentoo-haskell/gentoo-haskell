@@ -69,10 +69,6 @@ dev-haskell/github-backup
 dev-haskell/test-framework-th-prime
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
-# No homepage. Needs a port to network-3.
-dev-haskell/hspread
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-25)
 # Needs a port to cabal-3: No homepage.
 dev-haskell/package-description-remote
 
