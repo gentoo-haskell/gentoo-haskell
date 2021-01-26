@@ -65,10 +65,6 @@ dev-haskell/network-transport-inmemory
 dev-haskell/github-backup
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2020-12-26)
-# Was never ported to ghc-7. Masked for removal.
-dev-haskell/strategylib
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-26)
 # Typeclass interfaces are not compatible with network-3.
 dev-haskell/network-socket-options
 
