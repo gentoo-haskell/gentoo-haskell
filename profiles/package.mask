@@ -227,10 +227,6 @@ dev-haskell/webserver
 # No development in past 4 years. Needs porting to network-3.
 dev-haskell/memcache
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
-# No development in past 6 years. Needs a port to MonadFail.
-dev-haskell/stringtable-atom
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
