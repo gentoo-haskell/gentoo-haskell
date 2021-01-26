@@ -205,11 +205,6 @@ dev-haskell/onrmt
 dev-haskell/mime-string
 dev-vcs/darcswatch
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
-# needs port to ghc-8.8
-dev-haskell/multirec
-dev-haskell/annotations
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
