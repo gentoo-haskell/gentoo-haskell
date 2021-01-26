@@ -286,11 +286,6 @@ dev-haskell/friday-devil
 # ghc-8.10.2.
 dev-haskell/encoding
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-19)
-# No development in past 4 years. Needs a port to
-# modern dependencies.
-dev-haskell/emailaddress
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
