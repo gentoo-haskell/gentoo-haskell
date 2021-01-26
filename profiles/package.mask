@@ -239,13 +239,6 @@ dev-haskell/hsql-postgresql
 # Needs a port to modern ghc: https://bitbucket.org/HList/hlist/issues/3/support-base-412
 dev-haskell/hlist
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
-# Needs a port to modern ghc: https://hub.darcs.net/shelarcy/regex-tdfa-text/issue/1
-dev-haskell/regex-tdfa-text
-dev-haskell/regex-dfa
-dev-haskell/regex-parsec
-dev-haskell/regex-posix-unittest
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
