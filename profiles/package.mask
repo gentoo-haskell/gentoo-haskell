@@ -218,11 +218,6 @@ dev-haskell/hascas
 # Needs a port to ghc-7. Very old package.
 dev-haskell/monadlab
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-20)
-# No development in past 4 years. Needs porting to network-3.
-dev-haskell/c10k
-dev-haskell/webserver
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
