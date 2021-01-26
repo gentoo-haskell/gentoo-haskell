@@ -350,11 +350,6 @@ dev-haskell/highlighting-kate
 # Needs a port to MonadFail. Has no homepage.
 dev-haskell/picoparsec
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-18)
-# Needs port to new gtk. Does not compile. Last commit in 2015.
-# Use dev-haskell/timeplot instead.
-dev-haskell/splot
-
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
