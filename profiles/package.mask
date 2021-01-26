@@ -359,11 +359,6 @@ dev-haskell/splot
 # Needs port to ghc-8.8: https://github.com/jyp/glpk-hs/issues/15
 dev-haskell/glpk-hs
 
-# Jack Todaro <solpeth@posteo.org> (2020-12-18)
-# Unmaintained and declared dead upstream. Masked for
-# removal.
-app-admin/super-user-spark
-
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
