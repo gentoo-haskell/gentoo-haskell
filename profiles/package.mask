@@ -264,10 +264,6 @@ dev-haskell/cabal-db
 dev-haskell/ghci-lib
 
 # Jack Todaro <solpeth@posteo.org> (2020-12-20)
-# No release since 2016. Masked for removal.
-dev-haskell/gconf
-
-# Jack Todaro <solpeth@posteo.org> (2020-12-20)
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
 
