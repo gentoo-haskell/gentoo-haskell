@@ -271,11 +271,6 @@ dev-haskell/gconf
 # No release since 2014. Masked for removal
 dev-haskell/geniplate
 
-# Jack Todaro <solpeth@posteo.org> (2020-12-20)
-# No release since 2017. Needs porting to network-3.
-# Masked for removal.
-dev-haskell/ftphs
-
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Packages have not been maintained in ::haskell
 # for many years, and have not built for many
