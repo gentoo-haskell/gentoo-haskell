@@ -608,7 +608,7 @@ dev-haskell/follow-file 0.0.3: Be notified when a file gets appended, solely wit
 dev-haskell/fontyfruity 0.5.3.5: A true type file format loader
 dev-haskell/force-layout 0.4.0.6-r2: Simple force-directed layout
 dev-haskell/foreign-store 0.2: Store a stable pointer in a foreign context to be retrieved later
-dev-haskell/formatting 6.3.7: Combinator-based type-safe formatting (like printf() or FORMAT)
+dev-haskell/formatting 6.3.7 7.1.1: Combinator-based type-safe formatting (like printf() or FORMAT)
 dev-haskell/foundation 0.0.25: Alternative prelude with batteries and no dependencies
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 5.1.3 5.1.5: Monads for free
