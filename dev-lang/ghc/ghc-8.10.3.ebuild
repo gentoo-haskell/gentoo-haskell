@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -485,6 +485,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
+		eapply "${FILESDIR}"/${PN}-8.10.3-C99-typo-ac270.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
