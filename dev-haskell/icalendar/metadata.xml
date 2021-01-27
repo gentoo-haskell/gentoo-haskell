@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="network-uri">use network-uri package</flag>
-	</use>
-	<longdescription>
-		Data definitions, parsing and printing of the iCalendar
-		format (RFC5545).
-	</longdescription>
 </pkgmetadata>
