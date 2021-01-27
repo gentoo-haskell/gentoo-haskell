@@ -36,6 +36,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec )
 "
 
-PATCHES=( "${FILESDIR}/${PN}-5.3.1-upstream-monadfail-fix.patch" 
-	"${FILESDIR}/${PN}-5.3.1-upstream-haskell-src-exts-fix.patch" 
+PATCHES=( "${FILESDIR}/${PN}-5.3.1-upstream-monadfail-fix.patch"
+	"${FILESDIR}/${PN}-5.3.1-upstream-haskell-src-exts-fix.patch"
 	"${FILESDIR}/${PN}-5.3.1-upstream-monadfail-test-fix.patch" )
