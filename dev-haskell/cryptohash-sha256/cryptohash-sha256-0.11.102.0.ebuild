@@ -23,7 +23,7 @@ RDEPEND=">=dev-lang/ghc-8.4.3:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/sha-1.6.4 <dev-haskell/sha-1.7
-		>=dev-haskell/tasty-1.1 <dev-haskell/tasty-1.2
+		>=dev-haskell/tasty-1.1
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11
 		|| ( ( >=dev-haskell/base16-bytestring-0.1.1 <dev-haskell/base16-bytestring-0.2 )
