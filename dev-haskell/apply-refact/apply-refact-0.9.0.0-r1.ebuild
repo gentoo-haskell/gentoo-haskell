@@ -36,3 +36,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-expected-failure
 		dev-haskell/tasty-golden )
 "
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag executable executable)
+}
+
+pkg_postinst() {
+	if use executable; then
+		elog "The executable installed with this package (normally named 'refactor')"
+		elog "has been renamed to 'apply-refactor' to help prevent name collisions."
+	fi
+}
