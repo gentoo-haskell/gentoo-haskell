@@ -1,0 +1,18 @@
+diff -urN apply-refact-0.9.0.0/apply-refact.cabal apply-refact-0.9.0.0-new/apply-refact.cabal
+--- apply-refact-0.9.0.0/apply-refact.cabal	2001-09-08 19:46:40.000000000 -0600
++++ apply-refact-0.9.0.0-new/apply-refact.cabal	2021-01-28 03:28:47.706963715 -0700
+@@ -49,7 +49,13 @@
+   hs-source-dirs:      src
+   default-language:    Haskell2010
+ 
+-executable refactor
++flag executable
++  description: Install the apply-refactor executable
++  default: False
++
++executable apply-refactor
++  if !flag(executable)
++    buildable: False
+   main-is: Main.hs
+   other-modules:
+                  Paths_apply_refact
