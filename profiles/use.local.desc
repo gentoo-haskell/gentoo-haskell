@@ -303,6 +303,8 @@ dev-haskell/parsers:attoparsec - Enable the use of the `attoparsec` package
 dev-haskell/parsers:parsec - Enable the use of the `parsec` package
 dev-haskell/path:dev - Turn on development settings.
 dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nano second precision.
+dev-haskell/persistent-odbc:debug - Enable debug
+dev-haskell/persistent-odbc:tester - Enable test
 dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable
 dev-haskell/pipes-key-value-csv:devel - Development mode (-Werror)
