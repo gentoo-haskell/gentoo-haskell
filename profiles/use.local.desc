@@ -133,6 +133,7 @@ dev-haskell/freer-effects:test-hlint - Enable test suite that checks sources usi
 dev-haskell/gargoyle-postgresql:executables - Install executables
 dev-haskell/gargoyle-postgresql-nix:executables - Install executables
 dev-haskell/gauge:analysis - Build with statistical analysis support
+dev-haskell/ghc-check:package-abis - record package abis at compile time for improved precision (requires compile-time TH)
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
 dev-haskell/ghc-heap-view:prim-supports-any - The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)
 dev-haskell/ghc-lib-parser-ex:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
@@ -141,6 +142,9 @@ dev-haskell/ghc-tcplugins-extra:deverror - Enables `-Werror` for development mod
 dev-haskell/ghc-typelits-extra:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghc-typelits-knownnat:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghc-typelits-natnormalise:deverror - Enables `-Werror` for development mode and TravisCI
+dev-haskell/ghcide:bench-exe - Build the ghcide-bench executable
+dev-haskell/ghcide:ghc-lib - build against ghc-lib instead of the ghc package
+dev-haskell/ghcide:test-exe - Build the ghcide-test-preprocessor executable
 dev-haskell/gi-cairo-render:cairo-pdf - Build the PDF backend of Cairo.
 dev-haskell/gi-cairo-render:cairo-ps - Build the PostScript backend of Cairo.
 dev-haskell/gi-cairo-render:cairo-svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
@@ -187,6 +191,7 @@ dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
 dev-haskell/hexpat:bundled-expat - Use bundled expat instead of dev-libs/expat
+dev-haskell/hie-compat:ghc-lib - build against ghc-lib instead of the ghc package
 dev-haskell/highlighter:executable - Install a "highlighter" executable
 dev-haskell/highlighting-kate:executable - Build the Highlight executable.
 dev-haskell/highlighting-kate:pcre-light - Use the pcre-light library instead of regex-pcre-builtin.
@@ -230,6 +235,7 @@ dev-haskell/hxt:profile - turn profiling on
 dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hyphenation:embed - Embed data in library binary (Warning: This increases the executable size by about 1Mb unless unneeded language data files are manually removed from the "data" directory before compiling)
 dev-haskell/ignore:without-pcre - Disable pcre support
+dev-haskell/implicit-hie:executable - Build the gen-hie executable
 dev-haskell/inflections:dev - Turn on development settings.
 dev-haskell/influxdb:examples - Build examples
 dev-haskell/inline-c:gsl-example - Build GSL example
@@ -353,6 +359,8 @@ dev-haskell/reflex:debug-trace-events - Add instrumentation that outputs the sta
 dev-haskell/reflex:fast-weak - Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default
 dev-haskell/reflex:reflex-optimizer - Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
+dev-haskell/retrie:example - build the retrie example executable
+dev-haskell/retrie:executable - build the retrie executable
 dev-haskell/retry:lib-werror - 
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking executable.
