@@ -7,19 +7,19 @@
 	</maintainer>
 	<use>
 		<flag name="agpl">Enable AGPL dependencies</flag>
-		<flag name="brittany">Enable brittany plugin</flag>
-		<flag name="class">Enable class plugin</flag>
-		<flag name="eval">Enable eval plugin</flag>
-		<flag name="floskell">Enable floskell plugin</flag>
-		<flag name="fourmolu">Enable fourmolu plugin</flag>
-		<flag name="hlint">Enable hlint plugin</flag>
-		<flag name="importlens">Enable importLens plugin</flag>
-		<flag name="modulename">Enable moduleName plugin</flag>
-		<flag name="ormolu">Enable ormolu plugin</flag>
-		<flag name="pragmas">Enable pragmas plugin</flag>
-		<flag name="retrie">Enable retrie plugin</flag>
-		<flag name="splice">Enable splice plugin</flag>
-		<flag name="stylish-haskell">Enable stylishHaskell plugin</flag>
-		<flag name="tactic">Enable tactic plugin</flag>
+		<flag name="hls_plugins_class">Enable class plugin</flag>
+		<flag name="hls_plugins_eval">Enable eval plugin</flag>
+		<flag name="hls_plugins_hlint">Enable hlint plugin</flag>
+		<flag name="hls_plugins_import-lens">Enable importLens plugin</flag>
+		<flag name="hls_plugins_module-name">Enable moduleName plugin</flag>
+		<flag name="hls_plugins_pragmas">Enable pragmas plugin</flag>
+		<flag name="hls_plugins_retrie">Enable retrie plugin</flag>
+		<flag name="hls_plugins_splice">Enable splice plugin</flag>
+		<flag name="hls_plugins_tactic">Enable tactic plugin</flag>
+		<flag name="hls_formatters_brittany">Enable brittany plugin</flag>
+		<flag name="hls_formatters_floskell">Enable floskell plugin</flag>
+		<flag name="hls_formatters_fourmolu">Enable fourmolu plugin</flag>
+		<flag name="hls_formatters_ormolu">Enable ormolu plugin</flag>
+		<flag name="hls_formatters_stylish-haskell">Enable stylishHaskell plugin</flag>
 	</use>
 </pkgmetadata>
