@@ -9,17 +9,4 @@
 		<flag name="library-only">Build for use with "yesod devel"</flag>
 		<flag name="threaded">Build with support for multithreaded execution.</flag>
 	</use>
-	<longdescription>
-		A simple web-based user interface for the hledger accounting system,
-		providing a more modern UI than the command-line or terminal interfaces.
-		It can be used as a local single-user UI, or as a multi-user UI for
-		viewing\/adding\/editing on the web.
-		
-		hledger is a robust, cross-platform set of tools for tracking money,
-		time, or any other commodity, using double-entry accounting and a
-		simple, editable file format, with command-line, terminal and web
-		interfaces. It is a Haskell rewrite of Ledger, and one of the leading
-		implementations of Plain Text Accounting. Read more at:
-		&lt;https://hledger.org&gt;
-	</longdescription>
 </pkgmetadata>

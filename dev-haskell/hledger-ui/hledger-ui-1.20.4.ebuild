@@ -25,8 +25,8 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.9:=
 	dev-haskell/data-default:=
 	>=dev-haskell/extra-1.6.3:=
 	>=dev-haskell/fsnotify-0.2.1.2:= <dev-haskell/fsnotify-0.4:=
-	>=dev-haskell/hledger-1.20.3:= <dev-haskell/hledger-1.21:=
-	>=dev-haskell/hledger-lib-1.20.3:= <dev-haskell/hledger-lib-1.21:=
+	>=dev-haskell/hledger-1.20.4:= <dev-haskell/hledger-1.21:=
+	>=dev-haskell/hledger-lib-1.20.4:= <dev-haskell/hledger-lib-1.21:=
 	>=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-9.1:=
 	>=dev-haskell/microlens-0.4:=
 	>=dev-haskell/microlens-platform-0.2.3.1:=
@@ -36,10 +36,10 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.9:=
 	>=dev-haskell/text-zipper-0.4:=
 	dev-haskell/vector:=
 	>=dev-haskell/vty-5.15:=
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 "
 
 src_configure() {
