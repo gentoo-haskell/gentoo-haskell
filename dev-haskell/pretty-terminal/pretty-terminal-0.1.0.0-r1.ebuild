@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,3 +23,11 @@ RDEPEND="dev-haskell/text:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	# Rename ambiguous binary. Upstream proposal: https://github.com/loganmac/pretty-terminal/pull/3
+	cabal_chdeps \
+		'executable example' 'executable pretty-terminal-example'
+}

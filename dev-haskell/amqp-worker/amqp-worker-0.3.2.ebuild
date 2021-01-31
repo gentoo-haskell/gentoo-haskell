@@ -35,3 +35,11 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	# Rename ambiguous binary. Upstream proposal: https://github.com/seanhess/amqp-worker/pull/4
+	cabal_chdeps \
+		'executable example' 'executable amqp-worker-example'
+}
