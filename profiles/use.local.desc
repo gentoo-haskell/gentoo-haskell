@@ -128,7 +128,9 @@ dev-haskell/ffmpeg-light:buildtranscodedemo - Build transcode demo executable
 dev-haskell/ffmpeg-light:buildvplaydemo - Build video player demo executable
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
 dev-haskell/finite-field:useghctypelits - GHC.TypeLits module
+dev-haskell/floskell:executable - Build the floskell executable
 dev-haskell/foundation:experimental - enable building experimental features, known as highly unstable or without good support cross-platform
+dev-haskell/fourmolu:executable - Build the fourmolu executable
 dev-haskell/freer-effects:pedantic - Pass additional warning flags and -Werror to GHC.
 dev-haskell/freer-effects:test-hlint - Enable test suite that checks sources using HLint.
 dev-haskell/gargoyle-postgresql:executables - Install executables
@@ -144,6 +146,7 @@ dev-haskell/ghc-typelits-extra:deverror - Enables `-Werror` for development mode
 dev-haskell/ghc-typelits-knownnat:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghc-typelits-natnormalise:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghcide:bench-exe - Build the ghcide-bench executable
+dev-haskell/ghcide:executable - Build the ghcide executable
 dev-haskell/ghcide:ghc-lib - build against ghc-lib instead of the ghc package
 dev-haskell/ghcide:test-exe - Build the ghcide-test-preprocessor executable
 dev-haskell/gi-cairo-render:cairo-pdf - Build the PDF backend of Cairo.
@@ -502,20 +505,20 @@ dev-util/brittany:brittany-test-perf - determines if performance test suite is e
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with the multi-threaded runtime
 dev-util/haskell-language-server:agpl - Enable AGPL dependencies
-dev-util/haskell-language-server:brittany - Enable brittany plugin
-dev-util/haskell-language-server:class - Enable class plugin
-dev-util/haskell-language-server:eval - Enable eval plugin
-dev-util/haskell-language-server:floskell - Enable floskell plugin
-dev-util/haskell-language-server:fourmolu - Enable fourmolu plugin
-dev-util/haskell-language-server:hlint - Enable hlint plugin
-dev-util/haskell-language-server:importlens - Enable importLens plugin
-dev-util/haskell-language-server:modulename - Enable moduleName plugin
-dev-util/haskell-language-server:ormolu - Enable ormolu plugin
-dev-util/haskell-language-server:pragmas - Enable pragmas plugin
-dev-util/haskell-language-server:retrie - Enable retrie plugin
-dev-util/haskell-language-server:splice - Enable splice plugin
-dev-util/haskell-language-server:stylish-haskell - Enable stylishHaskell plugin
-dev-util/haskell-language-server:tactic - Enable tactic plugin
+dev-util/haskell-language-server:hls_formatters_brittany - Enable brittany plugin
+dev-util/haskell-language-server:hls_formatters_floskell - Enable floskell plugin
+dev-util/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu plugin
+dev-util/haskell-language-server:hls_formatters_ormolu - Enable ormolu plugin
+dev-util/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell plugin
+dev-util/haskell-language-server:hls_plugins_class - Enable class plugin
+dev-util/haskell-language-server:hls_plugins_eval - Enable eval plugin
+dev-util/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
+dev-util/haskell-language-server:hls_plugins_import-lens - Enable importLens plugin
+dev-util/haskell-language-server:hls_plugins_module-name - Enable moduleName plugin
+dev-util/haskell-language-server:hls_plugins_pragmas - Enable pragmas plugin
+dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
+dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
+dev-util/haskell-language-server:hls_plugins_tactic - Enable tactic plugin
 dev-util/hsdev:docs - build with haddock/hdocs to support scanning docs
 dev-util/hsdev:hlint - build with hlint to support linting
 dev-vcs/darcs:curl - Use libcurl for HTTP support.
