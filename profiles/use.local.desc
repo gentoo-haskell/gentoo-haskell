@@ -28,6 +28,7 @@ dev-haskell/alsa-pcm:buildexamples - Build example executables
 dev-haskell/alsa-seq:modifyfilter - Use native event filter functions that are provided by newer ALSA versions
 dev-haskell/ansi-terminal:example - Build the example application.
 dev-haskell/ansi-wl-pprint:example - Build the example application.
+dev-haskell/apply-refact:executable - Install the apply-refactor executable
 dev-haskell/atomic-primops:debug - Enable extra internal checks.
 dev-haskell/attoparsec-iso8601:developer - operate in developer mode
 dev-haskell/attoparsec-iso8601:fast - compile without optimizations
@@ -186,6 +187,7 @@ dev-haskell/hashtables:detailed-profiling - add detailed profiling information t
 dev-haskell/hashtables:portable - if on, use only pure Haskell code and no GHC extensions.
 dev-haskell/hashtables:unsafe-tricks - turn on unsafe GHC tricks
 dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
+dev-haskell/haskell-lsp:demo-exe - Build the lsp-hello demo executable
 dev-haskell/haskellnet:network-bsd - Use network-bsd
 dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
@@ -206,6 +208,7 @@ dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if 
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
+dev-haskell/hls-hlint-plugin:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/hnix:optimize - Enable all optimization flags
 dev-haskell/hnix:profiling - Enable profiling
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
@@ -498,6 +501,21 @@ dev-util/brittany:brittany-dev-lib - set buildable false for anything but lib
 dev-util/brittany:brittany-test-perf - determines if performance test suite is enabled
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with the multi-threaded runtime
+dev-util/haskell-language-server:agpl - Enable AGPL dependencies
+dev-util/haskell-language-server:brittany - Enable brittany plugin
+dev-util/haskell-language-server:class - Enable class plugin
+dev-util/haskell-language-server:eval - Enable eval plugin
+dev-util/haskell-language-server:floskell - Enable floskell plugin
+dev-util/haskell-language-server:fourmolu - Enable fourmolu plugin
+dev-util/haskell-language-server:hlint - Enable hlint plugin
+dev-util/haskell-language-server:importlens - Enable importLens plugin
+dev-util/haskell-language-server:modulename - Enable moduleName plugin
+dev-util/haskell-language-server:ormolu - Enable ormolu plugin
+dev-util/haskell-language-server:pragmas - Enable pragmas plugin
+dev-util/haskell-language-server:retrie - Enable retrie plugin
+dev-util/haskell-language-server:splice - Enable splice plugin
+dev-util/haskell-language-server:stylish-haskell - Enable stylishHaskell plugin
+dev-util/haskell-language-server:tactic - Enable tactic plugin
 dev-util/hsdev:docs - build with haddock/hdocs to support scanning docs
 dev-util/hsdev:hlint - build with hlint to support linting
 dev-vcs/darcs:curl - Use libcurl for HTTP support.
