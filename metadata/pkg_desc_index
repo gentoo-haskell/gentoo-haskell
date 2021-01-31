@@ -1231,7 +1231,7 @@ dev-haskell/miso 1.7.1.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1: Convenience functions for FFI work
 dev-haskell/missingh 1.4.3.0: Large utility library
 dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
-dev-haskell/mmorph 1.1.3: Monad morphisms
+dev-haskell/mmorph 1.1.4: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/mod 0.1.2.0: Fast type-safe modular arithmetic
 dev-haskell/modern-uri 0.3.3.0: Modern library for working with URIs
