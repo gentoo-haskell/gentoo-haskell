@@ -1,3 +1,8 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2021-02-01)
+# Masked until revdeps are ported to newer version:
+# https://github.com/gentoo-haskell/gentoo-haskell/issues/1147
+>=dev-haskell/apply-refact-0.9
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-23)
 # According to hackage, reflex-basic-host has been deprecated in favor of
 # reflex.  Masked for removal, including reverse dependencies. The reverse
