@@ -1327,7 +1327,7 @@ dev-haskell/network-transport 0.4.4.0 0.5.4: Network abstraction layer
 dev-haskell/network-transport-inmemory 0.5.2-r1: In-memory instantiation of Network.Transport
 dev-haskell/network-transport-tcp 0.6.0: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.4.3: Unit tests for Network.Transport implementations
-dev-haskell/network-uri 2.5.0.0 2.6.3.0: URI manipulation
+dev-haskell/network-uri 2.5.0.0 2.6.4.1: URI manipulation
 dev-haskell/newtype 0.2.2.0: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.5.4: A typeclass for working with newtypes, with generics support
 dev-haskell/ngx-export 1.7.1: Helper module for Nginx haskell module
@@ -1901,6 +1901,7 @@ dev-haskell/text-zipper 0.10.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
 dev-haskell/th-abstraction 0.3.2.0 0.4.1.0 0.4.2.0: Nicer interface for reified information about data types
+dev-haskell/th-compat 0.1.1: Backward- (and forward-)compatible Quote and Code types
 dev-haskell/th-constraint-compat 0.0.1.0: Compatibility for type constraint template
 dev-haskell/th-data-compat 0.1.0.0: Compatibility for data definition template of TH
 dev-haskell/th-desugar 1.9 1.11: Functions to desugar Template Haskell
