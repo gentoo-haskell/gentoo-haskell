@@ -8,7 +8,4 @@
 	<use>
 		<flag name="ghc-lib">Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported</flag>
 	</use>
-	<longdescription>
-		Please see the README on GitHub at &lt;https://github.com/shayne-fletcher/ghc-lib-parser-ex#readme&gt;
-	</longdescription>
 </pkgmetadata>
