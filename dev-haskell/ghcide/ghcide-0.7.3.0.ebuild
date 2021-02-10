@@ -17,8 +17,8 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="ghc-lib bench-exe executable test-exe"
-REQUIRED_USE="executable? ( !ghc-lib )" # test? ( !ghc-lib executable test-exe )
+IUSE="bench-exe executable ghc-lib test-exe"
+REQUIRED_USE="executable? ( !ghc-lib )" # test? ( !ghc-lib )
 
 PATCHES=( "${FILESDIR}/${P}-add-exe-flags.patch" )
 
@@ -26,17 +26,19 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/async:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
 	dev-haskell/data-default:=[profile?]
+	dev-haskell/dlist:=[profile?]
 	dev-haskell/extra:=[profile?]
 	dev-haskell/fingertree:=[profile?]
 	dev-haskell/fuzzy:=[profile?]
+	dev-haskell/ghc-exactprint:=[profile?]
 	dev-haskell/glob:=[profile?]
 	>=dev-haskell/haddock-library-1.8:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	>=dev-haskell/haskell-lsp-0.22:=[profile?] <dev-haskell/haskell-lsp-0.23:=[profile?]
-	>=dev-haskell/haskell-lsp-types-0.22:=[profile?] <dev-haskell/haskell-lsp-types-0.23:=[profile?]
+	>=dev-haskell/haskell-lsp-0.23:=[profile?] <dev-haskell/haskell-lsp-0.24:=[profile?]
+	>=dev-haskell/haskell-lsp-types-0.23:=[profile?] <dev-haskell/haskell-lsp-types-0.24:=[profile?]
 	>=dev-haskell/heapsize-0.3:=[profile?] <dev-haskell/heapsize-0.4:=[profile?]
-	dev-haskell/hie-compat:=[profile?,ghc-lib?]
-	>=dev-haskell/hls-plugin-api-0.6:=[profile?]
+	dev-haskell/hie-compat:=[profile?]
+	>=dev-haskell/hls-plugin-api-0.7:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/mtl:=[profile?]
@@ -46,6 +48,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
 	dev-haskell/prettyprinter-ansi-terminal:=[profile?]
 	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?]
+	dev-haskell/retrie:=[profile?]
 	dev-haskell/rope-utf16-splay:=[profile?]
 	dev-haskell/safe:=[profile?]
 	dev-haskell/safe-exceptions:=[profile?]
@@ -56,10 +59,12 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.6:=
-	bench-exe? ( >=dev-haskell/lsp-test-0.11.0.2:=[profile?] <dev-haskell/lsp-test-0.12:=[profile?] )
-	executable? ( dev-haskell/optparse-applicative:=[profile?]
-			dev-haskell/gitrev:=[profile?] )
+	dev-haskell/vector:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
+	bench-exe? ( >=dev-haskell/lsp-test-0.11.0.2:=[profile?] <dev-haskell/lsp-test-0.12:=[profile?]
+			dev-haskell/optparse-applicative:=[profile?] )
+	executable? ( dev-haskell/gitrev:=[profile?]
+			dev-haskell/optparse-applicative:=[profile?] )
 	ghc-lib? ( >=dev-haskell/ghc-lib-8.8:=[profile?]
 			>=dev-haskell/ghc-lib-parser-8.8:=[profile?] )
 	!ghc-lib? ( >=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
@@ -71,20 +76,20 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1"
-#	test? ( !ghc-lib? ( dev-haskell/ghc-typelits-knownnat
-#				>=dev-haskell/lsp-test-0.11.0.6 <dev-haskell/lsp-test-0.12
-#				dev-haskell/quickcheck
-#				dev-haskell/quickcheck-instances
-#				dev-haskell/tasty
-#				dev-haskell/tasty-expected-failure
-#				dev-haskell/tasty-hunit
-#				dev-haskell/tasty-quickcheck
-#				dev-haskell/tasty-rerun ) )
+#	test? ( dev-haskell/ghc-typelits-knownnat
+#			>=dev-haskell/lsp-test-0.11.0.6 <dev-haskell/lsp-test-0.12
+#			dev-haskell/quickcheck
+#			dev-haskell/quickcheck-instances
+#			dev-haskell/tasty
+#			dev-haskell/tasty-expected-failure
+#			dev-haskell/tasty-hunit
+#			dev-haskell/tasty-quickcheck
+#			dev-haskell/tasty-rerun )
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag ghc-lib ghc-lib) \
 		$(cabal_flag bench-exe bench-exe) \
 		$(cabal_flag executable executable) \
+		$(cabal_flag ghc-lib ghc-lib) \
 		$(cabal_flag test-exe test-exe)
 }
