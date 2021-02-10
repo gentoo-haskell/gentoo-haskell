@@ -11,9 +11,7 @@ inherit haskell-cabal
 
 DESCRIPTION="Haskell Language Server API for plugin communication"
 HOMEPAGE="https://github.com/haskell/haskell-language-server/hls-plugin-api"
-SRC_URI="
-	https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/2.cabal -> ${PF}.cabal"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
@@ -23,7 +21,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/diff:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	>=dev-haskell/haskell-lsp-0.22:=[profile?]
+	>=dev-haskell/haskell-lsp-0.23:=[profile?] <dev-haskell/haskell-lsp-0.24:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	dev-haskell/lens:=[profile?]
 	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?]
@@ -35,11 +33,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 "
-
-src_prepare() {
-	default
-	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
