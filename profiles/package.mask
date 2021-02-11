@@ -1,3 +1,9 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-11)
+# Both of these packages appear abandoned upstream, with the latest commits back
+# in 2017. Masked for removal.
+dev-haskell/megadeth
+dev-haskell/ttasm
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-02-01)
 # Masked until revdeps are ported to newer version:
 # https://github.com/gentoo-haskell/gentoo-haskell/issues/1147
