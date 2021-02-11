@@ -1,0 +1,45 @@
+name: pkgcheck
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      # force all history to be pulled for git-related checks
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Configure pkgcheck cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cache/pkgcheck
+          ~/.cache/pkgcore
+        key: pkgcheck # static value to force cache pull
+
+    - name: Install pkgcheck
+      run: |
+        pip install --upgrade pip
+        pip install pkgcheck
+    - name: Sync gentoo repo
+      run: sudo env "PATH=$PATH" pmaint sync gentoo
+
+    - name: Regen repo metadata
+      run: sudo env "PATH=$PATH" pmaint regen --dir ~/.cache/pkgcheck/repos .
+
+    - name: Run pkgcheck
+      # NonSolvableDepsInXXX is a false positive. This is fixed in
+      # https://github.com/pkgcore/pkgcheck/issues/281 , and we can remove this
+      # keyword flag once the next pkgcheck release hits
+      run: sudo env "PATH=$PATH" pkgcheck --color y scan --exit --checks=-RedundantVersionCheck --keywords=-NonsolvableDepsInDev,-NonsolvableDepsInStable,-NonsolvableDepsInExp
