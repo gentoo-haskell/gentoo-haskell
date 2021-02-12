@@ -26,7 +26,10 @@ jobs:
         path: |
           ~/.cache/pkgcheck
           ~/.cache/pkgcore
-        key: pkgcheck # static value to force cache pull
+        # unique value to force cache save on every run
+        key: pkgcheck-${{ github.run_id }}
+        # static value to restore the previous run's cache
+        restore-keys: pkgcheck-
 
     - name: Install pkgcheck
       run: |
