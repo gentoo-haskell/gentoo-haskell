@@ -10,14 +10,15 @@ inherit haskell-cabal
 
 DESCRIPTION="Explicit imports plugin for Haskell Language Server"
 HOMEPAGE="https://hackage.haskell.org/package/hls-explicit-imports-plugin"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/1.cabal -> ${PF}.cabal"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
-	dev-haskell/ghcide:=[profile?]
+	<dev-haskell/ghcide-0.7.4:=[profile?]
 	dev-haskell/haskell-lsp-types:=[profile?]
 	dev-haskell/hls-plugin-api:=[profile?]
 	dev-haskell/shake:=[profile?]
@@ -28,3 +29,12 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 "
+
+src_prepare() {
+	default
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Somebody goofed and set the upper limit to "<= 0.7.3" instead of "< 0.7.4"
+	cabal_chdeps\
+		'ghcide     <= 0.7.3' 'ghcide < 0.7.4'
+}
