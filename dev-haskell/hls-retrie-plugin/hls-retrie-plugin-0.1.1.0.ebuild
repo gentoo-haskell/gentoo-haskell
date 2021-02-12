@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/extra:=[profile?]
@@ -29,7 +28,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/shake:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	dev-lang/ghc:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
