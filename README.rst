@@ -6,6 +6,14 @@ travis.ci:
 .. image:: https://travis-ci.org/gentoo-haskell/gentoo-haskell.svg?branch=master
     :target: https://travis-ci.org/gentoo-haskell/gentoo-haskell
 
+github.ci:
+
+.. image:: https://github.com/gentoo-haskell/gentoo-haskell/workflows/pkgcheck/badge.svg
+    :target: https://github.com/gentoo-haskell/gentoo-haskell/actions?query=workflow%3Apkgcheck
+
+.. image:: https://github.com/gentoo-haskell/gentoo-haskell/workflows/repoman/badge.svg
+    :target: https://github.com/gentoo-haskell/gentoo-haskell/actions?query=workflow%3Arepoman
+
 Quickest start
 ==============
 
