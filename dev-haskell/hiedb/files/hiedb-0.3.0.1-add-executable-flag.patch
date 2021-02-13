@@ -1,0 +1,18 @@
+diff -urN hiedb-0.3.0.1/hiedb.cabal hiedb-0.3.0.1-new/hiedb.cabal
+--- hiedb-0.3.0.1/hiedb.cabal	2001-09-08 19:46:40.000000000 -0600
++++ hiedb-0.3.0.1-new/hiedb.cabal	2021-02-03 22:13:39.524633712 -0700
+@@ -30,7 +30,14 @@
+                        -Wredundant-constraints
+                        -Wpartial-fields
+                        -Wno-unrecognised-pragmas
++
++flag executable
++  description: Install the hiedb executable
++  default: False
++
+ executable hiedb
++  if !flag(executable)
++    buildable: False
+   import:              common-options
+   hs-source-dirs:      exe
+   main-is:             Main.hs

@@ -17,8 +17,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples executable"
 
-#PATCHES=( "${FILESDIR}/${P}-add-flags.patch" )
-
 RDEPEND=">=dev-haskell/aeson-1.5.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/dlist-0.8:=[profile?] <dev-haskell/dlist-2.0:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
@@ -53,14 +51,5 @@ src_prepare() {
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-dev \
-		$(cabal_flag examples examples)\
 		$(cabal_flag executable executable)
 }
-
-# Hacky, but gets the job done. Will improve on this if I find out how...
-# FIXME: use src_install instead of pkg_preinst
-#pkg_preinst() {
-#	if ! use examples; then
-#		rm -rv "${D}/usr/share/fourmolu-0.3.0.0" || die
-#	fi
-#}

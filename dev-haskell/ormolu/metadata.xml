@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="dev">Turn on development settings.</flag>
+		<flag name="executable">Build the fourmolu executable</flag>
 	</use>
 </pkgmetadata>

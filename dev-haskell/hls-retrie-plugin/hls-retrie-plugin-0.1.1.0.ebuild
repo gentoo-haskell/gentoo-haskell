@@ -8,8 +8,8 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Explicit imports plugin for Haskell Language Server"
-HOMEPAGE="https://hackage.haskell.org/package/hls-explicit-imports-plugin"
+DESCRIPTION="Retrie integration plugin for Haskell Language Server"
+HOMEPAGE="https://hackage.haskell.org/package/hls-retrie-plugin"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
@@ -17,9 +17,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
+	dev-haskell/extra:=[profile?]
 	dev-haskell/ghcide:=[profile?]
+	dev-haskell/hashable:=[profile?]
+	dev-haskell/haskell-lsp:=[profile?]
 	dev-haskell/haskell-lsp-types:=[profile?]
 	dev-haskell/hls-plugin-api:=[profile?]
+	>=dev-haskell/retrie-0.1.1.0:=[profile?]
+	dev-haskell/safe-exceptions:=[profile?]
 	dev-haskell/shake:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]

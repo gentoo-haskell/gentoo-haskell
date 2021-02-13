@@ -8,19 +8,22 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Preprocessor to allow record.field syntax"
-HOMEPAGE="https://github.com/ndmitchell/record-dot-preprocessor#readme"
+DESCRIPTION="ByteString <-> Text converter based on GHC.IO.Encoding"
+HOMEPAGE="https://github.com/msakai/bytestring-encoding#readme"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-haskell/extra:=[profile?]
-	dev-haskell/uniplate:=[profile?]
+RDEPEND="dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( dev-haskell/record-hasfield )
+	test? ( dev-haskell/quickcheck
+		>=dev-haskell/tasty-0.10.1
+		dev-haskell/tasty-hunit
+		dev-haskell/tasty-quickcheck
+		dev-haskell/tasty-th )
 "

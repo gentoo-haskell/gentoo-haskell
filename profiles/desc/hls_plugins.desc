@@ -1,0 +1,13 @@
+# hololeap <hololeap@gmail.com> (2021-01-30)
+# Plugins for dev-util/haskell-language-server
+
+class - Enable class plugin
+eval - Enable eval plugin
+haddock-comments - Enable haddockComments plugin
+hlint - Enable hlint plugin
+import-lens - Enable importLens plugin
+module-name - Enable moduleName plugin
+pragmas - Enable pragmas plugin
+retrie - Enable retrie plugin
+splice - Enable splice plugin
+tactic - Enable tactic plugin

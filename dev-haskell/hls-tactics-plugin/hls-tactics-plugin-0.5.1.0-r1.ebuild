@@ -11,7 +11,8 @@ inherit haskell-cabal
 
 DESCRIPTION="Tactics plugin for Haskell Language Server"
 HOMEPAGE="https://hackage.haskell.org/package/hls-tactics-plugin"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/1.cabal -> ${PF}.cabal"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
@@ -23,8 +24,8 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/generic-lens:=[profile?]
 	dev-haskell/ghc-exactprint:=[profile?]
 	dev-haskell/ghc-source-gen:=[profile?]
-	>=dev-haskell/ghcide-0.1:=[profile?]
-	>=dev-haskell/haskell-lsp-0.22:=[profile?] <dev-haskell/haskell-lsp-0.23:=[profile?]
+	>=dev-haskell/ghcide-0.7.3:=[profile?] <=dev-haskell/ghcide-0.7.4:=[profile?]
+	>=dev-haskell/haskell-lsp-0.22:=[profile?] <dev-haskell/haskell-lsp-0.24:=[profile?]
 	dev-haskell/hls-plugin-api:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/mtl:=[profile?]
@@ -42,6 +43,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	default
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

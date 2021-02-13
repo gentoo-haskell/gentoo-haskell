@@ -1,7 +1,7 @@
-diff -urN ghcide-0.7.0.0-orig/ghcide.cabal ghcide-0.7.0.0/ghcide.cabal
---- ghcide-0.7.0.0-orig/ghcide.cabal	2001-09-08 19:46:40.000000000 -0600
-+++ ghcide-0.7.0.0/ghcide.cabal	2021-01-30 11:18:54.583979874 -0700
-@@ -197,7 +197,13 @@
+diff -urN ghcide-0.7.3.0/ghcide.cabal ghcide-0.7.3.0-new/ghcide.cabal
+--- ghcide-0.7.3.0/ghcide.cabal	2021-02-10 16:08:17.390191536 -0700
++++ ghcide-0.7.3.0-new/ghcide.cabal	2021-02-10 16:16:49.503241208 -0700
+@@ -204,7 +204,13 @@
          Development.IDE.Types.Action
      ghc-options: -Wall -Wno-name-shadowing -Wincomplete-uni-patterns
  
@@ -11,11 +11,11 @@ diff -urN ghcide-0.7.0.0-orig/ghcide.cabal ghcide-0.7.0.0/ghcide.cabal
 +
  executable ghcide-test-preprocessor
 +    if !flag(test-exe)
-+        buildable: False
++        buildable: False    
      default-language: Haskell2010
      hs-source-dirs: test/preprocessor
      ghc-options: -Wall -Wno-name-shadowing
-@@ -239,9 +245,15 @@
+@@ -247,9 +253,15 @@
          text,
          yaml
  
@@ -27,11 +27,11 @@ diff -urN ghcide-0.7.0.0-orig/ghcide.cabal ghcide-0.7.0.0/ghcide.cabal
      if flag(ghc-lib)
        buildable: False
 +    if !flag(executable)
-+      buildable: False
++      buildable: False      
      default-language:   Haskell2010
      hs-source-dirs:     exe
      ghc-options:
-@@ -373,7 +385,13 @@
+@@ -381,7 +393,13 @@
          TypeApplications
          ViewPatterns
  
