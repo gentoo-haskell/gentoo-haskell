@@ -197,6 +197,7 @@ dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
 dev-haskell/hexpat:bundled-expat - Use bundled expat instead of dev-libs/expat
 dev-haskell/hie-compat:ghc-lib - build against ghc-lib instead of the ghc package
+dev-haskell/hiedb:executable - Install the hiedb executable
 dev-haskell/highlighter:executable - Install a "highlighter" executable
 dev-haskell/highlighting-kate:executable - Build the Highlight executable.
 dev-haskell/highlighting-kate:pcre-light - Use the pcre-light library instead of regex-pcre-builtin.
@@ -304,7 +305,7 @@ dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optparse-applicative:process - Depend on the process package for Bash autocompletion
 dev-haskell/optparse-simple:build-example - Build the example executable
-dev-haskell/ormolu:dev - Turn on development settings.
+dev-haskell/ormolu:executable - Build the fourmolu executable
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
 dev-haskell/pandoc-citeproc:debug - Turn on debug tracing.
 dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging)
@@ -358,6 +359,7 @@ dev-haskell/random-bytestring:pcg - compile with support for PCG from pcg-random
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/record-dot-preprocessor:executable - Install the record-dot-preprocessor executable
 dev-haskell/reflection:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/reflex:debug-cycles - Enable debugging of event cycles
 dev-haskell/reflex:debug-propagation - Enable debugging of spider internals
@@ -473,6 +475,7 @@ dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GN
 dev-haskell/warp:warp-debug - Add additional debuging information
 dev-haskell/wcwidth:cli - Enable command line tool
 dev-haskell/websockets:examples - Build the example server
+dev-haskell/with-utf8:troubleshoot-exe - Install the utf8-troubleshoot executable
 dev-haskell/wreq:aws - Enable AWS tests
 dev-haskell/wreq:httpbin - Install client
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
