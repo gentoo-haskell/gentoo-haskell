@@ -2201,7 +2201,7 @@ dev-util/cabal-fmt 0.1.5.1: Format .cabal files
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
-dev-util/hadolint 1.17.3: Dockerfile Linter JavaScript API
+dev-util/hadolint 1.17.3 1.22.1: Dockerfile Linter JavaScript API
 dev-util/haskell-language-server 0.9.0.0: LSP server for GHC
 dev-util/hdocs 0.5.5.0: Haskell docs tool
 dev-util/hindent 5.3.1: Extensible Haskell pretty printer
