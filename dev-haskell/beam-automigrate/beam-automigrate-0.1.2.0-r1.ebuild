@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.4:=[profile?]
 	>=dev-haskell/microlens-0.4.10:=[profile?] <dev-haskell/microlens-0.6:=[profile?]
 	>=dev-haskell/mtl-2.2.2:=[profile?] <dev-haskell/mtl-2.4:=[profile?]
 	>=dev-haskell/postgresql-simple-0.5.4:=[profile?] <dev-haskell/postgresql-simple-0.7.0.0:=[profile?]
-	>=dev-haskell/pretty-simple-2.2.0:=[profile?] <dev-haskell/pretty-simple-3.3:=[profile?]
+	>=dev-haskell/pretty-simple-2.2.0:=[profile?]
 	>=dev-haskell/quickcheck-2.13:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
 	>=dev-haskell/quickcheck-instances-0.3:=[profile?] <dev-haskell/quickcheck-instances-0.4:=[profile?]
 	>=dev-haskell/scientific-0.3.6:=[profile?] <dev-haskell/scientific-0.5:=[profile?]
@@ -50,7 +50,8 @@ src_prepare() {
 	cabal_chdeps\
 		'aeson                 >=1.4.4    && <1.5' 'aeson >=1.4.4'\
 		'dlist                 >=0.8.0    && <0.10' 'dlist >=0.8.0'\
-		'splitmix              >=0.0.3    && <0.1' 'splitmix >=0.0.3'
+		'splitmix              >=0.0.3    && <0.1' 'splitmix >=0.0.3'\
+		'pretty-simple         >=2.2.0    && <3.3' 'pretty-simple >=2.2.0'
 }
 
 src_configure() {
