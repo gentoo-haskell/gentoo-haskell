@@ -902,7 +902,7 @@ dev-haskell/hnix-store-core 0.2.0.0: Core effects for interacting with the Nix s
 dev-haskell/hoauth2 1.16.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
-dev-haskell/hoogle 5.0.17.11 5.0.18: Haskell API Search
+dev-haskell/hoogle 5.0.18 5.0.18.1: Haskell API Search
 dev-haskell/hookup 0.3.1.0 0.5: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
