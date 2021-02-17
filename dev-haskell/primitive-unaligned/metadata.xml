@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		Unaligned access to primitive arrays. The offsets are given in bytes rather than elements.
-	</longdescription>
 </pkgmetadata>
