@@ -10,7 +10,4 @@
 			Support building against GHC with &lt;https://phabricator.haskell.org/D4388&gt; backported
 		</flag>
 	</use>
-	<longdescription>
-		Liquid Types for Haskell.
-	</longdescription>
 </pkgmetadata>
