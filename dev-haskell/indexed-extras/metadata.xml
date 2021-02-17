@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Indexed functors, monads and comonads that require extensiosn to Haskell98
-	</longdescription>
 </pkgmetadata>
