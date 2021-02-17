@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Parser combinator library designed to be fast. It doesn&#39;t
-		support backtracking.
-	</longdescription>
 </pkgmetadata>

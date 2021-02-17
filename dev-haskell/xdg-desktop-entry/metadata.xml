@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		Parse files conforming to the xdg desktop entry spec
-	</longdescription>
 </pkgmetadata>

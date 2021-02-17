@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		One module layer over regex-posix to replace Text.Regex
-	</longdescription>
 </pkgmetadata>

@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		&#39;MonadTime&#39; type class for monads which carry the notion of the current time.
-	</longdescription>
 </pkgmetadata>

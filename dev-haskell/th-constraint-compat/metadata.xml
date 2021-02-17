@@ -7,8 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		This package provides compatibe interfaces
-		for type constraint template
-	</longdescription>
 </pkgmetadata>

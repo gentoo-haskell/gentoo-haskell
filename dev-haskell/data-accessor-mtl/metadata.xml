@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Use Accessor to access state in mtl State monad class
-	</longdescription>
 </pkgmetadata>

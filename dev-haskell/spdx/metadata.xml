@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Implementation of &lt;http://spdx.org/sites/spdx/files/SPDX-2.0.pdf SPDX&gt; related functionality.
-	</longdescription>
 </pkgmetadata>

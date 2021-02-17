@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This tool permits browsing of users, changing their roles, and other features.
-	</longdescription>
 </pkgmetadata>

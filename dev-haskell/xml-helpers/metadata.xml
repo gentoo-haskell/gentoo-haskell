@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Included are some folds and maps I&#39;ve found useful in parsing XML data.
-	</longdescription>
 </pkgmetadata>

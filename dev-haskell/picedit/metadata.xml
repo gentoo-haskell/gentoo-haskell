@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Simple set of functions for image manipulation: contrast, brightnesss, rotation, etc.
-	</longdescription>
 </pkgmetadata>

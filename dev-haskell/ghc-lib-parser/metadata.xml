@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		A package equivalent to the @ghc@ package, but which can be loaded on many compiler versions.
-	</longdescription>
 </pkgmetadata>

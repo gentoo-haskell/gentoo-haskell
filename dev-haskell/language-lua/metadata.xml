@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Lua 5.3 lexer, parser and pretty-printer.
-	</longdescription>
 </pkgmetadata>

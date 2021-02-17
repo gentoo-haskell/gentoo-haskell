@@ -8,7 +8,4 @@
 	<use>
 		<flag name="version-1-1-beta">By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1</flag>
 	</use>
-	<longdescription>
-		Haskell bindings to the Sphinx full-text searching daemon. Compatible with Sphinx version 2.0
-	</longdescription>
 </pkgmetadata>

@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		MonadIO provides for many IO operations to be
-		overloaded over other IO-like monads.
-	</longdescription>
 </pkgmetadata>

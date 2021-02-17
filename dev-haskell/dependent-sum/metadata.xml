@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Dependent sums and supporting typeclasses for
-		comparing and formatting them.
-	</longdescription>
 </pkgmetadata>

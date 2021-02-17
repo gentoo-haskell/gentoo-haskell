@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Takes an error-throwing expression and puts it back in the Maybe it belongs in.
-	</longdescription>
 </pkgmetadata>

@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A correct implementation of the list monad-transformer.
-		Useful for basic streaming.
-	</longdescription>
 </pkgmetadata>

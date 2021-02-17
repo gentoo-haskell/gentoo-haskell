@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Provides a replacement for Data.Conduit.List, as well as a convenient Conduit module.
-	</longdescription>
 </pkgmetadata>

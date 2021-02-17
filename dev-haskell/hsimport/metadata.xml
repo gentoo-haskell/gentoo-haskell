@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A command line program for extending the import list of a Haskell source file.
-	</longdescription>
 </pkgmetadata>

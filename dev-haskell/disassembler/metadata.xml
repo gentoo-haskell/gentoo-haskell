@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Disassembler for X86 &amp; AMD64 machine code
-	</longdescription>
 </pkgmetadata>

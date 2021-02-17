@@ -8,7 +8,4 @@
 	<use>
 		<flag name="hashable">use <pkg>dev-haskell/hashable</pkg></flag>
 	</use>
-	<longdescription>
-		Orphan Instances for 'Data.Vector'
-	</longdescription>
 </pkgmetadata>

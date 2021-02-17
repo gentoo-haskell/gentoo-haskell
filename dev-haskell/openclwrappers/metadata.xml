@@ -9,9 +9,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Light opencl wrappers, a fork of the OpenCLRaw package.
-	</longdescription>
 	<use>
 		<flag name="link">Link against OpenCL library.</flag>
 	</use>

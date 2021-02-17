@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Quick and easy configuration files in the INI format.
-	</longdescription>
 </pkgmetadata>
