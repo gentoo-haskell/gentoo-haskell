@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A Haskell binding to a Field of View calculation library
-		written by Greg McIntyre (blue_puyo) in C.
-	</longdescription>
 </pkgmetadata>
