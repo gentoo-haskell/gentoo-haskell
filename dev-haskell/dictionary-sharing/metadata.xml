@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		Library for ensuring that class members are shared.
-	</longdescription>
 </pkgmetadata>
