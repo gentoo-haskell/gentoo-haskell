@@ -94,7 +94,6 @@ dev-haskell/geniplate
 # for many years, and have not built for many
 # years. Masked for removal.
 dev-haskell/accelerate
-dev-haskell/accelerate-cuda
 dev-haskell/accelerate-io
 
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
