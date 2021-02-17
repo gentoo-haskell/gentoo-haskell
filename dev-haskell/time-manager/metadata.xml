@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		Scalable timer functions provided by a timer manager.
-	</longdescription>
 </pkgmetadata>
