@@ -7,15 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		This package provides a @Dec@ type.
-		
-		@
-		type Not a = a -&gt; Void
-		
-		data Dec a
-		\    = Yes a
-		\    | No (Not a)
-		@
-	</longdescription>
 </pkgmetadata>
