@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A Haskell datastructure for working with locations in
-		trees or forests.
-	</longdescription>
 </pkgmetadata>
