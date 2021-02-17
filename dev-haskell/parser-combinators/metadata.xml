@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Lightweight package providing commonly useful parser combinators.
-	</longdescription>
 </pkgmetadata>
