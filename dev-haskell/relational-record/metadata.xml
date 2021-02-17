@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Meta package to install Relational Record quickly
-	</longdescription>
 </pkgmetadata>
