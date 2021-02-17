@@ -8,7 +8,4 @@
 	<use>
 		<flag name='unsafe'>Compile the library without locks. Code may be faster, but not threadsafe.</flag>
 	</use>
-	<longdescription>
-		Fast, scalable, mutable dynamic arrays, maps and hashes
-	</longdescription>
 </pkgmetadata>
