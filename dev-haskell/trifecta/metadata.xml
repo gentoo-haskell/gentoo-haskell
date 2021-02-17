@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A modern parser combinator library with slicing and Clang-style colored diagnostics
-	</longdescription>
 </pkgmetadata>
