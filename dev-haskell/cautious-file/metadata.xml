@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		On non-Windows systems, posix-specific functions are used to reduce the chance of data loss further
-	</longdescription>
 </pkgmetadata>
