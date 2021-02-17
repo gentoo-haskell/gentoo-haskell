@@ -12,8 +12,4 @@
 		<flag name="useexithook">Override the OnExitHook symbol to shutdown the Qt framework on exit.</flag>
 		<flag name="usepkgconfig">Use pkg-config for libraries instead of the platform default mechanism.</flag>
 	</use>
-	<longdescription>
-		A Haskell binding for Qt Quick.
-		General documentation is present in the 'Graphics.QML' module.
-	</longdescription>
 </pkgmetadata>
