@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Just a wrapper around the pdfinfo command. See man pdfinfo.
-	</longdescription>
 </pkgmetadata>
