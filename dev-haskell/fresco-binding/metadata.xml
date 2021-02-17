@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Fresco is a framwork for multi-language programming. This is the Haskell binding.
-	</longdescription>
 </pkgmetadata>
