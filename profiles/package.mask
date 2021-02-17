@@ -90,12 +90,6 @@ dev-haskell/bitsyntax
 dev-haskell/geniplate
 
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
-# Packages have not been maintained in ::haskell
-# for many years, and have not built for many
-# years. Masked for removal.
-dev-haskell/accelerate
-
-# Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Unmaintained, deprecated and/or dead upstream. Masked
 # for removal
 app-text/lit
