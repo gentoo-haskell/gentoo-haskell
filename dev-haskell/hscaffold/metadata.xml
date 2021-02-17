@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		See our README on GitHub at &lt;https://github.com/yamadapc/hscaffold&gt;
-	</longdescription>
 </pkgmetadata>
