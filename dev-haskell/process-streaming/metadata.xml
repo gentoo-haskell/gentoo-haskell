@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Concurrent, streaming access to the input and outputs of system processes.
-	</longdescription>
 </pkgmetadata>
