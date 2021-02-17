@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Generator and shrink functions for testing
-		Unicode-related software.
-	</longdescription>
 </pkgmetadata>
