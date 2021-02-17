@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Tokenizes Tag, so [ Tag ] can be used as parser input.  Provides
-		basic combinators.
-	</longdescription>
 </pkgmetadata>
