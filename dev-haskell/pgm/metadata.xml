@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Reads and writes 8 and 16 bit PGM images, loading them into Haskell as arrays.
-	</longdescription>
 </pkgmetadata>
