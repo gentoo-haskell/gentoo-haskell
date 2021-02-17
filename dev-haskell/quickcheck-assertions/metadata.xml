@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Library with convenient assertions for QuickCheck properties like in HUnit
-	</longdescription>
 </pkgmetadata>
