@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Preprocessor for typesetting Haskell sources with LaTeX
-	</longdescription>
 </pkgmetadata>
