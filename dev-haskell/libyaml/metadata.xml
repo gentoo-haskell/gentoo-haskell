@@ -9,7 +9,4 @@
 		<flag name="no-unicode">Don't enable unicode output. Instead, unicode characters will be escaped.</flag>
 		<flag name="system-libyaml">Use the system-wide libyaml instead of the bundled copy</flag>
 	</use>
-	<longdescription>
-		README and API documentation are available at &lt;https://www.stackage.org/package/libyaml&gt;
-	</longdescription>
 </pkgmetadata>
