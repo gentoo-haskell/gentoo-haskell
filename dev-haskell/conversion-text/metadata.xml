@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		&quot;Conversion&quot; instances for the &quot;text&quot; library
-	</longdescription>
 </pkgmetadata>
