@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Wadler/Leijen pretty printer with annotations and slightly modernized API
-	</longdescription>
 </pkgmetadata>
