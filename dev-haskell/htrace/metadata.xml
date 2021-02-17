@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Hierarchical tracing (like Debug.Trace.trace but with indentation)
-		for debugging of lazy evaluation
-	</longdescription>
 </pkgmetadata>
