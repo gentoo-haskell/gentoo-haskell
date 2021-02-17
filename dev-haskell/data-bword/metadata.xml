@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides extra (vs. &#39;Data.Bits&#39;) operations on binary words of
-		fixed length.
-	</longdescription>
 </pkgmetadata>
