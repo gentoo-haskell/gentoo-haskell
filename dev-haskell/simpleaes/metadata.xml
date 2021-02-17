@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A simplified binding to Brian Gladman&#39;s AES implementation,
-		including a copy of that implementation
-	</longdescription>
 </pkgmetadata>
