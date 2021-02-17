@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A binding to libffi, allowing C functions of types only known at runtime to be called from Haskell.
-	</longdescription>
 </pkgmetadata>

@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Store a stable pointer in a foreign context to be retrieved later. Persists through GHCi reloads.
-	</longdescription>
 </pkgmetadata>

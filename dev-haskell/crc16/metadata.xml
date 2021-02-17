@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This module provides a method to calculate the crc16-ccitt using the slow bit shift.
-	</longdescription>
 </pkgmetadata>

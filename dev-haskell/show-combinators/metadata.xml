@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		A minimal pretty-printing library for Show instances in Haskell.
-	</longdescription>
 </pkgmetadata>

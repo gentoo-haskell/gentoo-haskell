@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Strings that can be involved in IO, accesible with Path.
-	</longdescription>
 </pkgmetadata>

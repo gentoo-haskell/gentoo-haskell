@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		More information on readline can be found at
-		http:\/\/www.gnu.org\/directory\/readline.html.
-	</longdescription>
 </pkgmetadata>

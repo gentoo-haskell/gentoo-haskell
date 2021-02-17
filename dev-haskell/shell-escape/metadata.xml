@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Shell escaping library, offering both Bourne shell and Bash style escaping
-		of ByteStrings.
-	</longdescription>
 </pkgmetadata>

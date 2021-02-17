@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits.
-		
-		[0.7]
-		Upgrade to conduit 1.0.0
-	</longdescription>
 </pkgmetadata>

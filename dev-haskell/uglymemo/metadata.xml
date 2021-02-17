@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A simple (but internally ugly) memoization function.
-		
-		* New in 0.1.0.1: Make it exception safe.
-	</longdescription>
 </pkgmetadata>

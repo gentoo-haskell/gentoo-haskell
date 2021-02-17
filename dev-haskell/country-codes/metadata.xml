@@ -8,7 +8,4 @@
 	<use>
 		<flag name="generate">Build generate executable?</flag>
 	</use>
-	<longdescription>
-		ISO 3166 country codes and i18n names.
-	</longdescription>
 </pkgmetadata>

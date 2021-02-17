@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		Witherable = Traversable + Filterable
-	</longdescription>
 </pkgmetadata>

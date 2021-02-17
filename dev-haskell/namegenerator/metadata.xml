@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Creates names using the frequencies of trigrams using Claude Shannon&#39;s method.
-	</longdescription>
 </pkgmetadata>

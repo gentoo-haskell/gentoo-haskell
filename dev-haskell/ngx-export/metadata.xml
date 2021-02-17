@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Helper module for
-		&lt;http://github.com/lyokha/nginx-haskell-module Nginx haskell module&gt;
-	</longdescription>
 </pkgmetadata>

@@ -8,7 +8,4 @@
 	<use>
 		<flag name="unsafe-indices">Disable bound checks on Idx and Idxs types</flag>
 	</use>
-	<longdescription>
-		Safe type-level dimensionality for multidimensional data.
-	</longdescription>
 </pkgmetadata>

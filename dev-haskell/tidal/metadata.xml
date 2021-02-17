@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Tidal is a domain specific language for live coding pattern.
-	</longdescription>
 </pkgmetadata>

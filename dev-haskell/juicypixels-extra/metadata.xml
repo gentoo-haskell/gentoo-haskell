@@ -8,7 +8,4 @@
 	<use>
 		<flag name="dev">Turn on development settings.</flag>
 	</use>
-	<longdescription>
-		Efficiently scale, crop, flip images with JuicyPixels.
-	</longdescription>
 </pkgmetadata>

@@ -8,7 +8,4 @@
 	<use>
 		<flag name="devel">Development mode (-Werror)</flag>
 	</use>
-	<longdescription>
-		Operations on records parametrized with various kinds of functors.
-	</longdescription>
 </pkgmetadata>

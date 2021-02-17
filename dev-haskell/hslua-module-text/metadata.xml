@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		UTF-8 aware subset of Lua&#39;s `string` module.
-	</longdescription>
 </pkgmetadata>

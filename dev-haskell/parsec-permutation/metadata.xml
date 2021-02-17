@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Applicative permutation parser for Parsec intended as
-		a replacement for Text.Parsec.Perm.
-	</longdescription>
 </pkgmetadata>

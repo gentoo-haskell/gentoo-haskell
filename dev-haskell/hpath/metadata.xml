@@ -7,7 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		Support for well-typed paths, utilizing ByteString under the hood.
-	</longdescription>
 </pkgmetadata>

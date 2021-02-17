@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		TLS session manager with limitation, automatic pruning, energy saving and replay resistance
-	</longdescription>
 </pkgmetadata>

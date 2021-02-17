@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Utils for using aeson&#39;s deriveJSON with lens&#39;s makeFields
-	</longdescription>
 </pkgmetadata>

@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Library and tiny tool for working with ignore files of different version control systems
-	</longdescription>
 	<use>
 		<flag name="without-pcre">Disable pcre support</flag>
 	</use>

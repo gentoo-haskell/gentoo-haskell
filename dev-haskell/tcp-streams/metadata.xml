@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		One stop solution for tcp client and server with tls support.
-	</longdescription>
 </pkgmetadata>

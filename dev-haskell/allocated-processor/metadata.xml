@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		See module docs for more information, and "cv-combinators" package for example usage.
-	</longdescription>
 </pkgmetadata>

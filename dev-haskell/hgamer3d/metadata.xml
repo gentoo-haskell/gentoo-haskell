@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		HGamer3D is a toolset for developing 3D games in the programming
-		language Haskell.
-	</longdescription>
 </pkgmetadata>
