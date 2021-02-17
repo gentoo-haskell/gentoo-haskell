@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Helper functions for working with haskell-src-exts trees.
-	</longdescription>
 </pkgmetadata>
