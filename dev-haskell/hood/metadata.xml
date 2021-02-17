@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Hood debugger, based on the idea of observing functions and structures as they are evaluated.
-	</longdescription>
 </pkgmetadata>
