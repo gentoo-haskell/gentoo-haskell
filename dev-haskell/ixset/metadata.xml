@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Create and query sets that are indexed by multiple indices.
-	</longdescription>
 </pkgmetadata>
