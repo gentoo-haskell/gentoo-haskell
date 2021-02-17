@@ -8,7 +8,4 @@
 	<use>
 		<flag name='dump'>build 'dump' tool</flag>
 	</use>
-	<longdescription>
-		Library for parsing GHC time and allocation profiling reports
-	</longdescription>
 </pkgmetadata>
