@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Provides functions to update text region positions according to text edit actions
-	</longdescription>
 </pkgmetadata>
