@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Generates Haskell files from an attribute grammar specification
-	</longdescription>
 </pkgmetadata>
