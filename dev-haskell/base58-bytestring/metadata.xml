@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Implementation of BASE58 transcoding copy-pasted from
-		haskoin package
-	</longdescription>
 </pkgmetadata>
