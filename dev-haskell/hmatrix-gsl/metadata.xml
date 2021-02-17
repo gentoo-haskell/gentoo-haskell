@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Purely functional interface to selected numerical computations,
-		internally implemented using GSL.
-	</longdescription>
 </pkgmetadata>
