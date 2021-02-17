@@ -7,8 +7,4 @@
 	</maintainer>
 	<use>
 	</use>
-	<longdescription>
-		Parse jira wiki text into an abstract syntax tree for easy
-		transformation to other formats.
-	</longdescription>
 </pkgmetadata>
