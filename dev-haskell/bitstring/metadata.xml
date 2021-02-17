@@ -8,7 +8,4 @@
 	<use>
 		<flag name="withquickcheck">Build with QuickCheck test. Note that Show instances will be different.</flag>
 	</use>
-	<longdescription>
-		Lazy bit strings, built on the top of bytestrings.
-	</longdescription>
 </pkgmetadata>
