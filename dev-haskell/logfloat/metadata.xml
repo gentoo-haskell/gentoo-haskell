@@ -5,14 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This module presents a type for storing numbers
-		in the log-domain. The main reason for doing this
-		is to prevent underflow when multiplying many
-		probabilities as is done in Hidden Markov Models.
-		It is also helpful for preventing overflow.
-	</longdescription>
 	<use>
-		<flag name="useffi">Use bindings to C libraries</flag>
+		<flag name="useffi">Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.</flag>
 	</use>
 </pkgmetadata>
