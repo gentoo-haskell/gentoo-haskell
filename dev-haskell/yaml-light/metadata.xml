@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides a light-weight algebraic data type representing parsed Yaml files. It is implemented as a more conveinent wrapper around the HsSyck package, and provides utility functions as well.
-	</longdescription>
 </pkgmetadata>
