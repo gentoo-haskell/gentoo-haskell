@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Opaque unique identifiers in primitive state monads
-		and a GADT-like type using them as witnesses of type
-		equality.
-	</longdescription>
 </pkgmetadata>
