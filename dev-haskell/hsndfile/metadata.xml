@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Haskell bindings for /libsndfile/, a comprehensive C library for reading and writing a large number of soundfile formats by Erik de Castro Lopo (&lt;http://www.mega-nerd.com/libsndfile/&gt;).
-		
-		For more information on /hsndfile/ visit its homepage at &lt;http://haskell.org/haskellwiki/Hsndfile&gt;.
-	</longdescription>
 </pkgmetadata>
