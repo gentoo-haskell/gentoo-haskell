@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Interlude is a CPP include file, and a module which you can use instead of the
-		(often implicit) Prelude import.  It replaces some partial
-		functions (i.e. functions that may fail on correctly typed input like 'head []')
-		with pattern matches, so that a sensible error message that includes
-		location can be printed out.
-	</longdescription>
 </pkgmetadata>
