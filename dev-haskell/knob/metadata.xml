@@ -5,21 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Create memory-backed 'Handle's, referencing virtual files. This is
-		mostly useful for testing 'Handle'-based APIs without having to
-		interact with the filesystem.
-		
-		&gt; import Data.ByteString (pack)
-		&gt; import Data.Knob
-		&gt; import System.IO
-		&gt;
-		&gt; main = do
-		&gt;     knob &lt;- newKnob (pack [])
-		&gt;     h &lt;- newFileHandle knob "test.txt" WriteMode
-		&gt;     hPutStrLn h "Hello world!"
-		&gt;     hClose h
-		&gt;     bytes &lt;- Data.Knob.getContents knob
-		&gt;     putStrLn ("Wrote bytes: " ++ show bytes)
-	</longdescription>
 </pkgmetadata>
