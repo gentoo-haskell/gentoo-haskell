@@ -5,34 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Regular expression library like Perl and Ruby's regular expressions.
-		This package has a module RegexPR.
-		And RegexPR export functions matchRegexPR and gsubRegexPR.
-		
-		&gt; matchRegexPR      :: String -&gt; String -&gt; Maybe ((String, (String, String)), [(Int, String)])
-		&gt; multiMatchRegexPR :: String -&gt; String -&gt; [ ((String, (String, String)), [(Int, String)]) ]
-		&gt; gmatchRegexPR     :: String -&gt; String -&gt; [ ((String, (String, String)), [(Int, String)]) ]
-		&gt; getbrsRegexPR     :: String -&gt; String -&gt; [ String ]
-		&gt; ggetbrsRegexPR    :: String -&gt; String -&gt; [ [ String ] ]
-		&gt; subRegexPR        :: String -&gt; String -&gt; String -&gt; String
-		&gt; subRegexPRBy      :: String -&gt; (String -&gt; String) -&gt; String -&gt; String
-		&gt; gsubRegexPR       :: String -&gt; String -&gt; String -&gt; String
-		&gt; gsubRegexPRBy     :: String -&gt; (String -&gt; String) -&gt; String -&gt; String
-		&gt; splitRegexPR      :: String -&gt; String -&gt; [String]
-		
-		Examples
-		
-		&gt; matchRegexPR "ab(cde)f\\1" "kkkabcdefcdefgh" =&gt;
-		&gt;              Just (("abcdefcde", ("kkk", "fgh")),[(1,"cde")])
-		&gt; matchRegexPR "(?&lt;=hij)abc" "kkkabchijabcde" =&gt;
-		&gt;              Just (("abc",("kkkabchij","de")),[])
-		&gt; gsubRegexPR "\\G(\\d\\d\\d)" "\\1," "123456 789" =&gt; "123,456, 789"
-		&gt; subRegexPR "(?&lt;=(.)(.)(.))e" " \\3\\2\\1 " "abcdefg" =&gt; "abcd dcb fg"
-		&gt; gsubRegexPR "(?ixm)  aBc  . # comment \n\n" "abc!" "abc\nABCDAbcAbc" =&gt;
-		&gt;             "abc!abc!abc!bc"
-		&gt; gmatchRegexPR "(?=(?&lt;!(?!abc)))abc" "abcdefdefabc" =&gt;
-		&gt;              [(("abc", ("", "defdefabc")), []), (("abc", ("defdef", "")), [])]
-		&gt; splitRegexPR "\\s*,\\s*" "a,b ,c\t ,d , e" =&gt; ["a","b","c","d","e"]
-	</longdescription>
 </pkgmetadata>
