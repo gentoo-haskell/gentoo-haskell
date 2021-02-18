@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		List zipper with O(1) get element at cursor, insert at cursor,
-		delete at cursor, move right, and move left operations.
-	</longdescription>
 </pkgmetadata>
