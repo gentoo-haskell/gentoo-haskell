@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A Haskell binding to the liblzf by Marc Lehmann. LZF is a fast
-		compression algorithm sacrifising compression quality for an extra
-		bit of speed. The tiny library is contained in the source and
-		statically linked in the Haskell library resulting in no external
-		dependencies.  Exposed-modules: Codec.Compression.LZF
-	</longdescription>
 </pkgmetadata>
