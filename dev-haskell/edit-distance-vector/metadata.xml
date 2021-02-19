@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		An implementation of the Wagner-Fischer dynamic programming algorithm to
 		find the optimal edit script and cost between two sequences.
