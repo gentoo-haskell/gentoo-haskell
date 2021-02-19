@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		A practical incremental and one-pass, pure API to
 		the [SHA-512 cryptographic hash algorithm](https://en.wikipedia.org/wiki/SHA-2) according
