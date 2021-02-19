@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		Property based testing libraries such as QuickCheck tend to include type modifiers. Most of them
 		are used to quantify over subsets of a type. For example a property on non-empty lists:
