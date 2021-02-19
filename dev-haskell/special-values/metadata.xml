@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		Special values are provided by a SpecialValues typeclass. Those can be used for example by QuickCheck, see quickcheck-special.
 	</longdescription>
