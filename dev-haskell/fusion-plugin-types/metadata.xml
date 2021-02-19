@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		GHC package that provides types that when used in a package can be identified by the &lt;https://hackage.haskell.org/package/fusion-plugin fusion-plugin&gt; package to perform any extra optimizations.
 	</longdescription>
