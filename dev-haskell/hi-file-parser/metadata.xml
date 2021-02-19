@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		Please see the README on Github at &lt;https://github.com/commercialhaskell/stack/blob/master/subs/hi-file-parser/README.md&gt;
 	</longdescription>
