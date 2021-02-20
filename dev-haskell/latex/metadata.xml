@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		Currently the package only provides
 		conversion between LaTeX escape sequences and Unicode characters.

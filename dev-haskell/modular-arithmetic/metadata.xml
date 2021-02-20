@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		A convenient type for working with integers modulo some constant. It saves you from manually wrapping numeric operations all over the place and prevents a range of simple mistakes. @Integer `Mod` 7@ is the type of integers (mod 7) backed by @Integer@.
 		We also have some cute syntax for these types like @ℤ/7@ for integers modulo 7.

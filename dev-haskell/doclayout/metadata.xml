@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		doclayout is a prettyprinting library for laying out
 		text documents, with several features not present

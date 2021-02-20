@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		This package provides an implemenation of
 		Cross-Origin resource sharing (CORS) for

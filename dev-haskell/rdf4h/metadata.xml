@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		'RDF for Haskell' is a library for working with RDF in Haskell.
 		At present it includes parsers and serializers for RDF in the N-Triples

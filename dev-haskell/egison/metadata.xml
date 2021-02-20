@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		An interpreter for Egison, a **pattern-matching-oriented**, purely functional programming language.
 		We can directly represent pattern-matching against lists, multisets, sets, trees, graphs and any kind of data types.

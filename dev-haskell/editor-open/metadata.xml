@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		You know when you run @git commit@, and an editor pops open so you can enter a
 		commit message? This is a Haskell library that does that.

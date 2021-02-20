@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		This package transparently supplies the &quot;GHC.ByteOrder&quot; API as provided in @base-4.11.0.0@ for legacy GHC releases which didn&#39;t provide it yet (i.e. GHC 7.0 through GHC 8.2).
 		
