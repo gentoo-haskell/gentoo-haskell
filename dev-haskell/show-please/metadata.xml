@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		Provides Show instances for various types whose official
 		Show won&#39;t Read. This is particularly intended for exception types,

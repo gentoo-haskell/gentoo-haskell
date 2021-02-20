@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		This package simplifies defining custom &quot;Prelude&quot;s without having
 		to use @-XNoImplicitPrelude@ by re-exporting the full module-hierarchy of

@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		This package bundles the minified &lt;https://github.com/danielgindi/jquery.dgtable jquery.dgtable&gt; code into a Haskell package,
 		so it can be depended upon by Cabal packages. The first three components of

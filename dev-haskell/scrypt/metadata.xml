@@ -5,8 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
 	<longdescription>
 		This package provides bindings to Colin Percival&#39;s `scrypt`
 		implementation (&lt;http://www.tarsnap.com/scrypt.html&gt;). Scrypt is a key
