@@ -31,6 +31,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-1.2.1 <dev-haskell/tasty-1.5
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11
-		|| ( ( >=dev-haskell/hunit-1.3.1 <dev-haskell/hunit-1.3.2 )
-			( >=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7 ) ) )
+		>=dev-haskell/hunit-1.3.1 <dev-haskell/hunit-1.7
+	)
 "
