@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Bifunctors"
+DESCRIPTION="The Bifunctors package authored by Edward Kmett"
 HOMEPAGE="https://github.com/ekmett/bifunctors/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
