@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="force-alignment"></flag>
+		<flag name="force-alignment">Adds -DALIGNED_MEMORY to cpp-options</flag>
 	</use>
 </pkgmetadata>

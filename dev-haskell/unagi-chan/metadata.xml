@@ -6,7 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="compare-benchmarks"></flag>
+		<flag name="compare-benchmarks">
+			compare benchmarks with Chan, TQueue, and (eventually) lockfree-queue?
+		</flag>
 	</use>
 	<longdescription>
 		This library provides implementations of concurrent FIFO queues (for both

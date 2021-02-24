@@ -6,15 +6,33 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="benchmark-uniplate"></flag>
-		<flag name="dump-splices"></flag>
-		<flag name="inlining"></flag>
-		<flag name="j"></flag>
-		<flag name="old-inline-pragmas"></flag>
-		<flag name="safe"></flag>
-		<flag name="test-doctests"></flag>
-		<flag name="test-templates"></flag>
-		<flag name="trustworthy"></flag>
+		<flag name="benchmark-uniplate">
+			Enable benchmarking against Neil Mitchell's uniplate library
+		</flag>
+		<flag name="dump-splices">
+			Make the test suites dump their template-haskell splices
+		</flag>
+		<flag name="inlining">
+			Generate inline pragmas when using template-haskell.
+		</flag>
+		<flag name="j">
+			Attempt a parallel build
+		</flag>
+		<flag name="old-inline-pragmas">
+			For 7.6.1-rc1 users
+		</flag>
+		<flag name="safe">
+			Dissallow unsafeCoerce
+		</flag>
+		<flag name="test-doctests">
+			Enable doctests
+		</flag>
+		<flag name="test-templates">
+			Enable template tests
+		</flag>
+		<flag name="trustworthy">
+			Assert that we are trustworthy when we can
+		</flag>
 	</use>
 	<longdescription>
 		This package comes \&quot;Batteries Included\&quot; with many useful lenses for the types
