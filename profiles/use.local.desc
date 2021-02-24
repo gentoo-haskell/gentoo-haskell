@@ -55,7 +55,7 @@ dev-haskell/cabal-plan:exe - Enable @exe:cabal-plan@ component
 dev-haskell/cabal-plan:license-report - Enable @license-report@ sub-command (only relevant when the @exe@ flag is active)
 dev-haskell/cabal-plan:underline - Enable underlining of primary unit-ids
 dev-haskell/cabal-rpm:curl - Use curl library to query Stackage instead of http-client
-dev-haskell/categories:optimize - enable optimizations
+dev-haskell/categories:optimize - Enable optimizations
 dev-haskell/cborg:optimize-gmp - Use optimized code paths for integer-gmp
 dev-haskell/chaselev-deque:debug - Enable the extra internal checks.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
@@ -172,7 +172,8 @@ dev-haskell/hakyll:checkexternal - Include external link checking
 dev-haskell/hakyll:previewserver - Include the preview server
 dev-haskell/hakyll:usepandoc - Include Pandoc support
 dev-haskell/hakyll:watchserver - Include the watch server
-dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/handsomesoup:examples - Build examples
+dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri package
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hashable:examples - Build example modules
@@ -272,7 +273,7 @@ dev-haskell/linux-file-extents:examples - Build examples
 dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for development.
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
-dev-haskell/logfloat:useffi - Use bindings to C libraries
+dev-haskell/logfloat:useffi - Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.
 dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/megaparsec-tests:dev - Turn on development settings.
@@ -364,7 +365,7 @@ dev-haskell/retrie:example - build the retrie example executable
 dev-haskell/retrie:executable - build the retrie executable
 dev-haskell/retry:lib-werror - 
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/sample-frame:buildbenchmarks - Build and install benchmarking executable.
+dev-haskell/sample-frame:buildbenchmarks - Build benchmark executables
 dev-haskell/sandi:conduit - Build with conduit
 dev-haskell/sbv:skip-hlint-tester - Do not build the HLint tester
 dev-haskell/sdl2:examples - Build opengl-example
