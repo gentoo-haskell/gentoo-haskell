@@ -1,3 +1,8 @@
+# Wolfgang E. Sanyer <WolfgagESanyer@gmail.com> (2021-02-24)
+# This package has not been maintained upstream since 2014 and does not have any
+# official releases. Masked for removal in 30 days.
+app-misc/lambdawars
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-11)
 # Both of these packages appear abandoned upstream, with the latest commits back
 # in 2017. Masked for removal.
