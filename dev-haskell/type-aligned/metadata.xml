@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Various data structures for type aligned sequences: heterogeneous sequences where the types enforce the element order.
-	</longdescription>
 </pkgmetadata>

@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		\"Prompting\" monad that allows splitting the description
-		of a computation from the implementation of the effects
-		used in that computation.
-		&lt;http://www.haskell.org/pipermail/haskell-cafe/2008-January/038301.html&gt;
-	</longdescription>
 </pkgmetadata>

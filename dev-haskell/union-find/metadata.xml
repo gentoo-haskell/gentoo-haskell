@@ -5,14 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The Union\/Find algorithm implements these operations in
-		(effectively) constant-time:
-		
-		1. Check whether two elements are in the same equivalence class.
-		
-		2. Create a union of two equivalence classes.
-		
-		3. Look up the descriptor of the equivalence class.
-	</longdescription>
 </pkgmetadata>

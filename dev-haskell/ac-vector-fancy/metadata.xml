@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Adds various type-system tricks to AC-Vector.
-		(Requires several language extensions, including
-		type families.)
-		Added missing @Vector Point@ constraint to @HasSpace@
-		class. Consequently removed @HasSpace Range@ instance.
-		Added @unions@ method to @BoundingBox@ class. Added
-		@axis_range@ function.
-	</longdescription>
 </pkgmetadata>
