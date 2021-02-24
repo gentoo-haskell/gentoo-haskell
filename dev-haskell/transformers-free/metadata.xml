@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package is obsolete and all functionality has been merged into the
-		@free@ package.
-		
-		This library generalizes free monads to free monad transformers.
-	</longdescription>
 </pkgmetadata>

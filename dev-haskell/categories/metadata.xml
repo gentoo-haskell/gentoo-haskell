@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="optimize">enable optimizations</flag>
+		<flag name="optimize">Enable optimizations</flag>
 	</use>
 </pkgmetadata>

@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Limit operations for converging sequences.  This is
-		fairly simple right now.
-		
-		Changes in 0.1.0.1: Nothing except to enable -XSafe under
-		GHC 7.2.1
-	</longdescription>
 </pkgmetadata>

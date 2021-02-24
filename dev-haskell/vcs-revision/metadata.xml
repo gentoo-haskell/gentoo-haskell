@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Facilities for accessing the version control revision of the current directory.
-		Useful e.g. to make your program output its revision using Template Haskell.
-	</longdescription>
 </pkgmetadata>

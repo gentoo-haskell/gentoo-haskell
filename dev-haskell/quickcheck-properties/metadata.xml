@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Package provide set of generic QuickCheck properties for testing
-		laws of standard type classes. At the moment is not complete. It do
-		not depend on QuickCheck and could be used with smallcheck as well.
-		
-		See module Test.QuickCheck.Property.Common for general description
-		of library and examples.
-	</longdescription>
 </pkgmetadata>

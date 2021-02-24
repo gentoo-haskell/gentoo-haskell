@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides some helper functions for testing attoparsec parsers with hspec.
-		
-		See the documentation in @Test.Hspec.Attoparsec@ for examples, or this package&#39;s own test suite.
-	</longdescription>
 </pkgmetadata>

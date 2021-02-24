@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Concatenative gives haskell factor style
-		combinators and arrows for postfix notation.
-		For more information on stack based languages,
-		see &lt;http://concatenative.org&gt;
-	</longdescription>
 </pkgmetadata>

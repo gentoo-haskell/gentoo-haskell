@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Template Haskell functions for generating functions similar to those in Data.List for tuples of statically known size.
-	</longdescription>
 </pkgmetadata>

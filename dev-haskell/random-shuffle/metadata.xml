@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Random shuffle implementation, on immutable lists.
-		Based on `perfect shuffle' implementation by Oleg Kiselyov,
-		available on http://okmij.org/ftp/Haskell/perfect-shuffle.txt
-	</longdescription>
 </pkgmetadata>
