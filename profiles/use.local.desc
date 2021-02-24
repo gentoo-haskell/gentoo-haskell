@@ -87,7 +87,6 @@ dev-haskell/contravariant:tagged - You can disable the use of the `tagged` packa
 dev-haskell/country-codes:generate - Build generate executable?
 dev-haskell/cpu:executable - build 'cpuid' tool
 dev-haskell/criterion:embed-data-files - Embed the data files in the binary for a relocatable executable. (Warning: This will increase the executable size significantly.)
-dev-haskell/cron:lib-werror - 
 dev-haskell/crypto-api:all-cpolys - Build all the CMAC polynomes up to 10000 bits instead of just the usual ones
 dev-haskell/cryptonite:cpu-flags-x86-rdrand - allow compilation with RDRAND on system and architecture that supports it
 dev-haskell/cryptonite:integer-gmp - Whether or not to use GMP for some functions
@@ -257,15 +256,15 @@ dev-haskell/juicypixels-extra:dev - Turn on development settings.
 dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes
 dev-haskell/language-dot:executable - Build the `ppdot' executable
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
-dev-haskell/lens:benchmark-uniplate - 
-dev-haskell/lens:dump-splices - 
-dev-haskell/lens:inlining - 
-dev-haskell/lens:j - 
-dev-haskell/lens:old-inline-pragmas - 
-dev-haskell/lens:safe - 
-dev-haskell/lens:test-doctests - 
-dev-haskell/lens:test-templates - 
-dev-haskell/lens:trustworthy - 
+dev-haskell/lens:benchmark-uniplate - Enable benchmarking against Neil Mitchell's uniplate library
+dev-haskell/lens:dump-splices - Make the test suites dump their template-haskell splices
+dev-haskell/lens:inlining - Generate inline pragmas when using template-haskell.
+dev-haskell/lens:j - Attempt a parallel build
+dev-haskell/lens:old-inline-pragmas - For 7.6.1-rc1 users
+dev-haskell/lens:safe - Dissallow unsafeCoerce
+dev-haskell/lens:test-doctests - Enable doctests
+dev-haskell/lens:test-templates - Enable template tests
+dev-haskell/lens:trustworthy - Assert that we are trustworthy when we can
 dev-haskell/libyaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
 dev-haskell/linear:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -363,7 +362,6 @@ dev-haskell/reflex:reflex-optimizer - Use the GHC plugin Reflex.Optimizer on som
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
 dev-haskell/retrie:example - build the retrie example executable
 dev-haskell/retrie:executable - build the retrie executable
-dev-haskell/retry:lib-werror - 
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build benchmark executables
 dev-haskell/sandi:conduit - Build with conduit
@@ -391,7 +389,7 @@ dev-haskell/shake:cloud - Enable cloud build features
 dev-haskell/shake:embed-files - Embed data files into the shake library
 dev-haskell/shake:portable - Obtain FileTime using portable functions
 dev-haskell/shakespeare:test-coffee - render tests through coffeescript render function
-dev-haskell/shakespeare:test-export - 
+dev-haskell/shakespeare:test-export - adds -DTEST_EXPORT cpp-option
 dev-haskell/shakespeare:test-roy - render tests through roy render function
 dev-haskell/shellac-compatline:editline - Use editline instead of readline backend.
 dev-haskell/shelly:lifted - run the tests against Shelly.Lifted
@@ -420,7 +418,7 @@ dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
 dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
-dev-haskell/store-core:force-alignment - 
+dev-haskell/store-core:force-alignment - Adds -DALIGNED_MEMORY to cpp-options
 dev-haskell/streamly:debug - Debug build with asserts enabled
 dev-haskell/streamly:dev - Development build
 dev-haskell/streamly:examples - Build including examples
@@ -446,7 +444,7 @@ dev-haskell/tls:compat - Accept SSLv2 compatible handshake.
 dev-haskell/tls:network - Use the base network library.
 dev-haskell/transformers-base:orphaninstances - Build instances for orphan datatypes.
 dev-haskell/tz:template-haskell - Enable the use of and export Template Haskell functionality. (Might need to disable this for cross-compiling.)
-dev-haskell/unagi-chan:compare-benchmarks - 
+dev-haskell/unagi-chan:compare-benchmarks - compare benchmarks with Chan, TQueue, and (eventually) lockfree-queue?
 dev-haskell/unix-compat:old-time - build against old-time package
 dev-haskell/unordered-containers:debug - Enable debug support
 dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package.

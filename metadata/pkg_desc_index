@@ -370,7 +370,7 @@ dev-haskell/cracknum 2.4: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
 dev-haskell/criterion 1.5.7.0: Robust, reliable performance measurement and analysis
 dev-haskell/criterion-measurement 0.1.2.0: Criterion measurement functionality and associated types
-dev-haskell/cron 0.7.0: Cron datatypes and Attoparsec parser
+dev-haskell/cron 0.7.0-r1: Cron datatypes and Attoparsec parser
 dev-haskell/crypto 4.2.5.1-r1: Collects together existing Haskell cryptographic functions into a package
 dev-haskell/crypto-api 0.13.3: A generic interface for cryptographic operations
 dev-haskell/crypto-api-tests 0.3-r1: A test framework and KATs for cryptographic operations
@@ -1617,7 +1617,7 @@ dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv s
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.11 1.2.4.2: Deterministic allocation and freeing of scarce resources
 dev-haskell/retrie 0.1.1.1: A powerful, easy-to-use codemodding tool for Haskell
-dev-haskell/retry 0.7.7.0 0.8.1.2: Retry combinators for monadic actions that may fail
+dev-haskell/retry 0.8.1.2: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
 dev-haskell/rio 0.1.20.0: A standard library for Haskell
