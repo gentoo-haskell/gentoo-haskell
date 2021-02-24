@@ -7,7 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="test-coffee">render tests through coffeescript render function</flag>
-		<flag name="test-export"></flag>
+		<flag name="test-export">adds -DTEST_EXPORT cpp-option</flag>
 		<flag name="test-roy">render tests through roy render function</flag>
 	</use>
 	<longdescription>
