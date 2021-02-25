@@ -97,7 +97,6 @@ dev-haskell/geniplate
 # Jack Todaro <solpeth@posteo.org> (2020-12-19)
 # Unmaintained, deprecated and/or dead upstream. Masked
 # for removal
-app-text/lit
 dev-haskell/highlighting-kate
 
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
