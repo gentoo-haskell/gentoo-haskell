@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -35,6 +35,5 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-golden-2.3.1.1 <dev-haskell/tasty-golden-2.4
 		>=dev-haskell/tasty-hunit-0.10.0.2 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tree-diff-0.1 <dev-haskell/tree-diff-0.2
-		|| ( ( >=dev-haskell/tasty-1.2.3 <dev-haskell/tasty-1.3 )
-			( >=dev-haskell/tasty-1.3.1 <dev-haskell/tasty-1.4 ) ) )
+		>=dev-haskell/tasty-1.2.3 <dev-haskell/tasty-1.4 )
 "
