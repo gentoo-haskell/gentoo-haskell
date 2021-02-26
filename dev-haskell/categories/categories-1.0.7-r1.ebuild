@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Categories"
+DESCRIPTION="The Categories package authored by Edward Kmett"
 HOMEPAGE="https://github.com/ekmett/categories"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

@@ -9,7 +9,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Comonads"
+DESCRIPTION="The Comonads package authored by Edward Kmett"
 HOMEPAGE="https://github.com/ekmett/comonad/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
