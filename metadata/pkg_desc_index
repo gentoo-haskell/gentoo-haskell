@@ -7,7 +7,6 @@ app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.6.6 0.6.7 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
-app-text/lit 0.1.10.0: A simple tool for literate programming
 app-text/pandoc 2.11.4: Conversion between markup formats
 app-text/pdfsplit 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
@@ -20,7 +19,7 @@ dev-haskell/ac-angle 1.0: Angles in degrees and radians
 dev-haskell/ac-ppm 1.1.1: Trivial package for writing PPM images
 dev-haskell/ac-vector 2.3.2: Efficient geometric vectors and transformations
 dev-haskell/ac-vector-fancy 2.4.0-r1: Fancy type-system stuff for AC-Vector
-dev-haskell/accelerate 0.15.1.0 1.0.0.0: An embedded language for accelerated array processing
+dev-haskell/accelerate 1.0.0.0: An embedded language for accelerated array processing
 dev-haskell/acid-state 0.16.0.1: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1-r1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.14-r1: Abstractions for animation
@@ -150,7 +149,7 @@ dev-haskell/bench-show 0.3.1: Show, plot and compare benchmark results
 dev-haskell/bencode 0.6.1.1: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bibtex 0.1.0.6: Parse, format and processing BibTeX files
-dev-haskell/bifunctors 5.5.6 5.5.8 5.5.9: Bifunctors
+dev-haskell/bifunctors 5.5.9 5.5.10: The Bifunctors package authored by Edward Kmett
 dev-haskell/bimap 0.4.0: Bidirectional mapping between two key types
 dev-haskell/binary 0.8.3.0 0.8.5.1 0.8.6.0 0.8.7.0 0.8.8.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
@@ -247,7 +246,7 @@ dev-haskell/cascading 0.1.0-r2: DSL for HTML CSS (Cascading Style Sheets)
 dev-haskell/case-insensitive 1.2.0.11 1.2.1.0: Case insensitive string comparison
 dev-haskell/cassava 0.5.2.0: A CSV parsing and encoding library
 dev-haskell/cassava-megaparsec 2.0.2: Megaparsec parser of CSV files that plays nicely with Cassava
-dev-haskell/categories 1.0.7-r1: Categories
+dev-haskell/categories 1.0.7-r1: The Categories package authored by Edward Kmett
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
 dev-haskell/cborg 0.2.4.0: Concise Binary Object Representation
 dev-haskell/cborg-json 0.2.2.0-r1: A library for encoding JSON as CBOR
@@ -313,7 +312,7 @@ dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
 dev-haskell/commonmark 0.1.1.4: Pure Haskell commonmark parser
 dev-haskell/commonmark-extensions 0.2.0.4: Pure Haskell commonmark parser
 dev-haskell/commonmark-pandoc 0.2.0.1: Bridge between commonmark and pandoc AST
-dev-haskell/comonad 5.0.7 5.0.8: Comonads
+dev-haskell/comonad 5.0.7 5.0.8: The Comonads package authored by Edward Kmett
 dev-haskell/comonad-extras 4.0.1: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
@@ -752,7 +751,7 @@ dev-haskell/groundhog-th 0.11: Type-safe datatype-database mapping library
 dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
 dev-haskell/groups 0.4.1.0: Haskell 98 groups
 dev-haskell/gsasl 0.3.7: Bindings for GNU libgsasl
-dev-haskell/gtk 0.13.9 0.14.10-r3 0.15.5-r1: Binding to the Gtk+ graphical user interface library
+dev-haskell/gtk 0.14.10-r3 0.15.5-r1: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-sni-tray 0.1.6.0: A standalone StatusNotifierItem/AppIndicator tray
 dev-haskell/gtk-strut 0.1.3.0: Libary for creating strut windows with gi-gtk
@@ -807,7 +806,7 @@ dev-haskell/haskell-names 0.9.9: Name resolution library for Haskell
 dev-haskell/haskell-platform 2014.2.0.0-r1: The Haskell Platform
 dev-haskell/haskell-qrencode 1.0.4: Haskell bindings for libqrencode
 dev-haskell/haskell-src 1.0.3.1: Support for manipulating Haskell source code
-dev-haskell/haskell-src-exts 1.14.0.1 1.15.0.1-r1 1.16.0.1 1.17.1 1.18.2 1.19.1 1.20.2 1.20.3 1.21.1 1.22.0 1.23.0 1.23.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
+dev-haskell/haskell-src-exts 1.21.1 1.22.0 1.23.0 1.23.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
 dev-haskell/haskell-src-exts-simple 1.21.1.0 1.22.0.0 1.23.0.0: A simplified view on the haskell-src-exts AST
 dev-haskell/haskell-src-exts-util 0.2.5: Helper functions for working with haskell-src-exts trees
 dev-haskell/haskell-src-meta 0.8.5-r1: Parse source to template-haskell abstract syntax
@@ -860,7 +859,6 @@ dev-haskell/hie-bios 0.7.2: Set up a GHC API session
 dev-haskell/hie-compat 0.1.0.0: HIE files for GHC 8.6 and other HIE file backports
 dev-haskell/hiedb 0.3.0.1: Generates a references DB from .hie files
 dev-haskell/highlighter 0.2.2: source code highlighting
-dev-haskell/highlighting-kate 0.6.4: Syntax highlighting
 dev-haskell/hinotify 0.4.1: Haskell binding to inotify
 dev-haskell/hint 0.9.0.3 9999: Runtime Haskell interpreter (GHC API wrapper)
 dev-haskell/hip 1.5.6.0: Haskell Image Processing (HIP) Library
@@ -903,7 +901,7 @@ dev-haskell/hoogle 5.0.18 5.0.18.1: Haskell API Search
 dev-haskell/hookup 0.3.1.0 0.5: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
-dev-haskell/hora 2.2.0: date time
+dev-haskell/hora 2.2.0: Convenient type, timestamp, timezone, format
 dev-haskell/hosc 0.17: Haskell Open Sound Control
 dev-haskell/hostname 1.0-r1: A a cross-platform means of determining the hostname
 dev-haskell/hourglass 0.2.12: simple performant time related library
@@ -1022,7 +1020,7 @@ dev-haskell/imagesize-conduit 1.1-r1: Determine the size of some common image fo
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
 dev-haskell/implicit-hie 0.1.2.5: Auto generate hie-bios cradles & hie.yaml
 dev-haskell/implicit-hie-cradle 0.3.0.2: Auto generate hie-bios cradles
-dev-haskell/indents 0.3.3 0.5.0.1: indentation sensitive parser-combinators for parsec
+dev-haskell/indents 0.5.0.1: indentation sensitive parser-combinators for parsec
 dev-haskell/indexed 0.1.3: Haskell98 indexed functors, monads, comonads
 dev-haskell/indexed-extras 0.2-r1: Indexed functors, monads and comonads that require extensions to Haskell98
 dev-haskell/indexed-list-literals 0.2.1.3: Type safe indexed list literals
@@ -1988,7 +1986,7 @@ dev-haskell/units-parser 0.1.1.3: A parser for units of measure
 dev-haskell/universe-base 1.1.1: A class for finite and recursively enumerable types
 dev-haskell/universe-reverse-instances 1.1: Instances of standard classes that are made possible by enumerations
 dev-haskell/unix-bytestring 0.3.7.3: Unix/Posix-specific functions for ByteStrings
-dev-haskell/unix-compat 0.4.3.1 0.5.2: Portable POSIX-compatibility layer
+dev-haskell/unix-compat 0.5.2: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2-r1: Unix memory syscalls
 dev-haskell/unix-time 0.4.7: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
@@ -2101,7 +2099,7 @@ dev-haskell/wreq 0.5.3.2: An easy-to-use HTTP client library
 dev-haskell/writer-cps-mtl 0.1.1.6: MonadWriter orphan instances for writer-cps-transformers
 dev-haskell/writer-cps-transformers 0.1.1.4 0.5.6.1: WriteT and RWST monad transformers
 dev-haskell/wuss 1.1.17: Secure WebSocket (WSS) clients
-dev-haskell/wx 0.92.3.0: wxHaskell
+dev-haskell/wx 0.92.3.0: A portable and native GUI library for Haskell built on top of wxWidgets
 dev-haskell/wxc 0.92.3.0: wxHaskell C++ wrapper
 dev-haskell/wxcore 0.92.3.0: wxHaskell core
 dev-haskell/wxdirect 0.92.3.0-r1: helper tool for building wxHaskell
