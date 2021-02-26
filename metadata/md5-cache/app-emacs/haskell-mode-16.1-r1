@@ -1,7 +1,7 @@
+BDEPEND=>=app-editors/emacs-23.1:*
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpack
-DEPEND=>=app-editors/emacs-23.1:*
 DESCRIPTION=Mode for editing (and running) Haskell programs in Emacs
-EAPI=5
+EAPI=7
 HOMEPAGE=http://projects.haskell.org/haskellmode-emacs/ https://www.haskell.org/haskellwiki/Emacs#Haskell-mode
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3+ FDL-1.2+
@@ -9,5 +9,5 @@ RDEPEND=>=app-editors/emacs-23.1:*
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/haskell/haskell-mode/archive/v16.1.tar.gz -> haskell-mode-16.1.tar.gz
-_eclasses_=eapi7-ver	f9ec87e93172b25ce65a85303dc06964	elisp	00840e1f4eb277c757dbfa5abf73c4c7	elisp-common	d4b53ec63c580b993ed19445f411e1d2	epatch	e8f1ec13660dc2f44b32775765d85e42	estack	055c42df72f76a4f45ec92b35e83cd56
-_md5_=bf1f19d2dc9b951d825f31cef6ddc060
+_eclasses_=elisp	00840e1f4eb277c757dbfa5abf73c4c7	elisp-common	d4b53ec63c580b993ed19445f411e1d2
+_md5_=bdc153ba39ca11ee44e2d13c95e37a32
