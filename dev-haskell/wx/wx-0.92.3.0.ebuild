@@ -10,7 +10,7 @@ WX_GTK_VER="3.0"
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="wxHaskell"
+DESCRIPTION="A portable and native GUI library for Haskell built on top of wxWidgets"
 HOMEPAGE="https://wiki.haskell.org/WxHaskell"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

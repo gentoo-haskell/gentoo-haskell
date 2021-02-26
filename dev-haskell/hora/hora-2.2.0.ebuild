@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="date time"
+DESCRIPTION="Convenient type, timestamp, timezone, format"
 HOMEPAGE="https://github.com/ciez/hora"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
