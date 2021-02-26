@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="DiffArray"
+DESCRIPTION="This package defines the DiffArray type"
 HOMEPAGE="https://hackage.haskell.org/package/diffarray"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
