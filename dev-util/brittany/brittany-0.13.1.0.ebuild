@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -37,7 +37,6 @@ RDEPEND=">=dev-haskell/aeson-1.0.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/uniplate-1.6.12:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-haskell/unsafe-0.0:=[profile?] <dev-haskell/unsafe-0.1:=[profile?]
 	>=dev-haskell/yaml-0.8.18:=[profile?] <dev-haskell/yaml-0.12:=[profile?]
-	>=dev-lang/ghc-8.6.1:=[profile?] <dev-lang/ghc-8.11:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
