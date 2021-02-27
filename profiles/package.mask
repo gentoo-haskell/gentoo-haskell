@@ -1,3 +1,12 @@
+# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-26)
+# This package appears to do nothing. Checking the source code, there doesn't
+# seem to be anything other than a cabal file and a Setup.lhs file. There is no
+# description of what the package should do, the hackage page states it is
+# deprecated, and there appears to be no activity on hackage since 2014.
+#
+# Masked for removal.
+dev-haskell/kibro
+
 # Wolfgang E. Sanyer <WolfgagESanyer@gmail.com> (2021-02-24)
 # This package has not been maintained upstream since 2014 and does not have any
 # official releases. Masked for removal in 30 days.
