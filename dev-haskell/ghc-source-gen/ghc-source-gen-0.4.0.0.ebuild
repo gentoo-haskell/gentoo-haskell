@@ -15,11 +15,8 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-RDEPEND=">=dev-lang/ghc-8.4:=[profile?] <dev-lang/ghc-8.11:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
-"
+RDEPEND=">=dev-lang/ghc-8.4.3:="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/ghc-paths-0.1 <dev-haskell/ghc-paths-0.2

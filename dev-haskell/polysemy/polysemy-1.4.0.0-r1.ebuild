@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="dump-core +error-messages"
+IUSE="+error-messages"
 
 RESTRICT=test # broken on USE=doc
 
@@ -30,7 +30,6 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
 	>=dev-haskell/type-errors-pretty-0.0.0.0:=[profile?] <dev-haskell/type-errors-pretty-0.1:=[profile?]
 	>=dev-haskell/unagi-chan-0.4.0.0:=[profile?] <dev-haskell/unagi-chan-0.5:=[profile?]
 	>=dev-lang/ghc-8.2.1:=
-	dump-core? ( >=dev-haskell/dump-core-0.1.3.2:=[profile?] <dev-haskell/dump-core-0.2:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.1.0
@@ -42,6 +41,6 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag dump-core dump-core) \
+		--flags=-dump-core \
 		$(cabal_flag error-messages error-messages)
 }

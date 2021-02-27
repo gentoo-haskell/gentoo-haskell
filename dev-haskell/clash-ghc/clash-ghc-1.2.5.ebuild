@@ -37,7 +37,6 @@ RDEPEND=">=dev-haskell/bifunctors-4.1.1:=[profile?] <dev-haskell/bifunctors-6.0:
 	>=dev-haskell/unordered-containers-0.2.1.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/utf8-string-1.0.0.0:=[profile?] <dev-haskell/utf8-string-1.1.0.0:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-1.0:=[profile?]
-	>=dev-lang/ghc-8.4.0:=[profile?] <dev-lang/ghc-8.11:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	virtual/libc
 	ghc-paths? ( dev-haskell/ghc-paths:=[profile?] )

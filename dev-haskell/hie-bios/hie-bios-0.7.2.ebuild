@@ -33,7 +33,6 @@ RDEPEND=">=dev-haskell/aeson-1.4.5:=[profile?] <dev-haskell/aeson-2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.9:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12.0:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/yaml-0.10.0:=[profile?] <dev-haskell/yaml-0.12:=[profile?]
-	>=dev-lang/ghc-8.4.1:=[profile?] <dev-lang/ghc-8.11:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

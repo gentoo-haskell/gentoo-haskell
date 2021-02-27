@@ -38,8 +38,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-golden-2.3.1.1 <dev-haskell/tasty-golden-2.4
 		>=dev-haskell/tasty-hunit-0.10.0.2 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tree-diff-0.1 <dev-haskell/tree-diff-0.2
-		|| ( ( >=dev-haskell/tasty-1.2.3 <dev-haskell/tasty-1.3 )
-			( >=dev-haskell/tasty-1.3.1 <dev-haskell/tasty-1.4 ) ) )
+		>=dev-haskell/tasty-1.2.3 <dev-haskell/tasty-1.4 )
 "
 
 src_prepare() {

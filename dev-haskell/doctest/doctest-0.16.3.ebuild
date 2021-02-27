@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,7 +23,6 @@ RDEPEND=">=dev-haskell/base-compat-0.7.0:=[profile?]
 	>=dev-haskell/code-page-0.1:=[profile?]
 	>=dev-haskell/ghc-paths-0.1.0.9:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?]
-	>=dev-lang/ghc-7.0:=[profile?] <dev-lang/ghc-8.11:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
