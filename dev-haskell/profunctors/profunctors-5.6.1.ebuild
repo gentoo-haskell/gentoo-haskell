@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Profunctors"
+DESCRIPTION="The Profunctors package, authored by Edward Kmett"
 HOMEPAGE="https://github.com/ekmett/profunctors/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
