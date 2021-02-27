@@ -8,7 +8,4 @@
 	<use>
 		<flag name="corelint">Perform the corelint tests</flag>
 	</use>
-	<longdescription>
-		Please see the README on GitHub at &lt;https://github.com/isovector/polysemy/tree/master/polysemy-plugin#readme&gt;
-	</longdescription>
 </pkgmetadata>
