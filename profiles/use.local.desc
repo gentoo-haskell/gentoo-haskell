@@ -354,6 +354,8 @@ dev-haskell/reflex:debug-propagation - Enable debugging of spider internals
 dev-haskell/reflex:debug-trace-events - Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!
 dev-haskell/reflex:fast-weak - Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
+dev-haskell/rere:rere-cfg - CFG functionality, needs dependency on fin and vec
+dev-haskell/rere:rere-intersection - Add add intersection constructor. EXPERIMENTAL
 dev-haskell/retrie:example - build the retrie example executable
 dev-haskell/retrie:executable - build the retrie executable
 dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
@@ -444,6 +446,9 @@ dev-haskell/unordered-containers:debug - Enable debug support
 dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/uri-encode:tools - Build executables.
 dev-haskell/uuagc:loag - Use MiniSat as external SAT-solver to schedule all Linear Ordered AGs
+dev-haskell/vec:adjunctions - Depend on @adjunctions@ to provide its instances
+dev-haskell/vec:distributive - Depend on @distributive@ to provide its instances. Turning on, disables @adjunctions@ too.
+dev-haskell/vec:semigroupoids - Depend on @semigroupoids@ to provide its instances, and `traverse1`.
 dev-haskell/vector:boundschecks - Enable bounds checking
 dev-haskell/vector:internalchecks - Enable internal consistency checks at the cost of a significant performance penalty
 dev-haskell/vector:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty
