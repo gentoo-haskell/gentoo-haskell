@@ -191,14 +191,16 @@ run mkdir "${chroot_temp}"
 	EOF
 
         cat >refresh-ghc.bash <<-EOF
-	echo "Installing stable binary ghc"
-	FEATURES="${FEATURES} -test -strict -stricter" USE="binary ${USE}" emerge --verbose --oneshot dev-lang/ghc || exit 1
-	echo "Building pkg '${needed_atom}'"
 	mkdir -p /etc/portage/package.accept_keywords
 	mkdir -p /etc/portage/package.unmask
+	mkdir -p /etc/portage/package.use
+	echo "Installing ~arch binary ghc"
+	echo "dev-lang/ghc              ~${target_arch}" >  /etc/portage/package.accept_keywords/haskell
+	echo "app-admin/haskell-updater ~${target_arch}" >> /etc/portage/package.accept_keywords/haskell
+	FEATURES="${FEATURES} -test -strict -stricter" USE="binary ${USE}" emerge --verbose --oneshot dev-lang/ghc || exit 1
+	echo "Building pkg '${needed_atom}'"
 	echo "${needed_atom} ~${target_arch} **" > /etc/portage/package.accept_keywords/ghc
 	echo "${needed_atom}"                    > /etc/portage/package.unmask/ghc
-	mkdir -p /etc/portage/package.use
 	echo "${needed_atom} -binary doc ghcbootstrap ghcmakebinary ${USE}" > /etc/portage/package.use/ghc
 	FEATURES="${FEATURES} -test -strict -stricter"                     emerge --verbose --buildpkg=y "${needed_atom}"
 	EOF
