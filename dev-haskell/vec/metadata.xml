@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="adjunctions">Depend on @adjunctions@ to provide its instances</flag>
+		<flag name="distributive">Depend on @distributive@ to provide its instances. Turning on, disables @adjunctions@ too.</flag>
+		<flag name="semigroupoids">Depend on @semigroupoids@ to provide its instances, and `traverse1`.</flag>
+	</use>
+</pkgmetadata>
