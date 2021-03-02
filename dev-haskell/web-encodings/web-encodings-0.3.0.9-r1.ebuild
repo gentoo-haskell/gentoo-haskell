@@ -29,6 +29,8 @@ DEPEND="${RDEPEND}
 PATCHES=( "${FILESDIR}/${P}-time-1.5.patch" )
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'bytestring >= 0.9.1.4 && < 0.10' 'bytestring >= 0.9.1.4' \
 		'directory >= 1 && < 1.2' 'directory >= 1' \
