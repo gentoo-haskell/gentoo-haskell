@@ -25,9 +25,9 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
 PATCHES=(
-	"${FILESDIR}/${P}-ghc-7.6.patch"
-	"${FILESDIR}/${P}-ghc-7.10.patch"
-	"${FILESDIR}/${P}-ghc-hinotify-0.3.10.patch"
+	"${FILESDIR}"/${P}-ghc-7.6.patch
+	"${FILESDIR}"/${P}-ghc-7.10.patch
+	"${FILESDIR}"/${P}-hinotify-0.3.10.patch
 )
 
 src_prepare() {
