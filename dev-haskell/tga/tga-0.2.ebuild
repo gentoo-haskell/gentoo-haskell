@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	prepare
+	default
 
 	cabal_chdeps \
 		'bytestring == 0.9.1.*' 'bytestring >= 0.9.1 && < 0.11'
