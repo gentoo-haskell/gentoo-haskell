@@ -25,6 +25,8 @@ DEPEND="${RDEPEND}
 PATCHES=( "${FILESDIR}/${P}-ghc-7.6.patch" )
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		': haskell98, ' ':'
 }

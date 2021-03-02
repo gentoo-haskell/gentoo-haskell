@@ -1,5 +1,5 @@
---- plugins-auto-0.0.4-orig/plugins-auto.cabal	2011-12-15 11:02:46.000000000 +1100
-+++ plugins-auto-0.0.4/plugins-auto.cabal	2018-04-25 21:43:19.733170322 +1000
+--- a/plugins-auto-0.0.4-orig/plugins-auto.cabal	2011-12-15 11:02:46.000000000 +1100
++++ b/plugins-auto-0.0.4/plugins-auto.cabal	2018-04-25 21:43:19.733170322 +1000
 @@ -63,6 +63,7 @@
                         System.Plugins.Auto.LiftName
  
@@ -8,8 +8,8 @@
                         containers,
                         filepath,
                         hinotify >= 0.3.2,
---- plugins-auto-0.0.4-orig/System/Plugins/Auto/FileSystemWatcher.hs	2011-12-15 11:02:46.000000000 +1100
-+++ plugins-auto-0.0.4/System/Plugins/Auto/FileSystemWatcher.hs	2018-04-25 21:45:36.872378477 +1000
+--- a/plugins-auto-0.0.4-orig/System/Plugins/Auto/FileSystemWatcher.hs	2011-12-15 11:02:46.000000000 +1100
++++ b/plugins-auto-0.0.4/System/Plugins/Auto/FileSystemWatcher.hs	2018-04-25 21:45:36.872378477 +1000
 @@ -1,3 +1,4 @@
 +{-# LANGUAGE CPP #-}
  -- | Api for watching and notifying file changes.

@@ -24,11 +24,15 @@ RDEPEND=">=dev-haskell/hinotify-0.3.2:=[profile?]
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 
-PATCHES=(	"${FILESDIR}/${P}-ghc-7.6.patch"
-			"${FILESDIR}/${P}-ghc-7.10.patch"
-			"${FILESDIR}/${P}-ghc-hinotify-0.3.10patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-ghc-7.6.patch"
+	"${FILESDIR}/${P}-ghc-7.10.patch"
+	"${FILESDIR}/${P}-ghc-hinotify-0.3.10.patch"
+)
 
 src_prepare() {
+	default
+
 	mkdir -p "${S}/Test" || die "Could not create Test directory"
 	cp "${FILESDIR}/Test.hs" "${S}/Test/Test.hs" || die "Could not copy Test.hs"
 }
