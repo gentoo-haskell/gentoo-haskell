@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -28,6 +28,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 	virtual/pkgconfig
 "
+
+PATCHES=("${FILESDIR}"/${P}-ncurses-6.2_p2021.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
