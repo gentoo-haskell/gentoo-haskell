@@ -1,0 +1,12 @@
+--- a/lib/UI/NCurses/Enums.chs
++++ b/lib/UI/NCurses/Enums.chs
+@@ -195,7 +195,9 @@ enum hsncurses_Key
+ , hsncurses_KEY_UNDO = KEY_UNDO
+ , hsncurses_KEY_MOUSE = KEY_MOUSE
+ , hsncurses_KEY_RESIZE = KEY_RESIZE
++#ifdef KEY_EVENT
+ , hsncurses_KEY_EVENT = KEY_EVENT
++#endif
+ };
+ #endc
+ 
