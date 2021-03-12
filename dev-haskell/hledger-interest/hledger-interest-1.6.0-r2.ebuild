@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=
-	>=dev-haskell/hledger-lib-1.19:= <dev-haskell/hledger-lib-1.21:=
+	>=dev-haskell/hledger-lib-1.21:= <dev-haskell/hledger-lib-1.22:=
 	dev-haskell/mtl:=
 	dev-haskell/text:=
 	>=dev-lang/ghc-7.4.1:=
@@ -28,9 +28,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
 
+PATCHES=( "${FILESDIR}"/${P}-hledger-lib-1.21.patch )
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'hledger-lib == 1.19.*' 'hledger-lib >= 1.19'
+		'hledger-lib == 1.19.*' 'hledger-lib >= 1.21'
 }
