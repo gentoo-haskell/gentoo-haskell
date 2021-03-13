@@ -20,8 +20,17 @@ IUSE="halvm"
 RDEPEND=">=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0 <dev-haskell/cabal-3.3
+	>=dev-haskell/cabal-1.22.2.0 <dev-haskell/cabal-3.5
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal >= 1.10 && < 3.3' 'Cabal >= 1.10 && < 3.5'
+
+	eapply_user
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
