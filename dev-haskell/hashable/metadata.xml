@@ -7,13 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="examples">Build example modules</flag>
-		<flag name="gmp">Are we using @integer-gmp@ to provide fast Integer instances?</flag>
+		<flag name="gmp">Are we using @integer-gmp@ to provide fast Integer instances? No effect on GHC-9.0 or later.</flag>
 	</use>
-	<longdescription>
-		This package defines a class, &#39;Hashable&#39;, for types that
-		can be converted to a hash value.  This class
-		exists for the benefit of hashing-based data
-		structures.  The package provides instances for
-		basic types and a way to combine hash values.
-	</longdescription>
 </pkgmetadata>
