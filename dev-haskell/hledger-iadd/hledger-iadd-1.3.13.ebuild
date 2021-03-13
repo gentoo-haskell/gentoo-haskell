@@ -37,3 +37,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/quickcheck )
 "
+
+# https://github.com/hpdeifel/hledger-iadd/issues/53
+PATCHES=("${FILESDIR}"/${P}-skip-test.patch)
