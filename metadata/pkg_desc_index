@@ -1941,7 +1941,7 @@ dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compile
 dev-haskell/topograph 1.0.0.1: Directed acyclic graphs
 dev-haskell/torrent 10000.1.1: BitTorrent file parser and generater
 dev-haskell/torsor 0.1: Torsor Typeclass
-dev-haskell/transformers 0.5.5.0 0.5.6.2: Concrete functor and monad transformers
+dev-haskell/transformers 0.5.6.2: Concrete functor and monad transformers
 dev-haskell/transformers-base 0.4.5.2: Lift computations from the bottom of a transformer stack
 dev-haskell/transformers-compat 0.6.6: A small compatibility shim for the transformers library
 dev-haskell/transformers-free 1.0.1-r1: Free monad transformers
