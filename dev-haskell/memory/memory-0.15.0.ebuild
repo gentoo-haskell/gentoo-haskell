@@ -11,7 +11,8 @@ inherit haskell-cabal
 
 DESCRIPTION="memory and related abstraction stuff"
 HOMEPAGE="https://github.com/vincenthz/hs-memory"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://patch-diff.githubusercontent.com/raw/vincenthz/hs-memory/pull/81.patch -> ${PN}-81.patch"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -25,6 +26,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 	test? ( dev-haskell/foundation )
 "
+
+PATCHES=( "${DISTDIR}/${PN}-81.patch" )
 
 src_configure() {
 	haskell-cabal_src_configure \
