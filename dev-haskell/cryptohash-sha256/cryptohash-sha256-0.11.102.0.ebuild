@@ -34,7 +34,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tasty             ^>= 1.1' 'tasty             >= 1.1'
+		'tasty             ^>= 1.1' 'tasty             >= 1.1' \
+		'base              >= 4.5 && < 4.15' 'base              >= 4.5'
 }
 
 src_configure() {
