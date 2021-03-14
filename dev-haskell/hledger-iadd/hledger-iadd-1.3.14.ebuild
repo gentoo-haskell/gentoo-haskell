@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/brick-0.27:=[profile?]
 	>=dev-haskell/free-4.12.4:=[profile?]
-	>=dev-haskell/hledger-lib-1.20.99:=[profile?] <dev-haskell/hledger-lib-1.22:=[profile?]
+	>=dev-haskell/hledger-lib-1.21:=[profile?] <dev-haskell/hledger-lib-1.22:=[profile?]
 	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-9.1:=[profile?]
 	dev-haskell/microlens:=[profile?]
 	dev-haskell/microlens-th:=[profile?]
@@ -37,6 +37,3 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/quickcheck )
 "
-
-# https://github.com/hpdeifel/hledger-iadd/issues/53
-PATCHES=("${FILESDIR}"/${P}-skip-test.patch)
