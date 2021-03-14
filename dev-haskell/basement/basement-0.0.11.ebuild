@@ -10,7 +10,8 @@ inherit haskell-cabal
 
 DESCRIPTION="Foundation scrap box of array & string"
 HOMEPAGE="https://github.com/haskell-foundation/foundation#readme"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://patch-diff.githubusercontent.com/raw/haskell-foundation/foundation/pull/549.patch -> foundation-549.patch"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -22,3 +23,9 @@ RDEPEND=">=dev-lang/ghc-8.0.1:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+	patch -fp2 < "${DISTDIR}/foundation-549.patch"
+	eapply_user
+}
