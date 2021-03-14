@@ -1392,7 +1392,7 @@ dev-haskell/pantry 0.4.0.2 0.5.1.4-r1: Content addressable Haskell package manag
 dev-haskell/parallel 3.2.2.0: Parallel programming library
 dev-haskell/parallel-io 0.3.3-r3: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.2.0.9: Full-featured command-line argument parsing library
-dev-haskell/parsec 3.1.13.0-r1 3.1.14.0: Monadic parser combinators
+dev-haskell/parsec 3.1.14.0: Monadic parser combinators
 dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsec-numbers 0.1.0: Utilities for parsing numbers from strings
 dev-haskell/parsec-permutation 0.1.2.0: Applicative permutation parser for Parsec (replacement for Text.Parsec.Perm)
@@ -1771,7 +1771,7 @@ dev-haskell/statvfs 0.2: Get unix filesystem statistics with statfs, statvfs
 dev-haskell/stb-image-redux 0.2.1.0-r1: Image loading and writing microlibrary
 dev-haskell/stemmer 0.5.2: Haskell bindings to the Snowball stemming library
 dev-haskell/stickykeyshotkey 0.1.0.2-r1: get and set STICKYKEYS.SKF_HOTKEYACTIVE
-dev-haskell/stm 2.4.5.0 2.5.0.0: Software Transactional Memory
+dev-haskell/stm 2.5.0.0: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
 dev-haskell/stm-conduit 4.0.1: Introduces conduits to channels, and promotes using conduits concurrently
 dev-haskell/stm-containers 1.1.0.5: Containers for STM
@@ -1866,7 +1866,7 @@ dev-haskell/temporary-rc 1.2.0.3: Portable temporary file and directory support 
 dev-haskell/tensor 1.1.0.2: Tensor data types
 dev-haskell/terminal-progress-bar 0.4.1: A simple progress bar in the terminal
 dev-haskell/terminal-size 0.3.2.1: Get terminal window height and width
-dev-haskell/terminfo 0.4.1.2 0.4.1.4: Haskell bindings to the terminfo library
+dev-haskell/terminfo 0.4.1.4: Haskell bindings to the terminfo library
 dev-haskell/terminfo-hs 0.2.1.1: A pure-Haskell (no FFI) module for accessing terminfo databases
 dev-haskell/test-framework 0.8.2.0-r2: Framework for running and organising tests, with HUnit and QuickCheck support
 dev-haskell/test-framework-hunit 0.3.0.2-r1: HUnit support for the test-framework package
@@ -2119,7 +2119,7 @@ dev-haskell/xdg-userdirs 0.1.0.2-r1: Basic implementation of XDG user directorie
 dev-haskell/xdot 0.3.0.2: Parse Graphviz xdot files and interactively view them using GTK and Cairo
 dev-haskell/xeno 0.4.2: A fast event-based XML parser in pure Haskell
 dev-haskell/xformat 0.1.2.1: Extensible, type-safe formatting with scanf- and printf-like functions
-dev-haskell/xhtml 3000.2.1-r1 3000.2.2.1: An XHTML combinator library
+dev-haskell/xhtml 3000.2.2.1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
 dev-haskell/xlsx 0.8.2: Simple and incomplete Excel file parser/writer
 dev-haskell/xml 1.3.14: A simple XML library
