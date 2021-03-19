@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hunit-1.3.1 <dev-haskell/hunit-1.7
 	)
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base          >=4.3     && <4.15' 'base          >=4.3'
+	eapply_user
+}
