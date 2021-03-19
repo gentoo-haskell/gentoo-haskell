@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/base16-bytestring-0.1:=[profile?] <dev-haskell/base16-byt
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base               >= 4.5 && <4.15' 'base               >= 4.5'
+	eapply_user
+}
