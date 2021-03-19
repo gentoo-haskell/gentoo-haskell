@@ -30,3 +30,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.11
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7 )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base          >=4.3     && <4.15' 'base          >=4.3'
+	eapply_user
+}
