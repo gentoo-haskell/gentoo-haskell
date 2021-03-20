@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -11,6 +11,7 @@ inherit haskell-cabal
 
 MY_PN="HTTP"
 MY_P="${MY_PN}-${PV}"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="A library for client-side HTTP"
 HOMEPAGE="https://github.com/haskell/HTTP"
@@ -23,13 +24,13 @@ IUSE="conduit10 +network-uri"
 
 RDEPEND=">=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-8.4.3:=
 	network-uri? ( >=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.4:=[profile?] <dev-haskell/network-2.6:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/httpd-shed-0.4 <dev-haskell/httpd-shed-0.5
 		>=dev-haskell/hunit-1.2.0.1 <dev-haskell/hunit-1.7
 		>=dev-haskell/puremd5-0.2.4 <dev-haskell/puremd5-2.2
@@ -37,8 +38,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.2.0 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3.0 <dev-haskell/test-framework-hunit-0.4 )
 "
-
-S="${WORKDIR}/${MY_P}"
 
 src_configure() {
 	haskell-cabal_src_configure \

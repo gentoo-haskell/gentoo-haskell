@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,20 +25,18 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
 	>=dev-haskell/colour-2.0:=[profile?]
-	dev-haskell/hxt:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/safe:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.2.1:=
+	>=dev-haskell/xml-conduit-1.9.1.0:=[profile?] <dev-haskell/xml-conduit-1.10:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.0.0.2
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/diff
-		dev-haskell/hunit
 		dev-haskell/pretty-show
 		dev-haskell/quickcheck
-		dev-haskell/random
 		dev-haskell/tasty
 		dev-haskell/tasty-golden
 		dev-haskell/tasty-hunit
