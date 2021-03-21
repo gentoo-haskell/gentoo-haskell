@@ -7,7 +7,7 @@ app-misc/lambdawars 9999: RoboWars for London Haskell User Group
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.6.6 0.6.7 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
-app-text/pandoc 2.11.4: Conversion between markup formats
+app-text/pandoc 2.11.4 2.12: Conversion between markup formats
 app-text/pdfsplit 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -279,7 +279,7 @@ dev-haskell/cipher-camellia 0.0.2: Camellia block cipher primitives
 dev-haskell/cipher-des 0.0.6: DES and 3DES primitives
 dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.6: Simple heuristic for packing discs of varying radii in a circle
-dev-haskell/citeproc 0.3.0.6: Generates citations and bibliography from CSL styles
+dev-haskell/citeproc 0.3.0.9: Generates citations and bibliography from CSL styles
 dev-haskell/clash-ghc 1.2.5: CAES Language for Synchronous Hardware
 dev-haskell/clash-lib 1.2.5: CAES Language for Synchronous Hardware - As a Library
 dev-haskell/clash-prelude 1.2.5: CAES Language for Synchronous Hardware - Prelude library
@@ -765,7 +765,7 @@ dev-haskell/haddock 2.24.0: A documentation-generation tool for Haskell librarie
 dev-haskell/haddock-api 2.24.0: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.8.0 1.9.0: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1-r1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.13.4.1: A static website compiler library
+dev-haskell/hakyll 4.14.0.0: A static website compiler library
 dev-haskell/hakyll-agda 0.1.12: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.4: Hakyll SASS compiler over hsass
 dev-haskell/half 0.3-r1 0.3.1: Half-precision floating-point
@@ -927,9 +927,10 @@ dev-haskell/hsexif 0.6.1.8: EXIF handling library in pure Haskell
 dev-haskell/hsh 2.1.3: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.11.0: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.12 1.3.1.0-r1: Versatile logging framework
-dev-haskell/hslua 1.0.3.1 1.1.2: A Lua language interpreter embedding in Haskell
+dev-haskell/hslua 1.3.0.1: Bindings to Lua, an embeddable scripting language
+dev-haskell/hslua-module-path 0.1.0.1: Lua module to work with file paths
 dev-haskell/hslua-module-system 0.2.2.1: Lua module wrapper around Haskell's System module
-dev-haskell/hslua-module-text 0.2.1: Lua module for text
+dev-haskell/hslua-module-text 0.3.0.1: Lua module for text
 dev-haskell/hsndfile 0.8.0-r1: Haskell bindings for libsndfile
 dev-haskell/hsndfile-vector 0.5.2: Haskell bindings for libsndfile (Data.Vector interface)
 dev-haskell/hsopenssl 0.11.4.17: Partial OpenSSL binding for Haskell
@@ -1064,7 +1065,7 @@ dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.1.1.1: Efficient relational queries on Haskell sets
 dev-haskell/ixset-typed 0.5: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
-dev-haskell/jira-wiki-markup 1.1.4 1.3.2: Parse jira wiki text into an abstract syntax tree
+dev-haskell/jira-wiki-markup 1.3.4: Handle Jira wiki markup
 dev-haskell/jmacro 0.6.17: QuasiQuotation library for programmatic generation of Javascript code
 dev-haskell/jose-jwt 0.8.0: JSON Object Signing and Encryption Library
 dev-haskell/js-dgtable 0.5.2: Obtain minified jquery.dgtable code
@@ -1383,7 +1384,7 @@ dev-haskell/ordered-containers 0.2.2: Set- and Map-like types that remember the 
 dev-haskell/ormolu 0.1.4.1-r1: A formatter for Haskell source code
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.17.0.2: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.3.9.0: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.3.10.0: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.21 1.22: Types for representing a structured document
 dev-haskell/pango 0.13.8.1: Binding to the Pango text rendering engine
