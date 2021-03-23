@@ -35,6 +35,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 	cabal_chdeps \
+		"base >= 4.11.1.0 && < 4.15" "base >= 4.11.1.0" \
 		"hedgehog ^>= 1.0" "hedgehog >= 1.0" \
 		"hspec ^>= 2.7.1" "hspec >= 2.7.1" \
 		"hspec-hedgehog ^>= 0.0.1.1" "hspec-hedgehog >= 0.0.1.1" \
