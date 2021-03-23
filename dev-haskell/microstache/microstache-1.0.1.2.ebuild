@@ -29,3 +29,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0 )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base                  >=4.5     && <4.15' 'base                  >=4.5'
+	eapply_user
+}
