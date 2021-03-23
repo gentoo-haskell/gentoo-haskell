@@ -61,6 +61,13 @@ src_prepare() {
 	eapply_user
 }
 
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base       >= 4.8      && < 4.15' 'base       >= 4.8'
+	eapply_user
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag debug-conflict-sets debug-conflict-sets) \
