@@ -12,7 +12,7 @@ inherit haskell-cabal
 DESCRIPTION="Hackage security library"
 HOMEPAGE="https://github.com/haskell/hackage-security"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/4.cabal -> ${PF}.cabal"
+	https://hackage.haskell.org/package/${P}/revision/5.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -51,8 +51,11 @@ PATCHES=( "${FILESDIR}/hackage-security-0.6.0.1-disable-failing-aeson-canonical-
 
 src_prepare() {
 	default
-
 	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+	cabal_chdeps \
+		'base              >= 4.5     && < 4.15' 'base              >= 4.5' \
+		'template-haskell  >= 2.7     && < 2.17' 'template-haskell  >= 2.7'
+	eapply_user
 }
 
 src_configure() {
