@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'deepseq        >=1.4.3.0  && <1.4.5.0' 'deepseq        >=1.4.3.0'
+	eapply_user
+}
