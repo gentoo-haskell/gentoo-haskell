@@ -24,3 +24,10 @@ RDEPEND=">=dev-haskell/bifunctors-5.5.5:=[profile?] <dev-haskell/bifunctors-5.6:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.12
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base        >=4.3   && <4.15' 'base        >=4.3'
+	eapply_user
+}
