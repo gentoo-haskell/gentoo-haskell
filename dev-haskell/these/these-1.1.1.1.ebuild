@@ -29,6 +29,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
 
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base     >=4.5.1.0 && <4.15' 'base     >=4.5.1.0'
+	eapply_user
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag assoc assoc)
