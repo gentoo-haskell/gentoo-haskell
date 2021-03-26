@@ -1,14 +1,14 @@
-BDEPEND=app-arch/unzip
+BDEPEND=app-arch/unzip X? ( >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings )
 DEFINED_PHASES=install postinst postrm setup
-DEPEND=X? ( >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings )
 DESCRIPTION=Hasklig - a Haskell code font with monospaced ligatures
 EAPI=7
 HOMEPAGE=https://github.com/i-tu/Hasklig
+INHERIT=font
 IUSE=X
 KEYWORDS=~amd64 ~x86
 LICENSE=OFL-1.1
 RESTRICT=binchecks strip
 SLOT=0
 SRC_URI=https://github.com/i-tu/Hasklig/releases/download/v1.2/Hasklig-1.2.zip
-_eclasses_=font	dd073b36fe3fd8b868c23bc23209db45
+_eclasses_=font	0667878c2b594871023dd1833d05996f
 _md5_=ea828fd217fe4b8cadcde0abfd62e259
