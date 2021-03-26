@@ -5,14 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A test framework for writing tests against
-		&lt;https://microsoft.github.io/language-server-protocol/ Language Server Protocol servers&gt;.
-		@Language.Haskell.LSP.Test@ launches your server as a subprocess and allows you to simulate a session
-		down to the wire, and @Language.Haskell.LSP.Test@ can replay captured sessions from
-		&lt;haskell-lsp https://hackage.haskell.org/package/haskell-lsp&gt;.
-		To see examples of it in action, check out &lt;https://github.com/haskell/haskell-ide-engine haskell-ide-engine&gt;,
-		&lt;https://github.com/haskell/haskell-language-server haskell-language-server&gt; and
-		&lt;https://github.com/digital-asset/ghcide ghcide&gt;.
-	</longdescription>
 </pkgmetadata>
