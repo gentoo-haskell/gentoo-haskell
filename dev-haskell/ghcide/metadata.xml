@@ -8,7 +8,6 @@
 	<use>
 		<flag name="bench-exe">Build the ghcide-bench executable</flag>
 		<flag name="executable">Build the ghcide executable</flag>
-		<flag name="ghc-lib">build against ghc-lib instead of the ghc package</flag>
 		<flag name="test-exe">Build the ghcide-test-preprocessor executable</flag>
 	</use>
 </pkgmetadata>
