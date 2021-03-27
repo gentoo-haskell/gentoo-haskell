@@ -1,3 +1,13 @@
+# hololeap <hololeap@protonmail.com> (2021-03-27)
+# These packages have been deprecated in favor of new names on Hackage.
+# The old packages are masked for renewal.
+# (haskell-lsp is now known as lsp)
+# (haskell-lsp-types is now known as lsp-types)
+# (hls-exactprint-utils has been absorbed by ghcide)
+dev-haskell/haskell-lsp
+dev-haskell/haskell-lsp-types
+dev-haskell/hls-exactprint-utils
+
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-27)
 # These are packages that cause some sort of conflict related to ghc-9. Please
 # try to gather all such issues in this section, and add notes as appropriate to
