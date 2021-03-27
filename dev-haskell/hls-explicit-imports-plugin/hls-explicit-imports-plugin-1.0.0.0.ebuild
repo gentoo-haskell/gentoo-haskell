@@ -18,9 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
-	<dev-haskell/ghcide-0.7.4:=[profile?]
-	dev-haskell/haskell-lsp-types:=[profile?]
-	dev-haskell/hls-plugin-api:=[profile?]
+	>=dev-haskell/ghcide-1.0:=[profile?] <dev-haskell/ghcide-1.2:=[profile?]
+	>=dev-haskell/hls-plugin-api-1.0.0.0:=[profile?] <dev-haskell/hls-plugin-api-1.1:=[profile?]
+	dev-haskell/lsp:=[profile?]
+	dev-haskell/lsp-types:=[profile?]
 	dev-haskell/shake:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
@@ -33,8 +34,4 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
-
-	# Somebody goofed and set the upper limit to "<= 0.7.3" instead of "< 0.7.4"
-	cabal_chdeps\
-		'ghcide     <= 0.7.3' 'ghcide < 0.7.4'
 }
