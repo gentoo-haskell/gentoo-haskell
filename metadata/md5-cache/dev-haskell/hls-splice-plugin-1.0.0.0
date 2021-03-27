@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/aeson:=[profile?] dev-haskell/dlist:=[profile?] dev-haskell/extra:=[profile?] dev-haskell/foldl:=[profile?] dev-haskell/ghc-exactprint:=[profile?] >=dev-haskell/ghcide-1.0.0.0:=[profile?] <dev-haskell/ghcide-1.1:=[profile?] >=dev-haskell/hls-plugin-api-1.0.0.0:=[profile?] <dev-haskell/hls-plugin-api-1.1:=[profile?] dev-haskell/lens:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/retrie:=[profile?] dev-haskell/shake:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unliftio-core:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.6.3:= >=dev-haskell/cabal-2.4.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes
+EAPI=7
+HOMEPAGE=https://hackage.haskell.org/package/hls-splice-plugin
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/dlist:=[profile?] dev-haskell/extra:=[profile?] dev-haskell/foldl:=[profile?] dev-haskell/ghc-exactprint:=[profile?] >=dev-haskell/ghcide-1.0.0.0:=[profile?] <dev-haskell/ghcide-1.1:=[profile?] >=dev-haskell/hls-plugin-api-1.0.0.0:=[profile?] <dev-haskell/hls-plugin-api-1.1:=[profile?] dev-haskell/lens:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/retrie:=[profile?] dev-haskell/shake:=[profile?] dev-haskell/syb:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unliftio-core:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.6.3:=
+SLOT=0/1.0.0.0
+SRC_URI=https://hackage.haskell.org/package/hls-splice-plugin-1.0.0.0/hls-splice-plugin-1.0.0.0.tar.gz
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	l10n	8cdd85e169b835d518bc2fd59f780d8e	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	2d5b3f4b315094768576b6799e4f926e	multiprocessing	cac3169468f893670dac3e7cb940e045	ghc-package	c5182eb7e501132153f9710aa822d170	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	haskell-cabal	658e96e9ebbdc78375837f4aab79399f
+_md5_=3482a19bb9986eed5714b5d1d5102bc1

@@ -682,7 +682,7 @@ dev-haskell/ghc-typelits-knownnat 0.7.3: Derive KnownNat constraints from other 
 dev-haskell/ghc-typelits-natnormalise 0.7.2: GHC typechecker plugin for types of kind GHC.TypeLits.Nat
 dev-haskell/ghci-pretty 0.0.2: colored pretty-printing within ghci
 dev-haskell/ghcid 0.6.6 0.8.7: GHCi based bare bones IDE
-dev-haskell/ghcide 0.7.3.0: The core of an IDE
+dev-haskell/ghcide 1.0.0.0: The core of an IDE
 dev-haskell/ghcjs-codemirror 0.0.0.2: Installs CodeMirror JavaScript files
 dev-haskell/gi-atk 2.0.22: Atk bindings
 dev-haskell/gi-cairo 1.0.24: Cairo bindings
@@ -878,16 +878,16 @@ dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
 dev-haskell/hlint 3.2.3 3.2.7: Source code suggestions
-dev-haskell/hls-class-plugin 0.1.0.1: Class/instance management plugin for Haskell Language Server
-dev-haskell/hls-eval-plugin 0.2.0.0: Eval plugin for Haskell Language Server
+dev-haskell/hls-class-plugin 1.0.0.0: Class/instance management plugin for Haskell Language Server
+dev-haskell/hls-eval-plugin 1.0.0.0: Eval plugin for Haskell Language Server
 dev-haskell/hls-exactprint-utils 0.5.0.1: Common utilities to interaction between ghc-exactprint and HLS plugins
-dev-haskell/hls-explicit-imports-plugin 0.1.0.0-r1: Explicit imports plugin for Haskell Language Server
-dev-haskell/hls-haddock-comments-plugin 0.1.1.0: Haddock comments plugin for Haskell Language Server
-dev-haskell/hls-hlint-plugin 0.2.0.0: Hlint integration plugin with Haskell Language Server
-dev-haskell/hls-plugin-api 0.7.0.0: Haskell Language Server API for plugin communication
-dev-haskell/hls-retrie-plugin 0.1.1.0: Retrie integration plugin for Haskell Language Server
-dev-haskell/hls-splice-plugin 0.3.0.0: HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes
-dev-haskell/hls-tactics-plugin 0.5.1.0-r1: Tactics plugin for Haskell Language Server
+dev-haskell/hls-explicit-imports-plugin 1.0.0.0: Explicit imports plugin for Haskell Language Server
+dev-haskell/hls-haddock-comments-plugin 1.0.0.0: Haddock comments plugin for Haskell Language Server
+dev-haskell/hls-hlint-plugin 1.0.0.1: Hlint integration plugin with Haskell Language Server
+dev-haskell/hls-plugin-api 1.0.0.0: Haskell Language Server API for plugin communication
+dev-haskell/hls-retrie-plugin 1.0.0.0: Retrie integration plugin for Haskell Language Server
+dev-haskell/hls-splice-plugin 1.0.0.0: HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes
+dev-haskell/hls-tactics-plugin 1.0.0.0: Wingman plugin for Haskell Language Server
 dev-haskell/hmatrix 0.20.0.0: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
@@ -1166,13 +1166,15 @@ dev-haskell/log-base 0.8.0.0: Structured logging solution (base package)
 dev-haskell/log-domain 0.13: Log-domain arithmetic
 dev-haskell/log-postgres 0.7.1.4-r1: Structured logging solution (PostgreSQL back end)
 dev-haskell/logfloat 0.13.3.3-r1: Log-domain floating point numbers
-dev-haskell/logging-effect 1.3.9-r2: A mtl-style monad transformer for general purpose & compositional logging
+dev-haskell/logging-effect 1.3.12: A mtl-style monad transformer for general purpose & compositional logging
 dev-haskell/logging-facade 0.3.0: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.7.0.3: A backtracking logic-programming monad
 dev-haskell/logict-state 0.1.0.5: Library for logic programming based on haskell package logict
 dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lrucache 1.2.0.1: a simple, pure LRU cache
-dev-haskell/lsp-test 0.11.0.7: Functional test framework for LSP servers
+dev-haskell/lsp 1.1.1.0: Haskell library for the Microsoft Language Server Protocol
+dev-haskell/lsp-test 0.13.0.0: Functional test framework for LSP servers
+dev-haskell/lsp-types 1.1.0.0: Haskell library for the Microsoft Language Server Protocol, data types
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
 dev-haskell/lucid 2.9.12: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
@@ -1994,7 +1996,7 @@ dev-haskell/unix-time 0.4.7: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
 dev-haskell/unliftio 0.2.14: The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)
-dev-haskell/unliftio-core 0.1.2.0 0.2.0.1: The MonadUnliftIO typeclass for unlifting monads to IO
+dev-haskell/unliftio-core 0.2.0.1: The MonadUnliftIO typeclass for unlifting monads to IO
 dev-haskell/unordered-containers 0.2.12.0 0.2.13.0: Efficient hashing-based container types
 dev-haskell/unsafe 0.0-r1: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
@@ -2200,7 +2202,7 @@ dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/hadolint 1.17.3 1.22.1: Dockerfile Linter JavaScript API
-dev-util/haskell-language-server 0.9.0.0: LSP server for GHC
+dev-util/haskell-language-server 1.0.0.0: LSP server for GHC
 dev-util/hdocs 0.5.5.0: Haskell docs tool
 dev-util/hindent 5.3.1: Extensible Haskell pretty printer
 dev-util/hsdev 0.3.4.0-r2: Haskell development library

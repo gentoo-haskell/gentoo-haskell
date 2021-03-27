@@ -133,7 +133,6 @@ dev-haskell/ghc-typelits-knownnat:deverror - Enables `-Werror` for development m
 dev-haskell/ghc-typelits-natnormalise:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghcide:bench-exe - Build the ghcide-bench executable
 dev-haskell/ghcide:executable - Build the ghcide executable
-dev-haskell/ghcide:ghc-lib - build against ghc-lib instead of the ghc package
 dev-haskell/ghcide:test-exe - Build the ghcide-test-preprocessor executable
 dev-haskell/gi-cairo-render:cairo-pdf - Build the PDF backend of Cairo.
 dev-haskell/gi-cairo-render:cairo-ps - Build the PostScript backend of Cairo.
@@ -197,7 +196,6 @@ dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if 
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
-dev-haskell/hls-hlint-plugin:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/hnix:optimize - Enable all optimization flags
 dev-haskell/hnix:profiling - Enable profiling
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
@@ -265,6 +263,7 @@ dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for developme
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
 dev-haskell/log-domain:ffi - Use C FFI to call math.h functions.
 dev-haskell/logfloat:useffi - Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.
+dev-haskell/lsp:demo - Build the demo executables
 dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/megaparsec-tests:dev - Turn on development settings.
