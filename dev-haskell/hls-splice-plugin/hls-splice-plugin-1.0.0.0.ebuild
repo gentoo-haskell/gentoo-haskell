@@ -18,16 +18,18 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/dlist:=[profile?]
+	dev-haskell/extra:=[profile?]
 	dev-haskell/foldl:=[profile?]
 	dev-haskell/ghc-exactprint:=[profile?]
-	>=dev-haskell/ghcide-0.7.3.0:=[profile?]
-	dev-haskell/haskell-lsp:=[profile?]
-	dev-haskell/hls-plugin-api:=[profile?]
+	>=dev-haskell/ghcide-1.0.0.0:=[profile?] <dev-haskell/ghcide-1.1:=[profile?]
+	>=dev-haskell/hls-plugin-api-1.0.0.0:=[profile?] <dev-haskell/hls-plugin-api-1.1:=[profile?]
 	dev-haskell/lens:=[profile?]
+	dev-haskell/lsp:=[profile?]
 	dev-haskell/retrie:=[profile?]
 	dev-haskell/shake:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "

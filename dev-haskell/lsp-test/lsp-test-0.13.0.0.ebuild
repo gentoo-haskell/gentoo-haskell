@@ -29,15 +29,17 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/diff:=[profile?]
 	>=dev-haskell/glob-0.9:=[profile?] <dev-haskell/glob-0.11:=[profile?]
 	dev-haskell/lens:=[profile?]
+	>=dev-haskell/lsp-types-1.1:=[profile?] <dev-haskell/lsp-types-1.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/parser-combinators-1.2:=[profile?]
+	dev-haskell/some:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-haskell/haskell-lsp-0.22:=[profile?] <dev-haskell/haskell-lsp-0.24:=[profile?]
-	>=dev-lang/ghc-8.4.3:="
-
+	>=dev-lang/ghc-8.4.3:=
+"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1"
+#	test? ( dev-haskell/hspec )
 
 src_configure() {
 	haskell-cabal_src_configure \
