@@ -199,6 +199,7 @@ dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hnix:optimize - Enable all optimization flags
 dev-haskell/hnix:profiling - Enable profiling
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
+dev-haskell/hnix-store-remote:io-testsuite - Enable testsuite, which requires external binaries and Linux namespace support.
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
 dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.
