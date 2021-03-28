@@ -8,9 +8,4 @@
 	<use>
 		<flag name="bounded-memory">Run tests of constant memory use (requires +RTS -T)</flag>
 	</use>
-	<longdescription>
-		This package contains types and functions needed to describe
-		interactions with the Nix store abstracted away from
-		specific effectful context.
-	</longdescription>
 </pkgmetadata>
