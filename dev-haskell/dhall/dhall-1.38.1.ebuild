@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -67,7 +67,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/doctest-0.7.0 <dev-haskell/doctest-0.18
+	test? ( >=dev-haskell/doctest-0.7.0 <dev-haskell/doctest-0.19
 		<dev-haskell/foldl-1.5
 		>=dev-haskell/generic-random-1.3.0.0 <dev-haskell/generic-random-1.4
 		<dev-haskell/mockery-0.4
@@ -75,11 +75,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-instances-0.3.12 <dev-haskell/quickcheck-instances-0.4
 		<dev-haskell/special-values-0.2
 		<dev-haskell/spoon-0.4
-		>=dev-haskell/tasty-0.11.2 <dev-haskell/tasty-1.4
+		>=dev-haskell/tasty-0.11.2 <dev-haskell/tasty-1.5
 		<dev-haskell/tasty-expected-failure-0.13
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.9.2 <dev-haskell/tasty-quickcheck-0.11
-		<dev-haskell/tasty-silver-3.2
+		<dev-haskell/tasty-silver-3.3
 		<dev-haskell/turtle-1.6 )
 	http? ( test? ( !http-client-tls? ( dev-haskell/http-client-tls ) ) )
 	!http? ( test? ( dev-haskell/http-client

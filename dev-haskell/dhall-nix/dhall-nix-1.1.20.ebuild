@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,11 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="<dev-haskell/data-fix-0.4:=[profile?]
-	>=dev-haskell/dhall-1.36:=[profile?] <dev-haskell/dhall-1.38:=[profile?]
-	>=dev-haskell/hnix-0.7:=[profile?] <dev-haskell/hnix-0.12:=[profile?]
+	>=dev-haskell/dhall-1.38:=[profile?] <dev-haskell/dhall-1.39:=[profile?]
+	>=dev-haskell/hnix-0.7:=[profile?] <dev-haskell/hnix-0.13:=[profile?]
 	>=dev-haskell/lens-family-core-1.0.0:=[profile?] <dev-haskell/lens-family-core-2.2:=[profile?]
 	<dev-haskell/neat-interpolation-0.6:=[profile?]
 	>=dev-haskell/optparse-generic-1.1.1:=[profile?] <dev-haskell/optparse-generic-1.5:=[profile?]

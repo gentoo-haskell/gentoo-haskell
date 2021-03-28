@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,16 +18,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE="optimize profiling"
 
 RDEPEND=">=dev-haskell/aeson-1.4.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
-	>=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
+	>=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/comonad-5.0.4:=[profile?] <dev-haskell/comonad-5.1:=[profile?]
 	>=dev-haskell/data-fix-0.3.0:=[profile?] <dev-haskell/data-fix-0.4:=[profile?]
 	>=dev-haskell/deriving-compat-0.3:=[profile?] <dev-haskell/deriving-compat-0.6:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/free-5.1:=[profile?] <dev-haskell/free-5.2:=[profile?]
 	>=dev-haskell/gitrev-1.1.0:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
-	>=dev-haskell/hashable-1.2.5:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
+	>=dev-haskell/hashable-1.2.5:=[profile?] <dev-haskell/hashable-1.3.1:=[profile?]
 	>=dev-haskell/hashing-0.1.0:=[profile?] <dev-haskell/hashing-0.2:=[profile?]
-	>=dev-haskell/hnix-store-core-0.1.0:=[profile?] <dev-haskell/hnix-store-core-0.3:=[profile?]
+	>=dev-haskell/hnix-store-core-0.4.0:=[profile?] <dev-haskell/hnix-store-core-0.5:=[profile?]
+	>=dev-haskell/hnix-store-remote-0.4.0:=[profile?] <dev-haskell/hnix-store-remote-0.5:=[profile?]
 	>=dev-haskell/http-client-tls-0.3.5:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/http-types-0.12.2:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/lens-family-1.2.2:=[profile?] <dev-haskell/lens-family-2.2:=[profile?]
@@ -58,7 +59,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?
 	>=dev-haskell/vector-0.12.0:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/xml-1.3.14:=[profile?] <dev-haskell/xml-1.4:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
-	>=dev-haskell/http-client-0.5.14:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
+	>=dev-haskell/http-client-0.5.14:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
 	>=dev-haskell/logict-0.6.0:=[profile?] <dev-haskell/logict-0.8:=[profile?]
 "
 DEPEND="${RDEPEND}

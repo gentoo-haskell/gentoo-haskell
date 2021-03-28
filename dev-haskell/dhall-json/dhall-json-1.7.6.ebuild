@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,13 +15,12 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.5:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/aeson-yaml-1.1.0:=[profile?] <dev-haskell/aeson-yaml-1.2:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
-	>=dev-haskell/dhall-1.36.0:=[profile?] <dev-haskell/dhall-1.38:=[profile?]
+	>=dev-haskell/dhall-1.38.0:=[profile?] <dev-haskell/dhall-1.39:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/lens-family-core-1.0.0:=[profile?] <dev-haskell/lens-family-core-2.2:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
@@ -35,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( <dev-haskell/tasty-1.4
+	test? ( <dev-haskell/tasty-1.5
 		>=dev-haskell/tasty-hunit-0.2
 		>=dev-haskell/tasty-silver-3.0 )
 "

@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="bounded-memory">Run tests of constant memory use (requires +RTS -T)</flag>
+		<flag name="io-testsuite">Enable testsuite, which requires external binaries and Linux namespace support.</flag>
 	</use>
 </pkgmetadata>
