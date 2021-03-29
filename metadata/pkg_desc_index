@@ -1165,7 +1165,7 @@ dev-haskell/load-env 0.2.1.0: Load environment variables from a file
 dev-haskell/located-base 0.1.1.1: Location-aware variants of partial functions
 dev-haskell/loch-th 0.2.2: Support for precise error locations in source files (Template Haskell version)
 dev-haskell/lockfree-queue 0.2.3.1-r1: Michael and Scott lock-free queues
-dev-haskell/log-base 0.8.0.0: Structured logging solution (base package)
+dev-haskell/log-base 0.8.0.0 0.9.1.0: Structured logging solution (base package)
 dev-haskell/log-domain 0.13: Log-domain arithmetic
 dev-haskell/log-postgres 0.7.1.4-r1: Structured logging solution (PostgreSQL back end)
 dev-haskell/logfloat 0.13.3.3-r1: Log-domain floating point numbers
