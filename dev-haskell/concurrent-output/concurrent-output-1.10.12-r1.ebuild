@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-terminal-0.11.0:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-terminal-0.12.0:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/exceptions-0.6.0:=[profile?] <dev-haskell/exceptions-0.11.0:=[profile?]
 	>=dev-haskell/stm-2.0:=[profile?] <dev-haskell/stm-2.6:=[profile?]
@@ -28,3 +28,10 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.0:=[profile?] <dev-haskell/ansi-termina
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ansi-terminal (>= 0.6.0 && < 0.11.0)' 'ansi-terminal >= 0.6.0'
+}
