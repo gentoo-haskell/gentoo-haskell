@@ -19,7 +19,7 @@ IUSE="example executable"
 
 PATCHES=( "${FILESDIR}/${P}-modify-flags.patch" )
 
-RDEPEND=">=dev-haskell/ansi-terminal-0.10.3:=[profile?] <dev-haskell/ansi-terminal-0.11:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.10.3:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
 	>=dev-haskell/async-2.2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/data-default-0.7.1:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/ghc-exactprint-0.6.2:=[profile?] <dev-haskell/ghc-exactprint-0.7:=[profile?]
@@ -42,6 +42,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/temporary
 		>=dev-haskell/haskell-src-exts-1.23.0 <dev-haskell/haskell-src-exts-1.24
 		dev-vcs/mercurial )"
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ansi-terminal >= 0.10.3 && < 0.11' 'ansi-terminal >= 0.10.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
