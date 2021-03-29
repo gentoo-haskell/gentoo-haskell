@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/base16-bytestring-0.1.1.6:=[profile?] <dev-haskell/base16
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2
-	test? ( >=dev-haskell/ansi-terminal-0.10 <dev-haskell/ansi-terminal-0.11
+	test? ( >=dev-haskell/ansi-terminal-0.10
 		>=dev-haskell/tasty-golden-2.3.1.1 <dev-haskell/tasty-golden-2.4
 		>=dev-haskell/tasty-hunit-0.10.0.2 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tree-diff-0.1 <dev-haskell/tree-diff-0.2
@@ -45,5 +45,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'aeson                 ^>=1.4.6.0' ' aeson                 >=1.4.6.0'
+		'aeson                 ^>=1.4.6.0' ' aeson                 >=1.4.6.0' \
+		'ansi-terminal  ^>=0.10' 'ansi-terminal  >=0.10'
 }
