@@ -62,7 +62,6 @@ dev-haskell/process-streaming
 # turtle, and  hsdev. In order to keep these available, the newer
 # optparse-applicative and its dependencies are being masked.
 >=dev-haskell/optparse-applicative-0.16
->=dev-haskell/byline-1.1.0.1
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-01-18)
 # No homepage. Fals to build with ghc-8.8 or above.
