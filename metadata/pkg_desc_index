@@ -25,7 +25,7 @@ dev-haskell/active 0.2.0.14-r1: Abstractions for animation
 dev-haskell/ad 4.4.1: Automatic Differentiation
 dev-haskell/adjunctions 4.4: Adjunctions and representable functors
 dev-haskell/aes 0.2.9-r1: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 1.5.4.1: Fast JSON parsing and encoding
+dev-haskell/aeson 1.5.6.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.2.0.0: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.9-r3: Compatibility layer for aeson
@@ -90,8 +90,8 @@ dev-haskell/amazonka-test 1.6.1: Common functionality for Amazonka library test-
 dev-haskell/amqp 0.19.1: Client library for AMQP servers (currently only RabbitMQ)
 dev-haskell/amqp-worker 0.3.2: High level functions for working with message queues
 dev-haskell/annotated-wl-pprint 0.7.0: The Wadler/Leijen Pretty Printer, with annotation support
-dev-haskell/ansi-terminal 0.6.3.1 0.8.2 0.9.1 0.10.3: Simple ANSI terminal support, with Windows compatibility
-dev-haskell/ansi-wl-pprint 0.6.9: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
+dev-haskell/ansi-terminal 0.11: Simple ANSI terminal support, with Windows compatibility
+dev-haskell/ansi-wl-pprint 0.6.9-r1: The Wadler/Leijen Pretty Printer for colored ANSI terminal output
 dev-haskell/api-field-json-th 0.1.0.2: option of aeson's deriveJSON
 dev-haskell/appar 0.1.8: A simple applicative parser
 dev-haskell/applicative-numbers 0.1.3: Applicative-based numeric instances
@@ -208,7 +208,7 @@ dev-haskell/btrfs 0.2.0.0: Bindings to the btrfs API
 dev-haskell/bug 1.0.1: Better alternatives to the "error" function
 dev-haskell/buster 2.51-r1: Almost but not quite entirely unlike FRP
 dev-haskell/butcher 1.3.3.2: Chops a command or program invocation into digestable pieces
-dev-haskell/byline 0.4.0.0-r1 1.0.0.0 1.1.0.1: Library for creating command-line interfaces (colors, menus, etc.)
+dev-haskell/byline 1.1.0.1: Library for creating command-line interfaces (colors, menus, etc.)
 dev-haskell/byte-order 0.1.2.0: Portable big-endian and little-endian conversions
 dev-haskell/byteable 0.1.1: Type class for sequence of bytes
 dev-haskell/bytedump 1.0: Flexible byte dump helpers for human readers
@@ -320,7 +320,7 @@ dev-haskell/composition 1.0.2.1-r1: Combinators for unorthodox function composit
 dev-haskell/concatenative 1.0.1-r1: A library for postfix control flow
 dev-haskell/conceit 0.4.0.0: Concurrent actions that may fail with a value
 dev-haskell/concurrent-extra 0.7.0.12: Extra concurrency primitives
-dev-haskell/concurrent-output 1.10.12: Ungarble output from several threads or commands
+dev-haskell/concurrent-output 1.10.12-r1: Ungarble output from several threads or commands
 dev-haskell/concurrent-split 0.0.1.1: MVars and Channels with distinguished input and output side
 dev-haskell/concurrent-supply 0.1.8-r1: A fast concurrent unique identifier supply with a pure API
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
@@ -785,7 +785,7 @@ dev-haskell/happy 1.19.12 1.20.0: Happy is a parser generator for Haskell
 dev-haskell/harp 0.4.3.4: HaRP allows pattern-matching with regular expressions
 dev-haskell/hashable 1.2.7.0 1.3.0.0: A class for types that can be converted to a hash value
 dev-haskell/hashable-extras 0.2.3: Higher-rank Hashable
-dev-haskell/hashable-time 0.2.0.2-r1: Hashable instances for Data.Time
+dev-haskell/hashable-time 0.2.1: Hashable instances for Data.Time
 dev-haskell/hashing 0.1.0.1: A pure haskell library implements several hash algorithms
 dev-haskell/hashmap 1.3.3: Persistent containers Map and Set based on hashing
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
@@ -1622,7 +1622,7 @@ dev-haskell/rerebase 1.10.0.1: Reexports from "base" with a bunch of other stand
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.1.11 1.2.4.2: Deterministic allocation and freeing of scarce resources
-dev-haskell/retrie 0.1.1.1: A powerful, easy-to-use codemodding tool for Haskell
+dev-haskell/retrie 0.1.1.1-r1: A powerful, easy-to-use codemodding tool for Haskell
 dev-haskell/retry 0.8.1.2: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
@@ -1954,7 +1954,7 @@ dev-haskell/transformers-compat 0.6.6: A small compatibility shim for the transf
 dev-haskell/transformers-free 1.0.1-r1: Free monad transformers
 dev-haskell/traverse-with-class 1.0.1.0: Generic applicative traversals
 dev-haskell/tree-diff 0.1-r2: Diffing of (expression) trees
-dev-haskell/trifecta 2.1: A modern parser combinator library with convenient diagnostics
+dev-haskell/trifecta 2.1.1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttasm 9999: TTF assembler
 dev-haskell/ttrie 0.1.2.1-r1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2-r1: Various functions on tuples
@@ -2187,12 +2187,12 @@ dev-haskell/ztail 1.2.0.2-r1: Multi-file, colored, filtered log tailer
 dev-haskell/zxcvbn-hs 0.3.0.0: Password strength estimation based on zxcvbn
 dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
-dev-lang/elm 0.19.0: Meta package for Elm
-dev-lang/elm-compiler 0.19.0-r1 0.19.1: The 'elm' command line interface
+dev-lang/elm 0.19.1: Meta package for Elm
+dev-lang/elm-compiler 0.19.1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
 dev-lang/ghc 8.8.4 8.10.4 9.0.1 9999: The Glasgow Haskell Compiler
 dev-lang/hugs98 2006.9-r2: The Hugs98 Haskell interpreter
-dev-lang/idris 1.3.3-r2: Functional Programming Language with Dependent Types
+dev-lang/idris 1.3.3-r3: Functional Programming Language with Dependent Types
 dev-lang/ott 0.31: Ott is a tool for writing definitions of programming languages and calculi.
 dev-lang/purescript 0.13.6 9999: PureScript Programming Language Compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language

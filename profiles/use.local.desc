@@ -14,7 +14,7 @@ dev-haskell/aeson-pretty:lib-only - don't build 'aeson-pretty' executable.
 dev-haskell/aeson-yaml:build-binaries - Build the binaries
 dev-haskell/alsa-pcm:buildexamples - Build example executables
 dev-haskell/alsa-seq:modifyfilter - Use native event filter functions that are provided by newer ALSA versions
-dev-haskell/ansi-terminal:example - Build the example application.
+dev-haskell/ansi-terminal:example - Build the example application
 dev-haskell/ansi-wl-pprint:example - Build the example application.
 dev-haskell/apply-refact:executable - Install the apply-refactor executable
 dev-haskell/atomic-primops:debug - Enable extra internal checks.
