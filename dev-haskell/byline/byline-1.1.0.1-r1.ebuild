@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-
 	>=dev-haskell/free-5.1:=[profile?] <dev-haskell/free-5.2:=[profile?]
 	>=dev-haskell/haskeline-0.8:=[profile?] <dev-haskell/haskeline-0.8.2:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.16:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
+	>=dev-haskell/optparse-applicative-0.15:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
 	>=dev-haskell/relude-0.6:=[profile?] <dev-haskell/relude-0.8:=[profile?]
 	>=dev-haskell/terminfo-hs-0.1:=[profile?] <dev-haskell/terminfo-hs-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -36,6 +36,15 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-1.2
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11 )
 "
+
+PATCHES=( "${FILESDIR}"/${P}-optparse-applicative-0.15.patch )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'optparse-applicative  ^>=0.16' 'optparse-applicative  >=0.15'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
