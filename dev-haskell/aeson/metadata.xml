@@ -9,13 +9,4 @@
 		<flag name="cffi">Controls whether to include c-ffi bits or pure haskell. Default to False for security.</flag>
 		<flag name="fast">compile without optimizations</flag>
 	</use>
-	<longdescription>
-		A JSON parsing and encoding library optimized for ease of use
-		and high performance.
-		
-		To get started, see the documentation for the @Data.Aeson@ module
-		below.
-		
-		(A note on naming: in Greek mythology, Aeson was the father of Jason.)
-	</longdescription>
 </pkgmetadata>

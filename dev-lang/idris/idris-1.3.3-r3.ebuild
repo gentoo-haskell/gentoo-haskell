@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -22,7 +22,7 @@ RESTRICT=test # pulls stack
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/annotated-wl-pprint-0.7:=[profile?] <dev-haskell/annotated-wl-pprint-0.8:=[profile?]
-	<dev-haskell/ansi-terminal-0.11:=[profile?]
+	<dev-haskell/ansi-terminal-0.12:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/async-2.3:=[profile?]
 	<dev-haskell/base64-bytestring-1.2:=[profile?]
@@ -81,6 +81,7 @@ src_prepare() {
 	tc-export AR CC RANLIB
 
 	cabal_chdeps \
+		'ansi-terminal < 0.11' 'ansi-terminal' \
 		'Cabal >= 2.4 && < 3.1' 'Cabal >= 2.4' \
 		'haskeline >= 0.7 && < 0.8' 'haskeline >= 0.8' \
 		'aeson >= 0.6 && < 1.5' 'aeson >= 0.6' \
