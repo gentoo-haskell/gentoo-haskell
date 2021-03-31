@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,23 +15,21 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="dev-haskell/haskell-src-meta:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-haskell/persistent-2.10:=[profile?]
+	>=dev-haskell/persistent-2.12:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/aeson
 		dev-haskell/fast-logger
 		dev-haskell/hspec
 		dev-haskell/hunit
 		dev-haskell/monad-logger
 		dev-haskell/persistent-sqlite
-		dev-haskell/persistent-template
 		dev-haskell/resourcet
 		dev-haskell/unliftio )
 "

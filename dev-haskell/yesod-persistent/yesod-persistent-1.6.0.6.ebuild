@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,19 +15,18 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	dev-haskell/conduit:=[profile?]
-	>=dev-haskell/persistent-2.8:=[profile?] <dev-haskell/persistent-2.12:=[profile?]
-	>=dev-haskell/persistent-template-2.1:=[profile?] <dev-haskell/persistent-template-2.10:=[profile?]
+	>=dev-haskell/persistent-2.8:=[profile?]
+	>=dev-haskell/persistent-template-2.1:=[profile?]
 	dev-haskell/resource-pool:=[profile?]
 	>=dev-haskell/resourcet-0.4.5:=[profile?]
 	>=dev-haskell/yesod-core-1.6:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?]
-	>=dev-lang/ghc-8.2.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.0.0.2
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/hspec
 		>=dev-haskell/persistent-sqlite-2.8
 		dev-haskell/text

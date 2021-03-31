@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/blaze-html-0.9:=[profile?]
@@ -28,8 +27,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/monad-logger-0.3.25:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/path-pieces-0.2:=[profile?]
-	>=dev-haskell/persistent-2.11:=[profile?] <dev-haskell/persistent-2.12:=[profile?]
-	>=dev-haskell/persistent-template-2.9:=[profile?] <dev-haskell/persistent-template-2.10:=[profile?]
+	>=dev-haskell/persistent-2.12:=[profile?] <dev-haskell/persistent-2.13:=[profile?]
 	>=dev-haskell/quickcheck-2.9:2=[profile?]
 	>=dev-haskell/quickcheck-instances-0.3:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?]
@@ -39,8 +37,8 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/unliftio:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 "
