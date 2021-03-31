@@ -300,7 +300,7 @@ dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-hask
 dev-haskell/parsers:attoparsec - Enable the use of the `attoparsec` package
 dev-haskell/parsers:parsec - Enable the use of the `parsec` package
 dev-haskell/path:dev - Turn on development settings.
-dev-haskell/persistent-mongodb:high-precision-date - Use a time storage with nano second precision.
+dev-haskell/persistent-mongodb:high-precision-date - for MongoDB use a time storage with nano second precision.
 dev-haskell/persistent-odbc:debug - Enable debug
 dev-haskell/persistent-odbc:tester - Enable test
 dev-haskell/persistent-relational-record:test-examples - Test examples

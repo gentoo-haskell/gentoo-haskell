@@ -536,7 +536,7 @@ dev-haskell/erd 0.2.1.0: An entity-relationship diagram generator from a plain t
 dev-haskell/erf 2.0.0.0: The error function, erf, and related functions
 dev-haskell/errorcall-eq-instance 0.3.0: An orphan Eq instance for ErrorCall
 dev-haskell/errors 2.3.0: Simplified error-handling
-dev-haskell/esqueleto 3.4.0.1: Type-safe EDSL for SQL queries on persistent backends
+dev-haskell/esqueleto 3.4.2.0: Type-safe EDSL for SQL queries on persistent backends
 dev-haskell/etherbunny 0.3-r1: A network analysis toolkit for Haskell
 dev-haskell/euterpea 2.0.7-r1: Library for computer music research and education
 dev-haskell/event-list 0.1.2: Event lists with relative or absolute time stamps
@@ -1427,18 +1427,18 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/pem 0.2.4: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/persistable-record 0.6.0.4: Binding between SQL database values and haskell records
 dev-haskell/persistable-types-hdbc-pg 0.0.3.5: HDBC and Relational-Record instances of PostgreSQL extended types
-dev-haskell/persistent 2.10.5.2 2.11.0.2: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.11.0.2 2.12.0.1: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1-r1: Persistent instances for types in iproute
-dev-haskell/persistent-mongodb 2.10.0.0: Backend for the persistent library using mongoDB
-dev-haskell/persistent-mysql 2.10.3.1: Backend for the persistent library using MySQL database server
+dev-haskell/persistent-mongodb 2.12.0.0: Backend for the persistent library using mongoDB
+dev-haskell/persistent-mysql 2.12.0.0: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-odbc 0.2.1.0: Backend for the persistent library using ODBC
-dev-haskell/persistent-postgresql 2.11.0.1: Backend for the persistent library using postgresql
-dev-haskell/persistent-qq 2.9.2.1: Provides a quasi-quoter for raw SQL for persistent
-dev-haskell/persistent-redis 2.5.2.2: Backend for persistent library using Redis
+dev-haskell/persistent-postgresql 2.12.0.0: Backend for the persistent library using postgresql
+dev-haskell/persistent-qq 2.12.0.0: Provides a quasi-quoter for raw SQL for persistent
+dev-haskell/persistent-redis 2.12.0.0: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.3.0: relational-record on persisten backends
-dev-haskell/persistent-sqlite 2.11.0.0: Backend for the persistent library using sqlite3
-dev-haskell/persistent-template 2.9.1.0: Type-safe, non-relational, multi-backend persistence
-dev-haskell/persistent-test 2.0.3.5: Tests for Persistent
+dev-haskell/persistent-sqlite 2.12.0.0: Backend for the persistent library using sqlite3
+dev-haskell/persistent-template 2.12.0.0: Type-safe, non-relational, multi-backend persistence
+dev-haskell/persistent-test 2.12.0.0: Tests for Persistent
 dev-haskell/pgm 0.1.4-r1: Pure Haskell implementation of PGM image format
 dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-readable collection of words
 dev-haskell/picedit 0.2.3.0-r3: simple image manipulation functions
@@ -2148,7 +2148,7 @@ dev-haskell/yaml-light 0.1.4-r1: A light-weight wrapper with utility functions a
 dev-haskell/yampa 0.13.1: Library for programming hybrid systems
 dev-haskell/yesod 1.6.1.0: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
-dev-haskell/yesod-auth 1.6.10.1: Authentication for Yesod
+dev-haskell/yesod-auth 1.6.10.2: Authentication for Yesod
 dev-haskell/yesod-auth-hashdb 1.7.1.5: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.6.1.7: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.6.0.6: The yesod helper executable
@@ -2165,7 +2165,7 @@ dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package
 dev-haskell/yesod-markdown 0.12.6.3-r1: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.7.0.0: Helper functions and data types for producing News feeds
 dev-haskell/yesod-paginator 1.1.1.0: A pagination approach for yesod
-dev-haskell/yesod-persistent 1.6.0.5: Some helpers for using Persistent from Yesod
+dev-haskell/yesod-persistent 1.6.0.6: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-recaptcha2 0.3.0: yesod recaptcha2
 dev-haskell/yesod-sitemap 1.6.0: Generate XML sitemaps
 dev-haskell/yesod-static 1.6.1.0: Static file serving subsite for Yesod Web Framework
