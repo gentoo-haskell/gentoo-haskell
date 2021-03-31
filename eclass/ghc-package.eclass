@@ -37,6 +37,7 @@ ghc-getghc() {
 }
 
 # @FUNCTION: ghc-getghcpkg
+# @INTERNAL
 # @DESCRIPTION:
 # Internal function determines returns the name of the ghc-pkg executable
 ghc-getghcpkg() {
