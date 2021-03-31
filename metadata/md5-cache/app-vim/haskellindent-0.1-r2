@@ -3,6 +3,7 @@ DEPEND=|| ( >=app-editors/vim-7.0 >=app-editors/gvim-7.0 )
 DESCRIPTION=vim plugin: Indent settings and filetype detection for Haskell sources
 EAPI=5
 HOMEPAGE=http://www.vim.org/scripts/script.php?script_id=1968
+INHERIT=vim-plugin
 KEYWORDS=~amd64 ~x86
 LICENSE=public-domain
 RDEPEND=|| ( >=app-editors/vim-7.0 >=app-editors/gvim-7.0 )

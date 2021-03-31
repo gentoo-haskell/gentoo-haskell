@@ -3,11 +3,12 @@ DEPEND=>=dev-lang/ghc-6.6.1 dev-haskell/random:=[profile?] >=dev-haskell/cabal-1
 DESCRIPTION=Automatic testing of Haskell programs
 EAPI=7
 HOMEPAGE=http://www.math.chalmers.se/~rjmh/QuickCheck/
+INHERIT=eutils haskell-cabal
 IUSE=doc profile
 KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris
 LICENSE=BSD
 RDEPEND=>=dev-lang/ghc-6.6.1 dev-haskell/random:=[profile?]
 SLOT=1
 SRC_URI=https://hackage.haskell.org/package/QuickCheck-1.2.0.1/QuickCheck-1.2.0.1.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	2d5b3f4b315094768576b6799e4f926e	ghc-package	c5182eb7e501132153f9710aa822d170	haskell-cabal	658e96e9ebbdc78375837f4aab79399f	l10n	8cdd85e169b835d518bc2fd59f780d8e	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	wrapper	4251d4c84c25f59094fd557e0063a974
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	l10n	8cdd85e169b835d518bc2fd59f780d8e	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	2d5b3f4b315094768576b6799e4f926e	multiprocessing	cac3169468f893670dac3e7cb940e045	ghc-package	c5182eb7e501132153f9710aa822d170	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	haskell-cabal	658e96e9ebbdc78375837f4aab79399f
 _md5_=17826156f213f78dbd6911b10358f1ee

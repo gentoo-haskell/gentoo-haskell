@@ -3,6 +3,7 @@ DEPEND=>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-
 DESCRIPTION=A framework for packaging Haskell software
 EAPI=7
 HOMEPAGE=https://www.haskell.org/cabal/
+INHERIT=haskell-cabal
 IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
 LICENSE=BSD
@@ -10,5 +11,5 @@ RDEPEND=>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev
 RESTRICT=test
 SLOT=0/3.4.0.0
 SRC_URI=https://hackage.haskell.org/package/Cabal-3.4.0.0/Cabal-3.4.0.0.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	eutils	2d5b3f4b315094768576b6799e4f926e	ghc-package	c5182eb7e501132153f9710aa822d170	haskell-cabal	658e96e9ebbdc78375837f4aab79399f	l10n	8cdd85e169b835d518bc2fd59f780d8e	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	wrapper	4251d4c84c25f59094fd557e0063a974
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	l10n	8cdd85e169b835d518bc2fd59f780d8e	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	2d5b3f4b315094768576b6799e4f926e	multiprocessing	cac3169468f893670dac3e7cb940e045	ghc-package	c5182eb7e501132153f9710aa822d170	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	haskell-cabal	658e96e9ebbdc78375837f4aab79399f
 _md5_=d9ad1a65e721bc4320ad8d42c9a3e102
