@@ -1,0 +1,77 @@
+diff -urN rio-orphans-0.1.1.0-old/rio-orphans.cabal rio-orphans-0.1.1.0-new/rio-orphans.cabal
+--- rio-orphans-0.1.1.0-old/rio-orphans.cabal	2018-05-24 05:49:43.000000000 -0600
++++ rio-orphans-0.1.1.0-new/rio-orphans.cabal	2021-04-01 16:10:06.610869187 -0600
+@@ -41,6 +41,7 @@
+     , resourcet
+     , rio
+     , transformers-base
++    , unliftio-core
+   default-language: Haskell2010
+ 
+ test-suite rio-orphans-test
+@@ -63,4 +64,5 @@
+     , rio
+     , rio-orphans
+     , transformers-base
++    , unliftio-core
+   default-language: Haskell2010
+diff -urN rio-orphans-0.1.1.0-old/src/RIO/Orphans.hs rio-orphans-0.1.1.0-new/src/RIO/Orphans.hs
+--- rio-orphans-0.1.1.0-old/src/RIO/Orphans.hs	2018-05-24 12:32:56.000000000 -0600
++++ rio-orphans-0.1.1.0-new/src/RIO/Orphans.hs	2021-04-01 16:10:21.900437931 -0600
+@@ -16,12 +16,13 @@
+ import RIO
+ import Control.Monad.Catch (MonadCatch, MonadMask)
+ import Control.Monad.Base (MonadBase)
++import Control.Monad.IO.Unlift (askRunInIO)
+ import Control.Monad.Trans.Resource.Internal (MonadResource (..), ReleaseMap, ResourceT (..))
+ import Control.Monad.Trans.Resource (runResourceT)
+ import Control.Monad.Trans.Control (MonadBaseControl (..))
+ 
+ import qualified Control.Monad.Logger as LegacyLogger
+-import Control.Monad.Logger (MonadLogger (..), LogStr)
++import Control.Monad.Logger (MonadLogger (..), MonadLoggerIO (..), LogStr)
+ import System.Log.FastLogger (fromLogStr)
+ import qualified GHC.Stack as GS
+ 
+@@ -57,15 +58,32 @@
+             , GS.srcLocEndLine = fst $ LegacyLogger.loc_end loc
+             , GS.srcLocEndCol = snd $ LegacyLogger.loc_end loc
+             })]
+-       in logGeneric source rioLogLevel (display $ LegacyLogger.toLogStr msg)
+-    where
+-      rioLogLevel =
+-        case level of
+-          LegacyLogger.LevelDebug -> LevelDebug
+-          LegacyLogger.LevelInfo  -> LevelInfo
+-          LegacyLogger.LevelWarn  -> LevelWarn
+-          LegacyLogger.LevelError  -> LevelError
+-          LegacyLogger.LevelOther name -> LevelOther name
++       in logGeneric source (rioLogLevel level) (display $ LegacyLogger.toLogStr msg)
++
++instance HasLogFunc env => MonadLoggerIO (RIO env) where
++  askLoggerIO = do
++    r <- askRunInIO
++    pure $ \loc src lvl str ->
++       let ?callStack = GS.fromCallSiteList [("", GS.SrcLoc
++            { GS.srcLocPackage = LegacyLogger.loc_package loc
++            , GS.srcLocModule = LegacyLogger.loc_module loc
++            , GS.srcLocFile = LegacyLogger.loc_filename loc
++            , GS.srcLocStartLine = fst $ LegacyLogger.loc_start loc
++            , GS.srcLocStartCol = snd $ LegacyLogger.loc_start loc
++            , GS.srcLocEndLine = fst $ LegacyLogger.loc_end loc
++            , GS.srcLocEndCol = snd $ LegacyLogger.loc_end loc
++            })]          
++       in r (logGeneric src (rioLogLevel lvl) (display str))
++
++rioLogLevel :: LegacyLogger.LogLevel -> LogLevel
++rioLogLevel level =
++  case level of
++    LegacyLogger.LevelDebug -> LevelDebug
++    LegacyLogger.LevelInfo  -> LevelInfo
++    LegacyLogger.LevelWarn  -> LevelWarn
++    LegacyLogger.LevelError  -> LevelError
++    LegacyLogger.LevelOther name -> LevelOther name
++
+ 
+ -- | A collection of all of the registered resource cleanup actions.
+ --
