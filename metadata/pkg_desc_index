@@ -2149,6 +2149,7 @@ dev-haskell/yampa 0.13.1: Library for programming hybrid systems
 dev-haskell/yesod 1.6.1.0: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
 dev-haskell/yesod-auth 1.6.10.2: Authentication for Yesod
+dev-haskell/yesod-auth-basic 0.1.0.3: Yesod Middleware for HTTP Basic Authentication
 dev-haskell/yesod-auth-hashdb 1.7.1.5: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.6.1.7: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.6.0.6: The yesod helper executable
