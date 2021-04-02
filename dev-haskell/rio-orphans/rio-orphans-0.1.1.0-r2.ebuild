@@ -25,6 +25,7 @@ RDEPEND="dev-haskell/exceptions:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/rio:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
+	dev-haskell/unliftio-core:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
