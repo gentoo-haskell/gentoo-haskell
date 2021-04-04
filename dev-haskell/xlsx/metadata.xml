@@ -8,15 +8,4 @@
 	<use>
 		<flag name="microlens">Use microlens instead of lens</flag>
 	</use>
-	<longdescription>
-		This library can help you to get some data read and written in Office
-		Open XML xlsx format. Small subset of xlsx format is supported.
-		
-		For examples look into &quot;Codec.Xlsx&quot;.
-		
-		Format is covered by ECMA-376 standard:
-		&lt;http://www.ecma-international.org/publications/standards/Ecma-376.htm&gt;
-		
-		4th edition of the standard with the transitional schema is used for this library.
-	</longdescription>
 </pkgmetadata>
