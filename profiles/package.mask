@@ -34,16 +34,6 @@ app-misc/lambdawars
 dev-haskell/megadeth
 dev-haskell/ttasm
 
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-23)
-# According to hackage, reflex-basic-host has been deprecated in favor of
-# reflex.  Masked for removal, including reverse dependencies. The reverse
-# dependencies seem to be les recently maintained than reflex-basic-host itself,
-# so they also appear to be deprecated (perhaps their functionality has been
-# absorbed into the reflex package?)
-dev-haskell/reflex-basic-host
-dev-haskell/reflex-backend-socket
-dev-haskell/reflex-backend-wai
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
 # remain masked for now.
