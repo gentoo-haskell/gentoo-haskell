@@ -23,11 +23,6 @@ dev-haskell/hls-exactprint-utils
 # Masked for removal.
 dev-haskell/kibro
 
-# Wolfgang E. Sanyer <WolfgagESanyer@gmail.com> (2021-02-24)
-# This package has not been maintained upstream since 2014 and does not have any
-# official releases. Masked for removal in 30 days.
-app-misc/lambdawars
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
 # remain masked for now.
