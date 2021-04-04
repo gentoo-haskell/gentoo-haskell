@@ -28,12 +28,6 @@ dev-haskell/kibro
 # official releases. Masked for removal in 30 days.
 app-misc/lambdawars
 
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-11)
-# Both of these packages appear abandoned upstream, with the latest commits back
-# in 2017. Masked for removal.
-dev-haskell/megadeth
-dev-haskell/ttasm
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
 # remain masked for now.
