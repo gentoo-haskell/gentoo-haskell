@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -10,25 +10,24 @@ inherit haskell-cabal
 
 MY_PN="BNFC"
 MY_P="${MY_PN}-${PV}"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="A compiler front-end generator"
-HOMEPAGE="http://bnfc.digitalgrammars.com/"
+HOMEPAGE="https://bnfc.digitalgrammars.com/"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-RESTRICT=test # Ambiguous module name ‘Data.Time’: it was found in multiple packages: pulseaudio-0.0.2.1 time-1.8.0.2
 
 RDEPEND=">=dev-haskell/mtl-2.2.1:=[profile?]
-	dev-haskell/semigroups:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	dev-haskell/string-qq:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/alex
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-2.2.0.1
+	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
 	dev-haskell/happy
 	test? ( >=dev-haskell/doctest-0.8
 		dev-haskell/hspec
@@ -36,5 +35,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.5
 		dev-haskell/temporary )
 "
-
-S="${WORKDIR}/${MY_P}"
