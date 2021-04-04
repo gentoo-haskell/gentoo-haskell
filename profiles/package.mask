@@ -109,10 +109,6 @@ dev-haskell/test-framework-th-prime
 # Needs porting to ghc-8.10 template haskell: https://github.com/joecrayne/hs-bitsyntax/issues/1
 dev-haskell/bitsyntax
 
-# Jack Todaro <solpeth@posteo.org> (2020-12-20)
-# No release since 2014. Masked for removal
-dev-haskell/geniplate
-
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
