@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Extensible Haskell pretty printer"
-HOMEPAGE="https://github.com/commercialhaskell/hindent"
+HOMEPAGE="https://github.com/mihaimaruseac/hindent"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -35,7 +35,3 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/diff
 		dev-haskell/hspec )
 "
-
-PATCHES=( "${FILESDIR}/${PN}-5.3.1-upstream-monadfail-fix.patch"
-	"${FILESDIR}/${PN}-5.3.1-upstream-haskell-src-exts-fix.patch"
-	"${FILESDIR}/${PN}-5.3.1-upstream-monadfail-test-fix.patch" )
