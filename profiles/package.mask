@@ -101,10 +101,6 @@ dev-haskell/network-transport-inmemory
 >=dev-haskell/base16-bytestring-1.0.1.0
 >=dev-haskell/cabal-install-parsers-0.4
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-23)
-# Needs porting to ghc-8.10 template haskell: https://github.com/joecrayne/hs-bitsyntax/issues/1
-dev-haskell/bitsyntax
-
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
