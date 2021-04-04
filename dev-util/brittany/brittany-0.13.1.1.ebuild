@@ -23,12 +23,12 @@ RDEPEND=">=dev-haskell/aeson-1.0.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/czipwith-1.0.1.0:=[profile?] <dev-haskell/czipwith-1.1:=[profile?]
 	dev-haskell/data-tree-print:=[profile?]
 	>=dev-haskell/extra-1.4.10:=[profile?] <dev-haskell/extra-1.8:=[profile?]
-	>=dev-haskell/ghc-exactprint-0.5.8:=[profile?] <dev-haskell/ghc-exactprint-0.6.4:=[profile?]
+	>=dev-haskell/ghc-exactprint-0.5.8:=[profile?] <dev-haskell/ghc-exactprint-0.6.5:=[profile?]
 	>=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
 	>=dev-haskell/monad-memo-0.4.1:=[profile?] <dev-haskell/monad-memo-0.6:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/multistate-0.7.1.1:=[profile?] <dev-haskell/multistate-0.9:=[profile?]
-	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/safe-0.3.9:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/semigroups-0.18.2:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/strict-0.3.2:=[profile?] <dev-haskell/strict-0.5:=[profile?]
@@ -37,6 +37,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/uniplate-1.6.12:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-haskell/unsafe-0.0:=[profile?] <dev-haskell/unsafe-0.1:=[profile?]
 	>=dev-haskell/yaml-0.8.18:=[profile?] <dev-haskell/yaml-0.12:=[profile?]
+	>=dev-lang/ghc-8.6.1:=[profile?] <dev-lang/ghc-8.11:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}

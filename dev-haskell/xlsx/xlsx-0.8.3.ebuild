@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -34,15 +34,15 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/xml-conduit-1.1.0:=[profile?]
 	>=dev-haskell/zip-archive-0.2:=[profile?]
 	>=dev-haskell/zlib-0.5.4.0:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 	microlens? ( >=dev-haskell/microlens-0.4:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 			dev-haskell/microlens-ghc:=[profile?]
 			dev-haskell/microlens-mtl:=[profile?]
 			dev-haskell/microlens-th:=[profile?] )
-	!microlens? ( >=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-5:=[profile?] )
+	!microlens? ( >=dev-haskell/lens-3.8:=[profile?] <dev-haskell/lens-5.1:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/diff-0.3.0
 		dev-haskell/groom
 		dev-haskell/raw-strings-qq
@@ -50,7 +50,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-smallcheck
-		microlens? ( >=dev-haskell/lens-3.8 <dev-haskell/lens-5 ) )
+		microlens? ( >=dev-haskell/lens-3.8 <dev-haskell/lens-5.1 ) )
 "
 
 src_configure() {
