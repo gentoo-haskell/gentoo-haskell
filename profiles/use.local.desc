@@ -207,11 +207,6 @@ dev-haskell/hslogger:network-3 - Use network-3
 dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but Use hard coded values for instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those do not expose the necessary information in the @lauxlib.h@ header file.
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP
 dev-haskell/hsp:base4 - Use base-4.0.
-dev-haskell/hsqml:enableqmldebugging - Allow the QML debug server to be enabled via Qt arguments.
-dev-haskell/hsqml:forceghcilib - Force enable GHCi workaround library if not using shared libraries.
-dev-haskell/hsqml:threadedtestsuite - Build test executable with the threaded RTS.
-dev-haskell/hsqml:useexithook - Override the OnExitHook symbol to shutdown the Qt framework on exit.
-dev-haskell/hsqml:usepkgconfig - Use pkg-config for libraries instead of the platform default mechanism.
 dev-haskell/hsyslog:install-examples - Build and install example programs
 dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (for the test suite)
 dev-haskell/http:network-uri - Get Network.URI from the network-uri package
@@ -305,7 +300,6 @@ dev-haskell/persistent-odbc:debug - Enable debug
 dev-haskell/persistent-odbc:tester - Enable test
 dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable
-dev-haskell/pipes-key-value-csv:devel - Development mode (-Werror)
 dev-haskell/pointed:comonad - You can disable the use of the `comonad` package using `-f-transformers`.
 dev-haskell/pointed:containers - You can disable the use of the `containers` package using `-f-containers`.
 dev-haskell/pointed:kan-extensions - You can disable the use of the `kan-extensions` package using `-f-kan-extensions`.
@@ -454,7 +448,6 @@ dev-haskell/vector-algorithms:internalchecks - Enable internal consistency check
 dev-haskell/vector-algorithms:properties - Enable the quickcheck tests
 dev-haskell/vector-algorithms:unsafechecks - Enable bounds checking in unsafe operations at the cost of a significant performance penalty.
 dev-haskell/vector-instances:hashable - use dev-haskell/hashable
-dev-haskell/vinyl-utils:devel - Development mode (-Werror)
 dev-haskell/void:safe - Disable effective but unsafe coercions
 dev-haskell/wai-app-static:print - print debug info
 dev-haskell/wai-extra:examples - Build example executable.
