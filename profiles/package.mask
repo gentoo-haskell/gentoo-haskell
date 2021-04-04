@@ -1,6 +1,6 @@
 # hololeap <hololeap@protonmail.com> (2021-03-27)
 # These packages have been deprecated in favor of new names on Hackage.
-# The old packages are masked for renewal.
+# The old packages are masked for removal.
 # (haskell-lsp is now known as lsp)
 # (haskell-lsp-types is now known as lsp-types)
 # (hls-exactprint-utils has been absorbed by ghcide)
@@ -13,15 +13,6 @@ dev-haskell/hls-exactprint-utils
 # try to gather all such issues in this section, and add notes as appropriate to
 # indicate the issue.
 >=dev-haskell/cabal-3.4.0.0 # packages have <dev-haskell/cabal-3.1. ghc-9 bundles 3.4.0.0
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-26)
-# This package appears to do nothing. Checking the source code, there doesn't
-# seem to be anything other than a cabal file and a Setup.lhs file. There is no
-# description of what the package should do, the hackage page states it is
-# deprecated, and there appears to be no activity on hackage since 2014.
-#
-# Masked for removal.
-dev-haskell/kibro
 
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
