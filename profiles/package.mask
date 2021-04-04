@@ -1,6 +1,6 @@
 # hololeap <hololeap@protonmail.com> (2021-03-27)
 # These packages have been deprecated in favor of new names on Hackage.
-# The old packages are masked for renewal.
+# The old packages are masked for removal.
 # (haskell-lsp is now known as lsp)
 # (haskell-lsp-types is now known as lsp-types)
 # (hls-exactprint-utils has been absorbed by ghcide)
@@ -14,43 +14,6 @@ dev-haskell/hls-exactprint-utils
 # indicate the issue.
 >=dev-haskell/cabal-3.4.0.0 # packages have <dev-haskell/cabal-3.1. ghc-9 bundles 3.4.0.0
 
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-26)
-# This package appears to do nothing. Checking the source code, there doesn't
-# seem to be anything other than a cabal file and a Setup.lhs file. There is no
-# description of what the package should do, the hackage page states it is
-# deprecated, and there appears to be no activity on hackage since 2014.
-#
-# Masked for removal.
-dev-haskell/kibro
-
-# Wolfgang E. Sanyer <WolfgagESanyer@gmail.com> (2021-02-24)
-# This package has not been maintained upstream since 2014 and does not have any
-# official releases. Masked for removal in 30 days.
-app-misc/lambdawars
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-11)
-# Both of these packages appear abandoned upstream, with the latest commits back
-# in 2017. Masked for removal.
-dev-haskell/megadeth
-dev-haskell/ttasm
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-23)
-# According to hackage, reflex-basic-host has been deprecated in favor of
-# reflex.  Masked for removal, including reverse dependencies. The reverse
-# dependencies seem to be les recently maintained than reflex-basic-host itself,
-# so they also appear to be deprecated (perhaps their functionality has been
-# absorbed into the reflex package?)
-dev-haskell/reflex-basic-host
-dev-haskell/reflex-backend-socket
-dev-haskell/reflex-backend-wai
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-05)
-# Both of these are produced by the same developer, both github repositories
-# have their latest commit in early 2018. These projects seem abandoned and
-# depend on older aeson, which causes many conflicts.
-dev-haskell/pipes-transduce
-dev-haskell/process-streaming
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
 # remain masked for now.
@@ -63,47 +26,12 @@ dev-haskell/process-streaming
 # optparse-applicative and its dependencies are being masked.
 >=dev-haskell/optparse-applicative-0.16
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-01-18)
-# No homepage. Fals to build with ghc-8.8 or above.
-dev-haskell/vinyl-utils
-dev-haskell/pipes-key-value-csv
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-01-17)
-# Fails to build against modern dependds: https://github.com/stschiff/rarecoal/issues/3
-# Due to OverloadedStrings it's hard to say where API mismatch is.
-sci-biology/rarecoal
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-05)
-# The last commit was 2017-01-17. This package has very old upper bound
-# dependencies and appears to be abandoned. Masking for removal
-dev-haskell/hashable-extras
-
-# Wolfgang E. Sanyre <WolfgangESanyer@gmail.com> (2021-01-05)
-# Per upstream[1], hjsonpointer has been deprecated. Masking it and its revdeps
-# for removal
-# [1]: https://hackage.haskell.org/package/hjsonpointer
-dev-haskell/hjsonpointer
-dev-haskell/hjsonschema
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-01-02)
-# Last release in 2018. Needs a port to Cabal-3.
-dev-haskell/hsqml
-
-# Jack Todaro <solpeth@posteo.org> (2021-01-15)
-# Dead upstream, has no reverse dependencies.
-# Masked for removal in 30 days.
-dev-haskell/network-transport-inmemory
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-12-22)
 # There are a large number of packages that are not ready for this upgrade yet.
 # Until more of the reverse-dependencies update to the newer version, this will
 # remain masked
 >=dev-haskell/base16-bytestring-1.0.1.0
 >=dev-haskell/cabal-install-parsers-0.4
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2020-12-23)
-# Needs porting to ghc-8.10 template haskell: https://github.com/joecrayne/hs-bitsyntax/issues/1
-dev-haskell/bitsyntax
 
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
