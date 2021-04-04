@@ -451,8 +451,8 @@ dev-haskell/vector-instances:hashable - use dev-haskell/hashable
 dev-haskell/void:safe - Disable effective but unsafe coercions
 dev-haskell/wai-app-static:print - print debug info
 dev-haskell/wai-extra:examples - Build example executable.
-dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GNU/kFreeBSD).
-dev-haskell/warp:warp-debug - Add additional debuging information
+dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GNU/kFreeBSD)
+dev-haskell/warp:warp-debug - print debug output. not suitable for production
 dev-haskell/wcwidth:cli - Enable command line tool
 dev-haskell/websockets:examples - Build the example server
 dev-haskell/with-utf8:troubleshoot-exe - Install the utf8-troubleshoot executable
@@ -544,8 +544,9 @@ x11-misc/xmobar:weather - Enable weather plugin.
 x11-misc/xmobar:wifi - Wireless info support via nl80211. Required for the Wireless plugin on systems running Linux, the kernel.
 x11-misc/xmobar:xft - Use Xft to render text. UTF-8 support included.
 x11-misc/xmobar:xpm - Enable usage of xpm for icons.
-x11-misc/xmonad-extras:brightness - Enable brightness control plugin
-x11-misc/xmonad-extras:eval - Enable eval plugin
-x11-misc/xmonad-extras:mpd - Enable mpd plugin
+x11-misc/xmonad-extras:alsa - Build modules depending on the alsa-mixer package
+x11-misc/xmonad-extras:brightness - Build module for brightness control.
+x11-misc/xmonad-extras:eval - Build modules depending on hint(for evaluating Haskell expressions at runtime).
+x11-misc/xmonad-extras:mpd - Build modules depending on libmpd.
 x11-misc/yeganesh:profiling - Build with profiling and -auto-all
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
