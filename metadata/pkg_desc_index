@@ -1611,7 +1611,7 @@ dev-haskell/retry 0.8.1.2: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
 dev-haskell/rio 0.1.20.0: A standard library for Haskell
-dev-haskell/rio-orphans 0.1.1.0-r2: Orphan instances for the RIO type in the rio package
+dev-haskell/rio-orphans 0.1.2.0: Orphan instances for the RIO type in the rio package
 dev-haskell/rio-prettyprint 0.1.1.0: Pretty-printing for RIO
 dev-haskell/rolling-queue 0.1-r1: Bounded channel for STM that discards old entries when full
 dev-haskell/roman-numerals 0.5.1.5: Parsing and pretty printing of Roman numerals
