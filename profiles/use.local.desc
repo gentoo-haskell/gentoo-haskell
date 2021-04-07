@@ -433,8 +433,8 @@ dev-haskell/tz:template-haskell - Enable the use of and export Template Haskell 
 dev-haskell/unagi-chan:compare-benchmarks - compare benchmarks with Chan, TQueue, and (eventually) lockfree-queue?
 dev-haskell/unix-compat:old-time - build against old-time package
 dev-haskell/unordered-containers:debug - Enable debug support
-dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package.
-dev-haskell/uri-encode:tools - Build executables.
+dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package
+dev-haskell/uri-encode:tools - Build executables
 dev-haskell/uuagc:loag - Use MiniSat as external SAT-solver to schedule all Linear Ordered AGs
 dev-haskell/vec:adjunctions - Depend on @adjunctions@ to provide its instances
 dev-haskell/vec:distributive - Depend on @distributive@ to provide its instances. Turning on, disables @adjunctions@ too.

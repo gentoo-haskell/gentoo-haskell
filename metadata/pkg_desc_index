@@ -1849,7 +1849,7 @@ dev-haskell/tasty-th 0.1.7: Automatic tasty test case discovery using TH
 dev-haskell/tcache 0.12.1: A Transactional cache with user-defined persistence
 dev-haskell/tcp-streams 1.0.1.1: One stop solution for tcp client and server with tls support
 dev-haskell/tcp-streams-openssl 1.0.1.0-r1: Tcp streams using openssl for tls support
-dev-haskell/tdigest 0.2.1-r2: On-line accumulation of rank-based statistics
+dev-haskell/tdigest 0.2.1.1: On-line accumulation of rank-based statistics
 dev-haskell/template 0.2.0.10-r1: Simple string substitution
 dev-haskell/template-haskell-compat-v0208 0.1.5: A backwards compatibility layer for Template Haskell newer than 2.8
 dev-haskell/temporary 1.3: Portable temporary file and directory support for Windows and Unix
@@ -1891,19 +1891,19 @@ dev-haskell/text-zipper 0.10.1: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
 dev-haskell/th-abstraction 0.3.2.0 0.4.1.0 0.4.2.0: Nicer interface for reified information about data types
-dev-haskell/th-compat 0.1.1: Backward- (and forward-)compatible Quote and Code types
+dev-haskell/th-compat 0.1.2: Backward- (and forward-)compatible Quote and Code types
 dev-haskell/th-constraint-compat 0.0.1.0: Compatibility for type constraint template
 dev-haskell/th-data-compat 0.1.0.0: Compatibility for data definition template of TH
 dev-haskell/th-desugar 1.9 1.11: Functions to desugar Template Haskell
 dev-haskell/th-env 0.1.0.2: Template Haskell splice that expands to an environment variable
-dev-haskell/th-expand-syns 0.4.6.0: Expands type synonyms in Template Haskell ASTs
+dev-haskell/th-expand-syns 0.4.8.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.8.2: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.18: Lift instances for template-haskell for common data types
-dev-haskell/th-orphans 0.13.10: Orphan instances for TH datatypes
+dev-haskell/th-orphans 0.13.11: Orphan instances for TH datatypes
 dev-haskell/th-reify-compat 0.0.1.5: Compatibility for the result type of TH reify
 dev-haskell/th-reify-many 0.1.9: Recurseively reify template haskell datatype info
-dev-haskell/th-utilities 0.2.4.1: Collection of useful functions for use with Template Haskell
+dev-haskell/th-utilities 0.2.4.2: Collection of useful functions for use with Template Haskell
 dev-haskell/themoviedb 1.2.0.1: Haskell API bindings for http://themoviedb.org
 dev-haskell/these 1.0.1-r1 1.1.1.1: An either-or-both data type
 dev-haskell/these-lens 1.0.1.1: Lenses for These
@@ -1976,7 +1976,7 @@ dev-haskell/units-parser 0.1.1.3: A parser for units of measure
 dev-haskell/universe-base 1.1.1: A class for finite and recursively enumerable types
 dev-haskell/universe-reverse-instances 1.1: Instances of standard classes that are made possible by enumerations
 dev-haskell/unix-bytestring 0.3.7.3: Unix/Posix-specific functions for ByteStrings
-dev-haskell/unix-compat 0.5.2: Portable POSIX-compatibility layer
+dev-haskell/unix-compat 0.5.3: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2-r1: Unix memory syscalls
 dev-haskell/unix-time 0.4.7: Unix time parser/formatter and utilities
 dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like operating systems
@@ -1988,7 +1988,7 @@ dev-haskell/unsafe 0.0-r1: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
 dev-haskell/uri-bytestring 0.3.3.0: Haskell URI parsing as ByteStrings
 dev-haskell/uri-bytestring-aeson 0.1.0.8: Aeson instances for URI Bytestring
-dev-haskell/uri-encode 1.5.0.5: Unicode aware uri-encoding
+dev-haskell/uri-encode 1.5.0.7: Unicode aware uri-encoding
 dev-haskell/url 2.1.3-r1: A library for working with URLs
 dev-haskell/userid 0.1.3.6: The UserId type and useful instances for web development
 dev-haskell/users 0.5.0.0: A library simplifying user management for web applications
