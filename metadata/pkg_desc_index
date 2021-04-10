@@ -929,7 +929,7 @@ dev-haskell/hslua-module-system 0.2.2.1: Lua module wrapper around Haskell's Sys
 dev-haskell/hslua-module-text 0.3.0.1: Lua module for text
 dev-haskell/hsndfile 0.8.0-r1: Haskell bindings for libsndfile
 dev-haskell/hsndfile-vector 0.5.2: Haskell bindings for libsndfile (Data.Vector interface)
-dev-haskell/hsopenssl 0.11.4.17: Partial OpenSSL binding for Haskell
+dev-haskell/hsopenssl 0.11.6.2: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.4: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.3.6: A SPARQL query generator and DSL, and a client to query a SPARQL server
@@ -2132,7 +2132,7 @@ dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
 dev-haskell/yesod-auth 1.6.10.2: Authentication for Yesod
 dev-haskell/yesod-auth-basic 0.1.0.3: Yesod Middleware for HTTP Basic Authentication
 dev-haskell/yesod-auth-hashdb 1.7.1.5: Authentication plugin for Yesod
-dev-haskell/yesod-auth-oauth2 0.6.1.7: OAuth 2.0 authentication plugins
+dev-haskell/yesod-auth-oauth2 0.6.3.0: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.6.1: The yesod helper executable
 dev-haskell/yesod-colonnade 1.3.0.1: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.5: PDF Content Type for Yesod

@@ -205,7 +205,7 @@ dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.
 dev-haskell/hslogger:network-3 - Use network-3
 dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but Use hard coded values for instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those do not expose the necessary information in the @lauxlib.h@ header file.
-dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP
+dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC and OpenSSL version < 1.1.0 only).
 dev-haskell/hsp:base4 - Use base-4.0.
 dev-haskell/hsyslog:install-examples - Build and install example programs
 dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (for the test suite)
