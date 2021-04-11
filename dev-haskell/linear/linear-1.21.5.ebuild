@@ -24,7 +24,8 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/cereal-0.4.1.1:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-	>=dev-haskell/lens-4.15.2:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/indexed-traversable-0.1.1:=[profile?] <dev-haskell/indexed-traversable-0.2:=[profile?]
+	>=dev-haskell/lens-4.15.2:=[profile?] <dev-haskell/lens-6:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/reflection-1.3.2:=[profile?] <dev-haskell/reflection-3:=[profile?]
 	>=dev-haskell/semigroupoids-5.2.1:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
@@ -34,13 +35,11 @@ RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[pr
 	>=dev-haskell/unordered-containers-0.2.3:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?] <dev-haskell/void-1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
-	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.1 <dev-haskell/doctest-0.18
-		>=dev-haskell/hunit-1.2.5
+	>=dev-haskell/cabal-2.2.0.1
+	test? ( >=dev-haskell/hunit-1.2.5
 		>=dev-haskell/simple-reflect-0.3.1
 		>=dev-haskell/test-framework-0.8
 		>=dev-haskell/test-framework-hunit-0.3 )
