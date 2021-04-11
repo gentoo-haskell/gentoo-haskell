@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-haskell/primitive:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/text:=[profile?]
-	dev-haskell/th-abstraction:=[profile?]
+	>=dev-haskell/th-abstraction-0.4:=[profile?]
 	dev-haskell/th-orphans:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
