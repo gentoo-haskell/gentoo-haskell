@@ -684,8 +684,8 @@ dev-haskell/ghcide 1.0.0.0: The core of an IDE
 dev-haskell/ghcjs-codemirror 0.0.0.2: Installs CodeMirror JavaScript files
 dev-haskell/gi-atk 2.0.22 2.0.23: Atk bindings
 dev-haskell/gi-cairo 1.0.24 1.0.25: Cairo bindings
-dev-haskell/gi-cairo-connector 0.0.1 0.1.0: GI friendly Binding to the Cairo library
-dev-haskell/gi-cairo-render 0.0.1-r1 0.1.0: GI friendly Binding to the Cairo library
+dev-haskell/gi-cairo-connector 0.0.1 0.1.0-r1: GI friendly Binding to the Cairo library
+dev-haskell/gi-cairo-render 0.0.1-r1 0.1.0-r1: GI friendly Binding to the Cairo library
 dev-haskell/gi-dbusmenu 0.4.8 0.4.9: Dbusmenu bindings
 dev-haskell/gi-dbusmenugtk3 0.4.9 0.4.10: DbusmenuGtk bindings
 dev-haskell/gi-gdk 3.0.23 3.0.24: Gdk bindings
