@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2021-04-13)
+# Mask >=dev-haskell/network-3.1.2 due to reverse dependency
+# breakages (e.g. idris, purescript, network-bsd)
+>=dev-haskell/network-3.1.2
+
 # hololeap <hololeap@protonmail.com> (2021-03-27)
 # These packages have been deprecated in favor of new names on Hackage.
 # The old packages are masked for removal.
@@ -40,11 +45,6 @@ dev-haskell/hls-exactprint-utils
 # Jack Todaro <solpeth@posteo.org> (2 July 2020)
 # Needs porting to Cabal-3
 dev-lang/purescript
-
-# Jack Todaro <solpeth@posteo.org> (10 Apr 2020)
-# Mask >=dev-haskell/network-3.1 due to reverse dependency
-# breakages (e.g. purescript)
->=dev-haskell/network-3.1
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
