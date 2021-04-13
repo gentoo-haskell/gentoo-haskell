@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,18 +17,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+binary-laws +unary-laws"
 
-RDEPEND=">=dev-haskell/base-orphans-0.1:=[profile?]
-	dev-haskell/bifunctors:=[profile?]
-	dev-haskell/contravariant:=[profile?]
-	dev-haskell/fail:=[profile?]
-	dev-haskell/tagged:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+RDEPEND="dev-haskell/contravariant:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	binary-laws? ( >=dev-haskell/quickcheck-2.10.0:2=[profile?] )
 	unary-laws? ( >=dev-haskell/quickcheck-2.10.0:2=[profile?] )
 	!unary-laws? ( !binary-laws? ( >=dev-haskell/quickcheck-2.7:2=[profile?] ) )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.4
 "
 
 src_configure() {
