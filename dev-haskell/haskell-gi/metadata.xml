@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Generate Haskell bindings for GObject Introspection capable libraries. This includes most notably
-		Gtk+, but many other libraries in the GObject ecosystem provide introspection data too.
-	</longdescription>
 </pkgmetadata>
