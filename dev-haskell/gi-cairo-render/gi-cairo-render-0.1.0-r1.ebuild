@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+cairo-pdf +cairo-ps +cairo-svg"
 
-RDEPEND=">=dev-haskell/haskell-gi-base-0.24:=[profile?] <dev-haskell/haskell-gi-base-0.25:=[profile?]
+RDEPEND=">=dev-haskell/haskell-gi-base-0.24:=[profile?] <dev-haskell/haskell-gi-base-0.26:=[profile?]
 	>=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
@@ -29,6 +29,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
 	virtual/pkgconfig
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haskell-gi-base >= 0.24 && <0.25' 'haskell-gi-base >= 0.24'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
