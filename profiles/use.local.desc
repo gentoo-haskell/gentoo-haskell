@@ -323,12 +323,12 @@ dev-haskell/pretty-simple:buildexe - Build a small command line program that pre
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library
 dev-haskell/quickcheck:template-haskell - Build Test.QuickCheck.All, which uses Template Haskell.
-dev-haskell/quickcheck-classes:aeson - Enable the use of the `aeson` package. This may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/quickcheck-classes:binary-laws - Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
-dev-haskell/quickcheck-classes:semigroupoids - Enable the use of the `semigroupoids` package. This may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/quickcheck-classes:semirings - Enable the use of the `semirings` package. This may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/quickcheck-classes:unary-laws - Include infrastructure for testing class laws of unary type constructors.
-dev-haskell/quickcheck-classes:vector - Enable the use of the `vector` package. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:aeson - You can disable the use of the `aeson` package using `-f-aeson`. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:binary-laws - Include infrastructure for testing class laws of binary type constructors. It is required that this flag match the value that the `unary-laws` flag was given when building `quickcheck-classes-base`. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
+dev-haskell/quickcheck-classes:semigroupoids - You can disable the use of the `semigroupoids` package using `-f-semigroupoids`. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:semirings - You can disable the use of the `semirings` package using `-f-semirings`. This may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/quickcheck-classes:unary-laws - Include infrastructure for testing class laws of unary type constructors. It is required that this flag match the value that the `unary-laws` flag was given when building `quickcheck-classes-base`.
+dev-haskell/quickcheck-classes:vector - You can disable the use of the `vector` package using `-f-vector`. This may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/quickcheck-classes-base:binary-laws - Include infrastructure for testing class laws of binary type constructors. Disabling `unary-laws` while keeping `binary-laws` enabled is an unsupported configuration.
 dev-haskell/quickcheck-classes-base:unary-laws - Include infrastructure for testing class laws of unary type constructors.
 dev-haskell/random-bytestring:pcg - compile with support for PCG from pcg-random

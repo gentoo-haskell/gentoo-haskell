@@ -1052,7 +1052,7 @@ dev-haskell/ipynb 0.1.0.1: Data structure for working with Jupyter notebooks (ip
 dev-haskell/ipython-kernel 0.10.2.1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0-r1: A small library for parsing IRC messages
 dev-haskell/irc-core 2.7.2 2.9: IRC core library for glirc
-dev-haskell/ircbot 0.6.6: A library for writing IRC bots
+dev-haskell/ircbot 0.6.6.1: A library for writing IRC bots
 dev-haskell/ireal 0.2.3-r1: Real numbers and intervals with relatively efficient exact arithmetic
 dev-haskell/iso3166-country-codes 0.20140203.8: A datatype for ISO 3166 country codes
 dev-haskell/iso8601-time 0.1.5: Convert to/from the ISO 8601 time format
@@ -1522,8 +1522,8 @@ dev-haskell/qr-imager 2.0.0.2: Library to generate images
 dev-haskell/quickcheck 1.2.0.1-r1 2.8.2 2.9.1 2.9.2 2.10.1 2.11.3 2.12.6.1 2.13.2 2.14.2: Automatic testing of Haskell programs
 dev-haskell/quickcheck-arbitrary-template 0.2.1.1: Generate QuickCheck Gen for Sum Types
 dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
-dev-haskell/quickcheck-classes 0.6.4.0: QuickCheck common typeclasses
-dev-haskell/quickcheck-classes-base 0.6.1.0: QuickCheck common typeclasses from 'base'
+dev-haskell/quickcheck-classes 0.6.5.0: QuickCheck common typeclasses
+dev-haskell/quickcheck-classes-base 0.6.2.0: QuickCheck common typeclasses from 'base'
 dev-haskell/quickcheck-instances 0.3.25.2: Common quickcheck instances
 dev-haskell/quickcheck-io 0.2.0: Use HUnit assertions as QuickCheck properties
 dev-haskell/quickcheck-properties 0.1-r1: QuickCheck properties for standard type classes
