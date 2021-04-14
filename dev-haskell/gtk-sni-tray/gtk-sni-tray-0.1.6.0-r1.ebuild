@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/dbus-1.0.0:=[profile?] <dev-haskell/dbus-2.0.0:=[profile?
 	dev-haskell/gi-cairo-render:=[profile?]
 	dev-haskell/gi-dbusmenugtk3:=[profile?]
 	dev-haskell/gi-gdk:=[profile?]
-	>=dev-haskell/gi-gdkpixbuf-2.0.16:=[profile?]
+	>=dev-haskell/gi-gdkpixbuf-2.0.26:=[profile?]
 	dev-haskell/gi-glib:=[profile?]
 	>=dev-haskell/gi-gtk-3.0.21:=[profile?]
 	>=dev-haskell/gtk-strut-0.1.2.1:=[profile?]
@@ -43,3 +43,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	virtual/pkgconfig
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-0.1.6.0-gdkpixbuf-2.0.26.patch )
