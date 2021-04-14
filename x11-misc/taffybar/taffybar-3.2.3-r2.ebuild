@@ -29,7 +29,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/gi-cairo-connector:=[profile?]
 	dev-haskell/gi-cairo-render:=[profile?]
 	dev-haskell/gi-gdk:=[profile?]
-	dev-haskell/gi-gdkpixbuf:=[profile?]
+	>=dev-haskell/gi-gdkpixbuf-2.0.26:=[profile?]
 	dev-haskell/gi-gdkx11:=[profile?]
 	dev-haskell/gi-glib:=[profile?]
 	dev-haskell/gi-gtk:=[profile?]
@@ -74,6 +74,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	virtual/pkgconfig
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-3.2.3-gi-gdkpixbuf-2.0.26.patch )
 
 src_prepare() {
 	default
