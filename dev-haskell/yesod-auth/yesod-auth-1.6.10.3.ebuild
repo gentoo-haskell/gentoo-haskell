@@ -46,7 +46,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/wai-1.4:=[profile?]
 	>=dev-haskell/yesod-core-1.6:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?]
-	>=dev-haskell/yesod-form-1.6:=[profile?] <dev-haskell/yesod-form-1.7:=[profile?]
+	>=dev-haskell/yesod-form-1.6:=[profile?] <dev-haskell/yesod-form-1.8:=[profile?]
 	>=dev-haskell/yesod-persistent-1.6:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] )

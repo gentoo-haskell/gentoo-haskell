@@ -24,7 +24,7 @@ RDEPEND=">=app-text/pandoc-2.0:=[profile?] <app-text/pandoc-2.14:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.0:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3.1:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?]
-	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.7:=[profile?]
+	>=dev-haskell/yesod-form-1.3:=[profile?] <dev-haskell/yesod-form-1.8:=[profile?]
 	>=dev-lang/ghc-8.8.3:=
 "
 DEPEND="${RDEPEND}
