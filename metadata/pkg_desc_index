@@ -869,7 +869,7 @@ dev-haskell/hledger-iadd 1.3.14: A terminal UI as drop-in replacement for hledge
 dev-haskell/hledger-interest 1.6.1: computes interest for a given account
 dev-haskell/hledger-lib 1.21: A reusable library providing the core functionality of hledger
 dev-haskell/hledger-ui 1.21: Curses-style terminal interface for the hledger accounting system
-dev-haskell/hledger-web 1.21: Web-based user interface for the hledger accounting system
+dev-haskell/hledger-web 1.21-r1: Web-based user interface for the hledger accounting system
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
@@ -934,16 +934,16 @@ dev-haskell/hsopenssl 0.11.6.2: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.4: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.3.6: A SPARQL query generator and DSL, and a client to query a SPARQL server
-dev-haskell/hspec 2.7.8: A Testing Framework for Haskell
+dev-haskell/hspec 2.7.10: A Testing Framework for Haskell
 dev-haskell/hspec-attoparsec 0.1.0.2-r1: Utility functions for testing your attoparsec parsers with hspec
 dev-haskell/hspec-contrib 0.5.1: Contributed functionality for Hspec
-dev-haskell/hspec-core 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: A Testing Framework for Haskell
-dev-haskell/hspec-discover 2.2.4 2.4.8 2.5.0 2.6.1 2.7.1 2.7.2 2.7.5 2.7.8: Automatically discover and run Hspec tests
+dev-haskell/hspec-core 2.7.10: A Testing Framework for Haskell
+dev-haskell/hspec-discover 2.7.10: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.7.2-r1 0.8.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0-r1: Hspec expectations for the lens stuff
 dev-haskell/hspec-expectations-lifted 0.10.0: A version of hspec-expectations generalized to MonadIO
 dev-haskell/hspec-megaparsec 2.1.0 2.2.0: Utility functions for testing Megaparsec parsers with Hspec
-dev-haskell/hspec-meta 2.6.0: A version of Hspec which is used to test Hspec itself
+dev-haskell/hspec-meta 2.7.8: A version of Hspec which is used to test Hspec itself
 dev-haskell/hspec-smallcheck 0.5.2: SmallCheck support for the Hspec testing framework
 dev-haskell/hspec-wai 0.10.1: Experimental Hspec support for testing WAI applications
 dev-haskell/hspecvariant 0.1.0.1: Spec for testing properties for variant types
@@ -2112,7 +2112,7 @@ dev-haskell/xhtml 3000.2.2.1: An XHTML combinator library
 dev-haskell/xhtml-combinators 0.3: Fast and easy to use XHTML combinators
 dev-haskell/xlsx 0.8.3: Simple and incomplete Excel file parser/writer
 dev-haskell/xml 1.3.14: A simple XML library
-dev-haskell/xml-conduit 1.9.1.0: Pure-Haskell utilities for dealing with XML with the conduit package
+dev-haskell/xml-conduit 1.9.1.1: Pure-Haskell utilities for dealing with XML with the conduit package
 dev-haskell/xml-hamlet 0.5.0.1: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-helpers 1.0.0: Some useful helper functions for the xml library
 dev-haskell/xml-html-conduit-lens 0.3.2.4-r1: Optics for xml-conduit and html-conduit
@@ -2128,11 +2128,11 @@ dev-haskell/xxhash-ffi 0.2.0.0: Bindings to the C implementation the xxHash algo
 dev-haskell/yaml 0.11.5.0: Support for parsing and rendering YAML documents
 dev-haskell/yaml-light 0.1.4-r1: A light-weight wrapper with utility functions around HsSyck
 dev-haskell/yampa 0.13.1: Library for programming hybrid systems
-dev-haskell/yesod 1.6.1.0: Creation of type-safe, RESTful web applications
+dev-haskell/yesod 1.6.1.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
-dev-haskell/yesod-auth 1.6.10.2: Authentication for Yesod
+dev-haskell/yesod-auth 1.6.10.3: Authentication for Yesod
 dev-haskell/yesod-auth-basic 0.1.0.3: Yesod Middleware for HTTP Basic Authentication
-dev-haskell/yesod-auth-hashdb 1.7.1.5: Authentication plugin for Yesod
+dev-haskell/yesod-auth-hashdb 1.7.1.6: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.6.3.0: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.6.1: The yesod helper executable
 dev-haskell/yesod-colonnade 1.3.0.1: Helper functions for using yesod with colonnade
@@ -2142,10 +2142,10 @@ dev-haskell/yesod-default 1.2.0: Default config and main functions for your yeso
 dev-haskell/yesod-elements 1.1.1: Non template haskell markup building function in the spirit of lucid
 dev-haskell/yesod-eventsource 1.6.0.1: Server-sent events support for Yesod apps
 dev-haskell/yesod-fay 0.10.0: Utilities for using the Fay Haskell-to-JS compiler with Yesod
-dev-haskell/yesod-form 1.6.7: Form handling support for Yesod Web Framework
+dev-haskell/yesod-form 1.7.0: Form handling support for Yesod Web Framework
 dev-haskell/yesod-gitrepo 0.3.0: Host content provided by a Git repo
 dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package. (deprecated)
-dev-haskell/yesod-markdown 0.12.6.8: Tools for using markdown in a yesod application
+dev-haskell/yesod-markdown 0.12.6.9: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.7.0.0: Helper functions and data types for producing News feeds
 dev-haskell/yesod-paginator 1.1.1.0: A pagination approach for yesod
 dev-haskell/yesod-persistent 1.6.0.6: Some helpers for using Persistent from Yesod
