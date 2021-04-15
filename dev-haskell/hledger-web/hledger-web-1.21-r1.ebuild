@@ -52,7 +52,7 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	dev-haskell/yaml:=[profile?]
 	>=dev-haskell/yesod-1.4:=[profile?] <dev-haskell/yesod-1.7:=[profile?]
 	>=dev-haskell/yesod-core-1.4:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?]
-	>=dev-haskell/yesod-form-1.4:=[profile?] <dev-haskell/yesod-form-1.7:=[profile?]
+	>=dev-haskell/yesod-form-1.4:=[profile?] <dev-haskell/yesod-form-1.8:=[profile?]
 	>=dev-haskell/yesod-static-1.4:=[profile?] <dev-haskell/yesod-static-1.7:=[profile?]
 	dev-haskell/yesod-test:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
@@ -60,6 +60,13 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'yesod-form >=1.4 && <1.7' 'yesod-form >=1.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
