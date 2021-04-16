@@ -1,8 +1,3 @@
-# Jack Todaro <solpeth@posteo.org> (2021-04-13)
-# Mask >=dev-haskell/network-3.1.2 due to reverse dependency
-# breakages (e.g. idris, purescript, network-bsd)
->=dev-haskell/network-3.1.2
-
 # hololeap <hololeap@protonmail.com> (2021-03-27)
 # These packages have been deprecated in favor of new names on Hackage.
 # The old packages are masked for removal.
