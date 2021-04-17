@@ -1,3 +1,9 @@
+# Sergei Trofimovich <slyfox@gentoo.org> (2021-04-17)
+# Fails to build agains current poppler C library:
+#    parsing output of pkg-config --modversion failed
+# As there are no revdeps let's mask it.
+dev-haskell/poppler
+
 # hololeap <hololeap@protonmail.com> (2021-03-27)
 # These packages have been deprecated in favor of new names on Hackage.
 # The old packages are masked for removal.
