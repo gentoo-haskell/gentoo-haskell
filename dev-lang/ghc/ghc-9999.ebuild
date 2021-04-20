@@ -13,6 +13,8 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
+PYTHON_COMPAT=( python3_{7..9} )
+inherit python-any-r1
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib multiprocessing pax-utils toolchain-funcs prefix
 inherit check-reqs llvm
@@ -134,21 +136,33 @@ RDEPEND+="
 	llvm? ( sys-devel/llvm:${LLVM_MAX_SLOT} )
 "
 
-DEPEND="${RDEPEND}
+DEPEND="${RDEPEND}"
+BDEPEND="
 	doc? ( app-text/docbook-xml-dtd:4.2
 		app-text/docbook-xml-dtd:4.5
 		app-text/docbook-xsl-stylesheets
 		dev-python/sphinx
 		>=dev-libs/libxslt-1.1.2 )
-	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )"
+	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )
+	test? ( ${PYTHON_DEPS} )
+"
 
 if [[ ${PV} = *9999* ]]; then
 	# git tree has no pregenerated parser
-	DEPEND+="
+	# git tree need to run ./boot written in python
+	BDEPEND+="
 		>=dev-haskell/alex-3.2.6
 		>=dev-haskell/happy-1.20.0
+		${PYTHON_DEPS}
 	"
 fi
+
+needs_python() {
+	# test driver is written in python
+	use test && return 0
+	[[ ${PV} = *9999* ]] && return 0
+	return 1
+}
 
 # we build binaries without profiling support
 REQUIRED_USE="
@@ -426,6 +440,10 @@ pkg_setup() {
 
 	# populate LLVM path
 	use llvm && llvm_pkg_setup
+
+	if needs_python; then
+		python-any-r1_pkg_setup
+	fi
 }
 
 src_unpack() {
