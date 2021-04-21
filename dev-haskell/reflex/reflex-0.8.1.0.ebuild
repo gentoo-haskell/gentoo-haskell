@@ -50,11 +50,12 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 	template-haskell? ( >=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 				>=dev-haskell/haskell-src-meta-0.6:=[profile?] <dev-haskell/haskell-src-meta-0.9:=[profile?] )
 "
+# allow hlint-3: https://github.com/gentoo-haskell/gentoo-haskell/issues/1177
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( dev-haskell/constraints
 		dev-haskell/filemanip
-		<dev-haskell/hlint-3
+		dev-haskell/hlint
 		dev-haskell/hspec
 		dev-haskell/proctest
 		dev-haskell/split
