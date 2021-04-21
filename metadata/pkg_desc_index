@@ -988,7 +988,7 @@ dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.6.0: Reverse proxy HTTP requests, either over raw sockets or with WAI
 dev-haskell/http-streams 0.8.7.1: An HTTP client using io-streams
 dev-haskell/http-types 0.9.1-r1 0.12.3: Generic HTTP types for Haskell (for both client and server code)
-dev-haskell/http2 3.0.0: HTTP/2 library
+dev-haskell/http2 3.0.1: HTTP/2 library
 dev-haskell/httpd-shed 0.4.1.1: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
 dev-haskell/hunit 1.6.2.0: A unit testing framework for Haskell
@@ -1418,12 +1418,12 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/pem 0.2.4: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/persistable-record 0.6.0.4: Binding between SQL database values and haskell records
 dev-haskell/persistable-types-hdbc-pg 0.0.3.5: HDBC and Relational-Record instances of PostgreSQL extended types
-dev-haskell/persistent 2.11.0.2 2.12.1.0: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.12.1.1: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1-r1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.12.0.0: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.12.0.0: Backend for the persistent library using MySQL database server
 dev-haskell/persistent-odbc 0.2.1.0: Backend for the persistent library using ODBC
-dev-haskell/persistent-postgresql 2.12.1.0: Backend for the persistent library using postgresql
+dev-haskell/persistent-postgresql 2.12.1.1: Backend for the persistent library using postgresql
 dev-haskell/persistent-qq 2.12.0.0: Provides a quasi-quoter for raw SQL for persistent
 dev-haskell/persistent-redis 2.12.0.0: Backend for persistent library using Redis
 dev-haskell/persistent-relational-record 0.3.0: relational-record on persisten backends
