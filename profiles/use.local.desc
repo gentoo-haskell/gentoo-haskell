@@ -125,7 +125,6 @@ dev-haskell/gauge:analysis - Build with statistical analysis support
 dev-haskell/ghc-check:package-abis - record package abis at compile time for improved precision (requires compile-time TH)
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
 dev-haskell/ghc-heap-view:prim-supports-any - The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)
-dev-haskell/ghc-lib-parser-ex:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/ghc-prof:dump - build 'dump' tool
 dev-haskell/ghc-tcplugins-extra:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghc-typelits-extra:deverror - Enables `-Werror` for development mode and TravisCI
