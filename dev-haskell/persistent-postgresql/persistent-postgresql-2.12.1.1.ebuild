@@ -39,6 +39,7 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/fast-logger
 		>=dev-haskell/hspec-2.4
 		dev-haskell/hspec-expectations
+		dev-haskell/hspec-expectations-lifted
 		dev-haskell/hunit
 		dev-haskell/persistent-qq
 		dev-haskell/persistent-test
