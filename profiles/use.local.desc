@@ -115,7 +115,7 @@ dev-haskell/ffmpeg-light:buildvplaydemo - Build video player demo executable
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
 dev-haskell/finite-field:useghctypelits - GHC.TypeLits module
 dev-haskell/floskell:executable - Build the floskell executable
-dev-haskell/foundation:experimental - enable building experimental features, known as highly unstable or without good support cross-platform
+dev-haskell/foundation:experimental - Enable building experimental features, known as highly unstable or without good support cross-platform
 dev-haskell/fourmolu:executable - Build the fourmolu executable
 dev-haskell/freer-effects:pedantic - Pass additional warning flags and -Werror to GHC.
 dev-haskell/freer-effects:test-hlint - Enable test suite that checks sources using HLint.
