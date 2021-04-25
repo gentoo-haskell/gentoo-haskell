@@ -16,22 +16,19 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RESTRICT=test # needs local mysql
 
-RDEPEND=">=dev-haskell/semigroups-0.11:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+RDEPEND=">=dev-lang/ghc-8.4.3:=
+"
+DEPEND="${RDEPEND}
+	>=dev-haskell/cabal-2.2.0.1
+	test? ( dev-haskell/hspec )
 "
 
 # 'mysql_config' is used in Setup.hs to detect mysql libs and headers.
 RDEPEND+="
 	dev-db/mysql-connector-c:=
-"
-
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
-	test? ( dev-haskell/hspec )
 "
 
 src_configure() {
