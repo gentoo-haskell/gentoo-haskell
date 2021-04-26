@@ -194,7 +194,6 @@ dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the syst
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
-dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hnix:optimize - Enable all optimization flags
 dev-haskell/hnix:profiling - Enable profiling
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
@@ -501,7 +500,6 @@ dev-util/haskell-language-server:hls_plugins_pragmas - Enable pragmas plugin
 dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
 dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
 dev-util/haskell-language-server:hls_plugins_tactic - Enable tactic plugin
-dev-util/hsdev:docs - build with haddock/hdocs to support scanning docs
 dev-util/hsdev:hlint - build with hlint to support linting
 dev-vcs/darcs:curl - Use libcurl for HTTP support.
 dev-vcs/darcs:terminfo - Use the terminfo package for enhanced console support.
