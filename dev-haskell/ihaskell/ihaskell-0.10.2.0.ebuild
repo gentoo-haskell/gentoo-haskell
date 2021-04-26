@@ -22,6 +22,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?]
+	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/ghc-parser-0.2.1:=[profile?]
 	>=dev-haskell/ghc-paths-0.1:=[profile?]
 	dev-haskell/haskeline:=[profile?]
@@ -41,10 +42,10 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:= <dev-lang/ghc-9.1:=[profile?]
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/here
 		dev-haskell/hspec
 		dev-haskell/hspec-contrib

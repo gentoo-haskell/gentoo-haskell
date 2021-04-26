@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/ghc-lib-parser-8.10:=[profile?] <dev-haskell/ghc-lib-parser-8.11:=[profile?]
+RDEPEND=">=dev-haskell/ghc-lib-parser-9.0:=[profile?] <dev-haskell/ghc-lib-parser-9.1:=[profile?]
 	>=dev-haskell/uniplate-1.5:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "

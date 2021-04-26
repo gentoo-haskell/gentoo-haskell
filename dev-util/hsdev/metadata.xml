@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="docs">build with haddock/hdocs to support scanning docs</flag>
 		<flag name="hlint">build with hlint to support linting</flag>
 	</use>
 	<longdescription>

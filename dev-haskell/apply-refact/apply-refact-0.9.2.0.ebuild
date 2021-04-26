@@ -21,7 +21,7 @@ PATCHES=( "${FILESDIR}/${P}-add-executable-flag.patch" )
 
 RDEPEND=">=dev-haskell/extra-1.7.3:=[profile?]
 	>=dev-haskell/filemanip-0.3.6.3:=[profile?] <dev-haskell/filemanip-0.4:=[profile?]
-	>=dev-haskell/ghc-exactprint-0.6.3.3:=[profile?]
+	>=dev-haskell/ghc-exactprint-0.6.4:=[profile?]
 	>=dev-haskell/refact-0.2:=[profile?]
 	>=dev-haskell/syb-0.7.1:=[profile?]
 	>=dev-haskell/uniplate-1.6.13:=[profile?]
@@ -36,6 +36,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-expected-failure
 		dev-haskell/tasty-golden )
 "
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag executable executable)
