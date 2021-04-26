@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="experimental"
 
+RESTRICT=test # hangs indefinitely
+
 RDEPEND="~dev-haskell/basement-0.0.12:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
