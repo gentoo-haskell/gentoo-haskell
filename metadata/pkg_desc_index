@@ -667,8 +667,8 @@ dev-haskell/ghc-exactprint 0.6.4: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.6.1 0.6.2: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.10.2.20200916: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser 9.0.1.20210324: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser-ex 9.0.0.4: Algorithms on GHC parse trees
+dev-haskell/ghc-lib-parser 8.10.2.20200916 9.0.1.20210324: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-lib-parser-ex 8.10.0.19 9.0.0.4: Algorithms on GHC parse trees
 dev-haskell/ghc-parser 0.2.2.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.12-r1: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.7: Library for parsing GHC time and allocation profiling reports
@@ -873,7 +873,7 @@ dev-haskell/hledger-web 1.21-r1: Web-based user interface for the hledger accoun
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
-dev-haskell/hlint 3.3.1: Source code suggestions
+dev-haskell/hlint 3.2.7 3.3.1: Source code suggestions
 dev-haskell/hls-class-plugin 1.0.0.0: Class/instance management plugin for Haskell Language Server
 dev-haskell/hls-eval-plugin 1.0.0.0: Eval plugin for Haskell Language Server
 dev-haskell/hls-exactprint-utils 0.5.0.1: Common utilities to interaction between ghc-exactprint and HLS plugins
