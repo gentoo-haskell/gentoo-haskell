@@ -1,3 +1,10 @@
+# Jack Todaro <solpeth@posteo.org> (2021-05-06)
+# Causes upgrade conflict warning during world updates.
+# Mask until the rest of the ecosystem catches up.
+>=dev-haskell/hlint-3.3
+>=dev-haskell/ghc-lib-parser-9.0
+>=dev-haskell/ghc-lib-parser-ex-9.0
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-04-17)
 # Fails to build agains current poppler C library:
 #    parsing output of pkg-config --modversion failed
