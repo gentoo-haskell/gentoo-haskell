@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
+RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	>=dev-haskell/entropy-0.3.7:=[profile?]
 	>=dev-haskell/text-0.9:=[profile?]
 	dev-haskell/unliftio:=[profile?]
@@ -32,5 +32,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'base64-bytestring == 1.0.*' 'base64-bytestring >= 1.0 && < 1.3' \
 		'entropy           >= 0.3.7 && < 0.4.2' 'entropy           >= 0.3.7'
 }

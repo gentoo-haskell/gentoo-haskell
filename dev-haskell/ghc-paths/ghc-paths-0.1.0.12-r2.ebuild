@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.6 <dev-haskell/cabal-3.3
+	>=dev-haskell/cabal-1.6 <dev-haskell/cabal-3.5
 "
 
 src_prepare() {
@@ -31,7 +31,7 @@ src_prepare() {
 	cabal-mksetup
 
 	cabal_chdeps \
-		'Cabal >= 1.6 && <3.1' 'Cabal >= 1.6 && <3.3'
+		'Cabal >= 1.6 && <3.1' 'Cabal >= 1.6 && <3.5'
 
 	# and use gentoo's hardcoded one:
 	# a few things we need to replace, and example values
