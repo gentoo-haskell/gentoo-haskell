@@ -45,7 +45,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.5.2:=[profile?] <dev-haskell/base-orphans-
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-3.3
+	>=dev-haskell/cabal-2.2.0.1
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
 	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.4
@@ -58,6 +58,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/simple-reflect-0.3.1
 		>=dev-haskell/doctest-0.11.4 <dev-haskell/doctest-0.18 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal >= 1.10 && <3.3' 'Cabal >= 1.10'
+}
 
 src_prepare() {
 	default
