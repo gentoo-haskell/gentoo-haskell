@@ -20,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytestring-1.2:=[profile?]
+RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	dev-haskell/colour:=[profile?]
 	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
@@ -48,5 +48,6 @@ src_prepare() {
 
 	# upstream hasn't bumped this yet
 	cabal_chdeps \
-		'base                 >= 4.7   && < 4.14' 'base >= 4.7'
+		'base                 >= 4.7   && < 4.14' 'base >= 4.7' \
+		'base64-bytestring    >= 1     && < 1.2' 'base64-bytestring    >= 1     && < 1.3'
 }
