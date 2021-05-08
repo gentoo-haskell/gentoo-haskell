@@ -195,7 +195,7 @@ dev-haskell/bmp 1.2.6.3: Read and write uncompressed BMP image files
 dev-haskell/boolean 0.2.4: Generalized booleans and numbers
 dev-haskell/boomerang 1.4.6: Library for invertible parsing and printing
 dev-haskell/bootstrap-types 0.3: Bootstrap CSS Framework type-safe interface
-dev-haskell/bound 2.0.1-r1: Making de Bruijn Succ Less
+dev-haskell/bound 2.0.3: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.5: 2D text pretty-printing library
