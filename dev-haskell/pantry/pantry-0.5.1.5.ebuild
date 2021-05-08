@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/ansi-terminal:=[profile?]
-	>=dev-haskell/cabal-3:=[profile?] <dev-haskell/cabal-3.3:=[profile?]
+	>=dev-haskell/cabal-3:=[profile?]
 	dev-haskell/casa-client:=[profile?]
 	dev-haskell/casa-types:=[profile?]
 	dev-haskell/conduit:=[profile?]
@@ -70,3 +70,10 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=( "${FILESDIR}/${PN}-0.5.1.4-disable-network-tests.patch" )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'Cabal >=3 && <3.3' 'Cabal >=3'
+}
