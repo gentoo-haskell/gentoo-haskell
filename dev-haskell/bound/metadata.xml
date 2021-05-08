@@ -6,27 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="template-haskell">Enable additional test modules requiring Template Haskell support.</flag>
+		<flag name="template-haskell">You can disable the use of the `template-haskell` package using `-f-template-haskell`.
+
+Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.</flag>
 	</use>
-	<longdescription>
-		We represent the target language itself as an ideal monad supplied by the
-		user, and provide a 'Scope' monad transformer for introducing bound variables
-		in user supplied terms. Users supply a 'Monad' and 'Traversable' instance,
-		and we traverse to find free variables, and use the Monad to perform
-		substitution that avoids bound variables.
-		
-		Slides describing and motivating this approach to name binding are available
-		online at:
-		
-		&lt;http://www.slideshare.net/ekmett/bound-making-de-bruijn-succ-less&gt;
-		
-		The goal of this package is to make it as easy as possible to deal with name
-		binding without forcing an awkward monadic style on the user.
-		
-		With generalized de Bruijn term you can 'lift' whole trees instead of just
-		applying 'succ' to individual variables, weakening the all variables bound
-		by a scope and greatly speeding up instantiation. By giving binders more
-		structure we permit easy simultaneous substitution and further speed up
-		instantiation.
-	</longdescription>
 </pkgmetadata>
