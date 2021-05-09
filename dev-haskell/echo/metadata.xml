@@ -19,4 +19,7 @@
 		this library. To build it, make sure to configure with the
 		@-fexample@ flag.
 	</longdescription>
+	<use>
+		<flag name="examples">Build the bundled example program.</flag>
+	</use>
 </pkgmetadata>
