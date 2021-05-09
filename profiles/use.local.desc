@@ -105,6 +105,7 @@ dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bun
 dev-haskell/dlist:werror - Enable -Werror
 dev-haskell/dotenv:dev - Turn on development settings.
 dev-haskell/dotenv:static - Creates static binary.
+dev-haskell/echo:examples - Build the bundled example program.
 dev-haskell/entropy:halvm - Build for the HaLVM.
 dev-haskell/extensible:barbies - "define instances for barbies"
 dev-haskell/extensible:cassava - "define instances for cassava"
