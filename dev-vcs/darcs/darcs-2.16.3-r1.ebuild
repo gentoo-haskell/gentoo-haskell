@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/base16-bytestring-0.1.1.7:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/conduit-1.3.0:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/constraints-0.11:=[profile?] <dev-haskell/constraints-0.13:=[profile?]
-	>=dev-haskell/cryptonite-0.24:=[profile?] <dev-haskell/cryptonite-0.28:=[profile?]
+	>=dev-haskell/cryptonite-0.24:=[profile?]
 	>=dev-haskell/data-ordlist-0.4:=[profile?] <dev-haskell/data-ordlist-0.5:=[profile?]
 	>=dev-haskell/fgl-5.5.2.3:=[profile?] <dev-haskell/fgl-5.8:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
@@ -75,7 +75,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck   >= 2.13 && < 2.14' 'QuickCheck >= 2.13'
+		'QuickCheck   >= 2.13 && < 2.14' 'QuickCheck >= 2.13' \
+		'cryptonite        >= 0.24 && < 0.28' 'cryptonite        >= 0.24'
 }
 
 src_configure() {

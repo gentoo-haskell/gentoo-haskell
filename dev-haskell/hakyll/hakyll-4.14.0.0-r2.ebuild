@@ -19,7 +19,7 @@ IUSE="buildwebsite +checkexternal +previewserver +usepandoc +watchserver"
 
 RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.1:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
-	>=dev-haskell/cryptonite-0.25:=[profile?] <dev-haskell/cryptonite-0.28:=[profile?]
+	>=dev-haskell/cryptonite-0.25:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/file-embed-0.0.10.1:=[profile?] <dev-haskell/file-embed-0.0.14:=[profile?]
 	>=dev-haskell/lrucache-1.1.1:=[profile?] <dev-haskell/lrucache-1.3:=[profile?]
@@ -66,7 +66,8 @@ src_prepare() {
 	# https://github.com/jaspervdj/hakyll/commit/0dc6127d81ff688e27c36ce469230320eee60246
 	cabal_chdeps \
 		'pandoc >= 2.11 && < 2.12' 'pandoc >= 2.11' \
-		'pandoc    >= 2.11  && < 2.12' 'pandoc    >= 2.11'
+		'pandoc    >= 2.11  && < 2.12' 'pandoc    >= 2.11' \
+		'cryptonite           >= 0.25     && < 0.28' 'cryptonite           >= 0.25'
 }
 
 src_configure() {
