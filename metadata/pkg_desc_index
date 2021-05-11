@@ -764,7 +764,7 @@ dev-haskell/haddock 2.24.0: A documentation-generation tool for Haskell librarie
 dev-haskell/haddock-api 2.24.0: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.8.0 1.9.0: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1-r1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.14.0.0-r1: A static website compiler library
+dev-haskell/hakyll 4.14.0.0-r2: A static website compiler library
 dev-haskell/hakyll-agda 0.1.12: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.4: Hakyll SASS compiler over hsass
 dev-haskell/half 0.3-r1 0.3.1: Half-precision floating-point
@@ -1402,7 +1402,8 @@ dev-haskell/parser-combinators 1.2.1: Lightweight package providing commonly use
 dev-haskell/parser-combinators-tests 1.2.1-r1: Test suite of parser-combinators
 dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
-dev-haskell/password 2.1.0.0: Hashing and checking of passwords
+dev-haskell/password 3.0.0.0: Hashing and checking of passwords
+dev-haskell/password-types 1.0.0.0: Types for handling passwords
 dev-haskell/patch 0.0.3.2: Data structures for describing changes to other data structures
 dev-haskell/path 0.7.0 0.8.0: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
@@ -2197,7 +2198,7 @@ dev-util/hsdev 0.3.4.0-r3: Haskell development library
 dev-util/shellcheck 0.7.2: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.14: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.16.3: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.16.3-r1: a distributed, interactive, smart revision control system
 dev-vcs/git-annex 8.20200810 8.20210330: manage files with git, without checking their contents into git
 games-action/monadius 0.99: 2-D arcade scroller
 games-arcade/shu-thing 1.1.4: A vector shooter game
