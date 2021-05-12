@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="tools">Build associated tools (in general you won't need this)</flag>
+	</use>
+	<longdescription>
+		This is based on the elm-vegalite package
+		(&lt;http://package.elm-lang.org/packages/gicentre/elm-vegalite/latest&gt;)
+		by Jo Wood of the giCentre at the City University of London.
+	</longdescription>
+</pkgmetadata>
