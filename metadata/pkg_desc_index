@@ -993,6 +993,7 @@ dev-haskell/httpd-shed 0.4.1.1: A simple web-server with an interact style API
 dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding algorithm
 dev-haskell/hunit 1.6.2.0: A unit testing framework for Haskell
 dev-haskell/hunit-approx 1.1.1.1: Approximate equality for floating point numbers with HUnit
+dev-haskell/hvega 0.11.0.1: Create Vega-Lite visualizations (version 4) in Haskell
 dev-haskell/hxt 9.3.1.18: A collection of tools for processing XML with Haskell
 dev-haskell/hxt-charproperties 9.4.0.0: Character properties and classes for XML and Unicode
 dev-haskell/hxt-http 9.1.5.2: Interface to native Haskell HTTP package HTTP
