@@ -994,6 +994,7 @@ dev-haskell/huffman 1.0.1: Pure Haskell implementation of the Huffman encoding a
 dev-haskell/hunit 1.6.2.0: A unit testing framework for Haskell
 dev-haskell/hunit-approx 1.1.1.1: Approximate equality for floating point numbers with HUnit
 dev-haskell/hvega 0.11.0.1: Create Vega-Lite visualizations (version 4) in Haskell
+dev-haskell/hvega-theme 0.2.0.4: Theme for hvega
 dev-haskell/hxt 9.3.1.18: A collection of tools for processing XML with Haskell
 dev-haskell/hxt-charproperties 9.4.0.0: Character properties and classes for XML and Unicode
 dev-haskell/hxt-http 9.1.5.2: Interface to native Haskell HTTP package HTTP
@@ -1453,6 +1454,7 @@ dev-haskell/pipes-text 0.0.2.5-r2: properly streaming text
 dev-haskell/pipes-zlib 0.4.4.2: Zlib and GZip compression and decompression for Pipes streams
 dev-haskell/placeholders 0.1: Placeholders for use while developing Haskell code
 dev-haskell/plailude 0.6.0-r1: plaimi's prelude
+dev-haskell/ploterific 0.1.0.1: Basic plotting of tabular data for the command line
 dev-haskell/plugins 1.6.1: Dynamic linking for Haskell and C objects
 dev-haskell/plugins-auto 0.0.4: Automatic recompilation and reloading of haskell modules
 dev-haskell/pointed 5.0.2: Pointed and copointed data
