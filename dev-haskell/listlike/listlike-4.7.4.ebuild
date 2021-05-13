@@ -10,6 +10,7 @@ inherit haskell-cabal
 
 MY_PN="ListLike"
 MY_P="${MY_PN}-${PV}"
+S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="Generalized support for list-like structures"
 HOMEPAGE="https://github.com/ddssff/listlike"
@@ -18,21 +19,17 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/dlist-0.7:=[profile?] <dev-haskell/dlist-1.1:=[profile?]
 	>=dev-haskell/fmlist-0.8:=[profile?] <dev-haskell/fmlist-0.10:=[profile?]
-	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	dev-haskell/utf8-string:=[profile?]
+	>=dev-haskell/utf8-string-0.3.1:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.5:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-2
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-3
 		>=dev-haskell/random-1 <dev-haskell/random-2 )
 "
-
-S="${WORKDIR}/${MY_P}"
