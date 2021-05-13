@@ -2191,7 +2191,7 @@ dev-util/brittany 0.13.1.1: Haskell source code formatter
 dev-util/bustle 0.8.0: Draw sequence diagrams of D-Bus traffic
 dev-util/cabal-fmt 0.1.5.1: Format .cabal files
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
-dev-util/codex 0.6.0.0 0.6.0.0-r1: A ctags file generator for cabal project dependencies
+dev-util/codex 0.6.0.0 0.6.0.0-r2: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
 dev-util/hadolint 1.22.1: Dockerfile Linter JavaScript API
 dev-util/haskell-language-server 1.0.0.0: LSP server for GHC
