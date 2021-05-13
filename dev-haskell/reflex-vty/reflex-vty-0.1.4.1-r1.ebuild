@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/bimap-0.3.3:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/text-1.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/text-icu-0.7:=[profile?] <dev-haskell/text-icu-0.8:=[profile?]
-	>=dev-haskell/vty-5.21:=[profile?] <dev-haskell/vty-5.29:=[profile?]
+	>=dev-haskell/vty-5.21:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
@@ -49,7 +49,8 @@ src_prepare() {
 	# Upstream has not updated these yet
 	cabal_chdeps \
 		'base >= 4.10.0 && < 4.14' 'base >= 4.10.0' \
-		'bimap >= 0.3.3 && < 0.4' 'bimap >= 0.3.3'
+		'bimap >= 0.3.3 && < 0.4' 'bimap >= 0.3.3' \
+		'vty >= 5.21 && < 5.29' 'vty >= 5.21'
 }
 
 src_configure() {
