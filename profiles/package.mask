@@ -1,3 +1,9 @@
+# hololeap <hololeap@protonmail.com> (2021-05-12)
+# dev-lang/purescript-0.14.1 requires
+# ~dev-haskell/language-javascript-0.7.0.0
+# Mask any versions higher than that until purescript bumps its dependencies.
+>=dev-haskell/language-javascript-0.7.0.1
+
 # Jack Todaro <solpeth@posteo.org> (2021-05-06)
 # Causes upgrade conflict warning during world updates.
 # Mask until the rest of the ecosystem catches up.
