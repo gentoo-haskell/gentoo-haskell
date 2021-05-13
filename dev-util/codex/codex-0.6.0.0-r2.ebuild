@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/ascii-progress-0.3:=[profile?]
 	>=dev-haskell/cabal-3.0:=[profile?]
 	>=dev-haskell/conduit-1.3.0:=[profile?]
-	>=dev-haskell/cryptonite-0.21:=[profile?] <dev-haskell/cryptonite-0.27:=[profile?]
+	>=dev-haskell/cryptonite-0.21:=[profile?]
 	>=dev-haskell/hackage-db-2:=[profile?] <dev-haskell/hackage-db-3:=[profile?]
 	>=dev-haskell/http-client-0.4:=[profile?] <=dev-haskell/http-client-0.6.5:=[profile?]
 	dev-haskell/http-client-tls:=[profile?]
@@ -38,6 +38,8 @@ DEPEND="${RDEPEND}
 
 src_prepare(){
 	default
+
 	cabal_chdeps \
-		"Cabal               >= 3.0        && < 3.1" "Cabal >= 3.0"
+		'Cabal               >= 3.0        && < 3.1' 'Cabal >= 3.0' \
+		'cryptonite          >= 0.21       && < 0.27' 'cryptonite          >= 0.21'
 }
