@@ -1574,7 +1574,7 @@ dev-haskell/reflection 2.1.6: Reifies arbitrary terms into types that can be ref
 dev-haskell/reflex 0.6.3-r2 0.8.1.0: Higher-order Functional Reactive Programming
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
 dev-haskell/reflex-process 0.3.1.0: Reflex FRP interface for running system processes
-dev-haskell/reflex-vty 0.1.4.1: Reflex FRP host and widgets for VTY applications
+dev-haskell/reflex-vty 0.1.4.1-r1: Reflex FRP host and widgets for VTY applications
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
 dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.4: Happstack support for reform
