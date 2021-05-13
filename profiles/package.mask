@@ -1,3 +1,23 @@
+# hololeap <hololeap@protonmail.com> (2021-05-13)
+# These packages depend on dev-haskell/numhask. In addition, some of them
+# have been deprecated:
+# 
+# chart-unit has been deprecated in favor of chart-svg
+# numhask-prelude has been deprecated in favor of numhask
+# numhask-test has been deprecated in favor of numhask-hedgehog
+# numhask-hedgehog has been deprecated in favor of numhask
+# numhask-histogram has been deprecated in favor of numhask-space
+dev-haskell/chart-unit
+dev-haskell/numhask-histogram
+dev-haskell/numhask-prelude
+dev-haskell/numhask-range
+dev-haskell/numhask-test
+
+# hololeap <hololeap@protonmail.com> (2021-05-13)
+# Version in tree is severely outdated and current version depends on
+# dev-haskell/random-1.2.0
+dev-haskell/numhask
+
 # hololeap <hololeap@protonmail.com> (2021-05-12)
 # dev-lang/purescript-0.14.1 requires
 # ~dev-haskell/language-javascript-0.7.0.0
