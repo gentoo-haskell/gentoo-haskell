@@ -76,10 +76,6 @@ dev-haskell/hls-exactprint-utils
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
 
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Needs porting to Cabal-3
-dev-lang/purescript
-
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
 >=dev-haskell/hsemail-2              # smptclient-1.1.0
