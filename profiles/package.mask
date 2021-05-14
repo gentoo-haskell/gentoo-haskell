@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (2021-05-14)
+# Out of date and no revdeps. Masked for removal.
+dev-haskell/yi-language
+
 # hololeap <hololeap@protonmail.com> (2021-05-13)
 # These packages depend on dev-haskell/numhask. In addition, some of them
 # have been deprecated:
