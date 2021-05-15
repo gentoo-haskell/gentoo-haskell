@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
-	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.2:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.3:=[profile?]
 	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.9:=[profile?]
@@ -52,3 +52,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers-compat
 		>=dev-haskell/wai-extra-3.0.24.3 <dev-haskell/wai-extra-3.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base64-bytestring   >= 1.0.0.1  && < 1.2' 'base64-bytestring   >= 1.0.0.1'
+}
