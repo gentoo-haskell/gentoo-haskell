@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
-	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.2:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?]
 	>=dev-haskell/bifunctors-5.5.3:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/free-5.1:=[profile?] <dev-haskell/free-5.2:=[profile?]
@@ -41,5 +41,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 
-	cabal_chdeps 'QuickCheck >= 2.12.6.1 && < 2.14' 'QuickCheck >= 2.12.6.1'
+	cabal_chdeps \
+		'QuickCheck >= 2.12.6.1 && < 2.14' 'QuickCheck >= 2.12.6.1' \
+		'base64-bytestring     >= 1.0.0.1  && < 1.2' 'base64-bytestring     >= 1.0.0.1'
 }
