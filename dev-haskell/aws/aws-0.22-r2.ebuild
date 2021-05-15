@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -22,7 +22,7 @@ RESTRICT=test # requires aws account
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
-	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/blaze-builder-0.2.1.4:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/byteable-0.1:=[profile?] <dev-haskell/byteable-0.2:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
@@ -71,6 +71,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/transformers-base-0.4
 		!examples? ( >=dev-haskell/errors-2.0 ) )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base64-bytestring    == 1.0.*' 'base64-bytestring    >= 1.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
