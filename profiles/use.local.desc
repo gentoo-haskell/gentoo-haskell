@@ -323,6 +323,7 @@ dev-haskell/postgresql-typed:tls - Enable TLS (SSL) support in PostgreSQL server
 dev-haskell/postgresql-typed:uuid - Support the UUID type via uuid (implied by binary).
 dev-haskell/pretty-simple:buildexample - Build a small example program showing how to use the pPrint function
 dev-haskell/pretty-simple:buildexe - Build a small command line program that pretty-prints anything from stdin.
+dev-haskell/protolude:dev - Build development tools
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
 dev-haskell/publicsuffixlist:runtimelist - read suffix list from dist at startup instead of embedding list into library
 dev-haskell/quickcheck:template-haskell - Build Test.QuickCheck.All, which uses Template Haskell.
@@ -417,6 +418,7 @@ dev-haskell/streamly:streamk - Use CPS style streams when possible
 dev-haskell/strict:assoc - Build with assoc dependency
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
+dev-haskell/tasty-golden:build-example - 
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
@@ -484,7 +486,6 @@ dev-lang/ghc:llvm - Enable LLVM backend via sys-devel/llvm.
 dev-lang/ghc:numa - Enable NUMA thread balancing policy using sys-process/numactl.
 dev-lang/idris:ffi - Build support for libffi
 dev-lang/idris:gmp - Use GMP for Integers
-dev-lang/purescript:release - prevents inclusion of extra info e.g. commit SHA in --version outpu
 dev-util/brittany:brittany-dev-lib - set buildable false for anything but lib
 dev-util/brittany:brittany-test-perf - determines if performance test suite is enabled
 dev-util/bustle:interactivetests - Build interactive test programs
