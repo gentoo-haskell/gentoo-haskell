@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	<dev-haskell/ansi-terminal-0.12:=[profile?]
 	<dev-haskell/ansi-wl-pprint-0.7:=[profile?]
 	<dev-haskell/async-2.3:=[profile?]
-	<dev-haskell/base64-bytestring-1.2:=[profile?]
+	dev-haskell/base64-bytestring:=[profile?]
 	>=dev-haskell/blaze-html-0.6.1.3:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/blaze-markup-0.5.2.1:=[profile?] <dev-haskell/blaze-markup-0.10:=[profile?]
 	>=dev-haskell/cheapskate-0.1.1.2:=[profile?] <dev-haskell/cheapskate-0.2:=[profile?]
@@ -87,7 +87,8 @@ src_prepare() {
 		'aeson >= 0.6 && < 1.5' 'aeson >= 0.6' \
 		'optparse-applicative >= 0.13 && < 0.16' 'optparse-applicative >= 0.13' \
 		'megaparsec >= 7.0.4 && < 9' 'megaparsec >= 7.0.4' \
-		'network >= 2.7 && < 3.1.2' 'network >= 2.7'
+		'network >= 2.7 && < 3.1.2' 'network >= 2.7' \
+		'base64-bytestring < 1.2' 'base64-bytestring'
 }
 
 src_configure() {
