@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/aeson:=[profile?]
-	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/nonce-1.0:=[profile?] <dev-haskell/nonce-1.1:=[profile?]
@@ -32,3 +32,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.1 <dev-haskell/hspec-3
 		dev-haskell/quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base64-bytestring         == 1.0.*' 'base64-bytestring         >= 1.0'
+}

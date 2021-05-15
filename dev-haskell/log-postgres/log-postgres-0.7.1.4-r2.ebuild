@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -21,7 +21,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
-	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/hpqtypes-1.7:=[profile?] <=dev-haskell/hpqtypes-2.0:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/log-base-0.7:=[profile?] <dev-haskell/log-base-0.10:=[profile?]
@@ -47,5 +47,6 @@ src_prepare() {
 
 	# They haven't relaxed text-show yet
 	cabal_chdeps \
-		'text-show             >= 3.7  && < 3.8  || ^>= 3.8' 'text-show >= 3.7'
+		'text-show             >= 3.7  && < 3.8  || ^>= 3.8' 'text-show >= 3.7' \
+		'base64-bytestring    ^>= 1.0' 'base64-bytestring    >= 1.0'
 }

@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+network-uri"
 
-RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.2:=[profile?]
+RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
@@ -48,6 +48,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( dev-haskell/hunit )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base64-bytestring      >= 1.0  && < 1.2' 'base64-bytestring      >= 1.0'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

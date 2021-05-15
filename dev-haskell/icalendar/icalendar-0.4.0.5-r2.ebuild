@@ -20,7 +20,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.1:=[profile?]
+RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/case-insensitive-0.4:=[profile?]
 	>=dev-haskell/data-default-0.3:=[profile?]
 	>=dev-haskell/mime-0.4.0.2:=[profile?]
@@ -43,7 +43,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'containers >= 0.5 && < 0.6' 'containers >= 0.5' \
-		'network >= 2.6 && < 2.7' 'network >= 2.6'
+		'network >= 2.6 && < 2.7' 'network >= 2.6' \
+		'base64-bytestring ==1.0.*' 'base64-bytestring >=1.0'
 }
 
 src_configure() {
