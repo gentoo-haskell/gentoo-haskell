@@ -1,3 +1,33 @@
+# hololeap <hololeap@protonmail.com> (2021-05-14)
+# Out of date and no revdeps. Masked for removal.
+dev-haskell/yi-language
+
+# hololeap <hololeap@protonmail.com> (2021-05-13)
+# These packages depend on dev-haskell/numhask. In addition, some of them
+# have been deprecated:
+# 
+# chart-unit has been deprecated in favor of chart-svg
+# numhask-prelude has been deprecated in favor of numhask
+# numhask-test has been deprecated in favor of numhask-hedgehog
+# numhask-hedgehog has been deprecated in favor of numhask
+# numhask-histogram has been deprecated in favor of numhask-space
+dev-haskell/chart-unit
+dev-haskell/numhask-histogram
+dev-haskell/numhask-prelude
+dev-haskell/numhask-range
+dev-haskell/numhask-test
+
+# hololeap <hololeap@protonmail.com> (2021-05-13)
+# Version in tree is severely outdated and current version depends on
+# dev-haskell/random-1.2.0
+dev-haskell/numhask
+
+# hololeap <hololeap@protonmail.com> (2021-05-12)
+# dev-lang/purescript-0.14.1 requires
+# ~dev-haskell/language-javascript-0.7.0.0
+# Mask any versions higher than that until purescript bumps its dependencies.
+>=dev-haskell/language-javascript-0.7.0.1
+
 # Jack Todaro <solpeth@posteo.org> (2021-05-06)
 # Causes upgrade conflict warning during world updates.
 # Mask until the rest of the ecosystem catches up.
@@ -49,10 +79,6 @@ dev-haskell/hls-exactprint-utils
 # Jack Todaro <solpeth@posteo.org> (3 July 2020)
 # Mask dev-haskell/random-1.2 and reverse dependencies
 >=dev-haskell/random-1.2
-
-# Jack Todaro <solpeth@posteo.org> (2 July 2020)
-# Needs porting to Cabal-3
-dev-lang/purescript
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
