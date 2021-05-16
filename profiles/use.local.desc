@@ -177,7 +177,6 @@ dev-haskell/hashtables:detailed-profiling - add detailed profiling information t
 dev-haskell/hashtables:portable - if on, use only pure Haskell code and no GHC extensions.
 dev-haskell/hashtables:unsafe-tricks - turn on unsafe GHC tricks
 dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
-dev-haskell/haskell-lsp:demo-exe - Build the lsp-hello demo executable
 dev-haskell/haskellnet:network-bsd - Use network-bsd
 dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
