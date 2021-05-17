@@ -1190,9 +1190,9 @@ dev-haskell/map-syntax 0.3-r1: Syntax sugar for defining maps
 dev-haskell/markdown 0.1.17.4: Convert Markdown to HTML, with XSS protection
 dev-haskell/markdown-unlit 0.5.0: Literate Haskell support for Markdown
 dev-haskell/markov-chain 0.0.3.4: Markov Chains for generating random sequences with a user definable behaviour
-dev-haskell/massiv 0.5.8.0: Massiv is an Array Library
-dev-haskell/massiv-io 0.3.0.1: Import/export of Image files into massiv Arrays
-dev-haskell/massiv-test 0.1.5: Library that contains generators, properties and tests for Massiv Array Library
+dev-haskell/massiv 0.6.0.0: Massiv is an Array Library
+dev-haskell/massiv-io 0.4.1.0: Import/export of Image files into massiv Arrays
+dev-haskell/massiv-test 0.1.6.1: Library that contains generators, properties and tests for Massiv Array Library
 dev-haskell/math-functions 0.3.4.1: Collection of tools for numeric computations
 dev-haskell/matrices 0.5.0: native matrix based on vector
 dev-haskell/matrix 0.3.6.1: A native implementation of matrix operations
