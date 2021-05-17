@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package contains functionality for import/export of arrays
-		into the real world. For now it only has the ability to read/write
-		image files in various formats.
-	</longdescription>
 </pkgmetadata>

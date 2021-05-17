@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="unsafe-checks">Enable all the bounds checks for unsafe functions at the cost of significant performance penalty</flag>
+		<flag name="unsafe-checks">Enable all the bounds checks for unsafe functions at the cost of
+significant performance penalty</flag>
 	</use>
 </pkgmetadata>
