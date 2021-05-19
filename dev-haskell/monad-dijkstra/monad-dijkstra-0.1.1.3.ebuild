@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+PATCHES=( "${FILESDIR}/${P}-fix-tests.diff" )
+
 RDEPEND=">=dev-haskell/free-4.12.0:=[profile?] <dev-haskell/free-5.2:=[profile?]
 	>=dev-haskell/mtl-2.2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/psqueues-0.2.0.0:=[profile?] <dev-haskell/psqueues-0.3:=[profile?]
@@ -25,5 +27,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/hlint-1.0 <dev-haskell/hlint-4
 		dev-haskell/tasty
-		dev-haskell/tasty-hspec )
+		dev-haskell/tasty-hspec
+		dev-haskell/hspec )
 "
