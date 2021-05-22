@@ -39,12 +39,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/wai-extra
 		dev-haskell/yesod
 		>=dev-haskell/yesod-test-1.5.0.1
-		>=dev-haskell/yesod-auth-1.4.18 <dev-haskell/yesod-auth-1.7 )
+		>=dev-haskell/yesod-auth-1.6.1 <dev-haskell/yesod-auth-1.7 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'persistent-sqlite  >= 2.1 && < 2.12' 'persistent-sqlite  >= 2.1'
-}
