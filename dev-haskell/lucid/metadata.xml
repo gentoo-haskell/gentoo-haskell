@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Clear to write, read and edit DSL for HTML. See the 'Lucid' module
-		for description and documentation.
-	</longdescription>
 </pkgmetadata>
