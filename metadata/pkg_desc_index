@@ -784,7 +784,7 @@ dev-haskell/happstack-server 7.6.1-r1: Web related tools and services
 dev-haskell/happstack-server-tls 7.2.1.1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.12 1.20.0: Happy is a parser generator for Haskell
 dev-haskell/harp 0.4.3.4: HaRP allows pattern-matching with regular expressions
-dev-haskell/hashable 1.2.7.0 1.3.0.0: A class for types that can be converted to a hash value
+dev-haskell/hashable 1.2.7.0 1.3.2.0: A class for types that can be converted to a hash value
 dev-haskell/hashable-time 0.2.1: Hashable instances for Data.Time
 dev-haskell/hashing 0.1.0.1: A pure haskell library implements several hash algorithms
 dev-haskell/hashmap 1.3.3: Persistent containers Map and Set based on hashing
@@ -1033,7 +1033,7 @@ dev-haskell/inline-c 0.9.1.3: Write Haskell source files including C code inline
 dev-haskell/inline-c-cpp 0.2.1.0: Lets you embed C++ code into Haskell
 dev-haskell/insert-ordered-containers 0.2.3.1: Associative containers retaining insertion order for traversals
 dev-haskell/inspection-testing 0.4.2.4: GHC plugin to do inspection testing
-dev-haskell/integer-logarithms 1.0.3-r1: Integer logarithms
+dev-haskell/integer-logarithms 1.0.3.1: Integer logarithms
 dev-haskell/integer-roots 1.0: Integer roots and perfect powers
 dev-haskell/integration 0.2.1-r1: Fast robust numeric integration via tanh-sinh quadrature
 dev-haskell/interlude 0.1.2-r1: Replaces some Prelude functions for enhanced error reporting
@@ -1644,7 +1644,7 @@ dev-haskell/scalpel 0.6.1: A high level web scraping library for Haskell
 dev-haskell/scalpel-core 0.6.1: A high level web scraping library for Haskell
 dev-haskell/scanner 0.3.1: Fast non-backtracking incremental combinator parsing for bytestrings
 dev-haskell/scheduler 1.5.0: Work stealing scheduler
-dev-haskell/scientific 0.3.6.2-r1: Numbers represented using scientific notation
+dev-haskell/scientific 0.3.7.0: Numbers represented using scientific notation
 dev-haskell/scotty 0.12: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scrypt 0.5.0: Stronger password hashing via sequential memory-hard functions
 dev-haskell/sdl 0.6.7.0: Binding to libSDL
@@ -1920,7 +1920,7 @@ dev-haskell/threads 0.5.1.6: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.9.0.0: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
 dev-haskell/tidal 1.4.8: Pattern language for improvised music
-dev-haskell/time-compat 1.9.5: Compatibility package for time
+dev-haskell/time-compat 1.9.6: Compatibility package for time
 dev-haskell/time-lens 0.4.0.2: Lens-based interface to Data.Time data structures
 dev-haskell/time-locale-compat 0.1.1.5: Compatibility of TimeLocale between old-locale and time-1.5
 dev-haskell/time-manager 0.0.0: Scalable timer
@@ -1992,7 +1992,7 @@ dev-haskell/unixutils 1.54.1: A crude interface between Haskell and Unix-like op
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
 dev-haskell/unliftio 0.2.14: The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)
 dev-haskell/unliftio-core 0.2.0.1: The MonadUnliftIO typeclass for unlifting monads to IO
-dev-haskell/unordered-containers 0.2.12.0 0.2.13.0: Efficient hashing-based container types
+dev-haskell/unordered-containers 0.2.14.0: Efficient hashing-based container types
 dev-haskell/unsafe 0.0-r1: Unified interface to unsafe functions
 dev-haskell/uri 0.1.6.4: Library for working with URIs
 dev-haskell/uri-bytestring 0.3.3.0: Haskell URI parsing as ByteStrings
@@ -2141,12 +2141,12 @@ dev-haskell/yesod 1.6.1.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
 dev-haskell/yesod-auth 1.6.10.3: Authentication for Yesod
 dev-haskell/yesod-auth-basic 0.1.0.3: Yesod Middleware for HTTP Basic Authentication
-dev-haskell/yesod-auth-hashdb 1.7.1.6: Authentication plugin for Yesod
+dev-haskell/yesod-auth-hashdb 1.7.1.7: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.6.3.0: OAuth 2.0 authentication plugins
 dev-haskell/yesod-bin 1.6.1: The yesod helper executable
 dev-haskell/yesod-colonnade 1.3.0.1: Helper functions for using yesod with colonnade
 dev-haskell/yesod-content-pdf 0.2.0.5: PDF Content Type for Yesod
-dev-haskell/yesod-core 1.6.19.0: Creation of type-safe, RESTful web applications
+dev-haskell/yesod-core 1.6.20.1: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-default 1.2.0: Default config and main functions for your yesod application (deprecated)
 dev-haskell/yesod-elements 1.1.1: Non template haskell markup building function in the spirit of lucid
 dev-haskell/yesod-eventsource 1.6.0.1: Server-sent events support for Yesod apps
@@ -2205,7 +2205,7 @@ dev-util/hsdev 0.3.4.0-r3: Haskell development library
 dev-util/shellcheck 0.7.2: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.14: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.16.3-r1: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.16.4: a distributed, interactive, smart revision control system
 dev-vcs/git-annex 8.20200810 8.20210330: manage files with git, without checking their contents into git
 games-action/monadius 0.99: 2-D arcade scroller
 games-arcade/shu-thing 1.1.4: A vector shooter game
