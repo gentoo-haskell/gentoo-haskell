@@ -1175,7 +1175,7 @@ dev-haskell/lsp 1.1.1.0: Haskell library for the Microsoft Language Server Proto
 dev-haskell/lsp-test 0.13.0.0: Functional test framework for LSP servers
 dev-haskell/lsp-types 1.1.0.0: Haskell library for the Microsoft Language Server Protocol, data types
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
-dev-haskell/lucid 2.9.12: Clear to write, read and edit DSL for HTML
+dev-haskell/lucid 2.9.12.1: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
 dev-haskell/lukko 0.1.1.2: File locking
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
