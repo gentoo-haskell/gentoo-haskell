@@ -1390,7 +1390,7 @@ dev-haskell/pango 0.13.8.1-r1: Binding to the Pango text rendering engine
 dev-haskell/panic 0.4.0.1: A convenient way to panic
 dev-haskell/pantry 0.4.0.2 0.5.1.5: Content addressable Haskell package management
 dev-haskell/parallel 3.2.2.0: Parallel programming library
-dev-haskell/parallel-io 0.3.3-r3: Combinators for executing IO actions in parallel on a thread pool
+dev-haskell/parallel-io 0.3.4: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.2.0.9: Full-featured command-line argument parsing library
 dev-haskell/parsec 3.1.14.0: Monadic parser combinators
 dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
