@@ -785,7 +785,7 @@ dev-haskell/happstack-server-tls 7.2.1.1: extend happstack-server with https:// 
 dev-haskell/happy 1.19.12 1.20.0: Happy is a parser generator for Haskell
 dev-haskell/harp 0.4.3.4: HaRP allows pattern-matching with regular expressions
 dev-haskell/hashable 1.2.7.0 1.3.2.0: A class for types that can be converted to a hash value
-dev-haskell/hashable-time 0.2.1: Hashable instances for Data.Time
+dev-haskell/hashable-time 0.3: Hashable instances for Data.Time
 dev-haskell/hashing 0.1.0.1: A pure haskell library implements several hash algorithms
 dev-haskell/hashmap 1.3.3: Persistent containers Map and Set based on hashing
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
@@ -1561,7 +1561,7 @@ dev-haskell/reactive-banana-wx 1.1.1.0-r2: Examples for the reactive-banana libr
 dev-haskell/readable 0.3.1: Reading from Text and ByteString
 dev-haskell/readargs 1.2.3: Simple command line argument parsing
 dev-haskell/readline 1.0.3.0-r1: An interface to the GNU readline library
-dev-haskell/rebase 1.10.0.1: A more progressive alternative to the "base" package
+dev-haskell/rebase 1.12.1: A more progressive alternative to the "base" package
 dev-haskell/recaptcha 0.1.0.4: Functions for using the reCAPTCHA service in web applications
 dev-haskell/record-dot-preprocessor 0.2.7-r1: Preprocessor to allow record.field syntax
 dev-haskell/record-hasfield 1.0: A version of GHC.Records as available in future GHCs
@@ -1609,7 +1609,7 @@ dev-haskell/repl-toolkit 1.1.0.0: Toolkit for quickly whipping up config files a
 dev-haskell/repline 0.4.0.0: Haskeline wrapper for GHCi-like REPL interfaces
 dev-haskell/req 3.9.0: Easy-to-use, type-safe, expandable, high-level HTTP client library
 dev-haskell/rere 0.1: Regular-expressions extended with fixpoints for context-free powers
-dev-haskell/rerebase 1.10.0.1: Reexports from "base" with a bunch of other standard libraries
+dev-haskell/rerebase 1.12.1: Reexports from "base" with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.2.4.2: Deterministic allocation and freeing of scarce resources
