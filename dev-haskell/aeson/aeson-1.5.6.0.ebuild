@@ -44,7 +44,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/base16-bytestring
 		>=dev-haskell/diff-0.4 <dev-haskell/diff-0.5
 		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.15
-		>=dev-haskell/hashable-time-0.2.1 <dev-haskell/hashable-time-0.3
+		>=dev-haskell/hashable-time-0.2.1
 		>=dev-haskell/integer-logarithms-1 <dev-haskell/integer-logarithms-1.1
 		>=dev-haskell/quickcheck-2.14.2 <dev-haskell/quickcheck-2.15
 		>=dev-haskell/quickcheck-instances-0.3.25.2 <dev-haskell/quickcheck-instances-0.4
@@ -53,6 +53,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit
 		dev-haskell/tasty-quickcheck )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hashable-time >= 0.2.1 && <0.3' 'hashable-time >= 0.2.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
