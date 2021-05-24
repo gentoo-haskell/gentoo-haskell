@@ -180,7 +180,6 @@ dev-haskell/haskellnet:network-bsd - Use network-bsd
 dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
-dev-haskell/hexpat:bundled-expat - Use bundled expat instead of dev-libs/expat
 dev-haskell/hie-compat:ghc-lib - build against ghc-lib instead of the ghc package
 dev-haskell/hiedb:executable - Install the hiedb executable
 dev-haskell/highlighter:executable - Install a "highlighter" executable
