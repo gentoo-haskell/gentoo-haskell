@@ -1,0 +1,31 @@
+
+--- a/hnix-store-core.cabal
++++ b/hnix-store-core.cabal
+@@ -104,6 +104,7 @@ test-suite format-tests
+     , directory
+     , filepath
+     , process
++    , hspec
+     , tasty
+     , tasty-golden
+     , tasty-hspec
+--- a/tests/Hash.hs
++++ b/tests/Hash.hs
+@@ -16,6 +16,7 @@ import           Data.Text                   (Text)
+ 
+ import           Test.Tasty.Hspec
+ import           Test.Tasty.QuickCheck
++import           Test.Hspec
+ 
+ import           System.Nix.Hash
+ import           System.Nix.StorePath
+--- a/tests/NarFormat.hs
++++ b/tests/NarFormat.hs
+@@ -36,6 +36,7 @@ import qualified System.IO                        as IO
+ import qualified System.IO.Temp                   as Temp
+ import qualified System.Posix.Process             as Unix
+ import qualified System.Process                   as P
++import           Test.Hspec
+ import           Test.Tasty                       as T
+ import           Test.Tasty.Hspec
+ import qualified Test.Tasty.HUnit                 as HU
