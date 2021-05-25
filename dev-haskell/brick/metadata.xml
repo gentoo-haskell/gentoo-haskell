@@ -6,33 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="demos">Build demonstration programs.</flag>
+		<flag name="demos">Build demonstration programs</flag>
 	</use>
-	<longdescription>
-		Write terminal applications painlessly with 'brick'! You write an
-		event handler and a drawing function and the library does the rest.
-		
-		
-		&gt; module Main where
-		&gt;
-		&gt; import Brick
-		&gt;
-		&gt; ui :: Widget
-		&gt; ui = str "Hello, world!"
-		&gt;
-		&gt; main :: IO ()
-		&gt; main = simpleMain ui
-		
-		
-		To get started, see:
-		
-		* &lt;https://github.com/jtdaugherty/brick/blob/master/README.md The README&gt;
-		
-		* The &lt;https://github.com/jtdaugherty/brick/blob/master/docs/guide.rst Brick user guide&gt;
-		
-		* The demonstration programs in the 'programs' directory
-		
-		
-		This package deprecates &lt;http://hackage.haskell.org/package/vty-ui vty-ui&gt;.
-	</longdescription>
 </pkgmetadata>
