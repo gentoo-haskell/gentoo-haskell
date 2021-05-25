@@ -1,0 +1,20 @@
+--- a/htoml.cabal
++++ b/htoml.cabal
+@@ -66,6 +66,7 @@ test-suite htoml-test
+                         , htoml
+                         , bytestring
+                         , file-embed
++                        , hspec
+                         , tasty
+                         , tasty-hspec
+                         , tasty-hunit
+--- a/test/Text/Toml/Parser/Spec.hs
++++ b/test/Text/Toml/Parser/Spec.hs
+@@ -4,6 +4,7 @@ module Text.Toml.Parser.Spec where
+ 
+ import           Test.Tasty          (TestTree)
+ import           Test.Tasty.Hspec
++import           Test.Hspec
+ 
+ import           Data.HashMap.Strict (fromList)
+ import           Data.Time.Calendar  (Day (..))
