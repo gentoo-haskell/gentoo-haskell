@@ -47,6 +47,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/temporary )
 "
 
+PATCHES=("${FILESDIR}"/${P}-tasty-hspec-1.1.7.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag bounded-memory bounded_memory)
