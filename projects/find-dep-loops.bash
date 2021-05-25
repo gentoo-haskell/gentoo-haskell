@@ -12,4 +12,4 @@
 # Example output and fixes: https://bugs.gentoo.org/760863#c9
 
 # Problems are printed on stderr
-python dump_dep_graph.py | sort -u | LANG=C tsort >/dev/null
+${PYTHON-python} dump_dep_graph.py | sort -u | LANG=C tsort >/dev/null
