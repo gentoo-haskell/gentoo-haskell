@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">dev-haskell/brick-0.26.1:= <dev-haskell/brick-0.54:=
+RDEPEND=">dev-haskell/brick-0.26.1:=
 	>=dev-haskell/ghc-prof-1.4:= <dev-haskell/ghc-prof-1.5:=
 	>=dev-haskell/lens-4.14:= <dev-haskell/lens-4.20:=
 	>=dev-haskell/scientific-0.3.4.4:= <dev-haskell/scientific-0.4:=
@@ -35,5 +35,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'vty >= 5.13 && < 5.29' 'vty >= 5.13'
+		'vty >= 5.13 && < 5.29' 'vty >= 5.13' \
+		'brick > 0.26.1 && < 0.54' 'brick > 0.26.1'
 }
