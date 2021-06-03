@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,6 +16,9 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+# https://github.com/haskell-suite/haskell-names/issues/115
+RESTRICT=test # tests fail due to reliance on json field ordering
 
 RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
