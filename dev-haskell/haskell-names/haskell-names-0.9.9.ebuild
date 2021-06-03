@@ -17,6 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+# https://github.com/haskell-suite/haskell-names/issues/115
 RESTRICT=test # tests fail due to reliance on json field ordering
 
 RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
