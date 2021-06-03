@@ -31,6 +31,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-quickcheck )
 "
 
+PATCHES=("${FILESDIR}"/${PN}-0.28-align-hack.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-check_alignment \
