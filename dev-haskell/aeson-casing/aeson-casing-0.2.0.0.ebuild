@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,6 +16,9 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+# Upstream bug:  https://github.com/AndrewRademacher/aeson-casing/issues/7
+RESTRICT=test # does not preserve ordering
 
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
