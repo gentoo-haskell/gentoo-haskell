@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,6 +16,9 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+# https://github.com/tdammers/ginger/issues/64
+RESTRICT=test # fails at least on recursive loop test
 
 RDEPEND=">=dev-haskell/aeson-1.4.2.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.7:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
