@@ -227,7 +227,7 @@ dev-haskell/bytestring-to-vector 0.3.0.1: Convert between ByteString and Vector.
 dev-haskell/bytestring-trie 0.2.5.0: An efficient finite map from (byte)strings to values
 dev-haskell/bzlib 0.5.1.0: Compression and decompression in the bzip2 format
 dev-haskell/c2hs 0.28.7: C->Haskell FFI tool that gives some cross-language type safety
-dev-haskell/cabal 3.0.1.0 3.2.0.0 3.2.1.0 3.2.1.0-r1 3.3.9999 3.4.0.0: A framework for packaging Haskell software
+dev-haskell/cabal 3.0.1.0 3.2.0.0 3.2.1.0-r1 3.3.9999 3.4.0.0: A framework for packaging Haskell software
 dev-haskell/cabal-doctest 1.0.8-r2: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.7: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-install 3.0.0.0 3.2.0.0 9999: The command-line interface for Cabal and Hackage
