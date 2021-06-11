@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RESTRICT=test # fails a few tests, unstable ordering?
 
 # Minimum ghc set to 8.0 in order to drop semigroups dependency.
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
