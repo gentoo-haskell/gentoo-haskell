@@ -587,6 +587,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9999-or1k-cpu.patch
 
+		eapply "${FILESDIR}"/${PN}-9999-ppc-NCG.patch
+
 		bump_libs
 
 		eapply_user
