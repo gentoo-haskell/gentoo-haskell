@@ -11,5 +11,5 @@ RDEPEND=>=dev-haskell/aeson-1:=[profile?] >=dev-haskell/ansi-terminal-0.9:=[prof
 RESTRICT=!test? ( test )
 SLOT=0/1.21
 SRC_URI=https://hackage.haskell.org/package/hledger-1.21/hledger-1.21.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	l10n	6da6797255ab7fb848a02afa0cbc406f	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	f93c6ebbcd4a4e3e3f2328a13511b73a	multiprocessing	65f88f0e80751d45b06bbcfc4b149ccc	ghc-package	c5182eb7e501132153f9710aa822d170	multilib	ba7da83f763a749a2870c28785c6dc0b	toolchain-funcs	2545dc6f0aaecb2dea61424911e82674	haskell-cabal	658e96e9ebbdc78375837f4aab79399f
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	l10n	3c7381c56a184f0dd5ba3fb824808f30	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	f93c6ebbcd4a4e3e3f2328a13511b73a	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	c5182eb7e501132153f9710aa822d170	multilib	6f710a580aea2e8c7f5be70f8912ad43	toolchain-funcs	7a9551c9a6680454019664620505375a	haskell-cabal	658e96e9ebbdc78375837f4aab79399f
 _md5_=61e4a8a80005be46b8f846780b4ff83b
