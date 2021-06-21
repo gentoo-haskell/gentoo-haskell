@@ -35,12 +35,6 @@ dev-haskell/numhask
 >=dev-haskell/ghc-lib-parser-9.0
 >=dev-haskell/ghc-lib-parser-ex-9.0
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-04-17)
-# Fails to build agains current poppler C library:
-#    parsing output of pkg-config --modversion failed
-# As there are no revdeps let's mask it.
-dev-haskell/poppler
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-27)
 # These are packages that cause some sort of conflict related to ghc-9. Please
 # try to gather all such issues in this section, and add notes as appropriate to
