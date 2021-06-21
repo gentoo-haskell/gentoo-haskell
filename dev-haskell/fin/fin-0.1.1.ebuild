@@ -26,3 +26,11 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/inspection-testing-0.2.0.1 <dev-haskell/inspection-testing-0.5
 		dev-haskell/tagged )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base        >=4.7     && <4.14' 'base        >=4.7' \
+		'QuickCheck  >=2.13.2  && <2.14' 'QuickCheck  >=2.13.2'
+}
