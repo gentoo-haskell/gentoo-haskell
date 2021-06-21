@@ -32,6 +32,14 @@ DEPEND="${RDEPEND}
 		dev-haskell/tagged )
 "
 
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base          >=4.7     && <4.14' 'base          >=4.7' \
+		'QuickCheck  ^>=2.13.2' 'QuickCheck  >=2.13.2'
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag adjunctions adjunctions) \
