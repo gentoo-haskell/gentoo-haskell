@@ -1,6 +1,7 @@
-# hololeap <hololeap@protonmail.com> (2021-05-14)
-# Out of date and no revdeps. Masked for removal.
-dev-haskell/yi-language
+# Sergei Trofimovich <slyfox@gentoo.org> (2021-06-21)
+# Was not ported for newer ghc, cabal or pandoc for past 4 years.
+# Mask for removal.
+dev-haskell/graphalyze
 
 # hololeap <hololeap@protonmail.com> (2021-05-13)
 # These packages depend on dev-haskell/numhask. In addition, some of them
@@ -34,12 +35,6 @@ dev-haskell/numhask
 >=dev-haskell/hlint-3.3
 >=dev-haskell/ghc-lib-parser-9.0
 >=dev-haskell/ghc-lib-parser-ex-9.0
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-04-17)
-# Fails to build agains current poppler C library:
-#    parsing output of pkg-config --modversion failed
-# As there are no revdeps let's mask it.
-dev-haskell/poppler
 
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-27)
 # These are packages that cause some sort of conflict related to ghc-9. Please
