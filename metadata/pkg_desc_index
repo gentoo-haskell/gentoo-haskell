@@ -1465,7 +1465,6 @@ dev-haskell/polyparse 1.12.1 1.13: A variety of alternative parser combinator li
 dev-haskell/polysemy 1.4.0.0-r1: Higher-order, low-boilerplate free monads
 dev-haskell/polysemy-plugin 0.2.5.2: Disambiguate obvious uses of effects
 dev-haskell/polysemy-zoo 0.7.0.0: Experimental, user-contributed effects and interpreters for polysemy
-dev-haskell/poppler 0.14.2-r1: Binding to the Poppler
 dev-haskell/port-utils 0.2.1.0: Utilities for creating and waiting on ports
 dev-haskell/portaudio 0.2.4-r1: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.2.0.0: A binding for PortMedia/PortMidi
@@ -2165,7 +2164,6 @@ dev-haskell/yesod-table 2.0.3: HTML tables for Yesod
 dev-haskell/yesod-test 1.6.12: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.10: Yesod support for Text.Markdown
 dev-haskell/yesod-websockets 0.3.0.3: WebSockets support for Yesod
-dev-haskell/yi-language 0.2.1 0.18.0-r2: Collection of language-related Yi libraries
 dev-haskell/yi-rope 0.7.0.2 0.11: A rope data structure used by Yi
 dev-haskell/zeromq4-haskell 0.8.0: Bindings to ZeroMQ 4.x
 dev-haskell/zip-archive 0.4.1: Library for creating and modifying zip archives
