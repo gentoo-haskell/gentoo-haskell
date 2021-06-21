@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,10 +19,17 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/parsec-3.1.9:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/sqlite-simple-0.4.9:=[profile?] <dev-haskell/sqlite-simple-0.5.0:=[profile?]
-	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.2.4:=[profile?]
+	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
 	test? ( >=dev-haskell/mtl-2.1 <dev-haskell/mtl-2.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'text          >= 1.2   && < 1.2.4' 'text          >= 1.2'
+}
