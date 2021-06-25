@@ -17,13 +17,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="call-stacks check-unchecked"
 
-RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11.3.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
 	>=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
-	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
-	>=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-5.1:=[profile?]
 	>=dev-haskell/primitive-0.6.1.0:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/ref-tf-0.4.0.1:=[profile?] <dev-haskell/ref-tf-0.5:=[profile?]
@@ -33,17 +33,16 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/unliftio-core-0.1:=[profile?] <dev-haskell/unliftio-core-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 "
 
 src_prepare() {
 	default
-
 	cabal_chdeps \
-		'base64-bytestring >=1.0.0.1 && <1.2' 'base64-bytestring >=1.0.0.1 && <1.3'
+		'base64-bytestring >=1.0.0.1 && <1.2' 'base64-bytestring >=1.0.0.1'
 }
 
 src_configure() {
