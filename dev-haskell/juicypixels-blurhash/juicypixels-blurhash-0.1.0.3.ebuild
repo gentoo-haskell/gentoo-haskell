@@ -20,6 +20,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+RESTRICT=test # Ambiguous module name ‘Data.Vector’: it was found in multiple packages: AC-Vector-Fancy-2.4.0 vector-0.12.3.0
+
 RDEPEND=">=dev-haskell/juicypixels-3.2.8:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.3:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
