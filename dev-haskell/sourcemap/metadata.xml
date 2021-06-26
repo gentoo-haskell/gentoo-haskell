@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Implementation of source maps, revision 3, proposed by Google and Mozilla here
-		&lt;https://wiki.mozilla.org/DevTools/Features/SourceMap&gt; and here
-		&lt;https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit&gt;
-	</longdescription>
 </pkgmetadata>
