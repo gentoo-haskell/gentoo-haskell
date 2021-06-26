@@ -25,13 +25,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'containers >= 0.2 && < 0.6' 'containers >= 0.2'
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-benchmark \
