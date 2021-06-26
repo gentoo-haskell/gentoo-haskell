@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name='dump'>build 'dump' tool</flag>
+		<flag name="dump">Build the executable &quot;dump&quot;</flag>
 	</use>
 </pkgmetadata>
