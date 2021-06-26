@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,13 +17,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+semirings +vector"
 
-RDEPEND=">=dev-lang/ghc-8.2.1:=
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 	semirings? ( >=dev-haskell/semirings-0.5:=[profile?] )
 	vector? ( dev-haskell/primitive:=[profile?]
 			>=dev-haskell/vector-0.12:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.0.0.2
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/quickcheck-classes-base
 		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-quickcheck-0.9 <dev-haskell/tasty-quickcheck-0.11

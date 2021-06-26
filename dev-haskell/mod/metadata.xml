@@ -9,9 +9,4 @@
 		<flag name="semirings">Derive semiring instances</flag>
 		<flag name="vector">Derive unboxed and primitive vector instances</flag>
 	</use>
-	<longdescription>
-		&lt;https://en.wikipedia.org/wiki/Modular_arithmetic Modular arithmetic&gt;,
-		promoting moduli to the type level, with an emphasis on performance.
-		Originally part of &lt;https://hackage.haskell.org/package/arithmoi arithmoi&gt; package.
-	</longdescription>
 </pkgmetadata>
