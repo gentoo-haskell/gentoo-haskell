@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Designed for xmonad users relies on feh to setup wallpaper. It allows user to setup a random image as the wallpaper choosed from user specified image directories.
-	</longdescription>
 </pkgmetadata>
