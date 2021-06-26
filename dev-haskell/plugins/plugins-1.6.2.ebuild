@@ -21,10 +21,9 @@ RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
 	dev-haskell/haskell-src:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/split:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-6.10:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-2.2.0.1
 "
-
-PATCHES=("${FILESDIR}"/${P}-ghc-8.10.patch)
