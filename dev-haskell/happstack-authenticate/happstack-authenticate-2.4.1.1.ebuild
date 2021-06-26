@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -9,13 +9,12 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Happstack Authentication Library"
-HOMEPAGE="http://www.happstack.com/"
+HOMEPAGE="https://www.happstack.com/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.17:=[profile?]
 	>=dev-haskell/authenticate-1.3:=[profile?] <dev-haskell/authenticate-1.4:=[profile?]
@@ -25,7 +24,7 @@ RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.17:=
 	>=dev-haskell/email-validate-2.1:=[profile?] <dev-haskell/email-validate-2.4:=[profile?]
 	>=dev-haskell/happstack-hsp-7.3:=[profile?] <dev-haskell/happstack-hsp-7.4:=[profile?]
 	>=dev-haskell/happstack-jmacro-7.0:=[profile?] <dev-haskell/happstack-jmacro-7.1:=[profile?]
-	>=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-server-7.7:=[profile?]
+	>=dev-haskell/happstack-server-6.0:=[profile?] <dev-haskell/happstack-server-7.8:=[profile?]
 	>=dev-haskell/hsp-0.10:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
 	>=dev-haskell/hsx-jmacro-7.3:=[profile?] <dev-haskell/hsx-jmacro-7.4:=[profile?]
 	>=dev-haskell/hsx2hs-0.13:=[profile?] <dev-haskell/hsx2hs-0.15:=[profile?]
@@ -49,9 +48,9 @@ RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.17:=
 	>=dev-haskell/web-routes-happstack-0.23:=[profile?] <dev-haskell/web-routes-happstack-0.24:=[profile?]
 	>=dev-haskell/web-routes-hsp-0.24:=[profile?] <dev-haskell/web-routes-hsp-0.25:=[profile?]
 	>=dev-haskell/web-routes-th-0.22:=[profile?] <dev-haskell/web-routes-th-0.23:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-8.4.3:=
 	>=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-2.2.0.1
 "
