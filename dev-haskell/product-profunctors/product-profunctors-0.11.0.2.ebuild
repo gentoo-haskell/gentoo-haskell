@@ -15,21 +15,14 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/bifunctors-5.4:=[profile?] <dev-haskell/bifunctors-6.0:=[profile?]
 	>=dev-haskell/contravariant-0.4:=[profile?] <dev-haskell/contravariant-1.6:=[profile?]
 	>=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-5.7:=[profile?]
 	>=dev-haskell/tagged-0.0:=[profile?] <dev-haskell/tagged-1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-haskell/th-abstraction-0.4:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-2.2.0.1
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'profunctors   >= 5   && < 5.6' 'profunctors   >= 5'
-}
