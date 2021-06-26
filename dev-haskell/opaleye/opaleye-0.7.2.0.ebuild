@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RESTRICT=test # needs running postgresql
 
@@ -32,20 +31,13 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
 	>=dev-haskell/uuid-1.3:=[profile?] <dev-haskell/uuid-1.4:=[profile?]
 	>=dev-haskell/void-0.4:=[profile?] <dev-haskell/void-0.8:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/dotenv-0.3.1
 		dev-haskell/hspec
 		dev-haskell/hspec-discover
 		dev-haskell/multiset
 		dev-haskell/quickcheck )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'profunctors         >= 4.0     && < 5.6' 'profunctors         >= 4.0'
-}
