@@ -15,30 +15,23 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-1.4.2.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/hashable-1.2.6.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-4.20:=[profile?]
-	>=dev-haskell/optics-core-0.2:=[profile?] <dev-haskell/optics-core-0.4:=[profile?]
-	>=dev-haskell/optics-extra-0.2:=[profile?] <dev-haskell/optics-extra-0.4:=[profile?]
+	>=dev-haskell/indexed-traversable-0.1.1:=[profile?] <dev-haskell/indexed-traversable-0.2:=[profile?]
+	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-5.1:=[profile?]
+	>=dev-haskell/optics-core-0.2:=[profile?] <dev-haskell/optics-core-0.5:=[profile?]
+	>=dev-haskell/optics-extra-0.2:=[profile?] <dev-haskell/optics-extra-0.5:=[profile?]
 	>=dev-haskell/semigroupoids-5.3.2:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
 	>=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/unordered-containers-0.2.8.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-haskell/unordered-containers-0.2.14.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/quickcheck-2.13.2 <dev-haskell/quickcheck-2.15
-		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-1.3
+		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-1.5
 		>=dev-haskell/tasty-quickcheck-0.8.3.2 <dev-haskell/tasty-quickcheck-0.11 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'aeson                 >=1.4.2.0 && <1.5' 'aeson                 >=1.4.2.0'
-}
