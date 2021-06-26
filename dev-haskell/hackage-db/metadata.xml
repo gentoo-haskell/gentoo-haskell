@@ -8,10 +8,4 @@
 	<use>
 		<flag name="install-examples">Build and install example programs.</flag>
 	</use>
-	<longdescription>
-		This library provides convenient access to the local copy of the Hackage
-		database that \&quot;cabal update\&quot; creates. Check out
-		&lt;https://github.com/peti/hackage-db/tree/master/example/&gt; for a collection
-		of simple example programs that demonstrate how to use this code.
-	</longdescription>
 </pkgmetadata>
