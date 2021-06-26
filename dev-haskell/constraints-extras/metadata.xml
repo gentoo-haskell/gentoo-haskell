@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Convenience functions and TH for working with constraints. See &lt;https://github.com/obsidiansystems/constraints-extras/blob/develop/README.md README.md&gt; for example usage.
-	</longdescription>
 </pkgmetadata>
