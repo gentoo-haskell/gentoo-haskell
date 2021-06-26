@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,19 +20,17 @@ IUSE="regression"
 RESTRICT=test # needs unprefixed 'cpp'
 
 RDEPEND="dev-haskell/dlist:=
-	dev-haskell/fail:=
-	>=dev-haskell/language-c-0.7.1:= <dev-haskell/language-c-0.9:=
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-haskell/language-c-0.7.1:= <dev-haskell/language-c-0.10:=
+	>=dev-lang/ghc-8.4.3:=
 	regression? ( >=dev-haskell/shelly-1.9.0:= <dev-haskell/shelly-1.10.0:=
 			dev-haskell/text:=
 			>=dev-haskell/yaml-0.8:= )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/hunit
 		dev-haskell/test-framework
 		dev-haskell/test-framework-hunit
-		dev-haskell/transformers
 		!regression? ( >=dev-haskell/shelly-1.9.0 <dev-haskell/shelly-1.10.0
 				dev-haskell/text ) )
 "
