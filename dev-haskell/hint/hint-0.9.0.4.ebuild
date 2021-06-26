@@ -20,6 +20,7 @@ RDEPEND=">=dev-haskell/exceptions-0.10:=[profile?] <dev-haskell/exceptions-0.11:
 	dev-haskell/ghc-paths:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/temporary:=[profile?]
+	>=dev-lang/ghc-8.4:=[profile?] <dev-lang/ghc-9.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
