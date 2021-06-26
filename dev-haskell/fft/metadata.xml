@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Bindings to the FFTW library.
-		
-		Provides high performance discrete fourier transforms in
-		arbitrary dimensions.  Include transforms of complex data,
-		real data, and real to real transforms.
-		
-	</longdescription>
 </pkgmetadata>
