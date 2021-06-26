@@ -15,20 +15,13 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="executable"
 
-PATCHES=( "${FILESDIR}/${P}-add-executable-flag.patch" )
+RESTRICT=test # Ambiguous module name ‘Data.Kind’: it was found in multiple packages: base-4.14.2.0 kinds-0.0.1.5
 
 RDEPEND="dev-haskell/extra:=[profile?]
-	dev-haskell/uniplate:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/record-hasfield )
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag executable executable)
-}
