@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RESTRICT=test # it was found in multiple packages: hashmap-1.3.3 unordered-containers-0.2.10.0
 
@@ -26,13 +25,12 @@ RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?
 	<dev-haskell/primitive-0.8:=[profile?]
 	<dev-haskell/profunctors-5.7:=[profile?]
 	>=dev-haskell/semigroupoids-1.0:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
-	>=dev-haskell/semigroups-0.17:=[profile?] <dev-haskell/semigroups-1.20:=[profile?]
 	>=dev-haskell/text-0.11.2.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/doctest-0.16 )
 "
