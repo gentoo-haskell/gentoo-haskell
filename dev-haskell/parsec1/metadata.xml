@@ -5,16 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Parsec is designed from scratch as an industrial-strength parser
-		library.  It is simple, safe, well-known, has extensive libraries,
-		good error messages, and is also fast.
-		
-		This package is the core haskell98 part of the parsec2
-		package as originally created by Daan Leijen. It is intended to
-		preserve its simplicity and portability.
-		
-		This version differs from the pervious one only by a MonadFail
-		instance to let it compile with ghc-8.8.
-	</longdescription>
 </pkgmetadata>
