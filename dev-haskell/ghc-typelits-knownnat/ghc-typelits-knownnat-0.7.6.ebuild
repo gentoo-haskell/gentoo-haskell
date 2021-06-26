@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Derive KnownNat constraints from other KnownNat constraints"
-HOMEPAGE="http://clash-lang.org/"
+HOMEPAGE="https://clash-lang.org/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
@@ -19,10 +19,11 @@ IUSE="deverror"
 
 RDEPEND=">=dev-haskell/ghc-tcplugins-extra-0.3.1:=[profile?]
 	>=dev-haskell/ghc-typelits-natnormalise-0.7.1:=[profile?] <dev-haskell/ghc-typelits-natnormalise-0.8:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.0.1:=[profile?] <dev-lang/ghc-9.4:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9
 		>=dev-haskell/tasty-quickcheck-0.8 )
