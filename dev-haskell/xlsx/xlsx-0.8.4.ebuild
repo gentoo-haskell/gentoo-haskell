@@ -49,8 +49,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/smallcheck
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
-		dev-haskell/tasty-smallcheck
-		microlens? ( >=dev-haskell/lens-3.8 <dev-haskell/lens-5.1 ) )
+		dev-haskell/tasty-smallcheck )
 "
 
 src_configure() {
