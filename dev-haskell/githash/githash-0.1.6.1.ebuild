@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,17 +15,16 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-RESTRICT=test # can't operate in a git tree
-
-RDEPEND=">=dev-lang/ghc-8.0.2:=
+RDEPEND="dev-haskell/th-compat:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
-# The package is a wrapper around 'git'
-RDEPEND+=" dev-vcs/git"
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.2.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/hspec
 		dev-haskell/temporary
 		dev-haskell/unliftio )
 "
+
+RESTRICT=test # can't operate in a git tree
+RDEPEND+=" dev-vcs/git"
