@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -28,13 +28,13 @@ RDEPEND=">=dev-haskell/extra-1.6.19:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
-	>=dev-lang/ghc-8.0.2:=
+	>=dev-lang/ghc-8.4.3:=
 	cloud? ( dev-haskell/network:=[profile?]
 			dev-haskell/network-uri:=[profile?] )
 	embed-files? ( >=dev-haskell/file-embed-0.0.11:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.2.0
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/quickcheck-2.0 )
 "
 
