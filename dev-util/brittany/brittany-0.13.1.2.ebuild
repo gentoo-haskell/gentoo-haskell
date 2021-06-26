@@ -42,7 +42,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( !brittany-dev-lib? ( >=dev-haskell/hspec-2.4.1 <dev-haskell/hspec-2.8
+	test? ( !brittany-dev-lib? ( >=dev-haskell/hspec-2.4.1 <dev-haskell/hspec-2.9
 					>=dev-haskell/parsec-3.1.11 <dev-haskell/parsec-3.2 ) )
 "
 
