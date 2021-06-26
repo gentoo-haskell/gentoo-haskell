@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -24,14 +24,14 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6.8:=[profile?]
 	dev-haskell/parsers:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.2.1:=
+	>=dev-lang/ghc-8.4.3:=
 	gsl-example? ( >=dev-haskell/chart-1.3:=[profile?]
 			dev-haskell/chart-cairo:=[profile?]
 			sci-libs/gsl
 			virtual/libc )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.0.0.2
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/hspec-2
 		dev-haskell/quickcheck
 		dev-haskell/raw-strings-qq
