@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -9,7 +9,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="GUI framework that uses the web browser as a display"
-HOMEPAGE="http://wiki.haskell.org/Threepenny-gui"
+HOMEPAGE="https://wiki.haskell.org/Threepenny-gui"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -31,12 +31,12 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?] <dev-haskell/vault-0.4:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/websockets-snap-0.8:=[profile?] <dev-haskell/websockets-snap-0.11:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.4.3:=
 	>=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>dev-haskell/websockets-0.12.5.0:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-2.2.0.1
 "
 
 src_configure() {
