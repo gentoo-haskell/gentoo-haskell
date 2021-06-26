@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RESTRICT=test # connection problems, seems to require postgres instance
 
@@ -33,10 +32,10 @@ RDEPEND=">=dev-db/postgresql-7
 	>=dev-haskell/transformers-base-0.4:=[profile?]
 	>=dev-haskell/uuid-types-1.0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0 <dev-haskell/cabal-3.3
+	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-3.6
 	test? ( >=dev-haskell/hunit-1.2
 		>=dev-haskell/quickcheck-2.5
 		>=dev-haskell/random-1.0
