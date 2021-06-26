@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Haskell client library for InfluxDB"
+DESCRIPTION="InfluxDB client library for Haskell"
 HOMEPAGE="https://github.com/maoe/influxdb-haskell"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
@@ -17,12 +17,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
+RESTRICT="test" # requires network connection
+
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
-	<dev-haskell/attoparsec-0.14:=[profile?]
+	<dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/clock-0.7:=[profile?] <dev-haskell/clock-0.9:=[profile?]
 	>=dev-haskell/http-client-0.5:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
-	>=dev-haskell/lens-4.9:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-4.9:=[profile?] <dev-haskell/lens-5.1:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/optional-args-1.0:=[profile?] <dev-haskell/optional-args-1.1:=[profile?]
 	>=dev-haskell/scientific-0.3.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
@@ -38,13 +40,11 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.3 <dev-haskell/doctest-0.18
+	test? ( >=dev-haskell/doctest-0.11.3 <dev-haskell/doctest-0.19
 		>=dev-haskell/raw-strings-qq-1.1 <dev-haskell/raw-strings-qq-1.2
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit )
 "
-
-RESTRICT="test" # requires network connection
 
 src_configure() {
 	haskell-cabal_src_configure \
