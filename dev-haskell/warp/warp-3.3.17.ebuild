@@ -16,10 +16,9 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+allow-sendfilefd warp-debug"
+IUSE="+allow-sendfilefd debug"
 
-RDEPEND="dev-haskell/async:=[profile?]
-	>=dev-haskell/auto-update-0.1.3:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
+RDEPEND=">=dev-haskell/auto-update-0.1.3:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]
 	<dev-haskell/bsb-http-chunked-0.1:=[profile?]
 	>=dev-haskell/case-insensitive-0.2:=[profile?]
 	dev-haskell/hashable:=[profile?]
@@ -34,18 +33,19 @@ RDEPEND="dev-haskell/async:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/time-manager:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
+	dev-haskell/unliftio:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?]
 	>=dev-haskell/wai-3.2:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	dev-haskell/word8:=[profile?]
 	dev-haskell/x509:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/hspec-1.3
+	>=dev-haskell/cabal-2.4.0.1
+	test? ( dev-haskell/async
+		>=dev-haskell/hspec-1.3
 		dev-haskell/http-client
 		dev-haskell/hunit
-		>=dev-haskell/lifted-base-0.1
 		dev-haskell/quickcheck )
 "
 
@@ -53,5 +53,5 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag allow-sendfilefd allow-sendfilefd) \
 		--flag=-network-bytestring \
-		$(cabal_flag warp-debug warp-debug)
+		$(cabal_flag debug warp-debug)
 }
