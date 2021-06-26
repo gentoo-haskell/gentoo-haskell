@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,12 +19,12 @@ IUSE="+aeson +binary +hdbc +md5 +scientific +text +tls +uuid"
 
 RESTRICT=test # needs database access at compile time
 
-RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	dev-haskell/haskell-src-meta:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.4.3:=
 	aeson? ( >=dev-haskell/aeson-0.7:=[profile?] )
 	binary? ( >=dev-haskell/postgresql-binary-0.8:=[profile?]
 			>=dev-haskell/scientific-0.3:=[profile?]
@@ -43,7 +43,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:
 		dev-haskell/x509-validation:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-2.2.0.1
 "
 
 src_configure() {
