@@ -15,19 +15,11 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/sop-core-0.5.0:=[profile?] <dev-haskell/sop-core-0.5.1:=[profile?]
-	>=dev-haskell/th-abstraction-0.3:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-haskell/th-abstraction-0.4:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'th-abstraction       >= 0.3  && < 0.4' 'th-abstraction >= 0.3'
-}
