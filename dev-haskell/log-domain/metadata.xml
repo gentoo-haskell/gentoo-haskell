@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="ffi">Use C FFI to call math.h functions.</flag>
-	</use>
 </pkgmetadata>
