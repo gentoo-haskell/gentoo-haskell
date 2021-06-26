@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,10 +26,10 @@ RDEPEND=">=dev-haskell/contravariant-1.3:=[profile?] <dev-haskell/contravariant-
 	>=dev-haskell/reflection-2.0:=[profile?] <dev-haskell/reflection-3.0:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-8.6.3:=
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.4.0.1
+	>=dev-haskell/cabal-3.0.0.0
 	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-megaparsec-2.0 <dev-haskell/hspec-megaparsec-3.0 )
 "
