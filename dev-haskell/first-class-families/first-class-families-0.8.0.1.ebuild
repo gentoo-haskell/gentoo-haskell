@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -8,28 +8,16 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="First class type families"
+DESCRIPTION="First-class type families"
 HOMEPAGE="https://github.com/Lysxia/first-class-families#readme"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-RDEPEND=">=dev-lang/ghc-8.0.1:=
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
-	test? ( dev-haskell/doctest
-		dev-haskell/glob )
+	>=dev-haskell/cabal-2.2.0.1
 "
-
-RESTRICT=test # Ambiguous module name ‘Data.Kind’: it was found in multiple packages: base-4.12.0.0 kinds-0.0.1.5
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base >= 4.9 && < 4.14' 'base >= 4.9'
-}
