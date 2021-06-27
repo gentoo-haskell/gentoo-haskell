@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The translation from haskell-src-exts abstract syntax
-		to template-haskell abstract syntax isn't 100% complete yet.
-	</longdescription>
 </pkgmetadata>

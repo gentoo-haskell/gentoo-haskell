@@ -7,6 +7,5 @@
 	</maintainer>
 	<use>
 		<flag name="allow-sendfilefd">Allow use of sendfileFd (not available on GNU/kFreeBSD)</flag>
-		<flag name="warp-debug">print debug output. not suitable for production</flag>
 	</use>
 </pkgmetadata>

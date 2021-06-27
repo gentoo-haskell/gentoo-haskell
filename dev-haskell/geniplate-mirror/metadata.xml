@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Use Template Haskell to generate Uniplate-like functions.
-		
-		This is a maintained mirror of the
-		&lt;http://hackage.haskell.org/package/geniplate geniplate&gt; package,
-		written by Lennart Augustsson.
-	</longdescription>
 </pkgmetadata>

@@ -5,12 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides access to ALSA sequencer (MIDI support).
-		For audio support see alsa-pcm.
-		Included are some simple example programs.
-		For more example programs including a GUI, see the alsa-gui programs.
-	</longdescription>
 	<use>
 		<flag name="modifyfilter">Use native event filter functions that are provided by newer ALSA versions</flag>
 	</use>

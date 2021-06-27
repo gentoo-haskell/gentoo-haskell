@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Pretty printing designed for printing source code based on
-		Wadler's paper /A Prettier Printer/. The main advantage of this
-		library is its ability to automatically track the source
-		locations associated with pretty printed values and output
-		appropriate #line pragmas.
-	</longdescription>
 </pkgmetadata>

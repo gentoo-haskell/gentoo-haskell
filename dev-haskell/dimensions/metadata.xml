@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="unsafe-indices">Disable bound checks on Idx and Idxs types</flag>
+		<flag name="unsafeindices">Disable bound checks on Idx and Idxs types.</flag>
 	</use>
 </pkgmetadata>

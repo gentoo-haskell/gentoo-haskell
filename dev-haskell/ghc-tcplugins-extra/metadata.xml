@@ -8,9 +8,4 @@
 	<use>
 		<flag name="deverror">Enables `-Werror` for development mode and TravisCI</flag>
 	</use>
-	<longdescription>
-		Utilities for writing GHC type-checker plugins, such as
-		creating constraints, with a stable API covering multiple
-		GHC releases.
-	</longdescription>
 </pkgmetadata>

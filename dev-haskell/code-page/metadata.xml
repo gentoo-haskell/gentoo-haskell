@@ -5,15 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This library provides two modules:
-		
-		* &quot;System.IO.CodePage&quot;: a cross-platform module that exports
-		functions which adjust code pages on Windows, and do nothing
-		on other operating systems.
-		
-		* &quot;System.Win32.CodePage&quot;: On Windows, this exports functions
-		for getting, setting, and analyzing code pages. On other
-		operating systems, this module exports nothing.
-	</longdescription>
 </pkgmetadata>
