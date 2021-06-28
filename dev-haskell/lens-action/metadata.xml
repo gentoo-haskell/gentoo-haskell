@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package contains combinators and types for working with
-		monadic getters and folds as split off from the original
-		lens package.
-	</longdescription>
 </pkgmetadata>
