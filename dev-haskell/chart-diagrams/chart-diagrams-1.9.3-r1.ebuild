@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/blaze-markup-0.7:=[profile?] <dev-haskell/blaze-markup-0.
 	>=dev-haskell/chart-1.9:=[profile?] <dev-haskell/chart-1.10:=[profile?]
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.3:=[profile?]
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/diagrams-postscript-0.7:=[profile?] <dev-haskell/diagrams-postscript-1.6:=[profile?]
 	>=dev-haskell/diagrams-svg-1.4:=[profile?] <dev-haskell/diagrams-svg-1.5:=[profile?]
@@ -49,5 +49,6 @@ src_prepare() {
 	cabal_chdeps \
 		'containers >= 0.4 && < 0.7' 'containers >= 0.4' \
 		'lens >= 3.9 && < 4.19' 'lens >= 3.9' \
-		'SVGFonts >= 1.4 && < 1.8' 'SVGFonts >= 1.4'
+		'SVGFonts >= 1.4 && < 1.8' 'SVGFonts >= 1.4' \
+		'diagrams-core >= 1.3 && < 1.5' 'diagrams-core >= 1.3'
 }
