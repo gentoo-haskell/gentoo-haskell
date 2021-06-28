@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Parses .eventlog files emitted by GHC 6.12.1 and later.
-		Includes the show-ghc-events tool to dump an event
-		log file as text.
-	</longdescription>
 </pkgmetadata>
