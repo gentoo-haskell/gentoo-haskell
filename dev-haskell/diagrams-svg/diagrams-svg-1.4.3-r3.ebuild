@@ -12,7 +12,7 @@ DESCRIPTION="SVG backend for diagrams drawing EDSL"
 HOMEPAGE="http://projects.haskell.org/diagrams/"
 SRC_URI="
 	https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/2.cabal -> ${PF}.cabal
+	https://hackage.haskell.org/package/${P}/revision/3.cabal -> ${PF}.cabal
 	"
 
 LICENSE="BSD"
@@ -22,14 +22,14 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/base64-bytestring-1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	dev-haskell/colour:=[profile?]
-	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.6:=[profile?]
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/juicypixels-3.1.5:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.20:=[profile?]
-	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.6:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
+	>=dev-haskell/monoid-extras-0.3:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.16:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/semigroups-0.13:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/split-0.1.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/svg-builder-0.1:=[profile?] <dev-haskell/svg-builder-0.2:=[profile?]
@@ -48,6 +48,8 @@ src_prepare() {
 
 	# upstream hasn't bumped this yet
 	cabal_chdeps \
-		'base                 >= 4.7   && < 4.14' 'base >= 4.7' \
-		'base64-bytestring    >= 1     && < 1.2' 'base64-bytestring    >= 1     && < 1.3'
+		'base                 >= 4.7   && < 4.16' 'base >= 4.7' \
+		'lens                 >= 4.0   && < 5.1' 'lens                 >= 4.0' \
+		'monoid-extras        >= 0.3   && < 0.7' 'monoid-extras        >= 0.3' \
+		'optparse-applicative >= 0.13  && < 0.17' 'optparse-applicative >= 0.13'
 }
