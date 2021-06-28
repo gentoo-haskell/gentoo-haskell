@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,8 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="text-show"
 
-RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
-	>=dev-haskell/attoparsec-iso8601-1.0.1.0:=[profile?] <dev-haskell/attoparsec-iso8601-1.1:=[profile?]
+RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
+	>=dev-haskell/attoparsec-iso8601-1.0.2.0:=[profile?] <dev-haskell/attoparsec-iso8601-1.1:=[profile?]
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/cookie-0.4.3:=[profile?] <dev-haskell/cookie-0.5:=[profile?]
 	>=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
@@ -27,20 +27,26 @@ RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/tagged-0.8.5:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-haskell/time-compat-1.9.2:=[profile?] <dev-haskell/time-compat-1.10:=[profile?]
+	>=dev-haskell/time-compat-1.9.5:=[profile?] <dev-haskell/time-compat-1.10:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/uuid-types-1.0.3:=[profile?] <dev-haskell/uuid-types-1.1:=[profile?]
 	>=dev-haskell/void-0.7.3:=[profile?] <dev-haskell/void-0.8:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
-	text-show? ( >=dev-haskell/text-show-3.8.2:=[profile?] <dev-haskell/text-show-3.9:=[profile?] )
+	>=dev-lang/ghc-8.4.3:=
+	text-show? ( >=dev-haskell/text-show-3.8.2:=[profile?] <dev-haskell/text-show-3.10:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18.1.3
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/hspec-2.7.1 <dev-haskell/hspec-2.8
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7
 		>=dev-haskell/quickcheck-2.13.1 <dev-haskell/quickcheck-2.15
-		>=dev-haskell/quickcheck-instances-0.3.21 <dev-haskell/quickcheck-instances-0.4 )
+		>=dev-haskell/quickcheck-instances-0.3.25.2 <dev-haskell/quickcheck-instances-0.4 )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base                  >= 4.7      && < 4.15' 'base                  >= 4.7'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
