@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-
 	>=dev-haskell/haskeline-0.8:=[profile?] <dev-haskell/haskeline-0.8.2:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.15:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
-	>=dev-haskell/relude-0.6:=[profile?] <dev-haskell/relude-0.8:=[profile?]
+	>=dev-haskell/relude-0.6:=[profile?]
 	>=dev-haskell/terminfo-hs-0.1:=[profile?] <dev-haskell/terminfo-hs-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
@@ -43,7 +43,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'optparse-applicative  ^>=0.16' 'optparse-applicative  >=0.15'
+		'optparse-applicative  ^>=0.16' 'optparse-applicative  >=0.15' \
+		'relude                >=0.6  && <0.8' 'relude                >=0.6'
 }
 
 src_configure() {
