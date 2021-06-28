@@ -9,40 +9,32 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Core libraries for diagrams EDSL"
-HOMEPAGE="http://projects.haskell.org/diagrams"
-SRC_URI="
-	https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/1.cabal -> ${PF}.cabal
-	"
+HOMEPAGE="https://projects.haskell.org/diagrams"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1.0:=[profile?]
 	>=dev-haskell/dual-tree-0.2:=[profile?] <dev-haskell/dual-tree-0.3:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-5.1:=[profile?]
 	>=dev-haskell/linear-1.11.3:=[profile?] <dev-haskell/linear-1.22:=[profile?]
-	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.6:=[profile?]
+	>=dev-haskell/monoid-extras-0.3:=[profile?] <dev-haskell/monoid-extras-0.7:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/profunctors-5.0:=[profile?] <dev-haskell/profunctors-6.0:=[profile?]
 	>=dev-haskell/semigroups-0.8.4:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.18
+	>=dev-haskell/cabal-2.2.0.1
 "
 
 src_prepare(){
 	default
 
-	# Pulled from upstream revision on hackage
-	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
-
-	# upstream has not updated this yet
 	cabal_chdeps \
-		'base >= 4.2 && < 4.14' 'base >= 4.2'
+		'base >= 4.11 && < 4.16' 'base >= 4.11'
 }
