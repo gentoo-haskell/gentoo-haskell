@@ -12,7 +12,7 @@ DESCRIPTION="Collection of user contributions to diagrams EDSL"
 HOMEPAGE="http://projects.haskell.org/diagrams/"
 SRC_URI="
 	https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/1.cabal -> ${PF}.cabal
+	https://hackage.haskell.org/package/${P}/revision/2.cabal -> ${PF}.cabal
 	"
 
 LICENSE="BSD"
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/circle-packing-0.1:=[profile?] <dev-haskell/circle-packin
 	>=dev-haskell/cubicbezier-0.6:=[profile?] <dev-haskell/cubicbezier-0.7:=[profile?]
 	>=dev-haskell/data-default-0.5.2:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	<dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.6:=[profile?]
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/diagrams-solve-0.1:=[profile?] <dev-haskell/diagrams-solve-0.2:=[profile?]
 	>=dev-haskell/force-layout-0.4:=[profile?] <dev-haskell/force-layout-0.5:=[profile?]
@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/circle-packing-0.1:=[profile?] <dev-haskell/circle-packin
 	>=dev-haskell/linear-1.11.3:=[profile?] <dev-haskell/linear-1.22:=[profile?]
 	>=dev-haskell/mfsolve-0.3:=[profile?] <dev-haskell/mfsolve-0.4:=[profile?]
 	>=dev-haskell/monadrandom-0.1.8:=[profile?] <dev-haskell/monadrandom-0.6:=[profile?]
-	>=dev-haskell/monoid-extras-0.4.2:=[profile?] <dev-haskell/monoid-extras-0.6:=[profile?]
+	>=dev-haskell/monoid-extras-0.4.2:=[profile?] <dev-haskell/monoid-extras-0.7:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/mtl-compat-0.2.1:=[profile?] <dev-haskell/mtl-compat-0.3:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
@@ -47,7 +47,7 @@ RDEPEND=">=dev-haskell/circle-packing-0.1:=[profile?] <dev-haskell/circle-packin
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.7
-		>=dev-haskell/quickcheck-2.4
+		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.15
 		>=dev-haskell/test-framework-0.4 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2 <dev-haskell/test-framework-quickcheck2-0.4 )
@@ -61,6 +61,5 @@ src_prepare() {
 
 	# upstream has not fixed these
 	cabal_chdeps \
-		'QuickCheck                 >= 2.4 && < 2.14' 'QuickCheck >= 2.4' \
-		'base >= 4.8 && < 4.14' 'base >= 4.8'
+		'base >= 4.8 && < 4.16' 'base >= 4.8'
 }
