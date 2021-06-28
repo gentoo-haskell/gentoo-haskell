@@ -12,7 +12,7 @@ DESCRIPTION="Simple force-directed layout"
 HOMEPAGE="https://hackage.haskell.org/package/force-layout"
 SRC_URI="
 	https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/6.cabal -> ${PF}.cabal"
+	https://hackage.haskell.org/package/${P}/revision/7.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/lens-3.0:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-3.0:=[profile?] <dev-haskell/lens-5.1:=[profile?]
 	>=dev-haskell/linear-1.10:=[profile?] <dev-haskell/linear-1.22:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -36,5 +36,5 @@ src_prepare() {
 
 	# upstream hasn't fixed this yet
 	cabal_chdeps \
-		'base >= 4.2 && < 4.14' 'base >= 4.2'
+		'base >= 4.2 && < 4.16' 'base >= 4.2'
 }
