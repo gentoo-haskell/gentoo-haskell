@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -33,6 +33,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.3.3
 		>=dev-haskell/test-framework-quickcheck2-0.2.9 )
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-0.2.1.0-ghc-9.0.patch )
 
 src_configure() {
 	haskell-cabal_src_configure \
