@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,12 +18,12 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-	>=dev-haskell/lens-4.4:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/lens-4.4:=[profile?]
 	>=dev-haskell/newtype-0.2:=[profile?] <dev-haskell/newtype-0.3:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	>=dev-haskell/semialign-1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
+	>=dev-haskell/semialign-1:=[profile?]
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]
 "
 DEPEND="${RDEPEND}
@@ -36,7 +36,9 @@ src_prepare() {
 	cabal_chdeps \
 		'base >=4.7 && <4.14' 'base >= 4.7' \
 		'aeson >=1.0 && <1.5' 'aeson >= 1.0' \
-		'these >= 1 && <1.1' 'these >= 1'
+		'these >= 1 && <1.1' 'these >= 1' \
+		'lens >=4.4 && <5' 'lens >=4.4' \
+		'semialign >=1 && <1.2' 'semialign >=1'
 }
 
 src_configure() {
