@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RESTRICT=test # Ambiguous module name ‘Data.Kind’: it was found in multiple packages: base-4.14.1.0 kinds-0.0.1.5
 
@@ -24,10 +23,10 @@ RDEPEND=">=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.4:=[prof
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.4
+	>=dev-haskell/cabal-3.0
 	test? ( dev-haskell/doctest
 		dev-haskell/glob
 		>=dev-haskell/hedgehog-1.0 <dev-haskell/hedgehog-1.1 )
