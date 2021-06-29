@@ -29,3 +29,10 @@ DEPEND="${RDEPEND}
 # 		>=dev-haskell/tasty-quickcheck-0.9 <dev-haskell/tasty-quickcheck-0.11
 # 		>=dev-haskell/tasty-smallcheck-0.8 <dev-haskell/tasty-smallcheck-0.9 )
 # "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'integer-gmp <1.1' 'integer-gmp'
+}
