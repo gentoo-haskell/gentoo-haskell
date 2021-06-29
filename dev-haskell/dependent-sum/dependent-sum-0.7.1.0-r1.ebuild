@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,9 +18,16 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/constraints-extras-0.2:=[profile?] <dev-haskell/constraints-extras-0.4:=[profile?]
-	>=dev-haskell/some-1.0.1:=[profile?] <dev-haskell/some-1.0.2:=[profile?]
+	>=dev-haskell/some-1.0.1:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'some == 1.0.1.*' 'some >= 1.0.1'
+}
