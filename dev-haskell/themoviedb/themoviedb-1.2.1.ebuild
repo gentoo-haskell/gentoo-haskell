@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -22,12 +22,12 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/relude-0.6:=[profile?] <dev-haskell/relude-0.8:=[profile?]
+	>=dev-haskell/relude-1.0:=[profile?] <dev-haskell/relude-1.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2
+	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/tasty-0.10 <dev-haskell/tasty-1.5
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11 )
 "
