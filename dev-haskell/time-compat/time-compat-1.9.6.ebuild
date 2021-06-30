@@ -34,6 +34,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 	cabal_chdeps \
-		'base          >=4.3     && <4.15' 'base          >=4.3'
+		'base          >=4.5     && <4.16' 'base          >=4.5'
 	eapply_user
 }
