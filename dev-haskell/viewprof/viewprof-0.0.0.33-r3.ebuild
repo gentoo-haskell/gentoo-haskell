@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">dev-haskell/brick-0.26.1:=
 	>=dev-haskell/ghc-prof-1.4:= <dev-haskell/ghc-prof-1.5:=
-	>=dev-haskell/lens-4.14:= <dev-haskell/lens-4.20:=
+	>=dev-haskell/lens-4.14:=
 	>=dev-haskell/scientific-0.3.4.4:= <dev-haskell/scientific-0.4:=
 	>=dev-haskell/text-1.2.2.0:= <dev-haskell/text-1.3:=
 	>=dev-haskell/vector-0.10.12.3:= <dev-haskell/vector-0.13:=
@@ -36,5 +36,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'vty >= 5.13 && < 5.29' 'vty >= 5.13' \
-		'brick > 0.26.1 && < 0.54' 'brick > 0.26.1'
+		'brick > 0.26.1 && < 0.54' 'brick > 0.26.1' \
+		'base >= 4.9 && < 4.15' 'base >= 4.9' \
+		'lens >= 4.14 && < 4.20' 'lens >= 4.14'
 }
