@@ -1,0 +1,26 @@
+commit fe6bf78a1b97ff7429630d0e8974c9bc40945dcf (HEAD -> master, origin/master, origin/HEAD)
+Author: Brent Yorgey <byorgey@gmail.com>
+Date:   Sun May 9 21:48:54 2021 -0500
+
+    updates to build with template-haskell 2.16 and 2.17
+
+diff --git a/Control/Enumerable/Derive.hs b/Control/Enumerable/Derive.hs
+index c49e6de..b7ae8b2 100644
+--- a/Control/Enumerable/Derive.hs
++++ b/Control/Enumerable/Derive.hs
+@@ -33,9 +33,15 @@ extractData n = reify n >>= \i -> return $ case i of
+   TyConI (NewtypeD cxt _ tvbs con _) -> (cxt, map tvbName tvbs, [con])
+ #endif
+ 
++#if MIN_VERSION_template_haskell(2,17,0)
++tvbName :: TyVarBndr flag -> Name
++tvbName (PlainTV n _)    = n
++tvbName (KindedTV n _ _) = n
++#else
+ tvbName :: TyVarBndr -> Name
+ tvbName (PlainTV n)  = n
+ tvbName (KindedTV n _) = n
++#endif
+ 
+ 
+ conData :: Con -> Q (Name,[Type])
