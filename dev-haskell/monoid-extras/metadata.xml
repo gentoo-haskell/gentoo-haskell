@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Various extra monoid-related definitions and utilities,
-		such as monoid actions, monoid coproducts, \"deletable\"
-		monoids, \"split\" monoids, and \"cut\" monoids.
-	</longdescription>
 </pkgmetadata>

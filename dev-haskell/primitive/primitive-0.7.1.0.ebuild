@@ -25,3 +25,12 @@ RDEPEND=">=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.5 && < 4.15' 'base >= 4.5 && < 4.16'
+
+	eapply_user
+}

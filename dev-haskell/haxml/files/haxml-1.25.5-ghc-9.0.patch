@@ -1,0 +1,19 @@
+--- HaXml-1.25.5-orig/src/Text/XML/HaXml/Escape.hs	2001-09-09 11:46:40.000000000 +1000
++++ HaXml-1.25.5/src/Text/XML/HaXml/Escape.hs	2021-06-24 22:37:45.758265304 +1000
+@@ -241,14 +241,14 @@
+       compress :: [Either String Reference] -> [Either String Reference]
+       compress [] = []
+       compress (Right ref : es) = Right ref : (compress es)
+-      compress ( (ls @ (Left s1)) : es) =
++      compress ( (ls@(Left s1)) : es) =
+          case compress es of
+             (Left s2 : es2) -> Left (s1 ++ s2) : es2
+             es2 -> ls : es2
+ 
+ compressContent :: [Content i] -> [Content i]
+ compressContent [] = []
+-compressContent ((csb @ (CString b1 s1 i1)) : cs) =
++compressContent ((csb@(CString b1 s1 i1)) : cs) =
+    case compressContent cs of
+       (CString b2 s2 _) : cs2
+           | b1 == b2

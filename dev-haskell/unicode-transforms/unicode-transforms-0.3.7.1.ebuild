@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -28,6 +28,13 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.1 <dev-haskell/quickcheck-2.15
 		>=dev-haskell/split-0.1 <dev-haskell/split-0.3 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'ghc-prim >= 0.2 && < 0.7' 'ghc-prim >= 0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

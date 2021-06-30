@@ -8,12 +8,4 @@
 	<use>
 		<flag name="semigroupoids">Build with semigroupoids dependency</flag>
 	</use>
-	<longdescription>
-		The major use of @These@ of this is provided by the @align@ member of
-		@Semialign@ class, representing a generalized notion of &quot;zipping with padding&quot;
-		that combines structures without truncating to the size of the smaller input.
-		
-		It turns out that @zip@ operation fits well the @Semialign@ class,
-		forming lattice-like structure.
-	</longdescription>
 </pkgmetadata>

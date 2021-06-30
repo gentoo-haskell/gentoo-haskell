@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="examples">Build example modules</flag>
 		<flag name="gmp">Are we using @integer-gmp@ to provide fast Integer instances? No effect on GHC-9.0 or later.</flag>
 		<flag name="random-initial-seed">Randomly initialize the initial seed on each final executable invocation
 This is useful for catching cases when you rely on (non-existent)

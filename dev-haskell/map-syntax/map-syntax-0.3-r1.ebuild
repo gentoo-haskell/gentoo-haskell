@@ -32,4 +32,6 @@ src_prepare() {
 	default
 
 	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+	cabal_chdeps \
+		'base                       >= 4.3 && < 4.15' 'base                       >= 4.3'
 }

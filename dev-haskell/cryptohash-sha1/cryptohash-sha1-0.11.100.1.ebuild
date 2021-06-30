@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
-	test? ( >=dev-haskell/base16-bytestring-0.1.1 <dev-haskell/base16-bytestring-0.2
+	test? ( >=dev-haskell/base16-bytestring-0.1.1
 		>=dev-haskell/sha-1.6.4 <dev-haskell/sha-1.7
 		>=dev-haskell/tasty-0.11
 		>=dev-haskell/tasty-hunit-0.9
@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	cabal_chdeps \
 		'base             >= 4.5   && < 4.10' 'base             >= 4.5' \
+		'base16-bytestring >= 0.1.1  && < 0.2' 'base16-bytestring >= 0.1.1' \
 		'tasty             == 0.11.*' 'tasty             >= 0.11' \
 		'tasty-quickcheck  == 0.8.*' 'tasty-quickcheck  >= 0.8' \
 		'tasty-hunit       == 0.9.*' 'tasty-hunit       >= 0.9'

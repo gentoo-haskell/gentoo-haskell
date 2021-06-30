@@ -11,7 +11,8 @@ inherit haskell-cabal
 
 DESCRIPTION="A tiling window manager"
 HOMEPAGE="https://xmonad.org"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://patch-diff.githubusercontent.com/raw/xmonad/xmonad/pull/259.patch -> ${PN}-259.patch"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -39,6 +40,7 @@ SAMPLE_CONFIG="${PN}.hs"
 src_prepare() {
 	default
 	use no-autorepeat-keys && eapply "${FILESDIR}"/${PN}-0.14-check-repeat.patch
+	eapply "${DISTDIR}/${PN}-259.patch"
 }
 
 src_configure() {

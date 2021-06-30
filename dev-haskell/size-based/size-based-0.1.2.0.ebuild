@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,6 +25,8 @@ RDEPEND=">=dev-haskell/dictionary-sharing-0.1:=[profile?] <dev-haskell/dictionar
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-0.1.2.0-ghc-9.0.patch )
 
 src_prepare() {
 	default

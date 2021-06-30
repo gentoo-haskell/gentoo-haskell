@@ -11,7 +11,8 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple, composable, and easy-to-use stream I/O"
 HOMEPAGE="https://hackage.haskell.org/package/io-streams"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://patch-diff.githubusercontent.com/raw/snapframework/io-streams/pull/75.patch -> ${PN}-75.patch"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -36,6 +37,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
 		zlib? ( >=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.7 ) )
 "
+
+PATCHES=( "${DISTDIR}/${PN}-75.patch" )
 
 src_configure() {
 	haskell-cabal_src_configure \
