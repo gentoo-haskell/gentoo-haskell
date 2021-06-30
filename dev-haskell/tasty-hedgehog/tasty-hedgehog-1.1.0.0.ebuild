@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/hedgehog-1.0.2:=[profile?] <dev-haskell/hedgehog-1.0.5:=[profile?]
+RDEPEND=">=dev-haskell/hedgehog-1.0.2:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/tasty-0.11:=[profile?] <dev-haskell/tasty-1.5:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
@@ -25,3 +25,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/tasty-expected-failure-0.11 <dev-haskell/tasty-expected-failure-0.13 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.8 && <4.16' 'base >= 4.8' \
+		'hedgehog >= 1.0.2 && < 1.0.6' 'hedgehog >= 1.0.2'
+}
