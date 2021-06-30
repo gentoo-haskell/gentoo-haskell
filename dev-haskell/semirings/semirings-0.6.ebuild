@@ -15,20 +15,19 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+containers +hashable +unordered-containers"
+IUSE="+containers +unordered-containers"
 
 RDEPEND="dev-haskell/base-compat-batteries:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[gmp]
-	hashable? ( >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-			unordered-containers? ( >=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] ) )
+	>=dev-lang/ghc-8.4.3:=
+	unordered-containers? ( >=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
+				>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.22.2.0
+	>=dev-haskell/cabal-2.2.0.1
 "
 
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag containers containers) \
-		$(cabal_flag hashable hashable) \
 		$(cabal_flag unordered-containers unordered-containers)
 }
