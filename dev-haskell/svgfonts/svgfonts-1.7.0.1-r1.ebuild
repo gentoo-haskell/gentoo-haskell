@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 	dev-haskell/cereal:=[profile?]
 	dev-haskell/cereal-vector:=[profile?]
 	<dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.3:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/split:=[profile?]
@@ -45,5 +45,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'containers >= 0.4 && < 0.7' 'containers >= 0.4'
+		'containers >= 0.4 && < 0.7' 'containers >= 0.4' \
+		'diagrams-core >= 1.3 && < 1.5' 'diagrams-core >= 1.3'
 }
