@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/relude-0.6:=[profile?] <dev-haskell/relude-0.8:=[profile?]
+	>=dev-haskell/relude-0.6:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/themoviedb-1.2:=[profile?] <dev-haskell/themoviedb-1.3:=[profile?]
@@ -36,3 +36,12 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2
 "
+
+PATCHES=("${FILESDIR}"/${PN}-0.3.0.1-relude-1.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'relude                >=0.6    && <0.8' 'relude                >=0.6'
+}
