@@ -523,7 +523,7 @@ dev-haskell/either-unwrap 1.1-r1: Functions for probing and unwrapping values in
 dev-haskell/ekg 0.4.0.15-r7: Remote monitoring of processes
 dev-haskell/ekg-core 0.1.1.7: Tracking of system metrics
 dev-haskell/ekg-json 0.1.0.6-r1: JSON encoding of ekg metrics
-dev-haskell/email-validate 2.3.2.13: Email address validation
+dev-haskell/email-validate 2.3.2.14: Email address validation
 dev-haskell/emoji 0.1.0.2: emoji utility
 dev-haskell/emojis 0.1: Conversion between emoji characters and their names.
 dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an enclosed computation
