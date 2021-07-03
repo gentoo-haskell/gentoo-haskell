@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="cairo canvas gtk postscript rasterific +svg"
 
 RDEPEND=">=dev-haskell/diagrams-contrib-1.4:=[profile?] <dev-haskell/diagrams-contrib-1.5:=[profile?]
-	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	cairo? ( >=dev-haskell/diagrams-cairo-1.4:=[profile?] <dev-haskell/diagrams-cairo-1.5:=[profile?] )
@@ -37,7 +37,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'diagrams-postscript >= 1.4 && < 1.5' 'diagrams-postscript >= 1.4'
+		'diagrams-postscript >= 1.4 && < 1.5' 'diagrams-postscript >= 1.4' \
+		'diagrams-core >= 1.4 && < 1.5' 'diagrams-core >= 1.4'
 }
 
 src_configure() {

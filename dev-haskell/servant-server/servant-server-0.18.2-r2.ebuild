@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
-	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.3:=[profile?]
+	>=dev-haskell/http-api-data-0.4.1:=[profile?]
 	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.9:=[profile?]
 	>=dev-haskell/http-types-0.12.2:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/monad-control-1.0.2.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -57,5 +57,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base64-bytestring   >= 1.0.0.1  && < 1.2' 'base64-bytestring   >= 1.0.0.1'
+		'base64-bytestring   >= 1.0.0.1  && < 1.2' 'base64-bytestring   >= 1.0.0.1' \
+		'http-api-data       >= 0.4.1    && < 0.4.3' 'http-api-data       >= 0.4.1'
 }

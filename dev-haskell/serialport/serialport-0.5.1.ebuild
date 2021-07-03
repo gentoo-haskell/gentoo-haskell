@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+RESTRICT=test # test is not designed to be ran as cabal test
+
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

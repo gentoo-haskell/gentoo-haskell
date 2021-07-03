@@ -66,7 +66,7 @@ RDEPEND=">=dev-haskell/aeson-1.5.6.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	>=dev-haskell/safe-0.3.19:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/scientific-0.3.6.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/semialign-1.1.0.1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
+	>=dev-haskell/semialign-1.1.0.1:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-haskell/serialise-0.2.3.0:=[profile?] <dev-haskell/serialise-0.3:=[profile?]
 	>=dev-haskell/sourcemap-0.1.6:=[profile?] <dev-haskell/sourcemap-0.2:=[profile?]
@@ -99,12 +99,14 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/tasty-quickcheck-0.10.1.2 <dev-haskell/tasty-quickcheck-0.11 )
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'semigroups >=0.19.1 && <0.20' 'semigroups >=0.18 && <0.20' \
 		'cryptonite ==0.27.*' 'cryptonite >=0.27' \
 		'dlist >=0.8.0.8 && <0.9' 'dlist >=0.8.0.8' \
-		'ansi-terminal >=0.10.3 && <0.11' 'ansi-terminal >=0.10.3'
-	default
+		'ansi-terminal >=0.10.3 && <0.11' 'ansi-terminal >=0.10.3' \
+		'semialign >=1.1.0.1 && <1.2' 'semialign >=1.1.0.1'
 }
 
 src_configure() {

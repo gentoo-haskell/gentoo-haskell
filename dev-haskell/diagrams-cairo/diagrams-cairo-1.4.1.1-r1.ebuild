@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/cairo-0.12.4:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	dev-haskell/colour:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.3:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/juicypixels-3.1.3.2:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
@@ -43,5 +43,6 @@ src_prepare() {
 	cabal_chdeps \
 		'base >= 4.2 && < 4.14' 'base >= 4.2' \
 		'containers >= 0.3 && < 0.7' 'containers >= 0.3' \
-		'lens >= 3.8 && < 4.19' 'lens >= 3.8'
+		'lens >= 3.8 && < 4.19' 'lens >= 3.8' \
+		'diagrams-core >= 1.3 && < 1.5' 'diagrams-core >= 1.3'
 }

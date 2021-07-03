@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/constraints-extras-0.3:=[profile?] <dev-haskell/constrain
 	>=dev-haskell/witherable-0.3:=[profile?] <dev-haskell/witherable-0.4:=[profile?]
 	>=dev-lang/ghc-8.6.5:=
 	>=dev-haskell/monoidal-containers-0.6:=[profile?] <dev-haskell/monoidal-containers-0.7:=[profile?]
-	>=dev-haskell/semialign-1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
+	>=dev-haskell/semialign-1:=[profile?]
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]
 "
 DEPEND="${RDEPEND}
@@ -41,7 +41,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base >= 4.9 && < 4.14' 'base >= 4.9' \
-		'hlint (< 2.1 || >= 2.2.2) && < 3' 'hlint >= 2.2'
+		'hlint (< 2.1 || >= 2.2.2) && < 3' 'hlint >= 2.2' \
+		'semialign >=1 && <1.2' 'semialign >=1'
 }
 
 src_configure() {

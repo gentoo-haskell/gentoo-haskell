@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/ref-tf-0.4:=[profile?] <dev-haskell/ref-tf-0.5:=[profile?]
 	>=dev-haskell/reflection-2.1:=[profile?] <dev-haskell/reflection-2.2:=[profile?]
-	>=dev-haskell/semialign-1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
+	>=dev-haskell/semialign-1:=[profile?]
 	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/syb-0.5:=[profile?] <dev-haskell/syb-0.8:=[profile?]
@@ -63,6 +63,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/these-lens
 		>=dev-haskell/hlint-2.2.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'semialign >=1 && <1.2' 'semialign >=1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
