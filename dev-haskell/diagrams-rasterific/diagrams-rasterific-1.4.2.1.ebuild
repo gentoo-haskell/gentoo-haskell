@@ -32,3 +32,11 @@ RDEPEND=">=dev-haskell/data-default-class-0.0:=[profile?] <dev-haskell/data-defa
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'base >= 4.2 && < 4.16' 'base >= 4.2' \
+		'bytestring >= 0.9 && < 0.11' 'bytestring >= 0.9' \
+		'optparse-applicative >= 0.13 && < 0.16' 'optparse-applicative >= 0.13 && < 0.17'
+}
