@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.17:
 	<dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/ixset-1.0:=[profile?] <dev-haskell/ixset-1.2:=[profile?]
 	>=dev-haskell/jmacro-0.6:=[profile?] <dev-haskell/jmacro-0.7:=[profile?]
-	>=dev-haskell/lens-4.3:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-4.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
@@ -67,6 +67,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18
 	dev-haskell/hsx2hs
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens                         >= 4.3  && < 4.20' 'lens                         >= 4.3'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
