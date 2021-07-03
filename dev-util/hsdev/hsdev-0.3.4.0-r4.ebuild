@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-1.2.4.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/haskell-src-exts-1.19.1:=[profile?] <dev-haskell/haskell-src-exts-1.24.0:=[profile?]
 	>=dev-haskell/hformat-0.1.0.1:=[profile?] <dev-haskell/hformat-0.4:=[profile?]
 	>=dev-haskell/http-client-0.5:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
-	>=dev-haskell/lens-4.14:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-4.14:=[profile?]
 	>=dev-haskell/lifted-base-0.2.3.10:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/mmorph-1.0.9:=[profile?] <dev-haskell/mmorph-1.2:=[profile?]
 	>=dev-haskell/monad-control-1.0.1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -72,7 +72,8 @@ src_prepare(){
 	cabal_chdeps \
 		'Cabal >= 3.0 && < 3.1' 'Cabal >= 3.0' \
 		'ghc-lib-parser == 8.10.*' 'ghc-lib-parser >= 8.10' \
-		'hlint >= 3.0.0 && < 3.3.0' 'hlint >= 3.0.0'
+		'hlint >= 3.0.0 && < 3.3.0' 'hlint >= 3.0.0' \
+		'lens                              >= 4.14 && < 4.20' 'lens                              >= 4.14'
 }
 
 src_configure() {
