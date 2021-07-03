@@ -1,0 +1,14 @@
+--- a/src/Development/IDE/Spans/Common.hs
++++ b/src/Development/IDE/Spans/Common.hs
+@@ -122,7 +122,11 @@ haddockToMarkdown (H.DocIdentifier i)
+   = "`" ++ i ++ "`"
+ haddockToMarkdown (H.DocIdentifierUnchecked i)
+   = "`" ++ i ++ "`"
++#if MIN_VERSION_haddock_library(1,10,0)
++haddockToMarkdown (H.DocModule (H.ModLink i _))
++#else
+ haddockToMarkdown (H.DocModule i)
++#endif
+   = "`" ++ escapeBackticks i ++ "`"
+ haddockToMarkdown (H.DocWarning w)
+   = haddockToMarkdown w

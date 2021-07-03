@@ -36,6 +36,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hlint-2.2.2 )
 "
 
+PATCHES=("${FILESDIR}"/${P}-lens-5.patch)
+
 src_prepare() {
 	default
 

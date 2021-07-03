@@ -40,7 +40,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/ghc-exactprint:=[profile?]
 	dev-haskell/ghc-paths:=[profile?]
 	dev-haskell/glob:=[profile?]
-	>=dev-haskell/haddock-library-1.8:=[profile?] <dev-haskell/haddock-library-1.10:=[profile?]
+	>=dev-haskell/haddock-library-1.8:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/heapsize-0.3:=[profile?] <dev-haskell/heapsize-0.4:=[profile?]
 	>=dev-haskell/hie-bios-0.7.1:=[profile?] <dev-haskell/hie-bios-0.8.0:=[profile?]
@@ -91,6 +91,15 @@ DEPEND="${RDEPEND}
 #				dev-haskell/tasty-quickcheck
 #				dev-haskell/tasty-rerun
 #				~dev-haskell/lsp-test-0.13.0.0 )
+
+PATCHES=("${FILESDIR}"/${PN}-1.0.0.0-haddock-library-1.10.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haddock-library >= 1.8 && < 1.10' 'haddock-library >= 1.8'
+}
 
 src_configure() {
 	haskell-cabal_src_configure\
