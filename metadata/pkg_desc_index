@@ -288,7 +288,7 @@ dev-haskell/classy-prelude 1.5.0: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 1.5.0: conduit instances for classy-prelude
 dev-haskell/classy-prelude-yesod 1.5.0: Provide a classy prelude including common Yesod functionality
 dev-haskell/clay 0.13.3: CSS preprocessor as embedded Haskell
-dev-haskell/clckwrks 0.26.3: A secure, reliable content management system (CMS) and blogging platform
+dev-haskell/clckwrks 0.26.3-r1: A secure, reliable content management system (CMS) and blogging platform
 dev-haskell/clckwrks-cli 0.3.0.3: a command-line interface for adminstrating some aspects of clckwrks
 dev-haskell/clckwrks-plugin-media 0.6.16.9 0.6.17: media plugin for clckwrks
 dev-haskell/clckwrks-plugin-page 0.4.3.24: support for CMS/Blogging in clckwrks
@@ -775,7 +775,7 @@ dev-haskell/hamlet 1.2.0: Haml-like template files that are compile-time checked
 dev-haskell/handsomesoup 0.4.2-r1: Work with HTML more easily in HXT
 dev-haskell/happraise 0.1-r1: A small program for counting the comments in haskell source
 dev-haskell/happstack 7.0.2-r1: The haskell application server stack + code generation
-dev-haskell/happstack-authenticate 2.4.1.1: Happstack Authentication Library
+dev-haskell/happstack-authenticate 2.4.1.1-r1: Happstack Authentication Library
 dev-haskell/happstack-hamlet 7.0.4-r1: Support for Hamlet HTML templates in Happstack
 dev-haskell/happstack-hsp 7.3.7.5: Support for using HSP templates in Happstack
 dev-haskell/happstack-jmacro 7.0.12.3: Support for using JMacro with Happstack
@@ -1174,7 +1174,7 @@ dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lrucache 1.2.0.1: a simple, pure LRU cache
 dev-haskell/lsp 1.1.1.0: Haskell library for the Microsoft Language Server Protocol
 dev-haskell/lsp-test 0.13.0.0: Functional test framework for LSP servers
-dev-haskell/lsp-types 1.1.0.0: Haskell library for the Microsoft Language Server Protocol, data types
+dev-haskell/lsp-types 1.1.0.0-r1: Haskell library for the Microsoft Language Server Protocol, data types
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
 dev-haskell/lucid 2.9.12.1: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
@@ -1406,7 +1406,7 @@ dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/password 3.0.0.0: Hashing and checking of passwords
 dev-haskell/password-types 1.0.0.0: Types for handling passwords
-dev-haskell/patch 0.0.3.2-r1: Data structures for describing changes to other data structures
+dev-haskell/patch 0.0.3.2-r2: Data structures for describing changes to other data structures
 dev-haskell/path 0.7.0 0.8.0: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.6.3: Interface to 'directory' package for users of 'path'
@@ -1572,7 +1572,7 @@ dev-haskell/ref-tf 0.4.0.2: A type class for monads with references using type f
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/refinery 0.3.0.0: Toolkit for building proof automation systems
 dev-haskell/reflection 2.1.6: Reifies arbitrary terms into types that can be reflected back into terms
-dev-haskell/reflex 0.6.3-r2 0.8.1.0-r1: Higher-order Functional Reactive Programming
+dev-haskell/reflex 0.6.3-r2 0.8.1.0-r2: Higher-order Functional Reactive Programming
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
 dev-haskell/reflex-process 0.3.1.0: Reflex FRP interface for running system processes
 dev-haskell/reflex-vty 0.1.4.1-r1: Reflex FRP host and widgets for VTY applications
@@ -1658,7 +1658,7 @@ dev-haskell/sdl2-mixer 1.1.0: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.10: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/selective 0.4.2: Selective applicative functors
 dev-haskell/semialign 1.1.0.1 1.2: Align and Zip type-classes from the common Semialign ancestor
-dev-haskell/semialign-indexed 1.1-r2: SemialignWithIndex, i.e. izipWith and ialignWith
+dev-haskell/semialign-indexed 1.1-r3: SemialignWithIndex, i.e. izipWith and ialignWith
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 5.3.5: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.18.4 0.18.5-r1 0.19.1: Anything that associates
@@ -1726,13 +1726,13 @@ dev-haskell/smallcheck 1.2.1: A property-based testing library
 dev-haskell/smtlib 1.1: A library for working with the SMTLIB format
 dev-haskell/smtp-mail 0.2.0.0 0.3.0.0: Simple email sending via SMTP
 dev-haskell/smtpclient 1.1.0-r1: A simple SMTP client library
-dev-haskell/snap 1.1.3.1-r1: Top-level package for the Snap Web Framework
+dev-haskell/snap 1.1.3.1-r2: Top-level package for the Snap Web Framework
 dev-haskell/snap-core 1.0.4.2: Snap: A Haskell Web Framework (core interfaces and types)
 dev-haskell/snap-loader-dynamic 1.0.0.2: Snap dynamic loader
 dev-haskell/snap-loader-static 1.0.0.1: Snap static loader
 dev-haskell/snap-server 1.1.2.0 9999: A fast, iteratee-based, epoll-enabled web server for the Snap Framework
 dev-haskell/snap-templates 1.0.0.2-r1: Scaffolding CLI for the Snap Framework
-dev-haskell/snaplet-sqlite-simple 1.0.0.2-r1: sqlite-simple snaplet for the Snap Framework
+dev-haskell/snaplet-sqlite-simple 1.0.0.2-r2: sqlite-simple snaplet for the Snap Framework
 dev-haskell/sockaddr 0.0.0-r1: Printing SockAddr
 dev-haskell/socket 0.7.0.0 0.8.3.0: An extensible socket library
 dev-haskell/socket-sctp 0.3.0.0: STCP socket extensions library
@@ -1809,7 +1809,7 @@ dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
 dev-haskell/superdoc 0.1.2.9: Additional documentation markup and Unicode support
 dev-haskell/svg-builder 0.1.1-r1: DSL for building SVG
-dev-haskell/svg-tree 0.6.2.4: SVG file loader and serializer
+dev-haskell/svg-tree 0.6.2.4-r1: SVG file loader and serializer
 dev-haskell/svgcairo 0.13.2.1: Binding to the libsvg-cairo library
 dev-haskell/svgfonts 1.7.0.1-r1: Fonts from the SVG-Font format
 dev-haskell/sxml 0.1.0.0: A SXML-parser
@@ -1981,7 +1981,7 @@ dev-haskell/union-find 0.2-r1: Efficient union and equivalence testing of sets
 dev-haskell/uniplate 1.6.13: Help writing simple, concise and fast generic operations
 dev-haskell/unique 0-r1: Fully concurrent unique identifiers
 dev-haskell/uniqueid 0.1.1: Splittable Unique Identifier Supply
-dev-haskell/units 2.4.1.3: A domain-specific type system for dimensional analysis
+dev-haskell/units 2.4.1.3-r1: A domain-specific type system for dimensional analysis
 dev-haskell/units-parser 0.1.1.4: A parser for units of measure
 dev-haskell/universe-base 1.1.1: A class for finite and recursively enumerable types
 dev-haskell/universe-reverse-instances 1.1: Instances of standard classes that are made possible by enumerations
@@ -2126,7 +2126,7 @@ dev-haskell/xml-conduit 1.9.1.1: Pure-Haskell utilities for dealing with XML wit
 dev-haskell/xml-hamlet 0.5.0.1: Hamlet-style quasiquoter for XML content
 dev-haskell/xml-helpers 1.0.0: Some useful helper functions for the xml library
 dev-haskell/xml-html-conduit-lens 0.3.2.4-r1: Optics for xml-conduit and html-conduit
-dev-haskell/xml-lens 0.2: Lenses, traversals, and prisms for xml-conduit
+dev-haskell/xml-lens 0.2-r1: Lenses, traversals, and prisms for xml-conduit
 dev-haskell/xml-picklers 0.3.6: XML picklers based on xml-types, ported from hexpat-pickle
 dev-haskell/xml-types 0.3.8: Basic types for representing XML
 dev-haskell/xmlgen 0.6.2.2: Fast XML generation library
@@ -2176,7 +2176,7 @@ dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits
 dev-haskell/zlib-enum 0.2.3.1-r1: Enumerator interface for zlib compression
 dev-haskell/zmidi-core 0.9.0: Read and write MIDI files
 dev-haskell/ztail 1.2.0.2-r1: Multi-file, colored, filtered log tailer
-dev-haskell/zxcvbn-hs 0.3.0.0-r1: Password strength estimation based on zxcvbn
+dev-haskell/zxcvbn-hs 0.3.0.0-r2: Password strength estimation based on zxcvbn
 dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
 dev-lang/elm 0.19.1: Meta package for Elm
@@ -2201,7 +2201,7 @@ dev-util/hadolint 1.22.1: Dockerfile Linter JavaScript API
 dev-util/haskell-language-server 1.0.0.0: LSP server for GHC
 dev-util/hdocs 0.5.5.0: Haskell docs tool
 dev-util/hindent 5.3.2: Extensible Haskell pretty printer
-dev-util/hsdev 0.3.4.0-r3: Haskell development library
+dev-util/hsdev 0.3.4.0-r4: Haskell development library
 dev-util/shellcheck 0.7.2: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.14 0.2.14-r1: A graphical tool for profiling parallel Haskell programs
