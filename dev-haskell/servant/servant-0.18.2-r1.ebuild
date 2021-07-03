@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/bifunctors-5.5.3:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/case-insensitive-1.2.0.11:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
-	>=dev-haskell/http-api-data-0.4.1:=[profile?] <dev-haskell/http-api-data-0.4.3:=[profile?]
+	>=dev-haskell/http-api-data-0.4.1:=[profile?]
 	>=dev-haskell/http-media-0.7.1.3:=[profile?] <dev-haskell/http-media-0.9:=[profile?]
 	>=dev-haskell/http-types-0.12.2:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/mmorph-1.1.2:=[profile?] <dev-haskell/mmorph-1.2:=[profile?]
@@ -42,3 +42,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.8
 		>=dev-haskell/quickcheck-instances-0.3.19 <dev-haskell/quickcheck-instances-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'http-api-data          >= 0.4.1    && < 0.4.3' 'http-api-data          >= 0.4.1'
+}
