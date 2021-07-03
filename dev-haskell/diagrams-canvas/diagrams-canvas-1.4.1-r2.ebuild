@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?]
 	>=dev-haskell/cmdargs-0.6:=[profile?] <dev-haskell/cmdargs-0.11:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/diagrams-core-1.3:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.3:=[profile?]
 	>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
@@ -43,5 +43,6 @@ src_prepare() {
 		'lens >= 4.0 && < 4.17' 'lens >= 4.0' \
 		'containers >= 0.3 && < 0.6' 'containers >= 0.3' \
 		'blank-canvas >= 0.5 && < 0.7' 'blank-canvas >= 0.5' \
-		'statestack >= 0.2 && <0.3' 'statestack >= 0.2'
+		'statestack >= 0.2 && <0.3' 'statestack >= 0.2' \
+		'diagrams-core >= 1.3 && < 1.5' 'diagrams-core >= 1.3'
 }
