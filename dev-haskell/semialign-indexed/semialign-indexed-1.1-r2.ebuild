@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-4.20:=[profile?]
-	>=dev-haskell/semialign-1.1:=[profile?] <dev-haskell/semialign-1.2:=[profile?]
+	>=dev-haskell/semialign-1.1:=[profile?]
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]
 	>=dev-haskell/transformers-compat-0.6.5:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.8.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -36,5 +36,6 @@ src_prepare() {
 	cabal_chdeps \
 		'base        >=4.5.1.0 && <4.14' 'base        >=4.5.1.0' \
 		'these      >=1   && <1.1' 'these      >=1' \
-		'lens                  >=4.17     && <4.19' 'lens                  >=4.17'
+		'lens                  >=4.17     && <4.19' 'lens                  >=4.17' \
+		'semialign  >=1.1 && <1.2' 'semialign  >=1.1'
 }
