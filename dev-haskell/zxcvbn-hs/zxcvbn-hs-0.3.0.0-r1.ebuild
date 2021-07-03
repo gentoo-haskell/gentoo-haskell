@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -39,9 +39,16 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( >=dev-haskell/hedgehog-0.6 <dev-haskell/hedgehog-1.1
 		>=dev-haskell/tasty-1.1 <dev-haskell/tasty-1.5
-		>=dev-haskell/tasty-hedgehog-0.2 <dev-haskell/tasty-hedgehog-1.1
+		>=dev-haskell/tasty-hedgehog-0.2
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'tasty-hedgehog  >=0.2  && <1.1' 'tasty-hedgehog  >=0.2'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

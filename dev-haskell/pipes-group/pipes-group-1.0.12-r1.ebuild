@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/free-3.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 	test? ( >=dev-haskell/doctest-0.9.12
-		<dev-haskell/lens-family-core-2.1 )
+		dev-haskell/lens-family-core )
 "
 
 src_prepare() {
@@ -36,5 +36,6 @@ src_prepare() {
 
 	cabal_chdeps \
 		'free         >= 3.2     && < 5.2' 'free         >= 3.2' \
-		'doctest          >= 0.9.12 && < 0.17' 'doctest          >= 0.9.12'
+		'doctest          >= 0.9.12 && < 0.17' 'doctest          >= 0.9.12' \
+		'lens-family-core              < 1.3' 'lens-family-core'
 }
