@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="<dev-haskell/bytestring-builder-1.1:=[profile?]
 	dev-haskell/colour:=[profile?]
-	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.5:=[profile?]
+	>=dev-haskell/diagrams-core-1.4:=[profile?]
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	dev-haskell/juicypixels:=[profile?]
@@ -39,5 +39,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base                 >= 4.4   && < 4.14' 'base                 >= 4.4'
+		'base                 >= 4.4   && < 4.14' 'base                 >= 4.4' \
+		'diagrams-core        >= 1.4   && < 1.5' 'diagrams-core        >= 1.4'
 }
