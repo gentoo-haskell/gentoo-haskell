@@ -6,7 +6,7 @@ app-emacs/idris-mode 0.9.18: Idris syntax highlighting and (eventually) other th
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.6.6 0.6.7 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
-app-text/pandoc 2.11.4 2.12 2.13: Conversion between markup formats
+app-text/pandoc 2.11.4 2.12 2.13-r1: Conversion between markup formats
 app-text/pdfsplit 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
