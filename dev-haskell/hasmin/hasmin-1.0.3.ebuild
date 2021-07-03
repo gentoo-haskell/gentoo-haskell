@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2
-	test? ( >=dev-haskell/doctest-0.11 <dev-haskell/doctest-0.17
+	test? ( >=dev-haskell/doctest-0.11
 		>=dev-haskell/doctest-discover-0.1.0.0 <dev-haskell/doctest-discover-0.3
 		>=dev-haskell/hspec-2.2 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-attoparsec-0.1.0.0 <dev-haskell/hspec-attoparsec-0.2
@@ -44,5 +44,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'optparse-applicative >=0.11       && <0.15' 'optparse-applicative >=0.11'
+		'optparse-applicative >=0.11       && <0.15' 'optparse-applicative >=0.11' \
+		'doctest          >=0.11    && <0.17' 'doctest          >=0.11'
 }
