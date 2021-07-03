@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -39,6 +39,13 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprin
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/doctest-0.7 <dev-haskell/doctest-0.18
+	test? ( >=dev-haskell/doctest-0.7
 		>=dev-haskell/system-filepath-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >= 0.7 && < 0.18' 'doctest >= 0.7'
+}
