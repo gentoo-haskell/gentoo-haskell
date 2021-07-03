@@ -42,7 +42,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/file-embed-0.0:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	>=dev-haskell/glob-0.7:=[profile?] <dev-haskell/glob-0.11:=[profile?]
-	>=dev-haskell/haddock-library-1.8:=[profile?] <dev-haskell/haddock-library-1.10:=[profile?]
+	>=dev-haskell/haddock-library-1.8:=[profile?]
 	>=dev-haskell/hslua-1.1:=[profile?] <dev-haskell/hslua-1.4:=[profile?]
 	>=dev-haskell/hslua-module-path-0.1.0:=[profile?] <dev-haskell/hslua-module-path-0.2.0:=[profile?]
 	>=dev-haskell/hslua-module-system-0.2:=[profile?] <dev-haskell/hslua-module-system-0.3:=[profile?]
@@ -94,12 +94,18 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
 "
 
-PATCHES=("${FILESDIR}"/${P}-trypandoc.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-trypandoc.patch
+	"${FILESDIR}"/${P}-haddock-library-1.10.patch
+)
 
 src_prepare() {
 	default
 	# optimisations require ~16GB of memory on ghc-8.8.3
 	use optimize || HCFLAGS+=' -O0'
+
+	cabal_chdeps \
+		'haddock-library       >= 1.8      && < 1.10' 'haddock-library       >= 1.8'
 }
 
 src_configure() {
