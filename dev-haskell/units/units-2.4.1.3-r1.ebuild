@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-5:=[profile?]
+RDEPEND=">=dev-haskell/lens-4:=[profile?]
 	>=dev-haskell/linear-1.16.2:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?]
 	>=dev-haskell/multimap-1.2:=[profile?]
@@ -34,3 +34,10 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-0.8
 		>=dev-haskell/tasty-hunit-0.8 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens >= 4 && < 5' 'lens >= 4'
+}

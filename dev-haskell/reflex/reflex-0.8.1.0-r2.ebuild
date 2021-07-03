@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 	>=dev-haskell/dependent-map-0.3:=[profile?] <dev-haskell/dependent-map-0.5:=[profile?]
 	>=dev-haskell/dependent-sum-0.6:=[profile?] <dev-haskell/dependent-sum-0.8:=[profile?]
 	>=dev-haskell/exception-transformers-0.4:=[profile?] <dev-haskell/exception-transformers-0.5:=[profile?]
-	>=dev-haskell/lens-4.7:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/lens-4.7:=[profile?]
 	>=dev-haskell/memotrie-0.6:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/mmorph-1.0:=[profile?] <dev-haskell/mmorph-1.2:=[profile?]
 	>=dev-haskell/monad-control-1.0.1:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -68,7 +68,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'semialign >=1 && <1.2' 'semialign >=1'
+		'semialign >=1 && <1.2' 'semialign >=1' \
+		'lens >= 4.7 && < 5' 'lens >= 4.7'
 }
 
 src_configure() {

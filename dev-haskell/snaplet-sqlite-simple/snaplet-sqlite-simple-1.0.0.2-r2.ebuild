@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/aeson-0.11.1.4:=[profile?]
 	>=dev-haskell/clientsession-0.8:=[profile?] <dev-haskell/clientsession-0.10:=[profile?]
 	>=dev-haskell/configurator-0.3:=[profile?]
 	>=dev-haskell/direct-sqlite-2.3.3:=[profile?] <dev-haskell/direct-sqlite-2.4:=[profile?]
-	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/monad-control-1.0.1.0:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
@@ -50,5 +50,6 @@ src_prepare() {
 	cabal_chdeps \
 		'directory                  >= 1.0      && < 1.3' 'directory                  >= 1.0' \
 		'snap                       >= 1.0      && < 1.1' 'snap                       >= 1.0' \
-		'snap                       >= 1.0     && < 1.1' 'snap                       >= 1.0'
+		'snap                       >= 1.0     && < 1.1' 'snap                       >= 1.0' \
+		'lens                       >= 4.0     && < 5' 'lens                       >= 4.0'
 }

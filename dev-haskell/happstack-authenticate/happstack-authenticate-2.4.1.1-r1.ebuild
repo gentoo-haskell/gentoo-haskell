@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.17:=
 	>=dev-haskell/ixset-typed-0.3:=[profile?] <dev-haskell/ixset-typed-0.6:=[profile?]
 	>=dev-haskell/jmacro-0.6.11:=[profile?] <dev-haskell/jmacro-0.7:=[profile?]
 	>=dev-haskell/jwt-0.3:=[profile?] <dev-haskell/jwt-0.11:=[profile?]
-	>=dev-haskell/lens-4.2:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-4.2:=[profile?]
 	>=dev-haskell/mime-mail-0.4:=[profile?] <dev-haskell/mime-mail-0.6:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/pwstore-purehaskell-2.1:=[profile?] <dev-haskell/pwstore-purehaskell-2.2:=[profile?]
@@ -54,3 +54,10 @@ RDEPEND=">=dev-haskell/acid-state-0.6:=[profile?] <dev-haskell/acid-state-0.17:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens                         >= 4.2  && < 4.20' 'lens                         >= 4.2'
+}

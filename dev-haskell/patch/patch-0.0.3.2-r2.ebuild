@@ -22,7 +22,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/constraints-extras-0.3:=[profile?] <dev-haskell/constraints-extras-0.4:=[profile?]
 	>=dev-haskell/dependent-map-0.3:=[profile?] <dev-haskell/dependent-map-0.5:=[profile?]
 	>=dev-haskell/dependent-sum-0.6:=[profile?] <dev-haskell/dependent-sum-0.8:=[profile?]
-	>=dev-haskell/lens-4.7:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/lens-4.7:=[profile?]
 	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/witherable-0.3:=[profile?] <dev-haskell/witherable-0.4:=[profile?]
 	>=dev-lang/ghc-8.6.5:=
@@ -42,7 +42,8 @@ src_prepare() {
 	cabal_chdeps \
 		'base >= 4.9 && < 4.14' 'base >= 4.9' \
 		'hlint (< 2.1 || >= 2.2.2) && < 3' 'hlint >= 2.2' \
-		'semialign >=1 && <1.2' 'semialign >=1'
+		'semialign >=1 && <1.2' 'semialign >=1' \
+		'lens >= 4.7 && < 5' 'lens >= 4.7'
 }
 
 src_configure() {

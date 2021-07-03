@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/aeson-1.3:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	>=dev-haskell/binary-instances-1:=[profile?] <dev-haskell/binary-instances-1.1:=[profile?]
 	>=dev-haskell/fgl-5.7:=[profile?] <dev-haskell/fgl-5.8:=[profile?]
-	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/lens-4.17:=[profile?]
 	>=dev-haskell/math-functions-0.3:=[profile?] <dev-haskell/math-functions-0.4:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -47,7 +47,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'tasty-hedgehog  >=0.2  && <1.1' 'tasty-hedgehog  >=0.2'
+		'tasty-hedgehog  >=0.2  && <1.1' 'tasty-hedgehog  >=0.2' \
+		'lens                  >=4.17 && <5' 'lens                  >=4.17'
 }
 
 src_configure() {

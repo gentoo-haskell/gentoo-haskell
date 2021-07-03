@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/aeson-1.2.2.0:=[profile?]
 	dev-haskell/dependent-sum-template:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/hslogger:=[profile?]
-	>=dev-haskell/lens-4.15.2:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/lens-4.15.2:=[profile?]
 	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/rope-utf16-splay-0.3.1.0:=[profile?]
 	dev-haskell/scientific:=[profile?]
@@ -41,3 +41,5 @@ RDEPEND=">=dev-haskell/aeson-1.2.2.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+PATCHES=("${FILESDIR}"/${PN}-1.1.0.0-lens-5.patch)

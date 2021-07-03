@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/hashable-1.2.0.6:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/heist-1.1:=[profile?] <dev-haskell/heist-1.2:=[profile?]
-	>=dev-haskell/lens-3.7.6:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-3.7.6:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/map-syntax-0.2:=[profile?] <dev-haskell/map-syntax-0.4:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -66,7 +66,8 @@ src_prepare() {
 	cabal_chdeps \
 		'QuickCheck                 >= 2.4.2    && < 2.14' 'QuickCheck >= 2.4.2' \
 		'dlist                     >= 0.5      && < 0.9' 'dlist >= 0.5' \
-		'aeson                     >= 0.6      && < 1.5' 'aeson >= 0.6'
+		'aeson                     >= 0.6      && < 1.5' 'aeson >= 0.6' \
+		'lens                      >= 3.7.6    && < 4.20' 'lens                      >= 3.7.6'
 }
 
 src_configure() {
