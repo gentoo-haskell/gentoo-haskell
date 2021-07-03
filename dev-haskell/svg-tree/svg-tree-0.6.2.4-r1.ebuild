@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
 	>=dev-haskell/fail-4.9:=[profile?] <dev-haskell/fail-4.10:=[profile?]
 	>=dev-haskell/juicypixels-3.2:=[profile?]
-	>=dev-haskell/lens-4.6:=[profile?] <dev-haskell/lens-5:=[profile?]
+	>=dev-haskell/lens-4.6:=[profile?]
 	>=dev-haskell/linear-1.20:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?]
@@ -33,3 +33,10 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'lens       >= 4.6 && < 5' 'lens       >= 4.6'
+}
