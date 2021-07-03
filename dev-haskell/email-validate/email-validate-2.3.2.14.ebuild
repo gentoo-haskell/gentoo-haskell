@@ -21,7 +21,14 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0:=[profile?] <dev-haskell/attoparsec-0.1
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/doctest-0.8 <dev-haskell/doctest-0.18
+	test? ( >=dev-haskell/doctest-0.8
 		>=dev-haskell/hspec-2.2.3 <dev-haskell/hspec-2.9
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.15 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >= 0.8 && < 0.18' 'doctest >= 0.8'
+}
