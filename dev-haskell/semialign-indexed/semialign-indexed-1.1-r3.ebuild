@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
-	>=dev-haskell/lens-4.17:=[profile?] <dev-haskell/lens-4.20:=[profile?]
+	>=dev-haskell/lens-4.17:=[profile?]
 	>=dev-haskell/semialign-1.1:=[profile?]
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]
 	>=dev-haskell/transformers-compat-0.6.5:=[profile?] <dev-haskell/transformers-compat-0.7:=[profile?]
