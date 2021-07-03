@@ -1444,7 +1444,7 @@ dev-haskell/pipes-binary 0.4.2: Encode and decode binary streams using the pipes
 dev-haskell/pipes-bytestring 2.1.7: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
 dev-haskell/pipes-concurrency 2.0.12: Concurrency for the pipes ecosystem
-dev-haskell/pipes-group 1.0.12: Group streams into substreams
+dev-haskell/pipes-group 1.0.12-r1: Group streams into substreams
 dev-haskell/pipes-http 1.0.6: HTTP client with pipes interface
 dev-haskell/pipes-network 0.6.5: Use network sockets together with the pipes library
 dev-haskell/pipes-parse 3.0.9: Parsing infrastructure for the pipes ecosystem
@@ -2176,7 +2176,7 @@ dev-haskell/zlib-conduit 1.1.0: Streaming compression/decompression via conduits
 dev-haskell/zlib-enum 0.2.3.1-r1: Enumerator interface for zlib compression
 dev-haskell/zmidi-core 0.9.0: Read and write MIDI files
 dev-haskell/ztail 1.2.0.2-r1: Multi-file, colored, filtered log tailer
-dev-haskell/zxcvbn-hs 0.3.0.0: Password strength estimation based on zxcvbn
+dev-haskell/zxcvbn-hs 0.3.0.0-r1: Password strength estimation based on zxcvbn
 dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
 dev-lang/elm 0.19.1: Meta package for Elm
