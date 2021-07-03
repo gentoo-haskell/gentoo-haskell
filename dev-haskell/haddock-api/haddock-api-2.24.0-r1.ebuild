@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND=">=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
-	>=dev-haskell/haddock-library-1.9.0:=[profile?] <dev-haskell/haddock-library-1.10:=[profile?]
+	>=dev-haskell/haddock-library-1.9.0:=[profile?]
 	>=dev-haskell/xhtml-3000.2.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
 	>=dev-lang/ghc-8.10.1:=
 "
@@ -29,11 +29,15 @@ DEPEND="${RDEPEND}
 		)
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-8.10.2.patch )
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-8.10.2.patch
+	"${FILESDIR}"/${P}-haddock-library-1.10.patch
+)
 
 src_prepare () {
 	default
 
 	cabal_chdeps \
-		'QuickCheck      >= 2.11  && < 2.14' 'QuickCheck >= 2.11'
+		'QuickCheck      >= 2.11  && < 2.14' 'QuickCheck >= 2.11' \
+		'haddock-library ^>= 1.9.0' 'haddock-library >= 1.9.0'
 }
