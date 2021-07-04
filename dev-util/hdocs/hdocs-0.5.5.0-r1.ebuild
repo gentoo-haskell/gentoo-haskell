@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0:=[profile?]
 	>=dev-haskell/cabal-1.22.2:=[profile?]
 	>=dev-haskell/ghc-paths-0.1.0:=[profile?]
 	>=dev-haskell/haddock-api-2.16.0:=[profile?] <dev-haskell/haddock-api-2.25:=[profile?]
-	>=dev-haskell/haddock-library-1.6:=[profile?] <dev-haskell/haddock-library-1.10:=[profile?]
+	>=dev-haskell/haddock-library-1.6:=[profile?]
 	>=dev-haskell/mtl-2.1.0:=[profile?]
 	>=dev-haskell/network-2.4.0:=[profile?]
 	>=dev-haskell/text-1.1.0:=[profile?]
@@ -30,3 +30,12 @@ RDEPEND=">=dev-haskell/aeson-0.7.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
+
+PATCHES=("${FILESDIR}"/${PN}-0.5.5.0-haddock-library-1.10.patch)
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'haddock-library == 1.9.*' 'haddock-library >= 1.9'
+}
