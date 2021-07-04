@@ -1,0 +1,24 @@
+--- a/src/HDocs/Base.hs
++++ b/src/HDocs/Base.hs
+@@ -13,6 +13,9 @@ import Data.Foldable (foldMap, toList)
+ import qualified Data.Map as M
+ 
+ import Documentation.Haddock
++#if MIN_VERSION_haddock_library(1,10,0)
++import Documentation.Haddock.Types
++#endif
+ 
+ import DynFlags
+ import GHC
+@@ -56,7 +59,11 @@ formatDoc = trim . go where
+ 	go (DocIdentifier i) = unwrap i
+ 	go (DocIdentifierUnchecked m) = moduleNameString mname ++ "." ++ occNameString occname where
+ 			(mname, occname) = unwrap m
++#if MIN_VERSION_haddock_library(1,10,0)
++	go (DocModule m) = modLinkName m
++#else
+ 	go (DocModule m) = m
++#endif
+ 	go (DocWarning w) = go w
+ 	go (DocEmphasis e) = "*" ++ go e ++ "*"
+ 	go (DocMonospaced e) = "`" ++ go e ++ "`"
