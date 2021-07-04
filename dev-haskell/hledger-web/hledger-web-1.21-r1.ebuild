@@ -30,8 +30,8 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	>=dev-haskell/decimal-0.5.1:=[profile?]
 	>=dev-haskell/extra-1.6.3:=[profile?]
 	dev-haskell/hjsmin:=[profile?]
-	>=dev-haskell/hledger-1.22:=[profile?] <dev-haskell/hledger-1.23:=[profile?]
-	>=dev-haskell/hledger-lib-1.22:=[profile?] <dev-haskell/hledger-lib-1.23:=[profile?]
+	>=dev-haskell/hledger-1.21:=[profile?] <dev-haskell/hledger-1.22:=[profile?]
+	>=dev-haskell/hledger-lib-1.21:=[profile?] <dev-haskell/hledger-lib-1.22:=[profile?]
 	dev-haskell/hspec:=[profile?]
 	dev-haskell/http-client:=[profile?]
 	dev-haskell/http-conduit:=[profile?]
@@ -60,6 +60,13 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'yesod-form >=1.4 && <1.7' 'yesod-form >=1.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

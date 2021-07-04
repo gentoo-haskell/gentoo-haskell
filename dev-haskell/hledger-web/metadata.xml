@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="library-only">Build for use with &quot;yesod devel&quot;</flag>
+		<flag name="library-only">Build for use with "yesod devel"</flag>
 		<flag name="threaded">Build with support for multithreaded execution.</flag>
 	</use>
 </pkgmetadata>
