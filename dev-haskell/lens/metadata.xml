@@ -24,6 +24,9 @@
 		<flag name="safe">
 			Dissallow unsafeCoerce
 		</flag>
+		<flag name="test-templates">
+			Enable template tests
+		</flag>
 		<flag name="trustworthy">
 			Assert that we are trustworthy when we can
 		</flag>
