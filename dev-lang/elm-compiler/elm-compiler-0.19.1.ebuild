@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -48,6 +48,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2
 "
 
+PATCHES=("${FILESDIR}"/${PN}-0.19.1-fetch-hack.patch)
+
 S=${WORKDIR}/compiler-${PV}
 
 src_prepare() {
@@ -57,6 +59,9 @@ src_prepare() {
 		'ansi-terminal >= 0.8 && < 0.9' 'ansi-terminal >= 0.8' \
 		'containers >= 0.5.8.2 && < 0.6' 'containers >= 0.5.8.2' \
 		'network >= 2.4 && < 2.7' 'network >= 2.4.0.0'
+
+	# =fail is useful to detect uncached entries 
+	export ELM_FETCH_MODE_GENTOO=warn
 }
 
 src_configure() {
