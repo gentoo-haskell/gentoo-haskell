@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -58,6 +58,8 @@ RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
+
+PATCHES=("${FILESDIR}"/${P}-safecopy-0.10.4-hack.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
