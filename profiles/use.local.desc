@@ -244,6 +244,7 @@ dev-haskell/lens:inlining - Generate inline pragmas when using template-haskell.
 dev-haskell/lens:j - Attempt a parallel build
 dev-haskell/lens:old-inline-pragmas - For 7.6.1-rc1 users
 dev-haskell/lens:safe - Dissallow unsafeCoerce
+dev-haskell/lens:test-templates - Enable template tests
 dev-haskell/lens:trustworthy - Assert that we are trustworthy when we can
 dev-haskell/libyaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
