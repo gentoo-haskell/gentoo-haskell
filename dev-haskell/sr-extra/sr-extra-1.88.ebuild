@@ -51,15 +51,13 @@ RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 	dev-haskell/uuid-orphans:=[profile?]
 	dev-haskell/uuid-types:=[profile?]
 	dev-haskell/zlib:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.4.3:=
 	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.4:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.24.0.0
+	>=dev-haskell/cabal-2.2.0.1
 "
-
-PATCHES=("${FILESDIR}"/${P}-safecopy-0.10.4-hack.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
