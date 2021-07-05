@@ -10,5 +10,5 @@ LICENSE=MIT
 RDEPEND=>=dev-haskell/haskell-src-exts-1.23:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?] >=dev-lang/ghc-8.0.1:=
 SLOT=1.23/1.23.0.0
 SRC_URI=https://hackage.haskell.org/package/haskell-src-exts-simple-1.23.0.0/haskell-src-exts-simple-1.23.0.0.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	c5182eb7e501132153f9710aa822d170	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	658e96e9ebbdc78375837f4aab79399f
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	aa324820bb0ce64282e05b788dd9e5c4	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	a6a9f8da604278fa2760832e7b0886be
 _md5_=8476ff3a835365e5c8d286057e56ce71
