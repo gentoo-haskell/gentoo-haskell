@@ -11,5 +11,5 @@ RDEPEND=>=dev-haskell/aeson-0.4.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profile
 RESTRICT=!test? ( test )
 SLOT=0/1.1.0.0
 SRC_URI=https://hackage.haskell.org/package/aeson-yaml-1.1.0.0/aeson-yaml-1.1.0.0.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	aa324820bb0ce64282e05b788dd9e5c4	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	a6a9f8da604278fa2760832e7b0886be
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	a305a0366a639c76a9934c6a743f328d	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	8d5eab816b9f52861ed03f33f4f7b331
 _md5_=f2ec38b91d7ed9d3cd649b3533e0d5a7
