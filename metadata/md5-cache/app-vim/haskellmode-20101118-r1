@@ -10,4 +10,4 @@ RDEPEND=>=dev-lang/ghc-6.6[doc] net-misc/wget || ( >=app-editors/vim-7.0 >=app-e
 SLOT=0
 SRC_URI=http://code.haskell.org/~wwolff/haskellmode/haskellmode-20101118.tar.bz2
 _eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	vim-doc	e063cddf18e5d2f2cfb21388252579ec	vim-plugin	93be71a1efbbf62981fcd40ee0db6e3f
-_md5_=40da14761cc50ac74f018bb4ccff3655
+_md5_=2022eae8f72f4e08a7dd0c40f2bdcd29
