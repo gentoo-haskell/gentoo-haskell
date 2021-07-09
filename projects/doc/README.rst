@@ -21,7 +21,7 @@ emerged, run this to get your own copy of the repo::
 
 You need to be able to make patches, and send patches/pull requests on github.
 If you are new to git try to read `some git basics`_ and drop in on
-irc://freenode.net/gentoo-haskell to get help.
+ircs://irc.libera.chat/#gentoo-haskell to get help.
 
 .. _TODO list: TODO.rst
 .. _bug reports: http://tinyurl.com/2l3p48
