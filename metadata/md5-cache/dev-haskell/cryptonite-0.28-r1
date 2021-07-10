@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/basement-0.0.6:=[profile?] >=dev-haskell/memory-0.14.18:=[profile?] >=dev-lang/ghc-8.4.3:= virtual/libc >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/tasty dev-haskell/tasty-hunit dev-haskell/tasty-kat dev-haskell/tasty-quickcheck ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Cryptography Primitives sink
+EAPI=7
+HOMEPAGE=https://github.com/haskell-crypto/cryptonite
+INHERIT=flag-o-matic haskell-cabal
+IUSE=cpu_flags_x86_rdrand cpu_flags_x86_aes cpu_flags_x86_sse cpu_flags_x86_sse4_1 +integer-gmp +target-attributes doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/basement-0.0.6:=[profile?] >=dev-haskell/memory-0.14.18:=[profile?] >=dev-lang/ghc-8.4.3:= virtual/libc
+RESTRICT=!test? ( test )
+SLOT=0/0.28
+SRC_URI=https://hackage.haskell.org/package/cryptonite-0.28/cryptonite-0.28.tar.gz https://github.com/haskell-crypto/cryptonite/pull/338.patch -> cryptonite-338.patch
+_eclasses_=toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	97566c1a256d07b00848aa767e38a352	edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	flag-o-matic	4134b5c0fb719b9161d10bdaba9e09e5	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	a305a0366a639c76a9934c6a743f328d	haskell-cabal	8d5eab816b9f52861ed03f33f4f7b331
+_md5_=861eabb8656cf33f3fc948dfb925509a
