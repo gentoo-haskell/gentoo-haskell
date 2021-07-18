@@ -13,7 +13,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
-PYTHON_COMPAT=( python3_{7..9} )
+PYTHON_COMPAT=( python3_{7..10} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib multiprocessing pax-utils toolchain-funcs prefix
@@ -78,14 +78,14 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
+IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
-	sys-libs/ncurses:0=[unicode]
+	sys-libs/ncurses:=[unicode(+)]
 	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
@@ -501,7 +501,6 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
-		eapply "${FILESDIR}"/${PN}-8.10.3-C99-typo-ac270.patch
 		eapply "${FILESDIR}"/${PN}-8.10.4-sphinx-quote.patch
 
 		# a bunch of crosscompiler patches
@@ -527,8 +526,8 @@ src_configure() {
 		echo '# Gentoo changes' > mk/build.mk
 
 		# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
-		echo "docdir = ${EPREFIX}/usr/share/doc/$(cross)${P}" >> mk/build.mk
-		echo "htmldir = ${EPREFIX}/usr/share/doc/$(cross)${P}" >> mk/build.mk
+		echo "docdir = ${EPREFIX}/usr/share/doc/$(cross)${PF}" >> mk/build.mk
+		echo "htmldir = ${EPREFIX}/usr/share/doc/$(cross)${PF}" >> mk/build.mk
 
 		# We also need to use the GHC_FLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk

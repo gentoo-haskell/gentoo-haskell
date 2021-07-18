@@ -105,7 +105,7 @@ RESTRICT="!test? ( test )"
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
-	sys-libs/ncurses:0=[unicode]
+	sys-libs/ncurses:=[unicode(+)]
 	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
@@ -601,8 +601,8 @@ src_configure() {
 		echo '# Gentoo changes' > mk/build.mk
 
 		# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
-		echo "docdir = ${EPREFIX}/usr/share/doc/$(cross)${P}" >> mk/build.mk
-		echo "htmldir = ${EPREFIX}/usr/share/doc/$(cross)${P}" >> mk/build.mk
+		echo "docdir = ${EPREFIX}/usr/share/doc/$(cross)${PF}" >> mk/build.mk
+		echo "htmldir = ${EPREFIX}/usr/share/doc/$(cross)${PF}" >> mk/build.mk
 
 		# We also need to use the GHC_FLAGS flags when building ghc itself
 		echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
