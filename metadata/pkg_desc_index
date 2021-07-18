@@ -1989,7 +1989,7 @@ dev-haskell/unix-bytestring 0.3.7.3: Unix/Posix-specific functions for ByteStrin
 dev-haskell/unix-compat 0.5.3: Portable POSIX-compatibility layer
 dev-haskell/unix-memory 0.1.2-r1: Unix memory syscalls
 dev-haskell/unix-time 0.4.7: Unix time parser/formatter and utilities
-dev-haskell/unixutils 1.54.2: A crude interface between Haskell and Unix-like operating systems
+dev-haskell/unixutils 1.54.2-r1: A crude interface between Haskell and Unix-like operating systems
 dev-haskell/unlambda 0.1.4.2: Unlambda interpreter
 dev-haskell/unliftio 0.2.18: The MonadUnliftIO typeclass for unlifting monads to IO (batteries included)
 dev-haskell/unliftio-core 0.2.0.1: The MonadUnliftIO typeclass for unlifting monads to IO
@@ -2182,7 +2182,7 @@ dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
 dev-lang/elm 0.19.1: Meta package for Elm
 dev-lang/elm-compiler 0.19.1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
-dev-lang/ghc 8.8.4 8.10.4 8.10.5 9.0.1 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 8.8.4-r1 8.10.4-r1 8.10.5-r1 9.0.1-r1 9999: The Glasgow Haskell Compiler
 dev-lang/hugs98 2006.9-r2: The Hugs98 Haskell interpreter
 dev-lang/idris 1.3.3-r5: Functional Programming Language with Dependent Types
 dev-lang/ott 0.31: Ott is a tool for writing definitions of programming languages and calculi.
