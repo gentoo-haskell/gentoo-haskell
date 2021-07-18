@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/fourmolu-0.3:=[profile?] <dev-haskell/fourmolu-0.4:=[profile?] >=dev-haskell/ghcide-1.2:=[profile?] <dev-haskell/ghcide-1.5:=[profile?] >=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.2:=[profile?] dev-haskell/lens:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-8.6.3:= >=dev-haskell/cabal-2.4.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Integration with the Fourmolu code formatter
+EAPI=8
+HOMEPAGE=https://hackage.haskell.org/package/hls-fourmolu-plugin
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=>=dev-haskell/fourmolu-0.3:=[profile?] <dev-haskell/fourmolu-0.4:=[profile?] >=dev-haskell/ghcide-1.2:=[profile?] <dev-haskell/ghcide-1.5:=[profile?] >=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.2:=[profile?] dev-haskell/lens:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-8.6.3:=
+RESTRICT=test
+SLOT=0/1.0.0.1
+SRC_URI=https://hackage.haskell.org/package/hls-fourmolu-plugin-1.0.0.1/hls-fourmolu-plugin-1.0.0.1.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5
+_md5_=414416e57f362edbd12dd80d208ce1c7

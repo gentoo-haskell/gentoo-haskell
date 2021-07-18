@@ -178,7 +178,6 @@ dev-haskell/haskellnet:network-bsd - Use network-bsd
 dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
-dev-haskell/hie-compat:ghc-lib - build against ghc-lib instead of the ghc package
 dev-haskell/hiedb:executable - Install the hiedb executable
 dev-haskell/highlighter:executable - Install a "highlighter" executable
 dev-haskell/hip:disable-chart - Disable Chart-diagrams and Chart for a lighter dependency footprint
@@ -477,7 +476,6 @@ dev-util/brittany:brittany-dev-lib - set buildable false for anything but lib
 dev-util/brittany:brittany-test-perf - determines if performance test suite is enabled
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with the multi-threaded runtime
-dev-util/haskell-language-server:agpl - Enable AGPL dependencies
 dev-util/haskell-language-server:hls_formatters_brittany - Enable brittany plugin
 dev-util/haskell-language-server:hls_formatters_floskell - Enable floskell plugin
 dev-util/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu plugin
@@ -489,6 +487,7 @@ dev-util/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
 dev-util/haskell-language-server:hls_plugins_import-lens - Enable importLens plugin
 dev-util/haskell-language-server:hls_plugins_module-name - Enable moduleName plugin
 dev-util/haskell-language-server:hls_plugins_pragmas - Enable pragmas plugin
+dev-util/haskell-language-server:hls_plugins_refine-imports - Enable refineImports plugin
 dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
 dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
 dev-util/haskell-language-server:hls_plugins_tactic - Enable tactic plugin
