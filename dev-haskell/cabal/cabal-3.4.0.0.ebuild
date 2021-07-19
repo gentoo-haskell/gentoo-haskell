@@ -48,4 +48,4 @@ src_configure() {
 		--flag=-bundled-binary-generic
 }
 
-CABAL_CORE_LIB_GHC_PV="PM:9.0.1"
+CABAL_CORE_LIB_GHC_PV="PM:9.0.1 PM:9.0.1-r1"
