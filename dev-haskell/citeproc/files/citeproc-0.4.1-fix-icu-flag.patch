@@ -1,0 +1,51 @@
+This makes the library behave similarly whether compiled
+with `icu` or with the default `unicode-collation` and prevents
+test failures with `icu`.
+
+From: John MacFarlane <jgm@berkeley.edu>
+Source: https://github.com/jgm/citeproc/commit/50d14d938c883a8835550933df4004050b0b3902
+Bug: https://github.com/jgm/citeproc/issues/83
+Bug: https://github.com/jgm/pandoc/issues/7449
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+diff --git a/src/Citeproc/Unicode.hs b/src/Citeproc/Unicode.hs
+index 6381a39..70d19bb 100644
+--- a/src/Citeproc/Unicode.hs
++++ b/src/Citeproc/Unicode.hs
+@@ -13,6 +13,7 @@ where
+ import Text.Collate.Lang (Lang(..), parseLang, renderLang, lookupLang)
+ #ifdef MIN_VERSION_text_icu
+ import qualified Data.Text.ICU as ICU
++import qualified Data.Text.ICU.Collate as ICUC
+ #else
+ import qualified Text.Collate as U
+ #endif
+@@ -56,14 +57,19 @@ toLower mblang = T.toLower .
+ 
+ comp :: Maybe Lang -> Text -> Text -> Ordering
+ #ifdef MIN_VERSION_text_icu
+-comp mblang = ICU.collate (ICU.collator (toICULocale mblang))
++comp mblang = ICU.collate collator
++ where
++  collator = ICU.collatorWith (toICULocale mblang) [ICUC.AlternateHandling alt]
++  alt = case mblang >>= lookup "u" . langExtensions >>= lookup "ka" of
++          Just "noignore" -> ICUC.NonIgnorable
++          _ -> ICUC.Shifted
+ #else
+-comp mblang =
+-  let lang = fromMaybe (Lang "" Nothing Nothing [] [] []) mblang
+-      coll = case lookup "u" (langExtensions lang) >>= lookup "ka" of
+-                -- default to Shifted variable weighting, unless a variable
+-                -- weighting is explicitly specified with the ka keyword:
+-                Nothing -> U.setVariableWeighting U.Shifted $ U.collatorFor lang
+-                Just _  -> U.collatorFor lang
+-   in U.collate coll
++comp mblang = U.collate coll
++ where
++  lang = fromMaybe (Lang "" Nothing Nothing [] [] []) mblang
++  coll = case lookup "u" (langExtensions lang) >>= lookup "ka" of
++           -- default to Shifted variable weighting, unless a variable
++           -- weighting is explicitly specified with the ka keyword:
++           Nothing -> U.setVariableWeighting U.Shifted $ U.collatorFor lang
++           Just _  -> U.collatorFor lang
+ #endif
