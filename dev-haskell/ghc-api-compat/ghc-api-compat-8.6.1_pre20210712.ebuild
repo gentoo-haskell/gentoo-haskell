@@ -13,7 +13,9 @@ HOMEPAGE="https://hackage.haskell.org/package/ghc-api-compat"
 
 # The version on hackage isn't properly packaged, so we use a tarball from gitlab
 GIT_COMMIT="1c4b23e8f929b052f2172ca509c7428811547b89"
-SRC_URI="https://gitlab.haskell.org/haskell/${PN}/-/archive/${GIT_COMMIT}/${PN}-${GIT_COMMIT}.tar.bz2"
+SRC_URI="https://gitlab.haskell.org/haskell/${PN}/-/archive/${GIT_COMMIT}/${PN}-${GIT_COMMIT}.tar.bz2 -> ${P}.tar.bz2"
+
+S="${WORKDIR}/${PN}-${GIT_COMMIT}"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
