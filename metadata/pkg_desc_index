@@ -230,7 +230,7 @@ dev-haskell/c2hs 0.28.8: C->Haskell FFI tool that gives some cross-language type
 dev-haskell/cabal 3.0.1.0 3.2.0.0 3.2.1.0-r1 3.3.9999 3.4.0.0: A framework for packaging Haskell software
 dev-haskell/cabal-doctest 1.0.8-r2: A Setup.hs helper for doctests running
 dev-haskell/cabal-file-th 0.2.7: Template Haskell expressions for reading fields from a project's cabal file
-dev-haskell/cabal-install 3.0.0.0 3.2.0.0 3.4.0.0 9999: The command-line interface for Cabal and Hackage
+dev-haskell/cabal-install 3.2.0.0 3.4.0.0 9999: The command-line interface for Cabal and Hackage
 dev-haskell/cabal-install-parsers 0.3.0.1 0.4: Utilities to work with cabal-install files
 dev-haskell/cabal-macosx 0.2.4.2: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-plan 0.7.2.0 0.7.2.0-r2: Library and utility for processing cabal's plan.json file
