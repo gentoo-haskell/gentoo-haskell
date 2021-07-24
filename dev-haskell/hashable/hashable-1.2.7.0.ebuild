@@ -19,7 +19,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+cpu_flags_x86_sse2 cpu_flags_x86_sse4_1 examples +gmp"
+IUSE="cpu_flags_x86_sse2 cpu_flags_x86_sse4_1 examples +gmp"
 
 RESTRICT=test # circular deps: hashable[test]->quickcheck->semigroups->hashable
 
