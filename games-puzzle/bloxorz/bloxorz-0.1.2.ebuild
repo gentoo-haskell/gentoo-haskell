@@ -5,7 +5,7 @@
 
 EAPI=7
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES=""
 inherit flag-o-matic haskell-cabal
 
 DESCRIPTION="OpenGL Logic Game"
