@@ -453,7 +453,6 @@ dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
 dev-haskell/xlsx:microlens - Use microlens instead of lens
 dev-haskell/yaml:no-examples - don't build the examples
 dev-haskell/yaml:no-exe - don't install the yaml2json or json2yaml executables
-dev-haskell/yesod-auth:network-uri - Get Network.URI from the network-uri package
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
 dev-haskell/yesod-paginator:examples - Build the examples
 dev-haskell/zip-archive:executable - Build the Zip executable.
