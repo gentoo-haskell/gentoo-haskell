@@ -3,7 +3,7 @@
 
 EAPI=6
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES=""
 inherit haskell-cabal
 
 DESCRIPTION="A tool for testing command-line programs"

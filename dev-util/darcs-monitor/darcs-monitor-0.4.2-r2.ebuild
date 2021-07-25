@@ -3,7 +3,7 @@
 
 EAPI=7
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES=""
 inherit haskell-cabal
 
 DESCRIPTION="Darcs repository monitor (sends email)"

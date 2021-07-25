@@ -3,7 +3,7 @@
 
 EAPI=6
 
-CABAL_FEATURES="bin lib profile haddock hoogle hscolour"
+CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Interfacing with the MediaWiki API"
