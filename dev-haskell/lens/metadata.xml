@@ -18,9 +18,6 @@
 		<flag name="j">
 			Attempt a parallel build
 		</flag>
-		<flag name="old-inline-pragmas">
-			For 7.6.1-rc1 users
-		</flag>
 		<flag name="safe">
 			Dissallow unsafeCoerce
 		</flag>

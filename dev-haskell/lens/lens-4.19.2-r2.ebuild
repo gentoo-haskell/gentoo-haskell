@@ -17,7 +17,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
 LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="benchmark-uniplate dump-splices +inlining j old-inline-pragmas safe +trustworthy"
+IUSE="benchmark-uniplate dump-splices +inlining j safe +trustworthy"
 
 RESTRICT=test # Ambiguous occurrence 'foldmap': Vector.foldMap or Foldable.foldMap
 
@@ -79,7 +79,6 @@ src_configure() {
 		$(cabal_flag inlining inlining) \
 		$(cabal_flag j j) \
 		--flag=-lib-werror \
-		$(cabal_flag old-inline-pragmas old-inline-pragmas) \
 		$(cabal_flag safe safe) \
 		$(cabal_flag test test-doctests) \
 		$(cabal_flag test test-hunit) \
