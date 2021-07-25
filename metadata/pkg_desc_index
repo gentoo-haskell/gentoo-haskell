@@ -722,7 +722,7 @@ dev-haskell/glfw 0.5.2.5: A Haskell binding for GLFW
 dev-haskell/glfw-b 1.4.8.4 3.3.0.0: Bindings to GLFW OpenGL library
 dev-haskell/glib 0.13.8.1-r1: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glirc 2.35 2.37-r1 2.38: Console IRC client
-dev-haskell/glob 0.9.3 0.10.1: Globbing library
+dev-haskell/glob 0.10.1: Globbing library
 dev-haskell/gloss 1.13.2.1: Painless 2D vector graphics, animations and simulations
 dev-haskell/gloss-algorithms 1.13.0.2: Data structures and algorithms for working with 2D graphics
 dev-haskell/gloss-examples 1.13.0.3: Examples using the gloss library
