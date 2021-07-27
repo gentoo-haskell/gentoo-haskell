@@ -1,7 +1,7 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 # For resurrectors:
 #   hugs98 has major problems with upstream,
@@ -9,13 +9,13 @@ EAPI=6
 #     gentoo bug #303665
 #     gentoo bug #240036
 
-inherit flag-o-matic versionator autotools
+inherit flag-o-matic autotools
 
 IUSE="X opengl openal doc"
 
 # version numbering of Hugs is rather strange
 # we have to transform 2003.11 -> Nov2003
-HUGS_MONTH_NR=$(get_version_component_range 2)
+HUGS_MONTH_NR=$(ver_cut 2)
 
 transform_month() {
 	case "$1" in
@@ -44,8 +44,8 @@ transform_month_num() {
 
 HUGS_MONTH=$(transform_month ${HUGS_MONTH_NR})
 HUGS_MONTH0=$(transform_month_num ${HUGS_MONTH_NR})
-MY_PV="${HUGS_MONTH}$(get_major_version )"
-MY_PV0="$(get_version_component_range 1)-${HUGS_MONTH0}"
+MY_PV="${HUGS_MONTH}$(ver_cut 1)"
+MY_PV0="$(ver_cut 1)-${HUGS_MONTH0}"
 MY_P="${PN}-plus-${MY_PV}"
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="The Hugs98 Haskell interpreter"
