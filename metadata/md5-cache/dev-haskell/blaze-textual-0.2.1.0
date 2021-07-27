@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile configure install postinst postrm setup test
 DEPEND=>=dev-haskell/blaze-builder-0.2.1.4:=[profile?] >=dev-haskell/double-conversion-0.2.0.1:=[profile?] dev-haskell/old-locale:=[profile?] >=dev-haskell/text-0.11.0.2:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.8 test? ( >=dev-haskell/quickcheck-2.4.0.1 >=dev-haskell/test-framework-0.3.3 >=dev-haskell/test-framework-quickcheck2-0.2.9 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Fast rendering of common datatypes
-EAPI=7
+EAPI=8
 HOMEPAGE=https://github.com/bos/blaze-textual
 INHERIT=haskell-cabal
 IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/blaze-builder-0.2.1.4:=[profile?] >=dev-haskell/double-conversion-0.2.0.1:=[profile?] dev-haskell/old-locale:=[profile?] >=dev-haskell/text-0.11.0.2:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-7.4.1:=
-RESTRICT=test
+RESTRICT=!test? ( test )
 SLOT=0/0.2.1.0
 SRC_URI=https://hackage.haskell.org/package/blaze-textual-0.2.1.0/blaze-textual-0.2.1.0.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5
-_md5_=ea8ce7d76293e5ddaa7d01329920b4e8
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5
+_md5_=034cdf3fdbf03ce1b4bf0f84e7ef937d
