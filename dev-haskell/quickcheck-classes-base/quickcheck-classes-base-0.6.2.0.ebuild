@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4
 "
 
+PATCHES=("${FILESDIR}"/${P}-laws.patch)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag binary-laws binary-laws) \
