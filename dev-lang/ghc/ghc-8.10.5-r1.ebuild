@@ -502,6 +502,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
 		eapply "${FILESDIR}"/${PN}-8.10.4-sphinx-quote.patch
+		eapply "${FILESDIR}"/${PN}-8.10.5-modorigin-verbose-conflict.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
