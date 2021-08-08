@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/data-default-class-0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-lang/ghc-8.4.3:= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=A binding to the X11 graphics library
+EAPI=8
+HOMEPAGE=https://github.com/xmonad/X11
+INHERIT=haskell-cabal
+IUSE=pedantic doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos
+LICENSE=BSD
+RDEPEND=>=dev-haskell/data-default-class-0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-lang/ghc-8.4.3:= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr
+SLOT=0/1.10
+SRC_URI=https://hackage.haskell.org/package/X11-1.10/X11-1.10.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5
+_md5_=a85f67cd84cf650e1e65727d99197c29

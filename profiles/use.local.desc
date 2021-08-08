@@ -447,6 +447,7 @@ dev-haskell/wcwidth:cli - Enable command line tool
 dev-haskell/websockets:examples - Build the example server
 dev-haskell/wreq:aws - enable AWS tests
 dev-haskell/wreq:httpbin - enable httpbin test daemon
+dev-haskell/x11:pedantic - Be pedantic (-Werror and the like)
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
 dev-haskell/xlsx:microlens - Use microlens instead of lens
 dev-haskell/yaml:no-examples - don't build the examples
