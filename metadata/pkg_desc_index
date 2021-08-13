@@ -134,7 +134,7 @@ dev-haskell/base16-bytestring 0.1.1.7 1.0.1.0: RFC 4648-compliant Base16 encodin
 dev-haskell/base32-bytestring 0.2.1.0: Fast base32 and base32hex codec for ByteStrings
 dev-haskell/base58-bytestring 0.1.0-r1: Implementation of BASE58 transcoding for ByteStrings
 dev-haskell/base64 0.4.2.3: A modern RFC 4648-compliant Base64 library
-dev-haskell/base64-bytestring 1.0.0.3 1.2.0.1: Fast base64 encoding and decoding for ByteStrings
+dev-haskell/base64-bytestring 1.0.0.3 1.2.1.0: Fast base64 encoding and decoding for ByteStrings
 dev-haskell/base64-string 0.2: Base64 implementation for String's
 dev-haskell/basement 0.0.12: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.7.0: An enhanced core prelude; a common foundation for alternate preludes
@@ -965,7 +965,7 @@ dev-haskell/hsshellscript 3.4.5: Haskell for Unix shell scripting tasks
 dev-haskell/hssyck 0.53-r1: Fast, lightweight YAML loader and dumper
 dev-haskell/hstatistics 0.2.5.4: Statistics
 dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
-dev-haskell/hstringtemplate 0.8.7: StringTemplate implementation in Haskell
+dev-haskell/hstringtemplate 0.8.8: StringTemplate implementation in Haskell
 dev-haskell/hsx-jmacro 7.3.8.1: hsp+jmacro support
 dev-haskell/hsx2hs 0.14.1.8: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsyaml 0.1.2.0 0.2.1.0: Pure Haskell YAML 1.2 parser
@@ -2240,7 +2240,7 @@ sci-mathematics/agda 2.6.1.2: A dependently typed functional programming languag
 sci-mathematics/agda-stdlib 2.6.1.2.1.4: Agda standard library
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/darcsweb 1.1: A web interface for darcs
-www-apps/gitit 0.13.0.0-r1: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.15.0.0: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp

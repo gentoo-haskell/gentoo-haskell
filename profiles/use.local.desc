@@ -515,7 +515,7 @@ sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
 sci-mathematics/agda:debug - Enable debugging features that may slow Agda down.
 sci-mathematics/agda:enable-cluster-counting - Enable the --count-clusters flag. (If enable-cluster-counting is False, then the --count-clusters flag triggers an error message.)
 sci-mathematics/agda:stdlib - Install the standard library.
-www-apps/gitit:plugins - enables optional plugin runtime loader
+www-apps/gitit:plugins - Compile in support for plugins. This will increase the size of the executable and the memory it uses, so those who will not need plugins should disable this flag.
 www-servers/mighttpd2:tls - HTTPS support.
 x11-misc/xmobar:alsa - Use alsa-mixer to get the volume from soundcards.
 x11-misc/xmobar:dbus - Publish a service on the session bus for controlling xmobar.
