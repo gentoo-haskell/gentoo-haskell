@@ -1,4 +1,4 @@
-BDEPEND=sys-devel/gnuconfig >=app-portage/elt-patches-20170815
+BDEPEND=sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.2-r1:1.16 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DEFINED_PHASES=compile configure install prepare
 DEPEND=X? ( || ( x11-libs/libX11 virtual/x11 ) ) opengl? ( virtual/opengl media-libs/freeglut ) openal? ( media-libs/openal ) ~app-text/docbook-sgml-dtd-4.2
 DESCRIPTION=The Hugs98 Haskell interpreter
@@ -12,5 +12,5 @@ RDEPEND=X? ( || ( x11-libs/libX11 virtual/x11 ) ) opengl? ( virtual/opengl media
 RESTRICT=test
 SLOT=0
 SRC_URI=https://www.haskell.org/hugs/downloads/2006-09/hugs98-plus-Sep2006.tar.gz
-_eclasses_=toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	97566c1a256d07b00848aa767e38a352	flag-o-matic	4134b5c0fb719b9161d10bdaba9e09e5	gnuconfig	262062cef0ba4f22b397193da514a350	libtool	241a8f577b9781a42a7421e53448a44e	autotools	2a36908d5f63f41614b450a2459567da
+_eclasses_=toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	97566c1a256d07b00848aa767e38a352	flag-o-matic	4134b5c0fb719b9161d10bdaba9e09e5	gnuconfig	262062cef0ba4f22b397193da514a350	libtool	241a8f577b9781a42a7421e53448a44e	autotools	c7052b276346587968d52ea8eaf5aca1
 _md5_=bbb004f756ac81f685f308ac72f4e452
