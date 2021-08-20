@@ -8,4 +8,7 @@
 	<longdescription>
 		An implementation of the Jupyter messaging protocol, used to implement Jupyter kernels in Haskell or communicate with existing Jupyter kernels via the messaging protocol.
 	</longdescription>
+	<use>
+		<flag name="examples">Build example Jupyter kernel executables</flag>
+	</use>
 </pkgmetadata>

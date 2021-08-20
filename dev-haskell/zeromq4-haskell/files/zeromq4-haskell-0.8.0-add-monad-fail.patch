@@ -1,0 +1,19 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Add a MonadFail instance to ZMQ.
+This is needed for dev-haskell/jupyter to compile.
+https://github.com/gentoo-haskell/gentoo-haskell/issues/1214
+
+diff -urN zeromq4-haskell-0.8.0-orig/src/System/ZMQ4/Monadic.hs zeromq4-haskell-0.8.0/src/System/ZMQ4/Monadic.hs
+--- zeromq4-haskell-0.8.0-orig/src/System/ZMQ4/Monadic.hs	1969-12-31 17:00:00.000000000 -0700
++++ zeromq4-haskell-0.8.0/src/System/ZMQ4/Monadic.hs	2021-08-15 10:19:10.498706502 -0600
+@@ -220,7 +220,7 @@
+ -- unintented use of 'Socket's outside their scope. Cf. the paper
+ -- of John Launchbury and Simon Peyton Jones /Lazy Functional State Threads/.
+ newtype ZMQ z a = ZMQ { _unzmq :: ReaderT ZMQEnv IO a }
+-    deriving (MonadBase IO)
++    deriving (MonadBase IO, MonadFail)
+ 
+ -- | The ZMQ socket, parameterised by 'SocketType' and belonging to
+ -- a particular 'ZMQ' thread.
