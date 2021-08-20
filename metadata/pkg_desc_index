@@ -1093,7 +1093,7 @@ dev-haskell/juicypixels 3.3.5: Picture loading/serialization (in png, jpeg, bitm
 dev-haskell/juicypixels-blurhash 0.1.0.3: Blurhash is a very compact represenation of a placeholder for an image
 dev-haskell/juicypixels-extra 0.4.1: Efficiently scale, crop, flip images with JuicyPixels
 dev-haskell/juicypixels-scale-dct 0.1.2-r1: Scale JuicyPixels images with DCT
-dev-haskell/jupyter 0.9.0: A library for creating and using Jupyter kernels
+dev-haskell/jupyter 0.9.0-r1: A library for creating and using Jupyter kernels
 dev-haskell/jwt 0.10.0: JSON Web Token (JWT) decoding and encoding
 dev-haskell/kan-extensions 5.2.2: Kan extensions, Kan lifts, the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r6: A JavaScript push mechanism based on the comet idiom
@@ -2177,7 +2177,7 @@ dev-haskell/yesod-test 1.6.12: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.10: Yesod support for Text.Markdown
 dev-haskell/yesod-websockets 0.3.0.3: WebSockets support for Yesod
 dev-haskell/yi-rope 0.7.0.2 0.11: A rope data structure used by Yi
-dev-haskell/zeromq4-haskell 0.8.0: Bindings to ZeroMQ 4.x
+dev-haskell/zeromq4-haskell 0.8.0-r1: Bindings to ZeroMQ 4.x
 dev-haskell/zip-archive 0.4.1: Library for creating and modifying zip archives
 dev-haskell/zippers 0.3.1: Traversal based zippers
 dev-haskell/zlib 0.5.4.2 0.6.2.3: Compression and decompression in the gzip and zlib formats
