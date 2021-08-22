@@ -6,7 +6,7 @@ app-emacs/idris-mode 0.9.18: Idris syntax highlighting and (eventually) other th
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.6.7 0.7 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
-app-text/pandoc 2.11.4 2.12 2.13-r1 2.14.1: Conversion between markup formats
+app-text/pandoc 2.13-r1 2.14.2: Conversion between markup formats
 app-text/pdfsplit 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -279,7 +279,7 @@ dev-haskell/cipher-camellia 0.0.2: Camellia block cipher primitives
 dev-haskell/cipher-des 0.0.6: DES and 3DES primitives
 dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.6: Simple heuristic for packing discs of varying radii in a circle
-dev-haskell/citeproc 0.3.0.9 0.4.1: Generates citations and bibliography from CSL styles
+dev-haskell/citeproc 0.3.0.9 0.5: Generates citations and bibliography from CSL styles
 dev-haskell/clash-ghc 1.2.5: CAES Language for Synchronous Hardware
 dev-haskell/clash-lib 1.2.5: CAES Language for Synchronous Hardware - As a Library
 dev-haskell/clash-prelude 1.2.5: CAES Language for Synchronous Hardware - Prelude library
@@ -448,9 +448,9 @@ dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate in
 dev-haskell/deque 0.4.3: Double-ended queues
 dev-haskell/deriving-compat 0.5.8 0.5.10: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/dhall 1.38.1: A configuration language guaranteed to terminate
-dev-haskell/dhall-json 1.7.6: Convert between Dhall and JSON or YAML
-dev-haskell/dhall-nix 1.1.20: Dhall to Nix compiler
+dev-haskell/dhall 1.40.0: A configuration language guaranteed to terminate
+dev-haskell/dhall-json 1.7.8: Convert between Dhall and JSON or YAML
+dev-haskell/dhall-nix 1.1.22: Dhall to Nix compiler
 dev-haskell/diagrams 1.4-r2: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.5-r2: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1-r1: Cairo backend for diagrams drawing EDSL
@@ -791,7 +791,7 @@ dev-haskell/hashmap 1.3.3: Persistent containers Map and Set based on hashing
 dev-haskell/hashring 0.0.0: Efficient consistent hashing
 dev-haskell/hashtables 1.2.4.1: Mutable hash tables in the ST monad
 dev-haskell/haskakafka 1.2.0: Kafka bindings for Haskell
-dev-haskell/haskeline 0.7.5.0 0.8.0.1 0.8.1.2: A command-line interface for user input, written in Haskell
+dev-haskell/haskeline 0.7.5.0 0.8.0.1 0.8.1.2 0.8.2: A command-line interface for user input, written in Haskell
 dev-haskell/haskell-awk 1.1.1: Transform text from the command-line using Haskell expressions
 dev-haskell/haskell-exp-parser 0.1.4: Simple parser parser from Haskell to TemplateHaskell expressions
 dev-haskell/haskell-gi 0.24.7 0.25.0: Generate Haskell bindings for GObject Introspection capable libraries
@@ -987,7 +987,7 @@ dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-c
 dev-haskell/http-client-openssl 0.3.0.0: http-client backend using the OpenSSL library
 dev-haskell/http-client-restricted 0.0.3: restricting the servers that http-client will use
 dev-haskell/http-client-tls 0.3.5.3: http-client backend using the connection package and tls library
-dev-haskell/http-common 0.8.2.1: Common types for HTTP clients and servers
+dev-haskell/http-common 0.8.3.4: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.3.8: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.11: HTTP Date parser/formatter
 dev-haskell/http-download 0.2.0.0: Verified downloads with retries
@@ -995,7 +995,7 @@ dev-haskell/http-link-header 1.0.3.1: An RFC 5988 parser and writer for the HTTP
 dev-haskell/http-media 0.8.0.0: Processing HTTP Content-Type and Accept headers
 dev-haskell/http-querystring 1.0: The HTTP query builder
 dev-haskell/http-reverse-proxy 0.6.0: Reverse proxy HTTP requests, either over raw sockets or with WAI
-dev-haskell/http-streams 0.8.7.2: An HTTP client using io-streams
+dev-haskell/http-streams 0.8.9.4: An HTTP client using io-streams
 dev-haskell/http-types 0.9.1-r1 0.12.3: Generic HTTP types for Haskell (for both client and server code)
 dev-haskell/http2 3.0.1: HTTP/2 library
 dev-haskell/httpd-shed 0.4.1.1: A simple web-server with an interact style API
@@ -1896,7 +1896,7 @@ dev-haskell/text-builder 0.6.6.2: An efficient strict text builder
 dev-haskell/text-conversions 0.3.1: Safe conversions between textual types
 dev-haskell/text-format 0.3.2: Text formatting
 dev-haskell/text-format-simple 1.1.0-r1: Simple text formatting library
-dev-haskell/text-icu 0.7.0.1: Bindings to the ICU library
+dev-haskell/text-icu 0.7.0.1 0.7.1.0: Bindings to the ICU library
 dev-haskell/text-icu-normalized 0.1.6: Dealing with Strict Text in NFC normalization
 dev-haskell/text-latin1 0.3.1: Latin-1 (including ASCII) utility functions
 dev-haskell/text-manipulate 0.2.0.1: Case conversion, word boundary manipulation, and textual subjugation
