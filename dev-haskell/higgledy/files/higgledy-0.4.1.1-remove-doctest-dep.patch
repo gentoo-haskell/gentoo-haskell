@@ -1,0 +1,16 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Remove dependency on higgledy in doctests so they do not fail.
+
+diff -urN higgledy-0.4.1.1/higgledy.cabal higgledy-0.4.1.1-new/higgledy.cabal
+--- higgledy-0.4.1.1/higgledy.cabal	2021-08-28 02:29:22.370718321 -0600
++++ higgledy-0.4.1.1-new/higgledy.cabal	2021-08-28 02:31:09.370718373 -0600
+@@ -39,7 +39,6 @@
+   build-depends: base
+                , base-compat ^>= 0.11
+                , doctest >= 0.16 && <0.18
+-               , higgledy
+                , lens
+                , QuickCheck
+                , template-haskell
