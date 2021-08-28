@@ -123,7 +123,7 @@ dev-haskell/authenticate-oauth 1.6.0.1-r1: Library to authenticate with OAuth fo
 dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.6: Efficiently run periodic, on-demand actions
 dev-haskell/aws 0.22-r2: Amazon Web Services (AWS) for Haskell
-dev-haskell/barbies 2.0.2.0: Classes for working with types that can change clothes
+dev-haskell/barbies 2.0.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.10.1 0.10.5 0.11.2: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.2: base-compat with extra batteries
 dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
