@@ -1,8 +1,3 @@
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-08-29)
-# Mask fresh version until binaries are mirrored to ::gentoo:
-#   https://github.com/gentoo-haskell/gentoo-haskell/issues/1216
-=dev-lang/ghc-8.10.6
-
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-07-25)
 # Mask ancient quickechk-1 and it's revdep for removal.
 dev-haskell/quickcheck:1
