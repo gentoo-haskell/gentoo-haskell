@@ -27,17 +27,15 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	>=dev-haskell/cabal-doctest-1.0 <dev-haskell/cabal-doctest-1.1
 	test? ( >=dev-haskell/base-compat-0.11 <dev-haskell/base-compat-0.12
-		>=dev-haskell/doctest-0.16 <dev-haskell/doctest-0.18
+		>=dev-haskell/doctest-0.18
 		>=dev-haskell/hspec-2.6.1 <dev-haskell/hspec-2.8
 		>=dev-haskell/lens-4.17
 		dev-haskell/markdown-unlit[executable] )
 "
 
-PATCHES=( "${FILESDIR}/${PN}-0.4.1.1-remove-doctest-dep.patch" )
-
 src_prepare() {
 	cabal_chdeps \
 		'lens >= 4.17 && < 5' 'lens >= 4.17' \
-		'doctest ^>= 0.17' 'doctest >= 0.16 && <0.18'
+		'doctest ^>= 0.17' 'doctest >= 0.18'
 	default
 }
