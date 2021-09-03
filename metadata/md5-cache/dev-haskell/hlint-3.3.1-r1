@@ -11,5 +11,5 @@ RDEPEND=>=dev-haskell/aeson-1.1.2.0:=[profile?] >=dev-haskell/ansi-terminal-0.8.
 RESTRICT=!test? ( test )
 SLOT=0/3.3.1
 SRC_URI=https://hackage.haskell.org/package/hlint-3.3.1/hlint-3.3.1.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	97566c1a256d07b00848aa767e38a352	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5	elisp-common	cf4fd1b0835b9f3e638724840468064a
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4b66d835ec72e021e359bb81eacfe988	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5	elisp-common	cf4fd1b0835b9f3e638724840468064a
 _md5_=d31351dc9ac047f6b01bab7f2e208ec1
