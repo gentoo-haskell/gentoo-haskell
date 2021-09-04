@@ -12,4 +12,4 @@ RESTRICT=!test? ( test )
 SLOT=0/0.4.1.1
 SRC_URI=https://hackage.haskell.org/package/higgledy-0.4.1.1/higgledy-0.4.1.1.tar.gz
 _eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4b66d835ec72e021e359bb81eacfe988	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5
-_md5_=5848df8cb9ae8726588a097734b6d43b
+_md5_=34c189cc74324d1e7d46558a53a66f39
