@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="strict"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/profunctors:=[profile?]
@@ -27,5 +26,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag strict strict)
+		--flag=-strict
 }
