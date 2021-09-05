@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Generic implementations of standard type classes.
-		Operations on generic representations to help using &quot;GHC.Generics&quot;.
-		See README.
-	</longdescription>
 </pkgmetadata>
