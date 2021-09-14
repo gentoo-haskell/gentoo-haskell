@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 		>=dev-haskell/async-2.2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 		>=dev-haskell/base-compat-0.11:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 		>=dev-haskell/mtl-2.2.2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-		>=dev-haskell/optics-core-0.2:=[profile?] <dev-haskell/optics-core-0.4:=[profile?]
+		>=dev-haskell/optics-core-0.2:=[profile?]
 		>=dev-haskell/parsec-3.1.13:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 		>=dev-haskell/semialign-1.1:=[profile?]
 		>=dev-haskell/singleton-bool-0.1.5:=[profile?] <dev-haskell/singleton-bool-0.2:=[profile?]
@@ -46,7 +46,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'semialign      ^>= 1.1' 'semialign      >= 1.1'
+		'semialign      ^>= 1.1' 'semialign      >= 1.1' \
+		'optics-core    ^>= 0.2 || ^>= 0.3' 'optics-core >=0.2'
 }
 
 src_configure() {
