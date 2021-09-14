@@ -5,4 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="explicit-generic-labels">Require explicit GenericLabelOptics instances in order to use generics-based labels</flag>
+	</use>
 </pkgmetadata>
