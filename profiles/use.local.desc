@@ -277,6 +277,7 @@ dev-haskell/network-data:small-base - Build the split-up base package.
 dev-haskell/oeis:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
+dev-haskell/optics-core:explicit-generic-labels - Require explicit GenericLabelOptics instances in order to use generics-based labels
 dev-haskell/optparse-applicative:process - Depend on the process package for Bash autocompletion
 dev-haskell/optparse-simple:build-example - Build the example executable
 dev-haskell/ormolu:executable - Build the fourmolu executable
