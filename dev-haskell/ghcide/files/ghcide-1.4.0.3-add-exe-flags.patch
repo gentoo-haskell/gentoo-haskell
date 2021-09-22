@@ -1,3 +1,23 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/haskell/haskell-language-server/pull/2212
+
+ghcide: Add flags to toggle building each executable
+
+This package is a transient dependency of `haskell-language-server`.
+However, only the library is needed. These three flags give the option for
+those who do not need the executables to disable them. All three are
+enabled by default.
+
+`executable`:
+* Toggles the `ghcide` executable
+
+`test-exe`:
+* Toggles the `ghcide-test-preprocessor` executable
+
+`bench-exe`:
+* Toggles the `ghcide-bench` executable
+
 diff -urN ghcide-1.4.0.3.orig/ghcide.cabal ghcide-1.4.0.3/ghcide.cabal
 --- ghcide-1.4.0.3.orig/ghcide.cabal	2021-07-13 12:14:55.926090165 -0600
 +++ ghcide-1.4.0.3/ghcide.cabal	2021-07-13 12:18:02.918221483 -0600
@@ -7,7 +27,7 @@ diff -urN ghcide-1.4.0.3.orig/ghcide.cabal ghcide-1.4.0.3/ghcide.cabal
  
 +flag test-exe
 +    description: Build the ghcide-test-preprocessor executable
-+    default: False
++    default: True
 +
  executable ghcide-test-preprocessor
 +    if !flag(test-exe)
@@ -21,7 +41,7 @@ diff -urN ghcide-1.4.0.3.orig/ghcide.cabal ghcide-1.4.0.3/ghcide.cabal
  
 +flag executable
 +    description: Build the ghcide executable
-+    default: False
++    default: True
 +
  executable ghcide
 +    if !flag(executable)
@@ -35,7 +55,7 @@ diff -urN ghcide-1.4.0.3.orig/ghcide.cabal ghcide-1.4.0.3/ghcide.cabal
  
 +flag bench-exe
 +    description: Build the ghcide-bench executable
-+    default: False
++    default: True
 +
  executable ghcide-bench
 +    if !flag(bench-exe)
