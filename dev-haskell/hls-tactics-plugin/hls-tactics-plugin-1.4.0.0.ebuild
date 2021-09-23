@@ -8,7 +8,7 @@ EAPI=8
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
-RESTRICT="test" # Requires network access
+RESTRICT="test" # Requires some kind of dummy server to be running
 
 DESCRIPTION="Wingman plugin for Haskell Language Server"
 HOMEPAGE="https://haskellwingman.dev"
@@ -23,10 +23,10 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/fingertree:=[profile?]
 	dev-haskell/generic-lens:=[profile?]
 	dev-haskell/ghc-exactprint:=[profile?]
-	dev-haskell/ghc-source-gen:=[profile?]
-	>=dev-haskell/ghcide-1.4:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
+	>=dev-haskell/ghc-source-gen-0.4.1:=[profile?] <dev-haskell/ghc-source-gen-0.5:=[profile?]
+	>=dev-haskell/ghcide-1.4.1:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
 	dev-haskell/hls-graph:=[profile?]
-	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.2:=[profile?]
+	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.3:=[profile?]
 	dev-haskell/hyphenation:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
@@ -34,16 +34,24 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/parser-combinators:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
-	>=dev-haskell/refinery-0.3:=[profile?] <dev-haskell/refinery-0.4:=[profile?]
+	>=dev-haskell/refinery-0.4:=[profile?] <dev-haskell/refinery-0.5:=[profile?]
 	>=dev-haskell/retrie-0.1.1.0:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-haskell/unagi-chan:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 "
+#	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.2
+#		dev-haskell/hspec
+#		dev-haskell/hspec-expectations
+#		dev-haskell/lsp-types
+#		dev-haskell/quickcheck
+#		dev-haskell/tasty-hspec
+#		dev-haskell/tasty-hunit )
 
 src_configure() {
 	haskell-cabal_src_configure \
