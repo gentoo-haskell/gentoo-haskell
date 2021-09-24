@@ -23,9 +23,12 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/diff-0.4.0:=[profile?] <dev-haskell/diff-0.5:=[profile?]
 	dev-haskell/extra:=[profile?]
 	>=dev-haskell/ghc-exactprint-0.6.3.4:=[profile?]
+	>=dev-haskell/ghc-lib-8.10.4.20210206:=[profile?] <dev-haskell/ghc-lib-8.11:=[profile?]
+	>=dev-haskell/ghc-lib-parser-ex-8.10:=[profile?] <dev-haskell/ghc-lib-parser-ex-8.11:=[profile?]
 	>=dev-haskell/ghcide-1.4:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.2:=[profile?]
+	>=dev-haskell/hlint-3.2:=[profile?] <dev-haskell/hlint-3.3:=[profile?]
+	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.3:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
@@ -33,10 +36,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.10:=
-	>=dev-haskell/ghc-lib-8.10.4.20210206:=[profile?] <dev-haskell/ghc-lib-8.11:=[profile?]
-	>=dev-haskell/ghc-lib-parser-ex-8.10:=[profile?] <dev-haskell/ghc-lib-parser-ex-8.11:=[profile?]
-	>=dev-haskell/hlint-3.2:=[profile?] <dev-haskell/hlint-3.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
@@ -45,6 +45,6 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-ghc-lib \
-		--flag=-hlint33
+		--flag=-hlint33 \
 		--flag=-pedantic
 }
