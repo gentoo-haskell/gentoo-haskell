@@ -20,7 +20,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/ghc-api-compat:=[profile?]
 	dev-haskell/ghc-exactprint:=[profile?]
 	>=dev-haskell/ghcide-1.2:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
-	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.2:=[profile?]
+	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.3:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
 	dev-haskell/text:=[profile?]
@@ -28,6 +28,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.1
+	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.2
 		dev-haskell/lsp-types )
 "
