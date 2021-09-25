@@ -59,6 +59,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/lsp-1.2:=[profile?] <dev-haskell/lsp-1.3:=[profile?]
 	dev-haskell/lsp-test:=[profile?]
 	>=dev-haskell/lsp-types-1.3.0.1:=[profile?] <dev-haskell/lsp-types-1.4:=[profile?]
+	dev-haskell/monoid-subclasses:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/network-uri:=[profile?]
 	>=dev-haskell/opentelemetry-0.6.1:=[profile?]
@@ -66,8 +67,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/parallel:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
 	dev-haskell/prettyprinter-ansi-terminal:=[profile?]
-	dev-haskell/record-dot-preprocessor
-	dev-haskell/record-hasfield
 	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?]
 	dev-haskell/retrie:=[profile?]
 	dev-haskell/rope-utf16-splay:=[profile?]
@@ -84,7 +83,8 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.6:=[profile?]
+	dev-haskell/vector-algorithms:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4
