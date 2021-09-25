@@ -17,14 +17,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/ghcide-1.2:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
-	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.2:=[profile?]
+	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.3:=[profile?]
 	dev-haskell/lsp-types:=[profile?]
-	>=dev-haskell/stylish-haskell-0.12:=[profile?] <dev-haskell/stylish-haskell-0.13:=[profile?]
+	>=dev-haskell/stylish-haskell-0.12:=[profile?] <dev-haskell/stylish-haskell-0.14:=[profile?]
 	dev-haskell/text:=[profile?]
-	dev-lang/ghc:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.1 )
+	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.2 )
 "
