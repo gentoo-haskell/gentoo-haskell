@@ -16,16 +16,18 @@ LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/ghcide-1.2:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
-	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.2:=[profile?]
+RDEPEND="dev-haskell/ghc-api-compat:=[profile?]
+	>=dev-haskell/ghcide-1.2:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
+	>=dev-haskell/hls-plugin-api-1.1:=[profile?] <dev-haskell/hls-plugin-api-1.3:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
-	>=dev-haskell/ormolu-0.1.2:=[profile?] <dev-haskell/ormolu-0.2:=[profile?]
+	>=dev-haskell/ormolu-0.1.2:=[profile?] <dev-haskell/ormolu-0.4:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-lang/ghc:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.1
+	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.2
 		dev-haskell/lsp-types )
 "
