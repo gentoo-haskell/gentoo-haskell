@@ -124,10 +124,6 @@ dev-haskell/ghc-check:package-abis - record package abis at compile time for imp
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
 dev-haskell/ghc-heap-view:prim-supports-any - The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)
 dev-haskell/ghc-prof:dump - Build the executable "dump"
-dev-haskell/ghc-tcplugins-extra:deverror - Enables `-Werror` for development mode and TravisCI
-dev-haskell/ghc-typelits-extra:deverror - Enables `-Werror` for development mode and TravisCI
-dev-haskell/ghc-typelits-knownnat:deverror - Enables `-Werror` for development mode and TravisCI
-dev-haskell/ghc-typelits-natnormalise:deverror - Enables `-Werror` for development mode and TravisCI
 dev-haskell/ghcide:bench-exe - Build the ghcide-bench executable
 dev-haskell/ghcide:executable - Build the ghcide executable
 dev-haskell/ghcide:test-exe - Build the ghcide-test-preprocessor executable
@@ -333,6 +329,7 @@ dev-haskell/random-bytestring:pcg - compile with support for PCG from pcg-random
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
+dev-haskell/record-dot-preprocessor:executable - Build the record-dot-processor executable
 dev-haskell/reflex:debug-cycles - Enable debugging of event cycles
 dev-haskell/reflex:debug-propagation - Enable debugging of spider internals
 dev-haskell/reflex:debug-trace-events - Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!
@@ -482,6 +479,7 @@ dev-util/haskell-language-server:hls_formatters_floskell - Enable floskell plugi
 dev-util/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu plugin
 dev-util/haskell-language-server:hls_formatters_ormolu - Enable ormolu plugin
 dev-util/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell plugin
+dev-util/haskell-language-server:hls_plugins_call-hierarchy - Enable call hierarchy plugin
 dev-util/haskell-language-server:hls_plugins_class - Enable class plugin
 dev-util/haskell-language-server:hls_plugins_eval - Enable eval plugin
 dev-util/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
@@ -489,6 +487,7 @@ dev-util/haskell-language-server:hls_plugins_import-lens - Enable importLens plu
 dev-util/haskell-language-server:hls_plugins_module-name - Enable moduleName plugin
 dev-util/haskell-language-server:hls_plugins_pragmas - Enable pragmas plugin
 dev-util/haskell-language-server:hls_plugins_refine-imports - Enable refineImports plugin
+dev-util/haskell-language-server:hls_plugins_rename - Enable rename plugin
 dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
 dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
 dev-util/haskell-language-server:hls_plugins_tactic - Enable tactic plugin
