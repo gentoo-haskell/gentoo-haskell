@@ -105,7 +105,7 @@ src_configure() {
 		$(cabal_flag hls_formatters_fourmolu fourmolu) \
 		$(cabal_flag hls_formatters_ormolu ormolu) \
 		$(cabal_flag hls_formatters_stylish-haskell stylishhaskell) \
-		$(cabal_flag hls_plugins_call-hierarchy callHierarchy)
+		$(cabal_flag hls_plugins_call-hierarchy callHierarchy) \
 		$(cabal_flag hls_plugins_class class) \
 		$(cabal_flag hls_plugins_eval eval) \
 		$(cabal_flag hls_plugins_haddock-comments haddockcomments) \
