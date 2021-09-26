@@ -1,0 +1,28 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+ 
+Add `executable` flag to toggle building executable
+
+--- record-dot-preprocessor/record-dot-preprocessor.cabal.orig	2021-09-19 04:37:59.396466525 -0600
++++ record-dot-preprocessor/record-dot-preprocessor.cabal	2021-09-19 04:41:32.886466628 -0600
+@@ -51,6 +51,10 @@
+         Lexer
+         Paren
+ 
++flag executable
++    description: Build the record-dot-preprocessor executable
++    default: True
++
+ executable record-dot-preprocessor
+     default-language:   Haskell2010
+     hs-source-dirs:     preprocessor
+@@ -64,6 +68,9 @@
+         Lexer
+         Paren
+ 
++    if !flag(executable)
++        buildable: False
++
+ test-suite record-dot-preprocessor-test
+     default-language:   Haskell2010
+     type:               exitcode-stdio-1.0
