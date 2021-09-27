@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=
-	>=dev-haskell/hledger-lib-1.22:= <dev-haskell/hledger-lib-1.23:=
+	>=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.24:=
 	dev-haskell/mtl:=
 	dev-haskell/text:=
 	>=dev-lang/ghc-8.4.3:=
