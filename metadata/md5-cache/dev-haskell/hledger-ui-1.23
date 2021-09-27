@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/ansi-terminal-0.9:= dev-haskell/async:= >=dev-haskell/base-compat-batteries-0.10.1:= <dev-haskell/base-compat-batteries-0.12:= >=dev-haskell/brick-0.23:= >=dev-haskell/cmdargs-0.8:= dev-haskell/data-default:= >=dev-haskell/extra-1.6.3:= >=dev-haskell/fsnotify-0.2.1.2:= <dev-haskell/fsnotify-0.4:= >=dev-haskell/hledger-1.23:= <dev-haskell/hledger-1.24:= >=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.24:= >=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-9.2:= >=dev-haskell/microlens-0.4:= >=dev-haskell/microlens-platform-0.2.3.1:= >=dev-haskell/safe-0.2:= >=dev-haskell/split-0.1:= >=dev-haskell/text-1.2:= >=dev-haskell/text-zipper-0.4:= dev-haskell/vector:= >=dev-haskell/vty-5.15:= >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1
+DESCRIPTION=Curses-style terminal interface for the hledger accounting system
+EAPI=8
+HOMEPAGE=https://hledger.org
+INHERIT=haskell-cabal
+IUSE=+threaded
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>=dev-haskell/ansi-terminal-0.9:= dev-haskell/async:= >=dev-haskell/base-compat-batteries-0.10.1:= <dev-haskell/base-compat-batteries-0.12:= >=dev-haskell/brick-0.23:= >=dev-haskell/cmdargs-0.8:= dev-haskell/data-default:= >=dev-haskell/extra-1.6.3:= >=dev-haskell/fsnotify-0.2.1.2:= <dev-haskell/fsnotify-0.4:= >=dev-haskell/hledger-1.23:= <dev-haskell/hledger-1.24:= >=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.24:= >=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-9.2:= >=dev-haskell/microlens-0.4:= >=dev-haskell/microlens-platform-0.2.3.1:= >=dev-haskell/safe-0.2:= >=dev-haskell/split-0.1:= >=dev-haskell/text-1.2:= >=dev-haskell/text-zipper-0.4:= dev-haskell/vector:= >=dev-haskell/vty-5.15:= >=dev-lang/ghc-8.4.3:=
+SLOT=0
+SRC_URI=https://hackage.haskell.org/package/hledger-ui-1.23/hledger-ui-1.23.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4b66d835ec72e021e359bb81eacfe988	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5
+_md5_=6a299b7c5b8f69d79cac482b63b1d304

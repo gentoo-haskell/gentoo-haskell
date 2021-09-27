@@ -327,7 +327,7 @@ dev-haskell/concurrent-split 0.0.1.1: MVars and Channels with distinguished inpu
 dev-haskell/concurrent-supply 0.1.8-r1: A fast concurrent unique identifier supply with a pure API
 dev-haskell/concurrentoutput 0.2.0.2: Ungarble output from several threads
 dev-haskell/cond 0.4.1.1-r1: Basic conditional and boolean operators with monadic variants
-dev-haskell/conduit 1.3.4.1: Streaming data processing library
+dev-haskell/conduit 1.3.4.2: Streaming data processing library
 dev-haskell/conduit-audio 0.2.0.3: Combinators to efficiently slice and dice audio streams
 dev-haskell/conduit-audio-lame 0.1.2.1: conduit-audio interface to the LAME MP3 library
 dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
@@ -866,12 +866,12 @@ dev-haskell/hit 0.7.0: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.2.0.4: Haskell implementation of a javascript minifier
-dev-haskell/hledger 1.22.2: Command-line interface for the hledger accounting system
-dev-haskell/hledger-iadd 1.3.15: A terminal UI as drop-in replacement for hledger add
-dev-haskell/hledger-interest 1.6.2: computes interest for a given account
-dev-haskell/hledger-lib 1.22.2: A reusable library providing the core functionality of hledger
-dev-haskell/hledger-ui 1.22.2: Curses-style terminal interface for the hledger accounting system
-dev-haskell/hledger-web 1.22.2: Web-based user interface for the hledger accounting system
+dev-haskell/hledger 1.23: Command-line interface for the hledger accounting system
+dev-haskell/hledger-iadd 1.3.16: A terminal UI as drop-in replacement for hledger add
+dev-haskell/hledger-interest 1.6.3: computes interest for a given account
+dev-haskell/hledger-lib 1.23: A reusable library providing the core functionality of hledger
+dev-haskell/hledger-ui 1.23: Curses-style terminal interface for the hledger accounting system
+dev-haskell/hledger-web 1.23: Web-based user interface for the hledger accounting system
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
