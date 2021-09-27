@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="library-only +threaded"
 
 RDEPEND=">=dev-haskell/aeson-1:=[profile?]
+	dev-haskell/base64:=[profile?]
 	dev-haskell/blaze-html:=[profile?]
 	dev-haskell/blaze-markup:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]
@@ -30,8 +31,8 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	>=dev-haskell/decimal-0.5.1:=[profile?]
 	>=dev-haskell/extra-1.6.3:=[profile?]
 	dev-haskell/hjsmin:=[profile?]
-	>=dev-haskell/hledger-1.22.2:=[profile?] <dev-haskell/hledger-1.23:=[profile?]
-	>=dev-haskell/hledger-lib-1.22.2:=[profile?] <dev-haskell/hledger-lib-1.23:=[profile?]
+	>=dev-haskell/hledger-1.23:=[profile?] <dev-haskell/hledger-1.24:=[profile?]
+	>=dev-haskell/hledger-lib-1.23:=[profile?] <dev-haskell/hledger-lib-1.24:=[profile?]
 	dev-haskell/hspec:=[profile?]
 	dev-haskell/http-client:=[profile?]
 	dev-haskell/http-conduit:=[profile?]
