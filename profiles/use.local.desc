@@ -161,9 +161,8 @@ dev-haskell/handsomesoup:examples - Build examples
 dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri package
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
 dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
-dev-haskell/hashable:examples - Build example modules
 dev-haskell/hashable:gmp - Are we using @integer-gmp@ to provide fast Integer instances? No effect on GHC-9.0 or later.
-dev-haskell/hashable:random-initial-seed - Randomly initialize the initial seed on each final executable invocation This is useful for catching cases when you rely on (non-existent) stability of hashable's hash functions.
+dev-haskell/hashable:random-initial-seed - Randomly initialize the initial seed on each final executable invocation This is useful for catching cases when you rely on (non-existent) stability of hashable's hash functions. This is not a security feature.
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
 dev-haskell/hashtables:debug - if on, spew debugging output to stdout
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
