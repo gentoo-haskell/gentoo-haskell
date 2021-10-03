@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,6 @@ IUSE=""
 RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 	>=dev-haskell/data-memocombinators-0.4:=[profile?]
 	>=dev-haskell/haskell-src-exts-simple-1.18:=[profile?] <dev-haskell/haskell-src-exts-simple-1.24:=[profile?]
-	>=dev-haskell/hoogle-5.0.17.1:=[profile?]
 	>=dev-haskell/http-4000:=[profile?]
 	>=dev-haskell/iospec-0.2:=[profile?]
 	>=dev-haskell/lambdabot-core-5.3:=[profile?] <dev-haskell/lambdabot-core-5.4:=[profile?]
@@ -43,6 +42,7 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-haskell/vector-space-0.8:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
+	>=dev-util/hoogle-5.0.17.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
