@@ -1,0 +1,56 @@
+[Unit]
+Description=Hoogle search daemon
+Documentation=man:hoogle(1) https://github.com/ndmitchell/hoogle
+Requires=hoogle-generate.service
+After=hoogle-generate.service
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/hoogle
+ExecStart=/usr/bin/hoogle server --port $HOOGLE_SERVER_PORT --host $HOOGLE_SERVER_HOST $HOOGLE_SERVER_EXTRA_ARGS
+User=hoogle
+Group=hoogle
+StateDirectory=hoogle
+Restart=always
+
+# Security settings for systemd running as root, optional but recommended to improve security. You
+# can disable individual settings if they cause problems for your use case. For more details, see
+# the systemd manual: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
+LockPersonality=true
+# You can try setting this to "yes" for improved security
+MemoryDenyWriteExecute=no
+NoNewPrivileges=yes
+PrivateDevices=yes
+PrivateTmp=yes
+ProtectClock=yes
+ProtectControlGroups=yes
+ProtectHostname=yes
+ProtectKernelLogs=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+# Restrict write access
+# Change to 'ProtectSystem=strict' and uncomment 'ProtectHome' to make the whole file
+# system read-only be default and uncomment 'ReadWritePaths' for the required write access.
+# Add local repositroy paths to the list of 'ReadWritePaths' like '-/mnt/my_backup_drive'.
+ProtectSystem=full
+ProtectHome=true
+# ReadWritePaths=
+
+CapabilityBoundingSet=CAP_DAC_READ_SEARCH CAP_NET_RAW
+
+# Lower CPU and I/O priority.
+#Nice=19
+#CPUSchedulingPolicy=batch
+#IOSchedulingClass=best-effort
+#IOSchedulingPriority=7
+#IOWeight=100
+
+[Install]
+WantedBy=multi-user.target

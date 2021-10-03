@@ -1,0 +1,8 @@
+[Unit]
+Description=Run hoogle generate
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target

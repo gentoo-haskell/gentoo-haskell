@@ -1,0 +1,76 @@
+.de EX
+.ne 5
+.if n .sp 1
+.if t .sp .5
+.nf
+.in +.5i
+..
+.de EE
+.fi
+.in -.5i
+.if n .sp 1
+.if t .sp .5
+..
+.TH HOOGLE 1 "October 30, 2016"
+.SH NAME
+hoogle \- A Haskell API search engine.
+.SH SYNOPSIS
+.B hoogle
+.RI EXPRESSION|COMMAND
+.RI [OPTIONS]
+.SH DESCRIPTION
+Hoogle is a Haskell API search engine which allows you to search Haskell
+libraries by either function name, or by approximate type signature.
+.EE
+Example searches with EXPRESSION:
+.EX
+
+    map
+    (a -> b) -> [a] -> [b]
+    Ord a => [a] -> [a]
+    Data.Map.insert
+
+.EE
+The Hoogle manual (http://www.haskell.org/haskellwiki/Hoogle) contains more
+details, including further details on search queries, how to install Hoogle as
+a command line application and how to integrate Hoogle with Firefox/Emacs/Vim
+etc.
+.PP
+This program also has some command for special usage.
+.SS "Command reference:"
+.TP
+\fBsearch\fR
+Perform a search
+.TP
+\fBgenerate\fR
+Generate Hoogle databases
+.TP
+\fBserver\fR
+Start a Hoogle server
+.TP
+\fBreplay\fR
+Replay a log file
+.TP
+\fBtest\fR
+Run the test suite
+.SS "Option reference:"
+.TP
+\fB\-\fR?, \fB\-\-help\fR
+Display help message
+.TP
+\fB\-V,\-\-version\fR
+Print version information
+.TP
+\fB\-\-numeric\-version\fR
+Print just the version number
+.TP
+\fB\-v\fR, \fB\-\-verbose\fR
+Loud verbosity
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Quiet verbosity
+.SH AUTHOR
+The text for this page was constructed from the Hoogle search engine's web page
+and written by Erik de Castro Lopo <erikd@mega-nerd.com> and Kiwamu Okabe
+<kiwamu@debian.or.jp>, for the Debian GNU/Linux system (but may be used by
+others).

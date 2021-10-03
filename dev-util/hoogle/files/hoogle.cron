@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rc-config generate hoogle

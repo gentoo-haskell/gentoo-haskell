@@ -1,0 +1,7 @@
+# Configuration for dev-util/hoogle
+
+HOOGLE_SERVER_PORT="4006"
+HOOGLE_SERVER_HOST="localhost"
+
+HOOGLE_SERVER_EXTRA_ARGS="--local"
+HOOGLE_GENERATE_ARGS="--local"
