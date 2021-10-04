@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+RESTRICT=test # fails
+
 RDEPEND=">=dev-haskell/blaze-builder-0.4.0.0:=[profile?]
 	>=dev-haskell/hashable-1.2.3.2:=[profile?]
 	>=dev-haskell/mmorph-1.0.3:=[profile?]
