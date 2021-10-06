@@ -105,7 +105,7 @@ dev-haskell/asn1-parse 0.9.5: Simple monadic parser for ASN1 stream types
 dev-haskell/asn1-types 0.3.4: ASN.1 types
 dev-haskell/assoc 1.0.2: swap and assoc: Symmetric and Semigroupy Bifunctors
 dev-haskell/astar 0.3.0.0-r1: General A* search algorithm
-dev-haskell/async 2.2.3: Run IO operations asynchronously and wait for their results
+dev-haskell/async 2.2.4: Run IO operations asynchronously and wait for their results
 dev-haskell/async-pool 0.9.1: async that supports worker groups and many-to-many task dependencies
 dev-haskell/atomic-file-ops 0.3.0.0: Functions to atomically write to files
 dev-haskell/atomic-primops 0.8.4: A safe approach to CAS and other atomic ops in Haskell
@@ -308,6 +308,7 @@ dev-haskell/colonnade 1.2.0.2-r1: Generic types and functions for columnar encod
 dev-haskell/color 0.3.2: Color spaces and conversions between them
 dev-haskell/colorize-haskell 1.0.1-r1: Highligt Haskell source
 dev-haskell/colour 2.3.6: A model for human colour/color perception
+dev-haskell/colourista 0.1.0.1: Convenient interface for printing colourful messages
 dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
 dev-haskell/commonmark 0.1.1.4 0.2.1: Pure Haskell commonmark parser
 dev-haskell/commonmark-extensions 0.2.1.2: Pure Haskell commonmark parser
@@ -1119,7 +1120,7 @@ dev-haskell/language-bash 0.9.2: Parsing and pretty-printing Bash shell scripts
 dev-haskell/language-c 0.6.1 0.8.3 0.8.3-r1: Analysis and generation of C code
 dev-haskell/language-c-quote 0.12.2.1: C/CUDA/OpenCL/Objective-C quasiquoting library
 dev-haskell/language-css 0.0.3.1: CSS 2.1 syntax
-dev-haskell/language-docker 9.2.0: Dockerfile parser, pretty-printer and embedded DSL
+dev-haskell/language-docker 10.2.0: Dockerfile parser, pretty-printer and embedded DSL
 dev-haskell/language-dot 0.1.1: A library for the analysis and creation of Graphviz DOT files
 dev-haskell/language-ecmascript 0.17.1.0-r2 0.19.1.0: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.1-r1 0.3.0: GLSL abstract syntax tree, parser, and pretty-printer
@@ -1377,7 +1378,7 @@ dev-haskell/one-liner 1.0: Constraint-based generics
 dev-haskell/onetuple 0.2.2.1: Singleton Tuple
 dev-haskell/only 0.1: The 1-tuple type or single-value "collection"
 dev-haskell/oo-prototypes 0.1.0.0-r1: Support for OO-like prototypes
-dev-haskell/opaleye 0.7.2.0: An SQL-generating DSL targeting PostgreSQL
+dev-haskell/opaleye 0.7.5.0: An SQL-generating DSL targeting PostgreSQL
 dev-haskell/open-browser 0.2.1.0-r1: Open a web browser from Haskell
 dev-haskell/openal 1.7.0.5: A binding to the OpenAL cross-platform 3D audio API
 dev-haskell/opencl 1.0.3.4: Haskell high-level wrapper for OpenCL
@@ -1946,6 +1947,7 @@ dev-haskell/time-parsers 0.1.2.1: Parsers for types in 'time'
 dev-haskell/time-units 1.0.0: A basic library for defining units of time as types
 dev-haskell/timeit 2.0: Time a computation
 dev-haskell/timeplot 1.0.33: A tool for visualizing time series from log files
+dev-haskell/timerep 2.0.1.0: Parse and display time according to some RFCs (RFC3339, RFC2822, RFC822)
 dev-haskell/timespan 0.3.0.0: Useful timespan datatype and functions
 dev-haskell/timezone-olson 0.1.9 0.2.0: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.9: Enhanced timezone handling for Data.Time
@@ -2216,7 +2218,7 @@ dev-util/cabal-fmt 0.1.5.1: Format .cabal files
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0 0.6.0.0-r2: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
-dev-util/hadolint 1.22.1: Dockerfile Linter JavaScript API
+dev-util/hadolint 2.7.0: Dockerfile Linter JavaScript API
 dev-util/haskell-language-server 1.4.0.0: LSP server for GHC
 dev-util/hdocs 0.5.5.0-r1: Haskell docs tool
 dev-util/hindent 5.3.2: Extensible Haskell pretty printer
