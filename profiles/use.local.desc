@@ -20,8 +20,6 @@ dev-haskell/apply-refact:executable - Install the apply-refactor executable
 dev-haskell/atomic-primops:debug - Enable extra internal checks.
 dev-haskell/attoparsec-iso8601:developer - operate in developer mode
 dev-haskell/attoparsec-iso8601:fast - compile without optimizations
-dev-haskell/authenticate:network-uri - Get Network.URI from the network-uri package
-dev-haskell/aws:network-3 - Use network-3
 dev-haskell/beam-automigrate:examples - Install example executables
 dev-haskell/beam-automigrate:ghcipretty - Enable pretty-show for pretty-printing purposes
 dev-haskell/bench-show:executable - Build executable as well as library
@@ -38,7 +36,6 @@ dev-haskell/bound:template-haskell - You can disable the use of the `template-ha
 dev-haskell/brick:demos - Build demonstration programs
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
 dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
-dev-haskell/bson:old-network - Use network-2.x when enabled, else use network-bsd.
 dev-haskell/btrfs:examples - Build examples
 dev-haskell/byline:examples - Build examples when building the library.
 dev-haskell/bytedump:executable - build executable file
@@ -67,7 +64,6 @@ dev-haskell/clash-prelude:large-tuples - Generate instances for classes such as 
 dev-haskell/clash-prelude:multiple-hidden - Allow multiple hidden clocks, resets, and enables to be used. This is an experimental feature, possibly triggering confusing error messages. By default, it is enabled on development versions of Clash and disabled on releases.
 dev-haskell/clash-prelude:strict-mapsignal - Use `seqX` in 'mapSignal#'. This can help to eliminate space leaks in long running simulations.
 dev-haskell/clash-prelude:super-strict - Use `deepseqX` (instead of `seqX`) in register-like constructs. This can help to eliminate space leaks when using lazy data structures in registers-like constructs. This potentially slows down Clash hardware simulation.
-dev-haskell/clckwrks:network-uri - Get Network.URI from the network-uri package
 dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build the Quote module
 dev-haskell/cmdargs:testprog - Build the test program
@@ -151,16 +147,13 @@ dev-haskell/gtk3:fmode-binary - Set the default file translation mode for file I
 dev-haskell/gtk3:gio - Depend on GIO package, thereby enabling certain features.
 dev-haskell/hackage-db:install-examples - Build and install example programs.
 dev-haskell/hackage-security:lukko - Use @lukko@ for file-locking, otherwise use @GHC.IO.Handle.Lock@
-dev-haskell/hackage-security:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hakyll:buildwebsite - Build the hakyll website
 dev-haskell/hakyll:checkexternal - Include external link checking
 dev-haskell/hakyll:previewserver - Include the preview server
 dev-haskell/hakyll:usepandoc - Include Pandoc support
 dev-haskell/hakyll:watchserver - Include the watch server
 dev-haskell/handsomesoup:examples - Build examples
-dev-haskell/handsomesoup:network-uri - Get Network.URI from the network-uri package
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
-dev-haskell/happstack-server:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hashable:gmp - Are we using @integer-gmp@ to provide fast Integer instances? No effect on GHC-9.0 or later.
 dev-haskell/hashable:random-initial-seed - Randomly initialize the initial seed on each final executable invocation This is useful for catching cases when you rely on (non-existent) stability of hashable's hash functions. This is not a security feature.
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
@@ -169,8 +162,6 @@ dev-haskell/hashtables:detailed-profiling - add detailed profiling information t
 dev-haskell/hashtables:portable - if on, use only pure Haskell code and no GHC extensions.
 dev-haskell/hashtables:unsafe-tricks - turn on unsafe GHC tricks
 dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
-dev-haskell/haskellnet:network-bsd - Use network-bsd
-dev-haskell/haxr:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
 dev-haskell/hiedb:executable - Install the hiedb executable
@@ -191,25 +182,16 @@ dev-haskell/hnix:profiling - Enable profiling
 dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
 dev-haskell/hnix-store-remote:io-testsuite - Enable testsuite, which requires external binaries and Linux namespace support.
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
-dev-haskell/hs3:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.
-dev-haskell/hslogger:network-3 - Use network-3
 dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but Use hard coded values for instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those do not expose the necessary information in the @lauxlib.h@ header file.
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC and OpenSSL version < 1.1.0 only).
 dev-haskell/hsp:base4 - Use base-4.0.
 dev-haskell/hsyslog:install-examples - Build and install example programs
-dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (for the test suite)
-dev-haskell/http:network-uri - Get Network.URI from the network-uri package
 dev-haskell/http-api-data:text-show - Use text-show library for efficient ToHttpApiData implementations.
-dev-haskell/http-client:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/http-client-openssl:test-proxy - Test with http-proxy
-dev-haskell/http-streams:network-uri - Get Network.URI from the network-uri package
 dev-haskell/httpd-shed:buildexamples - Build example executables.
-dev-haskell/httpd-shed:network-bsd - Get Network.BSD from the network-bsd package.
-dev-haskell/httpd-shed:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/hvega:tools - Build associated tools (in general you won't need this)
 dev-haskell/hxt:profile - turn profiling on
-dev-haskell/hxt-http:network-uri - Get Network.URI from the network-uri package
 dev-haskell/hxt-regex-xmlschema:profile - turn profiling on
 dev-haskell/hyphenation:embed - Embed data in library binary (Warning: This increases the executable size by about 1Mb unless unneeded language data files are manually removed from the "data" directory before compiling)
 dev-haskell/ignore:without-pcre - Disable pcre support
@@ -255,7 +237,6 @@ dev-haskell/midi-alsa:buildexamples - Build example executables.
 dev-haskell/miso:ios - Cross compile to iOS
 dev-haskell/miso:jsaddle - Compile with JSaddle
 dev-haskell/miso:tests - Builds Miso's tests
-dev-haskell/missingh:network-3 - Use network-3
 dev-haskell/mod:semirings - Derive semiring instances
 dev-haskell/mod:vector - Derive unboxed and primitive vector instances
 dev-haskell/modern-uri:dev - Turn on development settings.
@@ -269,7 +250,6 @@ dev-haskell/nats:template-haskell - You can disable the use of the `template-has
 dev-haskell/netlink:generators - build the generator scripts for constants
 dev-haskell/network:devel - using tests for developers
 dev-haskell/network-data:small-base - Build the split-up base package.
-dev-haskell/oeis:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optics-core:explicit-generic-labels - Require explicit GenericLabelOptics instances in order to use generics-based labels
@@ -327,7 +307,6 @@ dev-haskell/quickcheck-classes-base:unary-laws - Include infrastructure for test
 dev-haskell/random-bytestring:pcg - compile with support for PCG from pcg-random
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
-dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/record-dot-preprocessor:executable - Build the record-dot-processor executable
 dev-haskell/reflex:debug-cycles - Enable debugging of event cycles
 dev-haskell/reflex:debug-propagation - Enable debugging of spider internals
@@ -339,7 +318,6 @@ dev-haskell/rere:rere-cfg - CFG functionality, needs dependency on fin and vec
 dev-haskell/rere:rere-intersection - Add add intersection constructor. EXPERIMENTAL
 dev-haskell/retrie:example - build the retrie example executable
 dev-haskell/retrie:executable - build the retrie executable
-dev-haskell/rss:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/sample-frame:buildbenchmarks - Build benchmark executables
 dev-haskell/sandi:conduit - Build with conduit
 dev-haskell/sbv:skip-hlint-tester - Do not build the HLint tester
@@ -405,7 +383,6 @@ dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
 dev-haskell/tasty-golden:build-example - 
 dev-haskell/texmath:executable - Compile test executable.
-dev-haskell/texmath:network-uri - Get Network.URI from the network-uri package
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
 dev-haskell/th-extras:base4 - Use base-4.0.
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
@@ -423,7 +400,6 @@ dev-haskell/unagi-chan:compare-benchmarks - compare benchmarks with Chan, TQueue
 dev-haskell/unicode-collation:doctests - Run doctests as part of test suite. Use with: @--write-ghc-environment-files=always@.
 dev-haskell/unicode-collation:executable - Build the unicode-collate executable.
 dev-haskell/unix-compat:old-time - build against old-time package
-dev-haskell/uri-encode:network-uri - Get Network.URI from the network-uri package
 dev-haskell/uri-encode:tools - Build executables
 dev-haskell/uuagc:loag - Use MiniSat as external SAT-solver to schedule all Linear Ordered AGs
 dev-haskell/vec:adjunctions - Depend on @adjunctions@ to provide its instances
@@ -501,12 +477,9 @@ dev-vcs/git-annex:debuglocks - Debug location of MVar/STM deadlocks
 dev-vcs/git-annex:gitlfs - Build with git-lfs library (rather than vendored copy)
 dev-vcs/git-annex:httpclientrestricted - Build with http-client-restricted library (rather than vendored copy)
 dev-vcs/git-annex:magicmime - Use libmagic to determine file MIME types
-dev-vcs/git-annex:networkbsd - Build with network-3.0 which split out network-bsd
 dev-vcs/git-annex:pairing - Enable pairing
-dev-vcs/git-annex:s3 - Enable S3 support
 dev-vcs/git-annex:torrentparser - Use haskell torrent library to parse torrent files
 dev-vcs/git-annex:webapp - Enable git-annex webapp
-dev-vcs/git-annex:webdav - Enable WebDAV support
 games-puzzle/intricacy:curses - Enables curses user interface
 games-puzzle/intricacy:sdl - Enables SDL user interface
 games-puzzle/intricacy:sound - Enables sound in SDL user interface
