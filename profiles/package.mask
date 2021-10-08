@@ -1,3 +1,7 @@
+# Jack Todaro <solpeth@posteo.org> (2021-10-21)
+# Requires porting to network-3.
+media-sound/live-sequencer
+
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-07-25)
 # Mask ancient quickechk-1 and it's revdep for removal.
 dev-haskell/quickcheck:1
@@ -24,7 +28,7 @@ dev-haskell/graphalyze
 # hololeap <hololeap@protonmail.com> (2021-05-13)
 # These packages depend on dev-haskell/numhask. In addition, some of them
 # have been deprecated:
-# 
+#
 # chart-unit has been deprecated in favor of chart-svg
 # numhask-prelude has been deprecated in favor of numhask
 # numhask-test has been deprecated in favor of numhask-hedgehog
