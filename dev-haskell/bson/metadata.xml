@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="old-network">Use network-2.x when enabled, else use network-bsd.</flag>
-	</use>
 	<longdescription>
 		A BSON Document is an untyped (dynamically type-checked) record.
 		I.e. it is a list of name-value pairs, where a Value is a single
