@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="network-uri">Get Network.URI from the network-uri package.</flag>
 		<flag name="lukko">Use @lukko@ for file-locking, otherwise use @GHC.IO.Handle.Lock@</flag>
 	</use>
 	<longdescription>
@@ -17,11 +16,11 @@
 		recommendations developed by security researchers at
 		various universities in the US as well as developers on the
 		Tor project (&lt;https://www.torproject.org/&gt;).
-		
+
 		The current implementation supports only index signing,
 		thereby enabling untrusted mirrors. It does not yet provide
 		facilities for author package signing.
-		
+
 		The library has two main entry points:
 		&quot;Hackage.Security.Client&quot; is the main entry point for
 		clients (the typical example being @cabal@), and
