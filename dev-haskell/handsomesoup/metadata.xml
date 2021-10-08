@@ -7,6 +7,5 @@
 	</maintainer>
 	<use>
 		<flag name="examples">Build examples</flag>
-		<flag name="network-uri">Get Network.URI from the network-uri package</flag>
 	</use>
 </pkgmetadata>
