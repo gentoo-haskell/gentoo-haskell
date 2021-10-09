@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="embed-data-files">Embed the data files in the binary for a relocatable executable.
-(Warning: This will increase the executable size significantly.)</flag>
-	</use>
 </pkgmetadata>
