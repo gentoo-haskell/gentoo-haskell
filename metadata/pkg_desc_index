@@ -141,10 +141,10 @@ dev-haskell/basement 0.0.12: Foundation scrap box of array & string
 dev-haskell/basic-prelude 0.7.0: An enhanced core prelude; a common foundation for alternate preludes
 dev-haskell/bcrypt 0.0.11: Haskell bindings to the bcrypt password hash
 dev-haskell/beam-automigrate 0.1.2.0-r1: DB migration library for beam, targeting Postgres
-dev-haskell/beam-core 0.9.0.0: Type-safe, feature-complete SQL query and manipulation interface for Haskell
-dev-haskell/beam-migrate 0.5.0.0: SQL DDL support and migrations support library for Beam
-dev-haskell/beam-postgres 0.5.0.0: Connection layer between beam and postgres
-dev-haskell/beam-sqlite 0.5.0.0: Beam driver for SQLite
+dev-haskell/beam-core 0.9.1.0: Type-safe, feature-complete SQL query and manipulation interface for Haskell
+dev-haskell/beam-migrate 0.5.1.0: SQL DDL support and migrations support library for Beam
+dev-haskell/beam-postgres 0.5.1.0: Connection layer between beam and postgres
+dev-haskell/beam-sqlite 0.5.1.0: Beam driver for SQLite
 dev-haskell/bench-show 0.3.1: Show, plot and compare benchmark results
 dev-haskell/bencode 0.6.1.1: Parser and printer for bencoded data
 dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
