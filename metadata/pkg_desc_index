@@ -1967,6 +1967,7 @@ dev-haskell/transformers-compat 0.6.6: A small compatibility shim for the transf
 dev-haskell/transformers-free 1.0.1-r1: Free monad transformers
 dev-haskell/traverse-with-class 1.0.1.1: Generic applicative traversals
 dev-haskell/tree-diff 0.1-r2: Diffing of (expression) trees
+dev-haskell/tree-traversals 0.1.1.0: Functions and newtype wrappers for traversing Trees
 dev-haskell/trifecta 2.1.1: A modern parser combinator library with convenient diagnostics
 dev-haskell/ttrie 0.1.2.1-r1: Contention-free STM hash map
 dev-haskell/tuple 0.3.0.2-r1: Various functions on tuples
