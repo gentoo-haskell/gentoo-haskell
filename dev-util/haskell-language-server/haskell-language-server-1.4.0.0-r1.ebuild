@@ -42,7 +42,11 @@ IUSE_HLS_FORMATTERS="
 	+hls_formatters_stylish-haskell
 "
 
-IUSE="${IUSE_HLS_PLUGINS} ${IUSE_HLS_FORMATTERS}"
+IUSE="
+	threads
+	${IUSE_HLS_PLUGINS}
+	${IUSE_HLS_FORMATTERS}
+"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
@@ -97,6 +101,11 @@ DEPEND="${RDEPEND}
 #		dev-haskell/hspec-expectations
 #		dev-haskell/lsp-test
 #		dev-haskell/lsp-types )
+
+src_prepare() {
+	use threads && eapply "${FILESDIR}/${PN}-1.4.0.0-add-paralellism-rtsopts.patch"
+	default
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
