@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.10:=[profile?] <dev-haskell/x11-1.11:=[profile?] >=dev-lang/ghc-8.4.3:= >=x11-wm/xmonad-0.16.99999:=[profile?] <x11-wm/xmonad-0.18:=[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/hspec-2.4.0 <dev-haskell/hspec-3 >=dev-haskell/quickcheck-2 ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Community-maintained extensions extensions for xmonad
+EAPI=8
+HOMEPAGE=https://xmonad.org/
+INHERIT=haskell-cabal
+IUSE=+xft doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.10:=[profile?] <dev-haskell/x11-1.11:=[profile?] >=dev-lang/ghc-8.4.3:= >=x11-wm/xmonad-0.16.99999:=[profile?] <x11-wm/xmonad-0.18:=[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] )
+RESTRICT=!test? ( test )
+SLOT=0/0.17.0
+SRC_URI=https://hackage.haskell.org/package/xmonad-contrib-0.17.0/xmonad-contrib-0.17.0.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4b66d835ec72e021e359bb81eacfe988	toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	haskell-cabal	206e6f4e903162d9938f3493b68676f5
+_md5_=7f4360c23e68c773bdcde33c9ab5173c
