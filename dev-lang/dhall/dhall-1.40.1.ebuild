@@ -17,9 +17,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="cross +http +http-client-tls"
 
-# Ambiguous modules, network access on import.
-RESTRICT=test
-
 RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	<dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
@@ -38,7 +35,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
 	>=dev-haskell/haskeline-0.7.2.1:=[profile?] <dev-haskell/haskeline-0.9:=[profile?]
 	>=dev-haskell/lens-family-core-1.0.0:=[profile?] <dev-haskell/lens-family-core-2.2:=[profile?]
-	>=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-9.2:=[profile?]
+	>=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-9.3:=[profile?]
 	>=dev-haskell/memory-0.14:=[profile?] <dev-haskell/memory-0.17:=[profile?]
 	<dev-haskell/mmorph-1.3:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
@@ -78,7 +75,7 @@ DEPEND="${RDEPEND}
 		<dev-haskell/tasty-expected-failure-0.13
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.9.2 <dev-haskell/tasty-quickcheck-0.11
-		<dev-haskell/tasty-silver-3.3
+		<dev-haskell/tasty-silver-3.4
 		>=dev-haskell/temporary-1.2.1 <dev-haskell/temporary-1.4
 		<dev-haskell/turtle-1.6 )
 	http? ( test? ( !http-client-tls? ( dev-haskell/http-client-tls ) ) )
