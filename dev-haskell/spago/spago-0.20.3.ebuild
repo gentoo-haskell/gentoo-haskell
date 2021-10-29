@@ -29,7 +29,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/async-pool:=[profile?]
 	dev-haskell/bower-json:=[profile?]
 	dev-haskell/cryptonite:=[profile?]
-	>=dev-haskell/dhall-1.38.0:=[profile?]
 	dev-haskell/either:=[profile?]
 	dev-haskell/file-embed:=[profile?]
 	dev-haskell/foldl:=[profile?]
@@ -63,6 +62,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	<dev-haskell/versions-5:=[profile?]
 	dev-haskell/with-utf8:=[profile?]
 	dev-haskell/zlib:=[profile?]
+	>=dev-lang/dhall-1.38.0:=[profile?]
 	>=dev-lang/ghc-8.8.3:=
 "
 DEPEND="${RDEPEND}
