@@ -1,3 +1,10 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Toggle building example with `examples` USE flag
+
+Rename example to `reflex-process-example` to avoid name collisions
+
 diff --git a/reflex-process.cabal b/reflex-process.cabal
 index 7cbf7b4..9dffcd7 100644
 --- a/reflex-process.cabal
