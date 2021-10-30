@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.11.3.0:=[profile?] <dev-haskell/aeson-1.6:=[profi
 	>=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-5.1:=[profile?]
 	>=dev-haskell/primitive-0.6.1.0:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
-	>=dev-haskell/ref-tf-0.4.0.1:=[profile?] <dev-haskell/ref-tf-0.5:=[profile?]
+	>=dev-haskell/ref-tf-0.4.0.1:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/text-1.2.1.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
@@ -42,7 +42,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 	cabal_chdeps \
-		'base64-bytestring >=1.0.0.1 && <1.2' 'base64-bytestring >=1.0.0.1'
+		'base64-bytestring >=1.0.0.1 && <1.2' 'base64-bytestring >=1.0.0.1' \
+		'ref-tf >=0.4.0.1 && <0.5' 'ref-tf >=0.4.0.1'
 }
 
 src_configure() {
