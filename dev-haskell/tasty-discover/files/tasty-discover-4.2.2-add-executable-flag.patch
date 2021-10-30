@@ -1,0 +1,22 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Add `executable` USE flag to toggle building the `tasty-discover` executable
+(enabled by default)
+
+--- tasty-discover-4.2.2/tasty-discover.cabal
++++ tasty-discover-4.2.2-new/tasty-discover.cabal
+@@ -62,7 +62,13 @@
+                       , filepath        >= 1.3      && < 2.0
+   default-language:     Haskell2010
+ 
++flag executable
++  description: Build the tasty-discover executable
++  default: True
++
+ executable              tasty-discover
++  if !flag(executable)
++    buildable: False
+   import:               base
+                       , Glob
+                       , containers
