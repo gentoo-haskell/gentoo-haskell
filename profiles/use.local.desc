@@ -80,9 +80,6 @@ dev-haskell/cryptonite:integer-gmp - Whether or not to use GMP for some function
 dev-haskell/cryptonite:target-attributes - use GCC / clang function attributes instead of global target options.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-reify:tests - Enable full development tree
-dev-haskell/dhall:cross - Disable TemplateHaskell to make cross-compiling easier
-dev-haskell/dhall:http - Include support for importing dhall modules from HTTP URLs
-dev-haskell/dhall:http-client-tls - Use http-client-tls for resolving HTTP imports by default (requires with-http to be enabled)
 dev-haskell/diagrams:canvas - Enable canvas backend.
 dev-haskell/diagrams:postscript - Enable the Haskell-native PostScript backend.
 dev-haskell/diagrams:rasterific - Enable rasterific backend.
@@ -177,10 +174,8 @@ dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if 
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
+dev-haskell/hnix:executable - Build the hnix executable
 dev-haskell/hnix:optimize - Enable all optimization flags
-dev-haskell/hnix:profiling - Enable profiling
-dev-haskell/hnix-store-core:bounded-memory - Run tests of constant memory use (requires +RTS -T)
-dev-haskell/hnix-store-remote:io-testsuite - Enable testsuite, which requires external binaries and Linux namespace support.
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
 dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.
 dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but Use hard coded values for instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those do not expose the necessary information in the @lauxlib.h@ header file.
@@ -308,11 +303,6 @@ dev-haskell/random-bytestring:pcg - compile with support for PCG from pcg-random
 dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding a (huge) dep
 dev-haskell/reactive-banana-wx:buildexamples - Build example executables.
 dev-haskell/record-dot-preprocessor:executable - Build the record-dot-processor executable
-dev-haskell/reflex:debug-cycles - Enable debugging of event cycles
-dev-haskell/reflex:debug-propagation - Enable debugging of spider internals
-dev-haskell/reflex:debug-trace-events - Add instrumentation that outputs the stack trace of the definition of an event whenever it is subscribed to. Warning: It is very slow!
-dev-haskell/reflex:fast-weak - Use the primitive implementation of FastWeak in GHCJS; note that this requires GHCJS to be built with FastWeak and FastWeakBag present in the RTS, which is not the default
-dev-haskell/reflex:reflex-optimizer - Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
 dev-haskell/rere:rere-cfg - CFG functionality, needs dependency on fin and vec
 dev-haskell/rere:rere-intersection - Add add intersection constructor. EXPERIMENTAL
@@ -381,6 +371,7 @@ dev-haskell/streamly:streamk - Use CPS style streams when possible
 dev-haskell/strict:assoc - Build with assoc dependency
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
+dev-haskell/tasty-discover:executable - Build the tasty-discover executable
 dev-haskell/tasty-golden:build-example - 
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
@@ -434,6 +425,9 @@ dev-haskell/zlib:bundled-c-zlib - Use the bundled zlib C sources. Requires pkg-c
 dev-haskell/zlib:non-blocking-ffi - The (de)compression calls can sometimes take a long time, which prevents other Haskell threads running. Enabling this flag avoids this unfairness, but with greater overall cost.
 dev-haskell/zxcvbn-hs:tools - Build the data processing tools (i.e. dictionary compilers)
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
+dev-lang/dhall:cross - Disable TemplateHaskell to make cross-compiling easier
+dev-lang/dhall:http - Include support for importing dhall modules from HTTP URLs
+dev-lang/dhall:http-client-tls - Use http-client-tls for resolving HTTP imports by default (requires with-http to be enabled)
 dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors
 dev-lang/elm-compiler-bin:symlink - Create a symlink to "elm", instead of just installing "elm-bin" binary.
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.

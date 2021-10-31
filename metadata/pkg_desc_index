@@ -450,7 +450,6 @@ dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate in
 dev-haskell/deque 0.4.3: Double-ended queues
 dev-haskell/deriving-compat 0.5.8 0.5.10: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/dhall 1.40.0: A configuration language guaranteed to terminate
 dev-haskell/dhall-json 1.7.8: Convert between Dhall and JSON or YAML
 dev-haskell/dhall-nix 1.1.22: Dhall to Nix compiler
 dev-haskell/diagrams 1.4-r2: Embedded domain-specific language for declarative vector graphics
@@ -902,9 +901,9 @@ dev-haskell/hmatrix 0.20.0.0: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
 dev-haskell/hmatrix-vector-sized 0.1.3.0: Conversions between hmatrix and vector-sized types
-dev-haskell/hnix 0.12.0.1 0.12.0.1-r1: Haskell implementation of the Nix language
-dev-haskell/hnix-store-core 0.4.2.0: Core effects for interacting with the Nix store
-dev-haskell/hnix-store-remote 0.4.2.0: Remote hnix store
+dev-haskell/hnix 0.14.0.2: Haskell implementation of the Nix language
+dev-haskell/hnix-store-core 0.5.0.0: Core effects for interacting with the Nix store
+dev-haskell/hnix-store-remote 0.5.0.0: Remote hnix store
 dev-haskell/hoauth2 1.16.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
@@ -1586,14 +1585,14 @@ dev-haskell/record-hasfield 1.0: A version of GHC.Records as available in future
 dev-haskell/recursion-schemes 5.1.3 5.2.2.1: Representing common recursion patterns as higher-order functions
 dev-haskell/redis 0.14.2: A driver for Redis key-value database
 dev-haskell/reducers 3.12.3-r1: Semigroups, specialized containers and a general map/reduce framework
-dev-haskell/ref-tf 0.4.0.2: A type class for monads with references using type families
+dev-haskell/ref-tf 0.5: A type class for monads with references using type families
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/refinery 0.4.0.0: Toolkit for building proof automation systems
 dev-haskell/reflection 2.1.6: Reifies arbitrary terms into types that can be reflected back into terms
-dev-haskell/reflex 0.6.3-r2 0.8.1.0-r2: Higher-order Functional Reactive Programming
+dev-haskell/reflex 0.8.2.0: Higher-order Functional Reactive Programming
 dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
-dev-haskell/reflex-process 0.3.1.0: Reflex FRP interface for running system processes
-dev-haskell/reflex-vty 0.1.4.1-r1: Reflex FRP host and widgets for VTY applications
+dev-haskell/reflex-process 0.3.1.1: Reflex FRP interface for running system processes
+dev-haskell/reflex-vty 0.2.0.0: Reflex FRP host and widgets for VTY applications
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
 dev-haskell/reform-hamlet 0.0.5.3: Add support for using Hamlet with Reform
 dev-haskell/reform-happstack 0.2.5.4: Happstack support for reform
@@ -1861,7 +1860,7 @@ dev-haskell/tar-conduit 0.3.2-r1: Extract and create tar files using conduit for
 dev-haskell/tardis 0.4.3.0: Bidirectional state monad transformer
 dev-haskell/tasty 0.11.2.3 0.12.0.1 1.1.0.4 1.2 1.2.3: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.1.7: Render tasty output to XML for Jenkins
-dev-haskell/tasty-discover 4.2.1: Test discovery for the tasty framework
+dev-haskell/tasty-discover 4.2.2: Test discovery for the tasty framework
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.3.2: Golden tests support for tasty
 dev-haskell/tasty-hedgehog 1.1.0.0: Integration for tasty and hedgehog
@@ -2202,6 +2201,7 @@ dev-haskell/ztail 1.2.0.2-r1: Multi-file, colored, filtered log tailer
 dev-haskell/zxcvbn-hs 0.3.0.0-r2: Password strength estimation based on zxcvbn
 dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
+dev-lang/dhall 1.40.1: A configuration language guaranteed to terminate
 dev-lang/elm 0.19.1: Meta package for Elm
 dev-lang/elm-compiler 0.19.1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
