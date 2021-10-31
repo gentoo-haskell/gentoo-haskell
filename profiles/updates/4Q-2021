@@ -1,2 +1,3 @@
 move dev-haskell/dhall dev-lang/dhall
 move dev-haskell/dhall-json dev-util/dhall-json
+move dev-haskell/dhall-nix dev-util/dhall-nix
