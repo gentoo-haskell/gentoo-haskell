@@ -1480,9 +1480,9 @@ dev-haskell/pointful 1.1.0.0: Pointful refactoring tool
 dev-haskell/poll 0.0.0.2: Bindings to poll.h
 dev-haskell/polynomial 0.7.3: Polynomials
 dev-haskell/polyparse 1.12.1 1.13: A variety of alternative parser combinator libraries
-dev-haskell/polysemy 1.4.0.0-r1: Higher-order, low-boilerplate free monads
-dev-haskell/polysemy-plugin 0.2.5.2: Disambiguate obvious uses of effects
-dev-haskell/polysemy-zoo 0.7.0.0: Experimental, user-contributed effects and interpreters for polysemy
+dev-haskell/polysemy 1.6.0.0: Higher-order, low-boilerplate free monads
+dev-haskell/polysemy-plugin 0.4.1.0: Disambiguate obvious uses of effects
+dev-haskell/polysemy-zoo 0.7.0.1: Experimental, user-contributed effects and interpreters for polysemy
 dev-haskell/port-utils 0.2.1.0: Utilities for creating and waiting on ports
 dev-haskell/portaudio 0.2.4-r1: Haskell bindings for the PortAudio library
 dev-haskell/portmidi 0.2.0.0: A binding for PortMedia/PortMidi
