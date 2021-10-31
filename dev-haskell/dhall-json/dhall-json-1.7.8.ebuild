@@ -20,7 +20,6 @@ RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/aeson-pretty-0.8.5:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/aeson-yaml-1.1.0:=[profile?] <dev-haskell/aeson-yaml-1.2:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
-	>=dev-haskell/dhall-1.40.0:=[profile?] <dev-haskell/dhall-1.41:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/lens-family-core-1.0.0:=[profile?] <dev-haskell/lens-family-core-2.2:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
@@ -30,6 +29,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	dev-haskell/vector:=[profile?]
+	>=dev-lang/dhall-1.40.0:=[profile?] <dev-lang/dhall-1.41:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

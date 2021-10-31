@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (2021-10-29)
+# Very simple package, no longer maintained. Mask for removal.
+dev-haskell/reflex-gloss
+
 # Jack Todaro <solpeth@posteo.org> (2021-10-21)
 # Requires porting to network-3.
 media-sound/live-sequencer

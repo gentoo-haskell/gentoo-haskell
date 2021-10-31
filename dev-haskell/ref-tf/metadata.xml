@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Contains a &#39;MonadRef&#39; type class that abstracts over the
-		details of manipulating references, allowing one to write code
-		that can operate in either the ST monad or the IO monad.
-	</longdescription>
 </pkgmetadata>

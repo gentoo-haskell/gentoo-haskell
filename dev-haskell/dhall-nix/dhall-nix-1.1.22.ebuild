@@ -17,12 +17,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="<dev-haskell/data-fix-0.4:=[profile?]
-	>=dev-haskell/dhall-1.40:=[profile?] <dev-haskell/dhall-1.41:=[profile?]
 	>=dev-haskell/hnix-0.7:=[profile?] <dev-haskell/hnix-0.15:=[profile?]
 	>=dev-haskell/lens-family-core-1.0.0:=[profile?] <dev-haskell/lens-family-core-2.2:=[profile?]
 	<dev-haskell/neat-interpolation-0.6:=[profile?]
 	>=dev-haskell/optparse-generic-1.1.1:=[profile?] <dev-haskell/optparse-generic-1.5:=[profile?]
 	>=dev-haskell/text-0.8.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-lang/dhall-1.40:=[profile?] <dev-lang/dhall-1.41:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

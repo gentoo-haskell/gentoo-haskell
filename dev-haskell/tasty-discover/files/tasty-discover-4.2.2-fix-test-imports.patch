@@ -1,0 +1,29 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Some tests need an extra import to define `Spec`
+
+diff -urN tasty-discover-4.2.2-new2/test/ConfigTest.hs tasty-discover-4.2.2-new3/test/ConfigTest.hs
+--- tasty-discover-4.2.2-new2/test/ConfigTest.hs	2001-09-08 19:46:40.000000000 -0600
++++ tasty-discover-4.2.2-new3/test/ConfigTest.hs	2021-10-30 16:35:40.701272581 -0600
+@@ -14,6 +14,8 @@
+ 
+ import qualified Data.Map.Strict as M
+ 
++import Test.Hspec
++
+ spec_modules :: Spec
+ spec_modules = describe "Test discovery" $ do
+   it "Discovers tests" $ do
+diff -urN tasty-discover-4.2.2-new2/test/DiscoverTest.hs tasty-discover-4.2.2-new3/test/DiscoverTest.hs
+--- tasty-discover-4.2.2-new2/test/DiscoverTest.hs	2001-09-08 19:46:40.000000000 -0600
++++ tasty-discover-4.2.2-new3/test/DiscoverTest.hs	2021-10-30 16:44:55.185576846 -0600
+@@ -12,6 +12,8 @@
+ import qualified Hedgehog.Gen   as G
+ import qualified Hedgehog.Range as R
+ 
++import Test.Hspec
++
+ unit_listCompare :: IO ()
+ unit_listCompare = [1 :: Int, 2, 3] `compare` [1,2] @?= GT
+ 
