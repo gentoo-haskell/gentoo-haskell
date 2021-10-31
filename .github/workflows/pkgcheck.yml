@@ -14,7 +14,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run pkgcheck
-      uses: pkgcore/pkgcheck-action@v1
+      # Temporarily use a fork from '@osirisinferi'
+      # See https://github.com/gentoo-haskell/gentoo-haskell/issues/1227      
+      uses: osirisinferi/pkgcheck-action@v1.1
+      # uses: pkgcore/pkgcheck-action@v1
       with:
         # NonSolvableDepsInXXX is a false positive. This is fixed in
         # https://github.com/pkgcore/pkgcheck/issues/281 , and we can remove this
