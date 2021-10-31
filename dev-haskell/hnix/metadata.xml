@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="executable">Build the hnix executable</flag>
 		<flag name="optimize">Enable all optimization flags</flag>
-		<flag name="profiling">Enable profiling</flag>
 	</use>
 </pkgmetadata>
