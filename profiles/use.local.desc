@@ -424,7 +424,6 @@ dev-haskell/zlib:bundled-c-zlib - Use the bundled zlib C sources. Requires pkg-c
 dev-haskell/zlib:non-blocking-ffi - The (de)compression calls can sometimes take a long time, which prevents other Haskell threads running. Enabling this flag avoids this unfairness, but with greater overall cost.
 dev-haskell/zxcvbn-hs:tools - Build the data processing tools (i.e. dictionary compilers)
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
-dev-lang/dhall:cross - Disable TemplateHaskell to make cross-compiling easier
 dev-lang/dhall:http - Include support for importing dhall modules from HTTP URLs
 dev-lang/dhall:http-client-tls - Use http-client-tls for resolving HTTP imports by default (requires with-http to be enabled)
 dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors
