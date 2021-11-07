@@ -9,7 +9,8 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Convert between Dhall and JSON or YAML"
-HOMEPAGE="https://hackage.haskell.org/package/dhall-json"
+HOMEPAGE="https://dhall-lang.org/
+	https://hackage.haskell.org/package/dhall-json"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
