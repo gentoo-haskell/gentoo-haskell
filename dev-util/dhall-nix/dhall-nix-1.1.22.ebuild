@@ -9,7 +9,8 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Dhall to Nix compiler"
-HOMEPAGE="https://hackage.haskell.org/package/dhall-nix"
+HOMEPAGE="https://dhall-lang.org/
+	https://hackage.haskell.org/package/dhall-nix"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
