@@ -450,8 +450,6 @@ dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate in
 dev-haskell/deque 0.4.3: Double-ended queues
 dev-haskell/deriving-compat 0.5.8 0.5.10: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/dhall-json 1.7.8: Convert between Dhall and JSON or YAML
-dev-haskell/dhall-nix 1.1.22: Dhall to Nix compiler
 dev-haskell/diagrams 1.4-r2: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.5-r2: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1-r1: Cairo backend for diagrams drawing EDSL
@@ -955,6 +953,7 @@ dev-haskell/hspec-discover 2.7.10: Automatically discover and run Hspec tests
 dev-haskell/hspec-expectations 0.7.2-r1 0.8.2: Catchy combinators for HUnit
 dev-haskell/hspec-expectations-lens 0.4.0-r1: Hspec expectations for the lens stuff
 dev-haskell/hspec-expectations-lifted 0.10.0: A version of hspec-expectations generalized to MonadIO
+dev-haskell/hspec-hedgehog 0.0.1.2: Integrate Hedgehog and Hspec!
 dev-haskell/hspec-megaparsec 2.1.0 2.2.0: Utility functions for testing Megaparsec parsers with Hspec
 dev-haskell/hspec-meta 2.7.8: A version of Hspec which is used to test Hspec itself
 dev-haskell/hspec-smallcheck 0.5.2: SmallCheck support for the Hspec testing framework
@@ -979,6 +978,7 @@ dev-haskell/htf 0.14.0.6: The Haskell Test Framework
 dev-haskell/html 1.0.1.2-r1: HTML combinator library
 dev-haskell/html-conduit 1.3.2.1: Parse HTML documents using xml-conduit datatypes
 dev-haskell/html-entities 1.1.4.5: A codec library for HTML-escaped text and HTML-entities
+dev-haskell/html-entity-map 0.1.0.0: Map from HTML5 entity names to the corresponding Unicode text
 dev-haskell/html-parse 0.2.0.2: A high-performance HTML tokenizer
 dev-haskell/htoml 1.0.0.3: Parser for TOML files
 dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
@@ -1192,7 +1192,7 @@ dev-haskell/lsp 1.2.0.1: Haskell library for the Microsoft Language Server Proto
 dev-haskell/lsp-test 0.14.0.1: Functional test framework for LSP servers
 dev-haskell/lsp-types 1.3.0.1: Haskell library for the Microsoft Language Server Protocol, data types
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
-dev-haskell/lucid 2.9.12.1: Clear to write, read and edit DSL for HTML
+dev-haskell/lucid 2.10.0: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
 dev-haskell/lukko 0.1.1.2: File locking
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
@@ -1248,6 +1248,7 @@ dev-haskell/miso 1.8.0.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1-r1: Convenience functions for FFI work
 dev-haskell/missingh 1.4.3.0-r1: Large utility library
 dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
+dev-haskell/mmark 0.0.7.4: Strict markdown processor for writers
 dev-haskell/mmorph 1.1.5: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/mod 0.1.2.2: Fast type-safe modular arithmetic
@@ -1955,7 +1956,7 @@ dev-haskell/tls 1.5.5: TLS/SSL protocol native implementation (Server and Client
 dev-haskell/tls-debug 0.4.8: Set of programs for TLS testing and debugging
 dev-haskell/tls-session-manager 0.0.4: In-memory TLS session manager
 dev-haskell/tmp-postgres 1.34.1.0: Start and stop a temporary postgres
-dev-haskell/tomland 1.3.1.0: Bidirectional TOML serialization
+dev-haskell/tomland 1.3.1.0 1.3.3.0: Bidirectional TOML serialization
 dev-haskell/top 1.7: Constraint solving framework employed by the Helium Compiler
 dev-haskell/topograph 1.0.0.1: Directed acyclic graphs
 dev-haskell/torrent 10000.1.1: BitTorrent file parser and generater
@@ -2220,6 +2221,13 @@ dev-util/cabal-fmt 0.1.5.1: Format .cabal files
 dev-util/change-monger 0.0: Parse VCS changelogs into ChangeLogs
 dev-util/codex 0.6.0.0 0.6.0.0-r2: A ctags file generator for cabal project dependencies
 dev-util/darcs-monitor 0.4.2-r2: Darcs repository monitor (sends email)
+dev-util/dhall-bash 1.0.38: Compile Dhall to Bash
+dev-util/dhall-csv 1.0.0: Convert bidirectionally between Dhall and CSV files
+dev-util/dhall-docs 1.0.7: Generate HTML docs from a dhall package
+dev-util/dhall-json 1.7.8: Convert between Dhall and JSON or YAML
+dev-util/dhall-nix 1.1.22: Dhall to Nix compiler
+dev-util/dhall-toml 1.0.0: Convert between Dhall and TOML
+dev-util/dhall-yaml 1.2.8: Convert between Dhall and YAML
 dev-util/hadolint 2.7.0: Dockerfile Linter JavaScript API
 dev-util/haskell-language-server 1.4.0.0-r1: LSP server for GHC
 dev-util/hdocs 0.5.5.0-r1: Haskell docs tool

@@ -182,6 +182,7 @@ dev-haskell/hslua:hardcode-reg-keys - Don't use CAPI to determine the names of c
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC and OpenSSL version < 1.1.0 only).
 dev-haskell/hsp:base4 - Use base-4.0.
 dev-haskell/hsyslog:install-examples - Build and install example programs
+dev-haskell/html-entity-map:dev - Turn on development settings.
 dev-haskell/http-api-data:text-show - Use text-show library for efficient ToHttpApiData implementations.
 dev-haskell/http-client-openssl:test-proxy - Test with http-proxy
 dev-haskell/httpd-shed:buildexamples - Build example executables.
