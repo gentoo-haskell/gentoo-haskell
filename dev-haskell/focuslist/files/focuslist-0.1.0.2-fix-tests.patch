@@ -1,0 +1,35 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/cdepillabout/focuslist/pull/10
+
+`Spec` is no longer re-exported in `tasty-hspec-1.1.7`:
+
+https://github.com/mitchellwrosen/tasty-hspec/commit/640f5973b4bca0c6c3e01d4fab4528aa08da22e9#diff-aa396797a3d6306aa116e2b7625e44e1065d3ab547143569d4febace859d5859L18-L19
+
+diff -urN focuslist-0.1.0.2/focuslist.cabal focuslist-0.1.0.2-r1/focuslist.cabal
+--- focuslist-0.1.0.2/focuslist.cabal	2021-11-14 11:08:52.511224026 -0700
++++ focuslist-0.1.0.2-r1/focuslist.cabal	2021-11-14 11:18:46.931224314 -0700
+@@ -60,6 +60,7 @@
+                      , genvalidity-containers >= 0.5
+                      , genvalidity-hspec >= 0.6
+                      , hedgehog >= 0.6.1
++                     , hspec
+                      , lens
+                      , QuickCheck
+                      , tasty >= 1.1
+diff -urN focuslist-0.1.0.2/test/Test/FocusList.hs focuslist-0.1.0.2-r1/test/Test/FocusList.hs
+--- focuslist-0.1.0.2/test/Test/FocusList.hs	2019-03-21 07:41:59.000000000 -0600
++++ focuslist-0.1.0.2-r1/test/Test/FocusList.hs	2021-11-14 11:20:37.771224368 -0700
+@@ -5,10 +5,11 @@
+ module Test.FocusList where
+ 
+ import Data.GenValidity.Sequence ()
++import Test.Hspec (Spec)
+ import Test.QuickCheck (Gen)
+ import Test.Tasty (TestTree, testGroup)
+ import Test.Tasty.Hedgehog (testProperty)
+-import Test.Tasty.Hspec (Spec, testSpec)
++import Test.Tasty.Hspec (testSpec)
+ import Test.Validity (GenInvalid, GenUnchecked, GenValid(genValid), Validity(validate), check, eqSpec, genValidSpec)
+ 
+ import Data.FocusList (Focus, FocusList, genValidFL, invariantFL)
