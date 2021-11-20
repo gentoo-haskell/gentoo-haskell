@@ -17,8 +17,8 @@ LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/shake-0.19.4:=[profile?]
-	dev-haskell/unordered-containers:=[profile?]
+RDEPEND="dev-haskell/unordered-containers:=[profile?]
+	>=dev-util/shake-0.19.4:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}

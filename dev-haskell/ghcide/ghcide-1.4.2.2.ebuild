@@ -72,7 +72,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/rope-utf16-splay:=[profile?]
 	dev-haskell/safe:=[profile?]
 	dev-haskell/safe-exceptions:=[profile?]
-	dev-haskell/shake:=[profile?]
 	dev-haskell/sorted-list:=[profile?]
 	dev-haskell/sqlite-simple:=[profile?]
 	dev-haskell/stm:=[profile?]
@@ -84,6 +83,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/vector:=[profile?]
 	dev-haskell/vector-algorithms:=[profile?]
+	dev-util/shake:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
