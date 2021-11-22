@@ -20,10 +20,6 @@ dev-haskell/haskell-platform
 # Was not updated since 2016. Needs an update to lens-family-2.1
 dev-haskell/lens-simple
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-06-21)
-# Was not ported for newer gi. Mask for removal.
-dev-haskell/vcsgui
-
 # hololeap <hololeap@protonmail.com> (2021-05-13)
 # These packages depend on dev-haskell/numhask. In addition, some of them
 # have been deprecated:
