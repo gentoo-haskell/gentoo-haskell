@@ -10,7 +10,9 @@ inherit haskell-cabal
 
 DESCRIPTION="Rename plugin for Haskell Language Server"
 HOMEPAGE="https://hackage.haskell.org/package/hls-rename-plugin"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+HACKAGE_REV="1"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
@@ -18,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/extra:=[profile?]
 	dev-haskell/ghc-exactprint:=[profile?]
-	>=dev-haskell/ghcide-1.4:=[profile?] <dev-haskell/ghcide-1.5:=[profile?]
+	>=dev-haskell/ghcide-1.4:=[profile?] <dev-haskell/ghcide-1.6:=[profile?]
 	dev-haskell/hiedb:=[profile?]
 	>=dev-haskell/hls-plugin-api-1.2:=[profile?] <dev-haskell/hls-plugin-api-1.3:=[profile?]
 	>=dev-haskell/hls-retrie-plugin-1.0.1.1:=[profile?]
@@ -26,10 +28,17 @@ RDEPEND="dev-haskell/extra:=[profile?]
 	dev-haskell/lsp-types:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/text:=[profile?]
-	dev-lang/ghc:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.2 )
 "
+
+src_prepare() {
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Apply patches *after* pulling the revised cabal
+	default
+}
