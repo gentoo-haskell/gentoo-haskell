@@ -1,0 +1,8 @@
+DEFINED_PHASES=install preinst pretend
+DESCRIPTION=A group for dev-util/hoogle
+EAPI=8
+INHERIT=acct-group
+KEYWORDS=~amd64 ~x86
+SLOT=0
+_eclasses_=user-info	2e75eaea3582b052ec16d9d5aa74ced3	user	1033b6bed7cf367c4507ea9a3ff503d0	acct-group	d12e466819e60dedccac935746c2b151
+_md5_=78437e1960e423bfb8fa5e4c5c0364b7

@@ -1,3 +1,5 @@
+acct-group/hoogle 0: A group for dev-util/hoogle
+acct-user/hoogle 0: A user for dev-util/hoogle
 app-accessibility/hsay 1.1.0-r3: (ab)Use Google Translate as a speech synthesiser
 app-admin/haskell-updater 1.3.2 9999: Rebuild Haskell dependencies in Gentoo
 app-admin/propellor 5.12: property-based host configuration management in haskell
@@ -908,7 +910,6 @@ dev-haskell/hnix-store-remote 0.5.0.0: Remote hnix store
 dev-haskell/hoauth2 1.16.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
-dev-haskell/hoogle 5.0.18 5.0.18.1: Haskell API Search
 dev-haskell/hookup 0.3.1.0 0.5 0.6: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
@@ -2239,6 +2240,7 @@ dev-util/hadolint 2.7.0: Dockerfile Linter JavaScript API
 dev-util/haskell-language-server 1.4.0.0-r1: LSP server for GHC
 dev-util/hdocs 0.5.5.0-r1: Haskell docs tool
 dev-util/hindent 5.3.2: Extensible Haskell pretty printer
+dev-util/hoogle 5.0.18 5.0.18.2: Haskell API Search
 dev-util/hsdev 0.3.4.0-r4: Haskell development library
 dev-util/shellcheck 0.7.2: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
