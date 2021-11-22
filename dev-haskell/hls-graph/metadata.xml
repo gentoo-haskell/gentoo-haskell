@@ -5,4 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="embed-files">Embed data files into the shake library</flag>
+	</use>
 </pkgmetadata>
