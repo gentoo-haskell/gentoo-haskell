@@ -9,7 +9,6 @@ media-sound/live-sequencer
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-07-25)
 # Mask ancient quickechk-1 and it's revdep for removal.
 dev-haskell/quickcheck:1
-dev-haskell/test-framework-quickcheck
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-07-03)
 # Was not updated since 2016. Needs an update to lens-family-2.1
