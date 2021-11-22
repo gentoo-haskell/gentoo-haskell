@@ -330,9 +330,6 @@ dev-haskell/semirings:unordered-containers - You can disable the use of the `uno
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
 dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
-dev-haskell/shake:cloud - Enable cloud build features
-dev-haskell/shake:embed-files - Embed data files into the shake library
-dev-haskell/shake:portable - Obtain FileTime using portable functions
 dev-haskell/shakespeare:test-coffee - render tests through coffeescript render function
 dev-haskell/shakespeare:test-export - adds -DTEST_EXPORT cpp-option
 dev-haskell/shakespeare:test-roy - render tests through roy render function
@@ -461,6 +458,9 @@ dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
 dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
 dev-util/haskell-language-server:hls_plugins_tactic - Enable tactic plugin
 dev-util/hsdev:hlint - build with hlint to support linting
+dev-util/shake:cloud - Enable cloud build features
+dev-util/shake:embed-files - Embed data files into the shake library
+dev-util/shake:portable - Obtain FileTime using portable functions
 dev-vcs/darcs:curl - Use libcurl for HTTP support.
 dev-vcs/darcs:terminfo - Use the terminfo package for enhanced console support.
 dev-vcs/darcs:threaded - Use threading and SMP support.
