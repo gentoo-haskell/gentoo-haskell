@@ -11,11 +11,6 @@ media-sound/live-sequencer
 dev-haskell/quickcheck:1
 dev-haskell/test-framework-quickcheck
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-07-05)
-# The platform is outdated and not maintained anymore.
-# Mask for removal in 30 days.
-dev-haskell/haskell-platform
-
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-07-03)
 # Was not updated since 2016. Needs an update to lens-family-2.1
 dev-haskell/lens-simple
