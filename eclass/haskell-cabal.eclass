@@ -445,7 +445,7 @@ cabal-build() {
 }
 
 cabal-copy() {
-	set -- copy --destdir="${D}" "$@"
+	set -- copy "$@" --destdir="${D}"
 	echo ./setup "$@"
 	./setup "$@" || die "setup copy failed"
 
@@ -596,7 +596,8 @@ haskell-cabal_src_test() {
 # exported function: cabal-style copy and register
 cabal_src_install() {
 	if ! cabal-is-dummy-lib; then
-		cabal-copy
+		# Pass arguments to cabal-copy
+		cabal-copy "$@"
 		cabal-pkg
 	fi
 
@@ -611,10 +612,14 @@ cabal_src_install() {
 	touch "${hint_file}" || die
 }
 
+# Arguments passed to this function will make their way to `cabal-copy`
+# and eventually `./setup copy`. This allows you to specify which
+# components will be installed.
+# e.g. `haskell-cabal_src_install "lib:${PN}"` will only install the library
 haskell-cabal_src_install() {
 	pushd "${S}" > /dev/null || die
 
-	cabal_src_install
+	cabal_src_install "$@"
 
 	popd > /dev/null || die
 }
