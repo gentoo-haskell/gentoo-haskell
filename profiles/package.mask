@@ -1,33 +1,10 @@
-# hololeap <hololeap@protonmail.com> (2021-10-29)
-# Very simple package, no longer maintained. Mask for removal.
-dev-haskell/reflex-gloss
-
 # Jack Todaro <solpeth@posteo.org> (2021-10-21)
 # Requires porting to network-3.
 media-sound/live-sequencer
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-07-25)
-# Mask ancient quickechk-1 and it's revdep for removal.
-dev-haskell/quickcheck:1
-dev-haskell/test-framework-quickcheck
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-07-05)
-# The platform is outdated and not maintained anymore.
-# Mask for removal in 30 days.
-dev-haskell/haskell-platform
-
 # Sergei Trofimovich <slyfox@gentoo.org> (2021-07-03)
 # Was not updated since 2016. Needs an update to lens-family-2.1
 dev-haskell/lens-simple
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-06-21)
-# Was not ported for newer gi. Mask for removal.
-dev-haskell/vcsgui
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-06-21)
-# Was not ported for newer ghc, cabal or pandoc for past 4 years.
-# Mask for removal.
-dev-haskell/graphalyze
 
 # hololeap <hololeap@protonmail.com> (2021-05-13)
 # These packages depend on dev-haskell/numhask. In addition, some of them
