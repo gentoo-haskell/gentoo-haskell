@@ -743,7 +743,6 @@ dev-haskell/googlesuggest 0.0.4: Interface to Google Suggest API
 dev-haskell/googletranslate 0.0.5-r2: Interface to Google Translate API
 dev-haskell/gpipe 2.2.5-r2: Typesafe functional GPU graphics programming
 dev-haskell/gpipe-glfw 1.4.1.4: GLFW OpenGL context creation for GPipe
-dev-haskell/graphalyze 0.14.1.1-r2: Graph-Theoretic Analysis library
 dev-haskell/graphmod 1.4.4: Present the module dependencies of a program as a "dot" graph
 dev-haskell/graphscc 1.0.4: Tarjan's algorithm for computing the strongly connected components of a graph
 dev-haskell/graphviz 2999.20.1.0: Bindings to Graphviz for graph visualisation
@@ -805,7 +804,6 @@ dev-haskell/haskell-import-graph 1.0.4: create haskell import graph for graphviz
 dev-haskell/haskell-lexer 1.1: A fully compliant Haskell 98 lexer
 dev-haskell/haskell-mpi 1.4.0: Distributed parallel programming in Haskell using MPI
 dev-haskell/haskell-names 0.9.9: Name resolution library for Haskell
-dev-haskell/haskell-platform 2014.2.0.0-r1: The Haskell Platform
 dev-haskell/haskell-qrencode 1.0.4: Haskell bindings for libqrencode
 dev-haskell/haskell-src 1.0.3.1: Support for manipulating Haskell source code
 dev-haskell/haskell-src-exts 1.21.1 1.22.0 1.23.0 1.23.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
@@ -1550,7 +1548,7 @@ dev-haskell/pwstore-fast 2.4.4: Secure password storage
 dev-haskell/pwstore-purehaskell 2.1.4: Secure password storage, in pure Haskell
 dev-haskell/python-pickle 0.2.3: Serialization/deserialization using Python Pickle format
 dev-haskell/qr-imager 2.0.0.2: Library to generate images
-dev-haskell/quickcheck 1.2.0.1-r1 2.13.2 2.14.2: Automatic testing of Haskell programs
+dev-haskell/quickcheck 2.13.2 2.14.2: Automatic testing of Haskell programs
 dev-haskell/quickcheck-arbitrary-template 0.2.1.1: Generate QuickCheck Gen for Sum Types
 dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-classes 0.6.5.0: QuickCheck common typeclasses
@@ -1597,7 +1595,6 @@ dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/refinery 0.4.0.0: Toolkit for building proof automation systems
 dev-haskell/reflection 2.1.6: Reifies arbitrary terms into types that can be reflected back into terms
 dev-haskell/reflex 0.8.2.0: Higher-order Functional Reactive Programming
-dev-haskell/reflex-gloss 0.2-r2: An reflex interface for gloss
 dev-haskell/reflex-process 0.3.1.1: Reflex FRP interface for running system processes
 dev-haskell/reflex-vty 0.2.0.0: Reflex FRP host and widgets for VTY applications
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
@@ -1896,7 +1893,6 @@ dev-haskell/terminfo-hs 0.2.1.1: A pure-Haskell (no FFI) module for accessing te
 dev-haskell/test-framework 0.8.2.0-r2: Framework for running and organising tests, with HUnit and QuickCheck support
 dev-haskell/test-framework-hunit 0.3.0.2-r1: HUnit support for the test-framework package
 dev-haskell/test-framework-leancheck 0.0.1: LeanCheck support for test-framework
-dev-haskell/test-framework-quickcheck 0.3.0-r1: QuickCheck support for the test-framework package
 dev-haskell/test-framework-quickcheck2 0.3.0.5-r1: QuickCheck2 support for the test-framework package
 dev-haskell/test-framework-smallcheck 0.2: Support for SmallCheck tests in test-framework
 dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit and Quickcheck using Template Haskell
@@ -2057,7 +2053,6 @@ dev-haskell/validity-vector 0.2.0.3: Validity instances for vector
 dev-haskell/varying 0.8.1.0: FRP through value streams and monadic splines
 dev-haskell/vault 0.3.1.5: a persistent store for values of arbitrary types
 dev-haskell/vcs-revision 0.0.2-r1: Facilities for accessing the version control revision of the current directory
-dev-haskell/vcsgui 0.2.2.0-r1: GUI library for source code management systems
 dev-haskell/vcswrapper 0.1.6: Wrapper for source code management systems
 dev-haskell/vec 0.3: Vec: length-indexed (sized) list
 dev-haskell/vect 0.4.7: A low-dimensional linear algebra library, tailored to computer graphics
