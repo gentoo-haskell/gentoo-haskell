@@ -2261,8 +2261,8 @@ net-misc/haeredes 0.5.2: Confirm delegation of NS and MX records
 net-misc/hath 0.5.0: Hath manipulates network blocks in CIDR notation
 sci-biology/bamstats 0.4: A program to extract various information from BAM alignmnet files
 sci-biology/flowsim 0.3.5: Simulate 454 pyrosequencing
-sci-mathematics/agda 2.6.1.2: A dependently typed functional programming language and proof assistant
-sci-mathematics/agda-stdlib 2.6.1.2.1.4: Agda standard library
+sci-mathematics/agda 2.6.1.2 2.6.2: A dependently typed functional programming language and proof assistant
+sci-mathematics/agda-stdlib 2.6.1.2.1.4 2.6.2.1.7.1: Agda standard library
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/darcsweb 1.1: A web interface for darcs
 www-apps/gitit 0.15.0.0: Wiki using happstack, git or darcs, and pandoc

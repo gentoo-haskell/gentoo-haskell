@@ -480,8 +480,8 @@ games-puzzle/intricacy:sound - Enables sound in SDL user interface
 media-sound/live-sequencer:gui - Build the wxWidgets GUI for the sequencer.
 media-sound/live-sequencer:httpserver - Enable access to modules via a web browser.
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
-sci-mathematics/agda:debug - Enable debugging features that may slow Agda down.
 sci-mathematics/agda:enable-cluster-counting - Enable the --count-clusters flag. (If enable-cluster-counting is False, then the --count-clusters flag triggers an error message.)
+sci-mathematics/agda:optimise-heavily - Enable some expensive optimisations when compiling Agda.
 sci-mathematics/agda:stdlib - Install the standard library.
 www-apps/gitit:plugins - Compile in support for plugins. This will increase the size of the executable and the memory it uses, so those who will not need plugins should disable this flag.
 www-servers/mighttpd2:tls - HTTPS support.
