@@ -11,5 +11,5 @@ RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/aeson-pretty:=[profile?] dev-h
 RESTRICT=test
 SLOT=0/1.4.0.0
 SRC_URI=https://hackage.haskell.org/package/haskell-language-server-1.4.0.0/haskell-language-server-1.4.0.0.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4b66d835ec72e021e359bb81eacfe988	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	8a0248f83ae77f945d376ff4a7953257	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
 _md5_=d6be30f8b0f7b3ae098d2c00d6d6f08b
