@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=
-	>=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.24:=
+	>=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.25:=
 	dev-haskell/mtl:=
 	dev-haskell/text:=
 	>=dev-lang/ghc-8.4.3:=
@@ -26,3 +26,10 @@ RDEPEND="dev-haskell/cabal:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hledger-lib >= 1.23 && < 1.24' 'hledger-lib >= 1.23'
+}

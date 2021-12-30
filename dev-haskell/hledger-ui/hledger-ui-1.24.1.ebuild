@@ -19,15 +19,15 @@ IUSE="+threaded"
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.9:=
 	dev-haskell/async:=
-	>=dev-haskell/base-compat-batteries-0.10.1:= <dev-haskell/base-compat-batteries-0.12:=
 	>=dev-haskell/brick-0.23:=
 	>=dev-haskell/cmdargs-0.8:=
 	dev-haskell/data-default:=
+	>=dev-haskell/doclayout-0.3:= <dev-haskell/doclayout-0.4:=
 	>=dev-haskell/extra-1.6.3:=
 	>=dev-haskell/fsnotify-0.2.1.2:= <dev-haskell/fsnotify-0.4:=
-	>=dev-haskell/hledger-1.23:= <dev-haskell/hledger-1.24:=
-	>=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.24:=
-	>=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-9.2:=
+	>=dev-haskell/hledger-1.24.1:= <dev-haskell/hledger-1.25:=
+	>=dev-haskell/hledger-lib-1.24.1:= <dev-haskell/hledger-lib-1.25:=
+	>=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-9.3:=
 	>=dev-haskell/microlens-0.4:=
 	>=dev-haskell/microlens-platform-0.2.3.1:=
 	>=dev-haskell/safe-0.2:=
