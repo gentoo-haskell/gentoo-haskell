@@ -64,8 +64,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'pandoc >= 2.11 && < 2.17' 'pandoc >= 2.11' \
-		'pandoc    >= 2.11  && < 2.17' 'pandoc    >= 2.11'
+		'pandoc >= 2.11 && < 2.16' 'pandoc >= 2.11' \
+		'pandoc    >= 2.11  && < 2.16' 'pandoc    >= 2.11'
 }
 
 src_configure() {
