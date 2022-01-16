@@ -8,7 +8,7 @@ app-emacs/idris-mode 0.9.18: Idris syntax highlighting and (eventually) other th
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
 app-portage/hackport 0.6.7 0.7 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
-app-text/pandoc 2.13-r1 2.14.2: Conversion between markup formats
+app-text/pandoc 2.16.2: Conversion between markup formats
 app-text/pdfsplit 0.0.1-r1: split two-column PDFs, so there is one column per page
 app-vim/haskellindent 0.1-r2: vim plugin: Indent settings and filetype detection for Haskell sources
 app-vim/haskellmode 20101118-r1: vim plugin: Provides IDE-like features for Haskell development
@@ -282,7 +282,7 @@ dev-haskell/cipher-camellia 0.0.2: Camellia block cipher primitives
 dev-haskell/cipher-des 0.0.6: DES and 3DES primitives
 dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.6: Simple heuristic for packing discs of varying radii in a circle
-dev-haskell/citeproc 0.3.0.9 0.5: Generates citations and bibliography from CSL styles
+dev-haskell/citeproc 0.6.0.1: Generates citations and bibliography from CSL styles
 dev-haskell/clash-ghc 1.2.5: CAES Language for Synchronous Hardware
 dev-haskell/clash-lib 1.2.5: CAES Language for Synchronous Hardware - As a Library
 dev-haskell/clash-prelude 1.2.5: CAES Language for Synchronous Hardware - Prelude library
@@ -313,8 +313,8 @@ dev-haskell/colour 2.3.6: A model for human colour/color perception
 dev-haskell/colourista 0.1.0.1: Convenient interface for printing colourful messages
 dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
 dev-haskell/commonmark 0.1.1.4 0.2.1.1: Pure Haskell commonmark parser
-dev-haskell/commonmark-extensions 0.2.2: Pure Haskell commonmark parser
-dev-haskell/commonmark-pandoc 0.2.1.1: Bridge between commonmark and pandoc AST
+dev-haskell/commonmark-extensions 0.2.3: Pure Haskell commonmark parser
+dev-haskell/commonmark-pandoc 0.2.1.2: Bridge between commonmark and pandoc AST
 dev-haskell/comonad 5.0.7 5.0.8: The Comonads package authored by Edward Kmett
 dev-haskell/comonad-extras 4.0.1: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
@@ -492,7 +492,7 @@ dev-haskell/djinn-lib 0.0.1.3: Generate Haskell code from a type. Library extrac
 dev-haskell/dlist 0.8.0.7 1.0: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 4.0.1: DNS library in Haskell
-dev-haskell/doclayout 0.3.0.2: A prettyprinting library for laying out text documents
+dev-haskell/doclayout 0.3.1.1: A prettyprinting library for laying out text documents
 dev-haskell/doctemplates 0.9 0.10: Pandoc-style document templates
 dev-haskell/doctest 0.16.3 0.18.1: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
@@ -526,7 +526,7 @@ dev-haskell/ekg-core 0.1.1.7: Tracking of system metrics
 dev-haskell/ekg-json 0.1.0.6-r1: JSON encoding of ekg metrics
 dev-haskell/email-validate 2.3.2.14: Email address validation
 dev-haskell/emoji 0.1.0.2: emoji utility
-dev-haskell/emojis 0.1: Conversion between emoji characters and their names.
+dev-haskell/emojis 0.1.2: Conversion between emoji characters and their names
 dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an enclosed computation
 dev-haskell/engine-io 1.2.23: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.4.1.6-r1: A platform independent entropy source
@@ -769,7 +769,7 @@ dev-haskell/haddock 2.24.0 2.25.0: A documentation-generation tool for Haskell l
 dev-haskell/haddock-api 2.24.0-r1 2.25.0: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.8.0 1.9.0 1.10.0: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1-r1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.15.0.1: A static website compiler library
+dev-haskell/hakyll 4.15.1.0: A static website compiler library
 dev-haskell/hakyll-agda 0.1.13: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.4: Hakyll SASS compiler over hsass
 dev-haskell/half 0.3-r1 0.3.1: Half-precision floating-point
@@ -938,10 +938,16 @@ dev-haskell/hsexif 0.6.1.8: EXIF handling library in pure Haskell
 dev-haskell/hsh 2.1.3: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.11.0: A command line program for extending the import list of a Haskell source file
 dev-haskell/hslogger 1.2.12 1.3.1.0-r2: Versatile logging framework
-dev-haskell/hslua 1.3.0.2: Bindings to Lua, an embeddable scripting language
-dev-haskell/hslua-module-path 0.1.0.1: Lua module to work with file paths
-dev-haskell/hslua-module-system 0.2.2.1: Lua module wrapper around Haskell's System module
-dev-haskell/hslua-module-text 0.3.0.1: Lua module for text
+dev-haskell/hslua 2.0.1: Bindings to Lua, an embeddable scripting language
+dev-haskell/hslua-classes 2.0.0: Type classes for HsLua
+dev-haskell/hslua-core 2.0.0.2: Bindings to Lua, an embeddable scripting language
+dev-haskell/hslua-marshalling 2.0.1: Marshalling of values between Haskell and Lua
+dev-haskell/hslua-module-path 1.0.0: Lua module to work with file paths
+dev-haskell/hslua-module-system 1.0.0: Lua module wrapper around Haskell's System module
+dev-haskell/hslua-module-text 1.0.0: Lua module for text
+dev-haskell/hslua-module-version 1.0.0: Lua module to work with version specifiers
+dev-haskell/hslua-objectorientation 2.0.1: Object orientation tools for HsLua
+dev-haskell/hslua-packaging 2.0.0: Utilities to build Lua modules
 dev-haskell/hsndfile 0.8.0-r1: Haskell bindings for libsndfile
 dev-haskell/hsndfile-vector 0.5.2: Haskell bindings for libsndfile (Data.Vector interface)
 dev-haskell/hsopenssl 0.11.7: Partial OpenSSL binding for Haskell
@@ -1069,7 +1075,7 @@ dev-haskell/iostring 0.0.0.0-r1: A class of strings that can be involved in IO
 dev-haskell/ipprint 0.6-r1: Tiny helper for pretty-printing values in ghci console
 dev-haskell/iproute 1.7.12: IP Routing Table
 dev-haskell/ipv6addr 1.1.5: Library to deal with IPv6 address text representations
-dev-haskell/ipynb 0.1.0.1: Data structure for working with Jupyter notebooks (ipynb)
+dev-haskell/ipynb 0.1.0.2: Data structure for working with Jupyter notebooks (ipynb)
 dev-haskell/ipython-kernel 0.10.2.1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0-r1: A small library for parsing IRC messages
 dev-haskell/irc-core 2.7.2 2.9 2.10: IRC core library for glirc
@@ -1191,10 +1197,13 @@ dev-haskell/logging-facade 0.3.0: Simple logging abstraction that allows multipl
 dev-haskell/logict 0.7.0.3: A backtracking logic-programming monad
 dev-haskell/logict-state 0.1.0.5: Library for logic programming based on haskell package logict
 dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
+dev-haskell/lpeg 1.0.1: LPeg - Parsing Expression Grammars For Lua
 dev-haskell/lrucache 1.2.0.1: a simple, pure LRU cache
 dev-haskell/lsp 1.2.0.1: Haskell library for the Microsoft Language Server Protocol
 dev-haskell/lsp-test 0.14.0.1: Functional test framework for LSP servers
 dev-haskell/lsp-types 1.3.0.1: Haskell library for the Microsoft Language Server Protocol, data types
+dev-haskell/lua 2.0.2: Lua, an embeddable scripting language
+dev-haskell/lua-arbitrary 1.0.0: Arbitrary instances for Lua types
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
 dev-haskell/lucid 2.10.0: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
@@ -1406,9 +1415,9 @@ dev-haskell/ordered-containers 0.2.2: Set- and Map-like types that remember the 
 dev-haskell/ormolu 0.1.4.1-r1: A formatter for Haskell source code
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.17.0.2: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.3.12.0: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.3.12.1: Pandoc filter for cross-references
 dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, images and paragraphs
-dev-haskell/pandoc-types 1.21 1.22: Types for representing a structured document
+dev-haskell/pandoc-types 1.22.1: Types for representing a structured document
 dev-haskell/pango 0.13.8.1-r1: Binding to the Pango text rendering engine
 dev-haskell/panic 0.4.0.1: A convenient way to panic
 dev-haskell/pantry 0.5.2.2: Content addressable Haskell package management
@@ -1505,7 +1514,7 @@ dev-haskell/preprocessor-tools 2.0.2: A framework for extending Haskell's syntax
 dev-haskell/presburger 1.3.1-r1: A decision procedure for quantifier-free linear arithmetic
 dev-haskell/pretty-hex 1.1: A library for hex dumps of ByteStrings
 dev-haskell/pretty-ncols 0.1-r2: A implementation of multi-column layout w/ Text.PrettyPrint
-dev-haskell/pretty-show 1.9.5: Tools for working with derived 'Show' instances and generic inspection of values
+dev-haskell/pretty-show 1.10: Tools for working with derived 'Show' instances and generic inspection of values
 dev-haskell/pretty-simple 3.2.2.0 4.0.0.0: pretty printer for data types with a 'Show' instance
 dev-haskell/pretty-terminal 0.1.0.0-r1: Styling and coloring terminal output with ANSI escape sequences
 dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
@@ -1740,8 +1749,8 @@ dev-haskell/singleton-bool 0.1.5-r1: Type level booleans
 dev-haskell/singletons 2.7: A framework for generating singleton types
 dev-haskell/size-based 0.1.2.0: Sized functors, for size-based enumerations
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.10.5 0.11: syntax highlighting library
-dev-haskell/skylighting-core 0.10.5 0.11: syntax highlighting library
+dev-haskell/skylighting 0.12.1: syntax highlighting library
+dev-haskell/skylighting-core 0.12.1: syntax highlighting library
 dev-haskell/slave-thread 1.1.0.1: A fundamental solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.2.1: A property-based testing library
 dev-haskell/smtlib 1.1: A library for working with the SMTLIB format
@@ -1867,10 +1876,11 @@ dev-haskell/tasty-discover 4.2.2: Test discovery for the tasty framework
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.3.2: Golden tests support for tasty
 dev-haskell/tasty-hedgehog 1.1.0.0: Integration for tasty and hedgehog
+dev-haskell/tasty-hslua 1.0.0: Tasty helpers to test HsLua
 dev-haskell/tasty-hspec 1.1.7: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.10.0.3: HUnit support for the Tasty test framework
 dev-haskell/tasty-kat 0.0.3: Known Answer Tests (KAT) framework for tasty
-dev-haskell/tasty-lua 0.2.3.1: Write tests in Lua, integrate into tasty
+dev-haskell/tasty-lua 1.0.0: Write tests in Lua, integrate into tasty
 dev-haskell/tasty-quickcheck 0.8.4 0.9.2 0.10.1.2: QuickCheck support for the Tasty test framework
 dev-haskell/tasty-rerun 1.1.18: Rerun only tests which failed in a previous test run
 dev-haskell/tasty-silver 3.1.15: A fancy test runner, including support for golden tests
@@ -2265,7 +2275,7 @@ sci-mathematics/agda 2.6.1.2 2.6.2: A dependently typed functional programming l
 sci-mathematics/agda-stdlib 2.6.1.2.1.4 2.6.2.1.7.1: Agda standard library
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/darcsweb 1.1: A web interface for darcs
-www-apps/gitit 0.15.0.0: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.15.1.0: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp
