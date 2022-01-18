@@ -33,7 +33,7 @@ dev-haskell/aeson-compat 0.3.10: Compatibility layer for aeson
 dev-haskell/aeson-diff 1.1.0.9: Extract and apply patches to JSON documents
 dev-haskell/aeson-extra 0.5.1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
-dev-haskell/aeson-pretty 0.8.9: JSON pretty-printing library and command-line tool
+dev-haskell/aeson-pretty 0.8.9-r1: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.3: JSON quasiquoter for Haskell
 dev-haskell/aeson-yaml 1.1.0.0: Output any Aeson value as YAML (pure Haskell library)
 dev-haskell/alex 3.2.6: Alex is a tool for generating lexical analysers in Haskell
