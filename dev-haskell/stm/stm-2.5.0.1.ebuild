@@ -23,4 +23,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
-CABAL_CORE_LIB_GHC_PV="PM:8.10.5 PM:8.10.5-r1 PM:8.10.6 PM:9999"
+# ghc-9.0.2 actually bundles stm-2.5.0.0, but downgrades can be messy.
+# Mark as bundled as a workaround.
+CABAL_CORE_LIB_GHC_PV="PM:8.10.5 PM:8.10.5-r1 PM:8.10.6 PM:9.0.2 PM:9999"
