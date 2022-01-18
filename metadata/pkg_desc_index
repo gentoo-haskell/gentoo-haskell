@@ -336,6 +336,7 @@ dev-haskell/conduit-audio-lame 0.1.2.1: conduit-audio interface to the LAME MP3 
 dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the libsamplerate resampling library
 dev-haskell/conduit-audio-sndfile 0.1.2.2: conduit-audio interface to the libsndfile audio file library
 dev-haskell/conduit-combinators 1.3.0: Commonly used conduit functions, for both chunked and unchunked data
+dev-haskell/conduit-connection 0.1.0.5: Conduit source and sink for Network.Connection
 dev-haskell/conduit-extra 1.3.5: Batteries included conduit: adapters for common libraries
 dev-haskell/conduit-parse 0.2.1.0: Parsing framework based on conduit
 dev-haskell/config-ini 0.2.4.0 0.2.4.0-r2: A library for simple INI-based configuration files
