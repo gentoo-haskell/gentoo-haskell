@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/map-syntax-0.3:=[profile?] <dev-haskell/map-syntax-0.4:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/random-1.0.1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/random-1.0.1.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/unordered-containers-0.1.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -64,5 +64,6 @@ src_prepare() {
 		'lens                       >= 4.3      && < 4.18' 'lens                       >= 4.3' \
 		'QuickCheck                 >= 2        && < 2.13' 'QuickCheck                 >= 2' \
 		'aeson                      >= 0.6     && < 1.5' 'aeson >= 0.6' \
-		'dlist                      >= 0.5     && < 0.9' 'dlist >= 0.5'
+		'dlist                      >= 0.5     && < 0.9' 'dlist >= 0.5' \
+		'random                     >= 1.0.1.0 && < 1.2' 'random                     >= 1.0.1.0'
 }
