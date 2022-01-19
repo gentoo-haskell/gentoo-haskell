@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -36,4 +36,4 @@ src_configure() {
 		$(cabal_flag terminfo terminfo)
 }
 
-CABAL_CORE_LIB_GHC_PV="PM:8.10.6"
+CABAL_CORE_LIB_GHC_PV="PM:8.10.6 PM:9.0.2 PM:9999"
