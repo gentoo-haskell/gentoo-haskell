@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -46,7 +46,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/monad-control-1.0 <dev-haskell/monad-control-1.1
 		>=dev-haskell/parallel-3 <dev-haskell/parallel-4
 		>=dev-haskell/quickcheck-2.3.0.2 <dev-haskell/quickcheck-3
-		>=dev-haskell/random-1.0 <dev-haskell/random-1.2
+		>=dev-haskell/random-1.0
 		>=dev-haskell/test-framework-0.8.0.3 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4
