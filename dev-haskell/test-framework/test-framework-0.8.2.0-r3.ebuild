@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.4.0:=[profile?]
 	>=dev-haskell/base-orphans-0.1:=[profile?]
 	>=dev-haskell/hostname-1.0:=[profile?] <dev-haskell/hostname-1.1:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
-	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/regex-posix-0.72:=[profile?]
 	>=dev-haskell/semigroups-0.18:=[profile?]
 	>=dev-haskell/xml-1.3.5:=[profile?] <dev-haskell/xml-1.4:=[profile?]
@@ -44,5 +44,6 @@ src_prepare() {
 		'semigroups     >= 0.18   && < 0.19' 'semigroups     >= 0.18' \
 		'QuickCheck     >= 2.3 && < 2.10' 'QuickCheck     >= 2.3' \
 		'regex-posix    >= 0.72   && < 0.96' 'regex-posix    >= 0.72' \
-		'time           >= 1.1.2  && < 1.9' 'time           >= 1.1.2'
+		'time           >= 1.1.2  && < 1.9' 'time           >= 1.1.2' \
+		'random         >= 1.0    && < 1.2' 'random         >= 1.0'
 }

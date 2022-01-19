@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -56,7 +56,7 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	terminfo? ( >=dev-haskell/terminfo-0.4.0.2:=[profile?] <dev-haskell/terminfo-0.5:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2 <dev-haskell/cabal-3.3
+	>=dev-haskell/cabal-2.2 <dev-haskell/cabal-3.5
 	test? ( >=dev-haskell/cmdargs-0.10.10 <dev-haskell/cmdargs-0.11
 		>=dev-haskell/exceptions-0.6
 		>=dev-haskell/findbin-0.0.5 <dev-haskell/findbin-0.1
@@ -77,6 +77,7 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
+		'Cabal     >= 2.2 && < 3.3' 'Cabal     >= 2.2'
 		'QuickCheck   >= 2.13 && < 2.14' 'QuickCheck >= 2.13' \
 		'cryptonite        >= 0.24 && < 0.28' 'cryptonite        >= 0.24'
 }

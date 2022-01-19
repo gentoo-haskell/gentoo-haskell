@@ -1,3 +1,7 @@
+# Jack Todaro <solpeth@posteo.org> (2022-01-19)
+# Mask packages which have not ported to newer random
+dev-haskell/gloss-examples
+
 # Jack Todaro <solpeth@posteo.org> (2022-01-16)
 # Missing deps. Mask for removal.
 dev-libs/odpi

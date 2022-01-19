@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/hslogger-1.3.0.0:=[profile?] <dev-haskell/hslogger-1.4:=[
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/old-time-1.1:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-haskell/random-1.0.1.1:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	dev-haskell/random
 	>=dev-haskell/regex-compat-0.95.1:=[profile?] <dev-haskell/regex-compat-0.96:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2:=[profile?]
@@ -44,7 +44,8 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	default
 	cabal_chdeps \
-		'base                >= 4.5.0.0 && < 4.15' 'base                >= 4.5.0.0'
+		'base                >= 4.5.0.0 && < 4.15' 'base                >= 4.5.0.0' \
+		'random              >= 1.0.1.1 && < 1.2' 'random'
 }
 
 src_configure() {
