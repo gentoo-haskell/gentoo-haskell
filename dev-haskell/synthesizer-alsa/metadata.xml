@@ -5,10 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package allows to read MIDI events
-		and to convert them to control signals
-		that can be used for audio effects.
-		As demonstration there is a keyboard controlled music synthesizer.
-	</longdescription>
+	<use>
+		<flag name="examples">Build example executables</flag>
+	</use>
 </pkgmetadata>
