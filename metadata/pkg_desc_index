@@ -457,7 +457,7 @@ dev-haskell/diagrams 1.4-r2: Embedded domain-specific language for declarative v
 dev-haskell/diagrams-builder 0.8.0.5-r2: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1-r1: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.4.1-r2: HTML5 canvas backend for diagrams drawing EDSL
-dev-haskell/diagrams-contrib 1.4.4-r2: Collection of user contributions to diagrams EDSL
+dev-haskell/diagrams-contrib 1.4.4-r3: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.5.0: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.4-r1: Backend for rendering diagrams directly to GTK windows
 dev-haskell/diagrams-lib 1.4.4: Embedded domain-specific language for declarative graphics
@@ -715,7 +715,7 @@ dev-haskell/gi-webkit2 4.0.26 4.0.27: WebKit2 bindings
 dev-haskell/gi-xlib 2.0.9 2.0.10: xlib bindings
 dev-haskell/gifcurry 2.1.0.0-r1: Create animated GIFs, overlaid with optional text, from video files
 dev-haskell/ginger 0.10.1.0: An implementation of the Jinja2 template language in Haskell
-dev-haskell/gio 0.13.8.1: Binding to GIO
+dev-haskell/gio 0.13.8.1-r1: Binding to GIO
 dev-haskell/git 0.3.0: Git operations in haskell
 dev-haskell/git-lfs 1.1.1: git-lfs protocol
 dev-haskell/githash 0.1.6.1: Compile git revision info into Haskell projects
@@ -756,13 +756,13 @@ dev-haskell/groundhog-th 0.11: Type-safe datatype-database mapping library
 dev-haskell/groupoids 4.0: This package has been absorbed into semigroupoids 4.0
 dev-haskell/groups 0.4.1.0: Haskell 98 groups
 dev-haskell/gsasl 0.3.7: Bindings for GNU libgsasl
-dev-haskell/gtk 0.14.10-r3 0.15.5-r1: Binding to the Gtk+ graphical user interface library
+dev-haskell/gtk 0.14.10-r3 0.15.5-r2: Binding to the Gtk+ graphical user interface library
 dev-haskell/gtk-serialized-event 0.12.0-r4: GTK+ Serialized event
 dev-haskell/gtk-sni-tray 0.1.6.2: A standalone StatusNotifierItem/AppIndicator tray
 dev-haskell/gtk-strut 0.1.3.0: Libary for creating strut windows with gi-gtk
 dev-haskell/gtk-traymanager 1.0.1: A wrapper around the eggtraymanager library for Linux system trays
 dev-haskell/gtk2hs-buildtools 0.13.8.0-r1: Tools to build the Gtk2Hs suite of User Interface libraries
-dev-haskell/gtk3 0.14.9-r3 0.15.5: Binding to the Gtk+ 3 graphical user interface library
+dev-haskell/gtk3 0.14.9-r3 0.15.5-r1: Binding to the Gtk+ 3 graphical user interface library
 dev-haskell/gtkglext 0.13.2.0-r2: Binding to the GTK+ OpenGL Extension
 dev-haskell/hackage-db 2.1.1: Access cabal-install's Hackage database via Data.Map
 dev-haskell/hackage-security 0.6.1.0: Hackage security library
@@ -819,7 +819,7 @@ dev-haskell/hasktags 0.71.2-r2 9999: Produces ctags "tags" and etags "TAGS" file
 dev-haskell/hasmin 1.0.3: CSS Minifier
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hatex 3.22.3.0: The Haskell LaTeX library
-dev-haskell/haxml 1.25.5-r1: Utilities for manipulating XML documents
+dev-haskell/haxml 1.25.8: Utilities for manipulating XML documents
 dev-haskell/haxr 3000.11.4.1-r1: XML-RPC client and server library
 dev-haskell/hcg-minus 0.15: haskell cg (minus)
 dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modifying the system clipboard
@@ -840,7 +840,7 @@ dev-haskell/hedgehog 1.0.4: Release with confidence
 dev-haskell/hedgehog-fn 1.0: Function generation for 'hedgehog'
 dev-haskell/hedis 0.9.6 0.12.14: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/hedis-config 0.0.3 1.0.0: Easy trivial configuration for Redis
-dev-haskell/heist 1.1.0.1-r2: An Haskell template system supporting both HTML5 and XML
+dev-haskell/heist 1.1.0.1-r3: An Haskell template system supporting both HTML5 and XML
 dev-haskell/here 1.2.13: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0-r1: multi-line string / here document using QuasiQuotes
 dev-haskell/heterocephalus 1.0.5.4: A type-safe template engine for working with front end development tools
@@ -1260,7 +1260,7 @@ dev-haskell/mintty 0.1.2: A reliable way to detect the presence of a MinTTY cons
 dev-haskell/misfortune 0.1.1.2: fortune-mod clone
 dev-haskell/miso 1.8.0.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1-r1: Convenience functions for FFI work
-dev-haskell/missingh 1.4.3.0-r1: Large utility library
+dev-haskell/missingh 1.4.3.0-r2: Large utility library
 dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmark 0.0.7.4: Strict markdown processor for writers
 dev-haskell/mmorph 1.1.5: Monad morphisms
@@ -1357,7 +1357,7 @@ dev-haskell/network-multicast 0.3.2: Simple multicast library
 dev-haskell/network-simple 0.4.5: Simple network sockets usage patterns
 dev-haskell/network-transport 0.4.4.0 0.5.4: Network abstraction layer
 dev-haskell/network-transport-tcp 0.6.0: TCP instantiation of Network.Transport
-dev-haskell/network-transport-tests 0.2.4.3: Unit tests for Network.Transport implementations
+dev-haskell/network-transport-tests 0.2.4.3-r1: Unit tests for Network.Transport implementations
 dev-haskell/network-uri 2.5.0.0-r1 2.6.4.1: URI manipulation
 dev-haskell/newtype 0.2.2.0: A typeclass and set of functions for working with newtypes
 dev-haskell/newtype-generics 0.5.4 0.6: A typeclass and set of functions for working with newtypes
@@ -1572,7 +1572,7 @@ dev-haskell/quickcheck-text 0.1.2.1: Alternative arbitrary instance for Text
 dev-haskell/quickcheck-unicode 1.0.1.0: Generator and shrink functions for testing Unicode-related software
 dev-haskell/quickcheckvariant 0.2.0.0: Generator of "valid" and "invalid" data in a type class
 dev-haskell/quicktest 0.1.3: A reflective batch tester for Haskell
-dev-haskell/random 1.1 1.2.0: Pseudo-random number generation
+dev-haskell/random 1.1 1.2.1: Pseudo-random number generation
 dev-haskell/random-bytestring 0.1.3.2: Efficient generation of random bytestrings
 dev-haskell/random-fu 0.2.7.4: Random number generation
 dev-haskell/random-shuffle 0.0.4-r1: Random shuffle implementation
@@ -1848,7 +1848,7 @@ dev-haskell/syb 0.7.2.1: Scrap Your Boilerplate
 dev-haskell/syb-with-class 0.6.1.13: Scrap Your Boilerplate With Class
 dev-haskell/syb-with-class-instances-text 0.0.1: Scrap Your Boilerplate With Class Text instance
 dev-haskell/symbol 0.2.4: A 'Symbol' type for fast symbol comparison
-dev-haskell/synthesizer-alsa 0.5.0.5: Control synthesizer effects via ALSA/MIDI
+dev-haskell/synthesizer-alsa 0.5.0.6: Control synthesizer effects via ALSA/MIDI
 dev-haskell/synthesizer-core 0.8.2.1: Audio signal processing coded in Haskell: Low level part
 dev-haskell/synthesizer-dimensional 0.8.1: Audio signal processing with static physical dimensions
 dev-haskell/synthesizer-midi 0.6.1.1: Render audio signals from MIDI files or realtime messages
@@ -1901,10 +1901,10 @@ dev-haskell/terminal-progress-bar 0.4.1: A simple progress bar in the terminal
 dev-haskell/terminal-size 0.3.2.1: Get terminal window height and width
 dev-haskell/terminfo 0.4.1.4 0.4.1.5: Haskell bindings to the terminfo library
 dev-haskell/terminfo-hs 0.2.1.1: A pure-Haskell (no FFI) module for accessing terminfo databases
-dev-haskell/test-framework 0.8.2.0-r2: Framework for running and organising tests, with HUnit and QuickCheck support
+dev-haskell/test-framework 0.8.2.0-r3: Framework for running and organising tests, with HUnit and QuickCheck support
 dev-haskell/test-framework-hunit 0.3.0.2-r1: HUnit support for the test-framework package
 dev-haskell/test-framework-leancheck 0.0.1: LeanCheck support for test-framework
-dev-haskell/test-framework-quickcheck2 0.3.0.5-r1: QuickCheck2 support for the test-framework package
+dev-haskell/test-framework-quickcheck2 0.3.0.5-r2: QuickCheck2 support for the test-framework package
 dev-haskell/test-framework-smallcheck 0.2: Support for SmallCheck tests in test-framework
 dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit and Quickcheck using Template Haskell
 dev-haskell/testing-feat 1.1.0.0: Functional Enumeration of Algebraic Types
@@ -1951,7 +1951,7 @@ dev-haskell/these-lens 1.0.1.2: Lenses for These
 dev-haskell/threads 0.5.1.6: Fork threads and wait for their result
 dev-haskell/threepenny-gui 0.9.1.0: GUI framework that uses the web browser as a display
 dev-haskell/thyme 0.3.5.5: A faster time library
-dev-haskell/tidal 1.4.8: Pattern language for improvised music
+dev-haskell/tidal 1.7.10: Pattern language for improvised music
 dev-haskell/time-compat 1.9.6: Compatibility package for time
 dev-haskell/time-lens 0.4.0.2: Lens-based interface to Data.Time data structures
 dev-haskell/time-locale-compat 0.1.1.5: Compatibility of TimeLocale between old-locale and time-1.5
@@ -2045,9 +2045,9 @@ dev-haskell/uu-parsinglib 2.9.1.1: Online error-correcting monadic applicative a
 dev-haskell/uuagc 0.9.53.1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-bootstrap 0.9.40.2-r1: Attribute Grammar System of Universiteit Utrecht
 dev-haskell/uuagc-cabal 1.2.0.0: Cabal plugin for UUAGC
-dev-haskell/uuid 1.3.13-r1: For creating, comparing, parsing and printing Universally Unique Identifiers
+dev-haskell/uuid 1.3.15: For creating, comparing, parsing and printing Universally Unique Identifiers
 dev-haskell/uuid-orphans 1.4.5: Orphan instances for the UUID datatype
-dev-haskell/uuid-types 1.0.3-r2: Type definitions for Universally Unique Identifiers
+dev-haskell/uuid-types 1.0.5: Type definitions for Universally Unique Identifiers
 dev-haskell/uulib 0.9.24: Haskell Utrecht Tools Library
 dev-haskell/vado 0.0.13: Runs commands on remote machines using ssh
 dev-haskell/validated-literals 0.3.0: Compile-time checking for partial smart-constructors
@@ -2251,7 +2251,7 @@ dev-util/shake 0.19.4: Build system library, like Make, but more accurate depend
 dev-util/shellcheck 0.7.2: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.14 0.2.14-r1: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.16.4: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.16.4-r1: a distributed, interactive, smart revision control system
 dev-vcs/git-annex 8.20210330-r1: manage files with git, without checking their contents into git
 games-action/monadius 0.99: 2-D arcade scroller
 games-arcade/shu-thing 1.1.4: A vector shooter game
