@@ -788,7 +788,7 @@ dev-haskell/happstack-server 7.6.1-r2: Web related tools and services
 dev-haskell/happstack-server-tls 7.2.1.1: extend happstack-server with https:// support (TLS/SSL)
 dev-haskell/happy 1.19.12 1.20.0: Happy is a parser generator for Haskell
 dev-haskell/harp 0.4.3.4: HaRP allows pattern-matching with regular expressions
-dev-haskell/hashable 1.2.7.0 1.3.4.1: A class for types that can be converted to a hash value
+dev-haskell/hashable 1.2.7.0 1.3.5.0: A class for types that can be converted to a hash value
 dev-haskell/hashable-time 0.3: Hashable instances for Data.Time
 dev-haskell/hashing 0.1.0.1: A pure haskell library implements several hash algorithms
 dev-haskell/hashmap 1.3.3: Persistent containers Map and Set based on hashing
