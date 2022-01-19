@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2.0:=[profile?]
 	>=dev-haskell/quickcheck-2.4:2=[profile?]
-	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/test-framework-0.8:=[profile?] <dev-haskell/test-framework-0.9:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -32,7 +32,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'QuickCheck            >= 2.4    && < 2.13' 'QuickCheck            >= 2.4'
+		'QuickCheck            >= 2.4    && < 2.13' 'QuickCheck            >= 2.4' \
+		'random                >= 1      && < 1.2' 'random                >= 1'
 }
 
 src_configure() {
