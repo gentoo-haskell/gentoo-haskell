@@ -1558,7 +1558,7 @@ dev-haskell/pwstore-fast 2.4.4: Secure password storage
 dev-haskell/pwstore-purehaskell 2.1.4: Secure password storage, in pure Haskell
 dev-haskell/python-pickle 0.2.3: Serialization/deserialization using Python Pickle format
 dev-haskell/qr-imager 2.0.0.2: Library to generate images
-dev-haskell/quickcheck 2.13.2 2.14.2: Automatic testing of Haskell programs
+dev-haskell/quickcheck 2.13.2 2.14.2 2.14.2-r1: Automatic testing of Haskell programs
 dev-haskell/quickcheck-arbitrary-template 0.2.1.1: Generate QuickCheck Gen for Sum Types
 dev-haskell/quickcheck-assertions 0.3.0: HUnit like assertions for QuickCheck
 dev-haskell/quickcheck-classes 0.6.5.0: QuickCheck common typeclasses
