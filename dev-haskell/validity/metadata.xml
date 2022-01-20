@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Note: There are companion instance packages for this library:
-		
-		* &lt;https://hackage.haskell.org/package/validity-text validity-text&gt;
-		
-		* &lt;https://hackage.haskell.org/package/validity-containers validity-containers&gt;
-	</longdescription>
 </pkgmetadata>
