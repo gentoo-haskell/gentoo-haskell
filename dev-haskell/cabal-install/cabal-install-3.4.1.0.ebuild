@@ -53,6 +53,9 @@ src_prepare() {
 	#	epatch "${FILESDIR}/${PN}"-0.13.3-nopref.patch
 	#fi
 
+	cabal_chdeps \
+		'base       >= 4.8      && < 4.15' 'base >= 4.8'
+
 	# no chance to link to -threaded on ppc64, alpha and others
 	# who use UNREG, not only ARM
 	if ! ghc-supports-threaded-runtime; then
