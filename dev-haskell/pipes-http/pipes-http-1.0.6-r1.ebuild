@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-haskell/http-client-0.2:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
+RDEPEND=">=dev-haskell/http-client-0.2:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
 	<dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -25,3 +25,10 @@ RDEPEND=">=dev-haskell/http-client-0.2:=[profile?] <dev-haskell/http-client-0.7:
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'http-client      >= 0.2     && < 0.7' 'http-client      >= 0.2'
+}

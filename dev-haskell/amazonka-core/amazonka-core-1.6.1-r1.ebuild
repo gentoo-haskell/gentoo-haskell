@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/cryptonite-0.4:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?]
-	>=dev-haskell/http-client-0.4:=[profile?] <dev-haskell/http-client-0.7:=[profile?]
+	>=dev-haskell/http-client-0.4:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
 	>=dev-haskell/http-conduit-2.1.4:=[profile?] <dev-haskell/http-conduit-3:=[profile?]
 	>=dev-haskell/http-types-0.8:=[profile?]
 	>=dev-haskell/lens-4.4:=[profile?]

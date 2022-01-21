@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -31,9 +31,12 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
+PATCHES=( "${FILESDIR}"/${P}-ghc-9.0.patch )
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'ghc-events >= 0.13 && < 0.16' 'ghc-events >= 0.13'
+		'ghc-events >= 0.13 && < 0.16' 'ghc-events >= 0.13' \
+		'template-haskell < 2.17' 'template-haskell'
 }
