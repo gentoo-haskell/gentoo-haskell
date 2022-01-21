@@ -1,4 +1,8 @@
-# Jack Todaro <solpeth@posteo.org> (2022-01-22)
+# Jack Todaro <solpeth@posteo.org> (2022-01-21)
+# Needs porting to newer http-client.
+dev-util/hsdev
+
+# Jack Todaro <solpeth@posteo.org> (2022-01-20)
 # Needs porting to newer base.
 dev-haskell/bytestring-handle
 
