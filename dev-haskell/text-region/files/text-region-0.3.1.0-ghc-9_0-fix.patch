@@ -1,0 +1,18 @@
+Signed-off-by: hololeap <hololeap@protonmail.com>
+From: hololeap <hololeap@users.noreply.github.com>
+Bug: https://github.com/mvoidex/text-region/pull/2
+
+This patch is needed to compile on ghc-9.0.2
+
+diff -urN text-region-0.3.1.0/src/Data/Text/Region.hs text-region-0.3.1.0-r1/src/Data/Text/Region.hs
+--- text-region-0.3.1.0/src/Data/Text/Region.hs	2017-05-02 08:30:51.000000000 -0600
++++ text-region-0.3.1.0-r1/src/Data/Text/Region.hs	2022-01-21 08:58:28.168838030 -0700
+@@ -79,7 +79,7 @@
+ 	| otherwise = True
+ 
+ applyMap ∷ Map → Region → Region
+-applyMap = view ∘ mapIso
++applyMap m = view $ mapIso m
+ 
+ -- | Cut 'Region' mapping
+ cutMap ∷ Region → Map
