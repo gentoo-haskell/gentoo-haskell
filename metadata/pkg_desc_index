@@ -652,17 +652,17 @@ dev-haskell/generic-trie 0.3.1: A map, where the keys may be complex structured 
 dev-haskell/genericpretty 1.2.2: A generic, derivable, haskell pretty printer
 dev-haskell/generics-sop 0.5.1.1: Generic Programming using True Sums of Products
 dev-haskell/geniplate-mirror 0.7.8: Use Template Haskell to generate Uniplate-like functions
-dev-haskell/genvalidity 0.10.0.2: Testing utilities for the validity library
+dev-haskell/genvalidity 1.0.0.1: Testing utilities for the validity library
 dev-haskell/genvalidity-aeson 0.3.0.0: GenValidity support for aeson
-dev-haskell/genvalidity-containers 0.9.0.0: GenValidity support for containers
-dev-haskell/genvalidity-hspec 0.7.0.4: Standard spec's for GenValidity instances
-dev-haskell/genvalidity-hspec-aeson 0.3.1.1: Standard spec's for aeson-related instances
-dev-haskell/genvalidity-path 0.3.0.4: GenValidity support for Path
-dev-haskell/genvalidity-property 0.5.0.1: Standard properties for functions on 'Validity' types
-dev-haskell/genvalidity-scientific 0.2.1.1: GenValidity support for Scientific
-dev-haskell/genvalidity-text 0.7.0.2: GenValidity support for Text
-dev-haskell/genvalidity-unordered-containers 0.3.0.1: GenValidity support for unordered-containers
-dev-haskell/genvalidity-vector 0.3.0.1: GenValidity support for aeson
+dev-haskell/genvalidity-containers 1.0.0.0: GenValidity support for containers
+dev-haskell/genvalidity-hspec 1.0.0.0: Standard spec's for GenValidity instances
+dev-haskell/genvalidity-hspec-aeson 1.0.0.0: Standard spec's for aeson-related instances
+dev-haskell/genvalidity-path 1.0.0.0: GenValidity support for Path
+dev-haskell/genvalidity-property 1.0.0.0: Standard properties for functions on 'Validity' types
+dev-haskell/genvalidity-scientific 1.0.0.0: GenValidity support for Scientific
+dev-haskell/genvalidity-text 1.0.0.0: GenValidity support for Text
+dev-haskell/genvalidity-unordered-containers 1.0.0.0: GenValidity support for unordered-containers
+dev-haskell/genvalidity-vector 1.0.0.0: GenValidity support for vector
 dev-haskell/getopt-generics 0.13.0.4: Create command line interfaces with ease
 dev-haskell/ghc-api-compat 8.6 8.10.5 8.10.6 9.0.1: GHC-API compatibility helpers
 dev-haskell/ghc-byteorder 4.11.0.0.10: "GHC.ByteOrder" API Compatibility Layer
@@ -1439,7 +1439,7 @@ dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/password 3.0.0.0: Hashing and checking of passwords
 dev-haskell/password-types 1.0.0.0: Types for handling passwords
 dev-haskell/patch 0.0.3.2-r2: Data structures for describing changes to other data structures
-dev-haskell/path 0.7.0 0.8.0: Support for well-typed paths
+dev-haskell/path 0.7.0 0.9.2: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.6.3: Interface to 'directory' package for users of 'path'
 dev-haskell/path-pieces 0.2.1: Components of paths
@@ -2053,7 +2053,7 @@ dev-haskell/vado 0.0.13: Runs commands on remote machines using ssh
 dev-haskell/validated-literals 0.3.0: Compile-time checking for partial smart-constructors
 dev-haskell/validation 1.1.1: A data-type like Either but with an accumulating Applicative
 dev-haskell/validation-selective 0.1.0.0: Lighweight pure data validation based on Applicative and Selective functors
-dev-haskell/validity 0.9.0.3: Validity typeclass
+dev-haskell/validity 0.12.0.0: Validity typeclass
 dev-haskell/validity-aeson 0.2.0.4: Validity instances for aeson
 dev-haskell/validity-containers 0.5.0.4: Validity instances for containers
 dev-haskell/validity-path 0.4.0.1: Validity instances for Path
