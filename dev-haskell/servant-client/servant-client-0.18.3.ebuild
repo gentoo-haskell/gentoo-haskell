@@ -16,8 +16,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RESTRICT=test # seems to require network access
-
 RDEPEND=">=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
 	>=dev-haskell/exceptions-0.10.0:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/http-client-0.5.13.1:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
