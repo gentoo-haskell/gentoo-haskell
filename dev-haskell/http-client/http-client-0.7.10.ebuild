@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RESTRICT=test # requires network access
+PATCHES=( "${FILESDIR}/${PN}-0.7.10-disable-net-tests.patch" )
 
 RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
