@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/genvalidity-0.8:=[profile?]
+RDEPEND=">=dev-haskell/genvalidity-1.0:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/validity-0.5:=[profile?]
 	>=dev-haskell/validity-containers-0.3:=[profile?]
@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/genvalidity-0.8:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	test? ( dev-haskell/genvalidity-hspec
-		>=dev-haskell/genvalidity-property-0.5
+		dev-haskell/genvalidity-property
 		dev-haskell/hspec
 		>=dev-haskell/validity-0.9 )
 "
