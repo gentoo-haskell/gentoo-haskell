@@ -73,11 +73,16 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers-base )
 	curl? ( virtual/pkgconfig )
 "
+
+PATCHES=( "${FILESDIR}"/${P}-ghc-9.0.patch )
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'Cabal     >= 2.2 && < 3.3' 'Cabal     >= 2.2'
+		'base      >= 4.10 && < 4.15' 'base      >= 4.10' \
+		'base              >= 4.10 && < 4.15' 'base              >= 4.10' \
+		'Cabal     >= 2.2 && < 3.3' 'Cabal     >= 2.2' \
 		'QuickCheck   >= 2.13 && < 2.14' 'QuickCheck >= 2.13' \
 		'cryptonite        >= 0.24 && < 0.28' 'cryptonite        >= 0.24'
 }
