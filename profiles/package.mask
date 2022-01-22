@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (2022-01-21)
+# Needs extensive patching in order to build on ghc-9.0.2
+dev-util/hdocs
+
 # Jack Todaro <solpeth@posteo.org> (2022-01-21)
 # Needs porting to newer http-client.
 dev-util/hsdev

@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -12,10 +12,11 @@ DESCRIPTION="Marking text regions"
 HOMEPAGE="https://github.com/mvoidex/text-region"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
+PATCHES=( "${FILESDIR}/${PN}-0.3.1.0-ghc-9_0-fix.patch" )
+
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/base-unicode-symbols-0.2:=[profile?]
