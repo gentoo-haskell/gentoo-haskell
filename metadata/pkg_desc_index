@@ -125,7 +125,7 @@ dev-haskell/authenticate-kerberos 1.0.0-r1: Authentication methods for Haskell w
 dev-haskell/authenticate-oauth 1.6.0.1-r1: Library to authenticate with OAuth for Haskell web applications
 dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.6: Efficiently run periodic, on-demand actions
-dev-haskell/aws 0.22-r3: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.22-r4: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 2.0.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.10.1 0.10.5 0.11.2: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.10.1 0.10.5 0.11.2: base-compat with extra batteries
@@ -920,7 +920,7 @@ dev-haskell/hpack 0.33.0 0.34.4: A modern format for Haskell packages
 dev-haskell/hpath 0.9.2: Support for well-typed paths
 dev-haskell/hpdf 1.5.3: Generation of PDF documents
 dev-haskell/hpp 0.6.4: A Haskell pre-processor
-dev-haskell/hpqtypes 1.9.1.1: Haskell bindings to libpqtypes
+dev-haskell/hpqtypes 1.9.2.1: Haskell bindings to libpqtypes
 dev-haskell/hprotoc 2.4.13 2.4.17: Parse Google Protocol Buffer specifications
 dev-haskell/hps 0.15: Haskell Postscript
 dev-haskell/hs-bibutils 6.8.0.0: Haskell bindings to bibutils, the bibliography conversion utilities
@@ -1190,7 +1190,7 @@ dev-haskell/load-env 0.2.1.0: Load environment variables from a file
 dev-haskell/located-base 0.1.1.1: Location-aware variants of partial functions
 dev-haskell/loch-th 0.2.2: Support for precise error locations in source files (Template Haskell version)
 dev-haskell/lockfree-queue 0.2.3.1-r1: Michael and Scott lock-free queues
-dev-haskell/log-base 0.8.0.0 0.9.1.0: Structured logging solution (base package)
+dev-haskell/log-base 0.8.0.0 0.11.0.0: Structured logging solution (base package)
 dev-haskell/log-domain 0.13.1: Log-domain arithmetic
 dev-haskell/log-postgres 0.7.1.5: Structured logging solution (PostgreSQL back end)
 dev-haskell/logfloat 0.13.3.3-r1: Log-domain floating point numbers
@@ -1269,7 +1269,7 @@ dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/mod 0.1.2.2: Fast type-safe modular arithmetic
 dev-haskell/modern-uri 0.3.4.1: Modern library for working with URIs
 dev-haskell/modular-arithmetic 1.2.1.5: A type for integers modulo some constant
-dev-haskell/monad-control 1.0.2.3: Lift control operations, like exception catching, through monad transformers
+dev-haskell/monad-control 1.0.3.1: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-control-aligned 0.0.1.1: monad-control altrnative
 dev-haskell/monad-dijkstra 0.1.1.3: A monad transformer for weighted graph searches
 dev-haskell/monad-extras 0.6.0: Extra utility functions for working with monads
@@ -1478,7 +1478,7 @@ dev-haskell/pipes-bytestring 2.1.7: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
 dev-haskell/pipes-concurrency 2.0.12: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.12-r1: Group streams into substreams
-dev-haskell/pipes-http 1.0.6-r1: HTTP client with pipes interface
+dev-haskell/pipes-http 1.0.6-r2: HTTP client with pipes interface
 dev-haskell/pipes-network 0.6.5: Use network sockets together with the pipes library
 dev-haskell/pipes-parse 3.0.9: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-random 1.0.0.5: Producers for handling randomness
@@ -2218,7 +2218,7 @@ dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
 dev-lang/dhall 1.40.1: A configuration language guaranteed to terminate
 dev-lang/elm 0.19.1: Meta package for Elm
-dev-lang/elm-compiler 0.19.1: The 'elm' command line interface
+dev-lang/elm-compiler 0.19.1-r1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
 dev-lang/ghc 8.8.4-r1 8.10.5-r1 8.10.6 9.0.1-r1 9.0.2 9999: The Glasgow Haskell Compiler
 dev-lang/hugs98 2006.9-r2: The Hugs98 Haskell interpreter
