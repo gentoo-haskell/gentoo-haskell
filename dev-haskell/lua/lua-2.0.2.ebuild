@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+allow-unsafe-gc apicheck +export-dynamic +hardcode-reg-keys lua-32bits"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=
-	>=dev-lang/lua-5.3 <dev-lang/lua-5.4
+	dev-lang/lua:5.3
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
