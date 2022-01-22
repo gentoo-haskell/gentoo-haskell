@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,8 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 # flag `ghc-patched-unboxed-bytecode` needs a specific GHC feature in a yet-to-be-determined version
-IUSE="bench-exe executable test-exe threads"
-REQUIRED_USE="threads? ( || ( bench-exe executable test-exe ) )"
+IUSE="bench-exe executable test-exe"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
@@ -105,7 +104,7 @@ DEPEND="${RDEPEND}
 #				dev-haskell/tasty-hunit ) )
 
 src_prepare() {
-	use threads && eapply "${FILESDIR}/${PN}-1.5.0.1-add-parallelism-rtsopts.patch"
+	ghc-supports-threaded-runtime && eapply "${FILESDIR}/${PN}-1.5.0.1-add-parallelism-rtsopts.patch"
 	default
 }
 
