@@ -1,0 +1,31 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Add `executable` flag to toggle building the `ormolu` executable.
+
+This executable is not normally needed when building ormolu as a dependency
+for other packages.
+
+diff -urN ormolu-0.3.1.0/ormolu.cabal ormolu-0.3.1.0-r1/ormolu.cabal
+--- ormolu-0.3.1.0/ormolu.cabal	2022-01-23 00:37:34.148907245 -0700
++++ ormolu-0.3.1.0-r1/ormolu.cabal	2022-01-23 00:38:56.478907285 -0700
+@@ -108,6 +108,10 @@
+     if impl(ghc <8.10.0)
+         ghc-options: -fmax-pmcheck-iterations=3000000
+ 
++flag executable
++    description: Install the ormolu executable
++    default: False
++
+ executable ormolu
+     main-is:          Main.hs
+     hs-source-dirs:   app
+@@ -131,6 +135,8 @@
+ 
+     else
+         ghc-options: -O2 -Wall -rtsopts
++    if !flag(executable)
++        buildable: False
+ 
+ test-suite tests
+     type:               exitcode-stdio-1.0

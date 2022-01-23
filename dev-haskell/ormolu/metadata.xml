@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="executable">Build the fourmolu executable</flag>
+		<flag name="executable">Install the ormolu executable</flag>
 	</use>
 </pkgmetadata>
