@@ -1,0 +1,42 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Add `executable` USE flag to toggle building the `retrie` executable. Normally,
+the executable is not needed if retrie is being built as a dependency.
+
+Add `examples` USE flag to toggle building the `retrie-example` executable.
+
+diff -urN retrie-1.1.0.0/retrie.cabal retrie-1.1.0.0-r1/retrie.cabal
+--- retrie-1.1.0.0/retrie.cabal	2022-01-22 18:18:03.088896204 -0700
++++ retrie-1.1.0.0-r1/retrie.cabal	2022-01-22 18:23:09.428896352 -0700
+@@ -96,12 +96,16 @@
+     unordered-containers >= 0.2.10 && < 0.3
+   default-language: Haskell2010
+ 
+-Flag BuildExecutable
++Flag executable
+   Description: build the retrie executable
+-  Default: True
++  Default: False
++
++Flag examples
++  Description: build the retrie-example executable
++  Default: False
+ 
+ executable retrie
+-  if flag(BuildExecutable)
++  if flag(executable)
+     Buildable: True
+   else
+     Buildable: False
+@@ -116,8 +120,8 @@
+     haskell-src-exts >= 1.23.0 && < 1.24
+   default-language: Haskell2010
+ 
+-executable demo-retrie
+-  if flag(BuildExecutable)
++executable retrie-example
++  if flag(examples)
+     Buildable: True
+   else
+     Buildable: False
