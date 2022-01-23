@@ -17,7 +17,7 @@
 		<flag name="hls_plugins_rename">Enable rename plugin</flag>
 		<flag name="hls_plugins_retrie">Enable retrie plugin</flag>
 		<flag name="hls_plugins_splice">Enable splice plugin</flag>
-		<flag name="hls_plugins_tactic">Enable tactic plugin</flag>
+		<flag name="hls_plugins_tactics">Enable tactics plugin</flag>
 		<flag name="hls_formatters_brittany">Enable brittany plugin</flag>
 		<flag name="hls_formatters_floskell">Enable floskell plugin</flag>
 		<flag name="hls_formatters_fourmolu">Enable fourmolu plugin</flag>

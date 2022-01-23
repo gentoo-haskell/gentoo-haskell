@@ -10,4 +10,4 @@ module-name - Enable moduleName plugin
 pragmas - Enable pragmas plugin
 retrie - Enable retrie plugin
 splice - Enable splice plugin
-tactic - Enable tactic plugin
+tactics - Enable tactics plugin
