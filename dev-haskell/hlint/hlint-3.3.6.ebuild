@@ -16,8 +16,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="emacs +gpl hsyaml"
-USE_RESTRICT="test? (-hsyaml)" # Test fails when HsYAML is used
+IUSE="emacs +gpl hsyaml test"
+
+# Test fails when HsYAML is used
+REQUIRED_USE="test? ( !hsyaml )"
 
 RDEPEND=">=dev-haskell/aeson-1.1.2.0:=[profile?]
 	>=dev-haskell/ansi-terminal-0.8.1:=[profile?]
@@ -80,8 +82,10 @@ src_install() {
 }
 
 src_test() {
-	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}:${LD_LIBRARY_PATH}"
-	"${S}"/dist/build/hlint/hlint --datadir="${S}"/data --test || die
+	if use test; then
+		export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}:${LD_LIBRARY_PATH}"
+		"${S}"/dist/build/hlint/hlint --datadir="${S}"/data --test || die
+	fi
 }
 
 pkg_postinst() {
