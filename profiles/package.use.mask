@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (23 Jan 2022)
+# hls-tactics-plugin needs update to compile on ghc-9.0.2
+dev-util/haskell-language-server hls_plugins_tactics
+
 # Sergei Trofimovich <slyfox@gentoo.org> (16 Nov 2019)
 # Needs masked dev-haskell/slave-thread
 dev-haskell/hedis test
