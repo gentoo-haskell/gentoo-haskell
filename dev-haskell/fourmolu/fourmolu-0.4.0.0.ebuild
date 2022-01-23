@@ -53,5 +53,9 @@ src_configure() {
 src_install() {
 	haskell-cabal_src_install
 
-	use examples && dodoc -r data/examples/
+	if use examples; then
+		# Don't compress example source files
+		docompress -x /usr/share/doc/${PF}/examples
+		dodoc -r data/examples/
+	fi
 }
