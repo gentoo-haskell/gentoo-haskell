@@ -39,7 +39,7 @@ dev-haskell/aeson-yaml 1.1.0.0: Output any Aeson value as YAML (pure Haskell lib
 dev-haskell/alex 3.2.7: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/alex-tools 0.4: A set of functions for a common use case of Alex
 dev-haskell/algebra 4.3.1: Constructive abstract algebra
-dev-haskell/algebraic-graphs 0.5: A library for algebraic graph construction and transformation
+dev-haskell/algebraic-graphs 0.6: A library for algebraic graph construction and transformation
 dev-haskell/align 0.1.1.2: Sequence alignment algorithms
 dev-haskell/allocated-processor 0.0.2-r1: Functional combinators for monadic actions that require (de)allocation
 dev-haskell/alsa-core 0.5.0.1-r2: Binding to the ALSA Library API (Exceptions)
@@ -449,7 +449,7 @@ dev-haskell/deferred-folds 0.9.17: Abstractions over deferred folds
 dev-haskell/dense-linear-algebra 0.1.0.0: Simple and incomplete pure haskell implementation of linear algebra
 dev-haskell/dependent-map 0.3.1.0 0.4.0.0: Dependent finite maps (partial dependent products)
 dev-haskell/dependent-sum 0.4 0.6.2.0 0.7.1.0-r1: Dependent sum type
-dev-haskell/dependent-sum-template 0.1.0.3: Template Haskell code to generate instances of classes in dependent-sum package
+dev-haskell/dependent-sum-template 0.1.1.1: Template Haskell code to generate instances of classes in dependent-sum package
 dev-haskell/deque 0.4.3: Double-ended queues
 dev-haskell/deriving-compat 0.5.8 0.5.10: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
@@ -615,7 +615,7 @@ dev-haskell/force-layout 0.4.0.6-r3: Simple force-directed layout
 dev-haskell/foreign-store 0.2: Store a stable pointer in a foreign context to be retrieved later
 dev-haskell/formatting 7.1.2: Combinator-based type-safe formatting (like printf() or FORMAT)
 dev-haskell/foundation 0.0.26.1: Alternative prelude with batteries and no dependencies
-dev-haskell/fourmolu 0.3.0.0: A formatter for Haskell source code
+dev-haskell/fourmolu 0.3.0.0 0.4.0.0: A formatter for Haskell source code
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 5.1.3 5.1.5: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
@@ -687,7 +687,7 @@ dev-haskell/ghc-typelits-knownnat 0.7.6-r1: Derive KnownNat constraints from oth
 dev-haskell/ghc-typelits-natnormalise 0.7.6-r1: GHC typechecker plugin for types of kind GHC.TypeLits.Nat
 dev-haskell/ghci-pretty 0.0.2: colored pretty-printing within ghci
 dev-haskell/ghcid 0.6.6 0.8.7: GHCi based bare bones IDE
-dev-haskell/ghcide 1.4.2.2-r1 1.5.0.1: The core of an IDE
+dev-haskell/ghcide 1.4.2.2-r1 1.5.0.1-r1: The core of an IDE
 dev-haskell/ghcjs-codemirror 0.0.0.2: Installs CodeMirror JavaScript files
 dev-haskell/gi-atk 2.0.22 2.0.23: Atk bindings
 dev-haskell/gi-cairo 1.0.24 1.0.25: Cairo bindings
@@ -856,7 +856,7 @@ dev-haskell/hgdbmi 0.2-r1: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgl 3.2.3.2: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.2: Generate scaffold for cabal project
 dev-haskell/hi-file-parser 0.1.2.0: Parser for GHC's hi files
-dev-haskell/hie-bios 0.7.6: Set up a GHC API session
+dev-haskell/hie-bios 0.8.1: Set up a GHC API session
 dev-haskell/hie-compat 0.2.1.0: HIE files for GHC 8.6 and other HIE file backports
 dev-haskell/hiedb 0.4.0.0 0.4.1.0: Generates a references DB from .hie files
 dev-haskell/higgledy 0.4.1.1-r2: Partial types as a type constructor
@@ -904,7 +904,7 @@ dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
 dev-haskell/hmatrix-vector-sized 0.1.3.0: Conversions between hmatrix and vector-sized types
 dev-haskell/hnix 0.14.0.2: Haskell implementation of the Nix language
-dev-haskell/hnix-store-core 0.5.0.0: Core effects for interacting with the Nix store
+dev-haskell/hnix-store-core 0.5.0.0-r1: Core effects for interacting with the Nix store
 dev-haskell/hnix-store-remote 0.5.0.0: Remote hnix store
 dev-haskell/hoauth2 1.16.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
@@ -1645,7 +1645,7 @@ dev-haskell/rerebase 1.12.1: Reexports from "base" with a bunch of other standar
 dev-haskell/resolv 0.1.2.0-r1: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.2.4.2: Deterministic allocation and freeing of scarce resources
-dev-haskell/retrie 0.1.1.1-r1: A powerful, easy-to-use codemodding tool for Haskell
+dev-haskell/retrie 1.1.0.0: A powerful, easy-to-use codemodding tool for Haskell
 dev-haskell/retry 0.8.1.2 0.9.0.0: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
@@ -1939,7 +1939,7 @@ dev-haskell/th-data-compat 0.1.0.0: Compatibility for data definition template o
 dev-haskell/th-desugar 1.9 1.11: Functions to desugar Template Haskell
 dev-haskell/th-env 0.1.0.2: Template Haskell splice that expands to an environment variable
 dev-haskell/th-expand-syns 0.4.8.0: Expands type synonyms in Template Haskell ASTs
-dev-haskell/th-extras 0.0.0.4: A grab bag of functions for use with Template Haskell
+dev-haskell/th-extras 0.0.0.6: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.8.2: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.18: Lift instances for template-haskell for common data types
 dev-haskell/th-orphans 0.13.11: Orphan instances for TH datatypes

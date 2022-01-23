@@ -312,7 +312,7 @@ dev-haskell/record-dot-preprocessor:executable - Build the record-dot-processor 
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
 dev-haskell/rere:rere-cfg - CFG functionality, needs dependency on fin and vec
 dev-haskell/rere:rere-intersection - Add add intersection constructor. EXPERIMENTAL
-dev-haskell/retrie:example - build the retrie example executable
+dev-haskell/retrie:examples - build the retrie-example executable
 dev-haskell/retrie:executable - build the retrie executable
 dev-haskell/sample-frame:buildbenchmarks - Build benchmark executables
 dev-haskell/sandi:conduit - Build with conduit
@@ -379,7 +379,6 @@ dev-haskell/tasty-discover:executable - Build the tasty-discover executable
 dev-haskell/tasty-golden:build-example - 
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
-dev-haskell/th-extras:base4 - Use base-4.0.
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
 dev-haskell/these:assoc - Build with assoc dependency
 dev-haskell/threepenny-gui:buildexamples - Build example executables.
