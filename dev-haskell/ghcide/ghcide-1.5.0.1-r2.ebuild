@@ -21,6 +21,8 @@ KEYWORDS="~amd64 ~x86"
 # flag `ghc-patched-unboxed-bytecode` needs a specific GHC feature in a yet-to-be-determined version
 IUSE="bench-exe executable test-exe"
 
+PATCHES=( "${FILESDIR}/${PN}-1.5.0.1-fix-extra-1_7_10.patch" )
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	dev-haskell/async:=[profile?]
@@ -34,7 +36,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/diff-0.4.0:=[profile?] <dev-haskell/diff-0.5:=[profile?]
 	dev-haskell/dlist:=[profile?]
 	dev-haskell/exceptions:=[profile?]
-	>=dev-haskell/extra-1.7.4:=[profile?] <dev-haskell/extra-1.7.10:=[profile?]
+	>=dev-haskell/extra-1.7.4:=[profile?]
 	dev-haskell/fingertree:=[profile?]
 	dev-haskell/fuzzy:=[profile?]
 	>=dev-haskell/ghc-check-0.5.0.4:=[profile?]
@@ -105,7 +107,11 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	ghc-supports-threaded-runtime && eapply "${FILESDIR}/${PN}-1.5.0.1-add-parallelism-rtsopts.patch"
+
 	default
+
+	cabal_chdeps \
+		'extra >= 1.7.4 && < 1.7.10' 'extra >= 1.7.4'
 }
 
 src_configure() {
