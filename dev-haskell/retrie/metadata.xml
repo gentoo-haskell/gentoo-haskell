@@ -6,19 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="examples">build the retrie-example executable</flag>
 		<flag name="executable">build the retrie executable</flag>
-		<flag name="example">build the retrie example executable</flag>
 	</use>
-	<longdescription>
-		Retrie is a tool for codemodding Haskell. Key goals include:
-		
-		* Speed: Efficiently rewrite in large (&gt;1 million line) codebases.
-		* Safety: Avoids large classes of codemod-related errors.
-		* Ease-of-use: Haskell syntax instead of regular expressions. No hand-rolled AST traversals.
-		
-		This package provides a command-line tool (@retrie@) and a library
-		(&quot;Retrie&quot;) for making equational edits to Haskell code.
-		
-		Please see the [README](#readme) for examples and usage.
-	</longdescription>
 </pkgmetadata>
