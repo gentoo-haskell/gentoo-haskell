@@ -7,7 +7,7 @@ EAPI=8
 #hackport: flags: -ghc-lib
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal elisp-common
+inherit haskell-cabal elisp-common optfeature
 
 DESCRIPTION="Source code suggestions"
 HOMEPAGE="https://github.com/ndmitchell/hlint#readme"
@@ -17,6 +17,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs +gpl hsyaml test"
+
+PATCHES=( "${FILESDIR}/${PN}-3.3.6-change-refactor-name.patch" )
 
 # Test fails when HsYAML is used
 REQUIRED_USE="test? ( !hsyaml )"
@@ -91,6 +93,8 @@ src_test() {
 pkg_postinst() {
 	haskell-cabal_pkg_postinst
 	use emacs && elisp-site-regen
+
+	use test && optfeature "refactoring tests" "dev-haskell/apply-refact[executable]"
 }
 
 pkg_postrm() {
