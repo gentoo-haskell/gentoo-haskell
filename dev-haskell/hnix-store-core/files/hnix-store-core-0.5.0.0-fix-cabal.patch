@@ -7,25 +7,6 @@ The [cabal file][1] needs some modifications
 
 --- hnix-store-core-0.5.0.0/hnix-store-core.cabal
 +++ hnix-store-core-0.5.0.0-new/hnix-store-core.cabal
-@@ -49,7 +49,6 @@
-     , System.Nix.StorePathMetadata
-   build-depends:
-       base >=4.12 && <5
--    , relude
-     , attoparsec
-     , algebraic-graphs >= 0.5 && < 0.6
-     , base16-bytestring
-@@ -73,10 +72,6 @@
-     , unix
-     , unordered-containers
-     , vector
--  mixins:
--      base hiding (Prelude)
--    , relude (Relude as Prelude)
--    , relude
-   default-extensions:
-       OverloadedStrings
-     , DeriveGeneric
 @@ -107,7 +102,7 @@
    import: commons
    if flag(bounded_memory)
@@ -35,23 +16,3 @@ The [cabal file][1] needs some modifications
    type: exitcode-stdio-1.0
    main-is: Driver.hs
    other-modules:
-@@ -124,7 +119,6 @@
-       hnix-store-core
-     , attoparsec
-     , base
--    , relude
-     , base16-bytestring
-     , base64-bytestring
-     , binary
-@@ -143,10 +137,6 @@
-     , temporary
-     , text
-     , unix
--  mixins:
--      base hiding (Prelude)
--    , relude (Relude as Prelude)
--    , relude
-   default-extensions:
-       OverloadedStrings
-     , DeriveGeneric
-

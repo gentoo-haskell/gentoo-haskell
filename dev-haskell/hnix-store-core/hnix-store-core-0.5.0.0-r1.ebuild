@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -12,9 +12,9 @@ inherit haskell-cabal
 DESCRIPTION="Core effects for interacting with the Nix store"
 HOMEPAGE="https://github.com/haskell-nix/hnix-store"
 
+HACKAGE_REV="2"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://github.com/haskell-nix/hnix-store/raw/5e55781516178939bf9a86f943e120e6ad775b9d/hnix-store-core/hnix-store-core.cabal -> ${PF}.cabal
-"
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
@@ -23,24 +23,25 @@ KEYWORDS="~amd64 ~x86"
 PATCHES=(
 	"${FILESDIR}/${PN}-0.5.0.0-fix-cabal.patch"
 	"${FILESDIR}/${PN}-0.5.0.0-fix-tests.patch"
+	"${FILESDIR}/${PN}-0.5.0.0-add-overloaded-strings.patch"
 )
 
-RDEPEND=">=dev-haskell/algebraic-graphs-0.5:=[profile?] <dev-haskell/algebraic-graphs-0.6:=[profile?]
-	dev-haskell/attoparsec:=[profile?]
-	dev-haskell/base16-bytestring:=[profile?]
-	dev-haskell/base64-bytestring:=[profile?]
-	dev-haskell/cereal:=[profile?]
-	dev-haskell/cryptonite:=[profile?]
-	dev-haskell/hashable:=[profile?]
-	dev-haskell/lifted-base:=[profile?]
-	dev-haskell/memory:=[profile?]
-	dev-haskell/monad-control:=[profile?]
-	dev-haskell/mtl:=[profile?]
+RDEPEND=">=dev-haskell/algebraic-graphs-0.5:=[profile?]
+	<dev-haskell/attoparsec-0.15:=[profile?]
+	<dev-haskell/base16-bytestring-1.1:=[profile?]
+	<dev-haskell/base64-bytestring-1.3:=[profile?]
+	<dev-haskell/cereal-0.6:=[profile?]
+	<dev-haskell/cryptonite-0.30:=[profile?]
+	<dev-haskell/hashable-1.5:=[profile?]
+	<dev-haskell/lifted-base-0.3:=[profile?]
+	<dev-haskell/memory-0.17:=[profile?]
+	<dev-haskell/monad-control-1.1:=[profile?]
+	<dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/nix-derivation-1.1.1:=[profile?] <dev-haskell/nix-derivation-2:=[profile?]
-	dev-haskell/saltine:=[profile?]
-	dev-haskell/text:=[profile?]
-	dev-haskell/unordered-containers:=[profile?]
-	dev-haskell/vector:=[profile?]
+	<dev-haskell/saltine-0.3:=[profile?]
+	<dev-haskell/text-1.3:=[profile?]
+	<dev-haskell/unordered-containers-0.3:=[profile?]
+	<dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
@@ -56,8 +57,14 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	cp -v "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal"
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Apply patches *after* pulling the revised cabal
 	default
+
+	cabal_chdeps \
+		'algebraic-graphs >= 0.5 && < 0.6' 'algebraic-graphs >= 0.5'
 }
 
 src_configure() {
