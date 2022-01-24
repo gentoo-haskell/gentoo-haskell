@@ -257,7 +257,7 @@ dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optics-core:explicit-generic-labels - Require explicit GenericLabelOptics instances in order to use generics-based labels
 dev-haskell/optparse-applicative:process - Depend on the process package for Bash autocompletion
 dev-haskell/optparse-simple:build-example - Build the example executable
-dev-haskell/ormolu:executable - Build the fourmolu executable
+dev-haskell/ormolu:executable - Install the ormolu executable
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
 dev-haskell/pandoc-citeproc:debug - Turn on debug tracing.
 dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging)
@@ -461,7 +461,7 @@ dev-util/haskell-language-server:hls_plugins_refine-imports - Enable refineImpor
 dev-util/haskell-language-server:hls_plugins_rename - Enable rename plugin
 dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
 dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
-dev-util/haskell-language-server:hls_plugins_tactic - Enable tactic plugin
+dev-util/haskell-language-server:hls_plugins_tactics - Enable tactics plugin
 dev-util/hsdev:hlint - build with hlint to support linting
 dev-util/shake:cloud - Enable cloud build features
 dev-util/shake:embed-files - Embed data files into the shake library
