@@ -4,3 +4,4 @@
 # Keep them sorted
 
 hoogle - generate hoogle database for dev-haskell/hoogle
+profile - build using cabal's --enable-profiling flag
