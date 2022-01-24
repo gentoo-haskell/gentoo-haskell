@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,8 +24,6 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/diff-0.4.0:=[profile?] <dev-haskell/diff-0.5:=[profile?]
 	dev-haskell/extra:=[profile?]
 	>=dev-haskell/ghc-exactprint-0.6.3.4:=[profile?]
-	>=dev-haskell/ghc-lib-8.10.7.20210828:=[profile?] <dev-haskell/ghc-lib-8.11:=[profile?]
-	>=dev-haskell/ghc-lib-parser-ex-8.10:=[profile?] <dev-haskell/ghc-lib-parser-ex-8.11:=[profile?]
 	>=dev-haskell/ghcide-1.5.0:=[profile?] <dev-haskell/ghcide-1.6:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/hlint-3.2:=[profile?] <dev-haskell/hlint-3.3:=[profile?]
@@ -37,7 +35,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.6.3:=
+	>=dev-lang/ghc-8.10:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

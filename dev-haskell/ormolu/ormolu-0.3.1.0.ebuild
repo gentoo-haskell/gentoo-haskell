@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A formatter for Haskell source code"
-HOMEPAGE="https://github.com/parsonsmatt/fourmolu"
+HOMEPAGE="https://github.com/tweag/ormolu"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -18,17 +18,14 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE="examples executable"
 
-PATCHES=( "${FILESDIR}/${PN}-0.4.0.0-add-flags.patch" )
+PATCHES=( "${FILESDIR}/${PN}-0.3.1.0-add-executable-flag.patch" )
 
-RDEPEND=">=dev-haskell/aeson-1.4.0.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
-	>=dev-haskell/ansi-terminal-0.10:=[profile?] <dev-haskell/ansi-terminal-1.0:=[profile?]
+RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?] <dev-haskell/ansi-terminal-1.0:=[profile?]
 	>=dev-haskell/cabal-3.4:=[profile?] <dev-haskell/cabal-3.5:=[profile?]
 	>=dev-haskell/diff-0.4:=[profile?] <dev-haskell/diff-1.0:=[profile?]
 	>=dev-haskell/dlist-0.8:=[profile?] <dev-haskell/dlist-2.0:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/ghc-lib-parser-9.0:=[profile?] <dev-haskell/ghc-lib-parser-9.1:=[profile?]
-	>=dev-haskell/hsyaml-0.2:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?]
-	>=dev-haskell/hsyaml-aeson-0.2:=[profile?] <dev-haskell/hsyaml-aeson-0.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-3.0:=[profile?]
 	>=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
