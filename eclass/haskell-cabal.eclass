@@ -322,7 +322,7 @@ cabal-configure() {
 		fi
 	fi
 	if [[ -n "${CABAL_USE_PROFILE}" ]] && use profile; then
-		cabalconf+=(--enable-library-profiling)
+		cabalconf+=(--enable-profiling)
 	fi
 
 	if [[ -n "${CABAL_TEST_SUITE}" ]]; then
