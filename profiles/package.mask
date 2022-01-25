@@ -60,7 +60,6 @@ dev-haskell/lens-simple
 # numhask-histogram has been deprecated in favor of numhask-space
 dev-haskell/chart-unit
 dev-haskell/numhask-histogram
-dev-haskell/numhask-prelude
 
 # hololeap <hololeap@protonmail.com> (2021-05-12)
 # dev-lang/purescript-0.14.1 requires
