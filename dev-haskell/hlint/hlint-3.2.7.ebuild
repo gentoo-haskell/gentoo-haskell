@@ -61,5 +61,8 @@ src_test() {
 }
 
 pkg_postinst() {
-	use test && optfeature "refactoring tests" "dev-haskell/apply-refact[executable]"
+	if use test; then
+		optfeature_header "Install additional packages for extra test features:"
+		optfeature "refactoring tests" "dev-haskell/apply-refact[executable]"
+	fi
 }
