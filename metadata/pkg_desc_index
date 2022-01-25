@@ -264,7 +264,6 @@ dev-haskell/chart 1.9.3: A library for generating 2D Charts and Plots
 dev-haskell/chart-cairo 1.9.3-r1: Cairo backend for Charts
 dev-haskell/chart-diagrams 1.9.3-r1: Diagrams backend for Charts
 dev-haskell/chart-gtk 1.9.3: Utility functions for using the chart library with GTK
-dev-haskell/chart-unit 0.7.0.0: Native haskell charts
 dev-haskell/chaselev-deque 0.5.0.5: Chase & Lev work-stealing lock-free double-ended queues (deques)
 dev-haskell/chasingbottoms 1.3.1.10: For testing partial and infinite values
 dev-haskell/cheapskate 0.1.1.2: Experimental markdown processor
@@ -1156,7 +1155,6 @@ dev-haskell/lens-family 1.2.3 2.1.1: Lens Families
 dev-haskell/lens-family-core 1.2.3 2.1.0: Haskell 2022 Lens Families
 dev-haskell/lens-family-th 0.5.1.0: Generate lens-family style lenses
 dev-haskell/lens-filesystem 0.1.0.1: Lens interface for your filesystem; still a bit experimental
-dev-haskell/lens-simple 0.1.0.9: simplified import of elementary lens-family combinators
 dev-haskell/lenses 0.1.8: Simple Functional Lenses
 dev-haskell/leveldb-haskell 0.6.5: Haskell bindings to LevelDB
 dev-haskell/lhs2tex 1.24: Preprocessor for typesetting Haskell sources with LaTeX
@@ -1377,11 +1375,6 @@ dev-haskell/numbersieves 0.1.2: Number Theoretic Sieves: primes, factorization, 
 dev-haskell/numeric-extras 0.1-r1: Useful tools from the C standard library
 dev-haskell/numeric-prelude 0.4.3.2: An experimental alternative hierarchy of numeric type classes
 dev-haskell/numeric-quest 0.2.0.2: Math and quantum mechanics
-dev-haskell/numhask 0.2.3.1: A numeric prelude
-dev-haskell/numhask-histogram 0.1.2.0: See readme.md
-dev-haskell/numhask-prelude 0.1.0.1: A numeric prelude
-dev-haskell/numhask-range 0.2.3.1: Numbers that are range representations
-dev-haskell/numhask-test 0.1.0.0-r1: Laws and tests for numhask
 dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tuples
 dev-haskell/numtype 1.2: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5.0.3: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
@@ -2264,7 +2257,6 @@ games-puzzle/raincat 1.2.1: A puzzle game written in Haskell with a cat in lead 
 games-roguelike/scroll 1.20180421: scroll(6), a roguelike game
 media-fonts/hasklig 1.2: Hasklig - a Haskell code font with monospaced ligatures
 media-sound/hpodder 1.1.6-r2: Podcast Aggregator (downloader)
-media-sound/live-sequencer 0.0.6.2-r1: Live coding of MIDI music
 net-irc/glirc 2.38: Console IRC client
 net-mail/list-remote-forwards 0.0.1-r2: List all remote forwards for mail accounts stored in a database
 net-mail/mailbox-count 0.0.5: Count mailboxes in a SQL database

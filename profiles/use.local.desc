@@ -482,8 +482,6 @@ dev-vcs/git-annex:webapp - Enable git-annex webapp
 games-puzzle/intricacy:curses - Enables curses user interface
 games-puzzle/intricacy:sdl - Enables SDL user interface
 games-puzzle/intricacy:sound - Enables sound in SDL user interface
-media-sound/live-sequencer:gui - Build the wxWidgets GUI for the sequencer.
-media-sound/live-sequencer:httpserver - Enable access to modules via a web browser.
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
 sci-mathematics/agda:enable-cluster-counting - Enable the --count-clusters flag. (If enable-cluster-counting is False, then the --count-clusters flag triggers an error message.)
 sci-mathematics/agda:optimise-heavily - Enable some expensive optimisations when compiling Agda.
