@@ -45,21 +45,6 @@ dev-haskell/odpic-raw
 # Requires porting to network-3.
 media-sound/live-sequencer
 
-# Sergei Trofimovich <slyfox@gentoo.org> (2021-07-03)
-# Was not updated since 2016. Needs an update to lens-family-2.1
-dev-haskell/lens-simple
-
-# hololeap <hololeap@protonmail.com> (2021-05-13)
-# These packages depend on dev-haskell/numhask. In addition, some of them
-# have been deprecated:
-#
-# chart-unit has been deprecated in favor of chart-svg
-# numhask-prelude has been deprecated in favor of numhask
-# numhask-test has been deprecated in favor of numhask-hedgehog
-# numhask-hedgehog has been deprecated in favor of numhask
-# numhask-histogram has been deprecated in favor of numhask-space
-dev-haskell/chart-unit
-
 # hololeap <hololeap@protonmail.com> (2021-05-12)
 # dev-lang/purescript-0.14.1 requires
 # ~dev-haskell/language-javascript-0.7.0.0
