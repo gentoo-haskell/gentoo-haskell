@@ -61,7 +61,6 @@ dev-haskell/lens-simple
 dev-haskell/chart-unit
 dev-haskell/numhask-histogram
 dev-haskell/numhask-prelude
-dev-haskell/numhask-range
 
 # hololeap <hololeap@protonmail.com> (2021-05-12)
 # dev-lang/purescript-0.14.1 requires
