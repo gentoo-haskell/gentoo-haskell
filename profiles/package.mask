@@ -41,10 +41,6 @@ dev-haskell/gloss-examples
 dev-libs/odpi
 dev-haskell/odpic-raw
 
-# Jack Todaro <solpeth@posteo.org> (2021-10-21)
-# Requires porting to network-3.
-media-sound/live-sequencer
-
 # hololeap <hololeap@protonmail.com> (2021-05-12)
 # dev-lang/purescript-0.14.1 requires
 # ~dev-haskell/language-javascript-0.7.0.0
