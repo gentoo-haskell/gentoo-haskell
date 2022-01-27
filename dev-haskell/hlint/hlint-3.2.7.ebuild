@@ -19,7 +19,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+gpl hsyaml +threaded test"
 RESTRICT="!test? ( test )"
 
-PATCHES=( "${FILESDIR}/${PN}-3.2.7-change-refactor-name.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-3.2.7-change-refactor-name.patch"
+	"${FILESDIR}/${PN}-3.2.7-extra-1_7_10-compat.patch"
+)
 
 RDEPEND=">=dev-haskell/aeson-1.1.2.0:=[profile?]
 	>=dev-haskell/ansi-terminal-0.8.1:=[profile?]
