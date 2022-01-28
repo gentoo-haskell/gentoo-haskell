@@ -123,7 +123,7 @@ done
 
 [[ -z ${target_arch} ]] && target_arch=$(portageq envvar ARCH)
 [[ -z ${autobuild_machine} ]] && autobuild_machine=$(default_autobuild_machine "${target_arch}")
-[[ -z ${stage3_url} ]] && stage3_url=$(autobuild_dir "${target_arch}")/latest-stage3-${autobuild_machine}.txt
+[[ -z ${stage3_url} ]] && stage3_url=$(autobuild_dir "${target_arch}")/latest-stage3-${autobuild_machine}-systemd.txt
 # choose 17.1 profile for amd64, otherwise 17.0
 if [[ ${target_arch} == "amd64" ]] && [[ -z ${chroot_profile} ]]; then
     chroot_profile=default/linux/${target_arch}/17.1
