@@ -11,8 +11,8 @@ random_pkg() {
 }
 
 while true; do
-    pkg="$(random_pkg)"
-    [ "$pkg" == "No matches found" ] && break
-    emerge -1 -j1 --quiet-build --keep-going=y --deep --complete-graph "$pkg"
+	pkg="$(random_pkg)"
+	[ "$pkg" == "No matches found" ] && break
+	emerge -1 -j1 --quiet-build --keep-going=y --deep --complete-graph "$pkg"
 	haskell-updater -- -j1
 done
