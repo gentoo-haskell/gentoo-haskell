@@ -1407,7 +1407,7 @@ dev-haskell/optparse-applicative 0.14.3.0 0.15.1.0 0.16.1.0: Utilities and combi
 dev-haskell/optparse-generic 1.4.2: Auto-generate a command-line parser for your datatype
 dev-haskell/optparse-simple 0.1.1.4: Simple interface to optparse-applicative
 dev-haskell/ordered-containers 0.2.2: Set- and Map-like types that remember the order elements were inserted
-dev-haskell/ormolu 0.1.4.1-r1 0.3.1.0: A formatter for Haskell source code
+dev-haskell/ormolu 0.1.4.1-r2 0.3.1.0: A formatter for Haskell source code
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.17.0.2: Supports using pandoc with citeproc
 dev-haskell/pandoc-crossref 0.3.12.1: Pandoc filter for cross-references
