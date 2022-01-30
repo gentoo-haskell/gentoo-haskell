@@ -8,6 +8,6 @@ KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=dev-haskell/cabal:= dev-haskell/decimal:= >=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.25:= dev-haskell/mtl:= dev-haskell/text:= >=dev-lang/ghc-8.4.3:=
 SLOT=0
-SRC_URI=https://hackage.haskell.org/package/hledger-interest-1.6.3/hledger-interest-1.6.3.tar.gz
+SRC_URI=https://hackage.haskell.org/package/hledger-interest-1.6.3/hledger-interest-1.6.3.tar.gz https://hackage.haskell.org/package/hledger-interest-1.6.3/revision/1.cabal -> hledger-interest-1.6.3-r1.cabal
 _eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
-_md5_=fc7553bb3ce6143b0d20584cf4dd87cf
+_md5_=2b62707fa454a05359e15bdff56b9806
