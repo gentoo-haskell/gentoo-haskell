@@ -1598,7 +1598,7 @@ dev-haskell/ref-tf 0.5: A type class for monads with references using type famil
 dev-haskell/refact 0.3.0.2: Specify refactorings to perform with apply-refact
 dev-haskell/refinery 0.4.0.0: Toolkit for building proof automation systems
 dev-haskell/reflection 2.1.6: Reifies arbitrary terms into types that can be reflected back into terms
-dev-haskell/reflex 0.8.2.0: Higher-order Functional Reactive Programming
+dev-haskell/reflex 0.8.2.0-r1: Higher-order Functional Reactive Programming
 dev-haskell/reflex-process 0.3.1.1: Reflex FRP interface for running system processes
 dev-haskell/reflex-vty 0.2.0.0: Reflex FRP host and widgets for VTY applications
 dev-haskell/reform 0.2.7.4: reform is a type-safe HTML form generation and validation library
