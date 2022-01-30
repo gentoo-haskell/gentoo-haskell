@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -10,7 +10,9 @@ inherit haskell-cabal
 
 DESCRIPTION="computes interest for a given account"
 HOMEPAGE="https://github.com/peti/hledger-interest"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+HACKAGE_REV="1"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0"
@@ -28,8 +30,9 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	default
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
 
-	cabal_chdeps \
-		'hledger-lib >= 1.23 && < 1.24' 'hledger-lib >= 1.23'
+	# Apply patches *after* pulling the revised cabal
+	default
 }
