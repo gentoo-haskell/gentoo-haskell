@@ -18,6 +18,8 @@ SLOT="0"
 #keep in sync with ghc-9.0.2
 #KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
+RESTRICT=test # missing test-suite
+
 RDEPEND="~dev-haskell/haddock-api-2.25.1:=
 	>=dev-lang/ghc-8.8.1:=
 "
