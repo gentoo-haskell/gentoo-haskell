@@ -1,3 +1,17 @@
+# hololeap <hololeap@protonmail.com> (2022-02-03)
+# Bug: https://github.com/purescript/spago/issues/848
+# Currently incompatible with modern dhall. Would require a downgrade for the
+# following:
+# dev-haskell/hnix-store-core
+# dev-haskell/hnix-store-remote
+# dev-haskell/algebraic-graphs
+# dev-haskell/hnix
+# dev-util/dhall-bash
+# dev-util/dhall-json
+# dev-util/dhall-nix
+# dev-lang/dhall
+dev-haskell/spago
+
 # hololeap <hololeap@protonmail.com> (2022-01-24)
 # Needs update to build on ghc-9.0.2
 dev-haskell/hls-rename-plugin

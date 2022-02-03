@@ -37,7 +37,8 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.10.3:=[profile?] <dev-haskell/ansi-termin
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( dev-haskell/ghc-paths
+	test? ( dev-vcs/mercurial
+		dev-haskell/ghc-paths
 		dev-haskell/hunit
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
