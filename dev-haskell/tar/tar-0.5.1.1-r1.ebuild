@@ -10,7 +10,9 @@ inherit haskell-cabal
 
 DESCRIPTION="Reading, writing and manipulating tar files"
 HOMEPAGE="https://hackage.haskell.org/package/tar"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+HACKAGE_REV="4"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -20,7 +22,7 @@ RESTRICT=test
 
 RDEPEND=">=dev-haskell/bytestring-builder-0.10.4.0.2:=[profile?] <dev-haskell/bytestring-builder-0.11:=[profile?]
 	<dev-haskell/old-time-1.2:=[profile?]
-	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
@@ -32,10 +34,9 @@ DEPEND="${RDEPEND}
 # "
 
 src_prepare() {
-	default
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
 
-	cabal_chdeps \
-		'base       >= 4 && < 4.14' 'base       >= 4' \
-		'tasty            >= 0.10 && <0.12' 'tasty            >= 0.10' \
-		'tasty-quickcheck == 0.8.*' 'tasty-quickcheck >= 0.8'
+	# Apply patches *after* pulling the revised cabal
+	default
 }
