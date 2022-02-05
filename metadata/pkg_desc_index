@@ -2242,7 +2242,7 @@ dev-util/hindent 5.3.2: Extensible Haskell pretty printer
 dev-util/hoogle 5.0.18 5.0.18.2: Haskell API Search
 dev-util/hsdev 0.3.4.0-r4: Haskell development library
 dev-util/shake 0.19.4: Build system library, like Make, but more accurate dependencies
-dev-util/shellcheck 0.7.2: Shell script analysis tool
+dev-util/shellcheck 0.7.2 0.8.0: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/threadscope 0.2.14-r1: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.16.4-r1: a distributed, interactive, smart revision control system
