@@ -28,7 +28,6 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.14:
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
-	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?] <dev-haskell/unix-compat-0.6:=[profile?]
