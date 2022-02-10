@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -9,9 +9,11 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
 DESCRIPTION="Dhall to Nix compiler"
-HOMEPAGE="https://dhall-lang.org/
+HOMEPAGE="https://dhall-lang.org
 	https://hackage.haskell.org/package/dhall-nix"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+HACKAGE_REV="1"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -22,10 +24,23 @@ RDEPEND="<dev-haskell/data-fix-0.4:=[profile?]
 	>=dev-haskell/lens-family-core-1.0.0:=[profile?] <dev-haskell/lens-family-core-2.2:=[profile?]
 	<dev-haskell/neat-interpolation-0.6:=[profile?]
 	>=dev-haskell/optparse-generic-1.1.1:=[profile?] <dev-haskell/optparse-generic-1.5:=[profile?]
-	>=dev-haskell/text-0.8.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.8.0.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	>=dev-lang/dhall-1.40:=[profile?] <dev-lang/dhall-1.41:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+BDEPEND="app-text/dos2unix"
+
+src_prepare() {
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Convert to unix line endings
+	dos2unix "${S}/${PN}.cabal" || die
+
+	# Apply patches *after* pulling the revised cabal
+	default
+}
