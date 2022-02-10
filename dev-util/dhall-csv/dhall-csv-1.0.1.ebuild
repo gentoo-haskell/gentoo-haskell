@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 # Tests depend on files that are only present on GitHub
 # This is the current package's release commit hash
-COMMIT="8f62fdf6b267d98273ec701b3079e80305b83ce1"
+COMMIT="fc56822eb56ca280a7d574eb9c056c2b8bb0a05c"
 # SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 SRC_URI="https://github.com/dhall-lang/dhall-haskell/archive/${COMMIT}.tar.gz -> dhall-${COMMIT}.tar.gz"
 S="${WORKDIR}/dhall-haskell-${COMMIT}/${PN}"
@@ -28,9 +28,9 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/either:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
-	>=dev-haskell/prettyprinter-1.5.1:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
+	>=dev-haskell/prettyprinter-1.7.0:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?]
-	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/dhall-1.39.0:=[profile?] <dev-lang/dhall-1.41:=[profile?]
