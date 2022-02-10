@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,21 +11,23 @@ inherit haskell-cabal
 DESCRIPTION="Convert between Dhall and YAML"
 HOMEPAGE="https://dhall-lang.org/
 	https://hackage.haskell.org/package/dhall-yaml"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+HACKAGE_REV="2"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
+RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
 	>=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]
 	>=dev-haskell/hsyaml-0.2:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?]
 	>=dev-haskell/hsyaml-aeson-0.2:=[profile?] <dev-haskell/hsyaml-aeson-0.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.17:=[profile?]
-	dev-haskell/prettyprinter:=[profile?]
+	>=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
+	>=dev-haskell/prettyprinter-1.7.0:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?]
-	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/dhall-1.31.0:=[profile?] <dev-lang/dhall-1.41:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
@@ -37,3 +39,16 @@ DEPEND="${RDEPEND}
 		<dev-haskell/tasty-expected-failure-0.13
 		>=dev-haskell/tasty-hunit-0.2 )
 "
+
+BDEPEND="app-text/dos2unix"
+
+src_prepare() {
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Convert to unix line endings
+	dos2unix "${S}/${PN}.cabal" || die
+
+	# Apply patches *after* pulling the revised cabal
+	default
+}
