@@ -1,3 +1,11 @@
+# hololeap <hololeap@protonmail.com> (2022-02-10)
+# Mask protolude and reverse-dependencies.
+# Needs patching to build on >=base-4.15
+dev-haskell/protolude
+dev-haskell/purescript-ast
+dev-haskell/purescript-cst
+dev-lang/purescript
+
 # hololeap <hololeap@protonmail.com> (2022-01-24)
 # Needs update to build on ghc-9.0.2
 dev-haskell/hls-rename-plugin
