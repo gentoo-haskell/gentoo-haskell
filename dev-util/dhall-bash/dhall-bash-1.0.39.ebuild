@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="<dev-haskell/neat-interpolation-0.6:=[profile?]
 	>=dev-haskell/optparse-generic-1.1.1:=[profile?] <dev-haskell/optparse-generic-1.5:=[profile?]
 	<dev-haskell/shell-escape-0.3:=[profile?]
-	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	>=dev-lang/dhall-1.40.0:=[profile?] <dev-lang/dhall-1.41:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
