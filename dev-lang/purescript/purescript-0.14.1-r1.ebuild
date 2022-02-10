@@ -120,7 +120,7 @@ pkg_postinst() {
 		elog
 		elog "You may also wish to install the PureScript package manager:"
 		elog
-		elog "    dev-haskell/spago"
+		elog "    dev-util/spago"
 		elog
 	fi
 }

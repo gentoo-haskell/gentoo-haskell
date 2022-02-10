@@ -10,7 +10,7 @@
 # dev-util/dhall-json
 # dev-util/dhall-nix
 # dev-lang/dhall
-dev-haskell/spago
+dev-util/spago
 
 # hololeap <hololeap@protonmail.com> (2022-01-24)
 # Needs update to build on ghc-9.0.2
