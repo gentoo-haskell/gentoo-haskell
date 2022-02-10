@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,16 +11,16 @@ inherit haskell-cabal
 DESCRIPTION="Convert between Dhall and TOML"
 HOMEPAGE="https://dhall-lang.org/
 	https://hackage.haskell.org/package/dhall-toml"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+HACKAGE_REV="1"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-PATCHES=( "${FILESDIR}/${PN}-1.0.0-disable-buggy-tests.patch" )
-
-RDEPEND=">=dev-haskell/prettyprinter-1.5.1:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
-	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
+RDEPEND=">=dev-haskell/prettyprinter-1.7.0:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
+	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	>=dev-haskell/tomland-1.3.2.0:=[profile?] <dev-haskell/tomland-1.4:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/dhall-1.39.0:=[profile?] <dev-lang/dhall-1.41:=[profile?]
@@ -32,3 +32,16 @@ DEPEND="${RDEPEND}
 		<dev-haskell/tasty-1.5
 		>=dev-haskell/tasty-hunit-0.2 )
 "
+
+BDEPEND="app-text/dos2unix"
+
+src_prepare() {
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Convert to unix line endings
+	dos2unix "${S}/${PN}.cabal" || die
+
+	# Apply patches *after* pulling the revised cabal
+	default
+}
