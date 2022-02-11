@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="example-play-tomland">Build play-tomland executable</flag>
+		<flag name="example-readme">Build example-tomland generator</flag>
+	</use>
 </pkgmetadata>
