@@ -32,6 +32,15 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.9
+	test? ( >=dev-haskell/hspec-2.6.0
+		>=dev-haskell/hspec-discover-2.6.0
 		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.15 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec      >= 2.6.0    && < 2.9' 'hspec >= 2.6.0' \
+		'hspec-discover:hspec-discover >= 2.6.0 && <2.9' 'hspec-discover:hspec-discover >= 2.6.0'
+}
