@@ -35,8 +35,15 @@ RDEPEND=">=dev-haskell/aeson-0.11.3.0:=[profile?] <dev-haskell/aeson-2.1:=[profi
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/exceptions-0.8.3 <dev-haskell/exceptions-0.12
-		>=dev-haskell/hspec-2.2.4 <dev-haskell/hspec-2.8 )
+		>=dev-haskell/hspec-2.2.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec >=2.2.4 && <2.8' 'hspec >=2.2.4'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
