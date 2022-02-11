@@ -5,16 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This library generates singleton types, promoted functions, and singleton
-		functions using Template Haskell. It is useful for programmers who wish
-		to use dependently typed programming techniques. The library was originally
-		presented in /Dependently typed programming with singletons/, submitted
-		to the Haskell Symposium, 2012.
-		(&lt;http://www.cis.upenn.edu/~eir/papers/2012/singletons/paper.pdf&gt;)
-		As of this release date, Haddock was not able to properly process the code
-		and produce documentation. Hence, all of the documentation is in the
-		README file distributed with the package. This README is also accessible
-		from the project home page.
-	</longdescription>
 </pkgmetadata>
