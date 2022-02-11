@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/bimap-0.3.3:=[profile?] <dev-haskell/bimap-0.5:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/extra
-		>=dev-haskell/hspec-2.7 <dev-haskell/hspec-2.8 )
+		>=dev-haskell/hspec-2.7 )
 "
 
 PATCHES=( "${FILESDIR}/${PN}-0.2.0.0-add-examples-flag.patch" )
@@ -44,7 +44,9 @@ PATCHES=( "${FILESDIR}/${PN}-0.2.0.0-add-examples-flag.patch" )
 src_prepare() {
 	cabal_chdeps \
 		'ref-tf >= 0.4.0 && < 0.5' 'ref-tf >= 0.4.0' \
-		'vty >= 5.28 && < 5.29' 'vty >= 5.21'
+		'vty >= 5.28 && < 5.29' 'vty >= 5.21' \
+		'hspec >= 2.7 && < 2.8' 'hspec >= 2.7' \
+		'base >= 4.10.0 && < 4.15' 'base >= 4.10.0'
 	default
 }
 
