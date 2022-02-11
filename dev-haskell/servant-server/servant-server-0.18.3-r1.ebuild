@@ -15,6 +15,9 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
+IUSE="examples"
+
+PATCHES=( "${FILESDIR}/${PN}-0.18.3-add-examples-flag.patch" )
 
 RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
@@ -36,13 +39,14 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 	>=dev-haskell/transformers-base-0.4.5.2:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
 	>=dev-haskell/wai-3.2.1.2:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/wai-app-static-3.1.6.2:=[profile?] <dev-haskell/wai-app-static-3.2:=[profile?]
-	>=dev-haskell/warp-3.2.25:=[profile?] <dev-haskell/warp-3.4:=[profile?]
 	>=dev-haskell/word8-0.1.3:=[profile?] <dev-haskell/word8-0.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
+	examples? ( >=dev-haskell/warp-3.2.25:=[profile?] <dev-haskell/warp-3.4:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.9
+	test? ( >=dev-haskell/hspec-2.6.0
+		>=dev-haskell/hspec-discover-2.6.0
 		>=dev-haskell/hspec-wai-0.10.1 <dev-haskell/hspec-wai-0.12
 		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.15
 		dev-haskell/safe
@@ -51,3 +55,16 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers-compat
 		>=dev-haskell/wai-extra-3.0.24.3 <dev-haskell/wai-extra-3.2 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec                >= 2.6.0    && < 2.9' 'hspec >= 2.6.0' \
+		'hspec-discover:hspec-discover >= 2.6.0 && <2.9' 'hspec-discover:hspec-discover >= 2.6.0'
+}
+
+src_configure() {
+	haskell-cabal_src_configure \
+		$(cabal_flag examples examples)
+}
