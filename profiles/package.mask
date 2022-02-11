@@ -1,3 +1,8 @@
+# hololeap <hololeap@protonmail.com> (2022-02-11)
+# Mask until >=dev-haskell/base16-bytestring-1.0.1.0 is unmasked
+>=dev-lang/dhall-1.40.2
+>=dev-util/dhall-docs-1.0.8
+
 # hololeap <hololeap@protonmail.com> (2022-02-10)
 # Mask protolude and reverse-dependencies.
 # Needs patching to build on >=base-4.15
