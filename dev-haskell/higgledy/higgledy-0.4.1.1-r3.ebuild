@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,6 +16,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+PATCHES=( "${FILESDIR}/${PN}-0.4.1.1-disable-doctests.patch" )
+
 RDEPEND=">=dev-haskell/barbies-2.0:=[profile?] <dev-haskell/barbies-2.1:=[profile?]
 	>=dev-haskell/generic-lens-2.1:=[profile?] <dev-haskell/generic-lens-3.0:=[profile?]
 	>=dev-haskell/generic-lens-core-2.1:=[profile?] <dev-haskell/generic-lens-core-3.0:=[profile?]
@@ -28,14 +30,16 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-doctest-1.0 <dev-haskell/cabal-doctest-1.1
 	test? ( >=dev-haskell/base-compat-0.11 <dev-haskell/base-compat-0.12
 		>=dev-haskell/doctest-0.18
-		>=dev-haskell/hspec-2.6.1 <dev-haskell/hspec-2.8
+		>=dev-haskell/hspec-2.6.1
 		>=dev-haskell/lens-4.17
 		dev-haskell/markdown-unlit[executable] )
 "
 
 src_prepare() {
+	default
+
 	cabal_chdeps \
 		'lens >= 4.17 && < 5' 'lens >= 4.17' \
-		'doctest ^>= 0.17' 'doctest >= 0.16'
-	default
+		'doctest ^>= 0.17' 'doctest >= 0.16' \
+		'hspec >= 2.6.1 && < 2.8' 'hspec >= 2.6.1'
 }
