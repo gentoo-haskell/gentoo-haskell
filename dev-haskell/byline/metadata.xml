@@ -6,35 +6,5 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="examples">Build examples when building the library.</flag>
 	</use>
-	<longdescription>
-		Byline simplifies writing interactive command-line applications by
-		building upon @ansi-terminal@ and @haskeline@.  This makes it
-		possible to print messages and prompts that include terminal escape
-		sequences (such as setting text colors) that are automatically
-		disabled when standard input is a file.  It also means that Byline
-		works on both POSIX-compatible systems and on Windows.
-		
-		The primary features of Byline include printing messages, prompting
-		for input, and generating custom menus.  It was inspired by the
-		@highline@ Ruby library and the @terminal@ library by Craig Roche.
-		
-		== Example
-		
-		&gt; example :: MonadByline m =&gt; m Text
-		&gt; example = do
-		&gt;   sayLn (&quot;Hey, I like &quot; &lt;&gt; (&quot;Haskell&quot; &lt;&gt; fg magenta) &lt;&gt; &quot;!&quot;)
-		&gt;
-		&gt;   let question =
-		&gt;         &quot;What&#39;s &quot;
-		&gt;           &lt;&gt; (&quot;your&quot; &lt;&gt; bold)
-		&gt;           &lt;&gt; &quot; favorite &quot;
-		&gt;           &lt;&gt; (&quot;language&quot; &lt;&gt; fg green &lt;&gt; underline)
-		&gt;           &lt;&gt; &quot;? &quot;
-		&gt;
-		&gt;   askLn question (Just &quot;Haskell&quot;)
-		
-		&lt;&lt;https://github.com/pjones/byline/raw/master/doc/demo.png&gt;&gt;
-	</longdescription>
 </pkgmetadata>
