@@ -28,6 +28,15 @@ RDEPEND="dev-haskell/exceptions:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/ghc-paths-0.1.0.12 <dev-haskell/ghc-paths-0.2
-		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.8
+		>=dev-haskell/hspec-2.4.4
+		>=dev-haskell/hspec-discover-2.4.4
 		>=dev-haskell/quickcheck-2.14 <dev-haskell/quickcheck-2.15 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec           >= 2.4.4 && < 2.8' 'hspec >=2.4.4' \
+		'hspec-discover:hspec-discover >= 2.4.4 && < 2.8' 'hspec-discover:hspec-discover >= 2.4.4'
+}
