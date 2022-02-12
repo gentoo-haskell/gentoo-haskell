@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/hashable:=[profile?] dev-haskell/primitive:=[profile?] dev-haskell/storable-tuple:=[profile?] dev-haskell/text:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-9.0.2:= >=dev-haskell/cabal-3.4.1.0 test? ( dev-haskell/hedgehog dev-haskell/mmorph dev-haskell/tasty dev-haskell/tasty-hedgehog ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Standard library for linear types
+EAPI=8
+HOMEPAGE=https://github.com/tweag/linear-base#README
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile test
+LICENSE=MIT
+RDEPEND=dev-haskell/hashable:=[profile?] dev-haskell/primitive:=[profile?] dev-haskell/storable-tuple:=[profile?] dev-haskell/text:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-9.0.2:=
+RESTRICT=!test? ( test )
+SLOT=0/0.1.0
+SRC_URI=https://hackage.haskell.org/package/linear-base-0.1.0/linear-base-0.1.0.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=29e20f123ae08c17de4694d480acb5c3
