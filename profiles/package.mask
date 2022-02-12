@@ -68,13 +68,6 @@ dev-haskell/odpic-raw
 # Mask any versions higher than that until purescript bumps its dependencies.
 >=dev-haskell/language-javascript-0.7.0.1
 
-# Jack Todaro <solpeth@posteo.org> (2021-05-06)
-# Causes upgrade conflict warning during world updates.
-# Mask until the rest of the ecosystem catches up.
->=dev-haskell/hlint-3.3
->=dev-haskell/ghc-lib-parser-9.0
->=dev-haskell/ghc-lib-parser-ex-9.0
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
 # remain masked for now.
