@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/blaze-html-0.9:=[profile?]
