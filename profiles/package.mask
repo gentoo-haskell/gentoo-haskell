@@ -94,10 +94,6 @@ dev-haskell/odpic-raw
 >=dev-haskell/base16-bytestring-1.0.1.0
 >=dev-haskell/cabal-install-parsers-0.4
 
-# Jack Todaro <solpeth@posteo.org> (3 July 2020)
-# Mask dev-haskell/random-1.2 and reverse dependencies
->=dev-haskell/random-1.2
-
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
 >=dev-haskell/hsemail-2              # smptclient-1.1.0
