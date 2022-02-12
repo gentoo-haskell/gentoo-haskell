@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -12,12 +12,18 @@ inherit haskell-cabal
 DESCRIPTION="Generate HTML docs from a dhall package"
 HOMEPAGE="https://dhall-lang.org/
 	https://hackage.haskell.org/package/dhall-docs"
+HACKAGE_REV="2"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/2.cabal -> ${PF}.cabal"
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
+
+PATCHES=(
+	"${FILESDIR}/${PN}-1.0.7-cabal-doctest.patch"
+	"${FILESDIR}/${PN}-1.0.7-disable-tasty-tests.patch"
+)
 
 RDEPEND="<dev-haskell/cryptonite-0.30:=[profile?]
 	>=dev-haskell/file-embed-0.0.10.0:=[profile?]
@@ -37,26 +43,29 @@ RDEPEND="<dev-haskell/cryptonite-0.30:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/doctest-0.7.0 <dev-haskell/doctest-0.19 )"
+	test? ( >=dev-haskell/doctest-0.7.0 <dev-haskell/doctest-0.19
+		dev-haskell/cabal-doctest )
+"
 #		<dev-haskell/foldl-1.5
 #		dev-haskell/hashable
 #		<dev-haskell/tasty-1.5
 #		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 #		<dev-haskell/tasty-silver-3.4
 #		<dev-haskell/turtle-1.6 )
-
-PATCHES=(
-	"${FILESDIR}/${PN}-1.0.7-package-imports.patch"
-	"${FILESDIR}/${PN}-1.0.7-disable-tasty-tests.patch"
-)
+BDEPEND="app-text/dos2unix"
 
 src_prepare() {
-	cp -v "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Convert to unix line endings
+	dos2unix "${S}/${PN}.cabal" || die
+
+	# Apply patches *after* pulling the revised cabal
+	default
 
 	cabal_chdeps \
 		'lucid                >= 2.9.12    && < 2.10' 'lucid >=2.9.12'
-
-	default
 }
 
 src_configure() {

@@ -7,50 +7,18 @@
 	</maintainer>
 	<use>
 		<flag name="benchmarks">You can disable testing with benchmarks using `-f-benchmarks`.</flag>
-		<flag name="large-tuples">Generate instances for classes such as `NFDataX` and `BitPack` for tuples up to and including 62 elements - the GHC imposed maximum. This greatly increases compile times for `clash-prelude` and therefore mostly impacts the Clash developers themselves. Hence its default is set to disabled on development versions and enabled on releases.</flag>
-		<flag name="multiple-hidden">Allow multiple hidden clocks, resets, and enables to be used. This is an experimental feature, possibly triggering confusing error messages. By default, it is enabled on development versions of Clash and disabled on releases.</flag>
-		<flag name="strict-mapsignal">Use `seqX` in 'mapSignal#'. This can help to eliminate space leaks in long running simulations.</flag>
-		<flag name="super-strict">Use `deepseqX` (instead of `seqX`) in register-like constructs. This can help to eliminate space leaks when using lazy data structures in registers-like constructs. This potentially slows down Clash hardware simulation.</flag>
+		<flag name="large-tuples">Generate instances for classes such as `NFDataX` and `BitPack` for tuples
+up to and including 62 elements - the GHC imposed maximum. This greatly
+increases compile times for `clash-prelude`.</flag>
+		<flag name="multiple-hidden">Allow multiple hidden clocks, resets, and enables to be used. This is an
+experimental feature, possibly triggering confusing error messages. By
+default, it is enabled on development versions of Clash and disabled on
+releases.</flag>
+		<flag name="strict-mapsignal">Use `seqX` in &#39;mapSignal#&#39;. This can help to eliminate space leaks in long
+running simulations.</flag>
+		<flag name="super-strict">Use `deepseqX` (instead of `seqX`) in register-like constructs. This can
+help to eliminate space leaks when using lazy data structures in
+registers-like constructs. This potentially slows down Clash hardware
+simulation.</flag>
 	</use>
-	<longdescription>
-		Clash is a functional hardware description language that borrows both its
-		syntax and semantics from the functional programming language Haskell. The
-		Clash compiler transforms these high-level descriptions to low-level
-		synthesizable VHDL, Verilog, or SystemVerilog.
-		
-		Features of Clash:
-		
-		* Strongly typed, but with a very high degree of type inference, enabling both
-		safe and fast prototyping using concise descriptions.
-		
-		* Interactive REPL: load your designs in an interpreter and easily test all
-		your component without needing to setup a test bench.
-		
-		* Higher-order functions, with type inference, result in designs that are
-		fully parametric by default.
-		
-		* Synchronous sequential circuit design based on streams of values, called
-		@Signal@s, lead to natural descriptions of feedback loops.
-		
-		* Support for multiple clock domains, with type safe clock domain crossing.
-		
-		
-		This package provides:
-		
-		* Prelude library containing datatypes and functions for circuit design
-		
-		To use the library:
-		
-		* Import &quot;Clash.Prelude&quot;
-		
-		* Alternatively, if you want to explicitly route clock and reset ports,
-		for more straightforward multi-clock designs, you can import the
-		&quot;Clash.Explicit.Prelude&quot; module. Note that you should not import
-		&quot;Clash.Prelude&quot; and &quot;Clash.Explicit.Prelude&quot; at the same time as they
-		have overlapping definitions.
-		
-		A preliminary version of a tutorial can be found in &quot;Clash.Tutorial&quot;, for a
-		general overview of the library you should however check out &quot;Clash.Prelude&quot;.
-		Some circuit examples can be found in &quot;Clash.Examples&quot;.
-	</longdescription>
 </pkgmetadata>

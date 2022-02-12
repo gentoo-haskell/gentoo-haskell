@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,7 +11,9 @@ inherit haskell-cabal
 
 DESCRIPTION="GHC typechecker plugin for types of kind GHC.TypeLits.Nat"
 HOMEPAGE="https://www.clash-lang.org/"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+HACKAGE_REV="1"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
@@ -25,6 +27,18 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9 )
 "
+BDEPEND="app-text/dos2unix"
+
+src_prepare() {
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+
+	# Convert to unix line endings
+	dos2unix "${S}/${PN}.cabal" || die
+
+	# Apply patches *after* pulling the revised cabal
+	default
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

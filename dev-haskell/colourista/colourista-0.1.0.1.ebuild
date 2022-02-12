@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,5 +22,12 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?] <dev-haskell/ansi-terminal
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4
-	test? ( >=dev-haskell/hspec-2.7.1 <dev-haskell/hspec-2.8 )
+	test? ( >=dev-haskell/hspec-2.7.1 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec ^>= 2.7.1' 'hspec >= 2.7.1'
+}

@@ -1,16 +1,19 @@
-# hololeap <hololeap@protonmail.com> (2022-02-03)
-# Bug: https://github.com/purescript/spago/issues/848
-# Currently incompatible with modern dhall. Would require a downgrade for the
-# following:
-# dev-haskell/hnix-store-core
-# dev-haskell/hnix-store-remote
-# dev-haskell/algebraic-graphs
-# dev-haskell/hnix
-# dev-util/dhall-bash
-# dev-util/dhall-json
-# dev-util/dhall-nix
-# dev-lang/dhall
-dev-haskell/spago
+# hololeap <hololeap@protonmail.com> (2022-02-12)
+# Needs patching to build with current optparse-applicative
+dev-haskell/hi
+
+# hololeap <hololeap@protonmail.com> (2022-02-11)
+# Mask until >=dev-haskell/base16-bytestring-1.0.1.0 is unmasked
+>=dev-lang/dhall-1.40.2
+>=dev-util/dhall-docs-1.0.8
+
+# hololeap <hololeap@protonmail.com> (2022-02-10)
+# Mask protolude and reverse-dependencies.
+# Needs patching to build on >=base-4.15
+dev-haskell/protolude
+dev-haskell/purescript-ast
+dev-haskell/purescript-cst
+dev-lang/purescript
 
 # hololeap <hololeap@protonmail.com> (2022-01-24)
 # Needs update to build on ghc-9.0.2

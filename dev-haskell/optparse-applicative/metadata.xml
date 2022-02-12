@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="process">Depend on the process package for Bash autocompletion</flag>
-	</use>
 	<longdescription>
 		optparse-applicative is a haskell library for parsing options
 		on the command line, and providing a powerful applicative

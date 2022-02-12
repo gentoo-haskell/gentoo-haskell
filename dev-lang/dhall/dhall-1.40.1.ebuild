@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,8 +20,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+http +http-client-tls"
 
 PATCHES=(
+	"${FILESDIR}/${PN}-1.40.2-cabal-doctest.patch"
 	"${FILESDIR}/${PN}-1.40.1-disable-http-tests.patch"
-	"${FILESDIR}/${PN}-1.40.1-package-imports.patch"
 	"${FILESDIR}/${PN}-1.40.1-disable-buggy-tests.patch"
 )
 
@@ -72,6 +72,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/doctest-0.7.0 <dev-haskell/doctest-0.19
+		dev-haskell/cabal-doctest
 		<dev-haskell/foldl-1.5
 		>=dev-haskell/generic-random-1.3.0.0 <dev-haskell/generic-random-1.6
 		<dev-haskell/mockery-0.4
