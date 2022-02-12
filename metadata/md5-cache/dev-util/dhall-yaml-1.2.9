@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?] >=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?] >=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?] >=dev-haskell/hsyaml-0.2:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?] >=dev-haskell/hsyaml-aeson-0.2:=[profile?] <dev-haskell/hsyaml-aeson-0.3:=[profile?] >=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?] >=dev-haskell/prettyprinter-1.7.0:=[profile?] >=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?] >=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/dhall-1.31.0:=[profile?] <dev-lang/dhall-1.41:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-util/dhall-json-1.6.0:=[profile?] <dev-util/dhall-json-1.8:=[profile?] >=dev-haskell/cabal-2.2.0.1 test? ( <dev-haskell/tasty-1.5 <dev-haskell/tasty-expected-failure-0.13 >=dev-haskell/tasty-hunit-0.2 ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Convert between Dhall and YAML
+EAPI=8
+HOMEPAGE=https://dhall-lang.org/ https://hackage.haskell.org/package/dhall-yaml
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?] >=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?] >=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11:=[profile?] >=dev-haskell/hsyaml-0.2:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?] >=dev-haskell/hsyaml-aeson-0.2:=[profile?] <dev-haskell/hsyaml-aeson-0.3:=[profile?] >=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?] >=dev-haskell/prettyprinter-1.7.0:=[profile?] >=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?] >=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/dhall-1.31.0:=[profile?] <dev-lang/dhall-1.41:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-util/dhall-json-1.6.0:=[profile?] <dev-util/dhall-json-1.8:=[profile?]
+RESTRICT=!test? ( test )
+SLOT=0/1.2.9
+SRC_URI=https://hackage.haskell.org/package/dhall-yaml-1.2.9/dhall-yaml-1.2.9.tar.gz https://hackage.haskell.org/package/dhall-yaml-1.2.9/revision/2.cabal -> dhall-yaml-1.2.9.cabal
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=f3071d027fd4c1c72e552969052fc402

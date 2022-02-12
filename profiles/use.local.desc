@@ -36,7 +36,6 @@ dev-haskell/brick:demos - Build demonstration programs
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
 dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
 dev-haskell/btrfs:examples - Build examples
-dev-haskell/byline:examples - Build examples when building the library.
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/c2hs:regression - Enable regression suite build.
 dev-haskell/cabal-install:debug-conflict-sets - Add additional information to ConflictSets
@@ -59,7 +58,7 @@ dev-haskell/clash-ghc:ghc-paths - Locate the GHC core libraries using the `ghc-p
 dev-haskell/clash-lib:debug - Build a debug compiler
 dev-haskell/clash-lib:history - Emit rewrite history to disk
 dev-haskell/clash-prelude:benchmarks - You can disable testing with benchmarks using `-f-benchmarks`.
-dev-haskell/clash-prelude:large-tuples - Generate instances for classes such as `NFDataX` and `BitPack` for tuples up to and including 62 elements - the GHC imposed maximum. This greatly increases compile times for `clash-prelude` and therefore mostly impacts the Clash developers themselves. Hence its default is set to disabled on development versions and enabled on releases.
+dev-haskell/clash-prelude:large-tuples - Generate instances for classes such as `NFDataX` and `BitPack` for tuples up to and including 62 elements - the GHC imposed maximum. This greatly increases compile times for `clash-prelude`.
 dev-haskell/clash-prelude:multiple-hidden - Allow multiple hidden clocks, resets, and enables to be used. This is an experimental feature, possibly triggering confusing error messages. By default, it is enabled on development versions of Clash and disabled on releases.
 dev-haskell/clash-prelude:strict-mapsignal - Use `seqX` in 'mapSignal#'. This can help to eliminate space leaks in long running simulations.
 dev-haskell/clash-prelude:super-strict - Use `deepseqX` (instead of `seqX`) in register-like constructs. This can help to eliminate space leaks when using lazy data structures in registers-like constructs. This potentially slows down Clash hardware simulation.
@@ -255,7 +254,6 @@ dev-haskell/network-data:small-base - Build the split-up base package.
 dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optics-core:explicit-generic-labels - Require explicit GenericLabelOptics instances in order to use generics-based labels
-dev-haskell/optparse-applicative:process - Depend on the process package for Bash autocompletion
 dev-haskell/optparse-simple:build-example - Build the example executable
 dev-haskell/ormolu:executable - Install the ormolu executable
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
@@ -388,6 +386,8 @@ dev-haskell/thyme:lens - use the full lens package
 dev-haskell/thyme:show-internal - instance Show of internal representation
 dev-haskell/tls:compat - Accept SSLv2 client hello for beginning SSLv3 / TLS handshake
 dev-haskell/tls:network - Use the base network library
+dev-haskell/tomland:example-play-tomland - Build play-tomland executable
+dev-haskell/tomland:example-readme - Build example-tomland generator
 dev-haskell/transformers-base:orphaninstances - Build instances for orphan datatypes.
 dev-haskell/tz:template-haskell - Enable the use of and export Template Haskell functionality. (Might need to disable this for cross-compiling.)
 dev-haskell/unagi-chan:compare-benchmarks - compare benchmarks with Chan, TQueue, and (eventually) lockfree-queue?

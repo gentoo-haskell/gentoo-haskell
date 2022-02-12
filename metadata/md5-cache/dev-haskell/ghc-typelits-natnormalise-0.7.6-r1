@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/ghc-tcplugins-extra-0.3.1:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/tasty-0.10 >=dev-haskell/tasty-hunit-0.9 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=GHC typechecker plugin for types of kind GHC.TypeLits.Nat
 EAPI=8
@@ -10,6 +11,6 @@ LICENSE=BSD-2
 RDEPEND=>=dev-haskell/ghc-tcplugins-extra-0.3.1:=[profile?] >=dev-lang/ghc-8.4.3:=
 RESTRICT=!test? ( test )
 SLOT=0/0.7.6
-SRC_URI=https://hackage.haskell.org/package/ghc-typelits-natnormalise-0.7.6/ghc-typelits-natnormalise-0.7.6.tar.gz
+SRC_URI=https://hackage.haskell.org/package/ghc-typelits-natnormalise-0.7.6/ghc-typelits-natnormalise-0.7.6.tar.gz https://hackage.haskell.org/package/ghc-typelits-natnormalise-0.7.6/revision/1.cabal -> ghc-typelits-natnormalise-0.7.6-r1.cabal
 _eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
-_md5_=84eabf9a70279fdd80257cae4dc552d6
+_md5_=95a008a6ce0d322bfc226cbc2f70e2e2
