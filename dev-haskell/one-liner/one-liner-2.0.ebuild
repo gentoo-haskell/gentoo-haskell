@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/bifunctors-5.4:=[profile?] <dev-haskell/bifunctors-6.0:=[profile?]
 	>=dev-haskell/contravariant-1.4:=[profile?] <dev-haskell/contravariant-1.6:=[profile?]
