@@ -75,12 +75,6 @@ dev-haskell/odpic-raw
 >=dev-haskell/ghc-lib-parser-9.0
 >=dev-haskell/ghc-lib-parser-ex-9.0
 
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-27)
-# These are packages that cause some sort of conflict related to ghc-9. Please
-# try to gather all such issues in this section, and add notes as appropriate to
-# indicate the issue.
->=dev-haskell/cabal-3.4.0.0 # packages have <dev-haskell/cabal-3.1. ghc-9 bundles 3.4.0.0
-
 # Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
 # Due to the large number of affected packages, this newer semigroups will
 # remain masked for now.
