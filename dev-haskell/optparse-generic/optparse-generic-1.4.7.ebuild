@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="<dev-haskell/only-0.2:=[profile?]
 	>=dev-haskell/optparse-applicative-0.16.0.0:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
