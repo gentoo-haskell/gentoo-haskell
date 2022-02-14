@@ -13,7 +13,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{8..10} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
 inherit multilib multiprocessing pax-utils toolchain-funcs prefix
@@ -498,6 +498,8 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
 		eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
+		# Below patch should not be needed by ghc-9.2
+		eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
 		#needs a port?
 		#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
