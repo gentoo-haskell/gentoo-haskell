@@ -498,8 +498,13 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
 		eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
+
 		# Below patch should not be needed by ghc-9.2
 		eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
+
+		# Needed for testing with python-3.10
+		use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
+
 		#needs a port?
 		#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
