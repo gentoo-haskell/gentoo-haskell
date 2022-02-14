@@ -1747,8 +1747,8 @@ dev-haskell/singletons-base 3.0: A promoted and singled version of the base libr
 dev-haskell/singletons-th 3.0: A framework for generating singleton types
 dev-haskell/size-based 0.1.2.0: Sized functors, for size-based enumerations
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
-dev-haskell/skylighting 0.12.1: syntax highlighting library
-dev-haskell/skylighting-core 0.12.1: syntax highlighting library
+dev-haskell/skylighting 0.12.2: syntax highlighting library
+dev-haskell/skylighting-core 0.12.2: syntax highlighting library
 dev-haskell/slave-thread 1.1.0.1: A fundamental solution to ghost threads and silent exceptions
 dev-haskell/smallcheck 1.2.1: A property-based testing library
 dev-haskell/smtlib 1.1: A library for working with the SMTLIB format
