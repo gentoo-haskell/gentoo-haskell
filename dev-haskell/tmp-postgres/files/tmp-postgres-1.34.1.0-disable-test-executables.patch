@@ -1,0 +1,24 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+These executables seem to be only for testing and are unneeded.
+
+diff -urN tmp-postgres/tmp-postgres.cabal tmp-postgres-r1/tmp-postgres.cabal
+--- tmp-postgres/tmp-postgres.cabal	2022-02-15 12:36:02.567866594 -0700
++++ tmp-postgres-r1/tmp-postgres.cabal	2022-02-15 12:36:45.397866614 -0700
+@@ -129,6 +129,7 @@
+   location: https://github.com/jfischoff/tmp-postgres
+ 
+ executable soak-test
++  buildable: False
+   main-is: Main.hs
+   hs-source-dirs: resource-soak-test
+   default-language: Haskell2010
+@@ -158,6 +159,7 @@
+     , ViewPatterns
+ 
+ executable with-cache-loop
++  buildable: False
+   main-is: Main.hs
+   hs-source-dirs: profiling
+   default-language: Haskell2010
