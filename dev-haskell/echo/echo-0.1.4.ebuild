@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,6 +23,14 @@ RDEPEND=">=dev-lang/ghc-8.4.3:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	default
+
+	# Change example name to avoid name collisions
+	cabal_chdeps \
+		'executable password' 'executable haskell-echo-example'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

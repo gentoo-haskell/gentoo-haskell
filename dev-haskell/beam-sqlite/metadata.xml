@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Beam driver for the &lt;https://sqlite.org/ SQLite&gt; embedded database.
-		See &lt;https://haskell-beam.github.io/beam/user-guide/backends/beam-sqlite/ here&gt;
-		for more information
-	</longdescription>
 </pkgmetadata>

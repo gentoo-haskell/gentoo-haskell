@@ -1,9 +1,0 @@
---- beam-migrate-0.5.1.0/Database/Beam/Haskell/Syntax.hs
-+++ beam-migrate-0.5.1.0-new/Database/Beam/Haskell/Syntax.hs
-@@ -1038,5 +1038,3 @@
- instance Hashable (Hs.DerivStrategy ())
- instance Hashable (Hs.MaybePromotedName ())
- #endif
--instance Hashable a => Hashable (S.Set a) where
--  hashWithSalt s a = hashWithSalt s (S.toList a)
-
