@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,10 +17,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
-	>=dev-haskell/dlist-0.7.1.2:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
+	>=dev-haskell/dlist-0.7.1.2:=[profile?] <dev-haskell/dlist-1.1:=[profile?]
 	>=dev-haskell/free-4.12:=[profile?] <dev-haskell/free-5.2:=[profile?]
-	>=dev-haskell/hashable-1.2.4.0:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
+	>=dev-haskell/hashable-1.2.4.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/text-1.2.2.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-haskell/vector-sized-0.5:=[profile?] <dev-haskell/vector-sized-1.5:=[profile?]
+	>=dev-haskell/vector-sized-0.5:=[profile?] <dev-haskell/vector-sized-1.6:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
@@ -36,12 +36,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/tasty
 		dev-haskell/tasty-hunit )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		'dlist        >=0.7.1.2 && <0.9' 'dlist >=0.7.1.2'
-	default
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
