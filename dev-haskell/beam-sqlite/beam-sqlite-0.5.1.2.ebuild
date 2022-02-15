@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,13 +17,13 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
-	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
+RDEPEND=">=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
+	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/beam-core-0.9:=[profile?] <dev-haskell/beam-core-0.10:=[profile?]
 	>=dev-haskell/beam-migrate-0.5:=[profile?] <dev-haskell/beam-migrate-0.6:=[profile?]
-	>=dev-haskell/dlist-0.8:=[profile?]
+	>=dev-haskell/dlist-0.8:=[profile?] <dev-haskell/dlist-1.1:=[profile?]
 	>=dev-haskell/free-4.12:=[profile?] <dev-haskell/free-5.2:=[profile?]
-	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
+	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
@@ -39,12 +39,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-expected-failure
 		dev-haskell/tasty-hunit )
 "
-
-src_prepare() {
-	cabal_chdeps \
-		"dlist         >=0.8  && <0.9" "dlist >=0.8"
-	default
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
