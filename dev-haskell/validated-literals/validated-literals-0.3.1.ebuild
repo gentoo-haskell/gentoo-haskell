@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -10,14 +10,14 @@ inherit haskell-cabal
 
 DESCRIPTION="Compile-time checking for partial smart-constructors"
 HOMEPAGE="https://github.com/merijn/validated-literals"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/4.cabal -> ${PF}.cabal"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=
+RDEPEND=">=dev-haskell/th-compat-0.1.3:=[profile?] <dev-haskell/th-compat-0.2:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
@@ -25,11 +25,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-travis-0.2 <dev-haskell/tasty-travis-0.3 )
 "
-
-src_prepare() {
-	# pull revised cabal from upstream
-	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
-
-	# Apply patches *after* pulling the revised cabal
-	default
-}
