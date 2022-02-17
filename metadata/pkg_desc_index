@@ -633,8 +633,8 @@ dev-haskell/fuzzy 0.1.0.0: Filters a list based on a fuzzy string search
 dev-haskell/gamma 0.10.0.0: Gamma function and related functions
 dev-haskell/gargoyle 0.1.1.0: Automatically spin up and spin down local daemons
 dev-haskell/gargoyle-postgresql 0.2.0.1: Manage PostgreSQL servers with gargoyle
-dev-haskell/gargoyle-postgresql-connect 0.1.0.0: Connect to gargoyle-managed postgresql instances
-dev-haskell/gargoyle-postgresql-nix 0.3.0.0: Manage PostgreSQL servers with gargoyle and nix
+dev-haskell/gargoyle-postgresql-connect 0.1.0.0-r1: Connect to gargoyle-managed postgresql instances
+dev-haskell/gargoyle-postgresql-nix 0.3.0.0-r1: Manage PostgreSQL servers with gargoyle and nix
 dev-haskell/gasp 1.2.0.0: A framework of algebraic classes
 dev-haskell/gauge 0.2.5: small framework for performance measurement and analysis
 dev-haskell/gd 3000.7.3: A Haskell binding to a subset of the GD graphics library

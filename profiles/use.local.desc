@@ -110,7 +110,7 @@ dev-haskell/fourmolu:executable - Build the fourmolu executable
 dev-haskell/freer-effects:pedantic - Pass additional warning flags and -Werror to GHC.
 dev-haskell/freer-effects:test-hlint - Enable test suite that checks sources using HLint.
 dev-haskell/gargoyle-postgresql:executables - Install executables
-dev-haskell/gargoyle-postgresql-nix:executables - Install executables
+dev-haskell/gargoyle-postgresql-nix:executable - Install executables
 dev-haskell/gauge:analysis - Build with statistical analysis support
 dev-haskell/ghc-check:package-abis - record package abis at compile time for improved precision (requires compile-time TH)
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
