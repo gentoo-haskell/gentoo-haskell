@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="executables">Install executables</flag>
+		<flag name="executable">Install executables</flag>
 	</use>
 </pkgmetadata>
