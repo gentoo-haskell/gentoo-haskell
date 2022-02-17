@@ -21,6 +21,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug portable"
 
+PATCHES=( "${FILESDIR}/${PN}-1.0.4.2-random-1_2-fix.patch" )
+
 # Fixed in next release: https://github.com/snapframework/snap-core/commit/49a8090d7834a0ef9b438048e96be36e55b2fbf5
 RESTRICT=test # test relied on headers ordering
 
