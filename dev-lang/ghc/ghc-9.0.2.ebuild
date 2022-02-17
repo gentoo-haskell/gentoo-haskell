@@ -502,6 +502,9 @@ src_prepare() {
 		# Below patch should not be needed by ghc-9.2
 		eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
 
+		# ModUnusable pretty-printing should include the reason
+		eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
+
 		# Needed for testing with python-3.10
 		use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
 
