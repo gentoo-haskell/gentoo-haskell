@@ -66,7 +66,8 @@ src_prepare() {
 		'QuickCheck                 >= 2.4.2    && < 2.14' 'QuickCheck >= 2.4.2' \
 		'dlist                     >= 0.5      && < 0.9' 'dlist >= 0.5' \
 		'aeson                     >= 0.6      && < 1.5' 'aeson >= 0.6' \
-		'lens                      >= 3.7.6    && < 4.20' 'lens                      >= 3.7.6'
+		'lens                      >= 3.7.6    && < 4.20' 'lens                      >= 3.7.6' \
+		'base                      >= 4        && < 4.15' 'base >=4'
 }
 
 src_configure() {
