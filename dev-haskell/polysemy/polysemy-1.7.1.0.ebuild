@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,7 +16,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="+error-messages"
 
 RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
 	>=dev-haskell/first-class-families-0.5.0.0:=[profile?] <dev-haskell/first-class-families-0.9:=[profile?]
@@ -39,6 +38,5 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flags=-dump-core \
-		$(cabal_flag error-messages error-messages)
+		--flag=-dump-core
 }
