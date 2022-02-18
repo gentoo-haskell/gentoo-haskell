@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="hls_plugins_alternate-number-format">Enable Alternate Number Format plugin</flag>
 		<flag name="hls_plugins_call-hierarchy">Enable call hierarchy plugin</flag>
 		<flag name="hls_plugins_class">Enable class plugin</flag>
 		<flag name="hls_plugins_eval">Enable eval plugin</flag>
@@ -13,9 +14,11 @@
 		<flag name="hls_plugins_import-lens">Enable importLens plugin</flag>
 		<flag name="hls_plugins_module-name">Enable moduleName plugin</flag>
 		<flag name="hls_plugins_pragmas">Enable pragmas plugin</flag>
+		<flag name="hls_plugins_qualify-imported-names">Enable qualifyImportedNames plugin</flag>
 		<flag name="hls_plugins_refine-imports">Enable refineImports plugin</flag>
 		<flag name="hls_plugins_rename">Enable rename plugin</flag>
 		<flag name="hls_plugins_retrie">Enable retrie plugin</flag>
+		<flag name="hls_plugins_selection-range">Enable selectionRange plugin</flag>
 		<flag name="hls_plugins_splice">Enable splice plugin</flag>
 		<flag name="hls_plugins_tactics">Enable tactics plugin</flag>
 		<flag name="hls_formatters_brittany">Enable brittany plugin</flag>
