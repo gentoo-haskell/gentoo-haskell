@@ -1,6 +1,8 @@
 # hololeap <hololeap@gmail.com> (2021-01-30)
 # Plugins for dev-util/haskell-language-server
+# (Updated 2022-02-10)
 
+alternate-number-format - Enable Alternate Number Format plugin
 class - Enable class plugin
 eval - Enable eval plugin
 haddock-comments - Enable haddockComments plugin
@@ -8,6 +10,8 @@ hlint - Enable hlint plugin
 import-lens - Enable importLens plugin
 module-name - Enable moduleName plugin
 pragmas - Enable pragmas plugin
+qualify-imported-names - Enable qualifyImportedNames plugin
 retrie - Enable retrie plugin
+selection-range - Enable selectionRange plugin
 splice - Enable splice plugin
 tactics - Enable tactics plugin
