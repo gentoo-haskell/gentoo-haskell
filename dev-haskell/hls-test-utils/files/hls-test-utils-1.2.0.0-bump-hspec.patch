@@ -1,0 +1,40 @@
+From: hololeap <hololeap@users.noreply.github.com>
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+Bug: https://github.com/haskell/haskell-language-server/pull/2721
+
+Remove unneeded `getHspecFormattedConfig` holding back hspec bump
+
+diff -urN hls-test-utils-1.2.0.0/src/Test/Hls/Util.hs hls-test-utils-1.2.0.0-r1/src/Test/Hls/Util.hs
+--- hls-test-utils-1.2.0.0/src/Test/Hls/Util.hs	2001-09-08 19:46:40.000000000 -0600
++++ hls-test-utils-1.2.0.0-r1/src/Test/Hls/Util.hs	2022-02-18 09:12:17.246427806 -0700
+@@ -18,7 +18,6 @@
+     , flushStackEnvironment
+     , fromAction
+     , fromCommand
+-    , getHspecFormattedConfig
+     , ghcVersion, GhcVersion(..)
+     , hostOS, OS(..)
+     , matchesCurrentEnv, EnvSpec(..)
+@@ -168,22 +167,6 @@
+ 
+ -- ---------------------------------------------------------------------
+ 
+-getHspecFormattedConfig :: String -> IO Config
+-getHspecFormattedConfig name = do
+-  -- https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables
+-  isCI <- isJust <$> lookupEnv "CI"
+-
+-  -- Only use the xml formatter on CI since it hides console output
+-  if isCI
+-    then do
+-      let subdir = "test-results" </> name
+-      createDirectoryIfMissing True subdir
+-
+-      return $ defaultConfig { configFormatter = Just xmlFormatter
+-                             , configOutputFile = Right $ subdir </> "results.xml"
+-                             }
+-    else return defaultConfig
+-
+ -- | A Hspec formatter for CircleCI.
+ -- Originally from https://github.com/LeastAuthority/hspec-jenkins
+ xmlFormatter :: Formatter
