@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
+PATCHES=( "${FILESDIR}/${PN}-0.3.1.0-add-examples-flag.patch" )
+
 RDEPEND=">=dev-haskell/async-2:=[profile?] <dev-haskell/async-3:=[profile?]
 	>=dev-haskell/data-default-0.2:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/reflex-0.7.1:=[profile?] <dev-haskell/reflex-0.9:=[profile?]
@@ -33,7 +35,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/primitive
 		dev-haskell/ref-tf )
 "
-PATCHES=( "${FILESDIR}/${PN}-0.3.1.0-add-examples-flag.patch" )
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >=4.12 && <4.15' 'base >=4.12'
+}
 
 src_configure() {
 	cabal_src_configure \

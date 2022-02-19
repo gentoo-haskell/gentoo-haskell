@@ -37,7 +37,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/aeson
 		>=dev-haskell/entropy-0.4.1.3 <dev-haskell/entropy-0.5
-		>=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.9
+		>=dev-haskell/hspec-2.6.0
+		>=dev-haskell/hspec-discover-2.6.0
 		dev-haskell/http-api-data
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7
 		dev-haskell/markdown-unlit
@@ -49,3 +50,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/wai
 		dev-haskell/warp )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hspec             >= 2.6.0    && < 2.9' 'hspec >=2.6.0' \
+		'hspec-discover:hspec-discover >= 2.6.0 && < 2.9' 'hspec-discover:hspec-discover >=2.6.0'
+}

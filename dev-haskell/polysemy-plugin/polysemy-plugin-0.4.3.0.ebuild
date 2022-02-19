@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,9 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/ghc-tcplugins-extra-0.3:=[profile?] <dev-haskell/ghc-tcplugins-extra-0.5:=[profile?]
-	>=dev-haskell/polysemy-1.3:=[profile?]
+	>=dev-haskell/polysemy-1.7:=[profile?]
 	>=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.6.5:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
@@ -28,7 +28,6 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.16.0.1 <dev-haskell/doctest-0.19
 		>=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-3
 		>=dev-haskell/inspection-testing-0.4.2 <dev-haskell/inspection-testing-0.5
-		>=dev-haskell/polysemy-1.3.0.0
 		>=dev-haskell/should-not-typecheck-2.1.0 <dev-haskell/should-not-typecheck-3 )
 "
 

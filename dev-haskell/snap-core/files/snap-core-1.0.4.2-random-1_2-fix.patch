@@ -1,0 +1,17 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Fix for random-1.2
+
+diff -urN snap-core-1.0.4.2/test/Snap/Util/GZip/Tests.hs snap-core-1.0.4.2-r1/test/Snap/Util/GZip/Tests.hs
+--- snap-core-1.0.4.2/test/Snap/Util/GZip/Tests.hs	2001-09-08 19:46:40.000000000 -0600
++++ snap-core-1.0.4.2-r1/test/Snap/Util/GZip/Tests.hs	2022-02-16 20:28:34.767922235 -0700
+@@ -23,7 +23,7 @@
+ import           Snap.Test.Common                     (coverTypeableInstance, expectException, expectExceptionH, liftQ)
+ import           Snap.Util.GZip                       (BadAcceptEncodingException, noCompression, withCompression)
+ import qualified System.IO.Streams                    as Streams
+-import           System.Random                        (Random (randomIO))
++import           System.Random                        (randomIO)
+ import           Test.Framework                       (Test)
+ import           Test.Framework.Providers.HUnit       (testCase)
+ import           Test.Framework.Providers.QuickCheck2 (testProperty)
