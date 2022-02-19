@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/prettyprinter-1.7.0:=[profile?] >=dev-haskell/prettyprinter-ansi-terminal-1.1.2:=[profile?] >=dev-lang/ghc-8.4.3:= examples? ( dev-haskell/aeson:=[profile?] ) executable? ( dev-haskell/optparse-applicative:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 >=dev-haskell/cabal-doctest-1.0.2 test? ( >=dev-haskell/doctest-0.13 dev-haskell/glob dev-haskell/quickcheck ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=pretty printer for data types with a 'Show' instance
+EAPI=8
+HOMEPAGE=https://github.com/cdepillabout/pretty-simple
+INHERIT=haskell-cabal
+IUSE=examples executable doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/prettyprinter-1.7.0:=[profile?] >=dev-haskell/prettyprinter-ansi-terminal-1.1.2:=[profile?] >=dev-lang/ghc-8.4.3:= examples? ( dev-haskell/aeson:=[profile?] ) executable? ( dev-haskell/optparse-applicative:=[profile?] )
+RESTRICT=!test? ( test )
+SLOT=0/4.0.0.0
+SRC_URI=https://hackage.haskell.org/package/pretty-simple-4.0.0.0/pretty-simple-4.0.0.0.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=1bc67afe7100e22c0c6f5ec03356c2c5

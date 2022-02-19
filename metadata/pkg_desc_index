@@ -130,7 +130,7 @@ dev-haskell/barbies 2.0.3.0: Classes for working with types that can change clot
 dev-haskell/base-compat 0.10.1 0.10.5 0.11.2: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.11.2: base-compat with extra batteries
 dev-haskell/base-noprelude 4.13.0.0: "base" package sans "Prelude" module
-dev-haskell/base-orphans 0.8.4: Backwards-compatible orphan instances for base
+dev-haskell/base-orphans 0.8.6: Backwards-compatible orphan instances for base
 dev-haskell/base-prelude 1.3: The most complete prelude formed solely from the \
 dev-haskell/base-unicode-symbols 0.2.4.2: Unicode alternatives for common functions and operators
 dev-haskell/base16-bytestring 0.1.1.7 1.0.1.0: RFC 4648-compliant Base16 encodings for ByteStrings
@@ -158,7 +158,7 @@ dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of
 dev-haskell/binary-conduit 1.3.1: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
 dev-haskell/binary-instances 1.0.2: Orphan instances for binary
-dev-haskell/binary-orphans 0.1.8.0-r3 1.0.1: Orphan instances for binary
+dev-haskell/binary-orphans 1.0.2: Compatibility package for binary; provides instances
 dev-haskell/binary-parser 0.5.7: A highly-efficient but limited parser API specialised for bytestrings
 dev-haskell/binary-parsers 0.2.4.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
@@ -1211,7 +1211,7 @@ dev-haskell/lua-arbitrary 1.0.0: Arbitrary instances for Lua types
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
 dev-haskell/lucid 2.11.0: Clear to write, read and edit DSL for HTML
 dev-haskell/lucid-svg 0.7.1: DSL for SVG using lucid for HTML
-dev-haskell/lukko 0.1.1.2: File locking
+dev-haskell/lukko 0.1.1.3: File locking
 dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haskell programs
 dev-haskell/lz4 0.2.3.1: LZ4 compression for ByteStrings
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
@@ -1388,7 +1388,7 @@ dev-haskell/oeis 0.3.10-r1: Interface to the Online Encyclopedia of Integer Sequ
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/one-liner 1.0 2.0: Constraint-based generics
-dev-haskell/onetuple 0.2.2.1: Singleton Tuple
+dev-haskell/onetuple 0.3.1: Singleton Tuple
 dev-haskell/only 0.1: The 1-tuple type or single-value "collection"
 dev-haskell/oo-prototypes 0.1.0.0-r1: Support for OO-like prototypes
 dev-haskell/opaleye 0.7.5.0: An SQL-generating DSL targeting PostgreSQL
@@ -1514,7 +1514,7 @@ dev-haskell/presburger 1.3.1-r1: A decision procedure for quantifier-free linear
 dev-haskell/pretty-hex 1.1: A library for hex dumps of ByteStrings
 dev-haskell/pretty-ncols 0.1-r2: A implementation of multi-column layout w/ Text.PrettyPrint
 dev-haskell/pretty-show 1.10: Tools for working with derived 'Show' instances and generic inspection of values
-dev-haskell/pretty-simple 3.2.2.0 4.0.0.0: pretty printer for data types with a 'Show' instance
+dev-haskell/pretty-simple 4.0.0.0-r1: pretty printer for data types with a 'Show' instance
 dev-haskell/pretty-terminal 0.1.0.0-r1: Styling and coloring terminal output with ANSI escape sequences
 dev-haskell/pretty-tree 0.1.0.0: Pretty-print trees
 dev-haskell/prettyclass 1.0.0.0-r1: Pretty printing class similar to Show
@@ -1544,7 +1544,7 @@ dev-haskell/protocol-buffers-descriptor 2.4.13 2.4.17: Haskell implementation of
 dev-haskell/protolude 0.3.0: A small prelude
 dev-haskell/pseudomacros 0.0.2: cpp-style built-in macros using Template Haskell
 dev-haskell/psqueue 1.1.0.1: Priority Search Queue
-dev-haskell/psqueues 0.2.7.2: Pure priority search queues
+dev-haskell/psqueues 0.2.7.3: Pure priority search queues
 dev-haskell/publicsuffixlist 0.1: Is a given string a domain suffix?
 dev-haskell/pulseaudio 0.0.2.1: A low-level (incomplete) wrapper around the pulseaudio client asynchronous api
 dev-haskell/punycode 2.0: Encode unicode strings to ascii forms according to RFC 3492
@@ -1924,7 +1924,7 @@ dev-haskell/text-metrics 0.3.0: Calculate various string metrics efficiently
 dev-haskell/text-postgresql 0.0.3.1: Parser and Printer of PostgreSQL extended types
 dev-haskell/text-printer 0.5.0.1: Abstract interface for text builders/printers
 dev-haskell/text-region 0.3.1.0: Marking text regions
-dev-haskell/text-short 0.1.3: Memory-efficient representation of Unicode text strings
+dev-haskell/text-short 0.1.5: Memory-efficient representation of Unicode text strings
 dev-haskell/text-show 3.8.5 3.9: Efficient conversion of values into Text
 dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF encodings. (deprecated)
 dev-haskell/text-zipper 0.11: A text editor zipper library

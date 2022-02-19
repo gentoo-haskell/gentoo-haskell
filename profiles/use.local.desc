@@ -231,7 +231,6 @@ dev-haskell/lua:apicheck - Compile Lua with -DLUA_USE_APICHECK.
 dev-haskell/lua:export-dynamic - Add all symbols to dynamic symbol table; disabling this will make it possible to create fully static binaries, but renders loading of dynamic C libraries impossible.
 dev-haskell/lua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but use hard coded values instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those versions do not expose the necessary information in the @lauxlib.h@ header file. Setting this flag should usually be unproblematic, except if the used Lua version has been patched heavily.
 dev-haskell/lua:lua-32bits - Compile Lua with -DLUA_32BITS
-dev-haskell/lukko:ofd-locking - Enable open file descriptor locking. Available on Linux (kernel 3.15, released Jun 8, 2014).
 dev-haskell/markdown-unlit:executable - Build executable
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/megaparsec-tests:dev - Turn on development settings.
@@ -288,8 +287,8 @@ dev-haskell/postgresql-typed:scientific - Support decoding numeric via scientifi
 dev-haskell/postgresql-typed:text - Support Text string values via text (implied by binary).
 dev-haskell/postgresql-typed:tls - Enable TLS (SSL) support in PostgreSQL server connections.
 dev-haskell/postgresql-typed:uuid - Support the UUID type via uuid (implied by binary).
-dev-haskell/pretty-simple:buildexample - Build a small example program showing how to use the pPrint function
-dev-haskell/pretty-simple:buildexe - Build a small command line program that pretty-prints anything from stdin.
+dev-haskell/pretty-simple:examples - Build pretty-simple-example and pretty-simple-json-example
+dev-haskell/pretty-simple:executable - Build pretty-simple executable (pretty-print from stdin)
 dev-haskell/profiteur:embed-data-files - Embed data files into the executable (needed for ghcjs packaging)
 dev-haskell/protolude:dev - Build development tools
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
@@ -376,7 +375,7 @@ dev-haskell/system-uuid:cli - Enable command line tool
 dev-haskell/tasty-discover:executable - Build the tasty-discover executable
 dev-haskell/tasty-golden:build-example - 
 dev-haskell/texmath:executable - Compile test executable.
-dev-haskell/text-short:asserts - Enable runtime-checks via 'assert'
+dev-haskell/text-short:asserts - Enable runtime-checks via @assert@
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
 dev-haskell/these:assoc - Build with assoc dependency
 dev-haskell/threepenny-gui:buildexamples - Build example executables.
