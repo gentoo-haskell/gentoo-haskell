@@ -1144,7 +1144,7 @@ dev-haskell/language-lua 0.11.0.1: Lua parser and pretty-printer
 dev-haskell/language-python 0.5.8: Parsing and pretty printing of Python code
 dev-haskell/largeword 1.2.5: Provides a way of producing large WordN
 dev-haskell/latex 0.1.0.4: Parse, format and process LaTeX files
-dev-haskell/lattices 2.0.2 2.0.2-r1: Fine-grained library for constructing and manipulating lattices
+dev-haskell/lattices 2.0.3: Fine-grained library for constructing and manipulating lattices
 dev-haskell/lazy-csv 0.5.1-r1: Efficient lazy parsers for CSV (comma-separated values)
 dev-haskell/lazy-pbkdf2 3.1.1: Lazy PBKDF2 generator
 dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskell programs
@@ -1236,7 +1236,7 @@ dev-haskell/megaparsec 7.0.5 8.0.0 9.0.1: Monadic parser combinators
 dev-haskell/megaparsec-tests 8.0.0-r1 9.0.1: Test utilities and the test suite of Megaparsec
 dev-haskell/meldable-heap 2.0.3-r1: Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues
 dev-haskell/membership 0.0.1: Indices for type level lists
-dev-haskell/memoize 0.8.1: A memoization library
+dev-haskell/memoize 1.1.1: A memoization library
 dev-haskell/memory 0.14.18 0.15.0: memory and related abstraction stuff
 dev-haskell/memotrie 0.6.10: Trie-based memo functions
 dev-haskell/mersenne-random 1.0.0.1-r2: Generate high quality pseudorandom numbers using a SIMD Fast Mersenne Twister
