@@ -12,4 +12,4 @@ RESTRICT=test !test? ( test )
 SLOT=0/1.0.4.2
 SRC_URI=https://hackage.haskell.org/package/snap-core-1.0.4.2/snap-core-1.0.4.2.tar.gz https://hackage.haskell.org/package/snap-core-1.0.4.2/revision/1.cabal -> snap-core-1.0.4.2-r1.cabal
 _eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
-_md5_=fe9447b7c16d2649c3bde3432f543f33
+_md5_=2464e599c150566ee521641cc1dfc529

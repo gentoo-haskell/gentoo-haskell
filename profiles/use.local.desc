@@ -279,7 +279,6 @@ dev-haskell/pointed:stm - You can disable the use of the `stm` package using `-f
 dev-haskell/pointed:tagged - You can disable the use of the `tagged` package using `-f-tagged`.
 dev-haskell/pointed:transformers - You can disable the use of the `transformers` package using `-f-transformers`.
 dev-haskell/pointed:unordered-containers - You can disable the use of the `unordered-containers` package using `-f-unordered-containers`.
-dev-haskell/polysemy:error-messages - Provide custom error messages
 dev-haskell/postgresql-typed:aeson - Support decoding json via aeson.
 dev-haskell/postgresql-typed:binary - Use binary protocol encoding via postgresql-binary. This may put additional restrictions on supported PostgreSQL server versions.
 dev-haskell/postgresql-typed:hdbc - Provide an HDBC driver backend using the raw PostgreSQL protocol.
