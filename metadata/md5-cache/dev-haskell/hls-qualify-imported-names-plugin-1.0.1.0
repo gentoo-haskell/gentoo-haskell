@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=dev-haskell/aeson:=[profile?] dev-haskell/dlist:=[profile?] >=dev-haskell/ghcide-1.6:=[profile?] <dev-haskell/ghcide-1.7:=[profile?] dev-haskell/hls-graph:=[profile?] >=dev-haskell/hls-plugin-api-1.3:=[profile?] <dev-haskell/hls-plugin-api-1.4:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.6.3:= >=dev-haskell/cabal-2.4.0.1 test? ( >=dev-haskell/hls-test-utils-1.2 <dev-haskell/hls-test-utils-1.3 ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=A Haskell Language Server plugin that qualifies imported names
+EAPI=8
+HOMEPAGE=https://hackage.haskell.org/package/hls-qualify-imported-names-plugin
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/dlist:=[profile?] >=dev-haskell/ghcide-1.6:=[profile?] <dev-haskell/ghcide-1.7:=[profile?] dev-haskell/hls-graph:=[profile?] >=dev-haskell/hls-plugin-api-1.3:=[profile?] <dev-haskell/hls-plugin-api-1.4:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/text:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.6.3:=
+RESTRICT=!test? ( test )
+SLOT=0/1.0.1.0
+SRC_URI=https://hackage.haskell.org/package/hls-qualify-imported-names-plugin-1.0.1.0/hls-qualify-imported-names-plugin-1.0.1.0.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=379285e2e28b63cbc2ac0390f3c81c81

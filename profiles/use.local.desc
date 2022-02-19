@@ -174,6 +174,7 @@ dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hls-graph:embed-files - Embed data files into the shake library
+dev-haskell/hls-graph:stm-stats - Collect STM transaction stats
 dev-haskell/hnix:executable - Build the hnix executable
 dev-haskell/hnix:optimize - Enable all optimization flags
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
@@ -244,7 +245,7 @@ dev-haskell/modern-uri:dev - Turn on development settings.
 dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/monky:ibus - enable ibus example
-dev-haskell/multistate:build-example - Build the MultiState-example example program
+dev-haskell/multistate:examples - Build the multistate-example executable
 dev-haskell/nats:binary - You can disable the use of the `binary` package using `-f-binary`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Binary`.
 dev-haskell/nats:hashable - You can disable the use of the `hashable` package using `-f-hashable`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Hashable`.
 dev-haskell/nats:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Lift`.
@@ -449,6 +450,7 @@ dev-util/haskell-language-server:hls_formatters_floskell - Enable floskell plugi
 dev-util/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu plugin
 dev-util/haskell-language-server:hls_formatters_ormolu - Enable ormolu plugin
 dev-util/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell plugin
+dev-util/haskell-language-server:hls_plugins_alternate-number-format - Enable Alternate Number Format plugin
 dev-util/haskell-language-server:hls_plugins_call-hierarchy - Enable call hierarchy plugin
 dev-util/haskell-language-server:hls_plugins_class - Enable class plugin
 dev-util/haskell-language-server:hls_plugins_eval - Enable eval plugin
@@ -456,9 +458,11 @@ dev-util/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
 dev-util/haskell-language-server:hls_plugins_import-lens - Enable importLens plugin
 dev-util/haskell-language-server:hls_plugins_module-name - Enable moduleName plugin
 dev-util/haskell-language-server:hls_plugins_pragmas - Enable pragmas plugin
+dev-util/haskell-language-server:hls_plugins_qualify-imported-names - Enable qualifyImportedNames plugin
 dev-util/haskell-language-server:hls_plugins_refine-imports - Enable refineImports plugin
 dev-util/haskell-language-server:hls_plugins_rename - Enable rename plugin
 dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
+dev-util/haskell-language-server:hls_plugins_selection-range - Enable selectionRange plugin
 dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
 dev-util/haskell-language-server:hls_plugins_tactics - Enable tactics plugin
 dev-util/hsdev:hlint - build with hlint to support linting

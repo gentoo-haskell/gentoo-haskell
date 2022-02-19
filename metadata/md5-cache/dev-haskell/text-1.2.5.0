@@ -5,10 +5,11 @@ EAPI=8
 HOMEPAGE=https://github.com/haskell/text
 INHERIT=haskell-cabal
 IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
 LICENSE=BSD-2
 RDEPEND=>=dev-lang/ghc-8.4.3:=
 RESTRICT=test
 SLOT=0/1.2.5.0
 SRC_URI=https://hackage.haskell.org/package/text-1.2.5.0/text-1.2.5.0.tar.gz
 _eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
-_md5_=45ca4a970183715646da9304430e79c0
+_md5_=ba9b9b1cf4a1c25e703fd9d7e4b14c0d
