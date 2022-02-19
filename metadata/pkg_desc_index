@@ -6,7 +6,7 @@ app-admin/propellor 5.12: property-based host configuration management in haskel
 app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/idris-mode 0.9.18: Idris syntax highlighting and (eventually) other things for emacs
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
-app-portage/hackport 0.6.7 0.7 9999: Hackage and Portage integration tool
+app-portage/hackport 0.6.7 0.7 0.7.1.1 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-text/pandoc 2.16.2: Conversion between markup formats
 app-text/pdfsplit 0.0.1-r1: split two-column PDFs, so there is one column per page
