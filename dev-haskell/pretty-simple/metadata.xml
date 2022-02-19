@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="buildexe">Build a small command line program that pretty-prints anything from stdin.</flag>
-		<flag name="buildexample">Build a small example program showing how to use the pPrint function</flag>
+		<flag name="examples">Build pretty-simple-example and pretty-simple-json-example</flag>
+		<flag name="executable">Build pretty-simple executable (pretty-print from stdin)</flag>
 	</use>
 </pkgmetadata>
