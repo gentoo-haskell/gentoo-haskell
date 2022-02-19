@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-haskell/async-2.0:=
-	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-1:=
+	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-1.1:=
 	>=dev-haskell/base64-bytestring-1.0:=
 	>=dev-haskell/cryptohash-sha256-0.11:=
 	dev-haskell/ed25519:=
