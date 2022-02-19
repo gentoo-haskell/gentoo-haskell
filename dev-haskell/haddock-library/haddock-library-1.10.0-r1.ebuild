@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-2.4.4
 		>=dev-haskell/hspec-discover-2.4.4
 		>=dev-haskell/optparse-applicative-0.15
-		>=dev-haskell/tree-diff-0.1 <dev-haskell/tree-diff-0.2
+		>=dev-haskell/tree-diff-0.1
 		>=dev-haskell/base-compat-0.11.0 <dev-haskell/base-compat-0.12
 		>=dev-haskell/quickcheck-2.13.2 <dev-haskell/quickcheck-2.15 )
 "
@@ -46,5 +46,6 @@ src_prepare() {
 	cabal_chdeps \
 		'hspec                          >= 2.4.4    && < 2.8' 'hspec >=2.4.4' \
 		'hspec-discover:hspec-discover  >= 2.4.4    && < 2.8' 'hspec-discover:hspec-discover >= 2.4.4' \
-		'optparse-applicative  ^>= 0.15' 'optparse-applicative >= 0.15'
+		'optparse-applicative  ^>= 0.15' 'optparse-applicative >= 0.15' \
+		'tree-diff             ^>= 0.1' 'tree-diff >=0.1'
 }

@@ -7,23 +7,24 @@ EAPI=8
 #hackport: flags: -disable-git-info,-hide-dependency-versions,-integration-tests,-static,-supported-build,-developer-mode
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite
-inherit haskell-cabal git-r3
+inherit haskell-cabal
 RESTRICT="test" # Requires internet access
 
 DESCRIPTION="The Haskell Tool Stack"
 HOMEPAGE="https://haskellstack.org"
-#SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 # hololeap <hololeap@protonmail.com> (2022-01-25)
 # Use patch for now: https://github.com/commercialhaskell/stack/pull/5559
 # Rebased commit 336ab51 from brandon-leapyear/chinn/cabal onto aac15d0 from origin/master
-EGIT_REPO_URI="https://github.com/hololeap/stack"
-EGIT_BRANCH="master"
-EGIT_COMMIT="9a0683679ad49982fcfb036f87c0f99a78916d2a"
+REPO_URI="https://github.com/hololeap/stack"
+COMMIT="9a0683679ad49982fcfb036f87c0f99a78916d2a"
+BRANCH="master"
+SRC_URI="${REPO_URI}/archive/${COMMIT}.tar.gz -> ${PN}-${COMMIT}.tar.gz"
+S="${WORKDIR}/${PN}-${BRANCH}"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/annotated-wl-pprint:=[profile?]

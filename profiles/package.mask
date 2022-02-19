@@ -1,3 +1,17 @@
+# hololeap <hololeap@protonmail.com> (2022-02-19)
+# web-routes-th needs patching to build with template-haskell-2.17. Mask along
+# with all revdeps
+dev-haskell/web-routes-th
+dev-haskell/clckwrks
+dev-haskell/clckwrks-cli
+dev-haskell/clckwrks-plugin-media
+dev-haskell/clckwrks-plugin-page
+dev-haskell/happstack-authenticate
+dev-haskell/userid
+dev-haskell/sr-extra
+dev-haskell/ipprint
+dev-haskell/ghci-pretty
+
 # hololeap <hololeap@protonmail.com> (2022-02-16)
 # Needs patching to build with ghc-9.0.2
 dev-haskell/beam-automigrate
@@ -5,11 +19,6 @@ dev-haskell/beam-automigrate
 # hololeap <hololeap@protonmail.com> (2022-02-12)
 # Needs patching to build with current optparse-applicative
 dev-haskell/hi
-
-# hololeap <hololeap@protonmail.com> (2022-02-11)
-# Mask until >=dev-haskell/base16-bytestring-1.0.1.0 is unmasked
->=dev-lang/dhall-1.40.2
->=dev-util/dhall-docs-1.0.8
 
 # hololeap <hololeap@protonmail.com> (2022-02-10)
 # Mask protolude and reverse-dependencies.
@@ -67,42 +76,6 @@ dev-haskell/odpic-raw
 # ~dev-haskell/language-javascript-0.7.0.0
 # Mask any versions higher than that until purescript bumps its dependencies.
 >=dev-haskell/language-javascript-0.7.0.1
-
-# Jack Todaro <solpeth@posteo.org> (2021-05-06)
-# Causes upgrade conflict warning during world updates.
-# Mask until the rest of the ecosystem catches up.
->=dev-haskell/hlint-3.3
->=dev-haskell/ghc-lib-parser-9.0
->=dev-haskell/ghc-lib-parser-ex-9.0
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2021-02-27)
-# These are packages that cause some sort of conflict related to ghc-9. Please
-# try to gather all such issues in this section, and add notes as appropriate to
-# indicate the issue.
->=dev-haskell/cabal-3.4.0.0 # packages have <dev-haskell/cabal-3.1. ghc-9 bundles 3.4.0.0
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05)
-# Due to the large number of affected packages, this newer semigroups will
-# remain masked for now.
->=dev-haskell/semigroups-0.19
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-01-05))
-# There are quite a few packages that have not updated their
-# optparse-applicative upperbound yet, including executables such as idris,
-# turtle, and  hsdev. In order to keep these available, the newer
-# optparse-applicative and its dependencies are being masked.
->=dev-haskell/optparse-applicative-0.16
-
-# Wolfgang E. Sanyer <WolfgangESanyer@gmail.com> (2020-12-22)
-# There are a large number of packages that are not ready for this upgrade yet.
-# Until more of the reverse-dependencies update to the newer version, this will
-# remain masked
->=dev-haskell/base16-bytestring-1.0.1.0
->=dev-haskell/cabal-install-parsers-0.4
-
-# Jack Todaro <solpeth@posteo.org> (3 July 2020)
-# Mask dev-haskell/random-1.2 and reverse dependencies
->=dev-haskell/random-1.2
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
 # Various unrelated packages and what causes the conflict with newer version.
