@@ -6,18 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="build-example">Build the MultiState-example example program</flag>
+		<flag name="examples">Build the multistate-example executable</flag>
 	</use>
-	<longdescription>
-		When using multiple Read\/Write\/State transformers in the same monad stack,
-		it becomes necessary to lift the operations in order to affect a specific
-		transformer.
-		Using heterogeneous lists (and all kinds of GHC extensions magic),
-		this package provides transformers that remove that necessity:
-		MultiReaderT\/MultiWriterT\/MultiStateT\/MultiRWST can contain a
-		heterogeneous list of values.
-		
-		See the &lt;https://github.com/lspitzner/multistate README&gt; for
-		a longer description.
-	</longdescription>
 </pkgmetadata>
