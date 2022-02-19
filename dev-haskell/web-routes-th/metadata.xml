@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		web-routes is a portable library for type-safe URLs. This module adds
-		support for creating the URL parsers/printers automatically using
-		Template Haskell.
-	</longdescription>
 </pkgmetadata>
