@@ -6,23 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="openssl">"Use http-client-openssl"</flag>
+		<flag name="openssl">&quot;Use http-client-openssl&quot;</flag>
 	</use>
-	<longdescription>
-		The GitHub API provides programmatic access to the full
-		GitHub Web site, from Issues to Gists to repos down to the underlying git data
-		like references and trees. This library wraps all of that, exposing a basic but
-		Haskell-friendly set of functions and data structures.
-		
-		For supported endpoints see &quot;GitHub&quot; module.
-		
-		&gt; import qualified GitHub as GH
-		&gt;
-		&gt; main :: IO ()
-		&gt; main = do
-		&gt;     possibleUser &lt;- GH.github&#39; GH.userInfoForR &quot;phadej&quot;
-		&gt;     print possibleUser
-		
-		For more of an overview please see the README: &lt;https://github.com/phadej/github/blob/master/README.md&gt;
-	</longdescription>
 </pkgmetadata>
