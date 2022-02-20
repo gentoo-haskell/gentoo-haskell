@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?] >=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?] >=dev-haskell/haskell-src-exts-1.21:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?] >=dev-haskell/traverse-with-class-1.0.0.0:=[profile?] <dev-haskell/traverse-with-class-1.1:=[profile?] >=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/filemanip-0.3.6.3 <dev-haskell/filemanip-0.4 >=dev-haskell/pretty-show-1.6.1 <dev-haskell/pretty-show-1.11 >=dev-haskell/tasty-0.12 >=dev-haskell/tasty-golden-2.2.1 <dev-haskell/tasty-golden-2.4 ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?] >=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?] >=dev-haskell/haskell-src-exts-1.21:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?] >=dev-haskell/traverse-with-class-1.0.0.0:=[profile?] <dev-haskell/traverse-with-class-1.1:=[profile?] >=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Name resolution library for Haskell
 EAPI=8
 HOMEPAGE=https://documentup.com/haskell-suite/haskell-names
 INHERIT=haskell-cabal
-IUSE=doc hscolour hoogle profile test
+IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-1.6:=[profile?] >=dev-haskell/data-lens-light-0.1.2.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?] >=dev-haskell/haskell-src-exts-1.21:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?] >=dev-haskell/traverse-with-class-1.0.0.0:=[profile?] <dev-haskell/traverse-with-class-1.1:=[profile?] >=dev-haskell/uniplate-1.5.1:=[profile?] <dev-haskell/uniplate-1.7:=[profile?] >=dev-lang/ghc-8.4.3:=
-RESTRICT=!test? ( test )
+RESTRICT=test
 SLOT=0/0.9.9
 SRC_URI=https://hackage.haskell.org/package/haskell-names-0.9.9/haskell-names-0.9.9.tar.gz
 _eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
-_md5_=ae2579fee0ae91f45edf014e81a139d2
+_md5_=f350176245d105dbba062ce7050de9d4
