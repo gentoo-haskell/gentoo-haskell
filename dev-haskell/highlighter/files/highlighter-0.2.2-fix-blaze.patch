@@ -1,0 +1,31 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+New blaze-html has been split into 'blaze-html' and 'blaze-markup'
+
+diff -urN highlighter-0.2.2/highlighter.cabal highlighter-0.2.2-r1/highlighter.cabal
+--- highlighter-0.2.2/highlighter.cabal	2022-02-21 12:58:19.566560064 -0700
++++ highlighter-0.2.2-r1/highlighter.cabal	2022-02-21 13:06:20.536560298 -0700
+@@ -169,6 +169,7 @@
+   build-depends:
+     { base >= 4 && < 5
+     , blaze-html
++    , blaze-markup
+     , bytestring
+     , filepath
+     , mtl
+diff -urN highlighter-0.2.2/src/Main.hs highlighter-0.2.2-r1/src/Main.hs
+--- highlighter-0.2.2/src/Main.hs	2012-07-09 17:12:31.000000000 -0600
++++ highlighter-0.2.2-r1/src/Main.hs	2022-02-21 13:08:59.686560375 -0700
+@@ -4,9 +4,9 @@
+ import Text.Highlighter.Formatters.Html
+ 
+ import System.Environment
+-import Text.Blaze.Html5
++import Text.Blaze.Html5 hiding (main)
+ import Text.Blaze.Html5.Attributes
+-import Text.Blaze.Renderer.String
++import Text.Blaze.Html.Renderer.String (renderHtml)
+ import qualified Data.ByteString as BS
+ 
+ main :: IO ()
