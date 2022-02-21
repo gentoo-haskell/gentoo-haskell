@@ -1,1 +1,1 @@
-move dev-haskell/spago dev-util/dhall
+move dev-haskell/gifcurry media-gfx/gifcurry
