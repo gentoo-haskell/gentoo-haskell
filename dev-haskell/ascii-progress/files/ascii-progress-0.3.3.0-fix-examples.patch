@@ -1,0 +1,68 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Change executable names to something more unique.
+
+Disable the `download-example` executable as it doesn't currently compile.
+
+diff -urN ascii-progress-0.3.3.0/ascii-progress.cabal ascii-progress-0.3.3.0-r1/ascii-progress.cabal
+--- ascii-progress-0.3.3.0/ascii-progress.cabal	2022-02-20 18:04:36.616527081 -0700
++++ ascii-progress-0.3.3.0-r1/ascii-progress.cabal	2022-02-20 18:17:28.886527456 -0700
+@@ -37,7 +37,7 @@
+   hs-source-dirs:      lib
+   default-language:    Haskell2010
+ 
+-executable example
++executable ascii-progress-example
+   main-is:             Example.hs
+   default-language:    Haskell2010
+ 
+@@ -53,7 +53,7 @@
+     hs-source-dirs:    lib
+                      , bin
+ 
+-executable npm-example
++executable ascii-progress-npm-example
+   main-is:             NpmExample.hs
+   default-language:    Haskell2010
+ 
+@@ -70,29 +70,7 @@
+                      , bin
+ 
+ 
+-executable download-example
+-  main-is:             DownloadExample.hs
+-  default-language:    Haskell2010
+-
+-  if !flag(examples)
+-    buildable: False
+-  else
+-    buildable: True
+-    build-depends:     HTTP
+-                     , concurrent-output >= 1.7
+-                     , async >= 2.0.1.5
+-                     , base >=4 && <5
+-                     , bytestring
+-                     , data-default >= 0.5.3
+-                     , time >= 1.4.0.1
+-                     , conduit >= 1.2
+-                     , http-conduit >= 2.1
+-                     , http-types >= 0.8
+-                     , transformers >= 0.3
+-    hs-source-dirs:    lib
+-                     , bin
+-
+-executable multi-example
++executable ascii-progress-multi-example
+   main-is:             MultiExample.hs
+   default-language:    Haskell2010
+ 
+@@ -108,7 +86,7 @@
+     hs-source-dirs:    lib
+                      , bin
+ 
+-executable crazy-multi-example
++executable ascii-progress-crazy-multi-example
+   main-is:             CrazyMultiExample.hs
+   default-language:    Haskell2010
+ 
