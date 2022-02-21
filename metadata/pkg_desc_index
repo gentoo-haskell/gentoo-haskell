@@ -859,7 +859,7 @@ dev-haskell/hie-bios 0.8.1: Set up a GHC API session
 dev-haskell/hie-compat 0.2.1.0: HIE files for GHC 8.6 and other HIE file backports
 dev-haskell/hiedb 0.4.0.0 0.4.1.0: Generates a references DB from .hie files
 dev-haskell/higgledy 0.4.1.1-r3: Partial types as a type constructor
-dev-haskell/highlighter 0.2.2: source code highlighting
+dev-haskell/highlighter 0.2.2-r1: source code highlighting
 dev-haskell/hinotify 0.4.1: Haskell binding to inotify
 dev-haskell/hint 0.9.0.4: Runtime Haskell interpreter (GHC API wrapper)
 dev-haskell/hip 1.5.6.0: Haskell Image Processing (HIP) Library
