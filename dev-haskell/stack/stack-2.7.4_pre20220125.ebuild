@@ -20,7 +20,7 @@ REPO_URI="https://github.com/hololeap/stack"
 COMMIT="9a0683679ad49982fcfb036f87c0f99a78916d2a"
 BRANCH="master"
 SRC_URI="${REPO_URI}/archive/${COMMIT}.tar.gz -> ${PN}-${COMMIT}.tar.gz"
-S="${WORKDIR}/${PN}-${BRANCH}"
+S="${WORKDIR}/${PN}-${COMMIT}"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
