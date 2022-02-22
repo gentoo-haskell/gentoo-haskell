@@ -1,3 +1,10 @@
+# hololeap <hololeap@protonmail.com> (2022-02-22)
+# gi-gtk-4 is not currently used and will cause conflicts
+>=dev-haskell/gi-gtk-4
+>=dev-haskell/gi-gdk-4
+>=dev-haskell/gi-gdkx11-4
+dev-haskell/gi-gsk
+
 # hololeap <hololeap@protonmail.com> (2022-02-19)
 # web-routes-th needs patching to build with template-haskell-2.17. Mask along
 # with all revdeps
