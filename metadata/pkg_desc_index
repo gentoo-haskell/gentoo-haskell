@@ -1419,7 +1419,7 @@ dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, imag
 dev-haskell/pandoc-types 1.22.1: Types for representing a structured document
 dev-haskell/pango 0.13.8.1-r1: Binding to the Pango text rendering engine
 dev-haskell/panic 0.4.0.1: A convenient way to panic
-dev-haskell/pantry 0.5.3: Content addressable Haskell package management
+dev-haskell/pantry 0.5.2.3 0.5.3: Content addressable Haskell package management
 dev-haskell/parallel 3.2.2.0: Parallel programming library
 dev-haskell/parallel-io 0.3.5: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.2.0.9: Full-featured command-line argument parsing library
