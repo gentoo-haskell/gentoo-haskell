@@ -35,7 +35,6 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/gi-gtk:=[profile?]
 	dev-haskell/gi-gtk-hs:=[profile?]
 	dev-haskell/gi-pango:=[profile?]
-	>=dev-haskell/gtk-sni-tray-0.1.5.0:=[profile?]
 	>=dev-haskell/gtk-strut-0.1.2.1:=[profile?]
 	>=dev-haskell/haskell-gi-0.24:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.24:=[profile?]
@@ -68,6 +67,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/xml-helpers:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 	x11-libs/gtk+:3
+	>=x11-misc/gtk-sni-tray-0.1.5.0:=[profile?]
 	x11-wm/xmonad:=[profile?]
 "
 DEPEND="${RDEPEND}
