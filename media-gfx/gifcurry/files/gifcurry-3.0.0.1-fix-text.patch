@@ -1,0 +1,17 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+A small fix is needed due to ambiguous reference to 'elem'
+
+diff -urN Gifcurry-3.0.0.1/src/lib/Gifcurry.hs Gifcurry-3.0.0.1-r1/src/lib/Gifcurry.hs
+--- Gifcurry-3.0.0.1/src/lib/Gifcurry.hs	2018-03-20 21:02:22.000000000 -0600
++++ Gifcurry-3.0.0.1-r1/src/lib/Gifcurry.hs	2022-02-22 13:53:50.986603574 -0700
+@@ -32,7 +32,7 @@
+ import Text.Read
+ import Data.Maybe
+ import Data.List
+-import Data.Text
++import Data.Text hiding (elem)
+ import Data.Either
+ import Text.Printf
+ import Control.Exception
