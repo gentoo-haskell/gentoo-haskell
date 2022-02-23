@@ -1,1 +1,2 @@
-move dev-haskell/spago dev-util/dhall
+move dev-haskell/gifcurry media-gfx/gifcurry
+move dev-haskell/gtk-sni-tray x11-misc/gtk-sni-tray
