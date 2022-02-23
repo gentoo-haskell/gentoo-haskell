@@ -12,6 +12,7 @@ command_args="server --port ${HOOGLE_SERVER_PORT} --host ${HOOGLE_SERVER_HOST} $
 command_background="true"
 command_user="hoogle:hoogle"
 directory="/var/lib/hoogle"
+supervisor=supervise-daemon
 shell=/bin/sh
 su=/bin/su
 
@@ -21,6 +22,7 @@ start_pre() {
 
 generate() {
 	ebegin "Generating hoogle database"
+	HOOGLE_GENERATE_ARGS:="--local +RTS -N"
 	"$su" -c "/usr/libexec/hoogle-generate.bash ${HOOGLE_GENERATE_ARGS}" -s "$shell" - hoogle
 	eend $?
 }

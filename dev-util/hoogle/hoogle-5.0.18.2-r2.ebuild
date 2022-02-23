@@ -75,8 +75,9 @@ src_install() {
 
 	if use systemd
 	then
-		systemd_dounit "${FILESDIR}/${PN}".{service,timer}
+		systemd_dounit "${FILESDIR}/${PN}.service"
 		systemd_dounit "${FILESDIR}/${PN}-generate.service"
+		systemd_dounit "${FILESDIR}/${PN}-restart".{service,timer}
 	else
 		insinto /etc/cron.daily
 		newins "${FILESDIR}/${PN}.cron" "${PN}-generate"
