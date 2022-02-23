@@ -6,6 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="executable">Build the record-dot-processor executable</flag>
+		<flag name="executable">Build the record-dot-preprocessor executable</flag>
 	</use>
 </pkgmetadata>
