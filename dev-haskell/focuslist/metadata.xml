@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="examples">Build the example from the README.md file.  This
-is normally only used for testing.</flag>
+		<flag name="examples">Build the focuslist-readme example executable</flag>
 	</use>
 </pkgmetadata>
