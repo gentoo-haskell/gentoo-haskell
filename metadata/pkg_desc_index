@@ -20,7 +20,7 @@ dev-haskell/ac-angle 1.0: Angles in degrees and radians
 dev-haskell/ac-ppm 1.1.1: Trivial package for writing PPM images
 dev-haskell/ac-vector 2.3.2: Efficient geometric vectors and transformations
 dev-haskell/ac-vector-fancy 2.4.0-r1: Fancy type-system stuff for AC-Vector
-dev-haskell/acid-state 0.16.0.1: Add ACID guarantees to any serializable Haskell data structure
+dev-haskell/acid-state 0.16.1: Add ACID guarantees to any serializable Haskell data structure
 dev-haskell/action-permutations 0.0.0.1-r1: Execute a set of actions (e.g. parsers) in each possible order
 dev-haskell/active 0.2.0.15: Abstractions for animation
 dev-haskell/ad 4.4.1: Automatic Differentiation
@@ -606,7 +606,7 @@ dev-haskell/floskell 0.10.6: A flexible Haskell source code pretty printer
 dev-haskell/flow2dot 0.9.2: Library and binary to generate sequence/flow diagrams from plain text source
 dev-haskell/fmlist 0.9.4: FoldMap lists
 dev-haskell/focus 0.1.5.2 1.0.2: A general abstraction for manipulating elements of container data structures
-dev-haskell/focuslist 0.1.0.2: Lists with a focused element
+dev-haskell/focuslist 0.1.1.0: Lists with a focused element
 dev-haskell/foldl 1.4.11: Composable, streaming, and efficient left folds
 dev-haskell/follow-file 0.0.3: Be notified when a file gets appended, solely with what was added
 dev-haskell/fontyfruity 0.5.3.5: A true type file format loader
@@ -844,7 +844,7 @@ dev-haskell/hedis-config 0.0.3 1.0.0: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r3: An Haskell template system supporting both HTML5 and XML
 dev-haskell/here 1.2.13: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0-r1: multi-line string / here document using QuasiQuotes
-dev-haskell/heterocephalus 1.0.5.4: A type-safe template engine for working with front end development tools
+dev-haskell/heterocephalus 1.0.5.5: A type-safe template engine for working with front end development tools
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexml 0.3.4: XML subset DOM parser
 dev-haskell/hexpat 0.20.13: XML parser/formatter based on expat
@@ -1540,7 +1540,6 @@ dev-haskell/profiteur 0.4.6.0: Treemap visualiser for GHC prof files
 dev-haskell/profunctor-extras 4.0: This package has been absorbed into profunctors 4.0
 dev-haskell/profunctors 5.6.2: The Profunctors package, authored by Edward Kmett
 dev-haskell/project-template 0.2.1.0: Specify Haskell project templates and generate files
-dev-haskell/prolog 0.3.2: A Prolog interpreter written in Haskell
 dev-haskell/protocol-buffers 2.4.13 2.4.17: Parse Google Protocol Buffer specifications
 dev-haskell/protocol-buffers-descriptor 2.4.13 2.4.17: Haskell implementation of the Google Protocol Buffer specification
 dev-haskell/protolude 0.3.0: A small prelude
@@ -2224,6 +2223,7 @@ dev-lang/ghc 8.8.4-r1 8.10.5-r1 8.10.6 8.10.7 9.0.1-r1 9.0.2-r1 9999: The Glasgo
 dev-lang/hugs98 2006.9-r2: The Hugs98 Haskell interpreter
 dev-lang/idris 1.3.4: Functional Programming Language with Dependent Types
 dev-lang/ott 0.31: Ott is a tool for writing definitions of programming languages and calculi.
+dev-lang/prolog 0.3.2: A Prolog interpreter written in Haskell
 dev-lang/purescript 0.14.1-r1: PureScript Programming Language Compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-libs/libsass 3.4.5: A C/C++ implementation of a Sass compiler

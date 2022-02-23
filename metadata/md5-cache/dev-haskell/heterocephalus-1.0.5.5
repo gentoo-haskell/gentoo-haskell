@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/blaze-html-0.9:=[profile?] >=dev-haskell/blaze-markup-0.8:=[profile?] >=dev-haskell/dlist-0.8:=[profile?] >=dev-haskell/shakespeare-2.0:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/doctest-0.10 dev-haskell/glob ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=A type-safe template engine for working with front end development tools
+EAPI=8
+HOMEPAGE=https://github.com/arowM/heterocephalus#readme
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/blaze-html-0.9:=[profile?] >=dev-haskell/blaze-markup-0.8:=[profile?] >=dev-haskell/dlist-0.8:=[profile?] >=dev-haskell/shakespeare-2.0:=[profile?] >=dev-lang/ghc-8.4.3:=
+RESTRICT=!test? ( test )
+SLOT=0/1.0.5.5
+SRC_URI=https://hackage.haskell.org/package/heterocephalus-1.0.5.5/heterocephalus-1.0.5.5.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=969d2dfd476ebd938f51ca608031afef

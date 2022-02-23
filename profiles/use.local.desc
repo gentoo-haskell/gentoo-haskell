@@ -104,7 +104,7 @@ dev-haskell/ffmpeg-light:buildvplaydemo - Build video player demo executable
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
 dev-haskell/finite-field:useghctypelits - GHC.TypeLits module
 dev-haskell/floskell:executable - Build the floskell executable
-dev-haskell/focuslist:examples - Build the example from the README.md file. This is normally only used for testing.
+dev-haskell/focuslist:examples - Build the focuslist-readme example executable
 dev-haskell/foundation:experimental - Enable building experimental features, known as highly unstable or without good support cross-platform
 dev-haskell/fourmolu:executable - Build the fourmolu executable
 dev-haskell/freer-effects:pedantic - Pass additional warning flags and -Werror to GHC.
@@ -505,6 +505,6 @@ x11-misc/xmonad-extras:brightness - Build module for brightness control.
 x11-misc/xmonad-extras:eval - Build modules depending on hint(for evaluating Haskell expressions at runtime).
 x11-misc/xmonad-extras:mpd - Build modules depending on libmpd.
 x11-misc/yeganesh:profiling - Build with profiling and -auto-all
-x11-terms/termonad:examples - Build an executable from the examples in the example-config/ directory, as well as the example from the README.md file. This is normally only used for testing.
+x11-terms/termonad:examples - Build various termonad-* example executables
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
 x11-wm/xmonad-contrib:xft - Use Xft to render text
