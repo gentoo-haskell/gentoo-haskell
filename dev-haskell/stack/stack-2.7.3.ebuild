@@ -93,7 +93,7 @@ RDEPEND=">=dev-haskell/aeson-1.5.6.0:=[profile?]
 	>=dev-lang/ghc-8.10.4:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.1.0
+	>=dev-haskell/cabal-3.2.1.0 <dev-haskell/cabal-3.4
 	test? ( >=dev-haskell/hspec-2.7.8
 		>=dev-haskell/quickcheck-2.14.2
 		>=dev-haskell/raw-strings-qq-1.1
