@@ -23,7 +23,7 @@ IUSE="gtk"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-3.0.0.1-fix-cabal.patch"
-	"${FILESDIR}/${PN}-3.0.0.1-fix-test.patch"
+	"${FILESDIR}/${PN}-3.0.0.1-fix-text.patch"
 )
 
 RDEPEND=">=dev-haskell/cmdargs-0.10:=[profile?]
