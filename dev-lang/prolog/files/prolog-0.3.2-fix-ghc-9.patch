@@ -1,0 +1,27 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+This is hopefully a decent fix for compiling on newer GHC
+
+diff -urN prolog-0.3.2/src/Quote.hs prolog-0.3.2-r1/src/Quote.hs
+--- prolog-0.3.2/src/Quote.hs	2020-08-25 07:35:02.000000000 -0600
++++ prolog-0.3.2-r1/src/Quote.hs	2022-02-23 04:04:12.707329737 -0700
+@@ -5,7 +5,7 @@
+ import Data.Functor.Identity (Identity)
+ 
+ import Language.Haskell.TH (listE, varE, viewP, mkName, Q, Exp, Pat)
+-import Language.Haskell.TH.Syntax (Lift(lift))
++import Language.Haskell.TH.Syntax (Lift(..))
+ import Language.Haskell.TH.Lift (deriveLiftMany)
+ import Language.Haskell.TH.Quote (QuasiQuoter(..))
+ import Text.Parsec (parse, eof, ParsecT)
+@@ -19,7 +19,8 @@
+ $(deriveLiftMany [''Term, ''VariableName, ''Clause])
+ 
+ instance Lift ([Term] -> [Goal]) where
+-   lift _ = fail "Clauses using Haskell functions can't be lifted."
++   lift _ = error "Clauses using Haskell functions can't be lifted."
++   liftTyped _ = error "Clauses using Haskell functions can't be lifted."
+ 
+ 
+ t  = prologQuasiQuoter term    "term"
