@@ -1,2 +1,3 @@
 move dev-haskell/gifcurry media-gfx/gifcurry
 move dev-haskell/gtk-sni-tray x11-misc/gtk-sni-tray
+move dev-haskell/prolog dev-lang/prolog
