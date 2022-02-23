@@ -1,0 +1,6 @@
+[Unit]
+Description=restart hoogle
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart hoogle
