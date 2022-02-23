@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Taffybar is a gtk+3 (through gi-gtk) based desktop information bar, intended
-		primarily for use with XMonad, though it can also function alongside other EWMH
-		compliant window managers. It is similar in spirit to xmobar, but it differs in
-		that it gives up some simplicity for a reasonable helping of eye candy.
-	</longdescription>
 </pkgmetadata>
