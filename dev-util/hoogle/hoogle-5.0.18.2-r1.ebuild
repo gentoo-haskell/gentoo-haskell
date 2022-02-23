@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -69,10 +69,14 @@ src_install() {
 
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 
+	insinto /usr/libexec
+	doins "${FILESDIR}/${PN}-generate.bash"
+	fperms 0755 "/usr/libexec/${PN}-generate.bash"
+
 	if use systemd
 	then
-		systemd_dounit "${FILESDIR}/${PN}.service"
-		systemd_dounit "${FILESDIR}/${PN}-generate".{service,timer}
+		systemd_dounit "${FILESDIR}/${PN}".{service,timer}
+		systemd_dounit "${FILESDIR}/${PN}-generate.service"
 	else
 		insinto /etc/cron.daily
 		newins "${FILESDIR}/${PN}.cron" "${PN}-generate"
