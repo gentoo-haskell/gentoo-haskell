@@ -1,14 +1,14 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=dev-haskell/mtl:=[profile?] >=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?] >=dev-lang/ghc-7.10.1:= x11-libs/cairo >=dev-haskell/cabal-1.24 >=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14 virtual/pkgconfig hscolour? ( dev-haskell/hscolour )
+DEPEND=dev-haskell/mtl:=[profile?] >=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?] >=dev-lang/ghc-7.10.1:= x11-libs/cairo[svg?] >=dev-haskell/cabal-1.24 >=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14 virtual/pkgconfig hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Binding to the Cairo library
-EAPI=7
+EAPI=8
 HOMEPAGE=http://projects.haskell.org/gtk2hs/
 INHERIT=haskell-cabal
-IUSE=+pdf +postscript +svg doc hscolour hoogle profile
+IUSE=+svg doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=dev-haskell/mtl:=[profile?] >=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?] >=dev-lang/ghc-7.10.1:= x11-libs/cairo
+RDEPEND=dev-haskell/mtl:=[profile?] >=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?] >=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?] >=dev-lang/ghc-7.10.1:= x11-libs/cairo[svg?]
 SLOT=0/0.13.8.1
 SRC_URI=https://hackage.haskell.org/package/cairo-0.13.8.1/cairo-0.13.8.1.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
-_md5_=9041ea0f0a19798acf10b07e7a04ba2e
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=3204465baf54e35cda6e92711fc8585d

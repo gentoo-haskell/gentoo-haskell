@@ -119,12 +119,7 @@ dev-haskell/ghc-prof:dump - Build the executable "dump"
 dev-haskell/ghcide:bench-exe - Build the ghcide-bench executable
 dev-haskell/ghcide:executable - Build the ghcide executable
 dev-haskell/ghcide:test-exe - Build the ghcide-test-preprocessor executable
-dev-haskell/gi-cairo-render:cairo-pdf - Build the PDF backend of Cairo.
-dev-haskell/gi-cairo-render:cairo-ps - Build the PostScript backend of Cairo.
-dev-haskell/gi-cairo-render:cairo-svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
-dev-haskell/gi-cairo-render:cairo_pdf - Build the PDF backend of Cairo.
-dev-haskell/gi-cairo-render:cairo_ps - Build the PostScript backend of Cairo.
-dev-haskell/gi-cairo-render:cairo_svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
+dev-haskell/gi-cairo-render:svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
 dev-haskell/github:openssl - "Use http-client-openssl"
 dev-haskell/glfw:system-glfw - use media-libs/glfw instead of bundled version
 dev-haskell/glib:closure-signals - Use the the GClosure-based signals implementation.
@@ -484,12 +479,14 @@ dev-vcs/git-annex:webapp - Enable git-annex webapp
 games-puzzle/intricacy:curses - Enables curses user interface
 games-puzzle/intricacy:sdl - Enables SDL user interface
 games-puzzle/intricacy:sound - Enables sound in SDL user interface
+media-gfx/gifcurry:gtk - Build the gifcurry_gui executable
 sci-mathematics/agda:cpphs - Use cpphs instead of cpp.
 sci-mathematics/agda:enable-cluster-counting - Enable the --count-clusters flag. (If enable-cluster-counting is False, then the --count-clusters flag triggers an error message.)
 sci-mathematics/agda:optimise-heavily - Enable some expensive optimisations when compiling Agda.
 sci-mathematics/agda:stdlib - Install the standard library.
 www-apps/gitit:plugins - Compile in support for plugins. This will increase the size of the executable and the memory it uses, so those who will not need plugins should disable this flag.
 www-servers/mighttpd2:tls - HTTPS support.
+x11-misc/gtk-sni-tray:executable - Build the gtk-sni-tray-standalone executable
 x11-misc/xmobar:alsa - Use alsa-mixer to get the volume from soundcards.
 x11-misc/xmobar:dbus - Publish a service on the session bus for controlling xmobar.
 x11-misc/xmobar:inotify - inotify support (modern Linux only). Required for the Mail and MBox plugins.
