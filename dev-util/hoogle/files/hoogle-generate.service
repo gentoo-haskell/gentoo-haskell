@@ -5,7 +5,7 @@ Documentation=man:hoogle(1) https://github.com/ndmitchell/hoogle
 [Service]
 Type=oneshot
 EnvironmentFile=-/etc/default/hoogle
-ExecStart=/usr/bin/hoogle generate $HOOGLE_GENERATE_ARGS
+ExecStart=/usr/libexec/hoogle-generate.bash $HOOGLE_GENERATE_ARGS
 User=hoogle
 Group=hoogle
 StateDirectory=hoogle

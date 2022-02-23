@@ -5,13 +5,13 @@ Requires=hoogle-generate.service
 After=hoogle-generate.service
 
 [Service]
-Type=simple
+Type=oneshot
 EnvironmentFile=-/etc/default/hoogle
 ExecStart=/usr/bin/hoogle server --port $HOOGLE_SERVER_PORT --host $HOOGLE_SERVER_HOST $HOOGLE_SERVER_EXTRA_ARGS
 User=hoogle
 Group=hoogle
 StateDirectory=hoogle
-Restart=always
+#Restart=always
 
 # Security settings for systemd running as root, optional but recommended to improve security. You
 # can disable individual settings if they cause problems for your use case. For more details, see

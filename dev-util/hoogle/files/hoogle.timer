@@ -1,7 +1,8 @@
 [Unit]
-Description=Run hoogle generate
+Description=Restart hoogle periodically
 
 [Timer]
+Unit=hoogle.service
 OnCalendar=daily
 
 [Install]
