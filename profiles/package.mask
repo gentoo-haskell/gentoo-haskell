@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (2022-02-26)
+# New ebuild does not require separate tests package. Masked for removal.
+dev-haskell/parser-combinators-tests
+
 # hololeap <hololeap@protonmail.com> (2022-02-23)
 # Package has not been updated for over 10 years and has no revdeps.
 # Masking for removal
