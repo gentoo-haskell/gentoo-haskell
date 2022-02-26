@@ -5,7 +5,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # gentoo-haskell random install script
-# v0.2.0
+# v0.2.1
 #
 # Repeatedly tries to install a random package from ::haskell (that is not
 # already installed and has at least one unmasked version)
@@ -65,7 +65,7 @@ finish() {
 error() {
 	(
 		echo
-		if [[ -n "${pkg}" ]]; then
+		if [[ "${pkg}" == "\n" ]]; then
 			echo "Cancelling while trying ${pkg}"
 		else
 			echo "Cancelling"
@@ -80,11 +80,56 @@ error() {
 random_pkg() {
         out="$("${EIX[@]}" --in-overlay haskell --and -\( -\! -I -\) --and --non-masked -#)"
 	ret="$?"
-	if [[ "${ret}" -eq 127 ]]; then
-		echo "Received exit code 127 from eix. Is it installed?"
-		error
+
+	case "${ret}" in
+		127)
+			echo "Received exit code 127 from eix. Is it installed?" >&2
+			return "${ret}"
+			;;
+		1)
+			echo "${out}" >&2
+			echo "No package matches found" >&2
+			return "${ret}"
+			;;
+		0)
+			;;
+		*)
+			echo "${out}" >&2
+			echo "eix exited with unsuccessful code ${ret}" >&2
+			return "${ret}"
+			;;
+	esac
+
+	# Skip packages that have already been tried
+	# Each of the arrays we check have timestamps at the front of each element
+	# (hence `grep -q "${l}\$"`)
+	readarray -t pkgs < <(echo "${out}" | while read -r l; do
+		skip=0
+		for c in "${completed[@]}"; do
+			echo "$c" | grep -q "${l}\$" && skip=1
+		done
+		for f in "${failed[@]}"; do
+			echo "$f" | grep -q "${l}\$" && skip=1
+		done
+		for d in "${tried_to_downgrade[@]}"; do
+			echo "$d" | grep -q "${l}\$" && skip=1
+		done
+		for r in "${resolve_failed[@]}"; do
+			echo "$r" | grep -q "${l}\$" && skip=1
+		done
+		[[ "${skip}" -eq 0 ]] && echo $l
+	done)
+
+	pool_size="${#pkgs[@]}"
+
+	if [[ "${pool_size}" -eq 0 ]]; then
+		echo "Pool is empty! Exiting..."
+		return 1
 	fi
-	echo "${out}" | sort -R | head -1 || true
+
+	echo "Choosing from pool of ${#pkgs[@]} packages..." >&2
+	for p in "${pkgs[@]}"; do echo $p; done | sort -R | head -1
+
 	return "${ret}"
 }
 
@@ -126,6 +171,7 @@ while true; do
 	) >&2
 
         pkg="$(random_pkg)"
+	[[ "$?" -eq 0 ]] || error
 	echo "Trying ${pkg}" >&2
 
         if [[ "${pkg}" == "No matches found" ]]; then
@@ -146,6 +192,8 @@ while true; do
 
 		log_portage_output "${pkg}" "${portage_output}" >> "${log_file}"
 
+		resolve_failed+=( "$(date): ${pkg}" )
+
 		continue
 	fi
 	
@@ -163,6 +211,6 @@ while true; do
 
 		log_portage_output "${pkg}" "${portage_output}" >> "${log_file}"
 
-		tried_to_downgrade+=( "${pkg}" )
+		tried_to_downgrade+=( "$(date): ${pkg}" )
 	fi
 done
