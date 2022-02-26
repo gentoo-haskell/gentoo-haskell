@@ -6,9 +6,9 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="dev">Development build</flag>
-		<flag name="examples-sdl">Build including SDL examples</flag>
+		<flag name="c-malloc">Use C malloc instead of GHC malloc</flag>
 		<flag name="fusion-plugin">Use fusion plugin for benchmarks and executables</flag>
+		<flag name="limit-build-mem">Limits memory when building</flag>
 		<flag name="no-fusion">Disable rewrite rules for stream fusion</flag>
 		<flag name="streamk">Use CPS style streams when possible</flag>
 	</use>
