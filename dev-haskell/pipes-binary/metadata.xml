@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Encode and decode binary Pipes streams using the @binary@ library.
-		
-		See the @changelog.md@ file in the source distribution to learn about any
-		important changes between version.
-	</longdescription>
 </pkgmetadata>

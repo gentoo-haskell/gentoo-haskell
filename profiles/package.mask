@@ -1,3 +1,17 @@
+# hololeap <hololeap@protonmail.com> (2022-02-26)
+# Needs patching in order to compile in current ecosystem.
+dev-haskell/pipes-cereal
+dev-haskell/pipes-network
+dev-haskell/pipes-text
+dev-haskell/pipes-zlib
+dev-haskell/diagrams-cairo
+dev-haskell/diagrams-gtk
+dev-haskell/ihaskell-diagrams
+
+# hololeap <hololeap@protonmail.com> (2022-02-26)
+# New ebuild does not require separate tests package. Masked for removal.
+dev-haskell/parser-combinators-tests
+
 # hololeap <hololeap@protonmail.com> (2022-02-23)
 # Package has not been updated for over 10 years and has no revdeps.
 # Masking for removal

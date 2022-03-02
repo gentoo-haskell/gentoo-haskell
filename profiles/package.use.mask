@@ -1,3 +1,13 @@
+# hololeap <hololeap@protonmail.com> (2022-03-02)
+# Fails to build with the latest version of diagrams-postscript
+dev-haskell/diagrams-builder postscript
+
+# hololeap <hololeap@protonmail.com> (2022-02-26)
+# These flags depend on packages that have been masked
+dev-haskell/zxcvbn-hs tools
+dev-haskell/diagrams cairo gtk
+dev-haskell/diagrams-builder cairo
+
 # hololeap <hololeap@protonmail.com> (23 Jan 2022)
 # hls-class-plugin needs update to compile on ghc-9.0.2
 dev-util/haskell-language-server hls_plugins_rename
