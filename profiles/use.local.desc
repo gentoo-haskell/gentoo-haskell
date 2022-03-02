@@ -78,12 +78,17 @@ dev-haskell/cryptonite:integer-gmp - Whether or not to use GMP for some function
 dev-haskell/cryptonite:target-attributes - use GCC / clang function attributes instead of global target options.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
 dev-haskell/data-reify:tests - Enable full development tree
-dev-haskell/diagrams:canvas - Enable canvas backend.
-dev-haskell/diagrams:postscript - Enable the Haskell-native PostScript backend.
-dev-haskell/diagrams:rasterific - Enable rasterific backend.
+dev-haskell/diagrams:cairo - Enable the cairo backend
+dev-haskell/diagrams:canvas - Enable the Haskell-native Canvas backend
+dev-haskell/diagrams:gtk - Enable the GTK backend
+dev-haskell/diagrams:postscript - Enable the Haskell-native PostScript backend
+dev-haskell/diagrams:rasterific - Enable the Haskell-native Rasterific backend
+dev-haskell/diagrams:svg - Enable the Haskell-native SVG backend
+dev-haskell/diagrams-builder:cairo - install cairo-specific builder tool
 dev-haskell/diagrams-builder:pgf - install PGF-specific builder tool
-dev-haskell/diagrams-builder:ps - Enable postscript backend
-dev-haskell/diagrams-builder:rasterific - Enable rasterific backend
+dev-haskell/diagrams-builder:postscript - install postscript-specific builder tool
+dev-haskell/diagrams-builder:rasterific - install rasterific-specific builder tool
+dev-haskell/diagrams-builder:svg - install svg-specific builder tool
 dev-haskell/dimensions:unsafeindices - Disable bound checks on Idx and Idxs types.
 dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using the bundled sqlite library.
 dev-haskell/direct-sqlite:json1 - Enable json1 extension.
@@ -187,7 +192,6 @@ dev-haskell/hxt-regex-xmlschema:profile - turn profiling on
 dev-haskell/hyphenation:embed - Embed data in library binary (Warning: This increases the executable size by about 1Mb unless unneeded language data files are manually removed from the "data" directory before compiling)
 dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/implicit-hie:executable - Build the gen-hie executable
-dev-haskell/inflections:dev - Turn on development settings.
 dev-haskell/inline-c:gsl-example - Build GSL example
 dev-haskell/io-streams:network - Include network support
 dev-haskell/io-streams:zlib - Include zlib support
@@ -265,6 +269,7 @@ dev-haskell/persistent-odbc:debug - Enable debug
 dev-haskell/persistent-odbc:tester - Enable test
 dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable
+dev-haskell/pipes-text:maintainer - Enable settings for the package maintainer.
 dev-haskell/pointed:comonad - You can disable the use of the `comonad` package using `-f-transformers`.
 dev-haskell/pointed:containers - You can disable the use of the `containers` package using `-f-containers`.
 dev-haskell/pointed:kan-extensions - You can disable the use of the `kan-extensions` package using `-f-kan-extensions`.
@@ -358,9 +363,9 @@ dev-haskell/stack:integration-tests - Run the integration test suite.
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
 dev-haskell/store-core:force-alignment - Adds -DALIGNED_MEMORY to cpp-options
-dev-haskell/streamly:dev - Development build
-dev-haskell/streamly:examples-sdl - Build including SDL examples
+dev-haskell/streamly:c-malloc - Use C malloc instead of GHC malloc
 dev-haskell/streamly:fusion-plugin - Use fusion plugin for benchmarks and executables
+dev-haskell/streamly:limit-build-mem - Limits memory when building
 dev-haskell/streamly:no-fusion - Disable rewrite rules for stream fusion
 dev-haskell/streamly:streamk - Use CPS style streams when possible
 dev-haskell/strict:assoc - Build with assoc dependency

@@ -1,0 +1,15 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/dictionary-sharing-0.1:=[profile?] <dev-haskell/dictionary-sharing-1.0:=[profile?] >=dev-haskell/testing-type-modifiers-0.1:=[profile?] <dev-haskell/testing-type-modifiers-1.0:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Sized functors, for size-based enumerations
+EAPI=8
+HOMEPAGE=https://hackage.haskell.org/package/size-based
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/dictionary-sharing-0.1:=[profile?] <dev-haskell/dictionary-sharing-1.0:=[profile?] >=dev-haskell/testing-type-modifiers-0.1:=[profile?] <dev-haskell/testing-type-modifiers-1.0:=[profile?] >=dev-lang/ghc-8.4.3:=
+SLOT=0/0.1.2.0
+SRC_URI=https://hackage.haskell.org/package/size-based-0.1.2.0/size-based-0.1.2.0.tar.gz https://hackage.haskell.org/package/size-based-0.1.2.0/revision/1.cabal -> size-based-0.1.2.0-r1.cabal
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=874ba1d720ece02fbe5b57ad744ea903

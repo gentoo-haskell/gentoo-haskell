@@ -185,7 +185,7 @@ dev-haskell/bitstringrandommonad 1.1.0.2: A library which turns a bytestring int
 dev-haskell/bitsyntax 0.3.2.2: A module to aid in the (de)serialisation of binary data
 dev-haskell/bitwise 1.0.0.1: fast multi-dimensional unboxed bit packed Bool arrays
 dev-haskell/bktrees 0.3.1: A set data structure with approximate searching
-dev-haskell/blank-canvas 0.7.3: HTML5 Canvas Graphics Library
+dev-haskell/blank-canvas 0.7.3-r1: HTML5 Canvas Graphics Library
 dev-haskell/blastxml 0.3.2: Library for reading Blast XML output
 dev-haskell/blaze-builder 0.4.2.1: Efficient buffered output
 dev-haskell/blaze-builder-conduit 1.1.0: Convert streams of builders to streams of bytestrings. (deprecated)
@@ -452,16 +452,16 @@ dev-haskell/dependent-sum-template 0.1.1.1: Template Haskell code to generate in
 dev-haskell/deque 0.4.3: Double-ended queues
 dev-haskell/deriving-compat 0.5.8 0.5.10: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
-dev-haskell/diagrams 1.4-r2: Embedded domain-specific language for declarative vector graphics
-dev-haskell/diagrams-builder 0.8.0.5-r2: hint-based build service for the diagrams graphics EDSL
+dev-haskell/diagrams 1.4.0.1: Embedded domain-specific language for declarative vector graphics
+dev-haskell/diagrams-builder 0.8.0.5-r3: hint-based build service for the diagrams graphics EDSL
 dev-haskell/diagrams-cairo 1.4.1.1-r1: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.4.1-r2: HTML5 canvas backend for diagrams drawing EDSL
-dev-haskell/diagrams-contrib 1.4.4-r3: Collection of user contributions to diagrams EDSL
-dev-haskell/diagrams-core 1.5.0: Core libraries for diagrams EDSL
+dev-haskell/diagrams-contrib 1.4.4-r4: Collection of user contributions to diagrams EDSL
+dev-haskell/diagrams-core 1.5.0-r1: Core libraries for diagrams EDSL
 dev-haskell/diagrams-gtk 1.4-r1: Backend for rendering diagrams directly to GTK windows
-dev-haskell/diagrams-lib 1.4.4: Embedded domain-specific language for declarative graphics
-dev-haskell/diagrams-pgf 1.4.1.1-r1: PGF backend for diagrams drawing EDSL
-dev-haskell/diagrams-postscript 1.5-r1: Postscript backend for diagrams drawing EDSL
+dev-haskell/diagrams-lib 1.4.5.1: Embedded domain-specific language for declarative graphics
+dev-haskell/diagrams-pgf 1.4.2: PGF backend for diagrams drawing EDSL
+dev-haskell/diagrams-postscript 1.5.1: Postscript backend for diagrams drawing EDSL
 dev-haskell/diagrams-rasterific 1.4.2.1: Rasterific backend for diagrams
 dev-haskell/diagrams-solve 0.1.3: Pure Haskell solver routines used by diagrams
 dev-haskell/diagrams-svg 1.4.3-r3: SVG backend for diagrams drawing EDSL
@@ -628,6 +628,7 @@ dev-haskell/ftgl 2.1-r1: Portable TrueType font rendering for OpenGL using the F
 dev-haskell/funcmp 1.9: Functional MetaPost
 dev-haskell/functor-classes-compat 1.0.1: Data.Functor.Classes instances for core packages
 dev-haskell/functor-monadic 0.1.0.3: Monad-style combinators for functors
+dev-haskell/fusion-plugin 0.2.3: GHC plugin to make stream fusion more predictable
 dev-haskell/fusion-plugin-types 0.1.0: Types for the fusion-plugin package
 dev-haskell/fuzzy 0.1.0.0: Filters a list based on a fuzzy string search
 dev-haskell/gamma 0.10.0.0: Gamma function and related functions
@@ -1056,7 +1057,7 @@ dev-haskell/indexed-profunctors 0.1.1: Utilities for indexed profunctors
 dev-haskell/indexed-traversable 0.1.1: FunctorWithIndex, FoldableWithIndex, TraversableWithIndex
 dev-haskell/indexed-traversable-instances 0.1: More instances of FunctorWithIndex, FoldableWithIndex, TraversableWithIndex
 dev-haskell/infer-license 0.2.0: Infer software license from a given license file
-dev-haskell/inflections 0.4.0.6: Inflections library for Haskell
+dev-haskell/inflections 0.4.0.6-r1: Inflections library for Haskell
 dev-haskell/influxdb 1.9.1.2: InfluxDB client library for Haskell
 dev-haskell/ini 0.4.1-r1: Quick and easy configuration files in the INI format
 dev-haskell/inline-c 0.9.1.4: Write Haskell source files including C code inline. No FFI required
@@ -1432,7 +1433,7 @@ dev-haskell/parsec-permutation 0.1.2.0: Applicative permutation parser for Parse
 dev-haskell/parsec1 1.0.0.8: Portable monadic parser combinators
 dev-haskell/parsec3-numbers 0.1.0: Utilities for parsing numbers from Char sequences
 dev-haskell/parsedate 3000.0.0-r1: Data and time parsing for CalendarTime
-dev-haskell/parser-combinators 1.2.1: Lightweight package providing commonly useful parser combinators
+dev-haskell/parser-combinators 1.3.0: Lightweight package providing commonly useful parser combinators
 dev-haskell/parser-combinators-tests 1.2.1-r1: Test suite of parser-combinators
 dev-haskell/parsers 0.12.10: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
@@ -1470,9 +1471,9 @@ dev-haskell/pgm 0.1.4-r1: Pure Haskell implementation of PGM image format
 dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-readable collection of words
 dev-haskell/picedit 0.2.3.0-r3: simple image manipulation functions
 dev-haskell/pid1 0.1.2.0: Do signal handling and orphan reaping for Unix PID1 init processes
-dev-haskell/pipes 4.3.16: Compositional pipelines
+dev-haskell/pipes 4.3.16-r1: Compositional pipelines
 dev-haskell/pipes-attoparsec 0.5.1.5: Attoparsec and Pipes integration
-dev-haskell/pipes-binary 0.4.2: Encode and decode binary streams using the pipes and binary libraries
+dev-haskell/pipes-binary 0.4.3: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.7: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
 dev-haskell/pipes-concurrency 2.0.12: Concurrency for the pipes ecosystem
@@ -1482,7 +1483,7 @@ dev-haskell/pipes-network 0.6.5: Use network sockets together with the pipes lib
 dev-haskell/pipes-parse 3.0.9: Parsing infrastructure for the pipes ecosystem
 dev-haskell/pipes-random 1.0.0.5: Producers for handling randomness
 dev-haskell/pipes-safe 2.3.3: Safety for the pipes ecosystem
-dev-haskell/pipes-text 0.0.2.5-r2: properly streaming text
+dev-haskell/pipes-text 0.0.2.5-r2 1.0.0: properly streaming text
 dev-haskell/pipes-zlib 0.4.4.2: Zlib and GZip compression and decompression for Pipes streams
 dev-haskell/placeholders 0.1: Placeholders for use while developing Haskell code
 dev-haskell/plailude 0.6.0-r1: plaimi's prelude
@@ -1749,7 +1750,7 @@ dev-haskell/singleton-bool 0.1.5-r1: Type level booleans
 dev-haskell/singletons 2.7 3.0.1: Basic singleton types and definitions
 dev-haskell/singletons-base 3.0: A promoted and singled version of the base library
 dev-haskell/singletons-th 3.0: A framework for generating singleton types
-dev-haskell/size-based 0.1.2.0: Sized functors, for size-based enumerations
+dev-haskell/size-based 0.1.2.0-r1: Sized functors, for size-based enumerations
 dev-haskell/skein 1.0.9.4: Skein, a family of cryptographic hash functions. Includes Skein-MAC as well
 dev-haskell/skylighting 0.12.2: syntax highlighting library
 dev-haskell/skylighting-core 0.12.2: syntax highlighting library
@@ -1821,7 +1822,7 @@ dev-haskell/strafunski-strategylib 5.0.1.0: Library for strategic programming
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/streaming 0.2.3.0: an elementary streaming prelude and general stream type
 dev-haskell/streaming-commons 0.1.19 0.2.2.1: Common lower-level functions needed by various streaming data libraries
-dev-haskell/streamly 0.7.3: Beautiful Streaming, Concurrent and Reactive Composition
+dev-haskell/streamly 0.8.1.1: Dataflow programming and declarative concurrency
 dev-haskell/strict 0.3.2-r1 0.4.0.1: Strict data types and String IO
 dev-haskell/strict-list 0.1.5: Strict linked list
 dev-haskell/strictify 0.1-r1: Find a local optimum of strictness annotations
@@ -1907,7 +1908,7 @@ dev-haskell/test-framework-leancheck 0.0.1: LeanCheck support for test-framework
 dev-haskell/test-framework-quickcheck2 0.3.0.5-r2: QuickCheck2 support for the test-framework package
 dev-haskell/test-framework-smallcheck 0.2: Support for SmallCheck tests in test-framework
 dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit and Quickcheck using Template Haskell
-dev-haskell/testing-feat 1.1.0.0: Functional Enumeration of Algebraic Types
+dev-haskell/testing-feat 1.1.0.0-r1: Functional Enumeration of Algebraic Types
 dev-haskell/testing-type-modifiers 0.1.0.1: Data type modifiers for property based testing
 dev-haskell/texmath 0.12.3.2: Conversion between formats used to represent mathematics
 dev-haskell/texrunner 0.0.1.2-r2: Functions for running Tex from Haskell
@@ -2009,6 +2010,7 @@ dev-haskell/unbounded-delays 0.1.1.1: Unbounded thread delays and timeouts
 dev-haskell/unexceptionalio 0.5.1: IO without any non-error, synchronous exceptions
 dev-haskell/unexceptionalio-trans 0.5.1: A wrapper around UnexceptionalIO using monad transformers
 dev-haskell/unicode-collation 0.1.3: Haskell implementation of the Unicode Collation Algorithm
+dev-haskell/unicode-data 0.3.0: Access Unicode character database
 dev-haskell/unicode-transforms 0.3.7.1: Unicode normalization
 dev-haskell/unification-fd 0.10.0.1: Simple generic unification algorithms
 dev-haskell/union-find 0.2-r1: Efficient union and equivalence testing of sets
