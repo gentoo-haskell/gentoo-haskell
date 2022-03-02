@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (2022-03-02)
+# Fails to build with the latest version of diagrams-postscript
+dev-haskell/diagrams-builder postscript
+
 # hololeap <hololeap@protonmail.com> (2022-02-26)
 # These flags depend on packages that have been masked
 dev-haskell/zxcvbn-hs tools
