@@ -5,10 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides a modular backend for rendering diagrams created
-		with the diagrams EDSL using the TeX library PGF.
-		
-		Support for rendering LaTeX, ConTeXt and plain TeX files.
-	</longdescription>
 </pkgmetadata>
