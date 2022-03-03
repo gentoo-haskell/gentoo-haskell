@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/map-syntax-0.2:=[profile?] <dev-haskell/map-syntax-0.4:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-haskell/mwc-random-0.8:=[profile?] <dev-haskell/mwc-random-0.15:=[profile?]
+	>=dev-haskell/mwc-random-0.8:=[profile?]
 	>=dev-haskell/pwstore-fast-2.2:=[profile?] <dev-haskell/pwstore-fast-2.5:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
 	>=dev-haskell/snap-server-1.0:=[profile?] <dev-haskell/snap-server-1.2:=[profile?]
@@ -67,7 +67,8 @@ src_prepare() {
 		'dlist                     >= 0.5      && < 0.9' 'dlist >= 0.5' \
 		'aeson                     >= 0.6      && < 1.5' 'aeson >= 0.6' \
 		'lens                      >= 3.7.6    && < 4.20' 'lens                      >= 3.7.6' \
-		'base                      >= 4        && < 4.15' 'base >=4'
+		'base                      >= 4        && < 4.15' 'base >=4' \
+		'mwc-random                >= 0.8      && < 0.15' 'mwc-random >=0.8'
 }
 
 src_configure() {
