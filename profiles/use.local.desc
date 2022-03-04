@@ -176,6 +176,7 @@ dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
 dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hls-graph:embed-files - Embed data files into the shake library
 dev-haskell/hls-graph:stm-stats - Collect STM transaction stats
+dev-haskell/hmatrix:no-random-r - When enabled, hmatrix will not depend on the random_r() C function, it is needed for musl libc support.
 dev-haskell/hnix:executable - Build the hnix executable
 dev-haskell/hnix:optimize - Enable all optimization flags
 dev-haskell/hps:build-exec - Build the `hps-fractals` executable
