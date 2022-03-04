@@ -5,17 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Reactive-banana is a practical library for Functional Reactive Programming (FRP).
-		
-		FRP offers an elegant and concise way to express interactive programs such as graphical user interfaces, animations, computer music or robot controllers. Thus, the reactive-banana library promises to avoid the spagethetti code commonly used in traditional GUI technologies.
-		
-		See the project homepage &lt;http://haskell.org/haskellwiki/Reactive-banana&gt;
-		for a more detailed introduction and features.
-		
-		Stability forecast:
-		No semantic bugs expected.
-		Significant API changes are likely in future versions,
-		though the main interface is beginning to stabilize.
-	</longdescription>
 </pkgmetadata>
