@@ -1,3 +1,5 @@
 move dev-haskell/gifcurry media-gfx/gifcurry
 move dev-haskell/gtk-sni-tray x11-misc/gtk-sni-tray
 move dev-haskell/prolog dev-lang/prolog
+move dev-haskell/haskell-awk app-text/haskell-awk
+move dev-haskell/lambdabot net-irc/lambdabot
