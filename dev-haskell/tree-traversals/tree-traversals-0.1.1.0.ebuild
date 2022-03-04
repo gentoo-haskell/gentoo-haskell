@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,10 +26,10 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	cabal_chdeps \
-		'base >=4.10 && <4.13' 'base >=4.10 && <4.15'
-
 	default
+
+	cabal_chdeps \
+		'base >=4.10 && <4.13' 'base >=4.10'
 }
 
 src_configure() {
