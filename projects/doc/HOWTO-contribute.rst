@@ -1,3 +1,8 @@
+Wiki
+====
+
+More info can be found in `the wiki <https://github.com/gentoo-haskell/gentoo-haskell/wiki/General-QA-tips>`_.
+
 Quick start
 ===========
 
