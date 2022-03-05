@@ -1137,7 +1137,7 @@ dev-haskell/language-c-quote 0.12.2.1: C/CUDA/OpenCL/Objective-C quasiquoting li
 dev-haskell/language-css 0.0.3.1: CSS 2.1 syntax
 dev-haskell/language-docker 10.4.0: Dockerfile parser, pretty-printer and embedded DSL
 dev-haskell/language-dot 0.1.1: A library for the analysis and creation of Graphviz DOT files
-dev-haskell/language-ecmascript 0.17.1.0-r2 0.19.1.0: JavaScript parser and pretty-printer library
+dev-haskell/language-ecmascript 0.19.1.0-r1: JavaScript parser and pretty-printer library
 dev-haskell/language-glsl 0.2.1-r1 0.3.0: GLSL abstract syntax tree, parser, and pretty-printer
 dev-haskell/language-haskell-extract 0.2.4-r1: Module to automatically extract functions from the local code
 dev-haskell/language-java 0.2.9: Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer
