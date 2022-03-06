@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm setup test
+DEPEND=>=dev-haskell/aeson-1:=[profile?] >=dev-haskell/ansi-terminal-0.9:=[profile?] >=dev-haskell/cmdargs-0.10:=[profile?] >=dev-haskell/data-default-0.5:=[profile?] >=dev-haskell/decimal-0.5.1:=[profile?] dev-haskell/diff:=[profile?] >=dev-haskell/extra-1.6.3:=[profile?] >=dev-haskell/githash-0.1.4:=[profile?] >=dev-haskell/hashable-1.2.4:=[profile?] >=dev-haskell/haskeline-0.6:=[profile?] >=dev-haskell/hledger-lib-1.25:=[profile?] <dev-haskell/hledger-lib-1.26:=[profile?] dev-haskell/lucid:=[profile?] >=dev-haskell/math-functions-0.3.3.0:=[profile?] >=dev-haskell/megaparsec-7.0.0:=[profile?] <dev-haskell/megaparsec-9.3:=[profile?] >=dev-haskell/microlens-0.4:=[profile?] dev-haskell/regex-tdfa:=[profile?] >=dev-haskell/safe-0.2:=[profile?] >=dev-haskell/shakespeare-2.0.2.2:=[profile?] >=dev-haskell/split-0.1:=[profile?] >=dev-haskell/tabular-0.2:=[profile?] >=dev-haskell/tasty-1.2.3:=[profile?] dev-haskell/temporary:=[profile?] dev-haskell/timeit:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-haskell/utf8-string-0.3.5:=[profile?] >=dev-haskell/utility-ht-0.0.13:=[profile?] >=dev-haskell/wizards-1.0:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Command-line interface for the hledger accounting system
+EAPI=8
+HOMEPAGE=https://hledger.org
+INHERIT=haskell-cabal
+IUSE=+terminfo +threaded doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>=dev-haskell/aeson-1:=[profile?] >=dev-haskell/ansi-terminal-0.9:=[profile?] >=dev-haskell/cmdargs-0.10:=[profile?] >=dev-haskell/data-default-0.5:=[profile?] >=dev-haskell/decimal-0.5.1:=[profile?] dev-haskell/diff:=[profile?] >=dev-haskell/extra-1.6.3:=[profile?] >=dev-haskell/githash-0.1.4:=[profile?] >=dev-haskell/hashable-1.2.4:=[profile?] >=dev-haskell/haskeline-0.6:=[profile?] >=dev-haskell/hledger-lib-1.25:=[profile?] <dev-haskell/hledger-lib-1.26:=[profile?] dev-haskell/lucid:=[profile?] >=dev-haskell/math-functions-0.3.3.0:=[profile?] >=dev-haskell/megaparsec-7.0.0:=[profile?] <dev-haskell/megaparsec-9.3:=[profile?] >=dev-haskell/microlens-0.4:=[profile?] dev-haskell/regex-tdfa:=[profile?] >=dev-haskell/safe-0.2:=[profile?] >=dev-haskell/shakespeare-2.0.2.2:=[profile?] >=dev-haskell/split-0.1:=[profile?] >=dev-haskell/tabular-0.2:=[profile?] >=dev-haskell/tasty-1.2.3:=[profile?] dev-haskell/temporary:=[profile?] dev-haskell/timeit:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-haskell/utf8-string-0.3.5:=[profile?] >=dev-haskell/utility-ht-0.0.13:=[profile?] >=dev-haskell/wizards-1.0:=[profile?] >=dev-lang/ghc-8.4.3:=
+RESTRICT=!test? ( test )
+SLOT=0/1.25
+SRC_URI=https://hackage.haskell.org/package/hledger-1.25/hledger-1.25.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_md5_=2a4673f5abb5b316078a9620b90ada42
