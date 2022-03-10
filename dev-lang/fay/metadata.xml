@@ -5,21 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="test">Build the fay-tests executable</flag>
-	</use>
 	<longdescription>
 		Fay is a proper subset of Haskell which is type-checked
 		with GHC, and compiled to JavaScript. It is lazy, pure, has a Fay monad,
 		an FFI, tail-recursion optimization (experimental), and support for cabal packages.
-		
-		/Documentation/
-		
-		See &lt;https://github.com/faylang/fay/wiki&gt;
-		
-		/Examples/
-		
-		See the examples directory and &lt;https://github.com/faylang/fay/wiki#fay-in-the-wild&gt;
-		
 	</longdescription>
 </pkgmetadata>
