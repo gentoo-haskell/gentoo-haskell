@@ -51,6 +51,39 @@ It basically means:
 - generate metadata for haskell repo after main
   tree sync is done, using N+1 cores
 
+Overlay Priority
+================
+
+Gentoo has a mechanism to define which ebuild is selected in the event
+a package has the same version number in two different
+repositories. This is detailed in the Gentoo wiki:
+https://wiki.gentoo.org/wiki//etc/portage/repos.conf
+The ebuild in the repository with the highest priority will be selected.
+
+When using the haskell overlay, ebuilds in this overlay should take
+precedence over the ebuilds in the main Gentoo repository, so you need
+to set the priorities accordingly.
+
+Check the current priority in ``/etc/portage/repos.conf/gentoo.conf``::
+
+  priority = -1000
+
+Note: -1000 is the default value, but you may have changed it previously
+
+In the haskell section of
+``/etc/portage/repos.conf/layman.conf`` confirm the priority ::
+
+  [haskell]
+  priority = 50
+  location = /var/lib/layman/haskell
+  layman-type = git
+  sync-type = laymansync
+  sync-uri = https://github.com/gentoo-haskell/gentoo-haskell.git
+  auto-sync = Yes
+
+The value in the haskell section needs to be higher than in the
+``gentoo.conf`` file - if it isn't, then modify one or both so it is.
+
 Developer's corner
 ==================
 
