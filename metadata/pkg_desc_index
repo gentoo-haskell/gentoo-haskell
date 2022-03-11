@@ -391,7 +391,7 @@ dev-haskell/cryptohash-cryptoapi 0.1.4: Crypto-api interfaces for cryptohash
 dev-haskell/cryptohash-md5 0.11.101.0: Fast, pure and practical MD5 implementation
 dev-haskell/cryptohash-sha1 0.11.100.1: Fast, pure and practical SHA-1 implementation
 dev-haskell/cryptohash-sha256 0.11.102.0: Fast, pure and practical SHA-256 implementation
-dev-haskell/cryptohash-sha512 0.11.100.1: Fast, pure and practical SHA-512 implementation
+dev-haskell/cryptohash-sha512 0.11.101.0: Fast, pure and practical SHA-512 implementation
 dev-haskell/cryptonite 0.25 0.26-r1 0.28 0.28-r1: Cryptography Primitives sink
 dev-haskell/cryptonite-conduit 0.2.2: cryptonite conduit
 dev-haskell/css-text 0.1.3.0: CSS parser and renderer
@@ -1312,7 +1312,7 @@ dev-haskell/monoid-transformer 0.0.4: Monoid counterparts to some ubiquitous mon
 dev-haskell/monoidal-containers 0.6.0.1-r1: Containers with monoidal accumulation
 dev-haskell/morsecode 0.0.5: Morse code
 dev-haskell/mountpoints 1.0.2: list mount points
-dev-haskell/msgpack 1.0.1.0-r1: A Haskell implementation of MessagePack
+dev-haskell/msgpack 1.0.1.0-r2: A Haskell implementation of MessagePack
 dev-haskell/mtl 2.2.2: Monad classes, using functional dependencies
 dev-haskell/mtl-compat 0.2.2: Backported Control.Monad.Except module from mtl
 dev-haskell/mtl-prelude 2.0.3.1: Reexports of most definitions from "mtl" and "transformers"
