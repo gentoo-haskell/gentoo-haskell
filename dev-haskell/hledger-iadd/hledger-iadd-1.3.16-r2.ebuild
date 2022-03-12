@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/brick-0.27:=[profile?]
 	>=dev-haskell/free-4.12.4:=[profile?]
-	>=dev-haskell/hledger-lib-1.23:=[profile?] <dev-haskell/hledger-lib-1.25:=[profile?]
+	>=dev-haskell/hledger-lib-1.23:=[profile?] <dev-haskell/hledger-lib-1.26:=[profile?]
 	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-9.3:=[profile?]
 	dev-haskell/microlens:=[profile?]
 	dev-haskell/microlens-th:=[profile?]
