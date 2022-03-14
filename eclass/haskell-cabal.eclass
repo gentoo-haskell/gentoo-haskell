@@ -4,10 +4,10 @@
 # @ECLASS: haskell-cabal.eclass
 # @MAINTAINER:
 # Haskell herd <haskell@gentoo.org>
-# @SUPPORTED_EAPIS: 6 7 8
 # @AUTHOR:
 # Original author: Andres Loeh <kosmikus@gentoo.org>
 # Original author: Duncan Coutts <dcoutts@gentoo.org>
+# @SUPPORTED_EAPIS: 6 7 8
 # @BLURB: for packages that make use of the Haskell Common Architecture for Building Applications and Libraries (cabal)
 # @DESCRIPTION:
 # Basic instructions:
@@ -49,9 +49,9 @@ esac
 
 inherit ghc-package multilib toolchain-funcs
 
-EXPORT_FUNCTIONS pkg_setup src_configure src_compile src_test src_install pkg_postinst pkg_postrm
+EXPORT_FUNCTIONS pkg_setup src_prepare src_configure src_compile src_test src_install pkg_postinst pkg_postrm
 
-# @ECLASS-VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
+# @ECLASS_VARIABLE: CABAL_EXTRA_CONFIGURE_FLAGS
 # @USER_VARIABLE
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup configure'.
@@ -59,14 +59,14 @@ EXPORT_FUNCTIONS pkg_setup src_configure src_compile src_test src_install pkg_po
 #    CABAL_EXTRA_CONFIGURE_FLAGS="--enable-shared --enable-executable-dynamic"
 : ${CABAL_EXTRA_CONFIGURE_FLAGS:=}
 
-# @ECLASS-VARIABLE: CABAL_EXTRA_BUILD_FLAGS
+# @ECLASS_VARIABLE: CABAL_EXTRA_BUILD_FLAGS
 # @USER_VARIABLE
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup build'.
 # example: /etc/portage/make.conf: CABAL_EXTRA_BUILD_FLAGS=-v
 : ${CABAL_EXTRA_BUILD_FLAGS:=}
 
-# @ECLASS-VARIABLE: GHC_BOOTSTRAP_FLAGS
+# @ECLASS_VARIABLE: GHC_BOOTSTRAP_FLAGS
 # @USER_VARIABLE
 # @DESCRIPTION:
 # User-specified additional parameters for ghc when building
@@ -75,7 +75,7 @@ EXPORT_FUNCTIONS pkg_setup src_configure src_compile src_test src_install pkg_po
 # linking 'setup' faster.
 : ${GHC_BOOTSTRAP_FLAGS:=}
 
-# @ECLASS-VARIABLE: CABAL_EXTRA_HADDOCK_FLAGS
+# @ECLASS_VARIABLE: CABAL_EXTRA_HADDOCK_FLAGS
 # @USER_VARIABLE
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup haddock'.
@@ -83,7 +83,7 @@ EXPORT_FUNCTIONS pkg_setup src_configure src_compile src_test src_install pkg_po
 #    CABAL_EXTRA_HADDOCK_FLAGS="--haddock-options=--latex --haddock-options=--pretty-html"
 : ${CABAL_EXTRA_HADDOCK_FLAGS:=}
 
-# @ECLASS-VARIABLE: CABAL_EXTRA_HOOGLE_FLAGS
+# @ECLASS_VARIABLE: CABAL_EXTRA_HOOGLE_FLAGS
 # @USER_VARIABLE
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup haddock --hoogle'.
@@ -91,7 +91,7 @@ EXPORT_FUNCTIONS pkg_setup src_configure src_compile src_test src_install pkg_po
 #    CABAL_EXTRA_HOOGLE_FLAGS="--haddock-options=--show-all"
 : ${CABAL_EXTRA_HOOGLE_FLAGS:=}
 
-# @ECLASS-VARIABLE: CABAL_EXTRA_HSCOLOUR_FLAGS
+# @ECLASS_VARIABLE: CABAL_EXTRA_HSCOLOUR_FLAGS
 # @USER_VARIABLE
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup hscolour'.
@@ -100,7 +100,7 @@ EXPORT_FUNCTIONS pkg_setup src_configure src_compile src_test src_install pkg_po
 : ${CABAL_EXTRA_HSCOLOUR_FLAGS:=}
 
 
-# @ECLASS-VARIABLE: CABAL_EXTRA_TEST_FLAGS
+# @ECLASS_VARIABLE: CABAL_EXTRA_TEST_FLAGS
 # @USER_VARIABLE
 # @DESCRIPTION:
 # User-specified additional parameters passed to 'setup test'.
@@ -108,19 +108,86 @@ EXPORT_FUNCTIONS pkg_setup src_configure src_compile src_test src_install pkg_po
 #    CABAL_EXTRA_TEST_FLAGS="-v3 --show-details=streaming"
 : ${CABAL_EXTRA_TEST_FLAGS:=}
 
-# @ECLASS-VARIABLE: CABAL_DEBUG_LOOSENING
+# @ECLASS_VARIABLE: CABAL_DEBUG_LOOSENING
 # @DESCRIPTION:
 # Show debug output for 'cabal_chdeps' function if set.
 # Needs working 'diff'.
 : ${CABAL_DEBUG_LOOSENING:=}
 
-# @ECLASS-VARIABLE: CABAL_REPORT_OTHER_BROKEN_PACKAGES
+# @ECLASS_VARIABLE: CABAL_REPORT_OTHER_BROKEN_PACKAGES
 # @DESCRIPTION:
 # Show other broken packages if 'cabal configure' fails.
 # It should be normally enabled unless you know you are about
 # to try to compile a lot of broken packages. Default value: 'yes'
 # Set to anything else to disable.
 : ${CABAL_REPORT_OTHER_BROKEN_PACKAGES:=yes}
+
+# @ECLASS_VARIABLE: CABAL_HACKAGE_REVISION
+# @PRE_INHERIT
+# @DESCRIPTION:
+# Set the upstream revision number from Hackage. This will automatically
+# add the upstream cabal revision to SRC_URI and apply it in src_prepare.
+: ${CABAL_HACKAGE_REVISION:=0}
+
+# @ECLASS_VARIABLE: CABAL_PN
+# @PRE_INHERIT
+# @DESCRIPTION:
+# Set the name of the package as it is recorded in the Hackage database. This
+# is mostly used when packages use CamelCase names upstream, but we want them
+# to be lowercase in portage.
+: ${CABAL_PN:=${PN}}
+
+# @ECLASS_VARIABLE: CABAL_PV
+# @PRE_INHERIT
+# @DESCRIPTION:
+# Set the version of the package as it is recorded in the Hackage database.
+# This can be useful if we use a different versioning scheme in Portage than
+# the one from upstream
+: ${CABAL_PV:=${PV}}
+
+# @ECLASS_VARIABLE: CABAL_P
+# @OUTPUT_VARIABLE
+# @DESCRIPTION:
+# The combined $CABAL_PN and $CABAL_PV variables, analogous to $P
+CABAL_P="${CABAL_PN}-${CABAL_PV}"
+
+S="${WORKDIR}/${CABAL_P}"
+
+# @ECLASS_VARIABLE: CABAL_FILE
+# @PRE_INHERIT
+# @DESCRIPTION:
+# The location of the .cabal file for the Haskell package. This defaults to
+# "${S}/${CABAL_PN}.cabal".
+: ${CABAL_FILE:="${S}/${CABAL_PN}.cabal"}
+
+# @ECLASS_VARIABLE: CABAL_DISTFILE
+# @OUTPUT_VARIABLE
+# @DESCRIPTION:
+# The name of the .cabal file downloaded from Hackage. This filename does not
+# include $DISTDIR
+if [[ ${CABAL_HACKAGE_REVISION} -ge 1 ]]; then
+	CABAL_DISTFILE="${P}-rev${CABAL_HACKAGE_REVISION}.cabal"
+fi
+
+# @ECLASS_VARIABLE: CABAL_CHDEPS
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Specifies changes to be made to the .cabal file. Uses the cabal_chdeps
+# function internally and shares the same syntax.
+# @EXAMPLE:
+# CABAL_CHDEPS=(
+#    'base >= 4.2 && < 4.6' 'base >= 4.2 && < 4.7'
+#    'containers ==0.4.*' 'containers >= 0.4 && < 0.6'
+# )
+: ${CABAL_CHDEPS:=}
+
+
+# @ECLASS_VARIABLE: CABAL_LIVE_VERSION
+# @PRE_INHERIT
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Set this to any value to prevent SRC_URI from being set automatically.
+: ${CABAL_LIVE_VERSION:=}
 
 # 'dev-haskell/cabal' passes those options with ./configure-based
 # configuration, but most packages don't need/don't accept it:
@@ -165,6 +232,22 @@ if [[ -n "${CABAL_TEST_SUITE}" ]]; then
 	IUSE="${IUSE} test"
 	RESTRICT+=" !test? ( test )"
 fi
+
+# If SRC_URI is defined in the ebuild without appending, it will overwrite
+# the value set here. This will not be set on packages whose versions end in "9999"
+# or if CABAL_LIVE_VERSION is set.
+case $PV in
+	*9999) ;;
+	*)
+		if [[ -z "${CABAL_LIVE_VERSION}" ]]; then
+			SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz -> ${P}.tar.gz"
+			if [[ -n ${CABAL_DISTFILE} ]]; then
+				SRC_URI+=" https://hackage.haskell.org/package/${CABAL_P}/revision/${CABAL_HACKAGE_REVISION}.cabal -> ${CABAL_DISTFILE}"
+			fi
+		fi ;;
+esac
+
+BDEPEND="${BDEPEND} app-text/dos2unix"
 
 # returns the version of cabal currently in use.
 # Rarely it's handy to pin cabal version from outside.
@@ -493,6 +576,29 @@ haskell-cabal_pkg_setup() {
 	fi
 }
 
+haskell-cabal_src_prepare() {
+	# Needed for packages that are still using MY_PN
+	if [[ -n ${MY_PN} ]]; then
+		local cabal_file="${S}/${MY_PN}.cabal"
+	else
+		local cabal_file="${CABAL_FILE}"
+	fi
+
+	if [[ -n ${CABAL_DISTFILE} ]]; then
+		# pull revised cabal from upstream
+		einfo "Using revised .cabal file from Hackage: revision ${CABAL_HACKAGE_REVISION}"
+		cp "${DISTDIR}/${CABAL_DISTFILE}" "${cabal_file}" || die
+	fi
+
+	# Convert to unix line endings
+	dos2unix "${cabal_file}" || die
+
+	# Apply patches *after* pulling the revised cabal
+	default
+
+	[[ -n "${CABAL_CHDEPS}" ]] && cabal_chdeps "${CABAL_CHDEPS[@]}"
+}
+
 haskell-cabal_src_configure() {
 	cabal-is-dummy-lib && return
 
@@ -666,23 +772,28 @@ cabal_flag() {
 #}
 # or
 # src_prepare() {
-#    CABAL_FILE=${S}/${MY_PN}.cabal cabal_chdeps \
+#    CABAL_FILE=${S}/${CABAL_PN}.cabal cabal_chdeps \
 #        'base >= 4.2 && < 4.6' 'base >= 4.2 && < 4.7'
-#    CABAL_FILE=${S}/${MY_PN}-tools.cabal cabal_chdeps \
+#    CABAL_FILE=${S}/${CABAL_PN}-tools.cabal cabal_chdeps \
 #        'base == 3.*' 'base >= 4.2 && < 4.7'
 #}
 #
 cabal_chdeps() {
-	local cabal_fn=${MY_PN:-${PN}}.cabal
-	local cf=${CABAL_FILE:-${S}/${cabal_fn}}
+	# Needed for compatibility with ebuilds still using MY_PN
+	if [[ -n ${MY_PN} ]]; then
+		local cabal_file="${S}/${MY_PN}.cabal"
+	else
+		local cabal_file="${CABAL_FILE}"
+	fi
+
 	local from_ss # ss - substring
 	local to_ss
 	local orig_c # c - contents
 	local new_c
 
-	[[ -f $cf ]] || die "cabal file '$cf' does not exist"
+	[[ -f "${cabal_file}" ]] || die "cabal file '${cabal_file}' does not exist"
 
-	orig_c=$(< "$cf")
+	orig_c=$(< "${cabal_file}")
 
 	while :; do
 		from_pat=$1
@@ -700,9 +811,9 @@ cabal_chdeps() {
 		new_c=${orig_c//${from_pat}/${to_str}}
 
 		if [[ -n $CABAL_DEBUG_LOOSENING ]]; then
-			echo "${orig_c}" >"${T}/${cf}".pre
-			echo "${new_c}" >"${T}/${cf}".post
-			diff -u "${T}/${cf}".{pre,post}
+			echo "${orig_c}" >"${T}/${cabal_file}".pre
+			echo "${new_c}" >"${T}/${cabal_file}".post
+			diff -u "${T}/${cabal_file}".{pre,post}
 		fi
 
 		[[ "${orig_c}" == "${new_c}" ]] && die "no trigger for '${from_pat}'"
@@ -711,7 +822,7 @@ cabal_chdeps() {
 		shift
 	done
 
-	echo "${new_c}" > "$cf" ||
+	echo "${new_c}" > "$cabal_file" ||
 		die "failed to update"
 }
 
