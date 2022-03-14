@@ -25,7 +25,7 @@ ircs://irc.libera.chat/#gentoo-haskell to get help.
 
 .. _TODO list: TODO.rst
 .. _bug reports: http://tinyurl.com/2l3p48
-.. _some git basics: http://progit.org/book/
+.. _some git basics: https://git-scm.com/book/en/v2 
 
 Introduction to Haskell Ebuilds
 ===============================
