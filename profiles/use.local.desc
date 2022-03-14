@@ -102,7 +102,6 @@ dev-haskell/echo:examples - Build the bundled example program.
 dev-haskell/entropy:halvm - Build for the HaLVM.
 dev-haskell/extensible:barbies - "define instances for barbies"
 dev-haskell/extensible:cassava - "define instances for cassava"
-dev-haskell/fay:test - Build the fay-tests executable
 dev-haskell/ffmpeg-light:builddemo - Build demo executable
 dev-haskell/ffmpeg-light:buildrasterdemo - Build Rasterific demo executable
 dev-haskell/ffmpeg-light:buildtranscodedemo - Build transcode demo executable

@@ -471,7 +471,7 @@ dev-haskell/dictionary-sharing 0.1.0.0: Sharing/memoization of class members
 dev-haskell/diff 0.3.4 0.4.0: O(ND) diff algorithm in haskell
 dev-haskell/diffarray 0.1.1-r1: This package defines the DiffArray type
 dev-haskell/digest 0.0.1.2: Various cryptographic hashes for bytestrings; CRC32 and Adler32 for now
-dev-haskell/digestive-functors 0.8.4.2: A practical formlet library
+dev-haskell/digestive-functors 0.8.4.2-r1: A practical formlet library
 dev-haskell/digestive-functors-blaze 0.6.2.0: Blaze frontend for the digestive-functors library
 dev-haskell/digestive-functors-happstack 0.6.1.3: Happstack backend for the digestive-functors library
 dev-haskell/digestive-functors-snap 0.7.0.1: Snap backend for the digestive-functors library
@@ -561,8 +561,7 @@ dev-haskell/fast-logger 3.0.5: A fast logging system
 dev-haskell/fast-math 1.0.2: Non IEEE-754 compliant compile-time floating-point optimisations
 dev-haskell/fastcgi 3001.0.2.5: A Haskell library for writing FastCGI programs
 dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
-dev-haskell/fay 0.24.2.0: A compiler for Fay, a Haskell subset that compiles to JavaScript
-dev-haskell/fay-base 0.21.1.1: The base package for Fay
+dev-haskell/fay-base 0.21.2.0: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1-r1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0-r1: jQuery bindings for Fay
 dev-haskell/fay-text 0.3.2.2-r2: Fay Text type represented as JavaScript strings
@@ -845,7 +844,7 @@ dev-haskell/hedis-config 0.0.3 1.0.0: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r3: An Haskell template system supporting both HTML5 and XML
 dev-haskell/here 1.2.13: Here docs & interpolated strings via quasiquotation
 dev-haskell/heredoc 0.2.0.0-r1: multi-line string / here document using QuasiQuotes
-dev-haskell/heterocephalus 1.0.5.5: A type-safe template engine for working with front end development tools
+dev-haskell/heterocephalus 1.0.5.6: A type-safe template engine for working with front end development tools
 dev-haskell/hex 0.1.2: Convert strings into hexadecimal and back
 dev-haskell/hexml 0.3.4: XML subset DOM parser
 dev-haskell/hexpat 0.20.13: XML parser/formatter based on expat
@@ -2220,6 +2219,7 @@ dev-lang/dhall 1.40.1 1.40.2: A configuration language guaranteed to terminate
 dev-lang/elm 0.19.1: Meta package for Elm
 dev-lang/elm-compiler 0.19.1-r1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
+dev-lang/fay 0.24.2.0: A compiler for Fay, a Haskell subset that compiles to JavaScript
 dev-lang/ghc 8.8.4-r1 8.10.5-r1 8.10.6 8.10.7 9.0.1-r1 9.0.2-r1 9999: The Glasgow Haskell Compiler
 dev-lang/hugs98 2006.9-r2: The Hugs98 Haskell interpreter
 dev-lang/idris 1.3.4: Functional Programming Language with Dependent Types

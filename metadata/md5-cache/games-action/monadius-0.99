@@ -9,5 +9,5 @@ LICENSE=GPL-2
 RDEPEND=>=dev-haskell/glut-2.4:= >=dev-haskell/opengl-2.8:= >=dev-lang/ghc-7.6.1:=
 SLOT=0
 SRC_URI=https://hackage.haskell.org/package/Monadius-0.99/Monadius-0.99.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
 _md5_=75b2dc3c8d1a92c46e03f26c8677f104

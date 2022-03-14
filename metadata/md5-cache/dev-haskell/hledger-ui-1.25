@@ -10,5 +10,5 @@ LICENSE=GPL-3
 RDEPEND=>=dev-haskell/ansi-terminal-0.9:= dev-haskell/async:= >=dev-haskell/brick-0.23:= >=dev-haskell/cmdargs-0.8:= dev-haskell/data-default:= >=dev-haskell/doclayout-0.3:= <dev-haskell/doclayout-0.4:= >=dev-haskell/extra-1.6.3:= >=dev-haskell/fsnotify-0.2.1.2:= <dev-haskell/fsnotify-0.4:= >=dev-haskell/hledger-1.25:= <dev-haskell/hledger-1.26:= >=dev-haskell/hledger-lib-1.25:= <dev-haskell/hledger-lib-1.26:= >=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-9.3:= >=dev-haskell/microlens-0.4:= >=dev-haskell/microlens-platform-0.2.3.1:= >=dev-haskell/safe-0.2:= >=dev-haskell/split-0.1:= >=dev-haskell/text-zipper-0.4:= dev-haskell/vector:= >=dev-haskell/vty-5.15:= >=dev-lang/ghc-8.4.3:=
 SLOT=0
 SRC_URI=https://hackage.haskell.org/package/hledger-ui-1.25/hledger-ui-1.25.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	bb88eb436089b3146db7fe7559d78fee
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	de4beb52bfa93c4c5d96792a6b5e1784	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
 _md5_=a5fbf4e76ec681305cac176623e1444a
