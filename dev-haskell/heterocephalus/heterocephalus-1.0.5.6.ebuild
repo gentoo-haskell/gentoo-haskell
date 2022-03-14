@@ -20,6 +20,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.9:=[profile?]
 	>=dev-haskell/blaze-markup-0.8:=[profile?]
 	>=dev-haskell/dlist-0.8:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?]
+	>=dev-haskell/template-haskell-compat-v0208-0.1.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

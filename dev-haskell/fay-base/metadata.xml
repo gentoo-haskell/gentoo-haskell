@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The base package for Fay.
-		This package exports Prelude and FFI which you probably want to use with Fay.
-	</longdescription>
 </pkgmetadata>
