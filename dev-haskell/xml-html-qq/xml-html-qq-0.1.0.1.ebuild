@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+PATCHES=( "${FILESDIR}/${PN}-0.1.0.1-cabal-doctest.patch" )
+
 RDEPEND="dev-haskell/blaze-markup:=[profile?]
 	dev-haskell/conduit:=[profile?]
 	dev-haskell/data-default:=[profile?]
@@ -32,6 +34,7 @@ RDEPEND="dev-haskell/blaze-markup:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( dev-haskell/doctest
+		dev-haskell/cabal-doctest
 		dev-haskell/glob
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit )

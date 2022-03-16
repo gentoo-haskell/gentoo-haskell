@@ -1,0 +1,84 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+diff -urN xml-html-qq-0.1.0.1/Setup.hs xml-html-qq-0.1.0.1-r1/Setup.hs
+--- xml-html-qq-0.1.0.1/Setup.hs	2017-02-07 01:49:27.000000000 -0700
++++ xml-html-qq-0.1.0.1-r1/Setup.hs	2022-03-15 20:40:45.606846792 -0600
+@@ -1,2 +1,6 @@
+-import Distribution.Simple
+-main = defaultMain
++module Main (main) where
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "xml-html-qq-doctest"
+diff -urN xml-html-qq-0.1.0.1/test/DocTest.hs xml-html-qq-0.1.0.1-r1/test/DocTest.hs
+--- xml-html-qq-0.1.0.1/test/DocTest.hs	2017-02-07 01:49:27.000000000 -0700
++++ xml-html-qq-0.1.0.1-r1/test/DocTest.hs	2022-03-15 21:55:01.876848952 -0600
+@@ -6,12 +6,28 @@
+ import Data.Monoid ((<>))
+ import System.FilePath.Glob (glob)
+ import Test.DocTest (doctest)
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.Directory (getCurrentDirectory, makeAbsolute)
++import System.FilePath.Posix ((</>))
++import System.IO (utf8)
++import Build_doctests (pkgs)
+ 
+ main :: IO ()
+ main = glob "src/**/*.hs" >>= doDocTest
+ 
+ doDocTest :: [String] -> IO ()
+-doDocTest options = doctest $ options <> ghcExtensions
++doDocTest options = do
++    setLocaleEncoding utf8
++    pwd    <- getCurrentDirectory
++    prefix <- makeAbsolute pwd
++    let customFlags =
++            [ "-package-env=-"
++            , "-hide-all-packages"
++            , "-no-user-package-db"
++            , "-package-db=" ++ prefix </> "dist/package.conf.inplace"
++            ]
++
++    doctest $ customFlags ++ pkgs ++ options ++ ghcExtensions
+ 
+ ghcExtensions :: [String]
+ ghcExtensions =
+diff -urN xml-html-qq-0.1.0.1/xml-html-qq.cabal xml-html-qq-0.1.0.1-r1/xml-html-qq.cabal
+--- xml-html-qq-0.1.0.1/xml-html-qq.cabal	2022-03-15 20:36:43.786846674 -0600
++++ xml-html-qq-0.1.0.1-r1/xml-html-qq.cabal	2022-03-15 21:56:04.736848983 -0600
+@@ -9,10 +9,16 @@
+ maintainer:          cdep.illabout@gmail.com
+ copyright:           2017 Dennis Gosnell
+ category:            Text
+-build-type:          Simple
++build-type:          Custom
+ extra-source-files:  README.md
+ cabal-version:       >=1.10
+ 
++custom-setup
++  setup-depends:
++      base
++    , Cabal
++    , cabal-doctest
++
+ library
+   hs-source-dirs:      src
+   exposed-modules:     Text.HTML.QQ
+@@ -42,6 +48,10 @@
+   build-depends:       base
+                      , doctest
+                      , Glob
++                     , directory
++                     , filepath
++                     , base-compat
++                     , cabal-doctest
+   default-language:    Haskell2010
+   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+ 
