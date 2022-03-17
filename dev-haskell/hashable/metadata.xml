@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="random-initial-seed">Randomly initialize the initial seed on each final executable invocation. This is not a security feature.</flag>
-	</use>
 </pkgmetadata>
