@@ -18,9 +18,6 @@
 		<flag name="j">
 			Attempt a parallel build
 		</flag>
-		<flag name="safe">
-			Dissallow unsafeCoerce
-		</flag>
 		<flag name="test-templates">
 			Enable template tests
 		</flag>
