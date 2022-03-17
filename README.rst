@@ -9,6 +9,13 @@ Gentoo Haskell project
 .. |repoman-badge| image:: https://github.com/gentoo-haskell/gentoo-haskell/workflows/repoman/badge.svg
     :target: https://github.com/gentoo-haskell/gentoo-haskell/actions?query=workflow%3Arepoman
 
+IRC
+===
+
+Find us in ``#gentoo-haskell`` on `libera.chat`_!
+
+.. _libera.chat: https://libera.chat
+
 Quickest start
 ==============
 
