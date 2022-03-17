@@ -16,12 +16,14 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+PATCHES=( "${FILESDIR}/${PN}-2.3.2.15-fix-doctest.patch" )
+
 RDEPEND=">=dev-haskell/attoparsec-0.10.0:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/doctest-0.8 <dev-haskell/doctest-0.19
+	test? ( >=dev-haskell/doctest-0.8
 		>=dev-haskell/hspec-2.2.3
 		>=dev-haskell/quickcheck-2.4 <dev-haskell/quickcheck-2.15 )
 "
@@ -30,5 +32,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'hspec >= 2.2.3 && < 2.9' 'hspec >= 2.2.3'
+		'hspec >= 2.2.3 && < 2.9' 'hspec >= 2.2.3' \
+		'doctest >= 0.8 && < 0.19' 'doctest >=0.8'
 }
