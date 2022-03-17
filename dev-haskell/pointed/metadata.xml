@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="comonad">You can disable the use of the `comonad` package using `-f-transformers`.</flag>
-		<flag name="containers">You can disable the use of the `containers` package using `-f-containers`.</flag>
 		<flag name="kan-extensions">You can disable the use of the `kan-extensions` package using `-f-kan-extensions`.</flag>
 		<flag name="semigroupoids">You can disable the use of the `semigroupoids` package using `-f-semigroupoids`.</flag>
 		<flag name="semigroups">You can disable the use of the `semigroups` package using `-f-semigroups`.</flag>
