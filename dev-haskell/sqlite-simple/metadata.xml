@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Mid-level SQLite client library, based on postgresql-simple.
-		
-		Main documentation (with examples): &lt;sqlite-simple/docs/Database-SQLite-Simple.html Database.SQLite.Simple&gt;
-		
-		You can view the project page at &lt;http://github.com/nurpax/sqlite-simple&gt;
-		for more information.
-	</longdescription>
 </pkgmetadata>
