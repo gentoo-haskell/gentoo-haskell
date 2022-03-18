@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="no-unicode system-libyaml"
+IUSE="+unicode system-libyaml"
 
 RDEPEND=">=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
@@ -27,7 +27,10 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	local unicode_flag="no-unicode"
+	use unicode && unicode_flag="-no-unicode"
+
 	haskell-cabal_src_configure \
-		$(cabal_flag no-unicode no-unicode) \
+		--flag="${unicode_flag}" \
 		$(cabal_flag system-libyaml system-libyaml)
 }
