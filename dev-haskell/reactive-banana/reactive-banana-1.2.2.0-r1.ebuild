@@ -16,9 +16,11 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.4:=[profile?]
+PATCHES=( "${FILESDIR}/${PN}-1.2.2.0-hashable-1_4-fix.patch" )
+
+RDEPEND=">=dev-haskell/hashable-1.1:=[profile?]
 	>=dev-haskell/pqueue-1.0:=[profile?] <dev-haskell/pqueue-1.5:=[profile?]
-	>=dev-haskell/semigroups-0.13:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
+	>=dev-haskell/semigroups-0.13:=[profile?]
 	>=dev-haskell/these-0.2:=[profile?] <dev-haskell/these-1.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.1.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?] <dev-haskell/vault-0.4:=[profile?]
@@ -31,3 +33,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.2 <dev-haskell/test-framework-hunit-0.4 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'hashable >= 1.1 && < 1.4' 'hashable >=1.1' \
+		'semigroups >= 0.13 && < 0.20' 'semigroups >=0.13'
+}
