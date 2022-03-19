@@ -1,0 +1,18 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+Typical doctest issues. This one will require a bit of work to get working
+again.
+
+diff -urN relude-1.0.0.1/relude.cabal relude-1.0.0.1-r1/relude.cabal
+--- relude-1.0.0.1/relude.cabal	2022-03-18 18:28:02.526968612 -0600
++++ relude-1.0.0.1-r1/relude.cabal	2022-03-18 18:49:10.756969227 -0600
+@@ -252,6 +252,7 @@
+ 
+ test-suite relude-doctest
+   import:              common-options
++  buildable: False
+   type:                exitcode-stdio-1.0
+   hs-source-dirs:      test
+   main-is:             Doctest.hs
