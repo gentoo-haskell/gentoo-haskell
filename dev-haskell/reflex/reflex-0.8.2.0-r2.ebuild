@@ -47,7 +47,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-5.6:=[
 	>=dev-haskell/syb-0.5:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]
 	>=dev-haskell/unbounded-delays-0.1.0.0:=[profile?] <dev-haskell/unbounded-delays-0.2:=[profile?]
-	>=dev-haskell/witherable-0.3:=[profile?] <dev-haskell/witherable-0.4:=[profile?]
+	>=dev-haskell/witherable-0.3:=[profile?]
 	>=dev-lang/ghc-8.6.5:=
 	template-haskell? ( >=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 				>=dev-haskell/haskell-src-meta-0.6:=[profile?] <dev-haskell/haskell-src-meta-0.9:=[profile?] )
@@ -70,7 +70,8 @@ src_prepare() {
 		'semialign >=1 && <1.2' 'semialign >=1' \
 		'base >= 4.11 && < 4.15' 'base >= 4.11' \
 		'random == 1.1.*' 'random >= 1.1' \
-		'template-haskell >= 2.9 && < 2.17' 'template-haskell >= 2.9'
+		'template-haskell >= 2.9 && < 2.17' 'template-haskell >= 2.9' \
+		'witherable >= 0.3 && < 0.4' 'witherable >=0.3'
 	default
 }
 
