@@ -31,10 +31,17 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	>=dev-haskell/cabal-doctest-1.0.6 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.16.0.1 <dev-haskell/doctest-0.19
+	test? ( >=dev-haskell/doctest-0.16.0.1
 		>=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-3
 		>=dev-haskell/inspection-testing-0.4.2 <dev-haskell/inspection-testing-0.5 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'doctest >=0.16.0.1 && <0.19' 'doctest >=0.16.0.1'
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
