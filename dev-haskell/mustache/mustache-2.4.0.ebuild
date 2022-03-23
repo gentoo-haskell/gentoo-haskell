@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 PATCHES=(
 	"${FILESDIR}/${PN}-2.3.2-disable-langspec-tests.patch"
 	"${FILESDIR}/${PN}-2.4.0-ghc-8_10-fix.patch"
+	"${FILESDIR}/${PN}-2.4.0-unordered-containers-2_17-fix.patch"
 )
 
 RDEPEND="dev-haskell/aeson:=[profile?]
