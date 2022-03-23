@@ -5,13 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="test-properties">used to enable tests</flag>
-	</use>
-	<longdescription>
-		A fast supply of concurrent unique identifiers suitable for use
-		within a single process. Once the initial &#39;Supply&#39; has been initialized,
-		the remainder of the API is pure. See &quot;Control.Concurrent.Supply&quot; for
-		details.
-	</longdescription>
 </pkgmetadata>
