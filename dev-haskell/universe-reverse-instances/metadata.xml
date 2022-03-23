@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		For example this package provides a @Eq (a -&gt; b)@ instance:
-		
-		@
-		instance (Finite a, Eq b) =&gt; Eq (a -&gt; b) where
-		f == g = and [f x == g x | x &lt;- universeF]
-		@
-	</longdescription>
 </pkgmetadata>
