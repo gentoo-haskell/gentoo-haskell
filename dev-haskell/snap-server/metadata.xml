@@ -6,11 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="build-pong">Build a server that just returns "PONG"? Normally useful only for benchmarks.</flag>
-		<flag name="build-testserver">Build the blackbox testserver?</flag>
 		<flag name="debug">Enable support for debugging.</flag>
 		<flag name="openssl">Enable https support using the HsOpenSSL library.</flag>
-		<flag name="portable">Compile in cross-platform mode. No platform-specific code or optimizations such as C routines will be used.</flag>
+		<flag name="pong-server">Build a server that just returns "PONG". Normally useful only for benchmarks.</flag>
+		<flag name="test-server">Build the blackbox testserver</flag>
 	</use>
 	<longdescription>
 		Snap is a simple and fast web development framework and server written in
