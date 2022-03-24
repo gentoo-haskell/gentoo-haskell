@@ -10,5 +10,5 @@ RDEPEND=>=app-editors/emacs-23.1:*
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/haskell/haskell-mode/archive/v16.1.tar.gz -> haskell-mode-16.1.tar.gz
-_eclasses_=elisp-common	cf4fd1b0835b9f3e638724840468064a	elisp	532fa549a4f54b2a3f83b827b272a4a9
+_eclasses_=elisp-common	f9c72486dbcb18b633c9d0949211d86e	elisp	ba40293f44b2e5c3c19d4671c19ce01a
 _md5_=bdc153ba39ca11ee44e2d13c95e37a32
