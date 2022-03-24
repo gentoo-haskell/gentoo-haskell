@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides a fast and reasonably robust HTML5 tokenizer built
-		upon the @attoparsec@ library. The parsing strategy is based upon the HTML5
-		parsing specification with few deviations.
-	</longdescription>
 </pkgmetadata>
