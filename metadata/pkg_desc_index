@@ -955,7 +955,7 @@ dev-haskell/hslua-objectorientation 2.0.1: Object orientation tools for HsLua
 dev-haskell/hslua-packaging 2.0.0: Utilities to build Lua modules
 dev-haskell/hsndfile 0.8.0-r1: Haskell bindings for libsndfile
 dev-haskell/hsndfile-vector 0.5.2: Haskell bindings for libsndfile (Data.Vector interface)
-dev-haskell/hsopenssl 0.11.7: Partial OpenSSL binding for Haskell
+dev-haskell/hsopenssl 0.11.7.2: Partial OpenSSL binding for Haskell
 dev-haskell/hsopenssl-x509-system 0.1.0.4: Use the system's native CA certificate store with HsOpenSSL
 dev-haskell/hsp 0.10.0: Haskell Server Pages is a library for writing dynamic server-side web pages
 dev-haskell/hsparql 0.3.6: A SPARQL query generator and DSL, and a client to query a SPARQL server
