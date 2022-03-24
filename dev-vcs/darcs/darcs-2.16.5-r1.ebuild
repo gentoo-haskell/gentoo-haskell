@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="curl +terminfo +threaded"
 
 RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
-	>=dev-haskell/attoparsec-0.13.0.1:=[profile?] <dev-haskell/attoparsec-0.14:=[profile?]
+	>=dev-haskell/attoparsec-0.13.0.1:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.7:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/conduit-1.3.0:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/constraints-0.11:=[profile?]
@@ -74,7 +74,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'constraints       >= 0.11 && < 0.13' 'constraints >=0.11' \
-		'hashable          >= 1.2.3.3 && < 1.4' 'hashable >=1.2.3.3'
+		'hashable          >= 1.2.3.3 && < 1.4' 'hashable >=1.2.3.3' \
+		'attoparsec        >= 0.13.0.1 && < 0.14' 'attoparsec >=0.13.0.1'
 }
 
 src_configure() {
