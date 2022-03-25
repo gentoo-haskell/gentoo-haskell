@@ -4,3 +4,4 @@ move dev-haskell/prolog dev-lang/prolog
 move dev-haskell/haskell-awk app-text/haskell-awk
 move dev-haskell/lambdabot net-irc/lambdabot
 move dev-haskell/fay dev-lang/fay
+move dev-haskell/hasmin dev-util/hasmin
