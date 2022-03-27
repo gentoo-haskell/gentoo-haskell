@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/async-2.0.0:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/mmorph-1.0.2:=[profile?] <dev-haskell/mmorph-1.2:=[profile?]
 	>=dev-haskell/pipes-4.1.7:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/pipes-concurrency-2.0.3:=[profile?] <dev-haskell/pipes-concurrency-2.1:=[profile?]
-	>=dev-haskell/semigroups-0.18:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
+	>=dev-haskell/semigroups-0.18:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -35,5 +35,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'contravariant                   < 1.5' 'contravariant'
+		'contravariant                   < 1.5' 'contravariant' \
+		'semigroups == 0.18.*' 'semigroups >= 0.18'
 }
