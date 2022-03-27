@@ -1325,7 +1325,7 @@ dev-haskell/multistate 0.8.0.4: like mtl's ReaderT / WriterT / StateT, but more 
 dev-haskell/murmur-hash 0.1.0.9: MurmurHash2 implementation for Haskell
 dev-haskell/mustache 2.4.0: A mustache template parser library
 dev-haskell/mutable-containers 0.3.4: Abstactions and concrete implementations of mutable containers
-dev-haskell/mvc 1.1.7: Model-view-controller
+dev-haskell/mvc 1.1.7-r1: Model-view-controller
 dev-haskell/mwc-probability 2.3.1: Sampling function-based probability distributions
 dev-haskell/mwc-random 0.14.0.0 0.15.0.2: Fast, high quality pseudo random number generation
 dev-haskell/mysql 0.2.0.1: A low-level MySQL client library
@@ -1474,7 +1474,7 @@ dev-haskell/pipes-attoparsec 0.5.1.5: Attoparsec and Pipes integration
 dev-haskell/pipes-binary 0.4.3: Encode and decode binary streams using the pipes and binary libraries
 dev-haskell/pipes-bytestring 2.1.7: ByteString support for pipes
 dev-haskell/pipes-cereal 0.1.0.0-r1: Encode and decode binary streams using the pipes and cereal libraries
-dev-haskell/pipes-concurrency 2.0.12: Concurrency for the pipes ecosystem
+dev-haskell/pipes-concurrency 2.0.14: Concurrency for the pipes ecosystem
 dev-haskell/pipes-group 1.0.12-r1: Group streams into substreams
 dev-haskell/pipes-http 1.0.6-r2: HTTP client with pipes interface
 dev-haskell/pipes-network 0.6.5: Use network sockets together with the pipes library
