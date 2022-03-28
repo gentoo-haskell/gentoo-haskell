@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/async-2.0:= <dev-haskell/async-2.3:=
 	>=dev-haskell/echo-0.1.3:= <dev-haskell/echo-0.2:=
 	>=dev-haskell/edit-distance-0.2.2:= <dev-haskell/edit-distance-0.3:=
 	>=dev-haskell/hackage-security-0.6.0.1:= <dev-haskell/hackage-security-0.7:=
-	>=dev-haskell/hashable-1.0:= <dev-haskell/hashable-1.4:=
+	>=dev-haskell/hashable-1.0:=
 	>=dev-haskell/http-4000.1.5:= <dev-haskell/http-4000.4:=
 	>=dev-haskell/mtl-2.0:= <dev-haskell/mtl-2.3:=
 	>=dev-haskell/network-uri-2.6.0.2:= <dev-haskell/network-uri-2.7:=
@@ -54,7 +54,8 @@ src_prepare() {
 	#fi
 
 	cabal_chdeps \
-		'base       >= 4.8      && < 4.15' 'base >= 4.8'
+		'base       >= 4.8      && < 4.15' 'base >= 4.8' \
+		'hashable   >= 1.0      && < 1.4' 'hashable >=1.0'
 
 	# no chance to link to -threaded on ppc64, alpha and others
 	# who use UNREG, not only ARM
