@@ -5,5 +5,5 @@ INHERIT=acct-user
 KEYWORDS=~amd64 ~x86
 RDEPEND=acct-group/hoogle
 SLOT=0
-_eclasses_=user-info	df8c432bdcb3cdcef6c8250f0ab9e4ea	user	532ab7f2ae477f0333be1eacc343821c	acct-user	5478f6e88280b3e8c01f87ad29aa8f2a
+_eclasses_=user-info	df8c432bdcb3cdcef6c8250f0ab9e4ea	user	cccf4b1f43c35defc6e448e73cc44ca0	acct-user	b1b77f98e85cd9473ed7798985a4a980
 _md5_=f118c729c2db6a533c8759700ae763b2
