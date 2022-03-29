@@ -25,7 +25,7 @@ RESTRICT="test"
 PATCHES=( "${FILESDIR}/${PN}-0.24.2.0-ghc-9-fix.patch" )
 
 RDEPEND=">dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-1.6:=[profile?]
-	>=dev-haskell/base-compat-0.10:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
+	>=dev-haskell/base-compat-0.10:=[profile?]
 	>=dev-haskell/data-default-0.2:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/data-lens-light-0.1:=[profile?] <dev-haskell/data-lens-light-0.2:=[profile?]
 	>=dev-haskell/ghc-paths-0.1:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
@@ -65,7 +65,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base >= 4.9 && < 4.15' 'base >= 4.9' \
-		'optparse-applicative >= 0.11 && < 0.16' 'optparse-applicative >= 0.11'
+		'optparse-applicative >= 0.11 && < 0.16' 'optparse-applicative >= 0.11' \
+		'base-compat >= 0.10 && < 0.12' 'base-compat >=0.10'
 }
 
 src_configure() {
