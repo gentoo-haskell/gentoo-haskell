@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/barbies-2.0:=[profile?] <dev-haskell/barbies-2.1:=[profil
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 	>=dev-haskell/cabal-doctest-1.0 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/base-compat-0.11 <dev-haskell/base-compat-0.12
+	test? ( >=dev-haskell/base-compat-0.11
 		>=dev-haskell/doctest-0.18
 		>=dev-haskell/hspec-2.6.1
 		>=dev-haskell/lens-4.17
@@ -41,5 +41,6 @@ src_prepare() {
 	cabal_chdeps \
 		'lens >= 4.17 && < 5' 'lens >= 4.17' \
 		'doctest ^>= 0.17' 'doctest >= 0.16' \
-		'hspec >= 2.6.1 && < 2.8' 'hspec >= 2.6.1'
+		'hspec >= 2.6.1 && < 2.8' 'hspec >= 2.6.1' \
+		'base-compat ^>= 0.11' 'base-compat >=0.11'
 }
