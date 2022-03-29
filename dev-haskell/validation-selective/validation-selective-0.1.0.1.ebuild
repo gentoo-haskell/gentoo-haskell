@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 	    dev-haskell/cabal-doctest
 		dev-haskell/base-compat
 		>=dev-haskell/hedgehog-1.0 <dev-haskell/hedgehog-1.1
-		>=dev-haskell/hspec-2.7.1 <dev-haskell/hspec-2.8
+		>=dev-haskell/hspec-2.7.1
 		>=dev-haskell/hspec-hedgehog-0.0.1.1 <dev-haskell/hspec-hedgehog-0.1 )
 "
 
