@@ -312,8 +312,8 @@ dev-haskell/colorize-haskell 1.0.1-r1: Highligt Haskell source
 dev-haskell/colour 2.3.6: A model for human colour/color perception
 dev-haskell/colourista 0.1.0.1: Convenient interface for printing colourful messages
 dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
-dev-haskell/commonmark 0.1.1.4 0.2.1.1: Pure Haskell commonmark parser
-dev-haskell/commonmark-extensions 0.2.3: Pure Haskell commonmark parser
+dev-haskell/commonmark 0.2.2: Pure Haskell commonmark parser
+dev-haskell/commonmark-extensions 0.2.3.1: Pure Haskell commonmark parser
 dev-haskell/commonmark-pandoc 0.2.1.2: Bridge between commonmark and pandoc AST
 dev-haskell/comonad 5.0.7 5.0.8: The Comonads package authored by Edward Kmett
 dev-haskell/comonad-extras 4.0.1: Exotic comonad transformers
@@ -772,7 +772,7 @@ dev-haskell/haddock 2.24.0 2.25.0 2.25.1: A documentation-generation tool for Ha
 dev-haskell/haddock-api 2.24.0-r1 2.25.1: A documentation-generation tool for Haskell libraries
 dev-haskell/haddock-library 1.8.0 1.9.0 1.10.0-r1: Library exposing some functionality of Haddock
 dev-haskell/haha 0.3.1.1-r1: A simple library for creating animated ascii art on ANSI terminals
-dev-haskell/hakyll 4.15.1.0: A static website compiler library
+dev-haskell/hakyll 4.15.1.1: A static website compiler library
 dev-haskell/hakyll-agda 0.1.13: Wrapper to integrate literate Agda files with Hakyll
 dev-haskell/hakyll-sass 0.2.4: Hakyll SASS compiler over hsass
 dev-haskell/half 0.3-r1 0.3.1: Half-precision floating-point
@@ -1102,9 +1102,9 @@ dev-haskell/js-chart 2.9.4.1: Obtain minified chart.js code
 dev-haskell/js-dgtable 0.5.2: Obtain minified jquery.dgtable code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 3.3.1: Obtain minified jQuery code
-dev-haskell/jsaddle 0.9.8.0: Interface for JavaScript that works with GHCJS and GHC
-dev-haskell/jsaddle-warp 0.9.8.0: Interface for JavaScript that works with GHCJS and GHC
-dev-haskell/jsaddle-wkwebview 0.9.7.1: Interface for JavaScript that works with GHCJS and GHC
+dev-haskell/jsaddle 0.9.8.2: Interface for JavaScript that works with GHCJS and GHC
+dev-haskell/jsaddle-warp 0.9.8.2: Interface for JavaScript that works with GHCJS and GHC
+dev-haskell/jsaddle-wkwebview 0.9.8.2: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/json 0.10: Support for serialising Haskell to and from JSON
 dev-haskell/json-ast 0.3.1: Universal JSON AST datastructure
 dev-haskell/json-bytes-builder 0.5.2.1: Direct-to-bytes JSON Builder
@@ -1271,7 +1271,7 @@ dev-haskell/mmark 0.0.7.4: Strict markdown processor for writers
 dev-haskell/mmorph 1.1.5: Monad morphisms
 dev-haskell/mockery 0.3.5: Support functions for automated testing
 dev-haskell/mod 0.1.2.2: Fast type-safe modular arithmetic
-dev-haskell/modern-uri 0.3.4.1: Modern library for working with URIs
+dev-haskell/modern-uri 0.3.4.4: Modern library for working with URIs
 dev-haskell/modular-arithmetic 1.2.1.5: A type for integers modulo some constant
 dev-haskell/monad-control 1.0.3.1: Lift control operations, like exception catching, through monad transformers
 dev-haskell/monad-control-aligned 0.0.1.1: monad-control altrnative
@@ -1416,10 +1416,10 @@ dev-haskell/ordered-containers 0.2.2: Set- and Map-like types that remember the 
 dev-haskell/ormolu 0.1.4.1-r2 0.3.1.0: A formatter for Haskell source code
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.17.0.2: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.3.12.1: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.3.12.2: Pandoc filter for cross-references
 dev-haskell/pandoc-lua-marshal 0.1.5.1: Use pandoc types in Lua
 dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, images and paragraphs
-dev-haskell/pandoc-types 1.22.1: Types for representing a structured document
+dev-haskell/pandoc-types 1.22.2: Types for representing a structured document
 dev-haskell/pango 0.13.8.1-r1: Binding to the Pango text rendering engine
 dev-haskell/panic 0.4.0.1: A convenient way to panic
 dev-haskell/pantry 0.5.2.3 0.5.4: Content addressable Haskell package management
@@ -1910,7 +1910,7 @@ dev-haskell/test-framework-smallcheck 0.2: Support for SmallCheck tests in test-
 dev-haskell/test-framework-th 0.2.4: Automagically generate the HUnit and Quickcheck using Template Haskell
 dev-haskell/testing-feat 1.1.0.0-r1: Functional Enumeration of Algebraic Types
 dev-haskell/testing-type-modifiers 0.1.0.1: Data type modifiers for property based testing
-dev-haskell/texmath 0.12.4: Conversion between math formats
+dev-haskell/texmath 0.12.5: Conversion between math formats
 dev-haskell/texrunner 0.0.1.2-r2: Functions for running Tex from Haskell
 dev-haskell/text 1.2.3.2 1.2.4.0-r1 1.2.4.1 1.2.5.0: An efficient packed Unicode text type
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
@@ -2282,7 +2282,7 @@ sci-mathematics/agda 2.6.1.2 2.6.2: A dependently typed functional programming l
 sci-mathematics/agda-stdlib 2.6.1.2.1.4 2.6.2.1.7.1: Agda standard library
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/darcsweb 1.1: A web interface for darcs
-www-apps/gitit 0.15.1.0: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.15.1.0-r1: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp

@@ -376,6 +376,7 @@ dev-haskell/system-uuid:cli - Enable command line tool
 dev-haskell/tasty-discover:executable - Build the tasty-discover executable
 dev-haskell/tasty-golden:build-example - 
 dev-haskell/texmath:executable - Compile test executable.
+dev-haskell/texmath:server - Compile webserver.
 dev-haskell/text-short:asserts - Enable runtime-checks via @assert@
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
 dev-haskell/these:assoc - Build with assoc dependency
