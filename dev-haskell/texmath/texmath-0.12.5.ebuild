@@ -16,27 +16,34 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE="executable"
+IUSE="executable server"
 
-RDEPEND="dev-haskell/mtl:=[profile?]
-	>=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.23:=[profile?]
-	>=dev-haskell/parsec-3:=[profile?]
+RDEPEND=">=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.23:=[profile?]
 	dev-haskell/split:=[profile?]
 	>=dev-haskell/syb-0.4.2:=[profile?] <dev-haskell/syb-0.8:=[profile?]
-	dev-haskell/text:=[profile?]
 	dev-haskell/xml:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	executable? ( dev-haskell/aeson:=[profile?]
-			>=dev-haskell/network-uri-2.6:=[profile?] )
+			>=dev-haskell/network-uri-2.6:=[profile?]
+			dev-haskell/pretty-show:=[profile?] )
+	!executable? ( server? ( dev-haskell/aeson:=[profile?] ) )
+	server? ( dev-haskell/optparse-applicative:=[profile?]
+			dev-haskell/safe:=[profile?]
+			dev-haskell/servant-server:=[profile?]
+			dev-haskell/wai:=[profile?]
+			dev-haskell/warp:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( dev-haskell/temporary
-		dev-haskell/utf8-string )
+	test? ( dev-haskell/tagged
+		dev-haskell/tasty
+		dev-haskell/tasty-golden
+		!executable? ( dev-haskell/pretty-show ) )
 "
 
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag executable executable) \
-		--flag=network-uri
+		--flag=network-uri \
+		$(cabal_flag server server)
 }
