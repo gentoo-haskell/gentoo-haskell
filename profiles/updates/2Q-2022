@@ -1,3 +1,4 @@
 move dev-haskell/hledger-interest app-office/hledger-interest
 move dev-haskell/hledger app-office/hledger
 move dev-haskell/hledger-iadd app-office/hledger-iadd
+move dev-haskell/hledger-ui app-office/hledger-ui
