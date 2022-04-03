@@ -18,7 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="library-only +threaded"
 
-RDEPEND=">=dev-haskell/aeson-1:=[profile?]
+RDEPEND=">=app-office/hledger-1.25:=[profile?] <app-office/hledger-1.26:=[profile?]
+	>=dev-haskell/aeson-1:=[profile?]
 	dev-haskell/base64:=[profile?]
 	dev-haskell/blaze-html:=[profile?]
 	dev-haskell/blaze-markup:=[profile?]
@@ -31,7 +32,6 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	>=dev-haskell/decimal-0.5.1:=[profile?]
 	>=dev-haskell/extra-1.6.3:=[profile?]
 	dev-haskell/hjsmin:=[profile?]
-	>=dev-haskell/hledger-1.25:=[profile?] <dev-haskell/hledger-1.26:=[profile?]
 	>=dev-haskell/hledger-lib-1.25:=[profile?] <dev-haskell/hledger-lib-1.26:=[profile?]
 	dev-haskell/hspec:=[profile?]
 	dev-haskell/http-client:=[profile?]
