@@ -10,7 +10,7 @@ inherit haskell-cabal
 
 DESCRIPTION="computes interest for a given account"
 HOMEPAGE="https://github.com/peti/hledger-interest"
-HACKAGE_REV="1"
+HACKAGE_REV="2"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
 	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 
@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=
-	>=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.25:=
+	>=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.26:=
 	dev-haskell/mtl:=
 	dev-haskell/text:=
 	>=dev-lang/ghc-8.4.3:=
