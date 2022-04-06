@@ -869,12 +869,12 @@ dev-haskell/hit 0.7.0: Git operations in haskell
 dev-haskell/hjavascript 0.4.7: HJavaScript is an abstract syntax for a typed subset of JavaScript
 dev-haskell/hjscript 0.7.0: HJScript is a Haskell EDSL for writing JavaScript programs
 dev-haskell/hjsmin 0.2.0.4: Haskell implementation of a javascript minifier
-dev-haskell/hledger 1.24.1 1.25: Command-line interface for the hledger accounting system
+dev-haskell/hledger 1.25: Command-line interface for the hledger accounting system
 dev-haskell/hledger-iadd 1.3.16-r2: A terminal UI as drop-in replacement for hledger add
-dev-haskell/hledger-interest 1.6.3-r1: computes interest for a given account
-dev-haskell/hledger-lib 1.24.1 1.25: A reusable library providing the core functionality of hledger
-dev-haskell/hledger-ui 1.24.1 1.25: Curses-style terminal interface for the hledger accounting system
-dev-haskell/hledger-web 1.24.1 1.25: Web-based user interface for the hledger accounting system
+dev-haskell/hledger-interest 1.6.3-r2: computes interest for a given account
+dev-haskell/hledger-lib 1.25: A reusable library providing the core functionality of hledger
+dev-haskell/hledger-ui 1.25: Curses-style terminal interface for the hledger accounting system
+dev-haskell/hledger-web 1.25: Web-based user interface for the hledger accounting system
 dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
