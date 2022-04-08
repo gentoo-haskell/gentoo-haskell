@@ -25,5 +25,7 @@ Setting this flag should usually be unproblematic,
 except if the used Lua version has been patched
 heavily.</flag>
 		<flag name="lua-32bits">Compile Lua with -DLUA_32BITS</flag>
+		<flag name="system-lua">Use @pkg-config@ to discover library and include paths.
+Setting this flag implies `pkg-config`.</flag>
 	</use>
 </pkgmetadata>
