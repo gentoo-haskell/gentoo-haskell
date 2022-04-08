@@ -4,6 +4,7 @@
 
 app-admin/propellor:type-errors - Build with type-errors library for better error messages and less memory use
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
+app-text/pandoc:lua53 - Embed Lua 5.3 instead of 5.4.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/acid-state:skip-state-machine-test - If enabled, do not build/run the state-machine test
@@ -231,6 +232,7 @@ dev-haskell/lua:apicheck - Compile Lua with -DLUA_USE_APICHECK.
 dev-haskell/lua:export-dynamic - Add all symbols to dynamic symbol table; disabling this will make it possible to create fully static binaries, but renders loading of dynamic C libraries impossible.
 dev-haskell/lua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but use hard coded values instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those versions do not expose the necessary information in the @lauxlib.h@ header file. Setting this flag should usually be unproblematic, except if the used Lua version has been patched heavily.
 dev-haskell/lua:lua-32bits - Compile Lua with -DLUA_32BITS
+dev-haskell/lua:system-lua - Use @pkg-config@ to discover library and include paths. Setting this flag implies `pkg-config`.
 dev-haskell/markdown-unlit:executable - Build executable
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
 dev-haskell/megaparsec-tests:dev - Turn on development settings.
