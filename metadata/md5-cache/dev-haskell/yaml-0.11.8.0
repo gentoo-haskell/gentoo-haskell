@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/aeson-0.11:=[profile?] >=dev-haskell/attoparsec-0.11.3.0:=[profile?] >=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.4:=[profile?] >=dev-haskell/libyaml-0.1:=[profile?] <dev-haskell/libyaml-0.2:=[profile?] >=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.3:=[profile?] >=dev-haskell/scientific-0.3:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-8.4.3:= examples? ( dev-haskell/raw-strings-qq:=[profile?] ) executable? ( dev-haskell/optparse-applicative:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/base-compat >=dev-haskell/hspec-1.3 dev-haskell/hunit dev-haskell/mockery dev-haskell/temporary !examples? ( dev-haskell/raw-strings-qq ) ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Support for parsing and rendering YAML documents
+EAPI=8
+HOMEPAGE=https://github.com/snoyberg/yaml#readme
+INHERIT=haskell-cabal
+IUSE=examples executable doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/aeson-0.11:=[profile?] >=dev-haskell/attoparsec-0.11.3.0:=[profile?] >=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.4:=[profile?] >=dev-haskell/libyaml-0.1:=[profile?] <dev-haskell/libyaml-0.2:=[profile?] >=dev-haskell/resourcet-0.3:=[profile?] <dev-haskell/resourcet-1.3:=[profile?] >=dev-haskell/scientific-0.3:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-8.4.3:= examples? ( dev-haskell/raw-strings-qq:=[profile?] ) executable? ( dev-haskell/optparse-applicative:=[profile?] )
+RESTRICT=!test? ( test )
+SLOT=0/0.11.8.0
+SRC_URI=https://hackage.haskell.org/package/yaml-0.11.8.0/yaml-0.11.8.0.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_md5_=bd9676e8a787a011d3d0ac5ce2a17b05

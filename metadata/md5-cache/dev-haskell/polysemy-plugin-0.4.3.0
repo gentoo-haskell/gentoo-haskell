@@ -1,5 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
-DEPEND=>=dev-haskell/ghc-tcplugins-extra-0.3:=[profile?] <dev-haskell/ghc-tcplugins-extra-0.5:=[profile?] >=dev-haskell/polysemy-1.7:=[profile?] >=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?] >=dev-lang/ghc-8.6.5:= >=dev-haskell/cabal-2.2.0.1 >=dev-haskell/cabal-doctest-1.0.6 <dev-haskell/cabal-doctest-1.1 test? ( >=dev-haskell/doctest-0.16.0.1 <dev-haskell/doctest-0.19 >=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-3 >=dev-haskell/inspection-testing-0.4.2 <dev-haskell/inspection-testing-0.5 >=dev-haskell/should-not-typecheck-2.1.0 <dev-haskell/should-not-typecheck-3 ) hscolour? ( dev-haskell/hscolour )
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/ghc-tcplugins-extra-0.3:=[profile?] <dev-haskell/ghc-tcplugins-extra-0.5:=[profile?] >=dev-haskell/polysemy-1.7:=[profile?] >=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?] >=dev-lang/ghc-8.6.5:= >=dev-haskell/cabal-2.2.0.1 >=dev-haskell/cabal-doctest-1.0.6 <dev-haskell/cabal-doctest-1.1 test? ( >=dev-haskell/doctest-0.16.0.1 >=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-3 >=dev-haskell/inspection-testing-0.4.2 <dev-haskell/inspection-testing-0.5 >=dev-haskell/should-not-typecheck-2.1.0 <dev-haskell/should-not-typecheck-3 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Disambiguate obvious uses of effects
 EAPI=8
 HOMEPAGE=https://github.com/polysemy-research/polysemy#readme
@@ -12,4 +12,4 @@ RESTRICT=!test? ( test )
 SLOT=0/0.4.3.0
 SRC_URI=https://hackage.haskell.org/package/polysemy-plugin-0.4.3.0/polysemy-plugin-0.4.3.0.tar.gz
 _eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
-_md5_=151c591bbe23a9e3b3b103b4d058d6fe
+_md5_=7f5070a58ceb784b715900283bc30138

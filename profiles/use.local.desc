@@ -3,23 +3,25 @@
 # * generated automatically using pmaint *
 
 app-admin/propellor:type-errors - Build with type-errors library for better error messages and less memory use
+app-office/hledger:terminfo - On POSIX systems, build with the terminfo lib for detecting terminal width.
+app-office/hledger:threaded - Build with support for multithreaded execution
+app-office/hledger-ui:threaded - Build with support for multithreaded execution
+app-office/hledger-web:library-only - Build for use with "yesod devel"
+app-office/hledger-web:threaded - Build with support for multithreaded execution.
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
 app-text/pandoc:lua53 - Embed Lua 5.3 instead of 5.4.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/acid-state:skip-state-machine-test - If enabled, do not build/run the state-machine test
 dev-haskell/aeson:cffi - Controls whether to include c-ffi bits or pure haskell. Default to False for security.
-dev-haskell/aeson:fast - compile without optimizations
 dev-haskell/aeson-pretty:lib-only - Only build/install the library, NOT the command-line tool.
 dev-haskell/aeson-yaml:build-binaries - Build the binaries
 dev-haskell/alsa-pcm:buildexamples - Build example executables
 dev-haskell/alsa-seq:modifyfilter - Use native event filter functions that are provided by newer ALSA versions
 dev-haskell/ansi-terminal:example - Build the example application
-dev-haskell/ansi-wl-pprint:example - Build the example application.
+dev-haskell/ansi-wl-pprint:examples - Build the example application
 dev-haskell/apply-refact:executable - Install the apply-refactor executable
 dev-haskell/atomic-primops:debug - Enable extra internal checks.
-dev-haskell/attoparsec-iso8601:developer - operate in developer mode
-dev-haskell/attoparsec-iso8601:fast - compile without optimizations
 dev-haskell/beam-automigrate:examples - Install example executables
 dev-haskell/beam-automigrate:ghcipretty - Enable pretty-show for pretty-printing purposes
 dev-haskell/bench-show:charts - Build the modules that provide charting functionality
@@ -33,11 +35,12 @@ dev-haskell/biosff:flower - Build the 'flower' executable.
 dev-haskell/biosff:frecover - Build the 'frecover' executable.
 dev-haskell/bits-atomic:test - Build test program.
 dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
-dev-haskell/bound:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/boring:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/brick:demos - Build demonstration programs
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
 dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
 dev-haskell/btrfs:examples - Build examples
+dev-haskell/bytebuild:checked - Add bounds-checking to primitive array operations
 dev-haskell/bytedump:executable - build executable file
 dev-haskell/c2hs:regression - Enable regression suite build.
 dev-haskell/cabal-install:debug-conflict-sets - Add additional information to ConflictSets
@@ -68,7 +71,6 @@ dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build the Quote module
 dev-haskell/cmdargs:testprog - Build the test program
 dev-haskell/comonad:indexed-traversable - You can disable the use of the `indexed-traversable` package using `-f-indexed-traversable`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `FunctorWithIndex`
-dev-haskell/concurrent-supply:test-properties - used to enable tests
 dev-haskell/constraints-deriving:constraints - Use vanilla constraints package as a dependency instead of the manual minimalistic definitions copied from there.
 dev-haskell/contravariant:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/contravariant:statevar - You can disable the use of the `StateVar` package using `-f-StateVar`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -79,7 +81,7 @@ dev-haskell/crypto-api:all-cpolys - Build all the CMAC polynomes up to 10000 bit
 dev-haskell/cryptonite:integer-gmp - Whether or not to use GMP for some functions
 dev-haskell/cryptonite:target-attributes - use GCC / clang function attributes instead of global target options.
 dev-haskell/data-lens:derivedatatypeable - Use the DeriveDataTypeable extension. This makes lens compile with old compilers. Users need not worry about it.
-dev-haskell/data-reify:tests - Enable full development tree
+dev-haskell/data-reify:examples - Install test executables
 dev-haskell/diagrams:cairo - Enable the cairo backend
 dev-haskell/diagrams:canvas - Enable the Haskell-native Canvas backend
 dev-haskell/diagrams:gtk - Enable the GTK backend
@@ -92,10 +94,9 @@ dev-haskell/diagrams-builder:postscript - install postscript-specific builder to
 dev-haskell/diagrams-builder:rasterific - install rasterific-specific builder tool
 dev-haskell/diagrams-builder:svg - install svg-specific builder tool
 dev-haskell/dimensions:unsafeindices - Disable bound checks on Idx and Idxs types.
-dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using the bundled sqlite library.
+dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using the bundled sqlite library
 dev-haskell/direct-sqlite:json1 - Enable json1 extension.
-dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library.
-dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library.
+dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library
 dev-haskell/dlist:werror - Enable -Werror
 dev-haskell/dotenv:dev - Turn on development settings.
 dev-haskell/dotenv:static - Creates static binary.
@@ -151,29 +152,18 @@ dev-haskell/hakyll:usepandoc - Include Pandoc support
 dev-haskell/hakyll:watchserver - Include the watch server
 dev-haskell/handsomesoup:examples - Build examples
 dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests in the library.
-dev-haskell/hashable:gmp - Are we using @integer-gmp@ to provide fast Integer instances? No effect on GHC-9.0 or later.
-dev-haskell/hashable:random-initial-seed - Randomly initialize the initial seed on each final executable invocation This is useful for catching cases when you rely on (non-existent) stability of hashable's hash functions. This is not a security feature.
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
-dev-haskell/hashtables:debug - if on, spew debugging output to stdout
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
-dev-haskell/hashtables:portable - if on, use only pure Haskell code and no GHC extensions.
-dev-haskell/hashtables:unsafe-tricks - turn on unsafe GHC tricks
 dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
 dev-haskell/hiedb:executable - Install the hiedb executable
 dev-haskell/highlighter:executable - Install a "highlighter" executable
 dev-haskell/hip:disable-chart - Disable Chart-diagrams and Chart for a lighter dependency footprint
-dev-haskell/hledger:terminfo - On POSIX systems, build with the terminfo lib for detecting terminal width.
-dev-haskell/hledger:threaded - Build with support for multithreaded execution
-dev-haskell/hledger-ui:threaded - Build with support for multithreaded execution
-dev-haskell/hledger-web:library-only - Build for use with "yesod devel"
-dev-haskell/hledger-web:threaded - Build with support for multithreaded execution.
 dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the system
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
-dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hls-graph:embed-files - Embed data files into the shake library
 dev-haskell/hls-graph:stm-stats - Collect STM transaction stats
 dev-haskell/hmatrix:no-random-r - When enabled, hmatrix will not depend on the random_r() C function, it is needed for musl libc support.
@@ -194,6 +184,7 @@ dev-haskell/hxt-regex-xmlschema:profile - turn profiling on
 dev-haskell/hyphenation:embed - Embed data in library binary (Warning: This increases the executable size by about 1Mb unless unneeded language data files are manually removed from the "data" directory before compiling)
 dev-haskell/ignore:without-pcre - Disable pcre support
 dev-haskell/implicit-hie:executable - Build the gen-hie executable
+dev-haskell/influxdb:examples - Build example executables
 dev-haskell/inline-c:gsl-example - Build GSL example
 dev-haskell/io-streams:network - Include network support
 dev-haskell/io-streams:zlib - Include zlib support
@@ -212,15 +203,8 @@ dev-haskell/jupyter:examples - Build example Jupyter kernel executables
 dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes
 dev-haskell/language-dot:executable - Build the `ppdot' executable
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
-dev-haskell/lens:benchmark-uniplate - Enable benchmarking against Neil Mitchell's uniplate library
-dev-haskell/lens:dump-splices - Make the test suites dump their template-haskell splices
-dev-haskell/lens:inlining - Generate inline pragmas when using template-haskell.
-dev-haskell/lens:j - Attempt a parallel build
-dev-haskell/lens:safe - Dissallow unsafeCoerce
-dev-haskell/lens:test-templates - Enable template tests
-dev-haskell/lens:trustworthy - Assert that we are trustworthy when we can
-dev-haskell/libyaml:no-unicode - Don't enable unicode output. Instead, unicode characters will be escaped.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
+dev-haskell/libyaml:unicode - Enable unicode output. Otherwise, unicode characters will be escaped.
 dev-haskell/linux-file-extents:examples - Build examples
 dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for development.
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
@@ -242,7 +226,6 @@ dev-haskell/miso:jsaddle - Compile with JSaddle
 dev-haskell/miso:tests - Builds Miso's tests
 dev-haskell/mod:semirings - Derive semiring instances
 dev-haskell/mod:vector - Derive unboxed and primitive vector instances
-dev-haskell/modern-uri:dev - Turn on development settings.
 dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
 dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/monky:ibus - enable ibus example
@@ -264,8 +247,9 @@ dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the libra
 dev-haskell/pandoc-citeproc:static - Use static linking.
 dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
-dev-haskell/parsers:attoparsec - Enable the use of the `attoparsec` package
-dev-haskell/parsers:parsec - Enable the use of the `parsec` package
+dev-haskell/parsers:attoparsec - You can disable the use of the `attoparsec` package using `-f-attoparsec`.
+dev-haskell/parsers:binary - You can disable the use of the `binary` package using `-f-binary`.
+dev-haskell/parsers:parsec - You can disable the use of the `parsec` package using `-f-parsec`.
 dev-haskell/path:dev - Turn on development settings.
 dev-haskell/persistent-mongodb:high-precision-date - for MongoDB use a time storage with nano second precision.
 dev-haskell/persistent-odbc:debug - Enable debug
@@ -274,7 +258,6 @@ dev-haskell/persistent-relational-record:test-examples - Test examples
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable
 dev-haskell/pipes-text:maintainer - Enable settings for the package maintainer.
 dev-haskell/pointed:comonad - You can disable the use of the `comonad` package using `-f-transformers`.
-dev-haskell/pointed:containers - You can disable the use of the `containers` package using `-f-containers`.
 dev-haskell/pointed:kan-extensions - You can disable the use of the `kan-extensions` package using `-f-kan-extensions`.
 dev-haskell/pointed:semigroupoids - You can disable the use of the `semigroupoids` package using `-f-semigroupoids`.
 dev-haskell/pointed:semigroups - You can disable the use of the `semigroups` package using `-f-semigroups`.
@@ -310,8 +293,8 @@ dev-haskell/rasterific:embed-linear - Embed a reduced version of Linear avoiding
 dev-haskell/reactive-banana-wx:examples - Build example executables.
 dev-haskell/record-dot-preprocessor:executable - Build the record-dot-preprocessor executable
 dev-haskell/reflex:template-haskell - Use template haskell to generate lenses
-dev-haskell/rere:rere-cfg - CFG functionality, needs dependency on fin and vec
-dev-haskell/rere:rere-intersection - Add add intersection constructor. EXPERIMENTAL
+dev-haskell/rere:rere-cfg - CFG functionality, adds dependency on fin and vec
+dev-haskell/rere:rere-intersection - Add intersection constructor. EXPERIMENTAL
 dev-haskell/retrie:examples - build the retrie-example executable
 dev-haskell/retrie:executable - build the retrie executable
 dev-haskell/sample-frame:buildbenchmarks - Build benchmark executables
@@ -319,7 +302,6 @@ dev-haskell/sandi:conduit - Build with conduit
 dev-haskell/sbv:skip-hlint-tester - Do not build the HLint tester
 dev-haskell/sdl2:examples - Build opengl-example
 dev-haskell/sdl2:no-linear - Do not depend on 'linear' library
-dev-haskell/semialign:semigroupoids - Build with semigroupoids dependency
 dev-haskell/semigroupoid-extras:profunctors - You can disable the use of the `profunctors` package using `-f-profunctors`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroupoids:comonad - You can disable the use of the `comonad` package using `-f-comonad`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Comonad`
 dev-haskell/semigroupoids:containers - You can disable the use of the `containers` package using `-f-containers`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -327,11 +309,6 @@ dev-haskell/semigroupoids:contravariant - You can disable the use of the `contra
 dev-haskell/semigroupoids:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
 dev-haskell/semigroupoids:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroupoids:unordered-containers - You can disable the use of the `unordered-containers` package (and also its dependency `hashable`) using `-f-unordered-containers`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semigroups:binary - You can disable the use of the `binary` package using `-f-binary`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semigroups:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semigroups:transformers - You can disable the use of the `transformers` and `transformers-compat` packages using `-f-transformers`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semirings:containers - You can disable the use of the `containers` package using `-f-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
-dev-haskell/semirings:unordered-containers - You can disable the use of the `unordered-containers` package using `-f-unordered-containers`. Disabling this may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
 dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
@@ -348,12 +325,10 @@ dev-haskell/skein:force-endianness - Use a manually selected endian when compili
 dev-haskell/skein:reference - Use the reference implementation instead of the optimized one.
 dev-haskell/skylighting:executable - Whether to build the skylighting program
 dev-haskell/skylighting-core:executable - Build skylighting-extract tool
-dev-haskell/snap-core:portable - No non-haskell unportable code.
-dev-haskell/snap-server:build-pong - Build a server that just returns "PONG"? Normally useful only for benchmarks.
-dev-haskell/snap-server:build-testserver - Build the blackbox testserver?
 dev-haskell/snap-server:debug - Enable support for debugging.
 dev-haskell/snap-server:openssl - Enable https support using the HsOpenSSL library.
-dev-haskell/snap-server:portable - Compile in cross-platform mode. No platform-specific code or optimizations such as C routines will be used.
+dev-haskell/snap-server:pong-server - Build a server that just returns "PONG". Normally useful only for benchmarks.
+dev-haskell/snap-server:test-server - Build the blackbox testserver
 dev-haskell/some:newtype-unsafe - Use implementation using @newtype@ and unsafe @Any@, instead of GADT
 dev-haskell/speculation:optimize - Enable optimizations
 dev-haskell/sphinx:version-1-1-beta - By default this library is compatible with version 2.0 beta of Sphinx. Use this flag if you use Sphinx 1.1
@@ -371,7 +346,6 @@ dev-haskell/streamly:fusion-plugin - Use fusion plugin for benchmarks and execut
 dev-haskell/streamly:limit-build-mem - Limits memory when building
 dev-haskell/streamly:no-fusion - Disable rewrite rules for stream fusion
 dev-haskell/streamly:streamk - Use CPS style streams when possible
-dev-haskell/strict:assoc - Build with assoc dependency
 dev-haskell/synthesizer-alsa:examples - Build example executables
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
@@ -381,9 +355,8 @@ dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:server - Compile webserver.
 dev-haskell/text-short:asserts - Enable runtime-checks via @assert@
 dev-haskell/themoviedb:maintainer - Enable settings for the package maintainer.
-dev-haskell/these:assoc - Build with assoc dependency
-dev-haskell/threepenny-gui:buildexamples - Build example executables.
-dev-haskell/threepenny-gui:rebug - The library uses some techniques that are highly non-deterministic, for example garbage collection and concurrency. Bugs in these subsystems are harder to find. Activating this flag will expose more of them.
+dev-haskell/threepenny-gui:examples - Build example executables
+dev-haskell/threepenny-gui:rebug - Expose more bugs by increasing determinism
 dev-haskell/thyme:bug-for-bug - bug-for-bug compatibility with time
 dev-haskell/thyme:lens - use the full lens package
 dev-haskell/thyme:show-internal - instance Show of internal representation
@@ -416,14 +389,13 @@ dev-haskell/wai-app-static:print - print debug info
 dev-haskell/wai-extra:examples - Build example executable.
 dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GNU/kFreeBSD)
 dev-haskell/wcwidth:cli - Enable command line tool
-dev-haskell/websockets:examples - Build the example server
 dev-haskell/wreq:aws - enable AWS tests
 dev-haskell/wreq:httpbin - enable httpbin test daemon
 dev-haskell/x11:pedantic - Be pedantic (-Werror and the like)
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
 dev-haskell/xlsx:microlens - Use microlens instead of lens
-dev-haskell/yaml:no-examples - don't build the examples
-dev-haskell/yaml:no-exe - don't install the yaml2json or json2yaml executables
+dev-haskell/yaml:examples - Install the haskell-yaml-examples executable
+dev-haskell/yaml:executable - Install the yaml2json and json2yaml executables
 dev-haskell/yesod-form:network-uri - Get Network.URI from the network-uri package
 dev-haskell/yesod-paginator:examples - Build the examples
 dev-haskell/zip-archive:executable - Build the Zip executable.

@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Reading, writing and manipulating ".tar" archive files
+EAPI=8
+HOMEPAGE=https://hackage.haskell.org/package/tar
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-lang/ghc-8.4.3:=
+RESTRICT=test
+SLOT=0/0.5.1.1
+SRC_URI=https://hackage.haskell.org/package/tar-0.5.1.1/tar-0.5.1.1.tar.gz https://hackage.haskell.org/package/tar-0.5.1.1/revision/4.cabal -> tar-0.5.1.1-rev4.cabal
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_md5_=6e5b1a4b00e2f88a510ce544ae314601

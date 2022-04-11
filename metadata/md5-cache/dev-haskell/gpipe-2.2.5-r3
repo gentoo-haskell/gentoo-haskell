@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/boolean-0.2:=[profile?] <dev-haskell/boolean-0.3:=[profile?] >=dev-haskell/exception-transformers-0.3:=[profile?] <dev-haskell/exception-transformers-0.5:=[profile?] >=dev-haskell/gl-0.8:=[profile?] >=dev-haskell/hashtables-1.2:=[profile?] >=dev-haskell/linear-1.18:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Typesafe functional GPU graphics programming
+EAPI=8
+HOMEPAGE=https://github.com/tobbebex/GPipe-Core#readme
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/boolean-0.2:=[profile?] <dev-haskell/boolean-0.3:=[profile?] >=dev-haskell/exception-transformers-0.3:=[profile?] <dev-haskell/exception-transformers-0.5:=[profile?] >=dev-haskell/gl-0.8:=[profile?] >=dev-haskell/hashtables-1.2:=[profile?] >=dev-haskell/linear-1.18:=[profile?] >=dev-lang/ghc-8.4.3:=
+SLOT=0/2.2.5
+SRC_URI=https://hackage.haskell.org/package/GPipe-2.2.5/GPipe-2.2.5.tar.gz
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_md5_=a8592fd03c99d064c50ff7566d064564
