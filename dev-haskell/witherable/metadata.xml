@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A stronger variant of `traverse` which can remove elements and generalised mapMaybe, catMaybes, filter
-	</longdescription>
 </pkgmetadata>

@@ -6,21 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="tests">Enable full development tree</flag>
+		<flag name="examples">Install test executables</flag>
 	</use>
-	<longdescription>
-		&#39;data-reify&#39; provided the ability to turn recursive structures into explicit graphs.
-		Many (implicitly or explicitly) recursive data structure can be given this ability, via
-		a type class instance. This gives an alternative to using &#39;Ref&#39; for observable sharing.
-		
-		Observable sharing in general is unsafe, so we use the IO monad to bound this effect,
-		but can be used safely even with &#39;unsafePerformIO&#39; if some simple conditions are met.
-		Typically this package will be used to tie the knot with DSL&#39;s that depend of
-		observable sharing, like Lava.
-		
-		Providing an instance for &#39;MuRef&#39; is the mechanism for allowing a structure to be
-		reified into a graph, and several examples of this are provided.
-		
-		&amp;#169; 2009 Andy Gill; BSD3 license.
-	</longdescription>
 </pkgmetadata>

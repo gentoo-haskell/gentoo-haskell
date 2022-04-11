@@ -1,3 +1,8 @@
+# hololeap <hololeap@protonmail.com> (2022-04-08)
+# semialign-indexed is deprecated and has no reverse dependencies.
+# Masking for removal
+dev-haskell/semialign-indexed
+
 # Jack Todaro <solpeth@posteo.org> (2022-04-08)
 # Mask dev-haskell/doclayout-0.4 until revdeps catch up
 # (e.g. hledger-lib, pandoc-2.18)

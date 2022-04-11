@@ -1,0 +1,121 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+diff -urN colonnade-1.2.0.2/Setup.hs colonnade-1.2.0.2-r1/Setup.hs
+--- colonnade-1.2.0.2/Setup.hs	2001-09-08 19:46:40.000000000 -0600
++++ colonnade-1.2.0.2-r1/Setup.hs	2022-03-22 20:53:48.777140429 -0600
+@@ -1,2 +1,6 @@
+-import Distribution.Simple
+-main = defaultMain
++module Main (main) where
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "test"
+diff -urN colonnade-1.2.0.2/colonnade.cabal colonnade-1.2.0.2-r1/colonnade.cabal
+--- colonnade-1.2.0.2/colonnade.cabal	2022-03-22 20:57:13.057140528 -0600
++++ colonnade-1.2.0.2-r1/colonnade.cabal	2022-03-22 20:59:11.807140586 -0600
+@@ -27,9 +27,15 @@
+ maintainer: andrew.thaddeus@gmail.com
+ copyright: 2016 Andrew Martin
+ category: web
+-build-type: Simple
++build-type: Custom
+ cabal-version: >=1.10
+ 
++custom-setup
++  setup-depends:
++      base
++    , Cabal
++    , cabal-doctest
++
+ library
+   hs-source-dirs:      src
+   exposed-modules:
+@@ -52,12 +58,14 @@
+   main-is: Main.hs
+   build-depends:
+       base >= 4.7 && <= 5
+-    , colonnade
+     , doctest
+     , semigroupoids
+     , ansi-wl-pprint
+     , QuickCheck
+     , fast-logger
++    , directory
++    , filepath
++    , base-compat
+   default-language: Haskell2010
+ 
+ source-repository head
+diff -urN colonnade-1.2.0.2/src/Colonnade.hs colonnade-1.2.0.2-r1/src/Colonnade.hs
+--- colonnade-1.2.0.2/src/Colonnade.hs	2001-09-08 19:46:40.000000000 -0600
++++ colonnade-1.2.0.2-r1/src/Colonnade.hs	2022-03-22 21:04:29.957140740 -0600
+@@ -95,7 +95,7 @@
+ -- >>> let showDollar = (('$':) . show) :: Int -> String
+ -- >>> colHouse = mconcat [headed "Color" (show . color), headed "Price" (showDollar . price)]
+ -- >>> :t colHouse
+--- colHouse :: Colonnade Headed House [Char]
++-- colHouse :: Colonnade Headed House String
+ -- >>> let houses = [House Green 170000, House Blue 115000, House Green 150000]
+ -- >>> putStr (ascii colHouse houses)
+ -- +-------+---------+
+@@ -179,10 +179,10 @@
+ -- >>> let allColors = [Red,Green,Blue]
+ -- >>> let encColor = columns (\c1 c2 -> if c1 == c2 then "✓" else "") (Headed . show) allColors
+ -- >>> :t encColor
+--- encColor :: Colonnade Headed Color [Char]
++-- encColor :: Colonnade Headed Color String
+ -- >>> let encHouse = headed "Price" (showDollar . price) <> lmap color encColor
+ -- >>> :t encHouse
+--- encHouse :: Colonnade Headed House [Char]
++-- encHouse :: Colonnade Headed House String
+ -- >>> putStr (ascii encHouse houses)
+ -- +---------+-----+-------+------+
+ -- | Price   | Red | Green | Blue |
+@@ -274,7 +274,7 @@
+ --   
+ --   >>> let cor = mconcat [cap "Person" colPersonFst, cap "House" colHouseSnd]
+ --   >>> :t cor
+---   cor :: Cornice Headed ('Cap 'Base) (Person, House) [Char]
++--   cor :: Cornice Headed ('Cap 'Base) (Person, House) String
+ --   >>> putStr (asciiCapped cor personHomePairs)
+ --   +-------------+-----------------+
+ --   | Person      | House           |
+diff -urN colonnade-1.2.0.2/test/Main.hs colonnade-1.2.0.2-r1/test/Main.hs
+--- colonnade-1.2.0.2/test/Main.hs	2001-09-08 19:46:40.000000000 -0600
++++ colonnade-1.2.0.2-r1/test/Main.hs	2022-03-22 20:56:14.257140500 -0600
+@@ -1,6 +1,25 @@
+ import Test.DocTest
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.Directory (getCurrentDirectory, makeAbsolute)
++import System.FilePath.Posix ((</>))
++import System.IO (utf8)
++import Build_doctests (pkgs)
+ 
+ main :: IO ()
+-main = doctest
+-  [ "src"
+-  ]
++main = do
++    setLocaleEncoding utf8
++    pwd    <- getCurrentDirectory
++    prefix <- makeAbsolute pwd
++
++    let customFlags =
++            [ "-package-env=-"
++            , "-hide-all-packages"
++            , "-no-user-package-db"
++            , "-package-db=" ++ prefix </> "dist/package.conf.inplace"
++            ]
++
++    let modules =
++            [ "src"
++            ]
++
++    doctest $ customFlags ++ pkgs ++ modules

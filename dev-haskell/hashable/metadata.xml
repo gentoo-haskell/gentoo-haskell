@@ -5,11 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="gmp">Are we using @integer-gmp@ to provide fast Integer instances? No effect on GHC-9.0 or later.</flag>
-		<flag name="random-initial-seed">Randomly initialize the initial seed on each final executable invocation
-This is useful for catching cases when you rely on (non-existent)
-stability of hashable&#39;s hash functions.
-This is not a security feature.</flag>
-	</use>
 </pkgmetadata>

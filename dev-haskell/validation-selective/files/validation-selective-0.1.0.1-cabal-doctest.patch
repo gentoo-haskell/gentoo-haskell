@@ -1,0 +1,115 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+diff -urN validation-selective-0.1.0.1/Setup.hs validation-selective-0.1.0.1-r1/Setup.hs
+--- validation-selective-0.1.0.1/Setup.hs	1969-12-31 17:00:00.000000000 -0700
++++ validation-selective-0.1.0.1-r1/Setup.hs	2022-03-19 01:57:40.916981694 -0600
+@@ -0,0 +1,6 @@
++module Main (main) where
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "validation-selective-doctest"
+diff -urN validation-selective-0.1.0.1/test/Doctest.hs validation-selective-0.1.0.1-r1/test/Doctest.hs
+--- validation-selective-0.1.0.1/test/Doctest.hs	2001-09-08 19:46:40.000000000 -0600
++++ validation-selective-0.1.0.1-r1/test/Doctest.hs	2022-03-19 02:19:03.766982316 -0600
+@@ -9,20 +9,41 @@
+ module Main (main) where
+ 
+ import Test.DocTest (doctest)
+-
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.Directory (getCurrentDirectory, makeAbsolute)
++import System.FilePath.Posix ((</>))
++import System.IO (utf8)
++import Build_doctests (pkgs)
++import Data.Foldable (forM_)
+ 
+ main :: IO ()
+-main = doctest
+-    $ "-XDeriveAnyClass"
+-    : "-XDeriveGeneric"
+-    : "-XDerivingStrategies"
+-    : "-XGeneralizedNewtypeDeriving"
+-    : "-XInstanceSigs"
+-    : "-XLambdaCase"
+-    : "-XOverloadedStrings"
+-    : "-XRecordWildCards"
+-    : "-XScopedTypeVariables"
+-    : "-XTypeApplications"
+-    : [ "src/Validation.hs"
+-      , "src/Validation/Combinators.hs"
+-      ]
++main = do
++    setLocaleEncoding utf8
++    pwd    <- getCurrentDirectory
++    prefix <- makeAbsolute pwd
++    let customFlags =
++            [ "-package-env=-"
++            , "-hide-all-packages"
++            , "-no-user-package-db"
++            , "-package-db=" ++ prefix </> "dist/package.conf.inplace"
++            ]
++
++    let origFlags =
++            [ "-XDeriveAnyClass"
++            , "-XDeriveGeneric"
++            , "-XDerivingStrategies"
++            , "-XGeneralizedNewtypeDeriving"
++            , "-XInstanceSigs"
++            , "-XLambdaCase"
++            , "-XOverloadedStrings"
++            , "-XRecordWildCards"
++            , "-XScopedTypeVariables"
++            , "-XTypeApplications"
++            ]
++
++    let modules =
++            [ "src/Validation.hs"
++            , "src/Validation/Combinators.hs"
++            ]
++
++    doctest $ customFlags ++ pkgs ++ origFlags ++ modules
+diff -urN validation-selective-0.1.0.1/validation-selective.cabal validation-selective-0.1.0.1-r1/validation-selective.cabal
+--- validation-selective-0.1.0.1/validation-selective.cabal	2022-03-19 01:53:51.776981583 -0600
++++ validation-selective-0.1.0.1-r1/validation-selective.cabal	2022-03-19 01:56:52.496981670 -0600
+@@ -22,7 +22,7 @@
+ maintainer:          Kowainik <xrom.xkov@gmail.com>
+ copyright:           2020-2021 Kowainik
+ category:            Validation, Selective, Data
+-build-type:          Simple
++build-type:          Custom
+ extra-doc-files:     README.md
+                      CHANGELOG.md
+ tested-with:         GHC == 8.4.4
+@@ -31,6 +31,12 @@
+                      GHC == 8.10.4
+                      GHC == 9.0.1
+ 
++custom-setup
++  setup-depends:
++      base
++    , Cabal
++    , cabal-doctest
++
+ source-repository head
+   type:                git
+   location:            https://github.com/kowainik/validation-selective.git
+@@ -101,5 +107,9 @@
+   type:                exitcode-stdio-1.0
+   hs-source-dirs:      test
+   main-is:             Doctest.hs
+-  build-depends:       doctest >= 0.16 && < 0.19
+-  ghc-options:         -threaded
+\ No newline at end of file
++  build-depends:       doctest >= 0.16 && < 0.19,
++                       directory,
++                       filepath,
++                       base-compat,
++                       cabal-doctest
++  ghc-options:         -threaded

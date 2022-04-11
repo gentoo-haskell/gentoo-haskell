@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="binary">You can disable the use of the `binary` package using `-f-binary`.  Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.</flag>
-		<flag name="template-haskell">You can disable the use of the `template-haskell` package using `-f-template-haskell`.  Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.</flag>
-		<flag name="transformers">You can disable the use of the `transformers` and `transformers-compat` packages using `-f-transformers`.  Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.</flag>
-	</use>
-	<longdescription>
-		In mathematics, a semigroup is an algebraic structure consisting of a set together with an associative binary operation. A semigroup generalizes a monoid in that there might not exist an identity element. It also (originally) generalized a group (a monoid with all inverses) to a type where every element did not have to have an inverse, thus the name semigroup.
-	</longdescription>
 </pkgmetadata>

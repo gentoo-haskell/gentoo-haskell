@@ -5,9 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Scale JuicyPixels Images with DCT
-		
-		There is also a @friday@ version: &lt;http://hackage.haskell.org/package/friday-scale-dct friday-scale-dct&gt;
-	</longdescription>
 </pkgmetadata>

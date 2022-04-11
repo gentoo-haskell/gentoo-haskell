@@ -6,11 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="buildexamples">Build example executables.</flag>
-		<flag name="rebug">The library uses some techniques that are highly
-non-deterministic, for example garbage collection
-and concurrency.
-Bugs in these subsystems are harder to find.
-Activating this flag will expose more of them.</flag>
+		<flag name="examples">Build example executables</flag>
+		<flag name="rebug">Expose more bugs by increasing determinism</flag>
 	</use>
 </pkgmetadata>

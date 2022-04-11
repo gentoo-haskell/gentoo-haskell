@@ -1,0 +1,88 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+diff -urN hasmin-1.0.3/Setup.hs hasmin-1.0.3-r1/Setup.hs
+--- hasmin-1.0.3/Setup.hs	2018-12-30 13:33:22.000000000 -0700
++++ hasmin-1.0.3-r1/Setup.hs	2022-03-25 17:21:42.594439357 -0600
+@@ -1,2 +1,6 @@
+-import Distribution.Simple
+-main = defaultMain
++module Main (main) where
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "doctest"
+diff -urN hasmin-1.0.3/hasmin.cabal hasmin-1.0.3-r1/hasmin.cabal
+--- hasmin-1.0.3/hasmin.cabal	2022-03-25 17:20:35.774440150 -0600
++++ hasmin-1.0.3-r1/hasmin.cabal	2022-03-25 17:28:32.994434485 -0600
+@@ -10,7 +10,7 @@
+ homepage:            https://github.com/contivero/hasmin#readme
+ bug-reports:         https://github.com/contivero/hasmin/issues
+ category:            Text
+-build-type:          Simple
++build-type:          Custom
+ extra-source-files:  README.md
+                      CHANGELOG.md
+ cabal-version:       >=1.10
+@@ -30,6 +30,12 @@
+   type: git
+   location: https://github.com/contivero/hasmin.git
+ 
++custom-setup
++    setup-depends:
++        base
++      , Cabal
++      , cabal-doctest
++
+ executable hasmin
+   default-language:    Haskell2010
+   ghc-options:         -O2 -Wall -fwarn-tabs -fwarn-unused-do-bind -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat -Wnoncanonical-monad-instances -Wnoncanonical-monadfail-instances -Wredundant-constraints -Werror=incomplete-patterns
+@@ -141,8 +147,9 @@
+   ghc-options:         -threaded -Wall -fno-warn-orphans
+   build-depends:       base             >=4.10    && <5.0
+                      , doctest          >=0.11    && <0.17
+-                     , doctest-discover >=0.1.0.0 && <0.3
+-                     , hasmin
++                     , directory
++                     , filepath
++                     , base-compat
+ 
+ benchmark bench
+   default-language:    Haskell2010
+diff -urN hasmin-1.0.3/tests/DocTest.hs hasmin-1.0.3-r1/tests/DocTest.hs
+--- hasmin-1.0.3/tests/DocTest.hs	2018-12-30 13:33:22.000000000 -0700
++++ hasmin-1.0.3-r1/tests/DocTest.hs	2022-03-25 17:26:47.174435741 -0600
+@@ -1,6 +1,24 @@
+--- {-# OPTIONS_GHC -F -pgmF doctest-discover #-}
+-
+ import Test.DocTest (doctest)
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.Directory (getCurrentDirectory, makeAbsolute)
++import System.FilePath.Posix ((</>))
++import System.IO (utf8)
++import Build_doctests (pkgs)
++ 
++main = do
++    setLocaleEncoding utf8
++    pwd    <- getCurrentDirectory
++    prefix <- makeAbsolute pwd
++
++    let customFlags =
++            [ "-package-env=-"
++            , "-hide-all-packages"
++            , "-no-user-package-db"
++            , "-package-db=" ++ prefix </> "dist/package.conf.inplace"
++            ]
++
++    let modules =
++            [ "src"
++            ]
+ 
+-main :: IO ()
+-main = doctest ["src"]
++    doctest $ customFlags ++ pkgs ++ modules

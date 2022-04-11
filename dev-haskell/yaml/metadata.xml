@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="no-examples">don't build the examples</flag>
-		<flag name="no-exe">don't install the yaml2json or json2yaml executables</flag>
+		<flag name="examples">Install the haskell-yaml-examples executable</flag>
+		<flag name="executable">Install the yaml2json and json2yaml executables</flag>
 	</use>
 </pkgmetadata>
