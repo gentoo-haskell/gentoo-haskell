@@ -10,14 +10,8 @@ CABAL_HACKAGE_REVISION="4"
 inherit haskell-cabal
 RESTRICT="test" # fails a few tests, unstable ordering?
 
-CABAL_FILE="${S}/${PN}.cabal"
-CABAL_DISTFILE="${P}-rev${CABAL_HACKAGE_REVISION}.cabal"
-
 DESCRIPTION="An Haskell template system supporting both HTML5 and XML"
 HOMEPAGE="https://snapframework.com/"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/${CABAL_HACKAGE_REVISION}.cabal
-		-> ${CABAL_DISTFILE}"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -51,23 +45,13 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4 )
 BDEPEND="app-text/dos2unix"
 
-src_prepare() {
-	# pull revised cabal from upstream
-	cp "${DISTDIR}/${CABAL_DISTFILE}" "${CABAL_FILE}" || die
-
-	# Convert to unix line endings
-	dos2unix "${CABAL_FILE}" || die
-
-	# Apply patches *after* pulling the revised cabal
-	default
-
-	cabal_chdeps \
-		'base                       >= 4.5     && < 4.15' 'base >=4.5' \
-		'attoparsec                 >= 0.10    && < 0.14' 'attoparsec >=0.10' \
-		'aeson                      >= 0.6     && < 1.5' 'aeson >=0.6' \
-		'hashable                   >= 1.1     && < 1.4' 'hashable >=1.1' \
-		'lens                       >= 4.3      && < 4.20' 'lens >=4.3' \
-		'dlist                      >= 0.5     && < 0.9' 'dlist >=0.5' \
-		'random                     >= 1.0.1.0 && < 1.3' 'random >=1.0.1.0' \
+CABAL_CHDEPS=(
+		'base                       >= 4.5     && < 4.15' 'base >=4.5'
+		'attoparsec                 >= 0.10    && < 0.14' 'attoparsec >=0.10'
+		'aeson                      >= 0.6     && < 1.5' 'aeson >=0.6'
+		'hashable                   >= 1.1     && < 1.4' 'hashable >=1.1'
+		'lens                       >= 4.3      && < 4.20' 'lens >=4.3'
+		'dlist                      >= 0.5     && < 0.9' 'dlist >=0.5'
+		'random                     >= 1.0.1.0 && < 1.3' 'random >=1.0.1.0'
 		'QuickCheck                 >= 2        && < 2.15' 'QuickCheck >=2'
-}
+)
