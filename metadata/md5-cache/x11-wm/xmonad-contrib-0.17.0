@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haskell/random:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/x11-1.10:=[profile?] <dev-haskell/x11-1.11:=[profile?] >=dev-lang/ghc-8.4.3:= >=x11-wm/xmonad-0.16.99999:=[profile?] <x11-wm/xmonad-0.18:=[profile?] xft? ( >=dev-haskell/x11-xft-0.2:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/hspec-2.4.0 <dev-haskell/hspec-3 >=dev-haskell/quickcheck-2 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Community-maintained extensions extensions for xmonad
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?] dev-haske
 RESTRICT=!test? ( test )
 SLOT=0/0.17.0
 SRC_URI=https://hackage.haskell.org/package/xmonad-contrib-0.17.0/xmonad-contrib-0.17.0.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=7f4360c23e68c773bdcde33c9ab5173c

@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/ix-shapable-0.1:=[profile?] <dev-haskell/ix-shapable-0.2:=[profile?] >=dev-haskell/quickcheck-2.4:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?] >=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?] >=dev-lang/ghc-7.4.1:= >=dev-haskell/cabal-1.14 hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=A C-compatible array library
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/ix-shapable-0.1:=[profile?] <dev-haskell/ix-shapable-0.2:=
 RESTRICT=!test? ( test )
 SLOT=0/0.1.6.8
 SRC_URI=https://hackage.haskell.org/package/carray-0.1.6.8/carray-0.1.6.8.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=97d1517f081614f46dc53d1234c100ca

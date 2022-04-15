@@ -1,4 +1,4 @@
-BDEPEND=app-text/dos2unix
+BDEPEND=app-text/dos2unix app-text/dos2unix
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?] >=dev-haskell/primitive-0.2:=[profile?] <dev-haskell/primitive-0.8:=[profile?] >=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-lang/ghc-8.4.3:= network? ( >=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.2:=[profile?] ) zlib? ( >=dev-haskell/zlib-bindings-0.1:=[profile?] <dev-haskell/zlib-bindings-0.2:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-2 >=dev-haskell/quickcheck-2.3.0.2 <dev-haskell/quickcheck-3 >=dev-haskell/test-framework-0.6 <dev-haskell/test-framework-0.9 >=dev-haskell/test-framework-hunit-0.2.7 <dev-haskell/test-framework-hunit-0.4 >=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4 zlib? ( >=dev-haskell/zlib-0.5 <dev-haskell/zlib-0.7 ) ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Simple, composable, and easy-to-use stream I/O
@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.15:=
 RESTRICT=!test? ( test )
 SLOT=0/1.5.2.1
 SRC_URI=https://hackage.haskell.org/package/io-streams-1.5.2.1/io-streams-1.5.2.1.tar.gz https://hackage.haskell.org/package/io-streams-1.5.2.1/revision/2.cabal -> io-streams-1.5.2.1-rev2.cabal
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=985b88d07493d626dcd82af348c1a7b6

@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/event-list-0.1:=[profile?] <dev-haskell/event-list-0.2:=[profile?] >=dev-haskell/explicit-exception-0.1.6:=[profile?] <dev-haskell/explicit-exception-0.2:=[profile?] >=dev-haskell/non-empty-0.2:=[profile?] <dev-haskell/non-empty-0.4:=[profile?] >=dev-haskell/non-negative-0.1:=[profile?] <dev-haskell/non-negative-0.2:=[profile?] >=dev-haskell/numeric-prelude-0.4.2:=[profile?] <dev-haskell/numeric-prelude-0.5:=[profile?] >=dev-haskell/numeric-quest-0.1:=[profile?] <dev-haskell/numeric-quest-0.3:=[profile?] >=dev-haskell/quickcheck-1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?] >=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-2.0:=[profile?] >=dev-haskell/sample-frame-np-0.0.4:=[profile?] <dev-haskell/sample-frame-np-0.1:=[profile?] >=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-1.0:=[profile?] >=dev-haskell/sox-0.1:=[profile?] <dev-haskell/sox-0.3:=[profile?] >=dev-haskell/storable-record-0.0.1:=[profile?] <dev-haskell/storable-record-0.1:=[profile?] >=dev-haskell/storable-tuple-0.0.1:=[profile?] <dev-haskell/storable-tuple-0.1:=[profile?] >=dev-haskell/storablevector-0.2.5:=[profile?] <dev-haskell/storablevector-0.3:=[profile?] >=dev-haskell/utility-ht-0.0.14:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?] >=dev-lang/ghc-7.8.2:= >=dev-haskell/cabal-1.18.1.3 test? ( >=dev-haskell/non-empty-0.2.1 <dev-haskell/non-empty-0.4 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Audio signal processing coded in Haskell: Low level part
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/event-list-0.1:=[profile?] <dev-haskell/event-list-0.2:=[p
 RESTRICT=!test? ( test )
 SLOT=0/0.8.2.1
 SRC_URI=https://hackage.haskell.org/package/synthesizer-core-0.8.2.1/synthesizer-core-0.8.2.1.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=38c0466a2ed0d7cbda86383fa59b9353

@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/attoparsec-0.13:=[profile?] >=dev-haskell/filepattern-0.1:=[profile?] >=dev-haskell/text-1.2:=[profile?] >=dev-haskell/yaml-0.5:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/hspec dev-haskell/hspec-attoparsec ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Auto generate hie-bios cradles & hie.yaml
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/attoparsec-0.13:=[profile?] >=dev-haskell/filepattern-0.1:
 RESTRICT=!test? ( test )
 SLOT=0/0.1.2.6
 SRC_URI=https://hackage.haskell.org/package/implicit-hie-0.1.2.6/implicit-hie-0.1.2.6.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=80fad9b6b4728835f51aa8dc4d399ce5

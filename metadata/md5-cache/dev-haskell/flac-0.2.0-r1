@@ -1,4 +1,4 @@
-BDEPEND=app-text/dos2unix
+BDEPEND=app-text/dos2unix app-text/dos2unix
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-haskell/wave-0.1.2:=[profile?] <dev-haskell/wave-0.3:=[profile?] >=dev-lang/ghc-8.10.1:= media-libs/flac >=dev-haskell/cabal-3.2.0.0 test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0 >=dev-haskell/temporary-1.1 <dev-haskell/temporary-1.4 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Complete high-level binding to libFLAC
@@ -11,6 +11,6 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-haskell/wave-0.1.2:=[profile?] <dev-haskell/wave-0.3:=[profile?] >=dev-lang/ghc-8.10.1:= media-libs/flac
 RESTRICT=!test? ( test )
 SLOT=0/0.2.0
-SRC_URI=https://hackage.haskell.org/package/flac-0.2.0/flac-0.2.0.tar.gz https://hackage.haskell.org/package/flac-0.2.0/revision/2.cabal -> flac-0.2.0-rev2.cabal
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
-_md5_=40b317b0c5662418981cd46e45a073cb
+SRC_URI=https://hackage.haskell.org/package/flac-0.2.0/flac-0.2.0.tar.gz -> flac-0.2.0.tar.gz https://hackage.haskell.org/package/flac-0.2.0/revision/2.cabal -> flac-0.2.0-rev2.cabal
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
+_md5_=caa076ea081d37b757419235b604a8a9

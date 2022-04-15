@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/aeson-1:=[profile?] <dev-haskell/aeson-2.1:=[profile?] >=dev-haskell/ansi-wl-pprint-0.6.7.2:=[profile?] >=dev-haskell/base-compat-batteries-0.10:=[profile?] <dev-haskell/base-compat-batteries-0.13:=[profile?] >=dev-haskell/binary-orphans-1.0.1:=[profile?] <dev-haskell/binary-orphans-1.1:=[profile?] >=dev-haskell/cassava-0.3.0.0:=[profile?] dev-haskell/code-page:=[profile?] >=dev-haskell/criterion-measurement-0.1.1.0:=[profile?] <dev-haskell/criterion-measurement-0.2:=[profile?] >=dev-haskell/exceptions-0.8.2:=[profile?] <dev-haskell/exceptions-0.11:=[profile?] >=dev-haskell/glob-0.7.2:=[profile?] >=dev-haskell/js-chart-2.9.4:=[profile?] <dev-haskell/js-chart-3:=[profile?] >=dev-haskell/microstache-1.0.1:=[profile?] <dev-haskell/microstache-1.1:=[profile?] >=dev-haskell/mtl-2:=[profile?] >=dev-haskell/mwc-random-0.8.0.3:=[profile?] >=dev-haskell/optparse-applicative-0.13:=[profile?] >=dev-haskell/parsec-3.1.0:=[profile?] >=dev-haskell/statistics-0.14:=[profile?] <dev-haskell/statistics-0.16:=[profile?] >=dev-haskell/text-0.11:=[profile?] >=dev-haskell/transformers-compat-0.6.4:=[profile?] >=dev-haskell/vector-0.7.1:=[profile?] >=dev-haskell/vector-algorithms-0.4:=[profile?] >=dev-lang/ghc-8.4.3:= embed-data-files? ( <dev-haskell/file-embed-0.1:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/base-compat dev-haskell/hunit >=dev-haskell/quickcheck-2.4 dev-haskell/tasty dev-haskell/tasty-hunit dev-haskell/tasty-quickcheck ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Robust, reliable performance measurement and analysis
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/aeson-1:=[profile?] <dev-haskell/aeson-2.1:=[profile?] >=d
 RESTRICT=!test? ( test )
 SLOT=0/1.5.11.0
 SRC_URI=https://hackage.haskell.org/package/criterion-1.5.11.0/criterion-1.5.11.0.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=855265edd09a2d05c0f6947578bcdf8b

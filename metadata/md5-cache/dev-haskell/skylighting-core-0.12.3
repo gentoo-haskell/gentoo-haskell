@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/aeson-1.0:=[profile?] >=dev-haskell/ansi-terminal-0.7:=[profile?] dev-haskell/attoparsec:=[profile?] dev-haskell/base64-bytestring:=[profile?] >=dev-haskell/blaze-html-0.5:=[profile?] dev-haskell/case-insensitive:=[profile?] >=dev-haskell/colour-2.0:=[profile?] dev-haskell/mtl:=[profile?] dev-haskell/safe:=[profile?] dev-haskell/text:=[profile?] dev-haskell/utf8-string:=[profile?] >=dev-haskell/xml-conduit-1.9.1.0:=[profile?] <dev-haskell/xml-conduit-1.10:=[profile?] >=dev-lang/ghc-8.6.3:= >=dev-haskell/cabal-2.4.0.1 test? ( dev-haskell/diff dev-haskell/pretty-show dev-haskell/quickcheck dev-haskell/tasty dev-haskell/tasty-golden dev-haskell/tasty-hunit dev-haskell/tasty-quickcheck ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=syntax highlighting library
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/aeson-1.0:=[profile?] >=dev-haskell/ansi-terminal-0.7:=[pr
 RESTRICT=!test? ( test )
 SLOT=0/0.12.3
 SRC_URI=https://hackage.haskell.org/package/skylighting-core-0.12.3/skylighting-core-0.12.3.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=dadef274519593715f28b9fd7bc934a1

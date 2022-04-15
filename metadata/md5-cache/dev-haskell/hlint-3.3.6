@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/aeson-1.1.2.0:=[profile?] >=dev-haskell/ansi-terminal-0.8.1:=[profile?] >=dev-haskell/cmdargs-0.10:=[profile?] >=dev-haskell/cpphs-1.20.1:=[profile?] >=dev-haskell/data-default-0.3:=[profile?] >=dev-haskell/extra-1.7.3:=[profile?] dev-haskell/file-embed:=[profile?] >=dev-haskell/filepattern-0.1.1:=[profile?] >=dev-haskell/ghc-lib-parser-9.0:=[profile?] <dev-haskell/ghc-lib-parser-9.1:=[profile?] >=dev-haskell/ghc-lib-parser-ex-9.0.0.4:=[profile?] <dev-haskell/ghc-lib-parser-ex-9.0.1:=[profile?] >=dev-haskell/refact-0.3:=[profile?] dev-haskell/text:=[profile?] >=dev-haskell/uniplate-1.5:=[profile?] dev-haskell/unordered-containers:=[profile?] dev-haskell/utf8-string:=[profile?] dev-haskell/vector:=[profile?] >=dev-lang/ghc-8.4.3:= gpl? ( >=dev-haskell/hscolour-1.21:=[profile?] ) hsyaml? ( >=dev-haskell/hsyaml-0.2:=[profile?] >=dev-haskell/hsyaml-aeson-0.2:=[profile?] ) !hsyaml? ( >=dev-haskell/yaml-0.5.0:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Source code suggestions
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/aeson-1.1.2.0:=[profile?] >=dev-haskell/ansi-terminal-0.8.
 REQUIRED_USE=test? ( !hsyaml )
 SLOT=0/3.3.6
 SRC_URI=https://hackage.haskell.org/package/hlint-3.3.6/hlint-3.3.6.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf	elisp-common	f9c72486dbcb18b633c9d0949211d86e	optfeature	d524f291c80f9d21ad80fe978e3ca760
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3	elisp-common	f9c72486dbcb18b633c9d0949211d86e	optfeature	d524f291c80f9d21ad80fe978e3ca760
 _md5_=b8613de3a92554307d7ecd889a49a785

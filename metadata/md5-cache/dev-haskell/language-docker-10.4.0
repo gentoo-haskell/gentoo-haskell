@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=dev-haskell/data-default-class:=[profile?] >=dev-haskell/megaparsec-8.0:=[profile?] dev-haskell/prettyprinter:=[profile?] >=dev-haskell/split-0.2:=[profile?] dev-haskell/text:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/hspec dev-haskell/hspec-megaparsec >=dev-haskell/hunit-1.2 dev-haskell/quickcheck ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Dockerfile parser, pretty-printer and embedded DSL
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=dev-haskell/data-default-class:=[profile?] >=dev-haskell/megaparsec-8.0:
 RESTRICT=!test? ( test )
 SLOT=0/10.4.0
 SRC_URI=https://hackage.haskell.org/package/language-docker-10.4.0/language-docker-10.4.0.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=7f04e6892bd31c8bcbbdb5282a9a2f45

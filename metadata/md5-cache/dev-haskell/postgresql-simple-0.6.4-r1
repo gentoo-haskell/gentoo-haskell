@@ -1,4 +1,4 @@
-BDEPEND=app-text/dos2unix
+BDEPEND=app-text/dos2unix app-text/dos2unix
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?] >=dev-haskell/bytestring-builder-0.10.8.1.0:=[profile?] <dev-haskell/bytestring-builder-0.11:=[profile?] >=dev-haskell/case-insensitive-1.2.0.11:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?] >=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?] >=dev-haskell/only-0.1:=[profile?] <dev-haskell/only-0.1.1:=[profile?] >=dev-haskell/postgresql-libpq-0.9.4.3:=[profile?] <dev-haskell/postgresql-libpq-0.10:=[profile?] >=dev-haskell/scientific-0.3.6.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?] >=dev-haskell/time-compat-1.9.5:=[profile?] <dev-haskell/time-compat-1.12:=[profile?] >=dev-haskell/uuid-types-1.0.3:=[profile?] <dev-haskell/uuid-types-1.1:=[profile?] >=dev-haskell/vector-0.12.0.1:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?] >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-2.1:=[profile?] >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/base16-bytestring >=dev-haskell/cryptohash-md5-0.11.100.1 <dev-haskell/cryptohash-md5-0.12 dev-haskell/hunit >=dev-haskell/inspection-testing-0.4.1.1 <dev-haskell/inspection-testing-0.5 dev-haskell/tasty dev-haskell/tasty-golden dev-haskell/tasty-hunit ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Mid-Level PostgreSQL client library
@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.
 RESTRICT=!test? ( test )
 SLOT=0/0.6.4
 SRC_URI=https://hackage.haskell.org/package/postgresql-simple-0.6.4/postgresql-simple-0.6.4.tar.gz https://hackage.haskell.org/package/postgresql-simple-0.6.4/revision/6.cabal -> postgresql-simple-0.6.4-r1.cabal
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=71a8951568140dd0dcbdd2beab881a8f

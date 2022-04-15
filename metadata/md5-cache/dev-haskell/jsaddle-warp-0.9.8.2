@@ -1,4 +1,5 @@
-DEFINED_PHASES=compile configure install postinst postrm setup test
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-2.1:=[profile?] >=dev-haskell/foreign-store-0.2:=[profile?] <dev-haskell/foreign-store-0.3:=[profile?] >=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?] >=dev-haskell/jsaddle-0.9.4.0:=[profile?] <dev-haskell/jsaddle-0.10:=[profile?] >=dev-haskell/stm-2.4.4:=[profile?] <dev-haskell/stm-2.6:=[profile?] >=dev-haskell/wai-3.0.3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?] >=dev-haskell/wai-websockets-3.0.0.6:=[profile?] <dev-haskell/wai-websockets-3.1:=[profile?] >=dev-haskell/warp-3.1.2:=[profile?] <dev-haskell/warp-3.4:=[profile?] >=dev-haskell/websockets-0.9.5.0:=[profile?] <dev-haskell/websockets-0.13:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/doctest-0.10.1 <dev-haskell/doctest-0.19 dev-haskell/exceptions dev-haskell/lens dev-haskell/network dev-haskell/primitive dev-haskell/quickcheck dev-haskell/random dev-haskell/ref-tf dev-haskell/unliftio-core >=dev-haskell/webdriver-0.8.4 <dev-haskell/webdriver-0.10 ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Interface for JavaScript that works with GHCJS and GHC
 EAPI=8
@@ -11,5 +12,5 @@ RDEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-2.1:=[profile
 RESTRICT=test !test? ( test )
 SLOT=0/0.9.8.2
 SRC_URI=https://hackage.haskell.org/package/jsaddle-warp-0.9.8.2/jsaddle-warp-0.9.8.2.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	d695cc7c08e08c7195f9e55aca17dccf
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
 _md5_=6d873d87108fce7c8e4c46bd90a5ae00
