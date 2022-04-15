@@ -10,14 +10,8 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 CABAL_HACKAGE_REVISION="2"
 inherit haskell-cabal
 
-CABAL_FILE="${S}/${PN}.cabal"
-CABAL_DISTFILE="${P}-rev${CABAL_HACKAGE_REVISION}.cabal"
-
 DESCRIPTION="Complete high-level binding to libFLAC"
 HOMEPAGE="https://github.com/mrkkrp/flac"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/${CABAL_HACKAGE_REVISION}.cabal
-		-> ${CABAL_DISTFILE}"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -34,17 +28,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/temporary-1.1 <dev-haskell/temporary-1.4 )
 "
 BDEPEND="app-text/dos2unix"
-
-src_prepare() {
-	# pull revised cabal from upstream
-	cp "${DISTDIR}/${CABAL_DISTFILE}" "${CABAL_FILE}" || die
-
-	# Convert to unix line endings
-	dos2unix "${CABAL_FILE}" || die
-
-	# Apply patches *after* pulling the revised cabal
-	default
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
