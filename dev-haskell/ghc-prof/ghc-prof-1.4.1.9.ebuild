@@ -23,7 +23,7 @@ RDEPEND="<dev-haskell/attoparsec-0.15:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4
-	test? ( >=dev-haskell/attoparsec-0.10 <dev-haskell/attoparsec-0.14
+	test? ( >=dev-haskell/attoparsec-0.10 <dev-haskell/attoparsec-0.15
 		<dev-haskell/tasty-1.5
 		>=dev-haskell/tasty-hunit-0.9.1 <dev-haskell/tasty-hunit-0.11
 		dev-haskell/temporary )
