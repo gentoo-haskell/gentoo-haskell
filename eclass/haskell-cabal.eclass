@@ -154,7 +154,6 @@ CABAL_P="${CABAL_PN}-${CABAL_PV}"
 : ${S:="${WORKDIR}/${CABAL_P}"}
 
 # @ECLASS_VARIABLE: CABAL_FILE
-# @PRE_INHERIT
 # @DESCRIPTION:
 # The location of the .cabal file for the Haskell package. This defaults to
 # "${S}/${CABAL_PN}.cabal".
