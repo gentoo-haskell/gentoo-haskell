@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=dev-haskell/random:=[profile?] dev-haskell/semigroups:=[profile?] dev-haskell/split:=[profile?] dev-haskell/storable-complex:=[profile?] >=dev-haskell/vector-0.11:=[profile?] >=dev-lang/ghc-8.0.1:= virtual/blas virtual/lapack
 SLOT=0/0.20.0.0
 SRC_URI=https://hackage.haskell.org/package/hmatrix-0.20.0.0/hmatrix-0.20.0.0.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	14a1aea60d15c39e7a6cd5484e2f1f4c
 _md5_=a7568f93f9fcd8b44c5cbe7e1342d12a

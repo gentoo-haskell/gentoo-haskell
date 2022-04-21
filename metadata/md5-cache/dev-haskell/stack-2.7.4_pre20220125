@@ -12,5 +12,5 @@ RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/annotated-wl-pprint:=[profile?
 RESTRICT=test
 SLOT=0/2.7.4_pre20220125
 SRC_URI=https://github.com/hololeap/stack/archive/9a0683679ad49982fcfb036f87c0f99a78916d2a.tar.gz -> stack-9a0683679ad49982fcfb036f87c0f99a78916d2a.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	6283ef7703f68cb6704fd08b15d3f9c3
-_md5_=12f6fe09c8957306e068820085b4a336
+_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	14a1aea60d15c39e7a6cd5484e2f1f4c
+_md5_=3ca403742ae2aecf7fa6c7e9d4f3b10e
