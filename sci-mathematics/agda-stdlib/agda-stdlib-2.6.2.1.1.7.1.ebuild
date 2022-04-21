@@ -34,6 +34,7 @@ DEPEND="${RDEPEND}
 "
 
 S=${WORKDIR}/${PN}-${MY_UPSTREAM_AGDA_STDLIB_V}
+CABAL_FILE="${S}/${PN}-utils.cabal"
 
 src_compile() {
 	haskell-cabal_src_compile
