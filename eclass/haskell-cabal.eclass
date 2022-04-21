@@ -151,7 +151,7 @@ EXPORT_FUNCTIONS pkg_setup src_prepare src_configure src_compile src_test src_in
 # The combined $CABAL_PN and $CABAL_PV variables, analogous to $P
 CABAL_P="${CABAL_PN}-${CABAL_PV}"
 
-: ${S:="${WORKDIR}/${CABAL_P}"}
+S="${WORKDIR}/${CABAL_P}"
 
 # @ECLASS_VARIABLE: CABAL_FILE
 # @DESCRIPTION:
