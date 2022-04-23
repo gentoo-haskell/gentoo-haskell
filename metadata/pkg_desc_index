@@ -260,7 +260,7 @@ dev-haskell/cassava 0.5.2.0-r1: A CSV parsing and encoding library
 dev-haskell/cassava-megaparsec 2.0.2: Megaparsec parser of CSV files that plays nicely with Cassava
 dev-haskell/categories 1.0.7-r1: The Categories package authored by Edward Kmett
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
-dev-haskell/cborg 0.2.6.0: Concise Binary Object Representation (CBOR)
+dev-haskell/cborg 0.2.7.0: Concise Binary Object Representation (CBOR)
 dev-haskell/cborg-json 0.2.2.0-r1: A library for encoding JSON as CBOR
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.5.8.2: A binary serialization library
@@ -1711,7 +1711,7 @@ dev-haskell/semver-range 0.2.8: An implementation of semver and semantic version
 dev-haskell/sendfile 0.7.11.1: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/sequence-formats 1.5.1.4: A package with basic parsing utilities for several Bioinformatic data formats
-dev-haskell/serialise 0.2.4.0: A binary serialisation library for Haskell values
+dev-haskell/serialise 0.2.5.0: A binary serialisation library for Haskell values
 dev-haskell/serialport 0.4.7 0.5.1: Cross platform serial port library
 dev-haskell/servant 0.19: A family of combinators for defining webservices APIs
 dev-haskell/servant-client 0.19: Automatic derivation of querying functions for servant
