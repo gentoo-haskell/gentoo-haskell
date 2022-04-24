@@ -261,7 +261,7 @@ dev-haskell/cassava-megaparsec 2.0.2: Megaparsec parser of CSV files that plays 
 dev-haskell/categories 1.0.7-r1: The Categories package authored by Edward Kmett
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
 dev-haskell/cborg 0.2.7.0: Concise Binary Object Representation (CBOR)
-dev-haskell/cborg-json 0.2.2.0-r1: A library for encoding JSON as CBOR
+dev-haskell/cborg-json 0.2.4.0: A library for encoding JSON as CBOR
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.5.8.2: A binary serialization library
 dev-haskell/cereal-conduit 0.8.0: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
