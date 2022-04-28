@@ -1,0 +1,20 @@
+diff --git a/src/Text/Parsec/Erd/Parser.hs b/src/Text/Parsec/Erd/Parser.hs
+index 2871423..04bd055 100644
+--- a/src/Text/Parsec/Erd/Parser.hs
++++ b/src/Text/Parsec/Erd/Parser.hs
+@@ -11,13 +11,14 @@ module Text.Parsec.Erd.Parser
+     comment
+   ) where
+ 
++
+ import           Erd.ER
+ 
+ import           Control.Monad         (liftM2, void, when)
+ import           Data.Char             (isAlphaNum, isControl, isSpace)
+ import qualified Data.Map              as M
+ import           Data.Maybe
+-import           Data.Text.Lazy
++import           Data.Text.Lazy hiding (elem)
+ import           Text.Parsec
+ import           Text.Parsec.Text.Lazy
+ import           Text.Printf           (printf)
