@@ -107,10 +107,6 @@ dev-haskell/hls-stylish-haskell-plugin
 dev-util/brittany
 dev-haskell/hls-brittany-plugin
 
-# hololeap <hololeap@protonmail.com> (2022-01-23)
-# Needs update to build on ghc-9.0.2
-dev-haskell/hls-tactics-plugin
-
 # hololeap <hololeap@protonmail.com> (2022-01-21)
 # Needs extensive patching in order to build on ghc-9.0.2
 dev-util/hdocs
