@@ -8,8 +8,10 @@
 	<use>
 		<flag name="hls_plugins_alternate-number-format">Enable Alternate Number Format plugin</flag>
 		<flag name="hls_plugins_call-hierarchy">Enable call hierarchy plugin</flag>
+        <flag name="hls_plugins_change-type-signature">Change a declarations type signature with a Code Action</flag>
 		<flag name="hls_plugins_class">Enable class plugin</flag>
 		<flag name="hls_plugins_eval">Enable eval plugin</flag>
+        <flag name="hls_plugins_haddock-comments">Enable haddock comments plugin</flag>
 		<flag name="hls_plugins_hlint">Enable hlint plugin</flag>
 		<flag name="hls_plugins_import-lens">Enable importLens plugin</flag>
 		<flag name="hls_plugins_module-name">Enable moduleName plugin</flag>
