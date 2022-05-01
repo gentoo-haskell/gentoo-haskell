@@ -9,24 +9,12 @@ dev-haskell/diagrams cairo gtk
 dev-haskell/diagrams-builder cairo
 
 # hololeap <hololeap@protonmail.com> (23 Jan 2022)
-# hls-class-plugin needs update to compile on ghc-9.0.2
-dev-util/haskell-language-server hls_plugins_rename
-
-# hololeap <hololeap@protonmail.com> (23 Jan 2022)
-# hls-class-plugin needs update to compile on ghc-9.0.2
-dev-util/haskell-language-server hls_plugins_class
-
-# hololeap <hololeap@protonmail.com> (23 Jan 2022)
 # stylish-haskell needs update to build with >=ghc-lib-parser-9.0
 dev-util/haskell-language-server hls_formatters_stylish-haskell
 
 # hololeap <hololeap@protonmail.com> (23 Jan 2022)
 # The version of brittany compatible with >=ghc-9.0 requires >=aeson-2
 dev-util/haskell-language-server hls_formatters_brittany
-
-# hololeap <hololeap@protonmail.com> (23 Jan 2022)
-# hls-tactics-plugin needs update to compile on ghc-9.0.2
-dev-util/haskell-language-server hls_plugins_tactics
 
 # Sergei Trofimovich <slyfox@gentoo.org> (16 Nov 2019)
 # Needs masked dev-haskell/slave-thread

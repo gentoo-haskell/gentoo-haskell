@@ -3,9 +3,10 @@
 # (Updated 2022-02-10)
 
 alternate-number-format - Enable Alternate Number Format plugin
+change-type-signature - Change a declarations type signature with a Code Action
 class - Enable class plugin
 eval - Enable eval plugin
-haddock-comments - Enable haddockComments plugin
+haddock-comments - Enable haddock comments plugin
 hlint - Enable hlint plugin
 import-lens - Enable importLens plugin
 module-name - Enable moduleName plugin
