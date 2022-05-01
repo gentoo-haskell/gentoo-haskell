@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/ghc-exactprint-0.6.4:=[profile?] >=dev-haskell/ghcide-1.7:=[profile?] <dev-haskell/ghcide-1.8:=[profile?] >=dev-haskell/hls-plugin-api-1.4:=[profile?] <dev-haskell/hls-plugin-api-1.5:=[profile?] dev-haskell/lens:=[profile?] dev-haskell/lsp:=[profile?] >=dev-lang/ghc-8.6.3:= >=dev-haskell/cabal-2.4.0.1 test? ( >=dev-haskell/hls-test-utils-1.3 <dev-haskell/hls-test-utils-1.4 dev-haskell/lsp-types ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Class/instance management plugin for Haskell Language Server
+EAPI=8
+HOMEPAGE=https://github.com/haskell/haskell-language-server#readme
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/ghc-exactprint-0.6.4:=[profile?] >=dev-haskell/ghcide-1.7:=[profile?] <dev-haskell/ghcide-1.8:=[profile?] >=dev-haskell/hls-plugin-api-1.4:=[profile?] <dev-haskell/hls-plugin-api-1.5:=[profile?] dev-haskell/lens:=[profile?] dev-haskell/lsp:=[profile?] >=dev-lang/ghc-8.6.3:=
+RESTRICT=!test? ( test )
+SLOT=0/1.0.3.0
+SRC_URI=https://hackage.haskell.org/package/hls-class-plugin-1.0.3.0/hls-class-plugin-1.0.3.0.tar.gz -> hls-class-plugin-1.0.3.0.tar.gz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
+_md5_=fe525ff17979fc6bd324e30d3a2ad9b0

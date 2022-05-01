@@ -210,6 +210,7 @@ dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC
 dev-haskell/logfloat:useffi - Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.
 dev-haskell/lpeg:rely-on-shared-lpeg-library - Do not build lpeg from source, but trust that lpeg is made available in other ways, e.g., through a system-wide installation. The loader will be replaced with a placeholder function that only emits a message.
 dev-haskell/lsp:demo - Build the demo executables
+dev-haskell/lsp:examples - Build the demo executables
 dev-haskell/lua:allow-unsafe-gc - Allow optimizations which make Lua's garbage collection potentially unsafe; enabling this should be safe if there are no callbacks into Haskell during Lua garbage collection cycles. The flag should be *disabled* if Lua objects can have Haskell finalizers, i.e., @__gc@ metamethods that call Haskell function.
 dev-haskell/lua:apicheck - Compile Lua with -DLUA_USE_APICHECK.
 dev-haskell/lua:export-dynamic - Add all symbols to dynamic symbol table; disabling this will make it possible to create fully static binaries, but renders loading of dynamic C libraries impossible.
@@ -426,8 +427,10 @@ dev-util/haskell-language-server:hls_formatters_ormolu - Enable ormolu plugin
 dev-util/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell plugin
 dev-util/haskell-language-server:hls_plugins_alternate-number-format - Enable Alternate Number Format plugin
 dev-util/haskell-language-server:hls_plugins_call-hierarchy - Enable call hierarchy plugin
+dev-util/haskell-language-server:hls_plugins_change-type-signature - Change a declarations type signature with a Code Action
 dev-util/haskell-language-server:hls_plugins_class - Enable class plugin
 dev-util/haskell-language-server:hls_plugins_eval - Enable eval plugin
+dev-util/haskell-language-server:hls_plugins_haddock-comments - Enable haddock comments plugin
 dev-util/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
 dev-util/haskell-language-server:hls_plugins_import-lens - Enable importLens plugin
 dev-util/haskell-language-server:hls_plugins_module-name - Enable moduleName plugin
@@ -440,9 +443,7 @@ dev-util/haskell-language-server:hls_plugins_selection-range - Enable selectionR
 dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
 dev-util/haskell-language-server:hls_plugins_tactics - Enable tactics plugin
 dev-util/hsdev:hlint - build with hlint to support linting
-dev-util/shake:cloud - Enable cloud build features
 dev-util/shake:embed-files - Embed data files into the shake library
-dev-util/shake:portable - Obtain FileTime using portable functions
 dev-vcs/darcs:curl - Use libcurl for HTTP support.
 dev-vcs/darcs:terminfo - Use the terminfo package for enhanced console support.
 dev-vcs/darcs:threaded - Use threading and SMP support.

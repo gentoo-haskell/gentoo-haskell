@@ -543,6 +543,7 @@ dev-haskell/enclosed-exceptions 1.0.3: Catching all exceptions from within an en
 dev-haskell/engine-io 1.2.23: A Haskell implementation of Engine.IO
 dev-haskell/entropy 0.4.1.6-r1: A platform independent entropy source
 dev-haskell/enumerator 0.4.20: Reliable, high-performance processing with left-fold enumerators
+dev-haskell/enummapset 0.6.0.3: IntMap and IntSet with Enum keys/elements
 dev-haskell/enumset 0.0.5: Sets of enumeration values represented by machine words
 dev-haskell/env-locale 1.0.0.1: A (non-forking) interface to the current locale
 dev-haskell/equivalence 0.3.5: Maintaining an equivalence relation implemented as union-find using STT
@@ -698,7 +699,7 @@ dev-haskell/ghc-typelits-knownnat 0.7.6-r1: Derive KnownNat constraints from oth
 dev-haskell/ghc-typelits-natnormalise 0.7.6-r1: GHC typechecker plugin for types of kind GHC.TypeLits.Nat
 dev-haskell/ghci-pretty 0.0.2: colored pretty-printing within ghci
 dev-haskell/ghcid 0.6.6 0.8.7: GHCi based bare bones IDE
-dev-haskell/ghcide 1.5.0.1-r2 1.6.0.1: The core of an IDE
+dev-haskell/ghcide 1.7.0.0: The core of an IDE
 dev-haskell/ghcjs-codemirror 0.0.0.2: Installs CodeMirror JavaScript files
 dev-haskell/gi-atk 2.0.24: Atk bindings
 dev-haskell/gi-cairo 1.0.26: Cairo bindings
@@ -867,7 +868,7 @@ dev-haskell/hgdbmi 0.2-r1: GDB Machine Interface: program-driven control of GDB
 dev-haskell/hgl 3.2.3.2: A simple graphics library based on X11 or Win32
 dev-haskell/hi 1.2.0.2: Generate scaffold for cabal project
 dev-haskell/hi-file-parser 0.1.2.0: Parser for GHC's hi files
-dev-haskell/hie-bios 0.8.1: Set up a GHC API session
+dev-haskell/hie-bios 0.9.1: Set up a GHC API session
 dev-haskell/hie-compat 0.2.1.0: HIE files for GHC 8.6 and other HIE file backports
 dev-haskell/hiedb 0.4.0.0 0.4.1.0: Generates a references DB from .hie files
 dev-haskell/higgledy 0.4.1.1-r4: Partial types as a type constructor
@@ -884,30 +885,31 @@ dev-haskell/hlibev 0.4.0: FFI interface to libev
 dev-haskell/hlibgit2 0.18.0.16: Low-level bindings to libgit2
 dev-haskell/hlibsass 0.1.10.1: Low-level bindings to Libsass
 dev-haskell/hlint 3.3.6: Source code suggestions
-dev-haskell/hls-alternate-number-format-plugin 1.0.1.0: Provide Alternate Number Formats plugin for Haskell Language Server
+dev-haskell/hls-alternate-number-format-plugin 1.1.0.0: Provide Alternate Number Formats plugin for Haskell Language Server
 dev-haskell/hls-brittany-plugin 1.0.1.1: Integration with the Brittany code formatter
-dev-haskell/hls-call-hierarchy-plugin 1.0.1.1 1.0.2.0: Call hierarchy plugin for Haskell Language Server
-dev-haskell/hls-class-plugin 1.0.1.2 1.0.2.0: Class/instance management plugin for Haskell Language Server
-dev-haskell/hls-eval-plugin 1.2.0.2 1.2.1.0: Eval plugin for Haskell Language Server
-dev-haskell/hls-explicit-imports-plugin 1.0.1.2 1.0.2.0: Explicit imports plugin for Haskell Language Server
-dev-haskell/hls-floskell-plugin 1.0.0.2 1.0.1.0: Integration with the Floskell code formatter
-dev-haskell/hls-fourmolu-plugin 1.0.1.2 1.0.2.0: Integration with the Fourmolu code formatter
-dev-haskell/hls-graph 1.5.1.1 1.6.0.0: Haskell Language Server internal graph API
-dev-haskell/hls-haddock-comments-plugin 1.0.0.4 1.0.1.0: Haddock comments plugin for Haskell Language Server
-dev-haskell/hls-hlint-plugin 1.0.2.1-r1 1.0.3.0: Hlint integration plugin with Haskell Language Server
-dev-haskell/hls-module-name-plugin 1.0.0.3 1.0.1.0: Module name plugin for Haskell Language Server
-dev-haskell/hls-ormolu-plugin 1.0.1.2 1.0.2.0: Integration with the Ormolu code formatter
-dev-haskell/hls-plugin-api 1.2.0.2 1.3.0.0: Haskell Language Server API for plugin communication
-dev-haskell/hls-pragmas-plugin 1.0.1.1 1.0.2.0: Pragmas plugin for Haskell Language Server
-dev-haskell/hls-qualify-imported-names-plugin 1.0.1.0: A Haskell Language Server plugin that qualifies imported names
-dev-haskell/hls-refine-imports-plugin 1.0.0.2 1.0.1.0: Refine imports plugin for Haskell Language Server
-dev-haskell/hls-rename-plugin 1.0.0.0: Rename plugin for Haskell Language Server
-dev-haskell/hls-retrie-plugin 1.0.1.4 1.0.2.0: Retrie integration plugin for Haskell Language Server
-dev-haskell/hls-selection-range-plugin 1.0.0.0: HLS Plugin to support smart selection range
-dev-haskell/hls-splice-plugin 1.0.0.6 1.0.1.0: HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes
+dev-haskell/hls-call-hierarchy-plugin 1.0.3.0: Call hierarchy plugin for Haskell Language Server
+dev-haskell/hls-change-type-signature-plugin 1.0.1.0: Change a declarations type signature with a Code Action
+dev-haskell/hls-class-plugin 1.0.3.0: Class/instance management plugin for Haskell Language Server
+dev-haskell/hls-eval-plugin 1.2.2.0: Eval plugin for Haskell Language Server
+dev-haskell/hls-explicit-imports-plugin 1.1.0.0: Explicit imports plugin for Haskell Language Server
+dev-haskell/hls-floskell-plugin 1.0.1.1: Integration with the Floskell code formatter
+dev-haskell/hls-fourmolu-plugin 1.0.3.0: Integration with the Fourmolu code formatter
+dev-haskell/hls-graph 1.7.0.0: Haskell Language Server internal graph API
+dev-haskell/hls-haddock-comments-plugin 1.0.1.0-r1: Haddock comments plugin for Haskell Language Server
+dev-haskell/hls-hlint-plugin 1.0.4.0: Hlint integration plugin with Haskell Language Server
+dev-haskell/hls-module-name-plugin 1.0.2.0: Module name plugin for Haskell Language Server
+dev-haskell/hls-ormolu-plugin 1.0.2.1: Integration with the Ormolu code formatter
+dev-haskell/hls-plugin-api 1.4.0.0: Haskell Language Server API for plugin communication
+dev-haskell/hls-pragmas-plugin 1.0.2.1: Pragmas plugin for Haskell Language Server
+dev-haskell/hls-qualify-imported-names-plugin 1.0.1.0-r1: A Haskell Language Server plugin that qualifies imported names
+dev-haskell/hls-refine-imports-plugin 1.0.2.0: Refine imports plugin for Haskell Language Server
+dev-haskell/hls-rename-plugin 1.0.0.2: Rename plugin for Haskell Language Server
+dev-haskell/hls-retrie-plugin 1.0.2.1: Retrie integration plugin for Haskell Language Server
+dev-haskell/hls-selection-range-plugin 1.0.0.0-r1: HLS Plugin to support smart selection range
+dev-haskell/hls-splice-plugin 1.0.1.0-r1: HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes
 dev-haskell/hls-stylish-haskell-plugin 1.0.0.4 1.0.1.0: Integration with the Stylish Haskell code formatter
-dev-haskell/hls-tactics-plugin 1.5.0.1: Wingman plugin for Haskell Language Server
-dev-haskell/hls-test-utils 1.1.0.2 1.2.0.0: Utilities used in the tests of Haskell Language Server
+dev-haskell/hls-tactics-plugin 1.6.2.0: Wingman plugin for Haskell Language Server
+dev-haskell/hls-test-utils 1.3.0.0: Utilities used in the tests of Haskell Language Server
 dev-haskell/hmatrix 0.20.0.0 0.20.2: Numeric Linear Algebra
 dev-haskell/hmatrix-gsl 0.19.0.1: Numerical computation
 dev-haskell/hmatrix-gsl-stats 0.4.1.8: GSL Statistics interface
@@ -1053,8 +1055,8 @@ dev-haskell/ihaskell-hatex 0.2.1.1: IHaskell display instances for hatex
 dev-haskell/ilist 0.3.1.0 0.4.0.1: Optimised list functions for doing index-related things
 dev-haskell/imagesize-conduit 1.1-r1: Determine the size of some common image formats
 dev-haskell/imlib 0.1.2-r1: Haskell binding for Imlib 2
-dev-haskell/implicit-hie 0.1.2.6: Auto generate hie-bios cradles & hie.yaml
-dev-haskell/implicit-hie-cradle 0.3.0.5 0.5.0.0: Auto generate hie-bios cradles
+dev-haskell/implicit-hie 0.1.2.7: Auto generate hie-bios cradles & hie.yaml
+dev-haskell/implicit-hie-cradle 0.5.0.0: Auto generate hie-bios cradles
 dev-haskell/indents 0.5.0.1: indentation sensitive parser-combinators for parsec
 dev-haskell/indexed 0.1.3: Haskell98 indexed functors, monads, comonads
 dev-haskell/indexed-extras 0.2-r1: Indexed functors, monads and comonads that require extensions to Haskell98
@@ -1212,7 +1214,7 @@ dev-haskell/loop 0.3.0: Fast loops (for when GHC can't optimize forM_)
 dev-haskell/lpeg 1.0.3: LPeg - Parsing Expression Grammars For Lua
 dev-haskell/lrucache 1.2.0.1: a simple, pure LRU cache
 dev-haskell/lsp 1.2.0.1 1.4.0.0: Haskell library for the Microsoft Language Server Protocol
-dev-haskell/lsp-test 0.14.0.1 0.14.0.2: Functional test framework for LSP servers
+dev-haskell/lsp-test 0.14.0.2: Functional test framework for LSP servers
 dev-haskell/lsp-types 1.3.0.1 1.4.0.1: Haskell library for the Microsoft Language Server Protocol, data types
 dev-haskell/lua 2.1.0 2.2.0: Lua, an embeddable scripting language
 dev-haskell/lua-arbitrary 1.0.1: Arbitrary instances for Lua types
@@ -2260,13 +2262,13 @@ dev-util/dhall-nix 1.1.24: Dhall to Nix compiler
 dev-util/dhall-toml 1.0.2: Convert between Dhall and TOML
 dev-util/dhall-yaml 1.2.10: Convert between Dhall and YAML
 dev-util/hadolint 2.8.0-r1: Dockerfile Linter JavaScript API
-dev-util/haskell-language-server 1.5.1.0 1.6.1.1: LSP server for GHC
+dev-util/haskell-language-server 1.7.0.0: LSP server for GHC
 dev-util/hasmin 1.0.3-r2: CSS Minifier
 dev-util/hdocs 0.5.5.0-r1: Haskell docs tool
 dev-util/hindent 5.3.2: Extensible Haskell pretty printer
 dev-util/hoogle 5.0.18.2-r2: Haskell API Search
 dev-util/hsdev 0.3.4.0-r4: Haskell development library
-dev-util/shake 0.19.4: Build system library, like Make, but more accurate dependencies
+dev-util/shake 0.19.6: Build system library, like Make, but more accurate dependencies
 dev-util/shellcheck 0.7.2 0.8.0: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/spago 0.20.6: PureScript package manager and build tool powered by Dhall and package-sets
