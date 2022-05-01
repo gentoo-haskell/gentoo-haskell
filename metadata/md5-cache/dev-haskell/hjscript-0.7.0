@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/hjavascript-0.4.6:=[profile?] >=dev-haskell/hsp-0.9:=[profile?] dev-haskell/mtl:=[profile?] >=dev-haskell/text-0.11:=[profile?] >=dev-lang/ghc-6.10.4:=
 SLOT=0/0.7.0
 SRC_URI=https://hackage.haskell.org/package/HJScript-0.7.0/HJScript-0.7.0.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
 _md5_=6c16132e2bef69a37de5df85d0ac64a2

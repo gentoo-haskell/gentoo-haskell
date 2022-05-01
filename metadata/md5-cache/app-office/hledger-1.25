@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/aeson-1:=[profile?] >=dev-haskell/ansi-terminal-0.9:=[prof
 RESTRICT=!test? ( test )
 SLOT=0/1.25
 SRC_URI=https://hackage.haskell.org/package/hledger-1.25/hledger-1.25.tar.gz
-_eclasses_=multiprocessing	61c959fc55c15c00bbb1079d6a71370b	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
 _md5_=2a4673f5abb5b316078a9620b90ada42
