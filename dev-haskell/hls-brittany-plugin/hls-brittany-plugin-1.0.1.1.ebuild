@@ -10,13 +10,14 @@ inherit haskell-cabal
 
 DESCRIPTION="Integration with the Brittany code formatter"
 HOMEPAGE="https://hackage.haskell.org/package/hls-brittany-plugin"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-haskell/czipwith:=[profile?]
+RDEPEND="
+	>=dev-haskell/brittany-0.13.1.0:=[profile?]
+	dev-haskell/czipwith:=[profile?]
 	dev-haskell/extra:=[profile?]
 	dev-haskell/ghc-exactprint:=[profile?]
 	>=dev-haskell/ghcide-1.2:=[profile?] <dev-haskell/ghcide-1.6:=[profile?]
@@ -25,9 +26,11 @@ RDEPEND="dev-haskell/czipwith:=[profile?]
 	dev-haskell/lsp-types:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
-	>=dev-util/brittany-0.13.1.0:=[profile?]
 "
-DEPEND="${RDEPEND}
+DEPEND="
+	${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( >=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.2 )
+	test? (
+		>=dev-haskell/hls-test-utils-1.0 <dev-haskell/hls-test-utils-1.2
+	)
 "
