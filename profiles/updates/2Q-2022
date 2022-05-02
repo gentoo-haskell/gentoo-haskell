@@ -3,3 +3,4 @@ move dev-haskell/hledger app-office/hledger
 move dev-haskell/hledger-iadd app-office/hledger-iadd
 move dev-haskell/hledger-ui app-office/hledger-ui
 move dev-haskell/hledger-web app-office/hledger-web
+move dev-haskell/erd dev-db/erd
