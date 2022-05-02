@@ -5,3 +5,4 @@ move dev-haskell/hledger-ui app-office/hledger-ui
 move dev-haskell/hledger-web app-office/hledger-web
 move dev-haskell/erd dev-db/erd
 move dev-util/brittany dev-haskell/brittany
+move dev-util/haskell-language-server dev-haskell/haskell-language-server
