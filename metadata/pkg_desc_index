@@ -346,8 +346,8 @@ dev-haskell/conduit-audio-samplerate 0.1.0.3: conduit-audio interface to the lib
 dev-haskell/conduit-audio-sndfile 0.1.2.2: conduit-audio interface to the libsndfile audio file library
 dev-haskell/conduit-combinators 1.3.0: Commonly used conduit functions, for both chunked and unchunked data
 dev-haskell/conduit-connection 0.1.0.5: Conduit source and sink for Network.Connection
-dev-haskell/conduit-extra 1.3.5: Batteries included conduit: adapters for common libraries
-dev-haskell/conduit-parse 0.2.1.0: Parsing framework based on conduit
+dev-haskell/conduit-extra 1.3.6: Batteries included conduit: adapters for common libraries
+dev-haskell/conduit-parse 0.2.1.1: Parsing framework based on conduit
 dev-haskell/config-ini 0.2.4.0 0.2.4.0-r2: A library for simple INI-based configuration files
 dev-haskell/config-schema 1.2.2.0: Schema definitions for the config-value package
 dev-haskell/config-value 0.7.0.1 0.8.1: Simple, layout-based value language similar to YAML or JSON
@@ -411,6 +411,7 @@ dev-haskell/cuda 0.10.1.0: FFI binding to the CUDA interface for programming NVI
 dev-haskell/cufft 0.8.0.0: Haskell bindings for the CUFFT library
 dev-haskell/curl 1.3.8: Haskell binding to libcurl
 dev-haskell/curly-expander 0.3.0.1: Curly braces (brackets) expanding
+dev-haskell/curve25519 0.2.7: Fast implementations of the curve25519 elliptic curve primitives
 dev-haskell/cyclotomic 1.1.1: A subfield of the complex numbers for exact calculation
 dev-haskell/czipwith 1.0.1.4: CZipWith class and deriving via TH
 dev-haskell/daemons 0.3.0: Daemons in Haskell made fun and easy
@@ -920,7 +921,7 @@ dev-haskell/hnix-store-remote 0.5.0.0: Remote hnix store
 dev-haskell/hoauth2 1.16.0: Haskell OAuth2 authentication client
 dev-haskell/hogg 0.4.1.2: Library and tools to manipulate the Ogg container format
 dev-haskell/hood 0.3.1: Debugging by observing in place
-dev-haskell/hookup 0.6-r1: Abstraction over creating network connections with SOCKS5 and TLS
+dev-haskell/hookup 0.7: Abstraction over creating network connections with SOCKS5 and TLS
 dev-haskell/hoopl 3.10.2.2: A library to support dataflow analysis and optimization
 dev-haskell/hopfli 0.2.2.1: Bidings to Google's Zopfli compression library
 dev-haskell/hora 2.2.0: Convenient type, timestamp, timezone, format
@@ -994,7 +995,7 @@ dev-haskell/hstatsd 0.1: Quick and dirty statsd interface
 dev-haskell/hstringtemplate 0.8.8-r1: StringTemplate implementation in Haskell
 dev-haskell/hsx-jmacro 7.3.8.1: hsp+jmacro support
 dev-haskell/hsx2hs 0.14.1.8: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
-dev-haskell/hsyaml 0.1.2.0 0.2.1.0: Pure Haskell YAML 1.2 parser
+dev-haskell/hsyaml 0.2.1.1: Pure Haskell YAML 1.2 processor
 dev-haskell/hsyaml-aeson 0.2.0.0: JSON to YAML Adapter
 dev-haskell/hsyslog 5.0.2: FFI interface to syslog(3) from POSIX.1-2001
 dev-haskell/htaglib 1.2.0: Bindings to TagLib, audio meta-data library
@@ -1101,7 +1102,7 @@ dev-haskell/iso8601-time 0.1.5: Convert to/from the ISO 8601 time format
 dev-haskell/iwlib 0.1.0: Bindings for the iw C library
 dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
 dev-haskell/ixset 1.1.1.1: Efficient relational queries on Haskell sets
-dev-haskell/ixset-typed 0.5: Efficient relational queries on Haskell sets
+dev-haskell/ixset-typed 0.5.1.0: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jira-wiki-markup 1.3.4 1.4.0: Handle Jira wiki markup
 dev-haskell/jmacro 0.6.17: QuasiQuotation library for programmatic generation of Javascript code
@@ -1655,7 +1656,7 @@ dev-haskell/rere 0.2: Regular-expressions extended with fixpoints for context-fr
 dev-haskell/rerebase 1.15.0.3: Reexports from "base" with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0-r1: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
-dev-haskell/resourcet 1.2.4.2: Deterministic allocation and freeing of scarce resources
+dev-haskell/resourcet 1.2.5: Deterministic allocation and freeing of scarce resources
 dev-haskell/retrie 1.1.0.0: A powerful, easy-to-use codemodding tool for Haskell
 dev-haskell/retry 0.8.1.2 0.9.0.0: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
@@ -1885,7 +1886,7 @@ dev-haskell/tagstream-conduit 0.5.6: streamlined html tag parser
 dev-haskell/tar 0.5.1.1-r2: Reading, writing and manipulating ".tar" archive files
 dev-haskell/tar-conduit 0.3.2-r1: Extract and create tar files using conduit for streaming
 dev-haskell/tardis 0.4.3.0: Bidirectional state monad transformer
-dev-haskell/tasty 1.4.2.1: Modern and extensible testing framework
+dev-haskell/tasty 1.4.2.3: Modern and extensible testing framework
 dev-haskell/tasty-ant-xml 1.1.8: Render tasty output to XML for Jenkins
 dev-haskell/tasty-discover 4.2.2: Test discovery for the tasty framework
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
@@ -2099,7 +2100,7 @@ dev-haskell/vimeta 0.3.0.1-r1: Frontend for video metadata tagging tools
 dev-haskell/vinyl 0.13.3: Extensible Records
 dev-haskell/vinyl-gl 0.3.4: Utilities for working with OpenGL's GLSL shading language and vinyl records
 dev-haskell/void 0.7.3: A Haskell 98 logically uninhabited data type
-dev-haskell/vty 5.33: A simple terminal UI library
+dev-haskell/vty 5.35.1: A simple terminal UI library
 dev-haskell/wai 3.2.3: Web Application Interface
 dev-haskell/wai-app-file-cgi 3.1.9: File/CGI/Rev Proxy App of WAI
 dev-haskell/wai-app-static 3.1.7.2-r1: WAI application for static serving
@@ -2216,7 +2217,7 @@ dev-haskell/yesod-recaptcha2 0.3.0: yesod recaptcha2
 dev-haskell/yesod-sitemap 1.6.0: Generate XML sitemaps
 dev-haskell/yesod-static 1.6.1.0: Static file serving subsite for Yesod Web Framework
 dev-haskell/yesod-table 2.0.3: HTML tables for Yesod
-dev-haskell/yesod-test 1.6.12: integration testing for WAI/Yesod Applications
+dev-haskell/yesod-test 1.6.14: integration testing for WAI/Yesod Applications
 dev-haskell/yesod-text-markdown 0.1.10: Yesod support for Text.Markdown
 dev-haskell/yesod-websockets 0.3.0.3: WebSockets support for Yesod
 dev-haskell/yi-rope 0.7.0.2 0.11: A rope data structure used by Yi
@@ -2272,7 +2273,7 @@ dev-util/shake 0.19.6: Build system library, like Make, but more accurate depend
 dev-util/shellcheck 0.7.2 0.8.0: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/spago 0.20.6: PureScript package manager and build tool powered by Dhall and package-sets
-dev-util/threadscope 0.2.14-r1: A graphical tool for profiling parallel Haskell programs
+dev-util/threadscope 0.2.14.1: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.16.5-r1: a distributed, interactive, smart revision control system
 dev-vcs/git-annex 8.20210330-r1: manage files with git, without checking their contents into git
 games-action/monadius 0.99: 2-D arcade scroller
@@ -2286,7 +2287,7 @@ games-roguelike/scroll 1.20180421: scroll(6), a roguelike game
 media-fonts/hasklig 1.2: Hasklig - a Haskell code font with monospaced ligatures
 media-gfx/gifcurry 3.0.0.1: GIF creation utility
 media-sound/hpodder 1.1.6-r2: Podcast Aggregator (downloader)
-net-irc/glirc 2.38-r1: Console IRC client
+net-irc/glirc 2.39: Console IRC client
 net-irc/lambdabot 5.3.0.1: Lambdabot is a development tool and advanced IRC bot
 net-mail/list-remote-forwards 0.0.1-r2: List all remote forwards for mail accounts stored in a database
 net-mail/mailbox-count 0.0.5: Count mailboxes in a SQL database
@@ -2305,7 +2306,7 @@ www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp
 x11-misc/gtk-sni-tray 0.1.8.0: A standalone StatusNotifierItem/AppIndicator tray
 x11-misc/taffybar 3.3.0: A desktop bar similar to xmobar, but with more GUI
-x11-misc/xmobar 0.37 0.41 9999: A Minimalistic Text Based Status Bar
+x11-misc/xmobar 0.37 0.41 0.43 9999: A Minimalistic Text Based Status Bar
 x11-misc/xmonad-extras 0.15.3: Third party extensions for xmonad with wacky dependencies
 x11-misc/xmonad-utils 0.1.3.3-r1: A small collection of X utilities
 x11-misc/xmonad-wallpaper 0.0.1.5: xmonad wallpaper extension
