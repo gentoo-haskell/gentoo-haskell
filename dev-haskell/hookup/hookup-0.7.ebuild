@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
-	>=dev-haskell/attoparsec-0.13:=[profile?]
+	>=dev-haskell/attoparsec-0.14:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/hsopenssl-0.11.2.3:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/hsopenssl-x509-system-0.1:=[profile?] <dev-haskell/hsopenssl-x509-system-0.2:=[profile?]
 	>=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2:=[profile?]
@@ -27,10 +27,3 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'attoparsec            >=0.13 && <0.14' 'attoparsec >=0.13'
-}
