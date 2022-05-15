@@ -37,6 +37,8 @@ dev-haskell/bits-atomic:test - Build test program.
 dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
 dev-haskell/boring:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/brick:demos - Build demonstration programs
+dev-haskell/brittany:brittany-dev-lib - set buildable false for anything but lib
+dev-haskell/brittany:brittany-test-perf - determines if performance test suite is enabled
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
 dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
 dev-haskell/btrfs:examples - Build examples
@@ -154,6 +156,28 @@ dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
 dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
+dev-haskell/haskell-language-server:hls_formatters_brittany - Enable brittany plugin
+dev-haskell/haskell-language-server:hls_formatters_floskell - Enable floskell plugin
+dev-haskell/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu plugin
+dev-haskell/haskell-language-server:hls_formatters_ormolu - Enable ormolu plugin
+dev-haskell/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell plugin
+dev-haskell/haskell-language-server:hls_plugins_alternate-number-format - Enable Alternate Number Format plugin
+dev-haskell/haskell-language-server:hls_plugins_call-hierarchy - Enable call hierarchy plugin
+dev-haskell/haskell-language-server:hls_plugins_change-type-signature - Change a declarations type signature with a Code Action
+dev-haskell/haskell-language-server:hls_plugins_class - Enable class plugin
+dev-haskell/haskell-language-server:hls_plugins_eval - Enable eval plugin
+dev-haskell/haskell-language-server:hls_plugins_haddock-comments - Enable haddock comments plugin
+dev-haskell/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
+dev-haskell/haskell-language-server:hls_plugins_import-lens - Enable importLens plugin
+dev-haskell/haskell-language-server:hls_plugins_module-name - Enable moduleName plugin
+dev-haskell/haskell-language-server:hls_plugins_pragmas - Enable pragmas plugin
+dev-haskell/haskell-language-server:hls_plugins_qualify-imported-names - Enable qualifyImportedNames plugin
+dev-haskell/haskell-language-server:hls_plugins_refine-imports - Enable refineImports plugin
+dev-haskell/haskell-language-server:hls_plugins_rename - Enable rename plugin
+dev-haskell/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
+dev-haskell/haskell-language-server:hls_plugins_selection-range - Enable selectionRange plugin
+dev-haskell/haskell-language-server:hls_plugins_splice - Enable splice plugin
+dev-haskell/haskell-language-server:hls_plugins_tactics - Enable tactics plugin
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
 dev-haskell/hiedb:executable - Install the hiedb executable
@@ -416,32 +440,8 @@ dev-lang/ghc:llvm - Enable LLVM backend via sys-devel/llvm.
 dev-lang/ghc:numa - Enable NUMA thread balancing policy using sys-process/numactl.
 dev-lang/idris:ffi - Build support for libffi
 dev-lang/idris:gmp - Use GMP for Integers
-dev-util/brittany:brittany-dev-lib - set buildable false for anything but lib
-dev-util/brittany:brittany-test-perf - determines if performance test suite is enabled
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with the multi-threaded runtime
-dev-util/haskell-language-server:hls_formatters_brittany - Enable brittany plugin
-dev-util/haskell-language-server:hls_formatters_floskell - Enable floskell plugin
-dev-util/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu plugin
-dev-util/haskell-language-server:hls_formatters_ormolu - Enable ormolu plugin
-dev-util/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell plugin
-dev-util/haskell-language-server:hls_plugins_alternate-number-format - Enable Alternate Number Format plugin
-dev-util/haskell-language-server:hls_plugins_call-hierarchy - Enable call hierarchy plugin
-dev-util/haskell-language-server:hls_plugins_change-type-signature - Change a declarations type signature with a Code Action
-dev-util/haskell-language-server:hls_plugins_class - Enable class plugin
-dev-util/haskell-language-server:hls_plugins_eval - Enable eval plugin
-dev-util/haskell-language-server:hls_plugins_haddock-comments - Enable haddock comments plugin
-dev-util/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
-dev-util/haskell-language-server:hls_plugins_import-lens - Enable importLens plugin
-dev-util/haskell-language-server:hls_plugins_module-name - Enable moduleName plugin
-dev-util/haskell-language-server:hls_plugins_pragmas - Enable pragmas plugin
-dev-util/haskell-language-server:hls_plugins_qualify-imported-names - Enable qualifyImportedNames plugin
-dev-util/haskell-language-server:hls_plugins_refine-imports - Enable refineImports plugin
-dev-util/haskell-language-server:hls_plugins_rename - Enable rename plugin
-dev-util/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
-dev-util/haskell-language-server:hls_plugins_selection-range - Enable selectionRange plugin
-dev-util/haskell-language-server:hls_plugins_splice - Enable splice plugin
-dev-util/haskell-language-server:hls_plugins_tactics - Enable tactics plugin
 dev-util/hsdev:hlint - build with hlint to support linting
 dev-util/shake:embed-files - Embed data files into the shake library
 dev-vcs/darcs:curl - Use libcurl for HTTP support.
