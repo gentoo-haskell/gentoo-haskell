@@ -104,7 +104,7 @@ dev-haskell/hls-stylish-haskell-plugin
 
 # hololeap <hololeap@protonmail.com> (2022-01-23)
 # The version compatible with >=ghc-9.0 requires >=aeson-2
-dev-util/brittany
+dev-haskell/brittany
 dev-haskell/hls-brittany-plugin
 
 # hololeap <hololeap@protonmail.com> (2022-01-21)
