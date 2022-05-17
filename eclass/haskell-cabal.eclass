@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: haskell-cabal.eclass
@@ -262,7 +262,7 @@ cabal-version() {
 		else
 			# We ask portage, not ghc, so that we only pick up
 			# portage-installed cabal versions.
-			_CABAL_VERSION_CACHE="$(ghc-extractportageversion dev-haskell/cabal)"
+			_CABAL_VERSION_CACHE="$(ghc-extract-pm-version dev-haskell/cabal)"
 		fi
 	fi
 	echo "${_CABAL_VERSION_CACHE}"
