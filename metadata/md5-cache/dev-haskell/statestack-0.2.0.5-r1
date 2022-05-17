@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-haskell/transformers-0.3:=[profile?] <dev-haskell/transformers-0.6:=[profile?] >=dev-haskell/transformers-compat-0.4:=[profile?] >=dev-lang/ghc-7.4.1:=
 SLOT=0/0.2.0.5
 SRC_URI=https://hackage.haskell.org/package/statestack-0.2.0.5/statestack-0.2.0.5.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
 _md5_=15046bf9b3a008a72309c0a9059192c8
