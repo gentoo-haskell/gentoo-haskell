@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-6:=[profile?] >=dev-haskell/linear-1.16.2:=[profile?] >=dev-haskell/mtl-1.1:=[profile?] >=dev-haskell/multimap-1.2:=[profile?] >=dev-haskell/singletons-3:=[profile?] <dev-haskell/singletons-4:=[profile?] >=dev-haskell/singletons-th-3:=[profile?] <dev-haskell/singletons-4:=[profile?] >=dev-haskell/singletons-base-3:=[profile?] <dev-haskell/singletons-4:=[profile?] >=dev-haskell/syb-0.3:=[profile?] >=dev-haskell/th-desugar-1.5.4:=[profile?] >=dev-haskell/units-parser-0.1:=[profile?] <dev-haskell/units-parser-1.0:=[profile?] >=dev-haskell/vector-space-0.8:=[profile?] >=dev-lang/ghc-8.4.3:=
 SLOT=0/2.4.1.5
 SRC_URI=https://hackage.haskell.org/package/units-2.4.1.5/units-2.4.1.5.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=73b654565913b7b97c72e9bea31f71b4

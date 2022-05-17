@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/hashable-1.1:=[profile?] <dev-haskell/hashable-1.5:=[profile?] >=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] >=dev-lang/ghc-8.4.3:=
 SLOT=0/0.9.4
 SRC_URI=https://hackage.haskell.org/package/intern-0.9.4/intern-0.9.4.tar.gz https://hackage.haskell.org/package/intern-0.9.4/revision/2.cabal -> intern-0.9.4-rev2.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=edda9f1be8db14d6804500cebaa8b812

@@ -12,5 +12,5 @@ RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/data-default:=[profile?] >=dev
 RESTRICT=test
 SLOT=0/1.2.2.0
 SRC_URI=https://hackage.haskell.org/package/hls-eval-plugin-1.2.2.0/hls-eval-plugin-1.2.2.0.tar.gz -> hls-eval-plugin-1.2.2.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	415b7c1a70bc9a29cd7dde101db18a0d	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3cbf1f849f07d86e713fc3c870e98615
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=7890b1ec65a7a1dc2977a22d3ba1480c
