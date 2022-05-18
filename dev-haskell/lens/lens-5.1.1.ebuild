@@ -7,13 +7,11 @@ EAPI=8
 #hackport: flags: -lib-werror,+test-hunit,+test-properties,-benchmark-uniplate,-dump-splices,+inlining,-j,+test-templates,+trustworthy
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-CABAL_HACKAGE_REVISION="1"
 inherit haskell-cabal
 
 DESCRIPTION="Lenses, Folds and Traversals"
 HOMEPAGE="https://github.com/ekmett/lens/"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
-	https://hackage.haskell.org/package/${P}/revision/${CABAL_HACKAGE_REVISION}.cabal -> ${PF}.cabal"
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
@@ -53,18 +51,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.2
 		>=dev-haskell/test-framework-quickcheck2-0.2 )
 "
-BDEPEND="app-text/dos2unix"
-
-src_prepare() {
-	# pull revised cabal from upstream
-	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
-
-	# Convert to unix line endings
-	dos2unix "${S}/${PN}.cabal" || die
-
-	# Apply patches *after* pulling the revised cabal
-	default
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
