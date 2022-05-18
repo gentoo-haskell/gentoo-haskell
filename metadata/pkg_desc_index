@@ -1164,7 +1164,7 @@ dev-haskell/lazysmallcheck 0.6-r1: A library for demand-driven testing of Haskel
 dev-haskell/lcs 0.2-r1: Find longest common sublist of two lists
 dev-haskell/ldap 0.6.11: Haskell binding for C LDAP API
 dev-haskell/leancheck 0.9.10: Enumerative property-based testing
-dev-haskell/lens 5.1: Lenses, Folds and Traversals
+dev-haskell/lens 5.1.1: Lenses, Folds and Traversals
 dev-haskell/lens-action 0.2.5: Monadic Getters and Folds
 dev-haskell/lens-aeson 1.1.2: Law-abiding lenses for aeson
 dev-haskell/lens-family 1.2.3 2.1.1: Lens Families
@@ -1792,7 +1792,7 @@ dev-haskell/sop-core 0.5.0.2: True Sums of Products
 dev-haskell/sorted-list 0.2.1.0: Type-enforced sorted lists and related functions
 dev-haskell/sourcemap 0.1.6.1: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.3.1: Play, write, read, convert audio signals using Sox
-dev-haskell/spdx 1.0.0.2: SPDX license expression language, Extras
+dev-haskell/spdx 1.0.0.3: SPDX license expression language, Extras
 dev-haskell/special-values 0.1.0.0: Typeclass providing special values
 dev-haskell/speculation 1.5.0.3-r1: A framework for safe, programmable, speculative parallelism
 dev-haskell/sphinx 0.6.0.2: Haskell bindings to the Sphinx full-text searching daemon
