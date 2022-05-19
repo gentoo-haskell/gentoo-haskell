@@ -15,7 +15,7 @@ CABAL_P="${CABAL_PN}-${CABAL_PV}"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 CABAL_HACKAGE_REVISION="2"
-inherit haskell-cabal
+inherit haskell-cabal elisp
 
 ## shared with sci-mathematics/agda-stdlib
 # upstream does not maintain version ordering:
