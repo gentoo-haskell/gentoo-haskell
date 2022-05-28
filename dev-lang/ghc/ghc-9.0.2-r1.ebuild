@@ -366,6 +366,65 @@ ghc-check-reqs() {
 	"$@"
 }
 
+# Using a non-UTF8 locale can cause build failures. This tries to locate
+# an available UTF-8 locale and switch to it temporarily.
+#
+# Modeled after python_export_utf8_locale() from python-utils-r1.eclass
+# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1287>
+ghc-export-utf8-locale() {
+
+	# It is unclear which variables are necessary to be set to UTF-8 locales
+	# in order for GHC to build succesfully. Therefore, we use the same
+	# procedure on all of them.
+	local vars=(
+		LANG
+		LC_CTYPE
+		LC_NUMERIC
+		LC_TIME
+		LC_COLLATE
+		LC_MONETARY
+		LC_MESSAGES
+		LC_PAPER
+		LC_NAME
+		LC_ADDRESS
+		LC_TELEPHONE
+		LC_MEASUREMENT
+		LC_IDENTIFICATION
+		LC_ALL
+	)
+
+	for var in "${vars[@]}"; do
+		# If the variable is unset, we can skip it
+		[[ -z "${!var}" ]] && continue
+
+		# If the variable already has been set to a UTF-8 locale, we can skip it
+		[[ $(LC_ALL=${!var} locale charmap 2>/dev/null) == UTF-8 ]] && continue
+
+		# Try current language first, then everything else
+		local lang locales="${!var%%.*}.utf8 $(locale -a)"
+		local locale_found=false
+
+		for lang in ${locales}; do
+			if [[ $(LC_ALL=${lang} locale charmap 2>/dev/null) == UTF-8 ]]; then
+				einfo "Exporting available UTF-8 locale as ${var}: ${lang}"
+				export "${var}=${lang}"
+				locale_found=true
+				break
+			fi
+		done
+
+		if [[ $locale_found != true ]]; then
+			eerror "There seems to be no UTF-8 locale available on your system. This"
+			eerror "will cause build failures for dev-lang/ghc."
+			eerror ""
+			eerror "See <https://wiki.gentoo.org/wiki/Localization/Guide> for more"
+			eerror "info on setting up a UTF-8 locale."
+
+			die "Could not find UTF-8 locale"
+		fi
+	done
+}
+
 pkg_pretend() {
 	ghc-check-reqs check-reqs_pkg_pretend
 }
@@ -411,6 +470,8 @@ src_unpack() {
 }
 
 src_prepare() {
+	ghc-export-utf8-locale
+
 	ghc_setup_cflags
 
 	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
