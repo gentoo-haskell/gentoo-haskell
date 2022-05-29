@@ -1,15 +1,15 @@
 BDEPEND=app-text/dos2unix
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=>=dev-haskell/data-default-class-0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-lang/ghc-8.4.3:= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/data-default-class-0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-lang/ghc-8.4.3:= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr x11-libs/libXScrnSaver >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=A binding to the X11 graphics library
 EAPI=8
 HOMEPAGE=https://github.com/xmonad/X11
 INHERIT=haskell-cabal
-IUSE=pedantic doc hscolour hoogle profile
+IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos
 LICENSE=BSD
-RDEPEND=>=dev-haskell/data-default-class-0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-lang/ghc-8.4.3:= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr
+RDEPEND=>=dev-haskell/data-default-class-0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?] >=dev-lang/ghc-8.4.3:= x11-libs/libX11 x11-libs/libXext x11-libs/libXrandr x11-libs/libXScrnSaver
 SLOT=0/1.10
 SRC_URI=https://hackage.haskell.org/package/X11-1.10/X11-1.10.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
-_md5_=a85f67cd84cf650e1e65727d99197c29
+_md5_=f69510894bb30c4fcec9492b05a3fa9c

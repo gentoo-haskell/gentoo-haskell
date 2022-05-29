@@ -415,7 +415,6 @@ dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GN
 dev-haskell/wcwidth:cli - Enable command line tool
 dev-haskell/wreq:aws - enable AWS tests
 dev-haskell/wreq:httpbin - enable httpbin test daemon
-dev-haskell/x11:pedantic - Be pedantic (-Werror and the like)
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks
 dev-haskell/xlsx:microlens - Use microlens instead of lens
 dev-haskell/yaml:examples - Install the haskell-yaml-examples executable
