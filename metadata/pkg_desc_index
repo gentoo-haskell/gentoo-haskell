@@ -1340,8 +1340,8 @@ dev-haskell/mutable-containers 0.3.4: Abstactions and concrete implementations o
 dev-haskell/mvc 1.1.7-r1: Model-view-controller
 dev-haskell/mwc-probability 2.3.1: Sampling function-based probability distributions
 dev-haskell/mwc-random 0.15.0.2-r1: Fast, high quality pseudo random number generation
-dev-haskell/mysql 0.2.0.1: A low-level MySQL client library
-dev-haskell/mysql-simple 0.4.6: A mid-level MySQL client library
+dev-haskell/mysql 0.2.1: A low-level MySQL client library
+dev-haskell/mysql-simple 0.4.8.1: A mid-level MySQL client library
 dev-haskell/named 0.3.0.1: Named parameters (keyword arguments) for Haskell
 dev-haskell/namegenerator 0.0.2: A name generator written in Haskell
 dev-haskell/names-th 0.3.0.1: Manipulate name strings for TH
@@ -1981,7 +1981,7 @@ dev-haskell/timerep 2.0.1.0: Parse and display time according to some RFCs (RFC3
 dev-haskell/timespan 0.3.0.0: Useful timespan datatype and functions
 dev-haskell/timezone-olson 0.1.9 0.2.0: A pure Haskell parser and renderer for binary Olson timezone files
 dev-haskell/timezone-series 0.1.9: Enhanced timezone handling for Data.Time
-dev-haskell/tls 1.5.5: TLS/SSL protocol native implementation (Server and Client)
+dev-haskell/tls 1.5.8: TLS/SSL protocol native implementation (Server and Client)
 dev-haskell/tls-debug 0.4.8: Set of programs for TLS testing and debugging
 dev-haskell/tls-session-manager 0.0.4: In-memory TLS session manager
 dev-haskell/tmp-postgres 1.34.1.0-r1: Start and stop a temporary postgres
@@ -2161,7 +2161,7 @@ dev-haskell/wxcore 0.92.3.0-r1: wxHaskell core
 dev-haskell/wxdirect 0.92.3.0-r2: helper tool for building wxHaskell
 dev-haskell/x11 1.9.2 1.10-r1: A binding to the X11 graphics library
 dev-haskell/x11-xft 0.3.1-r1: Bindings to the Xft, X Free Type interface library, and some Xrender parts
-dev-haskell/x509 1.7.5: X509 reader and writer
+dev-haskell/x509 1.7.7: X509 reader and writer
 dev-haskell/x509-store 1.6.7: X.509 collection accessing and storing methods
 dev-haskell/x509-system 1.6.6: Handle per-operating-system X.509 accessors and storage
 dev-haskell/x509-validation 1.6.11: X.509 Certificate and CRL validation
