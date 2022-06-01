@@ -48,7 +48,7 @@ RDEPEND="dev-haskell/async:=[profile?]
 					dev-haskell/http-types:=[profile?] ) ) )
 	!mpris? ( !dbus? ( weather? ( xpm? ( dev-haskell/http-conduit:=[profile?]
 						dev-haskell/http-types:=[profile?] ) ) ) )
-	timezone? ( >=dev-haskell/timezone-olson-0.1:=[profile?] <dev-haskell/timezone-olson-0.2:=[profile?]
+	timezone? ( >=dev-haskell/timezone-olson-0.2:=[profile?] <dev-haskell/timezone-olson-0.3:=[profile?]
 			>=dev-haskell/timezone-series-0.1:=[profile?] <dev-haskell/timezone-series-0.2:=[profile?] )
 	uvmeter? ( dev-haskell/http-conduit:=[profile?]
 			dev-haskell/http-types:=[profile?] )
