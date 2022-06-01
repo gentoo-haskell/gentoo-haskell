@@ -31,6 +31,7 @@ RDEPEND=">=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1
 			dev-haskell/safe:=[profile?]
 			dev-haskell/servant-server:=[profile?]
 			dev-haskell/wai:=[profile?]
+			dev-haskell/wai-logger:=[profile?]
 			dev-haskell/warp:=[profile?] )
 "
 DEPEND="${RDEPEND}

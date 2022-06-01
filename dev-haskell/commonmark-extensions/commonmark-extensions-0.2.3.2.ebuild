@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/commonmark-0.2:=[profile?] <dev-haskell/commonmark-0.3:=[profile?]
+RDEPEND=">=dev-haskell/commonmark-0.2.2:=[profile?] <dev-haskell/commonmark-0.3:=[profile?]
 	>=dev-haskell/emojis-0.1:=[profile?] <dev-haskell/emojis-0.2:=[profile?]
 	dev-haskell/network-uri:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
