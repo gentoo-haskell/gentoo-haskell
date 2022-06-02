@@ -2015,7 +2015,7 @@ dev-haskell/type-level 0.3.0: Type-level programming library
 dev-haskell/type-level-numbers 0.1.1.1-r1: Type level numbers implemented using type families
 dev-haskell/type-operators 0.2.0.0: Various type-level operators
 dev-haskell/typecompose 0.9.14: Type composition classes & instances
-dev-haskell/typed-process 0.2.6.3: Run external processes, with strong typing of streams
+dev-haskell/typed-process 0.2.9.0: Run external processes, with strong typing of streams
 dev-haskell/typelits-witnesses 0.4.0.0: Existential witnesses, singletons, and classes for operations on GHC TypeLits
 dev-haskell/tz 0.1.3.5: Efficient time zone handling
 dev-haskell/tzdata 0.2.20201021.0: Time zone database (as files and as a module)
