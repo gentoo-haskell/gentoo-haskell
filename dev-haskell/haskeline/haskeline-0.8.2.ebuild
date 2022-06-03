@@ -11,7 +11,6 @@ inherit haskell-cabal
 
 DESCRIPTION="A command-line interface for user input, written in Haskell"
 HOMEPAGE="https://github.com/judah/haskeline"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -36,4 +35,5 @@ src_configure() {
 		$(cabal_flag terminfo terminfo)
 }
 
-CABAL_CORE_LIB_GHC_PV="PM:8.10.6 PM:8.10.7 PM:9.0.2 PM:9.0.2-r1 PM:9999"
+# ghc-9.0.1 actually comes bundled with haskeline-0.8.1.0
+CABAL_CORE_LIB_GHC_PV="PM:8.10.6 PM:8.10.7 PM:9.0.1-r1 PM:9.0.2-r1 PM:9999"
