@@ -60,6 +60,15 @@ dev-haskell/parser-combinators-tests
 # Masking for removal
 dev-haskell/fastirc
 
+# hololeap <hololeap@protonmail.com> (2022-06-03)
+# Mask old GHC versions for removal
+<dev-lang/ghc-8.10.6
+<dev-haskell/ghc-api-compat-8.10.6
+<dev-haskell/cabal-3.2
+<dev-haskell/haskeline-0.8.1.0
+<dev-haskell/text-1.2.4.1
+<dev-haskell/binary-0.8.8.0
+
 # hololeap <hololeap@protonmail.com> (2022-02-22)
 # gi-gtk-4 is not currently used and will cause conflicts
 >=dev-haskell/gi-gtk-4
