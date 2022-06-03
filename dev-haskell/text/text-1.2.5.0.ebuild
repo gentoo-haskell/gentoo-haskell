@@ -14,7 +14,6 @@ inherit haskell-cabal
 
 DESCRIPTION="An efficient packed Unicode text type"
 HOMEPAGE="https://github.com/haskell/text"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
@@ -33,4 +32,4 @@ src_configure() {
 		--flag=-developer
 }
 
-CABAL_CORE_LIB_GHC_PV="PM:9.0.2 PM:9.0.2-r1 PM:9999"
+CABAL_CORE_LIB_GHC_PV="PM:9.0.2-r1 PM:9999"
