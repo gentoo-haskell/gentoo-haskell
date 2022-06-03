@@ -13,4 +13,4 @@ RESTRICT=test
 SLOT=0/0.8.8.0
 SRC_URI=https://hackage.haskell.org/package/binary-0.8.8.0/binary-0.8.8.0.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
-_md5_=c268be01275ebf443edaf653f0804e51
+_md5_=7799162691c22539ca38bb8cccdc8620
