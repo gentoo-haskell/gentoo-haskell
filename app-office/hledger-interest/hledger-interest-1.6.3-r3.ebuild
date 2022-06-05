@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=
-	>=dev-haskell/hledger-lib-1.23:= <dev-haskell/hledger-lib-1.26:=
+	>=dev-haskell/hledger-lib-1.26:= <dev-haskell/hledger-lib-1.27:=
 	dev-haskell/mtl:=
 	dev-haskell/text:=
 	>=dev-lang/ghc-8.4.3:=
@@ -29,10 +29,15 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
+PATCHES=( "${FILESDIR}"/${P}-hledger-lib-1.26.patch )
+
 src_prepare() {
 	# pull revised cabal from upstream
 	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
 
 	# Apply patches *after* pulling the revised cabal
 	default
+
+	cabal_chdeps \
+		'hledger-lib >= 1.23 && < 1.26' 'hledger-lib >= 1.23'
 }

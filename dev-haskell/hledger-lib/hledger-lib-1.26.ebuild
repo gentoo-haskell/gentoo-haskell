@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?]
 	>=dev-haskell/data-default-0.5:=[profile?]
 	>=dev-haskell/decimal-0.5.1:=[profile?]
-	>=dev-haskell/doclayout-0.3:=[profile?] <dev-haskell/doclayout-0.4:=[profile?]
+	>=dev-haskell/doclayout-0.3:=[profile?] <dev-haskell/doclayout-0.5:=[profile?]
 	>=dev-haskell/extra-1.6.3:=[profile?]
 	>=dev-haskell/file-embed-0.0.10:=[profile?]
 	>=dev-haskell/glob-0.9:=[profile?]
@@ -55,7 +55,6 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/doctest-0.18.1 )
 "
 
 src_configure() {
