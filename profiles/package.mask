@@ -1,12 +1,13 @@
+# Jack Todaro <solpeth@posteo.org> (2022-06-06)
+# Mask dev-haskell/tls-debug for removal. Requires
+# porting to newer tls, has no reverse dependencies,
+# does not appear maintained since 2019.
+dev-haskell/tls-debug
+
 # Mark Wright <gienah@gentoo.org> (2022-04-17)
 # Mask >=dev-haskell/doctemplates-0.10.0.2 as
 # >=dev-haskell/doclayout-0.4 is masked.
 >=dev-haskell/doctemplates-0.10.0.2
-
-# hololeap <hololeap@protonmail.com> (2022-04-08)
-# semialign-indexed is deprecated and has no reverse dependencies.
-# Masking for removal
-dev-haskell/semialign-indexed
 
 # Jack Todaro <solpeth@posteo.org> (2022-04-08)
 # Mask dev-haskell/doclayout-0.4 until revdeps catch up
@@ -50,15 +51,6 @@ dev-haskell/pipes-zlib
 dev-haskell/diagrams-cairo
 dev-haskell/diagrams-gtk
 dev-haskell/ihaskell-diagrams
-
-# hololeap <hololeap@protonmail.com> (2022-02-26)
-# New ebuild does not require separate tests package. Masked for removal.
-dev-haskell/parser-combinators-tests
-
-# hololeap <hololeap@protonmail.com> (2022-02-23)
-# Package has not been updated for over 10 years and has no revdeps.
-# Masking for removal
-dev-haskell/fastirc
 
 # hololeap <hololeap@protonmail.com> (2022-06-03)
 # Mask old GHC versions for removal
@@ -119,23 +111,6 @@ dev-haskell/hls-brittany-plugin
 # hololeap <hololeap@protonmail.com> (2022-01-21)
 # Needs extensive patching in order to build on ghc-9.0.2
 dev-util/hdocs
-
-# Jack Todaro <solpeth@posteo.org> (2022-01-21)
-# Needs porting to newer http-client.
-dev-util/hsdev
-
-# Jack Todaro <solpeth@posteo.org> (2022-01-20)
-# Needs porting to newer base.
-dev-haskell/bytestring-handle
-
-# Jack Todaro <solpeth@posteo.org> (2022-01-19)
-# Mask packages which have not ported to newer random
-dev-haskell/gloss-examples
-
-# Jack Todaro <solpeth@posteo.org> (2022-01-16)
-# Missing deps. Mask for removal.
-dev-libs/odpi
-dev-haskell/odpic-raw
 
 # hololeap <hololeap@protonmail.com> (2021-05-12)
 # dev-lang/purescript-0.14.1 requires
