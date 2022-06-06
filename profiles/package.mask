@@ -1,3 +1,9 @@
+# Jack Todaro <solpeth@posteo.org> (2022-06-06)
+# Mask dev-haskell/tls-debug for removal. Requires
+# porting to newer tls, has no reverse dependencies,
+# does not appear maintained since 2019.
+dev-haskell/tls-debug
+
 # Mark Wright <gienah@gentoo.org> (2022-04-17)
 # Mask >=dev-haskell/doctemplates-0.10.0.2 as
 # >=dev-haskell/doclayout-0.4 is masked.
