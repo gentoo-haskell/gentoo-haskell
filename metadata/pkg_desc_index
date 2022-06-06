@@ -232,7 +232,6 @@ dev-haskell/bytesmith 0.3.8.0: Nonresumable byte parser
 dev-haskell/bytestring-builder 0.10.8.2.0: The new bytestring builder, packaged outside of GHC
 dev-haskell/bytestring-conversion 0.3.1-r1: Type-classes to convert values to and from ByteString
 dev-haskell/bytestring-encoding 0.1.1.0: ByteString <-> Text converter based on GHC.IO.Encoding
-dev-haskell/bytestring-handle 0.1.0.6: ByteString-backed Handles
 dev-haskell/bytestring-lexing 0.5.0.2-r1: Parse and produce literals efficiently from strict or lazy bytestrings
 dev-haskell/bytestring-mmap 0.2.2-r1: mmap support for strict ByteStrings
 dev-haskell/bytestring-nums 0.3.6: Parse numeric literals from ByteStrings
@@ -574,7 +573,6 @@ dev-haskell/fast-builder 0.1.2.1: Fast ByteString Builder
 dev-haskell/fast-logger 3.0.5: A fast logging system
 dev-haskell/fast-math 1.0.2: Non IEEE-754 compliant compile-time floating-point optimisations
 dev-haskell/fastcgi 3001.0.2.5: A Haskell library for writing FastCGI programs
-dev-haskell/fastirc 0.2.0-r1: Fast Internet Relay Chat (IRC) library
 dev-haskell/fay-base 0.21.2.0: The base package for Fay
 dev-haskell/fay-dom 0.5.0.1-r1: DOM FFI wrapper library for Fay
 dev-haskell/fay-jquery 0.6.1.0-r1: jQuery bindings for Fay
@@ -746,7 +744,7 @@ dev-haskell/glib 0.13.8.1-r1: Binding to the GLIB library for Gtk2Hs
 dev-haskell/glob 0.10.2: Globbing library
 dev-haskell/gloss 1.13.2.1: Painless 2D vector graphics, animations and simulations
 dev-haskell/gloss-algorithms 1.13.0.2: Data structures and algorithms for working with 2D graphics
-dev-haskell/gloss-examples 1.13.0.3: Examples using the gloss library
+dev-haskell/gloss-examples 1.13.0.4: Examples using the gloss library
 dev-haskell/gloss-juicy 0.2.3: Load any image supported by Juicy.Pixels in your gloss application
 dev-haskell/gloss-raster 1.13.1.2: Parallel rendering of raster images
 dev-haskell/gloss-rendering 1.13.1.1: Gloss picture data types and rendering functions
@@ -1012,12 +1010,12 @@ dev-haskell/htrace 0.1: Hierarchical tracing for debugging of lazy evaluation
 dev-haskell/http 4000.3.16-r1: A library for client-side HTTP
 dev-haskell/http-api-data 0.4.3-r1: Converting to/from HTTP API data like URL pieces, headers and query parameters
 dev-haskell/http-attoparsec 0.1.1-r3: Attoparsec parsers for http-types
-dev-haskell/http-client 0.6.4.1-r1 0.7.10: An HTTP client engine
+dev-haskell/http-client 0.7.11: An HTTP client engine
 dev-haskell/http-client-conduit 0.3.0: Frontend support for using http-client with conduit (deprecated)
 dev-haskell/http-client-multipart 0.3.0.0: Generate multipart uploads for http-client. (deprecated)
 dev-haskell/http-client-openssl 0.3.0.0: http-client backend using the OpenSSL library
-dev-haskell/http-client-restricted 0.0.3 0.0.4: restricting the servers that http-client will use
-dev-haskell/http-client-tls 0.3.5.3: http-client backend using the connection package and tls library
+dev-haskell/http-client-restricted 0.0.5: restricting the servers that http-client will use
+dev-haskell/http-client-tls 0.3.6.1: http-client backend using the connection package and tls library
 dev-haskell/http-common 0.8.3.4: Common types for HTTP clients and servers
 dev-haskell/http-conduit 2.3.8: HTTP client package with conduit interface and HTTPS support
 dev-haskell/http-date 0.0.11: HTTP Date parser/formatter
@@ -1397,7 +1395,6 @@ dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tup
 dev-haskell/numtype 1.2: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5.0.3: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
 dev-haskell/objectname 1.1.0.1: Explicitly handled object names
-dev-haskell/odpic-raw 0.5.0: Oracle Database Bindings
 dev-haskell/oeis 0.3.10-r1: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
@@ -1446,7 +1443,6 @@ dev-haskell/parsec1 1.0.0.8: Portable monadic parser combinators
 dev-haskell/parsec3-numbers 0.1.0: Utilities for parsing numbers from Char sequences
 dev-haskell/parsedate 3000.0.0-r1: Data and time parsing for CalendarTime
 dev-haskell/parser-combinators 1.3.0: Lightweight package providing commonly useful parser combinators
-dev-haskell/parser-combinators-tests 1.2.1-r1: Test suite of parser-combinators
 dev-haskell/parsers 0.12.10-r1: Parsing combinators
 dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/password 3.0.0.0: Hashing and checking of passwords
@@ -1706,7 +1702,6 @@ dev-haskell/sdl2-mixer 1.1.0: Bindings to SDL2_mixer
 dev-haskell/securemem 0.1.10: abstraction to an auto scrubbing and const time eq, memory chunk
 dev-haskell/selective 0.5: Selective applicative functors
 dev-haskell/semialign 1.2.0.1: Align and Zip type-classes from the common Semialign ancestor
-dev-haskell/semialign-indexed 1.1-r3: SemialignWithIndex, i.e. izipWith and ialignWith
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
 dev-haskell/semigroupoids 5.3.7: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.20: Anything that associates
@@ -2248,7 +2243,6 @@ dev-lang/prolog 0.3.2: A Prolog interpreter written in Haskell
 dev-lang/purescript 0.14.1-r1: PureScript Programming Language Compiler
 dev-lang/whitespace 0.4: Whitespace, an esoteric programming language
 dev-libs/libsass 3.4.5: A C/C++ implementation of a Sass compiler
-dev-libs/odpi 2.3.2: Oracle Database Programming Interface for C (ODPI-C)
 dev-util/bnfc 2.9.2: A compiler front-end generator
 dev-util/bustle 0.8.0: Draw sequence diagrams of D-Bus traffic
 dev-util/cabal-fmt 0.1.5.1: Format .cabal files
@@ -2267,7 +2261,6 @@ dev-util/hasmin 1.0.3-r2: CSS Minifier
 dev-util/hdocs 0.5.5.0-r1: Haskell docs tool
 dev-util/hindent 5.3.2: Extensible Haskell pretty printer
 dev-util/hoogle 5.0.18.2-r2: Haskell API Search
-dev-util/hsdev 0.3.4.0-r4: Haskell development library
 dev-util/shake 0.19.6: Build system library, like Make, but more accurate dependencies
 dev-util/shellcheck 0.7.2 0.8.0: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs

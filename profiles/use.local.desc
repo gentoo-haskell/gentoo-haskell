@@ -442,7 +442,6 @@ dev-lang/idris:ffi - Build support for libffi
 dev-lang/idris:gmp - Use GMP for Integers
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with the multi-threaded runtime
-dev-util/hsdev:hlint - build with hlint to support linting
 dev-util/shake:embed-files - Embed data files into the shake library
 dev-vcs/darcs:curl - Use libcurl for HTTP support.
 dev-vcs/darcs:terminfo - Use the terminfo package for enhanced console support.
