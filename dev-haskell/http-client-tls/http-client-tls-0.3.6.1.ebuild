@@ -16,6 +16,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+RESTRICT=test # requires network access
+
 RDEPEND="dev-haskell/case-insensitive:=[profile?]
 	>=dev-haskell/connection-0.2.5:=[profile?]
 	dev-haskell/cryptonite:=[profile?]
