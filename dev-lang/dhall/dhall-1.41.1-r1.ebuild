@@ -21,6 +21,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+http +http-client-tls"
 REQUIRED_USE="http-client-tls? ( http )"
 
+HACKAGE_REVISION="1"
+
 RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	<dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
@@ -45,7 +47,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-2.1:=[profil
 	>=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
 	dev-haskell/parser-combinators:=[profile?]
 	>=dev-haskell/parsers-0.12.4:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
-	<dev-haskell/pretty-simple-4.1:=[profile?]
+	<dev-haskell/pretty-simple-4.2:=[profile?]
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?]
 	>=dev-haskell/profunctors-3.1.2:=[profile?] <dev-haskell/profunctors-5.7:=[profile?]
