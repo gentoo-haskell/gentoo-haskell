@@ -298,8 +298,7 @@ dev-haskell/postgresql-typed:scientific - Support decoding numeric via scientifi
 dev-haskell/postgresql-typed:text - Support Text string values via text (implied by binary).
 dev-haskell/postgresql-typed:tls - Enable TLS (SSL) support in PostgreSQL server connections.
 dev-haskell/postgresql-typed:uuid - Support the UUID type via uuid (implied by binary).
-dev-haskell/pretty-simple:examples - Build pretty-simple-example and pretty-simple-json-example
-dev-haskell/pretty-simple:executable - Build pretty-simple executable (pretty-print from stdin)
+dev-haskell/pretty-simple:executable - Build an small command line program that pretty-print anything from stdin.
 dev-haskell/profiteur:embed-data-files - Embed data files into the executable (needed for ghcjs packaging)
 dev-haskell/protolude:dev - Build development tools
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
