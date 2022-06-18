@@ -211,7 +211,7 @@ dev-haskell/bound 2.0.4: Making de Bruijn Succ Less
 dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.5: 2D text pretty-printing library
-dev-haskell/brick 0.66.1: A declarative terminal user interface library
+dev-haskell/brick 0.69.1: A declarative terminal user interface library
 dev-haskell/brittany 0.13.1.2: Haskell source code formatter
 dev-haskell/broadcast-chan 0.2.1.2: Closable, fair, single-wakeup channel type that avoids 0 reader space leaks
 dev-haskell/bsb-http-chunked 0.0.0.4: Chunked HTTP transfer encoding for bytestring builders
@@ -236,7 +236,7 @@ dev-haskell/bytestring-lexing 0.5.0.2-r1: Parse and produce literals efficiently
 dev-haskell/bytestring-mmap 0.2.2-r1: mmap support for strict ByteStrings
 dev-haskell/bytestring-nums 0.3.6: Parse numeric literals from ByteStrings
 dev-haskell/bytestring-show 0.3.5.6-r1: Efficient conversion of values into readable byte strings
-dev-haskell/bytestring-strict-builder 0.4.5.3: An efficient strict bytestring builder
+dev-haskell/bytestring-strict-builder 0.4.5.6: An efficient strict bytestring builder
 dev-haskell/bytestring-to-vector 0.3.0.1: Convert between ByteString and Vector.Storable without copying
 dev-haskell/bytestring-trie 0.2.5.0: An efficient finite map from (byte)strings to values
 dev-haskell/bzlib 0.5.1.0: Compression and decompression in the bzip2 format
@@ -1782,7 +1782,7 @@ dev-haskell/socket 0.7.0.0 0.8.3.0: An extensible socket library
 dev-haskell/socket-sctp 0.3.0.0: STCP socket extensions library
 dev-haskell/socks 0.6.1: Socks proxy (version 5) implementation
 dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell School of Expression"
-dev-haskell/some 1.0.3-r1: Existential type: Some
+dev-haskell/some 1.0.4: Existential type: Some
 dev-haskell/sop-core 0.5.0.2: True Sums of Products
 dev-haskell/sorted-list 0.2.1.0: Type-enforced sorted lists and related functions
 dev-haskell/sourcemap 0.1.6.1: Implementation of source maps as proposed by Google and Mozilla
