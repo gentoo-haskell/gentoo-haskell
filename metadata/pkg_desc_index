@@ -629,7 +629,7 @@ dev-haskell/formatting 7.1.2: Combinator-based type-safe formatting (like printf
 dev-haskell/foundation 0.0.26.1: Alternative prelude with batteries and no dependencies
 dev-haskell/fourmolu 0.3.0.0 0.4.0.0: A formatter for Haskell source code
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
-dev-haskell/free 5.1.3 5.1.5: Monads for free
+dev-haskell/free 5.1.9: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
 dev-haskell/freer-effects 0.3.0.1: Implementation of effect system for Haskell
 dev-haskell/fresco-binding 0.3.0: Fresco binding for Haskell
@@ -1127,7 +1127,7 @@ dev-haskell/juicypixels-extra 0.4.1: Efficiently scale, crop, flip images with J
 dev-haskell/juicypixels-scale-dct 0.1.2-r2: Scale JuicyPixels images with DCT
 dev-haskell/jupyter 0.9.0-r1: A library for creating and using Jupyter kernels
 dev-haskell/jwt 0.10.0: JSON Web Token (JWT) decoding and encoding
-dev-haskell/kan-extensions 5.2.3: Kan extensions, Kan lifts, the Yoneda lemma, and (co)density (co)monads
+dev-haskell/kan-extensions 5.2.5: Kan extensions, Kan lifts, the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4-r6: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keenser 0.1.0.0: Initial project template from stack
 dev-haskell/keys 3.12.3-r1: Keyed functors and containers
