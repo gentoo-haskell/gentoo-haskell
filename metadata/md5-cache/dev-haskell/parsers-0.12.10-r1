@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:=
 RESTRICT=!test? ( test )
 SLOT=0/0.12.10
 SRC_URI=https://hackage.haskell.org/package/parsers-0.12.10/parsers-0.12.10.tar.gz https://hackage.haskell.org/package/parsers-0.12.10/revision/2.cabal -> parsers-0.12.10-rev2.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=46a73a44a19de4b9a845b74dfe010cbd

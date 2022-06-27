@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=~dev-haskell/ghc-lib-parser-8.10.7.20210828:=[profile?] >=dev-lang/ghc-8.6.3:=
 SLOT=0/8.10.7.20210828
 SRC_URI=https://hackage.haskell.org/package/ghc-lib-8.10.7.20210828/ghc-lib-8.10.7.20210828.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=ab74a64478deabec2e651ca1f071488a

@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/primitive-0.6.2:=[profile?] >=dev-lang/ghc-8.4.3:=
 RESTRICT=!test? ( test )
 SLOT=0/1.2.1.0
 SRC_URI=https://hackage.haskell.org/package/fixed-vector-1.2.1.0/fixed-vector-1.2.1.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=52550ccfa85f4d10e4d31cb764e8f15e

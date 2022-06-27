@@ -11,5 +11,5 @@ LICENSE=MIT
 RDEPEND=dev-haskell/constraints:=[profile?] >=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?] dev-haskell/transformers:=[profile?] dev-haskell/transformers-base:=[profile?] >=dev-lang/ghc-7.6.1:=
 SLOT=0/0.2.0
 SRC_URI=https://hackage.haskell.org/package/monad-unlift-0.2.0/monad-unlift-0.2.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=2d3bfb325f26ed17a360d38ed4a5c74b

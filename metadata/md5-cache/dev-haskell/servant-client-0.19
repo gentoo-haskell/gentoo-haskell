@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.
 RESTRICT=!test? ( test )
 SLOT=0/0.19
 SRC_URI=https://hackage.haskell.org/package/servant-client-0.19/servant-client-0.19.tar.gz https://hackage.haskell.org/package/servant-client-0.19/revision/3.cabal -> servant-client-0.19-rev3.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=fd4e0b56bb7d03d314af44cee8368e36

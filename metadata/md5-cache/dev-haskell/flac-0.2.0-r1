@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile
 RESTRICT=!test? ( test )
 SLOT=0/0.2.0
 SRC_URI=https://hackage.haskell.org/package/flac-0.2.0/flac-0.2.0.tar.gz -> flac-0.2.0.tar.gz https://hackage.haskell.org/package/flac-0.2.0/revision/2.cabal -> flac-0.2.0-rev2.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=caa076ea081d37b757419235b604a8a9

@@ -12,5 +12,5 @@ RDEPEND=dev-haskell/text:=[profile?] >=dev-haskell/th-lift-0.8:=[profile?] >=dev
 RESTRICT=!test? ( test )
 SLOT=0/0.1.19
 SRC_URI=https://hackage.haskell.org/package/th-lift-instances-0.1.19/th-lift-instances-0.1.19.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=e3eaf7e9cb32ab760dc5d4be85da12f2
