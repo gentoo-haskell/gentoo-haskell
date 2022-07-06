@@ -42,7 +42,7 @@ dev-haskell/aeson-extra 0.5.1-r1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.8.9-r1: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.3: JSON quasiquoter for Haskell
-dev-haskell/aeson-yaml 1.1.0.0: Output any Aeson value as YAML (pure Haskell library)
+dev-haskell/aeson-yaml 1.1.0.1: Output any Aeson value as YAML (pure Haskell library)
 dev-haskell/alex 3.2.7.1: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/alex-tools 0.4: A set of functions for a common use case of Alex
 dev-haskell/algebra 4.3.1: Constructive abstract algebra
