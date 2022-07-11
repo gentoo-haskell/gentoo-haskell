@@ -370,6 +370,7 @@ dev-haskell/streamly:fusion-plugin - Use fusion plugin for benchmarks and execut
 dev-haskell/streamly:limit-build-mem - Limits memory when building
 dev-haskell/streamly:no-fusion - Disable rewrite rules for stream fusion
 dev-haskell/streamly:streamk - Use CPS style streams when possible
+dev-haskell/stylish-haskell:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/synthesizer-alsa:examples - Build example executables
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool

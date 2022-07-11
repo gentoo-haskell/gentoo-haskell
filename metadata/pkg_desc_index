@@ -687,8 +687,8 @@ dev-haskell/ghc-exactprint 0.6.4: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.6.2: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.10.7.20210828 9.0.2.20211226: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser 8.10.7.20210828 9.0.2.20211226: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser-ex 8.10.0.23 9.0.0.6: Algorithms on GHC parse trees
+dev-haskell/ghc-lib-parser 8.10.7.20210828 9.0.2.20211226 9.2.3.20220527: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-lib-parser-ex 8.10.0.23 9.0.0.6 9.2.1.0: Algorithms on GHC parse trees
 dev-haskell/ghc-parser 0.2.3.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.12-r2: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.9: Library for parsing GHC time and allocation profiling reports
@@ -1848,7 +1848,7 @@ dev-haskell/stringprep 1.0.0: Implements the "StringPrep" algorithm
 dev-haskell/stringsearch 0.3.6.6-r1: Fast searching, splitting and replacing of ByteStrings
 dev-haskell/strptime 1.0.10-r1: Efficient parsing of LocalTime using a binding to C's strptime
 dev-haskell/structured 0.1.1-r1: Structure (hash) of your data types
-dev-haskell/stylish-haskell 0.12.2.0: Haskell code prettifier
+dev-haskell/stylish-haskell 0.14.2.0: Haskell code prettifier
 dev-haskell/styx 1.3.1: A generator of nix files
 dev-haskell/suffixtree 0.2.2.1: Efficient, lazy suffix tree implementation
 dev-haskell/suitable 0.1.1-r1: Abstract over the constraints on the parameters to type constructors
