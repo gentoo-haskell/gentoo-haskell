@@ -100,7 +100,6 @@ dev-lang/purescript
 
 # hololeap <hololeap@protonmail.com> (2022-01-23)
 # Needs update to build with >=ghc-lib-parser-9.0
-dev-haskell/stylish-haskell
 dev-haskell/hls-stylish-haskell-plugin
 
 # hololeap <hololeap@protonmail.com> (2022-01-23)
