@@ -5,20 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="benchmarks">You can disable testing with benchmarks using `-f-benchmarks`.</flag>
-		<flag name="large-tuples">Generate instances for classes such as `NFDataX` and `BitPack` for tuples
-up to and including 62 elements - the GHC imposed maximum. This greatly
-increases compile times for `clash-prelude`.</flag>
-		<flag name="multiple-hidden">Allow multiple hidden clocks, resets, and enables to be used. This is an
-experimental feature, possibly triggering confusing error messages. By
-default, it is enabled on development versions of Clash and disabled on
-releases.</flag>
-		<flag name="strict-mapsignal">Use `seqX` in &#39;mapSignal#&#39;. This can help to eliminate space leaks in long
-running simulations.</flag>
-		<flag name="super-strict">Use `deepseqX` (instead of `seqX`) in register-like constructs. This can
-help to eliminate space leaks when using lazy data structures in
-registers-like constructs. This potentially slows down Clash hardware
-simulation.</flag>
-	</use>
 </pkgmetadata>
