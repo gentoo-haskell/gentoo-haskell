@@ -7,7 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="debug">Build a debug compiler</flag>
-		<flag name="history">Emit rewrite history to disk</flag>
+		<flag name="unittests">You can disable testing with unittests using `-f-unittests`</flag>
 	</use>
 	<longdescription>
 		Clash is a functional hardware description language that borrows both its
