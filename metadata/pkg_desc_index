@@ -1090,7 +1090,7 @@ dev-haskell/iospec 0.3.1.1: A pure specification of the IO monad
 dev-haskell/iostring 0.0.0.0-r1: A class of strings that can be involved in IO
 dev-haskell/ipprint 0.6-r1: Tiny helper for pretty-printing values in ghci console
 dev-haskell/iproute 1.7.12: IP Routing Table
-dev-haskell/ipv6addr 1.1.5: Library to deal with IPv6 address text representations
+dev-haskell/ipv6addr 2.0.5: Library to deal with IPv6 address text representations
 dev-haskell/ipynb 0.2: Data structure for working with Jupyter notebooks (ipynb)
 dev-haskell/ipython-kernel 0.10.2.1: A library for creating kernels for IPython frontends
 dev-haskell/irc 0.6.1.0-r1: A small library for parsing IRC messages
