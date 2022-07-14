@@ -17,20 +17,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+threaded"
 
-RDEPEND=">=app-office/hledger-1.26:= <app-office/hledger-1.27:=
+RDEPEND=">=app-office/hledger-1.26.1:= <app-office/hledger-1.27:=
 	>=dev-haskell/ansi-terminal-0.9:=
 	dev-haskell/async:=
 	>=dev-haskell/brick-0.23:=
 	>=dev-haskell/cmdargs-0.8:=
 	dev-haskell/data-default:=
-	>=dev-haskell/doclayout-0.3:= <dev-haskell/doclayout-0.4:=
+	>=dev-haskell/doclayout-0.3:= <dev-haskell/doclayout-0.5:=
 	>=dev-haskell/extra-1.6.3:=
 	>=dev-haskell/fsnotify-0.2.1.2:= <dev-haskell/fsnotify-0.4:=
-	>=dev-haskell/hledger-lib-1.26:= <dev-haskell/hledger-lib-1.27:=
+	>=dev-haskell/hledger-lib-1.26.1:= <dev-haskell/hledger-lib-1.27:=
 	>=dev-haskell/megaparsec-7.0.0:= <dev-haskell/megaparsec-9.3:=
 	>=dev-haskell/microlens-0.4:=
 	>=dev-haskell/microlens-platform-0.2.3.1:=
-	>=dev-haskell/safe-0.2:=
+	>=dev-haskell/safe-0.3.19:=
 	>=dev-haskell/split-0.1:=
 	>=dev-haskell/text-zipper-0.4:=
 	dev-haskell/vector:=
