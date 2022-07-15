@@ -29,13 +29,22 @@ RDEPEND=">=dev-haskell/juicypixels-3.2.8:=[profile?] <dev-haskell/juicypixels-3.
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.2.0
-	test? ( >=dev-haskell/doctest-0.16.2 <dev-haskell/doctest-0.19
+	test? ( >=dev-haskell/doctest-0.16.2 <dev-haskell/doctest-0.21
 		>=dev-haskell/glob-0.10 <dev-haskell/glob-0.11
 		>=dev-haskell/hedgehog-1.0.2 <dev-haskell/hedgehog-1.1
 		>=dev-haskell/tasty-1.2.3 <dev-haskell/tasty-1.5
 		>=dev-haskell/tasty-discover-4.2.1 <dev-haskell/tasty-discover-4.3
-		>=dev-haskell/tasty-hedgehog-1.0.0.2 <dev-haskell/tasty-hedgehog-1.2
+		>=dev-haskell/tasty-hedgehog-1.0.0.2 <dev-haskell/tasty-hedgehog-1.3
 		>=dev-haskell/tasty-hunit-0.10.0.2 <dev-haskell/tasty-hunit-0.11 )
 "
+
+src_prepare() {
+	default
+	cabal_chdeps \
+		'tasty-hedgehog >=1.0.0.2 && <1.1' 'tasty-hedgehog >=1.0.0.2 && <1.3' \
+		'doctest >=0.16.2 && <0.17' 'doctest >=0.16.2 && <0.21' \
+		'tasty >=1.2.3 && <1.4' 'tasty >=1.2.3 && <1.5' \
+		'optparse-applicative >=0.14.3 && <0.16' 'optparse-applicative >=0.14.3 && <0.17'
+}
 
 S="${WORKDIR}/${MY_P}"
