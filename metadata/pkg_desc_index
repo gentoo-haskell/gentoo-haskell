@@ -293,9 +293,9 @@ dev-haskell/cipher-des 0.0.6: DES and 3DES primitives
 dev-haskell/cipher-rc4 0.1.4: Fast RC4 cipher implementation
 dev-haskell/circle-packing 0.1.0.6: Simple heuristic for packing discs of varying radii in a circle
 dev-haskell/citeproc 0.6.0.1 0.7: Generates citations and bibliography from CSL styles
-dev-haskell/clash-ghc 1.2.5: CAES Language for Synchronous Hardware
-dev-haskell/clash-lib 1.2.5: CAES Language for Synchronous Hardware - As a Library
-dev-haskell/clash-prelude 1.2.5 1.4.7: Clash: a functional hardware description language - Prelude library
+dev-haskell/clash-ghc 1.6.3: Clash: a functional hardware description language - GHC frontend
+dev-haskell/clash-lib 1.6.3: Clash: a functional hardware description language - As a library
+dev-haskell/clash-prelude 1.6.3: Clash: a functional hardware description language - Prelude library
 dev-haskell/classify 2013.11.6.1-r1: Library for classification of media files
 dev-haskell/classy-prelude 1.5.0: A typeclass-based Prelude
 dev-haskell/classy-prelude-conduit 1.5.0: conduit instances for classy-prelude
@@ -510,6 +510,7 @@ dev-haskell/doctemplates 0.9 0.10 0.10.0.2: Pandoc-style document templates
 dev-haskell/doctest 0.20.0: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
 dev-haskell/doctest-driver-gen 0.3.0.5: Generate driver file for doctest's cabal integration
+dev-haskell/doctest-parallel 0.2.3: Test interactive Haskell examples
 dev-haskell/dotenv 0.8.0.7: Loads environment variables from dotenv files
 dev-haskell/dotgen 0.4.3: A simple interface for building .dot graph files
 dev-haskell/double-conversion 2.0.2.0: Fast conversion between double precision floating point and text
@@ -1122,7 +1123,7 @@ dev-haskell/json-types 0.1: Basic types for representing JSON
 dev-haskell/jsonb 1.0.8-r1: JSON parser that uses byte strings
 dev-haskell/judy 0.4.1: Fast, scalable, mutable dynamic arrays, maps and hashes
 dev-haskell/juicypixels 3.3.5: Picture loading/serialization (in png, jpeg, bitmap, gif, tga, tiff and others)
-dev-haskell/juicypixels-blurhash 0.1.0.3: Blurhash is a very compact represenation of a placeholder for an image
+dev-haskell/juicypixels-blurhash 0.1.0.3-r1: Blurhash is a very compact represenation of a placeholder for an image
 dev-haskell/juicypixels-extra 0.4.1: Efficiently scale, crop, flip images with JuicyPixels
 dev-haskell/juicypixels-scale-dct 0.1.2-r2: Scale JuicyPixels images with DCT
 dev-haskell/jupyter 0.9.0-r1: A library for creating and using Jupyter kernels
@@ -1890,7 +1891,7 @@ dev-haskell/tasty-ant-xml 1.1.8: Render tasty output to XML for Jenkins
 dev-haskell/tasty-discover 4.2.2: Test discovery for the tasty framework
 dev-haskell/tasty-expected-failure 0.11.1.2: Mark tasty tests as failure expected
 dev-haskell/tasty-golden 2.3.3.2: Golden tests support for tasty
-dev-haskell/tasty-hedgehog 1.1.0.0: Integration for tasty and hedgehog
+dev-haskell/tasty-hedgehog 1.2.0.0: Integration for tasty and hedgehog
 dev-haskell/tasty-hslua 1.0.2: Tasty helpers to test HsLua
 dev-haskell/tasty-hspec 1.2: Hspec support for the Tasty test framework
 dev-haskell/tasty-hunit 0.10.0.3: HUnit support for the Tasty test framework

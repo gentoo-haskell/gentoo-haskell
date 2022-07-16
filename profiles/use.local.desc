@@ -62,12 +62,6 @@ dev-haskell/citeproc:icu - Use Haskell bindings to the ICU library
 dev-haskell/clash-ghc:dynamic - Build Clash binaries with GHC flag `-dynamic`. This flag should only be used for packaging purposes. Installations using cabal should use `--enable-executable-dynamic`!
 dev-haskell/clash-ghc:ghc-paths - Locate the GHC core libraries using the `ghc-paths` package. Note: this flag may make binaries less relocatable, by hard-coding an absolute path to the core libraries.
 dev-haskell/clash-lib:debug - Build a debug compiler
-dev-haskell/clash-lib:history - Emit rewrite history to disk
-dev-haskell/clash-prelude:benchmarks - You can disable testing with benchmarks using `-f-benchmarks`.
-dev-haskell/clash-prelude:large-tuples - Generate instances for classes such as `NFDataX` and `BitPack` for tuples up to and including 62 elements - the GHC imposed maximum. This greatly increases compile times for `clash-prelude`.
-dev-haskell/clash-prelude:multiple-hidden - Allow multiple hidden clocks, resets, and enables to be used. This is an experimental feature, possibly triggering confusing error messages. By default, it is enabled on development versions of Clash and disabled on releases.
-dev-haskell/clash-prelude:strict-mapsignal - Use `seqX` in 'mapSignal#'. This can help to eliminate space leaks in long running simulations.
-dev-haskell/clash-prelude:super-strict - Use `deepseqX` (instead of `seqX`) in register-like constructs. This can help to eliminate space leaks when using lazy data structures in registers-like constructs. This potentially slows down Clash hardware simulation.
 dev-haskell/cmark:system-cmark - use app-text/cmark instead of bundled copy
 dev-haskell/cmdargs:quotation - Build the Quote module
 dev-haskell/cmdargs:testprog - Build the test program
