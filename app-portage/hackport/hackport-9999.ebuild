@@ -53,7 +53,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.0 )
 "
 RDEPEND+="
-	app-portage/repoman
 	dev-util/pkgcheck
 "
 

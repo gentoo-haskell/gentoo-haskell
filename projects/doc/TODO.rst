@@ -41,9 +41,6 @@ Perpetual TODO
 
 - [easy] Write a program to check for build errors of package in overlay.
 
-- [easy] run ``repoman full`` on the overlay and provide fixes for found
-  QA notices.
-
 Speculative TODO
 ================
 

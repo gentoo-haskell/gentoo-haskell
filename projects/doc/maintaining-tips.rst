@@ -89,7 +89,7 @@ slot conflicts at worst:
     ...
     src_prepare() {
         default
-        
+
         cabal_chdeps \
             'data-default >= 0.5 && < 0.7' 'data-default >= 0.5'
     }
@@ -115,9 +115,6 @@ by using ``cabal_chdeps`` or by porting dependent packages to a new
 version. Also send your fixes upstream if possible.
 
 So how to find those outdated packages?
-
-One day repoman will be able to tell us: https://bugs.gentoo.org/555266.
-But that day is not today.
 
 I am using plain ``emerge`` to do it. Here is my setup:
 
