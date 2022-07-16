@@ -11,5 +11,5 @@ LICENSE=Apache-2.0
 RDEPEND=>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-2:=[profile?] >=dev-haskell/data-default-0.5.3:=[profile?] >=dev-haskell/exceptions-0.8:=[profile?] <dev-haskell/exceptions-1:=[profile?] >=dev-haskell/functor-monadic-0.1:=[profile?] >=dev-haskell/listlike-4.1:=[profile?] >=dev-haskell/listsafe-0.1:=[profile?] >=dev-haskell/monad-loops-0.3:=[profile?] <dev-haskell/monad-loops-0.6:=[profile?] >=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-3:=[profile?] >=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-4:=[profile?] >=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-6:=[profile?] >=dev-haskell/text-1.1:=[profile?] >=dev-lang/ghc-7.10.1:=
 SLOT=0/1.1.0.0
 SRC_URI=https://hackage.haskell.org/package/repl-toolkit-1.1.0.0/repl-toolkit-1.1.0.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	3484f775017f532a8d1ae02c65defe13	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=8b006b71c8cef2d40c5dc0eb73bf7eaa

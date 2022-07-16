@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/text-0.11.0.8:=[profile?] >=dev-lang/ghc-7.4.1:= sys-devel
 RESTRICT=test !test? ( test )
 SLOT=0/2.0.2.0
 SRC_URI=https://hackage.haskell.org/package/double-conversion-2.0.2.0/double-conversion-2.0.2.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	3484f775017f532a8d1ae02c65defe13	haskell-cabal	3bef93ff148519d15163084feb67c264
 _md5_=ec67a68d477024cbbd51147f6cf30f7d
