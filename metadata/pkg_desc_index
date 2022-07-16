@@ -730,7 +730,7 @@ dev-haskell/gi-soup 2.4.25: Libsoup bindings
 dev-haskell/gi-vte 2.91.29: Vte bindings
 dev-haskell/gi-webkit2 4.0.28: WebKit2 bindings
 dev-haskell/gi-xlib 2.0.11: xlib bindings
-dev-haskell/ginger 0.10.1.0: An implementation of the Jinja2 template language in Haskell
+dev-haskell/ginger 0.10.4.0: An implementation of the Jinja2 template language in Haskell
 dev-haskell/gio 0.13.8.1-r1: Binding to GIO
 dev-haskell/git 0.3.0: Git operations in haskell
 dev-haskell/git-lfs 1.1.1: git-lfs protocol
@@ -2192,7 +2192,7 @@ dev-haskell/yaml-light 0.1.4-r1: A light-weight wrapper with utility functions a
 dev-haskell/yampa 0.13.1: Library for programming hybrid systems
 dev-haskell/yesod 1.6.1.2: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
-dev-haskell/yesod-auth 1.6.10.3: Authentication for Yesod
+dev-haskell/yesod-auth 1.6.10.3 1.6.11: Authentication for Yesod
 dev-haskell/yesod-auth-basic 0.1.0.3: Yesod Middleware for HTTP Basic Authentication
 dev-haskell/yesod-auth-hashdb 1.7.1.7: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.6.3.4: OAuth 2.0 authentication plugins
