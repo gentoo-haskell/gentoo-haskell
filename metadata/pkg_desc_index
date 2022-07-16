@@ -6,7 +6,7 @@ app-admin/propellor 5.12: property-based host configuration management in haskel
 app-emacs/haskell-mode 16.1-r1 9999: Mode for editing (and running) Haskell programs in Emacs
 app-emacs/idris-mode 0.9.18: Idris syntax highlighting and (eventually) other things for emacs
 app-office/hledger 1.26.1: Command-line interface for the hledger accounting system
-app-office/hledger-iadd 1.3.16-r3: A terminal UI as drop-in replacement for hledger add
+app-office/hledger-iadd 1.3.17: A terminal UI as drop-in replacement for hledger add
 app-office/hledger-interest 1.6.3-r3: computes interest for a given account
 app-office/hledger-ui 1.26.1: Curses-style terminal interface for the hledger accounting system
 app-office/hledger-web 1.26.1: Web-based user interface for the hledger accounting system
