@@ -8,7 +8,7 @@ Basic repo sanity check
 =======================
 
 When hacking on ebuilds it's common to forget to add
-newly created files in repository, or rerun ``repoman manifest``
+newly created files in repository, or rerun ``pkgdev manifest``
 after treewide change. We have ``lambdaman`` tool for it.
 
 See ``projects/lambdaman/REAMDE`` to plug it as
@@ -48,7 +48,7 @@ When you plan to patch some random ebuild it is
 handly to keep unpacked source tree under some SCM.
 I use git for example. Here is my ``/etc/portage/bashrc``::
 
-    # cat /etc/portage/bashrc 
+    # cat /etc/portage/bashrc
     git_commit_current_state() {
         [[ -z $GITIFY ]] && return
         pushd "${S}"
@@ -61,11 +61,11 @@ I use git for example. Here is my ``/etc/portage/bashrc``::
         git commit -a -s -m "$@"
         popd
     }
-    
+
     post_src_unpack() {
         git_commit_current_state "state after src_unpack()"
     }
-    
+
     post_src_prepare() {
         git_commit_current_state "state after src_prepare()"
     }
@@ -80,11 +80,3 @@ Then you might like to use it as::
     # 3. test / loop 1.
     git diff > ~/xmonad-0.10-unb0rked.patch
     # 4. fix ebuild
-
-Checking the repo with repoman
-==============================
-
-I use to run the following command time to time
-and check against older outputs::
-
-    repoman full -d > repoman-QA-`date +%F-%T`.log

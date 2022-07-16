@@ -34,8 +34,8 @@ Some notes:
 - Commit one ebuild at a time: don't modify more than one package
   in single commit. It makes reviewing easier.
 
-- Strongly consider using ``repoman commit`` instead of ``git commit``
-  (you will need to emerge repoman to do this). This enforces a minimum level
+- Strongly consider using ``pkgdev commit`` instead of ``git commit``
+  (you will need to emerge pkgdev to do this). This enforces a minimum level
   of quality assurance required to merge your commit, and can catch out a lot
   of simple mistakes.
 
