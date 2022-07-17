@@ -1659,7 +1659,7 @@ dev-haskell/resolv 0.1.2.0-r1: Domain Name Service (DNS) lookup via the libresol
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
 dev-haskell/resourcet 1.2.5: Deterministic allocation and freeing of scarce resources
 dev-haskell/retrie 1.1.0.0: A powerful, easy-to-use codemodding tool for Haskell
-dev-haskell/retry 0.8.1.2 0.9.0.0: Retry combinators for monadic actions that may fail
+dev-haskell/retry 0.9.3.0: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
 dev-haskell/riff 0.3.0.1: RIFF parser for Haskell
 dev-haskell/rio 0.1.21.0: A standard library for Haskell
