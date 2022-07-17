@@ -506,7 +506,7 @@ dev-haskell/dlist 1.0: Difference lists
 dev-haskell/dlist-instances 0.1.1.1: Difference lists instances
 dev-haskell/dns 4.0.1: DNS library in Haskell
 dev-haskell/doclayout 0.3.1.1 0.4: A prettyprinting library for laying out text documents
-dev-haskell/doctemplates 0.9 0.10 0.10.0.2: Pandoc-style document templates
+dev-haskell/doctemplates 0.10 0.10.0.2: Pandoc-style document templates
 dev-haskell/doctest 0.20.0: Test interactive Haskell examples
 dev-haskell/doctest-discover 0.2.0.0: Easy way to run doctests via cabal
 dev-haskell/doctest-driver-gen 0.3.0.5: Generate driver file for doctest's cabal integration
@@ -1428,7 +1428,7 @@ dev-haskell/ordered-containers 0.2.2: Set- and Map-like types that remember the 
 dev-haskell/ormolu 0.1.4.1-r2 0.3.1.0: A formatter for Haskell source code
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.17.0.2: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.3.12.2: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.3.12.2 0.3.13.0: Pandoc filter for cross-references
 dev-haskell/pandoc-lua-marshal 0.1.6: Use pandoc types in Lua
 dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.22.2: Types for representing a structured document
@@ -1657,7 +1657,7 @@ dev-haskell/rere 0.2: Regular-expressions extended with fixpoints for context-fr
 dev-haskell/rerebase 1.15.0.3: Reexports from "base" with a bunch of other standard libraries
 dev-haskell/resolv 0.1.2.0-r1: Domain Name Service (DNS) lookup via the libresolv standard library routines
 dev-haskell/resource-pool 0.2.3.2: A high-performance striped resource pooling implementation
-dev-haskell/resourcet 1.2.5: Deterministic allocation and freeing of scarce resources
+dev-haskell/resourcet 1.2.6: Deterministic allocation and freeing of scarce resources
 dev-haskell/retrie 1.1.0.0: A powerful, easy-to-use codemodding tool for Haskell
 dev-haskell/retry 0.9.3.0: Retry combinators for monadic actions that may fail
 dev-haskell/rfc5051 0.2: Simple unicode collation as per RFC5051
@@ -1835,7 +1835,7 @@ dev-haskell/store-core 0.4.4.4: Fast and lightweight binary serialization
 dev-haskell/strafunski-strategylib 5.0.1.0: Library for strategic programming
 dev-haskell/stream 0.4.7.2: A library for manipulating infinite lists
 dev-haskell/streaming 0.2.3.1: an elementary streaming prelude and general stream type
-dev-haskell/streaming-commons 0.1.19 0.2.2.1: Common lower-level functions needed by various streaming data libraries
+dev-haskell/streaming-commons 0.2.2.4: Common lower-level functions needed by various streaming data libraries
 dev-haskell/streamly 0.8.1.1: Dataflow programming and declarative concurrency
 dev-haskell/strict 0.4.0.1-r1: Strict data types and String IO
 dev-haskell/strict-list 0.1.5: Strict linked list
@@ -2193,7 +2193,7 @@ dev-haskell/yaml-light 0.1.4-r1: A light-weight wrapper with utility functions a
 dev-haskell/yampa 0.13.1: Library for programming hybrid systems
 dev-haskell/yesod 1.6.1.2: Creation of type-safe, RESTful web applications
 dev-haskell/yesod-angular 0.1.0.2: Angular JS integratoin
-dev-haskell/yesod-auth 1.6.10.3 1.6.11: Authentication for Yesod
+dev-haskell/yesod-auth 1.6.11: Authentication for Yesod
 dev-haskell/yesod-auth-basic 0.1.0.3: Yesod Middleware for HTTP Basic Authentication
 dev-haskell/yesod-auth-hashdb 1.7.1.7: Authentication plugin for Yesod
 dev-haskell/yesod-auth-oauth2 0.6.3.4: OAuth 2.0 authentication plugins
