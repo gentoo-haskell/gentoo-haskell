@@ -18,6 +18,7 @@ dev-haskell/tls-debug
 # Mask pandoc-2.18 conflicting deps until revdeps
 # catch up to pandoc-2.18.
 >=app-text/pandoc-2.18
+>=dev-haskell/pandoc-crossref-0.3.13.0
 >=dev-haskell/citeproc-0.7
 >=dev-haskell/hslua-2.2
 >=dev-haskell/hslua-aeson-2.2
