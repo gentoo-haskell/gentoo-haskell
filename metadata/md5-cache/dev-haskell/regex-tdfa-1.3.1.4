@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/regex-base-0.94:=[profile?] <dev-haskell/regex-base-0.95:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( >=dev-haskell/doctest-parallel-0.2.2 >=dev-haskell/utf8-string-1.0.1 <dev-haskell/utf8-string-1.1 ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Pure Haskell Tagged DFA Backend for "Text.Regex" (regex-base)
+EAPI=8
+HOMEPAGE=https://wiki.haskell.org/Regular_expressions
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/regex-base-0.94:=[profile?] <dev-haskell/regex-base-0.95:=[profile?] >=dev-lang/ghc-8.4.3:=
+RESTRICT=!test? ( test )
+SLOT=0/1.3.1.4
+SRC_URI=https://hackage.haskell.org/package/regex-tdfa-1.3.1.4/regex-tdfa-1.3.1.4.tar.gz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	3484f775017f532a8d1ae02c65defe13	haskell-cabal	3bef93ff148519d15163084feb67c264
+_md5_=82b3ad59a3f28f4fc6c7b22243a3c70c

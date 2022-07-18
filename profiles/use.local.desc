@@ -463,8 +463,6 @@ www-servers/mighttpd2:tls - HTTPS support.
 x11-misc/gtk-sni-tray:executable - Build the gtk-sni-tray-standalone executable
 x11-misc/xmobar:alsa - Use alsa-mixer to get the volume from soundcards.
 x11-misc/xmobar:dbus - Publish a service on the session bus for controlling xmobar.
-x11-misc/xmobar:inotify - inotify support (modern Linux only). Required for the Mail and MBox plugins.
-x11-misc/xmobar:iwlib - Wireless info support via Wext ioctls (deprecated). Required for the Wireless plugin, needs iwlib installed.
 x11-misc/xmobar:mpd - MPD support. Needs libmpd installed.
 x11-misc/xmobar:mpris - MPRIS v1, v2 support.
 x11-misc/xmobar:rtsopts - Use -with-rtsopts=-V0 to reduce wakeups.
