@@ -112,7 +112,7 @@ dev-util/hdocs
 # Mask any versions higher than that until purescript bumps its dependencies.
 >=dev-haskell/language-javascript-0.7.0.1
 
-# P.B. Lecavalier <pbl.ltx@gmail.com> (1 Jan 2020)
+# P.B. Lecavalier <pbl.ltx@gmail.com> (2020-01-01)
 # Various unrelated packages and what causes the conflict with newer version.
 >=dev-haskell/hsemail-2              # smptclient-1.1.0
 >=dev-haskell/ilist-0.4.0.0          # hsimport-0.11.0
