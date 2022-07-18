@@ -8,8 +8,6 @@
 	<use>
 		<flag name="alsa">Use alsa-mixer to get the volume from soundcards.</flag>
 		<flag name="dbus">Publish a service on the session bus for controlling xmobar.</flag>
-		<flag name="inotify">inotify support (modern Linux only). Required for the Mail and MBox plugins.</flag>
-		<flag name="iwlib">Wireless info support via Wext ioctls (deprecated). Required for the Wireless plugin, needs iwlib installed.</flag>
 		<flag name="mpd">MPD support. Needs libmpd installed.</flag>
 		<flag name="mpris">MPRIS v1, v2 support.</flag>
 		<flag name="rtsopts">Use -with-rtsopts=-V0 to reduce wakeups.</flag>
