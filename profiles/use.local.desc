@@ -191,6 +191,7 @@ dev-haskell/hsexif:iconv - Enable encoding conversion of the User Comment tag wi
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC and OpenSSL version < 1.1.0 only).
 dev-haskell/hsp:base4 - Use base-4.0.
 dev-haskell/hsyaml:exe - Enable @exe:yaml-test@ component
+dev-haskell/hsyaml-aeson:exe - Enable @exe:yaml-test@ component
 dev-haskell/hsyslog:install-examples - Build and install example programs
 dev-haskell/html-entity-map:dev - Turn on development settings.
 dev-haskell/http-api-data:text-show - Use text-show library for efficient ToHttpApiData implementations.

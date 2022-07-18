@@ -998,7 +998,7 @@ dev-haskell/hstringtemplate 0.8.8-r1: StringTemplate implementation in Haskell
 dev-haskell/hsx-jmacro 7.3.8.1: hsp+jmacro support
 dev-haskell/hsx2hs 0.14.1.8: HSX (Haskell Source with XML) allows literal XML syntax in Haskell source code
 dev-haskell/hsyaml 0.2.1.1: Pure Haskell YAML 1.2 processor
-dev-haskell/hsyaml-aeson 0.2.0.0: JSON to YAML Adapter
+dev-haskell/hsyaml-aeson 0.2.0.1: JSON to YAML Adapter
 dev-haskell/hsyslog 5.0.2: FFI interface to syslog(3) from POSIX.1-2001
 dev-haskell/htaglib 1.2.0: Bindings to TagLib, audio meta-data library
 dev-haskell/htf 0.14.0.6: The Haskell Test Framework
