@@ -12,6 +12,10 @@ dev-haskell/haskell-names
 dev-haskell/pandoc-citeproc
 dev-haskell/purescript-ast
 dev-haskell/vimeta
+dev-lang/fay
+dev-haskell/fay-base
+dev-haskell/fay-text
+dev-haskell/yesod-fay
 
 # Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Too many reverse dependencies require an older version.
