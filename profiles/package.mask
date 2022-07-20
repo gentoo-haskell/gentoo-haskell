@@ -1,6 +1,12 @@
-# solpeth <solpeth@posteo.org> (2022-07-20)
+# Jack Todaro <solpeth@posteo.org> (2020-07-20)
+# Too many reverse dependencies require an older version.
+# Mask until they catch up.
+>=dev-haskell/aeson-2.1
+
+# Jack Todaro <solpeth@posteo.org> (2022-07-20)
 # Requires porting to newer aeson. Remove in 30 days.
 dev-haskell/yesod-text-markdown
+dev-haskell/repl-toolkit
 
 # hololeap <hololeap@protonmail.com> (2022-03-03)
 # >=random-fu-0.3.0.0 is needed to compile on >=base-4.15, but the latest
