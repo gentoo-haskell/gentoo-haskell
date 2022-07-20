@@ -6,11 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="tools">Build associated tools (in general you won't need this)</flag>
+		<flag name="tools">Build associated tools (in general you won&#39;t need this)</flag>
 	</use>
-	<longdescription>
-		This is based on the elm-vegalite package
-		(&lt;http://package.elm-lang.org/packages/gicentre/elm-vegalite/latest&gt;)
-		by Jo Wood of the giCentre at the City University of London.
-	</longdescription>
 </pkgmetadata>
