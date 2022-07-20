@@ -241,7 +241,6 @@ dev-haskell/lua:lua-32bits - Compile Lua with -DLUA_32BITS
 dev-haskell/lua:system-lua - Use @pkg-config@ to discover library and include paths. Setting this flag implies `pkg-config`.
 dev-haskell/markdown-unlit:executable - Build executable
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
-dev-haskell/megaparsec-tests:dev - Turn on development settings.
 dev-haskell/midi-alsa:buildexamples - Build example executables.
 dev-haskell/miso:ios - Cross compile to iOS
 dev-haskell/miso:jsaddle - Compile with JSaddle
