@@ -33,7 +33,7 @@ dev-haskell/active 0.2.0.15-r1: Abstractions for animation
 dev-haskell/ad 4.4.1: Automatic Differentiation
 dev-haskell/adjunctions 4.4: Adjunctions and representable functors
 dev-haskell/aes 0.2.9-r1: Fast AES encryption/decryption for bytestrings
-dev-haskell/aeson 1.5.6.0-r2 2.0.3.0: Fast JSON parsing and encoding
+dev-haskell/aeson 2.0.3.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.2.0.0: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.10-r1: Compatibility layer for aeson
