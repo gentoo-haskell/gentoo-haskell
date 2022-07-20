@@ -1692,7 +1692,7 @@ dev-haskell/scalpel-core 0.6.1: A high level web scraping library for Haskell
 dev-haskell/scanner 0.3.1: Fast non-backtracking incremental combinator parsing for bytestrings
 dev-haskell/scheduler 1.5.0 2.0.0.1: Work stealing scheduler
 dev-haskell/scientific 0.3.7.0-r1: Numbers represented using scientific notation
-dev-haskell/scotty 0.12-r1: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
+dev-haskell/scotty 0.12-r2: Haskell web framework inspired by Ruby's Sinatra, using WAI and Warp
 dev-haskell/scrypt 0.5.0: Stronger password hashing via sequential memory-hard functions
 dev-haskell/sdl 0.6.7.0: Binding to libSDL
 dev-haskell/sdl-gfx 0.7.0.0: Binding to libSDL_gfx
@@ -2295,7 +2295,7 @@ sci-mathematics/agda 2.6.2.1: A dependently typed functional programming languag
 sci-mathematics/agda-stdlib 2.6.2.1.1.7.1: Agda standard library
 sci-mathematics/spline3 1.0.0: A parallel implementation of the Sorokina/Zeilfelder spline scheme
 www-apps/darcsweb 1.1: A web interface for darcs
-www-apps/gitit 0.15.1.0-r1: Wiki using happstack, git or darcs, and pandoc
+www-apps/gitit 0.15.1.0-r2: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp
