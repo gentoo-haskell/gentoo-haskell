@@ -1,4 +1,8 @@
-# Jack Todaro <solpeth@posteo.org> (20202-07-20)
+# Jack Todaro <solpeth@posteo.org> (2020-07-20)
+# Depends on pipes-text, which is masked.
+dev-haskell/zxcvbn-hs
+
+# Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Needs porting to newer aeson. Mask for removal.
 dev-haskell/ekg
 dev-haskell/ekg-core
