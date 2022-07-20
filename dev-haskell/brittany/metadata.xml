@@ -8,5 +8,6 @@
 	<use>
 		<flag name="brittany-dev-lib">set buildable false for anything but lib</flag>
 		<flag name="brittany-test-perf">determines if performance test suite is enabled</flag>
+		<flag name="pedantic">Enables @-Werror@, which turns warnings into errors.</flag>
 	</use>
 </pkgmetadata>

@@ -5,7 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="examples">Build various termonad-* example executables</flag>
-	</use>
 </pkgmetadata>

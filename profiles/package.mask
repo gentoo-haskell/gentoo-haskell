@@ -1,3 +1,37 @@
+# Jack Todaro <solpeth@posteo.org> (2020-07-20)
+# Depends on pipes-text, which is masked.
+dev-haskell/zxcvbn-hs
+
+# Jack Todaro <solpeth@posteo.org> (2020-07-20)
+# Needs porting to newer aeson. Mask for removal.
+dev-haskell/ekg
+dev-haskell/ekg-core
+dev-haskell/ekg-json
+dev-haskell/engine-io
+dev-haskell/haskell-names
+dev-haskell/pandoc-citeproc
+dev-haskell/vimeta
+dev-lang/fay
+dev-haskell/fay-base
+dev-haskell/fay-dom
+dev-haskell/fay-jquery
+dev-haskell/fay-uri
+dev-haskell/fay-text
+dev-haskell/yesod-fay
+dev-lang/idris
+
+# Jack Todaro <solpeth@posteo.org> (2020-07-20)
+# Too many reverse dependencies require an older version.
+# Mask until they catch up.
+>=dev-haskell/aeson-2.1
+dev-haskell/cabal-plan
+dev-haskell/cabal-install-parsers
+
+# Jack Todaro <solpeth@posteo.org> (2022-07-20)
+# Requires porting to newer aeson. Remove in 30 days.
+dev-haskell/yesod-text-markdown
+dev-haskell/repl-toolkit
+
 # hololeap <hololeap@protonmail.com> (2022-03-03)
 # >=random-fu-0.3.0.0 is needed to compile on >=base-4.15, but the latest
 # version of lambdabot-core needs <random-fu-0.3
