@@ -2,6 +2,8 @@
 # Too many reverse dependencies require an older version.
 # Mask until they catch up.
 >=dev-haskell/aeson-2.1
+dev-haskell/cabal-plan
+dev-haskell/cabal-install-parsers
 
 # Jack Todaro <solpeth@posteo.org> (2022-07-20)
 # Requires porting to newer aeson. Remove in 30 days.
