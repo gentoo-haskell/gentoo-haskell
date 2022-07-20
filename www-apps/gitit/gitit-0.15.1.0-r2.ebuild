@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+plugins"
 
-RDEPEND=">=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-2.18:=[profile?]
+RDEPEND=">=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-2.19:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
