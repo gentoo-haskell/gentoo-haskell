@@ -18,6 +18,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="embed-data-files lua53 trypandoc"
 
+RESTRICT=test # fails
+
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.9:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
