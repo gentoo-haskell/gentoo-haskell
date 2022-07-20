@@ -14,6 +14,7 @@ app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/acid-state:skip-state-machine-test - If enabled, do not build/run the state-machine test
 dev-haskell/aeson:cffi - Controls whether to include c-ffi bits or pure haskell. Default to False for security.
+dev-haskell/aeson:ordered-keymap - Use ordered @Data.Map.Strict@ for KeyMap implementation.
 dev-haskell/aeson-pretty:lib-only - Only build/install the library, NOT the command-line tool.
 dev-haskell/aeson-yaml:build-binaries - Build the binaries
 dev-haskell/alsa-pcm:buildexamples - Build example executables
@@ -39,6 +40,7 @@ dev-haskell/boring:tagged - You can disable the use of the `tagged` package usin
 dev-haskell/brick:demos - Build demonstration programs
 dev-haskell/brittany:brittany-dev-lib - set buildable false for anything but lib
 dev-haskell/brittany:brittany-test-perf - determines if performance test suite is enabled
+dev-haskell/brittany:pedantic - Enables @-Werror@, which turns warnings into errors.
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
 dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
 dev-haskell/btrfs:examples - Build examples
@@ -331,9 +333,6 @@ dev-haskell/semigroupoids:unordered-containers - You can disable the use of the 
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
 dev-haskell/serversession-backend-redis:lib-werror - Add to -Werror to ghc option
 dev-haskell/sha:exe - Build a sha1 and a sha384 executable similar to 'md5sum'.
-dev-haskell/shakespeare:test-coffee - render tests through coffeescript render function
-dev-haskell/shakespeare:test-export - adds -DTEST_EXPORT cpp-option
-dev-haskell/shakespeare:test-roy - render tests through roy render function
 dev-haskell/shellac-compatline:editline - Use editline instead of readline backend.
 dev-haskell/shelly:lifted - run the tests against Shelly.Lifted
 dev-haskell/simple-affine-space:test-doc-coverage - Enable haddock coverage test suite
@@ -478,6 +477,5 @@ x11-misc/xmonad-extras:brightness - Build module for brightness control.
 x11-misc/xmonad-extras:eval - Build modules depending on hint(for evaluating Haskell expressions at runtime).
 x11-misc/xmonad-extras:mpd - Build modules depending on libmpd.
 x11-misc/yeganesh:profiling - Build with profiling and -auto-all
-x11-terms/termonad:examples - Build various termonad-* example executables
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
 x11-wm/xmonad-contrib:xft - Use Xft to render text
