@@ -26,7 +26,7 @@ RDEPEND=">=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-2.19:=[profile?]
 	>=dev-haskell/feed-1.0:=[profile?] <dev-haskell/feed-1.4:=[profile?]
 	>=dev-haskell/filestore-0.6.5:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
 	>=dev-haskell/happstack-server-7.5:=[profile?] <dev-haskell/happstack-server-7.8:=[profile?]
-	>=dev-haskell/hoauth2-1.3.0:=[profile?] <dev-haskell/hoauth2-1.17:=[profile?]
+	>=dev-haskell/hoauth2-2.3.0:=[profile?] <dev-haskell/hoauth2-2.4.0:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?]
 	>=dev-haskell/hstringtemplate-0.8.8:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
 	>=dev-haskell/http-4000.0:=[profile?]
@@ -69,11 +69,14 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
+PATCHES=( "${FILESDIR}"/${P}-hoauth2-2.3.patch )
+
 src_prepare() {
 	default
 
 	cabal_chdeps \
-		'pandoc >= 2.9 && < 2.17' 'pandoc >= 2.9'
+		'pandoc >= 2.9 && < 2.17' 'pandoc >= 2.9' \
+		'hoauth2 >= 1.3.0 && < 1.17' 'hoauth2 >= 2.3.0'
 }
 
 src_configure() {
