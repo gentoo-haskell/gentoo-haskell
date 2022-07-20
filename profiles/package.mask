@@ -13,6 +13,9 @@ dev-haskell/pandoc-citeproc
 dev-haskell/vimeta
 dev-lang/fay
 dev-haskell/fay-base
+dev-haskell/fay-dom
+dev-haskell/fay-jquery
+dev-haskell/fay-uri
 dev-haskell/fay-text
 dev-haskell/yesod-fay
 dev-lang/idris
