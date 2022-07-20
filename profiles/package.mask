@@ -1,3 +1,9 @@
+# Jack Todaro <solpeth@posteo.org> (20202-07-20)
+# Needs porting to newer deps. Mask for removal.
+dev-haskell/ekg
+dev-haskell/ekg-core
+dev-haskell/ekg-json
+
 # Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Too many reverse dependencies require an older version.
 # Mask until they catch up.
