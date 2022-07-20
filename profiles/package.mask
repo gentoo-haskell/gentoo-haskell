@@ -10,7 +10,6 @@ dev-haskell/ekg-json
 dev-haskell/engine-io
 dev-haskell/haskell-names
 dev-haskell/pandoc-citeproc
-dev-haskell/purescript-ast
 dev-haskell/vimeta
 dev-lang/fay
 dev-haskell/fay-base
