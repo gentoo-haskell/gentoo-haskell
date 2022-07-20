@@ -1,9 +1,3 @@
-# Jack Todaro <solpeth@posteo.org> (2020-07-21)
-# Test package needs integration into main package
-# either upstream or downstream to reliably run tests.
-# Mask for removal
-dev-haskell/megaparsec-tests
-
 # Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Depends on pipes-text, which is masked.
 dev-haskell/zxcvbn-hs
