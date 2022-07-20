@@ -6,6 +6,8 @@ dev-haskell/ekg-json
 dev-haskell/engine-io
 dev-haskell/haskell-names
 dev-haskell/pandoc-citeproc
+dev-haskell/purescript-ast
+dev-haskell/vimeta
 
 # Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Too many reverse dependencies require an older version.
