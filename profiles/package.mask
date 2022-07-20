@@ -16,6 +16,7 @@ dev-lang/fay
 dev-haskell/fay-base
 dev-haskell/fay-text
 dev-haskell/yesod-fay
+dev-lang/idris
 
 # Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Too many reverse dependencies require an older version.
