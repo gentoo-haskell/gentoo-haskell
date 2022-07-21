@@ -72,20 +72,6 @@ dev-haskell/ihaskell-diagrams
 >=dev-haskell/gi-gdkx11-4
 dev-haskell/gi-gsk
 
-# hololeap <hololeap@protonmail.com> (2022-02-19)
-# web-routes-th needs patching to build with template-haskell-2.17. Mask along
-# with all revdeps
-dev-haskell/web-routes-th
-dev-haskell/clckwrks
-dev-haskell/clckwrks-cli
-dev-haskell/clckwrks-plugin-media
-dev-haskell/clckwrks-plugin-page
-dev-haskell/happstack-authenticate
-dev-haskell/userid
-dev-haskell/sr-extra
-dev-haskell/ipprint
-dev-haskell/ghci-pretty
-
 # hololeap <hololeap@protonmail.com> (2022-02-16)
 # Needs patching to build with ghc-9.0.2
 dev-haskell/beam-automigrate
