@@ -18,8 +18,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="embed-data-files lua53 trypandoc"
 
-RESTRICT=test # fails
-
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.9:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
@@ -60,8 +58,8 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/safe-0.3.18:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/sha-1.6:=[profile?] <dev-haskell/sha-1.7:=[profile?]
-	>=dev-haskell/skylighting-0.12.3:=[profile?] <dev-haskell/skylighting-0.13:=[profile?]
-	>=dev-haskell/skylighting-core-0.12.3:=[profile?] <dev-haskell/skylighting-core-0.13:=[profile?]
+	>=dev-haskell/skylighting-0.12.3.1:=[profile?] <dev-haskell/skylighting-0.13:=[profile?]
+	>=dev-haskell/skylighting-core-0.12.3.1:=[profile?] <dev-haskell/skylighting-core-0.13:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/tagsoup-0.14.6:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
@@ -92,6 +90,8 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-lua-1.0 <dev-haskell/tasty-lua-1.1
 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
 "
+
+PATCHES=("${FILESDIR}"/${P}-tests.patch )
 
 src_configure() {
 	haskell-cabal_src_configure \
