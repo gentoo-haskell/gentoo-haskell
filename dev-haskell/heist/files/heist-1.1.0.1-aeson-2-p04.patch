@@ -1,0 +1,48 @@
+commit 47a3d3e18a5007842ef92f67ee31755a3c336fcf
+Author: soiamsoNG <83182235@qq.com>
+Date:   Wed Apr 6 21:11:00 2022 +0800
+
+    Add back Map.foldlWithKey'
+
+diff --git a/src/Heist/Splices/Json.hs b/src/Heist/Splices/Json.hs
+index 4654f6d..cd6ff0b 100644
+--- a/src/Heist/Splices/Json.hs
++++ b/src/Heist/Splices/Json.hs
+@@ -16,10 +16,10 @@ import qualified Data.ByteString.Lazy.Char8  as L
+ #if MIN_VERSION_aeson(2,0,0)
+ import qualified Data.Aeson.KeyMap           as KM
+ import qualified Data.Aeson.Key              as K
++import qualified Data.Foldable.WithIndex     as FI
+ #else
+ import qualified Data.HashMap.Strict         as Map
+ #endif
+-import qualified Data.Foldable.WithIndex     as FI
+ import           Data.Map.Syntax
+ import           Data.Maybe
+ import           Data.Text                   (Text)
+@@ -228,12 +228,16 @@ explodeTag = ask >>= go
+     --------------------------------------------------------------------------
+     goObject obj = do
+         start <- genericBindings
+-        let bindings = FI.ifoldl' bindKvp start  obj
++#if MIN_VERSION_aeson(2,0,0)
++        let bindings = FI.ifoldl' (flip bindKvp) start  obj
++#else
++        let bindings = Map.foldlWithKey' bindKvp start obj
++#endif
+         lift $ runChildrenWith bindings
+ 
+     --------------------------------------------------------------------------
+     
+-    bindKvp k bindings v =
++    bindKvp bindings k v =
+ #if MIN_VERSION_aeson(2,0,0)
+         let k' = K.toText k
+ #else
+@@ -243,4 +247,4 @@ explodeTag = ask >>= go
+                 T.append "with:" k'    ## withValue v explodeTag
+                 T.append "snippet:" k' ## withValue v snippetTag
+                 T.append "value:" k'   ## withValue v valueTag
+-        in  bindings >> newBindings
++        in  bindings >> newBindings    
+\ No newline at end of file

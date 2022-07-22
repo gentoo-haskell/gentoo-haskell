@@ -24,6 +24,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?]
 	>=dev-haskell/hashable-1.1:=[profile?]
+	dev-haskell/indexed-traversable:=[profile?]
 	>=dev-haskell/lifted-base-0.2:=[profile?] <dev-haskell/lifted-base-0.3:=[profile?]
 	>=dev-haskell/map-syntax-0.3:=[profile?] <dev-haskell/map-syntax-0.4:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
@@ -45,13 +46,21 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/test-framework-quickcheck2-0.2.12.1 <dev-haskell/test-framework-quickcheck2-0.4 )
 BDEPEND="app-text/dos2unix"
 
-CABAL_CHDEPS=(
-		'base                       >= 4.5     && < 4.15' 'base >=4.5'
-		'attoparsec                 >= 0.10    && < 0.14' 'attoparsec >=0.10'
-		'aeson                      >= 0.6     && < 1.5' 'aeson >=0.6'
-		'hashable                   >= 1.1     && < 1.4' 'hashable >=1.1'
-		'lens                       >= 4.3      && < 4.20' 'lens >=4.3'
-		'dlist                      >= 0.5     && < 0.9' 'dlist >=0.5'
-		'random                     >= 1.0.1.0 && < 1.3' 'random >=1.0.1.0'
-		'QuickCheck                 >= 2        && < 2.15' 'QuickCheck >=2'
-)
+PATCHES=( "${FILESDIR}"/${PN}-1.1.0.1-aeson-2-p01.patch
+		  "${FILESDIR}"/${PN}-1.1.0.1-aeson-2-p02.patch
+		  "${FILESDIR}"/${PN}-1.1.0.1-aeson-2-p03.patch
+		  "${FILESDIR}"/${PN}-1.1.0.1-aeson-2-p04.patch )
+
+src_prepare() {
+	cabal_chdeps \
+		'aeson                      >= 0.6     && < 1.5' 'aeson                      >= 0.6     && < 1.6'
+	default
+	cabal_chdeps \
+		'base                       >= 4.5     && < 4.13' 'base                       >= 4.5' \
+		'attoparsec                 >= 0.10    && < 0.14' 'attoparsec                 >= 0.10' \
+		'hashable                   >= 1.1     && < 1.3' 'hashable                   >= 1.1' \
+		'dlist                      >= 0.5     && < 0.9' 'dlist                      >= 0.5' \
+		'lens                       >= 4.3      && < 4.18' 'lens                       >= 4.3' \
+		'random                     >= 1.0.1.0 && < 1.2' 'random                     >= 1.0.1.0' \
+		'QuickCheck                 >= 2        && < 2.13' 'QuickCheck                 >= 2'
+}
