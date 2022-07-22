@@ -34,14 +34,14 @@ dev-haskell/ad 4.4.1: Automatic Differentiation
 dev-haskell/adjunctions 4.4: Adjunctions and representable functors
 dev-haskell/aes 0.2.9-r1: Fast AES encryption/decryption for bytestrings
 dev-haskell/aeson 2.0.3.0: Fast JSON parsing and encoding
-dev-haskell/aeson-better-errors 0.9.1.0: Better error messages when decoding JSON values
+dev-haskell/aeson-better-errors 0.9.1.1: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.2.0.0: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.10-r1: Compatibility layer for aeson
 dev-haskell/aeson-diff 1.1.0.9: Extract and apply patches to JSON documents
 dev-haskell/aeson-extra 0.5.1-r1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.8.9-r1: JSON pretty-printing library and command-line tool
-dev-haskell/aeson-qq 0.8.3: JSON quasiquoter for Haskell
+dev-haskell/aeson-qq 0.8.4: JSON quasiquoter for Haskell
 dev-haskell/aeson-yaml 1.1.0.1: Output any Aeson value as YAML (pure Haskell library)
 dev-haskell/alex 3.2.7.1: Alex is a tool for generating lexical analysers in Haskell
 dev-haskell/alex-tools 0.4: A set of functions for a common use case of Alex
