@@ -2211,7 +2211,7 @@ dev-haskell/yesod-json 1.2.0: Generate content for Yesod using the aeson package
 dev-haskell/yesod-markdown 0.12.6.12: Tools for using markdown in a yesod application
 dev-haskell/yesod-newsfeed 1.7.0.0: Helper functions and data types for producing News feeds
 dev-haskell/yesod-paginator 1.1.1.0: A pagination approach for yesod
-dev-haskell/yesod-persistent 1.6.0.7: Some helpers for using Persistent from Yesod
+dev-haskell/yesod-persistent 1.6.0.8: Some helpers for using Persistent from Yesod
 dev-haskell/yesod-recaptcha2 0.3.0: yesod recaptcha2
 dev-haskell/yesod-sitemap 1.6.0: Generate XML sitemaps
 dev-haskell/yesod-static 1.6.1.0: Static file serving subsite for Yesod Web Framework
