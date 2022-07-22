@@ -12,5 +12,5 @@ RDEPEND=<dev-haskell/async-2.3:=[profile?] <dev-haskell/bifunctors-5.6:=[profile
 RESTRICT=!test? ( test )
 SLOT=0/1.7.10
 SRC_URI=https://hackage.haskell.org/package/tidal-1.7.10/tidal-1.7.10.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
 _md5_=ddb413b50dc3b9df1a3bfc2919b41fc1

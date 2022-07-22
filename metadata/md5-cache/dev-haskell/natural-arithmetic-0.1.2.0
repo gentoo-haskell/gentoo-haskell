@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=>=dev-lang/ghc-8.4.3:=
 SLOT=0/0.1.2.0
 SRC_URI=https://hackage.haskell.org/package/natural-arithmetic-0.1.2.0/natural-arithmetic-0.1.2.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	3bef93ff148519d15163084feb67c264
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
 _md5_=ce22b84a7148293fa8027225bd1f3d29
