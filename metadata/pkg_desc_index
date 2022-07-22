@@ -11,7 +11,7 @@ app-office/hledger-interest 1.6.3-r3: computes interest for a given account
 app-office/hledger-ui 1.26.1: Curses-style terminal interface for the hledger accounting system
 app-office/hledger-web 1.26.1: Web-based user interface for the hledger accounting system
 app-portage/fquery 0.2.3-r1 9999: Installed package query tool for Gentoo Linux
-app-portage/hackport 0.7.1.2 9999: Hackage and Portage integration tool
+app-portage/hackport 0.7.2.1 9999: Hackage and Portage integration tool
 app-portage/keyword-stat 0.2.2: Display keywording for ebuilds
 app-text/haskell-awk 1.2.0.1: Transform text from the command-line using Haskell expressions
 app-text/pandoc 2.17.1.1 2.18-r1: Conversion between markup formats
