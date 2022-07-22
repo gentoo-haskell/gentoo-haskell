@@ -405,6 +405,7 @@ dev-haskell/cryptohash-sha256 0.11.102.0: Fast, pure and practical SHA-256 imple
 dev-haskell/cryptohash-sha512 0.11.101.0: Fast, pure and practical SHA-512 implementation
 dev-haskell/cryptonite 0.25 0.26-r1 0.28 0.28-r1: Cryptography Primitives sink
 dev-haskell/cryptonite-conduit 0.2.2: cryptonite conduit
+dev-haskell/cryptostore 0.2.2.0: Serialization of cryptographic data types
 dev-haskell/css-text 0.1.3.0: CSS parser and renderer
 dev-haskell/csv 0.1.2-r1: CSV loader and dumper
 dev-haskell/cubicbezier 0.6.0.6: Efficient manipulating of 2D cubic bezier curves
@@ -1127,7 +1128,7 @@ dev-haskell/juicypixels-blurhash 0.1.0.3-r1: Blurhash is a very compact represen
 dev-haskell/juicypixels-extra 0.4.1: Efficiently scale, crop, flip images with JuicyPixels
 dev-haskell/juicypixels-scale-dct 0.1.2-r2: Scale JuicyPixels images with DCT
 dev-haskell/jupyter 0.9.0-r1: A library for creating and using Jupyter kernels
-dev-haskell/jwt 0.10.0: JSON Web Token (JWT) decoding and encoding
+dev-haskell/jwt 0.11.0: JSON Web Token (JWT) decoding and encoding
 dev-haskell/kan-extensions 5.2.5: Kan extensions, Kan lifts, the Yoneda lemma, and (co)density (co)monads
 dev-haskell/kansas-comet 0.4.1: A JavaScript push mechanism based on the comet idiom
 dev-haskell/keenser 0.1.0.0: Initial project template from stack
@@ -1788,7 +1789,7 @@ dev-haskell/soegtk 0.12.1-r5: GUI functions as used in the book "The Haskell Sch
 dev-haskell/some 1.0.4: Existential type: Some
 dev-haskell/sop-core 0.5.0.2: True Sums of Products
 dev-haskell/sorted-list 0.2.1.0: Type-enforced sorted lists and related functions
-dev-haskell/sourcemap 0.1.6.1: Implementation of source maps as proposed by Google and Mozilla
+dev-haskell/sourcemap 0.1.7: Implementation of source maps as proposed by Google and Mozilla
 dev-haskell/sox 0.2.3.1: Play, write, read, convert audio signals using Sox
 dev-haskell/spdx 1.0.0.3: SPDX license expression language, Extras
 dev-haskell/special-values 0.1.0.0: Typeclass providing special values
