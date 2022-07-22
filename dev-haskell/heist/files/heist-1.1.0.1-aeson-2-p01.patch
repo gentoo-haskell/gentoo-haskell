@@ -1,0 +1,109 @@
+commit 17dd31a18f041850dc024c4ec1fc7900b38579f0
+Author: Doug Beardsley <mightybyte@gmail.com>
+Date:   Sun May 30 09:45:51 2021 -0400
+
+    Fix test cases to use new ordering
+
+diff --git a/src/Heist/Common.hs b/src/Heist/Common.hs
+index 27886dc..22e89d1 100644
+--- a/src/Heist/Common.hs
++++ b/src/Heist/Common.hs
+@@ -17,7 +17,7 @@ import qualified Data.ByteString.Char8    as BC
+ import           Data.Hashable            (Hashable)
+ import           Data.HashMap.Strict      (HashMap)
+ import qualified Data.HashMap.Strict      as Map
+-import           Data.List                (isSuffixOf)
++import           Data.List                (isSuffixOf, sort)
+ import           Data.Map.Syntax
+ import           Data.Maybe               (isJust)
+ import           Data.Monoid              ((<>))
+diff --git a/test/suite/Heist/Compiled/Tests.hs b/test/suite/Heist/Compiled/Tests.hs
+index 115aed8..1d25ac9 100644
+--- a/test/suite/Heist/Compiled/Tests.hs
++++ b/test/suite/Heist/Compiled/Tests.hs
+@@ -266,9 +266,9 @@ nsBindErrorTest = do
+ 
+     H.assertEqual "namespace bind error test" (Left [ err1, err2, err3 ])  res
+   where
+-    err1 = "templates-nsbind/nsbinderror.tpl: No splice bound for h:invalid3\n   ... via templates-nsbind/nsbinderror.tpl: h:main2\nBound splices: h:sub h:recurse h:call h:main2 h:main\nNode: Element {elementTag = \"h:invalid3\", elementAttrs = [], elementChildren = []}"
+-    err2 = "templates-nsbind/nsbinderror.tpl: No splice bound for h:invalid2\n   ... via templates-nsbind/nsbinderror.tpl: h:recurse\n   ... via templates-nsbind/nsbinderror.tpl: h:main\nBound splices: h:sub h:recurse h:call h:main2 h:main\nNode: Element {elementTag = \"h:invalid2\", elementAttrs = [], elementChildren = []}"
+-    err3 = "templates-nsbind/nsbinderror.tpl: No splice bound for h:invalid1\nBound splices: h:call h:main2 h:main\nNode: Element {elementTag = \"h:invalid1\", elementAttrs = [], elementChildren = []}"
++    err1 = "templates-nsbind/nsbinderror.tpl: No splice bound for h:invalid3\n   ... via templates-nsbind/nsbinderror.tpl: h:main2\nBound splices: h:call h:main h:main2 h:recurse h:sub\nNode: Element {elementTag = \"h:invalid3\", elementAttrs = [], elementChildren = []}"
++    err2 = "templates-nsbind/nsbinderror.tpl: No splice bound for h:invalid2\n   ... via templates-nsbind/nsbinderror.tpl: h:recurse\n   ... via templates-nsbind/nsbinderror.tpl: h:main\nBound splices: h:call h:main h:main2 h:recurse h:sub\nNode: Element {elementTag = \"h:invalid2\", elementAttrs = [], elementChildren = []}"
++    err3 = "templates-nsbind/nsbinderror.tpl: No splice bound for h:invalid1\nBound splices: h:call h:main h:main2\nNode: Element {elementTag = \"h:invalid1\", elementAttrs = [], elementChildren = []}"
+ 
+ 
+ ------------------------------------------------------------------------------
+@@ -284,7 +284,7 @@ nsBindStackTest = do
+                          , Just "templates-nsbind/nsbinderror.tpl"
+                          , "h:main2") ]
+                (Just "templates-nsbind/nsbinderror.tpl")
+-               ["h:sub","h:recurse","h:call","h:main2","h:main"]
++               ["h:call","h:main","h:main2","h:recurse","h:sub"]
+                (X.Element "h:invalid3" [] [])
+                "No splice bound for h:invalid3"
+     err2 = SpliceError [ ( ["nsbinderror"]
+@@ -294,12 +294,12 @@ nsBindStackTest = do
+                          , Just "templates-nsbind/nsbinderror.tpl"
+                          ,"h:main") ]
+                (Just "templates-nsbind/nsbinderror.tpl")
+-               ["h:sub","h:recurse","h:call","h:main2","h:main"]
++               ["h:call","h:main","h:main2","h:recurse","h:sub"]
+                (X.Element "h:invalid2" [] [])
+                "No splice bound for h:invalid2"
+     err3 = SpliceError []
+                (Just "templates-nsbind/nsbinderror.tpl")
+-               ["h:call","h:main2","h:main"]
++               ["h:call","h:main","h:main2"]
+                (X.Element "h:invalid1" [] [])
+                "No splice bound for h:invalid1"
+ 
+@@ -334,8 +334,8 @@ nsCallErrTest = do
+       (Left $ Set.fromList [ err1, err2 ])
+       (first Set.fromList res)
+   where
+-    err1 = "templates-nscall/_call.tpl: No splice bound for h:sub\nBound splices: h:call h:main2 h:main\nNode: Element {elementTag = \"h:sub\", elementAttrs = [], elementChildren = []}"
+-    err2 = "templates-nscall/_invalid.tpl: No splice bound for h:invalid\nBound splices: h:call h:main2 h:main\nNode: Element {elementTag = \"h:invalid\", elementAttrs = [], elementChildren = []}"
++    err1 = "templates-nscall/_call.tpl: No splice bound for h:sub\nBound splices: h:call h:main h:main2\nNode: Element {elementTag = \"h:sub\", elementAttrs = [], elementChildren = []}"
++    err2 = "templates-nscall/_invalid.tpl: No splice bound for h:invalid\nBound splices: h:call h:main h:main2\nNode: Element {elementTag = \"h:invalid\", elementAttrs = [], elementChildren = []}"
+ 
+ 
+ ------------------------------------------------------------------------------
+@@ -357,7 +357,7 @@ exceptionsTest = do
+     H.assertEqual "exceptions" (Right (msg, err)) $ res
+ 
+   where
+-    msg = "templates-loaderror/_error.tpl: Exception in splice compile: Prelude.read: no parse\n   ... via templates-loaderror/_error.tpl: h:adder\n   ... via templates-loaderror/test.tpl: h:call2\nBound splices: h:adder h:call2 h:call1\nNode: Element {elementTag = \"h:adder\", elementAttrs = [(\"value\",\"noparse\")], elementChildren = []}"
++    msg = "templates-loaderror/_error.tpl: Exception in splice compile: Prelude.read: no parse\n   ... via templates-loaderror/_error.tpl: h:adder\n   ... via templates-loaderror/test.tpl: h:call2\nBound splices: h:adder h:call1 h:call2\nNode: Element {elementTag = \"h:adder\", elementAttrs = [(\"value\",\"noparse\")], elementChildren = []}"
+     err = SpliceError [ ( ["test"]
+                         , Just "templates-loaderror/_error.tpl"
+                         , "h:adder"),
+@@ -365,7 +365,7 @@ exceptionsTest = do
+                         , Just "templates-loaderror/test.tpl"
+                         ,"h:call2") ]
+               (Just "templates-loaderror/_error.tpl")
+-              ["h:adder", "h:call2", "h:call1"]
++              ["h:adder", "h:call1", "h:call2"]
+               (X.Element "h:adder" [("value", "noparse")] [])
+               "Exception in splice compile: Prelude.read: no parse"
+     hc = HeistConfig sc "h" True
+
+commit e85d0e1dfdc4be058ace5b2d227b908e3f58810b
+Author: Doug Beardsley <mightybyte@gmail.com>
+Date:   Sun May 30 09:10:48 2021 -0400
+
+    Sort keys to get predictable order
+
+diff --git a/src/Heist/Common.hs b/src/Heist/Common.hs
+index 1269677..27886dc 100644
+--- a/src/Heist/Common.hs
++++ b/src/Heist/Common.hs
+@@ -95,7 +95,7 @@ tellSpliceError msg = do
+     let spliceError = SpliceError
+                       { spliceHistory = _splicePath hs
+                       , spliceTemplateFile = _curTemplateFile hs
+-                      , visibleSplices = Map.keys $ _compiledSpliceMap hs
++                      , visibleSplices = sort $ Map.keys $ _compiledSpliceMap hs
+                       , contextNode = node
+                       , spliceMsg = msg
+                       }

@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,6 +26,8 @@ RDEPEND=">=dev-haskell/aeson-0.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "
+
+PATCHES=( "${FILESDIR}"/${PN}-0.1.1.7-aeson-2.patch )
 
 src_prepare() {
 	default

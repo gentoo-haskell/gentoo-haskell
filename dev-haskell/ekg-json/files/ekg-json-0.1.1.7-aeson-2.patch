@@ -1,0 +1,68 @@
+commit 3530b5d3ec3e62e3bff424d100b62c53565a02ff (HEAD -> fix-14, origin/fix-14)
+Author: Johannes Waldmann <waldmann@denk>
+Date:   Sat Mar 26 14:55:53 2022 +0100
+
+    fix #14
+
+diff --git a/System/Metrics/Json.hs b/System/Metrics/Json.hs
+index 40e3089..c164b6f 100644
+--- a/System/Metrics/Json.hs
++++ b/System/Metrics/Json.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE OverloadedStrings #-}
++{-# LANGUAGE OverloadedStrings, CPP #-}
+ 
+ -- | Encoding of ekg metrics as JSON. The encoding defined by the
+ -- functions in this module are standardized and used by the ekg web
+@@ -16,12 +16,33 @@ module System.Metrics.Json
+ 
+ import Data.Aeson ((.=))
+ import qualified Data.Aeson.Types as A
++-- H.* to refer to the type of the map constructed by System
++-- this does NOT depend on aeson version
++import qualified Data.HashMap.Strict as H
++-- M.* to refer to the type of the map in a JSON object
++-- this DOES depend on aeson version
++#if MIN_VERSION_aeson(2,0,0)
++import qualified Data.Aeson.Key as K
++import qualified Data.Aeson.KeyMap as M
++#else
+ import qualified Data.HashMap.Strict as M
++#endif
+ import Data.Int (Int64)
+ import qualified Data.Text as T
+ import qualified System.Metrics as Metrics
+ import qualified System.Metrics.Distribution as Distribution
+ 
++#if MIN_VERSION_aeson(2,0,0)
++type Key = A.Key
++toText = K.toText
++fromText = K.fromText
++type KeyMap = M.KeyMap
++#else
++type Key = T.Text
++toText = id
++fromText = id
++#endif
++
+ ------------------------------------------------------------------------
+ -- * Converting metrics to JSON values
+ 
+@@ -47,13 +68,13 @@ sampleToJson :: Metrics.Sample -> A.Value
+ sampleToJson metrics =
+     buildOne metrics $ A.emptyObject
+   where
+-    buildOne :: M.HashMap T.Text Metrics.Value -> A.Value -> A.Value
+-    buildOne m o = M.foldlWithKey' build o m
++    buildOne :: H.HashMap T.Text Metrics.Value -> A.Value -> A.Value
++    buildOne m o = H.foldlWithKey' build o m
+ 
+     build :: A.Value -> T.Text -> Metrics.Value -> A.Value
+-    build m name val = go m (T.splitOn "." name) val
++    build m name val = go m (map fromText $ T.splitOn "." name) val
+ 
+-    go :: A.Value -> [T.Text] -> Metrics.Value -> A.Value
++    go :: A.Value -> [Key] -> Metrics.Value -> A.Value
+     go (A.Object m) [str] val      = A.Object $ M.insert str metric m
+       where metric = valueToJson val
+     go (A.Object m) (str:rest) val = case M.lookup str m of
