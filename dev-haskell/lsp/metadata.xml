@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="demo">Build the demo executables</flag>
 		<flag name="examples">Build the demo executables</flag>
 	</use>
 </pkgmetadata>
