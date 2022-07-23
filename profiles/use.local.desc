@@ -231,7 +231,6 @@ dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for developme
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
 dev-haskell/logfloat:useffi - Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.
 dev-haskell/lpeg:rely-on-shared-lpeg-library - Do not build lpeg from source, but trust that lpeg is made available in other ways, e.g., through a system-wide installation. The loader will be replaced with a placeholder function that only emits a message.
-dev-haskell/lsp:demo - Build the demo executables
 dev-haskell/lsp:examples - Build the demo executables
 dev-haskell/lua:allow-unsafe-gc - Allow optimizations which make Lua's garbage collection potentially unsafe; enabling this should be safe if there are no callbacks into Haskell during Lua garbage collection cycles. The flag should be *disabled* if Lua objects can have Haskell finalizers, i.e., @__gc@ metamethods that call Haskell function.
 dev-haskell/lua:apicheck - Compile Lua with -DLUA_USE_APICHECK.
