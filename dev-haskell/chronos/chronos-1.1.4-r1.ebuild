@@ -7,7 +7,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=1
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A high-performance time library"
@@ -16,6 +16,8 @@ HOMEPAGE="https://github.com/andrewthad/chronos"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
+
+RESTRICT=test # requires older aeson
 
 RDEPEND=">=dev-haskell/aeson-1.1:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
@@ -32,11 +34,11 @@ RDEPEND=">=dev-haskell/aeson-1.1:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.0.0
-	test? ( >=dev-haskell/aeson-1.1 <dev-haskell/aeson-1.6
-		dev-haskell/hunit
-		dev-haskell/quickcheck
-		dev-haskell/test-framework
-		dev-haskell/test-framework-hunit
-		dev-haskell/test-framework-quickcheck2 )
-"
+	>=dev-haskell/cabal-3.2.0.0"
+# 	test? ( >=dev-haskell/aeson-1.1 <dev-haskell/aeson-1.6
+# 		dev-haskell/hunit
+# 		dev-haskell/quickcheck
+# 		dev-haskell/test-framework
+# 		dev-haskell/test-framework-hunit
+# 		dev-haskell/test-framework-quickcheck2 )
+# "
