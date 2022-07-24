@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/old-time-1.1.0.3:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/regex-applicative-0.2:=[profile?] <dev-haskell/regex-applicative-0.4:=[profile?]
 	>=dev-haskell/regex-base-0.94.0.1:=[profile?] <dev-haskell/regex-base-0.94.1:=[profile?]
-	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?] <dev-haskell/regex-tdfa-1.3.2:=[profile?]
+	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	>=dev-haskell/stm-2.1:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/tar-0.5:=[profile?] <dev-haskell/tar-0.6:=[profile?]
 	>=dev-haskell/temporary-1.2.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
@@ -75,7 +75,8 @@ src_prepare() {
 	cabal_chdeps \
 		'constraints       >= 0.11 && < 0.13' 'constraints >=0.11' \
 		'hashable          >= 1.2.3.3 && < 1.4' 'hashable >=1.2.3.3' \
-		'attoparsec        >= 0.13.0.1 && < 0.14' 'attoparsec >=0.13.0.1'
+		'attoparsec        >= 0.13.0.1 && < 0.14' 'attoparsec >=0.13.0.1' \
+		'regex-tdfa        >= 1.3.1.0 && < 1.3.2' 'regex-tdfa        >= 1.3.1.0'
 }
 
 src_configure() {
