@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="embed-data-files">Embed data files in binary for relocatable executable.</flag>
-		<flag name="lua53">Embed Lua 5.3 instead of 5.4.</flag>
 		<flag name="trypandoc">Build trypandoc cgi executable.</flag>
 	</use>
 </pkgmetadata>
