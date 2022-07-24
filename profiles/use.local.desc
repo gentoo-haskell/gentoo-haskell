@@ -110,6 +110,7 @@ dev-haskell/floskell:executable - Build the floskell executable
 dev-haskell/focuslist:examples - Build the focuslist-readme example executable
 dev-haskell/foundation:experimental - Enable building experimental features, known as highly unstable or without good support cross-platform
 dev-haskell/fourmolu:executable - Build the fourmolu executable
+dev-haskell/fourmolu:fixity-th - Parse the default fixity information via Template Haskell
 dev-haskell/freer-effects:pedantic - Pass additional warning flags and -Werror to GHC.
 dev-haskell/freer-effects:test-hlint - Enable test suite that checks sources using HLint.
 dev-haskell/gargoyle-postgresql:executables - Install executables

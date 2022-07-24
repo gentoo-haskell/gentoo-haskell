@@ -241,7 +241,7 @@ dev-haskell/bytestring-to-vector 0.3.0.1: Convert between ByteString and Vector.
 dev-haskell/bytestring-trie 0.2.5.0: An efficient finite map from (byte)strings to values
 dev-haskell/bzlib 0.5.1.0: Compression and decompression in the bzip2 format
 dev-haskell/c2hs 0.28.8: C->Haskell FFI tool that gives some cross-language type safety
-dev-haskell/cabal 3.0.1.0 3.2.1.0-r1 3.4.0.0 3.4.1.0: A framework for packaging Haskell software
+dev-haskell/cabal 3.0.1.0 3.2.1.0-r1 3.4.0.0 3.4.1.0 3.6.3.0: A framework for packaging Haskell software
 dev-haskell/cabal-doctest 1.0.9: A Setup.hs helper for running doctests
 dev-haskell/cabal-file-th 0.2.7: Template Haskell expressions for reading fields from a project's cabal file
 dev-haskell/cabal-install 3.2.0.0-r1 3.2.0.0-r2 3.4.0.0-r1 3.4.0.0-r2 3.4.1.0-r1 3.4.1.0-r2 9999: The command-line interface for Cabal and Hackage
@@ -629,7 +629,7 @@ dev-haskell/force-layout 0.4.0.6-r4: Simple force-directed layout
 dev-haskell/foreign-store 0.2: Store a stable pointer in a foreign context to be retrieved later
 dev-haskell/formatting 7.1.2: Combinator-based type-safe formatting (like printf() or FORMAT)
 dev-haskell/foundation 0.0.26.1: Alternative prelude with batteries and no dependencies
-dev-haskell/fourmolu 0.4.0.0: A formatter for Haskell source code
+dev-haskell/fourmolu 0.4.0.0 0.7.0.1: A formatter for Haskell source code
 dev-haskell/fpretty 1.1: Efficient simple pretty printing combinators
 dev-haskell/free 5.1.9: Monads for free
 dev-haskell/freer 0.2.4.1: Implementation of the Freer Monad
