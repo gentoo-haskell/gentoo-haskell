@@ -246,7 +246,6 @@ dev-haskell/miso:tests - Builds Miso's tests
 dev-haskell/mod:semirings - Derive semiring instances
 dev-haskell/mod:vector - Derive unboxed and primitive vector instances
 dev-haskell/monad-logger:template-haskell - Enable Template Haskell support
-dev-haskell/monad-par:chaselev - Use Chase-Lev Deques for higher-perf work-stealing.
 dev-haskell/monky:ibus - enable ibus example
 dev-haskell/multistate:examples - Build the multistate-example executable
 dev-haskell/nats:binary - You can disable the use of the `binary` package using `-f-binary`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Binary`.

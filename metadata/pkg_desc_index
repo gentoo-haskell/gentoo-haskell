@@ -1037,7 +1037,7 @@ dev-haskell/hunit-approx 1.1.1.1: Approximate equality for floating point number
 dev-haskell/hvega 0.12.0.3: Create Vega-Lite visualizations (version 4) in Haskell
 dev-haskell/hvega-theme 0.2.0.4: Theme for hvega
 dev-haskell/hxt 9.3.1.22: A collection of tools for processing XML with Haskell
-dev-haskell/hxt-charproperties 9.4.0.0: Character properties and classes for XML and Unicode
+dev-haskell/hxt-charproperties 9.5.0.0: Character properties and classes for XML and Unicode
 dev-haskell/hxt-http 9.1.5.2-r1: Interface to native Haskell HTTP package HTTP
 dev-haskell/hxt-regex-xmlschema 9.2.0.7: A regular expression library for W3C XML Schema regular expressions
 dev-haskell/hxt-unicode 9.0.2.4: Unicode en-/decoding functions for utf8, iso-latin-* and other encodings
@@ -1295,7 +1295,7 @@ dev-haskell/monad-logger 0.3.36: A class of monads which can log messages
 dev-haskell/monad-logger-syslog 0.1.4.0: syslog output for monad-logger
 dev-haskell/monad-loops 0.4.3: Monadic loops
 dev-haskell/monad-memo 0.5.3: Memoization monad transformer
-dev-haskell/monad-par 0.3.5: A library for parallel programming based on a monad
+dev-haskell/monad-par 0.3.5-r1: A library for parallel programming based on a monad
 dev-haskell/monad-par-extras 0.3.3-r1: Combinators and extra features for Par monads
 dev-haskell/monad-parallel 0.7.2.4: Parallel execution of monadic computations
 dev-haskell/monad-peel 0.2.1.2: Lift control operations like exception catching through monad transformers
@@ -1612,7 +1612,7 @@ dev-haskell/rebase 1.15.0.3: A more progressive alternative to the "base" packag
 dev-haskell/recaptcha 0.1.0.4-r1: Functions for using the reCAPTCHA service in web applications
 dev-haskell/record-dot-preprocessor 0.2.14: Preprocessor to allow record.field syntax
 dev-haskell/record-hasfield 1.0: A version of GHC.Records as available in future GHCs
-dev-haskell/recursion-schemes 5.1.3 5.2.2.1: Representing common recursion patterns as higher-order functions
+dev-haskell/recursion-schemes 5.2.2.1: Representing common recursion patterns as higher-order functions
 dev-haskell/redis 0.14.2: A driver for Redis key-value database
 dev-haskell/reducers 3.12.3-r1: Semigroups, specialized containers and a general map/reduce framework
 dev-haskell/ref-tf 0.5: A type class for monads with references using type families
@@ -1947,13 +1947,13 @@ dev-haskell/text-stream-decode 0.1.0.5: Streaming decoding functions for UTF enc
 dev-haskell/text-zipper 0.11: A text editor zipper library
 dev-haskell/tf-random 0.5: High-quality splittable pseudorandom number generator
 dev-haskell/tga 0.2: Reading and writing of tga image files
-dev-haskell/th-abstraction 0.3.2.0 0.4.1.0 0.4.2.0: Nicer interface for reified information about data types
+dev-haskell/th-abstraction 0.4.3.0: Nicer interface for reified information about data types
 dev-haskell/th-compat 0.1.3: Backward- (and forward-)compatible Quote and Code types
 dev-haskell/th-constraint-compat 0.0.1.0: Compatibility for type constraint template
 dev-haskell/th-data-compat 0.1.0.0: Compatibility for data definition template of TH
 dev-haskell/th-desugar 1.9 1.11 1.12: Functions to desugar Template Haskell
 dev-haskell/th-env 0.1.0.3: Template Haskell splice that expands to an environment variable
-dev-haskell/th-expand-syns 0.4.8.0: Expands type synonyms in Template Haskell ASTs
+dev-haskell/th-expand-syns 0.4.9.0: Expands type synonyms in Template Haskell ASTs
 dev-haskell/th-extras 0.0.0.6: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.8.2: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.19: Lift instances for template-haskell for common data types
