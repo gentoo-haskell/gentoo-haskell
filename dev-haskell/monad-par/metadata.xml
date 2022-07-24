@@ -5,8 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="chaselev">Use Chase-Lev Deques for higher-perf
-&#9;&#9;work-stealing.</flag>
-	</use>
 </pkgmetadata>
