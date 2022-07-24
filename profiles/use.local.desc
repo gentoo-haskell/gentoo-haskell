@@ -9,7 +9,6 @@ app-office/hledger-ui:threaded - Build with support for multithreaded execution
 app-office/hledger-web:library-only - Build for use with "yesod devel"
 app-office/hledger-web:threaded - Build with support for multithreaded execution.
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
-app-text/pandoc:lua53 - Embed Lua 5.3 instead of 5.4.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/acid-state:skip-state-machine-test - If enabled, do not build/run the state-machine test
