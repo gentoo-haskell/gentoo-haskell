@@ -132,7 +132,7 @@ dev-haskell/authenticate-kerberos 1.0.0-r1: Authentication methods for Haskell w
 dev-haskell/authenticate-oauth 1.6.0.1-r1: Library to authenticate with OAuth for Haskell web applications
 dev-haskell/auto 0.4.3.1: Denotative, locally stateful programming DSL & platform
 dev-haskell/auto-update 0.1.6: Efficiently run periodic, on-demand actions
-dev-haskell/aws 0.22-r4: Amazon Web Services (AWS) for Haskell
+dev-haskell/aws 0.22-r5: Amazon Web Services (AWS) for Haskell
 dev-haskell/barbies 2.0.3.0: Classes for working with types that can change clothes
 dev-haskell/base-compat 0.12.1: A compatibility layer for base
 dev-haskell/base-compat-batteries 0.12.1: base-compat with extra batteries
@@ -2270,7 +2270,7 @@ dev-util/shellcheck 0.8.0: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/spago 0.20.6: PureScript package manager and build tool powered by Dhall and package-sets
 dev-util/threadscope 0.2.14.1: A graphical tool for profiling parallel Haskell programs
-dev-vcs/darcs 2.16.5-r1: a distributed, interactive, smart revision control system
+dev-vcs/darcs 2.16.5-r2: a distributed, interactive, smart revision control system
 dev-vcs/git-annex 8.20210330-r1: manage files with git, without checking their contents into git
 games-action/monadius 0.99: 2-D arcade scroller
 games-arcade/shu-thing 1.1.4: A vector shooter game
