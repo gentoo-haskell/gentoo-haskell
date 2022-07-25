@@ -411,6 +411,11 @@ src_unpack() {
 }
 
 src_prepare() {
+	# Force the use of C.utf8 locale
+	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1287>
+	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1289>
+	export LC_ALL=C.utf8
+
 	ghc_setup_cflags
 
 	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
