@@ -440,9 +440,7 @@ dev-vcs/darcs:threaded - Use threading and SMP support.
 dev-vcs/git-annex:assistant - Enable git-annex assistant and watch command
 dev-vcs/git-annex:benchmark - Enable benchmarking
 dev-vcs/git-annex:dbus - Enable dbus support
-dev-vcs/git-annex:debuglocks - Debug location of MVar/STM deadlocks
 dev-vcs/git-annex:gitlfs - Build with git-lfs library (rather than vendored copy)
-dev-vcs/git-annex:httpclientrestricted - Build with http-client-restricted library (rather than vendored copy)
 dev-vcs/git-annex:magicmime - Use libmagic to determine file MIME types
 dev-vcs/git-annex:pairing - Enable pairing
 dev-vcs/git-annex:torrentparser - Use haskell torrent library to parse torrent files

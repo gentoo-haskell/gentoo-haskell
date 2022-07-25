@@ -2271,7 +2271,7 @@ dev-util/shelltestrunner 1.9: A tool for testing command-line programs
 dev-util/spago 0.20.6: PureScript package manager and build tool powered by Dhall and package-sets
 dev-util/threadscope 0.2.14.1: A graphical tool for profiling parallel Haskell programs
 dev-vcs/darcs 2.16.5-r2: a distributed, interactive, smart revision control system
-dev-vcs/git-annex 8.20210330-r1: manage files with git, without checking their contents into git
+dev-vcs/git-annex 10.20220624: manage files with git, without checking their contents into git
 games-action/monadius 0.99: 2-D arcade scroller
 games-arcade/shu-thing 1.1.4: A vector shooter game
 games-board/goatee-gtk 0.3.1.3 0.4.0: A monadic take on a 2,500-year-old board game - GTK+ UI
