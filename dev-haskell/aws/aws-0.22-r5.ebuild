@@ -8,7 +8,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=3
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite requires porting
 inherit haskell-cabal
 
 DESCRIPTION="Amazon Web Services (AWS) for Haskell"
@@ -54,18 +54,18 @@ RDEPEND=">=dev-haskell/aeson-2.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	examples? ( >=dev-haskell/errors-2.0:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.0.0
-	test? ( >=dev-haskell/aeson-0.7
-		>=dev-haskell/http-client-0.3 <dev-haskell/http-client-0.7
-		>=dev-haskell/lifted-base-0.2
-		>=dev-haskell/quickcheck-2.7
-		>=dev-haskell/quickcheck-instances-0.3
-		>=dev-haskell/tasty-0.8
-		>=dev-haskell/tasty-hunit-0.8
-		>=dev-haskell/tasty-quickcheck-0.8
-		>=dev-haskell/transformers-base-0.4
-		!examples? ( >=dev-haskell/errors-2.0 ) )
-"
+	>=dev-haskell/cabal-3.2.0.0"
+# 	test? ( >=dev-haskell/aeson-0.7
+# 		>=dev-haskell/http-client-0.3 <dev-haskell/http-client-0.7
+# 		>=dev-haskell/lifted-base-0.2
+# 		>=dev-haskell/quickcheck-2.7
+# 		>=dev-haskell/quickcheck-instances-0.3
+# 		>=dev-haskell/tasty-0.8
+# 		>=dev-haskell/tasty-hunit-0.8
+# 		>=dev-haskell/tasty-quickcheck-0.8
+# 		>=dev-haskell/transformers-base-0.4
+# 		!examples? ( >=dev-haskell/errors-2.0 ) )
+# "
 
 PATCHES=( "${FILESDIR}"/${P}-aeson-2.patch )
 
