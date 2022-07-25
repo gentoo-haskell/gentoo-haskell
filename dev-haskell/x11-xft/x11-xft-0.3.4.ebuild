@@ -24,7 +24,8 @@ RDEPEND=">=dev-haskell/utf8-string-0.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	virtual/pkgconfig
+"
+BDEPEND="virtual/pkgconfig
 "
 
 src_configure() {
