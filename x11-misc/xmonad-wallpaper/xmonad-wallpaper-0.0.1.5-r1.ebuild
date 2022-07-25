@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,8 +20,13 @@ RDEPEND=">=dev-haskell/magic-1.1:=[profile?] <dev-haskell/magic-1.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
-	>=x11-wm/xmonad-0.13:=[profile?] <x11-wm/xmonad-0.16:=[profile?]
+	>=x11-wm/xmonad-0.13:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+src_prepare() {
+	cabal_chdeps \
+		'xmonad >=0.13 && <0.16' 'xmonad >=0.13'
+}
