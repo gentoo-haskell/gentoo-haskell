@@ -2264,7 +2264,7 @@ dev-util/hadolint 2.8.0-r1: Dockerfile Linter JavaScript API
 dev-util/hasmin 1.0.3-r2: CSS Minifier
 dev-util/hdocs 0.5.5.0-r1: Haskell docs tool
 dev-util/hindent 5.3.2: Extensible Haskell pretty printer
-dev-util/hoogle 5.0.18.2-r2: Haskell API Search
+dev-util/hoogle 5.0.18.3: Haskell API Search
 dev-util/shake 0.19.6: Build system library, like Make, but more accurate dependencies
 dev-util/shellcheck 0.8.0: Shell script analysis tool
 dev-util/shelltestrunner 1.9: A tool for testing command-line programs
