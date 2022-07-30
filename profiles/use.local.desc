@@ -252,7 +252,6 @@ dev-haskell/multistate:examples - Build the multistate-example executable
 dev-haskell/nats:binary - You can disable the use of the `binary` package using `-f-binary`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Binary`.
 dev-haskell/nats:hashable - You can disable the use of the `hashable` package using `-f-hashable`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Hashable`.
 dev-haskell/nats:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Lift`.
-dev-haskell/netlink:generators - build the generator scripts for constants
 dev-haskell/network:devel - using tests for developers
 dev-haskell/network-data:small-base - Build the split-up base package.
 dev-haskell/openclwrappers:link - Link against OpenCL library.
