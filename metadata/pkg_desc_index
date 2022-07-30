@@ -37,7 +37,7 @@ dev-haskell/aeson 2.0.3.0: Fast JSON parsing and encoding
 dev-haskell/aeson-better-errors 0.9.1.1: Better error messages when decoding JSON values
 dev-haskell/aeson-casing 0.2.0.0: Tools to change the formatting of field names in Aeson instances
 dev-haskell/aeson-compat 0.3.10-r1: Compatibility layer for aeson
-dev-haskell/aeson-diff 1.1.0.9: Extract and apply patches to JSON documents
+dev-haskell/aeson-diff 1.1.0.13: Extract and apply patches to JSON documents
 dev-haskell/aeson-extra 0.5.1-r1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
 dev-haskell/aeson-pretty 0.8.9-r1: JSON pretty-printing library and command-line tool
@@ -1957,7 +1957,7 @@ dev-haskell/th-expand-syns 0.4.9.0: Expands type synonyms in Template Haskell AS
 dev-haskell/th-extras 0.0.0.6: A grab bag of functions for use with Template Haskell
 dev-haskell/th-lift 0.8.2: Derive Template Haskell's Lift class for datatypes
 dev-haskell/th-lift-instances 0.1.19: Lift instances for template-haskell for common data types
-dev-haskell/th-orphans 0.13.11: Orphan instances for TH datatypes
+dev-haskell/th-orphans 0.13.13: Orphan instances for TH datatypes
 dev-haskell/th-reify-compat 0.0.1.5: Compatibility for the result type of TH reify
 dev-haskell/th-reify-many 0.1.9: Recurseively reify template haskell datatype info
 dev-haskell/th-utilities 0.2.4.3: Collection of useful functions for use with Template Haskell
