@@ -598,7 +598,7 @@ dev-haskell/file-location 0.4.9.1: common functions that show file location info
 dev-haskell/file-modules 0.1.2.4: Takes a Haskell source-code file and outputs its modules
 dev-haskell/filelock 0.1.1.5: Portable interface to file locking (flock / LockFileEx)
 dev-haskell/filemanip 0.3.6.3: Expressive file and directory manipulation for Haskell
-dev-haskell/filepath-bytestring 1.4.2.1.7: Library for manipulating RawFilePaths in a cross platform way
+dev-haskell/filepath-bytestring 1.4.2.1.9: Library for manipulating RawFilePaths in a cross platform way
 dev-haskell/filepattern 0.1.2: File path glob-like matching
 dev-haskell/filestore 0.6.5: Interface for versioning file stores
 dev-haskell/fin 0.2.1: Nat and Fin: peano naturals and finite numbers
