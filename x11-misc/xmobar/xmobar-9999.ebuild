@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -12,7 +12,7 @@ inherit git-r3 haskell-cabal
 DESCRIPTION="A Minimalistic Text Based Status Bar"
 HOMEPAGE="https://xmobar.org"
 #SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
-EGIT_REPO_URI="https://github.com/jaor/xmobar.git"
+EGIT_REPO_URI="https://codeberg.org/xmobar/xmobar"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
