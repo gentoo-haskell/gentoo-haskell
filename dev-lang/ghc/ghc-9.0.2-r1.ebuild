@@ -15,8 +15,8 @@ fi
 
 PYTHON_COMPAT=( python3_{8..10} )
 inherit python-any-r1
-inherit autotools bash-completion-r1 eutils flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs prefix
+inherit autotools bash-completion-r1 flag-o-matic ghc-package
+inherit multiprocessing pax-utils toolchain-funcs prefix
 inherit check-reqs
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
@@ -33,7 +33,7 @@ arch_binaries="$arch_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_6
 #arch_binaries="$arch_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #arch_binaries="$arch_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
 #arch_binaries="$arch_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#arch_binaries="$arch_binaries ppc64? ( !big-endian? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tbz2 ) )"
+arch_binaries="$arch_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz ) )"
 #arch_binaries="$arch_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
 arch_binaries="$arch_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
 
@@ -49,10 +49,9 @@ yet_binary() {
 		amd64) return 0 ;;
 		#ia64) return 0 ;;
 		#ppc) return 0 ;;
-		#ppc64)
-		#	use big-endian && return 0
-		#	return 0
-		#	;;
+		ppc64)
+			use big-endian || return 0
+			;;
 		#sparc) return 0 ;;
 		x86) return 0 ;;
 		*) return 1 ;;
@@ -77,7 +76,7 @@ BUMP_LIBRARIES=(
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
@@ -273,15 +272,6 @@ ghc_setup_cflags() {
 	for flag in ${LDFLAGS}; do
 		append-ghc-cflags link ${flag}
 	done
-
-	# GHC uses ${CBUILD}-gcc, ${CHOST}-gcc and ${CTARGET}-gcc at a single build.
-	# Skip any gentoo-specific tweaks for cross-case to avoid passing unsupported
-	# options to gcc.
-	if is_native; then
-		# prevent from failing to build unregisterised ghc:
-		# https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
-		use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
-	fi
 }
 
 # substitutes string $1 to $2 in files $3 $4 ...
@@ -429,6 +419,19 @@ src_prepare() {
 		# linking on it's own (bug #299709)
 		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
 	fi
+
+	# binpkg may have been built with FEATURES=splitdebug
+	if [[ -d "${WORKDIR}/usr/lib/debug" ]] ; then
+		rm -rf "${WORKDIR}/usr/lib/debug" || die
+	fi
+	find "${WORKDIR}/usr/lib" -type d -empty -delete 2>/dev/null # do not die on failure here
+
+	# ffi headers don't get included in the binpkg for some reason
+	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/include/"{ffi.h,ffitarget.h}
+	do
+		mkdir -p "$(dirname "${f}")"
+		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
+	done
 
 	if use binary; then
 		if use prefix; then
