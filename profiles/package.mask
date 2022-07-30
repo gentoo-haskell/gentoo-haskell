@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2022-07-31)
+# Requires porting to newer dependencies. Has no reverse
+# dependencies, so mask for removal in 30 days.
+dev-haskell/easytest
+
 # Paul Jewell <paul@teulu.org> (2022-07-24)
 # Masking these packages pending ghc version bump to 9.2.3
 >dev-haskell/fourmolu-0.4.0.0
@@ -5,7 +10,7 @@
 
 # Paul Jewell <paul@teulu.org> (2022-07-23)
 # Reversing original mask in ::gentoo by Sam James <sam@gentoo.org> (2022-07-22)
-# This unmasks the packages masked in ::gentoo, as the mask there also covers 
+# This unmasks the packages masked in ::gentoo, as the mask there also covers
 # packages in the ::haskell overlay.
 #
 # This can be removed with the mask in the ::gentoo repository when the packages
