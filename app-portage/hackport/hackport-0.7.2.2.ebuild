@@ -11,7 +11,6 @@ inherit haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
 HOMEPAGE="https://hackage.haskell.org/package/hackport"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
