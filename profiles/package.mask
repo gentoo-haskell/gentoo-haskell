@@ -82,8 +82,6 @@ dev-haskell/easytest
 -dev-haskell/djinn-lib
 -dev-haskell/dlist-instances
 -dev-haskell/double-conversion
--dev-haskell/edisonapi
--dev-haskell/edisoncore
 -dev-haskell/editline
 -dev-haskell/ekg
 -dev-haskell/ekg-core
