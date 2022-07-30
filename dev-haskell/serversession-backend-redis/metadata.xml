@@ -6,9 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="lib-werror">Add to -Werror to ghc option</flag>
+		<flag name="lib-werror"></flag>
 	</use>
-	<longdescription>
-		API docs and the README are available at &lt;http://www.stackage.org/package/serversession-backend-redis&gt;
-	</longdescription>
 </pkgmetadata>
