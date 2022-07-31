@@ -13,6 +13,7 @@ dev-haskell/vado
 dev-lang/elm
 dev-lang/elm-compiler
 dev-util/codex
+dev-haskell/euterpea
 
 # Paul Jewell <paul@teulu.org> (2022-07-24)
 # Masking these packages pending ghc version bump to 9.2.3
