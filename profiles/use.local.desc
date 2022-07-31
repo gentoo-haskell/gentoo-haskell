@@ -232,11 +232,6 @@ dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC
 dev-haskell/logfloat:useffi - Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.
 dev-haskell/lpeg:rely-on-shared-lpeg-library - Do not build lpeg from source, but trust that lpeg is made available in other ways, e.g., through a system-wide installation. The loader will be replaced with a placeholder function that only emits a message.
 dev-haskell/lsp:examples - Build the demo executables
-dev-haskell/lua:allow-unsafe-gc - Allow optimizations which make Lua's garbage collection potentially unsafe; enabling this should be safe if there are no callbacks into Haskell during Lua garbage collection cycles. The flag should be *disabled* if Lua objects can have Haskell finalizers, i.e., @__gc@ metamethods that call Haskell function.
-dev-haskell/lua:apicheck - Compile Lua with -DLUA_USE_APICHECK.
-dev-haskell/lua:export-dynamic - Add all symbols to dynamic symbol table; disabling this will make it possible to create fully static binaries, but renders loading of dynamic C libraries impossible.
-dev-haskell/lua:hardcode-reg-keys - Don't use CAPI to determine the names of certain registry key names but use hard coded values instead. This flag is required when compiling against Lua 5.3.3 or earlier, as those versions do not expose the necessary information in the @lauxlib.h@ header file. Setting this flag should usually be unproblematic, except if the used Lua version has been patched heavily.
-dev-haskell/lua:lua-32bits - Compile Lua with -DLUA_32BITS
 dev-haskell/lua:system-lua - Use @pkg-config@ to discover library and include paths. Setting this flag implies `pkg-config`.
 dev-haskell/markdown-unlit:executable - Build executable
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty

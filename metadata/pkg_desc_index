@@ -954,18 +954,18 @@ dev-haskell/hsexif 0.6.1.8: EXIF handling library in pure Haskell
 dev-haskell/hsh 2.1.3: Library to mix shell scripting with Haskell programs
 dev-haskell/hsimport 0.11.0-r1: Extend the import list of a Haskell source file
 dev-haskell/hslogger 1.2.12 1.3.1.0-r2: Versatile logging framework
-dev-haskell/hslua 2.1.0 2.2.0: Bindings to Lua, an embeddable scripting language
-dev-haskell/hslua-aeson 2.1.0 2.2.0: Allow aeson data types to be used with Lua
-dev-haskell/hslua-classes 2.1.0 2.2.0: Type classes for HsLua
-dev-haskell/hslua-core 2.1.0 2.2.0: Bindings to Lua, an embeddable scripting language
-dev-haskell/hslua-marshalling 2.1.0 2.2.0: Marshalling of values between Haskell and Lua
+dev-haskell/hslua 2.2.0: Bindings to Lua, an embeddable scripting language
+dev-haskell/hslua-aeson 2.2.0: Allow aeson data types to be used with Lua
+dev-haskell/hslua-classes 2.2.0: Type classes for HsLua
+dev-haskell/hslua-core 2.2.0: Bindings to Lua, an embeddable scripting language
+dev-haskell/hslua-marshalling 2.2.0: Marshalling of values between Haskell and Lua
 dev-haskell/hslua-module-doclayout 1.0.4: Lua module wrapping Text.DocLayout
 dev-haskell/hslua-module-path 1.0.2: Lua module to work with file paths
 dev-haskell/hslua-module-system 1.0.2: Lua module wrapper around Haskell's System module
 dev-haskell/hslua-module-text 1.0.2: Lua module for text
 dev-haskell/hslua-module-version 1.0.2: Lua module to work with version specifiers
-dev-haskell/hslua-objectorientation 2.1.0 2.2.0: Object orientation tools for HsLua
-dev-haskell/hslua-packaging 2.1.0 2.2.0: Utilities to build Lua modules
+dev-haskell/hslua-objectorientation 2.2.0: Object orientation tools for HsLua
+dev-haskell/hslua-packaging 2.2.0: Utilities to build Lua modules
 dev-haskell/hsndfile 0.8.0-r1: Haskell bindings for libsndfile
 dev-haskell/hsndfile-vector 0.5.2: Haskell bindings for libsndfile (Data.Vector interface)
 dev-haskell/hsopenssl 0.11.7.2: Partial OpenSSL binding for Haskell
@@ -1220,7 +1220,7 @@ dev-haskell/lrucache 1.2.0.1: a simple, pure LRU cache
 dev-haskell/lsp 1.4.0.0: Haskell library for the Microsoft Language Server Protocol
 dev-haskell/lsp-test 0.14.0.2: Functional test framework for LSP servers
 dev-haskell/lsp-types 1.4.0.1: Haskell library for the Microsoft Language Server Protocol, data types
-dev-haskell/lua 2.1.0 2.2.0: Lua, an embeddable scripting language
+dev-haskell/lua 2.2.0: Lua, an embeddable scripting language
 dev-haskell/lua-arbitrary 1.0.1: Arbitrary instances for Lua types
 dev-haskell/lua-bc 0.1.1-r1: Lua bytecode parser
 dev-haskell/lucid 2.11.0: Clear to write, read and edit DSL for HTML
