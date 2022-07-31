@@ -19,7 +19,7 @@ IUSE="call-stacks check-unchecked"
 
 RDEPEND=">=dev-haskell/aeson-0.11.3.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
-	>=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.12:=[profile?]
+	>=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.13:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/lens-3.8.5:=[profile?] <dev-haskell/lens-5.2:=[profile?]
@@ -41,7 +41,8 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'ref-tf >=0.4.0.1 && <0.5' 'ref-tf >=0.4.0.1'
+		'ref-tf >=0.4.0.1 && <0.5' 'ref-tf >=0.4.0.1' \
+		'base-compat >=0.9.0 && <0.12' 'base-compat >=0.9.0'
 }
 
 src_configure() {
