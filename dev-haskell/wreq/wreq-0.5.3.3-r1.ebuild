@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+RESTRICT=test # requires network
+
 RDEPEND=">=dev-haskell/aeson-0.7.0.3:=[profile?]
 	>=dev-haskell/attoparsec-0.11.1.0:=[profile?]
 	>=dev-haskell/authenticate-oauth-1.5:=[profile?]
