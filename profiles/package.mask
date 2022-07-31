@@ -5,6 +5,7 @@ dev-haskell/easytest
 dev-haskell/fb
 dev-haskell/htaglib
 dev-haskell/partial-handler
+dev-haskell/strafunski-strategylib
 
 # Paul Jewell <paul@teulu.org> (2022-07-24)
 # Masking these packages pending ghc version bump to 9.2.3
