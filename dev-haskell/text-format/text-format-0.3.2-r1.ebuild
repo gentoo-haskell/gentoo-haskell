@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -20,7 +20,6 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/double-conversion-0.2.0.0:=[profile?]
 	dev-haskell/old-locale:=[profile?]
-	>=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.19:=[profile?]
 	>=dev-haskell/text-0.11.0.8:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
