@@ -244,7 +244,7 @@ dev-haskell/c2hs 0.28.8: C->Haskell FFI tool that gives some cross-language type
 dev-haskell/cabal 3.0.1.0 3.2.1.0-r1 3.4.0.0 3.4.1.0 3.6.3.0: A framework for packaging Haskell software
 dev-haskell/cabal-doctest 1.0.9: A Setup.hs helper for running doctests
 dev-haskell/cabal-file-th 0.2.7: Template Haskell expressions for reading fields from a project's cabal file
-dev-haskell/cabal-install 3.2.0.0-r1 3.2.0.0-r2 3.4.0.0-r1 3.4.0.0-r2 3.4.1.0-r1 3.4.1.0-r2 9999: The command-line interface for Cabal and Hackage
+dev-haskell/cabal-install 3.2.0.0-r2 3.4.0.0-r2 3.4.1.0-r2 9999: The command-line interface for Cabal and Hackage
 dev-haskell/cabal-install-parsers 0.4.2: Utilities to work with cabal-install files
 dev-haskell/cabal-macosx 0.2.4.2: Cabal support for creating Mac OSX application bundles
 dev-haskell/cabal-plan 0.7.2.0-r3: Library and utility for processing cabal's plan.json file
@@ -284,7 +284,7 @@ dev-haskell/chimera 0.3.1.0: Lazy infinite streams with O(1) indexing
 dev-haskell/chr-data 0.1.0.1: Datatypes required for chr library
 dev-haskell/chr-parse 0.1.0.0: Parsing for chr library
 dev-haskell/chr-pretty 0.1.0.0: Pretty printing for chr library
-dev-haskell/chronos 1.1.4-r1: A high-performance time library
+dev-haskell/chronos 1.1.4-r2: A high-performance time library
 dev-haskell/chunked-data 0.3.1: Typeclasses for dealing with various chunked data representations
 dev-haskell/cipher-aes 0.2.11: Fast AES cipher implementation with advanced mode of operations
 dev-haskell/cipher-aes128 0.7.0.5-r2: AES and common modes using AES-NI when available
@@ -854,7 +854,7 @@ dev-haskell/heapsize 0.3.0.1: Determine the size of runtime data structures
 dev-haskell/heckle 2.0.2.1: Jekyll in Haskell (feat. LaTeX)
 dev-haskell/hedgehog 1.0.5: Release with confidence
 dev-haskell/hedgehog-fn 1.0: Function generation for 'hedgehog'
-dev-haskell/hedis 0.9.6 0.12.14: Client library for the Redis datastore: supports full command set, pipelining
+dev-haskell/hedis 0.15.1: Client library for the Redis datastore: supports full command set, pipelining
 dev-haskell/hedis-config 0.0.3 1.0.0: Easy trivial configuration for Redis
 dev-haskell/heist 1.1.0.1-r5: An Haskell template system supporting both HTML5 and XML
 dev-haskell/here 1.2.13: Here docs & interpolated strings via quasiquotation
@@ -1104,7 +1104,7 @@ dev-haskell/iso3166-country-codes 0.20140203.8: A datatype for ISO 3166 country 
 dev-haskell/iso8601-time 0.1.5: Convert to/from the ISO 8601 time format
 dev-haskell/iwlib 0.1.0: Bindings for the iw C library
 dev-haskell/ix-shapable 0.1.0: Reshape multi-dimensional arrays
-dev-haskell/ixset 1.1.1.1: Efficient relational queries on Haskell sets
+dev-haskell/ixset 1.1.1.2: Efficient relational queries on Haskell sets
 dev-haskell/ixset-typed 0.5.1.0: Efficient relational queries on Haskell sets
 dev-haskell/jail 0.0.1.1-r4: Jailed IO monad
 dev-haskell/jira-wiki-markup 1.3.4 1.4.0: Handle Jira wiki markup
@@ -1210,7 +1210,7 @@ dev-haskell/log-base 0.11.1.0: Structured logging solution (base package)
 dev-haskell/log-domain 0.13.2: Log-domain arithmetic
 dev-haskell/log-postgres 0.8.1.0: Structured logging solution (PostgreSQL back end)
 dev-haskell/logfloat 0.13.3.3-r1: Log-domain floating point numbers
-dev-haskell/logging-effect 1.3.12: A mtl-style monad transformer for general purpose & compositional logging
+dev-haskell/logging-effect 1.3.13: A mtl-style monad transformer for general purpose & compositional logging
 dev-haskell/logging-facade 0.3.0: Simple logging abstraction that allows multiple back-ends
 dev-haskell/logict 0.7.0.3: A backtracking logic-programming monad
 dev-haskell/logict-state 0.1.0.5: Library for logic programming based on haskell package logict
@@ -1356,7 +1356,7 @@ dev-haskell/nats 1.1.2-r1: Natural numbers
 dev-haskell/natural-arithmetic 0.1.2.0: Arithmetic of natural numbers
 dev-haskell/natural-numbers 0.1.2.0-r1: Natural numbers
 dev-haskell/natural-sort 0.1.2: User-friendly text collation
-dev-haskell/natural-transformation 0.4-r7: A natural transformation package
+dev-haskell/natural-transformation 0.4-r8: A natural transformation package
 dev-haskell/ncurses 0.2.16: Modernised bindings to GNU ncurses
 dev-haskell/neat-interpolation 0.5.1.2: A quasiquoter for neat and simple multiline text interpolation
 dev-haskell/netlink 1.1.1.0: Netlink communication for Haskell
@@ -1399,7 +1399,7 @@ dev-haskell/numinstances 1.4: Instances of numeric classes for functions and tup
 dev-haskell/numtype 1.2: Type-level (low cardinality) integers
 dev-haskell/numtype-dk 0.5.0.3: Type-level integers, using TypeNats, Data Kinds, and Closed Type Families
 dev-haskell/objectname 1.1.0.1: Explicitly handled object names
-dev-haskell/oeis 0.3.10-r1: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
+dev-haskell/oeis 0.3.10-r2: Interface to the Online Encyclopedia of Integer Sequences (OEIS)
 dev-haskell/old-locale 1.0.0.7: locale library
 dev-haskell/old-time 1.1.0.3-r1: Time library
 dev-haskell/one-liner 1.0 2.0: Constraint-based generics
@@ -1452,7 +1452,7 @@ dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/password 3.0.0.0: Hashing and checking of passwords
 dev-haskell/password-types 1.0.0.0: Types for handling passwords
 dev-haskell/patch 0.0.5.2: Data structures for describing changes to other data structures
-dev-haskell/path 0.7.0 0.9.2: Support for well-typed paths
+dev-haskell/path 0.9.2: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.6.3: Interface to 'directory' package for users of 'path'
 dev-haskell/path-pieces 0.2.1: Components of paths
@@ -1599,7 +1599,7 @@ dev-haskell/rasterific 0.7.5.4: A pure haskell drawing engine
 dev-haskell/rate-limit 1.4.2: A basic library for rate-limiting IO actions
 dev-haskell/ratio-int 0.1.2: Fast specialisation of Data.Ratio for Int
 dev-haskell/raw-strings-qq 1.1: Raw string literals for Haskell
-dev-haskell/rdf4h 3.1.1: A library for RDF processing in Haskell
+dev-haskell/rdf4h 5.0.1: A library for RDF processing in Haskell
 dev-haskell/rdtsc 1.3.0.1-r1: Binding for the rdtsc machine instruction
 dev-haskell/re2 0.3: Bindings to the re2 regular expression library
 dev-haskell/reactive-banana 1.2.2.0-r1: Library for functional reactive programming (FRP)
@@ -1647,7 +1647,7 @@ dev-haskell/relational-record 0.2.2.0: Meta package of Relational Record
 dev-haskell/relational-schemas 0.1.8.0: RDBMSs' schema templates for relational-query
 dev-haskell/relude 1.0.0.1-r1: Safe, performant, user-friendly and lightweight Haskell Standard Library
 dev-haskell/rematch 0.2.0.0: A simple api for matchers
-dev-haskell/repa 3.4.1.4-r1 3.4.1.4-r2: High performance, regular, shape polymorphic parallel arrays
+dev-haskell/repa 3.4.1.4-r2: High performance, regular, shape polymorphic parallel arrays
 dev-haskell/repa-algorithms 3.4.1.3: Algorithms using the Repa array library
 dev-haskell/repa-devil 0.3.2.6-r1: Support for image reading and writing of Repa arrays using in-place FFI calls
 dev-haskell/repa-io 3.4.1.1-r1: Read and write Repa arrays in various formats
@@ -1723,7 +1723,7 @@ dev-haskell/servant-client-core 0.19: Core functionality and class for client fu
 dev-haskell/servant-lucid 0.9.0.5: Servant support for lucid
 dev-haskell/servant-server 0.19.1: A family of combinators for defining webservices APIs and serving them
 dev-haskell/serversession 1.0.2: Secure, modular server-side sessions
-dev-haskell/serversession-backend-redis 1.0.3 1.0.4: Storage backend for serversession using Redis
+dev-haskell/serversession-backend-redis 1.0.5: Storage backend for serversession using Redis
 dev-haskell/setenv 0.1.1.3: A cross-platform library for setting environment variables
 dev-haskell/setlocale 1.0.0.10: Haskell bindings to setlocale
 dev-haskell/sfml-audio 0.7.1.1816: minimal bindings to the audio module of sfml
@@ -1931,7 +1931,7 @@ dev-haskell/text 1.2.4.0-r1 1.2.4.1 1.2.5.0: An efficient packed Unicode text ty
 dev-haskell/text-binary 0.2.1.1: Binary instances for text types
 dev-haskell/text-builder 0.6.6.2: An efficient strict text builder
 dev-haskell/text-conversions 0.3.1: Safe conversions between textual types
-dev-haskell/text-format 0.3.2: Text formatting
+dev-haskell/text-format 0.3.2-r1: Text formatting
 dev-haskell/text-format-simple 1.1.0-r1: Simple text formatting library
 dev-haskell/text-icu 0.7.0.1 0.7.1.0: Bindings to the ICU library
 dev-haskell/text-icu-normalized 0.1.6: Dealing with Strict Text in NFC normalization
