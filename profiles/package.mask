@@ -7,6 +7,7 @@ dev-haskell/htaglib
 dev-haskell/partial-handler
 dev-haskell/strafunski-strategylib
 dev-haskell/svg-tree
+dev-haskell/unbound-generics
 
 # Paul Jewell <paul@teulu.org> (2022-07-24)
 # Masking these packages pending ghc version bump to 9.2.3
