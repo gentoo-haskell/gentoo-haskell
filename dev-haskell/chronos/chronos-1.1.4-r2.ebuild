@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/aeson-1.1:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/natural-arithmetic-0.1.2:=[profile?] <dev-haskell/natural-arithmetic-0.2:=[profile?]
 	>=dev-haskell/primitive-0.6.4:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
-	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.20:=[profile?]
+	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.21:=[profile?]
 	>=dev-haskell/text-short-0.1.3:=[profile?] <dev-haskell/text-short-0.2:=[profile?]
 	>=dev-haskell/torsor-0.1:=[profile?] <dev-haskell/torsor-0.2:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
@@ -42,3 +42,11 @@ DEPEND="${RDEPEND}
 # 		dev-haskell/test-framework-hunit
 # 		dev-haskell/test-framework-quickcheck2 )
 # "
+
+src_prepare() {
+	cabal_chdeps \
+		'semigroups >= 0.16 && < 0.20' 'semigroups >= 0.16' \
+		'hashable >= 1.2 && < 1.4' 'hashable >= 1.2'
+
+	default
+}

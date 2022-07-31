@@ -5,12 +5,4 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A natural transformation transforms a container @f a@ into another
-		container @g a@. Natural transformations act as functor morphisms
-		in category theory.
-		
-		The naming of &#39;~&gt;&#39;, &#39;:~&gt;&#39; and &#39;$$&#39; were taken,
-		with permission, from Edward Kmett&#39;s @indexed@ package.
-	</longdescription>
 </pkgmetadata>
