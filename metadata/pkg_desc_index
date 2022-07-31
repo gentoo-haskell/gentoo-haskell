@@ -325,7 +325,7 @@ dev-haskell/command-qq 0.3.1.0: Quasiquoters for external commands
 dev-haskell/commonmark 0.2.2: Pure Haskell commonmark parser
 dev-haskell/commonmark-extensions 0.2.3.2: Pure Haskell commonmark parser
 dev-haskell/commonmark-pandoc 0.2.1.2: Bridge between commonmark and pandoc AST
-dev-haskell/comonad 5.0.7 5.0.8: The Comonads package authored by Edward Kmett
+dev-haskell/comonad 5.0.8: The Comonads package authored by Edward Kmett
 dev-haskell/comonad-extras 4.0.1: Exotic comonad transformers
 dev-haskell/comonad-transformers 4.0: This package has been merged into comonad 4.0
 dev-haskell/comonads-fd 4.0: This package has been merged into comonad 4.0
@@ -836,7 +836,7 @@ dev-haskell/hasktags 0.71.2-r2 9999: Produces ctags "tags" and etags "TAGS" file
 dev-haskell/haspell 1.1.0: Haskell bindings to aspell
 dev-haskell/hatex 3.22.3.1: The Haskell LaTeX library
 dev-haskell/haxml 1.25.8: Utilities for manipulating XML documents
-dev-haskell/haxr 3000.11.4.1-r1: XML-RPC client and server library
+dev-haskell/haxr 3000.11.4.1-r2: XML-RPC client and server library
 dev-haskell/hcg-minus 0.15: haskell cg (minus)
 dev-haskell/hclip 3.0.0.4: A small cross-platform library for reading and modifying the system clipboard
 dev-haskell/hcodecs 0.5.2: A library to read, write and manipulate MIDI, WAVE, and SoundFont2 files
@@ -1114,7 +1114,7 @@ dev-haskell/js-chart 2.9.4.1: Obtain minified chart.js code
 dev-haskell/js-dgtable 0.5.2: Obtain minified jquery.dgtable code
 dev-haskell/js-flot 0.8.3: Obtain minified flot code
 dev-haskell/js-jquery 3.3.1: Obtain minified jQuery code
-dev-haskell/jsaddle 0.9.8.2: Interface for JavaScript that works with GHCJS and GHC
+dev-haskell/jsaddle 0.9.8.2-r1: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/jsaddle-warp 0.9.8.2: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/jsaddle-wkwebview 0.9.8.2: Interface for JavaScript that works with GHCJS and GHC
 dev-haskell/json 0.10: Support for serialising Haskell to and from JSON
@@ -1230,7 +1230,7 @@ dev-haskell/lushtags 0.0.1-r2 9999: Create ctags compatible tags files for Haske
 dev-haskell/lz4 0.2.3.1: LZ4 compression for ByteStrings
 dev-haskell/lzma 0.0.0.3: LZMA/XZ compression and decompression
 dev-haskell/maccatcher 2.1.5: Obtain the host MAC address on *NIX and Windows
-dev-haskell/machines 0.6.4 0.7.2: Networked stream transducers
+dev-haskell/machines 0.7.2: Networked stream transducers
 dev-haskell/mackerel-client 0.2.0: An API client library for Mackerel
 dev-haskell/magic 1.1: Interface to C file/magic library
 dev-haskell/mainland-pretty 0.7.1: Pretty printing designed for printing source code
@@ -1429,7 +1429,7 @@ dev-haskell/ordered-containers 0.2.2: Set- and Map-like types that remember the 
 dev-haskell/ormolu 0.1.4.1-r2 0.3.1.0: A formatter for Haskell source code
 dev-haskell/palette 0.3.0.2: Utilities for choosing and creating color schemes
 dev-haskell/pandoc-citeproc 0.17.0.2: Supports using pandoc with citeproc
-dev-haskell/pandoc-crossref 0.3.12.2 0.3.13.0: Pandoc filter for cross-references
+dev-haskell/pandoc-crossref 0.3.13.0: Pandoc filter for cross-references
 dev-haskell/pandoc-lua-marshal 0.1.7: Use pandoc types in Lua
 dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, images and paragraphs
 dev-haskell/pandoc-types 1.22.2: Types for representing a structured document
