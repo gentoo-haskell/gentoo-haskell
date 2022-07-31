@@ -160,7 +160,7 @@ dev-haskell/besout 0.2.0.1: Extended GCD of polynomials over F_p[x]
 dev-haskell/bibtex 0.1.0.6: Parse, format and processing BibTeX files
 dev-haskell/bifunctors 5.5.11: The Bifunctors package authored by Edward Kmett
 dev-haskell/bimap 0.4.0: Bidirectional mapping between two key types
-dev-haskell/binary 0.8.7.0 0.8.8.0: Binary serialisation for Haskell values using lazy ByteStrings
+dev-haskell/binary 0.8.7.0 0.8.8.0 0.8.9.0: Binary serialisation for Haskell values using lazy ByteStrings
 dev-haskell/binary-communicator 1.0.2.2-r1: Flexible way to ease transmission of binary data
 dev-haskell/binary-conduit 1.3.1: data serialization/deserialization conduit library
 dev-haskell/binary-ieee754 0.1.0.0: Backport ieee754 float double combinators to older binary
@@ -1439,7 +1439,7 @@ dev-haskell/pantry 0.5.2.3 0.5.4: Content addressable Haskell package management
 dev-haskell/parallel 3.2.2.0: Parallel programming library
 dev-haskell/parallel-io 0.3.5: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.2.0.9: Full-featured command-line argument parsing library
-dev-haskell/parsec 3.1.14.0-r1: Monadic parser combinators
+dev-haskell/parsec 3.1.14.0-r1 3.1.15.0: Monadic parser combinators
 dev-haskell/parsec-extra 0.2.0.0: Some miscellaneous basic string parsers
 dev-haskell/parsec-numbers 0.1.0: Utilities for parsing numbers from strings
 dev-haskell/parsec-permutation 0.1.2.0: Applicative permutation parser for Parsec (replacement for Text.Parsec.Perm)
@@ -1818,7 +1818,7 @@ dev-haskell/statvfs 0.2: Get unix filesystem statistics with statfs, statvfs
 dev-haskell/stb-image-redux 0.2.1.0-r1: Image loading and writing microlibrary
 dev-haskell/stemmer 0.5.2: Haskell bindings to the Snowball stemming library
 dev-haskell/stickykeyshotkey 0.1.0.2-r1: get and set STICKYKEYS.SKF_HOTKEYACTIVE
-dev-haskell/stm 2.5.0.0 2.5.0.1: Software Transactional Memory
+dev-haskell/stm 2.5.0.0 2.5.0.1 2.5.0.2: Software Transactional Memory
 dev-haskell/stm-chans 3.0.0.4: Additional types of channels for STM
 dev-haskell/stm-conduit 4.0.1: Introduces conduits to channels, and promotes using conduits concurrently
 dev-haskell/stm-containers 1.2: Containers for STM
@@ -2238,7 +2238,7 @@ dev-lang/elm 0.19.1: Meta package for Elm
 dev-lang/elm-compiler 0.19.1-r1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
 dev-lang/fay 0.24.2.0-r1: A compiler for Fay, a Haskell subset that compiles to JavaScript
-dev-lang/ghc 8.8.4-r1 8.10.5-r1 8.10.6 8.10.7 9.0.1-r1 9.0.2-r1 9999: The Glasgow Haskell Compiler
+dev-lang/ghc 8.8.4-r1 8.10.5-r1 8.10.6 8.10.7 9.0.1-r1 9.0.2-r1 9.2.4 9999: The Glasgow Haskell Compiler
 dev-lang/hugs98 2006.9-r2: The Hugs98 Haskell interpreter
 dev-lang/idris 1.3.4: Functional Programming Language with Dependent Types
 dev-lang/ott 0.31: Ott is a tool for writing definitions of programming languages and calculi.
