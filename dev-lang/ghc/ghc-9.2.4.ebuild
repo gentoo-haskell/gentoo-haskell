@@ -504,8 +504,8 @@ src_prepare() {
 
 		cd "${S}" # otherwise eapply will break
 
-		eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
-		eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
+		#eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
+		#eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
 
 		# Incompatible with ghc-9.0.2-modorigin-semigroup.patch
 		# Below patch should not be needed by ghc-9.2
@@ -520,7 +520,7 @@ src_prepare() {
 		#eapply "${FILESDIR}/${PN}-9.0.2-modorigin-semigroup.patch"
 
 		# Needed for testing with python-3.10
-		use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
+		#use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
 
 		#needs a port?
 		#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
