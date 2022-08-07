@@ -135,7 +135,7 @@ dev-haskell/gnuplot:executepipe - Avoid a temporary script by running with runIn
 dev-haskell/gnuplot:executeshell - Avoid a temporary script by calling via a UNIX shell and its piping syntax.
 dev-haskell/graphscc:use-maps - Use IntMap instead of mutable arrays.
 dev-haskell/gtk:deprecated - Include definitions in this library that are considered obsolete.
-dev-haskell/gtk:fmode-binary - Set the default file translation mode for file I/O operations to _O_BINARY.
+dev-haskell/gtk:fmode-binary - Set the default file translation mode for file I/O operations to _O_BINARY. Some GTK libraries open image files without specifing binary mode. If you have trouble loading gtk in ghci, then it may help to turn this option off.
 dev-haskell/gtk:gio - Depend on GIO package, thereby enabling certain features.
 dev-haskell/gtk2hs-buildtools:closuresignals - Use the the GClosure-based signals implementation.
 dev-haskell/gtk3:fmode-binary - Set the default file translation mode for file I/O operations to _O_BINARY.
