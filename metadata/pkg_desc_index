@@ -691,7 +691,7 @@ dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with differ
 dev-haskell/ghc-heap-view 0.6.2: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.10.7.20210828 9.0.2.20211226: The GHC API, decoupled from GHC versions
 dev-haskell/ghc-lib-parser 8.10.7.20210828 9.0.2.20211226 9.2.3.20220527 9.2.4.20220729: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser-ex 8.10.0.23 9.0.0.6 9.2.1.0 9.2.1.1: Algorithms on GHC parse trees
+dev-haskell/ghc-lib-parser-ex 8.10.0.23 9.0.0.6 9.2.0.4 9.2.1.0 9.2.1.1: Algorithms on GHC parse trees
 dev-haskell/ghc-parser 0.2.3.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.12-r3: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.9: Library for parsing GHC time and allocation profiling reports
@@ -1454,7 +1454,7 @@ dev-haskell/partial-handler 1.0.3: A composable exception handler
 dev-haskell/password 3.0.0.0: Hashing and checking of passwords
 dev-haskell/password-types 1.0.0.0: Types for handling passwords
 dev-haskell/patch 0.0.5.2: Data structures for describing changes to other data structures
-dev-haskell/path 0.9.2: Support for well-typed paths
+dev-haskell/path 0.9.2-r1: Support for well-typed paths
 dev-haskell/path-extra 0.2.0: Chris Done's path library, enriched with URL-related goodies
 dev-haskell/path-io 1.6.3: Interface to 'directory' package for users of 'path'
 dev-haskell/path-pieces 0.2.1: Components of paths
@@ -1709,7 +1709,7 @@ dev-haskell/securemem 0.1.10: abstraction to an auto scrubbing and const time eq
 dev-haskell/selective 0.5: Selective applicative functors
 dev-haskell/semialign 1.2.0.1: Align and Zip type-classes from the common Semialign ancestor
 dev-haskell/semigroupoid-extras 5: Semigroupoids that depend on PolyKinds
-dev-haskell/semigroupoids 5.3.7: Semigroupoids: Category sans id
+dev-haskell/semigroupoids 5.3.7-r1: Semigroupoids: Category sans id
 dev-haskell/semigroups 0.20: Anything that associates
 dev-haskell/semirings 0.6-r1: two monoids as one, in holy haskimony
 dev-haskell/semver 0.3.4: Representation, manipulation, and de/serialisation of Semantic Versions
