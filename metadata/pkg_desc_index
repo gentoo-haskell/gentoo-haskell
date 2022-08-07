@@ -690,8 +690,8 @@ dev-haskell/ghc-exactprint 0.6.4: ExactPrint for GHC
 dev-haskell/ghc-gc-tune 0.3.2: Graph performance of Haskell programs with different GC flags
 dev-haskell/ghc-heap-view 0.6.2: Extract the heap representation of Haskell values and thunks
 dev-haskell/ghc-lib 8.10.7.20210828 9.0.2.20211226: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser 8.10.7.20210828 9.0.2.20211226 9.2.4.20220729: The GHC API, decoupled from GHC versions
-dev-haskell/ghc-lib-parser-ex 8.10.0.23 9.0.0.6 9.2.1.1: Algorithms on GHC parse trees
+dev-haskell/ghc-lib-parser 8.10.7.20210828 9.0.2.20211226 9.2.3.20220527 9.2.4.20220729: The GHC API, decoupled from GHC versions
+dev-haskell/ghc-lib-parser-ex 8.10.0.23 9.0.0.6 9.2.1.0 9.2.1.1: Algorithms on GHC parse trees
 dev-haskell/ghc-parser 0.2.3.0: Haskell source parser from GHC
 dev-haskell/ghc-paths 0.1.0.12-r3: Knowledge of GHC's installation directories
 dev-haskell/ghc-prof 1.4.1.9: Library for parsing GHC time and allocation profiling reports
@@ -729,7 +729,7 @@ dev-haskell/gi-gtk-hs 0.3.12: A wrapper for gi-gtk, adding a few more idiomatic 
 dev-haskell/gi-gtksource 3.0.25: GtkSource bindings
 dev-haskell/gi-harfbuzz 0.0.6: HarfBuzz bindings
 dev-haskell/gi-javascriptcore 4.0.24: JavaScriptCore bindings
-dev-haskell/gi-pango 1.0.25: Pango bindings
+dev-haskell/gi-pango 1.0.26: Pango bindings
 dev-haskell/gi-soup 2.4.25: Libsoup bindings
 dev-haskell/gi-vte 2.91.29: Vte bindings
 dev-haskell/gi-webkit2 4.0.28: WebKit2 bindings
