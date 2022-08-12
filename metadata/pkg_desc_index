@@ -1437,7 +1437,7 @@ dev-haskell/pandoc-stylefrommeta 0.2.3.0: Pandoc filter to customize links, imag
 dev-haskell/pandoc-types 1.22.2: Types for representing a structured document
 dev-haskell/pango 0.13.8.1-r1: Binding to the Pango text rendering engine
 dev-haskell/panic 0.4.0.1: A convenient way to panic
-dev-haskell/pantry 0.5.2.3 0.5.4: Content addressable Haskell package management
+dev-haskell/pantry 0.5.6: Content addressable Haskell package management
 dev-haskell/parallel 3.2.2.0: Parallel programming library
 dev-haskell/parallel-io 0.3.5: Combinators for executing IO actions in parallel on a thread pool
 dev-haskell/parseargs 0.2.0.9: Full-featured command-line argument parsing library
@@ -1470,7 +1470,7 @@ dev-haskell/pdfinfo 1.5.4: Wrapper around the pdfinfo command
 dev-haskell/pem 0.2.4: Privacy Enhanced Mail (PEM) format reader and writer
 dev-haskell/persistable-record 0.6.0.4: Binding between SQL database values and haskell records
 dev-haskell/persistable-types-hdbc-pg 0.0.3.5: HDBC and Relational-Record instances of PostgreSQL extended types
-dev-haskell/persistent 2.14.0.3: Type-safe, multi-backend data serialization
+dev-haskell/persistent 2.13.3.5 2.14.0.3: Type-safe, multi-backend data serialization
 dev-haskell/persistent-instances-iproute 0.1.0.1-r1: Persistent instances for types in iproute
 dev-haskell/persistent-mongodb 2.13.0.1: Backend for the persistent library using mongoDB
 dev-haskell/persistent-mysql 2.13.1.3: Backend for the persistent library using MySQL database server
@@ -1481,7 +1481,7 @@ dev-haskell/persistent-redis 2.13.0.1: Backend for persistent library using Redi
 dev-haskell/persistent-relational-record 0.3.0: relational-record on persisten backends
 dev-haskell/persistent-sqlite 2.13.1.0: Backend for the persistent library using sqlite3
 dev-haskell/persistent-template 2.12.0.0: Type-safe, non-relational, multi-backend persistence
-dev-haskell/persistent-test 2.13.1.3: Tests for Persistent
+dev-haskell/persistent-test 2.13.1.2 2.13.1.3: Tests for Persistent
 dev-haskell/pgm 0.1.4-r1: Pure Haskell implementation of PGM image format
 dev-haskell/pgp-wordlist 0.1.0.3: Translate between binary data and a human-readable collection of words
 dev-haskell/picedit 0.2.3.0-r3: simple image manipulation functions
@@ -1808,7 +1808,7 @@ dev-haskell/sqlite-simple-errors 0.6.1.0: Light wrapper around errors from sqlit
 dev-haskell/sr-extra 1.88: Module limbo
 dev-haskell/srcloc 0.5.1.2: Data types for managing source code locations
 dev-haskell/ssh-known-hosts 0.2.0.0: Read and interpret the SSH known-hosts file
-dev-haskell/stack 2.7.3 2.7.4_pre20220125 2.7.6_pre20220421 9.9.9: The Haskell Tool Stack
+dev-haskell/stack 2.7.4_pre20220125 2.7.6_pre20220812 9.9.9: The Haskell Tool Stack
 dev-haskell/stack-bin 2.3.1 2.5.1: The Haskell Tool Stack (Binary)
 dev-haskell/stateref 0.3: Abstraction for things that work like IORef
 dev-haskell/statestack 0.2.0.5-r1 0.3: Simple State-like monad transformer with saveable and restorable state

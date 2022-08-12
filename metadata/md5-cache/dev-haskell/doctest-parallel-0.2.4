@@ -1,16 +1,16 @@
 BDEPEND=app-text/dos2unix
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=>=dev-haskell/base-compat-0.7.0:=[profile?] >=dev-haskell/cabal-3.4:=[profile?] <dev-haskell/cabal-3.9:=[profile?] >=dev-haskell/code-page-0.1:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/ghc-paths-0.1.0.9:=[profile?] dev-haskell/glob:=[profile?] >=dev-haskell/random-1.2:=[profile?] >=dev-haskell/syb-0.3:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.2:=[profile?] <dev-lang/ghc-9.5:=[profile?] >=dev-lang/ghc-8.10.1:= >=dev-haskell/cabal-3.2.0.0 test? ( >=dev-haskell/hspec-2.3.0 >=dev-haskell/hspec-core-2.3.0 dev-haskell/hspec-discover dev-haskell/hunit dev-haskell/mockery >=dev-haskell/quickcheck-2.13.1 dev-haskell/setenv >=dev-haskell/silently-1.2.4 >=dev-haskell/stringbuilder-0.4 ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/base-compat-0.7.0:=[profile?] >=dev-haskell/cabal-3.4:=[profile?] >=dev-haskell/code-page-0.1:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/ghc-paths-0.1.0.9:=[profile?] dev-haskell/glob:=[profile?] >=dev-haskell/random-1.2:=[profile?] >=dev-haskell/syb-0.3:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.10.1:= >=dev-haskell/cabal-3.2.0.0 hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Test interactive Haskell examples
 EAPI=8
 HOMEPAGE=https://github.com/martijnbastiaan/doctest-parallel#readme
 INHERIT=haskell-cabal
-IUSE=doc hscolour hoogle profile test
+IUSE=doc hscolour hoogle profile
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
-RDEPEND=>=dev-haskell/base-compat-0.7.0:=[profile?] >=dev-haskell/cabal-3.4:=[profile?] <dev-haskell/cabal-3.9:=[profile?] >=dev-haskell/code-page-0.1:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/ghc-paths-0.1.0.9:=[profile?] dev-haskell/glob:=[profile?] >=dev-haskell/random-1.2:=[profile?] >=dev-haskell/syb-0.3:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.2:=[profile?] <dev-lang/ghc-9.5:=[profile?] >=dev-lang/ghc-8.10.1:=
-RESTRICT=test !test? ( test )
+RDEPEND=>=dev-haskell/base-compat-0.7.0:=[profile?] >=dev-haskell/cabal-3.4:=[profile?] >=dev-haskell/code-page-0.1:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/ghc-paths-0.1.0.9:=[profile?] dev-haskell/glob:=[profile?] >=dev-haskell/random-1.2:=[profile?] >=dev-haskell/syb-0.3:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.10.1:=
+RESTRICT=test
 SLOT=0/0.2.4
 SRC_URI=https://hackage.haskell.org/package/doctest-parallel-0.2.4/doctest-parallel-0.2.4.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
-_md5_=7e781bbf8fa6498a3a12e8f96b581333
+_md5_=5d4acd46137a052b77e968d973c37b8c
