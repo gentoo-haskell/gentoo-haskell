@@ -1,3 +1,8 @@
+# hololeap <hololeap@protonmail.com> (2022-08-12)
+# dev-haskell/stack currently requires <dev-haskell/persistent-2.14
+>=dev-haskell/persistent-2.14
+>=dev-haskell/persistent-test-2.13.1.3
+
 # Jack Todaro <solpeth@posteo.org> (2022-07-31)
 # Requires porting to newer dependencies. Has no reverse
 # dependencies, so mask for removal in 30 days.
