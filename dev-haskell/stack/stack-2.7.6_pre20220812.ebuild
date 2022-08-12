@@ -16,7 +16,7 @@ HOMEPAGE="https://haskellstack.org"
 # Current released version (2.7.5) has issues with Cabal-3.4,
 # use latest upstream HEAD which has fixes.
 REPO_URI="https://github.com/commercialhaskell/stack"
-COMMIT="dcf7bb31815c7505e809a1707909832e02614501"
+COMMIT="70091c27ed0d21a72237d8223e574d3ad5a42969"
 BRANCH="master"
 SRC_URI="${REPO_URI}/archive/${COMMIT}.tar.gz -> ${PN}-${COMMIT}.tar.gz"
 S="${WORKDIR}/${PN}-${COMMIT}"
@@ -68,10 +68,10 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/open-browser:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.3.0:=[profile?]
 	dev-haskell/optparse-simple:=[profile?]
-	>=dev-haskell/pantry-0.5.3:=[profile?]
+	>=dev-haskell/pantry-0.5.6:=[profile?]
 	dev-haskell/path:=[profile?]
 	dev-haskell/path-io:=[profile?]
-	dev-haskell/persistent:=[profile?]
+	<dev-haskell/persistent-2.14:=[profile?]
 	dev-haskell/persistent-sqlite:=[profile?]
 	dev-haskell/persistent-template:=[profile?]
 	dev-haskell/primitive:=[profile?]
