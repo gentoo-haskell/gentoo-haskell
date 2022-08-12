@@ -17,6 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-1.4.0.0-aeson-2-tests.patch"
+)
+
 RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?]
 	dev-haskell/async:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
@@ -38,6 +42,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0
 	test? (
+		>=dev-haskell/aeson-2.0.3.0
 		dev-haskell/hspec
 		dev-haskell/quickcheck
 		dev-haskell/quickcheck-instances
