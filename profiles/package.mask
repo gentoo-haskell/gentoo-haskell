@@ -1,3 +1,9 @@
+# hololeap <hololeap@protonmail.com>
+# doctest-parallel does not currently work with Setup.hs (used internally by
+# haskell-cabal.eclass)
+# See: <https://github.com/martijnbastiaan/doctest-parallel/issues/45>
+dev-haskell/doctest-parallel
+
 # hololeap <hololeap@protonmail.com> (2022-08-12)
 # dev-haskell/stack currently requires <dev-haskell/persistent-2.14
 >=dev-haskell/persistent-2.14
