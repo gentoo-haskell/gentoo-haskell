@@ -51,7 +51,7 @@ find_prog() {
 : ${cabal_prog:=cabal}
 : ${hackport_prog:=hackport}
 : ${ebuild_prog:=ebuild}
-: ${repoman_prog:=repoman}
+: ${pkgdev_prog:=pkgdev}
 
 get_latest() {
     local pn=$1
@@ -85,7 +85,7 @@ done
 find_prog cabal_prog
 find_prog hackport_prog
 find_prog ebuild_prog
-find_prog repoman_prog
+find_prog pkgdev_prog
 
 if [[ ${autoversion} = yes ]]
   then
@@ -114,7 +114,7 @@ done
 c=$(basename "$(dirname "$(pwd)")")
 
 run git add --all .
-run $repoman_prog commit -m "${c}/${pn}: bump up to ${pv}"
+run $pkgdev_prog commit --signoff -m "${c}/${pn}: bump up to ${pv}"
 run git show -C -M -D
 echo "Cleaning in the background"
 run $ebuild_prog "${current_e}" clean >/dev/null 2>&1 &
