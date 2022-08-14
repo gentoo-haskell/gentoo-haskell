@@ -6,7 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="bundled-c-zlib">Use the bundled zlib C sources. Requires pkg-config to be False. For windows, this is the default.</flag>
-		<flag name="non-blocking-ffi">The (de)compression calls can sometimes take a long time, which prevents other Haskell threads running. Enabling this flag avoids this unfairness, but with greater overall cost.</flag>
+		<flag name="bundled-c-zlib">Use the bundled zlib C sources. Requires pkg-config to be False.
+For windows, this is the default.</flag>
+		<flag name="non-blocking-ffi">The (de)compression calls can sometimes take a long time, which
+prevents other Haskell threads running. Enabling this flag
+avoids this unfairness, but with greater overall cost.</flag>
 	</use>
 </pkgmetadata>
