@@ -25,8 +25,9 @@ RDEPEND=">=dev-haskell/regex-base-0.94:=[profile?] <dev-haskell/regex-base-0.95:
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( >=dev-haskell/doctest-parallel-0.2.2
-		>=dev-haskell/utf8-string-1.0.1 <dev-haskell/utf8-string-1.1 )
+	test? (
+		>=dev-haskell/utf8-string-1.0.1 <dev-haskell/utf8-string-1.1
+	)
 "
 
 src_configure() {
