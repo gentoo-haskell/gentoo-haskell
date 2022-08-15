@@ -10,7 +10,6 @@ inherit haskell-cabal
 
 DESCRIPTION="Utilities to make Data.Time.* easier to use"
 HOMEPAGE="https://github.com/stackbuilders/datetime"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
@@ -28,6 +27,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-hunit
 		dev-haskell/test-framework-quickcheck2 )
 "
+
+PATCHES=( "${FILESDIR}/${PN}-0.3.1-remove-obsolete-parseTime.patch" )
 
 src_prepare() {
 	default

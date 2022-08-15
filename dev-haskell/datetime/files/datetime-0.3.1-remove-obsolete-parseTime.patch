@@ -1,0 +1,37 @@
+From 0bbaebf3d0142649ba0923ec58af2851cd5a8722 Mon Sep 17 00:00:00 2001
+From: Sergey Alirzaev <zl29ah@gmail.com>
+Date: Mon, 31 May 2021 18:48:11 +0300
+Subject: [PATCH] Stop relying on obsolete parseTime function
+
+fixes https://github.com/stackbuilders/datetime/issues/12
+---
+ datetime.cabal       | 2 +-
+ src/Data/DateTime.hs | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/datetime.cabal b/datetime.cabal
+index 169f3b6..6b993c7 100644
+--- a/datetime.cabal
++++ b/datetime.cabal
+@@ -23,7 +23,7 @@ library
+   build-depends:     base < 5,
+                      old-locale >= 1.0.0.1,
+                      old-time >= 1.0.0.1,
+-                     time >= 1.1.2.2
++                     time >= 1.5
+   default-extensions:       CPP
+   exposed-modules:   Data.DateTime
+   hs-source-dirs:    src
+diff --git a/src/Data/DateTime.hs b/src/Data/DateTime.hs
+index d587f50..bab5379 100644
+--- a/src/Data/DateTime.hs
++++ b/src/Data/DateTime.hs
+@@ -116,7 +116,7 @@ formatDateTime :: String -> DateTime -> String
+ formatDateTime = formatTime defaultTimeLocale
+ 
+ parseDateTime :: String -> String -> Maybe DateTime
+-parseDateTime = parseTime defaultTimeLocale
++parseDateTime = parseTimeM True defaultTimeLocale
+ 
+ sqlFormat :: String
+ sqlFormat = iso8601DateFormat (Just "%T")
