@@ -48,7 +48,8 @@ src_prepare() {
 	cabal_chdeps \
 		'base       >= 4.8      && < 4.15' 'base       >= 4.8' \
 		'hashable   >= 1.0      && < 1.4' 'hashable   >= 1.0' \
-		'HTTP       >= 4000.1.5 && < 4000.4' 'HTTP       >= 4000.1.5'
+		'HTTP       >= 4000.1.5 && < 4000.4' 'HTTP       >= 4000.1.5' \
+		'time       >= 1.5.0.1  && < 1.11' 'time       >= 1.5.0.1'
 
 	# no chance to link to -threaded on ppc64, alpha and others
 	# who use UNREG, not only ARM
