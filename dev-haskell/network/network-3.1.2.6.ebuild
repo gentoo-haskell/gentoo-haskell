@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="devel"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=
@@ -26,6 +26,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/temporary )
 "
+
+PATCHES=(
+	"${FILESDIR}"/"${P}-size_t.patch"
+)
 
 src_configure() {
 	haskell-cabal_src_configure \
