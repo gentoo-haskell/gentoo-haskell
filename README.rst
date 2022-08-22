@@ -42,7 +42,7 @@ or we can use the layman method::
 Finally, we need to unmask the overlay (this does not apply if your system
 is already running on the ~testing branch)::
     # Unmask ~testing versions for your arch:
-    echo "*/*::haskell ~$(portageq envvar ARCH)" >> /etc/portage/package.accept_keywords
+    echo "*/*::haskell" >> /etc/portage/package.accept_keywords
 
 And here is the trick to speed up metadata resolution a bit.
 If you happen to use ``eix-sync`` for rsyncs you might
