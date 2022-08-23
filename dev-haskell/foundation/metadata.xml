@@ -8,4 +8,8 @@
 	<use>
 		<flag name="experimental">Enable building experimental features, known as highly unstable or without good support cross-platform</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">foundation</remote-id>
+		<remote-id type="github">haskell-foundation/foundation</remote-id>
+	</upstream>
 </pkgmetadata>
