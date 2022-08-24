@@ -1,16 +1,16 @@
 BDEPEND=app-text/dos2unix
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
-DEPEND=>=dev-haskell/vector-0.6:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-3.0 test? ( dev-haskell/tasty dev-haskell/tasty-quickcheck ) hscolour? ( dev-haskell/hscolour )
+DEPEND=>=dev-haskell/vector-0.6:=[profile?] <dev-haskell/vector-0.14:=[profile?] >=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-3.0 test? ( dev-haskell/tasty dev-haskell/tasty-quickcheck ) hscolour? ( dev-haskell/hscolour )
 DESCRIPTION=Instances of Data.Binary for vector
-EAPI=7
+EAPI=8
 HOMEPAGE=https://github.com/bos/vector-binary-instances
 INHERIT=haskell-cabal
 IUSE=doc hscolour hoogle profile test
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
-RDEPEND=>=dev-haskell/vector-0.6:=[profile?] <dev-haskell/vector-0.13:=[profile?] >=dev-lang/ghc-8.4.3:=
+RDEPEND=>=dev-haskell/vector-0.6:=[profile?] <dev-haskell/vector-0.14:=[profile?] >=dev-lang/ghc-8.4.3:=
 RESTRICT=!test? ( test )
 SLOT=0/0.2.5.2
-SRC_URI=https://hackage.haskell.org/package/vector-binary-instances-0.2.5.2/vector-binary-instances-0.2.5.2.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
-_md5_=e06618511e9315c04a4106de3c008d85
+SRC_URI=https://hackage.haskell.org/package/vector-binary-instances-0.2.5.2/vector-binary-instances-0.2.5.2.tar.gz https://hackage.haskell.org/package/vector-binary-instances-0.2.5.2/revision/2.cabal -> vector-binary-instances-0.2.5.2-rev2.cabal
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
+_md5_=390a325e2654a13f950b046d22e0ee05

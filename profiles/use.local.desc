@@ -219,6 +219,7 @@ dev-haskell/json:mapdict - Encode Haskell maps as JSON dicts
 dev-haskell/json:parsec - Add support for parsing with Parsec.
 dev-haskell/json:pretty - Add support for using pretty printing combinators.
 dev-haskell/judy:unsafe - Compile the library without locks. Code may be faster, but not threadsafe.
+dev-haskell/juicypixels:mmap - Enable the file loading via mmap (memory map)
 dev-haskell/juicypixels-extra:dev - Turn on development settings.
 dev-haskell/jupyter:examples - Build example Jupyter kernel executables
 dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes

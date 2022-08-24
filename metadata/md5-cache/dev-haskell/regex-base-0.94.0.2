@@ -1,16 +1,15 @@
 BDEPEND=app-text/dos2unix
 DEFINED_PHASES=compile configure install postinst postrm prepare setup test
 DEPEND=>=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
-DESCRIPTION=Ed25519 cryptographic signatures
+DESCRIPTION=Common "Text.Regex.*" API for Regex matching
 EAPI=8
-HOMEPAGE=https://thoughtpolice.github.com/hs-ed25519
+HOMEPAGE=https://wiki.haskell.org/Regular_expressions
 INHERIT=haskell-cabal
 IUSE=doc hscolour hoogle profile
-KEYWORDS=~amd64 ~x86
-LICENSE=MIT
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-solaris
+LICENSE=BSD
 RDEPEND=>=dev-lang/ghc-8.4.3:=
-RESTRICT=test
-SLOT=0/0.0.5.0
-SRC_URI=https://hackage.haskell.org/package/ed25519-0.0.5.0/ed25519-0.0.5.0.tar.gz https://hackage.haskell.org/package/ed25519-0.0.5.0/revision/5.cabal -> ed25519-0.0.5.0-rev5.cabal
+SLOT=0/0.94.0.2
+SRC_URI=https://hackage.haskell.org/package/regex-base-0.94.0.2/regex-base-0.94.0.2.tar.gz https://hackage.haskell.org/package/regex-base-0.94.0.2/revision/1.cabal -> regex-base-0.94.0.2-rev1.cabal
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
-_md5_=f8384052df75703a2e39baead172bda9
+_md5_=787e1e42fca4409c2fd0c95f0f3460a5
