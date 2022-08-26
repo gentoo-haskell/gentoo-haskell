@@ -47,4 +47,6 @@ pkg_postinst() {
 		elog "The executable installed with this package (normally named 'refactor')"
 		elog "has been renamed to 'apply-refactor' to help prevent name collisions."
 	fi
+
+	haskell-cabal_pkg_postinst
 }
