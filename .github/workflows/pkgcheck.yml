@@ -15,8 +15,3 @@ jobs:
 
     - name: Run pkgcheck
       uses: pkgcore/pkgcheck-action@v1
-      with:
-        # NonSolvableDepsInXXX is a false positive. This is fixed in
-        # https://github.com/pkgcore/pkgcheck/issues/281 , and we can remove this
-        # keyword flag once the next pkgcheck release hits
-        args: --checks=-RedundantVersionCheck --keywords=-NonsolvableDepsInDev,-NonsolvableDepsInStable,-NonsolvableDepsInExp
