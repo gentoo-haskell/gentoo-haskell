@@ -547,10 +547,6 @@ dev-haskell/purescript-ast
 dev-haskell/purescript-cst
 dev-lang/purescript
 
-# hololeap <hololeap@protonmail.com> (2022-01-23)
-# Needs update to build with >=ghc-lib-parser-9.0
-dev-haskell/hls-stylish-haskell-plugin
-
 # hololeap <hololeap@protonmail.com> (2022-01-21)
 # Needs extensive patching in order to build on ghc-9.0.2
 dev-util/hdocs
