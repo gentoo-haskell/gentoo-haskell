@@ -10,4 +10,8 @@
 		<flag name="executable">Build the ghcide executable</flag>
 		<flag name="test-exe">Build the ghcide-test-preprocessor executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">ghcide</remote-id>
+		<remote-id type="github">haskell/haskell-language-server</remote-id>
+	</upstream>
 </pkgmetadata>
