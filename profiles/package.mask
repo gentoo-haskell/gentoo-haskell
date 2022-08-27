@@ -2,6 +2,12 @@
 # Depends on 404'd patch. Mask for removal in 30 days.
 dev-haskell/edisoncore
 
+# hololeap <hololeap@protonmail.com> (2022-08-27)
+# hls-selection-range-plugin has been renamed to hls-code-range-plugin
+# upstream. Removal in 30 days.
+# See: <https://github.com/haskell/haskell-language-server/pull/3003>
+dev-haskell/hls-selection-range-plugin
+
 # hololeap <hololeap@protonmail.com> (2022-08-15)
 # This unmasks the packages masked in ::gentoo, as the mask there also covers
 # packages in the ::haskell overlay.
