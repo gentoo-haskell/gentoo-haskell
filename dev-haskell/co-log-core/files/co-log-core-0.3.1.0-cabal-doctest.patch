@@ -1,0 +1,103 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best current workaround is to migrate to cabal-doctest.
+
+diff -urN co-log-core-0.3.1.0/Setup.hs co-log-core-0.3.1.0-r1/Setup.hs
+--- co-log-core-0.3.1.0/Setup.hs	1969-12-31 17:00:00.000000000 -0700
++++ co-log-core-0.3.1.0-r1/Setup.hs	2022-08-26 19:44:04.548763014 -0600
+@@ -0,0 +1,6 @@
++module Main (main) where
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "doctest"
+diff -urN co-log-core-0.3.1.0/co-log-core.cabal co-log-core-0.3.1.0-r1/co-log-core.cabal
+--- co-log-core-0.3.1.0/co-log-core.cabal	2022-08-26 19:39:29.018762880 -0600
++++ co-log-core-0.3.1.0-r1/co-log-core.cabal	2022-08-26 19:46:07.408763074 -0600
+@@ -21,6 +21,9 @@
+     * [co-log-polysemy](http://hackage.haskell.org/package/co-log-polysemy): extensible
+       effects implementation based on @polysemy@.
+ 
++ extra-source-files:  README.md
++ cabal-version:       >=1.10
++
+ homepage:            https://github.com/co-log/co-log-core
+ bug-reports:         https://github.com/co-log/co-log-core/issues
+ license:             MPL-2.0
+@@ -29,7 +32,7 @@
+ maintainer:          Kowainik <xrom.xkov@gmail.com>
+ copyright:           2018-2020 Kowainik, 2021-2022 Co-Log
+ category:            Logging, Contravariant, Comonad
+-build-type:          Simple
++build-type:          Custom
+ stability:           stable
+ extra-doc-files:     CHANGELOG.md
+                      README.md
+@@ -45,6 +48,12 @@
+   type:                git
+   location:            https://github.com/co-log/co-log-core.git
+ 
++custom-setup
++  setup-depends:
++      base
++    , Cabal
++    , cabal-doctest
++
+ common common-options
+   build-depends:       base >= 4.10.1.0 && < 4.17
+ 
+@@ -100,5 +109,9 @@
+   type:                 exitcode-stdio-1.0
+   hs-source-dirs:       test
+   main-is:              Doctests.hs
+-  build-depends:        doctest >= 0.16.0 && < 0.19
++  build-depends:        doctest >= 0.16.0
+                       , Glob ^>= 0.10.0
++                      , directory
++                      , filepath
++                      , base-compat
++                      , cabal-doctest
+diff -urN co-log-core-0.3.1.0/test/Doctests.hs co-log-core-0.3.1.0-r1/test/Doctests.hs
+--- co-log-core-0.3.1.0/test/Doctests.hs	2001-09-08 19:46:40.000000000 -0600
++++ co-log-core-0.3.1.0-r1/test/Doctests.hs	2022-08-26 19:43:31.718762998 -0600
+@@ -4,13 +4,30 @@
+ 
+ import System.FilePath.Glob (glob)
+ import Test.DocTest (doctest)
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.Directory (getCurrentDirectory, makeAbsolute)
++import System.FilePath.Posix ((</>))
++import System.IO (utf8)
++import Build_doctests (pkgs)
+ 
+ main :: IO ()
+ main = do
+     sourceFiles <- glob "src/**/*.hs"
+-    doctest
+-        $ "-XDerivingStrategies"
+-        : "-XInstanceSigs"
+-        : "-XScopedTypeVariables"
+-        : "-XViewPatterns"
+-        : sourceFiles
++    let ghcExtensions =
++            [ "-XDerivingStrategies"
++            , "-XInstanceSigs"
++            , "-XScopedTypeVariables"
++            , "-XViewPatterns"
++            ]
++
++    setLocaleEncoding utf8
++    pwd    <- getCurrentDirectory
++    prefix <- makeAbsolute pwd
++    let customFlags =
++            [ "-package-env=-"
++            , "-hide-all-packages"
++            , "-no-user-package-db"
++            , "-package-db=" ++ prefix </> "dist/package.conf.inplace"
++            ]
++
++    doctest $ customFlags ++ pkgs ++ sourceFiles ++ ghcExtensions
