@@ -8,4 +8,7 @@
 	<use>
 		<flag name="package-abis">record package abis at compile time for improved precision (requires compile-time TH)</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">ghc-check</remote-id>
+	</upstream>
 </pkgmetadata>
