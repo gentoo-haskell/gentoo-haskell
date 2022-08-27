@@ -8,6 +8,7 @@ app-office/hledger:threaded - Build with support for multithreaded execution
 app-office/hledger-ui:threaded - Build with support for multithreaded execution
 app-office/hledger-web:library-only - Build for use with "yesod devel"
 app-office/hledger-web:threaded - Build with support for multithreaded execution.
+app-portage/hackport:pedantic - Enable -Werror
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
