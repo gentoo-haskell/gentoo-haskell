@@ -87,7 +87,6 @@ dev-haskell/diagrams:rasterific - Enable the Haskell-native Rasterific backend
 dev-haskell/diagrams:svg - Enable the Haskell-native SVG backend
 dev-haskell/diagrams-builder:cairo - install cairo-specific builder tool
 dev-haskell/diagrams-builder:pgf - install PGF-specific builder tool
-dev-haskell/diagrams-builder:postscript - install postscript-specific builder tool
 dev-haskell/diagrams-builder:rasterific - install rasterific-specific builder tool
 dev-haskell/diagrams-builder:svg - install svg-specific builder tool
 dev-haskell/dimensions:unsafeindices - Disable bound checks on Idx and Idxs types.

@@ -469,7 +469,7 @@ dev-haskell/deriving-compat 0.6: Backports of GHC deriving extensions
 dev-haskell/descriptive 0.9.5: Self-describing consumers/parsers; forms, cmd-line args, JSON, etc
 dev-haskell/diagrams 1.4.0.1: Embedded domain-specific language for declarative vector graphics
 dev-haskell/diagrams-builder 0.8.0.5-r3: hint-based build service for the diagrams graphics EDSL
-dev-haskell/diagrams-cairo 1.4.1.1-r1: Cairo backend for diagrams drawing EDSL
+dev-haskell/diagrams-cairo 1.4.2: Cairo backend for diagrams drawing EDSL
 dev-haskell/diagrams-canvas 1.4.1-r2: HTML5 canvas backend for diagrams drawing EDSL
 dev-haskell/diagrams-contrib 1.4.4-r4: Collection of user contributions to diagrams EDSL
 dev-haskell/diagrams-core 1.5.0-r1: Core libraries for diagrams EDSL
@@ -827,7 +827,7 @@ dev-haskell/haskell-names 0.9.9: Name resolution library for Haskell
 dev-haskell/haskell-qrencode 1.0.4: Haskell bindings for libqrencode
 dev-haskell/haskell-src 1.0.3.1: Support for manipulating Haskell source code
 dev-haskell/haskell-src-exts 1.23.1: Manipulating Haskell source: abstract syntax, lexer, parser, and pretty-printer
-dev-haskell/haskell-src-exts-simple 1.21.1.0 1.22.0.0 1.23.0.0: A simplified view on the haskell-src-exts AST
+dev-haskell/haskell-src-exts-simple 1.23.0.0: A simplified view on the haskell-src-exts AST
 dev-haskell/haskell-src-exts-util 0.2.5: Helper functions for working with haskell-src-exts trees
 dev-haskell/haskell-src-meta 0.8.7: Parse source to template-haskell abstract syntax
 dev-haskell/haskellnet 0.5.2-r1: Client support for POP3, SMTP, and IMAP
@@ -938,7 +938,7 @@ dev-haskell/hpath 0.9.2: Support for well-typed paths
 dev-haskell/hpdf 1.5.3: Generation of PDF documents
 dev-haskell/hpp 0.6.4: A Haskell pre-processor
 dev-haskell/hpqtypes 1.9.4.0: Haskell bindings to libpqtypes
-dev-haskell/hprotoc 2.4.13 2.4.17: Parse Google Protocol Buffer specifications
+dev-haskell/hprotoc 2.4.17: Parse Google Protocol Buffer specifications
 dev-haskell/hps 0.15: Haskell Postscript
 dev-haskell/hs-bibutils 6.8.0.0: Haskell bindings to bibutils, the bibliography conversion utilities
 dev-haskell/hs-duktape 1.0.0: Haskell bindings for a very compact embedded ECMAScript (JavaScript) engine
