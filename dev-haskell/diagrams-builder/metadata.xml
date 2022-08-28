@@ -8,8 +8,11 @@
 	<use>
 		<flag name="cairo">install cairo-specific builder tool</flag>
 		<flag name="pgf">install PGF-specific builder tool</flag>
-		<flag name="postscript">install postscript-specific builder tool</flag>
 		<flag name="rasterific">install rasterific-specific builder tool</flag>
 		<flag name="svg">install svg-specific builder tool</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">diagrams-builder</remote-id>
+		<remote-id type="github">diagrams/diagrams-builder</remote-id>
+	</upstream>
 </pkgmetadata>
