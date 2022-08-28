@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A full-featured backend for rendering
-		diagrams using the cairo rendering engine.
-		To get started, see "Diagrams.Backend.Cairo.CmdLine".
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">diagrams-cairo</remote-id>
+		<remote-id type="github">diagrams/diagrams-cairo</remote-id>
+	</upstream>
 </pkgmetadata>
