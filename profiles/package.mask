@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (2022-08-28)
+# Depends on 404'd patch. Mask for removal in 30 days.
+dev-haskell/edisoncore
+
 # hololeap <hololeap@protonmail.com> (2022-08-15)
 # This unmasks the packages masked in ::gentoo, as the mask there also covers
 # packages in the ::haskell overlay.
