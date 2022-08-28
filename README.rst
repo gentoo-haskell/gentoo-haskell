@@ -1,13 +1,10 @@
 Gentoo Haskell project
 **********************
 
-|pkgcheck-badge| |repoman-badge|
+|pkgcheck-badge|
 
 .. |pkgcheck-badge| image:: https://github.com/gentoo-haskell/gentoo-haskell/workflows/pkgcheck/badge.svg
     :target: https://github.com/gentoo-haskell/gentoo-haskell/actions?query=workflow%3Apkgcheck
-
-.. |repoman-badge| image:: https://github.com/gentoo-haskell/gentoo-haskell/workflows/repoman/badge.svg
-    :target: https://github.com/gentoo-haskell/gentoo-haskell/actions?query=workflow%3Arepoman
 
 IRC
 ===
