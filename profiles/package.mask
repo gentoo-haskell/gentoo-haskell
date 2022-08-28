@@ -504,8 +504,6 @@ dev-haskell/pipes-cereal
 dev-haskell/pipes-network
 dev-haskell/pipes-text
 dev-haskell/pipes-zlib
-dev-haskell/diagrams-cairo
-dev-haskell/diagrams-gtk
 dev-haskell/ihaskell-diagrams
 
 # hololeap <hololeap@protonmail.com> (2022-06-03)
