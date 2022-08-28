@@ -1,0 +1,12 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+defaultUserHooks does not exist
+
+diff -urN hprotoc-2.4.17/Setup.hs hprotoc-2.4.17-r1/Setup.hs
+--- hprotoc-2.4.17/Setup.hs	2019-11-24 11:14:14.000000000 -0700
++++ hprotoc-2.4.17-r1/Setup.hs	2022-08-28 17:20:40.968842630 -0600
+@@ -1,2 +1,2 @@
+ import Distribution.Simple
+-main = defaultMainWithHooks defaultUserHooks
++main = defaultMain
