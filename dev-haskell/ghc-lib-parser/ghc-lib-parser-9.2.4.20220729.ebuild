@@ -13,8 +13,7 @@ HOMEPAGE="https://github.com/digital-asset/ghc-lib"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#keep in sync with ghc-9.2
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-lang/ghc-8.10.1:=
 "
