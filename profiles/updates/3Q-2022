@@ -1,2 +1,3 @@
 move dev-haskell/xmonad-screenshot x11-misc/xmonad-screenshot
 move dev-haskell/hls-selection-range-plugin dev-haskell/hls-code-range-plugin
+move dev-util/cabal-fmt dev-haskell/cabal-fmt
