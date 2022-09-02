@@ -16,6 +16,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+CABAL_CHDEPS=(
+	"Cabal     >= 3.0 && < 3.5" "Cabal >= 3.0"
+)
+
 RDEPEND=">=dev-haskell/singletons-3.0:=[profile?] <dev-haskell/singletons-3.1:=[profile?]
 	>=dev-haskell/singletons-th-3.0:=[profile?] <dev-haskell/singletons-th-3.1:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?]
@@ -23,7 +27,7 @@ RDEPEND=">=dev-haskell/singletons-3.0:=[profile?] <dev-haskell/singletons-3.1:=[
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-3.5
+	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/tasty-1.2
 		>=dev-haskell/tasty-golden-2.2
 		>=dev-haskell/turtle-1.5 )
