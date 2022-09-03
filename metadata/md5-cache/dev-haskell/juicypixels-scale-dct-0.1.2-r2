@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/base-compat-0.6.0:=[profile?] <dev-haskell/base-compat-0.1
 RESTRICT=!test? ( test )
 SLOT=0/0.1.2
 SRC_URI=https://hackage.haskell.org/package/JuicyPixels-scale-dct-0.1.2/JuicyPixels-scale-dct-0.1.2.tar.gz https://hackage.haskell.org/package/JuicyPixels-scale-dct-0.1.2/revision/8.cabal -> JuicyPixels-scale-dct-0.1.2-rev8.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	f8fbdf4c863af3c197ffb9784a81f7a9
 _md5_=44150379193d48af4e1377d2567b5d5e

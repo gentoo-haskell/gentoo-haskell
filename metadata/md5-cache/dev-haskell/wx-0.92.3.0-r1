@@ -11,5 +11,5 @@ LICENSE=wxWinLL-3.1
 RDEPEND=dev-haskell/stm:=[profile?] >=dev-haskell/wxcore-0.92:3.0-gtk3=[profile?] >=dev-lang/ghc-7.6.1:= !!dev-haskell/wx:3.0
 SLOT=3.0-gtk3/0.92.3.0
 SRC_URI=https://hackage.haskell.org/package/wx-0.92.3.0/wx-0.92.3.0.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	a36c0317f18d6198adad9832abc98538
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	f8fbdf4c863af3c197ffb9784a81f7a9
 _md5_=378eddae34caeacdddc30d1529a9ea7c
