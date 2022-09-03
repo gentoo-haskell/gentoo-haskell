@@ -11,19 +11,27 @@ inherit haskell-cabal
 
 DESCRIPTION="a distributed, interactive, smart revision control system"
 HOMEPAGE="http://darcs.net/"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="curl +terminfo +threaded"
 
+CABAL_CHDEPS=(
+	'constraints       >= 0.11 && < 0.13' 'constraints >=0.11'
+	'hashable          >= 1.2.3.3 && < 1.4' 'hashable >=1.2.3.3'
+	'attoparsec        >= 0.13.0.1 && < 0.14' 'attoparsec >=0.13.0.1'
+	'regex-tdfa        >= 1.3.1.0 && < 1.3.2' 'regex-tdfa        >= 1.3.1.0'
+	'cryptonite        >= 0.24 && < 0.30' 'cryptonite >=0.24'
+	'memory            >= 0.14 && < 0.17' 'memory >= 0.14'
+)
+
 RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/attoparsec-0.13.0.1:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.7:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/conduit-1.3.0:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/constraints-0.11:=[profile?]
-	>=dev-haskell/cryptonite-0.24:=[profile?] <dev-haskell/cryptonite-0.30:=[profile?]
+	>=dev-haskell/cryptonite-0.24:=[profile?]
 	>=dev-haskell/data-ordlist-0.4:=[profile?] <dev-haskell/data-ordlist-0.5:=[profile?]
 	>=dev-haskell/fgl-5.5.2.3:=[profile?] <dev-haskell/fgl-5.8:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?]
@@ -31,7 +39,7 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/html-1.0.1.2:=[profile?] <dev-haskell/html-1.1:=[profile?]
 	>=dev-haskell/http-conduit-2.3:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/http-types-0.12.1:=[profile?] <dev-haskell/http-types-0.12.4:=[profile?]
-	>=dev-haskell/memory-0.14:=[profile?] <dev-haskell/memory-0.17:=[profile?]
+	>=dev-haskell/memory-0.14:=[profile?]
 	>=dev-haskell/mmap-0.5.9:=[profile?] <dev-haskell/mmap-0.6:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?] <dev-haskell/network-uri-2.8:=[profile?]
@@ -68,16 +76,6 @@ DEPEND="${RDEPEND}
 		dev-haskell/transformers-base )
 	curl? ( virtual/pkgconfig )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'constraints       >= 0.11 && < 0.13' 'constraints >=0.11' \
-		'hashable          >= 1.2.3.3 && < 1.4' 'hashable >=1.2.3.3' \
-		'attoparsec        >= 0.13.0.1 && < 0.14' 'attoparsec >=0.13.0.1' \
-		'regex-tdfa        >= 1.3.1.0 && < 1.3.2' 'regex-tdfa        >= 1.3.1.0'
-}
 
 src_configure() {
 	haskell-cabal_src_configure \
