@@ -18,15 +18,15 @@ KEYWORDS="~amd64 ~x86"
 IUSE="cpu_flags_x86_aes cpu_flags_x86_rdrand cpu_flags_x86_sse cpu_flags_x86_sse4_1 +integer-gmp +target-attributes"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=
-	virtual/libc
+	>=dev-haskell/memory-0.14.18:=[profile?]
+	>=dev-haskell/basement-0.0.6:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( dev-haskell/memory
-		dev-haskell/tasty
-		dev-haskell/tasty-hunit
-		dev-haskell/tasty-kat
-		dev-haskell/tasty-quickcheck )
+	test? ( dev-haskell/tasty
+			dev-haskell/tasty-hunit
+			dev-haskell/tasty-kat
+			dev-haskell/tasty-quickcheck )
 "
 
 src_prepare() {
