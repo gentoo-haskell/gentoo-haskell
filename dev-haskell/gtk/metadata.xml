@@ -13,4 +13,8 @@ If you have trouble loading gtk in ghci, then it may help to turn this
 option off.</flag>
 		<flag name="gio">Depend on GIO package, thereby enabling certain features.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">gtk</remote-id>
+		<remote-id type="github">gtk2hs/gtk2hs</remote-id>
+	</upstream>
 </pkgmetadata>
