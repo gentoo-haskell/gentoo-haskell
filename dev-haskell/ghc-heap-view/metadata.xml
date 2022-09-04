@@ -8,42 +8,7 @@
 	<use>
 		<flag name="prim-supports-any">The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)</flag>
 	</use>
-	<longdescription>
-		This library provides functions to introspect the Haskell heap, for example
-		to investigate sharing and lazy evaluation.
-		
-		It has been inspired by (and taken code from) the vacuum package and the GHCi
-		debugger, but also allows to investiage thunks and other closures.
-		
-		This package also provides a new GHCi-command, @:printHeap@, which allows you
-		to inspect the current heap representation of a value, including sharing and
-		cyclic references. To enable the command, you need to load the included ghci
-		script or add it to @~/.ghci@, as explained by @cabal install@. Once it is
-		set up, you can do this:
-		
-		&gt;&gt; let value = "A Value"
-		&gt;&gt; let x = (value, if head value == 'A' then value else "", cycle [True, False])
-		&gt;&gt; :printHeap x
-		&gt;let x1 = _bco
-		&gt;    x21 = []
-		&gt;in (x1,_bco,_bco)
-		&gt;&gt; length (take 100 (show x)) `seq` return () -- evaluate everything
-		&gt;&gt; :printHeap x
-		&gt;let x1 = "A Value"
-		&gt;    x16 = True : False : x16
-		&gt;in (x1,x1,x16)
-		
-		You can change the maximum recursion depth using @:setPrintHeapDepth@:
-		
-		&gt;&gt; :setPrintHeapDepth 3
-		&gt;&gt; :printHeap x
-		&gt;let x1 = C# 'A' : ... : ...
-		&gt;in (x1,x1,True : ... : ...)
-		
-		If the view is impaired by blackholes (written @_bh@), running
-		@System.Mem.performGC@ usually helps.
-		
-		The work on this package has been supported by the Deutsche Telekom Stiftung
-		(&lt;http://telekom-stiftung.de&gt;).
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">ghc-heap-view</remote-id>
+	</upstream>
 </pkgmetadata>
