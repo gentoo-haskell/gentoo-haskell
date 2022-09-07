@@ -267,6 +267,10 @@ cabal-version() {
 			# We ask portage, not ghc, so that we only pick up
 			# portage-installed cabal versions.
 			_CABAL_VERSION_CACHE="$(ghc-extract-pm-version dev-haskell/cabal)"
+			# exception for live (9999) version
+			if [[ "${_CABAL_VERSION_CACHE}" == 9999 ]]; then
+				_CABAL_VERSION_CACHE="$(ghc-cabal-version)"
+			fi
 		fi
 	fi
 	echo "${_CABAL_VERSION_CACHE}"
