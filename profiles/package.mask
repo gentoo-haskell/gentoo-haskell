@@ -43,6 +43,9 @@ dev-haskell/edisoncore
 -dev-haskell/filemanip
 -dev-haskell/filepattern
 -dev-haskell/fsnotify
+-dev-haskell/genvalidity
+-dev-haskell/genvalidity-hspec
+-dev-haskell/genvalidity-property
 -dev-haskell/ghc-lib-parser
 -dev-haskell/ghc-lib-parser-ex
 -dev-haskell/githash
@@ -89,6 +92,7 @@ dev-haskell/edisoncore
 -dev-haskell/optparse-simple
 -dev-haskell/pantry
 -dev-haskell/parallel-io
+-dev-haskell/path
 -dev-haskell/path-io
 -dev-haskell/pointed
 -dev-haskell/polyparse
@@ -115,6 +119,7 @@ dev-haskell/edisoncore
 -dev-haskell/th-orphans
 -dev-haskell/th-reify-many
 -dev-haskell/threads
+-dev-haskell/validity
 -dev-haskell/vector-builder
 -dev-haskell/vector-instances
 -dev-haskell/weigh
