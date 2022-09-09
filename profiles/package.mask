@@ -1,3 +1,11 @@
+# hololeap <hololeap@protonmail.com> (2022-09-09)
+# dev-haskell/reflex-vty fails to build, and my attempts to fix it failed.
+# It seems to want a Monoid instance for Attr from the vty package, which
+# doesn't seem to have ever existed.
+# Mask for removal in 30 days.
+dev-haskell/reflex-vty
+dev-haskell/reflex-process
+
 # hololeap <hololeap@protonmail.com> (2022-08-28)
 # Depends on 404'd patch. Mask for removal in 30 days.
 dev-haskell/edisoncore
