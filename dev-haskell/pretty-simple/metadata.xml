@@ -8,4 +8,7 @@
 	<use>
 		<flag name="executable">Build an small command line program that pretty-print anything from stdin.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">pretty-simple</remote-id>
+	</upstream>
 </pkgmetadata>
