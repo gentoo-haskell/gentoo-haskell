@@ -9,7 +9,4 @@
 		<remote-id type="hackage">hackport</remote-id>
 		<remote-id type="github">gentoo-haskell/hackport</remote-id>
 	</upstream>
-	<use>
-		<flag name="pedantic">Enable -Werror</flag>
-	</use>
 </pkgmetadata>

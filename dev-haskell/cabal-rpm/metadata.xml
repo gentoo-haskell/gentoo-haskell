@@ -8,4 +8,8 @@
 	<use>
 		<flag name="curl">Use curl library to query Stackage instead of http-client</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">cabal-rpm</remote-id>
+		<remote-id type="github">juhp/cabal-rpm</remote-id>
+	</upstream>
 </pkgmetadata>

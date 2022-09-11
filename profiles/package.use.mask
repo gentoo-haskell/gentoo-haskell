@@ -2,14 +2,6 @@
 # These flags depend on packages that have been masked
 dev-haskell/zxcvbn-hs tools
 
-# hololeap <hololeap@protonmail.com> (23 Jan 2022)
-# stylish-haskell needs update to build with >=ghc-lib-parser-9.0
-dev-haskell/haskell-language-server hls_formatters_stylish-haskell
-
-# hololeap <hololeap@protonmail.com> (23 Jan 2022)
-# The version of brittany compatible with >=ghc-9.0 requires >=aeson-2
-dev-haskell/haskell-language-server hls_formatters_brittany
-
 # Sergei Trofimovich <slyfox@gentoo.org> (16 Nov 2019)
 # Needs masked dev-haskell/slave-thread
 dev-haskell/hedis test

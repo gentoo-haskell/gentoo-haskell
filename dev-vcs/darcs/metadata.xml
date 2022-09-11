@@ -10,4 +10,7 @@
 		<flag name="terminfo">Use the terminfo package for enhanced console support.</flag>
 		<flag name="threaded">Use threading and SMP support.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">darcs</remote-id>
+	</upstream>
 </pkgmetadata>

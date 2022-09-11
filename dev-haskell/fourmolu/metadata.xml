@@ -9,4 +9,8 @@
 		<flag name="executable">Build the fourmolu executable</flag>
 		<flag name="fixity-th">Parse the default fixity information via Template Haskell</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">fourmolu</remote-id>
+		<remote-id type="github">parsonsmatt/fourmolu</remote-id>
+	</upstream>
 </pkgmetadata>

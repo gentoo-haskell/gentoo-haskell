@@ -1,6 +1,20 @@
+# hololeap <hololeap@protonmail.com> (2022-09-09)
+# dev-haskell/reflex-vty fails to build, and my attempts to fix it failed.
+# It seems to want a Monoid instance for Attr from the vty package, which
+# doesn't seem to have ever existed.
+# Mask for removal in 30 days.
+dev-haskell/reflex-vty
+dev-haskell/reflex-process
+
 # hololeap <hololeap@protonmail.com> (2022-08-28)
 # Depends on 404'd patch. Mask for removal in 30 days.
 dev-haskell/edisoncore
+
+# hololeap <hololeap@protonmail.com> (2022-08-27)
+# hls-selection-range-plugin has been renamed to hls-code-range-plugin
+# upstream. Removal in 30 days.
+# See: <https://github.com/haskell/haskell-language-server/pull/3003>
+dev-haskell/hls-selection-range-plugin
 
 # hololeap <hololeap@protonmail.com> (2022-08-15)
 # This unmasks the packages masked in ::gentoo, as the mask there also covers
@@ -160,11 +174,6 @@ dev-lang/elm
 dev-lang/elm-compiler
 dev-util/codex
 dev-haskell/euterpea
-
-# Paul Jewell <paul@teulu.org> (2022-07-24)
-# Masking these packages pending ghc version bump to 9.2.3
->dev-haskell/fourmolu-0.4.0.0
->dev-haskell/cabal-3.4.1.0
 
 # Paul Jewell <paul@teulu.org> (2022-07-23)
 # Reversing original mask in ::gentoo by Sam James <sam@gentoo.org> (2022-07-22)
@@ -546,15 +555,6 @@ dev-haskell/protolude
 dev-haskell/purescript-ast
 dev-haskell/purescript-cst
 dev-lang/purescript
-
-# hololeap <hololeap@protonmail.com> (2022-01-23)
-# Needs update to build with >=ghc-lib-parser-9.0
-dev-haskell/hls-stylish-haskell-plugin
-
-# hololeap <hololeap@protonmail.com> (2022-01-23)
-# The version compatible with >=ghc-9.0 requires >=aeson-2
-dev-haskell/brittany
-dev-haskell/hls-brittany-plugin
 
 # hololeap <hololeap@protonmail.com> (2022-01-21)
 # Needs extensive patching in order to build on ghc-9.0.2

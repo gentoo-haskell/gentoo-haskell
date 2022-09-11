@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="brittany-dev-lib">set buildable false for anything but lib</flag>
-		<flag name="brittany-test-perf">determines if performance test suite is enabled</flag>
-		<flag name="pedantic">Enables @-Werror@, which turns warnings into errors.</flag>
-	</use>
+	<upstream>
+		<remote-id type="hackage">brittany</remote-id>
+		<remote-id type="github">lspitzner/brittany</remote-id>
+	</upstream>
 </pkgmetadata>
