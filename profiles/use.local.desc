@@ -456,4 +456,5 @@ x11-misc/xmonad-extras:eval - Build modules depending on hint(for evaluating Has
 x11-misc/xmonad-extras:mpd - Build modules depending on libmpd.
 x11-misc/yeganesh:profiling - Build with profiling and -auto-all
 x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
+x11-wm/xmonad:test - 
 x11-wm/xmonad-contrib:xft - Use Xft to render text
