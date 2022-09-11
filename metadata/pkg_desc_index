@@ -2308,6 +2308,7 @@ www-apps/gitit 0.15.1.0-r3: Wiki using happstack, git or darcs, and pandoc
 www-apps/imagepaste 0.2.0.1: Command-line image paste utility
 www-misc/lambdafeed 0.3.1-r1: RSS 2.0 feed generator
 www-servers/mighttpd2 3.4.6: High performance web server on WAI/warp
+x11-misc/arbtt 0.12.0.1: Automatic Rule-Based Time Tracker
 x11-misc/gtk-sni-tray 0.1.8.0: A standalone StatusNotifierItem/AppIndicator tray
 x11-misc/taffybar 3.3.0: A desktop bar similar to xmobar, but with more GUI
 x11-misc/xmobar 0.44.1 9999: A Minimalistic Text Based Status Bar
