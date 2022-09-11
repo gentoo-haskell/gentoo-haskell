@@ -5,11 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="no-autorepeat-keys">Allow ignoring of keyboard autorepeat.</flag>
-	</use>
 	<upstream>
-		<remote-id type="hackage">xmonad</remote-id>
-		<remote-id type="github">xmonad/xmonad</remote-id>
+		<remote-id type="hackage">arbtt</remote-id>
+		<remote-id type="github">nomeata/arbtt</remote-id>
 	</upstream>
 </pkgmetadata>
