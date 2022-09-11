@@ -1,0 +1,15 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=dev-haskell/aeson:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/ghcide-1.7:=[profile?] <dev-haskell/ghcide-1.8:=[profile?] dev-haskell/hashable:=[profile?] >=dev-haskell/hls-plugin-api-1.4:=[profile?] <dev-haskell/hls-plugin-api-1.5:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/lsp-types:=[profile?] >=dev-haskell/retrie-0.1.1.0:=[profile?] dev-haskell/safe-exceptions:=[profile?] dev-haskell/stm:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.6.3:= >=dev-haskell/cabal-2.4.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Retrie integration plugin for Haskell Language Server
+EAPI=8
+HOMEPAGE=https://hackage.haskell.org/package/hls-retrie-plugin
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/ghcide-1.7:=[profile?] <dev-haskell/ghcide-1.8:=[profile?] dev-haskell/hashable:=[profile?] >=dev-haskell/hls-plugin-api-1.4:=[profile?] <dev-haskell/hls-plugin-api-1.5:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/lsp-types:=[profile?] >=dev-haskell/retrie-0.1.1.0:=[profile?] dev-haskell/safe-exceptions:=[profile?] dev-haskell/stm:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.6.3:=
+SLOT=0/1.0.2.2_pre20220823
+SRC_URI=https://github.com/haskell/haskell-language-server/archive/55d90241440c5282b9e60cf80a98fd8698e1f8d9.tar.gz -> haskell-language-server-55d90241440c5282b9e60cf80a98fd8698e1f8d9.tar.gz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	3e70d9977bd04f15d1d3c13cb6e9cf10
+_md5_=4a428104b31ca6f9c775b3b99cdae8f7

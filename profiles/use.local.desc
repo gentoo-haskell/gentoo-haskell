@@ -8,11 +8,11 @@ app-office/hledger:threaded - Build with support for multithreaded execution
 app-office/hledger-ui:threaded - Build with support for multithreaded execution
 app-office/hledger-web:library-only - Build for use with "yesod devel"
 app-office/hledger-web:threaded - Build with support for multithreaded execution.
-app-portage/hackport:pedantic - Enable -Werror
 app-text/pandoc:embed-data-files - Embed data files in binary for relocatable executable.
 app-text/pandoc:trypandoc - Build trypandoc cgi executable.
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
 dev-haskell/acid-state:skip-state-machine-test - If enabled, do not build/run the state-machine test
+dev-haskell/ad:ffi - 
 dev-haskell/aeson:cffi - Controls whether to include c-ffi bits or pure haskell. Default to False for security.
 dev-haskell/aeson:ordered-keymap - Use ordered @Data.Map.Strict@ for KeyMap implementation.
 dev-haskell/aeson-pretty:lib-only - Only build/install the library, NOT the command-line tool.
@@ -38,9 +38,6 @@ dev-haskell/bits-atomic:test - Build test program.
 dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
 dev-haskell/boring:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/brick:demos - Build demonstration programs
-dev-haskell/brittany:brittany-dev-lib - set buildable false for anything but lib
-dev-haskell/brittany:brittany-test-perf - determines if performance test suite is enabled
-dev-haskell/brittany:pedantic - Enables @-Werror@, which turns warnings into errors.
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
 dev-haskell/broadcast-chan:threaded - Run benchmarks with threaded backend.
 dev-haskell/btrfs:examples - Build examples
@@ -161,6 +158,7 @@ dev-haskell/haskell-language-server:hls_plugins_alternate-number-format - Enable
 dev-haskell/haskell-language-server:hls_plugins_call-hierarchy - Enable call hierarchy plugin
 dev-haskell/haskell-language-server:hls_plugins_change-type-signature - Change a declarations type signature with a Code Action
 dev-haskell/haskell-language-server:hls_plugins_class - Enable class plugin
+dev-haskell/haskell-language-server:hls_plugins_code-range - Enable codeRange plugin
 dev-haskell/haskell-language-server:hls_plugins_eval - Enable eval plugin
 dev-haskell/haskell-language-server:hls_plugins_haddock-comments - Enable haddock comments plugin
 dev-haskell/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
@@ -171,7 +169,6 @@ dev-haskell/haskell-language-server:hls_plugins_qualify-imported-names - Enable 
 dev-haskell/haskell-language-server:hls_plugins_refine-imports - Enable refineImports plugin
 dev-haskell/haskell-language-server:hls_plugins_rename - Enable rename plugin
 dev-haskell/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
-dev-haskell/haskell-language-server:hls_plugins_selection-range - Enable selectionRange plugin
 dev-haskell/haskell-language-server:hls_plugins_splice - Enable splice plugin
 dev-haskell/haskell-language-server:hls_plugins_tactics - Enable tactics plugin
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
@@ -183,6 +180,7 @@ dev-haskell/hlibsass:externallibsass - Use LibSass that is installed in the syst
 dev-haskell/hlibsass:sharedlibsass - Build LibSass as a shared library (only if external_libsass = False)
 dev-haskell/hlint:gpl - Use GPL libraries, specifically hscolour
 dev-haskell/hlint:hsyaml - Use HsYAML instead of yaml
+dev-haskell/hlint:threaded - Build with support for multithreaded execution
 dev-haskell/hls-graph:embed-files - Embed data files into the shake library
 dev-haskell/hls-graph:stm-stats - Collect STM transaction stats
 dev-haskell/hmatrix:no-random-r - When enabled, hmatrix will not depend on the random_r() C function, it is needed for musl libc support.
@@ -232,7 +230,6 @@ dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for developme
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
 dev-haskell/logfloat:useffi - Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.
 dev-haskell/lpeg:rely-on-shared-lpeg-library - Do not build lpeg from source, but trust that lpeg is made available in other ways, e.g., through a system-wide installation. The loader will be replaced with a placeholder function that only emits a message.
-dev-haskell/lsp:examples - Build the demo executables
 dev-haskell/lua:system-lua - Use @pkg-config@ to discover library and include paths. Setting this flag implies `pkg-config`.
 dev-haskell/markdown-unlit:executable - Build executable
 dev-haskell/massiv:unsafe-checks - Enable all the bounds checks for unsafe functions at the cost of significant performance penalty
@@ -255,6 +252,7 @@ dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optics-core:explicit-generic-labels - Require explicit GenericLabelOptics instances in order to use generics-based labels
 dev-haskell/optparse-simple:build-example - Build the example executable
 dev-haskell/ormolu:executable - Install the ormolu executable
+dev-haskell/ormolu:fixity-th - Parse the default fixity information via Template Haskell
 dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
 dev-haskell/pandoc-citeproc:debug - Turn on debug tracing.
 dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging)

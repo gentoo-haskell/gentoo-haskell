@@ -11,5 +11,5 @@ LICENSE=LGPL-2.1
 RDEPEND=>=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?] >=dev-haskell/gi-gobject-2.0:=[profile?] <dev-haskell/gi-gobject-2.1:=[profile?] >=dev-haskell/haskell-gi-0.26:=[profile?] <dev-haskell/haskell-gi-0.27:=[profile?] >=dev-haskell/haskell-gi-base-0.26:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?] <dev-haskell/haskell-gi-overloading-1.1:=[profile?] >=dev-lang/ghc-8.4.3:= net-libs/webkit-gtk:4[introspection]
 SLOT=0/4.0.24
 SRC_URI=https://hackage.haskell.org/package/gi-javascriptcore-4.0.24/gi-javascriptcore-4.0.24.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	f8fbdf4c863af3c197ffb9784a81f7a9
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	3e70d9977bd04f15d1d3c13cb6e9cf10
 _md5_=e80aff72bebef588fb99b0795fb6bd91

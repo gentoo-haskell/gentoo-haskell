@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/classy-prelude-1.5.0:=[profile?] <dev-haskell/classy-prelu
 RESTRICT=!test? ( test )
 SLOT=0/1.5.0
 SRC_URI=https://hackage.haskell.org/package/classy-prelude-conduit-1.5.0/classy-prelude-conduit-1.5.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	f8fbdf4c863af3c197ffb9784a81f7a9
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	3e70d9977bd04f15d1d3c13cb6e9cf10
 _md5_=9808890261c16665224fb25fd915598a
