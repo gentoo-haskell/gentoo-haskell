@@ -12,5 +12,5 @@ RDEPEND=dev-haskell/mtl-compat:=[profile?] >=dev-haskell/random-1:=[profile?] >=
 RESTRICT=!test? ( test )
 SLOT=0/0.9.3.0
 SRC_URI=https://hackage.haskell.org/package/retry-0.9.3.0/retry-0.9.3.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	3e70d9977bd04f15d1d3c13cb6e9cf10
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	e04abdf7d9f141c54351a8b66338812e
 _md5_=581a5f45d6c78cba089b11fffb979f44
