@@ -39,6 +39,7 @@ glibc_binaries="$glibc_binaries ppc64? (
 	big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64-unknown-linux-gnu.tar.gz )
 	!big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz )
 )"
+glibc_binaries="$glibc_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-riscv64-unknown-linux-gnu.tar.gz )"
 #glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
 glibc_binaries="$glibc_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
 
@@ -50,6 +51,7 @@ glibc_binaries="$glibc_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-
 #musl_binaries="$musl_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
 #musl_binaries="$musl_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
 #musl_binaries="$musl_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-musl.tar.gz ) )"
+#musl_binaries="$musl_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-riscv64-unknown-linux-musl.tar.gz )"
 #musl_binaries="$musl_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
 #musl_binaries="$musl_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-musl.tbz2 )"
 
@@ -71,6 +73,7 @@ yet_binary() {
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
 				ppc64) return 0 ;;
+				riscv) return 0 ;;
 				#sparc) return 0 ;;
 				x86) return 0 ;;
 				*) return 1 ;;
@@ -87,6 +90,7 @@ yet_binary() {
 				#ppc64)
 				#	use big-endian || return 0
 				#	;;
+				#riscv) return 0 ;;
 				#sparc) return 0 ;;
 				#x86) return 0 ;;
 				*) return 1 ;;
@@ -113,8 +117,8 @@ BUMP_LIBRARIES=(
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
-IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
+IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
@@ -172,6 +176,7 @@ needs_python() {
 REQUIRED_USE="
 	?? ( ghcbootstrap binary )
 	?? ( profile binary )
+	?? ( llvm unregisterised )
 "
 
 # haskell libraries built with cabal in configure mode, #515354
@@ -480,7 +485,7 @@ src_prepare() {
 		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
 	fi
 
-	use llvm && llvmize "${WORKDIR}/usr/bin"
+	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
 
 	# binpkg may have been built with FEATURES=splitdebug
 	if [[ -d "${WORKDIR}/usr/lib/debug" ]] ; then
@@ -578,6 +583,8 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
 		eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
 		eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
+		eapply "${FILESDIR}"/latomic-subword
+		eapply "${FILESDIR}"/${PN}-9.0.2-riscv64-llvm.patch
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
@@ -726,7 +733,7 @@ src_configure() {
 			--enable-bootstrap-with-devel-snapshot \
 			$(use_enable elfutils dwarf-unwind) \
 			$(use_enable numa) \
-			--disable-unregisterised # all targets are registerised for now
+			$(use_enable unregisterised)
 
 		if [[ ${PV} == *9999* ]]; then
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
