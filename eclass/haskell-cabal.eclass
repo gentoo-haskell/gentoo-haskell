@@ -197,6 +197,17 @@ fi
 # )
 : ${GHC_BOOTSTRAP_PACKAGES:=}
 
+# @ECLASS_VARIABLE: CABAL_TEST_REQUIRED_BINS
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Binaries included in this package which are needed during testing. This
+# adjusts PATH during src_test() so that the binaries can be found, even if
+# they have not been installed yet.
+# @EXAMPLE:
+# CABAL_TEST_REQUIRED_BINS=( arbtt-{capture,dump,import,recover,stats} )
+: ${CABAL_TEST_REQUIRED_BINS:=}
+
+
 # 'dev-haskell/cabal' passes those options with ./configure-based
 # configuration, but most packages don't need/don't accept it:
 # #515362, #515362
@@ -719,6 +730,17 @@ haskell-cabal_src_test() {
 		einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
 
 		cabal-register-inplace
+
+		# Add the local dist/build dir to LD_LIBRARY_PATH so just-built libraries
+		# can be found during testing.
+		export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
+
+		# Add binary build paths to PATH so just-built binaries can be found
+		# during testing.
+		local bin
+		for bin in ${CABAL_TEST_REQUIRED_BINS[*]}; do
+			export PATH="${S}/dist/build/${bin}${PATH+:}${PATH}"
+		done
 
 		# '--show-details=streaming' appeared in Cabal-1.20
 		if ./setup test --help | grep -q -- "'streaming'"; then
