@@ -19,6 +19,10 @@ PATCHES=(
 	"${FILESDIR}/${PN}-0.3.1.0-cabal-doctest.patch"
 )
 
+GHC_BOOTSTRAP_PACKAGES=(
+	cabal-doctest
+)
+
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
