@@ -718,6 +718,8 @@ haskell-cabal_src_test() {
 	else
 		einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
 
+		cabal-register-inplace
+
 		# '--show-details=streaming' appeared in Cabal-1.20
 		if ./setup test --help | grep -q -- "'streaming'"; then
 			cabaltest+=(--show-details=streaming)
@@ -906,4 +908,79 @@ replace-hcflags() {
 	export HCFLAGS="${new[*]}"
 
 	return 0
+}
+
+# @FUNCTION: cabal-register-inplace
+# @DESCRIPTION:
+# Register the package library with the in-place pacakge DB, located in
+# "${S}/dist/package.conf.inplace/". This is sometimes needed for tests when
+# the package is not yet installed. Unfortunately, prebuilt solutions to this
+# problem, such as './setup register --inplace', do not seem to work correctly.
+#
+# This function will not run unless CABAL_HAS_LIBRARIES is set to a nonempty
+# value.
+#
+# You can set SKIP_REGISTER_INPLACE to a nonempty value to skip this function
+# (useful since it is automatically called from within haskell-cabal_src_test).
+#
+# The environment variables TEST_CABAL_PN, TEST_PN, and TEST_PV can be
+# manually set in case the test suite is within a separate haskell package.
+#
+# The environment variable EXTRA_PACKAGE_DBS can be used to set extra databases
+# for ghc-pkg to read.
+cabal-register-inplace() {
+	if [[ -n ${CABAL_HAS_LIBRARIES} ]] && [[ -z ${SKIP_REGISTER_INPLACE} ]]; then
+		# It is assumed that the package-id is either registered in the global
+		# DB or in an "in-place" DB, local to the build dir. cabal-doctest is an
+		# example of something that makes this assumption.
+		local inplace_db="${S}/dist/package.conf.inplace/"
+
+		# Generate the default package conf
+		./setup register --gen-pkg-config || die
+
+		# Set test-specific CABAL_PN/PN/PV values if they are not set already
+		: ${TEST_CABAL_PN:="$(
+			if [[ -n $MY_PN ]]; then
+				echo "${MY_PN}"
+			else
+				echo "${CABAL_PN}"
+			fi
+		)"}
+		: ${TEST_PN:="${PN}"}
+		: ${TEST_PV:="${PV}"}
+
+		TEST_CABAL_P="${TEST_CABAL_PN}-${TEST_PV}"
+
+		local pkg_conf="${S}/${TEST_CABAL_P}.conf"
+		[[ -f "${pkg_conf}" ]] || die "Package conf file was not created by './setup register'"
+
+		# Modify the package conf so that it points to directories within the build
+		# dir.
+		local sed=( sed -ri ) k
+		for k in import-dirs library-dirs dynamic-library-dirs; do
+			sed+=( -e "s%(^${k}:\s+)\S.*%\1${S}/dist/build%" )
+		done
+		sed+=( -e "s%/usr/share/doc/${P}/html%${S}/dist/doc/html/${TEST_CABAL_PN}%" )
+		sed+=( "${pkg_conf}" )
+		"${sed[@]}" || die "sed command failed"
+
+		local -a extra_pkg_dbs
+		local db
+		for db in "${EXTRA_PACKAGE_DBS[@]}"; do
+			extra_pkg_dbs+=( --package-db="${db}" )
+		done
+
+		# The package-id may already be registered in the global DB, which will
+		# cause ghc-pkg to fail. However, we don't want to 'die' in this case, as
+		# the package registration in the global DB will be used instead.
+		/usr/bin/ghc-pkg "${extra_pkg_dbs[@]}" --package-db="${inplace_db}" register "${pkg_conf}"
+
+		local ret="$?"
+
+		case ${ret} in
+			0) return 0 ;;
+			1) einfo "Package is already registered in global DB"; return 0 ;;
+			*) die "ghc-pkg returned unusual code: ${ret}" ;;
+		esac
+	fi
 }
