@@ -15,6 +15,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+CABAL_TEST_REQUIRED_BINS=( arbtt-{capture,dump,import,recover,stats} )
+
 RDEPEND=">=dev-haskell/aeson-0.10:= <dev-haskell/aeson-2.2:=
 	>=dev-haskell/attoparsec-0.13:=
 	dev-haskell/bytestring-progress:=
@@ -36,11 +38,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-golden-2.2.0.2 <dev-haskell/tasty-golden-2.4
 		>=dev-haskell/tasty-hunit-0.2 <dev-haskell/tasty-hunit-0.11 )
 "
-
-src_test() {
-	for exe in arbtt-{capture,dump,import,recover,stats}; do
-		export PATH="${S}/dist/build/${exe}${PATH+:}${PATH}"
-	done
-	export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
-	haskell-cabal_src_test
-}
