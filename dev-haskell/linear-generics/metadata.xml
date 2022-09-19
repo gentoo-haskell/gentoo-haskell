@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">inspection-testing</remote-id>
-		<remote-id type="github">nomeata/inspection-testing</remote-id>
+		<remote-id type="hackage">linear-generics</remote-id>
+		<remote-id type="github">linear-generics/linear-generics</remote-id>
 	</upstream>
 </pkgmetadata>

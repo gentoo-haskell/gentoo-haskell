@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">inspection-testing</remote-id>
-		<remote-id type="github">nomeata/inspection-testing</remote-id>
+		<remote-id type="hackage">tasty-inspection-testing</remote-id>
+		<remote-id type="github">Bodigrim/tasty-inspection-testing</remote-id>
 	</upstream>
 </pkgmetadata>
