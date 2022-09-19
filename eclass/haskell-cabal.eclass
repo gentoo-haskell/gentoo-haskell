@@ -348,6 +348,7 @@ cabal-bootstrap() {
 		template-haskell
 		terminfo
 		text
+		time
 		transformers
 		unix
 		xhtml
