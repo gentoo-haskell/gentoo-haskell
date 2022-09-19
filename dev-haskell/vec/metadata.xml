@@ -10,4 +10,8 @@
 		<flag name="distributive">Depend on @distributive@ to provide its instances. Turning on, disables @adjunctions@ too.</flag>
 		<flag name="semigroupoids">Depend on @semigroupoids@ to provide its instances, and `traverse1`.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">vec</remote-id>
+		<remote-id type="github">phadej/vec</remote-id>
+	</upstream>
 </pkgmetadata>
