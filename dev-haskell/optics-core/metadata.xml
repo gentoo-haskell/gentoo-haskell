@@ -8,4 +8,8 @@
 	<use>
 		<flag name="explicit-generic-labels">Require explicit GenericLabelOptics instances in order to use generics-based labels</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">optics-core</remote-id>
+		<remote-id type="github">well-typed/optics</remote-id>
+	</upstream>
 </pkgmetadata>
