@@ -344,8 +344,10 @@ dev-haskell/store-core:force-alignment - Adds -DALIGNED_MEMORY to cpp-options
 dev-haskell/streamly:c-malloc - Use C malloc instead of GHC malloc
 dev-haskell/streamly:fusion-plugin - Use fusion plugin for benchmarks and executables
 dev-haskell/streamly:limit-build-mem - Limits memory when building
+dev-haskell/streamly:minimal - Build only the core modules
 dev-haskell/streamly:no-fusion - Disable rewrite rules for stream fusion
 dev-haskell/streamly:streamk - Use CPS style streams when possible
+dev-haskell/streamly:unliftio - Use unliftio-core instead of monad-control
 dev-haskell/stylish-haskell:ghc-lib - Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
 dev-haskell/synthesizer-alsa:examples - Build example executables
 dev-haskell/synthesizer-midi:buildexamples - Build example executables

@@ -12,5 +12,5 @@ RDEPEND=<dev-haskell/blaze-builder-0.5:=[profile?] <dev-haskell/old-locale-1.1:=
 RESTRICT=!test? ( test )
 SLOT=0/0.8.8
 SRC_URI=https://hackage.haskell.org/package/HStringTemplate-0.8.8/HStringTemplate-0.8.8.tar.gz https://hackage.haskell.org/package/HStringTemplate-0.8.8/revision/2.cabal -> HStringTemplate-0.8.8-rev2.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	6321bd77b834e1a711584b1dfc96e7fa
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	4a0d0712e993374b07c9979453c91a8c
 _md5_=e24fc02025fe0d9fbb4ccf37a5b5eaf5

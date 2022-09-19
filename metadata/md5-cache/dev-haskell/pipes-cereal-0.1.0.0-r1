@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=>=dev-haskell/cereal-0.4:=[profile?] >=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?] >=dev-haskell/pipes-4:=[profile?] <dev-haskell/pipes-5:=[profile?] >=dev-haskell/pipes-bytestring-2:=[profile?] <dev-haskell/pipes-bytestring-3:=[profile?] >=dev-haskell/pipes-parse-3:=[profile?] <dev-haskell/pipes-parse-4:=[profile?] >=dev-lang/ghc-7.8.2:=
 SLOT=0/0.1.0.0
 SRC_URI=https://hackage.haskell.org/package/pipes-cereal-0.1.0.0/pipes-cereal-0.1.0.0.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	6321bd77b834e1a711584b1dfc96e7fa
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	4a0d0712e993374b07c9979453c91a8c
 _md5_=6b86a55d975ded0f5d2a661ea57325e4
