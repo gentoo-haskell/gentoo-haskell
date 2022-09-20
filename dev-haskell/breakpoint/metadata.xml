@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">hledger-lib</remote-id>
-		<remote-id type="github">simonmichael/hledger</remote-id>
+		<remote-id type="hackage">breakpoint</remote-id>
 	</upstream>
 </pkgmetadata>

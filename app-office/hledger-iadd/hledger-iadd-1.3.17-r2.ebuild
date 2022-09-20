@@ -17,8 +17,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="
-	>=dev-haskell/brick-0.27:=[profile?] <dev-haskell/brick-0.72:=[profile?]
+RDEPEND=">=dev-haskell/brick-0.27:=[profile?] <dev-haskell/brick-0.72:=[profile?]
 	>=dev-haskell/free-4.12.4:=[profile?]
 	>=dev-haskell/hledger-lib-1.23:=[profile?] <dev-haskell/hledger-lib-1.28:=[profile?]
 	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-9.3:=[profile?]
@@ -34,8 +33,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? (
-		dev-haskell/hspec
-		dev-haskell/quickcheck
-	)
+	test? ( dev-haskell/hspec
+		dev-haskell/quickcheck )
 "

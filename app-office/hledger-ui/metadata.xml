@@ -8,4 +8,8 @@
 	<use>
 		<flag name="threaded">Build with support for multithreaded execution</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hledger-ui</remote-id>
+		<remote-id type="github">simonmichael/hledger</remote-id>
+	</upstream>
 </pkgmetadata>
