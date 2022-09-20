@@ -59,7 +59,8 @@ src_prepare() {
 		'ansi-terminal >= 0.8 && < 0.9' 'ansi-terminal >= 0.8' \
 		'containers >= 0.5.8.2 && < 0.6' 'containers >= 0.5.8.2' \
 		'network >= 2.4 && < 2.7' 'network >= 2.4.0.0' \
-		'http-client >= 0.6 && < 0.7' 'http-client >= 0.6 && < 0.8'
+		'http-client >= 0.6 && < 0.7' 'http-client >= 0.6 && < 0.8' \
+		'HTTP >= 4000.2.5 && < 4000.4' 'HTTP >= 4000.2.5'
 
 	# =fail is useful to detect uncached entries
 	export ELM_FETCH_MODE_GENTOO=warn
