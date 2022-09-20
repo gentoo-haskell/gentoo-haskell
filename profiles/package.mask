@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2022-09-20)
+# Project unmaintained since 2020. Deps need porting.
+# Mask for removal.
+dev-haskell/viewprof
+
 # hololeap <hololeap@protonmail.com> (2022-09-09)
 # dev-haskell/reflex-vty fails to build, and my attempts to fix it failed.
 # It seems to want a Monoid instance for Attr from the vty package, which
