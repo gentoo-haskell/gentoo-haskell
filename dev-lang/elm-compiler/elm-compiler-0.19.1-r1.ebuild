@@ -24,7 +24,7 @@ RDEPEND=" !dev-lang/elm-compiler-bin[symlink]
 	dev-haskell/file-embed:=
 	dev-haskell/filelock:=
 	dev-haskell/haskeline:=
-	>=dev-haskell/http-4000.2.5:= <dev-haskell/http-4000.4:=
+	>=dev-haskell/http-4000.2.5:=
 	>=dev-haskell/http-client-0.6:= <dev-haskell/http-client-0.8:=
 	>=dev-haskell/http-client-tls-0.3:= <dev-haskell/http-client-tls-0.4:=
 	>=dev-haskell/http-types-0.12:= <dev-haskell/http-types-1.0:=
