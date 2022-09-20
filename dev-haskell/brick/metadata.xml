@@ -8,4 +8,8 @@
 	<use>
 		<flag name="demos">Build demonstration programs</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">brick</remote-id>
+		<remote-id type="github">jtdaugherty/brick</remote-id>
+	</upstream>
 </pkgmetadata>
