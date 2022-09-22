@@ -1,0 +1,80 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+diff -urN trial-0.0.0.0/Setup.hs trial-0.0.0.0-r1/Setup.hs
+--- trial-0.0.0.0/Setup.hs	1969-12-31 17:00:00.000000000 -0700
++++ trial-0.0.0.0-r1/Setup.hs	2022-09-22 14:10:13.967473107 -0600
+@@ -0,0 +1,6 @@
++module Main (main) where
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "trial-doctest"
+diff -urN trial-0.0.0.0/test/Doctest.hs trial-0.0.0.0-r1/test/Doctest.hs
+--- trial-0.0.0.0/test/Doctest.hs	2001-09-08 19:46:40.000000000 -0600
++++ trial-0.0.0.0-r1/test/Doctest.hs	2022-09-22 14:20:47.147473414 -0600
+@@ -1,20 +1,12 @@
+-module Main (main) where
++module Main where
+ 
++import Build_doctests (flags, pkgs, module_sources)
++import System.Environment.Compat (unsetEnv)
+ import Test.DocTest (doctest)
+ 
+-
+ main :: IO ()
+-main = doctest
+-    $ "-XDeriveAnyClass"
+-    : "-XDeriveGeneric"
+-    : "-XDerivingStrategies"
+-    : "-XGeneralizedNewtypeDeriving"
+-    : "-XInstanceSigs"
+-    : "-XLambdaCase"
+-    : "-XOverloadedStrings"
+-    : "-XRecordWildCards"
+-    : "-XScopedTypeVariables"
+-    : "-XTupleSections"
+-    : "-XTypeApplications"
+-    : "-XViewPatterns"
+-    : [ "src/Trial.hs" ]
++main = do
++    unsetEnv "GHC_ENVIRONMENT"
++    doctest args
++  where
++    args = flags ++ pkgs ++ module_sources
+diff -urN trial-0.0.0.0/trial.cabal trial-0.0.0.0-r1/trial.cabal
+--- trial-0.0.0.0/trial.cabal	2022-09-22 14:15:57.207473274 -0600
++++ trial-0.0.0.0-r1/trial.cabal	2022-09-22 14:17:45.197473326 -0600
+@@ -42,7 +42,7 @@
+ maintainer:          Kowainik <xrom.xkov@gmail.com>
+ copyright:           2020 Kowainik
+ category:            Data Structures, Data
+-build-type:          Simple
++build-type:          Custom
+ extra-doc-files:     README.md
+                      CHANGELOG.md
+ tested-with:         GHC == 8.6.5
+@@ -89,6 +89,12 @@
+                        TypeApplications
+                        ViewPatterns
+ 
++custom-setup
++  setup-depends:
++      base
++    , Cabal
++    , cabal-doctest
++
+ library
+   import:              common-options
+   hs-source-dirs:      src
+@@ -122,4 +128,5 @@
+   hs-source-dirs:      test
+   main-is:             Doctest.hs
+   build-depends:       doctest ^>= 0.16
++                     , base-compat
+   ghc-options:         -threaded
