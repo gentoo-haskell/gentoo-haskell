@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Install the hiedb executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hiedb</remote-id>
+		<remote-id type="github">wz1000/HieDb</remote-id>
+	</upstream>
 </pkgmetadata>
