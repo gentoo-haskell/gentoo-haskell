@@ -1,0 +1,95 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+diff -urN slist-0.2.0.0/Setup.hs slist-0.2.0.0-r1/Setup.hs
+--- slist-0.2.0.0/Setup.hs	1969-12-31 17:00:00.000000000 -0700
++++ slist-0.2.0.0-r1/Setup.hs	2022-09-22 14:48:27.627474220 -0600
+@@ -0,0 +1,6 @@
++module Main (main) where
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "slist-doctest"
+diff -urN slist-0.2.0.0/slist.cabal slist-0.2.0.0-r1/slist.cabal
+--- slist-0.2.0.0/slist.cabal	2022-09-22 16:26:17.477477066 -0600
++++ slist-0.2.0.0-r1/slist.cabal	2022-09-22 16:40:44.897477486 -0600
+@@ -39,7 +39,6 @@
+                        -fhide-source-paths
+   if impl(ghc >= 8.8.1)
+     ghc-options:       -Wmissing-deriving-strategies
+-                       -Werror=missing-deriving-strategies
+   if impl(ghc >= 8.10.1)
+     ghc-options:       -Wunused-packages
+ 
+@@ -60,6 +59,12 @@
+ 
+   default-language:    Haskell2010
+ 
++custom-setup
++  setup-depends:
++      base
++    , Cabal
++    , cabal-doctest
++
+ library
+   import:              common-options
+   build-depends:       containers >= 0.5 && <= 0.7
+@@ -76,7 +81,7 @@
+   hs-source-dirs:      test
+   main-is:             Doctest.hs
+   build-depends:       doctest
+-                     , Glob
++                     , base-compat
+   ghc-options:         -threaded
+ 
+ test-suite slist-test
+diff -urN slist-0.2.0.0/src/Slist.hs slist-0.2.0.0-r1/src/Slist.hs
+--- slist-0.2.0.0/src/Slist.hs	2001-09-08 19:46:40.000000000 -0600
++++ slist-0.2.0.0-r1/src/Slist.hs	2022-09-22 16:48:07.037477701 -0600
+@@ -719,7 +719,7 @@
+ {- | Maps a function over all the elements of a container
+ and concatenates the resulting slists.
+ 
+->>> concatMap one "abc"
++>>> concatMap one ['a', 'b', 'c']
+ Slist {sList = "abc", sSize = Size 3}
+ -}
+ concatMap :: Foldable t => (a -> Slist b) -> t a -> Slist b
+@@ -731,7 +731,7 @@
+ 
+ Strict version of 'concatMap'.
+ 
+->>> concatMap' one "abc"
++>>> concatMap' one ['a', 'b', 'c']
+ Slist {sList = "abc", sSize = Size 3}
+ 
+ @since 0.2.0.0
+diff -urN slist-0.2.0.0/test/Doctest.hs slist-0.2.0.0-r1/test/Doctest.hs
+--- slist-0.2.0.0/test/Doctest.hs	2001-09-08 19:46:40.000000000 -0600
++++ slist-0.2.0.0-r1/test/Doctest.hs	2022-09-22 14:50:33.317474281 -0600
+@@ -1,14 +1,12 @@
+ module Main (main) where
+ 
+-import System.FilePath.Glob (glob)
+ import Test.DocTest (doctest)
++import Build_doctests (flags, pkgs, module_sources)
++import System.Environment.Compat (unsetEnv)
+ 
+ main :: IO ()
+ main = do
+-    sourceFiles <- glob "src/**/*.hs"
+-    doctest
+-        $ "-XInstanceSigs"
+-        : "-XScopedTypeVariables"
+-        : "-XRecordWildCards"
+-        : "-XDerivingStrategies"
+-        : sourceFiles
++    unsetEnv "GHC_ENVIRONMENT"
++    doctest args
++  where
++    args = flags ++ pkgs ++ module_sources
