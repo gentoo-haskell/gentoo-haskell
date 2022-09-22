@@ -4,13 +4,13 @@ Signed-off-by: hololeap <hololeap@protonmail.com>
 The `bios-tests` test suite requires making connections to the internet.
 Disable it.
 
-diff -urN hie-bios-0.8.1/hie-bios.cabal hie-bios-0.8.1-r1/hie-bios.cabal
---- hie-bios-0.8.1/hie-bios.cabal	2022-01-22 21:16:33.268901397 -0700
-+++ hie-bios-0.8.1-r1/hie-bios.cabal	2022-01-22 21:17:40.578901430 -0700
-@@ -222,6 +222,7 @@
-   hs-source-dirs: tests/
+diff -urN hie-bios-0.11.0/hie-bios.cabal hie-bios-0.11.0-r1/hie-bios.cabal
+--- hie-bios-0.11.0/hie-bios.cabal	2022-09-21 21:37:25.647444224 -0600
++++ hie-bios-0.11.0-r1/hie-bios.cabal	2022-09-21 21:38:40.247444260 -0600
+@@ -231,6 +231,7 @@
    ghc-options: -threaded -Wall
    main-is: BiosTests.hs
+   other-modules: Utils
 +  buildable: False
  
  Source-Repository head
