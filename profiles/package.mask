@@ -1,3 +1,10 @@
+# hololeap <hololeap@protonmail.com> (2022-09-22)
+# dev-haskell/stan does not build on >=ghc-9.0 and needs extensive patching or
+# a rewrite to do so.
+# See: <https://github.com/kowainik/stan/issues/423>
+dev-haskell/stan
+dev-haskell/hls-stan-plugin
+
 # Jack Todaro <solpeth@posteo.org> (2022-09-20)
 # Project unmaintained since 2020. Deps need porting.
 # Mask for removal.
