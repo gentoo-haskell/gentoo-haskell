@@ -5,4 +5,25 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="ghc-bundled-libffi">When GHC is configured without @--with-system-libffi@, it
+will bundle its own copies of @libffi@, one of them
+statically linked and the other dynamically linked. This
+flag will force linking against the static copy of @libffi@
+that GHC bundles. This avoids a GHC bug
+(https://gitlab.haskell.org/ghc/ghc/-/issues/15397) that
+can arise when the linker confuses the system&#39;s dynamic
+@libffi@ with GHC&#39;s own dynamic @libffi@.
+Note that this flag only works when GHC is configured
+without the @--with-system-libffi@ option. This is the case
+for most GHC binary distributions, such as those provided
+by @ghcup@. If you are using a GHC that was configured with
+@--with-system-libffi@, however, you will need to disable
+this option and link against the system&#39;s version of
+@libffi@ instead.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">libffi</remote-id>
+		<remote-id type="github">remiturk/libffi</remote-id>
+	</upstream>
 </pkgmetadata>
