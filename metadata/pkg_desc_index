@@ -170,7 +170,7 @@ dev-haskell/binary-orphans 1.0.2: Compatibility package for binary; provides ins
 dev-haskell/binary-parser 0.5.7: A highly-efficient but limited parser API specialised for bytestrings
 dev-haskell/binary-parsers 0.2.4.0: Extends binary with parsec/attoparsec style parsing combinators
 dev-haskell/binary-search 1.0.0.3: Binary and exponential searches
-dev-haskell/binary-serialise-cbor 0.2.1.0: Yet Another Binary Serialisation Library (compatibility shim)
+dev-haskell/binary-serialise-cbor 0.2.2.0: Yet Another Binary Serialisation Library (compatibility shim)
 dev-haskell/binary-shared 0.8.3: Sharing for the binary package
 dev-haskell/binary-state 0.1.1: Simple wrapper around Data.Binary, which adds StateT to Get/Put monads
 dev-haskell/binary-strict 0.4.8.6: Binary deserialisation using strict ByteStrings
@@ -266,8 +266,8 @@ dev-haskell/cassava 0.5.2.0-r1: A CSV parsing and encoding library
 dev-haskell/cassava-megaparsec 2.0.2: Megaparsec parser of CSV files that plays nicely with Cassava
 dev-haskell/categories 1.0.7-r1: The Categories package authored by Edward Kmett
 dev-haskell/cautious-file 1.0.2-r1: Ways to write a file cautiously, reducing chances of data loss due to crashes
-dev-haskell/cborg 0.2.7.0: Concise Binary Object Representation (CBOR)
-dev-haskell/cborg-json 0.2.4.0: A library for encoding JSON as CBOR
+dev-haskell/cborg 0.2.8.0: Concise Binary Object Representation (CBOR)
+dev-haskell/cborg-json 0.2.5.0: A library for encoding JSON as CBOR
 dev-haskell/cc-delcont 0.2.1.0: Delimited continuations and dynamically scoped variables
 dev-haskell/cereal 0.5.8.2: A binary serialization library
 dev-haskell/cereal-conduit 0.8.0: Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits
@@ -596,7 +596,7 @@ dev-haskell/feed 1.3.2.1: Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 dev-haskell/fficxx 0.3.1: automatic C++ binding generation
 dev-haskell/ffmpeg-light 0.13.0: Minimal bindings to the FFmpeg library
 dev-haskell/fft 0.1.8.7: Bindings to the FFTW library
-dev-haskell/fgl 5.5.3.1 5.6.0.0 5.7.0.3-r1: Martin Erwig's Functional Graph Library
+dev-haskell/fgl 5.8.0.0: Martin Erwig's Functional Graph Library
 dev-haskell/fgl-arbitrary 0.2.0.6: QuickCheck support for fgl
 dev-haskell/fgl-visualize 0.1.0.1-r1: Convert FGL graphs to dot (graphviz) files
 dev-haskell/file-embed 0.0.13.0 0.0.15.0: Use Template Haskell to embed file contents directly
@@ -1725,7 +1725,7 @@ dev-haskell/semver-range 0.2.8: An implementation of semver and semantic version
 dev-haskell/sendfile 0.7.11.1: A portable sendfile library
 dev-haskell/seqloc 0.6.1.1: Handle sequence locations for bioinformatics
 dev-haskell/sequence-formats 1.5.1.4: A package with basic parsing utilities for several Bioinformatic data formats
-dev-haskell/serialise 0.2.5.0: A binary serialisation library for Haskell values
+dev-haskell/serialise 0.2.6.0: A binary serialisation library for Haskell values
 dev-haskell/serialport 0.4.7 0.5.1: Cross platform serial port library
 dev-haskell/servant 0.19: A family of combinators for defining webservices APIs
 dev-haskell/servant-client 0.19: Automatic derivation of querying functions for servant
