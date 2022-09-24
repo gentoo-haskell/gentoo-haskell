@@ -223,6 +223,7 @@ dev-haskell/jupyter:examples - Build example Jupyter kernel executables
 dev-haskell/language-c-quote:full-haskell-antiquotes - Support full Haskell expressions/patterns in antiquotes
 dev-haskell/language-dot:executable - Build the `ppdot' executable
 dev-haskell/ldap:buildtests - Build the executable to run unit tests.
+dev-haskell/libffi:ghc-bundled-libffi - When GHC is configured without @--with-system-libffi@, it will bundle its own copies of @libffi@, one of them statically linked and the other dynamically linked. This flag will force linking against the static copy of @libffi@ that GHC bundles. This avoids a GHC bug (https://gitlab.haskell.org/ghc/ghc/-/issues/15397) that can arise when the linker confuses the system's dynamic @libffi@ with GHC's own dynamic @libffi@. Note that this flag only works when GHC is configured without the @--with-system-libffi@ option. This is the case for most GHC binary distributions, such as those provided by @ghcup@. If you are using a GHC that was configured with @--with-system-libffi@, however, you will need to disable this option and link against the system's version of @libffi@ instead.
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
 dev-haskell/libyaml:unicode - Enable unicode output. Otherwise, unicode characters will be escaped.
 dev-haskell/linux-file-extents:examples - Build examples

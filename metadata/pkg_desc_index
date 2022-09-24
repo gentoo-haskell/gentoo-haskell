@@ -1184,7 +1184,7 @@ dev-haskell/lens-filesystem 0.1.0.1: Lens interface for your filesystem; still a
 dev-haskell/lenses 0.1.8: Simple Functional Lenses
 dev-haskell/leveldb-haskell 0.6.5: Haskell bindings to LevelDB
 dev-haskell/lhs2tex 1.24: Preprocessor for typesetting Haskell sources with LaTeX
-dev-haskell/libffi 0.1: A binding to libffi
+dev-haskell/libffi 0.2.1: A binding to libffi
 dev-haskell/liblastfm 0.7.0: Lastfm API interface
 dev-haskell/libmpd 0.9.2.0: An MPD client library
 dev-haskell/libnotify 0.2.1: Bindings to libnotify library
