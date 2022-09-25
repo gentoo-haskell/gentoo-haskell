@@ -946,7 +946,7 @@ replace-hcflags() {
 # You can set SKIP_REGISTER_INPLACE to a nonempty value to skip this function
 # (useful since it is automatically called from within haskell-cabal_src_test).
 #
-# The environment variables TEST_CABAL_PN, TEST_PN, and TEST_PV can be
+# The environment variables TEST_CABAL_PN, TEST_CABAL_PV, and TEST_PN, and TEST_PV can be
 # manually set in case the test suite is within a separate haskell package.
 #
 # The environment variable EXTRA_PACKAGE_DBS can be used to set extra databases
@@ -969,10 +969,10 @@ cabal-register-inplace() {
 				echo "${CABAL_PN}"
 			fi
 		)"}
+		: ${TEST_CABAL_PV="${CABAL_PV}"}
 		: ${TEST_PN:="${PN}"}
-		: ${TEST_PV:="${PV}"}
 
-		TEST_CABAL_P="${TEST_CABAL_PN}-${TEST_PV}"
+		TEST_CABAL_P="${TEST_CABAL_PN}-${TEST_CABAL_PV}"
 
 		local pkg_conf="${S}/${TEST_CABAL_P}.conf"
 		[[ -f "${pkg_conf}" ]] || die "Package conf file was not created by './setup register'"
