@@ -23,6 +23,8 @@ RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[prof
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0 <dev-haskell/cabal-3.7
-	>=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14
-	virtual/pkgconfig
 "
+BDEPEND="virtual/pkgconfig
+	>=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14
+"
+GHC_BOOTSTRAP_PACKAGES=( gtk2hs-buildtools )
