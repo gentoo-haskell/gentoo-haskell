@@ -20,6 +20,7 @@ PATCHES=( "${FILESDIR}/${PN}-0.10.5-add-executable-flag.patch" )
 
 CABAL_CHDEPS=(
 	'optparse-applicative >=0.12.1.0 && <0.17' 'optparse-applicative >=0.12.1.0'
+	'hspec >=2.2.4 && <2.8' 'hspec >=2.2.4'
 )
 
 RDEPEND="
@@ -40,6 +41,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? (
 		>=dev-haskell/exceptions-0.8.3 <dev-haskell/exceptions-0.12
-		>=dev-haskell/hspec-2.2.4 <dev-haskell/hspec-2.8
+		>=dev-haskell/hspec-2.2.4
 	)
 "
