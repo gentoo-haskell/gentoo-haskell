@@ -946,8 +946,8 @@ replace-hcflags() {
 # You can set SKIP_REGISTER_INPLACE to a nonempty value to skip this function
 # (useful since it is automatically called from within haskell-cabal_src_test).
 #
-# The environment variables TEST_CABAL_PN, TEST_CABAL_PV, and TEST_PN, and TEST_PV can be
-# manually set in case the test suite is within a separate haskell package.
+# The environment variables TEST_CABAL_PN and TEST_PN can be manually set in
+# case the test suite is within a separate haskell package.
 #
 # The environment variable EXTRA_PACKAGE_DBS can be used to set extra databases
 # for ghc-pkg to read.
@@ -961,7 +961,7 @@ cabal-register-inplace() {
 		# Generate the default package conf
 		./setup register --gen-pkg-config || die
 
-		# Set test-specific CABAL_PN/PN/PV values if they are not set already
+		# Set test-specific CABAL_PN/PN values if they are not set already
 		: ${TEST_CABAL_PN:="$(
 			if [[ -n $MY_PN ]]; then
 				echo "${MY_PN}"
@@ -969,12 +969,18 @@ cabal-register-inplace() {
 				echo "${CABAL_PN}"
 			fi
 		)"}
-		: ${TEST_CABAL_PV="${CABAL_PV}"}
 		: ${TEST_PN:="${PN}"}
 
-		TEST_CABAL_P="${TEST_CABAL_PN}-${TEST_CABAL_PV}"
+		local cabal_file="${S}/${TEST_CABAL_PN}.cabal"
 
-		local pkg_conf="${S}/${TEST_CABAL_P}.conf"
+		# In order for cabal-register-inplace to work, we need to know the package
+		# version recorded inside the .cabal file. Looking inside the .cabal file
+		# is a reliable way to do this, even when we are using live ebuilds that
+		# cannot know this beforehand.
+		local cabal_pv="$(sed -rn 's/^version:\s*(\S+)/\1/ip' "${cabal_file}" || die)"
+		local cabal_p="${TEST_CABAL_PN}-${cabal_pv}"
+
+		local pkg_conf="${S}/${cabal_p}.conf"
 		[[ -f "${pkg_conf}" ]] || die "Package conf file was not created by './setup register'"
 
 		# Modify the package conf so that it points to directories within the build
@@ -987,9 +993,8 @@ cabal-register-inplace() {
 		sed+=( "${pkg_conf}" )
 		"${sed[@]}" || die "sed command failed"
 
-		local -a extra_pkg_dbs
-		local db
-		for db in "${EXTRA_PACKAGE_DBS[@]}"; do
+		local extra_pkg_dbs=() db
+		for db in ${EXTRA_PACKAGE_DBS[*]}; do
 			extra_pkg_dbs+=( --package-db="${db}" )
 		done
 
