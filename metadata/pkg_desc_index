@@ -389,8 +389,8 @@ dev-haskell/cpu 0.1.2: Cpu information and properties helpers
 dev-haskell/crack 0.1-r2: A haskell binding to cracklib
 dev-haskell/cracknum 2.4: Crack various integer, floating-point data formats
 dev-haskell/crc16 0.1.1: Calculate the crc16-ccitt
-dev-haskell/criterion 1.5.11.0: Robust, reliable performance measurement and analysis
-dev-haskell/criterion-measurement 0.1.2.0: Criterion measurement functionality and associated types
+dev-haskell/criterion 1.6.0.0: Robust, reliable performance measurement and analysis
+dev-haskell/criterion-measurement 0.2.0.0: Criterion measurement functionality and associated types
 dev-haskell/cron 0.7.0-r1: Cron datatypes and Attoparsec parser
 dev-haskell/crypto 4.2.5.1-r1: Collects together existing Haskell cryptographic functions into a package
 dev-haskell/crypto-api 0.13.3: A generic interface for cryptographic operations
