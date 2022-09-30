@@ -2245,7 +2245,7 @@ dev-haskell/ztail 1.2.0.2-r1: Multi-file, colored, filtered log tailer
 dev-haskell/zxcvbn-hs 0.3.1: Password strength estimation based on zxcvbn
 dev-lang/brainfuck 0.1.0.3: Brainfuck interpreter
 dev-lang/cryptol 2.6.0: Cryptol: The Language of Cryptography
-dev-lang/dhall 1.41.1-r1: A configuration language guaranteed to terminate
+dev-lang/dhall 1.41.2: A configuration language guaranteed to terminate
 dev-lang/elm 0.19.1: Meta package for Elm
 dev-lang/elm-compiler 0.19.1-r1: The 'elm' command line interface
 dev-lang/elm-compiler-bin 0.19.1: The 'elm' command line interface (binary)
