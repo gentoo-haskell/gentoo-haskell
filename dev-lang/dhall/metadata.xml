@@ -10,4 +10,8 @@
 		<flag name="http-client-tls">Use http-client-tls for resolving HTTP imports by default
 (requires with-http to be enabled)</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">dhall</remote-id>
+		<remote-id type="github">dhall-lang/dhall-haskell</remote-id>
+	</upstream>
 </pkgmetadata>
