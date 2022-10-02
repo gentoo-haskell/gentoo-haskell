@@ -213,7 +213,7 @@ dev-haskell/boundedchan 1.0.3.0: Implementation of bounded channels
 dev-haskell/bower-json 1.0.0.1: Read bower.json from Haskell
 dev-haskell/boxes 0.1.5: 2D text pretty-printing library
 dev-haskell/breakpoint 0.1.0.0: Set breakpoints using a GHC plugin
-dev-haskell/brick 0.69.1 1.1: A declarative terminal user interface library
+dev-haskell/brick 0.69.1 1.3: A declarative terminal user interface library
 dev-haskell/brittany 0.14.0.2: Haskell source code formatter
 dev-haskell/broadcast-chan 0.2.1.2: Closable, fair, single-wakeup channel type that avoids 0 reader space leaks
 dev-haskell/bsb-http-chunked 0.0.0.4: Chunked HTTP transfer encoding for bytestring builders
