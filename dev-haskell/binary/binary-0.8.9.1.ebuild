@@ -11,19 +11,18 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite circular depen
 CABAL_FEATURES+=" nocabaldep"
 inherit haskell-cabal
 
-DESCRIPTION="Monadic parser combinators"
-HOMEPAGE="https://github.com/haskell/parsec"
+DESCRIPTION="Binary serialisation for Haskell values using lazy ByteStrings"
+HOMEPAGE="https://github.com/kolmodin/binary"
 
-LICENSE="BSD-2"
+LICENSE="BSD"
 SLOT="0/${PV}"
-#keep in sync with ghc-9.2.4
-#KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+# keep in sync with ghc-9.4
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
-RESTRICT=test # circular dependencies: dev-haskell/base-orphans->cabal->parsec[test]->test-framework-hunit->test-framework->base-orphans
+RESTRICT=test # circular depend: test-framework->base-orphans->cabal->semigroups->nats->binary
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
-DEPEND="${RDEPEND}
-"
+DEPEND="${RDEPEND}"
 
-CABAL_CORE_LIB_GHC_PV="PM:9.2.4 PM:9.4.2 PM:9999"
+CABAL_CORE_LIB_GHC_PV="PM:9.4.2 PM:9999"
