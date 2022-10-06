@@ -2,9 +2,9 @@ name: pkgcheck
 
 on:
   push:
-    branches: [master]
+    branches: [master, ghc-9.4.2]
   pull_request:
-    branches: [master]
+    branches: [master, ghc-9.4.2]
 
 jobs:
   build:
