@@ -58,11 +58,17 @@ ghc-getghcpkg() {
 # because for some reason the global package file
 # must be specified
 ghc-getghcpkgbin() {
-	local empty_db="${T}/empty.conf.d" ghc_pkg="$(ghc-libdir)/bin/ghc-pkg"
+	local ghc_pkg
+	if ver_test "$(ghc-version)" -ge "9.4"; then
+		ghc_pkg="$(ghc-libdir)/../bin/ghc-pkg"
+	else
+		ghc_pkg="$(ghc-libdir)/bin/ghc-pkg"
+	fi
+	local empty_db="${T}/empty.conf.d" 
 	if [[ ! -d ${empty_db} ]]; then
 		"${ghc_pkg}" init "${empty_db}" || die "Failed to initialize empty global db"
 	fi
-	echo "$(ghc-libdir)/bin/ghc-pkg" "--global-package-db=${empty_db}"
+	echo "${ghc_pkg}" "--global-package-db=${empty_db}"
 }
 
 # @FUNCTION: ghc-version
