@@ -1,8 +1,0 @@
---- a/src/Vimeta/Core/Download.hs
-+++ b/src/Vimeta/Core/Download.hs
-@@ -115,4 +115,4 @@ downloadToHandle manager url handle = do
-   request <- HC.parseRequest url
-   response <- HC.httpLbs request manager
-   LByteString.hPut handle (HC.responseBody response)
--  hFlush handle
-+  System.IO.hFlush handle

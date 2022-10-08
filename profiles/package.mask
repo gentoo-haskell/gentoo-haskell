@@ -3,24 +3,6 @@
 # Mask for removal.
 dev-haskell/viewprof
 
-# hololeap <hololeap@protonmail.com> (2022-09-09)
-# dev-haskell/reflex-vty fails to build, and my attempts to fix it failed.
-# It seems to want a Monoid instance for Attr from the vty package, which
-# doesn't seem to have ever existed.
-# Mask for removal in 30 days.
-dev-haskell/reflex-vty
-dev-haskell/reflex-process
-
-# hololeap <hololeap@protonmail.com> (2022-08-28)
-# Depends on 404'd patch. Mask for removal in 30 days.
-dev-haskell/edisoncore
-
-# hololeap <hololeap@protonmail.com> (2022-08-27)
-# hls-selection-range-plugin has been renamed to hls-code-range-plugin
-# upstream. Removal in 30 days.
-# See: <https://github.com/haskell/haskell-language-server/pull/3003>
-dev-haskell/hls-selection-range-plugin
-
 # hololeap <hololeap@protonmail.com>
 # doctest-parallel does not currently work with Setup.hs (used internally by
 # haskell-cabal.eclass)
@@ -32,44 +14,9 @@ dev-haskell/doctest-parallel
 >=dev-haskell/persistent-2.14
 >=dev-haskell/persistent-test-2.13.1.3
 
-# Jack Todaro <solpeth@posteo.org> (2022-07-31)
-# Requires porting to newer dependencies. Has no reverse
-# dependencies, so mask for removal in 30 days.
-dev-haskell/easytest
-dev-haskell/fb
-dev-haskell/htaglib
-dev-haskell/partial-handler
-dev-haskell/strafunski-strategylib
-dev-haskell/svg-tree
-dev-haskell/unbound-generics
-dev-haskell/unique
-dev-haskell/vado
-dev-lang/elm
-dev-lang/elm-compiler
-dev-util/codex
-dev-haskell/euterpea
-
 # Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Depends on pipes-text, which is masked.
 dev-haskell/zxcvbn-hs
-
-# Jack Todaro <solpeth@posteo.org> (2020-07-20)
-# Needs porting to newer aeson. Mask for removal.
-dev-haskell/ekg
-dev-haskell/ekg-core
-dev-haskell/ekg-json
-dev-haskell/engine-io
-dev-haskell/haskell-names
-dev-haskell/pandoc-citeproc
-dev-haskell/vimeta
-dev-lang/fay
-dev-haskell/fay-base
-dev-haskell/fay-dom
-dev-haskell/fay-jquery
-dev-haskell/fay-uri
-dev-haskell/fay-text
-dev-haskell/yesod-fay
-dev-lang/idris
 
 # Jack Todaro <solpeth@posteo.org> (2020-07-20)
 # Too many reverse dependencies require an older version.
@@ -77,11 +24,6 @@ dev-lang/idris
 >=dev-haskell/aeson-2.1
 dev-haskell/cabal-plan
 dev-haskell/cabal-install-parsers
-
-# Jack Todaro <solpeth@posteo.org> (2022-07-20)
-# Requires porting to newer aeson. Remove in 30 days.
-dev-haskell/yesod-text-markdown
-dev-haskell/repl-toolkit
 
 # hololeap <hololeap@protonmail.com> (2022-03-03)
 # >=random-fu-0.3.0.0 is needed to compile on >=base-4.15, but the latest
@@ -104,15 +46,6 @@ dev-haskell/pipes-network
 dev-haskell/pipes-text
 dev-haskell/pipes-zlib
 dev-haskell/ihaskell-diagrams
-
-# hololeap <hololeap@protonmail.com> (2022-06-03)
-# Mask old GHC versions for removal
-<dev-lang/ghc-8.10.6
-<dev-haskell/ghc-api-compat-8.10.6
-<dev-haskell/cabal-3.2
-<dev-haskell/haskeline-0.8.1.0
-<dev-haskell/text-1.2.4.1
-<dev-haskell/binary-0.8.8.0
 
 # hololeap <hololeap@protonmail.com> (2022-02-22)
 # gi-gtk-4 is not currently used and will cause conflicts
