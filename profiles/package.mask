@@ -21,11 +21,6 @@ dev-haskell/edisoncore
 # See: <https://github.com/haskell/haskell-language-server/pull/3003>
 dev-haskell/hls-selection-range-plugin
 
--dev-haskell/genvalidity
--dev-haskell/genvalidity-hspec
--dev-haskell/genvalidity-property
--dev-haskell/path
--dev-haskell/validity
 # hololeap <hololeap@protonmail.com>
 # doctest-parallel does not currently work with Setup.hs (used internally by
 # haskell-cabal.eclass)
