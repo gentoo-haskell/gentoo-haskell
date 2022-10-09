@@ -254,11 +254,6 @@ dev-haskell/optics-core:explicit-generic-labels - Require explicit GenericLabelO
 dev-haskell/optparse-simple:build-example - Build the example executable
 dev-haskell/ormolu:executable - Install the ormolu executable
 dev-haskell/ormolu:fixity-th - Parse the default fixity information via Template Haskell
-dev-haskell/pandoc-citeproc:bibutils - Use Chris Putnam's Bibutils.
-dev-haskell/pandoc-citeproc:debug - Turn on debug tracing.
-dev-haskell/pandoc-citeproc:embed-data-files - Embed locale files into the library (needed for windows packaging)
-dev-haskell/pandoc-citeproc:static - Use static linking.
-dev-haskell/pandoc-citeproc:unicode-collation - Use Haskell bindings to the International Components for Unicode (ICU) libraries
 dev-haskell/parsec-numbers:parsec1 - use dev-haskell/parsec1 instead of dev-haskell/parsec
 dev-haskell/parsers:attoparsec - You can disable the use of the `attoparsec` package using `-f-attoparsec`.
 dev-haskell/parsers:binary - You can disable the use of the `binary` package using `-f-binary`.
@@ -406,7 +401,6 @@ dev-haskell/zxcvbn-hs:tools - Build the data processing tools (i.e. dictionary c
 dev-lang/cryptol:relocatable - Don't use the Cabal-provided data directory for looking up Cryptol libraries.
 dev-lang/dhall:http - Include support for importing dhall modules from HTTP URLs
 dev-lang/dhall:http-client-tls - Use http-client-tls for resolving HTTP imports by default (requires with-http to be enabled)
-dev-lang/elm-compiler:dev - Turn off optimization and make warnings errors
 dev-lang/elm-compiler-bin:symlink - Create a symlink to "elm", instead of just installing "elm-bin" binary.
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.
 dev-lang/ghc:elfutils - Enable DWARF-based backtraces using dev-libs/elfutils.
@@ -415,8 +409,6 @@ dev-lang/ghc:ghcmakebinary - Internal: Build binary friendly for redistribution.
 dev-lang/ghc:gmp - Use dev-libs/gmp for integer operations (works faster, but an external depend).
 dev-lang/ghc:llvm - Enable LLVM backend via sys-devel/llvm.
 dev-lang/ghc:numa - Enable NUMA thread balancing policy using sys-process/numactl.
-dev-lang/idris:ffi - Build support for libffi
-dev-lang/idris:gmp - Use GMP for Integers
 dev-util/bustle:interactivetests - Build interactive test programs
 dev-util/bustle:threaded - Build with the multi-threaded runtime
 dev-util/shake:embed-files - Embed data files into the shake library
