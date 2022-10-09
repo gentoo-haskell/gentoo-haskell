@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">unordered-containers</remote-id>
+		<remote-id type="github">haskell-unordered-containers/unordered-containers</remote-id>
+	</upstream>
 </pkgmetadata>
