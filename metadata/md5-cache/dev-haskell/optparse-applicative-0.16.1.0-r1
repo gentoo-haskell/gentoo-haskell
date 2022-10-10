@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/ansi-wl-pprint-0.6.8:=[profile?] <dev-haskell/ansi-wl-ppri
 RESTRICT=!test? ( test )
 SLOT=0/0.16.1.0
 SRC_URI=https://hackage.haskell.org/package/optparse-applicative-0.16.1.0/optparse-applicative-0.16.1.0.tar.gz https://hackage.haskell.org/package/optparse-applicative-0.16.1.0/revision/2.cabal -> optparse-applicative-0.16.1.0-r1.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	haskell-cabal	e7b758ae185e16c6fde4e96ca15f8d23
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	e7b758ae185e16c6fde4e96ca15f8d23
 _md5_=acaa09779e5fadb952b2959b701f05d7
