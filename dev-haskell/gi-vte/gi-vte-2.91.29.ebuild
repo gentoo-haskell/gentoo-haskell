@@ -16,7 +16,19 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?]
+GHC_BOOTSTRAP_PACKAGES=(
+	haskell-gi
+	gi-atk
+	gi-glib
+	gi-gobject
+	gi-gdk
+	gi-gio
+	gi-gtk
+	gi-pango
+)
+
+RDEPEND="
+	>=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?]
 	>=dev-haskell/gi-gdk-3.0:=[profile?] <dev-haskell/gi-gdk-3.1:=[profile?]
 	>=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?]
 	>=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?]
