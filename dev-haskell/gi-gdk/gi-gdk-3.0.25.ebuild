@@ -16,7 +16,18 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/gi-cairo-1.0:=[profile?] <dev-haskell/gi-cairo-1.1:=[profile?]
+GHC_BOOTSTRAP_PACKAGES=(
+	haskell-gi
+	gi-glib
+	gi-gobject
+	gi-gdkpixbuf
+	gi-gio
+	gi-pango
+	gi-cairo
+)
+
+RDEPEND="
+	>=dev-haskell/gi-cairo-1.0:=[profile?] <dev-haskell/gi-cairo-1.1:=[profile?]
 	>=dev-haskell/gi-gdkpixbuf-2.0:=[profile?] <dev-haskell/gi-gdkpixbuf-2.1:=[profile?]
 	>=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?]
 	>=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?]
