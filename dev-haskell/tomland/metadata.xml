@@ -9,4 +9,8 @@
 		<flag name="example-play-tomland">Build play-tomland executable</flag>
 		<flag name="example-readme">Build example-tomland generator</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">tomland</remote-id>
+		<remote-id type="github">kowainik/tomland</remote-id>
+	</upstream>
 </pkgmetadata>
