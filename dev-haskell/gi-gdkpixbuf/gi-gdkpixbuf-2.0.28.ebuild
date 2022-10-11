@@ -16,7 +16,16 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?]
+GHC_BOOTSTRAP_PACKAGES=(
+	haskell-gi
+	gi-glib
+	gi-gmodule
+	gi-gobject
+	gi-gio
+)
+
+RDEPEND="
+	>=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?]
 	>=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?]
 	>=dev-haskell/gi-gmodule-2.0:=[profile?] <dev-haskell/gi-gmodule-2.1:=[profile?]
 	>=dev-haskell/gi-gobject-2.0:=[profile?] <dev-haskell/gi-gobject-2.1:=[profile?]
