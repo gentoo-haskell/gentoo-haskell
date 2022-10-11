@@ -12,4 +12,4 @@ RDEPEND=>=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?]
 SLOT=0/3.0.38
 SRC_URI=https://hackage.haskell.org/package/gi-gtk-3.0.38/gi-gtk-3.0.38.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	e7b758ae185e16c6fde4e96ca15f8d23
-_md5_=112a6cce98826a0eedd729e87181199a
+_md5_=15535d3a76f1264b53b060b8168398e2

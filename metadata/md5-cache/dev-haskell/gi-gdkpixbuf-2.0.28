@@ -12,4 +12,4 @@ RDEPEND=>=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?]
 SLOT=0/2.0.28
 SRC_URI=https://hackage.haskell.org/package/gi-gdkpixbuf-2.0.28/gi-gdkpixbuf-2.0.28.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	e7b758ae185e16c6fde4e96ca15f8d23
-_md5_=f59516d78203b4bb1360d4f0cd7b048e
+_md5_=669e73a72e7b370ec88dd4e66b8bfdfa

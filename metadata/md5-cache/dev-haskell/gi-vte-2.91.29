@@ -12,4 +12,4 @@ RDEPEND=>=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?]
 SLOT=0/2.91.29
 SRC_URI=https://hackage.haskell.org/package/gi-vte-2.91.29/gi-vte-2.91.29.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	e7b758ae185e16c6fde4e96ca15f8d23
-_md5_=74c51dcda776d35e94522f89dfbfbde7
+_md5_=4c4a8d313f614668f1a16793fe2c6a80
