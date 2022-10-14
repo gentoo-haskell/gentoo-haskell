@@ -17,7 +17,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RDEPEND="dev-haskell/adjunctions:=[profile?]
+GHC_BOOTSTRAP_PACKAGES=(
+	cabal-doctest
+)
+
+RDEPEND="
+	dev-haskell/adjunctions:=[profile?]
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/classy-prelude:=[profile?]
 	dev-haskell/colour:=[profile?]
@@ -47,19 +52,23 @@ RDEPEND="dev-haskell/adjunctions:=[profile?]
 	dev-libs/libpcre2
 	x11-libs/vte:2.91
 	x11-libs/gtk+:3
-	examples? ( dev-haskell/markdown-unlit:=[profile?] )
+	examples? (
+		dev-haskell/markdown-unlit:=[profile?]
+	)
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	>=dev-haskell/cabal-doctest-1.0.2 <dev-haskell/cabal-doctest-1.1
 	virtual/pkgconfig
-	test? ( dev-haskell/doctest
+	test? (
+		dev-haskell/doctest
 		dev-haskell/genvalidity-containers
 		dev-haskell/genvalidity-hspec
 		dev-haskell/hedgehog
 		dev-haskell/tasty
 		dev-haskell/tasty-hedgehog
-		dev-haskell/tasty-hspec )
+		dev-haskell/tasty-hspec
+	)
 "
 
 src_configure() {
