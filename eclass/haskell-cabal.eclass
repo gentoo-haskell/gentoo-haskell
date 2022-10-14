@@ -973,15 +973,11 @@ cabal-register-inplace() {
 
 		local cabal_file="${S}/${TEST_CABAL_PN}.cabal"
 
-		# In order for cabal-register-inplace to work, we need to know the package
-		# version recorded inside the .cabal file. Looking inside the .cabal file
-		# is a reliable way to do this, even when we are using live ebuilds that
-		# cannot know this beforehand.
-		local cabal_pv="$(sed -rn 's/^version:\s*(\S+)\r?$/\1/ip' "${cabal_file}" || die)"
-		local cabal_p="${TEST_CABAL_PN}-${cabal_pv}"
-
-		local pkg_conf="${S}/${cabal_p}.conf"
-		[[ -f "${pkg_conf}" ]] || die "Package conf file was not created by './setup register'"
+		local pkg_conf="$(find "${S}" -type f -name "${TEST_CABAL_PN}-*.conf" -maxdepth 1 | head -1)"
+		if [[ ! -f "${pkg_conf}" ]]; then
+			einfo "pkg_conf: \"${pkg_conf}\""
+			die "Package conf file was not created by './setup register'"
+		fi
 
 		# Modify the package conf so that it points to directories within the build
 		# dir.
