@@ -12,5 +12,5 @@ RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/aeson-pretty:=[profile?] dev-h
 RESTRICT=test !test? ( test )
 SLOT=0/1.7.0.1_pre20220823
 SRC_URI=https://github.com/haskell/haskell-language-server/archive/55d90241440c5282b9e60cf80a98fd8698e1f8d9.tar.gz -> haskell-language-server-55d90241440c5282b9e60cf80a98fd8698e1f8d9.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	e7b758ae185e16c6fde4e96ca15f8d23
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	d6c1c523417e62fcd0ea51c03ba8d73c
 _md5_=a3308e4c2f20ed4ba04cc81be2d48b01

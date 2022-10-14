@@ -11,5 +11,5 @@ LICENSE=BSD
 RDEPEND=>=dev-lang/ghc-7.10.1:=
 SLOT=0/0.1.0.0
 SRC_URI=https://hackage.haskell.org/package/chr-pretty-0.1.0.0/chr-pretty-0.1.0.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	e7b758ae185e16c6fde4e96ca15f8d23
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	d6c1c523417e62fcd0ea51c03ba8d73c
 _md5_=57d1540de627d11c9b96c854b04951a5

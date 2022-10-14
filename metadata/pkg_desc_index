@@ -41,7 +41,7 @@ dev-haskell/aeson-compat 0.3.10-r1: Compatibility layer for aeson
 dev-haskell/aeson-diff 1.1.0.13: Extract and apply patches to JSON documents
 dev-haskell/aeson-extra 0.5.1-r1: Extra goodies for aeson
 dev-haskell/aeson-lens 0.5.0.0: Lens of Aeson
-dev-haskell/aeson-pretty 0.8.9-r1: JSON pretty-printing library and command-line tool
+dev-haskell/aeson-pretty 0.8.9-r2: JSON pretty-printing library and command-line tool
 dev-haskell/aeson-qq 0.8.4: JSON quasiquoter for Haskell
 dev-haskell/aeson-yaml 1.1.0.1: Output any Aeson value as YAML (pure Haskell library)
 dev-haskell/alex 3.2.7.1: Alex is a tool for generating lexical analysers in Haskell
@@ -2055,7 +2055,7 @@ dev-haskell/uuid-types 1.0.5-r1: Type definitions for Universally Unique Identif
 dev-haskell/uulib 0.9.24: Haskell Utrecht Tools Library
 dev-haskell/validated-literals 0.3.1: Compile-time checking for partial smart-constructors
 dev-haskell/validation 1.1.2: A data-type like Either but with an accumulating Applicative
-dev-haskell/validation-selective 0.1.0.1: Lighweight pure data validation based on Applicative and Selective functors
+dev-haskell/validation-selective 0.1.0.2: Lighweight pure data validation based on Applicative and Selective functors
 dev-haskell/validity 0.12.0.0: Validity typeclass
 dev-haskell/validity-aeson 0.2.0.4: Validity instances for aeson
 dev-haskell/validity-containers 0.5.0.4: Validity instances for containers
