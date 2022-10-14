@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="lib-only">Only build/install the library, NOT the command-line tool.</flag>
+		<flag name="executable">build/install the command-line tool as well as the library</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">aeson-pretty</remote-id>
+		<remote-id type="github">informatikr/aeson-pretty</remote-id>
+	</upstream>
 </pkgmetadata>

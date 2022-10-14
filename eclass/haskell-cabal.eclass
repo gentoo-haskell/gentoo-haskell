@@ -977,7 +977,7 @@ cabal-register-inplace() {
 		# version recorded inside the .cabal file. Looking inside the .cabal file
 		# is a reliable way to do this, even when we are using live ebuilds that
 		# cannot know this beforehand.
-		local cabal_pv="$(sed -rn 's/^version:\s*(\S+)/\1/ip' "${cabal_file}" || die)"
+		local cabal_pv="$(sed -rn 's/^version:\s*(\S+)\r?$/\1/ip' "${cabal_file}" || die)"
 		local cabal_p="${TEST_CABAL_PN}-${cabal_pv}"
 
 		local pkg_conf="${S}/${cabal_p}.conf"
