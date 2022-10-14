@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-3:=[profile?]
 RESTRICT=!test? ( test )
 SLOT=0/0.19
 SRC_URI=https://hackage.haskell.org/package/servant-0.19/servant-0.19.tar.gz https://hackage.haskell.org/package/servant-0.19/revision/4.cabal -> servant-0.19-rev4.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	d6c1c523417e62fcd0ea51c03ba8d73c
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
 _md5_=e315c084a443efbdc79fba7d14f43a98

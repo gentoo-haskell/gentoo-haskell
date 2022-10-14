@@ -11,5 +11,5 @@ LICENSE=Apache-2.0
 RDEPEND=dev-haskell/aeson:=[profile?] dev-haskell/extra:=[profile?] >=dev-haskell/ghcide-1.7:=[profile?] <dev-haskell/ghcide-1.8:=[profile?] dev-haskell/hashable:=[profile?] >=dev-haskell/hls-plugin-api-1.4:=[profile?] <dev-haskell/hls-plugin-api-1.5:=[profile?] dev-haskell/lsp:=[profile?] dev-haskell/lsp-types:=[profile?] >=dev-haskell/retrie-0.1.1.0:=[profile?] dev-haskell/safe-exceptions:=[profile?] dev-haskell/stm:=[profile?] dev-haskell/unordered-containers:=[profile?] >=dev-lang/ghc-8.6.3:=
 SLOT=0/1.0.2.2_pre20220823
 SRC_URI=https://github.com/haskell/haskell-language-server/archive/55d90241440c5282b9e60cf80a98fd8698e1f8d9.tar.gz -> haskell-language-server-55d90241440c5282b9e60cf80a98fd8698e1f8d9.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	d6c1c523417e62fcd0ea51c03ba8d73c
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
 _md5_=4a428104b31ca6f9c775b3b99cdae8f7

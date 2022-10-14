@@ -11,5 +11,5 @@ LICENSE=LGPL-2.1
 RDEPEND=>=dev-haskell/base-compat-0.9.0:=[profile?] <dev-haskell/base-compat-0.13:=[profile?] >=dev-haskell/gi-gdk-3.0.6:=[profile?] <dev-haskell/gi-gdk-3.1:=[profile?] >=dev-haskell/gi-gdkpixbuf-2.0.6:=[profile?] <dev-haskell/gi-gdkpixbuf-2.1:=[profile?] >=dev-haskell/gi-glib-2.0.6:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?] >=dev-haskell/gi-gobject-2.0.6:=[profile?] <dev-haskell/gi-gobject-2.1:=[profile?] >=dev-haskell/gi-gtk-3.0.26:=[profile?] <dev-haskell/gi-gtk-3.1:=[profile?] >=dev-haskell/haskell-gi-base-0.25.0:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?] >=dev-lang/ghc-8.4.3:=
 SLOT=0/0.3.12
 SRC_URI=https://hackage.haskell.org/package/gi-gtk-hs-0.3.12/gi-gtk-hs-0.3.12.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	d6c1c523417e62fcd0ea51c03ba8d73c
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
 _md5_=cb5a0425fe3310f6f3bbde2b17035770

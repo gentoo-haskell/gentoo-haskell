@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/hashable-1.1.2.0:=[profile?] <dev-haskell/hashable-1.5:=[p
 RESTRICT=!test? ( test )
 SLOT=0/2.2.4
 SRC_URI=https://hackage.haskell.org/package/async-2.2.4/async-2.2.4.tar.gz https://hackage.haskell.org/package/async-2.2.4/revision/1.cabal -> async-2.2.4-r1.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	d6c1c523417e62fcd0ea51c03ba8d73c
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
 _md5_=c9661e89f55c26d574278cf4d8f0d8bb

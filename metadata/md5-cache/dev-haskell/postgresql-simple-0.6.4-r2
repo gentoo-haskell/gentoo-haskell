@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-2.2:=[profile
 RESTRICT=!test? ( test )
 SLOT=0/0.6.4
 SRC_URI=https://hackage.haskell.org/package/postgresql-simple-0.6.4/postgresql-simple-0.6.4.tar.gz https://hackage.haskell.org/package/postgresql-simple-0.6.4/revision/8.cabal -> postgresql-simple-0.6.4-rev8.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	d6c1c523417e62fcd0ea51c03ba8d73c
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
 _md5_=5d3ee02f0b3e627aca31bea1c2a5e747
