@@ -29,5 +29,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base >= 4.3.1.0 && < 4.14' 'base >= 4.3.1.0'
+		'base >= 4.3.1.0 && < 4.14' 'base >= 4.3.1.0' \
+		'bytestring >= 0.9.1.0 && < 0.11' 'bytestring >= 0.9.1.0'
 }
