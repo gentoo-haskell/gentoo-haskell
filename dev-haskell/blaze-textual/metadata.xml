@@ -5,13 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A library for efficiently rendering Haskell datatypes to
-		bytestrings.
-		
-		/Note/: if you use GHCi or Template Haskell, please see the
-		@README@ file for important details about building this package,
-		and other packages that depend on it:
-		&lt;https://github.com/bos/blaze-textual#readme&gt;
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">blaze-textual</remote-id>
+		<remote-id type="github">bos/blaze-textual</remote-id>
+	</upstream>
 </pkgmetadata>
