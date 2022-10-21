@@ -11,4 +11,8 @@
 unneeded language data files are manually removed from
 the &quot;data&quot; directory before compiling)</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hyphenation</remote-id>
+		<remote-id type="github">ekmett/hyphenation</remote-id>
+	</upstream>
 </pkgmetadata>
