@@ -5,8 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A hierarchy of subclasses of 'Monoid' together with their instances for all data structures from base, containers, and
-		text packages.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">monoid-subclasses</remote-id>
+		<remote-id type="github">blamario/monoid-subclasses</remote-id>
+	</upstream>
 </pkgmetadata>
