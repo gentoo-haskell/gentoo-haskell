@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">opentelemetry</remote-id>
+		<remote-id type="github">ethercrow/opentelemetry-haskell</remote-id>
+	</upstream>
 </pkgmetadata>
