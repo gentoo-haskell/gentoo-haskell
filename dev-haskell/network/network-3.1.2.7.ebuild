@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=(
-	"${FILESDIR}"/"${P}-size_t.patch"
+	"${FILESDIR}/${PN}-3.1.2.6-size_t.patch"
 )
 
 src_configure() {
