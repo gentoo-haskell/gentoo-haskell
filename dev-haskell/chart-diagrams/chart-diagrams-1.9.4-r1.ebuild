@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+CABAL_CHDEPS=(
+	'lens >= 3.9 && < 5.2' 'lens >= 3.9'
+)
+
 RDEPEND="
 	>=dev-haskell/blaze-markup-0.7:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/chart-1.9:=[profile?] <dev-haskell/chart-1.10:=[profile?]
@@ -26,7 +30,7 @@ RDEPEND="
 	>=dev-haskell/diagrams-lib-1.2:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 	>=dev-haskell/diagrams-postscript-0.7:=[profile?] <dev-haskell/diagrams-postscript-1.6:=[profile?]
 	>=dev-haskell/diagrams-svg-1.4:=[profile?] <dev-haskell/diagrams-svg-1.5:=[profile?]
-	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-5.2:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/operational-0.2.2:=[profile?] <dev-haskell/operational-0.3:=[profile?]
 	>=dev-haskell/svg-builder-0.1:=[profile?] <dev-haskell/svg-builder-0.2:=[profile?]
