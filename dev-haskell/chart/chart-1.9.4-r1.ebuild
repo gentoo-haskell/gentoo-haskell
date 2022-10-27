@@ -17,10 +17,14 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+CABAL_CHDEPS=(
+	'lens >= 3.9 && < 5.2' 'lens >= 3.9'
+)
+
 RDEPEND="
 	>=dev-haskell/colour-2.2.1:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	<dev-haskell/data-default-class-0.2:=[profile?]
-	>=dev-haskell/lens-3.9:=[profile?] <dev-haskell/lens-5.2:=[profile?]
+	>=dev-haskell/lens-3.9:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/operational-0.2.2:=[profile?] <dev-haskell/operational-0.3:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
