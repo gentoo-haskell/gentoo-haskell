@@ -17,6 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+GHC_BOOTSTRAP_PACKAGES=(
+	gtk2hs-buildtools
+)
+
 RDEPEND=">=dev-haskell/cairo-0.13.0.0:= <dev-haskell/cairo-0.14:=
 	>=dev-haskell/glib-0.13.0.0:= <dev-haskell/glib-0.14:=
 	dev-haskell/mtl:=
