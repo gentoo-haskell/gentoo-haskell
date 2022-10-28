@@ -16,6 +16,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+closure-signals"
 
+GHC_BOOTSTRAP_PACKAGES=(
+	gtk2hs-buildtools
+)
+
 RDEPEND=">=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	dev-libs/glib:2
