@@ -254,7 +254,7 @@ dev-haskell/cabal-macosx 0.2.4.2: Cabal support for creating Mac OSX application
 dev-haskell/cabal-plan 0.7.2.0-r3: Library and utility for processing cabal's plan.json file
 dev-haskell/cabal-rpm 2.0.11.1: RPM packaging tool for Haskell Cabal-based packages
 dev-haskell/cabal-syntax 3.8.1.0: A library for working with .cabal files
-dev-haskell/cairo 0.13.8.1-r1: Binding to the Cairo library
+dev-haskell/cairo 0.13.8.2: Binding to the Cairo library
 dev-haskell/call-stack 0.2.0 0.3.0: Use GHC call-stacks in a backward compatible way
 dev-haskell/canonical-filepath 1.0.0.3: Abstract data type for canonical file paths
 dev-haskell/carray 0.1.6.8: A C-compatible array library
@@ -1500,7 +1500,7 @@ dev-haskell/pointedlist 0.6.1: A zipper-like comonad which works as a list, trac
 dev-haskell/pointful 1.1.0.0: Pointful refactoring tool
 dev-haskell/poll 0.0.0.2: Bindings to poll.h
 dev-haskell/polynomial 0.7.3: Polynomials
-dev-haskell/polyparse 1.12.1 1.13: A variety of alternative parser combinator libraries
+dev-haskell/polyparse 1.13: A variety of alternative parser combinator libraries
 dev-haskell/polysemy 1.7.1.0: Higher-order, low-boilerplate free monads
 dev-haskell/polysemy-plugin 0.4.3.1: Disambiguate obvious uses of effects
 dev-haskell/polysemy-zoo 0.8.0.0: Experimental, user-contributed effects and interpreters for polysemy

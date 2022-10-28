@@ -51,6 +51,7 @@ dev-haskell/cabal-plan:exe - Enable @exe:cabal-plan@ component
 dev-haskell/cabal-plan:license-report - Enable @license-report@ sub-command (only relevant when the @exe@ flag is active)
 dev-haskell/cabal-plan:underline - Enable underlining of primary unit-ids
 dev-haskell/cabal-rpm:curl - Use curl library to query Stackage instead of http-client
+dev-haskell/cairo:svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
 dev-haskell/categories:optimize - Enable optimizations
 dev-haskell/chaselev-deque:debug - Enable the extra internal checks.
 dev-haskell/cheapskate:dingus - Build cheapskate-dingus cgi script
