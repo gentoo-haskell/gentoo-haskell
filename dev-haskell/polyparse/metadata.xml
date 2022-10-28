@@ -13,4 +13,8 @@
 		replacement for the standard Read class, for better
 		deserialisation of Haskell values from Strings.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">polyparse</remote-id>
+		<remote-id type="github">hackage-trustees/malcolm-wallace-universe</remote-id>
+	</upstream>
 </pkgmetadata>
