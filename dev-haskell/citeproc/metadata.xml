@@ -9,4 +9,8 @@
 		<flag name="executable">Build citeproc executable</flag>
 		<flag name="icu">Use Haskell bindings to the ICU library</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">citeproc</remote-id>
+		<remote-id type="github">jgm/citeproc</remote-id>
+	</upstream>
 </pkgmetadata>
