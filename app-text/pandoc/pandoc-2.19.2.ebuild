@@ -96,7 +96,7 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag embed-data-files embed_data_files) \
 		--flag=-lua53 \
-		$(cabal_flag nightly nightly) \
+		--flag=-nightly \
 		--flag=-static
 }
 
