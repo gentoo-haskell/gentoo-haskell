@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Build skylighting-extract tool</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">skylighting-core</remote-id>
+		<remote-id type="github">jgm/skylighting</remote-id>
+	</upstream>
 </pkgmetadata>

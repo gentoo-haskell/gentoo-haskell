@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Whether to build the skylighting program</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">skylighting</remote-id>
+		<remote-id type="github">jgm/skylighting</remote-id>
+	</upstream>
 </pkgmetadata>

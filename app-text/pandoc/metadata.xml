@@ -9,4 +9,8 @@
 		<flag name="embed-data-files">Embed data files in binary for relocatable executable.</flag>
 		<flag name="trypandoc">Build trypandoc cgi executable.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">pandoc</remote-id>
+		<remote-id type="github">jgm/pandoc</remote-id>
+	</upstream>
 </pkgmetadata>
