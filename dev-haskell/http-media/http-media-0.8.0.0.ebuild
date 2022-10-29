@@ -34,6 +34,8 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base             >= 4.7  && < 4.13' 'base             >= 4.8' \
+		'bytestring       >= 0.10 && < 0.11' ' bytestring       >= 0.10' \
 		'base                       >= 4.7  && < 4.13' 'base >= 4.7' \
+		'bytestring                 >= 0.10 && < 0.11' 'bytestring >= 0.10' \
 		'QuickCheck                 >= 2.8  && < 2.14' 'QuickCheck >= 2.8'
 }
