@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">language-docker</remote-id>
+		<remote-id type="github">hadolint/language-docker</remote-id>
+	</upstream>
 </pkgmetadata>
