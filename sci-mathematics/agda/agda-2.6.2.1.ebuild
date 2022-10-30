@@ -15,7 +15,8 @@ CABAL_P="${CABAL_PN}-${CABAL_PV}"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 CABAL_HACKAGE_REVISION="2"
-inherit haskell-cabal elisp
+
+inherit ghc-package haskell-cabal elisp-common
 
 ## shared with sci-mathematics/agda-stdlib
 # upstream does not maintain version ordering:
@@ -30,15 +31,14 @@ S="${WORKDIR}/${CABAL_P}"
 
 DESCRIPTION="A dependently typed functional programming language and proof assistant"
 HOMEPAGE="https://wiki.portal.chalmers.se/agda/"
-SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz
-	https://hackage.haskell.org/package/${CABAL_P}/revision/${CABAL_HACKAGE_REVISION}.cabal -> ${PF}.cabal"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="cpphs debug emacs enable-cluster-counting optimise-heavily +stdlib"
 
-RDEPEND=">=dev-haskell/aeson-1.1.2.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
+RDEPEND="
+	>=dev-haskell/aeson-1.1.2.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/blaze-html-0.8:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/boxes-0.1.3:=[profile?] <dev-haskell/boxes-0.2:=[profile?]
@@ -61,35 +61,41 @@ RDEPEND=">=dev-haskell/aeson-1.1.2.0:=[profile?] <dev-haskell/aeson-2.1:=[profil
 	>=dev-haskell/uri-encode-1.5.0.4:=[profile?] <dev-haskell/uri-encode-1.6:=[profile?]
 	>=dev-haskell/zlib-0.6:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-8.10.1:=
-	enable-cluster-counting? ( >=dev-haskell/text-icu-0.7.1.0:=[profile?] )
+	enable-cluster-counting? (
+		>=dev-haskell/text-icu-0.7.1.0:=[profile?]
+	)
 "
 
 RDEPEND+="
 	emacs? (
 		>=app-editors/emacs-23.1:*
-		app-emacs/haskell-mode )
+		app-emacs/haskell-mode
+	)
 "
-PDEPEND="stdlib? ( ~sci-mathematics/agda-stdlib-${MY_GENTOO_AGDA_STDLIB_V} )"
+PDEPEND="
+	stdlib? (
+		~sci-mathematics/agda-stdlib-${MY_GENTOO_AGDA_STDLIB_V}
+	)
+"
 
 DEPEND="${RDEPEND}
 	dev-haskell/alex
 	>=dev-haskell/cabal-3.2.0.0 <dev-haskell/cabal-3.7
 	dev-haskell/happy
-	cpphs? ( dev-haskell/cpphs )
+	cpphs? (
+		dev-haskell/cpphs
+	)
 "
-BDEPEND="app-text/dos2unix"
+BDEPEND="
+	emacs? (
+		>=app-editors/emacs-23.1:*
+	)
+"
 
 SITEFILE="50${PN}2-gentoo.el"
 
 src_prepare() {
-	# pull revised cabal from upstream
-	cp "${DISTDIR}/${PF}.cabal" "${S}/${CABAL_PN}.cabal" || die
-
-	# Convert to unix line endings
-	dos2unix "${S}/${CABAL_PN}.cabal" || die
-
-	# Apply patches *after* pulling the revised cabal
-	default
+	haskell-cabal_src_prepare
 
 	# This currently breaks the .cabal file. Using patch instead
 	#if ! use emacs; then
