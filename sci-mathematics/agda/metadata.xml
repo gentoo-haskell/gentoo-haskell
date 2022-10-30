@@ -12,4 +12,8 @@ False, then the --count-clusters flag triggers an error message.)</flag>
 		<flag name="optimise-heavily">Enable some expensive optimisations when compiling Agda.</flag>
 		<flag name="stdlib">Install the standard library.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">Agda</remote-id>
+		<remote-id type="github">agda/agda</remote-id>
+	</upstream>
 </pkgmetadata>
