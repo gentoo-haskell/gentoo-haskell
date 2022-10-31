@@ -13,4 +13,4 @@ RESTRICT=test
 SLOT=0/3.4.0.0
 SRC_URI=https://hackage.haskell.org/package/Cabal-3.4.0.0/Cabal-3.4.0.0.tar.gz -> cabal-3.4.0.0.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
-_md5_=d11c5567b27f5aa065b9aa0967d9fc2f
+_md5_=7bb9c85825a0040fa83d91e73e03cdb8

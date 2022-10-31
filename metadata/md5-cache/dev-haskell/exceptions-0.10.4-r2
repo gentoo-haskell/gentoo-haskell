@@ -13,4 +13,4 @@ RESTRICT=!test? ( test )
 SLOT=0/0.10.4
 SRC_URI=https://hackage.haskell.org/package/exceptions-0.10.4/exceptions-0.10.4.tar.gz https://hackage.haskell.org/package/exceptions-0.10.4/revision/3.cabal -> exceptions-0.10.4-rev3.cabal
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
-_md5_=6c8e7ef7387552f7db4b3dce9f1226c6
+_md5_=b045ec55f22ae5722a6866ae5b92e679
