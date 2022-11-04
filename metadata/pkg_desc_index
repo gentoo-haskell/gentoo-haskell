@@ -1374,7 +1374,7 @@ dev-haskell/network-transport-tcp 0.6.0: TCP instantiation of Network.Transport
 dev-haskell/network-transport-tests 0.2.4.3-r1: Unit tests for Network.Transport implementations
 dev-haskell/network-uri 2.5.0.0-r1 2.6.4.1: URI manipulation
 dev-haskell/newtype 0.2.2.0: A typeclass and set of functions for working with newtypes
-dev-haskell/newtype-generics 0.5.4 0.6: A typeclass and set of functions for working with newtypes
+dev-haskell/newtype-generics 0.5.4 0.6.2: A typeclass and set of functions for working with newtypes
 dev-haskell/ngx-export 1.7.4: Helper module for Nginx haskell module
 dev-haskell/nicify 1.2.1: Pretty print the standard output of default 'Show' instances
 dev-haskell/nicify-lib 1.0.1: Pretty print the standard output of default 'Show' instances
