@@ -1273,7 +1273,7 @@ dev-haskell/mintty 0.1.2: A reliable way to detect the presence of a MinTTY cons
 dev-haskell/misfortune 0.1.1.2: fortune-mod clone
 dev-haskell/miso 1.8.0.0: A tasty Haskell front-end framework
 dev-haskell/missing-foreign 0.1.1-r1: Convenience functions for FFI work
-dev-haskell/missingh 1.4.3.0-r2: Large utility library
+dev-haskell/missingh 1.5.0.1: Large utility library
 dev-haskell/mmap 0.5.9: Memory mapped files for POSIX and Windows
 dev-haskell/mmark 0.0.7.5: Strict markdown processor for writers
 dev-haskell/mmorph 1.1.5: Monad morphisms
