@@ -7,7 +7,13 @@
 	</maintainer>
 	<use>
 		<flag name="deterministic-profiling">
-			Support building against GHC with &lt;https://phabricator.haskell.org/D4388&gt; backported
-		</flag>
+&#9;&#9;&#9;Support building against GHC with &lt;https://phabricator.haskell.org/D4388&gt; backported
+&#9;&#9;</flag>
+		<flag name="mirror-modules-helper">Build the &quot;mirror-modules&quot; helper executable.</flag>
+		<flag name="no-plugin">Use the legacy executable for testing.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">liquidhaskell</remote-id>
+		<remote-id type="github">ucsd-progsys/liquidhaskell</remote-id>
+	</upstream>
 </pkgmetadata>
