@@ -967,9 +967,6 @@ cabal-register-inplace() {
 		# example of something that makes this assumption.
 		local inplace_db="${S}/dist/package.conf.inplace/"
 
-		# Generate the default package conf
-		./setup register --gen-pkg-config || die
-
 		# Set test-specific CABAL_PN/PN values if they are not set already
 		: ${TEST_CABAL_PN:="$(
 			if [[ -n $MY_PN ]]; then
@@ -981,11 +978,23 @@ cabal-register-inplace() {
 		: ${TEST_PN:="${PN}"}
 
 		local cabal_file="${S}/${TEST_CABAL_PN}.cabal"
+		local conf="${S}/${TEST_CABAL_PN}.conf"
 
-		local pkg_conf="$(find "${S}" -type f -name "${TEST_CABAL_PN}-*.conf" -maxdepth 1 | head -1)"
-		if [[ ! -f "${pkg_conf}" ]]; then
-			einfo "pkg_conf: \"${pkg_conf}\""
-			die "Package conf file was not created by './setup register'"
+		# Generate the package conf
+		local ipid="$(./setup register --gen-pkg-config="${conf}" --print-ipid || die)"
+
+		# In the case that the package has multiple libraries (one "normal" and
+		# one or more "private" libraries) './setup register' will create a
+		# folder instead of a file, containing one conf file per library.
+		# The main library's conf file will end with the string captured by the
+		# 'ipid' variable.
+		if [[ -d "${S}/${TEST_CABAL_PN}.conf" ]]; then
+			local pkg_conf="$(find "${conf}" -maxdepth 1 -type f -name "*${ipid}")"
+			[[ -z $pkg_conf ]] && die "Failed to find package conf file in ${conf}"
+		elif [[ -f "${conf}" ]]; then
+			local pkg_conf="${conf}"
+		else
+			die "Package conf was not created by './setup register'"
 		fi
 
 		# Modify the package conf so that it points to directories within the build
