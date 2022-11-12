@@ -398,7 +398,15 @@ cabal-hscolour() {
 }
 
 cabal-haddock() {
-	haskell-cabal-run_verbose ./setup haddock "$@"
+	# './setup haddock' may become very unhappy in the presence of a
+	# private library. For example:
+	#     Preprocessing library 'testlib' for rest-rewrite-0.4.0..
+	#     Running Haddock on library 'testlib' for rest-rewrite-0.4.0..
+	#     setup: internal error when calculating transitive package dependencies.
+	# This ensures haddock is only run on the main library
+	local haddock_args=( "lib:${CABAL_PN}" )
+
+	haskell-cabal-run_verbose ./setup haddock "${haddock_args[@]}" "$@"
 }
 
 cabal-die-if-nonempty() {
@@ -685,9 +693,10 @@ cabal_src_compile() {
 	cabal-build
 
 	if [[ -n "$CABAL_USE_HADDOCK" ]] && use doc; then
+
 		if [[ -n "$CABAL_USE_HSCOLOUR" ]] && use hscolour; then
 			# --hyperlink-source implies calling 'setup hscolour'
-			haddock_args+=(--hyperlink-source)
+			local haddock_args=(--hyperlink-source)
 		fi
 
 		cabal-haddock "${haddock_args[@]}" $CABAL_EXTRA_HADDOCK_FLAGS
