@@ -5,21 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package is a Haskell wrapper to the SMTLIB-based
-		Horn-Clause/Logical Implication constraint solver used
-		for Liquid Types.
-		
-		The package includes:
-		
-		1. Types for Expressions, Predicates, Constraints, Solutions
-		
-		2. Code for solving constraints
-		
-		Requirements
-		
-		In addition to the .cabal dependencies you require
-		
-		- A Z3 (&lt;http://z3.codeplex.com&gt;) or CVC4 (&lt;http://cvc4.cs.nyu.edu&gt;) binary.
-	</longdescription>
+	<use>
+		<flag name="executable">Build the fixpoint executable</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">liquid-fixpoint</remote-id>
+		<remote-id type="github">ucsd-progsys/liquid-fixpoint</remote-id>
+	</upstream>
 </pkgmetadata>

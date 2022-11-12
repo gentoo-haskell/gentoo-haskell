@@ -1,0 +1,25 @@
+From: hololeap <hololeap@protonmail.com>
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+Add an 'executable' flag to toggle building the 'fixpoint' executable.
+
+diff --git a/liquid-fixpoint.cabal b/liquid-fixpoint.cabal
+index a54c7d15..e90a0e3b 100644
+--- a/liquid-fixpoint.cabal
++++ b/liquid-fixpoint.cabal
+@@ -162,8 +162,15 @@ library
+     hs-source-dirs: win
+   default-language: Haskell98
+ 
++flag executable
++  manual:           True
++  default:          False
++  description:      Build the fixpoint executable
++
+ executable fixpoint
+   import: warnings
++  if !flag(executable)
++    buildable: False
+   main-is:          Fixpoint.hs
+   other-modules:    Paths_liquid_fixpoint
+   autogen-modules:  Paths_liquid_fixpoint
