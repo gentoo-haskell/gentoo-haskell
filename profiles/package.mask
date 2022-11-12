@@ -1,3 +1,7 @@
+# hololeap <hololeap@protonmail.com> (2022-11-12)
+# Needs extensive patching to be compatible with modern hashable.
+dev-haskell/liquidhaskell
+
 # hololeap <hololeap@protonmail.com> (2022-11-11)
 # This version breaks the normal version scheme and seems to be a mistake.
 # Hackage doesn't allow for removal of versions that have already been
