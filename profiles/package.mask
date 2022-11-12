@@ -1,3 +1,9 @@
+# hololeap <hololeap@protonmail.com> (2022-11-11)
+# This version breaks the normal version scheme and seems to be a mistake.
+# Hackage doesn't allow for removal of versions that have already been
+# uploaded so it is masked to prevent accidental usage.
+=dev-haskell/liquid-fixpoint-8.10.7
+
 # hololeap <hololeap@protonmail.com> (2022-09-22)
 # dev-haskell/stan does not build on >=ghc-9.0 and needs extensive patching or
 # a rewrite to do so.
