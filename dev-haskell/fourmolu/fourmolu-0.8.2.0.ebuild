@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples executable +fixity-th"
 
-PATCHES=( "${FILESDIR}/${PN}-0.4.0.0-add-flags.patch" )
+PATCHES=( "${FILESDIR}/${PN}-0.8.2.0-add-flags.patch" )
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-3.0:=[profile?]
 	>=dev-haskell/ansi-terminal-0.10:=[profile?] <dev-haskell/ansi-terminal-1.0:=[profile?]

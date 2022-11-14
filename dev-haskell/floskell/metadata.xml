@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Build the floskell executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">floskell</remote-id>
+		<remote-id type="github">ennocramer/floskell</remote-id>
+	</upstream>
 </pkgmetadata>

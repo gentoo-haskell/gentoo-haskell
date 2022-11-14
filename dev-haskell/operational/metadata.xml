@@ -8,15 +8,8 @@
 	<use>
 		<flag name="buildexamples">Build example executables.</flag>
 	</use>
-	<longdescription>
-		Tiny library for implementing monads by specifying the primitive instructions
-		and their operational semantics. The monad laws will hold automatically.
-		Can also be used to define monad transformers,
-		and the lifting laws are, again, automatic.
-		
-		Accompanies the article: \"The Operational Monad Tutorial\",
-		published in Issue 15 of The Monad.Reader &lt;http://themonadreader.wordpress.com/2010/01/26/issue-15/&gt;.
-		
-		Related packages: MonadPrompt &lt;http://hackage.haskell.org/package/MonadPrompt&gt;.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">operational</remote-id>
+		<remote-id type="github">HeinrichApfelmus/operational</remote-id>
+	</upstream>
 </pkgmetadata>

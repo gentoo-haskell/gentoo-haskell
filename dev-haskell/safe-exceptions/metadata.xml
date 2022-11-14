@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">safe-exceptions</remote-id>
+		<remote-id type="github">fpco/safe-exceptions</remote-id>
+	</upstream>
 </pkgmetadata>

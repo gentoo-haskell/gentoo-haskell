@@ -8,4 +8,8 @@
 	<use>
 		<flag name="old-time">build against old-time package</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">unix-compat</remote-id>
+		<remote-id type="github">jacobstanley/unix-compat</remote-id>
+	</upstream>
 </pkgmetadata>

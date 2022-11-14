@@ -398,7 +398,15 @@ cabal-hscolour() {
 }
 
 cabal-haddock() {
-	haskell-cabal-run_verbose ./setup haddock "$@"
+	# './setup haddock' may become very unhappy in the presence of a
+	# private library. For example:
+	#     Preprocessing library 'testlib' for rest-rewrite-0.4.0..
+	#     Running Haddock on library 'testlib' for rest-rewrite-0.4.0..
+	#     setup: internal error when calculating transitive package dependencies.
+	# This ensures haddock is only run on the main library
+	local haddock_args=( "lib:${CABAL_PN}" )
+
+	haskell-cabal-run_verbose ./setup haddock "${haddock_args[@]}" "$@"
 }
 
 cabal-die-if-nonempty() {
@@ -685,9 +693,10 @@ cabal_src_compile() {
 	cabal-build
 
 	if [[ -n "$CABAL_USE_HADDOCK" ]] && use doc; then
+
 		if [[ -n "$CABAL_USE_HSCOLOUR" ]] && use hscolour; then
 			# --hyperlink-source implies calling 'setup hscolour'
-			haddock_args+=(--hyperlink-source)
+			local haddock_args=(--hyperlink-source)
 		fi
 
 		cabal-haddock "${haddock_args[@]}" $CABAL_EXTRA_HADDOCK_FLAGS
@@ -958,9 +967,6 @@ cabal-register-inplace() {
 		# example of something that makes this assumption.
 		local inplace_db="${S}/dist/package.conf.inplace/"
 
-		# Generate the default package conf
-		./setup register --gen-pkg-config || die
-
 		# Set test-specific CABAL_PN/PN values if they are not set already
 		: ${TEST_CABAL_PN:="$(
 			if [[ -n $MY_PN ]]; then
@@ -972,11 +978,23 @@ cabal-register-inplace() {
 		: ${TEST_PN:="${PN}"}
 
 		local cabal_file="${S}/${TEST_CABAL_PN}.cabal"
+		local conf="${S}/${TEST_CABAL_PN}.conf"
 
-		local pkg_conf="$(find "${S}" -type f -name "${TEST_CABAL_PN}-*.conf" -maxdepth 1 | head -1)"
-		if [[ ! -f "${pkg_conf}" ]]; then
-			einfo "pkg_conf: \"${pkg_conf}\""
-			die "Package conf file was not created by './setup register'"
+		# Generate the package conf
+		local ipid="$(./setup register --gen-pkg-config="${conf}" --print-ipid || die)"
+
+		# In the case that the package has multiple libraries (one "normal" and
+		# one or more "private" libraries) './setup register' will create a
+		# folder instead of a file, containing one conf file per library.
+		# The main library's conf file will end with the string captured by the
+		# 'ipid' variable.
+		if [[ -d "${S}/${TEST_CABAL_PN}.conf" ]]; then
+			local pkg_conf="$(find "${conf}" -maxdepth 1 -type f -name "*${ipid}")"
+			[[ -z $pkg_conf ]] && die "Failed to find package conf file in ${conf}"
+		elif [[ -f "${conf}" ]]; then
+			local pkg_conf="${conf}"
+		else
+			die "Package conf was not created by './setup register'"
 		fi
 
 		# Modify the package conf so that it points to directories within the build

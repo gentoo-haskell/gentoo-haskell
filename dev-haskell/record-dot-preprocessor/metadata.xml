@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Build the record-dot-preprocessor executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">record-dot-preprocessor</remote-id>
+		<remote-id type="github">ndmitchell/record-dot-preprocessor</remote-id>
+	</upstream>
 </pkgmetadata>

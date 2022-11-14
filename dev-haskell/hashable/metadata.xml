@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">hashable</remote-id>
+		<remote-id type="github">haskell-unordered-containers/hashable</remote-id>
+	</upstream>
 </pkgmetadata>
