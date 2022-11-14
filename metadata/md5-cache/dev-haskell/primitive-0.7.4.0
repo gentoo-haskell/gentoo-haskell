@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-lang/ghc-8.4.3:= >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/base-orphans >=dev-haskell/quickcheck-2.13 <dev-haskell/quickcheck-2.15 >=dev-haskell/quickcheck-classes-base-0.6 <dev-haskell/quickcheck-classes-base-0.7 dev-haskell/tagged >=dev-haskell/tasty-1.2 dev-haskell/tasty-quickcheck dev-haskell/transformers-compat ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Primitive memory-related operations
+EAPI=8
+HOMEPAGE=https://github.com/haskell/primitive
+INHERIT=haskell-cabal
+IUSE=doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux ~x86-solaris
+LICENSE=BSD
+RDEPEND=>=dev-lang/ghc-8.4.3:=
+RESTRICT=!test? ( test )
+SLOT=0/0.7.4.0
+SRC_URI=https://hackage.haskell.org/package/primitive-0.7.4.0/primitive-0.7.4.0.tar.gz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
+_md5_=ae085efd7c5521e44d95040bf812afe2

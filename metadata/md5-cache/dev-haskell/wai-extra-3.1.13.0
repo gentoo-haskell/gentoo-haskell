@@ -1,0 +1,16 @@
+BDEPEND=test? ( dev-haskell/hspec-discover ) app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/ansi-terminal-0.4:=[profile?] dev-haskell/base64-bytestring:=[profile?] dev-haskell/call-stack:=[profile?] >=dev-haskell/case-insensitive-0.2:=[profile?] dev-haskell/cookie:=[profile?] dev-haskell/data-default-class:=[profile?] >=dev-haskell/fast-logger-2.4.5:=[profile?] >=dev-haskell/http-types-0.7:=[profile?] dev-haskell/hunit:=[profile?] >=dev-haskell/iproute-1.7.8:=[profile?] >=dev-haskell/network-2.6.1.0:=[profile?] >=dev-haskell/resourcet-0.4.6:=[profile?] <dev-haskell/resourcet-1.4:=[profile?] >=dev-haskell/streaming-commons-0.2:=[profile?] dev-haskell/vault:=[profile?] >=dev-haskell/wai-3.2.2.1:=[profile?] <dev-haskell/wai-3.3:=[profile?] >=dev-haskell/wai-logger-2.3.7:=[profile?] >=dev-haskell/warp-3.3.22:=[profile?] dev-haskell/word8:=[profile?] >=dev-lang/ghc-8.6.3:= >=dev-haskell/cabal-2.4.0.1 test? ( >=dev-haskell/hspec-1.3 dev-haskell/temporary dev-haskell/zlib ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Provides some basic WAI handlers and middleware
+EAPI=8
+HOMEPAGE=https://github.com/yesodweb/wai
+INHERIT=haskell-cabal
+IUSE=examples doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-haskell/aeson:=[profile?] >=dev-haskell/ansi-terminal-0.4:=[profile?] dev-haskell/base64-bytestring:=[profile?] dev-haskell/call-stack:=[profile?] >=dev-haskell/case-insensitive-0.2:=[profile?] dev-haskell/cookie:=[profile?] dev-haskell/data-default-class:=[profile?] >=dev-haskell/fast-logger-2.4.5:=[profile?] >=dev-haskell/http-types-0.7:=[profile?] dev-haskell/hunit:=[profile?] >=dev-haskell/iproute-1.7.8:=[profile?] >=dev-haskell/network-2.6.1.0:=[profile?] >=dev-haskell/resourcet-0.4.6:=[profile?] <dev-haskell/resourcet-1.4:=[profile?] >=dev-haskell/streaming-commons-0.2:=[profile?] dev-haskell/vault:=[profile?] >=dev-haskell/wai-3.2.2.1:=[profile?] <dev-haskell/wai-3.3:=[profile?] >=dev-haskell/wai-logger-2.3.7:=[profile?] >=dev-haskell/warp-3.3.22:=[profile?] dev-haskell/word8:=[profile?] >=dev-lang/ghc-8.6.3:=
+RESTRICT=!test? ( test )
+SLOT=0/3.1.13.0
+SRC_URI=https://hackage.haskell.org/package/wai-extra-3.1.13.0/wai-extra-3.1.13.0.tar.gz https://hackage.haskell.org/package/wai-extra-3.1.13.0/revision/1.cabal -> wai-extra-3.1.13.0-rev1.cabal
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
+_md5_=0c9f305f4dd08b7cca6a0ccf4a9ff8fa

@@ -36,6 +36,7 @@ dev-haskell/biosff:flower - Build the 'flower' executable.
 dev-haskell/biosff:frecover - Build the 'frecover' executable.
 dev-haskell/bits-atomic:test - Build test program.
 dev-haskell/bitstring:withquickcheck - Build with QuickCheck test. Note that Show instances will be different.
+dev-haskell/bitvec:gmp - Link against the GMP library for the ultimate performance of `zipBits`, `invertBits` and `countBits`. Users are strongly encouraged to enable this flag whenever possible.
 dev-haskell/boring:tagged - You can disable the use of the `tagged` package using `-f-tagged`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/brick:demos - Build demonstration programs
 dev-haskell/broadcast-chan:sync - Benchmarks synchronisation primitives used in main benchmark.
@@ -89,15 +90,18 @@ dev-haskell/diagrams-builder:rasterific - install rasterific-specific builder to
 dev-haskell/diagrams-builder:svg - install svg-specific builder tool
 dev-haskell/dimensions:unsafeindices - Disable bound checks on Idx and Idxs types.
 dev-haskell/direct-sqlite:fulltextsearch - Enable full-text search when using the bundled sqlite library
+dev-haskell/direct-sqlite:haveusleep - Enable use of os function usleep.
 dev-haskell/direct-sqlite:json1 - Enable json1 extension.
+dev-haskell/direct-sqlite:systemlib - Use the system-wide sqlite library
 dev-haskell/direct-sqlite:urifilenames - Enable URI filenames when using the bundled sqlite library
 dev-haskell/dlist:werror - Enable -Werror
 dev-haskell/dotenv:dev - Turn on development settings.
 dev-haskell/dotenv:static - Creates static binary.
 dev-haskell/echo:examples - Build the bundled example program.
-dev-haskell/entropy:halvm - Build for the HaLVM.
+dev-haskell/entropy:donotgetentropy - Avoid use of the getentropy() *nix function. By default getentropy will be used if detected during compilation (this plays poorly with cross compilation).
 dev-haskell/extensible:barbies - "define instances for barbies"
 dev-haskell/extensible:cassava - "define instances for cassava"
+dev-haskell/extensions:executable - Build the extensions executable
 dev-haskell/ffmpeg-light:builddemo - Build demo executable
 dev-haskell/ffmpeg-light:buildrasterdemo - Build Rasterific demo executable
 dev-haskell/ffmpeg-light:buildtranscodedemo - Build transcode demo executable
@@ -118,7 +122,6 @@ dev-haskell/ghc-check:package-abis - record package abis at compile time for imp
 dev-haskell/ghc-exactprint:roundtrip - Build roundtripping executables
 dev-haskell/ghc-heap-view:prim-supports-any - The used GHC supports Any as an argument to foreign prim functions (GHC ticket #5931)
 dev-haskell/ghc-prof:dump - Build the executable "dump"
-dev-haskell/ghcide:bench-exe - Build the ghcide-bench executable
 dev-haskell/ghcide:executable - Build the ghcide executable
 dev-haskell/ghcide:test-exe - Build the ghcide-test-preprocessor executable
 dev-haskell/gi-cairo-render:svg - Build the Scalable Vector Graphics (SVG) backend of Cairo.
@@ -150,17 +153,20 @@ dev-haskell/happstack-plugins:tests - Build the testsuite, and include the tests
 dev-haskell/hashtables:bounds-checking - if on, use bounds-checking array accesses
 dev-haskell/hashtables:detailed-profiling - add detailed profiling information to profiled build-depends
 dev-haskell/haskeline:terminfo - Use the terminfo package for POSIX consoles.
-dev-haskell/haskell-language-server:hls_formatters_brittany - Enable brittany plugin
-dev-haskell/haskell-language-server:hls_formatters_floskell - Enable floskell plugin
-dev-haskell/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu plugin
-dev-haskell/haskell-language-server:hls_formatters_ormolu - Enable ormolu plugin
-dev-haskell/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell plugin
+dev-haskell/haskell-language-server:hls_formatters_brittany - Enable brittany formatter
+dev-haskell/haskell-language-server:hls_formatters_floskell - Enable floskell formatter
+dev-haskell/haskell-language-server:hls_formatters_fourmolu - Enable fourmolu formatter
+dev-haskell/haskell-language-server:hls_formatters_ormolu - Enable ormolu formatter
+dev-haskell/haskell-language-server:hls_formatters_refactor - Enable refactor formatter
+dev-haskell/haskell-language-server:hls_formatters_stylish-haskell - Enable stylishHaskell formatter
 dev-haskell/haskell-language-server:hls_plugins_alternate-number-format - Enable Alternate Number Format plugin
 dev-haskell/haskell-language-server:hls_plugins_call-hierarchy - Enable call hierarchy plugin
 dev-haskell/haskell-language-server:hls_plugins_change-type-signature - Change a declarations type signature with a Code Action
 dev-haskell/haskell-language-server:hls_plugins_class - Enable class plugin
 dev-haskell/haskell-language-server:hls_plugins_code-range - Enable codeRange plugin
 dev-haskell/haskell-language-server:hls_plugins_eval - Enable eval plugin
+dev-haskell/haskell-language-server:hls_plugins_explicit-fixity - Enable explicit-fixity plugin
+dev-haskell/haskell-language-server:hls_plugins_gadt - Enable GADT plugin
 dev-haskell/haskell-language-server:hls_plugins_haddock-comments - Enable haddock comments plugin
 dev-haskell/haskell-language-server:hls_plugins_hlint - Enable hlint plugin
 dev-haskell/haskell-language-server:hls_plugins_import-lens - Enable importLens plugin
@@ -171,7 +177,7 @@ dev-haskell/haskell-language-server:hls_plugins_refine-imports - Enable refineIm
 dev-haskell/haskell-language-server:hls_plugins_rename - Enable rename plugin
 dev-haskell/haskell-language-server:hls_plugins_retrie - Enable retrie plugin
 dev-haskell/haskell-language-server:hls_plugins_splice - Enable splice plugin
-dev-haskell/haskell-language-server:hls_plugins_tactics - Enable tactics plugin
+dev-haskell/haskell-language-server:hls_plugins_wingman - Enable wingman plugin
 dev-haskell/hdbc-sqlite3:splitbase - Choose the new smaller, split-up package.
 dev-haskell/hedgehog-fn:build-examples - Build the example executables
 dev-haskell/hiedb:executable - Install the hiedb executable
@@ -228,8 +234,11 @@ dev-haskell/libffi:ghc-bundled-libffi - When GHC is configured without @--with-s
 dev-haskell/libyaml:system-libyaml - Use the system-wide libyaml instead of the bundled copy
 dev-haskell/libyaml:unicode - Enable unicode output. Otherwise, unicode characters will be escaped.
 dev-haskell/linux-file-extents:examples - Build examples
+dev-haskell/liquid-fixpoint:executable - Build the fixpoint executable
 dev-haskell/liquiddesugar:devel - Turn on stricter error reporting for development.
 dev-haskell/liquidhaskell:deterministic-profiling - Support building against GHC with <https://phabricator.haskell.org/D4388> backported
+dev-haskell/liquidhaskell:mirror-modules-helper - Build the "mirror-modules" helper executable.
+dev-haskell/liquidhaskell:no-plugin - Use the legacy executable for testing.
 dev-haskell/logfloat:useffi - Use FFI to link C's log1p. Improves accuracy while maintaining the same performance. Disable only if your compiler doesn't support FFI.
 dev-haskell/lpeg:rely-on-shared-lpeg-library - Do not build lpeg from source, but trust that lpeg is made available in other ways, e.g., through a system-wide installation. The loader will be replaced with a placeholder function that only emits a message.
 dev-haskell/lua:system-lua - Use @pkg-config@ to discover library and include paths. Setting this flag implies `pkg-config`.
@@ -249,6 +258,9 @@ dev-haskell/nats:hashable - You can disable the use of the `hashable` package us
 dev-haskell/nats:template-haskell - You can disable the use of the `template-haskell` package using `-f-template-haskell`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply an instance of `Lift`.
 dev-haskell/network:devel - using tests for developers
 dev-haskell/network-data:small-base - Build the split-up base package.
+dev-haskell/nothunks:bytestring - Provide instances for bytestring
+dev-haskell/nothunks:text - Provide instances for text
+dev-haskell/nothunks:vector - Provide instances for vector
 dev-haskell/openclwrappers:link - Link against OpenCL library.
 dev-haskell/operational:buildexamples - Build example executables.
 dev-haskell/optics-core:explicit-generic-labels - Require explicit GenericLabelOptics instances in order to use generics-based labels
@@ -282,6 +294,8 @@ dev-haskell/postgresql-typed:text - Support Text string values via text (implied
 dev-haskell/postgresql-typed:tls - Enable TLS (SSL) support in PostgreSQL server connections.
 dev-haskell/postgresql-typed:uuid - Support the UUID type via uuid (implied by binary).
 dev-haskell/pretty-simple:executable - Build an small command line program that pretty-print anything from stdin.
+dev-haskell/prettyprinter:buildreadme - Build the readme generator
+dev-haskell/prettyprinter:text - While it's a core value of @prettyprinter@ to use @Text@, there are rare circumstances (mostly when @prettyprinter@ arises as a dependency of test suites of packages like @bytestring@ or @text@ themselves) when this is inconvenient. In this case one can disable this flag, so that @prettyprinter@ fallbacks to @String@.
 dev-haskell/profiteur:embed-data-files - Embed data files into the executable (needed for ghcjs packaging)
 dev-haskell/protolude:dev - Build development tools
 dev-haskell/publicsuffixlist:create - export Network.PublicSuffixList.Create module
@@ -335,6 +349,7 @@ dev-haskell/sr-extra:omit-data - Omit all Data instances
 dev-haskell/sr-extra:omit-serialize - Omit all the Serialize instances, on the assumption that we will use SafeCopy instances instead.
 dev-haskell/ssh-known-hosts:sample_progs - Build sample programs
 dev-haskell/stack:integration-tests - Run the integration test suite.
+dev-haskell/stan:executable - Build the stan executable
 dev-haskell/stateref:usestm - Include instances for STM types.
 dev-haskell/stateref:usetmvar - Include instances for TMVar.
 dev-haskell/store-core:force-alignment - Adds -DALIGNED_MEMORY to cpp-options
@@ -349,8 +364,8 @@ dev-haskell/stylish-haskell:ghc-lib - Force dependency on ghc-lib-parser even if
 dev-haskell/synthesizer-alsa:examples - Build example executables
 dev-haskell/synthesizer-midi:buildexamples - Build example executables
 dev-haskell/system-uuid:cli - Enable command line tool
+dev-haskell/tasty:clock - Depend on the clock package for more accurate time measurement
 dev-haskell/tasty-discover:executable - Build the tasty-discover executable
-dev-haskell/tasty-golden:build-example - 
 dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/texmath:server - Compile webserver.
 dev-haskell/text-short:asserts - Enable runtime-checks via @assert@
@@ -386,7 +401,6 @@ dev-haskell/vector-algorithms:unsafechecks - Enable bounds checking in unsafe op
 dev-haskell/vector-instances:hashable - use dev-haskell/hashable
 dev-haskell/void:safe - Disable effective but unsafe coercions
 dev-haskell/wai-app-static:print - print debug info
-dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GNU/kFreeBSD)
 dev-haskell/warp:x509 - Adds a dependency on the x509 library to enable getting TLS client certificates.
 dev-haskell/wcwidth:cli - Enable command line tool
 dev-haskell/xeno:libxml2 - Include libxml2 in the benchmarks

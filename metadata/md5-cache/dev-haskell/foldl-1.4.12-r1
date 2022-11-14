@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?]
 RESTRICT=!test? ( test )
 SLOT=0/1.4.12
 SRC_URI=https://hackage.haskell.org/package/foldl-1.4.12/foldl-1.4.12.tar.gz https://hackage.haskell.org/package/foldl-1.4.12/revision/5.cabal -> foldl-1.4.12-rev5.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
 _md5_=6b582df8f564bb2c977681af71cb5707

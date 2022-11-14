@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:=[profile?] >=dev-haskell/charset-0.3:=[profile?] <dev-haskell/charset-1:=[profile?] >=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?] >=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] >=dev-lang/ghc-8.4.3:= attoparsec? ( >=dev-haskell/attoparsec-0.12.1.4:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 test? ( dev-haskell/quickcheck dev-haskell/quickcheck-instances ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Parsing combinators
+EAPI=8
+HOMEPAGE=https://github.com/ekmett/parsers/
+INHERIT=haskell-cabal
+IUSE=+attoparsec +binary +parsec doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:=[profile?] >=dev-haskell/charset-0.3:=[profile?] <dev-haskell/charset-1:=[profile?] >=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?] >=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] >=dev-lang/ghc-8.4.3:= attoparsec? ( >=dev-haskell/attoparsec-0.12.1.4:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?] )
+RESTRICT=!test? ( test )
+SLOT=0/0.12.11
+SRC_URI=https://hackage.haskell.org/package/parsers-0.12.11/parsers-0.12.11.tar.gz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
+_md5_=fb8a13eeaf491abcfa1ef120b71be2d5

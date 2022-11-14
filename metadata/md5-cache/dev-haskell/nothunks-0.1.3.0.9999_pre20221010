@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/stm-2.5:=[profile?] <dev-haskell/stm-2.6:=[profile?] >=dev-lang/ghc-8.10.1:= vector? ( >=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?] ) >=dev-haskell/cabal-3.2.0.0 test? ( >=dev-haskell/hedgehog-1.1 <dev-haskell/hedgehog-1.3 >=dev-haskell/random-1.1 <dev-haskell/random-1.3 >=dev-haskell/tasty-1.3 <dev-haskell/tasty-1.5 >=dev-haskell/tasty-hedgehog-1.1 <dev-haskell/tasty-hedgehog-1.4 ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Examine values for unexpected thunks
+EAPI=8
+HOMEPAGE=https://hackage.haskell.org/package/nothunks
+INHERIT=haskell-cabal
+IUSE=+bytestring +text +vector doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=>=dev-haskell/stm-2.5:=[profile?] <dev-haskell/stm-2.6:=[profile?] >=dev-lang/ghc-8.10.1:= vector? ( >=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?] )
+RESTRICT=!test? ( test )
+SLOT=0/0.1.3.0.9999_pre20221010
+SRC_URI=https://github.com/input-output-hk/nothunks/archive/f224ca3838578045e07a81ed36552d1f4120dae2.tar.gz -> nothunks-f224ca3838578045e07a81ed36552d1f4120dae2.tar.gz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
+_md5_=6902da5c449d285327706b082b7f96a8

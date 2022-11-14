@@ -1,0 +1,16 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/cabal-3.0:=[profile?] <dev-haskell/cabal-3.7:=[profile?] >=dev-lang/ghc-8.8.1:= executable? ( >=dev-haskell/colourista-0.1:=[profile?] <dev-haskell/colourista-0.3:=[profile?] >=dev-haskell/optparse-applicative-0.15:=[profile?] ) >=dev-haskell/cabal-3.0.0.0 test? ( >=dev-haskell/hedgehog-1.0 <dev-haskell/hedgehog-1.1 dev-haskell/hspec >=dev-haskell/hspec-hedgehog-0.0.1 <dev-haskell/hspec-hedgehog-0.1 ) hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Parse Haskell Language Extensions
+EAPI=8
+HOMEPAGE=https://github.com/kowainik/extensions
+INHERIT=haskell-cabal
+IUSE=executable doc hscolour hoogle profile test
+KEYWORDS=~amd64 ~x86
+LICENSE=MPL-2.0
+RDEPEND=>=dev-haskell/cabal-3.0:=[profile?] <dev-haskell/cabal-3.7:=[profile?] >=dev-lang/ghc-8.8.1:= executable? ( >=dev-haskell/colourista-0.1:=[profile?] <dev-haskell/colourista-0.3:=[profile?] >=dev-haskell/optparse-applicative-0.15:=[profile?] )
+RESTRICT=!test? ( test )
+SLOT=0/0.0.0.1.9999_pre20220919
+SRC_URI=https://github.com/kowainik/extensions/archive/ab02b7b017a8ec301ba0320276383c5a618765c0.tar.gz -> extensions-ab02b7b017a8ec301ba0320276383c5a618765c0.tar.gz
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
+_md5_=a2dfa482d599029ff04456d5dcea724a

@@ -1,0 +1,15 @@
+BDEPEND=app-text/dos2unix
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test
+DEPEND=>=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] >=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?] >=dev-lang/ghc-8.4.3:= embed? ( >=dev-haskell/file-embed-0.0.7:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] ) >=dev-haskell/cabal-2.2.0.1 hscolour? ( dev-haskell/hscolour )
+DESCRIPTION=Configurable Knuth-Liang hyphenation
+EAPI=8
+HOMEPAGE=https://github.com/ekmett/hyphenation
+INHERIT=haskell-cabal
+IUSE=+embed doc hscolour hoogle profile
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+RDEPEND=>=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?] >=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?] >=dev-lang/ghc-8.4.3:= embed? ( >=dev-haskell/file-embed-0.0.7:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
+SLOT=0/0.8.2
+SRC_URI=https://hackage.haskell.org/package/hyphenation-0.8.2/hyphenation-0.8.2.tar.gz https://hackage.haskell.org/package/hyphenation-0.8.2/revision/1.cabal -> hyphenation-0.8.2-rev1.cabal
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
+_md5_=f0418850e66f71b58e9e61cf88bb1d0d

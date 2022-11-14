@@ -12,5 +12,5 @@ RDEPEND=>=dev-haskell/attoparsec-0.10.4.0:=[profile?] >=dev-haskell/cmdargs-0.10
 RESTRICT=!test? ( test )
 SLOT=0/0.11.0
 SRC_URI=https://hackage.haskell.org/package/hsimport-0.11.0/hsimport-0.11.0.tar.gz https://hackage.haskell.org/package/hsimport-0.11.0/revision/3.cabal -> hsimport-0.11.0-rev3.cabal
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b973982f41669479aef34442fafff600
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	2e4751f54ef269204d5d1cc12fe88185	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	haskell-cabal	b6c7bc0bf2d629810447ffba047a3cdc
 _md5_=adc9fe2c7caf852f1080a56fecab5de2
