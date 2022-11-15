@@ -32,7 +32,6 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag fulltextsearch fulltextsearch) \
 		$(cabal_flag haveusleep haveusleep) \
-		--flag=haveusleep -systemlib \
 		$(cabal_flag json1 json1) \
 		$(cabal_flag systemlib systemlib) \
 		$(cabal_flag urifilenames urifilenames)
