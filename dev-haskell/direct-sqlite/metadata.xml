@@ -5,13 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="fulltextsearch">Enable full-text search when using the bundled sqlite library</flag>
-		<flag name="haveusleep">Enable use of os function usleep.</flag>
-		<flag name="json1">Enable json1 extension.</flag>
-		<flag name="systemlib">Use the system-wide sqlite library</flag>
-		<flag name="urifilenames">Enable URI filenames when using the bundled sqlite library</flag>
-	</use>
 	<upstream>
 		<remote-id type="hackage">direct-sqlite</remote-id>
 		<remote-id type="github">IreneKnapp/direct-sqlite</remote-id>
