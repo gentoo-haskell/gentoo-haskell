@@ -1,9 +1,0 @@
-DEFINED_PHASES=install postinst preinst prerm pretend
-DESCRIPTION=A user for dev-util/hoogle
-EAPI=8
-INHERIT=acct-user
-KEYWORDS=~amd64 ~x86
-RDEPEND=acct-group/hoogle
-SLOT=0
-_eclasses_=user-info	69a1ed744ec33cf2c910ff2bd6084d11	acct-user	ce2d3878b49fe819717a68300f633480
-_md5_=f118c729c2db6a533c8759700ae763b2
