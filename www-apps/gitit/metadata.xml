@@ -10,4 +10,8 @@
 the executable and the memory it uses, so those who will not need
 plugins should disable this flag.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">gitit</remote-id>
+		<remote-id type="github">jgm/gitit</remote-id>
+	</upstream>
 </pkgmetadata>
