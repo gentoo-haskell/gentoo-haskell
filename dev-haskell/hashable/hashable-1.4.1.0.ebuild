@@ -16,6 +16,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+RESTRICT=test # fails 1 test consistently on ghc-9.0.2
+
 RDEPEND=">=dev-haskell/base-orphans-0.8.6:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
