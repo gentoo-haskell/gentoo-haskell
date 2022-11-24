@@ -31,6 +31,7 @@ CABAL_CHDEPS=(
 	'doctest ^>= 0.16' 'doctest >= 0.16'
 	'hspec ^>= 2.7' 'hspec >= 2.7'
 	'splitmix < 0.0.5' 'splitmix'
+	'hedgehog ^>= 1.0' 'hedgehog >= 1.0'
 )
 
 RDEPEND="
@@ -43,7 +44,7 @@ DEPEND="${RDEPEND}
 	dev-haskell/cabal-doctest
 	test? (
 		>=dev-haskell/doctest-0.16
-		>=dev-haskell/hedgehog-1.0 <dev-haskell/hedgehog-1.1
+		>=dev-haskell/hedgehog-1.0
 		>=dev-haskell/hspec-2.7
 		>=dev-haskell/hspec-hedgehog-0.0.1.1 <dev-haskell/hspec-hedgehog-0.1
 		dev-haskell/splitmix
