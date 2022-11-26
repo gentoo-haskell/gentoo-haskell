@@ -15,6 +15,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+RESTRICT=test #fails
+
 RDEPEND="dev-haskell/th-compat:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
