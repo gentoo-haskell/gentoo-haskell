@@ -878,6 +878,7 @@ cabal_chdeps() {
 	[[ -f "${cabal_file}" ]] || die "cabal file '${cabal_file}' does not exist"
 
 	orig_c=$(< "${cabal_file}")
+	local next_c=${orig_c}
 
 	while :; do
 		from_pat=$1
@@ -892,19 +893,26 @@ cabal_chdeps() {
 		from_pat=${from_pat//\*/\\*}
 		from_pat=${from_pat//\[/\\[}
 
-		new_c=${orig_c//${from_pat}/${to_str}}
+		# escape ampersands in the 'to' part
+		to_str=$(sed -e "s%&%\\\&%g" <<< "${to_str}")
 
-		if [[ -n $CABAL_DEBUG_LOOSENING ]]; then
-			echo "${orig_c}" >"${T}/${cabal_file}".pre
-			echo "${new_c}" >"${T}/${cabal_file}".post
-			diff -u "${T}/${cabal_file}".{pre,post}
-		fi
+		# use sed instead of bash to make sure things are consistent in the presence
+		# of the patsub_replacement shell option
+		# See: <https://github.com/gentoo-haskell/gentoo-haskell/issues/1363>
+		new_c="$(sed -e "s%${from_pat}%${to_str}%g" <<< "${next_c}")"
 
-		[[ "${orig_c}" == "${new_c}" ]] && die "no trigger for '${from_pat}'"
-		orig_c=${new_c}
+		[[ "${next_c}" == "${new_c}" ]] && die "no trigger for '${from_pat}'"
+		next_c=${new_c}
 		shift
 		shift
 	done
+
+	if [[ -n $CABAL_DEBUG_LOOSENING ]]; then
+		local cabal_base="${T}/$(basename "${cabal_file}")"
+		echo "${orig_c}" > "${cabal_base}.pre"
+		echo "${new_c}" > "${cabal_base}.post"
+		diff -u --color=always "${cabal_base}".{pre,post}
+	fi
 
 	echo "${new_c}" > "$cabal_file" ||
 		die "failed to update"
