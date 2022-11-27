@@ -207,6 +207,14 @@ fi
 # CABAL_TEST_REQUIRED_BINS=( arbtt-{capture,dump,import,recover,stats} )
 : ${CABAL_TEST_REQUIRED_BINS:=}
 
+# @ECLASS_VARIABLE: CABAL_HADDOCK_TARGETS
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Manually set the targets for haddock/hoogle. This is occasionally needed
+# when './setup haddock' cannot calculate the transient dependencies.
+# @EXAMPLE:
+# CABAL_HADDOCK_TARGETS="lib:${CABAL_PN}"
+: ${CABAL_HADDOCK_TARGETS:=}
 
 # 'dev-haskell/cabal' passes those options with ./configure-based
 # configuration, but most packages don't need/don't accept it:
@@ -398,15 +406,7 @@ cabal-hscolour() {
 }
 
 cabal-haddock() {
-	# './setup haddock' may become very unhappy in the presence of a
-	# private library. For example:
-	#     Preprocessing library 'testlib' for rest-rewrite-0.4.0..
-	#     Running Haddock on library 'testlib' for rest-rewrite-0.4.0..
-	#     setup: internal error when calculating transitive package dependencies.
-	# This ensures haddock is only run on the main library
-	local haddock_args=( "lib:${CABAL_PN}" )
-
-	haskell-cabal-run_verbose ./setup haddock "${haddock_args[@]}" "$@"
+	haskell-cabal-run_verbose ./setup haddock ${CABAL_HADDOCK_TARGETS[*]} "$@"
 }
 
 cabal-die-if-nonempty() {
@@ -791,7 +791,7 @@ cabal_src_install() {
 # Arguments passed to this function will make their way to `cabal-copy`
 # and eventually `./setup copy`. This allows you to specify which
 # components will be installed.
-# e.g. `haskell-cabal_src_install "lib:${PN}"` will only install the library
+# e.g. `haskell-cabal_src_install "lib:${CABAL_PN}"` will only install the library
 haskell-cabal_src_install() {
 	pushd "${S}" > /dev/null || die
 
