@@ -19,6 +19,9 @@ CABAL_CHDEPS=(
 	'hashable             >= 1.3.0 && < 1.4' 'hashable >= 1.3.0'
 )
 
+# Without this, './setup haddock' fails when calculating transient dependencies
+CABAL_HADDOCK_TARGETS="lib:${CABAL_PN}"
+
 RDEPEND="
 	>=dev-haskell/hashable-1.3.0:=[profile?]
 	>=dev-haskell/monad-loops-0.4.3:=[profile?] <dev-haskell/monad-loops-0.5:=[profile?]
