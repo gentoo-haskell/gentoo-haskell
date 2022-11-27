@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/async-2.0:=
 	dev-haskell/monad-control:=
 	>=dev-haskell/network-3.0:=
 	>=dev-haskell/network-uri-2.6.0.2:=
-	<dev-haskell/optparse-applicative-0.17:=
+	dev-haskell/optparse-applicative:=
 	>=dev-haskell/parallel-3.2.1.0:=
 	dev-haskell/parser-combinators:=
 	dev-haskell/quickcheck:2=
