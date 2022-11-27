@@ -8,7 +8,7 @@ EAPI=8
 CABAL_HACKAGE_REVISION=4
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit haskell-cabal
+inherit ghc-package haskell-cabal
 
 DESCRIPTION="Knowledge of GHC's installation directories"
 HOMEPAGE="https://hackage.haskell.org/package/ghc-paths"
@@ -24,13 +24,11 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	default
+	haskell-cabal_src_prepare
+
 	# ghc-patch it has awfully unportable (across cabal versions) ghc detection code
 	# but in gentoo we install it to fixed patch, so remove Setup.hs detection code
 	cabal-mksetup
-
-	cabal_chdeps \
-		'Cabal >= 1.6 && <3.1' 'Cabal >= 1.6 && <3.5'
 
 	# and use gentoo's hardcoded one:
 	# a few things we need to replace, and example values
