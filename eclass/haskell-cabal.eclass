@@ -894,7 +894,7 @@ cabal_chdeps() {
 		from_pat=${from_pat//\[/\\[}
 
 		# escape ampersands in the 'to' part
-		to_str=$(sed -e "s%&%\\\&%g" <<< "${to_str}")
+		to_str=$(sed -e 's%&%\\\&%g' <<< "${to_str}")
 
 		# use sed instead of bash to make sure things are consistent in the presence
 		# of the patsub_replacement shell option
