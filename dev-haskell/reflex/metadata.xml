@@ -6,6 +6,11 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="plugin">Use the GHC plugin Reflex.Optimizer on some of the modules in the package. This is still experimental.</flag>
 		<flag name="template-haskell">Use template haskell to generate lenses</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">reflex</remote-id>
+		<remote-id type="github">reflex-frp/reflex</remote-id>
+	</upstream>
 </pkgmetadata>
