@@ -16,10 +16,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 CABAL_CHDEPS=(
-	"vty                  >=5.35   && <5.36" "vty >=5.35"
+	'vty                  >=5.35   && <5.36' 'vty >=5.35'
+	'lens                 >=4.14   && <5.2' 'lens >=4.14'
 )
 
-RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
+RDEPEND="
+	>=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/attoparsec-0.14:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	>=dev-haskell/config-schema-1.2.1.0:=[profile?] <dev-haskell/config-schema-1.3:=[profile?]
@@ -32,7 +34,7 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/hsopenssl-0.11:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/irc-core-2.11:=[profile?] <dev-haskell/irc-core-2.12:=[profile?]
 	>=dev-haskell/kan-extensions-5.0:=[profile?] <dev-haskell/kan-extensions-5.3:=[profile?]
-	>=dev-haskell/lens-4.14:=[profile?] <dev-haskell/lens-5.2:=[profile?]
+	>=dev-haskell/lens-4.14:=[profile?]
 	>=dev-haskell/network-2.6.2:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/psqueues-0.2.7:=[profile?] <dev-haskell/psqueues-0.3:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
@@ -46,5 +48,7 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-4
-	test? ( >=dev-haskell/hunit-1.6 <dev-haskell/hunit-1.7 )
+	test? (
+		>=dev-haskell/hunit-1.6 <dev-haskell/hunit-1.7
+	)
 "
