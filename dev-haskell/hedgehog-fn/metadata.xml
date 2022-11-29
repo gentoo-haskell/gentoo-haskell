@@ -8,4 +8,7 @@
 	<use>
 		<flag name="build-examples">Build the example executables</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hedgehog-fn</remote-id>
+	</upstream>
 </pkgmetadata>
