@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="demos">Build demonstration programs</flag>
+		<flag name="examples">Build demonstration programs</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">brick</remote-id>
