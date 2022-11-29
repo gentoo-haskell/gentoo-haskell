@@ -24,11 +24,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 CABAL_CHDEPS=(
-	"base          ^>=4.11.1.0 || ^>=4.12.0.0 || ^>=4.13.0.0 || ^>=4.14.0.0" "base >=4.11.1.0"
+	'base          ^>=4.11.1.0 || ^>=4.12.0.0 || ^>=4.13.0.0 || ^>=4.14.0.0' 'base >=4.11.1.0'
+	'optparse-applicative >=0.14.3.0 && <0.17' 'optparse-applicative >=0.14.3.0'
 )
 
 RDEPEND=">=dev-haskell/cabal-syntax-3.8.1.0:= <dev-haskell/cabal-syntax-3.9:=
-	>=dev-haskell/optparse-applicative-0.14.3.0:= <dev-haskell/optparse-applicative-0.17:=
+	>=dev-haskell/optparse-applicative-0.14.3.0:=
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
