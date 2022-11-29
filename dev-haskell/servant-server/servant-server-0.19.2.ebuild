@@ -15,7 +15,12 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-3:=[profile?]
+CABAL_CHDEPS=(
+	'hspec                >= 2.6.0    && < 2.10' 'hspec >= 2.6.0'
+)
+
+RDEPEND="
+	>=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-3:=[profile?]
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.13:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0.0.1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	>=dev-haskell/constraints-0.2:=[profile?] <dev-haskell/constraints-0.14:=[profile?]
@@ -39,12 +44,14 @@ RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-3:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0
-	test? ( >=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.10
+	test? (
+		>=dev-haskell/hspec-2.6.0
 		>=dev-haskell/hspec-wai-0.10.1 <dev-haskell/hspec-wai-0.12
 		>=dev-haskell/quickcheck-2.12.6.1 <dev-haskell/quickcheck-2.15
 		dev-haskell/safe
 		>=dev-haskell/should-not-typecheck-2.1.0 <dev-haskell/should-not-typecheck-2.2
 		>=dev-haskell/temporary-1.3 <dev-haskell/temporary-1.4
 		dev-haskell/transformers-compat
-		>=dev-haskell/wai-extra-3.0.24.3 <dev-haskell/wai-extra-3.2 )
+		>=dev-haskell/wai-extra-3.0.24.3 <dev-haskell/wai-extra-3.2
+	)
 "
