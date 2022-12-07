@@ -5,4 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">web-routes-th</remote-id>
+		<remote-id type="github">Happstack/web-routes-th</remote-id>
+		<remote-id type="github">happstack/web-routes-th</remote-id>
+	</upstream>
 </pkgmetadata>
