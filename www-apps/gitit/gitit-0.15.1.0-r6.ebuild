@@ -17,17 +17,18 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+plugins"
 
 CABAL_CHDEPS=(
-	'pandoc >= 2.9 && < 2.17' 'pandoc >= 2.9' \
+	'pandoc >= 2.9 && < 2.17' 'pandoc >= 2.9'
 	'hoauth2 >= 1.3.0 && < 1.17' 'hoauth2 >= 2.3.0'
 	'skylighting >= 0.8.2.3 && < 0.13' 'skylighting >= 0.8.2.3'
+	'happstack-server >= 7.5 && < 7.8' 'happstack-server >= 7.5'
 )
 
 PATCHES=(
 	"${FILESDIR}/${P}-hoauth2-2.3.patch"
 )
 
-RDEPEND=
-	">=app-text/pandoc-2.9:=[profile?]
+RDEPEND="
+	>=app-text/pandoc-2.9:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
@@ -35,7 +36,7 @@ RDEPEND=
 	>=dev-haskell/doctemplates-0.7.1:=[profile?]
 	>=dev-haskell/feed-1.0:=[profile?] <dev-haskell/feed-1.4:=[profile?]
 	>=dev-haskell/filestore-0.6.5:=[profile?] <dev-haskell/filestore-0.7:=[profile?]
-	>=dev-haskell/happstack-server-7.5:=[profile?] <dev-haskell/happstack-server-7.8:=[profile?]
+	>=dev-haskell/happstack-server-7.5:=[profile?]
 	>=dev-haskell/hoauth2-1.3.0:=[profile?]
 	>=dev-haskell/hslogger-1:=[profile?]
 	>=dev-haskell/hstringtemplate-0.8.8:=[profile?] <dev-haskell/hstringtemplate-0.9:=[profile?]
