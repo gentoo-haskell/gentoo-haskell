@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">generic-data</remote-id>
+		<remote-id type="github">Lysxia/generic-data</remote-id>
+	</upstream>
 </pkgmetadata>
