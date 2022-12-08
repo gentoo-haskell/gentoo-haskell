@@ -1,0 +1,25 @@
+From 31c3384b18dfe9d623b86697f505ccf73efc2ba2 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Thu, 8 Dec 2022 02:35:51 -0700
+Subject: [PATCH] Disable test_package_db test
+
+This tests run 'cabal build' which tries to connect to the web
+---
+ unit-tests/run-unit-tests.hs | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/unit-tests/run-unit-tests.hs b/unit-tests/run-unit-tests.hs
+index 0824445..a8a1e60 100644
+--- a/unit-tests/run-unit-tests.hs
++++ b/unit-tests/run-unit-tests.hs
+@@ -421,7 +421,6 @@ tests = [test_reload_modified
+ 
+ ioTests :: [IOTestCase]
+ ioTests = [test_signal_handlers
+-          ,test_package_db
+           ]
+ 
+ main :: IO ()
+-- 
+2.37.4
+
