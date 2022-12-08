@@ -1,0 +1,37 @@
+From cdfcb5a2ccebc577be873cc08c0f13b4aa740acf Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Wed, 7 Dec 2022 15:37:15 -0700
+Bug: https://github.com/puffnfresh/haskell-jwt/pull/3
+Subject: [PATCH] Fix tests for modern aeson
+
+Modern aeson uses a new Key type
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ tests/src/Web/JWTInteropTests.hs | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/tests/src/Web/JWTInteropTests.hs b/tests/src/Web/JWTInteropTests.hs
+index c25d754..8ead17a 100644
+--- a/tests/src/Web/JWTInteropTests.hs
++++ b/tests/src/Web/JWTInteropTests.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP                  #-}
+ {-# LANGUAGE FlexibleInstances    #-}
+ {-# LANGUAGE OverloadedStrings    #-}
+ {-# LANGUAGE ScopedTypeVariables  #-}
+@@ -54,7 +55,11 @@ prop_encode_decode_sub = shouldBeMaybeStringOrUri "sub" sub
+ prop_encode_decode_iss :: JWTClaimsSet -> Bool
+ prop_encode_decode_iss = shouldBeMaybeStringOrUri "iss" iss
+ 
++#if MIN_VERSION_aeson(2,0,0)
++shouldBeMaybeStringOrUri :: ToJSON a => Key -> (a -> Maybe StringOrURI) -> a -> Bool
++#else
+ shouldBeMaybeStringOrUri :: ToJSON a => T.Text -> (a -> Maybe StringOrURI) -> a -> Bool
++#endif
+ shouldBeMaybeStringOrUri key' f claims' = 
+     let json = toJSON claims' ^? key key'
+     in json == (fmap (String . stringOrURIToText) $ f claims')
+-- 
+2.37.4
+

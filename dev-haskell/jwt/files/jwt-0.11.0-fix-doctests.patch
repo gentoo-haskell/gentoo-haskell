@@ -1,0 +1,36 @@
+From 572e919088cfc0c18c7fde452929178e68511a83 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Wed, 7 Dec 2022 17:05:01 -0700
+Bug: https://github.com/puffnfresh/haskell-jwt/pull/3
+Subject: [PATCH] Fix expected strings in two doctests
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ src/Web/JWT.hs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/Web/JWT.hs b/src/Web/JWT.hs
+index 65a1a27..a249393 100644
+--- a/src/Web/JWT.hs
++++ b/src/Web/JWT.hs
+@@ -268,7 +268,7 @@ instance Semigroup.Semigroup JWTClaimsSet where
+ --      key = hmacSecret . T.pack $ "secret-key"
+ --  in encodeSigned key mempty cs
+ --  :}
+---  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJodHRwOi8vZXhhbXBsZS5jb20vaXNfcm9vdCI6dHJ1ZSwiaXNzIjoiRm9vIn0.vHQHuG3ujbnBUmEp-fSUtYxk27rLiP2hrNhxpyWhb2E"
++--  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vZXhhbXBsZS5jb20vaXNfcm9vdCI6dHJ1ZSwiaXNzIjoiRm9vIn0.oq9ZKmaHvbupNWTulxbBuxZVIIdkZRkTbfVccteCOoU"
+ encodeSigned :: EncodeSigner -> JOSEHeader -> JWTClaimsSet -> T.Text
+ encodeSigned signer header' claims' = dotted [header'', claim, signature']
+     where claim     = encodeJWT claims'
+@@ -292,7 +292,7 @@ encodeSigned signer header' claims' = dotted [header'', claim, signature']
+ --            }
+ --  in encodeUnsigned cs mempty
+ --  :}
+---  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjEzOTQ3MDA5MzQsImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlLCJpc3MiOiJGb28ifQ."
++--  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vZXhhbXBsZS5jb20vaXNfcm9vdCI6dHJ1ZSwiaWF0IjoxMzk0NzAwOTM0LCJpc3MiOiJGb28ifQ."
+ encodeUnsigned :: JWTClaimsSet -> JOSEHeader -> T.Text
+ encodeUnsigned claims' header' = dotted [header'', claim, ""]
+     where claim     = encodeJWT claims'
+-- 
+2.37.4
+
