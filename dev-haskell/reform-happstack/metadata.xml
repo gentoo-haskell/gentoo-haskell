@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">reform-happstack</remote-id>
+		<remote-id type="github">Happstack/reform-happstack</remote-id>
+	</upstream>
 </pkgmetadata>
