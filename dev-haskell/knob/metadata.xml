@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">knob</remote-id>
+		<remote-id type="github">ncfavier/knob</remote-id>
+	</upstream>
 </pkgmetadata>
