@@ -1,2 +1,3 @@
 move dev-haskell/clckwrks www-apps/clckwrks
 move dev-haskell/clckwrks-cli www-apps/clckwrks-cli
+move dev-haskell/clckwrks-plugin-media www-apps/clckwrks-plugin-media
