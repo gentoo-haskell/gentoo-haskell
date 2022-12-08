@@ -1,1 +1,2 @@
 move dev-haskell/clckwrks www-apps/clckwrks
+move dev-haskell/clckwrks-cli www-apps/clckwrks-cli
