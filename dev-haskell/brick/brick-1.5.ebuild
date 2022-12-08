@@ -13,7 +13,7 @@ DESCRIPTION="A declarative terminal user interface library"
 HOMEPAGE="https://github.com/jtdaugherty/brick/"
 
 LICENSE="BSD"
-SLOT="1/${PV}"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
