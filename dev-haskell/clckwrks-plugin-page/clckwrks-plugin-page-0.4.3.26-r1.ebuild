@@ -23,7 +23,6 @@ RDEPEND="
 	>=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.17:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
-	>=dev-haskell/clckwrks-0.25:=[profile?] <dev-haskell/clckwrks-0.29:=[profile?]
 	>=dev-haskell/happstack-hsp-7.2:=[profile?] <dev-haskell/happstack-hsp-7.5:=[profile?]
 	>=dev-haskell/happstack-server-7.0:=[profile?]
 	>=dev-haskell/hsp-0.9:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
@@ -44,6 +43,7 @@ RDEPEND="
 	>=dev-haskell/web-routes-happstack-0.23:=[profile?] <dev-haskell/web-routes-happstack-0.24:=[profile?]
 	>=dev-haskell/web-routes-th-0.22:=[profile?] <dev-haskell/web-routes-th-0.23:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
+	>=www-apps/clckwrks-0.25:=[profile?] <www-apps/clckwrks-0.29:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -24,7 +24,6 @@ RDEPEND="
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
 	>=dev-haskell/cereal-0.4:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
-	>=dev-haskell/clckwrks-0.21:=[profile?] <dev-haskell/clckwrks-0.29:=[profile?]
 	>=dev-haskell/gd-3000:=[profile?] <dev-haskell/gd-3001:=[profile?]
 	>=dev-haskell/happstack-server-7.0:=[profile?]
 	>=dev-haskell/hsp-0.9:=[profile?] <dev-haskell/hsp-0.11:=[profile?]
@@ -39,6 +38,7 @@ RDEPEND="
 	>=dev-haskell/web-routes-0.27:=[profile?] <dev-haskell/web-routes-0.28:=[profile?]
 	>=dev-haskell/web-routes-th-0.21:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
+	>=www-apps/clckwrks-0.21:=[profile?] <www-apps/clckwrks-0.29:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
