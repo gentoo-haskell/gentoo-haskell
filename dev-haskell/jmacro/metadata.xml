@@ -6,9 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="benchmarks">Build the benchmarks.</flag>
+		<flag name="benchmarks">Build the jmacro-bench executable</flag>
 	</use>
-	<longdescription>
-		Javascript syntax, functional syntax, hygienic names, compile-time guarantees of syntactic correctness, limited typechecking. Additional documentation available at &lt;http://www.haskell.org/haskellwiki/Jmacro&gt;
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">jmacro</remote-id>
+		<remote-id type="github">Happstack/jmacro</remote-id>
+	</upstream>
 </pkgmetadata>
