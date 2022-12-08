@@ -1,0 +1,41 @@
+From 147cf51ac5bab57e18ebf3945e273526444cca20 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Thu, 8 Dec 2022 03:17:07 -0700
+Subject: [PATCH] Add executable flag
+
+Toggles if the misfortune and misfortune-strfile executables get built
+---
+ misfortune.cabal | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/misfortune.cabal b/misfortune.cabal
+index 8df609f..7a82347 100644
+--- a/misfortune.cabal
++++ b/misfortune.cabal
+@@ -136,8 +136,15 @@ library
+   import:               main
+   exposed-modules:      Data.Fortune
+ 
++flag executable
++  description: Build the misfortune and misfortune-strfile executables
++  default:     False
++  manual:      True
++
+ executable misfortune
+   import:               main
++  if !flag(executable)
++    buildable: False
+   main-is:              Fortune.hs
+   other-modules:        Data.Fortune
+   build-depends:        monad-loops,
+@@ -146,5 +153,7 @@ executable misfortune
+ 
+ executable misfortune-strfile
+   import:               main
++  if !flag(executable)
++    buildable: False
+   main-is:              StrFile.hs
+   other-modules:        Data.Fortune
+-- 
+2.37.4
+

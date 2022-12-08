@@ -5,4 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="executable">Build the misfortune and misfortune-strfile executables</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">misfortune</remote-id>
+		<remote-id type="github">ncfavier/misfortune</remote-id>
+	</upstream>
 </pkgmetadata>
