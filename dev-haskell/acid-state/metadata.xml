@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="skip-state-machine-test">If enabled, do not build/run the state-machine test</flag>
+		<flag name="executable">Build the acid-state-repair executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">acid-state</remote-id>
+		<remote-id type="github">acid-state/acid-state</remote-id>
+	</upstream>
 </pkgmetadata>

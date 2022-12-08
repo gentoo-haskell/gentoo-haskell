@@ -1,0 +1,32 @@
+From 2926c9af210de61a69cf842284ccb1acddfd0bc8 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Wed, 7 Dec 2022 20:38:07 -0700
+Subject: [PATCH] Add executable flag
+
+Toggles if the acid-state-repair executable is built
+---
+ acid-state.cabal | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/acid-state.cabal b/acid-state.cabal
+index 2a3f8a3..c54f8a7 100644
+--- a/acid-state.cabal
++++ b/acid-state.cabal
+@@ -96,7 +96,14 @@ Library
+   if impl(ghc >= 8.0)
+     ghc-options:       -Wcompat
+ 
++flag executable
++  description: Build the acid-state-repair executable
++  default:     False
++  manual:      True
++
+ executable acid-state-repair
++  if !flag(executable)
++    buildable: False
+   hs-source-dirs: repair
+   build-depends: acid-state
+                , base
+-- 
+2.37.4
+
