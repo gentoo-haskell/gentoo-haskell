@@ -5,10 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="terminfo">On POSIX systems, build with the terminfo lib for detecting terminal width.</flag>
-		<flag name="threaded">Build with support for multithreaded execution</flag>
-	</use>
 	<upstream>
 		<remote-id type="hackage">hledger</remote-id>
 		<remote-id type="github">simonmichael/hledger</remote-id>
