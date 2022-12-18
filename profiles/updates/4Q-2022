@@ -2,3 +2,4 @@ move dev-haskell/clckwrks www-apps/clckwrks
 move dev-haskell/clckwrks-cli www-apps/clckwrks-cli
 move dev-haskell/clckwrks-plugin-media www-apps/clckwrks-plugin-media
 move dev-haskell/clckwrks-plugin-page www-apps/clckwrks-plugin-page
+move dev-haskell/yesod-bin www-servers/yesod-bin
