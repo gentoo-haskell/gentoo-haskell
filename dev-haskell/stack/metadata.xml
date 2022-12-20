@@ -8,4 +8,8 @@
 	<use>
 		<flag name="integration-tests">Run the integration test suite.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">stack</remote-id>
+		<remote-id type="github">commercialhaskell/stack</remote-id>
+	</upstream>
 </pkgmetadata>

@@ -1,0 +1,47 @@
+From b6cf3a39b7a4ccf8d62c29e6f4cf399d7c0e9961 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Tue, 20 Dec 2022 16:00:21 -0700
+Subject: [PATCH] Disable network tests
+
+These tests fail when run under Gentoo's network sandbox
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ src/test/Stack/ConfigSpec.hs | 21 ---------------------
+ 1 file changed, 21 deletions(-)
+
+diff --git a/src/test/Stack/ConfigSpec.hs b/src/test/Stack/ConfigSpec.hs
+index 54ce13b..f47dda7 100644
+--- a/src/test/Stack/ConfigSpec.hs
++++ b/src/test/Stack/ConfigSpec.hs
+@@ -188,27 +188,6 @@ spec = beforeAll setup $ do
+       boptsReconfigure `shouldBe` True
+       boptsCabalVerbose `shouldBe` CabalVerbosity verbose
+ 
+-    it "finds the config file in a parent directory" $ inTempDir $ do
+-      writeFile "package.yaml" "name: foo"
+-      writeFile (toFilePath stackDotYaml) sampleConfig
+-      parentDir <- getCurrentDirectory >>= parseAbsDir
+-      let childDir = "child"
+-      createDirectory childDir
+-      setCurrentDirectory childDir
+-      loadConfig' $ \config -> liftIO $ do
+-        bc <- runRIO config $ withBuildConfig ask
+-        view projectRootL bc `shouldBe` parentDir
+-
+-    it "respects the STACK_YAML env variable" $ inTempDir $ do
+-      withSystemTempDir "config-is-here" $ \dir -> do
+-        let stackYamlFp = toFilePath (dir </> stackDotYaml)
+-        writeFile stackYamlFp sampleConfig
+-        writeFile (toFilePath dir ++ "/package.yaml") "name: foo"
+-        withEnvVar "STACK_YAML" stackYamlFp $ loadConfig' $ \config -> liftIO $ do
+-          BuildConfig{..} <- runRIO config $ withBuildConfig ask
+-          bcStackYaml `shouldBe` dir </> stackDotYaml
+-          parent bcStackYaml `shouldBe` dir
+-
+     it "STACK_YAML can be relative" $ inTempDir $ do
+         parentDir <- getCurrentDirectory >>= parseAbsDir
+         let childRel = either impureThrow id (parseRelDir "child")
+-- 
+2.38.2
+
