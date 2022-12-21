@@ -10,10 +10,7 @@ CABAL_FEATURES="test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Hackage and Portage integration tool"
-HOMEPAGE="https://github.com/gentoo-haskell/hackport#readme"
-
-# Needed until it gets released on hackage
-SRC_URI="https://eidetic.codes/${P}.tar.gz"
+HOMEPAGE="https://hackage.haskell.org/package/hackport"
 
 LICENSE="GPL-3+"
 SLOT="0"
