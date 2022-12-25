@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="profile">Enable profiling flags</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">hackport</remote-id>
 		<remote-id type="github">gentoo-haskell/hackport</remote-id>
