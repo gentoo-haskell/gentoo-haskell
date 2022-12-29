@@ -5,39 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="dev">Turn on development settings.</flag>
-		<flag name="static">Creates static binary.</flag>
-	</use>
-	<longdescription>
-		
-		In most applications,
-		&lt;http://12factor.net/config configuration should be separated from code&gt;.
-		While it usually works well to keep configuration in the
-		environment, there are cases where you may want to store
-		configuration in a file outside of version control.
-		
-		&quot;Dotenv&quot; files have become popular for storing configuration,
-		especially in development and test environments. In
-		&lt;https://github.com/bkeepers/dotenv Ruby&gt;,
-		&lt;https://github.com/theskumar/python-dotenv Python&gt; and
-		&lt;https://www.npmjs.com/package/dotenv Javascript&gt; there are libraries
-		to facilitate loading of configuration options from configuration
-		files. This library loads configuration to environment variables for
-		programs written in Haskell.
-		
-		To use, call `loadFile` from your application:
-		
-		&gt; import Control.Monad (void)
-		&gt; import Configuration.Dotenv
-		&gt; void $ loadFile defaultConfig
-		
-		This package also includes an executable that can be used
-		to inspect the results of applying one or more Dotenv files
-		to the environment, or for invoking your executables with
-		an environment after one or more Dotenv files is applied.
-		
-		See the &lt;https://github.com/stackbuilders/dotenv-hs Github&gt;
-		page for more information on this package.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">dotenv</remote-id>
+		<remote-id type="github">stackbuilders/dotenv-hs</remote-id>
+	</upstream>
 </pkgmetadata>
