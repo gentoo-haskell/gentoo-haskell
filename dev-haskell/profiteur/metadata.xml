@@ -8,4 +8,8 @@
 	<use>
 		<flag name="embed-data-files">Embed data files into the executable (needed for ghcjs packaging)</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">profiteur</remote-id>
+		<remote-id type="github">jaspervdj/profiteur</remote-id>
+	</upstream>
 </pkgmetadata>
