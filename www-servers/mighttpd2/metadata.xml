@@ -8,10 +8,8 @@
 	<use>
 		<flag name="tls">HTTPS support.</flag>
 	</use>
-	<longdescription>
-		High performance web server to handle static
-		files and CGI on WAI/warp.
-		Reverse proxy functionality is also provided
-		to connect web applications behind.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">mighttpd2</remote-id>
+		<remote-id type="github">kazu-yamamoto/mighttpd2</remote-id>
+	</upstream>
 </pkgmetadata>
