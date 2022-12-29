@@ -8,4 +8,8 @@
 	<use>
 		<flag name="high-precision-date">for MongoDB use a time storage with nano second precision.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">persistent-mongoDB</remote-id>
+		<remote-id type="github">yesodweb/persistent</remote-id>
+	</upstream>
 </pkgmetadata>
