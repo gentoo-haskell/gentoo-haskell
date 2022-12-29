@@ -11,7 +11,7 @@ inherit haskell-cabal
 DESCRIPTION="Tool for refactoring expressions into pointfree form"
 HOMEPAGE="https://hackage.haskell.org/package/pointfree"
 
-LICENSE=""	# FIXME: license unknown to cabal. Please pick it manually.
+LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
