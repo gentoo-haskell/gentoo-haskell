@@ -29,3 +29,11 @@ DEPEND="${RDEPEND}
 		dev-haskell/test-framework-quickcheck2
 	)
 "
+
+pkg_pretend() {
+	if use test; then
+		ewarn "The \"test\" USE flag for this package creates cycles within the"
+		ewarn "dependency graph. This may give you problems during 'haskell-updater' runs."
+		ewarn "It is recommended to leave it disabled unless explicitly testing the package."
+	fi
+}
