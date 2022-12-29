@@ -7,14 +7,8 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=1
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
-# circular deps:
-#      dev-haskell/splitmix[test]
-#   -> dev-haskell/base-compat-batteries
-#   -> dev-haskell/quickcheck
-#   -> dev-haskell/splitmix
-RESTRICT=test
 
 DESCRIPTION="Fast Splittable PRNG"
 HOMEPAGE="https://hackage.haskell.org/package/splitmix"
@@ -29,20 +23,28 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
+	test? (
+		>=dev-haskell/async-2.2.1 <dev-haskell/async-2.3
+		>=dev-haskell/base-compat-0.11.1 <dev-haskell/base-compat-0.13
+		>=dev-haskell/base-compat-batteries-0.10.5 <dev-haskell/base-compat-batteries-0.13
+		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7
+		>=dev-haskell/math-functions-0.3.3.0 <dev-haskell/math-functions-0.4
+		>=dev-haskell/process-1.0.1.5 <dev-haskell/process-1.7
+		dev-haskell/random
+		>=dev-haskell/test-framework-0.8.2.0 <dev-haskell/test-framework-0.9
+		>=dev-haskell/test-framework-hunit-0.3.0.2 <dev-haskell/test-framework-hunit-0.4
+		>=dev-haskell/tf-random-0.5 <dev-haskell/tf-random-0.6
+		>=dev-haskell/vector-0.11.0.0 <dev-haskell/vector-0.13
+	)
 "
-#	test? (
-#		>=dev-haskell/async-2.2.1 <dev-haskell/async-2.3
-#		>=dev-haskell/base-compat-0.11.1 <dev-haskell/base-compat-0.13
-#		>=dev-haskell/base-compat-batteries-0.10.5 <dev-haskell/base-compat-batteries-0.13
-#		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7
-#		>=dev-haskell/math-functions-0.3.3.0 <dev-haskell/math-functions-0.4
-#		>=dev-haskell/process-1.0.1.5 <dev-haskell/process-1.7
-#		dev-haskell/random
-#		>=dev-haskell/test-framework-0.8.2.0 <dev-haskell/test-framework-0.9
-#		>=dev-haskell/test-framework-hunit-0.3.0.2 <dev-haskell/test-framework-hunit-0.4
-#		>=dev-haskell/tf-random-0.5 <dev-haskell/tf-random-0.6
-#		>=dev-haskell/vector-0.11.0.0 <dev-haskell/vector-0.13
-#	)
+
+pkg_pretend() {
+	if use test; then
+		ewarn "The \"test\" USE flag for this package creates cycles within the"
+		ewarn "dependency graph. This may give you problems during 'haskell-updater' runs."
+		ewarn "It is recommended to leave it disabled unless explicitly testing the package."
+	fi
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

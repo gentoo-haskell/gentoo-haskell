@@ -8,9 +8,8 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=2
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour" # Disable test-suite: circular depends
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
-RESTRICT=test # disabled at build time
 
 DESCRIPTION="Fast combinator parsing for bytestrings and text"
 HOMEPAGE="https://github.com/bgamari/attoparsec"
@@ -25,14 +24,22 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
+	test? (
+		>=dev-haskell/quickcheck-2.13.2 <dev-haskell/quickcheck-2.15
+		dev-haskell/quickcheck-unicode
+		>=dev-haskell/tasty-0.11
+		>=dev-haskell/tasty-quickcheck-0.8
+		dev-haskell/vector
+	)
 "
-#	test? (
-#		>=dev-haskell/quickcheck-2.13.2 <dev-haskell/quickcheck-2.15
-#		dev-haskell/quickcheck-unicode
-#		>=dev-haskell/tasty-0.11
-#		>=dev-haskell/tasty-quickcheck-0.8
-#		dev-haskell/vector
-#)
+
+pkg_pretend() {
+	if use test; then
+		ewarn "The \"test\" USE flag for this package creates cycles within the"
+		ewarn "dependency graph. This may give you problems during 'haskell-updater' runs."
+		ewarn "It is recommended to leave it disabled unless explicitly testing the package."
+	fi
+}
 
 src_configure() {
 	haskell-cabal_src_configure \

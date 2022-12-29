@@ -8,7 +8,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=3
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Integer logarithms"
@@ -18,26 +18,31 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-#circular dependency: scientific -> integer-logarithms -> tasty -> scientific
-RESTRICT=test
-
 RDEPEND="
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
+	test? (
+		>=dev-haskell/quickcheck-2.14.1 <dev-haskell/quickcheck-2.15
+		>=dev-haskell/smallcheck-1.2 <dev-haskell/smallcheck-1.3
+		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-1.5
+		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
+		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11
+		>=dev-haskell/tasty-smallcheck-0.8 <dev-haskell/tasty-smallcheck-0.9
+	)
 "
-#	test? (
-#		>=dev-haskell/quickcheck-2.14.1 <dev-haskell/quickcheck-2.15
-#		>=dev-haskell/smallcheck-1.2 <dev-haskell/smallcheck-1.3
-#		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-1.4
-#		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
-#		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11
-#		>=dev-haskell/tasty-smallcheck-0.8 <dev-haskell/tasty-smallcheck-0.9
-#	)
 
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-check-bounds \
 		--flag=integer-gmp
+}
+
+pkg_pretend() {
+	if use test; then
+		ewarn "The \"test\" USE flag for this package creates cycles within the"
+		ewarn "dependency graph. This may give you problems during 'haskell-updater' runs."
+		ewarn "It is recommended to leave it disabled unless explicitly testing the package."
+	fi
 }
