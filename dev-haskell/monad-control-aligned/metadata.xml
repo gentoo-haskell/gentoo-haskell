@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">monad-control-aligned</remote-id>
+		<remote-id type="github">athanclark/monad-control</remote-id>
+	</upstream>
 </pkgmetadata>
