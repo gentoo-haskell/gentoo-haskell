@@ -8,4 +8,8 @@
 	<use>
 		<flag name="regression">Enable regression suite build.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">c2hs</remote-id>
+		<remote-id type="github">haskell/c2hs</remote-id>
+	</upstream>
 </pkgmetadata>
