@@ -8,7 +8,6 @@
 	<use>
 		<flag name="hls_plugins_alternate-number-format">Enable Alternate Number Format plugin</flag>
 		<flag name="hls_plugins_cabal">Enable cabal plugin</flag>
-		<flag name="hls_plugins_call-hierarchy">Enable call hierarchy plugin</flag>
 		<flag name="hls_plugins_change-type-signature">Change a declarations type signature with a Code Action</flag>
 		<flag name="hls_plugins_class">Enable class plugin</flag>
 		<flag name="hls_plugins_code-range">Enable codeRange plugin</flag>
