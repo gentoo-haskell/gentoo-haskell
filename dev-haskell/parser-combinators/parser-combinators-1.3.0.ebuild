@@ -14,7 +14,7 @@ TEST_P="${TEST_PN}-${PV}"
 
 DESCRIPTION="Lightweight package providing commonly useful parser combinators"
 HOMEPAGE="https://github.com/mrkkrp/parser-combinators"
-SRC_URI+=" https://hackage.haskell.org/package/${TEST_P}/${TEST_P}.tar.gz"
+SRC_URI+=" test? ( https://hackage.haskell.org/package/${TEST_P}/${TEST_P}.tar.gz )"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
@@ -26,12 +26,14 @@ RDEPEND=">=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
+	test? (
+		>=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-expectations-0.8 <dev-haskell/hspec-expectations-0.9
 		>=dev-haskell/hspec-megaparsec-2.0 <dev-haskell/hspec-megaparsec-3.0
 		>=dev-haskell/megaparsec-8.0 <dev-haskell/megaparsec-10.0
 		>=dev-haskell/megaparsec-tests-8.0 <dev-haskell/megaparsec-tests-10.0
-		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.15 )
+		>=dev-haskell/quickcheck-2.7 <dev-haskell/quickcheck-2.15
+	)
 "
 
 src_configure() {
