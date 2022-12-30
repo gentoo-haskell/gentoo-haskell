@@ -1,3 +1,8 @@
+
+# hololeap <hololeap@protonmail.com> (2022-12-29)
+# Many packages still depend on network-uri<2.7
+>=dev-haskell/network-uri-2.7
+
 # hololeap <hololeap@protonmail.com> (2022-12-28)
 # Depends on old optparse-applicative, no upstream activity for over a year
 # Removal in 30 days
