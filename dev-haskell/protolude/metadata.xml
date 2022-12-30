@@ -5,7 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="dev">Build development tools</flag>
-	</use>
+	<upstream>
+		<remote-id type="hackage">protolude</remote-id>
+		<remote-id type="github">sdiehl/protolude</remote-id>
+	</upstream>
 </pkgmetadata>
