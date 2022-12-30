@@ -1,4 +1,8 @@
 # hololeap <hololeap@protonmail.com> (2022-12-30)
+# Depends on old version of ghcide
+dev-haskell/hls-call-hierarchy-plugin
+
+# hololeap <hololeap@protonmail.com> (2022-12-30)
 # purescript package is out of date (and never seemed to work correctly)
 # Removal in 30 days unless someone steps up to fix it
 dev-haskell/purescript-ast

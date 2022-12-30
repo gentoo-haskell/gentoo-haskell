@@ -4,7 +4,6 @@
 
 alternate-number-format - Enable Alternate Number Format plugin
 cabal - Enable cabal plugin
-call-hierarchy - Enable call hierarchy plugin
 change-type-signature - Change a declarations type signature with a Code Action
 class - Enable class plugin
 code-range - Enable codeRange plugin
