@@ -37,6 +37,41 @@ def print_edges(source, target, edge):
     if source == 'dev-lang/ghc':
         return
 
+    # hack: These packages have warnings about their USE flags creating cycles
+    #       and can be ignored
+    if source == 'dev-haskell/attoparsec':
+        return
+    if source == 'dev-haskell/base-orphans':
+        return
+    if source == 'dev-haskell/clock':
+        return
+    if source == 'dev-haskell/colour':
+        return
+    if source == 'dev-haskell/hspec-core':
+        return
+    if source == 'dev-haskell/hspec-discover':
+        return
+    if source == 'dev-haskell/http-streams':
+        return
+    if source == 'dev-haskell/integer-logarithms':
+        return
+    if source == 'dev-haskell/nanospec':
+        return
+    if source == 'dev-haskell/network-uri':
+        return
+    if source == 'dev-haskell/options':
+        return
+    if source == 'dev-haskell/parser-combinators':
+        return
+    if source == 'dev-haskell/primitive':
+        return
+    if source == 'dev-haskell/scientific':
+        return
+    if source == 'dev-haskell/splitmix':
+        return
+    if source == 'dev-haskell/tasty-expected-failure':
+        return
+
     # atom
     if isinstance(target, str):
         target_cp = portage.dep_getkey(target)
