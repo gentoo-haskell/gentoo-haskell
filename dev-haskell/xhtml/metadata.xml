@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides combinators for producing
-		XHTML 1.0, including the Strict, Transitional and
-		Frameset variants.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">xhtml</remote-id>
+		<remote-id type="github">haskell/xhtml</remote-id>
+	</upstream>
 </pkgmetadata>
