@@ -6,8 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="rere-cfg">CFG functionality, adds dependency on fin and vec</flag>
-		<flag name="rere-intersection">Add intersection constructor. EXPERIMENTAL</flag>
+		<flag name="cfg">CFG functionality, adds dependency on fin and vec</flag>
+		<flag name="intersection">Add intersection constructor. EXPERIMENTAL</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">rere</remote-id>
