@@ -5,4 +5,12 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="integer-simple">Use the [simple integer library](http://hackage.haskell.org/package/integer-simple)
+instead of [integer-gmp](http://hackage.haskell.org/package/integer-gmp)</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">text</remote-id>
+		<remote-id type="github">haskell/text</remote-id>
+	</upstream>
 </pkgmetadata>
