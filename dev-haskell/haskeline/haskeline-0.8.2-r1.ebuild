@@ -8,8 +8,15 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=3
 
+# Give it a different version number so we don't get collisions
+CABAL_PV="0.8.2.0.1"
+
 CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite
 inherit haskell-cabal
+
+# Make sure these get reset to their original values
+S="${WORKDIR}/${CABAL_PN}-${PV}"
+CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
 DESCRIPTION="A command-line interface for user input, written in Haskell"
 HOMEPAGE="https://github.com/judah/haskeline"
@@ -18,6 +25,11 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="+terminfo"
+
+# The new version needs to match CABAL_PV
+CABAL_CHDEPS=(
+	'Version:        0.8.2' 'Version:        0.8.2.0.1'
+)
 
 RESTRICT=test # test requires example executable which does not work correctly
 
@@ -35,5 +47,3 @@ src_configure() {
 		--flag=-examples \
 		$(cabal_flag terminfo terminfo)
 }
-
-CABAL_CORE_LIB_GHC_PV="8.10.6 8.10.7 9.0.2 9.2.4 9.2.5"

@@ -8,4 +8,8 @@
 	<use>
 		<flag name="terminfo">Use the terminfo package for POSIX consoles.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">haskeline</remote-id>
+		<remote-id type="github">judah/haskeline</remote-id>
+	</upstream>
 </pkgmetadata>
