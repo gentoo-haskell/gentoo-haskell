@@ -15,6 +15,9 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour"
 CABAL_FEATURES+=" nocabaldep" # in case installed Cabal is broken
 inherit haskell-cabal
 
+# Override SRC_URI so it doesn't use the new CABAL_PV
+SRC_URI="https://hackage.haskell.org/package/${CABAL_PN}-${PV}/${CABAL_PN}-${PV}.tar.gz"
+
 # Make sure these get reset to their original values
 S="${WORKDIR}/${CABAL_PN}-${PV}"
 CABAL_FILE="${S}/${CABAL_PN}.cabal"
