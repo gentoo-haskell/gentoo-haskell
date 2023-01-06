@@ -14,6 +14,10 @@ CABAL_PV="0.8.2.0.1"
 CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite
 inherit haskell-cabal
 
+# Override SRC_URI so it doesn't use the new CABAL_PV
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI+=" https://hackage.haskell.org/package/${P}/revision/${CABAL_HACKAGE_REVISION}.cabal -> ${CABAL_DISTFILE}"
+
 # Make sure these get reset to their original values
 S="${WORKDIR}/${CABAL_PN}-${PV}"
 CABAL_FILE="${S}/${CABAL_PN}.cabal"
