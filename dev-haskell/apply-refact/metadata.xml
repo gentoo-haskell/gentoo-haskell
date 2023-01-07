@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Install the apply-refactor executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">apply-refact</remote-id>
+		<remote-id type="github">mpickering/apply-refact</remote-id>
+	</upstream>
 </pkgmetadata>
