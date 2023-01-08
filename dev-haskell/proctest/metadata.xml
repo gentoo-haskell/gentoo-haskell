@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">proctest</remote-id>
+		<remote-id type="github">nh2/proctest</remote-id>
+	</upstream>
 </pkgmetadata>
