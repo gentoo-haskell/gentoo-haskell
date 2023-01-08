@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">implicit-hie-cradle</remote-id>
+		<remote-id type="github">Avi-D-coder/implicit-hie-cradle</remote-id>
+	</upstream>
 </pkgmetadata>
