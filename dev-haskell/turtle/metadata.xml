@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">turtle</remote-id>
+		<remote-id type="github">Gabriella439/Haskell-Turtle-Library</remote-id>
+	</upstream>
 </pkgmetadata>
