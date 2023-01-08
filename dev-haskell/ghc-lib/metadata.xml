@@ -7,5 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">ghc-lib</remote-id>
+		<remote-id type="github">digital-asset/ghc-lib</remote-id>
 	</upstream>
 </pkgmetadata>
