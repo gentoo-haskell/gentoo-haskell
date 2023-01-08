@@ -1,0 +1,38 @@
+From 742b90825ff2d5f1859fea7f2389531e616463fb Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Sun, 8 Jan 2023 13:04:24 -0700
+Subject: [PATCH] Add examples flag
+
+This toggles building the example executable
+
+The example executable has been renamed from 'example' to
+'open-browser-example'.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ open-browser.cabal | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/open-browser.cabal b/open-browser.cabal
+index e2e16f6..57f1aaa 100644
+--- a/open-browser.cabal
++++ b/open-browser.cabal
+@@ -34,7 +34,14 @@ library
+       else
+         cpp-options:        "-DWINDOWS_CCONV=ccall"
+ 
+-executable example
++flag examples
++  description: Build the open-browser-example executable
++  default:     False
++  manual:      True
++
++executable open-browser-example
++    if !flag(examples)
++      buildable: False
+     main-is:                Main.hs
+     hs-source-dirs:         example
+     default-language:       Haskell2010
+-- 
+2.38.2
+
