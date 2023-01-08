@@ -5,4 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="executable">Build the htfpp executable</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">HTF</remote-id>
+		<remote-id type="github">skogsbaer/HTF</remote-id>
+	</upstream>
 </pkgmetadata>
