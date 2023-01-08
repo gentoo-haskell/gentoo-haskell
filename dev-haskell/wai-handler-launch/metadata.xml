@@ -5,7 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This handles cross-platform launching and inserts Javascript code to ping the server. When the server no longer receives pings, it shuts down.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">wai-handler-launch</remote-id>
+		<remote-id type="github">yesodweb/wai-handlers</remote-id>
+	</upstream>
 </pkgmetadata>
