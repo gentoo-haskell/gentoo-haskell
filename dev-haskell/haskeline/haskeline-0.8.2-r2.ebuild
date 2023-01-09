@@ -26,7 +26,7 @@ DESCRIPTION="A command-line interface for user input, written in Haskell"
 HOMEPAGE="https://github.com/judah/haskeline"
 
 LICENSE="BSD"
-SLOT="0/${PV}"
+SLOT="0/${CABAL_PV}"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="+terminfo"
 
