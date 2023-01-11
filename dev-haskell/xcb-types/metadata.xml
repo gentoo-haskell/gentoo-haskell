@@ -5,22 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides types which mirror the structures
-		used in the XCB code generation XML files.
-		
-		See project http://xcb.freedesktop.org/ for more information about the XCB
-		project.
-		
-		The XML files describe the data-types, events and requests used by the
-		X Protocol, and are used to auto-generate large parts of the XCB project.
-		
-		This package parses these XML files into Haskell data structures.
-		
-		If you want to do something with these XML descriptions but don't want
-		to learn XSLT, this package should help.
-		
-		This version of xcb-types is intended to fully parse the X Protocol
-		description version 1.4.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">xcb-types</remote-id>
+	</upstream>
 </pkgmetadata>
