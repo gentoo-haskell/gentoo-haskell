@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -13,7 +13,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{9..10} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
 inherit multiprocessing pax-utils toolchain-funcs prefix
@@ -575,7 +575,6 @@ src_prepare() {
 
 		eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
 		eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
-		eapply "${FILESDIR}"/${PN}-9.0.2-fptools.patch
 		# Fixes panic when compiling some packages
 		# https://github.com/gentoo-haskell/gentoo-haskell/issues/1250#issuecomment-1044257595
 		# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
@@ -587,6 +586,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
 		eapply "${FILESDIR}"/latomic-subword
 		eapply "${WORKDIR}"/${P}-riscv64-llvm.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-fptools.patch # clang-16 workaround
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
