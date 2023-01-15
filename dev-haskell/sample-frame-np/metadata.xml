@@ -5,12 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Orphan instances for types from @sample-frame@ package
-		and type classes from @numeric-prelude@.
-		Using this package instead defining custom orphan instances
-		saves you from conflicting instances.
-		
-		This is used by packages @synthesizer@, @synthesizer-alsa@, @synthesizer-llvm@.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">sample-frame-np</remote-id>
+	</upstream>
 </pkgmetadata>
