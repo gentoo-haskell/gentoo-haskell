@@ -7,13 +7,10 @@
 	</maintainer>
 	<use>
 		<flag name="ghcipretty">Enable pretty-show for pretty-printing purposes</flag>
-		<flag name="examples">Install example executables</flag>
+		<flag name="werror">Enable -Werror during development</flag>
 	</use>
-	<longdescription>
-		This package offers an alternative to @&lt;https://hackage.haskell.org/package/beam-migrate beam-migrate&gt;@
-		and can be used to migrate a database between different versions of a Haskell schema. It doesn&#39;t depend
-		on @beam-migrate@ if not transitively (@beam-postgres@ depends on it, for example).
-		
-		&lt;&lt;https://i.imgur.com/xuPyUfg.gif&gt;&gt;
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">beam-automigrate</remote-id>
+		<remote-id type="github">obsidiansystems/beam-automigrate</remote-id>
+	</upstream>
 </pkgmetadata>
