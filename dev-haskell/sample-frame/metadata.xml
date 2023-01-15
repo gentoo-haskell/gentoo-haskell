@@ -8,4 +8,7 @@
 	<use>
 		<flag name="buildbenchmarks">Build benchmark executables</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">sample-frame</remote-id>
+	</upstream>
 </pkgmetadata>
