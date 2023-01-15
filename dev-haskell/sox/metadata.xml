@@ -5,20 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This is a wrapper to Sox the Sound Exchanger
-		&lt;http://sox.sourceforge.net/&gt;
-		which lets you play, write, read and convert audio signals
-		in various formats, resolutions, and numbers of channels.
-		
-		The functions call sox commands via the shell,
-		that is, the 'sox' and 'play' executables must be installed
-		and in the path to the executables must be set.
-		
-		In the past this was part of the synthesizer package.
-		
-		There is some ancient code,
-		which allows interactive playback using the shell-pipe package on GHC-6.2,
-		where no runInteractiveProcess was available.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">sox</remote-id>
+	</upstream>
 </pkgmetadata>
