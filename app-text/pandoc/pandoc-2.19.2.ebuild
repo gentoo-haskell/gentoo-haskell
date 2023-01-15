@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,6 +16,8 @@ LICENSE="GPL-2+"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="embed-data-files"
+
+RESTRICT=test # one test case fails with newer deps
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.9:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
