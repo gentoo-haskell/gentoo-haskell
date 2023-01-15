@@ -5,17 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Low level audio signal processing
-		used by the other synthesizer packages.
-		The routines can be really fast
-		due to StorableVector, Stream-like list type and aggressive inlining.
-		For an interface to Haskore see &lt;http://code.haskell.org/haskore/revised/synthesizer/&gt;.
-		For introductory examples see "Synthesizer.Plain.Tutorial"
-		and "Synthesizer.Generic.Tutorial".
-		
-		Functions:
-		Oscillators, Noise generators, Frequency filters,
-		Fast Fourier transform for computation of frequency spectrum
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">synthesizer-core</remote-id>
+	</upstream>
 </pkgmetadata>
