@@ -1,0 +1,36 @@
+From 0e5a0a628fbef12a5fe05fcc67f33ee44c0ebed6 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Mon, 16 Jan 2023 13:15:41 -0700
+Subject: [PATCH] Disable test executables
+
+There isn't a good way to integrate these into the test phase of the
+ebuild, and it is unlikely that anyone will use them outside of that.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ beam-automigrate.cabal | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/beam-automigrate.cabal b/beam-automigrate.cabal
+index ebcefe9..af0214e 100644
+--- a/beam-automigrate.cabal
++++ b/beam-automigrate.cabal
+@@ -113,6 +113,7 @@ test-suite beam-automigrate-tests
+   default-extensions: OverloadedStrings
+ 
+ executable beam-automigrate-integration-tests
++  buildable:          False
+   hs-source-dirs:     integration-tests tests
+   main-is:            Main.hs
+   other-modules:      Test.Database.Beam.AutoMigrate.Arbitrary
+@@ -187,6 +188,7 @@ executable beam-automigrate-examples
+     build-depends: pretty-simple
+ 
+ executable beam-automigrate-large-migration-test
++  buildable:          False
+   hs-source-dirs:     large-migration-test
+   main-is:            Main.hs
+   build-depends:
+-- 
+2.38.2
+
