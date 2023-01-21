@@ -29,7 +29,7 @@ BIN_PV=${PV}
 # Differentiate glibc/musl
 
 #glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#glibc_binaries="$glibc_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
+glibc_binaries="$glibc_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
 #glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
 #glibc_binaries="$glibc_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
 #glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
@@ -37,7 +37,7 @@ BIN_PV=${PV}
 #glibc_binaries="$glibc_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
 #glibc_binaries="$glibc_binaries ppc64? ( !big-endian? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tbz2 ) )"
 #glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#glibc_binaries="$glibc_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
+glibc_binaries="$glibc_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
 
 #musl_binaries="$musl_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 #musl_binaries="$musl_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-musl.tbz2 )"
@@ -64,14 +64,14 @@ yet_binary() {
 				#alpha) return 0 ;;
 				#arm64) return 0 ;;
 				#arm) return 0 ;;
-				#amd64) return 0 ;;
+				amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
 				#ppc64)
 				#	use big-endian || return 0
 				#	;;
 				#sparc) return 0 ;;
-				#x86) return 0 ;;
+				x86) return 0 ;;
 				*) return 1 ;;
 			esac
 			;;
@@ -112,7 +112,7 @@ BUMP_LIBRARIES=(
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
@@ -122,7 +122,7 @@ RDEPEND="
 	dev-libs/gmp:0=
 	sys-libs/ncurses:=[unicode(+)]
 	elfutils? ( dev-libs/elfutils )
-	!ghcmakebinary? ( dev-libs/libffi:= )
+	!ghcmakebinary? ( dev-libs/libffi:=[-exec-static-trampoline] )
 	numa? ( sys-process/numactl )
 "
 
@@ -542,6 +542,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
 		eapply "${FILESDIR}"/${PN}-8.10.5-modorigin-verbose-conflict.patch
+		eapply "${FILESDIR}"/${PN}-8.10.6-aclocal.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
