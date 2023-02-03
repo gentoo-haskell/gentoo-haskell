@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,8 +16,8 @@ fi
 PYTHON_COMPAT=( python3_{9..10} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
-inherit multilib multiprocessing pax-utils toolchain-funcs prefix
-inherit check-reqs
+inherit multiprocessing pax-utils toolchain-funcs prefix
+inherit check-reqs llvm
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
@@ -29,26 +29,31 @@ BIN_PV=${PV}
 # Differentiate glibc/musl
 
 #glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#glibc_binaries="$glibc_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
+glibc_binaries="$glibc_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_64-pc-linux-gnu-r4.tbz2 )"
 #glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
-#glibc_binaries="$glibc_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
+#glibc_binaries="$glibc_binaries arm64? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tar.gz )"
 #glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #glibc_binaries="$glibc_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
 #glibc_binaries="$glibc_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? ( !big-endian? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tbz2 ) )"
+#glibc_binaries="$glibc_binaries ppc64? (
+#	big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64-unknown-linux-gnu.tar.gz )
+#	!big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz )
+#)"
+#glibc_binaries="$glibc_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-riscv64-unknown-linux-gnu.tar.gz )"
 #glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#glibc_binaries="$glibc_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
+glibc_binaries="$glibc_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-gnu-r4.tbz2 )"
 
 #musl_binaries="$musl_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#musl_binaries="$musl_binaries amd64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86_64-pc-linux-musl.tbz2 )"
+#musl_binaries="$musl_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_64-pc-linux-musl.tbz2 )"
 #musl_binaries="$musl_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-musl.tbz2 )"
 #musl_binaries="$musl_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-musl.tbz2 )"
 #musl_binaries="$musl_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #musl_binaries="$musl_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
 #musl_binaries="$musl_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#musl_binaries="$musl_binaries ppc64? ( !big-endian? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-powerpc64le-unknown-linux-musl.tbz2 ) )"
+#musl_binaries="$musl_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-musl.tar.gz ) )"
+#musl_binaries="$musl_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-riscv64-unknown-linux-musl.tar.gz )"
 #musl_binaries="$musl_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#musl_binaries="$musl_binaries x86? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-i686-pc-linux-musl.tbz2 )"
+#musl_binaries="$musl_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-musl.tbz2 )"
 
 [[ -n $glibc_binaries ]] && arch_binaries="$arch_binaries elibc_glibc? ( $glibc_binaries )"
 [[ -n $musl_binaries ]] && arch_binaries="$arch_binaries elibc_musl? ( $musl_binaries )"
@@ -64,14 +69,13 @@ yet_binary() {
 				#alpha) return 0 ;;
 				#arm64) return 0 ;;
 				#arm) return 0 ;;
-				#amd64) return 0 ;;
+				amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
-				#ppc64)
-				#	use big-endian || return 0
-				#	;;
+				#ppc64) return 0 ;;
+				#riscv) return 0 ;;
 				#sparc) return 0 ;;
-				#x86) return 0 ;;
+				x86) return 0 ;;
 				*) return 1 ;;
 			esac
 			;;
@@ -86,6 +90,7 @@ yet_binary() {
 				#ppc64)
 				#	use big-endian || return 0
 				#	;;
+				#riscv) return 0 ;;
 				#sparc) return 0 ;;
 				#x86) return 0 ;;
 				*) return 1 ;;
@@ -102,28 +107,38 @@ SRC_URI="!binary? (
 	https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-src.tar.xz
 	test? ( https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
 )"
+SRC_URI+=" https://dev.gentoo.org/~sam/distfiles/${CATEGORY}/${PN}/${P}-riscv64-llvm.patch.xz"
+
 S="${WORKDIR}"/${GHC_P}
 
 [[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
+	"process          1.6.16.0"
 )
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS=""
-IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
+IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
+LLVM_MAX_SLOT="14"
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
 	sys-libs/ncurses:=[unicode(+)]
 	elfutils? ( dev-libs/elfutils )
-	!ghcmakebinary? ( dev-libs/libffi:=[-exec-static-trampoline] )
+	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
+	llvm? (
+		<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
+		|| (
+			sys-devel/llvm:14
+		)
+	)
 "
 
 # This set of dependencies is needed to run
@@ -164,6 +179,7 @@ needs_python() {
 REQUIRED_USE="
 	?? ( ghcbootstrap binary )
 	?? ( profile binary )
+	?? ( llvm unregisterised )
 "
 
 # haskell libraries built with cabal in configure mode, #515354
@@ -308,15 +324,6 @@ ghc_setup_cflags() {
 	for flag in ${LDFLAGS}; do
 		append-ghc-cflags link ${flag}
 	done
-
-	# GHC uses ${CBUILD}-gcc, ${CHOST}-gcc and ${CTARGET}-gcc at a single build.
-	# Skip any gentoo-specific tweaks for cross-case to avoid passing unsupported
-	# options to gcc.
-	if is_native; then
-		# prevent from failing to build unregisterised ghc:
-		# https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg171602.html
-		use ppc64 && append-ghc-cflags persistent compile -mminimal-toc
-	fi
 }
 
 # substitutes string $1 to $2 in files $3 $4 ...
@@ -401,6 +408,15 @@ ghc-check-reqs() {
 	"$@"
 }
 
+llvmize() {
+	[[ -z "${1}" ]] && return
+	( find "${1}" -type f \
+		| file -if- \
+		| grep "text/x-shellscript" \
+		| awk -F: '{print $1}' \
+		| xargs sed -i "s#^exec #PATH=\"$(get_llvm_prefix "${LLVM_MAX_SLOT}")/bin:\${PATH}\" exec #") || die
+}
+
 pkg_pretend() {
 	ghc-check-reqs check-reqs_pkg_pretend
 }
@@ -430,6 +446,8 @@ pkg_setup() {
 	if needs_python; then
 		python-any-r1_pkg_setup
 	fi
+
+	use llvm && llvm_pkg_setup
 }
 
 src_unpack() {
@@ -453,6 +471,11 @@ src_prepare() {
 
 	ghc_setup_cflags
 
+	# ghc-9.0.2 release anomaly
+	# https://www.mail-archive.com/search?l=ghc-devs@haskell.org&q=subject:%22Re%5C%3A+%5C%5BHaskell%5C%5D+%5C%5BANNOUNCE%5C%5D+GHC+9.0.2+released%22&o=newest&f=1
+	# https://src.fedoraproject.org/rpms/ghc9.0/blob/rawhide/f/ghc9.0.spec#_327
+	rm -rf "libraries/containers/containers/dist-install" || die
+
 	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
 		# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
 		# See bug #313635.
@@ -464,6 +487,21 @@ src_prepare() {
 		# linking on it's own (bug #299709)
 		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
 	fi
+
+	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
+
+	# binpkg may have been built with FEATURES=splitdebug
+	if [[ -d "${WORKDIR}/usr/lib/debug" ]] ; then
+		rm -rf "${WORKDIR}/usr/lib/debug" || die
+	fi
+	find "${WORKDIR}/usr/lib" -type d -empty -delete 2>/dev/null # do not die on failure here
+
+	# ffi headers don't get included in the binpkg for some reason
+	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/include/"{ffi.h,ffitarget.h}
+	do
+		mkdir -p "$(dirname "${f}")"
+		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
+	done
 
 	if use binary; then
 		if use prefix; then
@@ -536,16 +574,22 @@ src_prepare() {
 
 		cd "${S}" # otherwise eapply will break
 
-		eapply "${FILESDIR}"/${PN}-7.0.4-CHOST-prefix.patch
-		eapply "${FILESDIR}"/${PN}-8.2.1-darwin.patch
-		eapply "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
-		eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
+		# Fixes panic when compiling some packages
+		# https://github.com/gentoo-haskell/gentoo-haskell/issues/1250#issuecomment-1044257595
+		# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
+		eapply "${FILESDIR}/${PN}-9.0.2-modorigin-semigroup.patch"
+		# Needed for testing with python-3.10
+		use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
-		eapply "${FILESDIR}"/${PN}-8.10.5-modorigin-verbose-conflict.patch
-
-		# a bunch of crosscompiler patches
-		# needs newer version:
-		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
+		eapply "${FILESDIR}"/latomic-subword
+		eapply "${WORKDIR}"/${P}-riscv64-llvm.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-fptools.patch # clang-16 workaround
+		eapply "${FILESDIR}"/${PN}-9.0.2-sphinx-6.patch
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
@@ -624,7 +668,7 @@ src_configure() {
 			export PATH="${WORKDIR}/usr/bin:${PATH}"
 		fi
 
-		echo "INTEGER_LIBRARY = $(usex gmp integer-gmp integer-simple)" >> mk/build.mk
+		echo "BIGNUM_BACKEND = $(usex gmp gmp native)" >> mk/build.mk
 
 		# don't strip anything. Very useful when stage2 SIGSEGVs on you
 		echo "STRIP_CMD = :" >> mk/build.mk
@@ -693,7 +737,8 @@ src_configure() {
 		econf ${econf_args[@]} \
 			--enable-bootstrap-with-devel-snapshot \
 			$(use_enable elfutils dwarf-unwind) \
-			$(use_enable numa)
+			$(use_enable numa) \
+			$(use_enable unregisterised)
 
 		if [[ ${PV} == *9999* ]]; then
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
@@ -749,6 +794,8 @@ src_install() {
 		#    /usr/bin/install: cannot create regular file \
 		#           '/tmp/portage-tmpdir/portage/cross-armv7a-unknown-linux-gnueabi/ghc-9999/image/usr/lib64/armv7a-unknown-linux-gnueabi-ghc-8.3.20170404': No such file or directory
 		emake -j1 install DESTDIR="${D}"
+
+		use llvm && llvmize "${ED}/usr/bin"
 
 		# Skip for cross-targets as they all share target location:
 		# /usr/share/doc/ghc-9999/
