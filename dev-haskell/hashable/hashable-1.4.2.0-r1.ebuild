@@ -15,6 +15,7 @@ HOMEPAGE="https://github.com/haskell-unordered-containers/hashable"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
+IUSE="random-initial-seed"
 
 RESTRICT=test # fails 1 test consistently on ghc-9.0.2
 
@@ -35,5 +36,5 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=integer-gmp \
-		--flag=random-initial-seed
+		$(cabal_flag random-initial-seed random-initial-seed)
 }
