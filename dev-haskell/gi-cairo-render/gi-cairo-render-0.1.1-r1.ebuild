@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,7 +21,7 @@ IUSE="+svg"
 RDEPEND=">=dev-haskell/haskell-gi-base-0.24:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?]
 	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
-	x11-libs/cairo[glib,svg?]
+	x11-libs/cairo[glib]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/c2hs-0.28 <dev-haskell/c2hs-0.30
