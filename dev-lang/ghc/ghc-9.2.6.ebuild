@@ -567,6 +567,9 @@ src_prepare() {
 		# needs newer version:
 		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
 
+		# https://gitlab.haskell.org/ghc/ghc/-/issues/22965
+		eapply "${FILESDIR}/${P}-fix-alignment-of-capability.patch"
+
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
 			eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
