@@ -6,7 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="examples">Install the haskell-yaml-examples executable</flag>
 		<flag name="executable">Install the yaml2json and json2yaml executables</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">yaml</remote-id>
+		<remote-id type="github">snoyberg/yaml</remote-id>
+	</upstream>
 </pkgmetadata>
