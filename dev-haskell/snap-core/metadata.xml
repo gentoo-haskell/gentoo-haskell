@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">snap-core</remote-id>
+		<remote-id type="github">snapframework/snap-core</remote-id>
+	</upstream>
 </pkgmetadata>
