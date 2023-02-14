@@ -8,4 +8,8 @@
 	<use>
 		<flag name="fast-bignum">Enable fast moving of bignums between OpenSSL and GMP (GHC and OpenSSL version &lt; 1.1.0 only).</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">HsOpenSSL</remote-id>
+		<remote-id type="github">haskell-cryptography/HsOpenSSL</remote-id>
+	</upstream>
 </pkgmetadata>
