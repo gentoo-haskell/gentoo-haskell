@@ -21,7 +21,6 @@ RDEPEND="
 	dev-haskell/blaze-html:=[profile?]
 	dev-haskell/blaze-markup:=[profile?]
 	>=dev-haskell/file-embed-0.0.1:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
-	>=dev-haskell/process-1.0:=[profile?]
 	>=dev-haskell/scientific-0.3.0.0:=[profile?]
 	dev-haskell/th-lift:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]

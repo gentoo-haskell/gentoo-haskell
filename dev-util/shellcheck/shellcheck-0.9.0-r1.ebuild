@@ -21,7 +21,6 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/aeson-1.4.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/diff-0.4.0:=[profile?] <dev-haskell/diff-0.5:=[profile?]
 	>=dev-haskell/fgl-5.7.0:=[profile?] <dev-haskell/fgl-5.8.1.0:=[profile?]
-	dev-haskell/process:=[profile?]
 	>=dev-haskell/quickcheck-2.14.2:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
 	>=dev-haskell/regex-tdfa-1.2.0:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	>=dev-lang/ghc-8.8.1:=

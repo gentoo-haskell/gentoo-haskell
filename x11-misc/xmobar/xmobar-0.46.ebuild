@@ -35,8 +35,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.7.1:=[profile?]
 	x11-libs/libXrender
 	alsa? ( >=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[profile?]
 		>=dev-haskell/alsa-mixer-0.3:=[profile?] <dev-haskell/alsa-mixer-0.4:=[profile?]
-		>=dev-haskell/process-1.4.3.0:=[profile?] )
-	!alsa? ( dev-haskell/process:=[profile?] )
+	)
 	datezone? ( >=dev-haskell/timezone-olson-0.2:=[profile?] <dev-haskell/timezone-olson-0.3:=[profile?]
 			>=dev-haskell/timezone-series-0.1:=[profile?] <dev-haskell/timezone-series-0.2:=[profile?] )
 	dbus? ( >=dev-haskell/dbus-1:=[profile?] )

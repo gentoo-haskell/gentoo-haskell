@@ -17,7 +17,6 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	>=dev-haskell/base-compat-0.6.0:=[profile?]
-	dev-haskell/process:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

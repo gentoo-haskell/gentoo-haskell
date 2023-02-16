@@ -29,7 +29,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/base-compat-batteries-0.10.5 <dev-haskell/base-compat-batteries-0.13
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7
 		>=dev-haskell/math-functions-0.3.3.0 <dev-haskell/math-functions-0.4
-		>=dev-haskell/process-1.0.1.5 <dev-haskell/process-1.7
 		dev-haskell/random
 		>=dev-haskell/test-framework-0.8.2.0 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3.0.2 <dev-haskell/test-framework-hunit-0.4

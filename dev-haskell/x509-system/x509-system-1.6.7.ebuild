@@ -17,7 +17,6 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	>=dev-haskell/pem-0.1:=[profile?] <dev-haskell/pem-0.3:=[profile?]
-	dev-haskell/process:=[profile?]
 	>=dev-haskell/x509-1.6:=[profile?]
 	>=dev-haskell/x509-store-1.6.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=

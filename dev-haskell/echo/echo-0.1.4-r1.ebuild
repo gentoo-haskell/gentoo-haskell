@@ -23,7 +23,6 @@ CABAL_CHDEPS=(
 )
 
 RDEPEND="
-	>=dev-haskell/process-1.0.1.1:=[profile?] <dev-haskell/process-1.7:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

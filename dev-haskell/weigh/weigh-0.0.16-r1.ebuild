@@ -19,7 +19,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	dev-haskell/process:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	>=dev-lang/ghc-8.4.3:=

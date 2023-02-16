@@ -32,7 +32,6 @@ RDEPEND="
 	>=dev-haskell/math-functions-0.3.3.0:=[profile?]
 	>=dev-haskell/megaparsec-7.0.0:=[profile?] <dev-haskell/megaparsec-9.4:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?]
-	dev-haskell/process:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	>=dev-haskell/safe-0.3.19:=[profile?]
 	>=dev-haskell/shakespeare-2.0.2.2:=[profile?]

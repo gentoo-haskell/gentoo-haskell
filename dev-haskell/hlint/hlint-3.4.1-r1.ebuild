@@ -32,7 +32,6 @@ RDEPEND="
 	>=dev-haskell/filepattern-0.1.1:=[profile?]
 	>=dev-haskell/ghc-lib-parser-9.2:=[profile?] <dev-haskell/ghc-lib-parser-9.3:=[profile?]
 	>=dev-haskell/ghc-lib-parser-ex-9.2.0.3:=[profile?] <dev-haskell/ghc-lib-parser-ex-9.2.2:=[profile?]
-	dev-haskell/process:=[profile?]
 	>=dev-haskell/refact-0.3:=[profile?]
 	>=dev-haskell/uniplate-1.5:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]

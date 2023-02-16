@@ -24,7 +24,6 @@ RDEPEND="
 	>=dev-haskell/extra-1.7.3:=[profile?]
 	>=dev-haskell/filemanip-0.3.6.3:=[profile?] <dev-haskell/filemanip-0.4:=[profile?]
 	>=dev-haskell/ghc-exactprint-0.6.4:=[profile?]
-	>=dev-haskell/process-1.6:=[profile?]
 	>=dev-haskell/refact-0.2:=[profile?]
 	>=dev-haskell/syb-0.7.1:=[profile?]
 	>=dev-haskell/uniplate-1.6.13:=[profile?]

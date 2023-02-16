@@ -22,7 +22,6 @@ IUSE="+terminfo"
 RESTRICT=test # test requires example executable which does not work correctly
 
 RDEPEND="
-	>=dev-haskell/process-1.0:=[profile?] <dev-haskell/process-1.7:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-lang/ghc-8.10.1:=
 "

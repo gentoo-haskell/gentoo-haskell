@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/explicit-exception-0.1.3:=[profile?] <dev-haskell/explicit-exception-0.3:=[profile?]
 	>=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]
-	>=dev-haskell/process-1.0:=[profile?] <dev-haskell/process-1.7:=[profile?]
 	>=dev-haskell/sample-frame-0.0.1:=[profile?] <dev-haskell/sample-frame-0.1:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-1.0:=[profile?]
 	>=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]

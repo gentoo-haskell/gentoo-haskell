@@ -41,7 +41,6 @@ RDEPEND="
 	>=dev-haskell/http-4000.1.5:= <dev-haskell/http-4000.5:=
 	>=dev-haskell/network-2.6:= <dev-haskell/network-3.2:=
 	>=dev-haskell/network-uri-2.6.0.2:= <dev-haskell/network-uri-2.7:=
-	>=dev-haskell/process-1.2.3.0:= <dev-haskell/process-1.7:=
 	>=dev-haskell/random-1:=
 	>=dev-haskell/stm-2.0:= <dev-haskell/stm-2.6:=
 	>=dev-haskell/tar-0.5.0.3:= <dev-haskell/tar-0.6:=

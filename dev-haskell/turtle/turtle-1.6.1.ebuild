@@ -26,7 +26,6 @@ RDEPEND="
 	>=dev-haskell/managed-1.0.3:=[profile?] <dev-haskell/managed-1.1:=[profile?]
 	>=dev-haskell/optional-args-1.0:=[profile?] <dev-haskell/optional-args-2.0:=[profile?]
 	>=dev-haskell/optparse-applicative-0.16:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
-	>=dev-haskell/process-1.0.1.1:=[profile?] <dev-haskell/process-1.7:=[profile?]
 	<dev-haskell/stm-2.6:=[profile?]
 	<dev-haskell/streaming-commons-0.3:=[profile?]
 	<dev-haskell/temporary-1.4:=[profile?]

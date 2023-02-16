@@ -17,7 +17,6 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	~dev-haskell/ghc-lib-parser-9.2.5.20221107:=[profile?]
-	>=dev-haskell/process-1:=[profile?] <dev-haskell/process-1.7:=[profile?]
 	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}

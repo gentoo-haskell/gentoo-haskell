@@ -20,7 +20,6 @@ IUSE="+network +zlib"
 RDEPEND="
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/primitive-0.2:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
-	>=dev-haskell/process-1.1:=[profile?] <dev-haskell/process-1.7:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	network? (

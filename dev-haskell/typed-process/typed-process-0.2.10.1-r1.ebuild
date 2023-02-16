@@ -21,7 +21,6 @@ PATCHES=(
 
 RDEPEND="
 	>=dev-haskell/async-2.0:=[profile?]
-	>=dev-haskell/process-1.2:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	>=dev-lang/ghc-8.6.3:=

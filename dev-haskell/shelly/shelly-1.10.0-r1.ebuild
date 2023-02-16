@@ -25,7 +25,6 @@ RDEPEND="
 	dev-haskell/lifted-async:=[profile?]
 	>=dev-haskell/lifted-base-0.2.3.2:=[profile?]
 	>=dev-haskell/monad-control-0.3.2:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
-	>=dev-haskell/process-1.4:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	>=dev-haskell/unix-compat-0.4.1.1:=[profile?] <dev-haskell/unix-compat-0.7:=[profile?]
 	>=dev-lang/ghc-8.10.1:=

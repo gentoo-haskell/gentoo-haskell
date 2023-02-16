@@ -21,7 +21,6 @@ RDEPEND="
 	>=dev-haskell/conduit-1.3:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?]
-	dev-haskell/process:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?]
 	dev-haskell/stm:=[profile?]
 	>=dev-haskell/streaming-commons-0.1.16:=[profile?]
