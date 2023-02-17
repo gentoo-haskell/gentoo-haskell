@@ -42,6 +42,7 @@ RDEPEND="
 	dev-haskell/optparse-applicative:=
 	>=dev-haskell/parallel-3.2.1.0:=
 	dev-haskell/parser-combinators:=
+	|| ( dev-lang/ghc >=dev-haskell/process-1.6.15.0 )
 	dev-haskell/quickcheck:2=
 	>=dev-haskell/random-1.2:=
 	>=dev-haskell/regex-base-0.94.0.0:=

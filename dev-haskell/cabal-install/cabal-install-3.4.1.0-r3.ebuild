@@ -37,6 +37,7 @@ RDEPEND="
 	>=dev-haskell/hashable-1.0:=
 	>=dev-haskell/http-4000.1.5:= <dev-haskell/http-4000.5:=
 	>=dev-haskell/network-uri-2.6.0.2:= <dev-haskell/network-uri-2.7:=
+	|| ( dev-lang/ghc ( >=dev-haskell/process-1.2.3.0 <dev-haskell/process-1.7 ) )
 	>=dev-haskell/random-1.2:= <dev-haskell/random-1.3:=
 	>=dev-haskell/regex-base-0.94.0.0:= <dev-haskell/regex-base-0.95:=
 	>=dev-haskell/regex-posix-0.96.0.0:= <dev-haskell/regex-posix-0.97:=

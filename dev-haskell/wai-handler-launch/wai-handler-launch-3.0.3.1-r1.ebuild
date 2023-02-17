@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	dev-haskell/async:=[profile?]
 	>=dev-haskell/http-types-0.7:=[profile?]
+	|| ( dev-lang/ghc ( >=dev-haskell/process-1.0[profile?] <dev-haskell/process-1.7[profile?] ) )
 	>=dev-haskell/streaming-commons-0.2:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/warp-3.0:=[profile?] <dev-haskell/warp-3.4:=[profile?]

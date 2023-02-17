@@ -31,6 +31,7 @@ RDEPEND="
 	>=dev-haskell/http-types-0.7:=[profile?]
 	dev-haskell/memory:=[profile?]
 	>=dev-haskell/mime-types-0.1:=[profile?]
+	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	>=dev-haskell/unix-compat-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/wai-1.3:=[profile?]

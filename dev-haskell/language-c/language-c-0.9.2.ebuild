@@ -17,6 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
+	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

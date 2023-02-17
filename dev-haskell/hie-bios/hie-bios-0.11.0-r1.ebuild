@@ -30,6 +30,7 @@ RDEPEND="
 	>=dev-haskell/file-embed-0.0.11:=[profile?] <dev-haskell/file-embed-1:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
+	|| ( dev-lang/ghc ( >=dev-haskell/process-1.6.1[profile?] <dev-haskell/process-1.7[profile?] ) )
 	>=dev-haskell/temporary-1.2:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	>=dev-haskell/unix-compat-0.5.1:=[profile?] <dev-haskell/unix-compat-0.7:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.9:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]

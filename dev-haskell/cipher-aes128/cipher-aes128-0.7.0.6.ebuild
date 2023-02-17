@@ -27,6 +27,7 @@ RDEPEND="dev-haskell/cereal:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-3.7
+	|| ( dev-lang/ghc >=dev-haskell/process-1.0 )
 "
 
 src_configure() {

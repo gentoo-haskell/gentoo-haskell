@@ -20,6 +20,7 @@ RDEPEND="
 	dev-haskell/microlens:=[profile?]
 	dev-haskell/microlens-mtl:=[profile?]
 	dev-haskell/primitive:=[profile?]
+	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	>=dev-haskell/typed-process-0.2.5.0:=[profile?]
 	>=dev-haskell/unliftio-0.2.14:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]

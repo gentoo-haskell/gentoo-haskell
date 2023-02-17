@@ -1,14 +1,3 @@
-# hololeap <hololeap@protonmail.com> (2023-02-16)
-# Exposing the 'process' package as a portage package has proven to be
-# a bad idea, creating many complications and system inconsistencies.
-# 
-# The version that comes bundled with GHC needs to be the only version
-# on the system. If upgrades to the 'process' package are needed, it
-# needs to be done through dev-lang/ghc.
-#
-# Removal in 30 days
-dev-haskell/process
-
 # hololeap <hololeap@protonmail.com> (2022-12-30)
 # Depends on old version of ghcide
 dev-haskell/hls-call-hierarchy-plugin

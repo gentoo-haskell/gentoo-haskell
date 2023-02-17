@@ -19,6 +19,7 @@ IUSE="+package-abis"
 
 RDEPEND="
 	dev-haskell/ghc-paths:=[profile?]
+	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	dev-haskell/safe-exceptions:=[profile?]
 	>=dev-haskell/th-compat-0.1.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=

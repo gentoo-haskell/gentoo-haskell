@@ -30,6 +30,7 @@ RDEPEND="
 	dev-haskell/js-flot:=[profile?]
 	dev-haskell/js-jquery:=[profile?]
 	dev-haskell/primitive:=[profile?]
+	|| ( dev-lang/ghc >=dev-haskell/process-1.1[profile?] )
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]

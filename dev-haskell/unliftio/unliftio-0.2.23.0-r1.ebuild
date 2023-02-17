@@ -17,6 +17,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	>dev-haskell/async-2.1.1:=[profile?]
+	|| ( dev-lang/ghc >=dev-haskell/process-1.2.0.0[profile?] )
 	dev-haskell/safe-exceptions:=[profile?]
 	>=dev-haskell/stm-2.5:=[profile?]
 	>=dev-haskell/unliftio-core-0.1.1.0:=[profile?]

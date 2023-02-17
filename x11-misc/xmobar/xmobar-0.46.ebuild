@@ -26,6 +26,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.7.1:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/pango-0.13:=[profile?]
 	>=dev-haskell/parsec-numbers-0.1.0:=[profile?]
+	|| ( dev-lang/ghc >=dev-haskell/process-1.4.3.0[profile?] )
 	dev-haskell/regex-compat:=[profile?]
 	>=dev-haskell/stm-2.3:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
@@ -33,7 +34,8 @@ RDEPEND=">=dev-haskell/aeson-1.4.7.1:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	x11-libs/libXrandr
 	x11-libs/libXrender
-	alsa? ( >=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[profile?]
+	alsa? (
+		>=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[profile?]
 		>=dev-haskell/alsa-mixer-0.3:=[profile?] <dev-haskell/alsa-mixer-0.4:=[profile?]
 	)
 	datezone? ( >=dev-haskell/timezone-olson-0.2:=[profile?] <dev-haskell/timezone-olson-0.3:=[profile?]

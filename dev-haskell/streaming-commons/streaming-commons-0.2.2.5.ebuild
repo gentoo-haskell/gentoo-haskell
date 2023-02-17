@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	dev-haskell/async:=[profile?]
 	>=dev-haskell/network-2.4.0.0:=[profile?]
+	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	dev-haskell/random:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/zlib:=[profile?]

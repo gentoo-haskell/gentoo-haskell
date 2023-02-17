@@ -30,6 +30,7 @@ RDEPEND="
 	dev-haskell/monad-logger:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/pretty-show:=[profile?]
+	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	dev-haskell/safe:=[profile?]
 	dev-haskell/safe-exceptions:=[profile?]
 	dev-haskell/stm:=[profile?]

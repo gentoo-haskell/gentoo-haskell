@@ -23,6 +23,7 @@ RDEPEND="
 	>=dev-haskell/hie-bios-0.7.0:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	>=dev-haskell/implicit-hie-0.1.2.6:=[profile?] <dev-haskell/implicit-hie-1:=[profile?]
+	|| ( dev-lang/ghc ( >=dev-haskell/process-1.6.1[profile?] <dev-haskell/process-1.7[profile?] ) )
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]

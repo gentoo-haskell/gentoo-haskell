@@ -20,6 +20,7 @@ RDEPEND="
 	>=dev-haskell/cmdargs-0.10:=[profile?]
 	>=dev-haskell/extra-1.6.20:=[profile?]
 	>=dev-haskell/fsnotify-0.4:=[profile?]
+	|| ( dev-lang/ghc >=dev-haskell/process-1.1[profile?] )
 	>=dev-haskell/terminal-size-0.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "

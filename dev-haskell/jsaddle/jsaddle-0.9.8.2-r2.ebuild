@@ -31,6 +31,7 @@ RDEPEND="
 	>=dev-haskell/http-types-0.8.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/lens-3.8.5:=[profile?]
 	>=dev-haskell/primitive-0.6.1.0:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
+	|| ( dev-lang/ghc ( >=dev-haskell/process-1.2.3.0[profile?] <dev-haskell/process-1.7[profile?] ) )
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/ref-tf-0.4.0.1:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]

@@ -26,6 +26,7 @@ RDEPEND="
 	>=dev-haskell/data-default-0.5:=[profile?]
 	>=dev-haskell/http-types-0.12:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.3.0:=[profile?]
+	|| ( dev-lang/ghc ( >=dev-haskell/process-1.6.5.0[profile?] <dev-haskell/process-1.7[profile?] ) )
 	>=dev-haskell/regex-tdfa-1.2.3:=[profile?] <=dev-haskell/regex-tdfa-1.5:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?]

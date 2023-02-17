@@ -29,6 +29,7 @@ RDEPEND="
 	dev-haskell/port-utils:=[profile?]
 	>=dev-haskell/postgres-options-0.2.0.0:=[profile?]
 	dev-haskell/postgresql-simple:=[profile?]
+	|| ( dev-lang/ghc >=dev-haskell/process-1.2.0.0[profile?] )
 	dev-haskell/stm:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	>=dev-lang/ghc-8.4.3:=

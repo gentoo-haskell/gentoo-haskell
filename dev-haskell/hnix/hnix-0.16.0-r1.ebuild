@@ -56,6 +56,7 @@ RDEPEND="
 	>=dev-haskell/parser-combinators-1.0.1:=[profile?] <dev-haskell/parser-combinators-1.4:=[profile?]
 	>=dev-haskell/pretty-show-1.9.5:=[profile?] <dev-haskell/pretty-show-1.11:=[profile?]
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
+	|| ( dev-lang/ghc ( >=dev-haskell/process-1.6.3[profile?] <dev-haskell/process-1.7[profile?] ) )
 	>=dev-haskell/ref-tf-0.5:=[profile?] <dev-haskell/ref-tf-0.6:=[profile?]
 	>=dev-haskell/regex-tdfa-1.2.3:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	>=dev-haskell/relude-1.0.0:=[profile?]

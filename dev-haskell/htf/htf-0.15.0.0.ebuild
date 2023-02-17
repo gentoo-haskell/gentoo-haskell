@@ -36,6 +36,7 @@ RDEPEND="
 	>=dev-haskell/lifted-base-0.1:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?]
 	>=dev-haskell/old-time-1.0:=[profile?]
+	|| ( dev-lang/ghc >=dev-haskell/process-1.0[profile?] )
 	>=dev-haskell/quickcheck-2.3:2=[profile?]
 	>=dev-haskell/random-1.0:=[profile?]
 	>=dev-haskell/regex-compat-0.92:=[profile?]
