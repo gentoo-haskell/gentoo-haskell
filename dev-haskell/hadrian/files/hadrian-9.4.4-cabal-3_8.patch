@@ -1,0 +1,29 @@
+From f05111c56a145a2c9a43e5d228008369d67428d3 Mon Sep 17 00:00:00 2001
+From: M Farkas-Dyck <strake888@proton.me>
+Date: Sat, 27 Aug 2022 09:02:53 -0800
+Bug: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/8910.patch
+Subject: [PATCH] Unbreak Hadrian with Cabal 3.8.
+
+---
+ hadrian/src/Hadrian/Haskell/Cabal/Parse.hs | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/hadrian/src/Hadrian/Haskell/Cabal/Parse.hs b/hadrian/src/Hadrian/Haskell/Cabal/Parse.hs
+index b14edd035ce..25fe1444be2 100644
+--- a/src/Hadrian/Haskell/Cabal/Parse.hs
++++ b/src/Hadrian/Haskell/Cabal/Parse.hs
+@@ -23,7 +23,11 @@ import qualified Distribution.ModuleName                       as C
+ import qualified Distribution.Package                          as C
+ import qualified Distribution.PackageDescription               as C
+ import qualified Distribution.PackageDescription.Configuration as C
++#if MIN_VERSION_Cabal(3,8,0)
++import qualified Distribution.Simple.PackageDescription        as C
++#else
+ import qualified Distribution.PackageDescription.Parsec        as C
++#endif
+ import qualified Distribution.Simple.Compiler                  as C
+ import qualified Distribution.Simple.Program.Db                as C
+ import qualified Distribution.Simple                           as C
+-- 
+GitLab
+
