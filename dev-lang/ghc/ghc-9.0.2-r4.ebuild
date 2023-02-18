@@ -127,6 +127,7 @@ RESTRICT="!test? ( test )"
 
 LLVM_MAX_SLOT="14"
 RDEPEND="
+	!<dev-haskell/process-1.6.16.0-r1
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
 	sys-libs/ncurses:=[unicode(+)]
