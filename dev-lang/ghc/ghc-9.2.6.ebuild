@@ -29,7 +29,7 @@ BIN_PV=${PV}
 # Differentiate glibc/musl
 
 #glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#glibc_binaries="$glibc_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
+glibc_binaries="$glibc_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
 #glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
 #glibc_binaries="$glibc_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
 #glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
