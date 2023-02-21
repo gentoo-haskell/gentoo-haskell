@@ -17,6 +17,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="profile"
 
+GHC_BOOTSTRAP_PACKAGES=(
+	cabal-doctest
+)
+
 RDEPEND=">=dev-haskell/async-2.0:=
 	>=dev-haskell/base16-bytestring-0.1.1:=
 	>=dev-haskell/base64-bytestring-1.0:=
@@ -65,4 +69,9 @@ src_configure() {
 		--flag=gentoo-tests \
 		--flag=pedantic \
 		$(cabal_flag profile profile)
+}
+
+src_install() {
+	haskell-cabal_src_install
+	doman man/hackport.1
 }
