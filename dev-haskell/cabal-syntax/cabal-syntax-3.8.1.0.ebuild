@@ -9,6 +9,7 @@ CABAL_HACKAGE_REVISION=1
 CABAL_PN="Cabal-syntax"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES+=" nocabaldep" # in case installed Cabal is broken
 inherit haskell-cabal
 
 DESCRIPTION="A library for working with .cabal files"
@@ -21,5 +22,6 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2.0.1
 "
+
+CABAL_CORE_LIB_GHC_PV="9.4.4"
