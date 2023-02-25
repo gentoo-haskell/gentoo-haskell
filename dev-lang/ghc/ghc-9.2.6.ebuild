@@ -159,7 +159,7 @@ BDEPEND="
 	doc? ( app-text/docbook-xml-dtd:4.2
 		app-text/docbook-xml-dtd:4.5
 		app-text/docbook-xsl-stylesheets
-		<dev-python/sphinx-6.0.0
+		dev-python/sphinx
 		>=dev-libs/libxslt-1.1.2 )
 	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )
 	test? ( ${PYTHON_DEPS} )
@@ -586,7 +586,8 @@ src_prepare() {
 		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
 
 		# https://gitlab.haskell.org/ghc/ghc/-/issues/22965
-		eapply "${FILESDIR}/${P}-fix-alignment-of-capability.patch"
+		eapply "${FILESDIR}/${PN}-9.2.6-fix-alignment-of-capability.patch"
+		eapply "${FILESDIR}"/${PN}-9.0.2-sphinx-6.patch
 
 		# mingw32 target
 		pushd "${S}/libraries/Win32"
