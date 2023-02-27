@@ -11,4 +11,8 @@
 		Haskell, and have it work with any number of backend SQL databases
 		(MySQL, Oracle, PostgreSQL, ODBC-compliant databases, etc.)
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">HDBC</remote-id>
+		<remote-id type="github">hdbc/hdbc</remote-id>
+	</upstream>
 </pkgmetadata>
