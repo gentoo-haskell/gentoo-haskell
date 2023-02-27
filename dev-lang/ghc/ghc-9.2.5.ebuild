@@ -393,7 +393,29 @@ ghc-check-reqs() {
 	"$@"
 }
 
+ghc-check-bootstrap-version () {
+	local diemsg version python_output
+	ebegin "Checking for appropriate installed GHC version for bootstrapping"
+	if version=$(ghc-version); then
+		if ver_test "${version}" -lt "9.1.0"; then
+			eend 0
+			return 0
+		else
+			diemsg="Inappropriate GHC version for bootstrapping: ${version}"
+		fi
+	else
+		diemsg="Could not find installed GHC for bootstrapping"
+	fi
+
+	eend 1
+	eerror "USE=ghcbootstrap _requires_ an existing GHC already installed on the system."
+	eerror "Furthermore, current technical limitations require that ghc-9.2.* _must_ be"
+	eerror "bootstrapped by ghc-9.0.* or earlier. This may be changed in a later update."
+	die "$diemsg"
+}
+
 pkg_pretend() {
+	use ghcbootstrap && ghc-check-bootstrap-version
 	ghc-check-reqs check-reqs_pkg_pretend
 }
 
