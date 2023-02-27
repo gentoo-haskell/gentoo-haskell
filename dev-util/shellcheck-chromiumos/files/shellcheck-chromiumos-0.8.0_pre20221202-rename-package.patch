@@ -1,0 +1,75 @@
+From 3261299048c5948c12b8a9c82f826cc578adeb08 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Mon, 27 Feb 2023 12:05:18 -0700
+Subject: [PATCH] Rename to ShellCheck-ChromiumOS
+
+This prevents name/file collisions when this is installed alongside the
+main fork.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ ShellCheck.cabal => ShellCheck-ChromiumOS.cabal | 10 +++++-----
+ src/ShellCheck/Data.hs                          |  2 +-
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+ rename ShellCheck.cabal => ShellCheck-ChromiumOS.cabal (95%)
+
+diff --git a/ShellCheck.cabal b/ShellCheck-ChromiumOS.cabal
+similarity index 95%
+rename from ShellCheck.cabal
+rename to ShellCheck-ChromiumOS.cabal
+index 6ed46f7..5373405 100644
+--- a/ShellCheck.cabal
++++ b/ShellCheck-ChromiumOS.cabal
+@@ -1,4 +1,4 @@
+-Name:             ShellCheck
++Name:             ShellCheck-ChromiumOS
+ Version:          0.8.0
+ Synopsis:         Shell script analysis tool
+ License:          GPL-3
+@@ -84,11 +84,11 @@ library
+       ShellCheck.Parser
+       ShellCheck.Regex
+     other-modules:
+-      Paths_ShellCheck
++      Paths_ShellCheck_ChromiumOS
+       ShellCheck.PortageAutoInternalVariables
+     default-language: Haskell98
+ 
+-executable shellcheck
++executable shellcheck-chromiumos
+     if impl(ghc < 8.0)
+       build-depends:
+         semigroups
+@@ -106,7 +106,7 @@ executable shellcheck
+       parsec >= 3.0,
+       QuickCheck >= 2.7.4,
+       regex-tdfa,
+-      ShellCheck
++      ShellCheck-ChromiumOS
+     default-language: Haskell98
+     main-is: shellcheck.hs
+ 
+@@ -126,6 +126,6 @@ test-suite test-shellcheck
+       parsec,
+       QuickCheck >= 2.7.4,
+       regex-tdfa,
+-      ShellCheck
++      ShellCheck-ChromiumOS
+     default-language: Haskell98
+     main-is: test/shellcheck.hs
+diff --git a/src/ShellCheck/Data.hs b/src/ShellCheck/Data.hs
+index 89ce048..212398c 100644
+--- a/src/ShellCheck/Data.hs
++++ b/src/ShellCheck/Data.hs
+@@ -4,7 +4,7 @@ import qualified Data.Map
+ import ShellCheck.Interface
+ import ShellCheck.PortageAutoInternalVariables
+ import Data.Version (showVersion)
+-import Paths_ShellCheck (version)
++import Paths_ShellCheck_ChromiumOS (version)
+ 
+ shellcheckVersion = showVersion version -- VERSIONSTRING
+ 
+-- 
+2.39.2
+
