@@ -18,10 +18,15 @@ LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-haskell/aeson-1.4.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
+# Rename shellcheck exe for use with app-alternatives/shellcheck
+CABAL_CHDEPS=(
+	'executable shellcheck' 'executable shellcheck-main'
+)
+
+RDEPEND="
+	>=dev-haskell/aeson-1.4.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/diff-0.4.0:=[profile?] <dev-haskell/diff-0.5:=[profile?]
 	>=dev-haskell/fgl-5.7.0:=[profile?] <dev-haskell/fgl-5.8.1.0:=[profile?]
-	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	>=dev-haskell/quickcheck-2.14.2:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
 	>=dev-haskell/regex-tdfa-1.2.0:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
@@ -29,3 +34,11 @@ RDEPEND=">=dev-haskell/aeson-1.4.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 "
+
+pkg_postinst() {
+	# ensure to preserve the symlink before app-alternatives/tar
+	# is installed
+	if [[ ! -h ${EROOT}/bin/shellcheck ]]; then
+		ln -s shellcheck-main "${EROOT}/bin/shellcheck" || die
+	fi
+}
