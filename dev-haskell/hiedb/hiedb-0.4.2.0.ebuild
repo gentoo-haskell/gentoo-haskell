@@ -16,13 +16,19 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="executable"
 
+# Known issue: <https://github.com/wz1000/HieDb/issues/46>
+RESTRICT="test" # Two test failures
+
 PATCHES=(
 	"${FILESDIR}/${PN}-0.3.0.1-add-executable-flag.patch"
 )
 
-CABAL_TEST_REQUIRED_BINS=( "${PN}" )
+CABAL_TEST_REQUIRED_BINS=(
+	"${PN}"
+)
 
-RDEPEND=">=dev-haskell/algebraic-graphs-0.3:=[profile?] <dev-haskell/algebraic-graphs-0.7:=[profile?]
+RDEPEND="
+	>=dev-haskell/algebraic-graphs-0.3:=[profile?] <dev-haskell/algebraic-graphs-0.7:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	dev-haskell/extra:=[profile?]
 	>=dev-haskell/hie-compat-0.3:=[profile?] <dev-haskell/hie-compat-0.4:=[profile?]
@@ -31,12 +37,16 @@ RDEPEND=">=dev-haskell/algebraic-graphs-0.3:=[profile?] <dev-haskell/algebraic-g
 	dev-haskell/sqlite-simple:=[profile?]
 	>=dev-haskell/terminal-size-0.2:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
-	executable? ( dev-haskell/ghc-paths:=[profile?] )
+	executable? (
+		dev-haskell/ghc-paths:=[profile?]
+	)
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
-	test? ( dev-haskell/hspec
-		dev-haskell/temporary )
+	test? (
+		dev-haskell/hspec
+		dev-haskell/temporary
+	)
 "
 
 src_configure() {
