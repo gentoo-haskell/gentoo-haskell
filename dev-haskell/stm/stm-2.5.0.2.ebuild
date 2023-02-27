@@ -15,8 +15,8 @@ HOMEPAGE="https://wiki.haskell.org/Software_transactional_memory"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#keep in sync with ghc-9.2.5
-#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+#keep in sync with ghc-9.2
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	>=dev-lang/ghc-8.4.3:=
