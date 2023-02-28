@@ -39,11 +39,6 @@ dev-haskell/liquidhaskell
 dev-haskell/stan
 dev-haskell/hls-stan-plugin
 
-# Jack Todaro <solpeth@posteo.org> (2022-09-20)
-# Project unmaintained since 2020. Deps need porting.
-# Mask for removal.
-dev-haskell/viewprof
-
 # hololeap <hololeap@protonmail.com>
 # doctest-parallel does not currently work with Setup.hs (used internally by
 # haskell-cabal.eclass)
