@@ -2,13 +2,6 @@
 # Depends on old version of ghcide
 dev-haskell/hls-call-hierarchy-plugin
 
-# hololeap <hololeap@protonmail.com> (2022-12-30)
-# purescript package is out of date (and never seemed to work correctly)
-# Removal in 30 days unless someone steps up to fix it
-dev-haskell/purescript-ast
-dev-haskell/purescript-cst
-dev-lang/purescript
-
 # hololeap <hololeap@protonmail.com> (2022-12-29)
 # Many packages still depend on network-uri<2.7
 >=dev-haskell/network-uri-2.7
