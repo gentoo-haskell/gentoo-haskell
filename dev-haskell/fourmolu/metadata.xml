@@ -11,6 +11,6 @@
 	</use>
 	<upstream>
 		<remote-id type="hackage">fourmolu</remote-id>
-		<remote-id type="github">parsonsmatt/fourmolu</remote-id>
+		<remote-id type="github">fourmolu/fourmolu</remote-id>
 	</upstream>
 </pkgmetadata>
