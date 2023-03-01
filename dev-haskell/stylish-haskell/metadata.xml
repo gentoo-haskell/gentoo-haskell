@@ -5,12 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A Haskell code prettifier. For more information, see:
-		
-		&lt;https://github.com/jaspervdj/stylish-haskell/blob/master/README.markdown&gt;
-	</longdescription>
 	<use>
 		<flag name="ghc-lib">Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">stylish-haskell</remote-id>
+		<remote-id type="github">haskell/stylish-haskell</remote-id>
+	</upstream>
 </pkgmetadata>
