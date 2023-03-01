@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="hlint-test">Enable hlint test</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">patch</remote-id>
 		<remote-id type="github">reflex-frp/patch</remote-id>
