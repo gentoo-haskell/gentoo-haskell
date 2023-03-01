@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="executable">Install the ormolu executable</flag>
-		<flag name="fixity-th">Parse the default fixity information via Template Haskell</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">ormolu</remote-id>
