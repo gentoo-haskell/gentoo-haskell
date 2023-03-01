@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="ghc-lib">Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported</flag>
 		<flag name="gpl">Use GPL libraries, specifically hscolour</flag>
 		<flag name="hsyaml">Use HsYAML instead of yaml</flag>
 	</use>
