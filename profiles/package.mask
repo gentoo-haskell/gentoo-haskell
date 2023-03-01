@@ -1,3 +1,8 @@
+# hololeap <hololeap@protonmail.com> (2022-03-01)
+# Not buildable on ghc-9.2
+# Masking until it is
+dev-haskell/hls-tactics-plugin
+
 # hololeap <hololeap@protonmail.com> (2022-02-27)
 # These currently depend on an old version of ghc-exactprint, which is
 # incompatible with ghc-9.2
@@ -6,7 +11,6 @@ dev-haskell/brittany
 dev-haskell/hls-brittany-plugin
 dev-haskell/hls-haddock-comments-plugin
 dev-haskell/hls-class-plugin
-
 
 # hololeap <hololeap@protonmail.com> (2022-12-30)
 # Depends on old version of ghcide
