@@ -27,9 +27,14 @@ CABAL_CHDEPS=(
 	'cryptonite        >= 0.24 && < 0.30' 'cryptonite >=0.24'
 	'memory            >= 0.14 && < 0.17' 'memory >= 0.14'
 	'fgl               >= 5.5.2.3 && < 5.8' 'fgl >=5.5.2.3'
+	'base      >= 4.10 && < 4.16' 'base >= 4.10'
+	'base              >= 4.10 && < 4.16' 'base >= 4.10'
+	'bytestring        >= 0.10.6 && < 0.11' 'bytestring >= 0.10.6'
+	'time              >= 1.5.0.1 && < 1.10' 'time >= 1.5.0.1'
 )
 
-RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
+RDEPEND="
+	>=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/attoparsec-0.13.0.1:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1.7:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/conduit-1.3.0:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
@@ -59,11 +64,14 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/zip-archive-0.3:=[profile?] <dev-haskell/zip-archive-0.5:=[profile?]
 	>=dev-haskell/zlib-0.6.1.2:=[profile?] <dev-haskell/zlib-0.7.0.0:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
-	curl? ( net-misc/curl )
+	curl? (
+		net-misc/curl
+	)
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4 <dev-haskell/cabal-3.7
-	test? ( >=dev-haskell/cmdargs-0.10.10 <dev-haskell/cmdargs-0.11
+	test? (
+		>=dev-haskell/cmdargs-0.10.10 <dev-haskell/cmdargs-0.11
 		>=dev-haskell/exceptions-0.6
 		>=dev-haskell/findbin-0.0.5 <dev-haskell/findbin-0.1
 		>=dev-haskell/hunit-1.3 <dev-haskell/hunit-1.7
@@ -76,8 +84,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3.0.2 <dev-haskell/test-framework-hunit-0.4
 		>=dev-haskell/test-framework-leancheck-0.0.1 <dev-haskell/test-framework-leancheck-0.1
 		>=dev-haskell/test-framework-quickcheck2-0.3.0.3 <dev-haskell/test-framework-quickcheck2-0.4
-		dev-haskell/transformers-base )
-	curl? ( virtual/pkgconfig )
+		dev-haskell/transformers-base
+	)
+	curl? (
+		virtual/pkgconfig
+	)
 "
 
 src_configure() {
