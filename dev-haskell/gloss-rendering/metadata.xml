@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Gloss picture data types and rendering functions. These functions
-		don't do any window management. If you want gloss to setup your window as
-		well then use the plain @gloss@ package.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">gloss-rendering</remote-id>
+		<remote-id type="github">benl23x5/gloss</remote-id>
+	</upstream>
 </pkgmetadata>
