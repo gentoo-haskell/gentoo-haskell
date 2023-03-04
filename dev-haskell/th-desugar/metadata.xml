@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">th-desugar</remote-id>
+		<remote-id type="github">goldfirere/th-desugar</remote-id>
+	</upstream>
 </pkgmetadata>
