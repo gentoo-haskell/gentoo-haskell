@@ -12,4 +12,8 @@ significant performance penalty</flag>
 		<flag name="unsafechecks">Enable bounds checking in unsafe operations at the cost of a
 significant performance penalty</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">vector</remote-id>
+		<remote-id type="github">haskell/vector</remote-id>
+	</upstream>
 </pkgmetadata>
