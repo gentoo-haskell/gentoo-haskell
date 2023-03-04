@@ -13,4 +13,8 @@
 	<use>
 		<flag name="portable">Explicitly enable portable sendfile support (implemented in Haskell)</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">sendfile</remote-id>
+		<remote-id type="github">Happstack/sendfile</remote-id>
+	</upstream>
 </pkgmetadata>
