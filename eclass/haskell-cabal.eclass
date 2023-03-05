@@ -155,8 +155,10 @@ S="${WORKDIR}/${CABAL_P}"
 
 # @ECLASS_VARIABLE: CABAL_FILE
 # @DESCRIPTION:
-# The location of the .cabal file for the Haskell package. This defaults to
-# "${S}/${CABAL_PN}.cabal".
+# The location of the .cabal file for the Haskell package.
+#
+# NOTE: If $S is redefined in the ebuild after inheriting this eclass,
+# $CABAL_FILE will also need to be redefined as well.
 : ${CABAL_FILE:="${S}/${CABAL_PN}.cabal"}
 
 # @ECLASS_VARIABLE: CABAL_DISTFILE
@@ -171,12 +173,15 @@ fi
 # @ECLASS_VARIABLE: CABAL_CHDEPS
 # @DEFAULT_UNSET
 # @DESCRIPTION:
-# Specifies changes to be made to the .cabal file. Uses the cabal_chdeps
-# function internally and shares the same syntax.
-# @EXAMPLE:
+# Specifies changes to be made to the .cabal file.
+# Accepts argument list as pairs of substitutions: <from-string> <to-string>...
+# Uses the cabal_chdeps function internally and shares the same syntax.
+#
+# Example:
+#
 # CABAL_CHDEPS=(
-#    'base >= 4.2 && < 4.6' 'base >= 4.2 && < 4.7'
-#    'containers ==0.4.*' 'containers >= 0.4 && < 0.6'
+#     'base >= 4.2 && < 4.6' 'base >= 4.2 && < 4.7'
+#     'containers ==0.4.*' 'containers >= 0.4 && < 0.6'
 # )
 : ${CABAL_CHDEPS:=}
 
@@ -191,9 +196,11 @@ fi
 # @DEFAULT_UNSET
 # @DESCRIPTION:
 # Extra packages that need to be exposed when compiling Setup.hs
-# @EXAMPLE:
+#
+# Example:
+#
 # GHC_BOOTSTRAP_PACKAGES=(
-#	cabal-doctest
+#     cabal-doctest
 # )
 : ${GHC_BOOTSTRAP_PACKAGES:=}
 
@@ -203,7 +210,9 @@ fi
 # Binaries included in this package which are needed during testing. This
 # adjusts PATH during src_test() so that the binaries can be found, even if
 # they have not been installed yet.
-# @EXAMPLE:
+#
+# Example:
+#
 # CABAL_TEST_REQUIRED_BINS=( arbtt-{capture,dump,import,recover,stats} )
 : ${CABAL_TEST_REQUIRED_BINS:=}
 
@@ -212,7 +221,9 @@ fi
 # @DESCRIPTION:
 # Manually set the targets for haddock/hoogle. This is occasionally needed
 # when './setup haddock' cannot calculate the transient dependencies.
-# @EXAMPLE:
+#
+# Example:
+#
 # CABAL_HADDOCK_TARGETS="lib:${CABAL_PN}"
 : ${CABAL_HADDOCK_TARGETS:=}
 
@@ -267,11 +278,7 @@ case $PV in
 	*9999) ;;
 	*)
 		if [[ -z "${CABAL_LIVE_VERSION}" ]]; then
-			if [[ "${CABAL_P}" == "${P}" ]]; then
-				SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
-			else
-				SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz -> ${P}.tar.gz"
-			fi
+			SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz -> ${P}.tar.gz"
 			if [[ -n ${CABAL_DISTFILE} ]]; then
 				SRC_URI+=" https://hackage.haskell.org/package/${CABAL_P}/revision/${CABAL_HACKAGE_REVISION}.cabal -> ${CABAL_DISTFILE}"
 			fi
@@ -839,28 +846,16 @@ cabal_flag() {
 }
 
 # @FUNCTION: cabal_chdeps
+# @DEPRECATED: CABAL_CHDEPS
 # @DESCRIPTION:
+# See the CABAL_CHDEPS variable for the preferred way to use this function.
+#
 # Allows easier patching of $CABAL_FILE (${S}/${PN}.cabal by default)
 # depends
 #
 # Accepts argument list as pairs of substitutions: <from-string> <to-string>...
 #
 # Dies on error.
-#
-# Usage examples:
-#
-# src_prepare() {
-#    cabal_chdeps \
-#        'base >= 4.2 && < 4.6' 'base >= 4.2 && < 4.7' \
-#        'containers ==0.4.*' 'containers >= 0.4 && < 0.6'
-#}
-# or
-# src_prepare() {
-#    CABAL_FILE=${S}/${CABAL_PN}.cabal cabal_chdeps \
-#        'base >= 4.2 && < 4.6' 'base >= 4.2 && < 4.7'
-#    CABAL_FILE=${S}/${CABAL_PN}-tools.cabal cabal_chdeps \
-#        'base == 3.*' 'base >= 4.2 && < 4.7'
-#}
 #
 cabal_chdeps() {
 	# Needed for compatibility with ebuilds still using MY_PN
