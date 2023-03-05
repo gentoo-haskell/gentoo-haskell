@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="debug">Enable support for debugging.</flag>
 		<flag name="openssl">Enable https support using the HsOpenSSL library.</flag>
 		<flag name="pong-server">Build a server that just returns "PONG". Normally useful only for benchmarks.</flag>
 		<flag name="test-server">Build the blackbox testserver</flag>
@@ -21,4 +20,8 @@
 		provides a clean and efficient Haskell programming interface to the HTTP
 		protocol.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">snap-server</remote-id>
+		<remote-id type="github">snapframework/snap-server</remote-id>
+	</upstream>
 </pkgmetadata>
