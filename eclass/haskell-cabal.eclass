@@ -278,7 +278,13 @@ case $PV in
 	*9999) ;;
 	*)
 		if [[ -z "${CABAL_LIVE_VERSION}" ]]; then
-			SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz -> ${P}.tar.gz"
+			# Without this if/then/else block, pkgcheck gives a
+			# RedundantUriRename warning for every package
+			if [[ "${CABAL_P}" == "${P}" ]]; then
+				SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+			else
+				SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz -> ${P}.tar.gz"
+			fi
 			if [[ -n ${CABAL_DISTFILE} ]]; then
 				SRC_URI+=" https://hackage.haskell.org/package/${CABAL_P}/revision/${CABAL_HACKAGE_REVISION}.cabal -> ${CABAL_DISTFILE}"
 			fi
