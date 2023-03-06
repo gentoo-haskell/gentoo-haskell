@@ -1,8 +1,0 @@
-diff --git a/Data/Functor/Foldable.hs b/Data/Functor/Foldable.hs
-index e7a2316..02d717e 100644
---- a/Data/Functor/Foldable.hs
-+++ b/Data/Functor/Foldable.hs
-@@ -6,2 +6,3 @@
- #endif
-+{-# LANGUAGE ConstrainedClassMethods #-}
- -----------------------------------------------------------------------------
