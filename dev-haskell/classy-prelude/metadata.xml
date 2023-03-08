@@ -8,4 +8,8 @@
 	<longdescription>
 		Focuses on using common typeclasses when possible, and creating new ones to avoid name clashing. Exposes many recommended datastructures (Map, ByteString, etc) directly without requiring long import lists and qualified modules.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">classy-prelude</remote-id>
+		<remote-id type="github">snoyberg/mono-traversable</remote-id>
+	</upstream>
 </pkgmetadata>
