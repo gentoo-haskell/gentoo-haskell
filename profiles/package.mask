@@ -1,3 +1,9 @@
+# hololeap <hololeap@protonmail.com> (2022-03-07)
+# Depends on >=ghc-9.4. Unmask when this enters the tree.
+>=dev-haskell/haddock-2.27
+>=dev-haskell/haddock-api-2.27
+>=dev-haskell/haddock-library-1.11
+
 # hololeap <hololeap@protonmail.com> (2022-03-01)
 # Not buildable on ghc-9.2
 # Masking until it is
