@@ -13,29 +13,29 @@ HOMEPAGE="https://www.haskell.org/haddock/"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-# keep in sync with ghc-9.0
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+# Keep in sync with ghc-9.4
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
 CABAL_CHDEPS=(
-	'hspec           >= 2.4.4 && < 2.8' 'hspec >=2.4.4'
-	'hspec-discover:hspec-discover >= 2.4.4 && < 2.8' 'hspec-discover:hspec-discover >= 2.4.4'
+	'hspec           ^>= 2.9' 'hspec >= 2.9'
+	'hspec-discover:hspec-discover ^>= 2.9' 'hspec-discover:hspec-discover >= 2.9'
 )
 
 RDEPEND="
 	>=dev-haskell/ghc-paths-0.1.0.9:=[profile?] <dev-haskell/ghc-paths-0.2:=[profile?]
-	>=dev-haskell/haddock-library-1.10.0:=[profile?] <dev-haskell/haddock-library-1.11:=[profile?]
+	>=dev-haskell/haddock-library-1.11:=[profile?] <dev-haskell/haddock-library-1.12:=[profile?]
 	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/xhtml-3000.2.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
-	>=dev-lang/ghc-9.0:= <dev-lang/ghc-9.1:=
+	>=dev-lang/ghc-9.4:= <dev-lang/ghc-9.5:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.4.1.0
+	>=dev-haskell/cabal-3.6.3.0
 	test? (
 		>=dev-haskell/ghc-paths-0.1.0.12 <dev-haskell/ghc-paths-0.2
-		>=dev-haskell/hspec-2.4.4
+		>=dev-haskell/hspec-2.9
 		>=dev-haskell/quickcheck-2.14 <dev-haskell/quickcheck-2.15
 	)
 "
 BDEPEND="test? (
-	>=dev-haskell/hspec-discover-2.4.4
+	>=dev-haskell/hspec-discover-2.9
 )"
