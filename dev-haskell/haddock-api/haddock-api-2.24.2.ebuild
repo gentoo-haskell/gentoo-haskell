@@ -26,6 +26,7 @@ PATCHES=(
 CABAL_CHDEPS=(
 	'QuickCheck      >= 2.11  && < 2.14' 'QuickCheck >= 2.11'
 	'haddock-library ^>= 1.9.0' 'haddock-library >= 1.9.0'
+	'hspec           >= 2.4.4 && < 2.8' 'hspec >= 2.4.4'
 )
 
 RDEPEND="
@@ -38,7 +39,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0
 	test? (
 		>=dev-haskell/ghc-paths-0.1.0.12 <dev-haskell/ghc-paths-0.2
-		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.8
+		>=dev-haskell/hspec-2.4.4
 		>=dev-haskell/quickcheck-2.14 <dev-haskell/quickcheck-2.15
 	)
 "
