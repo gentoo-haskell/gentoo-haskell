@@ -8,4 +8,8 @@
 	<use>
 		<flag name="tools">Build executables</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">uri-encode</remote-id>
+		<remote-id type="github">silkapp/uri-encode</remote-id>
+	</upstream>
 </pkgmetadata>
