@@ -13,7 +13,7 @@ inherit haskell-cabal elisp-common
 # As Agda-stdlib is tied to Agda version we encode
 # both versions in gentoo version.
 ##
-MY_UPSTREAM_AGDA_STDLIB_V="1.7.1"
+MY_UPSTREAM_AGDA_STDLIB_V="1.7.2"
 MY_GENTOO_AGDA_STDLIB_V="${PV}.${MY_UPSTREAM_AGDA_STDLIB_V}"
 MY_UPSTREAM_AGDA_V="${PV%.${MY_UPSTREAM_AGDA_STDLIB_V}}"
 
@@ -25,7 +25,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=sci-mathematics/agda-${MY_UPSTREAM_AGDA_V}:=[profile?]
+RDEPEND="
+	>=sci-mathematics/agda-${MY_UPSTREAM_AGDA_V}:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.2.0
