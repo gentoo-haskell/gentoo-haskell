@@ -5,12 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Implements MurmurHash2, a good, fast, general-purpose,
-		non-cryptographic hashing function.  See
-		&lt;http://murmurhash.googlepages.com/&gt; for details.
-		
-		This implementation is pure Haskell, so it might be a bit slower
-		than a C FFI binding.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">murmur-hash</remote-id>
+		<remote-id type="github">nominolo/murmur-hash</remote-id>
+	</upstream>
 </pkgmetadata>
