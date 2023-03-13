@@ -426,7 +426,7 @@ ghc-check-bootstrap-version () {
 }
 
 pkg_pretend() {
-	use ghcbootstrap && ghc-check-bootstrap-version
+	[[ ${MERGE_TYPE} != binary ]] && use ghcbootstrap && ghc-check-bootstrap-version
 	ghc-check-reqs check-reqs_pkg_pretend
 }
 
