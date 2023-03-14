@@ -1,0 +1,282 @@
+From 0c28a2b990171566aa733ad2f640be3b8349e75e Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Tue, 14 Mar 2023 13:44:14 -0600
+Subject: [PATCH] Switch tutorials to data-files
+
+Tutorials need data-files but most are not enabled by default.
+
+See: <https://cabal.readthedocs.io/en/3.6/cabal-package.html#accessing-data-files-from-package-code>
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ examples/tutorial/Tutorial01_Basics.hs       | 13 ++++++---
+ examples/tutorial/Tutorial03_LifeCycle.hs    | 12 ++++++---
+ examples/tutorial/Tutorial04_Tasks.hs        | 28 +++++++++++++-------
+ examples/tutorial/Tutorial05_Producers.hs    | 14 ++++++----
+ examples/tutorial/Tutorial06_Composite.hs    | 12 ++++++---
+ examples/tutorial/Tutorial07_CustomWidget.hs | 12 ++++++---
+ examples/tutorial/Tutorial08_Themes.hs       | 13 ++++++---
+ 7 files changed, 70 insertions(+), 34 deletions(-)
+
+diff --git a/examples/tutorial/Tutorial01_Basics.hs b/examples/tutorial/Tutorial01_Basics.hs
+index 1694f0b..df4feba 100644
+--- a/examples/tutorial/Tutorial01_Basics.hs
++++ b/examples/tutorial/Tutorial01_Basics.hs
+@@ -20,6 +20,10 @@ import TextShow
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++import qualified Data.Text as T
++
+ newtype AppModel = AppModel {
+   _clickCount :: Int
+ } deriving (Eq, Show)
+@@ -58,13 +62,14 @@ handleEvent wenv node model evt = case evt of
+ 
+ main01 :: IO ()
+ main01 = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 01 - Basics",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
+       appInitEvent AppInit
+       ]
+     model = AppModel 0
+diff --git a/examples/tutorial/Tutorial03_LifeCycle.hs b/examples/tutorial/Tutorial03_LifeCycle.hs
+index 108a58d..0077186 100644
+--- a/examples/tutorial/Tutorial03_LifeCycle.hs
++++ b/examples/tutorial/Tutorial03_LifeCycle.hs
+@@ -21,6 +21,9 @@ import TextShow
+ import qualified Data.Text as T
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ data ListItem = ListItem {
+   _ts :: Millisecond,
+   _text :: Text
+@@ -98,13 +101,14 @@ removeIdx idx lst = part1 ++ drop 1 part2 where
+ 
+ main03 :: IO ()
+ main03 = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 03 - Merging",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
+       appInitEvent AppInit
+       ]
+     model = AppModel {
+diff --git a/examples/tutorial/Tutorial04_Tasks.hs b/examples/tutorial/Tutorial04_Tasks.hs
+index b1ef206..311cd91 100644
+--- a/examples/tutorial/Tutorial04_Tasks.hs
++++ b/examples/tutorial/Tutorial04_Tasks.hs
+@@ -20,6 +20,10 @@ import System.Random
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++import qualified Data.Text as T
++
+ data AppModel = AppModel {
+   _selected :: Int,
+   _hoverButton :: Bool
+@@ -35,13 +39,18 @@ data AppEvent
+ makeLenses 'AppModel
+ 
+ buildUI
+-  :: WidgetEnv AppModel AppEvent
++  :: FilePath
++  -> WidgetEnv AppModel AppEvent
+   -> AppModel
+   -> WidgetNode AppModel AppEvent
+-buildUI wenv model = widgetTree where
++buildUI dd wenv model = widgetTree where
+   pushLayers = zstack [
+-      image_ "./assets/images/red-button.png" [fitFill] `nodeVisible` not (model ^. hoverButton),
+-      image_ "./assets/images/red-button-hover.png" [fitFill] `nodeVisible` model ^. hoverButton,
++      image_
++          (T.pack $ dd </> "assets/images/red-button.png")
++          [fitFill] `nodeVisible` not (model ^. hoverButton),
++      image_
++          (T.pack $ dd </> "assets/images/red-button-hover.png")
++          [fitFill] `nodeVisible` model ^. hoverButton,
+       label "Push!" `styleBasic` [textFont "Bold", textSize 20, textCenter]
+     ]
+   pushButton = box_ [onClick AppGenRandom, onEnter AppOnEnterBtn, onLeave AppOnLeaveBtn] pushLayers
+@@ -83,14 +92,15 @@ handleEvent wenv node model evt = case evt of
+ 
+ main04 :: IO ()
+ main04 = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent (buildUI dd) (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 04 - Tasks",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
+-      appFontDef "Bold" "./assets/fonts/Roboto-Bold.ttf"
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Bold" $ T.pack $ dd </> "assets/fonts/Roboto-Bold.ttf"
+       ]
+     model = AppModel {
+       _selected = 0,
+diff --git a/examples/tutorial/Tutorial05_Producers.hs b/examples/tutorial/Tutorial05_Producers.hs
+index cabeb00..61e963f 100644
+--- a/examples/tutorial/Tutorial05_Producers.hs
++++ b/examples/tutorial/Tutorial05_Producers.hs
+@@ -22,6 +22,9 @@ import Monomer
+ import qualified Data.Text as T
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ newtype AppModel = AppModel {
+   _currentTime :: TimeOfDay
+ } deriving (Eq, Show)
+@@ -76,14 +79,15 @@ getLocalTimeOfDay = do
+ main05 :: IO ()
+ main05 = do
+   time <- getLocalTimeOfDay
+-  startApp (model time) handleEvent buildUI config
++  dd <- getDataDir
++  startApp (model time) handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 05 - Producers",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
+-      appFontDef "Bold" "./assets/fonts/Roboto-Bold.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Bold" $ T.pack $ dd </> "assets/fonts/Roboto-Bold.ttf",
+       appInitEvent AppInit
+       ]
+     model time = AppModel {
+diff --git a/examples/tutorial/Tutorial06_Composite.hs b/examples/tutorial/Tutorial06_Composite.hs
+index 6322bb7..e97d897 100644
+--- a/examples/tutorial/Tutorial06_Composite.hs
++++ b/examples/tutorial/Tutorial06_Composite.hs
+@@ -23,6 +23,9 @@ import TextShow
+ import qualified Data.Text as T
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ data CompModel = CompModel {
+   _listA :: [Int],
+   _listB :: [Int]
+@@ -146,13 +149,14 @@ handleEvent wenv node model evt = case evt of
+ 
+ main06 :: IO ()
+ main06 = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 06 - Composite",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
+       appInitEvent AppInit
+       ]
+     compModel = CompModel {
+diff --git a/examples/tutorial/Tutorial07_CustomWidget.hs b/examples/tutorial/Tutorial07_CustomWidget.hs
+index 856fdbd..4b85acf 100644
+--- a/examples/tutorial/Tutorial07_CustomWidget.hs
++++ b/examples/tutorial/Tutorial07_CustomWidget.hs
+@@ -26,6 +26,9 @@ import Monomer.Widgets.Single
+ import qualified Data.Text as T
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ newtype CanvasCfg = CanvasCfg {
+   _canvasColors :: [Color]
+ } deriving (Eq, Show)
+@@ -164,12 +167,13 @@ handleEvent wenv node model evt = case evt of
+ 
+ main07 :: IO ()
+ main07 = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 07 - Custom Widget",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf"
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf"
+       ]
+     model = AppModel
+diff --git a/examples/tutorial/Tutorial08_Themes.hs b/examples/tutorial/Tutorial08_Themes.hs
+index bdb6fbc..99113ab 100644
+--- a/examples/tutorial/Tutorial08_Themes.hs
++++ b/examples/tutorial/Tutorial08_Themes.hs
+@@ -21,6 +21,10 @@ import TextShow
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++import qualified Data.Text as T
++
+ data ActiveTheme
+   = DarkTheme
+   | LightTheme
+@@ -111,13 +115,14 @@ customTheme = baseTheme darkThemeColors {
+ 
+ main08 :: IO ()
+ main08 = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 08 - Themes",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
+       appInitEvent AppInit
+       ]
+     model = AppModel 0 False LightTheme
+-- 
+2.39.2
+

@@ -1,0 +1,429 @@
+From 720b3b32eca8549232d42e2c2f9e255f9bbb6fa5 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Tue, 14 Mar 2023 13:37:39 -0600
+Subject: [PATCH] Enable all tutorial examples
+
+Turn each tutorial into its own executable, give each a reasonable exe
+name.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ examples/tutorial/Tutorial01_Basics.hs       |   6 +-
+ examples/tutorial/Tutorial02_Styling.hs      |   6 +-
+ examples/tutorial/Tutorial03_LifeCycle.hs    |   6 +-
+ examples/tutorial/Tutorial04_Tasks.hs        |   6 +-
+ examples/tutorial/Tutorial05_Producers.hs    |   6 +-
+ examples/tutorial/Tutorial06_Composite.hs    |   6 +-
+ examples/tutorial/Tutorial07_CustomWidget.hs |   6 +-
+ examples/tutorial/Tutorial08_Themes.hs       |   6 +-
+ monomer.cabal                                | 190 +++++++++++++++----
+ 9 files changed, 181 insertions(+), 57 deletions(-)
+
+diff --git a/examples/tutorial/Tutorial01_Basics.hs b/examples/tutorial/Tutorial01_Basics.hs
+index df4feba..36b7a4f 100644
+--- a/examples/tutorial/Tutorial01_Basics.hs
++++ b/examples/tutorial/Tutorial01_Basics.hs
+@@ -11,7 +11,7 @@ Main module for the '01 - Basics' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial01_Basics where
++module Main where
+ 
+ import Control.Lens
+ import Data.Text (Text)
+@@ -60,8 +60,8 @@ handleEvent wenv node model evt = case evt of
+   AppInit -> []
+   AppIncrease -> [Model (model & clickCount +~ 1)]
+ 
+-main01 :: IO ()
+-main01 = do
++main :: IO ()
++main = do
+   dd <- getDataDir
+   startApp model handleEvent buildUI (config dd)
+   where
+diff --git a/examples/tutorial/Tutorial02_Styling.hs b/examples/tutorial/Tutorial02_Styling.hs
+index b409724..bb618c1 100644
+--- a/examples/tutorial/Tutorial02_Styling.hs
++++ b/examples/tutorial/Tutorial02_Styling.hs
+@@ -11,7 +11,7 @@ Main module for the '02 - Styling' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial02_Styling where
++module Main where
+ 
+ import Control.Lens
+ import Data.Text (Text)
+@@ -105,8 +105,8 @@ handleEvent
+ handleEvent wenv node model evt = case evt of
+   AppInit -> []
+ 
+-main02 :: IO ()
+-main02 = do
++main :: IO ()
++main = do
+   dd <- getDataDir
+   startApp model handleEvent buildUI (config dd)
+   where
+diff --git a/examples/tutorial/Tutorial03_LifeCycle.hs b/examples/tutorial/Tutorial03_LifeCycle.hs
+index 0077186..5efa391 100644
+--- a/examples/tutorial/Tutorial03_LifeCycle.hs
++++ b/examples/tutorial/Tutorial03_LifeCycle.hs
+@@ -11,7 +11,7 @@ Main module for the '03 - LifeCycle' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial03_LifeCycle where
++module Main where
+ 
+ import Control.Lens
+ import Data.Text (Text)
+@@ -99,8 +99,8 @@ removeIdx :: Int -> [a] -> [a]
+ removeIdx idx lst = part1 ++ drop 1 part2 where
+   (part1, part2) = splitAt idx lst
+ 
+-main03 :: IO ()
+-main03 = do
++main :: IO ()
++main = do
+   dd <- getDataDir
+   startApp model handleEvent buildUI (config dd)
+   where
+diff --git a/examples/tutorial/Tutorial04_Tasks.hs b/examples/tutorial/Tutorial04_Tasks.hs
+index 311cd91..7e36501 100644
+--- a/examples/tutorial/Tutorial04_Tasks.hs
++++ b/examples/tutorial/Tutorial04_Tasks.hs
+@@ -11,7 +11,7 @@ Main module for the '04 - Tasks' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial04_Tasks where
++module Main where
+ 
+ import Control.Lens
+ import Data.Text (Text)
+@@ -90,8 +90,8 @@ handleEvent wenv node model evt = case evt of
+   AppOnEnterBtn -> [Model $ model & hoverButton .~ True]
+   AppOnLeaveBtn -> [Model $ model & hoverButton .~ False]
+ 
+-main04 :: IO ()
+-main04 = do
++main :: IO ()
++main = do
+   dd <- getDataDir
+   startApp model handleEvent (buildUI dd) (config dd)
+   where
+diff --git a/examples/tutorial/Tutorial05_Producers.hs b/examples/tutorial/Tutorial05_Producers.hs
+index 61e963f..ce9f223 100644
+--- a/examples/tutorial/Tutorial05_Producers.hs
++++ b/examples/tutorial/Tutorial05_Producers.hs
+@@ -11,7 +11,7 @@ Main module for the '05 - Producers' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial05_Producers where
++module Main where
+ 
+ import Control.Concurrent (threadDelay)
+ import Control.Lens
+@@ -76,8 +76,8 @@ getLocalTimeOfDay = do
+   time <- getZonedTime
+   return . localTimeOfDay . zonedTimeToLocalTime $ time
+ 
+-main05 :: IO ()
+-main05 = do
++main :: IO ()
++main = do
+   time <- getLocalTimeOfDay
+   dd <- getDataDir
+   startApp (model time) handleEvent buildUI (config dd)
+diff --git a/examples/tutorial/Tutorial06_Composite.hs b/examples/tutorial/Tutorial06_Composite.hs
+index e97d897..f3500b2 100644
+--- a/examples/tutorial/Tutorial06_Composite.hs
++++ b/examples/tutorial/Tutorial06_Composite.hs
+@@ -11,7 +11,7 @@ Main module for the '06 - Composite' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial06_Composite where
++module Main where
+ 
+ import Control.Concurrent (threadDelay)
+ import Control.Lens
+@@ -147,8 +147,8 @@ handleEvent wenv node model evt = case evt of
+   ShowDialog -> [Model $ model & showDialog .~ True]
+   CloseDialog -> [Model $ model & showDialog .~ False]
+ 
+-main06 :: IO ()
+-main06 = do
++main :: IO ()
++main = do
+   dd <- getDataDir
+   startApp model handleEvent buildUI (config dd)
+   where
+diff --git a/examples/tutorial/Tutorial07_CustomWidget.hs b/examples/tutorial/Tutorial07_CustomWidget.hs
+index 4b85acf..34d7e06 100644
+--- a/examples/tutorial/Tutorial07_CustomWidget.hs
++++ b/examples/tutorial/Tutorial07_CustomWidget.hs
+@@ -12,7 +12,7 @@ Main module for the '07 - Custom Widget' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial07_CustomWidget where
++module Main where
+ 
+ import Control.Concurrent (threadDelay)
+ import Control.Lens
+@@ -165,8 +165,8 @@ handleEvent
+ handleEvent wenv node model evt = case evt of
+   AppResetCanvas -> [Message "mainCanvas" ResetCanvas]
+ 
+-main07 :: IO ()
+-main07 = do
++main :: IO ()
++main = do
+   dd <- getDataDir
+   startApp model handleEvent buildUI (config dd)
+   where
+diff --git a/examples/tutorial/Tutorial08_Themes.hs b/examples/tutorial/Tutorial08_Themes.hs
+index 99113ab..7f14306 100644
+--- a/examples/tutorial/Tutorial08_Themes.hs
++++ b/examples/tutorial/Tutorial08_Themes.hs
+@@ -11,7 +11,7 @@ Main module for the '08 - Themes' tutorial.
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ 
+-module Tutorial08_Themes where
++module Main where
+ 
+ import Control.Lens
+ import Data.Text (Text)
+@@ -113,8 +113,8 @@ customTheme = baseTheme darkThemeColors {
+   btnMainText = rgbHex "000000"
+ }
+ 
+-main08 :: IO ()
+-main08 = do
++main :: IO ()
++main = do
+   dd <- getDataDir
+   startApp model handleEvent buildUI (config dd)
+   where
+diff --git a/monomer.cabal b/monomer.cabal
+index 79174b5..c038e17 100644
+--- a/monomer.cabal
++++ b/monomer.cabal
+@@ -473,51 +473,175 @@ executable todo
+   else
+     buildable: False
+ 
+-executable tutorial
+-  main-is: Main.hs
++executable monomer-examples-tutorial-01
++  main-is: Tutorial01_Basics.hs
+   other-modules:
+-      Tutorial01_Basics
+-      Tutorial02_Styling
+-      Tutorial03_LifeCycle
+-      Tutorial04_Tasks
+-      Tutorial05_Producers
+-      Tutorial06_Composite
+-      Tutorial07_CustomWidget
+-      Tutorial08_Themes
+       Paths_monomer
+   hs-source-dirs:
+       examples/tutorial
+   default-extensions:
+       OverloadedStrings
+-  ghc-options: -threaded
++  ghc-options: -threaded -Wunused-packages
+   build-depends:
+-      JuicyPixels >=3.2.9 && <3.5
+-    , OpenGLRaw ==3.3.*
+-    , async >=2.1 && <2.3
+-    , attoparsec >=0.12 && <0.15
+-    , base >=4.11 && <5
+-    , bytestring >=0.10 && <0.12
+-    , bytestring-to-vector ==0.3.*
+-    , containers >=0.5.11 && <0.7
+-    , data-default >=0.5 && <0.8
+-    , exceptions ==0.10.*
+-    , extra >=1.6 && <1.9
+-    , formatting >=6.0 && <8.0
+-    , http-client >=0.6 && <0.9
++      base >=4.11 && <5
++    , filepath
++    , lens >=4.16 && <6
++    , monomer
++    , text >=1.2 && <2.1
++    , text-show >=3.7 && <3.12
++  default-language: Haskell2010
++  if flag(examples)
++    buildable: True
++  else
++    buildable: False
++
++executable monomer-examples-tutorial-02
++  main-is: Tutorial02_Styling.hs
++  other-modules:
++      Paths_monomer
++  hs-source-dirs:
++      examples/tutorial
++  default-extensions:
++      OverloadedStrings
++  ghc-options: -threaded -Wunused-packages
++  build-depends:
++      base >=4.11 && <5
++    , filepath
++    , lens >=4.16 && <6
++    , monomer
++    , text >=1.2 && <2.1
++  default-language: Haskell2010
++  if flag(examples)
++    buildable: True
++  else
++    buildable: False
++
++executable monomer-examples-tutorial-03
++  main-is: Tutorial03_LifeCycle.hs
++  other-modules:
++      Paths_monomer
++  hs-source-dirs:
++      examples/tutorial
++  default-extensions:
++      OverloadedStrings
++  ghc-options: -threaded -Wunused-packages
++  build-depends:
++      base >=4.11 && <5
++    , filepath
+     , lens >=4.16 && <6
+     , monomer
+-    , mtl >=2.1 && <2.3
+-    , nanovg >=0.8.1 && <1.0
+-    , process ==1.6.*
+-    , random >=1.1 && <1.3
+-    , sdl2 >=2.5.0 && <2.6
+-    , stm ==2.5.*
+     , text >=1.2 && <2.1
+     , text-show >=3.7 && <3.12
++  default-language: Haskell2010
++  if flag(examples)
++    buildable: True
++  else
++    buildable: False
++
++executable monomer-examples-tutorial-04
++  main-is: Tutorial04_Tasks.hs
++  other-modules:
++      Paths_monomer
++  hs-source-dirs:
++      examples/tutorial
++  default-extensions:
++      OverloadedStrings
++  ghc-options: -threaded -Wunused-packages
++  build-depends:
++      base >=4.11 && <5
++    , filepath
++    , lens >=4.16 && <6
++    , monomer
++    , random >=1.1 && <1.3
++    , text >=1.2 && <2.1
++  default-language: Haskell2010
++  if flag(examples)
++    buildable: True
++  else
++    buildable: False
++
++executable monomer-examples-tutorial-05
++  main-is: Tutorial05_Producers.hs
++  other-modules:
++      Paths_monomer
++  hs-source-dirs:
++      examples/tutorial
++  default-extensions:
++      OverloadedStrings
++  ghc-options: -threaded -Wunused-packages
++  build-depends:
++      base >=4.11 && <5
++    , filepath
++    , lens >=4.16 && <6
++    , monomer
++    , text >=1.2 && <2.1
+     , time >=1.8 && <1.16
+-    , transformers >=0.5 && <0.7
+-    , vector >=0.12 && <0.14
+-    , wreq >=0.5.2 && <0.6
++  default-language: Haskell2010
++  if flag(examples)
++    buildable: True
++  else
++    buildable: False
++
++executable monomer-examples-tutorial-06
++  main-is: Tutorial06_Composite.hs
++  other-modules: 
++      Paths_monomer
++  hs-source-dirs:
++      examples/tutorial
++  default-extensions:
++      OverloadedStrings
++  ghc-options: -threaded -Wunused-packages
++  build-depends:
++      base >=4.11 && <5
++    , filepath
++    , lens >=4.16 && <6
++    , monomer
++    , text >=1.2 && <2.1
++    , text-show >=3.7 && <3.12
++  default-language: Haskell2010
++  if flag(examples)
++    buildable: True
++  else
++    buildable: False
++
++executable monomer-examples-tutorial-07
++  main-is: Tutorial07_CustomWidget.hs
++  other-modules:
++      Paths_monomer
++  hs-source-dirs:
++      examples/tutorial
++  default-extensions:
++      OverloadedStrings
++  ghc-options: -threaded -Wunused-packages
++  build-depends:
++      base >=4.11 && <5
++    , data-default >=0.5 && <0.8
++    , filepath
++    , lens >=4.16 && <6
++    , monomer
++    , text >=1.2 && <2.1
++  default-language: Haskell2010
++  if flag(examples)
++    buildable: True
++  else
++    buildable: False
++
++executable monomer-examples-tutorial-08
++  main-is: Tutorial08_Themes.hs
++  other-modules:
++      Paths_monomer
++  hs-source-dirs:
++      examples/tutorial
++  default-extensions:
++      OverloadedStrings
++  ghc-options: -threaded -Wunused-packages
++  build-depends:
++      base >=4.11 && <5
++    , filepath
++    , lens >=4.16 && <6
++    , monomer
++    , text >=1.2 && <2.1
++    , text-show >=3.7 && <3.12
+   default-language: Haskell2010
+   if flag(examples)
+     buildable: True
+-- 
+2.39.2
+

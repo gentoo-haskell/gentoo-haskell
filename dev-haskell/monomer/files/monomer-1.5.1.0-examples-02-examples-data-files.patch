@@ -1,0 +1,371 @@
+From c2bd1df3ee031b75f5e423e92514485d252372fe Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Tue, 14 Mar 2023 13:43:09 -0600
+Subject: [PATCH] Switch examples to data-files
+
+Examples require assets which are only stored in the git repo. This will
+install the assets to /usr/share so that they can be accessed when the
+example executables have been moved.
+
+See: <https://cabal.readthedocs.io/en/3.6/cabal-package.html#accessing-data-files-from-package-code>
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ dev-test-app/Main.hs                    | 13 +++++++++----
+ examples/books/Main.hs                  | 14 +++++++++-----
+ examples/generative/Main.hs             | 15 ++++++++++-----
+ examples/opengl/Main.hs                 | 13 +++++++++----
+ examples/opengl/OpenGLWidget.hs         |  8 ++++++--
+ examples/ticker/Main.hs                 | 14 +++++++++-----
+ examples/todo/Main.hs                   | 18 +++++++++++-------
+ examples/tutorial/Tutorial02_Styling.hs | 19 ++++++++++++-------
+ monomer.cabal                           | 12 ++++++++++++
+ 9 files changed, 87 insertions(+), 39 deletions(-)
+
+diff --git a/dev-test-app/Main.hs b/dev-test-app/Main.hs
+index 27ad640..bcb8349 100644
+--- a/dev-test-app/Main.hs
++++ b/dev-test-app/Main.hs
+@@ -11,6 +11,10 @@ import TextShow
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++import qualified Data.Text as T
++
+ newtype AppModel = AppModel {
+   _clickCount :: Int
+ } deriving (Eq, Show)
+@@ -49,13 +53,14 @@ handleEvent wenv node model evt = case evt of
+ 
+ main :: IO ()
+ main = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Dev test app",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "./assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "./assets/fonts/Roboto-Regular.ttf",
+       appInitEvent AppInit
+       ]
+     model = AppModel 0
+diff --git a/examples/books/Main.hs b/examples/books/Main.hs
+index 8848b45..56e161a 100644
+--- a/examples/books/Main.hs
++++ b/examples/books/Main.hs
+@@ -31,6 +31,9 @@ import Monomer
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ type BooksWenv = WidgetEnv BooksModel BooksEvt
+ type BooksNode = WidgetNode BooksModel BooksEvt
+ 
+@@ -187,14 +190,15 @@ searchBooks sess query = do
+ main :: IO ()
+ main = do
+   sess <- Sess.newAPISession
+-  startApp initModel (handleEvent sess) buildUI config
++  dd <- getDataDir
++  startApp initModel (handleEvent sess) buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Book search",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme customDarkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
+-      appFontDef "Medium" "./assets/fonts/Roboto-Medium.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Medium" $ T.pack $ dd </> "assets/fonts/Roboto-Medium.ttf",
+       appInitEvent BooksInit
+       ]
+     initModel = BooksModel "" False Nothing [] Nothing
+diff --git a/examples/generative/Main.hs b/examples/generative/Main.hs
+index 898de9a..70331eb 100644
+--- a/examples/generative/Main.hs
++++ b/examples/generative/Main.hs
+@@ -28,6 +28,10 @@ import Widgets.CirclesGrid
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++import qualified Data.Text as T
++
+ type GenerativeWenv = WidgetEnv GenerativeModel GenerativeEvt
+ type GenerativeNode = WidgetNode GenerativeModel GenerativeEvt
+ 
+@@ -107,15 +111,16 @@ handleEvent wenv node model evt = case evt of
+ 
+ main :: IO ()
+ main = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+     model = GenerativeModel CirclesGrid False def def
+-    config = [
++    config dd = [
+       appWindowTitle "Generative",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Remix" "./assets/fonts/remixicon.ttf",
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Remix" $ T.pack $ dd </> "assets/fonts/remixicon.ttf",
++      appFontDef "Regular" $ T.pack $  dd </> "assets/fonts/Roboto-Regular.ttf",
+       appInitEvent GenerativeInit
+       ]
+ 
+diff --git a/examples/opengl/Main.hs b/examples/opengl/Main.hs
+index e3b4aac..5b34a47 100644
+--- a/examples/opengl/Main.hs
++++ b/examples/opengl/Main.hs
+@@ -22,6 +22,10 @@ import qualified Monomer.Lens as L
+ 
+ import OpenGLWidget
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++import qualified Data.Text as T
++
+ data AppModel = AppModel {
+   _color1 :: Color,
+   _color2 :: Color,
+@@ -90,13 +94,14 @@ handleEvent wenv node model evt = case evt of
+ 
+ main :: IO ()
+ main = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "OpenGL",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
+       appInitEvent AppInit
+       ]
+     model = AppModel red green blue orange
+diff --git a/examples/opengl/OpenGLWidget.hs b/examples/opengl/OpenGLWidget.hs
+index 279ab54..4194e9b 100644
+--- a/examples/opengl/OpenGLWidget.hs
++++ b/examples/opengl/OpenGLWidget.hs
+@@ -35,6 +35,9 @@ import Monomer.Widgets.Single
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ data OpenGLWidgetMsg
+   = OpenGLWidgetInit GLuint (Ptr GLuint) (Ptr GLuint)
+   deriving (Show, Eq)
+@@ -189,8 +192,9 @@ drawVertices state vertices = do
+ createShaderProgram :: IO GLuint
+ createShaderProgram = do
+   shaderProgram <- glCreateProgram
+-  vertexShader <- compileShader GL_VERTEX_SHADER "examples/opengl/shaders/vert.glsl"
+-  fragmentShader <- compileShader GL_FRAGMENT_SHADER "examples/opengl/shaders/frag.glsl"
++  dd <- getDataDir
++  vertexShader <- compileShader GL_VERTEX_SHADER $ dd </> "assets/shaders/vert.glsl"
++  fragmentShader <- compileShader GL_FRAGMENT_SHADER $ dd </> "assets/shaders/frag.glsl"
+ 
+   glAttachShader shaderProgram vertexShader
+   glAttachShader shaderProgram fragmentShader
+diff --git a/examples/ticker/Main.hs b/examples/ticker/Main.hs
+index 507f09c..93c154b 100644
+--- a/examples/ticker/Main.hs
++++ b/examples/ticker/Main.hs
+@@ -41,6 +41,9 @@ import TickerTypes
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ type TickerWenv = WidgetEnv TickerModel TickerEvt
+ type TickerNode = WidgetNode TickerModel TickerEvt
+ 
+@@ -239,14 +242,15 @@ main = do
+   channel <- newTChanIO
+   let env = AppEnv channel
+ 
+-  startApp initModel (handleEvent env) buildUI config
++  dd <- getDataDir
++  startApp initModel (handleEvent env) buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Ticker",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme customDarkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
+-      appFontDef "Remix" "./assets/fonts/remixicon.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Remix" $ T.pack $ dd </> "assets/fonts/remixicon.ttf",
+       appInitEvent TickerInit
+       ]
+     initModel = def
+diff --git a/examples/todo/Main.hs b/examples/todo/Main.hs
+index 3d6ff01..347433e 100644
+--- a/examples/todo/Main.hs
++++ b/examples/todo/Main.hs
+@@ -27,6 +27,9 @@ import TodoTypes
+ import qualified Monomer.Lens as L
+ import qualified Data.Text as T
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++
+ type TodoWenv = WidgetEnv TodoModel TodoEvt
+ type TodoNode = WidgetNode TodoModel TodoEvt
+ 
+@@ -254,16 +257,17 @@ initialTodos = todos where
+ 
+ main :: IO ()
+ main = do
+-  startApp (TodoModel initialTodos def TodoNone) handleEvent buildUI config
++  dd <- getDataDir
++  startApp (TodoModel initialTodos def TodoNone) handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Todo list",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme customDarkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
+-      appFontDef "Medium" "./assets/fonts/Roboto-Medium.ttf",
+-      appFontDef "Bold" "./assets/fonts/Roboto-Bold.ttf",
+-      appFontDef "Remix" "./assets/fonts/remixicon.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Medium" $ T.pack $ dd </> "assets/fonts/Roboto-Medium.ttf",
++      appFontDef "Bold" $ T.pack $ dd </> "assets/fonts/Roboto-Bold.ttf",
++      appFontDef "Remix" $ T.pack $ dd </> "assets/fonts/remixicon.ttf",
+       appInitEvent TodoInit
+       ]
+ 
+diff --git a/examples/tutorial/Tutorial02_Styling.hs b/examples/tutorial/Tutorial02_Styling.hs
+index 999a944..b409724 100644
+--- a/examples/tutorial/Tutorial02_Styling.hs
++++ b/examples/tutorial/Tutorial02_Styling.hs
+@@ -19,6 +19,10 @@ import Monomer
+ 
+ import qualified Monomer.Lens as L
+ 
++import Paths_monomer (getDataDir)
++import System.FilePath ((</>))
++import qualified Data.Text as T
++
+ data AppModel = AppModel {
+   _sampleText :: Text,
+   _showPicker :: Bool,
+@@ -103,16 +107,17 @@ handleEvent wenv node model evt = case evt of
+ 
+ main02 :: IO ()
+ main02 = do
+-  startApp model handleEvent buildUI config
++  dd <- getDataDir
++  startApp model handleEvent buildUI (config dd)
+   where
+-    config = [
++    config dd = [
+       appWindowTitle "Tutorial 02 - Styling",
+-      appWindowIcon "./assets/images/icon.png",
++      appWindowIcon $ T.pack $ dd </> "assets/images/icon.png",
+       appTheme darkTheme,
+-      appFontDef "Regular" "./assets/fonts/Roboto-Regular.ttf",
+-      appFontDef "Medium" "./assets/fonts/Roboto-Medium.ttf",
+-      appFontDef "Bold" "./assets/fonts/Roboto-Bold.ttf",
+-      appFontDef "Italic" "./assets/fonts/Roboto-Italic.ttf",
++      appFontDef "Regular" $ T.pack $ dd </> "assets/fonts/Roboto-Regular.ttf",
++      appFontDef "Medium" $ T.pack $ dd </> "assets/fonts/Roboto-Medium.ttf",
++      appFontDef "Bold" $ T.pack $ dd </> "assets/fonts/Roboto-Bold.ttf",
++      appFontDef "Italic" $ T.pack $ dd </> "assets/fonts/Roboto-Italic.ttf",
+       appInitEvent AppInit
+       ]
+     model = AppModel {
+diff --git a/monomer.cabal b/monomer.cabal
+index 35395ce..79174b5 100644
+--- a/monomer.cabal
++++ b/monomer.cabal
+@@ -27,6 +27,12 @@ extra-source-files:
+     README.md
+     ChangeLog.md
+ 
++data-files:
++    assets/fonts/*.ttf
++    assets/images/*.png
++    assets/images/*.svg
++    assets/shaders/*.glsl
++
+ source-repository head
+   type: git
+   location: https://github.com/fjvallarino/monomer
+@@ -220,6 +226,7 @@ executable books
+     , data-default >=0.5 && <0.8
+     , exceptions ==0.10.*
+     , extra >=1.6 && <1.9
++    , filepath
+     , formatting >=6.0 && <8.0
+     , http-client >=0.6 && <0.9
+     , lens >=4.16 && <6
+@@ -264,6 +271,7 @@ executable dev-test-app
+     , data-default >=0.5 && <0.8
+     , exceptions ==0.10.*
+     , extra >=1.6 && <1.9
++    , filepath
+     , formatting >=6.0 && <8.0
+     , http-client >=0.6 && <0.9
+     , lens >=4.16 && <6
+@@ -305,6 +313,7 @@ executable generative
+     , data-default >=0.5 && <0.8
+     , exceptions ==0.10.*
+     , extra >=1.6 && <1.9
++    , filepath
+     , formatting >=6.0 && <8.0
+     , http-client >=0.6 && <0.9
+     , lens >=4.16 && <6
+@@ -349,6 +358,7 @@ executable opengl
+     , data-default >=0.5 && <0.8
+     , exceptions ==0.10.*
+     , extra >=1.6 && <1.9
++    , filepath
+     , formatting >=6.0 && <8.0
+     , http-client >=0.6 && <0.9
+     , lens >=4.16 && <6
+@@ -395,6 +405,7 @@ executable ticker
+     , data-default >=0.5 && <0.8
+     , exceptions ==0.10.*
+     , extra >=1.6 && <1.9
++    , filepath
+     , formatting >=6.0 && <8.0
+     , http-client >=0.6 && <0.9
+     , lens >=4.16 && <6
+@@ -440,6 +451,7 @@ executable todo
+     , data-default >=0.5 && <0.8
+     , exceptions ==0.10.*
+     , extra >=1.6 && <1.9
++    , filepath
+     , formatting >=6.0 && <8.0
+     , http-client >=0.6 && <0.9
+     , lens >=4.16 && <6
+-- 
+2.39.2
+

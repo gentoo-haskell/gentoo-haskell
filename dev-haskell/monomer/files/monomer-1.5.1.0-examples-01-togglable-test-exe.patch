@@ -1,0 +1,29 @@
+From 00c2401b00a07b697bc4677dae4d27e1f4ad1d83 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Tue, 14 Mar 2023 05:19:46 -0600
+Subject: [PATCH 1/2] Toggle dev-test-app with examples flag
+
+This executable isn't needed, so should only be build when the
+`examples` flag is enabled.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ monomer.cabal | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/monomer.cabal b/monomer.cabal
+index 50b6108..35395ce 100644
+--- a/monomer.cabal
++++ b/monomer.cabal
+@@ -242,6 +242,8 @@ executable books
+     buildable: False
+ 
+ executable dev-test-app
++  if !flag(examples)
++    buildable: False
+   main-is: Main.hs
+   other-modules:
+       Paths_monomer
+-- 
+2.39.2
+
