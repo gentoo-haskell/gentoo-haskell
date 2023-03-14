@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="gles">Build for GLES3. This deactivates GL3 support.</flag>
+		<flag name="truetype">Use freetype instead of bundled stb_truetype.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">nanovg</remote-id>
+		<remote-id type="github">cocreature/nanovg-hs</remote-id>
+	</upstream>
+</pkgmetadata>
