@@ -17,19 +17,31 @@ PYTHON_COMPAT=( python3_{9..11} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
 inherit multiprocessing pax-utils toolchain-funcs prefix
-inherit check-reqs
+inherit check-reqs unpacker
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-# we don't have any binaries yet
-arch_binaries=""
-
 BIN_PV=${PV}
+[[ $PR != r0 ]] && BIN_REV=${PR}
+BIN_PVR="${BIN_PV}${BIN_REV:+-${BIN_REV}}"
+
+# >=ghc-9.2 can only be built with <=ghc-9.0 until hadrian is supported
+BUILD_BIN_PV=9.0.2
+BUILD_BIN_REV=r4
+BUILD_BIN_PVR="${BUILD_BIN_PV}${BUILD_BIN_REV:+-${BUILD_BIN_REV}}"
+
+ghc_binaries() {
+	local host="https://eidetic.codes"
+	echo "
+		binary? ( ${host}/${PN}-bin-${BIN_PVR}-${1}.gpkg.tar )
+		!binary? ( ${host}/${PN}-bin-${BUILD_BIN_PVR}-${1}.gpkg.tar )
+	"
+}
 
 # Differentiate glibc/musl
 
 #glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#glibc_binaries="$glibc_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_64-pc-linux-gnu.tbz2 )"
+#glibc_binaries+=" amd64? ( $(ghc_binaries x86_64-pc-linux-gnu) )"
 #glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
 #glibc_binaries="$glibc_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
 #glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
@@ -37,7 +49,7 @@ BIN_PV=${PV}
 #glibc_binaries="$glibc_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
 #glibc_binaries="$glibc_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz ) )"
 #glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#glibc_binaries="$glibc_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
+#glibc_binaries+=" x86? ( $(ghc_binaries i686-pc-linux-gnu) )"
 
 #musl_binaries="$musl_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 #musl_binaries="$musl_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_64-pc-linux-musl.tbz2 )"
@@ -50,8 +62,8 @@ BIN_PV=${PV}
 #musl_binaries="$musl_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
 #musl_binaries="$musl_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-musl.tbz2 )"
 
-[[ -n $glibc_binaries ]] && arch_binaries="$arch_binaries elibc_glibc? ( $glibc_binaries )"
-[[ -n $musl_binaries ]] && arch_binaries="$arch_binaries elibc_musl? ( $musl_binaries )"
+[[ -n $glibc_binaries ]] && arch_binaries+=" elibc_glibc? ( $glibc_binaries )"
+[[ -n $musl_binaries ]] && arch_binaries+=" elibc_musl? ( $musl_binaries )"
 
 # various ports:
 #arch_binaries="$arch_binaries x86-fbsd? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86-fbsd.tbz2 )"
@@ -64,12 +76,11 @@ yet_binary() {
 				#alpha) return 0 ;;
 				#arm64) return 0 ;;
 				#arm) return 0 ;;
-				amd64) return 0 ;;
+				#amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
-				#ppc64)
-				#	use big-endian || return 0
-				#	;;
+				#ppc64) return 0 ;;
+				#riscv) return 0 ;;
 				#sparc) return 0 ;;
 				#x86) return 0 ;;
 				*) return 1 ;;
@@ -86,11 +97,13 @@ yet_binary() {
 				#ppc64)
 				#	use big-endian || return 0
 				#	;;
+				#riscv) return 0 ;;
 				#sparc) return 0 ;;
 				#x86) return 0 ;;
 				*) return 1 ;;
 			esac
 			;;
+		*) return 1 ;;
 	esac
 }
 
@@ -326,8 +339,9 @@ relocate_path() {
 
 # changes hardcoded ghc paths and updates package index
 # $1 - new absolute root path
+# $2 - ghc version unpacked in ${WORKDIR}
 relocate_ghc() {
-	local to=$1 ghc_v=${BIN_PV}
+	local to=$1 ghc_v=$2
 
 	# libdir for prebuilt binary and for current system may mismatch
 	# It does for prefix installation for example: bug #476998
@@ -456,7 +470,7 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
-	unpack ${ONLYA}
+	unpacker ${ONLYA}
 }
 
 src_prepare() {
@@ -465,18 +479,34 @@ src_prepare() {
 	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1289>
 	export LC_ALL=C.utf8
 
+	if use binary; then
+		local bin_pv="${BIN_PV}"
+		local bin_pvr="${BIN_PVR}"
+	else
+		local bin_pv="${BUILD_BIN_PV}"
+		local bin_pvr="${BUILD_BIN_PVR}"
+	fi
+
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
-		# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
-		# See bug #313635.
-		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
-			"${WORKDIR}/usr/bin/ghc-${BIN_PV}"
+	if ! use ghcbootstrap; then
+		# The switch to gpkg binaries means that they are unpacked in the wrong
+		# location. They are now unnpacked in the $orig_bindir and need to be
+		# moved so that usr/ is in $WORKDIR.
+		local orig_bindir="${WORKDIR}/${PN}-${bin_pvr}"
+		mv -v "${orig_bindir}/image/usr" "${WORKDIR}" || die
 
-		# allow hardened users use vanilla binary to bootstrap ghc
-		# ghci uses mmap with rwx protection at it implements dynamic
-		# linking on it's own (bug #299709)
-		pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
+		if [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
+			# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
+			# See bug #313635.
+			sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
+				"${WORKDIR}/usr/bin/ghc-${bin_pv}"
+
+			# allow hardened users use vanilla binary to bootstrap ghc
+			# ghci uses mmap with rwx protection at it implements dynamic
+			# linking on it's own (bug #299709)
+			pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${bin_pv}/bin/ghc"
+		fi
 	fi
 
 	# binpkg may have been built with FEATURES=splitdebug
@@ -486,7 +516,7 @@ src_prepare() {
 	find "${WORKDIR}/usr/lib" -type d -empty -delete 2>/dev/null # do not die on failure here
 
 	# ffi headers don't get included in the binpkg for some reason
-	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/include/"{ffi.h,ffitarget.h}
+	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${bin_pv}/include/"{ffi.h,ffitarget.h}
 	do
 		mkdir -p "$(dirname "${f}")"
 		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
@@ -494,7 +524,7 @@ src_prepare() {
 
 	if use binary; then
 		if use prefix; then
-			relocate_ghc "${EPREFIX}"
+			relocate_ghc "${EPREFIX}" "${bin_pv}"
 		fi
 
 		# Move unpacked files to the expected place
@@ -553,7 +583,7 @@ src_prepare() {
 				popd > /dev/null
 				;;
 				*)
-				relocate_ghc "${WORKDIR}"
+				relocate_ghc "${WORKDIR}" "${bin_pv}"
 				;;
 			esac
 		fi
