@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -29,4 +29,4 @@ src_configure() {
 		--flag=-parsec-struct-diff
 }
 
-CABAL_CORE_LIB_GHC_PV="9.2.4 9.2.5 9.2.6"
+CABAL_CORE_LIB_GHC_PV="9.2.4 9.2.5 9.2.6 9.2.7"
