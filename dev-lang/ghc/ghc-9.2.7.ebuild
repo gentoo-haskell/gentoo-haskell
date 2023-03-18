@@ -622,7 +622,7 @@ src_prepare() {
 		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
 
 		# https://gitlab.haskell.org/ghc/ghc/-/issues/22965
-		eapply "${FILESDIR}/${PN}-9.2.6-fix-alignment-of-capability.patch"
+		#eapply "${FILESDIR}/${PN}-9.2.6-fix-alignment-of-capability.patch"
 		eapply "${FILESDIR}"/${PN}-9.0.2-sphinx-6.patch
 
 		# mingw32 target
