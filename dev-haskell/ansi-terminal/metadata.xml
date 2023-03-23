@@ -8,4 +8,8 @@
 	<use>
 		<flag name="example">Build the example application</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">ansi-terminal</remote-id>
+		<remote-id type="github">UnkindPartition/ansi-terminal</remote-id>
+	</upstream>
 </pkgmetadata>
