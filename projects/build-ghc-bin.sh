@@ -65,12 +65,17 @@ modified_envvars=(
     "BINPKG_COMRESS_FLAGS_XZ=\"${BINPKG_COMPRESS_FLAGS_XZ}\""
 )
 
+# Make sure all dependencies are resolved for the new ghc
+echo "running:"
+echo "emerge --oneshot --onlydeps =ghc-${GHC_VERSION}"
+emerge --oneshot --onlydeps =ghc-${GHC_VERSION}
+
 ghcpath
 echo "running:"
 printf "%s " "${modified_envvars[@]}"
-echo "emerge --buildpkgonly ${@} =ghc-${GHC_VERSION}"
+echo "emerge --buildpkgonly --ignore-built-slot-operator-deps=y ${@} =ghc-${GHC_VERSION}"
 
-emerge --buildpkgonly "${@}" =ghc-${GHC_VERSION} || exit 1
+emerge --buildpkgonly --ignore-built-slot-operator-deps=y "${@}" =ghc-${GHC_VERSION} || exit 1
 
 echo "created $(portageq envvar PKGDIR)/dev-lang/ghc-${GHC_VERSION}.gpkg.tar"
 echo "to make the ghc-bin file just move it:"
