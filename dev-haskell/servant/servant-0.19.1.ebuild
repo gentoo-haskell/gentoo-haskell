@@ -46,7 +46,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	test? (
-		>=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-2.10
+		>=dev-haskell/hspec-2.6.0
 		>=dev-haskell/quickcheck-instances-0.3.19 <dev-haskell/quickcheck-instances-0.4
 	)
 "
