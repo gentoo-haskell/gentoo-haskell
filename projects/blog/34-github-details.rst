@@ -84,7 +84,7 @@ repository, and continued without being mixed with the overlay commits.
 However, the result was a repository with an messy history: hackport and
 overlay stuff was mixed. Moving to git gave us a new chance to clean it up.
 
-When using git you have the option of changeing the history of your
+When using git you have the option of changing the history of your
 repository. Of course this is a powerful tool, but it should be used
 carefully. As we were in a transition of moving to git, we used these
 advantages. In general git will require greater knowledge of your
@@ -92,7 +92,7 @@ consequences than similar tools (darcs, mercurial).
 
 For this job we used the features of ``git filter-branch``, see
 the git documentation at filter-branch_. As the projects where clearly
-separated it was easy to tell git wich files were interesting:
+separated it was easy to tell git which files were interesting:
 
 ::
 

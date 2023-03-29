@@ -87,7 +87,7 @@ It has quite nasty consequences.
 
 Once you upgrade a library you need to:
 
-1. rebuld all the reverse dependencies
+1. rebuild all the reverse dependencies
 2. and their reverse dependencies (recursive)
 
 The first point can be solved by **EAPI 5** so

@@ -36,7 +36,7 @@ CABAL_EXTRA_BUILD_FLAGS
 
 Sometimes it is nice to see detailed build log for some cabal package:
 ``haddock`` parameters, ``hsc2hs`` parameters and things like that.
-You either can do it manyally by running ``./setup build -v`` out of
+You either can do it manually by running ``./setup build -v`` out of
 source tree or just use ``CABAL_EXTRA_BUILD_FLAGS``::
 
     CABAL_EXTRA_BUILD_FLAGS=-v HCFLAGS=-O0 emerge -1 faulty-package

@@ -20,7 +20,7 @@ It's mostly a set of following commands:
    # usual workflow:
    #   update:
    $ git pull --rebase upstream master
-   #   hax-in teh patch:
+   #   hax-in the patch:
    $ git commit -m "meaningful message"
    #   push:
    $ git push -f origin master

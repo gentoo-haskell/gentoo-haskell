@@ -79,7 +79,7 @@ def print_edges(source, target, edge):
         print("%s %s" % (source, edge_name))
         print("%s %s" % (edge_name, target_cp))
         return
-    raise ValueError("Uknown type %s (%r)" % (type(target), target))
+    raise ValueError("Unknown type %s (%r)" % (type(target), target))
 
 # Similar to 'portage.dep.dep_opconvert', but for USE predicates
 def use_convert(deps):

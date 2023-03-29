@@ -10,7 +10,7 @@ Perpetual TODO
 
 - Improve `HackPort <https://github.com/gentoo-haskell/hackport>`_ tool.
 
-- [easy] Some packages are patched on top of upstream. Ideally they shoud not :].
+- [easy] Some packages are patched on top of upstream. Ideally they should not :].
   Your goal is to push nice patches upstream. Haskell world is very eager
   in getting feedback, so it's a source of pleasure to work with upstream!
 
@@ -45,5 +45,5 @@ Speculative TODO
 ================
 
 - SLOT libs (i personally think it's a worthless goal)
-- SLOT ghc (probly not possible with current portage)
+- SLOT ghc (probably not possible with current portage)
 - eclectic/haskell-config (related to SLOTting ghc & libs)
