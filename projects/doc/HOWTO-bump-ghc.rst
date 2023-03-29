@@ -1,6 +1,6 @@
 So you say you wanna new ghc in tree? Great!
 
-Quick-n-dirty start (aka. inital preparation):
+Quick-n-dirty start (aka. initial preparation):
 ==============================================
 
 - go to ``dev-lang/ghc/``
