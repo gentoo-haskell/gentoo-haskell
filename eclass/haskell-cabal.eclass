@@ -30,7 +30,7 @@
 #                  only used for packages that use libghc internally and _must_
 #                  not pull upper versions
 #   test-suite --  add support for cabal test-suites (introduced in Cabal-1.8)
-#   rebuild-after-doc-workaround -- enable doctest test failue workaround.
+#   rebuild-after-doc-workaround -- enable doctest test failure workaround.
 #                  Symptom: when `./setup haddock` is run in a `build-type: Custom`
 #                  package it might cause cause the test-suite to fail with
 #                  errors like:
@@ -545,7 +545,7 @@ cabal-configure() {
 	cabalconf+=(--verbose)
 
 	# We build shared version of our Cabal where ghc ships it's shared
-	# version of it. We will link ./setup as dynamic binary againt Cabal later.
+	# version of it. We will link ./setup as dynamic binary against Cabal later.
 	[[ ${CATEGORY}/${PN} == "dev-haskell/cabal" ]] && \
 		$(ghc-supports-shared-libraries) && \
 			cabalconf+=(--enable-shared)
@@ -921,7 +921,7 @@ cabal_chdeps() {
 
 # @FUNCTION: cabal-constraint
 # @DESCRIPTION:
-# Allowes to set contraint to the libraries that are
+# Allows to set constraint to the libraries that are
 # used by specified package
 cabal-constraint() {
 	while read p v ; do
@@ -953,7 +953,7 @@ replace-hcflags() {
 
 # @FUNCTION: cabal-register-inplace
 # @DESCRIPTION:
-# Register the package library with the in-place pacakge DB, located in
+# Register the package library with the in-place package DB, located in
 # "${S}/dist/package.conf.inplace/". This is sometimes needed for tests when
 # the package is not yet installed. Unfortunately, prebuilt solutions to this
 # problem, such as './setup register --inplace', do not seem to work correctly.
