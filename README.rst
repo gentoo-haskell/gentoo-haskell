@@ -100,7 +100,7 @@ Loner's corner
 ==============
 
 Alternatively if you really don't want to share any ebuilds (want to keep
-outdated package versions, highly experimental things, publically unavailable
+outdated package versions, highly experimental things, publicly unavailable
 stuff, other reasons) that's also fine.
 
 You can keep such ebuilds in your local overlay.
