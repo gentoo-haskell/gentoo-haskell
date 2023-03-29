@@ -1,7 +1,7 @@
 hsc2hs can't detect values at compile-time if those are
 declared as pointers: https://github.com/haskell/win32/issues/88
 
-This patch is a huge hack: we encode absolute vaues from <windows.h>
+This patch is a huge hack: we encode absolute values from <windows.h>
 diff --git a/Graphics/Win32/GDI/Types.hsc b/Graphics/Win32/GDI/Types.hsc
 index c363530..8643cee 100644
 --- a/Graphics/Win32/GDI/Types.hsc
