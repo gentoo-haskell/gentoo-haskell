@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="relational-record on persisten backends"
+DESCRIPTION="relational-record on persistent backends"
 HOMEPAGE="https://github.com/himura/persistent-relational-record"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

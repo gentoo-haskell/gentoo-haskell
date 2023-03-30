@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RESTRICT=test # tests expects an argument, cabal does't pass them
+RESTRICT=test # tests expects an argument, cabal doesn't pass them
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "

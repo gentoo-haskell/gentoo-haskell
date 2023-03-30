@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Bidings to Google's Zopfli compression library"
+DESCRIPTION="Bindings to Google's Zopfli compression library"
 HOMEPAGE="https://github.com/ananthakumaran/hopfli"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

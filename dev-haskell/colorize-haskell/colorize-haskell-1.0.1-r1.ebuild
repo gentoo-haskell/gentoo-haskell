@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Highligt Haskell source"
+DESCRIPTION="Highlight Haskell source"
 HOMEPAGE="https://github.com/yav/colorize-haskell"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

@@ -8,7 +8,7 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A simple uncomplete ibus api"
+DESCRIPTION="A simple incomplete ibus api"
 HOMEPAGE="https://github.com/Ongy/ibus-hs"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

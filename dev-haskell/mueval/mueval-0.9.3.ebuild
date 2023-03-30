@@ -32,7 +32,7 @@ DEPEND="${RDEPEND}
 
 # default mueval timeout. in 0.7-second units
 # Handy to change as lambdabot does not
-# allow this bit to confgure
+# allow this bit to configure
 : ${MUEVAL_TIMEOUT:=5}
 
 CABAL_EXTRA_BUILD_FLAGS+=" --ghc-options=-rtsopts"
