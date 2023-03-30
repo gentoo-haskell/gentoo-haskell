@@ -62,7 +62,7 @@ modified_envvars=(
     "PORTAGE_COMPRESS=\"${PORTAGE_COMPRESS}\""
     "BINPKG_FORMAT=\"${BINPKG_FORMAT}\""
     "BINPKG_COMPRESS=\"${BINPKG_COMPRESS}\""
-    "BINPKG_COMRESS_FLAGS_XZ=\"${BINPKG_COMPRESS_FLAGS_XZ}\""
+    "BINPKG_COMPRESS_FLAGS_XZ=\"${BINPKG_COMPRESS_FLAGS_XZ}\""
 )
 
 # Make sure all dependencies are resolved for the new ghc
