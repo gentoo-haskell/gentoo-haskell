@@ -8,7 +8,7 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A program to extract various information from BAM alignmnet files"
+DESCRIPTION="A program to extract various information from BAM alignment files"
 HOMEPAGE="http://blog.malde.org/posts/bamstats.html"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
