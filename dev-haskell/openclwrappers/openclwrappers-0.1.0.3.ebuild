@@ -11,7 +11,7 @@ inherit haskell-cabal
 MY_PN="OpenCLWrappers"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="The OpenCL Standard for heterogenous data-parallel computing"
+DESCRIPTION="The OpenCL Standard for heterogeneous data-parallel computing"
 HOMEPAGE="https://github.com/jkarlson/OpenCLWrappers"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 

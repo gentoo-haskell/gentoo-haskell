@@ -8,7 +8,7 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="BitTorrent file parser and generater"
+DESCRIPTION="BitTorrent file parser and generator"
 HOMEPAGE="https://hackage.haskell.org/package/torrent"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 

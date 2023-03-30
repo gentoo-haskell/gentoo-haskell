@@ -9,7 +9,7 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite
 inherit haskell-cabal
 
-# The tests try to do unusal things:
+# The tests try to do unusual things:
 # hnix-store-remote-tests: /proc/self/uid_map: writeUserMappings: permission denied (Permission denied)
 RESTRICT="test"
 

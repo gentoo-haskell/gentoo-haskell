@@ -11,7 +11,7 @@ inherit haskell-cabal
 MY_PN="Shellac"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="A framework for creating shell envinronments"
+DESCRIPTION="A framework for creating shell environments"
 HOMEPAGE="http://rwd.rdockins.name/shellac/home/"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 

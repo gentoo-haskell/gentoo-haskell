@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 # correct package:
 #	overloaded? ( =dev-haskell/haskell-gi-overloading-1.0:=[profile?] )
 #	!overloaded? ( =dev-haskell/haskell-gi-overloading-0.0:=[profile?] )
-# And app-editors/leksah would have to be altered to require the pacakges
+# And app-editors/leksah would have to be altered to require the packages
 # without overloaded, something like:
 # >=dev-haskell/gi-cairo-1.0.6:=[!overloaded, profile?] <dev-haskell/gi-cairo-1.1:=[!overloaded, profile?]
 # >=dev-haskell/gi-gdk-3.0.6:=[!overloaded, profile?] <dev-haskell/gi-gdk-3.1:=[!overloaded, profile?]

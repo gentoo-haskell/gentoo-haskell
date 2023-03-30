@@ -11,7 +11,7 @@ CABAL_PN="JuicyPixels-blurhash"
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-DESCRIPTION="Blurhash is a very compact represenation of a placeholder for an image"
+DESCRIPTION="Blurhash is a very compact representation of a placeholder for an image"
 HOMEPAGE="https://github.com/SamProtas/JuicyPixels-blurhash#readme"
 
 LICENSE="BSD"

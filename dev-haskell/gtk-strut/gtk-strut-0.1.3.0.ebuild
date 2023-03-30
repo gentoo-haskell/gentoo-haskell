@@ -8,7 +8,7 @@ EAPI=7
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="Libary for creating strut windows with gi-gtk"
+DESCRIPTION="Library for creating strut windows with gi-gtk"
 HOMEPAGE="https://github.com/IvanMalison/gtk-strut#readme"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
