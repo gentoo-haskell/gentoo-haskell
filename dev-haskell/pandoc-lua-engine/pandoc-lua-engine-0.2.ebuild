@@ -15,6 +15,8 @@ LICENSE="GPL-2+"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+RESTRICT=test # requires network access to fetch .svg
+
 RDEPEND=">=app-text/pandoc-3.1.2:=[profile?] <app-text/pandoc-3.2:=[profile?]
 	dev-haskell/aeson:=[profile?]
 	>=dev-haskell/citeproc-0.8:=[profile?] <dev-haskell/citeproc-0.9:=[profile?]
