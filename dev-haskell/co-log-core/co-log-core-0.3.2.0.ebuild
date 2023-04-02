@@ -8,10 +8,6 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
-# TODO: Get doctests working in light of
-# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1391>
-RESTRICT="test" # doctests
-
 DESCRIPTION="Composable Contravariant Comonadic Logging Library"
 HOMEPAGE="https://github.com/co-log/co-log-core"
 
@@ -19,12 +15,23 @@ LICENSE="MPL-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.3.2.0-cabal-doctest.patch"
+)
+
 RDEPEND=">=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	test? (
+		>=dev-haskell/cabal-doctest-1.0.0
 		>=dev-haskell/doctest-0.16.0 <dev-haskell/doctest-0.21
 		>=dev-haskell/glob-0.10.0 <dev-haskell/glob-0.11
 	)
 "
+
+src_configure() {
+	use test && export GHC_BOOTSTRAP_PACKAGES=(cabal-doctest)
+
+	haskell-cabal_src_configure
+}

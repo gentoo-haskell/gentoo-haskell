@@ -1,24 +1,55 @@
-From: hololeap <hololeap@protonmail.com>
-Signed-off-by: hololeap <hololeap@protonmail.com>
-Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+From 7d4381f9bcd254699f13c0b7d37019899ec6de6f Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Sun, 2 Apr 2023 14:27:20 -0600
+Subject: [PATCH] Migrate to cabal-doctest
 
 doctest pulls in the out-of-scope packages if they are installed on the
 system. The best current workaround is to migrate to cabal-doctest.
 
-diff -urN co-log-core-0.3.1.0/Setup.hs co-log-core-0.3.1.0-r1/Setup.hs
---- co-log-core-0.3.1.0/Setup.hs	1969-12-31 17:00:00.000000000 -0700
-+++ co-log-core-0.3.1.0-r1/Setup.hs	2022-08-26 19:44:04.548763014 -0600
-@@ -0,0 +1,6 @@
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1391
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ Setup.hs          | 23 +++++++++++++++++++++++
+ co-log-core.cabal | 15 ++++++++++++++-
+ test/Doctests.hs  | 29 +++++++++++++++++++++++------
+ 3 files changed, 60 insertions(+), 7 deletions(-)
+ create mode 100644 Setup.hs
+
+diff --git a/Setup.hs b/Setup.hs
+new file mode 100644
+index 0000000..45d9861
+--- /dev/null
++++ b/Setup.hs
+@@ -0,0 +1,23 @@
++{-# LANGUAGE CPP #-}
++
 +module Main (main) where
++
++#ifndef MIN_VERSION_cabal_doctest
++#define MIN_VERSION_cabal_doctest(x,y,z) 0
++#endif
++
++#if MIN_VERSION_cabal_doctest(1,0,0)
 +
 +import Distribution.Extra.Doctest ( defaultMainWithDoctests )
 +
 +main :: IO ()
 +main = defaultMainWithDoctests "doctest"
-diff -urN co-log-core-0.3.1.0/co-log-core.cabal co-log-core-0.3.1.0-r1/co-log-core.cabal
---- co-log-core-0.3.1.0/co-log-core.cabal	2022-08-26 19:39:29.018762880 -0600
-+++ co-log-core-0.3.1.0-r1/co-log-core.cabal	2022-08-26 19:46:07.408763074 -0600
-@@ -21,6 +21,9 @@
++
++#else
++
++import Distribution.Simple
++
++main :: IO ()
++main = defaultMain
++
++#endif
+diff --git a/co-log-core.cabal b/co-log-core.cabal
+index de354fd..52a605b 100644
+--- a/co-log-core.cabal
++++ b/co-log-core.cabal
+@@ -21,6 +21,9 @@ description:
      * [co-log-polysemy](http://hackage.haskell.org/package/co-log-polysemy): extensible
        effects implementation based on @polysemy@.
  
@@ -28,7 +59,7 @@ diff -urN co-log-core-0.3.1.0/co-log-core.cabal co-log-core-0.3.1.0-r1/co-log-co
  homepage:            https://github.com/co-log/co-log-core
  bug-reports:         https://github.com/co-log/co-log-core/issues
  license:             MPL-2.0
-@@ -29,7 +32,7 @@
+@@ -29,7 +32,7 @@ author:              Dmitrii Kovanikov
  maintainer:          Kowainik <xrom.xkov@gmail.com>
  copyright:           2018-2020 Kowainik, 2021-2022 Co-Log
  category:            Logging, Contravariant, Comonad
@@ -37,7 +68,7 @@ diff -urN co-log-core-0.3.1.0/co-log-core.cabal co-log-core-0.3.1.0-r1/co-log-co
  stability:           stable
  extra-doc-files:     CHANGELOG.md
                       README.md
-@@ -45,6 +48,12 @@
+@@ -46,6 +49,12 @@ source-repository head
    type:                git
    location:            https://github.com/co-log/co-log-core.git
  
@@ -48,23 +79,21 @@ diff -urN co-log-core-0.3.1.0/co-log-core.cabal co-log-core-0.3.1.0-r1/co-log-co
 +    , cabal-doctest
 +
  common common-options
-   build-depends:       base >= 4.10.1.0 && < 4.17
+   build-depends:       base >= 4.10.1.0 && < 4.18
  
-@@ -100,5 +109,9 @@
-   type:                 exitcode-stdio-1.0
-   hs-source-dirs:       test
+@@ -103,3 +112,7 @@ test-suite doctest
    main-is:              Doctests.hs
--  build-depends:        doctest >= 0.16.0 && < 0.19
-+  build-depends:        doctest >= 0.16.0
+   build-depends:        doctest >= 0.16.0 && < 0.21
                        , Glob ^>= 0.10.0
 +                      , directory
 +                      , filepath
 +                      , base-compat
-+                      , cabal-doctest
-diff -urN co-log-core-0.3.1.0/test/Doctests.hs co-log-core-0.3.1.0-r1/test/Doctests.hs
---- co-log-core-0.3.1.0/test/Doctests.hs	2001-09-08 19:46:40.000000000 -0600
-+++ co-log-core-0.3.1.0-r1/test/Doctests.hs	2022-08-26 19:43:31.718762998 -0600
-@@ -4,13 +4,30 @@
++                      , cabal-doctest >= 1.0.0
+diff --git a/test/Doctests.hs b/test/Doctests.hs
+index 9893a82..2a0cae8 100644
+--- a/test/Doctests.hs
++++ b/test/Doctests.hs
+@@ -4,13 +4,30 @@ module Main
  
  import System.FilePath.Glob (glob)
  import Test.DocTest (doctest)
@@ -101,3 +130,6 @@ diff -urN co-log-core-0.3.1.0/test/Doctests.hs co-log-core-0.3.1.0-r1/test/Docte
 +            ]
 +
 +    doctest $ customFlags ++ pkgs ++ sourceFiles ++ ghcExtensions
+-- 
+2.39.2
+
