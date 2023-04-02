@@ -17,10 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="profile"
 
-GHC_BOOTSTRAP_PACKAGES=(
-	cabal-doctest
-)
-
 RDEPEND="
 	>=dev-haskell/async-2.0:=
 	>=dev-haskell/base16-bytestring-0.1.1:=
@@ -68,6 +64,12 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	if use test; then
+		export GHC_BOOTSTRAP_PACKAGES=(
+			cabal-doctest
+		)
+	fi
+
 	haskell-cabal_src_configure \
 		--flag=cabal-v1 \
 		--flag=gentoo-tests \
