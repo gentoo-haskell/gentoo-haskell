@@ -95,3 +95,8 @@ src_install() {
 	haskell-cabal_src_install
 	doman "${S}/man/${PN}.1"
 }
+
+pkg_postinst() {
+	einfo "As of version 3, ${PN} no longer packages the pandoc executable"
+	einfo "as standard. For the executable, run 'emerge -av app-text/pandoc-cli'."
+}
