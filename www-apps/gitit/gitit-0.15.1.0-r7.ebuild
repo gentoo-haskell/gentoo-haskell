@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,7 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+plugins"
 
 CABAL_CHDEPS=(
-	'pandoc >= 2.9 && < 2.17' 'pandoc >= 2.9'
+	'pandoc >= 2.9 && < 2.17' 'pandoc >= 3'
+	'pandoc-types >= 1.20 && < 1.23' 'pandoc-types >= 1.20'
 	'hoauth2 >= 1.3.0 && < 1.17' 'hoauth2 >= 2.3.0'
 	'skylighting >= 0.8.2.3 && < 0.13' 'skylighting >= 0.8.2.3'
 	'happstack-server >= 7.5 && < 7.8' 'happstack-server >= 7.5'
@@ -25,10 +26,11 @@ CABAL_CHDEPS=(
 
 PATCHES=(
 	"${FILESDIR}/${P}-hoauth2-2.3.patch"
+	"${FILESDIR}"/${P}-pandoc-3.patch
 )
 
 RDEPEND="
-	>=app-text/pandoc-2.9:=[profile?]
+	>=app-text/pandoc-3:=[profile?]
 	>=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/base64-bytestring-0.1:=[profile?]
 	>=dev-haskell/blaze-html-0.4:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]
@@ -49,7 +51,7 @@ RDEPEND="
 	>=dev-haskell/network-uri-2.6:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/old-time:=[profile?]
-	>=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.23:=[profile?]
+	>=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/recaptcha-0.1:=[profile?]
 	dev-haskell/safe:=[profile?]
