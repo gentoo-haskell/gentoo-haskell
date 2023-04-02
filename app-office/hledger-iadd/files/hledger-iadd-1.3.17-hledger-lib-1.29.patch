@@ -1,0 +1,37 @@
+From 44e9cb1e9f435a4a8849418b13d916833fa13591 Mon Sep 17 00:00:00 2001
+From: Hans-Peter Deifel <hpd@hpdeifel.de>
+Date: Sun, 12 Mar 2023 20:26:04 +0100
+Subject: [PATCH] Update to hledger-lib 1.29
+
+---
+ hledger-iadd.cabal | 6 +++---
+ src/DateParser.hs  | 7 +++++--
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/src/DateParser.hs b/src/DateParser.hs
+index de889ee..c257f4e 100644
+--- a/src/DateParser.hs
++++ b/src/DateParser.hs
+@@ -32,9 +32,10 @@ import qualified Data.Text.Lazy as TL
+ import           Data.Text.Lazy.Builder (Builder, toLazyText)
+ import qualified Data.Text.Lazy.Builder as Build
+ import qualified Data.Text.Lazy.Builder.Int as Build
+-import           Data.Time.Ext hiding (parseTime)
++import           Data.Time.Ext
+ import           Data.Time.Calendar.WeekDate
+ import qualified Hledger.Data.Dates as HL
++import qualified Hledger.Data.Types as HL
+ import           Text.Megaparsec
+ import           Text.Megaparsec.Char
+ import           Text.Printf (printf, PrintfArg)
+@@ -55,7 +56,9 @@ data DateSpec = DateYear
+ 
+ parseHLDate :: Day -> Text -> Either Text Day
+ parseHLDate current text = case parse HL.smartdate "date" text of
+-  Right res -> Right $ HL.fixSmartDate current res
++  Right res -> case HL.fixSmartDate current res of
++    HL.Exact day -> Right day
++    HL.Flex day -> Left $ "Date " <> T.pack (show day) <> " not specified exactly."
+   Left err -> Left $ T.pack $ errorBundlePretty err
+ 
+ parseHLDateWithToday :: Text -> IO (Either Text Day)

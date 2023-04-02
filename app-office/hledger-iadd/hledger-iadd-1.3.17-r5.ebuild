@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,9 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	>=dev-haskell/brick-0.27:=[profile?] <dev-haskell/brick-0.72:=[profile?]
+	>=dev-haskell/brick-1.5:=[profile?]
 	>=dev-haskell/free-4.12.4:=[profile?]
-	>=dev-haskell/hledger-lib-1.23:=[profile?] <dev-haskell/hledger-lib-1.29:=[profile?]
+	>=dev-haskell/hledger-lib-1.23:=[profile?] <dev-haskell/hledger-lib-1.30:=[profile?]
 	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-9.3:=[profile?]
 	dev-haskell/microlens:=[profile?]
 	dev-haskell/microlens-th:=[profile?]
@@ -39,3 +39,13 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 	)
 "
+
+CABAL_CHDEPS=(
+	'brick >= 0.27 && < 0.72' 'brick >= 1.5'
+	'hledger-lib >= 1.23 && < 1.29' 'hledger-lib >= 1.23'
+)
+
+PATCHES=(
+	"${FILESDIR}"/${P}-hledger-lib-1.29.patch
+	"${FILESDIR}"/${P}-brick-1.5.patch
+)
