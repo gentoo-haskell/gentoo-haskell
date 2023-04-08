@@ -7,31 +7,43 @@ EAPI=8
 #hackport: flags: +small_base
 
 CABAL_FEATURES="test-suite"
-inherit autotools haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Alex is a tool for generating lexical analysers in Haskell"
 HOMEPAGE="https://www.haskell.org/alex/"
+
+GIT_REPO="https://github.com/haskell/${PN}"
+GIT_COMMIT="13732056ff8d287f2ee0c4ecb968efe04516c890"
+GIT_P="${PN}-${GIT_COMMIT}"
+GIT_S="${WORKDIR}/${GIT_P}"
+SRC_URI+=" doc? (
+	${GIT_REPO}/archive/${GIT_COMMIT}.tar.gz -> ${GIT_P}.tar.gz
+)"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-3.2.7.2-fix-docs.patch"
+)
+
 RDEPEND=">=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
-	doc? ( ~app-text/docbook-xml-dtd-4.2
-		app-text/docbook-xsl-stylesheets
-		>=dev-libs/libxslt-1.1.2 )
+	doc? (
+		dev-python/sphinx
+		dev-python/sphinx-rtd-theme
+	)
 "
 src_prepare() {
-	default
-
 	if use doc; then
-		cd "${S}/doc/"
-		eautoreconf
+		cp -a "${GIT_S}/doc/" "${S}" || die
 	fi
+
+	haskell-cabal_src_prepare
 }
 
 src_configure() {
@@ -41,11 +53,6 @@ src_configure() {
 		--with-alex=false \
 		--with-happy=false \
 		--flag=small_base
-
-	if use doc; then
-		cd "${S}/doc/"
-		econf
-	fi
 }
 
 src_compile() {
@@ -67,8 +74,6 @@ src_install() {
 	haskell-cabal_src_install
 
 	if use doc; then
-		doman "${S}/doc/alex.1"
-		docinto html
-		dodoc -r "${S}/doc/alex/"
+		dodoc -r "${S}/doc/_build/html"
 	fi
 }
