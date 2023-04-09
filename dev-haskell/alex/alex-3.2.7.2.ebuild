@@ -25,10 +25,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-3.2.7.2-fix-docs.patch"
-)
-
 RDEPEND=">=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
@@ -41,6 +37,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	if use doc; then
 		cp -a "${GIT_S}/doc/" "${S}" || die
+		eapply "${FILESDIR}/${PN}-3.2.7.2-fix-docs.patch"
 	fi
 
 	haskell-cabal_src_prepare
