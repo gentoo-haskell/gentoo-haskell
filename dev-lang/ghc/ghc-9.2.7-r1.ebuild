@@ -17,7 +17,7 @@ PYTHON_COMPAT=( python3_{9..11} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
 inherit multiprocessing pax-utils toolchain-funcs prefix
-inherit check-reqs unpacker
+inherit check-reqs llvm unpacker
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
@@ -30,11 +30,21 @@ BUILD_BIN_PV=9.0.2
 BUILD_BIN_REV=r4
 BUILD_BIN_PVR="${BUILD_BIN_PV}${BUILD_BIN_REV:+-${BUILD_BIN_REV}}"
 
+DEFAULT_SRC_HOST="https://eidetic.codes"
+
 ghc_binaries() {
-	local host="https://eidetic.codes"
 	echo "
-		binary? ( ${host}/${PN}-bin-${BIN_PVR}-${1}.gpkg.tar )
-		!binary? ( ${host}/${PN}-bin-${BUILD_BIN_PVR}-${1}.gpkg.tar )
+		binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BIN_PVR}-${1}.gpkg.tar )
+		!binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BUILD_BIN_PVR}-${1}.gpkg.tar )
+	"
+}
+
+# Some arches have ghc-9.0 binaries packaged as .tar.gz, which doesn't fit the
+# pattern established in ghc_binaries()
+ghc_binaries_gz_build_bin() {
+	echo "
+		binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BIN_PVR}-${1}.gpkg.tar )
+		!binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BUILD_BIN_PVR}-${1}.tar.gz )
 	"
 }
 
@@ -43,11 +53,14 @@ ghc_binaries() {
 #glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 glibc_binaries+=" amd64? ( $(ghc_binaries x86_64-pc-linux-gnu) )"
 #glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
-#glibc_binaries="$glibc_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
+glibc_binaries+=" arm64? ( $(ghc_binaries_gz_build_bin aarch64-unknown-linux-gnu) )"
 #glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #glibc_binaries="$glibc_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz ) )"
+glibc_binaries+=" ppc64? (
+	big-endian? ( $(ghc_binaries_gz_build_bin powerpc64-unknown-linux-gnu) )
+	!big-endian? ( $(ghc_binaries_gz_build_bin powerpc64le-unknown-linux-gnu) )
+)"
+glibc_binaries+=" riscv? ( $(ghc_binaries_gz_build_bin riscv64-unknown-linux-gnu) )"
 #glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
 glibc_binaries+=" x86? ( $(ghc_binaries i686-pc-linux-gnu) )"
 
@@ -126,11 +139,12 @@ BUMP_LIBRARIES=(
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
-IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
+IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
+LLVM_MAX_SLOT="14"
 RDEPEND="
 	!<dev-haskell/process-1.6.16.0-r1
 	>=dev-lang/perl-5.6.1
@@ -139,6 +153,12 @@ RDEPEND="
 	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
+	llvm? (
+		<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
+		|| (
+			sys-devel/llvm:14
+		)
+	)
 "
 
 # This set of dependencies is needed to run
@@ -179,6 +199,7 @@ needs_python() {
 REQUIRED_USE="
 	?? ( ghcbootstrap binary )
 	?? ( profile binary )
+	?? ( llvm unregisterised )
 "
 
 # haskell libraries built with cabal in configure mode, #515354
@@ -408,6 +429,15 @@ ghc-check-reqs() {
 	"$@"
 }
 
+llvmize() {
+	[[ -z "${1}" ]] && return
+	( find "${1}" -type f \
+		| file -if- \
+		| grep "text/x-shellscript" \
+		| awk -F: '{print $1}' \
+		| xargs sed -i "s#^exec #PATH=\"$(get_llvm_prefix "${LLVM_MAX_SLOT}")/bin:\${PATH}\" exec #") || die
+}
+
 ghc-check-bootstrap-version () {
 	local diemsg version python_output
 	ebegin "Checking for appropriate installed GHC version for bootstrapping"
@@ -459,6 +489,8 @@ pkg_setup() {
 	if needs_python; then
 		python-any-r1_pkg_setup
 	fi
+
+	use llvm && llvm_pkg_setup
 }
 
 src_unpack() {
@@ -509,6 +541,8 @@ src_prepare() {
 			pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${bin_pv}/bin/ghc"
 		fi
 	fi
+
+	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
 
 	# binpkg may have been built with FEATURES=splitdebug
 	if [[ -d "${WORKDIR}/usr/lib/debug" ]] ; then
@@ -612,6 +646,9 @@ src_prepare() {
 		#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
 		#eapply "${FILESDIR}"/${PN}-8.10.3-C99-typo-ac270.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
+		eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
@@ -767,7 +804,8 @@ src_configure() {
 		econf ${econf_args[@]} \
 			--enable-bootstrap-with-devel-snapshot \
 			$(use_enable elfutils dwarf-unwind) \
-			$(use_enable numa)
+			$(use_enable numa) \
+			$(use_enable unregisterised)
 
 		if [[ ${PV} == *9999* ]]; then
 			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
@@ -823,6 +861,8 @@ src_install() {
 		#    /usr/bin/install: cannot create regular file \
 		#           '/tmp/portage-tmpdir/portage/cross-armv7a-unknown-linux-gnueabi/ghc-9999/image/usr/lib64/armv7a-unknown-linux-gnueabi-ghc-8.3.20170404': No such file or directory
 		emake -j1 install DESTDIR="${D}"
+
+		use llvm && llvmize "${ED}/usr/bin"
 
 		# Skip for cross-targets as they all share target location:
 		# /usr/share/doc/ghc-9999/
