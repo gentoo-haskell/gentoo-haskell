@@ -58,11 +58,11 @@ ghc-getghcpkg() {
 # because for some reason the global package file
 # must be specified
 ghc-getghcpkgbin() {
-	local empty_db="${T}/empty.conf.d" ghc_pkg="$(ghc-libdir)/bin/ghc-pkg"
+	local empty_db="${T}/empty.conf.d" ghc_pkg="$(ghc-bindir)/ghc-pkg"
 	if [[ ! -d ${empty_db} ]]; then
 		"${ghc_pkg}" init "${empty_db}" || die "Failed to initialize empty global db"
 	fi
-	echo "$(ghc-libdir)/bin/ghc-pkg" "--global-package-db=${empty_db}"
+	echo "$(ghc-bindir)/ghc-pkg" "--global-package-db=${empty_db}"
 }
 
 # @FUNCTION: ghc-version
@@ -174,6 +174,24 @@ ghc-libdir() {
 		_GHC_LIBDIR_CACHE="$($(ghc-getghc) --print-libdir)"
 	fi
 	echo "${_GHC_LIBDIR_CACHE}"
+}
+
+# @FUNCTION: ghc-bindir
+# @DESCRIPTION:
+# returns the directory where ghc binaries live
+_GHC_BINDIR_CACHE=""
+ghc-bindir() {
+	if [[ -z "${_GHC_BINDIR_CACHE}" ]]; then
+		local bindir
+		if [[ "$(basename $(ghc-libdir))" == "lib" ]]; then
+			bindir="$(ghc-libdir)/../bin/"
+		else
+			bindir="$(ghc-libdir)/bin/"
+		fi
+		bindir="$(realpath "${bindir}")" || die "Cannot find ghc bindir: ${bindir}"
+		_GHC_BINDIR_CACHE="${bindir}"
+	fi
+	echo "${_GHC_BINDIR_CACHE}"
 }
 
 # @FUNCTION: ghc-make-args
