@@ -8,6 +8,7 @@
 	<use>
 		<flag name="integer-simple">Use the [simple integer library](http://hackage.haskell.org/package/integer-simple)
 instead of [integer-gmp](http://hackage.haskell.org/package/integer-gmp)</flag>
+		<flag name="simdutf">use simdutf library</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">text</remote-id>
