@@ -30,14 +30,22 @@ BUILD_BIN_PV=9.0.2
 BUILD_BIN_REV=r4
 BUILD_BIN_PVR="${BUILD_BIN_PV}${BUILD_BIN_REV:+-${BUILD_BIN_REV}}"
 
+DEFAULT_SRC_HOST="https://eidetic.codes"
+
 ghc_binaries() {
-	local host="https://eidetic.codes"
 	echo "
-		binary? ( ${host}/${PN}-bin-${BIN_PVR}-${1}.gpkg.tar )
+		binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BIN_PVR}-${1}.gpkg.tar )
+		!binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BUILD_BIN_PVR}-${1}.gpkg.tar )
 	"
-	[[ "${1}" == *-pc-* ]] && \
-		echo "!binary? ( ${host}/${PN}-bin-${BUILD_BIN_PVR}-${1}.gpkg.tar )" || \
-		echo "!binary? ( ${host}/${PN}-bin-${BUILD_BIN_PVR}-${1}.tar.gz )"
+}
+
+# Some arches have ghc-9.0 binaries packaged as .tar.gz, which doesn't fit the
+# pattern established in ghc_binaries()
+ghc_binaries_tar_build_bin() {
+	echo "
+		binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BIN_PVR}-${1}.gpkg.tar )
+		!binary? ( ${DEFAULT_SRC_HOST}/${PN}-bin-${BUILD_BIN_PVR}-${1}.tar.gz )
+	"
 }
 
 # Differentiate glibc/musl
@@ -45,14 +53,14 @@ ghc_binaries() {
 #glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 glibc_binaries+=" amd64? ( $(ghc_binaries x86_64-pc-linux-gnu) )"
 #glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
-glibc_binaries+=" arm64? ( $(ghc_binaries aarch64-unknown-linux-gnu) )"
+glibc_binaries+=" arm64? ( $(ghc_binaries_tar_build_bin aarch64-unknown-linux-gnu) )"
 #glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #glibc_binaries="$glibc_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
 glibc_binaries+=" ppc64? (
-	big-endian? ( $(ghc_binaries powerpc64-unknown-linux-gnu) )
-	!big-endian? ( $(ghc_binaries powerpc64le-unknown-linux-gnu) )
+	big-endian? ( $(ghc_binaries_tar_build_bin powerpc64-unknown-linux-gnu) )
+	!big-endian? ( $(ghc_binaries_tar_build_bin powerpc64le-unknown-linux-gnu) )
 )"
-glibc_binaries+=" riscv? ( $(ghc_binaries riscv64-unknown-linux-gnu) )"
+glibc_binaries+=" riscv? ( $(ghc_binaries_tar_build_bin riscv64-unknown-linux-gnu) )"
 #glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
 glibc_binaries+=" x86? ( $(ghc_binaries i686-pc-linux-gnu) )"
 
