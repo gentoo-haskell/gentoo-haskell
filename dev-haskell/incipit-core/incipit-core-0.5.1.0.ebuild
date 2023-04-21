@@ -11,7 +11,7 @@ inherit haskell-cabal
 DESCRIPTION="A Prelude for Polysemy"
 HOMEPAGE="https://github.com/tek/incipit-core#readme"
 
-LICENSE=""	# FIXME: license unknown to cabal. Please pick it manually.
+LICENSE="BSD-2-with-patent"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
