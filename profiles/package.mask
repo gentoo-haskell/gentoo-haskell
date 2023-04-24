@@ -1,3 +1,10 @@
+# hololeap <hololeap@protonmail.com> (2023-06-16)
+# Package does not appear to be buildable on linux and is strictly for
+# iOS.
+# See: <https://hackage.haskell.org/package/jsaddle-wkwebview-0.9.8.2/jsaddle-wkwebview.cabal>
+# Masked for removal in 30 days.
+dev-haskell/jsaddle-wkwebview
+
 # hololeap <hololeap@protonmail.com> (2023-03-07)
 # Depends on >=ghc-9.4. Unmask when this enters the tree.
 >=dev-haskell/haddock-2.27
