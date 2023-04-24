@@ -6,7 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="examples">Build example executables</flag>
 		<flag name="rebug">Expose more bugs by increasing determinism</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">threepenny-gui</remote-id>
+		<remote-id type="github">HeinrichApfelmus/threepenny-gui</remote-id>
+	</upstream>
 </pkgmetadata>
