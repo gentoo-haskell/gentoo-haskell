@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="tools">Build the data processing tools (i.e. dictionary compilers)</flag>
+		<flag name="executable">Build the zxcvbn-tools executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">zxcvbn-hs</remote-id>
+		<remote-id type="github">sthenauth/zxcvbn-hs</remote-id>
+	</upstream>
 </pkgmetadata>

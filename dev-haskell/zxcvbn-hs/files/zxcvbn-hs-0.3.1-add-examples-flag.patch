@@ -1,0 +1,36 @@
+From c6bde63633f25ae27a795ad907243106d8798f29 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Mon, 24 Apr 2023 13:58:06 -0600
+Subject: [PATCH 1/1] Add examples flag
+
+Flag allows for toggling whether to build the the zxcvbn-example
+executable.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ zxcvbn-hs.cabal | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/zxcvbn-hs.cabal b/zxcvbn-hs.cabal
+index f39edfe..67f7ec1 100644
+--- a/zxcvbn-hs.cabal
++++ b/zxcvbn-hs.cabal
+@@ -116,8 +116,15 @@ executable zxcvbn-tools
+     buildable: False
+ 
+ --------------------------------------------------------------------------------
++flag examples
++  description: Build the zxcvbn-example executable
++  default:     False
++  manual:      True
++
+ executable zxcvbn-example
+   import:           options, dependencies
++  if !flag(examples)
++    buildable: False
+   main-is:          Main.hs
+   hs-source-dirs:   example
+   ghc-prof-options: -rtsopts
+-- 
+2.39.2
+
