@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">structured</remote-id>
+		<remote-id type="github">phadej/binary-tagged</remote-id>
+	</upstream>
 </pkgmetadata>
