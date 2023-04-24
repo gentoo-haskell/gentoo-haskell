@@ -1,15 +1,15 @@
-# hololeap <hololeap@protonmail.com> (2022-03-07)
+# hololeap <hololeap@protonmail.com> (2023-03-07)
 # Depends on >=ghc-9.4. Unmask when this enters the tree.
 >=dev-haskell/haddock-2.27
 >=dev-haskell/haddock-api-2.27
 >=dev-haskell/haddock-library-1.11
 
-# hololeap <hololeap@protonmail.com> (2022-03-01)
+# hololeap <hololeap@protonmail.com> (2023-03-01)
 # Not buildable on ghc-9.2
 # Masking until it is
 dev-haskell/hls-tactics-plugin
 
-# hololeap <hololeap@protonmail.com> (2022-02-27)
+# hololeap <hololeap@protonmail.com> (2023-02-27)
 # These currently depend on an old version of ghc-exactprint, which is
 # incompatible with ghc-9.2
 # See e.g. <https://github.com/lspitzner/brittany/pull/366>
