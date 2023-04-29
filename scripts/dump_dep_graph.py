@@ -47,6 +47,8 @@ def print_edges(source, target, edge):
         return
     if source == 'dev-haskell/colour':
         return
+    if source == 'dev-haskell/foldable1-classes-compat':
+        return
     if source == 'dev-haskell/hspec-core':
         return
     if source == 'dev-haskell/hspec-discover':
