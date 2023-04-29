@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">text-show</remote-id>
+		<remote-id type="github">RyanGlScott/text-show</remote-id>
+	</upstream>
 </pkgmetadata>
