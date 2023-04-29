@@ -64,13 +64,6 @@ dev-haskell/doctest-parallel
 # Depends on pipes-text, which is masked.
 dev-haskell/zxcvbn-hs
 
-# Jack Todaro <solpeth@posteo.org> (2020-07-20)
-# Too many reverse dependencies require an older version.
-# Mask until they catch up.
->=dev-haskell/aeson-2.1
-dev-haskell/cabal-plan
-dev-haskell/cabal-install-parsers
-
 # hololeap <hololeap@protonmail.com> (2022-03-03)
 # >=random-fu-0.3.0.0 is needed to compile on >=base-4.15, but the latest
 # version of lambdabot-core needs <random-fu-0.3
