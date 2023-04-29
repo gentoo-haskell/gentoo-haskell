@@ -5,7 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="dev">Turn on development settings.</flag>
-	</use>
+	<upstream>
+		<remote-id type="hackage">html-entity-map</remote-id>
+		<remote-id type="github">mrkkrp/html-entity-map</remote-id>
+	</upstream>
 </pkgmetadata>
