@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">config-ini</remote-id>
+		<remote-id type="github">aisamanra/config-ini</remote-id>
+	</upstream>
 </pkgmetadata>
