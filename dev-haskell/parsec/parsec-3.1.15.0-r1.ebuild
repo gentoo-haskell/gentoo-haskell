@@ -25,7 +25,6 @@ RDEPEND="
 	>=dev-lang/ghc-9.2.4:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2.0.1
 "
 #	test? (
 #		>=dev-haskell/tasty-1.4 <dev-haskell/tasty-1.5
