@@ -1,0 +1,107 @@
+From 892700ddfe07d6a49f10c073893f75814744f0e7 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Sun, 30 Apr 2023 16:46:05 -0600
+Subject: [PATCH 1/1] Migrate to cabal-doctest
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ Setup.hs                   | 23 +++++++++++++++++++++++
+ test/Doctest.hs            | 22 +++++++---------------
+ validation-selective.cabal | 10 +++++++++-
+ 3 files changed, 39 insertions(+), 16 deletions(-)
+ create mode 100644 Setup.hs
+
+diff --git a/Setup.hs b/Setup.hs
+new file mode 100644
+index 0000000..1a42b50
+--- /dev/null
++++ b/Setup.hs
+@@ -0,0 +1,23 @@
++{-# LANGUAGE CPP #-}
++
++module Main (main) where
++
++#ifndef MIN_VERSION_cabal_doctest
++#define MIN_VERSION_cabal_doctest(x,y,z) 0
++#endif
++
++#if MIN_VERSION_cabal_doctest(1,0,0)
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "validation-selective-doctest"
++
++#else
++
++import Distribution.Simple
++
++main :: IO ()
++main = defaultMain
++
++#endif
+diff --git a/test/Doctest.hs b/test/Doctest.hs
+index ff2926a..dfc0456 100644
+--- a/test/Doctest.hs
++++ b/test/Doctest.hs
+@@ -9,20 +9,12 @@ DocTest's run function to keep docs up to date.
+ module Main (main) where
+ 
+ import Test.DocTest (doctest)
+-
++import Build_doctests (flags, pkgs, module_sources)
++import System.Environment.Compat (unsetEnv)
+ 
+ main :: IO ()
+-main = doctest
+-    $ "-XDeriveAnyClass"
+-    : "-XDeriveGeneric"
+-    : "-XDerivingStrategies"
+-    : "-XGeneralizedNewtypeDeriving"
+-    : "-XInstanceSigs"
+-    : "-XLambdaCase"
+-    : "-XOverloadedStrings"
+-    : "-XRecordWildCards"
+-    : "-XScopedTypeVariables"
+-    : "-XTypeApplications"
+-    : [ "src/Validation.hs"
+-      , "src/Validation/Combinators.hs"
+-      ]
++main = do
++    unsetEnv "GHC_ENVIRONMENT"
++    doctest args
++  where
++    args = flags ++ pkgs ++ module_sources
+diff --git a/validation-selective.cabal b/validation-selective.cabal
+index 3d75fad..41f2b2b 100644
+--- a/validation-selective.cabal
++++ b/validation-selective.cabal
+@@ -74,6 +74,12 @@ common common-options
+                        TypeApplications
+                        ViewPatterns
+ 
++custom-setup:
++  setup-depends:
++      base
++    , Cabal
++    , Cabal-doctest >= 1.0
++
+ library
+   import:              common-options
+   hs-source-dirs:      src
+@@ -105,5 +111,7 @@ test-suite validation-selective-doctest
+   type:                exitcode-stdio-1.0
+   hs-source-dirs:      test
+   main-is:             Doctest.hs
+-  build-depends:       doctest >= 0.16 && < 0.22
++  build-depends:
++      doctest >= 0.16 && < 0.22
++    , base-compat
+   ghc-options:         -threaded
+-- 
+2.39.2
+
