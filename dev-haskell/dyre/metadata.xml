@@ -5,12 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Dyre implements dynamic reconfiguration facilities after the
-		style of Xmonad. Dyre aims to be as simple as possible without
-		sacrificing features, and places an emphasis on simplicity of
-		integration with an application.
-		A full introduction with a complete example project can be found
-		in the documentation for 'Config.Dyre'
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">dyre</remote-id>
+		<remote-id type="github">willdonnelly/dyre</remote-id>
+	</upstream>
 </pkgmetadata>
