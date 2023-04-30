@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="asserts">Enable runtime-checks via @assert@</flag>
+		<flag name="debug">Enable runtime-checks via @assert@</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">text-short</remote-id>
+		<remote-id type="github">hvr/text-short</remote-id>
+	</upstream>
 </pkgmetadata>
