@@ -1,9 +1,0 @@
---- a/tests/Tests/Orphanage.hs
-+++ b/tests/Tests/Orphanage.hs
-@@ -197,4 +197,6 @@ deriving instance Eq a   => Eq   (Const a b)
- 
-+#if !MIN_VERSION_QuickCheck(2,11,0)
- instance Arbitrary BSS.ShortByteString where
-   arbitrary = BSS.pack <$> arbitrary
-+#endif
- 
