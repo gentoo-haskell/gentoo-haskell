@@ -30,7 +30,7 @@ RDEPEND="
 	dev-haskell/syb:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.6.3:=
+	>=dev-lang/ghc-8.6.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

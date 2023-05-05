@@ -70,7 +70,7 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?]
 	dev-haskell/word8:=[profile?]
 	>=dev-haskell/yaml-0.8.10.1:=[profile?]
 	>=dev-haskell/zlib-0.5.4.2:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

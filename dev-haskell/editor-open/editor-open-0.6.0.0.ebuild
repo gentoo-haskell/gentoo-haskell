@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/conduit-1.2.3:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/temporary:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

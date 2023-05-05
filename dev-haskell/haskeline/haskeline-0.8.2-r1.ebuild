@@ -22,7 +22,7 @@ IUSE="+terminfo"
 RESTRICT=test # test requires example executable which does not work correctly
 
 RDEPEND="
-	>=dev-lang/ghc-8.10.6:=
+	>=dev-lang/ghc-8.10.6:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

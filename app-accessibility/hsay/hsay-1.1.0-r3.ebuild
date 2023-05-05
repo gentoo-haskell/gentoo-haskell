@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/hclip-3:= <dev-haskell/hclip-4:=
 	>=dev-haskell/http-4000.2:=
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/http-3001:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/xml:=[profile?]
-	>=dev-lang/ghc-6.10.4:=
+	>=dev-lang/ghc-6.10.4:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

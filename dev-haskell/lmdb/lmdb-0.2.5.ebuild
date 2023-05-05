@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-7.6.1:=
+RDEPEND=">=dev-lang/ghc-7.6.1:=[profile?]
 	dev-db/lmdb:=
 "
 DEPEND="${RDEPEND}

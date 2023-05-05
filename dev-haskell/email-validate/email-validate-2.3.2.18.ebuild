@@ -21,7 +21,7 @@ PATCHES=(
 
 RDEPEND="
 	>=dev-haskell/attoparsec-0.10.0:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.8.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

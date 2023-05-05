@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/ghc-lib-parser-9.4:=[profile?] <dev-haskell/ghc-lib-parser-9.5:=[profile?]
 	>=dev-haskell/uniplate-1.5:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.8.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

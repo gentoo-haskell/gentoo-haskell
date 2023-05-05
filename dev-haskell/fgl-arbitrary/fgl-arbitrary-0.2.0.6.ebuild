@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/fgl-5.5.2.0:=[profile?] <dev-haskell/fgl-6:=[profile?]
 	>=dev-haskell/quickcheck-2.3:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.4.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

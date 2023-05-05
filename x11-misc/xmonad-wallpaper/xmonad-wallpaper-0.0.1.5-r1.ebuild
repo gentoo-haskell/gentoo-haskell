@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/magic-1.1:=[profile?] <dev-haskell/magic-1.2:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/random:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 	>=x11-wm/xmonad-0.13:=[profile?]
 "
 DEPEND="${RDEPEND}

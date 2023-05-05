@@ -22,7 +22,7 @@ CABAL_CHDEPS=(
 
 RDEPEND=">=dev-haskell/optparse-applicative-0.15:=[profile?]
 	dev-haskell/trial:=[profile?]
-	>=dev-lang/ghc-8.6.3:=
+	>=dev-lang/ghc-8.6.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

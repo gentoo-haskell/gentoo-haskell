@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=
 	>=dev-haskell/hledger-lib-1.26:= <dev-haskell/hledger-lib-1.30:=
 	dev-haskell/text:=
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.8.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/dlist-0.6:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]
 	>=dev-haskell/vector-algorithms-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 	!embed-linear? ( >=dev-haskell/linear-1.3:=[profile?] )
 "
 DEPEND="${RDEPEND}

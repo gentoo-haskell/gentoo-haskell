@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+useffi"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=
+RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
 	useffi? ( virtual/libc )
 "
 DEPEND="${RDEPEND}

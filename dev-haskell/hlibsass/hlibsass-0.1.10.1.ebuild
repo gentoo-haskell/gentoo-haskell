@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="externallibsass sharedlibsass"
 
-RDEPEND=">=dev-lang/ghc-7.8.2:=
+RDEPEND=">=dev-lang/ghc-7.8.2:=[profile?]
 	externallibsass? ( dev-libs/libsass:= )
 	!externallibsass? ( sys-devel/gcc:=[cxx] )
 "

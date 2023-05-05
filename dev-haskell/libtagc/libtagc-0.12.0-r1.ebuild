@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/glib-0.12.0:=[profile?] <dev-haskell/glib-0.14.0:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.4.1:=[profile?]
 	media-libs/taglib
 "
 DEPEND="${RDEPEND}

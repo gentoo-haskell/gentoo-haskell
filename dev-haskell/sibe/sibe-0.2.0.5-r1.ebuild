@@ -31,7 +31,7 @@ RDEPEND="dev-haskell/chart:=[profile?]
 	dev-haskell/stemmer:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.0.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

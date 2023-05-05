@@ -26,7 +26,7 @@ RDEPEND="
 	>=dev-haskell/haddock-library-1.11:=[profile?] <dev-haskell/haddock-library-1.12:=[profile?]
 	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/xhtml-3000.2.2:=[profile?] <dev-haskell/xhtml-3000.3:=[profile?]
-	>=dev-lang/ghc-9.4:= <dev-lang/ghc-9.5:=
+	>=dev-lang/ghc-9.4:=[profile?] <dev-lang/ghc-9.5:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0

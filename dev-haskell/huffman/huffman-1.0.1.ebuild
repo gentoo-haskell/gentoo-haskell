@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-haskell/fingertree:=[profile?]
-		>=dev-lang/ghc-6.8.2:="
+		>=dev-lang/ghc-6.8.2:=[profile?]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 

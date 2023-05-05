@@ -21,7 +21,7 @@ RESTRICT=test # missing files
 
 RDEPEND="dev-haskell/lens:=[profile?]
 	dev-haskell/lens-action:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2

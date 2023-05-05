@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/smallcheck-1.0:=[profile?]
 	>=dev-haskell/test-framework-0.4.2.0:=[profile?] <dev-haskell/test-framework-1.0:=[profile?]
 	dev-haskell/transformers:=[profile?]
-	>=dev-lang/ghc-6.10.4:=
+	>=dev-lang/ghc-6.10.4:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3

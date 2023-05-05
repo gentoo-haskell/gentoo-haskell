@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+pcg"
 
 RDEPEND=">=dev-haskell/mwc-random-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 	pcg? ( >=dev-haskell/pcg-random-0.1:=[profile?] )
 "
 DEPEND="${RDEPEND}

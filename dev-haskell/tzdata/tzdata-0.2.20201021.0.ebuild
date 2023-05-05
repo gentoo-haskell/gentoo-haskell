@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/tagged-0.8.6:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.6.2:=
+	>=dev-lang/ghc-7.6.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

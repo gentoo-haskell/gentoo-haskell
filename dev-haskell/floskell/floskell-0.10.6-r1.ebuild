@@ -35,7 +35,7 @@ RDEPEND="
 		>=dev-haskell/aeson-pretty-0.8.2:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 		>=dev-haskell/optparse-applicative-0.12.1.0:=[profile?]
 	)
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

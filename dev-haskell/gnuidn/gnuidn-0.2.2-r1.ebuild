@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT=test
 
 RDEPEND="dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.4.1:=[profile?]
 	net-dns/libidn:0=
 "
 DEPEND="${RDEPEND}

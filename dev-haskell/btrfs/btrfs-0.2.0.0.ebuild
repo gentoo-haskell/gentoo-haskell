@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RDEPEND=">=dev-lang/ghc-7.6.1:=
+RDEPEND=">=dev-lang/ghc-7.6.1:=[profile?]
 	examples? ( dev-haskell/ansi-terminal:=[profile?]
 			dev-haskell/linux-file-extents:=[profile?] )
 "

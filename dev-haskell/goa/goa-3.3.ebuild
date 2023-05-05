@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=
+RDEPEND=">=dev-lang/ghc-6.10.4:=[profile?]
 	dev-haskell/lambdabot
 "
 DEPEND="${RDEPEND}

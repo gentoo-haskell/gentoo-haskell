@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # needs a port to newer QuickCheck
 
-RDEPEND=">=dev-lang/ghc-7.6.1:=
+RDEPEND=">=dev-lang/ghc-7.6.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

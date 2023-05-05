@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # setSocketOption, V6Only: eAddressFamilyNotSupported
 
-RDEPEND=">=dev-lang/ghc-7.8.2:=
+RDEPEND=">=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

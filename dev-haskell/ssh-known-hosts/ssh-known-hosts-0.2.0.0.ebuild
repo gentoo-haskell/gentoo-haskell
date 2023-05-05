@@ -19,7 +19,7 @@ IUSE="sample_progs"
 
 RDEPEND=">=dev-haskell/iproute-1.5:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

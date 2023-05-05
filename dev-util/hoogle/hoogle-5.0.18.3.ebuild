@@ -49,7 +49,7 @@ RDEPEND="
 	dev-haskell/warp:=[profile?]
 	dev-haskell/warp-tls:=[profile?]
 	dev-haskell/zlib:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 	systemd? ( sys-apps/systemd )
 	!systemd? ( sys-apps/openrc )
 "

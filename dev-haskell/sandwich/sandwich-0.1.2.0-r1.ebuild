@@ -39,7 +39,7 @@ RDEPEND="
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/vector:=[profile?]
 	dev-haskell/vty:=[profile?]
-	>=dev-lang/ghc-8.10.1:=
+	>=dev-lang/ghc-8.10.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

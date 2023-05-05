@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/mmorph-1:=[profile?] <dev-haskell/mmorph-2:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

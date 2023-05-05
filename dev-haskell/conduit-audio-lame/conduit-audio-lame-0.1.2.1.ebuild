@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/conduit:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/vector:=[profile?]
 	media-sound/lame:=
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	dev-haskell/c2hs

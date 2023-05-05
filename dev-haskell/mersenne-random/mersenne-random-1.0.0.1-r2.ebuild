@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="cpu_flags_x86_sse2"
 
 RDEPEND="dev-haskell/old-time:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

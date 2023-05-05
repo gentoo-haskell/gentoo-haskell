@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="+ghc-bundled-libffi"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=
+RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
 	!ghc-bundled-libffi? ( dev-libs/libffi )
 "
 DEPEND="${RDEPEND}

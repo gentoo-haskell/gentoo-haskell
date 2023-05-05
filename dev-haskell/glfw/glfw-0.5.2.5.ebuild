@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="system-glfw"
 
 RDEPEND=">=dev-haskell/opengl-2.1:=[profile?] <dev-haskell/opengl-4:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.4.1:=[profile?]
 	system-glfw? ( media-libs/glfw )
 	!system-glfw? ( virtual/opengl
 			x11-libs/libX11 )

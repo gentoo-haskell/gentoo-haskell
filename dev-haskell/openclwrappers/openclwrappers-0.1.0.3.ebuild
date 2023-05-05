@@ -21,7 +21,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="link"
 
 RDEPEND=">=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.4.1:=[profile?]
 	virtual/opencl
 "
 DEPEND="${RDEPEND}

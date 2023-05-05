@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RESTRICT=test # tests fail
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=
+RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
 	>=dev-haskell/cabal-2.4.0.1:=[profile?] <dev-haskell/cabal-3.7:=[profile?]
 "
 DEPEND="${RDEPEND}

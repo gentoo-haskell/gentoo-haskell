@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/aeson-1.4:=[profile?]
 	>=dev-haskell/incipit-core-0.4:=[profile?]
 	>=dev-haskell/torsor-0.1:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.8.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

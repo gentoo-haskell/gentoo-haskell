@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.20.0:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/uniplate:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

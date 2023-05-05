@@ -16,7 +16,7 @@ LICENSE="public-domain"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-lang/ghc-7.6.1:=
+RDEPEND=">=dev-lang/ghc-7.6.1:=[profile?]
 	dev-libs/nanomsg
 "
 DEPEND="${RDEPEND}

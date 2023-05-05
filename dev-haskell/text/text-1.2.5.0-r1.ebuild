@@ -23,7 +23,7 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 RESTRICT=test
 
 RDEPEND="
-	>=dev-lang/ghc-9.0.2:=
+	>=dev-lang/ghc-9.0.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 "

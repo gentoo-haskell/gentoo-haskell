@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="system-cmark"
 
 RDEPEND=">=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.4.1:=[profile?]
 	system-cmark? ( app-text/cmark )
 "
 DEPEND="${RDEPEND}

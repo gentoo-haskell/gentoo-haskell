@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/dlist:=[profile?]
 	dev-haskell/names-th:=[profile?]
 	>=dev-haskell/product-isomorphic-0.0.3:=[profile?]
 	dev-haskell/th-data-compat:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

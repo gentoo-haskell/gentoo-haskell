@@ -18,7 +18,7 @@ IUSE="+lua nightly +server"
 
 RDEPEND=">=app-text/pandoc-3.0:=
 	dev-haskell/text:=
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.8.1:=[profile?]
 	lua? ( >=dev-haskell/hslua-cli-1.4.1:= <dev-haskell/hslua-cli-1.5:=
 		>=dev-haskell/pandoc-lua-engine-0.2:= <dev-haskell/pandoc-lua-engine-0.3:=
 		>=dev-haskell/temporary-1.1:= <dev-haskell/temporary-1.4:= )

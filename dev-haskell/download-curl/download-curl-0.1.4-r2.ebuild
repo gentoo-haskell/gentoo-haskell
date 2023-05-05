@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/curl:=[profile?]
 	dev-haskell/feed:=[profile?]
 	>=dev-haskell/tagsoup-0.8:=[profile?]
 	dev-haskell/xml:=[profile?]
-	>=dev-lang/ghc-6.8.2:="
+	>=dev-lang/ghc-6.8.2:=[profile?]"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2.0"
 

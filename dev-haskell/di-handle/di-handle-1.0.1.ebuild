@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	dev-haskell/di-core:=[profile?]
-	>=dev-lang/ghc-8.10.1:=
+	>=dev-lang/ghc-8.10.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

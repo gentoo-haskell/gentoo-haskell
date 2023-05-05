@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/listlike-3.1:=[profile?]
 		>=dev-haskell/uu-parsinglib-2.7.1:=[profile?]
-		>=dev-lang/ghc-7.0.1:="
+		>=dev-lang/ghc-7.0.1:=[profile?]"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 

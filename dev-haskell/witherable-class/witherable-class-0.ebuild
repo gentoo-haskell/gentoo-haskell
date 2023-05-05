@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/base-orphans:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4

@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-haskell/generic-monoid:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/uri-bytestring:=[profile?]
-	>=dev-lang/ghc-7.6.2:=
+	>=dev-lang/ghc-7.6.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

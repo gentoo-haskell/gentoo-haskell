@@ -54,7 +54,7 @@ RDEPEND="
 	>=dev-haskell/tar-0.5.0.3:=
 	dev-haskell/xml:=
 	>=dev-haskell/zlib-0.5.3:=
-	>=dev-lang/ghc-8.10.1:=
+	>=dev-lang/ghc-8.10.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

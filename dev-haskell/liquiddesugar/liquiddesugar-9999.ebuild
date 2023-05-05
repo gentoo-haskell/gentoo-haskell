@@ -18,7 +18,7 @@ KEYWORDS=""
 IUSE="devel"
 
 RDEPEND="
-	>=dev-lang/ghc-7.10.2:=
+	>=dev-lang/ghc-7.10.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

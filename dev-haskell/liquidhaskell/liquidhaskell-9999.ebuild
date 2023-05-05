@@ -51,7 +51,7 @@ RDEPEND="
 	<dev-haskell/th-compat-0.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.11:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-8.10.1:=
+	>=dev-lang/ghc-8.10.1:=[profile?]
 	mirror-modules-helper? (
 		dev-haskell/mustache:=[profile?]
 		<dev-haskell/shelly-1.10:=[profile?]

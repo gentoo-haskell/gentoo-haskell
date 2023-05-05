@@ -20,7 +20,7 @@ RDEPEND="
 	>=dev-haskell/mmap-0.5:=[profile?] <dev-haskell/mmap-0.6:=[profile?]
 	>=dev-haskell/unliftio-core-0.1.2.0:=[profile?] <dev-haskell/unliftio-core-0.3:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

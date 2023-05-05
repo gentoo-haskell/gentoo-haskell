@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/blaze-builder-0.4.0.0:=[profile?]
 	>=dev-haskell/hashable-1.2.3.2:=[profile?]
 	>=dev-haskell/mmorph-1.0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

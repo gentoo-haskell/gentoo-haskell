@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/uuid-types-1.0:=[profile?]
-	>=dev-lang/ghc-7.8.2:=
+	>=dev-lang/ghc-7.8.2:=[profile?]
 "
 # hackport can't infer those on it's own
 RDEPEND="${RDEPEND}

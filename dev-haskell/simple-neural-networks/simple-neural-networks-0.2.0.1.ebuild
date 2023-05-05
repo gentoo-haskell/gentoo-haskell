@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/parallel-3.2:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-lang/ghc-7.6.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

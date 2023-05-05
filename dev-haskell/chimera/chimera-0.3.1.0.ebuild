@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+representable"
 
 RDEPEND="dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.0.1:=
+	>=dev-lang/ghc-8.0.1:=[profile?]
 	representable? ( dev-haskell/adjunctions:=[profile?]
 				dev-haskell/distributive:=[profile?]
 				dev-haskell/mtl:=[profile?] )

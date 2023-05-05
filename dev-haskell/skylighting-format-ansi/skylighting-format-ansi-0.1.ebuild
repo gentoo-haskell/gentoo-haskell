@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/ansi-terminal-0.7:=[profile?]
 	>=dev-haskell/colour-2.0:=[profile?]
 	dev-haskell/skylighting-core:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

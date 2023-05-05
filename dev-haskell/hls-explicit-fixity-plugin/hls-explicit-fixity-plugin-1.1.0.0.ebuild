@@ -25,7 +25,7 @@ RDEPEND="
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/hls-plugin-api-1.6:=[profile?] <dev-haskell/hls-plugin-api-1.7:=[profile?]
 	>=dev-haskell/lsp-1.2.0.1:=[profile?]
-	>=dev-lang/ghc-8.6.3:=
+	>=dev-lang/ghc-8.6.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

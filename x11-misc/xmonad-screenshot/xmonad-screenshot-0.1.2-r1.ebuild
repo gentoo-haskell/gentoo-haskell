@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-haskell/gtk-0.12.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 	>=x11-wm/xmonad-0.9:=[profile?]
 "
 DEPEND="${RDEPEND}

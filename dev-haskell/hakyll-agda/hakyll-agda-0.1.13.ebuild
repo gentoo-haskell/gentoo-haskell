@@ -21,7 +21,7 @@ RDEPEND="app-text/pandoc:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/xhtml:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 	>=sci-mathematics/agda-2.6.1:=[profile?]
 "
 DEPEND="${RDEPEND}

@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-haskell/classy-prelude:=[profile?]
 	dev-haskell/graphviz:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.10.1:=
+	>=dev-lang/ghc-7.10.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

@@ -36,7 +36,7 @@ RDEPEND="
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/sqlite-simple:=[profile?]
 	>=dev-haskell/terminal-size-0.2:=[profile?]
-	>=dev-lang/ghc-8.6.3:=
+	>=dev-lang/ghc-8.6.3:=[profile?]
 	executable? (
 		dev-haskell/ghc-paths:=[profile?]
 	)

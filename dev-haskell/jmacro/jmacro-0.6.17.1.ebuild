@@ -27,7 +27,7 @@ RDEPEND="
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/vector-0.8:=[profile?]
 	dev-haskell/wl-pprint-text:=[profile?]
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:=[profile?]
 	benchmarks? (
 		dev-haskell/criterion:=[profile?]
 	)

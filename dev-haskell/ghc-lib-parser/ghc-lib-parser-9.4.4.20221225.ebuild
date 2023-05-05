@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-haskell/parsec:=[profile?]
-	>=dev-lang/ghc-9.0.2:=
+	>=dev-lang/ghc-9.0.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/alex-3.1

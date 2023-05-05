@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RESTRICT=test # test is not designed to be ran as cabal test
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=
+RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

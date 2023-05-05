@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 RESTRICT=test # circular depend: test-framework->base-orphans->cabal->semigroups->nats->binary
 
 RDEPEND="
-	>=dev-lang/ghc-9.2.4:=
+	>=dev-lang/ghc-9.2.4:=[profile?]
 "
 DEPEND="${RDEPEND}
 "

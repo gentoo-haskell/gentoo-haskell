@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-haskell/hslua-core-2.3:=[profile?] <dev-haskell/hslua-core-2.4:=[profile?]
 	>=dev-haskell/tasty-0.11:=[profile?]
 	>=dev-haskell/tasty-hunit-0.9:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.8.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
