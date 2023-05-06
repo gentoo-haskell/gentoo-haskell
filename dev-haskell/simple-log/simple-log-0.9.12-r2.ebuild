@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/mvoidex/simple-log"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'hspec >= 2.3 && < 2.8' 'hspec >=2.3'

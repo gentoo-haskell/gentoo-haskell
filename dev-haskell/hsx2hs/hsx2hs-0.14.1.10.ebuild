@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/seereason/hsx2hs"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 	>=dev-haskell/haskell-src-meta-0.7:=[profile?] <dev-haskell/haskell-src-meta-0.9:=[profile?]

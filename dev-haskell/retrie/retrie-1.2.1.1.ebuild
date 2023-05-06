@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/facebookincubator/retrie"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples executable"
 
 PATCHES=(

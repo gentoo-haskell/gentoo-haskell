@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/kosmikus/lhs2tex"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 GHC_BOOTSTRAP_PACKAGES=(
 	regex-compat

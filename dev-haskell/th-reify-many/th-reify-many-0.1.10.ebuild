@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/mgsloan/th-reify-many"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/safe:=[profile?]
 	dev-haskell/th-expand-syns:=[profile?]

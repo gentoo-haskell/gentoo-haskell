@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/haskell-unordered-containers/unordered-containers"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/hashable-1.2.5:=[profile?] <dev-haskell/hashable-1.5:=[profile?]

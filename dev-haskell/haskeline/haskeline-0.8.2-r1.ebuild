@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/judah/haskeline"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~amd64-linux"
 IUSE="+terminfo"
 
 RESTRICT=test # test requires example executable which does not work correctly

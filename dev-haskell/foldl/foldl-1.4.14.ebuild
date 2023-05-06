@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/foldl"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=( "${FILESDIR}/${PN}-1.4.12-cabal-doctest.patch" )
 

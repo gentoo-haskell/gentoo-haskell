@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/k-bx/protocol-buffers"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.4.17-fix-setup-hs.patch"

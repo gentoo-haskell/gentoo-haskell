@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/phadej/vec"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/boring-0.2:=[profile?] <dev-haskell/boring-0.3:=[profile?]
 	>=dev-haskell/dec-0.0.4:=[profile?] <dev-haskell/dec-0.1:=[profile?]

@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/phadej/insert-ordered-containers#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/aeson-1.4.2.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]

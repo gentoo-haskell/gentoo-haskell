@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/pbrisbin/hs-shellwords#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/megaparsec-6.5.0:=[profile?]
 	>=dev-lang/ghc-8.6.3:=[profile?]

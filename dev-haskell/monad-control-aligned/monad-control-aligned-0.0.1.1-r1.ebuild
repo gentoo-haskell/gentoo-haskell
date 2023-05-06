@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/athanclark/monad-control#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'transformers-compat  >= 0.3   && < 0.7' 'transformers-compat  >= 0.3'

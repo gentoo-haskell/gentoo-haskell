@@ -20,7 +20,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 LICENSE="BSD"
 SLOT="0/${PV}"
 #keep in sync with ghc-9.0.2
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~amd64-linux"
 
 RDEPEND="
 	|| ( dev-lang/ghc ( >=dev-haskell/process-1.1.0.2[profile?] <dev-haskell/process-1.7[profile?] ) )

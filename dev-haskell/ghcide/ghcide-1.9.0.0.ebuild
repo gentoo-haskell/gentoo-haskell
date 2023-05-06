@@ -20,7 +20,7 @@ HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/ghcide#
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable test-exe"
 
 CABAL_TEST_REQUIRED_BINS=(

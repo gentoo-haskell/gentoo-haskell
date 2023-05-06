@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/Avi-D-coder/implicit-hie-cradle#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-haskell/base16-bytestring:=[profile?]

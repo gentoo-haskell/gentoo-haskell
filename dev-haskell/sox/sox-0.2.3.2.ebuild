@@ -14,7 +14,7 @@ HOMEPAGE="https://www.haskell.org/haskellwiki/Sox"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/explicit-exception-0.1.3:=[profile?] <dev-haskell/explicit-exception-0.3:=[profile?]
 	>=dev-haskell/extensible-exceptions-0.1.1:=[profile?] <dev-haskell/extensible-exceptions-0.2:=[profile?]

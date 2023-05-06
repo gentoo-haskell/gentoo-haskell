@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/vincenthz/hs-hourglass"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.2.12-time-1_10-fix.patch"

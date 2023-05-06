@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/pointfree"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.20:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 	>=dev-lang/ghc-8.4.3:=[profile?]

@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/stackbuilders/cassava-megaparsec"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/cassava-0.4.2:=[profile?] <dev-haskell/cassava-0.6:=[profile?]

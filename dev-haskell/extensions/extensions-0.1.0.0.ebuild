@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/kowainik/extensions"
 
 LICENSE="MPL-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable"
 
 CABAL_CHDEPS=(

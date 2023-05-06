@@ -17,7 +17,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 LICENSE="BSD"
 SLOT="0"
 #keep in sync with ghc-9.0.2
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+lukko +native-dns"
 
 CABAL_CHDEPS=(

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/contravariant/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+semigroups +statevar +tagged"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]

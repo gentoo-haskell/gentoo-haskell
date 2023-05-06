@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell-foundation/foundation"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="experimental"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]

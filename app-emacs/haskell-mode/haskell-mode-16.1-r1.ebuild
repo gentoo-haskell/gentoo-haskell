@@ -12,7 +12,7 @@ SRC_URI="https://github.com/haskell/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+ FDL-1.2+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 DOCS="NEWS README.md"
 ELISP_TEXINFO="doc/${PN}.texi"

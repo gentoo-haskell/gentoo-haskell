@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/phadej/aeson-extra#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/attoparsec-0.11.3.4:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/base-compat-batteries-0.11.2:=[profile?] <dev-haskell/base-compat-batteries-0.14:=[profile?]

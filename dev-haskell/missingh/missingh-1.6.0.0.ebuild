@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/MissingH"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux"
+KEYWORDS="~amd64 ~amd64-linux"
 
 RDEPEND=">=dev-haskell/hslogger-1.3.0.0:=[profile?] <dev-haskell/hslogger-1.4:=[profile?]
 	>=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2:=[profile?]

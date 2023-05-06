@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/optics-extra"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hashable-1.1.1:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/indexed-profunctors-0.1:=[profile?] <dev-haskell/indexed-profunctors-0.2:=[profile?]

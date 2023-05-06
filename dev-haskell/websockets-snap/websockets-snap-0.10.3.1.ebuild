@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/websockets-snap"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/bytestring-builder-0.10:=[profile?] <dev-haskell/bytestring-builder-0.11:=[profile?]

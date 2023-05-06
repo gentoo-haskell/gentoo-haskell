@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/ku-fpg/kansas-comet/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/yesodweb/serversession"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hedis-0.15:=[profile?] <dev-haskell/hedis-0.16:=[profile?]
 	dev-haskell/path-pieces:=[profile?]

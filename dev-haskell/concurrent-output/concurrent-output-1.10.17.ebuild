@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/concurrent-output"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.2:=[profile?] <dev-haskell/ansi-terminal-0.12.0:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]

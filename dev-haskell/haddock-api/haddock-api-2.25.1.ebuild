@@ -14,7 +14,7 @@ HOMEPAGE="https://www.haskell.org/haddock/"
 LICENSE="BSD-2"
 SLOT="0/${PV}"
 # keep in sync with ghc-9.0
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~amd64-linux"
 
 CABAL_CHDEPS=(
 	'hspec           >= 2.4.4 && < 2.8' 'hspec >=2.4.4'

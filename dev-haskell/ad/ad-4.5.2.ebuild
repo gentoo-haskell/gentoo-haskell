@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/ekmett/ad"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="ffi"
 
 RDEPEND=">=dev-haskell/adjunctions-4.4:=[profile?] <dev-haskell/adjunctions-5:=[profile?]

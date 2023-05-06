@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/ekmett/bytes"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/binary-orphans-1.0.1:=[profile?] <dev-haskell/binary-orphans-1.1:=[profile?]
 	>=dev-haskell/cereal-0.5.2:=[profile?] <dev-haskell/cereal-0.6:=[profile?]

@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/HsYAML-aeson"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="exe"
 
 RDEPEND=">=dev-haskell/hsyaml-0.2.0:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?]

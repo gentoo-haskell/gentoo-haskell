@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/ezyang/compact"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'base       >= 4.10 && < 4.16' 'base >= 4.10'

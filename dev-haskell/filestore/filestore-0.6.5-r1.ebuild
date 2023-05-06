@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/filestore"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+maxcount"
 
 RESTRICT=test # requires mercurial to run the tests

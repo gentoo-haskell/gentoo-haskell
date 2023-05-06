@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="unsafeindices"
 
 RDEPEND=">=dev-haskell/constraints-deriving-1.1.1.0:=[profile?] <dev-haskell/constraints-deriving-2:=[profile?]

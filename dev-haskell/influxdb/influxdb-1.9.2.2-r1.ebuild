@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/maoe/influxdb-haskell"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples"
 
 CABAL_CHDEPS=(

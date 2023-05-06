@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/hspec/HUnit#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-1.6.2.0-prevent-abi-change.patch"

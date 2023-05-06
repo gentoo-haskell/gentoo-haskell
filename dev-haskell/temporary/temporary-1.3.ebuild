@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/feuerbach/temporary"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-1.3-smp-flag.patch"

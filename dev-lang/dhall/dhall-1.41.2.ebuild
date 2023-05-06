@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/dhall"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+http +http-client-tls"
 REQUIRED_USE="http-client-tls? ( http )" # carry over between version bumps
 

@@ -20,7 +20,7 @@ SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/boolean-0.2:=[profile?] <dev-haskell/boolean-0.3:=[profile?]
 	>=dev-haskell/exception-transformers-0.3:=[profile?] <dev-haskell/exception-transformers-0.5:=[profile?]

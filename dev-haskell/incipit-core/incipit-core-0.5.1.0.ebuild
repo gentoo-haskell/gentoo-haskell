@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/tek/incipit-core#readme"
 
 LICENSE="BSD-2-with-patent"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="~dev-haskell/incipit-base-0.5.1.0:=[profile?]
 	>=dev-haskell/polysemy-1.6:=[profile?] <dev-haskell/polysemy-2:=[profile?]

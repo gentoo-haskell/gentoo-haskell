@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/jsaddle"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="call-stacks check-unchecked"
 
 CABAL_CHDEPS=(

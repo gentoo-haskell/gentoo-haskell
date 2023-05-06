@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskellari/these"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/lens-4.17.1:=[profile?] <dev-haskell/lens-5.3:=[profile?]
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.2:=[profile?]

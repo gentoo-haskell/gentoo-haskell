@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/bitemyapp/esqueleto"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # tries to access network
 

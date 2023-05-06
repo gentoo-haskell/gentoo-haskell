@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/google/ghc-source-gen#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?] <dev-lang/ghc-9.3:=[profile?]
 "

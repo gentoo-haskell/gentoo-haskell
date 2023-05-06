@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/haskell-cryptography/HsOpenSSL"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="fast-bignum"
 
 RDEPEND=">=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-3.2:=[profile?]

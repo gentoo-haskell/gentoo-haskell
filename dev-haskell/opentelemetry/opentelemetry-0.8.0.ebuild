@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/opentelemetry"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ghc-trace-events-0.1.0.1:=[profile?]
 	dev-haskell/hashable:=[profile?]

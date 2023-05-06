@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/persistent-redis"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT="test" # requires running redis
 

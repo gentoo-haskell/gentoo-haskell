@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/Bodigrim/text-rope"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug"
 
 RDEPEND=">=dev-haskell/vector-0.11:=[profile?]

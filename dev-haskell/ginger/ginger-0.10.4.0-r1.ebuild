@@ -13,7 +13,7 @@ HOMEPAGE="https://ginger.tobiasdammers.nl/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'aeson >=1.4.2.0 && <2.1' 'aeson >=1.4.2.0'

@@ -10,7 +10,7 @@ HOMEPAGE="https://blitiri.com.ar/p/darcsweb/"
 SRC_URI="https://blitiri.com.ar/p/darcsweb/files/${PV}/${P}.tar.bz2"
 
 LICENSE="public-domain"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""

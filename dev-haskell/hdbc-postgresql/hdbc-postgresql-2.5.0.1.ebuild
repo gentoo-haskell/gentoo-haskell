@@ -24,7 +24,7 @@ LICENSE="BSD"
 # This should be changed at some point, but currently the version in ::gentoo
 # is also set to 2.
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-db/postgresql-7

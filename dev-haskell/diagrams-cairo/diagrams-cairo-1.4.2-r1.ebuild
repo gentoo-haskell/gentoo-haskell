@@ -15,7 +15,7 @@ HOMEPAGE="https://diagrams.github.io"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'lens >= 3.8 && < 5.2' 'lens >= 3.8'

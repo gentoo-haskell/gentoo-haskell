@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/mgsloan/store#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/async-2.0.2:=[profile?]

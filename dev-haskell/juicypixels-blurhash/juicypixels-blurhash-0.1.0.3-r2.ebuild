@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/SamProtas/JuicyPixels-blurhash#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'doctest >=0.16.2 && <0.20' 'doctest >=0.16.2'

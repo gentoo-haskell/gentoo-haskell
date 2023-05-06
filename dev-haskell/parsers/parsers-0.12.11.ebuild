@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/parsers/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+attoparsec +binary +parsec"
 
 RDEPEND=">=dev-haskell/base-orphans-0.3:=[profile?] <dev-haskell/base-orphans-1:=[profile?]

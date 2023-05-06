@@ -13,7 +13,7 @@ SRC_URI="http://www.vim.org/scripts/download_script.php?src_id=7407 -> ${P}.vim"
 
 LICENSE="public-domain"
 SLOT=0
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""

@@ -13,7 +13,7 @@ HOMEPAGE="https://haskell.org/haskellwiki/Library/libffi"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+ghc-bundled-libffi"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]

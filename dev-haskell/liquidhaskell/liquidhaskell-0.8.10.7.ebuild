@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/ucsd-progsys/liquidhaskell"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="deterministic-profiling mirror-modules-helper no-plugin"
 
 CABAL_CHDEPS=(

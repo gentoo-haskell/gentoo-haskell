@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/sjakobi/bsb-https-chunked"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.0.0.4-disable-doctests-ghc-9_2.patch"

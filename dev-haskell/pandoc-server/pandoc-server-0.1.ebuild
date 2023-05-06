@@ -13,7 +13,7 @@ HOMEPAGE="https://pandoc.org"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=app-text/pandoc-3.0:=[profile?]
 	>=dev-haskell/aeson-2.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]

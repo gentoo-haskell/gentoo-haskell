@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell/criterion"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/base-compat-0.9:=[profile?]

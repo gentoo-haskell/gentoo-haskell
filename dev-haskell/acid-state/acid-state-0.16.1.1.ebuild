@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/acid-state/acid-state"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable"
 
 PATCHES=(

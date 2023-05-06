@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/rblaze/haskell-dbus#readme"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-1.2.22-disable-integration-tests.patch"

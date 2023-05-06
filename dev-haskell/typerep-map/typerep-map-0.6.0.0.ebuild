@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/kowainik/typerep-map"
 
 LICENSE="MPL-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/primitive-0.7.0:=[profile?] <dev-haskell/primitive-0.8:=[profile?]

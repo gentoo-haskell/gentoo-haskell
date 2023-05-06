@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/which"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'shelly              >= 1.8.0 && < 1.10' 'shelly >= 1.8.0'

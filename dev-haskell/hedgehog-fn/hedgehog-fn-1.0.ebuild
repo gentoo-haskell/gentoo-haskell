@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/qfpl/hedgehog-fn"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="build-examples"
 
 RDEPEND=">=dev-haskell/contravariant-1.4:=[profile?] <dev-haskell/contravariant-1.6:=[profile?]

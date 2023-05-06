@@ -14,7 +14,7 @@ HOMEPAGE="https://hackage.haskell.org/package/cborg"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/half-0.2.2.3:=[profile?] <dev-haskell/half-0.4:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.8:=[profile?]

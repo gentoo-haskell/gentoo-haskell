@@ -14,7 +14,7 @@ HOMEPAGE="https://www.serpentine.com/wreq"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # requires network
 

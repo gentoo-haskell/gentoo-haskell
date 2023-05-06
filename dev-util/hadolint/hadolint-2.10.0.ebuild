@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/hadolint/hadolint"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/cabal:=[profile?]

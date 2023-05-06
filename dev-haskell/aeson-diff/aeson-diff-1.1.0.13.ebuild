@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ysangkok/aeson-diff"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 # Ambiguous module name ‘Data.Vector’: found in multiple packages: AC-Vector-Fancy-2.4.0 vector-0.12.0.2
 RESTRICT=test

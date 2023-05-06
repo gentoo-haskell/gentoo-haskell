@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/RyanGlScott/echo"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples"
 
 # Change example name to avoid name collisions

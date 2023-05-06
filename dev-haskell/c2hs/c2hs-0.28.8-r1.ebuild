@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/haskell/c2hs"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # needs unprefixed 'cpp'
 

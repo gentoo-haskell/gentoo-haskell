@@ -13,7 +13,7 @@ HOMEPAGE="https://gitlab.com/williamyaoh/string-interpolate/blob/master/README.m
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="bytestring-builder extended-benchmarks text-builder"
 
 RDEPEND="<dev-haskell/haskell-src-exts-1.24:=[profile?]

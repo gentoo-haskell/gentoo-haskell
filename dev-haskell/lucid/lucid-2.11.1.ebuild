@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/chrisdone/lucid"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.4.0.0:=[profile?]
 	>=dev-haskell/hashable-1.2.3.2:=[profile?]

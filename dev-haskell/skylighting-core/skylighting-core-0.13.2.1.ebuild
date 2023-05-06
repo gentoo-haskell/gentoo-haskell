@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/jgm/skylighting"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable"
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]

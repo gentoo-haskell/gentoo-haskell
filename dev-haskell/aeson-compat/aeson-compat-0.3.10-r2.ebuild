@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/phadej/aeson-compat#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-2.2:=[profile?]

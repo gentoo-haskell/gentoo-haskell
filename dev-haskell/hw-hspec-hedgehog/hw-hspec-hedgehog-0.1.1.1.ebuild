@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell-works/hw-hspec-hedgehog#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/call-stack-0.2:=[profile?] <dev-haskell/call-stack-0.5:=[profile?]

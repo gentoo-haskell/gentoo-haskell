@@ -14,7 +14,7 @@ HOMEPAGE="https://hledger.org"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 # PATCHES=(
 # 	"${FILESDIR}/${PN}-1.28-disable-doctests.patch"

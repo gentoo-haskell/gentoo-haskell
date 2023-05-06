@@ -18,7 +18,7 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="system-glfw"
 
 RDEPEND=">=dev-haskell/opengl-2.1:=[profile?] <dev-haskell/opengl-4:=[profile?]

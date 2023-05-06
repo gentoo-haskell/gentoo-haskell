@@ -22,7 +22,7 @@ DESCRIPTION="Convert bidirectionally between Dhall and CSV files"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/cassava-0.5.0.0:=[profile?] <dev-haskell/cassava-0.6:=[profile?]

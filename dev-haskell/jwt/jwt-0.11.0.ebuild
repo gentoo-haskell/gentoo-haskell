@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/puffnfresh/haskell-jwt"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.11.0-fix-tests-aeson-2.patch"

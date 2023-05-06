@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/glguy/irc-core"
 
 LICENSE="ISC"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'vty                  >=5.35   && <5.36' 'vty >=5.35'

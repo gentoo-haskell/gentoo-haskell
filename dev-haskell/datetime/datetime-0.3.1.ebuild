@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/stackbuilders/datetime"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/old-locale-1.0.0.1:=[profile?]
 	>=dev-haskell/old-time-1.0.0.1:=[profile?]

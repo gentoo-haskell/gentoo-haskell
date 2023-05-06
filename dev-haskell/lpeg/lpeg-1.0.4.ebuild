@@ -13,7 +13,7 @@ HOMEPAGE="https://hslua.org/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="rely-on-shared-lpeg-library"
 
 RDEPEND=">=dev-haskell/lua-2.1:=[profile?] <dev-haskell/lua-2.4:=[profile?]

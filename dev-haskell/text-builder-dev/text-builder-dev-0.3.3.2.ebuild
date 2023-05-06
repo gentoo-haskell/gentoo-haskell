@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/text-builder-dev"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/deferred-folds-0.9.10.1:=[profile?] <dev-haskell/deferred-folds-0.10:=[profile?]
 	>=dev-haskell/isomorphism-class-0.1.0.1:=[profile?] <dev-haskell/isomorphism-class-0.2:=[profile?]

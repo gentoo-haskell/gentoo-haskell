@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/rrnewton/haskell-lockfree/wiki"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug"
 
 RESTRICT=test

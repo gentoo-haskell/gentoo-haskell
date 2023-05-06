@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/daanx/isocline#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-8.8.1:=[profile?]

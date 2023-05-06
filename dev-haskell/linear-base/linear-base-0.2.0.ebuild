@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/tweag/linear-base#README"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/hashable:=[profile?]
 	>=dev-haskell/linear-generics-0.2:=[profile?]

@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/ghc-heap-view"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="prim-supports-any"
 
 RDEPEND=">=dev-lang/ghc-8.10.1:=[profile?]

@@ -25,7 +25,7 @@ CABAL_CHDEPS=(
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+bytestring +text +vector"
 
 RDEPEND="

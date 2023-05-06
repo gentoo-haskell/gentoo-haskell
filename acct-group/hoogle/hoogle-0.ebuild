@@ -6,6 +6,6 @@ EAPI=8
 inherit acct-group
 
 DESCRIPTION="A group for dev-util/hoogle"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 ACCT_GROUP_ID="605" # Random unused GID

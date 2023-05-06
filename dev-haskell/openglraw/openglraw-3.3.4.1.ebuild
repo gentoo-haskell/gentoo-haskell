@@ -17,7 +17,7 @@ HOMEPAGE="https://www.haskell.org/haskellwiki/Opengl"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/fixed-0.2:=[profile?] <dev-haskell/fixed-0.4:=[profile?]

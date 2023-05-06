@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/mitchellwrosen/tasty-hspec"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hspec-2.10:=[profile?] <dev-haskell/hspec-2.11:=[profile?]
 	>=dev-haskell/hspec-core-2.10:=[profile?] <dev-haskell/hspec-core-2.11:=[profile?]

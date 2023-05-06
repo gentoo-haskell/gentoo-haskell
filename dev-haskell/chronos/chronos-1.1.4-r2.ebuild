@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/andrewthad/chronos"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # requires older aeson
 

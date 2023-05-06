@@ -13,7 +13,7 @@ HOMEPAGE="https://arbtt.nomeata.de/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_TEST_REQUIRED_BINS=( arbtt-{capture,dump,import,recover,stats} )
 

@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/base-compat-batteries"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	~dev-haskell/base-compat-0.12.2:=[profile?]

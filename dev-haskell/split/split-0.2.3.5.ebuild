@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/split"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~ppc-macos"
+KEYWORDS="~amd64 ~ppc-macos"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
 "

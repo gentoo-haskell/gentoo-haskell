@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/kazu-yamamoto/http2"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # requires network to run one of the test suites
 

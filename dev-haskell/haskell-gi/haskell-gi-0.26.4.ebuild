@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell-gi/haskell-gi"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?]

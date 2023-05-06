@@ -15,7 +15,7 @@ HOMEPAGE="https://www.github.com/goldfirere/singletons"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	~dev-haskell/singletons-3.0.1:=[profile?]

@@ -14,7 +14,7 @@ HOMEPAGE="https://reflex-frp.org"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug plugin +template-haskell"
 
 CABAL_CHDEPS=(

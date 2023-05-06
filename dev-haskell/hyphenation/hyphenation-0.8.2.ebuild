@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/ekmett/hyphenation"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+embed"
 
 RDEPEND=">=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]

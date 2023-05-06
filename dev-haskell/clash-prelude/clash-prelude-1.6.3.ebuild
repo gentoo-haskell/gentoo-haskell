@@ -17,7 +17,7 @@ HOMEPAGE="https://clash-lang.org/"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	"lens                      >= 4.10    && < 5.1.0" "lens >=4.10"

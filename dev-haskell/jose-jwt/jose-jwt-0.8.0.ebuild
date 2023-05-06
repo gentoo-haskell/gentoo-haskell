@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+doctest"
 
 RESTRICT=test # Ambiguous ‘Data.Vector’: AC-Vector-Fancy-2.4.0 vector-0.12.0.1

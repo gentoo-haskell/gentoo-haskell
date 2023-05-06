@@ -22,7 +22,7 @@ SRC_URI="https://hackage.haskell.org/package/${CABAL_P}/${CABAL_P}.tar.gz
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="<dev-haskell/blaze-builder-0.5:=[profile?]
 	<dev-haskell/old-locale-1.1:=[profile?]

@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/ekmett/linear/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/adjunctions-4:=[profile?] <dev-haskell/adjunctions-5:=[profile?]
 	>=dev-haskell/base-orphans-0.8.3:=[profile?] <dev-haskell/base-orphans-1:=[profile?]

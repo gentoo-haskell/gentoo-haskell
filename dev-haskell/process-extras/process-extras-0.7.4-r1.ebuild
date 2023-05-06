@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/seereason/process-extras"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-haskell/data-default:=[profile?]

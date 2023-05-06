@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snowleopard/alga"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'inspection-testing >= 0.4.6.0 && < 0.5' 'inspection-testing >= 0.4.6.0'

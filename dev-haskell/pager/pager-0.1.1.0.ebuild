@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/pharpend/pager"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/conduit-1.2.3:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]

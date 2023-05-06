@@ -14,7 +14,7 @@ HOMEPAGE="https://hackage.haskell.org/package/sdl2"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples no-linear"
 
 RESTRICT=test #fails if XDG_RUNTIME_DIR and video device cannot be found

@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-6:=[profile?]
 	>=dev-haskell/linear-1.16.2:=[profile?]

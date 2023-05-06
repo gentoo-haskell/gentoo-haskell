@@ -6,7 +6,7 @@ EAPI=8
 inherit acct-user
 
 DESCRIPTION="A user for dev-util/hoogle"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 ACCT_USER_GROUPS=( "hoogle" )
 ACCT_USER_ID="605" # Random unused UID

@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/jacobstanley/unix-compat"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="old-time"
 
 RDEPEND="

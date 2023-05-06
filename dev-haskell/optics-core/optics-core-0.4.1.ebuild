@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/optics-core"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="explicit-generic-labels"
 
 RDEPEND=">=dev-haskell/indexed-profunctors-0.1:=[profile?] <dev-haskell/indexed-profunctors-0.2:=[profile?]

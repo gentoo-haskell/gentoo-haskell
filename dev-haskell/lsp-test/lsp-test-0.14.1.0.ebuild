@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell/lsp/blob/master/lsp-test/README.md"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.14.1.0-disable-test-timeout.patch"

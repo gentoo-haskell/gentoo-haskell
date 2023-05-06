@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/stackbuilders/dotenv-hs"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/base-compat-0.4:=[profile?]
 	>=dev-haskell/megaparsec-7.0.1:=[profile?] <dev-haskell/megaparsec-10.0:=[profile?]

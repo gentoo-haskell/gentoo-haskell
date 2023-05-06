@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/tek/polysemy-test#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hedgehog-1.0.2:=[profile?]
 	>=dev-haskell/incipit-core-0.4:=[profile?]

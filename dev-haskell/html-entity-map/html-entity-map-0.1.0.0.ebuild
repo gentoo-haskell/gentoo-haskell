@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="dev"
 
 RDEPEND=">=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-1.3:=[profile?]

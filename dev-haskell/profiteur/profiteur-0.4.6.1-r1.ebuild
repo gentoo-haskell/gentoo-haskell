@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jaspervdj/profiteur"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="embed-data-files"
 
 CABAL_CHDEPS=(

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ennocramer/floskell"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable"
 
 PATCHES=( "${FILESDIR}/${PN}-0.10.5-add-executable-flag.patch" )

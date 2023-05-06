@@ -13,7 +13,7 @@ HOMEPAGE="https://www.haskell.org/haskellwiki/Synthesizer"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="buildbenchmarks"
 
 RDEPEND=">=dev-haskell/quickcheck-1.0:2=[profile?] <dev-haskell/quickcheck-3.0:2=[profile?]

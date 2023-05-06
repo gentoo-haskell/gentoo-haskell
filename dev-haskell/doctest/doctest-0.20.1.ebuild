@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/sol/doctest#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/base-compat-0.7.0:=[profile?]

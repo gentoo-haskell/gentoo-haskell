@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/juhp/cabal-rpm"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="curl"
 
 RDEPEND=">dev-haskell/cabal-1.10:= <dev-haskell/cabal-3.7:=

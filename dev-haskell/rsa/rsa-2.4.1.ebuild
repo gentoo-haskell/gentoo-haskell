@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/RSA"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/crypto-api-0.10:=[profile?] <dev-haskell/crypto-api-0.14:=[profile?]
 	>=dev-haskell/crypto-pubkey-types-0.2:=[profile?] <dev-haskell/crypto-pubkey-types-0.6:=[profile?]

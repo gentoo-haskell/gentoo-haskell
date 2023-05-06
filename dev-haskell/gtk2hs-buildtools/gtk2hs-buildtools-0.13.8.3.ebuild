@@ -13,7 +13,7 @@ HOMEPAGE="https://projects.haskell.org/gtk2hs/"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+closuresignals"
 
 RDEPEND=">=dev-haskell/cabal-1.24.0.0:=[profile?]
