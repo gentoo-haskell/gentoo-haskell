@@ -15,6 +15,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-2.3.2-disable-langspec-tests.patch"
+)
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/cmdargs:=[profile?]
 	dev-haskell/parsec:=[profile?]
