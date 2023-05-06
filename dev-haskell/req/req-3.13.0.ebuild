@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/mrkkrp/req"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-3:=[profile?]
 	>=dev-haskell/authenticate-oauth-1.5:=[profile?] <dev-haskell/authenticate-oauth-1.8:=[profile?]

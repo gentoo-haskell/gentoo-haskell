@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/bytestring-lexing-0.5:= <dev-haskell/bytestring-lexing-0.6:=

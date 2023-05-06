@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell/haskell-language-server#readme"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+fingertree"
 
 RDEPEND="

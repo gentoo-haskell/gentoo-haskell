@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/happstack/web-routes-th"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'hspec >= 2.2 && < 2.10' 'hspec >= 2.2'

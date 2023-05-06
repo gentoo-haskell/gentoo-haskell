@@ -13,7 +13,7 @@ HOMEPAGE="https://www.happstack.com/docs/crashcourse/index.html#web-routes"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/http-types-0.6:=[profile?] <dev-haskell/http-types-0.13:=[profile?]

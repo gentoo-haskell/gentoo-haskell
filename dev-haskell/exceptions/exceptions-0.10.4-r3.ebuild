@@ -18,7 +18,7 @@ HOMEPAGE="https://github.com/ekmett/exceptions/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-lang/ghc-8.10.6:=[profile?]

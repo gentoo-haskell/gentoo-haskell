@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/exception-transformers"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/fail-4:=[profile?] <dev-haskell/fail-5:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.8:=[profile?]

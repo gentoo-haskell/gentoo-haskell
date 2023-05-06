@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/pjones/byline"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples"
 
 CABAL_CHDEPS=(

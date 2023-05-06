@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/monadfix/microlens"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hashable-1.1.2.3:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/microlens-0.4.13:=[profile?] <dev-haskell/microlens-0.4.14:=[profile?]

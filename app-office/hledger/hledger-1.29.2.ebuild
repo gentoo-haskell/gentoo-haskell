@@ -14,7 +14,7 @@ HOMEPAGE="https://hledger.org"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]

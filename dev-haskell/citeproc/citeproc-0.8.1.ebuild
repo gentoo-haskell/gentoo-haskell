@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/citeproc"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable icu"
 
 # Many tests for this package are known to fail and this is acceptable for

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/i-tu/Hasklig/releases/download/v${PV}/${MY_PN}-${PV}
 
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 BDEPEND="app-arch/unzip"
 

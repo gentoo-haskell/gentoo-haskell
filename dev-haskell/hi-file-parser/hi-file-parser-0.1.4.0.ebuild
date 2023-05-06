@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/commercialhaskell/hi-file-parser#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/rio:=[profile?]
 	dev-haskell/vector:=[profile?]

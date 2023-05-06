@@ -16,7 +16,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+lukko +native-dns"
 
 CABAL_CHDEPS=(

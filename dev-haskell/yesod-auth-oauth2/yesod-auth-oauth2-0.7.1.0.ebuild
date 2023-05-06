@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/freckle/yesod-auth-oauth2"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples"
 
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]

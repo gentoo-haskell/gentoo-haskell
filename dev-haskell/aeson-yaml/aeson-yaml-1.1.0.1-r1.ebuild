@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/clovyr/aeson-yaml"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="build-binaries"
 
 RDEPEND=">=dev-haskell/aeson-0.4.0.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]

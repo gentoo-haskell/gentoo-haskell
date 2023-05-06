@@ -14,7 +14,7 @@ HOMEPAGE="https://codeberg.org/xmobar/xmobar"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="alsa datezone dbus mpd mpris +rtsopts uvmeter +weather wifi xpm +xrender"
 
 RDEPEND=">=dev-haskell/aeson-1.4.7.1:=[profile?]

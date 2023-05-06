@@ -14,7 +14,7 @@ HOMEPAGE="https://obsidian.systems"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+hlint-test"
 
 # The <hlint-3.5 restriction on ghc-9.0 shouldn't be necessary with ghc-lib

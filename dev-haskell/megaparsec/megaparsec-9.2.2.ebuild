@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/mrkkrp/megaparsec"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/parser-combinators-1.0:=[profile?] <dev-haskell/parser-combinators-2.0:=[profile?]

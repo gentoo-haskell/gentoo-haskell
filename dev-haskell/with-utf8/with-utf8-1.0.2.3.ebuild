@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MPL-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/safe-exceptions-0.1:=[profile?] <dev-haskell/safe-exceptions-0.2:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?] <dev-haskell/text-1.3:=[profile?]

@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">dev-haskell/quickcheck-2:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
 	<dev-haskell/size-based-0.2:=[profile?]

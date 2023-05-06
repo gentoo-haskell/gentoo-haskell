@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/dependent-sum-0.7:=[profile?] <dev-haskell/dependent-sum-0.8:=[profile?]

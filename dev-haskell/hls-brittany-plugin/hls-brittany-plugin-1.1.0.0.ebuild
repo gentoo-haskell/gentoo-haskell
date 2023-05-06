@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/plugins
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>dev-haskell/brittany-0.14.0.1:=[profile?]

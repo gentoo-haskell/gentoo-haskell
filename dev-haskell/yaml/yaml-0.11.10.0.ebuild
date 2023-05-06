@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/yaml#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc64"
 IUSE="examples executable"
 
 RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]

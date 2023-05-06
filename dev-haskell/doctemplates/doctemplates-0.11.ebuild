@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jgm/doctemplates#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/doclayout-0.4:=[profile?] <dev-haskell/doclayout-0.5:=[profile?]

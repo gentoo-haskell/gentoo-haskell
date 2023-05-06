@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/typeable/generic-arbitrary#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/quickcheck:2=[profile?]
 	>=dev-lang/ghc-8.4.3:=[profile?]

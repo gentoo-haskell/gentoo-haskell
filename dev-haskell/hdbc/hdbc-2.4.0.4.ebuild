@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/hdbc/hdbc"
 
 LICENSE="BSD"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.4.0.4-fix-tests.patch"

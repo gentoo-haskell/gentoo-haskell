@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/phadej/haskell-tdigest#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'vector-algorithms  >=0.7.0.1  && <0.9' 'vector-algorithms >=0.7.0.1'

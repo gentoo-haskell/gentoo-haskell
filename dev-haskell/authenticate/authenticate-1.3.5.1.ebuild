@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/yesodweb/authenticate"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/aeson-0.5:=[profile?]

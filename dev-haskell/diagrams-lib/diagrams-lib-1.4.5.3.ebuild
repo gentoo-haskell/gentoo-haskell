@@ -15,7 +15,7 @@ HOMEPAGE="https://diagrams.github.io"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?]

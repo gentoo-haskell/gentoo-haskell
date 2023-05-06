@@ -14,7 +14,7 @@ HOMEPAGE="https://hledger.org"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="library-only +threaded"
 
 RDEPEND=">=app-office/hledger-1.29.2:=[profile?] <app-office/hledger-1.30:=[profile?]

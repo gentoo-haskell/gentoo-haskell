@@ -18,7 +18,7 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/attoparsec-0.12.1.6:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/extra-1.4.3:=[profile?] <dev-haskell/extra-1.8:=[profile?]

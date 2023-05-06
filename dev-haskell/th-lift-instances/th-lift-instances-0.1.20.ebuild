@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/bennofs/th-lift-instances/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/th-lift-0.8:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]

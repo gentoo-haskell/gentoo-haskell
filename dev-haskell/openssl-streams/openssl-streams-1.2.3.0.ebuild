@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/openssl-streams"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/hsopenssl-0.10.3:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]

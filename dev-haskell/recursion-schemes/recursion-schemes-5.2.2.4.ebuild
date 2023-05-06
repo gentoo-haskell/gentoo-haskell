@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/ekmett/recursion-schemes/"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/base-orphans-0.5.4:=[profile?] <dev-haskell/base-orphans-0.9:=[profile?]

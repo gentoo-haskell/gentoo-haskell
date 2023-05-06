@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell-nix/hnix#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable +optimize"
 
 CABAL_CHDEPS=(

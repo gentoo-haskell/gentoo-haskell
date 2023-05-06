@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nitros12/di-polysemy"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/df1-0.3.2:=[profile?] <dev-haskell/df1-0.5:=[profile?]
 	>=dev-haskell/di-core-1.0.4:=[profile?] <dev-haskell/di-core-2:=[profile?]

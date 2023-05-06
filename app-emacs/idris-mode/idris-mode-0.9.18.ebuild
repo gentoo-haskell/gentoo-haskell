@@ -11,7 +11,7 @@ SRC_URI="https://github.com/idris-hackers/${PN}/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="GPL-3"
 IUSE=""
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 SLOT="0"
 
 DEPEND=""

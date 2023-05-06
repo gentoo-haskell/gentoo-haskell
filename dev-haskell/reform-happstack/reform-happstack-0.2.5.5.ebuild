@@ -13,7 +13,7 @@ HOMEPAGE="https://www.happstack.com/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'happstack-server >= 7.0 && < 7.8' 'happstack-server >= 7.0'

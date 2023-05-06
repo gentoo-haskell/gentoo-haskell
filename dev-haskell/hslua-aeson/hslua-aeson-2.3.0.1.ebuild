@@ -13,7 +13,7 @@ HOMEPAGE="https://hslua.org/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-1.5:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.5:=[profile?]

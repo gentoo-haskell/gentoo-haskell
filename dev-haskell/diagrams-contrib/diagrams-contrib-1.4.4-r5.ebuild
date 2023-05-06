@@ -15,7 +15,7 @@ HOMEPAGE="https://diagrams.github.io/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/circle-packing-0.1:=[profile?] <dev-haskell/circle-packing-0.2:=[profile?]

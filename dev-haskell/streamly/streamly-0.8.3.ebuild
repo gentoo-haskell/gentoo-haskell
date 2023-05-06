@@ -14,7 +14,7 @@ HOMEPAGE="https://streamly.composewell.com"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="c-malloc fusion-plugin limit-build-mem minimal no-fusion streamk test unliftio"
 RESTRICT+=" !test? ( test )"
 

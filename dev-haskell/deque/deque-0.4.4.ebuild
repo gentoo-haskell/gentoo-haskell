@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/deque"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-2:=[profile?]
 	>=dev-haskell/strict-list-0.1.6:=[profile?] <dev-haskell/strict-list-0.2:=[profile?]

@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/nikita-volkov/rebase"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/bifunctors-5.5:=[profile?] <dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/comonad-5:=[profile?] <dev-haskell/comonad-5.1:=[profile?]

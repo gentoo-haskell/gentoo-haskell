@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell/stylish-haskell"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+ghc-lib"
 
 RDEPEND="

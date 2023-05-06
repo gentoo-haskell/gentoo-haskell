@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/erikd/wide-word"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/primitive-0.6.4.0:=[profile?] <dev-haskell/primitive-0.8:=[profile?]

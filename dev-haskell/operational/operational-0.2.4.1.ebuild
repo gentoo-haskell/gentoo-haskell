@@ -13,7 +13,7 @@ HOMEPAGE="https://wiki.haskell.org/Operational"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+buildexamples"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]

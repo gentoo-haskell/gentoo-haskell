@@ -16,7 +16,7 @@ HOMEPAGE="https://wiki.haskell.org/OpenGL"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/gluraw-2.0:=[profile?] <dev-haskell/gluraw-2.1:=[profile?]

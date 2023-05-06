@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/hvr/hslogger/wiki"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux"
+KEYWORDS="~amd64 ~amd64-linux"
 
 RDEPEND=">=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/network-bsd-2.8.1:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?]

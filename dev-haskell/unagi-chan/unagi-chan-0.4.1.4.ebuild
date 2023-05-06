@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/unagi-chan"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="compare-benchmarks"
 
 RDEPEND="

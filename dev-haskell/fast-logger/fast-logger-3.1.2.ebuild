@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/kazu-yamamoto/logger"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/auto-update-0.1.2:=[profile?]
 	>=dev-haskell/easy-file-0.2:=[profile?]

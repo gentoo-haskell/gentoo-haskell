@@ -17,7 +17,7 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/quickcheck-2.7.3:2=[profile?]

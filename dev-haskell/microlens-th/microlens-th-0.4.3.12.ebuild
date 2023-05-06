@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/stevenfontanella/microlens"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/microlens-0.4.0:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/th-abstraction-0.4.1:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]

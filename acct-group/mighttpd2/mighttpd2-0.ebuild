@@ -6,6 +6,6 @@ EAPI=8
 inherit acct-group
 
 DESCRIPTION="A group for www-servers/mighttpd2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 ACCT_GROUP_ID="606" # Random unused GID

@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/glib-0.12:0=[profile?]
 	>=dev-haskell/gtk-0.12:2=[profile?]

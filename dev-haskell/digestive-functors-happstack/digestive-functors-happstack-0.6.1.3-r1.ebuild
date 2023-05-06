@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jaspervdj/digestive-functors"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'happstack-server      >= 6.0  && < 7.7' 'happstack-server >= 6.0'

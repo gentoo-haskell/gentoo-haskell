@@ -13,7 +13,7 @@ HOMEPAGE="https://hspec.github.io/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="~dev-haskell/hspec-core-2.10.6:=[profile?]
 	~dev-haskell/hspec-discover-2.10.6:=[profile?]

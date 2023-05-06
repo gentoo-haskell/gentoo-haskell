@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/sol/hpack#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-1.4.3.0:=[profile?]
 	dev-haskell/bifunctors:=[profile?]

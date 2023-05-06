@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/dhall-nix"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'hnix                      >= 0.7      && < 0.15' 'hnix >= 0.7'

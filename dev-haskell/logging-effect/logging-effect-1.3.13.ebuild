@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ocharles/logging-effect"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/free-4.12.1:=[profile?] <dev-haskell/free-5.2:=[profile?]

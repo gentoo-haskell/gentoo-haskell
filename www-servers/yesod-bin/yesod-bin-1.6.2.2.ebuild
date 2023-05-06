@@ -15,7 +15,7 @@ HOMEPAGE="https://www.yesodweb.com/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/aeson:=
 	>=dev-haskell/cabal-1.18:=

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ndmitchell/extra#readme"
 
 LICENSE="BSD"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/clock-0.7:=[profile?]

@@ -13,7 +13,7 @@ HOMEPAGE="https://happstack.com"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/safecopy:=[profile?]
 	dev-haskell/syb:=[profile?]

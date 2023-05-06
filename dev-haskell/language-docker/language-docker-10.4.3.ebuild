@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/hadolint/language-docker#readme"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/megaparsec-9.0.0:=[profile?]

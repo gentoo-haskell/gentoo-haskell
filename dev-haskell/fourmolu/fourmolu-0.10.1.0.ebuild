@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/fourmolu/fourmolu"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples executable +fixity-th"
 
 PATCHES=(

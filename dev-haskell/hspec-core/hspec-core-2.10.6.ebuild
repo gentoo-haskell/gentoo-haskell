@@ -13,7 +13,7 @@ HOMEPAGE="https://hspec.github.io/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.6.2:=[profile?]
 	>=dev-haskell/call-stack-0.2.0:=[profile?]

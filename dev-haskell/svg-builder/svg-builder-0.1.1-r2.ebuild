@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/diagrams/svg-builder.git"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/blaze-builder-0.4:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]

@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/composewell/unicode-data"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'hspec            >= 2.0   && < 2.10' 'hspec >=2.0'

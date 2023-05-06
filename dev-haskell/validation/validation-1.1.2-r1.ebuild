@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/qfpl/validation"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'lens       >= 4    && < 5' 'lens >=4'

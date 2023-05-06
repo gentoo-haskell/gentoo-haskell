@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/stackbuilders/hspec-golden#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/hspec-core-2.5:=[profile?] <dev-haskell/hspec-core-3.0:=[profile?]

@@ -14,7 +14,7 @@ HOMEPAGE="https://snapframework.com/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug openssl pong-server test-server"
 
 RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]

@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/hiedb"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable"
 
 # Known issue: <https://github.com/wz1000/HieDb/issues/46>

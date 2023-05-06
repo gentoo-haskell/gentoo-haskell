@@ -53,7 +53,7 @@ SRC_URI="https://www.haskell.org/hugs/downloads/${MY_PV0}/${MY_P}.tar.gz"
 HOMEPAGE="https://www.haskell.org/hugs/"
 
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~mips ~x86"
+KEYWORDS="~amd64 ~hppa ~mips"
 LICENSE="BSD"
 
 RDEPEND="

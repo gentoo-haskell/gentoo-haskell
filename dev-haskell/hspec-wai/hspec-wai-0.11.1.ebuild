@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/hspec/hspec-wai#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/base-compat:=[profile?]
 	dev-haskell/case-insensitive:=[profile?]

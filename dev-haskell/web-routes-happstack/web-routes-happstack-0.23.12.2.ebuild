@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/web-routes-happstack"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'happstack-server >= 6.6    && < 7.8' 'happstack-server >= 6.6'

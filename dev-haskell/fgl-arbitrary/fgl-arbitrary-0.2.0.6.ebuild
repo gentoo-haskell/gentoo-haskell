@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/fgl-5.5.2.0:=[profile?] <dev-haskell/fgl-6:=[profile?]
 	>=dev-haskell/quickcheck-2.3:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/agda/agda/archive/v${AGDA_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/filemanip-0.3.6.2:= <dev-haskell/filemanip-0.4:=

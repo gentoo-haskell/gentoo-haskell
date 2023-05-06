@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/phadej/vec"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+adjunctions +distributive +semigroupoids"
 # Turning on 'adjunctions' without 'distributive' does nothing.
 # See <https://hackage.haskell.org/package/vec-0.4.1/revision/1.cabal>

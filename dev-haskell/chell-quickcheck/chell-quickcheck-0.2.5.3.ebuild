@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/typeclasses/chell"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/chell-0.3:=[profile?] <dev-haskell/chell-0.6:=[profile?]

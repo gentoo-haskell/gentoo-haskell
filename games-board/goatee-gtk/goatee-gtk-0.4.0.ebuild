@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-games/goatee-0.4:=[profile?] <dev-games/goatee-0.5:=[profile?]
 	>=dev-haskell/cairo-0.13:=[profile?] <dev-haskell/cairo-0.14:=[profile?]

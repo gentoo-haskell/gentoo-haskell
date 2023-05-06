@@ -17,7 +17,7 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hspec-2.2:=[profile?] <dev-haskell/hspec-3:=[profile?]

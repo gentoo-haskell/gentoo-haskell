@@ -20,7 +20,7 @@ PATCHES=( "${FILESDIR}/${PN}-0.2.4.0-upstream-fix-ini-compat-test.patch" )
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-10:=[profile?]

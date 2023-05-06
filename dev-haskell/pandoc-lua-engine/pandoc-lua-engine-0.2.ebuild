@@ -13,7 +13,7 @@ HOMEPAGE="https://pandoc.org"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # requires network access to fetch .svg
 

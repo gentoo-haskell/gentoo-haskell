@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/kowainik/tomland"
 
 LICENSE="MPL-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="example-play-tomland example-readme"
 
 RDEPEND="

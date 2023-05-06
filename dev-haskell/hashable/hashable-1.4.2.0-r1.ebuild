@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell-unordered-containers/hashable"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="random-initial-seed"
 
 RESTRICT=test # fails 1 test consistently on ghc-9.0.2

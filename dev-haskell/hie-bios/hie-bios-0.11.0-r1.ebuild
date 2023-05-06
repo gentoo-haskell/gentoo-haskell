@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/mpickering/hie-bios"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=( "${FILESDIR}/${PN}-0.11.0-disable-network-tests.patch" )
 

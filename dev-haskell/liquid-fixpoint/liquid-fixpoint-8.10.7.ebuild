@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/ucsd-progsys/liquid-fixpoint"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'megaparsec           >= 7.0.0 && < 9' 'megaparsec >= 7.0.0'

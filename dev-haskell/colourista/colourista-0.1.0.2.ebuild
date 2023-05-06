@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/kowainik/colourista"
 
 LICENSE="MPL-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-2.1:=[profile?]

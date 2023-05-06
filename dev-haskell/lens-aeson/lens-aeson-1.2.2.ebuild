@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/lens/lens-aeson/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-2.0.2:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]

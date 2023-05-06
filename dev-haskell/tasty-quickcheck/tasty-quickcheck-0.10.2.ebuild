@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/UnkindPartition/tasty"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/optparse-applicative:=[profile?]
 	>=dev-haskell/quickcheck-2.10:2=[profile?]

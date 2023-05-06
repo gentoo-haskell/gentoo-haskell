@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell-crypto/cryptonite"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="cpu_flags_x86_aes cpu_flags_x86_rdrand cpu_flags_x86_sse cpu_flags_x86_sse4_1 +integer-gmp +target-attributes"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]

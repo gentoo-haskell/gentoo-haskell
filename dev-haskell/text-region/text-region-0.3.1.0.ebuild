@@ -16,7 +16,7 @@ PATCHES=( "${FILESDIR}/${PN}-0.3.1.0-ghc-9_0-fix.patch" )
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/base-unicode-symbols-0.2:=[profile?]

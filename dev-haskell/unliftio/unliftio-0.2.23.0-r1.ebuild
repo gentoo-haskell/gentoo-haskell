@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/fpco/unliftio/tree/master/unliftio#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>dev-haskell/async-2.1.1:=[profile?]

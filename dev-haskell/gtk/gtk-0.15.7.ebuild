@@ -14,7 +14,7 @@ HOMEPAGE="https://projects.haskell.org/gtk2hs/"
 
 LICENSE="LGPL-2.1"
 SLOT="2/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+deprecated +fmode-binary +gio"
 
 GHC_BOOTSTRAP_PACKAGES=(

@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/peti/hledger-interest"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/cabal:=
 	dev-haskell/decimal:=

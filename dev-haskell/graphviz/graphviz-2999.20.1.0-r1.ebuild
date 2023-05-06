@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/ivan-m/graphviz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?]
 	>=dev-haskell/dlist-0.5:=[profile?] <dev-haskell/dlist-1.1:=[profile?]

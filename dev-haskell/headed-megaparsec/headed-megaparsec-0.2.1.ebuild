@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/headed-megaparsec"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-2:=[profile?]
 	>=dev-haskell/megaparsec-9.2:=[profile?] <dev-haskell/megaparsec-10:=[profile?]

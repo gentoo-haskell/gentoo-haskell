@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2 BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/base16-bytestring-1.0.0.0:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/binary-instances-1:=[profile?] <dev-haskell/binary-instances-1.1:=[profile?]

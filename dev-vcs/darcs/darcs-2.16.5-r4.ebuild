@@ -14,7 +14,7 @@ HOMEPAGE="http://darcs.net/"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="curl +terminfo +threaded"
 
 RESTRICT=test # tests pass, but take more than an hour to complete. - solpeth

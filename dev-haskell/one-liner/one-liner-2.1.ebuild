@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/sjoerdvisscher/one-liner"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/bifunctors-5.4:=[profile?] <dev-haskell/bifunctors-6.0:=[profile?]
 	>=dev-haskell/contravariant-1.4:=[profile?] <dev-haskell/contravariant-1.6:=[profile?]

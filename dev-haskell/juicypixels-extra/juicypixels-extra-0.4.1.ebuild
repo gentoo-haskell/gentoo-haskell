@@ -17,7 +17,7 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="dev"
 
 RDEPEND=">=dev-haskell/juicypixels-3.2.6.4:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]

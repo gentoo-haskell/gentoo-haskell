@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/polysemy-research/polysemy#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 GHC_BOOTSTRAP_PACKAGES=(
 	cabal-doctest

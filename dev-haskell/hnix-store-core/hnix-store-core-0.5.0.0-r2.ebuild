@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell-nix/hnix-store"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.5.0.0-test-rtsopts.patch"

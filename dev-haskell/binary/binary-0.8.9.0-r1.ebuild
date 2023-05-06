@@ -17,7 +17,7 @@ HOMEPAGE="https://github.com/kolmodin/binary"
 LICENSE="BSD"
 SLOT="0/${PV}"
 # keep in sync with ghc-9.2
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # circular depend: test-framework->base-orphans->cabal->semigroups->nats->binary
 

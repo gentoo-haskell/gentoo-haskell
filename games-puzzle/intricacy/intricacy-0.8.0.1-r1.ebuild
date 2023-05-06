@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+curses +sdl +sound"
 
 RDEPEND=">=dev-haskell/cryptonite-0.16:=

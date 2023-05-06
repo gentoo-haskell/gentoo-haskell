@@ -13,7 +13,7 @@ HOMEPAGE="https://kazu-yamamoto.github.io/mighttpd2/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="tls"
 
 CABAL_CHDEPS=(

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/gentoo-haskell/haskell-updater#readme"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="~amd64 ~ppc64 ~amd64-linux ~ppc-macos ~x64-macos ~sparc-solaris"
 
 DEPEND=">=dev-lang/ghc-6.12.1"
 

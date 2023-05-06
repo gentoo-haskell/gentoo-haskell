@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/linear-generics/linear-generics"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/th-abstraction-0.4:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]
 	>=dev-lang/ghc-9.0.2:=[profile?]

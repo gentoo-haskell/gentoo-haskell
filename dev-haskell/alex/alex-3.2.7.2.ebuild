@@ -22,7 +22,7 @@ SRC_URI+=" doc? (
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="doc"
 
 RDEPEND=">=dev-lang/ghc-8.8.1:=[profile?]

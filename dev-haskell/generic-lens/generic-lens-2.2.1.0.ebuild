@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/kcsongor/generic-lens"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=( "${FILESDIR}/${PN}-2.2.1.0-cabal-doctest.patch" )
 

@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/ghc-events"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/text-0.11.2.3:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.13:=[profile?]

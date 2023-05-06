@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/connection-0.3.1:=[profile?] <dev-haskell/connection-0.4:=[profile?]
 	>=dev-haskell/network-3.1.1:=[profile?] <dev-haskell/network-3.2:=[profile?]

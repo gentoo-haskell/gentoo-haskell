@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/atomic-primops-0.8:=[profile?] <dev-haskell/atomic-primops-0.9:=[profile?]
 	>=dev-haskell/exceptions-0.7:=[profile?] <dev-haskell/exceptions-0.11:=[profile?]

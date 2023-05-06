@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/list-t"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/foldl-1:=[profile?] <dev-haskell/foldl-2:=[profile?]
 	>=dev-haskell/logict-0.7:=[profile?] <dev-haskell/logict-0.9:=[profile?]

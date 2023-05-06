@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/indexed-profunctors-0.1:=[profile?] <dev-haskell/indexed-profunctors-1.0:=[profile?]
 	>=dev-lang/ghc-8.4.3:=[profile?]

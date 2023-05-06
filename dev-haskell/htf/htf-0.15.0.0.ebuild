@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/skogsbaer/HTF/"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="executable"
 
 CABAL_TEST_REQUIRED_BINS=(

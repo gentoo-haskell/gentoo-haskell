@@ -16,7 +16,7 @@ HOMEPAGE="https://www.haskell.org/haskellwiki/HaXR"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.13:=[profile?]
 	dev-haskell/base64-bytestring:=[profile?]

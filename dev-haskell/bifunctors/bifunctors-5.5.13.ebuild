@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/bifunctors/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+semigroups +tagged"
 
 RDEPEND=">=dev-haskell/base-orphans-0.8.4:=[profile?] <dev-haskell/base-orphans-1:=[profile?]

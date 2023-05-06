@@ -14,7 +14,7 @@ HOMEPAGE="https://wiki.haskell.org/Exception"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-1.0:=[profile?]
 	>=dev-lang/ghc-8.4.3:=[profile?]

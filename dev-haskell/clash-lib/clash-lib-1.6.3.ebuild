@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug"
 
 RDEPEND=">=dev-haskell/aeson-0.6.2.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]

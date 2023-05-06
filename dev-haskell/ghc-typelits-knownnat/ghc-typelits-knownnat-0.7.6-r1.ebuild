@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ghc-tcplugins-extra-0.3.1:=[profile?]
 	>=dev-haskell/ghc-typelits-natnormalise-0.7.1:=[profile?] <dev-haskell/ghc-typelits-natnormalise-0.8:=[profile?]

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/postgresql-binary "
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RESTRICT=test # requires running postgresql instance
 

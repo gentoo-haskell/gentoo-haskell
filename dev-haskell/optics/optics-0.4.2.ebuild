@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/optics"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'inspection-testing     >= 0.4.1.1    && <0.5' 'inspection-testing >= 0.4.1.1'

@@ -15,7 +15,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="bounds-checking cpu_flags_x86_sse4_2 debug detailed-profiling"
 
 RDEPEND=">=dev-haskell/hashable-1.4:=[profile?] <dev-haskell/hashable-1.5:=[profile?]

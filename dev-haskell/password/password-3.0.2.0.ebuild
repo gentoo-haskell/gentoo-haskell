@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/cdepillabout/password/tree/master/password#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/base64-0.3:=[profile?] <dev-haskell/base64-0.5:=[profile?]
 	>=dev-haskell/cryptonite-0.15.1:=[profile?]

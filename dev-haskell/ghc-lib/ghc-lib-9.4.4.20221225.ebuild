@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/digital-asset/ghc-lib"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	~dev-haskell/ghc-lib-parser-9.4.4.20221225:=[profile?]

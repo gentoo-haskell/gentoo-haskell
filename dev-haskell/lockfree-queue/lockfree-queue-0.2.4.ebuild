@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/rrnewton/haskell-lockfree/wiki"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/abstract-deque-0.3:=[profile?]
 	>=dev-haskell/atomic-primops-0.6:=[profile?]

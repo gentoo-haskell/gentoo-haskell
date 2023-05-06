@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/mono-traversable#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/basic-prelude-0.7:=[profile?]

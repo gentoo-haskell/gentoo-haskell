@@ -19,7 +19,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux" # ~ppc ~ppc64 ~ppc-macos ~x86-macos ~x86-solaris
+KEYWORDS="~amd64 ~amd64-linux" # ~ppc ~ppc64 ~ppc-macos ~x86-macos ~x86-solaris
 
 RDEPEND="
 	|| ( dev-lang/ghc ( >=dev-haskell/process-1.1.0.2[profile?] <dev-haskell/process-1.7[profile?] ) )

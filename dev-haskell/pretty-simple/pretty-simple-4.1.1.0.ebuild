@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/cdepillabout/pretty-simple"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples executable"
 
 GHC_BOOTSTRAP_PACKAGES=(

@@ -13,7 +13,7 @@ HOMEPAGE="https://jaspervdj.be/hakyll"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="buildwebsite +checkexternal +previewserver +usepandoc +watchserver"
 
 RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=[profile?]

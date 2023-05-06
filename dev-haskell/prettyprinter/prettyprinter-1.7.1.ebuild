@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/quchen/prettyprinter"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="buildreadme +text"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]

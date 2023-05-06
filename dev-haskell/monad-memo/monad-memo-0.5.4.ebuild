@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/EduardSergeev/monad-memo"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/primitive-0.3:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]

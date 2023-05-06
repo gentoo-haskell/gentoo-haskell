@@ -18,7 +18,7 @@ RESTRICT=test
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/first-class-families-0.5.0.0:=[profile?]

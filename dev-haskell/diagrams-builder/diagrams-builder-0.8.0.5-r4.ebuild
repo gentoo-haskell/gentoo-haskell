@@ -16,7 +16,7 @@ HOMEPAGE="https://diagrams.github.io/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="cairo pgf rasterific svg"
 
 CABAL_CHDEPS=(

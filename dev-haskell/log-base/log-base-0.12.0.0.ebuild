@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/scrive/log"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'mmorph >=1.0.9 && <1.2' 'mmorph >=1.0.9'

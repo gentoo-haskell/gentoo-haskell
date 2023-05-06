@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/DanielSchuessler/th-expand-syns"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/syb:=[profile?]
 	>=dev-haskell/th-abstraction-0.4.3:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]

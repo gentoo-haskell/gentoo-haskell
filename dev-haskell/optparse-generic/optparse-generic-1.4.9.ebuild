@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/optparse-generic"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="<dev-haskell/only-0.2:=[profile?]
 	>=dev-haskell/optparse-applicative-0.16.0.0:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]

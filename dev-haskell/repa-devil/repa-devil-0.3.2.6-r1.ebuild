@@ -14,7 +14,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/repa-3.2.0.0:=[profile?] <dev-haskell/repa-4.0:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]

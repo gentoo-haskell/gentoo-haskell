@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/cocreature/nanovg-hs"
 
 LICENSE="ISC"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="examples gles +truetype"
 
 # Make example executables more resiliant to name collisions

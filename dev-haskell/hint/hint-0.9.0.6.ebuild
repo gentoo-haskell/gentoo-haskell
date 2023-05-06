@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell-hint/hint"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.9.0.6-disable-net-test.patch"

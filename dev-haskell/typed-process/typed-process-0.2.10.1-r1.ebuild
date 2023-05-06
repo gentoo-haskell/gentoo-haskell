@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/fpco/typed-process"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.2.10.1-smp-flag.patch"

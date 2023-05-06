@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/hvr/cryptohash-sha512"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
 "

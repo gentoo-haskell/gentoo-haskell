@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/lierdakil/pandoc-crossref#readme"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=app-text/pandoc-3.0:=[profile?] <app-text/pandoc-3.2:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]

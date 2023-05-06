@@ -16,7 +16,7 @@ HOMEPAGE="https://dhall-lang.org/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=( "${FILESDIR}/${PN}-1.0.8-cabal-doctest.patch" )
 

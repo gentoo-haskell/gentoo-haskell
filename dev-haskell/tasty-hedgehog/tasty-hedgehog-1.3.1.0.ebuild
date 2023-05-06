@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/qfpl/tasty-hedgehog"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hedgehog-1.0.2:=[profile?] <dev-haskell/hedgehog-1.1.3:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]

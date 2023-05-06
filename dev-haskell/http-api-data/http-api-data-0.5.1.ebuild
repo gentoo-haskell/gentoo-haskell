@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/fizruk/https-api-data"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="text-show"
 
 RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]

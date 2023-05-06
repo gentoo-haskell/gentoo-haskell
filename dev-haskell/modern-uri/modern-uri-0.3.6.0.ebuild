@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/mrkkrp/modern-uri"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/contravariant-1.3:=[profile?] <dev-haskell/contravariant-2.0:=[profile?]
 	>=dev-haskell/hashable-1.3:=[profile?] <dev-haskell/hashable-2.0:=[profile?]

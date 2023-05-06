@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/cabal-fmt"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/cabal-syntax-3.8.1.0:= <dev-haskell/cabal-syntax-3.9:=
 	>=dev-haskell/optparse-applicative-0.14.3.0:= <dev-haskell/optparse-applicative-0.18:=

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/Bodigrim/tasty-inspection-testing"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/inspection-testing-0.5:=[profile?] <dev-haskell/inspection-testing-0.6:=[profile?]
 	dev-haskell/tasty:=[profile?]

@@ -13,7 +13,7 @@ HOMEPAGE="https://hslua.org/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/lua-2.0:=[profile?] <dev-haskell/lua-2.4:=[profile?]
 	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]

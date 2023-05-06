@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/charset"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/unordered-containers-0.1.4.6:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=[profile?]

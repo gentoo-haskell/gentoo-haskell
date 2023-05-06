@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/yesodweb/wai"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug +x509"
 
 RDEPEND=">=dev-haskell/auto-update-0.1.3:=[profile?] <dev-haskell/auto-update-0.2:=[profile?]

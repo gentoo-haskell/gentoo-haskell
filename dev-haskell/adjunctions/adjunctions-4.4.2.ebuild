@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/adjunctions/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/tek/incipit-core#readme"
 
 LICENSE="BSD-2-with-patent"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/data-default-0.7:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	dev-haskell/text:=[profile?]

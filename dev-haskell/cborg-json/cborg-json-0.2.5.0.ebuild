@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/well-typed/cborg"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]

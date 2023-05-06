@@ -16,7 +16,7 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/base-compat-batteries-0.10:=[profile?] <dev-haskell/base-compat-batteries-0.13:=[profile?]

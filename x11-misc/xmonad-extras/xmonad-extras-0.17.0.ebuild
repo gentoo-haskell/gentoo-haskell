@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/xmonad/xmonad-extras"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+alsa +brightness +eval +mpd"
 
 RDEPEND="dev-haskell/regex-posix:=[profile?]

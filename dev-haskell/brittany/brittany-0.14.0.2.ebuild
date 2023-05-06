@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/lspitzner/brittany/"
 
 LICENSE="AGPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.14.0.2-fix-tests.patch"

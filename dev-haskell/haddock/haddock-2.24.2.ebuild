@@ -15,7 +15,7 @@ HOMEPAGE="https://www.haskell.org/haddock/"
 LICENSE="BSD"
 SLOT="0"
 # keep in sync with ghc-8.10
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~amd64-linux"
 
 RESTRICT=test # test suite unavailable on hackage
 
