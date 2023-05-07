@@ -14,7 +14,7 @@ HOMEPAGE="https://pandoc.org"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+lua nightly +server"
+IUSE="+lua profile nightly +server"
 
 RDEPEND=">=app-text/pandoc-3.0:=
 	dev-haskell/text:=
