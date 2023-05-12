@@ -264,6 +264,7 @@ fi
 
 if [[ -n "${CABAL_USE_PROFILE}" ]]; then
 	IUSE="${IUSE} profile"
+	RDEPEND+=" dev-lang/ghc:=[profile?]"
 fi
 
 if [[ -n "${CABAL_TEST_SUITE}" ]]; then
