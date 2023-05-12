@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/cairo-0.9.11:=[profile?]
 	>=dev-haskell/gtk-0.9.11:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-locale:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

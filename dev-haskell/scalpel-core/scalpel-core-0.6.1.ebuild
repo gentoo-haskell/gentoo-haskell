@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	>=dev-haskell/tagsoup-0.12.2:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.6.2:=[profile?]
+	>=dev-lang/ghc-7.6.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT=test # Test suite doctests: PASS; Test suite spec: FAIL, 65 examples, 1 failure
 
 RDEPEND="dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

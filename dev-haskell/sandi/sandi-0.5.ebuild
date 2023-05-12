@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+conduit"
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.4.1:=
 	conduit? ( >=dev-haskell/conduit-1.3:=[profile?]
 			dev-haskell/exceptions:=[profile?] )
 "

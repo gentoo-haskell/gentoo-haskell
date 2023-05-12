@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-haskell/monadcatchio-transformers-0.3.1.0:=[profile?]
-	>=dev-lang/ghc-6.10.4:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3

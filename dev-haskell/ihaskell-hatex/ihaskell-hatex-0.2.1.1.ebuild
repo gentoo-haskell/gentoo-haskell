@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/hatex-3.9:=[profile?]
 	>=dev-haskell/ihaskell-0.5:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

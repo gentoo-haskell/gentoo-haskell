@@ -27,7 +27,7 @@ RDEPEND="
 	>=dev-haskell/scientific-0.3:= <dev-haskell/scientific-0.4:=
 	>=dev-haskell/unordered-containers-0.2:= <dev-haskell/unordered-containers-0.3:=
 	>=dev-haskell/vector-0.10:= <dev-haskell/vector-0.13:=
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	embed-data-files? (
 		>=dev-haskell/file-embed-0.0.10:=
 	)

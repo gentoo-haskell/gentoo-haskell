@@ -21,7 +21,7 @@ RESTRICT=test #stresstest fails, all others pass
 
 RDEPEND=">=dev-haskell/stm-2.1.2.1:=[profile?]
 	>=dev-haskell/unbounded-delays-0.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/data-binary-ieee754-0.4.4:=[profile?] <dev-haskell/data-b
 	>=dev-haskell/hashable-1.1.2.4:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.5:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

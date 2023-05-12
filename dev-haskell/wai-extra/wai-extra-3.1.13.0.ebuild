@@ -43,7 +43,7 @@ RDEPEND="
 	>=dev-haskell/wai-logger-2.3.7:=[profile?]
 	>=dev-haskell/warp-3.3.22:=[profile?]
 	dev-haskell/word8:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

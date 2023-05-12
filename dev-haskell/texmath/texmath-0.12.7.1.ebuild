@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1
 	>=dev-haskell/syb-0.4.2:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/xml:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	executable? ( dev-haskell/aeson:=[profile?]
 			>=dev-haskell/network-uri-2.6:=[profile?]
 			dev-haskell/pretty-show:=[profile?] )

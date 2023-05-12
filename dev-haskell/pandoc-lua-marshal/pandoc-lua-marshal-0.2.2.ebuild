@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/aeson-1.5:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/lua-2.2:=[profile?] <dev-haskell/lua-2.4:=[profile?]
 	>=dev-haskell/pandoc-types-1.23:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	>=dev-haskell/text-1.1.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
 "
 DEPEND="${RDEPEND}

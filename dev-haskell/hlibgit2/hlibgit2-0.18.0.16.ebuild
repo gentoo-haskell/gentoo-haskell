@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/bindings-dsl-1.0.11:=[profile?]
 	>=dev-haskell/zlib-0.5.4:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	dev-libs/openssl
 	virtual/libc
 "

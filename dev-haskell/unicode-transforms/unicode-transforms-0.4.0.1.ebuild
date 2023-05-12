@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~ppc64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/unicode-data-0.2:=[profile?] <dev-haskell/unicode-data-0.4:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

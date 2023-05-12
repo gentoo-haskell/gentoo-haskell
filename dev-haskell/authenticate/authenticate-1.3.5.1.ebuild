@@ -29,7 +29,7 @@ RDEPEND="
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/xml-conduit-1.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

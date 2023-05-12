@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/monads-tf-0.1:=[profile?] <dev-haskell/monads-tf-0.2:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	net-libs/gnutls:=
 "
 DEPEND="${RDEPEND}

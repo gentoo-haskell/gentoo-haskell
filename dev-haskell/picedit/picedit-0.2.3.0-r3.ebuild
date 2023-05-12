@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/cli-0.1.2:=[profile?] <dev-haskell/cli-0.2:=[profile?]
 	>=dev-haskell/hmatrix-0.17.0.2:=[profile?]
 	>=dev-haskell/juicypixels-3.2.8:=[profile?]
 	>=dev-haskell/vector-0.11.0.0:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

@@ -19,7 +19,7 @@ RDEPEND=">=dev-haskell/th-compat-0.1:=[profile?] <dev-haskell/th-compat-0.2:=[pr
 	>=dev-haskell/th-lift-0.7.1:=[profile?]
 	dev-haskell/th-lift-instances:=[profile?]
 	>=dev-haskell/th-reify-many-0.1:=[profile?] <dev-haskell/th-reify-many-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

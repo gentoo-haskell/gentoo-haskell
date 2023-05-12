@@ -30,7 +30,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/stm-containers:=[profile?]
 	dev-haskell/unliftio:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	embed-files? ( >=dev-haskell/file-embed-0.0.11:=[profile?] )
 "
 DEPEND="${RDEPEND}

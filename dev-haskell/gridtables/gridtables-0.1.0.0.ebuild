@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/doclayout:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	>=dev-haskell/text-1.1.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
 "
 DEPEND="${RDEPEND}

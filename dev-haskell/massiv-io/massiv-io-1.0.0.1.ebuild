@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/color-0.2:=[profile?]
 	dev-haskell/netpbm:=[profile?]
 	>=dev-haskell/unliftio-0.2.12:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	dev-haskell/uri-bytestring:=[profile?]
 	>=dev-haskell/yesod-auth-1.6.0:=[profile?]
 	>=dev-haskell/yesod-core-1.6.0:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	examples? ( dev-haskell/aeson-pretty:=[profile?]
 			dev-haskell/load-env:=[profile?]
 			dev-haskell/warp:=[profile?]

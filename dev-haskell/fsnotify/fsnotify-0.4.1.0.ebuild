@@ -21,7 +21,7 @@ RDEPEND="
 	>=dev-haskell/monad-control-1.0.0.0:=[profile?]
 	>=dev-haskell/safe-exceptions-0.1.0.0:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

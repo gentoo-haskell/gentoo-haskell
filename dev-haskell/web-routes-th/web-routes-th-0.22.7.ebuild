@@ -22,7 +22,7 @@ CABAL_CHDEPS=(
 RDEPEND="
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/web-routes-0.26:=[profile?] <dev-haskell/web-routes-0.28:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

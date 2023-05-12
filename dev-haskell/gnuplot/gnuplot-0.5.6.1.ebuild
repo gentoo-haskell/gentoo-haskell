@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/data-accessor-0.2.2:=[profile?] <dev-haskell/data-accesso
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-1.0:=[profile?]
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	>=dev-haskell/utility-ht-0.0.12:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	!executepipe? ( executeshell? ( >=dev-haskell/shell-utility-0.0:=[profile?] <dev-haskell/shell-utility-0.1:=[profile?] ) )
 "
 DEPEND="${RDEPEND}

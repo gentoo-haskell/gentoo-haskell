@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/aeson:=
 	dev-haskell/optparse-applicative:=
 	dev-haskell/text:=
 	dev-haskell/yaml:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.20

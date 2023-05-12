@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/cairo:=
 	>=dev-haskell/mtl-2.2.1:=
 	dev-haskell/pango:=
 	dev-haskell/text:=
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	dev-libs/glib:2
 	net-libs/libpcap
 "

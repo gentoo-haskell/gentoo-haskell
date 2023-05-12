@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/case-insensitive:=
 	dev-haskell/random:=
 	dev-haskell/text:=
 	dev-haskell/vector:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

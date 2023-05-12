@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/async-2.1:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

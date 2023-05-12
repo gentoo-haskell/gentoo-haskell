@@ -48,7 +48,8 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.0:=[profile?] <dev-haskell/aeson-2.1:=[profil
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-1.0:=[profile?]
 	>=dev-haskell/vector-binary-instances-0.2.3.5:=[profile?] <dev-haskell/vector-binary-instances-0.3:=[profile?]
 	>=dev-haskell/yaml-0.11:=[profile?] <dev-haskell/yaml-0.12:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?] <dev-lang/ghc-9.1:=[profile?]
+	>=dev-lang/ghc-8.6.0:=[profile?] <dev-lang/ghc-9.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

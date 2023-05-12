@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+iconv"
 
 RDEPEND=">=dev-haskell/text-0.9:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	iconv? ( >=dev-haskell/iconv-0.4:=[profile?] <dev-haskell/iconv-0.5:=[profile?] )
 "
 DEPEND="${RDEPEND}

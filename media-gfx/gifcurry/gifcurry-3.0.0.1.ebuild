@@ -28,7 +28,7 @@ PATCHES=(
 
 RDEPEND=">=dev-haskell/cmdargs-0.10:=[profile?]
 	>=dev-haskell/temporary-1.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	gtk? ( >=dev-haskell/cairo-0.13:=[profile?]
 		>=dev-haskell/gi-cairo-1.0:=[profile?]
 		>=dev-haskell/gi-gdk-3.0:=[profile?] <dev-haskell/gi-gdk-4:=[profile?]

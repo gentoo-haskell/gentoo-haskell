@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/crypto-4.1.0:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/regex-compat:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?]
 "

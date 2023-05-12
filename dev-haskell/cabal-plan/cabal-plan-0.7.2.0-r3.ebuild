@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="underline +exe license-report"
 
 RDEPEND=">=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=dev-haskell/aeson-1.4.0.0:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-0.2:=[profile?]
 	exe? ( >=dev-haskell/ansi-terminal-0.10:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]

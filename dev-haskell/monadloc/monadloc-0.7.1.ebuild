@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/transformers:=[profile?]
-	>=dev-lang/ghc-6.10.4:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3

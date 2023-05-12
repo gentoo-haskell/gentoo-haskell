@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 IUSE="fast-bignum"
 
 RDEPEND=">=dev-haskell/network-2.1:=[profile?] <dev-haskell/network-3.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	dev-libs/openssl
 "
 DEPEND="${RDEPEND}

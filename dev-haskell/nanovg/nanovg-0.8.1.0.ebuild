@@ -25,7 +25,7 @@ CABAL_CHDEPS=(
 RDEPEND="
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	media-libs/glew:0
 	virtual/glu
 	virtual/libc

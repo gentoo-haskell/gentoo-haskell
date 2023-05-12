@@ -20,7 +20,7 @@ RDEPEND="dev-haskell/hashable:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	dev-haskell/storable-tuple:=[profile?]
 	>=dev-haskell/vector-0.12.2:=[profile?]
-	>=dev-lang/ghc-9.0.2:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

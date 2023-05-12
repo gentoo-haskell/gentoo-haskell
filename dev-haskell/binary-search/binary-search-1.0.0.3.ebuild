@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RESTRICT=test # fails to load SBV for tests
 
 RDEPEND="dev-haskell/transformers:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

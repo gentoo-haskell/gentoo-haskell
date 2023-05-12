@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/attoparsec-0.13.1.0:=[profile?]
 	>=dev-haskell/blaze-builder-0.3.0.0:=[profile?]
 	>=dev-haskell/th-lift-instances-0.1.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

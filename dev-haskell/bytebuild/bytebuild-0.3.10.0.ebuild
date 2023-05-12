@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/byteslice-0.2.6:=[profile?] <dev-haskell/byteslice-0.3:=[
 	>=dev-haskell/text-short-0.1.3:=[profile?] <dev-haskell/text-short-0.2:=[profile?]
 	>=dev-haskell/wide-word-0.1.0.9:=[profile?] <dev-haskell/wide-word-0.2:=[profile?]
 	dev-haskell/zigzag:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	checked? ( >=dev-haskell/primitive-checked-0.7:=[profile?] <dev-haskell/primitive-checked-0.8:=[profile?] )
 	!checked? ( >=dev-haskell/primitive-0.7:=[profile?] <dev-haskell/primitive-0.8:=[profile?] )
 "

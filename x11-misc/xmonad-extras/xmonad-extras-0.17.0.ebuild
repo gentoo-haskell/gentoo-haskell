@@ -21,7 +21,7 @@ IUSE="+alsa +brightness +eval +mpd"
 
 RDEPEND="dev-haskell/regex-posix:=[profile?]
 	>=dev-haskell/x11-1.4.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=x11-wm/xmonad-0.10:=[profile?]
 	>=x11-wm/xmonad-contrib-0.10:=[profile?]
 	alsa? ( >=dev-haskell/alsa-mixer-0.3:=[profile?] )

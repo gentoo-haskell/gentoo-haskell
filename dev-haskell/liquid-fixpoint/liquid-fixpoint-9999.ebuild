@@ -40,7 +40,7 @@ RDEPEND="
 	dev-haskell/syb:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	<dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4

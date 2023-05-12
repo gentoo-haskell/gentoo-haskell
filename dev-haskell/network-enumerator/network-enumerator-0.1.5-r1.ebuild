@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/enumerator-0.4:=[profile?] <dev-haskell/enumerator-0.5:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	>=dev-haskell/network-2.3:=[profile?]
 "
 DEPEND="${RDEPEND}

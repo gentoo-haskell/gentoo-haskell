@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/parsec-3.1.9:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/sqlite-simple-0.4.9:=[profile?] <dev-haskell/sqlite-simple-0.5.0:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

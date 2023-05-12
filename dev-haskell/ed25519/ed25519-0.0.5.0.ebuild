@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 
 RESTRICT=test # bitrotten test suite
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1"

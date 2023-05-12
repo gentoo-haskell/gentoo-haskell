@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/data-accessor-0.2:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?]
 	>=dev-haskell/network-2.6.2:=[profile?]
 	>=dev-haskell/network-transport-0.5:=[profile?] <dev-haskell/network-transport-0.6:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

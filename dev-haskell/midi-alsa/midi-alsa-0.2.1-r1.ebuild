@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/alsa-seq-0.6:=[profile?] <dev-haskell/alsa-seq-0.7:=[prof
 	>=dev-haskell/data-accessor-0.2.1:=[profile?] <dev-haskell/data-accessor-0.3:=[profile?]
 	>=dev-haskell/midi-0.2.1:=[profile?] <dev-haskell/midi-0.3:=[profile?]
 	>=dev-haskell/utility-ht-0.0.5:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/dice-0.1:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1:=[profile?]
 	>=dev-haskell/unlambda-0.1:=[profile?]
 	>=dev-lang/brainfuck-0.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

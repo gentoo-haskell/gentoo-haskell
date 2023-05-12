@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	>=dev-haskell/unix-compat-0.2:=[profile?] <dev-haskell/unix-compat-0.7:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	openssl? (
 		>=dev-haskell/hsopenssl-0.10.4:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 		>=dev-haskell/openssl-streams-1.1:=[profile?] <dev-haskell/openssl-streams-1.3:=[profile?]

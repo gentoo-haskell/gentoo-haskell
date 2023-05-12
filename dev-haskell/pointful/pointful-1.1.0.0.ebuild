@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-7.8.2:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.8.2:=
 	>=dev-haskell/haskell-src-exts-simple-1.18:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?]

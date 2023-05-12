@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/th-abstraction-0.4:=[profile?] <dev-haskell/th-abstraction-0.6:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

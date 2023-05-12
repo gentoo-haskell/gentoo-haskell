@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/list-0.4.2:=[profile?] <dev-haskell/list-0.7:=[profile?]
 	>=dev-haskell/text-0.5.0.0:=[profile?] <dev-haskell/text-1.3.0.0:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	dev-libs/expat
 "
 DEPEND="${RDEPEND}

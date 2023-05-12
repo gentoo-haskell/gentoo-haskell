@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/websockets-0.12.5.1:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
 	>=dev-haskell/websockets-snap-0.8:=[profile?] <dev-haskell/websockets-snap-0.11:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

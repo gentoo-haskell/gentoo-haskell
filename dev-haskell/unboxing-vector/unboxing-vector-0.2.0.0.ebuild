@@ -19,7 +19,7 @@ IUSE="+mono-traversable"
 RDEPEND="
 	dev-haskell/primitive:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	mono-traversable? (
 		dev-haskell/mono-traversable:=[profile?]
 	)

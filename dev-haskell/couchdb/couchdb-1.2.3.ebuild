@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/http-4000.0.4:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?]
 	>=dev-haskell/utf8-string-0.3.6:=[profile?] <=dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

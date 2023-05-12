@@ -19,7 +19,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?] <dev-haskell/aeson-2.2:=[profile?
 	>=dev-haskell/quickcheck-2.10:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

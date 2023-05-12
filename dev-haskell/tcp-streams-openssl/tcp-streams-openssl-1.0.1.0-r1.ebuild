@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/hsopenssl-0.10.3:=[profile?] <dev-haskell/hsopenssl-0.12:
 	>=dev-haskell/io-streams-1.2:=[profile?] <dev-haskell/io-streams-2.0:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-4.0:=[profile?]
 	>=dev-haskell/tcp-streams-1.0:=[profile?] <dev-haskell/tcp-streams-1.1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

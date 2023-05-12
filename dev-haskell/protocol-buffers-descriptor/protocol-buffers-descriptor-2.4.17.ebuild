@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="~dev-haskell/protocol-buffers-2.4.17:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

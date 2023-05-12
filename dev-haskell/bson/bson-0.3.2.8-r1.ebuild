@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/cryptohash-md5-0.11:=[profile?] <dev-haskell/cryptohash-m
 	dev-haskell/data-binary-ieee754:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/network-bsd-2.7:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?]
 "
 DEPEND="${RDEPEND}

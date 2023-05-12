@@ -23,7 +23,7 @@ IUSE=""
 RDEPEND="dev-haskell/text:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]
 	>=dev-haskell/xml-1.3:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

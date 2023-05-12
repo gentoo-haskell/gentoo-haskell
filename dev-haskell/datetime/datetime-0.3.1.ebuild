@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/old-locale-1.0.0.1:=[profile?]
 	>=dev-haskell/old-time-1.0.0.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

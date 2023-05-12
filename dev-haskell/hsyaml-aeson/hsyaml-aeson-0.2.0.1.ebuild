@@ -22,7 +22,7 @@ IUSE="exe"
 RDEPEND=">=dev-haskell/hsyaml-0.2.0:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?]
 	>=dev-haskell/scientific-0.3.6.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=dev-haskell/aeson-1.4.0.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/vector-0.12.0.2:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 "

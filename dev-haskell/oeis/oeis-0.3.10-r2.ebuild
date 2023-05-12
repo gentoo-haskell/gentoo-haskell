@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/http-4000.2:=[profile?] <dev-haskell/http-4000.5:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/network-2.6:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?]
 "

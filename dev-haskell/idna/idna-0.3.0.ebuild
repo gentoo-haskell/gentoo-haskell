@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/punycode-2.0:=[profile?]
 	>=dev-haskell/stringprep-1:=[profile?] <dev-haskell/stringprep-2:=[profile?]
 	>=dev-haskell/text-0.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

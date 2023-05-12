@@ -51,7 +51,7 @@ RDEPEND="
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.3:=[profile?]
 	>=dev-haskell/unbounded-delays-0.1.0.0:=[profile?] <dev-haskell/unbounded-delays-0.2:=[profile?]
 	>=dev-haskell/witherable-0.3:=[profile?] <dev-haskell/witherable-0.5:=[profile?]
-	>=dev-lang/ghc-8.6.5:=[profile?]
+	>=dev-lang/ghc-8.6.5:=
 	template-haskell? (
 		>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 		>=dev-haskell/haskell-src-meta-0.6:=[profile?] <dev-haskell/haskell-src-meta-0.9:=[profile?]

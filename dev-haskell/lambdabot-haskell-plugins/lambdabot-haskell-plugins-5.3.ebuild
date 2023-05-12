@@ -41,7 +41,7 @@ RDEPEND=">=dev-haskell/arrows-0.4:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-haskell/vector-space-0.8:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	>=dev-util/hoogle-5.0.17.1:=[profile?]
 "
 DEPEND="${RDEPEND}

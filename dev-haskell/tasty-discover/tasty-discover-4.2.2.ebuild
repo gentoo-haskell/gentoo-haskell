@@ -24,7 +24,7 @@ PATCHES=(
 )
 
 RDEPEND=">=dev-haskell/glob-0.8:=[profile?] <dev-haskell/glob-1.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

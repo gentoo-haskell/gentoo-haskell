@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/base64-string:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	>=dev-haskell/network-2.7:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/network-bsd-2.7:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?]
 "

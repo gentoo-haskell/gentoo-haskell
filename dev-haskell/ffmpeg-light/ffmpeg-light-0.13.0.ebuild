@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/either:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/vector-0.10.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	media-video/ffmpeg
 	buildrasterdemo? ( >=dev-haskell/juicypixels-3.2:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
 				>=dev-haskell/rasterific-0.3:=[profile?] )

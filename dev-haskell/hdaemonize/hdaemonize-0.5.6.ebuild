@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-haskell/hsyslog-5:=[profile?] <dev-haskell/hsyslog-6:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

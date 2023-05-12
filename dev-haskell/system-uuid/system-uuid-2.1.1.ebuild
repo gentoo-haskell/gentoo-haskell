@@ -20,7 +20,7 @@ IUSE="cli"
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/murmur-hash:=[profile?]
 	dev-haskell/parsec:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	sys-apps/util-linux
 "
 DEPEND="${RDEPEND}

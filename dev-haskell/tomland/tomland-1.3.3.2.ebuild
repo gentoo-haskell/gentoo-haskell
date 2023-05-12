@@ -23,7 +23,7 @@ RDEPEND="
 	>=dev-haskell/parser-combinators-1.1.0:=[profile?] <dev-haskell/parser-combinators-1.4:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/validation-selective-0.1.0:=[profile?] <dev-haskell/validation-selective-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4

@@ -21,7 +21,7 @@ CABAL_CHDEPS=(
 )
 
 RDEPEND=">=dev-haskell/cabal-3.0:=[profile?] <dev-haskell/cabal-3.9:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	executable? ( >=dev-haskell/colourista-0.1:=[profile?] <dev-haskell/colourista-0.3:=[profile?]
 			>=dev-haskell/optparse-applicative-0.15:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?] )
 "

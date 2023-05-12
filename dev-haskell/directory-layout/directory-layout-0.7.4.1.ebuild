@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/command-qq-0.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.3:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

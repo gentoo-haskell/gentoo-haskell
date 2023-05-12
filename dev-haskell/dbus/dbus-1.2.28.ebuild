@@ -29,7 +29,7 @@ RDEPEND="<dev-haskell/cereal-0.6:=[profile?]
 	<dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/xml-conduit-1.9.0.0:=[profile?] <dev-haskell/xml-conduit-1.10.0.0:=[profile?]
 	<dev-haskell/xml-types-0.4:=[profile?]
-	>=dev-lang/ghc-9.2.4:=[profile?]
+	>=dev-lang/ghc-9.2.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0

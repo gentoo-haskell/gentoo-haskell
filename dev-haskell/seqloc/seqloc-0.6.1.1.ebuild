@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8.5:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.14

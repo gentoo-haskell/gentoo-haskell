@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cereal-0.2:=[profile?]
 	>=dev-haskell/cryptonite-0.13:=[profile?]
 	dev-haskell/memory:=[profile?]
 	>=dev-haskell/tagged-0.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

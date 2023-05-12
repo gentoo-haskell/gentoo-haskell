@@ -73,7 +73,7 @@ RDEPEND="
 	>=dev-haskell/unordered-containers-0.2.9:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12.0:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/xml-1.3.14:=[profile?] <dev-haskell/xml-1.4:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	executable? (
 		>=dev-haskell/haskeline-0.8.0.0:=[profile?] <dev-haskell/haskeline-0.9:=[profile?]
 		>=dev-haskell/repline-0.4.0.0:=[profile?] <dev-haskell/repline-0.5:=[profile?]

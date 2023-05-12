@@ -34,7 +34,7 @@ RDEPEND="
 	>=dev-haskell/hint-0.4:=[profile?] <dev-haskell/hint-0.10:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-5.3:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	cairo? ( 
 		>=dev-haskell/diagrams-cairo-1.4:=[profile?] <dev-haskell/diagrams-cairo-1.5:=[profile?]
 	)

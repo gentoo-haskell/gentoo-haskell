@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/cereal:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	create? ( >=dev-haskell/conduit-1.0.0:=[profile?] <dev-haskell/conduit-2.0.0:=[profile?]
 			>=dev-haskell/idna-0.1.2:=[profile?] <dev-haskell/idna-1.0:=[profile?] )
 "

@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-1.1:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/text-short-0.1.3:=[profile?] <dev-haskell/text-short-0.2:=[profile?]
 	>=dev-haskell/torsor-0.1:=[profile?] <dev-haskell/torsor-0.2:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0"

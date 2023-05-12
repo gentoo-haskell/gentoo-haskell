@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/network-2.7:=[profile?]
 	>=dev-haskell/network-bsd-2.7:=[profile?]
 	dev-haskell/safe-exceptions:=[profile?]
 	dev-haskell/socks:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

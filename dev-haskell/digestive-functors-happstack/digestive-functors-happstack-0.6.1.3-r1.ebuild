@@ -22,7 +22,7 @@ CABAL_CHDEPS=(
 RDEPEND="
 	>=dev-haskell/digestive-functors-0.8:=[profile?] <dev-haskell/digestive-functors-0.9:=[profile?]
 	>=dev-haskell/happstack-server-6.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

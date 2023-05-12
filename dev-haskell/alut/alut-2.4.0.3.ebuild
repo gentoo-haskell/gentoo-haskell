@@ -23,7 +23,7 @@ IUSE="examples"
 
 RDEPEND=">=dev-haskell/openal-1.7:=[profile?] <dev-haskell/openal-1.8:=[profile?]
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	media-libs/freealut
 "
 DEPEND="${RDEPEND}

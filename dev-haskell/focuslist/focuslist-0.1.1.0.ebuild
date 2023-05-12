@@ -22,7 +22,7 @@ IUSE="examples"
 RDEPEND=">=dev-haskell/lens-4.16:=[profile?]
 	dev-haskell/mono-traversable:=[profile?]
 	>=dev-haskell/quickcheck-2.11.3:2=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	examples? ( dev-haskell/markdown-unlit:=[profile?] )
 "
 DEPEND="${RDEPEND}

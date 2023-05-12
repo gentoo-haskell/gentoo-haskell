@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/primitive:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/storable-complex:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	virtual/blas
 	virtual/lapack
 "

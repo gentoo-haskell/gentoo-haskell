@@ -19,7 +19,7 @@ RDEPEND=">=dev-haskell/commonmark-0.2:=[profile?] <dev-haskell/commonmark-0.3:=[
 	>=dev-haskell/commonmark-extensions-0.2.1:=[profile?] <dev-haskell/commonmark-extensions-0.3:=[profile?]
 	>=dev-haskell/pandoc-types-1.21:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

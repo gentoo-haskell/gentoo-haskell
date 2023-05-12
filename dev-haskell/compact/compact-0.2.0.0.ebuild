@@ -23,7 +23,7 @@ CABAL_CHDEPS=(
 )
 
 RDEPEND="
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

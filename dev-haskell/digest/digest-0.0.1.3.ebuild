@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 	sys-libs/zlib
 "
 DEPEND="${RDEPEND}

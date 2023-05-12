@@ -21,7 +21,7 @@ RESTRICT=test # tests hung on gdb process
 
 RDEPEND=">=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/stm-2.3:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

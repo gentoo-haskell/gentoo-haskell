@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-3:=[profile?]
 	>=dev-haskell/retry-0.8:=[profile?] <dev-haskell/retry-0.10:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
 	>=dev-haskell/unliftio-core-0.1.1:=[profile?] <dev-haskell/unliftio-core-0.3:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

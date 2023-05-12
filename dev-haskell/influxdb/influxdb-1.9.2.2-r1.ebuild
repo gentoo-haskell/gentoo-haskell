@@ -35,7 +35,7 @@ RDEPEND="
 	>=dev-haskell/tagged-0.1:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	examples? (
 		dev-haskell/mwc-random:=[profile?]
 	)

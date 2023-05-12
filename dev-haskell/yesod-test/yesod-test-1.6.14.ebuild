@@ -36,7 +36,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/xml-conduit-1.0:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?]
 	>=dev-haskell/yesod-core-1.6.17:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -22,7 +22,7 @@ RDEPEND="
 	>=dev-haskell/hsopenssl-0.10:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/network-3.0.0:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/sendfile-0.7:=[profile?] <dev-haskell/sendfile-0.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	dev-libs/openssl
 "
 DEPEND="${RDEPEND}

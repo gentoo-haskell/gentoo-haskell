@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="app-emulation/libvirt
 	>=dev-haskell/syb-0.1.0.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/c2hs

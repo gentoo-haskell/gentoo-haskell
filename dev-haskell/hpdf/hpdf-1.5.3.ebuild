@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?]
 	>=dev-haskell/text-1.2.0:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

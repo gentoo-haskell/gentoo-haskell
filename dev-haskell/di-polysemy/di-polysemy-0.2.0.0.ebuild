@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/df1-0.3.2:=[profile?] <dev-haskell/df1-0.5:=[profile?]
 	>=dev-haskell/di-df1-1.2:=[profile?] <dev-haskell/di-df1-2:=[profile?]
 	>=dev-haskell/di-handle-1.0.1:=[profile?] <dev-haskell/di-handle-2:=[profile?]
 	>=dev-haskell/polysemy-1.3:=[profile?] <dev-haskell/polysemy-2:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

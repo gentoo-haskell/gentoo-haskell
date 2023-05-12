@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/cryptonite-0.12:=[profile?]
 	dev-haskell/unliftio:=[profile?]
 	>=dev-haskell/wai-3.2:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/warp-3.3.23:=[profile?] <dev-haskell/warp-3.4:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

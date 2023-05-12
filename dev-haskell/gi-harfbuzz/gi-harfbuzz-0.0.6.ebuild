@@ -28,7 +28,7 @@ RDEPEND="
 	>=dev-haskell/haskell-gi-base-0.26:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?]
 	<dev-haskell/haskell-gi-overloading-1.1:=[profile?]
 	media-libs/harfbuzz[introspection]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

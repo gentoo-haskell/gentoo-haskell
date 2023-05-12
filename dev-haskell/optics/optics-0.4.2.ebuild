@@ -22,7 +22,7 @@ CABAL_CHDEPS=(
 RDEPEND=">=dev-haskell/optics-core-0.4.1:=[profile?] <dev-haskell/optics-core-0.4.2:=[profile?]
 	>=dev-haskell/optics-extra-0.4.2:=[profile?] <dev-haskell/optics-extra-0.4.3:=[profile?]
 	>=dev-haskell/optics-th-0.4.1:=[profile?] <dev-haskell/optics-th-0.4.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

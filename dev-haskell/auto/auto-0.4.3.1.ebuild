@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.3.1:=[profile?]
 	>=dev-haskell/profunctors-4.3:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

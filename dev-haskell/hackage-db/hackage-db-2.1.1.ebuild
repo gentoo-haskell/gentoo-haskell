@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/exceptions:=[profile?]
 	>=dev-haskell/tar-0.4:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

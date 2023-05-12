@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/direct-sqlite-2.3.5:=[profile?]
 	>=dev-haskell/resourcet-1.1.2:=[profile?]
 	>=dev-haskell/text-0.8:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

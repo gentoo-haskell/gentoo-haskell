@@ -16,7 +16,7 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 	media-libs/libsndfile
 "
 DEPEND="${RDEPEND}

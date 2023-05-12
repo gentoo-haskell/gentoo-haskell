@@ -19,7 +19,7 @@ IUSE="profiling"
 
 RDEPEND=">=dev-haskell/strict-0.3:=
 	>=dev-haskell/xdg-basedir-0.2:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 # non-haskell depend
 RDEPEND+="

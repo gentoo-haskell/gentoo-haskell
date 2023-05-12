@@ -50,7 +50,7 @@ RDEPEND="
 	dev-haskell/store:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4

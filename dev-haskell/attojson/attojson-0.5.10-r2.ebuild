@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.8:=[profile?]
 		>=dev-haskell/bytestring-show-0.1:=[profile?]
 		>=dev-haskell/mtl-1.0:=[profile?]
 		>=dev-haskell/utf8-string-0.1:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]"
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 

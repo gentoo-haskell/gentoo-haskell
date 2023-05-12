@@ -16,7 +16,7 @@ LICENSE="LGPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-lang/ghc-9.0.2:=[profile?]
+RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

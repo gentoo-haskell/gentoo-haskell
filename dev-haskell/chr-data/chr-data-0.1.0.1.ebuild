@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/chr-pretty-0.1.0.0:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

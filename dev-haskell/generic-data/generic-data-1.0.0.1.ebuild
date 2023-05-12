@@ -21,7 +21,7 @@ RDEPEND="
 	>=dev-haskell/base-orphans-0.8:=[profile?]
 	dev-haskell/contravariant:=[profile?]
 	dev-haskell/show-combinators:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

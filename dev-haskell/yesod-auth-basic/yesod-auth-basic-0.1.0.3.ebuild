@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 	dev-haskell/wai:=[profile?]
 	dev-haskell/word8:=[profile?]
 	dev-haskell/yesod:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

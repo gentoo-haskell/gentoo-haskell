@@ -25,7 +25,7 @@ RDEPEND=">=app-text/pandoc-2.0:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3.1:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?]
 	>=dev-haskell/yesod-form-1.3:=[profile?]
-	>=dev-lang/ghc-8.8.3:=[profile?]
+	>=dev-lang/ghc-8.8.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.1.0"

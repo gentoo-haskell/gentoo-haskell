@@ -21,7 +21,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="exe"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 	exe? ( >=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-10:=[profile?]
 		>=dev-haskell/microaeson-0.1:=[profile?] <dev-haskell/microaeson-0.2:=[profile?] )
 "

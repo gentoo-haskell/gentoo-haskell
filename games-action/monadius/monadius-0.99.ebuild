@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/glut-2.4:=
 	>=dev-haskell/opengl-2.8:=
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/path-pieces:=[profile?]
 	dev-haskell/persistent:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/constraints-extras-0.2.3.0:=[profile?] <dev-haskell/constraints-extras-0.4:=[profile?]
 	>=dev-haskell/dependent-sum-0.6.1:=[profile?] <dev-haskell/dependent-sum-0.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

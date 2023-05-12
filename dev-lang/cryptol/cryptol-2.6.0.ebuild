@@ -36,7 +36,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?]
 	>=dev-haskell/tf-random-0.5:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/alex

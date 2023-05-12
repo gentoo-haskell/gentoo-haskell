@@ -28,7 +28,7 @@ RDEPEND="
 	|| ( dev-lang/ghc >=dev-haskell/process-1.4[profile?] )
 	dev-haskell/transformers-base:=[profile?]
 	>=dev-haskell/unix-compat-0.4.1.1:=[profile?] <dev-haskell/unix-compat-0.7:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

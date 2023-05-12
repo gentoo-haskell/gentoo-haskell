@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/byteorder:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	dev-haskell/network:=[profile?]
 	>=dev-haskell/wai-2.0.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

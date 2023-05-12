@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/exact-pi-0.4.1:=[profile?] <dev-haskell/exact-pi-0.6:=[pr
 	>=dev-haskell/numtype-dk-0.5:=[profile?] <dev-haskell/numtype-dk-1.1:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

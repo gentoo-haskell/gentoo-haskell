@@ -48,7 +48,7 @@ RDEPEND=">=dev-haskell/aeson-2.0.0.0:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/xml-conduit-1.8:=[profile?] <dev-haskell/xml-conduit-2.0:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	examples? ( >=dev-haskell/errors-2.0:=[profile?] )
 "
 DEPEND="${RDEPEND}

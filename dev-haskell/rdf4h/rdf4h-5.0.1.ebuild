@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/algebraic-graphs-0.5:=[profile?]
 	dev-haskell/selective:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?]
 	dev-haskell/xeno:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="dev-haskell/hunit:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/mtlparse-0.1.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

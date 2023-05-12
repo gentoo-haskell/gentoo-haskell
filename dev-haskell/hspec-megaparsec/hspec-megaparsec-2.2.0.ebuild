@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/hspec-expectations-0.8:=[profile?] <dev-haskell/hspec-expectations-0.9:=[profile?]
 	>=dev-haskell/megaparsec-9.0:=[profile?] <dev-haskell/megaparsec-10.0:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

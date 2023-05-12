@@ -42,7 +42,7 @@ RDEPEND="
 	>=dev-haskell/web-routes-0.27:=[profile?] <dev-haskell/web-routes-0.28:=[profile?]
 	>=dev-haskell/web-routes-happstack-0.23:=[profile?] <dev-haskell/web-routes-happstack-0.24:=[profile?]
 	>=dev-haskell/web-routes-th-0.22:=[profile?] <dev-haskell/web-routes-th-0.23:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=www-apps/clckwrks-0.25:=[profile?] <www-apps/clckwrks-0.29:=[profile?]
 "
 DEPEND="${RDEPEND}

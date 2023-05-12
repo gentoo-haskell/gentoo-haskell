@@ -18,6 +18,6 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/boxes-0.1.1:=[profile?]
 		<dev-haskell/boxes-0.2:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]"
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

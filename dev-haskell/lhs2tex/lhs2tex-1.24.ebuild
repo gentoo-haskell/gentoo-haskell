@@ -23,7 +23,7 @@ GHC_BOOTSTRAP_PACKAGES=(
 # for guide generation. dev-texlive/texlive-latexextra provides polytable
 RDEPEND="
 	dev-haskell/regex-compat:=
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	dev-texlive/texlive-mathscience:=
 	dev-texlive/texlive-latexextra:=
 "

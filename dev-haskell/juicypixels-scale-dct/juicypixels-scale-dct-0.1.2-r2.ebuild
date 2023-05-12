@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/base-compat-0.6.0:=[profile?] <dev-haskell/base-compat-0.
 	>=dev-haskell/carray-0.1.6.1:=[profile?] <dev-haskell/carray-0.2:=[profile?]
 	>=dev-haskell/fft-0.1.8.1:=[profile?] <dev-haskell/fft-0.2:=[profile?]
 	>=dev-haskell/juicypixels-3.2.5.3:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

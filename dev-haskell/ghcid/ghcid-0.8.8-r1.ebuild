@@ -22,7 +22,7 @@ RDEPEND="
 	>=dev-haskell/fsnotify-0.4:=[profile?]
 	|| ( dev-lang/ghc >=dev-haskell/process-1.1[profile?] )
 	>=dev-haskell/terminal-size-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.4:=[profile?] <dev-haskell/bifunctors-6.0:=[
 	>=dev-haskell/linear-base-0.1:=[profile?] <dev-haskell/linear-base-1.0:=[profile?]
 	>=dev-haskell/profunctors-5.2:=[profile?] <dev-haskell/profunctors-6.0:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/pipes-group-1.0.0:=[profile?] <dev-haskell/pipes-group-1.1:=[profile?]
 	>=dev-haskell/pipes-parse-3.0.0:=[profile?] <dev-haskell/pipes-parse-3.1:=[profile?]
 	>=dev-haskell/stringsearch-0.3.0:=[profile?] <dev-haskell/stringsearch-0.4:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

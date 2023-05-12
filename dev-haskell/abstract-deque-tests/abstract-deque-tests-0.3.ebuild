@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/abstract-deque-0.3:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?]
 	>=dev-haskell/test-framework-0.6:=[profile?]
 	>=dev-haskell/test-framework-hunit-0.2.7:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

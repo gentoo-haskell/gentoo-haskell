@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/hslogger:=[profile?]
 	dev-haskell/regex-base:=[profile?]
 	dev-haskell/regex-compat:=[profile?]
 	dev-haskell/regex-posix:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2.3

@@ -20,7 +20,7 @@ IUSE="+aeson +binary-laws +semigroupoids +semirings +unary-laws +vector"
 RDEPEND=">=dev-haskell/primitive-0.6.4:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/primitive-addr-0.1.0.2:=[profile?] <dev-haskell/primitive-addr-0.2:=[profile?]
 	>=dev-haskell/quickcheck-classes-base-0.6.2:=[profile?] <dev-haskell/quickcheck-classes-base-0.7:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	aeson? ( >=dev-haskell/aeson-0.9:=[profile?] )
 	binary-laws? ( >=dev-haskell/quickcheck-2.10.0:2=[profile?] )
 	semigroupoids? ( dev-haskell/semigroupoids:=[profile?] )

@@ -48,7 +48,7 @@ RDEPEND="
 	dev-haskell/xml-conduit:=[profile?]
 	dev-haskell/xml-html-qq:=[profile?]
 	dev-haskell/yaml:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	dev-libs/libpcre2
 	x11-libs/vte:2.91
 	x11-libs/gtk+:3

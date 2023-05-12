@@ -22,7 +22,7 @@ IUSE="+small-base"
 
 RDEPEND=">=dev-haskell/cereal-0.2:=[profile?]
 	>=dev-haskell/prettyclass-1.0:=[profile?]
-	>=dev-lang/ghc-6.10.4:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

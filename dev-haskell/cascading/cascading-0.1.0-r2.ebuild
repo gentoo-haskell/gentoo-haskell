@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-haskell/web-routes-0.27:=[profile?] <dev-haskell/web-routes-1:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

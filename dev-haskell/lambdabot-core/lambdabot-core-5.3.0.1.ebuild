@@ -42,7 +42,7 @@ RDEPEND=">=dev-haskell/dependent-map-0.2:=[profile?] <dev-haskell/dependent-map-
 	>=dev-haskell/transformers-base-0.4:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

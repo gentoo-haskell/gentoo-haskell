@@ -25,7 +25,7 @@ RDEPEND="dev-haskell/base16-bytestring:=[profile?]
 	dev-haskell/network:=[profile?]
 	dev-haskell/network-bsd:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

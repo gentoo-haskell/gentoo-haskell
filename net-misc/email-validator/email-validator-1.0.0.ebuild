@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/cmdargs-0.10:=
 	>=dev-haskell/pcre-light-0.4:=
 	>=dev-haskell/tasty-0.8:=
 	>=dev-haskell/tasty-hunit-0.8:=
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

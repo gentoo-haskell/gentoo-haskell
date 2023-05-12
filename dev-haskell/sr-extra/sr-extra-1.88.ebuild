@@ -51,7 +51,7 @@ RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 	dev-haskell/uuid-orphans:=[profile?]
 	dev-haskell/uuid-types:=[profile?]
 	dev-haskell/zlib:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	network-uri? ( >=dev-haskell/network-uri-2.6:=[profile?] )
 	!network-uri? ( >=dev-haskell/network-2.4:=[profile?] )
 "

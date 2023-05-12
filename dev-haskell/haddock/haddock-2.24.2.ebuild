@@ -21,7 +21,7 @@ RESTRICT=test # test suite unavailable on hackage
 
 RDEPEND="
 	~dev-haskell/haddock-api-2.24.2:=
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

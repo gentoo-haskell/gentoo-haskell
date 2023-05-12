@@ -21,7 +21,7 @@ RDEPEND="
 	dev-haskell/di-df1:=[profile?]
 	dev-haskell/di-handle:=[profile?]
 	dev-haskell/di-monad:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -22,7 +22,7 @@ RDEPEND=">dev-haskell/cabal-1.10:= <dev-haskell/cabal-3.7:=
 	>=dev-haskell/simple-cabal-0.1.3:=
 	>=dev-haskell/simple-cmd-0.2.0:=
 	>=dev-haskell/simple-cmd-args-0.1.6:=
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	curl? ( dev-haskell/curl:= )
 	!curl? ( >=dev-haskell/http-client-0.4.30:=
 			dev-haskell/http-client-tls:=

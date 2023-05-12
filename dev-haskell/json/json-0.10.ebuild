@@ -20,7 +20,7 @@ IUSE="mapdict +parsec +pretty"
 RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-haskell/syb-0.3.3:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 	parsec? ( dev-haskell/parsec:=[profile?] )
 "
 DEPEND="${RDEPEND}

@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/yesod-1.2:=[profile?]
 	dev-haskell/yesod-newsfeed:=[profile?]
 	dev-haskell/yesod-static:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

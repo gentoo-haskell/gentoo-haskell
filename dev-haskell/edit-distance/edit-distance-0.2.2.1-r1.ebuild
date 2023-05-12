@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~amd64-linux"
 IUSE=""
 
 RDEPEND=">=dev-haskell/random-1.0:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

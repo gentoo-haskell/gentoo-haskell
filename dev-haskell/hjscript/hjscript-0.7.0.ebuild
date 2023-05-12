@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/hjavascript-0.4.6:=[profile?]
 	>=dev-haskell/hsp-0.9:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-lang/ghc-6.10.4:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3

@@ -31,7 +31,7 @@ RDEPEND="dev-haskell/convertible:=[profile?]
 	>=dev-haskell/relational-schemas-0.1.7:=[profile?]
 	dev-haskell/sql-words:=[profile?]
 	dev-haskell/th-data-compat:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

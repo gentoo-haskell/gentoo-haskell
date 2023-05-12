@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/comonad-3:=[profile?]
 	>=dev-haskell/semigroupoids-3:=[profile?]
 	>=dev-haskell/semigroups-0.8.3.1:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	hashable? ( >=dev-haskell/hashable-1.1.1.0:=[profile?] )
 "
 DEPEND="${RDEPEND}

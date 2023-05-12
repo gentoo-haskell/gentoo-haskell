@@ -27,7 +27,7 @@ RDEPEND="
 	>=dev-haskell/streaming-commons-0.1.16:=[profile?]
 	>=dev-haskell/typed-process-0.2.6:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

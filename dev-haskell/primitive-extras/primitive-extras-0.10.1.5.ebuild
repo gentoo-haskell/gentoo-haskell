@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/cereal-0.5.5:=[profile?] <dev-haskell/cereal-0.6:=[profil
 	>=dev-haskell/primitive-unlifted-0.1.3.1:=[profile?] <dev-haskell/primitive-unlifted-0.2:=[profile?]
 	>=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

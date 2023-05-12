@@ -29,7 +29,7 @@ RDEPEND="dev-haskell/basement:=[profile?]
 	dev-haskell/vector:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-haskell/zlib-bindings-0.1:=[profile?] <dev-haskell/zlib-bindings-0.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

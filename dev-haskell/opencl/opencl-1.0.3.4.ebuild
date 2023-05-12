@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 RESTRICT=test # fails as: Opencl: duplicate int array: *** Failed! Exception: 'CL_PLATFORM_NOT_FOUND_KHR' (after 1 test and 2 shrinks)
 
 RDEPEND=">=dev-haskell/mtl-2:=[profile?]
-	>=dev-lang/ghc-6.10.4:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 	>=virtual/opencl-0-r2
 "
 DEPEND="${RDEPEND}

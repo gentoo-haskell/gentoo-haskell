@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/failure-0.0.0:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	dev-haskell/time-locale-compat:=[profile?]
-	>=dev-lang/ghc-6.12.1:=[profile?]
+	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2

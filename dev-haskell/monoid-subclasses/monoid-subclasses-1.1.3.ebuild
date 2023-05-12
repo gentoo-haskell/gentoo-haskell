@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/primes-0.2:=[profile?] <dev-haskell/primes-0.3:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -20,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/x11:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]
+		>=dev-lang/ghc-6.10.4:=
 		media-libs/imlib2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"

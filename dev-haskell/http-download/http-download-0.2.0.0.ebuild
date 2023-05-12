@@ -34,7 +34,7 @@ RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 	dev-haskell/retry:=[profile?]
 	dev-haskell/rio:=[profile?]
 	dev-haskell/rio-prettyprint:=[profile?]
-	>=dev-lang/ghc-8.2.1:=[profile?]
+	>=dev-lang/ghc-8.2.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2

@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.4.0:=[profile?]
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

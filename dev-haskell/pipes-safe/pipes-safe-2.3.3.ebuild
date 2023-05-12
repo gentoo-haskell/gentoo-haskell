@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/exceptions-0.6:=[profile?] <dev-haskell/exceptions-0.11:=
 	>=dev-haskell/pipes-4.3.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/primitive-0.6.2.0:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/transformers-base-0.4.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

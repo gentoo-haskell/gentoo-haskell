@@ -35,7 +35,7 @@ RDEPEND=">=app-office/hledger-1.29.2:= <app-office/hledger-1.30:=
 	>=dev-haskell/text-zipper-0.4:=
 	dev-haskell/vector:=
 	>=dev-haskell/vty-5.15:=
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

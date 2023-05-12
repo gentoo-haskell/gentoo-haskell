@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ac-angle-1.0:=[profile?]
 	>=dev-haskell/ac-vector-2.3.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

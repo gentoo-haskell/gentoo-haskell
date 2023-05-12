@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/profunctors:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

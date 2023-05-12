@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/binary-0.8:=[profile?] <dev-haskell/binary-0.9:=[profile?]
 	>=dev-haskell/binary-parsers-0.2.1:=[profile?]
 	>=dev-haskell/io-streams-1.2:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

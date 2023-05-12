@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/base-compat-0.9:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.14.0:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	executable? ( >=dev-haskell/aeson-0.6:=[profile?]
 			>=dev-haskell/attoparsec-0.10:=[profile?]

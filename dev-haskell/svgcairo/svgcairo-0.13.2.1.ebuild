@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/cairo-0.13.0.0:= <dev-haskell/cairo-0.14:=
 	>=dev-haskell/glib-0.13.0.0:= <dev-haskell/glib-0.14:=
 	dev-haskell/mtl:=
 	dev-haskell/text:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	gnome-base/librsvg
 "
 DEPEND="${RDEPEND}

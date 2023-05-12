@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 IUSE="examples"
 
 RDEPEND=">=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2

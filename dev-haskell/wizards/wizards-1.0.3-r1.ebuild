@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/control-monad-free-0.5:=[profile?] <dev-haskell/control-monad-free-0.7:=[profile?]
 	>=dev-haskell/haskeline-0.6:=[profile?] <dev-haskell/haskeline-0.9:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

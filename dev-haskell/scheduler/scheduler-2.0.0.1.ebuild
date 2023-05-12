@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/atomic-primops:=[profile?]
 	>=dev-haskell/primitive-0.7.1:=[profile?]
 	<dev-haskell/pvar-2.0:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

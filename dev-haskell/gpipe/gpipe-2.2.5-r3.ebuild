@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/boolean-0.2:=[profile?] <dev-haskell/boolean-0.3:=[profil
 	>=dev-haskell/gl-0.8:=[profile?]
 	>=dev-haskell/hashtables-1.2:=[profile?]
 	>=dev-haskell/linear-1.18:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

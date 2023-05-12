@@ -19,7 +19,7 @@ IUSE="+inotify"
 
 RDEPEND="<dev-haskell/regex-posix-1:=
 	>=dev-haskell/unordered-containers-0.2:= <dev-haskell/unordered-containers-0.3:=
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 	inotify? ( >=dev-haskell/hinotify-0.3.6:= <dev-haskell/hinotify-0.5:= )
 "
 DEPEND="${RDEPEND}

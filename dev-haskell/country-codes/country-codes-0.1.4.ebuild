@@ -20,7 +20,7 @@ IUSE="generate"
 RDEPEND=">=dev-haskell/aeson-0.5:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	generate? ( >=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?] )
 "
 DEPEND="${RDEPEND}

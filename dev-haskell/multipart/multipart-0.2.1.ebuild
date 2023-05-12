@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/parsec-2.0:=[profile?]
 	dev-haskell/stringsearch:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

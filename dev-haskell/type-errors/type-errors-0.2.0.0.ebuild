@@ -24,7 +24,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/first-class-families-0.5.0.0:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/th-abstraction:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/hmatrix-0.18:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	sci-libs/gsl
 "
 DEPEND="${RDEPEND}

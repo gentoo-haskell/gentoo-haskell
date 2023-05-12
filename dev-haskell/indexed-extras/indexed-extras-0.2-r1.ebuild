@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/bifunctors:=[profile?]
 	<dev-haskell/indexed-0.2:=[profile?]
 	<dev-haskell/mtl-2.3:=[profile?]
 	<dev-haskell/pointed-5.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

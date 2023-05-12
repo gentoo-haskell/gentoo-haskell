@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
 
 RDEPEND="
-	>=dev-lang/ghc-8.10.6:=[profile?]
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
 "

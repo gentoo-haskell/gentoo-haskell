@@ -37,7 +37,7 @@ RDEPEND="
 	>=dev-haskell/haskell-gi-0.26:=[profile?] <dev-haskell/haskell-gi-0.27:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.26:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?]
 	<dev-haskell/haskell-gi-overloading-1.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	dev-libs/libdbusmenu[gtk3,introspection]
 "
 DEPEND="${RDEPEND}

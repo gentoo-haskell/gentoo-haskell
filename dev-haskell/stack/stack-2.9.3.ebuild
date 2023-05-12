@@ -91,7 +91,7 @@ RDEPEND="
 	dev-haskell/yaml:=[profile?]
 	dev-haskell/zip-archive:=[profile?]
 	dev-haskell/zlib:=[profile?]
-	>=dev-lang/ghc-9.0.2:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

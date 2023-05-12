@@ -29,7 +29,7 @@ RDEPEND=">=app-text/pandoc-3.0:=[profile?] <app-text/pandoc-3.2:=[profile?]
 	>=dev-haskell/temporary-1.2:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	>=dev-haskell/utility-ht-0.0.11:=[profile?] <dev-haskell/utility-ht-0.1.0:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

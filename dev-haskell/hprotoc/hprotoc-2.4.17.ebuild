@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-sr
 	~dev-haskell/protocol-buffers-2.4.17:=[profile?]
 	~dev-haskell/protocol-buffers-descriptor-2.4.17:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/alex

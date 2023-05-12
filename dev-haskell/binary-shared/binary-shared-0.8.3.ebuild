@@ -18,6 +18,6 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/binary-0.5:=[profile?]
 		>=dev-haskell/mtl-1.1.0.2:=[profile?]
-		>=dev-lang/ghc-7.4.1:=[profile?]"
+		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"

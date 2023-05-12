@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	~dev-haskell/ghc-lib-parser-9.4.4.20221225:=[profile?]
 	dev-haskell/parsec:=[profile?]
-	>=dev-lang/ghc-9.0.2:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/alex-3.1

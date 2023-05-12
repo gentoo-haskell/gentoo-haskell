@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/async-2.0.0.0:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/stm-2.3:=[profile?]
 	dev-haskell/transformers-base:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

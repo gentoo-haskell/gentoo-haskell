@@ -20,7 +20,7 @@ RDEPEND="
 	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	>=dev-haskell/x509-1.6:=[profile?]
 	>=dev-haskell/x509-store-1.6.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

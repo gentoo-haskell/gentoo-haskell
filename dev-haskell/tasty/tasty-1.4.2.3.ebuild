@@ -24,7 +24,7 @@ RDEPEND="
 	>=dev-haskell/tagged-0.5:=[profile?]
 	>=dev-haskell/unbounded-delays-0.1:=[profile?]
 	dev-haskell/wcwidth:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	clock? (
 		>=dev-haskell/clock-0.4.4.0:=[profile?]
 	)

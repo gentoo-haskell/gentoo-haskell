@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/dependent-sum-0.4.1:=[profile?] <dev-haskell/dependent-sum-0.8:=[profile?]
 	>=dev-haskell/th-abstraction-0.4:=[profile?]
 	>=dev-haskell/th-extras-0.0.0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

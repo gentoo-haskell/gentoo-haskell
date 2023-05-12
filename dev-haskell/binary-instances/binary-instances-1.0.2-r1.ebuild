@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.6:=[profile?] <dev-haskell/aeson-2.1:=[profil
 	>=dev-haskell/unordered-containers-0.2.5.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10.12.3:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/vector-binary-instances-0.2.1.0:=[profile?] <dev-haskell/vector-binary-instances-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

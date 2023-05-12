@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/csv-0.1:=[profile?] <dev-haskell/csv-0.2:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/statistics-0.15:=[profile?] <dev-haskell/statistics-0.17:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	charts? ( >=dev-haskell/chart-1.6:=[profile?] <dev-haskell/chart-2:=[profile?]
 			>=dev-haskell/chart-diagrams-1.6:=[profile?] <dev-haskell/chart-diagrams-2:=[profile?] )
 	colors? ( >=dev-haskell/ansi-wl-pprint-0.6:=[profile?] <dev-haskell/ansi-wl-pprint-0.7:=[profile?] )

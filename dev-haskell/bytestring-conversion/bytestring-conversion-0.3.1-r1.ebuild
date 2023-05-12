@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?] <dev-haskell/attoparsec-1.0:=
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-2.0:=[profile?]
 	>=dev-haskell/double-conversion-2.0:=[profile?] <dev-haskell/double-conversion-3.0:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

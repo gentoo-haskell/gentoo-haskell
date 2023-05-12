@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/conduit-1.3.0:=[profile?]
 	>=dev-haskell/relational-query-0.12.0.0:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?]
 	>=dev-haskell/text-0.8:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

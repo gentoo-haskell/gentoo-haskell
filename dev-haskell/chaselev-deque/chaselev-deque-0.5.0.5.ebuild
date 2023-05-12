@@ -21,7 +21,7 @@ RESTRICT=test
 RDEPEND=">=dev-haskell/abstract-deque-0.3:=[profile?] <dev-haskell/abstract-deque-0.4:=[profile?]
 	>=dev-haskell/atomic-primops-0.5.0.2:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

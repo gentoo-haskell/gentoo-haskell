@@ -22,7 +22,7 @@ PATCHES=( "${FILESDIR}/${P}-add-executables-flag.patch" )
 RDEPEND=">=dev-haskell/gargoyle-0.1:=[profile?] <dev-haskell/gargoyle-0.2:=[profile?]
 	>=dev-haskell/gargoyle-postgresql-0.2:=[profile?] <dev-haskell/gargoyle-postgresql-0.3:=[profile?]
 	>=dev-haskell/which-0.2:=[profile?] <dev-haskell/which-0.3:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

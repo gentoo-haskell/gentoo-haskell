@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/connection-0.2.7:=[profile?]
 	>=dev-haskell/network-2.7:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/network-bsd-2.7:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?]
 	>=dev-haskell/tls-1.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

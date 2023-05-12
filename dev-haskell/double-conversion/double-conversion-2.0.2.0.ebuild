@@ -21,7 +21,7 @@ IUSE=""
 RESTRICT=test # fails to compare 0.0 with 0.0
 
 RDEPEND=">=dev-haskell/text-0.11.0.8:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	sys-devel/gcc:*[cxx]
 "
 DEPEND="${RDEPEND}

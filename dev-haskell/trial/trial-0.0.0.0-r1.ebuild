@@ -37,7 +37,7 @@ CABAL_CHDEPS=(
 RDEPEND="
 	>=dev-haskell/colourista-0.1.0.0:=[profile?] <dev-haskell/colourista-0.2:=[profile?]
 	>=dev-haskell/dlist-0.8.0.8:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

@@ -27,7 +27,7 @@ RDEPEND="
 	>=dev-haskell/random-fu-0.3:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	executable? (
 		dev-haskell/monad-loops:=[profile?]
 		dev-haskell/regex-base:=[profile?]

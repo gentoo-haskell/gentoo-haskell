@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/parsec-1:=[profile?] <dev-haskell/parsec-4:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

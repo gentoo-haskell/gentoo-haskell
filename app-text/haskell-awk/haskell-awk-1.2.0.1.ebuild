@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/extra-1.5.3:=[profile?]
 	>=dev-haskell/hint-0.7.0:=[profile?]
 	>=dev-haskell/list-t-1:=[profile?]
 	>=dev-haskell/stringsearch-0.3.6.6:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

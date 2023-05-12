@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/exceptions:=[profile?]
 	dev-haskell/unix-bytestring:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/word8:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

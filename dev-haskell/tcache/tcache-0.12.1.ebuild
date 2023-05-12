@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/hashtables:=[profile?]
 	>=dev-haskell/refserialize-0.4.0:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

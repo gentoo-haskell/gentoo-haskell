@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/bmp-1.2.4.1:=[profile?]
 	>=dev-haskell/gloss-1.13:=[profile?]
 	dev-haskell/juicypixels:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

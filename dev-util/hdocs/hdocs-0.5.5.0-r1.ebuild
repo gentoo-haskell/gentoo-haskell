@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0:=[profile?]
 	>=dev-haskell/mtl-2.1.0:=[profile?]
 	>=dev-haskell/network-2.4.0:=[profile?]
 	>=dev-haskell/text-1.1.0:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

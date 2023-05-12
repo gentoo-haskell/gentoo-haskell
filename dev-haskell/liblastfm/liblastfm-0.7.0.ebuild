@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/xml-conduit-1.1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

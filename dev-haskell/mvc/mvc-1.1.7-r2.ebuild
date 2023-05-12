@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/async-2.0.0:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/mmorph-1.0.2:=[profile?]
 	>=dev-haskell/pipes-4.1.7:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/pipes-concurrency-2.0.3:=[profile?] <dev-haskell/pipes-concurrency-2.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

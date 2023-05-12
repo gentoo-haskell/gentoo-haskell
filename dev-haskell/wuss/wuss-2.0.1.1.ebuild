@@ -20,7 +20,7 @@ RDEPEND="
 	>=dev-haskell/connection-0.3.1:=[profile?] <dev-haskell/connection-0.4:=[profile?]
 	>=dev-haskell/network-3.1.1:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/websockets-0.12.7:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
-	>=dev-lang/ghc-9.0.2:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

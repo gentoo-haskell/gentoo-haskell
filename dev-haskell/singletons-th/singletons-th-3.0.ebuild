@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/mtl-2.2.1:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?]
 	>=dev-haskell/th-desugar-1.12:=[profile?] <dev-haskell/th-desugar-1.13:=[profile?]
 	>=dev-haskell/th-orphans-0.13.11:=[profile?] <dev-haskell/th-orphans-0.14:=[profile?]
-	>=dev-lang/ghc-9.0.2:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

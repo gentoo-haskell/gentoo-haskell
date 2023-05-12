@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.8:=[profile?] <dev-haskell/blaze-html-0.10:=
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/yesod-core-1.6:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?]
 	>=dev-haskell/yesod-elements-1.1:=[profile?] <dev-haskell/yesod-elements-1.2:=[profile?]
-	>=dev-lang/ghc-8.0.2:=[profile?]
+	>=dev-lang/ghc-8.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0

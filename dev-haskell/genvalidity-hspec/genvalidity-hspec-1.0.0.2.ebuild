@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/genvalidity-1.0:=[profile?]
 	>=dev-haskell/hspec-core-2.5.0:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/validity-0.5:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

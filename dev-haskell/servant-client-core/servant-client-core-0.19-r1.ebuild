@@ -34,7 +34,7 @@ RDEPEND="
 	>=dev-haskell/safe-0.3.17:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/servant-0.19:=[profile?]
 	>=dev-haskell/sop-core-0.4.0.0:=[profile?] <dev-haskell/sop-core-0.6:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/math-functions-0.2.1.0:=[profile?]
 	>=dev-haskell/primitive-0.6.2:=[profile?]
 	>=dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

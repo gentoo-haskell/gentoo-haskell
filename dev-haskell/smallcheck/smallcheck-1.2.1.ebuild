@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/logict:=[profile?]
 	dev-haskell/nats:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/void:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

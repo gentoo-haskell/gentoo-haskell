@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/colour-2.3.3:=[profile?]
 	>=dev-haskell/repa-3.2.1.1:=[profile?] <dev-haskell/repa-4:=[profile?]
 	>=dev-haskell/temporary-1.1.1:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	!disable-chart? ( >=dev-haskell/chart-1.5:=[profile?]
 				>=dev-haskell/chart-diagrams-1.5:=[profile?] )
 "

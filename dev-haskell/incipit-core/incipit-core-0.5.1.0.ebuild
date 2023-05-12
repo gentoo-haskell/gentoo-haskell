@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="~dev-haskell/incipit-base-0.5.1.0:=[profile?]
 	>=dev-haskell/polysemy-1.6:=[profile?] <dev-haskell/polysemy-2:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

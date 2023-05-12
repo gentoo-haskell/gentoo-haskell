@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/haskell-src-exts-1.11.1:=[profile?]
 	>=dev-haskell/mtl-1.1.1.1:=[profile?]
 	>=dev-haskell/uuagc-cabal-1.0.2.0:=[profile?]
 	>=dev-haskell/uulib-0.9.14:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	loag? ( dev-haskell/minisat:=[profile?] )
 "
 DEPEND="${RDEPEND}

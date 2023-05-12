@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-1.0:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/parsec-3.1.0:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+fclip +flower +frecover"
 
 RDEPEND=">=dev-haskell/biocore-0.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	flower? ( dev-haskell/cmdargs:=[profile?]
 			>=dev-haskell/mtl-2:=[profile?] )
 "

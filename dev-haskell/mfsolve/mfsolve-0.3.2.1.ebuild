@@ -21,7 +21,7 @@ PATCHES=( "${FILESDIR}/${PN}-0.3.2.1-fix-tests.patch" )
 RDEPEND=">=dev-haskell/hashable-0.1.2:=[profile?]
 	>=dev-haskell/mtl-compat-0.2.1:=[profile?]
 	>dev-haskell/unordered-containers-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

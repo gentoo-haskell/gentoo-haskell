@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/contravariant-1.3:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/template-haskell-compat-v0208-0.1.4:=[profile?] <dev-haskell/template-haskell-compat-v0208-2:=[profile?]
-	>=dev-lang/ghc-8.2.1:=[profile?]
+	>=dev-lang/ghc-8.2.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2

@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/deferred-folds-0.9:=[profile?] <dev-haskell/deferred-fold
 	>=dev-haskell/focus-1:=[profile?] <dev-haskell/focus-1.1:=[profile?]
 	>=dev-haskell/foldl-1:=[profile?] <dev-haskell/foldl-2:=[profile?]
 	>=dev-haskell/stm-containers-1.1:=[profile?] <dev-haskell/stm-containers-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

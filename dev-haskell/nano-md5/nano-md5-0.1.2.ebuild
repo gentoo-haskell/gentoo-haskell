@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-lang/ghc-6.8.2:=[profile?]
+RDEPEND=">=dev-lang/ghc-6.8.2:=
 	dev-libs/openssl"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2"

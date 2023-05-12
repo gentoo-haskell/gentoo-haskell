@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/http-client-0.2:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
 	<dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2

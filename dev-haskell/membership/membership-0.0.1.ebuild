@@ -20,7 +20,7 @@ RDEPEND="dev-haskell/constraints:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
 	dev-haskell/th-lift:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

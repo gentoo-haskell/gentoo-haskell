@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/glutil-0.6.4:=[profile?]
 	>=dev-haskell/tagged-0.4:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/vinyl-0.9.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

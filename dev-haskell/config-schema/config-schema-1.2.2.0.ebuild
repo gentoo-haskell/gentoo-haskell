@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/config-value-0.8:=[profile?] <dev-haskell/config-value-0.
 	>=dev-haskell/kan-extensions-5.0.2:=[profile?] <dev-haskell/kan-extensions-5.3:=[profile?]
 	>=dev-haskell/semigroupoids-5.1:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

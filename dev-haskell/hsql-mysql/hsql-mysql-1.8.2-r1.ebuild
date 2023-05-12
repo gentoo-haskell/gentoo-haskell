@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/cabal:=[profile?]
 	>=dev-haskell/hsql-1.8.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	>=virtual/mysql-4.0
 "
 DEPEND="${RDEPEND}

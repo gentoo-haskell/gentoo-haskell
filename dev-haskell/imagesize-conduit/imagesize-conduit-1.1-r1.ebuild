@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/conduit-extra-1.1:=[profile?] <dev-haskell/conduit-extra-1.4:=[profile?]
 	>=dev-haskell/exceptions-0.4:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

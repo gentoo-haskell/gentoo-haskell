@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	>=dev-haskell/syb-0:=[profile?] <dev-haskell/syb-1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

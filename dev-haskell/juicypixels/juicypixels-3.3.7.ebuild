@@ -21,7 +21,7 @@ IUSE="mmap"
 RDEPEND=">=dev-haskell/primitive-0.4:=[profile?]
 	<dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/zlib-0.5.3.1:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

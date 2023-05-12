@@ -22,7 +22,7 @@ RDEPEND="
 	>=dev-haskell/hedgehog-0.5:=[profile?] <dev-haskell/hedgehog-1.3:=[profile?]
 	>=dev-haskell/hspec-2.6:=[profile?] <dev-haskell/hspec-3:=[profile?]
 	>=dev-haskell/hunit-1.5:=[profile?] <dev-haskell/hunit-1.7:=[profile?]
-	>=dev-lang/ghc-8.6.5:=[profile?]
+	>=dev-lang/ghc-8.6.5:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/utf8-string-0.1:=[profile?]
 	>=dev-haskell/x11-1.2.1:=[xinerama,profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	x11-libs/libXft
 "
 DEPEND="${RDEPEND}

@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/call-stack:=[profile?]
 	>=dev-haskell/hspec-core-2.5.0:=[profile?]
 	dev-haskell/hunit:=[profile?]
 	>=dev-haskell/smallcheck-1.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

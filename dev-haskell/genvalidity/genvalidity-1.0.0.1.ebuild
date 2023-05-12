@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/quickcheck-2.13:2=[profile?]
 	>=dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/validity-0.12:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

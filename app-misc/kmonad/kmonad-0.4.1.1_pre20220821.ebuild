@@ -30,7 +30,7 @@ RDEPEND="dev-haskell/cereal:=[profile?]
 	dev-haskell/resourcet:=[profile?]
 	dev-haskell/rio:=[profile?]
 	dev-haskell/unliftio:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

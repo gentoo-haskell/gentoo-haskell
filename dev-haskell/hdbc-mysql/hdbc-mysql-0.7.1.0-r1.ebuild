@@ -22,7 +22,7 @@ IUSE="debug"
 
 RDEPEND=">=dev-haskell/hdbc-2.1.0:2=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 	dev-libs/openssl:0=
 	sys-libs/zlib
 	dev-db/mysql-connector-c:0=

@@ -29,7 +29,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/tagsoup:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	jsaddle? ( dev-haskell/scientific:=[profile?]
 			dev-haskell/unordered-containers:=[profile?]
 			ios? ( dev-haskell/jsaddle-wkwebview:=[profile?] )

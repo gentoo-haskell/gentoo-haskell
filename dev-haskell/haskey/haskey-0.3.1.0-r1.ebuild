@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/exceptions-0.8.3:=[profile?] <dev-haskell/exceptions-0.11
 	>=dev-haskell/semigroups-0.12:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/stm-2.1:=[profile?] <dev-haskell/stm-3:=[profile?]
 	>=dev-haskell/xxhash-ffi-0.1.0.1:=[profile?] <dev-haskell/xxhash-ffi-1:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	>=dev-haskell/focus-0.1.2:=[profile?] <dev-haskell/focus-1.1:=[profile?]
 	>=dev-haskell/stm-containers-0.2:=[profile?]
 "

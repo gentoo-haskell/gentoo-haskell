@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6.8:=[profile?]
 	dev-haskell/parsers:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	gsl-example? ( >=dev-haskell/chart-1.3:=[profile?]
 			dev-haskell/chart-cairo:=[profile?]
 			sci-libs/gsl

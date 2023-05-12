@@ -22,7 +22,7 @@ PATCHES=( "${FILESDIR}/${PN}-0.3.3.0-fix-examples.patch" )
 RDEPEND=">=dev-haskell/async-2.0.1.5:=[profile?]
 	>=dev-haskell/concurrent-output-1.7:=[profile?]
 	>=dev-haskell/data-default-0.5.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	examples? ( dev-haskell/random:=[profile?] )
 "
 DEPEND="${RDEPEND}

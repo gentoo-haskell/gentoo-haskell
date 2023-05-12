@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/gi-gtk-3.0.1.1:=[profile?] <dev-haskell/gi-gtk-5.0:=[prof
 	>=dev-haskell/haskell-gi-base-0.20:=[profile?]
 	>=dev-haskell/reactive-banana-1.2.1.0:=[profile?] <dev-haskell/reactive-banana-1.3:=[profile?]
 	>=dev-haskell/text-1.2.2.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/fast-math-1.0.0:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-haskell/vector-space-0.10.4:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

@@ -35,7 +35,7 @@ RDEPEND="
 	>=dev-haskell/vector-0.7.1:=[profile?]
 	dev-haskell/x509:=[profile?]
 	dev-haskell/x509-store:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -20,7 +20,7 @@ IUSE="examples"
 RDEPEND="dev-haskell/data-default:=[profile?]
 	>=dev-haskell/exceptions-0.6:=[profile?]
 	>dev-haskell/resourcet-0.3.2:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	dev-libs/leveldb:=
 	examples? ( dev-haskell/async:=[profile?] )
 "

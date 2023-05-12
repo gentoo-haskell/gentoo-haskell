@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/deferred-folds-0.9:=[profile?] <dev-haskell/deferred-fold
 	<dev-haskell/hashable-2:=[profile?]
 	>=dev-haskell/list-t-1.0.1:=[profile?] <dev-haskell/list-t-1.1:=[profile?]
 	>=dev-haskell/stm-hamt-1.2:=[profile?] <dev-haskell/stm-hamt-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

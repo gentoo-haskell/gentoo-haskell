@@ -22,7 +22,7 @@ RESTRICT=test # fails 2/85 tests
 RDEPEND=">=dev-haskell/continued-fractions-0.10:=[profile?]
 	dev-haskell/converge:=[profile?]
 	>=dev-haskell/vector-0.5:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

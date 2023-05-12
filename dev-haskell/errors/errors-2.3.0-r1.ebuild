@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/safe-0.3.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/transformers-compat-0.4:=[profile?] <dev-haskell/transformers-compat-0.8:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

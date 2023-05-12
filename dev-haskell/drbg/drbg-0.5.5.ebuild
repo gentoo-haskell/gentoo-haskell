@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/cereal-0.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?
 	dev-haskell/parallel:=[profile?]
 	dev-haskell/prettyclass:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

@@ -103,7 +103,7 @@ RDEPEND="
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 	hls_formatters_floskell? ( >dev-haskell/hls-floskell-plugin-1.0.1.1:=[profile?] <dev-haskell/hls-floskell-plugin-1.1:=[profile?] )
 	hls_formatters_fourmolu? ( >=dev-haskell/hls-fourmolu-plugin-1.1:=[profile?] <dev-haskell/hls-fourmolu-plugin-1.2:=[profile?] )
 	hls_formatters_ormolu? ( >=dev-haskell/hls-ormolu-plugin-1.0:=[profile?] <dev-haskell/hls-ormolu-plugin-1.1:=[profile?] )

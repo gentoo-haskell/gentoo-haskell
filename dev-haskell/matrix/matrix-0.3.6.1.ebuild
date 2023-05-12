@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/loop-0.2:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?]
 	>=dev-haskell/semigroups-0.9:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

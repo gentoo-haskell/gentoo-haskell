@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/hlibsass-0.1.7.0:=[profile?]
 	>=dev-haskell/monad-loops-0.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

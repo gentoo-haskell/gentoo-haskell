@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/hashable-1.1:=[profile?]
 	>=dev-haskell/these-0.2:=[profile?] <dev-haskell/these-1.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.1.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vault-0.3:=[profile?] <dev-haskell/vault-0.4:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

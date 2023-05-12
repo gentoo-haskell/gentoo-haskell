@@ -26,7 +26,7 @@ RDEPEND="dev-db/unixODBC
 	>=dev-haskell/hdbc-2.1.0:2=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	virtual/libc
 "
 DEPEND="${RDEPEND}

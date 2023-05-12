@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/base-compat-0.4:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
 	|| ( dev-lang/ghc ( >=dev-haskell/process-1.6.3.0[profile?] <dev-haskell/process-1.7[profile?] ) )
 	>=dev-haskell/shellwords-0.1.3.0:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -54,7 +54,7 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	dev-haskell/uglymemo:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/utf8-string-0.3.5:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

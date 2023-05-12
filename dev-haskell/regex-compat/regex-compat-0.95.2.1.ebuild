@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/regex-base-0.94:=[profile?] <dev-haskell/regex-base-0.95:=[profile?]
 	>=dev-haskell/regex-posix-0.96:=[profile?] <dev-haskell/regex-posix-0.97:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

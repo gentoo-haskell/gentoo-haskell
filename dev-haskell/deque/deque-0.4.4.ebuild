@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-2:=[profile?]
 	>=dev-haskell/strict-list-0.1.6:=[profile?] <dev-haskell/strict-list-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

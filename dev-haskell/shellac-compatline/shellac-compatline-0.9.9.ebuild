@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 IUSE="editline +readline"
 
 RDEPEND="dev-haskell/shellac:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	editline? ( dev-haskell/shellac-editline:=[profile?] )
 	readline? ( dev-haskell/shellac-readline:=[profile?] )
 "

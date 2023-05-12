@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
 IUSE=""
 
 RDEPEND="dev-haskell/data-default-class:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/system-filepath-0.4.7:=[profile?] <dev-haskell/system-filepath-0.5:=[profile?]
 	>=dev-haskell/text-0.11.1.13:=[profile?] <dev-haskell/text-12:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

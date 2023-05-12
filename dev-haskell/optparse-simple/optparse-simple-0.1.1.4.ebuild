@@ -20,7 +20,7 @@ IUSE="build-example"
 RDEPEND=">=dev-haskell/githash-0.1.3.0:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/th-compat:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

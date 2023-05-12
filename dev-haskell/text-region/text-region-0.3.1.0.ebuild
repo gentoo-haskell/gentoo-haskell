@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.9:=[profile?]
 	>=dev-haskell/groups-0.4.0:=[profile?]
 	>=dev-haskell/lens-4.12:=[profile?]
 	>=dev-haskell/text-1.2.1:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

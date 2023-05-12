@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/conduit:=[profile?]
 	dev-haskell/hsndfile:=[profile?]
 	dev-haskell/hsndfile-vector:=[profile?]
 	dev-haskell/resourcet:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

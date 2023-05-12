@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
 	>=dev-haskell/numbers-3000.2.0.0:=[profile?] <dev-haskell/numbers-3000.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/parsers-0.12.3:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

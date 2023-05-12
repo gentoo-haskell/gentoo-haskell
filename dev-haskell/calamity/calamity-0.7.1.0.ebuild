@@ -58,7 +58,7 @@ RDEPEND="
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/websockets-0.12:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
 	>=dev-haskell/x509-system-1.6.6:=[profile?] <dev-haskell/x509-system-1.7:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -22,7 +22,7 @@ WX_GTK_VER="3.0-gtk3"
 
 RDEPEND=">=dev-haskell/cabal-macosx-0.1:=[profile?] <dev-haskell/cabal-macosx-0.3:=[profile?]
 	>=dev-haskell/reactive-banana-1.1:=[profile?] <dev-haskell/reactive-banana-1.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/wx-0.90.0.1:${WX_GTK_VER}=[profile?]
 	>=dev-haskell/wxcore-0.90.0.1:${WX_GTK_VER}=[profile?]
 	examples? (

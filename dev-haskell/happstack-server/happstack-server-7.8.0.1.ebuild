@@ -35,7 +35,7 @@ RDEPEND="
 	>=dev-haskell/utf8-string-0.3.4:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	dev-haskell/xhtml:=[profile?]
 	dev-haskell/zlib:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

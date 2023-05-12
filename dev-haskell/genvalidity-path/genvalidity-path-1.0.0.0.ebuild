@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/genvalidity-1.0:=[profile?]
 	>=dev-haskell/path-0.5:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/validity-path-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

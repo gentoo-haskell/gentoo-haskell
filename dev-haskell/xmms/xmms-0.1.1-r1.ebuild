@@ -19,7 +19,7 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.4.1:=
 	media-sound/xmms2
 "
 DEPEND="${RDEPEND}

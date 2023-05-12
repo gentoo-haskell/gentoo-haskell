@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/hspec-2.0:=[profile?] <dev-haskell/hspec-3.0:=[profile?]
 	>=dev-haskell/hspec-megaparsec-2.0:=[profile?] <dev-haskell/hspec-megaparsec-3.0:=[profile?]
 	~dev-haskell/megaparsec-9.2.2:=[profile?]
 	>=dev-haskell/quickcheck-2.10:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
-	>=dev-lang/ghc-9.0.2:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

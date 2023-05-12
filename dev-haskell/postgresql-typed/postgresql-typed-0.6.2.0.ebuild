@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:
 	dev-haskell/network:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	aeson? ( >=dev-haskell/aeson-0.7:=[profile?] )
 	binary? ( >=dev-haskell/postgresql-binary-0.8:=[profile?]
 			>=dev-haskell/scientific-0.3:=[profile?]

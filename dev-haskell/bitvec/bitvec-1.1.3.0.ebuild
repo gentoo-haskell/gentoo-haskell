@@ -19,7 +19,7 @@ IUSE="+gmp"
 RDEPEND="
 	>=dev-haskell/primitive-0.5:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	gmp? (
 		dev-libs/gmp
 	)

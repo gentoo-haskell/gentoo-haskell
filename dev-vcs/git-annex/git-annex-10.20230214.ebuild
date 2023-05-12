@@ -99,7 +99,7 @@ RDEPEND="
 	>=dev-haskell/yesod-core-1.6.0:=
 	>=dev-haskell/yesod-form-1.4.8:=
 	>=dev-haskell/yesod-static-1.5.1:=
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	assistant? (
 		>=dev-haskell/hinotify-0.3.10:=
 	)

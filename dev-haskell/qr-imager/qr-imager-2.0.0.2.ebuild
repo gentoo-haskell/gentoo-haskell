@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/cryptonite:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/vector:=[profile?]
 	media-gfx/qrencode:=
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

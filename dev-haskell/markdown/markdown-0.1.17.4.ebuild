@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	dev-haskell/xml-conduit:=[profile?]
 	dev-haskell/xml-types:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3.3:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

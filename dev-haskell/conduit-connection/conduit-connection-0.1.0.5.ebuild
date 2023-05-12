@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/conduit-1.1:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/connection-0.2:=[profile?] <dev-haskell/connection-0.4:=[profile?]
 	>=dev-haskell/resourcet-1.1:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1"

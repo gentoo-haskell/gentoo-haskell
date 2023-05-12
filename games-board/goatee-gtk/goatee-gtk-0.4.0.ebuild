@@ -22,7 +22,7 @@ RDEPEND=">=dev-games/goatee-0.4:=[profile?] <dev-games/goatee-0.5:=[profile?]
 	>=dev-haskell/gtk-0.13:=[profile?] <dev-haskell/gtk-0.16:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

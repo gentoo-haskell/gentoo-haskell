@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/text-1.1.1.0:=[profile?]
 	>=dev-haskell/uri-bytestring-0.2:=[profile?] <dev-haskell/uri-bytestring-0.4:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

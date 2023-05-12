@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/data-accessor-0.2.1:=[profile?] <dev-haskell/data-accesso
 	>=dev-haskell/synthesizer-core-0.6:=[profile?] <dev-haskell/synthesizer-core-0.9:=[profile?]
 	>=dev-haskell/synthesizer-dimensional-0.7:=[profile?] <dev-haskell/synthesizer-dimensional-0.9:=[profile?]
 	>=dev-haskell/utility-ht-0.0.1:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

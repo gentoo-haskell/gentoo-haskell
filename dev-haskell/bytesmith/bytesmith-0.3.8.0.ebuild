@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/byteslice-0.1.4:=[profile?] <dev-haskell/byteslice-0.3:=[
 	>=dev-haskell/run-st-0.1:=[profile?] <dev-haskell/run-st-0.2:=[profile?]
 	>=dev-haskell/text-short-0.1.3:=[profile?] <dev-haskell/text-short-0.2:=[profile?]
 	>=dev-haskell/wide-word-0.1.0.9:=[profile?] <dev-haskell/wide-word-0.2:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

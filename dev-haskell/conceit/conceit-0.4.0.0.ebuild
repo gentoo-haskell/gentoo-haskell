@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/bifunctors-4.1:=[profile?]
 	>=dev-haskell/semigroupoids-4:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	>=dev-haskell/void-0.6:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/ghc-tcplugins-extra-0.3.1:=[profile?]
 	>=dev-haskell/ghc-typelits-knownnat-0.7.2:=[profile?] <dev-haskell/ghc-typelits-knownnat-0.8:=[profile?]
 	>=dev-haskell/ghc-typelits-natnormalise-0.7.1:=[profile?] <dev-haskell/ghc-typelits-natnormalise-0.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

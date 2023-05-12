@@ -20,7 +20,7 @@ RDEPEND="
 	>=dev-haskell/hls-plugin-api-1.4:=[profile?] <dev-haskell/hls-plugin-api-1.7:=[profile?]
 	dev-haskell/lsp-types:=[profile?]
 	>=dev-haskell/stylish-haskell-0.14.2:=[profile?] <dev-haskell/stylish-haskell-0.15:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

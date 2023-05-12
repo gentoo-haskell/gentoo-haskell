@@ -21,7 +21,7 @@ RDEPEND="
 	>=dev-haskell/ghc-paths-0.1.0.9:=[profile?]
 	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	>=dev-haskell/syb-0.3:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

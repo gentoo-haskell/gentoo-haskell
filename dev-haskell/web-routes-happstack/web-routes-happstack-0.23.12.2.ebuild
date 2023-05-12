@@ -22,7 +22,7 @@ CABAL_CHDEPS=(
 RDEPEND="
 	>=dev-haskell/happstack-server-6.6:=[profile?]
 	>=dev-haskell/web-routes-0.27.1:=[profile?] <dev-haskell/web-routes-0.28:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

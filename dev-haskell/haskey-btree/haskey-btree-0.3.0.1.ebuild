@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-2:=[profil
 	>=dev-haskell/semigroups-0.12:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/text-1.2.1:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

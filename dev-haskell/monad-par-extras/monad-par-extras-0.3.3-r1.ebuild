@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/abstract-par-0.3:=[profile?] <dev-haskell/abstract-par-0.
 	>=dev-haskell/cereal-0.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

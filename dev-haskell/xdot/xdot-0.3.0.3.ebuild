@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?]
 	>=dev-haskell/polyparse-1.8:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

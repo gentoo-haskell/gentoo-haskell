@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
 	>=dev-haskell/http-types-0.8.0:=[profile?]
-	>=dev-lang/ghc-6.12.1:=[profile?]
+	>=dev-lang/ghc-6.12.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8.0.2

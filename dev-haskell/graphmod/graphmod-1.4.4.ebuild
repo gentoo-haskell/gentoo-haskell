@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="dev-haskell/cabal:=
 	>=dev-haskell/dotgen-0.2:= <dev-haskell/dotgen-0.5:=
 	>=dev-haskell/haskell-lexer-1.0.2:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:
 	>=dev-haskell/network-2.5:=[profile?] <dev-haskell/network-4:=[profile?]
 	>=dev-haskell/network-info-0.2:=[profile?] <=dev-haskell/network-info-0.3:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?] <dev-haskell/text-2.1:=[profile?]
 "

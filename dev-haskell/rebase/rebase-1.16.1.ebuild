@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.5:=[profile?] <dev-haskell/bifunctors-5.6:=[
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/vector-instances-3.4:=[profile?] <dev-haskell/vector-instances-3.5:=[profile?]
 	>=dev-haskell/void-0.7:=[profile?] <dev-haskell/void-0.8:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

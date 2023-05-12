@@ -35,7 +35,7 @@ RDEPEND="
 	dev-haskell/optparse-applicative:=[profile?]
 	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 	fingertree? (
 		dev-haskell/hw-fingertree:=[profile?]
 	)

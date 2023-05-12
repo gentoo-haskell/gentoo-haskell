@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/amazonka-core-1.6.1:=[profile?] <dev-haskell/amazonka-core-1.6.2:=[profile?]
 	>=dev-haskell/lens-4.4:=[profile?]
 	>=dev-haskell/text-1.1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

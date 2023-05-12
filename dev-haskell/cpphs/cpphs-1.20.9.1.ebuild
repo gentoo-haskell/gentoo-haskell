@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/polyparse-1.13:=[profile?] <dev-haskell/polyparse-1.14:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

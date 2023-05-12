@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RESTRICT=test # 1 of 2 test suites (1 of 2 test cases) passed
 
 RDEPEND="dev-haskell/stm:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

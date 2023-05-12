@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/cairo-0.12:0=[profile?]
 		>=dev-haskell/gtk-0.12:2=[profile?]
 		>=dev-haskell/stm-2.0:=[profile?]
 		<dev-haskell/stm-3.0:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]
+		>=dev-lang/ghc-6.10.4:=
 		x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"

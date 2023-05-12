@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/safecopy-0.8:=[profile?] <dev-haskell/safecopy-0.11:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?] <dev-haskell/syb-1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

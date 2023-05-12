@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/mtl-2.0.1.0:=[profile?]
 	>=dev-haskell/parsec-3.1.1:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?]
 	>=dev-haskell/th-lift-0.5.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

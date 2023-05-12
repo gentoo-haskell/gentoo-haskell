@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.11.3.4:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	>=dev-haskell/aeson-1.5.4.1:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-2.1:=[profile?]
 "

@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-4.0:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

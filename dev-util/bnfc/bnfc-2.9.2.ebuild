@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/mtl-2.2.1:=[profile?]
 	dev-haskell/string-qq:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/alex

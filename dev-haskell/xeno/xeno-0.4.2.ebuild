@@ -20,7 +20,7 @@ IUSE="libxml2"
 RDEPEND=">=dev-haskell/mtl-2.2.1:=[profile?]
 	>=dev-haskell/mutable-containers-0.3.3:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

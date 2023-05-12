@@ -30,7 +30,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 	type-errors? ( dev-haskell/type-errors:=[profile?] )
 "
 DEPEND="${RDEPEND}

@@ -30,7 +30,7 @@ RDEPEND="
 	>=dev-haskell/network-uri-2.6:=[profile?]
 	>=dev-haskell/openssl-streams-1.1:=[profile?] <dev-haskell/openssl-streams-1.4:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

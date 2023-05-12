@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/parsec-2.1.0.1:=[profile?]
 	dev-haskell/random:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/c2hs

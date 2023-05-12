@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
 	>=dev-haskell/th-abstraction-0.3.1.0:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]
 	>=dev-haskell/type-errors-0.2.0.0:=[profile?]
 	>=dev-haskell/unagi-chan-0.4.0.0:=[profile?] <dev-haskell/unagi-chan-0.5:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

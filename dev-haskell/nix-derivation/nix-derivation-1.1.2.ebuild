@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12.0.0:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/pretty-show-1.6.11:=[profile?] <dev-haskell/pretty-show-1.11:=[profile?]
 	>=dev-haskell/text-0.8.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	<dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

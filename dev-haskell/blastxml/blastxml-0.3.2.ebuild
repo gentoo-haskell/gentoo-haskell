@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/biocore-0.3.0:=[profile?]
 	dev-haskell/parallel:=[profile?]
 	dev-haskell/tagsoup:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

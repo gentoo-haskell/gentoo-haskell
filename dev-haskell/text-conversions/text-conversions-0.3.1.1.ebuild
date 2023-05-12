@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="<dev-haskell/base16-bytestring-2:=[profile?]
 	<dev-haskell/base64-bytestring-2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4

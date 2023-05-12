@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/aeson-pretty-0.8:=[profile?]
 	>=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/hakyll-4.7.0:=[profile?]
 	>=dev-haskell/hsass-0.2.0:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

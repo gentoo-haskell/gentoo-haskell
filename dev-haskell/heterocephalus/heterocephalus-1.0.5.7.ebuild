@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.9.1.2:=[profile?]
 	>=dev-haskell/shakespeare-2.0.26:=[profile?]
 	>=dev-haskell/template-haskell-compat-v0208-0.1.7:=[profile?]
 	>=dev-haskell/text-1.2.4.1:=[profile?]
-	>=dev-lang/ghc-9.0.2:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

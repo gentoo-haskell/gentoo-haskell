@@ -19,7 +19,8 @@ IUSE="constraints debug examples"
 
 RESTRICT=test # Test suite functional-tests: FAIL
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?] <dev-lang/ghc-9.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.0.1:=[profile?] <dev-lang/ghc-9.1:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	constraints? ( >=dev-haskell/constraints-0.6:=[profile?] )
 "
 DEPEND="${RDEPEND}

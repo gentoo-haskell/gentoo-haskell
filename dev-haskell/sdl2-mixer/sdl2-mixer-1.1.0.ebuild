@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?]
 	>=dev-haskell/sdl2-2.0.0:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	media-libs/sdl2-mixer[midi]
 "
 DEPEND="${RDEPEND}

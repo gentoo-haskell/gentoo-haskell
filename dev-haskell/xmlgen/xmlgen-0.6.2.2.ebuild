@@ -22,7 +22,7 @@ RESTRICT=test # Cases: 8  Tried: 0  Errors: 0  Failures: 0test/1.xml: openFile: 
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?]
 	>=dev-haskell/mtl-2.0:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

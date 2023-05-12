@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/primitive-0.7.2:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/primitive-unlifted-0.1.3.1:=[profile?] <dev-haskell/primitive-unlifted-0.2:=[profile?]
 	>=dev-haskell/run-st-0.1.1:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

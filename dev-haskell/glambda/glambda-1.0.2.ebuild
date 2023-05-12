@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/ansi-wl-pprint-0.6.7.1:=[profile?]
 	>=dev-haskell/haskeline-0.7.1.1:=[profile?]
 	>=dev-haskell/mtl-2.2.1:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

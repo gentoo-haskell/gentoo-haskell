@@ -28,7 +28,7 @@ RDEPEND="
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/uri-bytestring-0.2.3:=[profile?] <dev-haskell/uri-bytestring-0.4:=[profile?]
 	>=dev-haskell/uri-bytestring-aeson-0.1:=[profile?] <dev-haskell/uri-bytestring-aeson-0.2:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

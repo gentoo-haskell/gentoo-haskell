@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/hashtables:=[profile?]
 	dev-haskell/stringsearch:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/cabal

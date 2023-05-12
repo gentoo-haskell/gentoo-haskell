@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?
 	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	>=dev-haskell/temporary-1.1:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	>=dev-haskell/wl-pprint-text-1.2:=[profile?] <dev-haskell/wl-pprint-text-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

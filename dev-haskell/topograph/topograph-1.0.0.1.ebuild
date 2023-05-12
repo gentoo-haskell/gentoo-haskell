@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/base-orphans-0.8:=[profile?] <dev-haskell/base-orphans-0.9:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.6.2:=[profile?]
+	>=dev-lang/ghc-7.6.2:=
 	>=dev-haskell/base-compat-0.10.5:=[profile?]
 "
 DEPEND="${RDEPEND}

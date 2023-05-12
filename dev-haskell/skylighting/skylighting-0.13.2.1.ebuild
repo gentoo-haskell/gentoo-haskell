@@ -22,7 +22,7 @@ RDEPEND="~dev-haskell/skylighting-core-0.13.2.1:=[profile?]
 	>=dev-haskell/skylighting-format-blaze-html-0.1:=[profile?] <dev-haskell/skylighting-format-blaze-html-0.2:=[profile?]
 	>=dev-haskell/skylighting-format-context-0.1:=[profile?] <dev-haskell/skylighting-format-context-0.2:=[profile?]
 	>=dev-haskell/skylighting-format-latex-0.1:=[profile?] <dev-haskell/skylighting-format-latex-0.2:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	executable? ( >=dev-haskell/blaze-html-0.5:=[profile?]
 			dev-haskell/pretty-show:=[profile?]
 			dev-haskell/text:=[profile?] )

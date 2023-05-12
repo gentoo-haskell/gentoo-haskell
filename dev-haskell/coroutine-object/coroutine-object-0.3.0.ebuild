@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/either-3.1:=[profile?]
 	>=dev-haskell/free-4.0:=[profile?]
 	>dev-haskell/mtl-2:=[profile?]
 	>=dev-haskell/transformers-0.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/glib-0.12.3:=[profile?]
 	>=dev-haskell/gtk-0.12.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	x11-libs/libnotify
 "
 DEPEND="${RDEPEND}

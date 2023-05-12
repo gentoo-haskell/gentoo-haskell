@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/glib-0.12:0=[profile?]
 	>=dev-haskell/gtk-0.12:2=[profile?]
 	dev-haskell/mtl:=[profile?]
-	>=dev-lang/ghc-6.10.4:=[profile?]
+	>=dev-lang/ghc-6.10.4:=
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

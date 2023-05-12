@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/asn1-encoding-0.9:=[profile?] <dev-haskell/asn1-encoding-
 	dev-haskell/hourglass:=[profile?]
 	dev-haskell/memory:=[profile?]
 	>=dev-haskell/pem-0.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

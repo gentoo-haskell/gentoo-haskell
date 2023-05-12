@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.7.1:=[profile?]
 	>=dev-haskell/stm-2.3:=[profile?] <dev-haskell/stm-2.6:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/x11-1.6.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	x11-libs/libXrandr
 	x11-libs/libXrender
 	alsa? (

@@ -19,7 +19,7 @@ IUSE="+optimize"
 
 RDEPEND=">=dev-haskell/stm-2.1:=[profile?]
 	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

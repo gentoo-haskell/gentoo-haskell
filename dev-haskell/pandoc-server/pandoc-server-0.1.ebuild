@@ -27,7 +27,7 @@ RDEPEND=">=app-text/pandoc-3.0:=[profile?]
 	>=dev-haskell/unicode-collation-0.1.1:=[profile?] <dev-haskell/unicode-collation-0.2:=[profile?]
 	>=dev-haskell/wai-3.2:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/wai-cors-0.2.7:=[profile?] <dev-haskell/wai-cors-0.3:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

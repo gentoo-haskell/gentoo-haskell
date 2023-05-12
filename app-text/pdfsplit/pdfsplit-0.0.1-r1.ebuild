@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/pdfinfo-0:=
 	>=dev-haskell/temporary-1:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2

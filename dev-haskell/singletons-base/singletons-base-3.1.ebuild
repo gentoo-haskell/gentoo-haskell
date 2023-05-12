@@ -22,7 +22,7 @@ RDEPEND="
 	>=dev-haskell/singletons-th-3.1:=[profile?] <dev-haskell/singletons-th-3.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/th-desugar-1.13:=[profile?] <dev-haskell/th-desugar-1.14:=[profile?]
-	>=dev-lang/ghc-9.2.4:=[profile?]
+	>=dev-lang/ghc-9.2.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0 <dev-haskell/cabal-3.7

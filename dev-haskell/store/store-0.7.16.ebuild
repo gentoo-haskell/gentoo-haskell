@@ -46,7 +46,7 @@ RDEPEND="
 	>=dev-haskell/unordered-containers-0.2.5.1:=[profile?]
 	>=dev-haskell/vector-0.10.12.3:=[profile?]
 	>=dev-haskell/void-0.5.11:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

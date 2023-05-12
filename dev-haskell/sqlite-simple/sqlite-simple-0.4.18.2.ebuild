@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.3:=[profile?]
 	dev-haskell/blaze-textual:=[profile?]
 	>=dev-haskell/direct-sqlite-2.3.13:=[profile?] <dev-haskell/direct-sqlite-2.4:=[profile?]
 	>=dev-haskell/only-0.1:=[profile?] <dev-haskell/only-0.1.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

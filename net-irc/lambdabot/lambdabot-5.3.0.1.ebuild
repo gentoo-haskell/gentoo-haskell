@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/lambdabot-core-5.3:= <dev-haskell/lambdabot-core-5.4:=
 	>=dev-haskell/lambdabot-reference-plugins-5.3:= <dev-haskell/lambdabot-reference-plugins-5.4:=
 	>=dev-haskell/lambdabot-social-plugins-5.3:= <dev-haskell/lambdabot-social-plugins-5.4:=
 	>=dev-haskell/mtl-2:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

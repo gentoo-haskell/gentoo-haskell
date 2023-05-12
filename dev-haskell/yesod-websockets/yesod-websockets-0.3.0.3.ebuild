@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/conduit-1.3:=[profile?]
 	>=dev-haskell/wai-websockets-2.1:=[profile?]
 	>=dev-haskell/websockets-0.10:=[profile?]
 	>=dev-haskell/yesod-core-1.6:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

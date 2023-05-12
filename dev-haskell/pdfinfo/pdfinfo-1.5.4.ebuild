@@ -20,7 +20,7 @@ RDEPEND="dev-haskell/old-locale:=[profile?]
 	dev-haskell/process-extras:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/time-locale-compat:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/mtl-2.1.1:=[profile?]
 "
 DEPEND="${RDEPEND}

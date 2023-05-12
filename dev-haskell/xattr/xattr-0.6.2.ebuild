@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RESTRICT=test # needs xattr support on filesystem
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=[profile?]
+RDEPEND=">=dev-lang/ghc-6.10.4:=
 	sys-apps/attr
 "
 DEPEND="${RDEPEND}

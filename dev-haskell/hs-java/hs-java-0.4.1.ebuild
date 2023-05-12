@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/binary-state:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

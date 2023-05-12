@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/cryptonite-0.16:=
 	>=dev-haskell/stm-2.1:=
 	>=dev-haskell/transformers-0.4:=
 	>=dev-haskell/vector-0.9:=
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	curses? ( >=dev-haskell/hscurses-1.4:=
 		sys-libs/ncurses[unicode(+)] )
 	sdl? ( >=dev-haskell/sdl-0.6.5:=

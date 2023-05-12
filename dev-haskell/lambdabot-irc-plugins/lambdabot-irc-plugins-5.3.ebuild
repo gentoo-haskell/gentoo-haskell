@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/lambdabot-core-5.3:=[profile?] <dev-haskell/lambdabot-cor
 	>=dev-haskell/network-2.7:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	>=dev-haskell/safesemaphore-0.9:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

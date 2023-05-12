@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/assoc-1:=[profile?] <dev-haskell/assoc-1.1:=[profile?]
 	>=dev-haskell/lens-4:=[profile?] <dev-haskell/lens-6:=[profile?]
 	>=dev-haskell/semigroupoids-5:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -22,7 +22,7 @@ IUSE="gstreamer"
 RDEPEND=">dev-haskell/split-0:=[profile?]
 	>=dev-haskell/wxdirect-0.90.1.1:${WX_GTK_VER}=[profile?]
 	x11-libs/wxGTK:${WX_GTK_VER}=[X,gstreamer?,opengl]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 	!!dev-haskell/wxc:3.0
 "
 DEPEND="${RDEPEND}

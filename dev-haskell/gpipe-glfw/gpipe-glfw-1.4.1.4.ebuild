@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/async-2.1:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/glfw-b-3.2:=[profile?] <dev-haskell/glfw-b-3.4:=[profile?]
 	>=dev-haskell/gpipe-2.2:=[profile?] <dev-haskell/gpipe-2.5:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?] <dev-haskell/stm-3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

@@ -19,7 +19,7 @@ IUSE="+closuresignals"
 RDEPEND=">=dev-haskell/cabal-1.24.0.0:=[profile?]
 	dev-haskell/hashtables:=[profile?]
 	dev-haskell/random:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/alex-3.0.1

@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/blaze-builder:=[profile?]
 	>=dev-haskell/wai-1.3:=[profile?]
 	dev-haskell/wai-extra:=[profile?]
 	>=dev-haskell/yesod-core-1.6:=[profile?] <dev-haskell/yesod-core-1.7:=[profile?]
-	>=dev-lang/ghc-8.2.1:=[profile?]
+	>=dev-lang/ghc-8.2.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2

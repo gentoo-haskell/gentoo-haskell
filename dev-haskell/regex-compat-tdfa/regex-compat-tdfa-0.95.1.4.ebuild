@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/regex-base-0.93:=[profile?]
 	>=dev-haskell/regex-tdfa-1.1.0:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

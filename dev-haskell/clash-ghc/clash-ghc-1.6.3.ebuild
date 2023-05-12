@@ -36,7 +36,8 @@ RDEPEND="dev-haskell/cabal:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.1.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/utf8-string-1.0.0.0:=[profile?] <dev-haskell/utf8-string-1.1.0.0:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-1.0:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?] <dev-lang/ghc-9.1:=[profile?]
+	>=dev-lang/ghc-8.6.0:=[profile?] <dev-lang/ghc-9.1:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 	virtual/libc
 	ghc-paths? ( dev-haskell/ghc-paths:=[profile?] )
 "

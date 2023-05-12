@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	dev-libs/libxml2
 "
 DEPEND="${RDEPEND}

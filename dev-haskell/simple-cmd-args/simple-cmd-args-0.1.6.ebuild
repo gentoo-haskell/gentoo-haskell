@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/optparse-applicative-0.14.1:=[profile?]
 	dev-haskell/semigroups:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18

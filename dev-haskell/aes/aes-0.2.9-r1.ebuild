@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/cereal-0.2:=[profile?]
 	>=dev-haskell/monads-tf-0.1:=[profile?]
 	dev-haskell/random:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

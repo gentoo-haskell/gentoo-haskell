@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]
 	>=dev-haskell/vector-space-0.8:=[profile?]
 	>=dev-haskell/vector-th-unbox-0.2.1.0:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	lens? ( >=dev-haskell/lens-3.9:=[profile?] )
 	!lens? ( >=dev-haskell/profunctors-3.1.2:=[profile?] )
 "

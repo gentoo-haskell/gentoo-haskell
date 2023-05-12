@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/stm-2.4:=[profile?]
 	>=dev-haskell/time-units-1.0:=[profile?] <dev-haskell/time-units-2.0:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

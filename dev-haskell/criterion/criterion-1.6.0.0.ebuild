@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/aeson-1:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
 	>=dev-haskell/transformers-compat-0.6.4:=[profile?]
 	>=dev-haskell/vector-0.7.1:=[profile?]
 	>=dev-haskell/vector-algorithms-0.4:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	embed-data-files? ( <dev-haskell/file-embed-0.1:=[profile?] )
 "
 DEPEND="${RDEPEND}

@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 		>=dev-haskell/text-0.11:=[profile?]
 		>=dev-haskell/unordered-containers-0.2.2:=[profile?]
 		>=dev-haskell/vector-0.9:=[profile?]
-		>=dev-lang/ghc-7.4.1:=[profile?]"
+		>=dev-lang/ghc-7.4.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( >=dev-haskell/doctest-0.9

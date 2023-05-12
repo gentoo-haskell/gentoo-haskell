@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="prim-supports-any"
 
-RDEPEND=">=dev-lang/ghc-8.10.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0 <dev-haskell/cabal-3.9

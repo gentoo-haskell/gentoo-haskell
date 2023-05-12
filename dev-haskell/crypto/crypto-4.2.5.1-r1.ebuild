@@ -23,7 +23,7 @@ IUSE=""
 RDEPEND="dev-haskell/hunit:=[profile?]
 	>=dev-haskell/quickcheck-2.4.0.1:2=[profile?]
 	dev-haskell/random:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2

@@ -20,7 +20,7 @@ IUSE="profile"
 RDEPEND=">=dev-haskell/hxt-charproperties-9:=[profile?]
 	>=dev-haskell/parsec-2.1:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

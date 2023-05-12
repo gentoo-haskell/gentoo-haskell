@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/dbus:=[profile?]
 	dev-haskell/xdg-basedir:=[profile?]
-	>=dev-lang/ghc-7.6.2:=[profile?]
+	>=dev-lang/ghc-7.6.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

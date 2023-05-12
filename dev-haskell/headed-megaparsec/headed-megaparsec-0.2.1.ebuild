@@ -19,7 +19,7 @@ RDEPEND=">=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insens
 	>=dev-haskell/megaparsec-9.2:=[profile?] <dev-haskell/megaparsec-10:=[profile?]
 	>=dev-haskell/parser-combinators-1.3:=[profile?] <dev-haskell/parser-combinators-1.4:=[profile?]
 	>=dev-haskell/selective-0.5:=[profile?] <dev-haskell/selective-0.6:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

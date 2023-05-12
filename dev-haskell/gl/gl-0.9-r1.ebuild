@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/fixed-0.2.1:=[profile?]
 	>=dev-haskell/half-0.2:=[profile?] <dev-haskell/half-0.4:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	virtual/opengl
 "
 DEPEND="${RDEPEND}

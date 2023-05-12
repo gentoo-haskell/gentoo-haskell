@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.9:=[profile?
 	>=dev-haskell/old-time-1.1:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/repa-3.4:=[profile?] <dev-haskell/repa-3.5:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

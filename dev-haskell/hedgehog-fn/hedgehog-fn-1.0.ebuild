@@ -20,7 +20,7 @@ IUSE="build-examples"
 
 RDEPEND=">=dev-haskell/contravariant-1.4:=[profile?] <dev-haskell/contravariant-1.6:=[profile?]
 	>=dev-haskell/hedgehog-1.0:=[profile?] <dev-haskell/hedgehog-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

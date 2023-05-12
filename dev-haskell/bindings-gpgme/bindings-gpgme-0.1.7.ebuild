@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/bindings-dsl-1.0.16:=[profile?] <dev-haskell/bindings-dsl-1.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	app-crypt/gpgme
 "
 DEPEND="${RDEPEND}

@@ -32,7 +32,7 @@ RDEPEND=">=dev-haskell/base-compat-0.8:=[profile?] <dev-haskell/base-compat-0.13
 	dev-haskell/old-locale:=[profile?]
 	dev-haskell/old-time:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

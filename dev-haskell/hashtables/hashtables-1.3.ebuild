@@ -21,7 +21,7 @@ IUSE="bounds-checking cpu_flags_x86_sse4_2 debug detailed-profiling"
 RDEPEND=">=dev-haskell/hashable-1.4:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

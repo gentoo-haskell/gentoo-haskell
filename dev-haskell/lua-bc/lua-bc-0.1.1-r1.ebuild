@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/data-binary-ieee754-0.4:=[profile?] <dev-haskell/data-binary-ieee754-0.5:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

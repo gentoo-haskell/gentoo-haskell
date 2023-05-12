@@ -35,7 +35,7 @@ RDEPEND="
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	gpl? (
 		>=dev-haskell/hscolour-1.21:=[profile?]
 	)

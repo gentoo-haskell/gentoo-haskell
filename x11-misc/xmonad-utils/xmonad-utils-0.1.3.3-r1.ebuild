@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/random-1.0:=
 	>=dev-haskell/x11-1.3:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	virtual/libcrypt:=
 "
 DEPEND="${RDEPEND}

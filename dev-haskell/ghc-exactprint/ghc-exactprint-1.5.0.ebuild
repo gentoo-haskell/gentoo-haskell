@@ -25,7 +25,7 @@ RDEPEND="
 	>=dev-haskell/ghc-paths-0.1:=[profile?]
 	dev-haskell/ordered-containers:=[profile?]
 	>=dev-haskell/syb-0.5:=[profile?]
-	>=dev-lang/ghc-9.2.1:=[profile?]
+	>=dev-lang/ghc-9.2.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0

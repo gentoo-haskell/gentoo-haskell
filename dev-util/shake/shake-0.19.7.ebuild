@@ -34,7 +34,7 @@ RDEPEND="
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	embed-files? (
 		>=dev-haskell/file-embed-0.0.11:=[profile?]
 	)

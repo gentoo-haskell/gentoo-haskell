@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/data-default-0.6.0:=[profile?]
 	<dev-haskell/entropy-0.5:=[profile?]
 	>=dev-haskell/memory-0.9:=[profile?] <dev-haskell/memory-1.0:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/semigroups-0.18.2:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/text-latin1-0.3.1:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

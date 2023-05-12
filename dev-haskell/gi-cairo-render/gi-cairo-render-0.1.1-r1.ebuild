@@ -20,7 +20,7 @@ IUSE="+svg"
 
 RDEPEND=">=dev-haskell/haskell-gi-base-0.24:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?]
 	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	x11-libs/cairo[glib]
 "
 DEPEND="${RDEPEND}

@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 RESTRICT=test # circular dependencies: dev-haskell/base-orphans->cabal->parsec[test]->test-framework-hunit->test-framework->base-orphans
 
 RDEPEND="
-	>=dev-lang/ghc-9.2.4:=[profile?]
+	>=dev-lang/ghc-9.2.4:=
 "
 DEPEND="${RDEPEND}
 "

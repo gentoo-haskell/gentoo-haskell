@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/adjunctions-4.2:=[profile?] <dev-haskell/adjunctions-5:=[
 	>=dev-haskell/semigroups-0.8.3:=[profile?] <dev-haskell/semigroups-1:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	>=dev-haskell/void-0.6.1:=[profile?] <dev-haskell/void-1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

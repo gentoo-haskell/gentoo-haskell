@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/boring-0.2:=[profile?] <dev-haskell/boring-0.3:=[profile?
 	>=dev-haskell/quickcheck-2.13.2:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
 	>=dev-haskell/some-1.0.3:=[profile?] <dev-haskell/some-1.1:=[profile?]
 	>=dev-haskell/universe-base-1.1.2:=[profile?] <dev-haskell/universe-base-1.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

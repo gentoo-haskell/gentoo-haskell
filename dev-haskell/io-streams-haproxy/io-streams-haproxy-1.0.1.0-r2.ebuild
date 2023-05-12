@@ -21,7 +21,7 @@ RDEPEND="
 	>=dev-haskell/attoparsec-0.7:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/io-streams-1.3:=[profile?] <dev-haskell/io-streams-1.6:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.2:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

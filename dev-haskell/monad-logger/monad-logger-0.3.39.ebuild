@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.4:=[profil
 	dev-haskell/transformers-base:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

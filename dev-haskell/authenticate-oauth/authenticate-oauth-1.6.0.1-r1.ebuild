@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-byt
 	>=dev-haskell/rsa-2.0:=[profile?] <dev-haskell/rsa-2.5:=[profile?]
 	>=dev-haskell/sha-1.4:=[profile?] <dev-haskell/sha-1.7:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

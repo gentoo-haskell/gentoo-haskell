@@ -29,7 +29,7 @@ RDEPEND="<dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?] <dev-haskell/semigroups-0.21:=[profile?]
 	<dev-haskell/syb-0.8:=[profile?]
 	<dev-haskell/void-0.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-3.0:=[profile?]
 	>=dev-haskell/monad-control-1.0:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	>=net-libs/zeromq-4 <net-libs/zeromq-5
 "
 DEPEND="${RDEPEND}

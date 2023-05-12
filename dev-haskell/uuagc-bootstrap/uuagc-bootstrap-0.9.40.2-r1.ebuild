@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/haskell-src-exts-1.11.1:=[profile?]
 	>=dev-haskell/mtl-1.1.1.1:=[profile?]
 	>=dev-haskell/uulib-0.9.14:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

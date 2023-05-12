@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/persistable-record-0.6:=[profile?]
 	>=dev-haskell/product-isomorphic-0.0.3:=[profile?]
 	>=dev-haskell/relational-query-0.11:=[profile?]
 	>=dev-haskell/relational-query-hdbc-0.6.6:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

@@ -53,7 +53,7 @@ RDEPEND="
 	>=dev-haskell/web-routes-happstack-0.23:=[profile?] <dev-haskell/web-routes-happstack-0.24:=[profile?]
 	>=dev-haskell/web-routes-hsp-0.24:=[profile?] <dev-haskell/web-routes-hsp-0.25:=[profile?]
 	>=dev-haskell/web-routes-th-0.22:=[profile?] <dev-haskell/web-routes-th-0.23:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

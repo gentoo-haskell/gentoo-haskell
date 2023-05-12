@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/boolean-0.1.0:=[profile?]
 	>=dev-haskell/numinstances-1.0:=[profile?]
 	>=dev-haskell/semigroups-0.16:=[profile?]
 	>=dev-haskell/void-0.4:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

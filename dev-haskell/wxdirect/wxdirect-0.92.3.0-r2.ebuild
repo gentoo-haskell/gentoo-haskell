@@ -21,7 +21,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/parsec-2.1.0:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	dev-haskell/strict:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	!!dev-haskell/wxdirect:3.0
 "
 DEPEND="${RDEPEND}

@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+useghctypelits"
 
 RDEPEND="dev-haskell/hashable:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	useghctypelits? ( >=dev-haskell/singletons-1.0:=[profile?] )
 	!useghctypelits? ( >=dev-haskell/type-level-numbers-0.1.1.0:=[profile?] <dev-haskell/type-level-numbers-0.2.0.0:=[profile?] )
 "

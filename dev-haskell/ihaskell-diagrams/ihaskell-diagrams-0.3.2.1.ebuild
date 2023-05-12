@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?]
 	dev-haskell/diagrams-lib:=[profile?]
 	>=dev-haskell/ihaskell-0.6.2:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

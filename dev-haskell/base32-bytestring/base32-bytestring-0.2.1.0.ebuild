@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/bits-extras-0.1:=[profile?] <dev-haskell/bits-extras-0.2:=[profile?]
 	>=dev-haskell/cpu-0.1:=[profile?] <dev-haskell/cpu-0.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/juicypixels-3:=[profile?]
 	>=dev-haskell/opengl-3:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
 	>=dev-haskell/openglraw-3.0:=[profile?] <dev-haskell/openglraw-3.4:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	demos? ( >=dev-haskell/glfw-b-3.3.0.0:=[profile?] <dev-haskell/glfw-b-3.4:=[profile?] )
 "
 DEPEND="${RDEPEND}

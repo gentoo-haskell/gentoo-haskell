@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/glib-0.12.1:=[profile?] <dev-haskell/glib-0.15:=[profile?]
 	dev-haskell/gtk3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	x11-libs/libX11
 	x11-libs/gtk+:3[X]
 "

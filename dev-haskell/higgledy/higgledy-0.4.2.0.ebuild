@@ -31,7 +31,7 @@ RDEPEND="
 	>=dev-haskell/generic-lens-core-2.1:=[profile?] <dev-haskell/generic-lens-core-3.0:=[profile?]
 	>=dev-haskell/named-0.3.0.0:=[profile?] <dev-haskell/named-0.4:=[profile?]
 	>=dev-haskell/quickcheck-2.12.6:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

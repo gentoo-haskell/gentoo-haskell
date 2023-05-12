@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/old-locale-1.0:=[profile?]
 	dev-haskell/time-locale-compat:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

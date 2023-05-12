@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24

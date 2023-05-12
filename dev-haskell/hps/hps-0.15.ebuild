@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="build-exec"
 
 RDEPEND=">=dev-haskell/hcg-minus-0.15:=[profile?] <dev-haskell/hcg-minus-0.16:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	build-exec? ( dev-haskell/random:=[profile?] )
 "
 DEPEND="${RDEPEND}

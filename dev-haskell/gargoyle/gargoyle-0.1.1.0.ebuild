@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/filelock-0.1.1:=[profile?] <dev-haskell/filelock-0.2:=[profile?]
 	>=dev-haskell/network-2.6.0:=[profile?] <dev-haskell/network-3.2:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

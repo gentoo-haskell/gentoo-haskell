@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/primitive:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-haskell/th-abstraction-0.4:=[profile?]
 	dev-haskell/th-orphans:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

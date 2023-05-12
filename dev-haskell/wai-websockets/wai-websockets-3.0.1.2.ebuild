@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/case-insensitive-0.2:=[profile?]
 	>=dev-haskell/network-2.2.1.5:=[profile?]
 	>=dev-haskell/wai-3.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/websockets-0.9:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	examples? ( dev-haskell/file-embed:=[profile?]
 			dev-haskell/text:=[profile?]
 			dev-haskell/wai-app-static:=[profile?]

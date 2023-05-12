@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/case-insensitive-1.2.1:=[profile?] <dev-haskell/case-inse
 	>=dev-haskell/parser-combinators-1.3:=[profile?] <dev-haskell/parser-combinators-1.4:=[profile?]
 	>=dev-haskell/text-builder-0.6.6.3:=[profile?] <dev-haskell/text-builder-0.7:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.16:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

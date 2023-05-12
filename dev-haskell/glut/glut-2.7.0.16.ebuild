@@ -24,7 +24,7 @@ IUSE="examples"
 
 RDEPEND=">=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	examples? ( >=dev-haskell/openglraw-1.0:=[profile?] <dev-haskell/openglraw-3.4:=[profile?]
 			>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-1.3:=[profile?] )
 "

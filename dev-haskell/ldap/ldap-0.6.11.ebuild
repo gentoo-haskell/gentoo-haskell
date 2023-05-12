@@ -22,7 +22,7 @@ IUSE="buildtests"
 
 RESTRICT=test # missing files
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.4.1:=
 	net-nds/openldap
 "
 DEPEND="${RDEPEND}

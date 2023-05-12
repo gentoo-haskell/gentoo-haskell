@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/dbus-1.0.1:=[profile?] <dev-haskell/dbus-2:=[profile?]
 	dev-haskell/hslogger:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

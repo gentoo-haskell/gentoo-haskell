@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.4.1:=
 	   >=dev-haskell/blaze-builder-0.3:=[profile?]
 	   >=dev-haskell/case-insensitive-0.4:=[profile?]
 	   >=dev-haskell/conduit-1.3:=[profile?]

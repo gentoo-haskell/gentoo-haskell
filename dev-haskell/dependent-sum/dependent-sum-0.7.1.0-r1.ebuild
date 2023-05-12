@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/constraints-extras-0.2:=[profile?] <dev-haskell/constraints-extras-0.4:=[profile?]
 	>=dev-haskell/some-1.0.1:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

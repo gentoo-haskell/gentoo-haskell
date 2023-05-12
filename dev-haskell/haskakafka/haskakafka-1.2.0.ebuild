@@ -22,7 +22,7 @@ RESTRICT=test # needs running service
 RDEPEND="dev-haskell/cmdargs:=[profile?]
 	dev-haskell/pretty-show:=[profile?]
 	dev-haskell/temporary:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 	dev-libs/librdkafka:=
 "
 DEPEND="${RDEPEND}

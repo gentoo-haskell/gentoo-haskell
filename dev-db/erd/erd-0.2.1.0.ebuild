@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/gitrev-1.3.1:=
 	>=dev-haskell/graphviz-2999.20:= <dev-haskell/graphviz-2999.21:=
 	>=dev-haskell/raw-strings-qq-1.1:=
 	>=dev-haskell/yaml-0.8.32:=
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

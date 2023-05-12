@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/base-compat-0.6:=[profile?] <dev-haskell/base-compat-1:=[
 	>=dev-haskell/regex-tdfa-1.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

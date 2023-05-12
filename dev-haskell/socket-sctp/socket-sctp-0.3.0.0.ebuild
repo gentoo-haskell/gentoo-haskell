@@ -20,7 +20,7 @@ IUSE=""
 RESTRICT=test # needs sctp support in kernel
 
 RDEPEND=">=dev-haskell/socket-0.7.0.0:=[profile?] <dev-haskell/socket-0.8:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	net-misc/lksctp-tools:=
 "
 DEPEND="${RDEPEND}

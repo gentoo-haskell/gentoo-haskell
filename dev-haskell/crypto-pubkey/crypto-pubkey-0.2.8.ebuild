@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/byteable:=[profile?]
 	>=dev-haskell/crypto-pubkey-types-0.4.1:=[profile?] <dev-haskell/crypto-pubkey-types-0.5:=[profile?]
 	>=dev-haskell/crypto-random-0.0:=[profile?] <dev-haskell/crypto-random-0.1:=[profile?]
 	>=dev-haskell/cryptohash-0.9.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

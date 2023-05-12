@@ -21,7 +21,7 @@ IUSE="cairo canvas gtk postscript rasterific +svg"
 RDEPEND=">=dev-haskell/diagrams-contrib-1.4:=[profile?] <dev-haskell/diagrams-contrib-1.5:=[profile?]
 	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.6:=[profile?]
 	>=dev-haskell/diagrams-lib-1.4:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	cairo? ( >=dev-haskell/diagrams-cairo-1.4:=[profile?] <dev-haskell/diagrams-cairo-1.5:=[profile?] )
 	canvas? ( >=dev-haskell/diagrams-canvas-1.4:=[profile?] <dev-haskell/diagrams-canvas-1.5:=[profile?] )
 	gtk? ( >=dev-haskell/diagrams-gtk-1.4:=[profile?] <dev-haskell/diagrams-gtk-1.5:=[profile?] )

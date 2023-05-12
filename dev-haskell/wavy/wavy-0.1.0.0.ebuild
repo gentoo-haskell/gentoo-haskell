@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/pretty-show:=[profile?]
 	>=dev-haskell/riff-0.3:=[profile?] <dev-haskell/riff-0.4:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

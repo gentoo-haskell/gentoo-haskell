@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	>=dev-haskell/trifecta-2.1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.3:=[profile?]
 	>=dev-haskell/vector-0.7.1:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

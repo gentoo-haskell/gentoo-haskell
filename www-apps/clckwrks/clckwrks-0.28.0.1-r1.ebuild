@@ -62,7 +62,7 @@ RDEPEND="
 	dev-haskell/web-routes-hsp:=[profile?]
 	>=dev-haskell/web-routes-th-0.21:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	dev-libs/openssl
 "
 DEPEND="${RDEPEND}

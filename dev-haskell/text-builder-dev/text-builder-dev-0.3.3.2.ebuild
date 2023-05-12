@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/deferred-folds-0.9.10.1:=[profile?] <dev-haskell/deferred-folds-0.10:=[profile?]
 	>=dev-haskell/isomorphism-class-0.1.0.1:=[profile?] <dev-haskell/isomorphism-class-0.2:=[profile?]
 	>=dev-haskell/split-0.2.3.4:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0

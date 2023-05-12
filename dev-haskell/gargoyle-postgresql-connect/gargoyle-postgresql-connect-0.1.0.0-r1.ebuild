@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/gargoyle-0.1.1.0:=[profile?] <dev-haskell/gargoyle-0.2:=[
 	>=dev-haskell/gargoyle-postgresql-nix-0.3.0.0:=[profile?] <dev-haskell/gargoyle-postgresql-nix-0.4:=[profile?]
 	>=dev-haskell/postgresql-simple-0.5:=[profile?] <dev-haskell/postgresql-simple-0.7:=[profile?]
 	>=dev-haskell/resource-pool-0.2.3:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

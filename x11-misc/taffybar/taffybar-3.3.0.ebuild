@@ -64,7 +64,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	dev-haskell/xdg-desktop-entry:=[profile?]
 	dev-haskell/xml:=[profile?]
 	dev-haskell/xml-helpers:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	x11-libs/gtk+:3
 	>=x11-misc/gtk-sni-tray-0.1.8.0:=[profile?]
 	x11-wm/xmonad:=[profile?]

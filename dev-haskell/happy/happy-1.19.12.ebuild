@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 IUSE="doc"
 
 RDEPEND=">=dev-haskell/mtl-2.2.1:=
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

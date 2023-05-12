@@ -24,7 +24,7 @@ RDEPEND="
 	>=dev-haskell/reflection-2.1.4:=[profile?] <dev-haskell/reflection-3.0.0:=[profile?]
 	>=dev-haskell/streaming-0.2:=[profile?] <dev-haskell/streaming-0.3:=[profile?]
 	>=dev-haskell/text-1.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -19,7 +19,7 @@ RDEPEND="
 	>=dev-haskell/acid-state-0.12:=[profile?] <dev-haskell/acid-state-0.17:=[profile?]
 	>=dev-haskell/haskeline-0.7:=[profile?] <dev-haskell/haskeline-0.9:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=www-apps/clckwrks-0.23:=[profile?] <www-apps/clckwrks-0.29:=[profile?]
 "
 DEPEND="${RDEPEND}

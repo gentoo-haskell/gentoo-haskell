@@ -21,7 +21,7 @@ RESTRICT=test # multiple packages: parsec-3.1.13.0 parsec1-1.0.0.6
 RDEPEND="dev-haskell/mtl:=[profile?]
 		dev-haskell/old-time:=[profile?]
 		dev-haskell/parsec:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]"
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8
 		test? ( dev-haskell/doctest

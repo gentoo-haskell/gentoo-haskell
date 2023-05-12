@@ -20,7 +20,7 @@ RDEPEND="
 	>=dev-haskell/generic-deriving-1.10:=[profile?]
 	>=dev-haskell/listlike-4.4:=[profile?]
 	|| ( dev-lang/ghc dev-haskell/process[profile?] )
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

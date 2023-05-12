@@ -32,7 +32,7 @@ RDEPEND="dev-haskell/cereal:=[profile?]
 	dev-haskell/stm:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/transformers-compat:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	ibus? ( dev-haskell/dbus:=[profile?]
 		dev-haskell/ibus-hs:=[profile?] )
 	pulseaudio? ( >=dev-haskell/pulseaudio-0.0.2.0:=[profile?] <dev-haskell/pulseaudio-0.1.0.0:=[profile?] )

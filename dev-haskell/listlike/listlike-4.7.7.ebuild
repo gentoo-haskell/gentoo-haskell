@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/dlist-0.7:=[profile?] <dev-haskell/dlist-1.1:=[profile?]
 	>=dev-haskell/fmlist-0.8:=[profile?] <dev-haskell/fmlist-0.10:=[profile?]
 	>=dev-haskell/utf8-string-0.3.1:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/vector-0.5:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -27,7 +27,7 @@ RDEPEND="
 	>=dev-haskell/regex-tdfa-1.3.1:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	dev-haskell/stm:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0

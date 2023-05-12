@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/bytestring-lexing-0.5:=[profile?] <dev-haskell/bytestring-lexing-0.6:=[profile?]
 	>dev-haskell/scientific-0.3:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

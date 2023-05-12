@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+executable"
 
 RDEPEND=">=dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-4:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-3:=[profile?]
 "
 DEPEND="${RDEPEND}

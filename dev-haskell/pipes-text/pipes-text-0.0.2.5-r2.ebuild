@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/pipes-4.0:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 	>=dev-haskell/pipes-safe-2.1:=[profile?]
 	>=dev-haskell/streaming-commons-0.1:=[profile?]
 	>=dev-haskell/text-0.11.3:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

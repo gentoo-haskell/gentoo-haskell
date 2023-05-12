@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="cpu_flags_x86_aes cpu_flags_x86_rdrand cpu_flags_x86_sse cpu_flags_x86_sse4_1 +integer-gmp +target-attributes"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 	>=dev-haskell/memory-0.14.18:=[profile?]
 	>=dev-haskell/basement-0.0.6:=[profile?]
 "

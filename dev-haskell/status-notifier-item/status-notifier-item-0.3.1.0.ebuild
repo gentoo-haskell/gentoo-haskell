@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/byte-order:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

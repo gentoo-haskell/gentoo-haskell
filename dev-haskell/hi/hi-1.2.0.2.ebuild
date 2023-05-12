@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/ansi-wl-pprint:=[profile?]
 	>=dev-haskell/template-0.2:=[profile?] <dev-haskell/template-0.3:=[profile?]
 	>=dev-haskell/temporary-1.2.0.3:=[profile?]
 	>dev-haskell/text-1.0:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

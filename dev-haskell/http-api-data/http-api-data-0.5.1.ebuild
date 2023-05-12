@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.13.2.2:=[profile?] <dev-haskell/attoparsec-0
 	>=dev-haskell/time-compat-1.9.5:=[profile?] <dev-haskell/time-compat-1.10:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/uuid-types-1.0.3:=[profile?] <dev-haskell/uuid-types-1.1:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	text-show? ( >=dev-haskell/text-show-3.8.2:=[profile?] <dev-haskell/text-show-3.11:=[profile?] )
 "

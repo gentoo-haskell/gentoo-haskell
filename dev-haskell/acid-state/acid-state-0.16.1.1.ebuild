@@ -31,7 +31,7 @@ RDEPEND="
 	>=dev-haskell/safecopy-0.6:=[profile?] <dev-haskell/safecopy-0.11:=[profile?]
 	>=dev-haskell/stm-2.4:=[profile?]
 	dev-haskell/th-expand-syns:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

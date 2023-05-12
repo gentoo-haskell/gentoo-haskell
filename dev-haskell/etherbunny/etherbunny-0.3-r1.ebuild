@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/network:=[profile?]
 		dev-haskell/pcap:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]
+		>=dev-lang/ghc-6.10.4:=
 		net-libs/libpcap"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-0"

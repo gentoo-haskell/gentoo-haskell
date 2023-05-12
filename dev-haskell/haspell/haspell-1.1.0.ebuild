@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=[profile?]
+RDEPEND=">=dev-lang/ghc-6.10.4:=
 	app-text/aspell
 "
 DEPEND="${RDEPEND}

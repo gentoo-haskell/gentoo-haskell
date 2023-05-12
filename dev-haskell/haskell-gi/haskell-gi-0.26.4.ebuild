@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?]
 	dev-haskell/xdg-basedir:=[profile?]
 	>=dev-haskell/xml-conduit-1.3:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	dev-libs/glib:2
 	dev-libs/gobject-introspection
 "

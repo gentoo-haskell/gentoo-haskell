@@ -20,7 +20,7 @@ IUSE="+embed"
 
 RDEPEND=">=dev-haskell/unordered-containers-0.2.1:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	embed? ( >=dev-haskell/file-embed-0.0.7:=[profile?] <dev-haskell/file-embed-0.1:=[profile?] )
 "
 DEPEND="${RDEPEND}

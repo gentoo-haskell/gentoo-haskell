@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/th-orphans:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

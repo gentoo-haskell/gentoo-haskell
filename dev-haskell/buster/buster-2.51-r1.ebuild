@@ -22,7 +22,7 @@ RDEPEND="dev-haskell/binary:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/parsec-3.0.0:=[profile?]
 		dev-haskell/time-locale-compat:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]"
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"
 

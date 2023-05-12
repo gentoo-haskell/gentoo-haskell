@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/wave-0.1.2:=[profile?] <dev-haskell/wave-0.3:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	media-libs/flac
 "
 DEPEND="${RDEPEND}

@@ -22,7 +22,7 @@ IUSE="tools"
 RDEPEND="
 	>=dev-haskell/network-uri-2.6:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	tools? ( >=dev-haskell/text-0.7:=[profile?] <dev-haskell/text-1.3:=[profile?] )
 	!tools? ( >=dev-haskell/text-0.7:=[profile?] <dev-haskell/text-2.1:=[profile?] )
 "

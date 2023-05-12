@@ -60,7 +60,7 @@ RDEPEND="
 	>=dev-haskell/trial-optparse-applicative-0.0.0.0:=[profile?] <dev-haskell/trial-optparse-applicative-0.1:=[profile?]
 	>=dev-haskell/trial-tomland-0.0.0.0:=[profile?] <dev-haskell/trial-tomland-0.1:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.8.3:=[profile?]
+	>=dev-lang/ghc-8.8.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.1.0

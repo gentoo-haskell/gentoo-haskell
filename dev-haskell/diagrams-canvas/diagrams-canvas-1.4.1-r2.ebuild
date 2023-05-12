@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/blank-canvas-0.5:=[profile?]
 	>=dev-haskell/optparse-applicative-0.13:=[profile?]
 	>=dev-haskell/statestack-0.2:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

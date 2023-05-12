@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 IUSE="test"
 RESTRICT+=" !test? ( test )"
 
-RDEPEND=">=dev-lang/ghc-8.6.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

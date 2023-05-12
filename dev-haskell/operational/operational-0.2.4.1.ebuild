@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+buildexamples"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 	buildexamples? ( >=dev-haskell/random-1:=[profile?] <dev-haskell/random-2:=[profile?] )
 "
 DEPEND="${RDEPEND}

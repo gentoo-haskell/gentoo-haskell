@@ -36,7 +36,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.0.0:=[profile?]
 	dev-haskell/wai-conduit:=[profile?]
 	>=dev-haskell/warp-3.3:=[profile?] <dev-haskell/warp-3.4:=[profile?]
 	dev-haskell/word8:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

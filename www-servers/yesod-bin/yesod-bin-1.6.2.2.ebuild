@@ -45,7 +45,7 @@ RDEPEND="dev-haskell/aeson:=
 	>=dev-haskell/warp-tls-3.0.1:=
 	>=dev-haskell/yaml-0.8:= <dev-haskell/yaml-0.12:=
 	>=dev-haskell/zlib-0.5:=
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

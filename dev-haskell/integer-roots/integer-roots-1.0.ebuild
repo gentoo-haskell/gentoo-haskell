@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # requires porting to smallcheck-1.2
 
-RDEPEND=">=dev-lang/ghc-8.0.1:=[gmp,profile?]
+RDEPEND=">=dev-lang/ghc-8.0.1:=[gmp]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

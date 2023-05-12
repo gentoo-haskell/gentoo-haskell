@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-1.3:=[profile?] <dev-haskell/aeson-2.1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/zlib-0.6:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 	tools? ( >=dev-haskell/optparse-applicative-0.14:=[profile?] <dev-haskell/optparse-applicative-0.16:=[profile?]
 			>=dev-haskell/pipes-4.3:=[profile?] <dev-haskell/pipes-4.4:=[profile?]
 			>=dev-haskell/pipes-safe-2.3:=[profile?] <dev-haskell/pipes-safe-2.4:=[profile?]

@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/base-prelude-0.1.19:=[profile?] <dev-haskell/base-prelude-2:=[profile?]
 	>=dev-haskell/conversion-1:=[profile?] <dev-haskell/conversion-2:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

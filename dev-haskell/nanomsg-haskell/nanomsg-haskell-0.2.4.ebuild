@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # fail tests on QC-2.12
 
-RDEPEND=">=dev-lang/ghc-7.8.2:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.8.2:=
 	dev-libs/nanomsg
 "
 DEPEND="${RDEPEND}

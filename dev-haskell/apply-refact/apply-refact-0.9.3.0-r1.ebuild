@@ -29,7 +29,7 @@ RDEPEND="
 	>=dev-haskell/syb-0.7.1:=[profile?]
 	>=dev-haskell/uniplate-1.6.13:=[profile?]
 	>=dev-haskell/unix-compat-0.5.2:=[profile?]
-	>=dev-lang/ghc-8.6.5:=[profile?]
+	>=dev-lang/ghc-8.6.5:=
 	executable? (
 		>=dev-haskell/optparse-applicative-0.15.1.0:=[profile?]
 	)

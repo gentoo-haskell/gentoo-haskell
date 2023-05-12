@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/fusion-plugin-types-0.1:=[profile?] <dev-haskell/fusion-p
 	>=dev-haskell/heaps-0.3:=[profile?] <dev-haskell/heaps-0.5:=[profile?]
 	>=dev-haskell/primitive-0.5.4:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	test? (
 		>=dev-haskell/inspection-testing-0.4:=[profile?]
 	 )

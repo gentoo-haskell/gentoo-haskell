@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/cabal:=[profile?]
 	dev-haskell/quickcheck:2=[profile?]
 	>=dev-haskell/show-0.3:=[profile?]
 	dev-haskell/simple-reflect:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

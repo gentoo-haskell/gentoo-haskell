@@ -19,7 +19,7 @@ CABAL_CHDEPS=(
 	'inspection-testing >= 0.4.6.0 && < 0.5' 'inspection-testing >= 0.4.6.0'
 )
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/terminal-size-0.3.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?]
-	>=dev-lang/ghc-8.2.1:=[profile?]
+	>=dev-lang/ghc-8.2.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0.0.2

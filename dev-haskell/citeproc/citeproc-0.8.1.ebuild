@@ -36,7 +36,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/uniplate:=[profile?]
 	dev-haskell/vector:=[profile?]
 	dev-haskell/xml-conduit:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 	executable? ( dev-haskell/aeson-pretty:=[profile?] )
 	icu? ( >=dev-haskell/text-icu-0.7.1.0:=[profile?] )
 "

@@ -22,7 +22,7 @@ RDEPEND="
 	>=dev-haskell/primitive-0.2:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	|| ( dev-lang/ghc ( >=dev-haskell/process-1.1[profile?] <dev-haskell/process-1.7[profile?] ) )
 	>=dev-haskell/vector-0.7:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	network? (
 		>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-3.2:=[profile?]
 	)

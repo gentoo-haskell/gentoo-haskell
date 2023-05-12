@@ -24,7 +24,7 @@ RDEPEND="
 	|| ( dev-lang/ghc >=dev-haskell/process-1.2[profile?] )
 	dev-haskell/stm:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

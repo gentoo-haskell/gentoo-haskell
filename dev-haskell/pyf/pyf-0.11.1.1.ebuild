@@ -21,7 +21,7 @@ IUSE="python-test"
 RDEPEND="
 	>=dev-haskell/parsec-3.1.13:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/text-1.2.3:=[profile?] <=dev-haskell/text-2.1:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

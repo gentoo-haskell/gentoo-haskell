@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/exceptions:=[profile?]
 	dev-haskell/puremd5:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	dev-haskell/zlib:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	virtual/libcrypt:=
 "
 DEPEND="${RDEPEND}

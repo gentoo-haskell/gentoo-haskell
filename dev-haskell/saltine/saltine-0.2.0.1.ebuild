@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-haskell/hashable:=[profile?]
 	>=dev-haskell/profunctors-5.3:=[profile?] <dev-haskell/profunctors-5.7:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	>=dev-libs/libsodium-1.0.13
 "
 DEPEND="${RDEPEND}

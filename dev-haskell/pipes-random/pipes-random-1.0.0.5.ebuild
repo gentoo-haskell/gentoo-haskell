@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/mwc-random-0.13:=[profile?]
 	>=dev-haskell/pipes-4.1:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24

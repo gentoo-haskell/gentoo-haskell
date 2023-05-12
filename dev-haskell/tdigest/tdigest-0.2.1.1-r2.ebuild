@@ -27,7 +27,7 @@ RDEPEND="
 	>=dev-haskell/semigroupoids-5.2.2:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
 	>=dev-haskell/vector-0.12.0.1:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-haskell/vector-algorithms-0.7.0.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

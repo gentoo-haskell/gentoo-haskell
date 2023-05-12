@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 CABAL_EXTRA_CONFIGURE_FLAGS="--extra-include-dirs="${EPREFIX}"/usr/include/AL"
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=[profile?]
+RDEPEND=">=dev-lang/ghc-6.10.4:=
 		media-libs/openal
 		media-libs/libsndfile"
 DEPEND="${RDEPEND}

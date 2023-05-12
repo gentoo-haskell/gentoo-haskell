@@ -20,7 +20,7 @@ IUSE="+examples"
 
 RDEPEND=">=dev-haskell/sdl2-2.0:=[profile?]
 	>=dev-haskell/text-1.1.0.0:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	media-libs/libsdl2
 	media-libs/sdl2-image
 "

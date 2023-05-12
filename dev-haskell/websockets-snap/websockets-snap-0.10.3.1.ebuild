@@ -23,7 +23,7 @@ RDEPEND="
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
 	>=dev-haskell/snap-server-1.0:=[profile?] <dev-haskell/snap-server-1.2:=[profile?]
 	>=dev-haskell/websockets-0.9.5:=[profile?] <dev-haskell/websockets-0.13:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/alex-tools-0.4:=[profile?] <dev-haskell/alex-tools-0.5:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	dev-haskell/alex

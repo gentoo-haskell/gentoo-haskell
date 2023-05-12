@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+semigroups +statevar +tagged"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=[profile?]
+RDEPEND=">=dev-lang/ghc-8.4.3:=
 	statevar? ( >=dev-haskell/statevar-1.2.1:=[profile?] <dev-haskell/statevar-1.3:=[profile?] )
 "
 DEPEND="${RDEPEND}

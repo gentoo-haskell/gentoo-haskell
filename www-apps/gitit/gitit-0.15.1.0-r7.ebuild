@@ -71,7 +71,7 @@ RDEPEND="
 	>=dev-haskell/xml-types-0.3:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	plugins? (
 		dev-haskell/ghc-paths:=[profile?]
 	)

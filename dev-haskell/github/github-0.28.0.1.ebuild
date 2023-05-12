@@ -34,7 +34,7 @@ RDEPEND="
 	>=dev-haskell/transformers-compat-0.6.5:=[profile?] <dev-haskell/transformers-compat-0.8:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12.0.1:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	openssl? (
 		>=dev-haskell/hsopenssl-0.11.4.16:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 		>=dev-haskell/hsopenssl-x509-system-0.1.0.3:=[profile?] <dev-haskell/hsopenssl-x509-system-0.2:=[profile?]

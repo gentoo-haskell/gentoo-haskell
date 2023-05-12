@@ -27,7 +27,7 @@ RDEPEND="<dev-haskell/data-fix-0.4:=[profile?]
 	<dev-haskell/neat-interpolation-0.6:=[profile?]
 	>=dev-haskell/optparse-generic-1.1.1:=[profile?] <dev-haskell/optparse-generic-1.5:=[profile?]
 	>=dev-lang/dhall-1.41:=[profile?] <dev-lang/dhall-1.42:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

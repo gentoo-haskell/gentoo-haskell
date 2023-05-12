@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/base-compat-0.8.0:=[profile?]
 	dev-haskell/pcre-light:=[profile?]
 	dev-haskell/semigroups:=[profile?]
 	dev-haskell/string-conversions:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

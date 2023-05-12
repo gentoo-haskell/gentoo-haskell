@@ -21,7 +21,7 @@ RDEPEND="
 	>=dev-haskell/gloss-rendering-1.13:=[profile?] <dev-haskell/gloss-rendering-1.14:=[profile?]
 	>=dev-haskell/glut-2.7:=[profile?] <dev-haskell/glut-2.8:=[profile?]
 	>=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
-	>=dev-lang/ghc-9.2.4:=[profile?]
+	>=dev-lang/ghc-9.2.4:=
 	glfw? (
 		>=dev-haskell/glfw-b-1.4.1.0:=[profile?] <dev-haskell/glfw-b-2:=[profile?]
 	)

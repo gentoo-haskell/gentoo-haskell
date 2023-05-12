@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/gargoyle-0.1.1.0:=[profile?] <dev-haskell/gargoyle-0.2:=[
 	>=dev-haskell/posix-escape-0.1:=[profile?] <dev-haskell/posix-escape-0.2:=[profile?]
 	>=dev-haskell/stringsearch-0.3:=[profile?] <dev-haskell/stringsearch-0.4:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

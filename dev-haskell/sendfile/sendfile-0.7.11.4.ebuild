@@ -18,7 +18,7 @@ IUSE="portable"
 
 RDEPEND="
 	>=dev-haskell/network-2:=[profile?] <dev-haskell/network-3.2:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

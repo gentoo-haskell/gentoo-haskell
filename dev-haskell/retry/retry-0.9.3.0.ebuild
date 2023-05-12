@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 RDEPEND="dev-haskell/mtl-compat:=[profile?]
 	>=dev-haskell/random-1:=[profile?]
 	>=dev-haskell/unliftio-core-0.1.0.0:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

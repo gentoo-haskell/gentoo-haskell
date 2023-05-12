@@ -20,7 +20,7 @@ IUSE="+template-haskell"
 RDEPEND=">=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/tzdata-0.1:=[profile?] <dev-haskell/tzdata-0.3:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-7.6.2:=[profile?]
+	>=dev-lang/ghc-7.6.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

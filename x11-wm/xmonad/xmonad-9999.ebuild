@@ -21,7 +21,7 @@ IUSE="no-autorepeat-keys"
 RDEPEND="dev-haskell/data-default-class:=[profile?]
 	dev-haskell/setlocale:=[profile?]
 	>=dev-haskell/x11-1.10:=[profile?] <dev-haskell/x11-1.11:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

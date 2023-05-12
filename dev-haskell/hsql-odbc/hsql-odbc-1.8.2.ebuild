@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/hsql-1.8.2:=[profile?]
-		>=dev-lang/ghc-6.10.1:=[profile?]
+		>=dev-lang/ghc-6.10.1:=
 		>=dev-db/unixODBC-2.2"
 DEPEND="${RDEPEND}
 		dev-haskell/cabal"

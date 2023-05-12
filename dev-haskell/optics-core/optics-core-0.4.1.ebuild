@@ -20,7 +20,7 @@ IUSE="explicit-generic-labels"
 
 RDEPEND=">=dev-haskell/indexed-profunctors-0.1:=[profile?] <dev-haskell/indexed-profunctors-0.2:=[profile?]
 	>=dev-haskell/indexed-traversable-0.1:=[profile?] <dev-haskell/indexed-traversable-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

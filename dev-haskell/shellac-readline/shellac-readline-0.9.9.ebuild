@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/readline-1.0:=[profile?]
 	dev-haskell/shellac:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22

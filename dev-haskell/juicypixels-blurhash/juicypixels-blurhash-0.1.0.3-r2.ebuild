@@ -27,7 +27,7 @@ RDEPEND="
 	>=dev-haskell/juicypixels-3.2.8:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14.3:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/bmp-1.2:= <dev-haskell/bmp-1.3:=
 	>=dev-haskell/repa-algorithms-3.4:= <dev-haskell/repa-algorithms-3.5:=
 	>=dev-haskell/repa-io-3.4:= <dev-haskell/repa-io-3.5:=
 	>=dev-haskell/vector-0.11:= <dev-haskell/vector-0.13:=
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -39,7 +39,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.4:=[profile?] <dev-haskell/aeson-2.2:=[profile?
 	dev-haskell/tasty:=[profile?]
 	>=dev-haskell/uuid-1.3:=[profile?] <dev-haskell/uuid-1.4:=[profile?]
 	>=dev-haskell/vector-0.12.0.3:=[profile?] <dev-haskell/vector-0.13.0.0:=[profile?]
-	>=dev-lang/ghc-8.6.5:=[profile?]
+	>=dev-lang/ghc-8.6.5:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

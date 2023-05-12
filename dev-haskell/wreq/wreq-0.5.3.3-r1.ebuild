@@ -35,7 +35,7 @@ RDEPEND=">=dev-haskell/aeson-0.7.0.3:=[profile?]
 	>=dev-haskell/psqueues-0.2:=[profile?]
 	dev-haskell/time-locale-compat:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.6:=[profile?] <dev-haskell/blaze-html-0.10:=
 	>=dev-haskell/text-0.9:=[profile?] <dev-haskell/text-1.3:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
-	>=dev-lang/ghc-7.6.2:=[profile?]
+	>=dev-lang/ghc-7.6.2:=
 	dingus? ( dev-haskell/aeson:=[profile?]
 			dev-haskell/http-types:=[profile?]
 			>=dev-haskell/wai-0.3:=[profile?]

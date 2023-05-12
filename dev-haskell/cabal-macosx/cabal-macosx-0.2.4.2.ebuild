@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
 	dev-haskell/hscolour:=[profile?]
 	dev-haskell/parsec:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

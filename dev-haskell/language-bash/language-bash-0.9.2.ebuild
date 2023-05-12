@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/parsec-3.0:=[profile?] <dev-haskell/parsec-4.0:=[profile?]
 	>=dev-haskell/prettyprinter-1.2:=[profile?] <dev-haskell/prettyprinter-2.0:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/text:=[profile?]
 	>=dev-haskell/text-metrics-0.3.0:=[profile?] <dev-haskell/text-metrics-0.4:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

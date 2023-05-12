@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/repa-3.2.0.0:=[profile?] <dev-haskell/repa-4.0:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	media-libs/devil
 "
 DEPEND="${RDEPEND}

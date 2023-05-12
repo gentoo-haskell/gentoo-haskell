@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/exception-mtl-0.3:=[profile?] <dev-haskell/exception-mtl-
 	>=dev-haskell/srcloc-0.4:=[profile?] <dev-haskell/srcloc-0.6:=[profile?]
 	>=dev-haskell/syb-0.3:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/symbol-0.1:=[profile?] <dev-haskell/symbol-0.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	full-haskell-antiquotes? ( >=dev-haskell/haskell-src-meta-0.4:=[profile?] <dev-haskell/haskell-src-meta-0.9:=[profile?] dev-haskell/safe )
 	!full-haskell-antiquotes? ( >=dev-haskell/haskell-exp-parser-0.1:=[profile?] <dev-haskell/haskell-exp-parser-0.2:=[profile?] )
 "

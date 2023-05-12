@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/foldl-1:=[profile?] <dev-haskell/foldl-2:=[profile?]
 	>=dev-haskell/mmorph-1:=[profile?] <dev-haskell/mmorph-2:=[profile?]
 	>=dev-haskell/monad-control-0.3:=[profile?] <dev-haskell/monad-control-2:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0

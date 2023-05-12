@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/json-0.5:=[profile?] <dev-haskell/json-0.11:=[profile?]
 	>=dev-haskell/microlens-platform-0.3.8.0:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

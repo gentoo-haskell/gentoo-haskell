@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/http-4:=[profile?]
 	>=dev-haskell/rdf4h-3.0.1:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/xml:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.9.2

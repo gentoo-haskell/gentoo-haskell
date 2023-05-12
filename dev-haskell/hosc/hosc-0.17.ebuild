@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?]
 	dev-haskell/data-binary-ieee754:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

@@ -63,7 +63,7 @@ RDEPEND="
 	>=dev-haskell/text-show-3.7:=[profile?] <dev-haskell/text-show-3.12:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/wreq-0.5.2:=[profile?] <dev-haskell/wreq-0.6:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	media-libs/glew:0
 	examples? (
 		>=dev-haskell/aeson-1.4:=[profile?] <dev-haskell/aeson-2.3:=[profile?]

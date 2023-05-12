@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/parallel-3.2:=[profile?] <dev-haskell/parallel-4:=[profil
 	>=dev-haskell/profunctors-4.3:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/semigroups-0.15:=[profile?] <dev-haskell/semigroups-1:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

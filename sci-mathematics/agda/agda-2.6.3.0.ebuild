@@ -62,7 +62,7 @@ RDEPEND="
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/vector-hashtables-0.1:=[profile?] <dev-haskell/vector-hashtables-0.2:=[profile?]
 	>=dev-haskell/zlib-0.6:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	enable-cluster-counting? (
 		>=dev-haskell/text-icu-0.7.1.0:=[profile?]
 	)

@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/quickcheck-2.3:2=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/semigroupoids-5:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

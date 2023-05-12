@@ -33,7 +33,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/th-lift:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/vector-0.12.1.2:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	barbies? ( >=dev-haskell/barbies-2:=[profile?] <dev-haskell/barbies-2.1:=[profile?] )
 	cassava? ( dev-haskell/cassava:=[profile?] )
 "

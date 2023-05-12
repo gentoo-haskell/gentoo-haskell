@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/flexible-defaults-0.0.0.2:=[profile?]
 	>=dev-haskell/stateref-0.3:=[profile?] <dev-haskell/stateref-0.4:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/th-extras:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

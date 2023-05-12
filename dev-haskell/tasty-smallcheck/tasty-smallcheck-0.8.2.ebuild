@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/optparse-applicative:=[profile?]
 	>=dev-haskell/smallcheck-1.0:=[profile?]
 	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/tasty-0.8:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

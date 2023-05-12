@@ -27,7 +27,7 @@ RDEPEND=">=dev-haskell/bytestring-lexing-0.5:= <dev-haskell/bytestring-lexing-0.
 	dev-haskell/regex-tdfa:=
 	>=dev-haskell/strptime-0.1.7:=
 	>=dev-haskell/vcs-revision-0.0.2:=
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

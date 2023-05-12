@@ -25,7 +25,7 @@ RESTRICT=test # ### Error in:   0:Monadic API:18:set file compression method
 RDEPEND=">=dev-haskell/bindings-libzip-1.0:=[profile?] <dev-haskell/bindings-libzip-1.1:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

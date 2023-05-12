@@ -29,7 +29,7 @@ RDEPEND="dev-haskell/ad:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-haskell/vector-sized-1.0:=[profile?]
 	dev-haskell/vty:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

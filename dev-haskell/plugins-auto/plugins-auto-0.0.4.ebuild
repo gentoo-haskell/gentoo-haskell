@@ -20,7 +20,7 @@ RESTRICT="test" # missing files
 RDEPEND=">=dev-haskell/hinotify-0.3.2:=[profile?]
 		dev-haskell/mtl:=[profile?]
 		>=dev-haskell/plugins-1.5.1.4:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]"
+		>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.8"
 

@@ -22,7 +22,7 @@ RDEPEND="
 	|| ( dev-lang/ghc dev-haskell/process[profile?] )
 	dev-haskell/split:=[profile?]
 	dev-haskell/temporary:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

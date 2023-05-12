@@ -19,7 +19,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/path-0.5:=[profile?]
 	>=dev-haskell/validity-0.9.0.2:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

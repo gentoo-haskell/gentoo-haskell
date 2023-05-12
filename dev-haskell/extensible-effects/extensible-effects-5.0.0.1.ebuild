@@ -21,7 +21,7 @@ RESTRICT=test # Ambiguous module name ‘Data.Kind’: it was found in multiple 
 
 RDEPEND=">=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/transformers-base-0.4:=[profile?] <dev-haskell/transformers-base-0.5:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 
 DEPEND="${RDEPEND}

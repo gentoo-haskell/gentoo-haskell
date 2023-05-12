@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
 
 RESTRICT="test" # the test suite compile fails: Not in scope: data constructor `Permissions'
 
-RDEPEND=">=dev-lang/ghc-6.10.4:=[profile?]"
+RDEPEND=">=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"
 #		test? ( dev-haskell/hunit[profile?] )" # pcheck dislikes useless depends

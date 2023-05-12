@@ -25,7 +25,7 @@ GHC_BOOTSTRAP_PACKAGES=(
 RDEPEND=">=dev-haskell/glib-0.13.3.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/gtk-0.14.3:=[profile?] <dev-haskell/gtk-0.16:=[profile?]
 	>=dev-haskell/pango-0.13.2.0:=[profile?] <dev-haskell/pango-0.14:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	x11-libs/gtkglext
 "
 DEPEND="${RDEPEND}

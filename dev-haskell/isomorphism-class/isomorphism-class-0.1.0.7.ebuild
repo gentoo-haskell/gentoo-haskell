@@ -19,7 +19,7 @@ RDEPEND=">=dev-haskell/hashable-1:=[profile?] <dev-haskell/hashable-2:=[profile?
 	>=dev-haskell/primitive-0.7.3:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0

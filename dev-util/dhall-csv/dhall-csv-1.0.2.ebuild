@@ -33,7 +33,7 @@ RDEPEND="dev-haskell/ansi-terminal:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.13:=[profile?]
 	>=dev-lang/dhall-1.39.0:=[profile?] <dev-lang/dhall-1.42:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

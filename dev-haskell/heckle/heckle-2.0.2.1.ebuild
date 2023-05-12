@@ -22,7 +22,7 @@ RDEPEND=">=app-text/pandoc-1.17.0.3:=[profile?]
 	>=dev-haskell/pandoc-types-1.16.1:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
 	>=dev-haskell/tagsoup-0.13.3:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

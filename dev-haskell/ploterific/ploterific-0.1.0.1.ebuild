@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/cassava:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/optparse-generic:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

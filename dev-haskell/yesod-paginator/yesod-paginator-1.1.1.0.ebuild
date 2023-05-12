@@ -24,7 +24,7 @@ RDEPEND="dev-haskell/blaze-markup:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.0:=[profile?]
 	dev-haskell/uri-encode:=[profile?]
 	>=dev-haskell/yesod-core-1.4:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 	examples? ( dev-haskell/warp:=[profile?]
 			dev-haskell/yesod:=[profile?] )
 "

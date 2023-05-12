@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/flac-0.1:=[profile?] <dev-haskell/flac-0.3:=[profile?]
 	>=dev-haskell/juicypixels-3.2.6.5:=[profile?] <dev-haskell/juicypixels-4.0:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

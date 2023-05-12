@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-haskell/network:=[profile?]
-		>=dev-lang/ghc-6.12.1:=[profile?]
+		>=dev-lang/ghc-6.12.1:=
 		net-libs/libpcap"
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6"

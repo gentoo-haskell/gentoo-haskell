@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+usestm +usetmvar"
 
 RDEPEND="dev-haskell/mtl:=[profile?]
-		>=dev-lang/ghc-6.10.4:=[profile?]
+		>=dev-lang/ghc-6.10.4:=
 		usestm? ( dev-haskell/stm:=[profile?]
 		)"
 DEPEND="${RDEPEND}

@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/binary:=[profile?]
 	dev-haskell/parsec:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6

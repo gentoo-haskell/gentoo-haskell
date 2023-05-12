@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~amd64-linux ~ppc-macos ~sparc-solaris"
 RESTRICT=test
 
 RDEPEND=">=dev-haskell/splitmix-0.1:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1"

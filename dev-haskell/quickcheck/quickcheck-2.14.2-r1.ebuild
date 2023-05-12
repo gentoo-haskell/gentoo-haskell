@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~amd64-linux"
 IUSE="+template-haskell"
 
 RDEPEND=">=dev-haskell/splitmix-0.1:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
-	>=dev-lang/ghc-7.8.2:=[profile?]
+	>=dev-lang/ghc-7.8.2:=
 	>=dev-haskell/random-1.2.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
 "
 DEPEND="${RDEPEND}

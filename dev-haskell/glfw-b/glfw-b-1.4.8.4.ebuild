@@ -23,7 +23,7 @@ IUSE=""
 RESTRICT=test # needs access to video driver
 
 RDEPEND=">=dev-haskell/bindings-glfw-3.2.1.0:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

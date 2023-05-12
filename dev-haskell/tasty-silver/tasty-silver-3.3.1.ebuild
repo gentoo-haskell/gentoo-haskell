@@ -26,7 +26,7 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2.1:=[profile?]
 	dev-haskell/tagged:=[profile?]
 	>=dev-haskell/tasty-1.4:=[profile?]
 	dev-haskell/temporary:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -20,7 +20,7 @@ RDEPEND="
 	dev-haskell/di-core:=[profile?]
 	dev-haskell/di-handle:=[profile?]
 	dev-haskell/di-monad:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

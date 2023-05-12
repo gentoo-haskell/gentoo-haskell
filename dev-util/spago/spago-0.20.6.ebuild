@@ -65,7 +65,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/with-utf8:=[profile?]
 	dev-haskell/zlib:=[profile?]
 	>=dev-lang/dhall-1.39.0:=[profile?]
-	>=dev-lang/ghc-8.8.3:=[profile?]
+	>=dev-lang/ghc-8.8.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.1.0

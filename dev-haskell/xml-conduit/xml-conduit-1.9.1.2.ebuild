@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/resourcet-1.2:=[profile?] <dev-haskell/resourcet-1.4:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/xml-types-0.3.4:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0 <dev-haskell/cabal-4

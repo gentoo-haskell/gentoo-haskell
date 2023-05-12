@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/configfile:=[profile?]
 	dev-haskell/either:=[profile?]
 	dev-haskell/multimap:=[profile?]
 	dev-haskell/safe:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

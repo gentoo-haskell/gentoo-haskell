@@ -19,7 +19,7 @@ RDEPEND="dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/megaparsec-9.0.0:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
 	>=dev-haskell/split-0.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

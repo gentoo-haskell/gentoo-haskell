@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/mono-traversable-1.0.7:=[profile?]
 	>=dev-haskell/resourcet-1.2:=[profile?] <dev-haskell/resourcet-1.3:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/vector:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/parsec:=[profile?]
 	dev-haskell/stm:=[profile?]
 	>=dev-haskell/wxc-0.92:${WX_GTK_VER}=[profile?,gstreamer?]
 	>=dev-haskell/wxdirect-0.91:${WX_GTK_VER}=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	x11-libs/wxGTK:${WX_GTK_VER}=[X,gstreamer?,opengl]
 	!!dev-haskell/wxcore:3.0
 "

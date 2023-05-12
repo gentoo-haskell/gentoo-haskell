@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/case-insensitive:=[profile?]
 	>=dev-haskell/lens-4.0:=[profile?]
 	>=dev-haskell/text-0.7:=[profile?] <dev-haskell/text-2:=[profile?]
 	>=dev-haskell/xml-conduit-1.1:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10

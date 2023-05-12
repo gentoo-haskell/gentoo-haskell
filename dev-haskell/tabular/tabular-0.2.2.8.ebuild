@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/csv-0.1:=[profile?] <dev-haskell/csv-0.2:=[profile?]
 	>=dev-haskell/html-1.0:=[profile?] <dev-haskell/html-2.0:=[profile?]
 	>=dev-haskell/mtl-1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18

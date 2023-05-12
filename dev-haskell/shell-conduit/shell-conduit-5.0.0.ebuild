@@ -28,7 +28,7 @@ RDEPEND=">=dev-haskell/async-2.0.1.5:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unliftio:=[profile?]
-	>=dev-lang/ghc-7.10.1:=[profile?]
+	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0

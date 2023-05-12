@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 RDEPEND="dev-haskell/cereal:=[profile?]
 	>=dev-haskell/crypto-api-0.13:=[profile?]
 	dev-haskell/tagged:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-3.7

@@ -21,7 +21,7 @@ RESTRICT=test # requires testrunner, and that can't be built
 
 RDEPEND="dev-haskell/cereal:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	virtual/mpi
 "
 DEPEND="${RDEPEND}

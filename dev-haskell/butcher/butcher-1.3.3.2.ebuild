@@ -26,7 +26,7 @@ RDEPEND="<dev-haskell/bifunctors-5.6:=[profile?]
 	>=dev-haskell/multistate-0.7:=[profile?] <dev-haskell/multistate-0.9:=[profile?]
 	<dev-haskell/unsafe-0.1:=[profile?]
 	<dev-haskell/void-0.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

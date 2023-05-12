@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/alsa-core-0.5:=[profile?] <dev-haskell/alsa-core-0.6:=[pr
 	>=dev-haskell/synthesizer-dimensional-0.7:=[profile?] <dev-haskell/synthesizer-dimensional-0.9:=[profile?]
 	>=dev-haskell/synthesizer-midi-0.6:=[profile?] <dev-haskell/synthesizer-midi-0.7:=[profile?]
 	>=dev-haskell/utility-ht-0.0.1:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

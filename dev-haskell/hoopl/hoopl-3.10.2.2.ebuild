@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # Could not find module ‘Test’
 
-RDEPEND=">=dev-lang/ghc-7.6.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

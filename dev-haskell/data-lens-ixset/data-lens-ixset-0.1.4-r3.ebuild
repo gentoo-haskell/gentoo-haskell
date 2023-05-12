@@ -21,7 +21,7 @@ RESTRICT=test
 RDEPEND=">=dev-haskell/data-lens-2.0:=[profile?]
 	<dev-haskell/data-lens-2.11:=[profile?]
 	>=dev-haskell/ixset-1.0:=[profile?]
-	>=dev-lang/ghc-6.10.4:=[profile?]"
+	>=dev-lang/ghc-6.10.4:="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
 "

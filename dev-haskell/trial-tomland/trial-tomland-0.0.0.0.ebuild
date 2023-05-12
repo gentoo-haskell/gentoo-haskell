@@ -23,7 +23,7 @@ CABAL_CHDEPS=(
 
 RDEPEND=">=dev-haskell/tomland-1.3.0.0:=[profile?] <dev-haskell/tomland-1.4:=[profile?]
 	>=dev-haskell/trial-0.0.0.0:=[profile?] <dev-haskell/trial-0.1:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

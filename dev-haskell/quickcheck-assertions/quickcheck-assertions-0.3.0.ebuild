@@ -20,7 +20,7 @@ IUSE=""
 RDEPEND="dev-haskell/ieee754:=[profile?]
 	dev-haskell/pretty-show:=[profile?]
 	>=dev-haskell/quickcheck-2.3:2=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8

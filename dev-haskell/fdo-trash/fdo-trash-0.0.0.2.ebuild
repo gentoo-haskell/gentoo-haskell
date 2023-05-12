@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/diff-0.2:=[profile?]
 		dev-haskell/parsec:=[profile?]
 		dev-haskell/time-locale-compat:=[profile?]
 		dev-haskell/url:=[profile?]
-		>=dev-lang/ghc-6.12.1:=[profile?]"
+		>=dev-lang/ghc-6.12.1:="
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.12
 		sys-apps/help2man"

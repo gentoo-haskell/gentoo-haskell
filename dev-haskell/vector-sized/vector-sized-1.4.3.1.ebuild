@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/adjunctions-4.3:=[profile?] <dev-haskell/adjunctions-4.5:
 	>=dev-haskell/indexed-list-literals-0.2.0.0:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?]
+	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0

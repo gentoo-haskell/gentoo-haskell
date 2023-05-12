@@ -40,7 +40,7 @@ RDEPEND="
 	>=dev-haskell/semigroups-0.3.4:=[profile?] <dev-haskell/semigroups-0.21:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

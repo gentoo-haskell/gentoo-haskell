@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/chart:=[profile?]
 	>=dev-haskell/chart-cairo-1.2:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/ihaskell-0.6.2:=[profile?]
-	>=dev-lang/ghc-7.6.1:=[profile?]
+	>=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

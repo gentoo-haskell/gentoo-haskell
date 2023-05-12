@@ -28,7 +28,7 @@ RDEPEND="dev-haskell/cabal:=[profile?]
 	dev-haskell/unix-compat:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	dev-haskell/yaml:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

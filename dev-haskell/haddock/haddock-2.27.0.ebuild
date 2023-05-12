@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~amd64-linux"
 
 RDEPEND="
 	~dev-haskell/haddock-api-2.27.0:=
-	>=dev-lang/ghc-8.8.1:=[profile?]
+	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0

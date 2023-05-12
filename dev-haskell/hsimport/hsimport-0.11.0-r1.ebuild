@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
 	>=dev-haskell/ilist-0.1:=[profile?] <dev-haskell/ilist-0.5:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/split-0.2.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

@@ -38,7 +38,7 @@ RDEPEND="
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-3.0:=[profile?]
 	>=dev-haskell/th-lift-instances-0.1:=[profile?] <dev-haskell/th-lift-instances-0.2:=[profile?]
 	>=dev-haskell/yaml-0.11.6.0:=[profile?] <dev-haskell/yaml-1:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 	executable? (
 		>=dev-haskell/gitrev-1.3:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
 		>=dev-haskell/optparse-applicative-0.14:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]

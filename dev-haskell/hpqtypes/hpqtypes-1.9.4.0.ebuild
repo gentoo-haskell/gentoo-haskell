@@ -28,7 +28,7 @@ RDEPEND=">=dev-db/postgresql-7
 	>=dev-haskell/transformers-base-0.4:=[profile?]
 	>=dev-haskell/uuid-types-1.0.3:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0 <dev-haskell/cabal-3.7

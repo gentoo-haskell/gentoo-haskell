@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/optparse-applicative-0.14:=[profile?] <dev-haskell/optpar
 	>=dev-haskell/tomland-1.3.2.0:=[profile?] <dev-haskell/tomland-1.4:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/dhall-1.39.0:=[profile?] <dev-lang/dhall-1.42:=[profile?]
-	>=dev-lang/ghc-8.6.3:=[profile?]
+	>=dev-lang/ghc-8.6.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1

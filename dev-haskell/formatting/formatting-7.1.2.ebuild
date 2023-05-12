@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/clock-0.4:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/scientific-0.3.0.0:=[profile?]
 	>=dev-haskell/text-0.11.0.8:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4

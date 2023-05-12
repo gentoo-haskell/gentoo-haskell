@@ -34,7 +34,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.2.1:=[profile?] <dev-haskell/aeson-2.2:=[profil
 	>=dev-haskell/wai-3.0.0:=[profile?] <dev-haskell/wai-3.3:=[profile?]
 	>=dev-haskell/wai-extra-3.0.0:=[profile?] <dev-haskell/wai-extra-3.2:=[profile?]
 	>=dev-haskell/warp-3.0.13:=[profile?] <dev-haskell/warp-3.4:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

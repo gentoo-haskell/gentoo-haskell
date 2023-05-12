@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # Ambiguous interface for ‘Data.Time’: pulseaudio-0.0.2.0 time-1.6.0.1
 
-RDEPEND=">=dev-lang/ghc-7.8.2:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3

@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="cli"
 
-RDEPEND=">=dev-lang/ghc-7.4.1:=[profile?]
+RDEPEND=">=dev-lang/ghc-7.4.1:=
 	cli? ( >=dev-haskell/attoparsec-0.8.5:=[profile?]
 		>=dev-haskell/setlocale-0.0.3:=[profile?]
 		>=dev-haskell/utf8-string-0.3:=[profile?] )

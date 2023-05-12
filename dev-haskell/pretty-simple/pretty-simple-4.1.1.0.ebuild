@@ -23,7 +23,7 @@ GHC_BOOTSTRAP_PACKAGES=(
 
 RDEPEND=">=dev-haskell/prettyprinter-1.7.0:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.2:=[profile?]
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 	examples? ( dev-haskell/aeson:=[profile?] )
 	executable? ( dev-haskell/optparse-applicative:=[profile?] )
 "

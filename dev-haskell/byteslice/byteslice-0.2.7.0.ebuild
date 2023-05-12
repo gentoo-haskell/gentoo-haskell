@@ -23,7 +23,7 @@ RDEPEND=">=dev-haskell/primitive-0.7:=[profile?] <dev-haskell/primitive-0.8:=[pr
 	>=dev-haskell/run-st-0.1.1:=[profile?] <dev-haskell/run-st-0.2:=[profile?]
 	>=dev-haskell/tuples-0.1:=[profile?] <dev-haskell/tuples-0.2:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.13:=[profile?]
-	>=dev-lang/ghc-8.10.1:=[profile?]
+	>=dev-lang/ghc-8.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0

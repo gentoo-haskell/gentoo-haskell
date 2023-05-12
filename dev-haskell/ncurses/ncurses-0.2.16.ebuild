@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/transformers-0.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 	sys-libs/ncurses:0=
 "
 DEPEND="${RDEPEND}

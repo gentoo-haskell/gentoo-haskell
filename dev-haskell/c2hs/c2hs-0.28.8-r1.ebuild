@@ -24,7 +24,7 @@ RDEPEND="
 	dev-haskell/dlist:=
 	>=dev-haskell/language-c-0.7.1:= <dev-haskell/language-c-0.10:=
 	|| ( dev-lang/ghc dev-haskell/process )
-	>=dev-lang/ghc-8.4.3:=[profile?]
+	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1

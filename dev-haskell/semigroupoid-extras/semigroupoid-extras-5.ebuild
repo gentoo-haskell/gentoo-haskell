@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+profunctors"
 
 RDEPEND=">=dev-haskell/semigroupoids-5:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
-	>=dev-lang/ghc-7.6.2:=[profile?]
+	>=dev-lang/ghc-7.6.2:=
 	profunctors? ( >=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-6:=[profile?] )
 "
 DEPEND="${RDEPEND}

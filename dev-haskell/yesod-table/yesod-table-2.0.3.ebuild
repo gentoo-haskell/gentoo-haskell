@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/contravariant-1.0:=[profile?]
 	>=dev-haskell/semigroups-0.16.2.2:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?]
 	>=dev-haskell/yesod-core-1.2:=[profile?]
-	>=dev-lang/ghc-7.4.1:=[profile?]
+	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.10
