@@ -700,6 +700,19 @@ cabal_src_configure() {
 	haskell-cabal_src_configure "$@"
 }
 
+# Run this to search for directories in "${S}/dist/build/" which contain
+# libraries, and add them to LD_LIBRARY_PATH
+cabal-export-dist-libs() {
+	local so lib_dir
+	while read -r lib_dir; do
+		export LD_LIBRARY_PATH="${lib_dir}${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
+	done < <(
+		find "${S}/dist/build" -name "*.so" \
+			| while read -r so; do dirname "$so"; done \
+			| sort -u \
+	)
+}
+
 # exported function: cabal-style bootstrap configure and compile
 cabal_src_compile() {
 	cabal-is-dummy-lib && return
@@ -733,6 +746,10 @@ cabal_src_compile() {
 			ewarn "hoogle USE flag requires doc USE flag, building without hoogle"
 		fi
 	fi
+
+	# Export built libraries to LD_LIBRARY_PATH so they can be used in the
+	# test and install phases.
+	cabal-export-dist-libs
 }
 
 haskell-cabal_src_compile() {
@@ -754,10 +771,6 @@ haskell-cabal_src_test() {
 		einfo ">>> Test phase [cabal test]: ${CATEGORY}/${PF}"
 
 		cabal-register-inplace
-
-		# Add the local dist/build dir to LD_LIBRARY_PATH so just-built libraries
-		# can be found during testing.
-		export LD_LIBRARY_PATH="${S}/dist/build${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
 
 		# Add binary build paths to PATH so just-built binaries can be found
 		# during testing.
@@ -1035,4 +1048,28 @@ cabal-register-inplace() {
 			*) die "ghc-pkg returned unusual code: ${ret}" ;;
 		esac
 	fi
+}
+
+# @FUNCTION: cabal-run-dist-bin
+# @USAGE: <bin> [args]
+# @DESCRIPTION:
+# Run an executable that was built but has not been installed to the system.
+# These live in "${S}/dist/build/", which also includes libraries that are
+# needed by the executable. (Needed libraries are automatically added to
+# LD_LIBRARY_PATH by haskell-cabal_src_compile().)
+#
+# This is only inteded to be run in the test and install phases.
+cabal-run-dist-bin() {
+	einfo "LD_LIBRARY_PATH: ${LD_LIBRARY_PATH}"
+	case "$EBUILD_PHASE_FUNC" in
+		src_test|src_install)
+			local bin="$1"
+			shift
+			"${S}/dist/build/${bin}/${bin}" "$@"
+			;;
+		*)
+			ewarn "cabal-run-dist-bin() called from ${EBUILD_PHASE_FUNC} (ignoring)"
+			false
+			;;
+	esac
 }
