@@ -9,7 +9,7 @@ EAPI=8
 CABAL_FEATURES="test-suite"
 EGIT_REPO_URI="https://github.com/gentoo-haskell/hackport.git"
 
-inherit git-r3 haskell-cabal
+inherit git-r3 haskell-cabal bash-completion-r1
 
 DESCRIPTION="Hackage and Portage integration tool"
 HOMEPAGE="https://github.com/gentoo-haskell/hackport#readme"
@@ -65,6 +65,16 @@ DEPEND="${RDEPEND}
 	)
 "
 
+mk_completion_scripts() {
+	local s bin="${S}/dist/build/${PN}/${PN}"
+
+	mkdir "${S}/completion-scripts"
+	for s in bash fish zsh; do
+		cabal-run-dist-bin "$PN" "--${s}-completion-script" /usr/bin/hackport \
+			> "${S}/completion-scripts/${s}" || die
+	done
+}
+
 src_prepare() {
 	default
 	sed -e 's/^version:.*/&.9999/' -i ${PN}.cabal || die # just to distinguish from release install
@@ -87,4 +97,8 @@ src_configure() {
 src_install() {
 	haskell-cabal_src_install
 	doman man/hackport.1
+
+	# We only install bash completion scripts currently
+	mk_completion_scripts
+	newbashcomp "${S}"/completion-scripts/bash "${PN}"
 }
