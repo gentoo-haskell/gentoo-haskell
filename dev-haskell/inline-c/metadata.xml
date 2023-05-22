@@ -8,4 +8,8 @@
 	<use>
 		<flag name="gsl-example">Build GSL example</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">inline-c</remote-id>
+		<remote-id type="github">fpco/inline-c</remote-id>
+	</upstream>
 </pkgmetadata>
