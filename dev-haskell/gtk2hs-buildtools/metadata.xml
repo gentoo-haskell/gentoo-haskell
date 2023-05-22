@@ -8,4 +8,8 @@
 	<use>
 		<flag name="closuresignals">Use the the GClosure-based signals implementation.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">gtk2hs-buildtools</remote-id>
+		<remote-id type="github">gtk2hs/gtk2hs</remote-id>
+	</upstream>
 </pkgmetadata>
