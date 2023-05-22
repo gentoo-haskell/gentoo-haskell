@@ -5,13 +5,12 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This is the core library of the Gtk2Hs suite of libraries for Haskell
-		based on Gtk+. Gtk+ is an extensive and mature multi-platform toolkit
-		for creating graphical user interfaces.
-	</longdescription>
 	<use>
-		<flag name="gio">Depend on GIO package, thereby enabling certain features.</flag>
 		<flag name="fmode-binary">Set the default file translation mode for file I/O operations to _O_BINARY.</flag>
+		<flag name="gio">Depend on GIO package, thereby enabling certain features.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">gtk3</remote-id>
+		<remote-id type="github">gtk2hs/gtk2hs</remote-id>
+	</upstream>
 </pkgmetadata>
