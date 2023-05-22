@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">hpqtypes</remote-id>
+		<remote-id type="github">scrive/hpqtypes</remote-id>
+	</upstream>
 </pkgmetadata>
