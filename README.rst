@@ -94,7 +94,7 @@ Developer's corner
 Have a nice haskell-related ebuild to share with community?
 Look at our `Developer's README`_!
 
-.. _Developer's README: http://github.com/gentoo-haskell/gentoo-haskell/blob/master/projects/doc/README.rst
+.. _Developer's README: http://github.com/gentoo-haskell/gentoo-haskell/blob/master/scripts/doc/README.rst
 
 Loner's corner
 ==============
