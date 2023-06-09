@@ -88,13 +88,13 @@ yet_binary() {
 		glibc)
 			case "${ARCH}" in
 				#alpha) return 0 ;;
-				#arm64) return 0 ;;
+				arm64) return 0 ;;
 				#arm) return 0 ;;
 				amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
-				#ppc64) return 0 ;;
-				#riscv) return 0 ;;
+				ppc64) return 0 ;;
+				riscv) return 0 ;;
 				#sparc) return 0 ;;
 				x86) return 0 ;;
 				*) return 1 ;;
