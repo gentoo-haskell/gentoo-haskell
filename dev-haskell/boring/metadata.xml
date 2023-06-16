@@ -10,4 +10,8 @@
 
 Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">boring</remote-id>
+		<remote-id type="github">phadej/boring</remote-id>
+	</upstream>
 </pkgmetadata>
