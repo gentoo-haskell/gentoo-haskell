@@ -8,4 +8,8 @@
 	<use>
 		<flag name="newtype-unsafe">Use implementation using @newtype@ and unsafe @Any@, instead of GADT</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">some</remote-id>
+		<remote-id type="github">haskellari/some</remote-id>
+	</upstream>
 </pkgmetadata>
