@@ -7,6 +7,7 @@ EAPI=8
 #hackport: flags: -dev,-has-icu,-has-llvm,-bench-show,-gauge
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_HACKAGE_REVISION="3"
 inherit haskell-cabal
 
 DESCRIPTION="Unicode normalization"
