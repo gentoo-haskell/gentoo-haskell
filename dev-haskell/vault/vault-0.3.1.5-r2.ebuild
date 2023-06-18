@@ -7,7 +7,7 @@ EAPI=8
 #hackport: flags: +useghc
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-CABAL_HACKAGE_REVISION="1"
+CABAL_HACKAGE_REVISION="3"
 inherit haskell-cabal
 
 DESCRIPTION="a persistent store for values of arbitrary types"
