@@ -131,7 +131,7 @@ IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
-LLVM_MAX_SLOT="15"
+LLVM_MAX_SLOT="16"
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
@@ -143,6 +143,7 @@ RDEPEND="
 		<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
 		|| (
 			sys-devel/llvm:15
+			sys-devel/llvm:16
 		)
 	)
 "
@@ -651,6 +652,10 @@ src_prepare() {
 		#eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
 		#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
 		#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
+
+		# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
+		# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
+		eapply "${FILESDIR}"/${PN}-9.4.5-llvm-16.patch
 
 		# a bunch of crosscompiler patches
 		# needs newer version:
