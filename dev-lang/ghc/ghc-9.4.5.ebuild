@@ -657,6 +657,10 @@ src_prepare() {
 		# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
 		eapply "${FILESDIR}"/${PN}-9.4.5-llvm-16.patch
 
+		# Fix issue caused by non-standard "musleabi" target in
+		# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
+		eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
+
 		# a bunch of crosscompiler patches
 		# needs newer version:
 		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
