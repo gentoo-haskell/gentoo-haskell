@@ -29,6 +29,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/resourcet )
 "
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.2.30-musl-1.2.4.patch"
+)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag allow-bsd allow-bsd)
