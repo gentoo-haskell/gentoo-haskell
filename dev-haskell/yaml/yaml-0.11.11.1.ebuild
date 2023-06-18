@@ -16,7 +16,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc64"
 IUSE="examples executable"
 
-RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
+CABAL_CHDEPS=(
+	'executable examples' 'executable haskell-yaml-examples'
+)
+
+RDEPEND="
+	>=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/attoparsec-0.11.3.0:=[profile?]
 	>=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/libyaml-0.1:=[profile?] <dev-haskell/libyaml-0.2:=[profile?]
@@ -25,25 +30,26 @@ RDEPEND=">=dev-haskell/aeson-0.11:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
-	examples? ( dev-haskell/raw-strings-qq:=[profile?] )
-	executable? ( dev-haskell/optparse-applicative:=[profile?] )
+	examples? (
+		dev-haskell/raw-strings-qq:=[profile?]
+	)
+	executable? (
+		dev-haskell/optparse-applicative:=[profile?]
+	)
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
-	test? ( dev-haskell/base-compat
+	test? (
+		dev-haskell/base-compat
 		>=dev-haskell/hspec-1.3
 		dev-haskell/hunit
 		dev-haskell/mockery
 		dev-haskell/temporary
-		examples? ( dev-haskell/raw-strings-qq ) )
+		examples? (
+			dev-haskell/raw-strings-qq
+		)
+	)
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'executable examples' 'executable haskell-yaml-examples'
-}
 
 src_configure() {
 	local examples_flag="no-examples"
@@ -55,4 +61,13 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flag="${examples_flag}" \
 		--flag="${exe_flag}"
+}
+
+pkg_postinst() {
+	if use examples; then
+		elog "The executable installed with this package (normally named 'examples')"
+		elog "has been renamed to 'haskell-yaml-examples' to help prevent name collisions."
+	fi
+
+	haskell-cabal_pkg_postinst
 }
