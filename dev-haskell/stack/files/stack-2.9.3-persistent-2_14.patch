@@ -47,42 +47,42 @@ diff --git a/stack.cabal b/stack.cabal
 index a3e88422..f5c8bbc7 100644
 --- a/stack.cabal
 +++ b/stack.cabal
-@@ -316,7 +316,7 @@ library
-     , pantry >=0.8.1
-     , path
-     , path-io
--    , persistent >=2.13.3.5 && <2.14
-+    , persistent >=2.14.0.0 && <2.15
-     , persistent-sqlite
-     , persistent-template
-     , pretty
-@@ -440,7 +440,7 @@ executable stack
-     , pantry >=0.8.1
-     , path
-     , path-io
--    , persistent >=2.13.3.5 && <2.14
-+    , persistent >=2.14.0.0 && <2.15
-     , persistent-sqlite
-     , persistent-template
-     , pretty
-@@ -565,7 +565,7 @@ executable stack-integration-test
-     , pantry >=0.8.1
-     , path
-     , path-io
--    , persistent >=2.13.3.5 && <2.14
-+    , persistent >=2.14.0.0 && <2.15
-     , persistent-sqlite
-     , persistent-template
-     , pretty
-@@ -695,7 +695,7 @@ test-suite stack-test
-     , pantry >=0.8.1
-     , path
-     , path-io
--    , persistent >=2.13.3.5 && <2.14
-+    , persistent >=2.14.0.0 && <2.15
-     , persistent-sqlite
-     , persistent-template
-     , pretty
+@@ -323,7 +323,7 @@ library
+         pantry >=0.8.1,
+         path,
+         path-io,
+-        persistent >=2.13.3.5 && <2.14,
++        persistent >=2.14.0.0 && <2.15,
+         persistent-sqlite,
+         persistent-template,
+         pretty,
+@@ -450,7 +450,7 @@ executable stack
+         pantry >=0.8.1,
+         path,
+         path-io,
+-        persistent >=2.13.3.5 && <2.14,
++        persistent >=2.14.0.0 && <2.15,
+         persistent-sqlite,
+         persistent-template,
+         pretty,
+@@ -583,7 +583,7 @@ executable stack-integration-test
+         pantry >=0.8.1,
+         path,
+         path-io,
+-        persistent >=2.13.3.5 && <2.14,
++        persistent >=2.14.0.0 && <2.15,
+         persistent-sqlite,
+         persistent-template,
+         pretty,
+@@ -720,7 +720,7 @@ test-suite stack-test
+         pantry >=0.8.1,
+         path,
+         path-io,
+-        persistent >=2.13.3.5 && <2.14,
++        persistent >=2.14.0.0 && <2.15,
+         persistent-sqlite,
+         persistent-template,
+         pretty,
 -- 
 2.39.2
 
