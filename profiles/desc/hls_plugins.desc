@@ -1,9 +1,10 @@
 # hololeap <hololeap@protonmail.com> (2021-01-30)
 # Plugins for dev-util/haskell-language-server
-# (Updated 2022-12-30)
+# (Updated 2023-07-16)
 
 alternate-number-format - Enable Alternate Number Format plugin
 cabal - Enable cabal plugin
+call-hierarchy - Enable callHierarchy plugin
 change-type-signature - Change a declarations type signature with a Code Action
 class - Enable class plugin
 code-range - Enable codeRange plugin
@@ -15,6 +16,7 @@ haddock-comments - Enable haddock comments plugin
 hlint - Enable hlint plugin
 import-lens - Enable importLens plugin
 module-name - Enable moduleName plugin
+overloaded-record-dot - Enable overloadedRecordDot plugin
 pragmas - Enable pragmas plugin
 qualify-imported-names - Enable qualifyImportedNames plugin
 refine-imports - Enable refineImports plugin
