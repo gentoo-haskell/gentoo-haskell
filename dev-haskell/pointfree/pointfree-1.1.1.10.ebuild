@@ -23,3 +23,10 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hunit-1.6 <dev-haskell/hunit-1.7
 		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.15 )
 "
+
+src_prepare() {
+	default
+
+	cabal_chdeps \
+		'base >= 4.5 && < 4.17' 'base >= 4.5 && < 5'
+}
