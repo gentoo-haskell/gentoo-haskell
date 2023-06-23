@@ -5,21 +5,14 @@ Subject: [PATCH] Disable test_package_db test
 
 This tests run 'cabal build' which tries to connect to the web
 ---
- unit-tests/run-unit-tests.hs | 1 -
- 1 file changed, 1 deletion(-)
 
-diff --git a/unit-tests/run-unit-tests.hs b/unit-tests/run-unit-tests.hs
-index 0824445..a8a1e60 100644
---- a/unit-tests/run-unit-tests.hs
-+++ b/unit-tests/run-unit-tests.hs
-@@ -421,7 +421,6 @@ tests = [test_reload_modified
+--- hint-0.9.0.7-orig/unit-tests/run-unit-tests.hs	2001-09-09 11:46:40.000000000 +1000
++++ hint-0.9.0.7/unit-tests/run-unit-tests.hs	2023-06-23 09:26:01.434721207 +1000
+@@ -520,7 +520,6 @@
  
  ioTests :: [IOTestCase]
  ioTests = [test_signal_handlers
 -          ,test_package_db
+           ,test_ghc_environment_file
            ]
  
- main :: IO ()
--- 
-2.37.4
-
