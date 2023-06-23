@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,6 +20,10 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="exe"
+
+CABAL_CHDEPS=(
+	'base         >= 4.5      && < 4.17' 'base         >= 4.5'
+)
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 	exe? ( >=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-10:=[profile?]
