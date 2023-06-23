@@ -17,6 +17,7 @@ SLOT="0/${PV}"
 #KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
 CABAL_CHDEPS=(
+	'base            ^>= 4.16.0' 'base            >= 4.16.0'
 	'hspec           ^>= 2.9' 'hspec >= 2.9'
 	'hspec-discover:hspec-discover ^>= 2.9' 'hspec-discover:hspec-discover >= 2.9'
 )
