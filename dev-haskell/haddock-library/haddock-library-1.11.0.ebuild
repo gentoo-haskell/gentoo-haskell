@@ -18,12 +18,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux"
 
 CABAL_CHDEPS=(
-	'hspec                          >= 2.4.4    && < 2.8' 'hspec >=2.4.4'
-	'hspec-discover:hspec-discover  >= 2.4.4    && < 2.8' 'hspec-discover:hspec-discover >=2.4.4'
+	'hspec                          >= 2.4.4    && < 2.10' 'hspec >=2.4.4'
+	'hspec-discover:hspec-discover  >= 2.4.4    && < 2.10' 'hspec-discover:hspec-discover >=2.4.4'
 	'optparse-applicative  ^>= 0.15' 'optparse-applicative >=0.15'
-	'tree-diff             ^>= 0.1' 'tree-diff >=0.1'
-	'base-compat  ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >=0.11.0'
-	'base-compat           ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >=0.11.0'
+	'tree-diff             ^>= 0.2' 'tree-diff >=0.2'
+	'base-compat  ^>= 0.12.0' 'base-compat  >= 0.12.0'
+	'base-compat           ^>= 0.12.0' 'base-compat           >= 0.12.0'
 )
 
 RDEPEND="
