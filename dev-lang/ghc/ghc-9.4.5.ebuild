@@ -52,7 +52,7 @@ glibc_binaries+=" amd64? ( $(ghc_binaries x86_64-pc-linux-gnu) )"
 #glibc_binaries="$glibc_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
 
 #musl_binaries="$musl_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#musl_binaries="$musl_binaries amd64? ( https://eidetic.codes/ghc-bin-${PV}-x86_64-pc-linux-musl.tbz2 )"
+musl_binaries+=" amd64? ( $(ghc_binaries x86_64-gentoo-linux-musl) )"
 #musl_binaries="$musl_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-musl.tbz2 )"
 #musl_binaries="$musl_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-musl.tbz2 )"
 #musl_binaries="$musl_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
@@ -92,7 +92,7 @@ yet_binary() {
 				#alpha) return 0 ;;
 				#arm64) return 0 ;;
 				#arm) return 0 ;;
-				#amd64) return 0 ;;
+				amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
 				#ppc64)
