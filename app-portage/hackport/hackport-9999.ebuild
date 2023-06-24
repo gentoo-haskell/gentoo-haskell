@@ -20,38 +20,38 @@ KEYWORDS=""
 IUSE="profile"
 
 RDEPEND="
-	>=dev-haskell/async-2.0:=
-	>=dev-haskell/base16-bytestring-0.1.1:=
-	>=dev-haskell/base64-bytestring-1.0:=
-	>=dev-haskell/cryptohash-sha256-0.11:=
-	dev-haskell/dlist:=
-	>=dev-haskell/echo-0.1.3:=
-	>=dev-haskell/ed25519-0.0:=
-	>=dev-haskell/edit-distance-0.2.2:=
-	dev-haskell/extensible-exceptions:=
-	>=dev-haskell/hashable-1.0:=
-	>=dev-haskell/http-4000.1.5:=
-	dev-haskell/lifted-base:=
-	>=dev-haskell/lukko-0.1:=
-	dev-haskell/monad-control:=
-	>=dev-haskell/network-3.0:=
-	>=dev-haskell/network-uri-2.6.0.2:=
-	dev-haskell/optparse-applicative:=
-	>=dev-haskell/parallel-3.2.1.0:=
-	>=dev-haskell/parsec-3.1.13.0:=
-	dev-haskell/parser-combinators:=
-	dev-haskell/prettyprinter:=
+	>=dev-haskell/async-2.0:=[profile?]
+	>=dev-haskell/base16-bytestring-0.1.1:=[profile?]
+	>=dev-haskell/base64-bytestring-1.0:=[profile?]
+	>=dev-haskell/cryptohash-sha256-0.11:=[profile?]
+	dev-haskell/dlist:=[profile?]
+	>=dev-haskell/echo-0.1.3:=[profile?]
+	>=dev-haskell/ed25519-0.0:=[profile?]
+	>=dev-haskell/edit-distance-0.2.2:=[profile?]
+	dev-haskell/extensible-exceptions:=[profile?]
+	>=dev-haskell/hashable-1.0:=[profile?]
+	>=dev-haskell/http-4000.1.5:=[profile?]
+	dev-haskell/lifted-base:=[profile?]
+	>=dev-haskell/lukko-0.1:=[profile?]
+	dev-haskell/monad-control:=[profile?]
+	>=dev-haskell/network-3.0:=[profile?]
+	>=dev-haskell/network-uri-2.6.0.2:=[profile?]
+	dev-haskell/optparse-applicative:=[profile?]
+	>=dev-haskell/parallel-3.2.1.0:=[profile?]
+	>=dev-haskell/parsec-3.1.13.0:=[profile?]
+	dev-haskell/parser-combinators:=[profile?]
+	dev-haskell/prettyprinter:=[profile?]
 	dev-haskell/quickcheck:2=
-	>=dev-haskell/random-1.2:=
-	>=dev-haskell/regex-base-0.94.0.0:=
-	>=dev-haskell/regex-posix-0.96.0.0:=
-	>=dev-haskell/resolv-0.1.1:=
-	>=dev-haskell/safe-exceptions-0.1.7.0:=
-	dev-haskell/split:=
-	>=dev-haskell/tar-0.5.0.3:=
-	>=dev-haskell/text-1.2.3.0:=
-	dev-haskell/xml:=
-	>=dev-haskell/zlib-0.5.3:=
+	>=dev-haskell/random-1.2:=[profile?]
+	>=dev-haskell/regex-base-0.94.0.0:=[profile?]
+	>=dev-haskell/regex-posix-0.96.0.0:=[profile?]
+	>=dev-haskell/resolv-0.1.1:=[profile?]
+	>=dev-haskell/safe-exceptions-0.1.7.0:=[profile?]
+	dev-haskell/split:=[profile?]
+	>=dev-haskell/tar-0.5.0.3:=[profile?]
+	>=dev-haskell/text-1.2.3.0:=[profile?]
+	dev-haskell/xml:=[profile?]
+	>=dev-haskell/zlib-0.5.3:=[profile?]
 	>=dev-lang/ghc-8.10.6:=[profile?]
 "
 DEPEND="${RDEPEND}
