@@ -45,9 +45,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/hunit
 		dev-haskell/mockery
 		dev-haskell/temporary
-		examples? (
-			dev-haskell/raw-strings-qq
-		)
+		dev-haskell/raw-strings-qq
 	)
 "
 
