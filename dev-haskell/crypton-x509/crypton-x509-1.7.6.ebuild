@@ -7,7 +7,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=1
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite fails to build
 inherit haskell-cabal
 
 DESCRIPTION="X509 reader and writer"
@@ -16,6 +16,8 @@ HOMEPAGE="https://github.com/kazu-yamamoto/crypton-certificate"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+
+RESTRICT=test # fails to build
 
 RDEPEND=">=dev-haskell/asn1-encoding-0.9:=[profile?] <dev-haskell/asn1-encoding-0.10:=[profile?]
 	>=dev-haskell/asn1-parse-0.9.3:=[profile?] <dev-haskell/asn1-parse-0.10:=[profile?]
@@ -28,7 +30,8 @@ RDEPEND=">=dev-haskell/asn1-encoding-0.9:=[profile?] <dev-haskell/asn1-encoding-
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
-	test? ( dev-haskell/tasty
-		dev-haskell/tasty-quickcheck
-		dev-haskell/x509 )
 "
+# 	test? ( dev-haskell/tasty
+# 		dev-haskell/tasty-quickcheck
+# 		dev-haskell/x509 )
+# "
