@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-haskell/brick-1.5:=[profile?]
 	>=dev-haskell/free-4.12.4:=[profile?]
-	>=dev-haskell/hledger-lib-1.29:=[profile?] <dev-haskell/hledger-lib-1.30:=[profile?]
+	>=dev-haskell/hledger-lib-1.29:=[profile?] <dev-haskell/hledger-lib-1.31:=[profile?]
 	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-9.3:=[profile?]
 	dev-haskell/microlens:=[profile?]
 	dev-haskell/microlens-mtl:=[profile?]
@@ -39,3 +39,8 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 	)
 "
+
+CABAL_CHDEPS=(
+	'hledger-lib >= 1.29 && < 1.30' 'hledger-lib >= 1.29'
+	'hledger-lib >= 1.29 && <1.30' 'hledger-lib >= 1.29'
+)
