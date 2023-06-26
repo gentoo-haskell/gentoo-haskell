@@ -22,12 +22,19 @@ RDEPEND="dev-haskell/basement:=[profile?]
 	>=dev-haskell/network-2.6.3:=[profile?]
 	>=dev-haskell/socks-0.6:=[profile?]
 	>=dev-haskell/tls-1.4:=[profile?]
-	>=dev-haskell/x509-1.5:=[profile?]
-	>=dev-haskell/x509-store-1.5:=[profile?]
-	>=dev-haskell/x509-system-1.5:=[profile?]
-	>=dev-haskell/x509-validation-1.5:=[profile?]
+	>=dev-haskell/crypton-x509-1.5:=[profile?]
+	>=dev-haskell/crypton-x509-store-1.5:=[profile?]
+	>=dev-haskell/crypton-x509-system-1.5:=[profile?]
+	>=dev-haskell/crypton-x509-validation-1.5:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.22.2.0
 "
+
+CABAL_CHDEPS=(
+	"x509 >= 1.5" "crypton-x509 >= 1.5"
+	"x509-store >= 1.5" "crypton-x509-store >= 1.5"
+	"x509-system >= 1.5" "crypton-x509-system >= 1.5"
+	"x509-validation >= 1.5" "crypton-x509-validation >= 1.5"
+)
