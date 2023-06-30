@@ -34,6 +34,7 @@ RDEPEND="
 	>=dev-lang/ghc-8.4.3:=
 	>=dev-util/shake-0.18.3:= <dev-util/shake-0.20:=
 	static? (
+		dev-libs/libffi[static-libs]
 		dev-libs/gmp[static-libs]
 	)
 	test? (
