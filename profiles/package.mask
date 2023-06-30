@@ -1,3 +1,9 @@
+# Jack Todaro <solpeth@posteo.org> (2023-06-30)
+# Last rites dead packages for removal within 30 days.
+dev-haskell/conduit-connection
+dev-haskell/simpleirc
+dev-haskell/smtp-mail
+
 # hololeap <hololeap@protonmail.com> (2023-06-16)
 # Package does not appear to be buildable on linux and is strictly for
 # iOS.
