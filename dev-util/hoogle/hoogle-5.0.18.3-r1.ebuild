@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -25,7 +25,7 @@ RDEPEND="
 	dev-haskell/cmdargs:=[profile?]
 	>=dev-haskell/conduit-1.3.0:=[profile?]
 	>=dev-haskell/conduit-extra-1.2.3.2:=[profile?]
-	dev-haskell/connection:=[profile?]
+	dev-haskell/crypton-connection:=[profile?]
 	>=dev-haskell/extra-1.6.6:=[profile?]
 	>=dev-haskell/foundation-0.0.13:=[profile?]
 	dev-haskell/hashable:=[profile?]
@@ -84,3 +84,7 @@ src_install() {
 
 	doman "${FILESDIR}/${PN}.1"
 }
+
+CABAL_CHDEPS=(
+	'connection' 'crypton-connection'
+)
