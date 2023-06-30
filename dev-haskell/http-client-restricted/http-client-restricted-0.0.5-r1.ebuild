@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/connection-0.2.5:=[profile?]
+RDEPEND=">=dev-haskell/crypton-connection-0.2.5:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/http-client-0.7.11:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
 	>=dev-haskell/http-client-tls-0.3.6:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
@@ -28,3 +28,7 @@ RDEPEND=">=dev-haskell/connection-0.2.5:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+CABAL_CHDEPS=(
+	'connection >= 0.2.5' 'crypton-connection >= 0.2.5'
+)
