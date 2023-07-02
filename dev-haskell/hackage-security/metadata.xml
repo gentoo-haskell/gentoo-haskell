@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="lukko">Use @lukko@ for file-locking, otherwise use @GHC.IO.Handle.Lock@</flag>
-		<flag name="new-cabal-syntax">Use newer cabal-syntax package (breaks cabal-install-3.6 and lower)</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">hackage-security</remote-id>
