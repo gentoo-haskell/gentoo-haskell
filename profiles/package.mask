@@ -4,6 +4,22 @@ dev-haskell/conduit-connection
 dev-haskell/simpleirc
 dev-haskell/smtp-mail
 
+# Jack Todaro <solpeth@posteo.org> (2023-07-03)
+# Masked for removal in 30 days. Dead package with reverse dependencies
+# in the process of migrating over to crypton-connection.
+#
+# ::gentoo only users will not be affected by this mask, whereas ::haskell
+# users will be. This is the intended behaviour.
+#
+# Removal: 2023-08-02.
+=dev-haskell/connection-0.3.1-r1
+
+# Jack Todaro <solpeth@posteo.org> (2023-06-30)
+# Last rites dead packages for removal within 30 days.
+dev-haskell/conduit-connection
+dev-haskell/simpleirc
+dev-haskell/smtp-mail
+
 # hololeap <hololeap@protonmail.com> (2023-06-16)
 # Package does not appear to be buildable on linux and is strictly for
 # iOS.
@@ -60,7 +76,7 @@ dev-haskell/liquidhaskell
 dev-haskell/stan
 dev-haskell/hls-stan-plugin
 
-# hololeap <hololeap@protonmail.com>
+# hololeap <hololeap@protonmail.com> (2022-09-01)
 # doctest-parallel does not currently work with Setup.hs (used internally by
 # haskell-cabal.eclass)
 # See: <https://github.com/martijnbastiaan/doctest-parallel/issues/45>
@@ -119,6 +135,6 @@ dev-util/hdocs
 
 # P.B. Lecavalier <pbl.ltx@gmail.com> (2020-01-01)
 # Various unrelated packages and what causes the conflict with newer version.
->=dev-haskell/hsemail-2              # smptclient-1.1.0
->=dev-haskell/ilist-0.4.0.0          # hsimport-0.11.0
->=dev-haskell/socket-0.8             # socket-sctp-0.3.0.0
+>=dev-haskell/hsemail-2
+>=dev-haskell/ilist-0.4.0.0
+>=dev-haskell/socket-0.8
