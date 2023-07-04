@@ -64,4 +64,5 @@ DEPEND="${RDEPEND}
 
 CABAL_CHDEPS=(
 	'connection            >=0.2.6   && <0.4' 'crypton-connection            >=0.2.6   && <0.4'
+	'x509-system           >=1.6.6   && <1.7' 'crypton-x509-system           >=1.6.6   && <1.7'
 )
