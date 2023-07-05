@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">config-value</remote-id>
+		<remote-id type="github">glguy/config-value</remote-id>
+	</upstream>
 </pkgmetadata>
