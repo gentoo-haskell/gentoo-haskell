@@ -5,11 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package makes it possible to defined schemas for use when
-		loading configuration files using the config-value format.
-		These schemas can be used to be process a configuration file into
-		a Haskell value, or to automatically generate documentation for
-		the file format.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">config-schema</remote-id>
+		<remote-id type="github">glguy/config-schema</remote-id>
+	</upstream>
 </pkgmetadata>
