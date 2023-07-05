@@ -1,9 +1,0 @@
-diff --git a/src/Data/GADT/Compare.hs b/src/Data/GADT/Compare.hs
-index e1897eb..9047db4 100644
---- a/src/Data/GADT/Compare.hs
-+++ b/src/Data/GADT/Compare.hs
-@@ -60,3 +60,3 @@ instance GRead ((:=) a) where
-             f :: forall x. (x := x, String) -> [(forall b. (forall a. x := a -> b) -> b, String)]
--            f (Refl, rest) = return ((\x -> x Refl) :: forall b. (forall a. x := a -> b) -> b, rest)
-+            f (Refl, rest) = [((\x -> x Refl) :: forall b. (forall a. x := a -> b) -> b, rest)]
- 
