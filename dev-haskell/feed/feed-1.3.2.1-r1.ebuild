@@ -48,3 +48,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 	)
 "
+BDEPEND="test? (
+	dev-haskell/markdown-unlit[executable]
+)"
