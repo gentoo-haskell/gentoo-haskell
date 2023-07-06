@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -23,10 +23,7 @@ RDEPEND="app-text/mecab
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'text >= 0.11 && < 0.12' 'text >= 0.11'
-}
+CABAL_CHDEPS=(
+	'bytestring >= 0.9 && < 0.11' 'bytestring >= 0.9'
+	'text >= 0.11 && < 0.12' 'text >= 0.11'
+)
