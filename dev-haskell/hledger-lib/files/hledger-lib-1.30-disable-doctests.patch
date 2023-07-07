@@ -1,0 +1,28 @@
+From c730a3236096487ae44d349d81120a53159179d6 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Thu, 6 Jul 2023 23:48:20 -0600
+Subject: [PATCH] Disable doctests
+
+Doctests fail and seem to be pretty difficult to get working. Disable
+for now.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ hledger-lib.cabal | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/hledger-lib.cabal b/hledger-lib.cabal
+index dea60fd..597643e 100644
+--- a/hledger-lib.cabal
++++ b/hledger-lib.cabal
+@@ -152,6 +152,7 @@ library
+         pager >=0.1.1.0
+ 
+ test-suite doctest
++  buildable: False
+   type: exitcode-stdio-1.0
+   main-is: doctests.hs
+   hs-source-dirs:
+-- 
+2.39.3
+

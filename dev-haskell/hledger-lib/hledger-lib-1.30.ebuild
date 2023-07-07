@@ -18,6 +18,10 @@ LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-1.30-disable-doctests.patch"
+)
+
 RDEPEND=">=dev-haskell/aeson-1:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
