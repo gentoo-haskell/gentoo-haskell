@@ -67,16 +67,6 @@ DEPEND="${RDEPEND}
 	)
 "
 
-mk_completion_scripts() {
-	local s bin="${S}/dist/build/${PN}/${PN}"
-
-	mkdir "${S}/completion-scripts"
-	for s in bash fish zsh; do
-		cabal-run-dist-bin "$PN" "--${s}-completion-script" /usr/bin/hackport \
-			> "${S}/completion-scripts/${s}" || die
-	done
-}
-
 src_prepare() {
 	haskell-cabal_src_prepare
 	sed -e 's/^version:.*/&.9999/' -i ${PN}.cabal || die # just to distinguish from release install
@@ -101,6 +91,5 @@ src_install() {
 	doman man/hackport.1
 
 	# We only install bash completion scripts currently
-	mk_completion_scripts
-	newbashcomp "${S}"/completion-scripts/bash "${PN}"
+	newbashcomp "${FILESDIR}/${PN}.bash.completion" "${PN}"
 }
