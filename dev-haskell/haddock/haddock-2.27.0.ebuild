@@ -16,7 +16,8 @@ HOMEPAGE="https://www.haskell.org/haddock/"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~amd64-linux"
+# Keep in sync with ghc-9.4
+#KEYWORDS="~amd64 ~amd64-linux"
 
 RDEPEND="
 	~dev-haskell/haddock-api-2.27.0:=
