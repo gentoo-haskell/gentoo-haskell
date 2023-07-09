@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="bounded-memory">Run tests of constant memory use (requires +RTS -T)</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">hnix-store-core</remote-id>
 		<remote-id type="github">haskell-nix/hnix-store</remote-id>
