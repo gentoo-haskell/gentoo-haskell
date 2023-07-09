@@ -8,29 +8,8 @@
 	<use>
 		<flag name="template-haskell">Build Test.QuickCheck.All, which uses Template Haskell.</flag>
 	</use>
-	<longdescription>
-		QuickCheck is a library for random testing of program properties.
-		The programmer provides a specification of the program, in the form of
-		properties which functions should satisfy, and QuickCheck then tests that the
-		properties hold in a large number of randomly generated cases.
-		Specifications are expressed in Haskell, using combinators provided by
-		QuickCheck. QuickCheck provides combinators to define properties, observe the
-		distribution of test data, and define test data generators.
-		
-		Most of QuickCheck&#39;s functionality is exported by the main &quot;Test.QuickCheck&quot;
-		module. The main exception is the monadic property testing library in
-		&quot;Test.QuickCheck.Monadic&quot;.
-		
-		If you are new to QuickCheck, you can try looking at the following resources:
-		
-		* The &lt;http://www.cse.chalmers.se/~rjmh/QuickCheck/manual.html official QuickCheck manual&gt;.
-		It&#39;s a bit out-of-date in some details and doesn&#39;t cover newer QuickCheck features,
-		but is still full of good advice.
-		* &lt;https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html&gt;,
-		a detailed tutorial written by a user of QuickCheck.
-		
-		The &lt;https://hackage.haskell.org/package/quickcheck-instances quickcheck-instances&gt;
-		companion package provides instances for types in Haskell Platform packages
-		at the cost of additional dependencies.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">QuickCheck</remote-id>
+		<remote-id type="github">nick8325/quickcheck</remote-id>
+	</upstream>
 </pkgmetadata>
