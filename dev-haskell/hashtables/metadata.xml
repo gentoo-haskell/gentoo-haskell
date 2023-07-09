@@ -9,4 +9,8 @@
 		<flag name="bounds-checking">if on, use bounds-checking array accesses</flag>
 		<flag name="detailed-profiling">add detailed profiling information to profiled build-depends</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hashtables</remote-id>
+		<remote-id type="github">gregorycollins/hashtables</remote-id>
+	</upstream>
 </pkgmetadata>
