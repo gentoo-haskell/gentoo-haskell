@@ -4,6 +4,19 @@ dev-haskell/conduit-connection
 dev-haskell/simpleirc
 dev-haskell/smtp-mail
 
+# Jack Todaro <solpeth@posteo.org> (2023-07-10)
+# No reverse dependencies left. Deprecated upstream.
+# Masked for removal.
+#
+# Removal: 2023-08-09.
+dev-haskell/aeson-compat
+
+# Jack Todaro <solpeth@posteo.org> (2023-06-30)
+# Last rites dead packages for removal within 30 days.
+dev-haskell/conduit-connection
+dev-haskell/simpleirc
+dev-haskell/smtp-mail
+
 # Jack Todaro <solpeth@posteo.org> (2023-07-03)
 # Masked for removal in 30 days. Dead package with reverse dependencies
 # in the process of migrating over to crypton-connection.
