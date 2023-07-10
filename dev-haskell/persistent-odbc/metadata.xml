@@ -6,12 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="debug">Enable debug</flag>
 		<flag name="tester">Enable test</flag>
 	</use>
-	<longdescription>
-		This package contains backends for persistent using ODBC.
-		It currently supports the following databases: MSSQL, MySql, Oracle, Sqlite, DB2, Postgres.
-		Uses HDBC-ODBC for accessing ODBC.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">persistent-odbc</remote-id>
+		<remote-id type="github">gbwey/persistent-odbc</remote-id>
+	</upstream>
 </pkgmetadata>
