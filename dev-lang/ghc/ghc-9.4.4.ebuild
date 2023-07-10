@@ -466,7 +466,7 @@ ghc-check-bootstrap-mismatch () {
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]] && use ghcbootstrap; then
 		ghc-check-bootstrap-version
-		ghc-check-boostrap-mismatch
+		ghc-check-bootstrap-mismatch
 	fi
 	ghc-check-reqs check-reqs_pkg_pretend
 }
