@@ -1,0 +1,34 @@
+From ef4db158cd3d0419d7ab4f7d26ffb7a1e5c94750 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Tue, 11 Jul 2023 20:30:38 -0600
+Subject: [PATCH 1/1] Add executable flag
+
+Allow disabling building/installing the fourmolu executable
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ fourmolu.cabal | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/fourmolu.cabal b/fourmolu.cabal
+index 638c06f..b264a9e 100644
+--- a/fourmolu.cabal
++++ b/fourmolu.cabal
+@@ -139,7 +139,14 @@ library
+     if flag(internal-bundle-fixities)
+         cpp-options: -DBUNDLE_FIXITIES
+ 
++flag executable
++    description: Build the fourmolu executable
++    default:     False
++    manual:      True
++
+ executable fourmolu
++    if !flag(executable)
++        buildable: False
+     main-is:          Main.hs
+     hs-source-dirs:   app
+     other-modules:    Paths_fourmolu
+-- 
+2.39.3
+
