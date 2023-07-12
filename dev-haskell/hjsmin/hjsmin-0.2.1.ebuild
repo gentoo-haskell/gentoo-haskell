@@ -15,9 +15,13 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'text                    >= 2' 'text                    >= 1.2.5.0'
+)
+
 RDEPEND=">=dev-haskell/language-javascript-0.6:=[profile?] <dev-haskell/language-javascript-0.8:=[profile?]
 	>=dev-haskell/optparse-applicative-0.7:=[profile?]
-	>=dev-haskell/text-2:=[profile?]
+	>=dev-haskell/text-1.2.5.0:=[profile?]
 	>=dev-lang/ghc-9.2.4:=
 "
 DEPEND="${RDEPEND}
