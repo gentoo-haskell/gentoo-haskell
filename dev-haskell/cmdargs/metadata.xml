@@ -6,7 +6,11 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="examples">Build the cmdargs-demo program</flag>
 		<flag name="quotation">Build the Quote module</flag>
-		<flag name="testprog">Build the test program</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">cmdargs</remote-id>
+		<remote-id type="github">ndmitchell/cmdargs</remote-id>
+	</upstream>
 </pkgmetadata>
