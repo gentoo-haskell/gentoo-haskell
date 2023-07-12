@@ -7,6 +7,8 @@
 	</maintainer>
 	<use>
 		<flag name="executable">Install the ormolu executable</flag>
+		<flag name="internal-bundle-fixities">An internal ad-hoc flag that is enabled by default, Ormolu Live disables
+it due to missing WASM TH support.</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">ormolu</remote-id>
