@@ -1,3 +1,10 @@
+# hololeap <hololeap@protonmail.com> (2023-07-13)
+# Cabal-syntax-3.10 could cause trouble on ghc-9.4
+# See: https://github.com/gentoo-haskell/gentoo-haskell/issues/1464
+>=dev-haskell/cabal-syntax-3.10
+dev-haskell/cabal-install-parsers
+dev-haskell/cabal-plan
+
 # Jack Todaro <solpeth@posteo.org> (2023-06-30)
 # Last rites dead packages for removal within 30 days.
 dev-haskell/conduit-connection
