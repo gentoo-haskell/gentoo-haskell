@@ -54,10 +54,6 @@ dev-haskell/hls-brittany-plugin
 dev-haskell/hls-haddock-comments-plugin
 dev-haskell/hls-class-plugin
 
-# hololeap <hololeap@protonmail.com> (2022-12-30)
-# Depends on old version of ghcide
-dev-haskell/hls-call-hierarchy-plugin
-
 # hololeap <hololeap@protonmail.com> (2022-12-29)
 # Many packages still depend on network-uri<2.7
 >=dev-haskell/network-uri-2.7
