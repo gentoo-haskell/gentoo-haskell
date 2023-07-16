@@ -20,6 +20,7 @@ IUSE="debug plugin +template-haskell"
 # The <hlint-3.5 restriction on ghc-9.0 shouldn't be necessary with ghc-lib
 CABAL_CHDEPS=(
 	'hlint (< 2.1 || >= 2.2.2) && < 3.5' 'hlint >= 2.2.2'
+	'hlint >= 3.5 && < 3.6' 'hlint >= 3.5'
 )
 
 RDEPEND="
@@ -50,17 +51,17 @@ RDEPEND="
 	>=dev-haskell/these-1:=[profile?] <dev-haskell/these-1.3
 	=dev-haskell/unbounded-delays-0.1*:=[profile?]
 	=dev-haskell/witherable-0.4*:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.1:=
 	template-haskell? (
 		>=dev-haskell/haskell-src-exts-1.16:=[profile?] <dev-haskell/haskell-src-exts-1.24
 		>=dev-haskell/haskell-src-meta-0.6:=[profile?] <dev-haskell/haskell-src-meta-0.9
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.2.0.0
 	test? (
 		dev-haskell/filemanip
-		>=dev-haskell/hlint-2.2.2[ghc-lib] <dev-haskell/hlint-3.6
+		>=dev-haskell/hlint-3.5[ghc-lib]
 		dev-haskell/hspec
 		dev-haskell/proctest
 		dev-haskell/split
