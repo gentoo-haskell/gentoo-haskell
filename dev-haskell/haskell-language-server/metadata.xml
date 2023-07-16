@@ -31,8 +31,8 @@
 <!-- 		<flag name="hls_formatters_brittany">Enable brittany formatter</flag> -->
 		<flag name="hls_formatters_cabal-fmt">Enable cabalfmt formatter</flag>
 		<flag name="hls_formatters_floskell">Enable floskell formatter</flag>
-		<flag name="hls_formatters_fourmolu">Enable fourmolu formatter</flag>
-		<flag name="hls_formatters_ormolu">Enable ormolu formatter</flag>
+<!-- 		<flag name="hls_formatters_fourmolu">Enable fourmolu formatter</flag> -->
+<!-- 		<flag name="hls_formatters_ormolu">Enable ormolu formatter</flag> -->
 		<flag name="hls_formatters_refactor">Enable refactor formatter</flag>
 		<flag name="hls_formatters_stylish-haskell">Enable stylishHaskell formatter</flag>
 	</use>

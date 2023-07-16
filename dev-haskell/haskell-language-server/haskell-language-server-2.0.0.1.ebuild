@@ -45,11 +45,12 @@ IUSE_HLS_PLUGINS="
 	+hls_plugins_splice
 "
 
+# Disabled:
+# - hls_formatters_fourmolu: Requires masked package fourmolu
+# - hls_formatters_ormolu: Requires masked package ormolu
 IUSE_HLS_FORMATTERS="
 	+hls_formatters_cabal-fmt
 	+hls_formatters_floskell
-	+hls_formatters_fourmolu
-	+hls_formatters_ormolu
 	+hls_formatters_refactor
 	+hls_formatters_stylish-haskell
 "
@@ -64,6 +65,8 @@ CABAL_TEST_REQUIRED_BINS=(
 )
 
 # Disabled:
+# hls_formatters_fourmolu? ( ~dev-haskell/hls-fourmolu-plugin-2.0.0.1:=[profile?] )
+# hls_formatters_ormolu? ( ~dev-haskell/hls-ormolu-plugin-2.0.0.1:=[profile?] )
 # hls_plugins_class? ( ~dev-haskell/hls-class-plugin-2.0.0.1:=[profile?] )
 # hls_plugins_haddock-comments? ( ~dev-haskell/hls-haddock-comments-plugin-2.0.0.1:=[profile?] )
 # hls_plugins_stan? ( >=dev-haskell/hls-stan-plugin-1.0:=[profile?] <dev-haskell/hls-stan-plugin-1.1:=[profile?] )
@@ -100,8 +103,6 @@ RDEPEND="
 	>=dev-lang/ghc-8.6.3:=
 	hls_formatters_cabal-fmt? ( ~dev-haskell/hls-cabal-fmt-plugin-2.0.0.1:=[profile?] )
 	hls_formatters_floskell? ( ~dev-haskell/hls-floskell-plugin-2.0.0.1:=[profile?] )
-	hls_formatters_fourmolu? ( ~dev-haskell/hls-fourmolu-plugin-2.0.0.1:=[profile?] )
-	hls_formatters_ormolu? ( ~dev-haskell/hls-ormolu-plugin-2.0.0.1:=[profile?] )
 	hls_formatters_refactor? ( ~dev-haskell/hls-refactor-plugin-2.0.0.1:=[profile?] )
 	hls_formatters_stylish-haskell? ( ~dev-haskell/hls-stylish-haskell-plugin-2.0.0.1:=[profile?] )
 	hls_plugins_alternate-number-format? ( ~dev-haskell/hls-alternate-number-format-plugin-2.0.0.1:=[profile?] )
@@ -141,8 +142,6 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag hls_formatters_cabal-fmt cabalfmt) \
 		$(cabal_flag hls_formatters_floskell floskell) \
-		$(cabal_flag hls_formatters_fourmolu fourmolu) \
-		$(cabal_flag hls_formatters_ormolu ormolu) \
 		$(cabal_flag hls_formatters_refactor refactor) \
 		$(cabal_flag hls_formatters_stylish-haskell stylishhaskell) \
 		$(cabal_flag hls_plugins_alternate-number-format alternateNumberFormat) \
@@ -164,6 +163,8 @@ src_configure() {
 		$(cabal_flag hls_plugins_rename rename) \
 		$(cabal_flag hls_plugins_retrie retrie) \
 		$(cabal_flag hls_plugins_splice splice) \
+		--flag=-fourmolu \
+		--flag=-ormolu \
 		--flag=-class \
 		--flag=-haddockComments \
 		--flag=-stan \
