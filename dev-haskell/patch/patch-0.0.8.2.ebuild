@@ -19,6 +19,7 @@ KEYWORDS="~amd64"
 # The <hlint-3.5 restriction on ghc-9.0 shouldn't be necessary with ghc-lib
 CABAL_CHDEPS=(
 	'hlint (< 2.1 || >= 2.2.2) && < 3.5' 'hlint >= 2.2.2'
+	'hlint >= 3.5 && < 3.6' 'hlint >= 3.5'
 )
 
 RDEPEND="
@@ -40,7 +41,7 @@ DEPEND="${RDEPEND}
 	test? (
 		dev-haskell/filemanip
 		dev-haskell/hedgehog
-		>=dev-haskell/hlint-2.2.2[ghc-lib] <dev-haskell/hlint-3.6
+		>=dev-haskell/hlint-3.5[ghc-lib]
 		dev-haskell/hunit
 	)
 "
