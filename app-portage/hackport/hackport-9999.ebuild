@@ -17,7 +17,8 @@ HOMEPAGE="https://github.com/gentoo-haskell/hackport#readme"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS=""
-IUSE="profile +threaded"
+IUSE="profile +threads"
+REQUIRED_USE="profile? ( threads ) test? ( threads )"
 
 RDEPEND="
 	>=dev-haskell/async-2.0:=[profile?]
@@ -84,7 +85,7 @@ src_configure() {
 		--flag=gentoo-tests \
 		--flag=pedantic \
 		$(cabal_flag profile profile) \
-		$(cabal-flag threaded threaded)
+		$(cabal-flag threads threads)
 }
 
 src_install() {
