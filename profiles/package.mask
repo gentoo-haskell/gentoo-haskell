@@ -63,13 +63,6 @@ dev-haskell/conduit-connection
 dev-haskell/simpleirc
 dev-haskell/smtp-mail
 
-# hololeap <hololeap@protonmail.com> (2023-06-16)
-# Package does not appear to be buildable on linux and is strictly for
-# iOS.
-# See: <https://hackage.haskell.org/package/jsaddle-wkwebview-0.9.8.2/jsaddle-wkwebview.cabal>
-# Masked for removal in 30 days.
-dev-haskell/jsaddle-wkwebview
-
 # hololeap <hololeap@protonmail.com> (2023-03-01)
 # Not buildable on ghc-9.2
 # Masking until it is
