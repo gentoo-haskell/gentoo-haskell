@@ -16,8 +16,20 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-lang/ghc-8.8.1:=
+	dev-haskell/ghcide:=[profile?]
+	dev-haskell/hls-graph:=[profile?]
+	dev-haskell/hls-plugin-api:=[profile?]
+	dev-haskell/lens:=[profile?]
+	dev-haskell/lsp:=[profile?]
+	dev-haskell/syb:=[profile?]
+	dev-haskell/text:=[profile?]
+	dev-haskell/unordered-containers:=[profile?]
+	>=dev-lang/ghc-9.2.4:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.6.3.0
+	test? (
+		dev-haskell/hls-test-utils
+		dev-haskell/lsp-test
+	)
 "
