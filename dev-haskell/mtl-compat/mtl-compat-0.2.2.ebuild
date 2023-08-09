@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND=">=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+RDEPEND=">=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.4:=[profile?]
 	dev-haskell/transformers-compat:=
 	>=dev-lang/ghc-7.4.1:=
 "
