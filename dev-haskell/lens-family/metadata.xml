@@ -5,18 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package provides first class functional references.
-		In addition to the usual operations of getting, setting and composition, plus integration with monad state, lens families provide some unique features:
-		
-		* Polymorphic updating
-		
-		* Traversals
-		
-		* Cast projection functions to read-only lenses
-		
-		* Cast \&quot;toList\&quot; functions to read-only traversals
-		
-		* Cast semantic editor combinators to modify-only traversals.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">lens-family</remote-id>
+	</upstream>
 </pkgmetadata>
