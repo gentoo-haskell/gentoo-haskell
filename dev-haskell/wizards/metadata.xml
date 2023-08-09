@@ -26,4 +26,8 @@
 		
 		For creating backends, the module "System.Console.Wizard.Internal" has a brief tutorial.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">wizards</remote-id>
+		<remote-id type="github">liamoc/wizards</remote-id>
+	</upstream>
 </pkgmetadata>
