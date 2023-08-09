@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="examples">build the retrie-example executable</flag>
+		<flag name="buildexecutable">build the retrie executable</flag>
 		<flag name="executable">build the retrie executable</flag>
 	</use>
 	<upstream>
