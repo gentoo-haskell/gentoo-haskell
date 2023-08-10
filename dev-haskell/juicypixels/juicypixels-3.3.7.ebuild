@@ -27,6 +27,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
+CABAL_CHDEPS=(
+	'mtl                 >= 1.1     && < 2.3' 'mtl                 >= 1.1'
+)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag mmap mmap)
