@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="no-autorepeat-keys">Allow ignoring of keyboard autorepeat.</flag>
-		<flag name="test"></flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">xmonad</remote-id>
