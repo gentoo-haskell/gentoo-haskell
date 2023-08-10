@@ -15,4 +15,8 @@
 		<flag name="transformers">You can disable the use of the `transformers` package using `-f-transformers`.</flag>
 		<flag name="unordered-containers">You can disable the use of the `unordered-containers` package using `-f-unordered-containers`.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">pointed</remote-id>
+		<remote-id type="github">ekmett/pointed</remote-id>
+	</upstream>
 </pkgmetadata>
