@@ -7,6 +7,7 @@ EAPI=8
 #hackport: flags: -dev
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_HACKAGE_REVISION=1
 inherit haskell-cabal
 
 DESCRIPTION="Modern library for working with URIs"
