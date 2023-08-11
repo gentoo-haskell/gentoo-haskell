@@ -61,8 +61,6 @@ def print_edges(source, target, edge):
         return
     if source == 'dev-haskell/network-uri':
         return
-    if source == 'dev-haskell/options':
-        return
     if source == 'dev-haskell/parser-combinators':
         return
     if source == 'dev-haskell/primitive':
