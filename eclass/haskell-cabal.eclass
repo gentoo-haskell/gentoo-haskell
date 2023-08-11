@@ -227,6 +227,22 @@ fi
 # CABAL_HADDOCK_TARGETS="lib:${CABAL_PN}"
 : ${CABAL_HADDOCK_TARGETS:=}
 
+# @ECLASS_VARIABLE: CABAL_CHBINS
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Renames executables that are installed with the package.
+# Accepts argument list as pairs of substitutions: <from-string> <to-string>...
+#
+# Example:
+#
+# CABAL_CHBINS=(
+#	'demo' 'byline-demo'
+#	'simple' 'byline-simple'
+#	'menu' 'byline-menu'
+#	'shell' 'byline-shell'
+# )
+: ${CABAL_CHBINS:=}
+
 # 'dev-haskell/cabal' passes those options with ./configure-based
 # configuration, but most packages don't need/don't accept it:
 # #515362, #515362
@@ -680,6 +696,12 @@ haskell-cabal_src_prepare() {
 	# Apply patches *after* pulling the revised cabal
 	default
 
+	if [[ -n "${CABAL_CHBINS}" ]]; then
+		for b in "${CABAL_CHBINS[@]}"; do
+			CABAL_CHDEPS+=( "executable ${b}" )
+		done
+	fi
+
 	[[ -n "${CABAL_CHDEPS}" ]] && cabal_chdeps "${CABAL_CHDEPS[@]}"
 }
 
@@ -829,6 +851,22 @@ haskell-cabal_src_install() {
 
 haskell-cabal_pkg_postinst() {
 	ghc-package_pkg_postinst
+
+	if [[ -n "${CABAL_CHBINS}" ]]; then
+		elog "The following example executables installed with this package have been"
+		elog "renamed to help prevent name collisions:"
+		elog ""
+
+		local from
+		for b in "${CABAL_CHBINS[@]}"; do
+			if [[ -z "${from}" ]]; then
+				from="${b}"
+			else
+				elog "${from} -> ${b}"
+				from=""
+			fi
+		done
+	fi
 }
 
 haskell-cabal_pkg_postrm() {
