@@ -15,8 +15,13 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-lang/ghc-9.2.4:=
+CABAL_CHDEPS=(
+	'base ^>= 4.16 || ^>= 4.17 || ^>= 4.18' 'base >= 4.14 && < 5'
+)
+
+RDEPEND="
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.6.3.0
+	>=dev-haskell/cabal-3.2.1.0
 "
