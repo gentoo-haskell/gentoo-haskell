@@ -22,7 +22,6 @@ dev-haskell/http-streams test
 dev-haskell/integer-logarithms test
 dev-haskell/nanospec test
 dev-haskell/network-uri test
-dev-haskell/options test
 dev-haskell/parser-combinators test
 dev-haskell/primitive test
 dev-haskell/scientific test
