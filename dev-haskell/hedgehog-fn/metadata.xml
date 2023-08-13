@@ -6,9 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="build-examples">Build the example executables</flag>
+		<flag name="examples">Build the example executables</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">hedgehog-fn</remote-id>
+		<remote-id type="github">qfpl/hedgehog-fn</remote-id>
 	</upstream>
 </pkgmetadata>
