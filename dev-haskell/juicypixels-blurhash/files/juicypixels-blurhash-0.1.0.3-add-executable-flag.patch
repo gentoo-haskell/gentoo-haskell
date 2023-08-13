@@ -1,0 +1,35 @@
+From 57879c4c9547481548f013aa3a510cbfcf5790e2 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@users.noreply.github.com>
+Date: Sat, 19 Aug 2023 16:43:52 -0600
+Subject: [PATCH 1/1] Add executable flag
+
+Add 'executable' flag to toggle building the JuicyPixels-blurhash-exe
+executable.
+
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ JuicyPixels-blurhash.cabal | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/JuicyPixels-blurhash.cabal b/JuicyPixels-blurhash.cabal
+index 35f7e97..587f149 100644
+--- a/JuicyPixels-blurhash.cabal
++++ b/JuicyPixels-blurhash.cabal
+@@ -55,7 +55,14 @@ library
+     , vector >=0.10 && <0.13
+   default-language: Haskell2010
+ 
++flag executable
++  description: Build the JuicyPixels-blurhash-exe executable
++  default: False
++  manual: True
++
+ executable JuicyPixels-blurhash-exe
++  if !flag(executable)
++      buildable: False
+   main-is: Main.hs
+   other-modules:
+       Paths_JuicyPixels_blurhash
+-- 
+2.41.0
+
