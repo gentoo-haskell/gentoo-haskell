@@ -6,8 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="example-play-tomland">Build play-tomland executable</flag>
-		<flag name="example-readme">Build example-tomland generator</flag>
+		<flag name="examples">Build example exes</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">tomland</remote-id>
