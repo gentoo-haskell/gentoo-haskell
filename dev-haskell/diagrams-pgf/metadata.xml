@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">diagrams-pgf</remote-id>
+		<remote-id type="github">cchalmers/diagrams-pgf</remote-id>
+	</upstream>
 </pkgmetadata>
