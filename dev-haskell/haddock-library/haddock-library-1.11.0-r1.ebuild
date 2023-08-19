@@ -18,6 +18,10 @@ SLOT="0/${PV}"
 # Keep in sync with ghc-9.4
 #KEYWORDS="~amd64 ~amd64-linux"
 
+CABAL_CHDEPS=(
+	'optparse-applicative   >= 0.15   && < 0.18' 'optparse-applicative >= 0.15'
+)
+
 RDEPEND="
 	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
@@ -32,7 +36,7 @@ DEPEND="${RDEPEND}
 	test? (
 		>=dev-haskell/base-compat-0.12 <dev-haskell/base-compat-0.14
 		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-2.11
-		>=dev-haskell/optparse-applicative-0.15 <dev-haskell/optparse-applicative-0.18
+		>=dev-haskell/optparse-applicative-0.15
 		>=dev-haskell/tree-diff-0.2 <dev-haskell/tree-diff-0.4
 		|| (
 			=dev-haskell/quickcheck-2.11*
