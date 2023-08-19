@@ -17,6 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples executable +fixity-th"
 
+CABAL_CHDEPS=(
+	'optparse-applicative >=0.14 && <0.18' 'optparse-applicative >=0.14'
+)
+
 PATCHES=(
 	"${FILESDIR}/${PN}-0.8.2.0-add-flags.patch"
 )
@@ -41,7 +45,7 @@ RDEPEND="
 	>=dev-lang/ghc-8.10.1:=
 	executable? (
 		>=dev-haskell/gitrev-1.3:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
-		>=dev-haskell/optparse-applicative-0.14:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
+		>=dev-haskell/optparse-applicative-0.14:=[profile?]
 	)
 	!fixity-th? (
 		>=dev-haskell/file-embed-0.0.15:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
