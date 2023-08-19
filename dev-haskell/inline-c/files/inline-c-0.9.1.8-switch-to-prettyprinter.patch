@@ -1,0 +1,288 @@
+From 571ab399b5766ca383f427e34ef0771f28e19e27 Mon Sep 17 00:00:00 2001
+From: Michael Peyton Jones <me@michaelpj.com>
+Date: Fri, 1 Sep 2023 10:36:49 +0100
+Subject: [PATCH] Switch to use prettyprinter
+
+`ansi-wl-pprint` is deprecated in favour of `prettyprinter`.
+
+Bug: https://github.com/fpco/inline-c/pull/148
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ inline-c.cabal                             |  4 ++--
+ src/Language/C/Inline/HaskellIdentifier.hs |  4 ++--
+ src/Language/C/Inline/Internal.hs          | 19 +++++++++--------
+ src/Language/C/Types.hs                    | 24 ++++++++++++----------
+ src/Language/C/Types/Parse.hs              | 10 ++++-----
+ test/Language/C/Types/ParseSpec.hs         | 11 +++++-----
+ 6 files changed, 38 insertions(+), 34 deletions(-)
+
+diff --git a/inline-c.cabal b/inline-c.cabal
+index 3339692..615d73e 100644
+--- a/inline-c.cabal
++++ b/inline-c.cabal
+@@ -33,7 +33,7 @@ library
+   other-modules:       Language.C.Inline.FunPtr
+   ghc-options:         -Wall
+   build-depends:       base >=4.7 && <5
+-                     , ansi-wl-pprint >= 0.6.8 && < 1.0.0
++                     , prettyprinter >=1.7
+                      , bytestring
+                      , containers
+                      , hashable
+@@ -57,13 +57,13 @@ test-suite tests
+                      , Language.C.Types.ParseSpec
+   build-depends:       base >=4 && <5
+                      , QuickCheck
+-                     , ansi-wl-pprint
+                      , containers
+                      , hashable
+                      , hspec >= 2
+                      , inline-c
+                      , parsers
+                      , QuickCheck
++                     , prettyprinter
+                      , raw-strings-qq
+                      , regex-posix
+                      , template-haskell
+diff --git a/src/Language/C/Inline/HaskellIdentifier.hs b/src/Language/C/Inline/HaskellIdentifier.hs
+index 137f4ee..ccee6b8 100644
+--- a/src/Language/C/Inline/HaskellIdentifier.hs
++++ b/src/Language/C/Inline/HaskellIdentifier.hs
+@@ -30,7 +30,7 @@ import           Text.Parser.Char (upper, lower, digit, char)
+ import           Text.Parser.Combinators (many, eof, try, unexpected, (<?>))
+ import           Text.Parser.Token (IdentifierStyle(..), highlight, TokenParsing)
+ import qualified Text.Parser.Token.Highlight as Highlight
+-import qualified Text.PrettyPrint.ANSI.Leijen as PP
++import qualified Prettyprinter as PP
+ 
+ import qualified Language.C.Types.Parse as C
+ 
+@@ -49,7 +49,7 @@ instance IsString HaskellIdentifier where
+       Right x -> x
+ 
+ instance PP.Pretty HaskellIdentifier where
+-  pretty = PP.text . unHaskellIdentifier
++  pretty = fromString . unHaskellIdentifier
+ 
+ haskellIdentifierFromString :: Bool -> String -> Either String HaskellIdentifier
+ haskellIdentifierFromString useCpp s =
+diff --git a/src/Language/C/Inline/Internal.hs b/src/Language/C/Inline/Internal.hs
+index 633497f..7dc3665 100644
+--- a/src/Language/C/Inline/Internal.hs
++++ b/src/Language/C/Inline/Internal.hs
+@@ -77,8 +77,9 @@ import qualified Text.Parser.Char as Parser
+ import qualified Text.Parser.Combinators as Parser
+ import qualified Text.Parser.LookAhead as Parser
+ import qualified Text.Parser.Token as Parser
+-import           Text.PrettyPrint.ANSI.Leijen ((<+>))
+-import qualified Text.PrettyPrint.ANSI.Leijen as PP
++import           Prettyprinter ((<+>))
++import qualified Prettyprinter as PP
++import qualified Prettyprinter.Render.String as PP
+ import qualified Data.List as L
+ import qualified Data.Char as C
+ import           Data.Hashable (Hashable)
+@@ -410,7 +411,7 @@ inlineItems callSafety funPtr mbPostfix loc type_ cRetType cParams cItems = do
+                        "funName:\n" ++ err
+     Right x -> return x
+   let decl = C.ParameterDeclaration (Just cFunName) proto
+-  let defs = prettyOneLine decl ++ " { " ++ cItems ++ " }\n"
++  let defs = prettyOneLine (PP.pretty decl) ++ " { " ++ cItems ++ " }\n"
+   inlineCode $ Code
+     { codeCallSafety = callSafety
+     , codeLoc = Just loc
+@@ -599,7 +600,7 @@ parseTypedC useCpp antiQs = do
+       let hsIdentS = unHaskellIdentifier hsIdent
+       case C.cIdentifierFromString useCpp hsIdentS of
+         Left err -> fail $ "Haskell identifier " ++ hsIdentS ++ " in illegal position" ++
+-                           "in C type\n" ++ pretty80 cTy ++ "\n" ++
++                           "in C type\n" ++ pretty80 (PP.pretty cTy) ++ "\n" ++
+                            "A C identifier was expected, but:\n" ++ err
+         Right cIdent -> return cIdent
+ 
+@@ -618,7 +619,7 @@ cToHs :: Context -> Purity -> C.Type C.CIdentifier -> TH.TypeQ
+ cToHs ctx purity cTy = do
+   mbHsTy <- convertType purity (ctxTypesTable ctx) cTy
+   case mbHsTy of
+-    Nothing -> fail $ "Could not resolve Haskell type for C type " ++ pretty80 cTy
++    Nothing -> fail $ "Could not resolve Haskell type for C type " ++ pretty80 (PP.pretty cTy)
+     Just hsTy -> return hsTy
+ 
+ genericQuote
+@@ -758,8 +759,8 @@ funPtrQuote callSafety = quoteCode $ \rawCode -> do
+ ------------------------------------------------------------------------
+ -- Utils
+ 
+-pretty80 :: PP.Pretty a => a -> String
+-pretty80 x = PP.displayS (PP.renderPretty 0.8 80 (PP.pretty x)) ""
++pretty80 :: PP.Doc ann -> String
++pretty80 x = PP.renderString $ PP.layoutSmart (PP.LayoutOptions { PP.layoutPageWidth = PP.AvailablePerLine 80 0.8 }) x
+ 
+-prettyOneLine :: PP.Pretty a => a -> String
+-prettyOneLine x = PP.displayS (PP.renderCompact (PP.pretty x)) ""
++prettyOneLine :: PP.Doc ann -> String
++prettyOneLine x = PP.renderString $ PP.layoutCompact x
+diff --git a/src/Language/C/Types.hs b/src/Language/C/Types.hs
+index 2443d29..1c77d42 100644
+--- a/src/Language/C/Types.hs
++++ b/src/Language/C/Types.hs
+@@ -67,9 +67,11 @@ import           Control.Monad.State (execState, modify)
+ import           Control.Monad.Reader (ask)
+ import           Data.List (partition, intersperse)
+ import           Data.Maybe (fromMaybe)
++import           Data.String (fromString)
+ import           Data.Typeable (Typeable)
+-import           Text.PrettyPrint.ANSI.Leijen ((</>), (<+>))
+-import qualified Text.PrettyPrint.ANSI.Leijen as PP
++import           Prettyprinter ((<+>))
++import qualified Prettyprinter as PP
++import qualified Prettyprinter.Render.String as PP
+ 
+ #if MIN_VERSION_base(4,9,0)
+ import           Data.Semigroup (Semigroup, (<>))
+@@ -424,14 +426,14 @@ tangleTypeSpecifier (Specifiers storages tyQuals funSpecs) tySpec =
+ ------------------------------------------------------------------------
+ -- To english
+ 
+-describeParameterDeclaration :: PP.Pretty i => ParameterDeclaration i -> PP.Doc
++describeParameterDeclaration :: PP.Pretty i => ParameterDeclaration i -> PP.Doc ann
+ describeParameterDeclaration (ParameterDeclaration mbId ty) =
+   let idDoc = case mbId of
+         Nothing -> ""
+         Just id' -> PP.pretty id' <+> "is a "
+   in idDoc <> describeType ty
+ 
+-describeType :: PP.Pretty i => Type i -> PP.Doc
++describeType :: PP.Pretty i => Type i -> PP.Doc ann
+ describeType ty0 = case ty0 of
+   TypeSpecifier specs tySpec -> engSpecs specs <> PP.pretty tySpec
+   Ptr quals ty -> engQuals quals <> "ptr to" <+> describeType ty
+@@ -449,7 +451,7 @@ describeType ty0 = case ty0 of
+ 
+     engArrTy arrTy = case arrTy of
+       P.VariablySized -> "variably sized array "
+-      P.SizedByInteger n -> "array of size" <+> PP.text (show n) <> " "
++      P.SizedByInteger n -> "array of size" <+> fromString (show n) <> " "
+       P.SizedByIdentifier s -> "array of size" <+> PP.pretty s <> " "
+       P.Unsized -> "array "
+ 
+@@ -470,7 +472,7 @@ untangleParameterDeclaration'
+ untangleParameterDeclaration' pDecl =
+   case untangleParameterDeclaration pDecl of
+     Left err -> fail $ pretty80 $
+-      "Error while parsing declaration:" </> PP.pretty err </> PP.pretty pDecl
++      PP.vsep ["Error while parsing declaration:", PP.pretty err, PP.pretty pDecl]
+     Right x -> return x
+ 
+ parseParameterDeclaration
+@@ -526,11 +528,11 @@ instance PP.Pretty TypeSpecifier where
+ instance PP.Pretty UntangleErr where
+   pretty err = case err of
+     MultipleDataTypes specs ->
+-      "Multiple data types in" </> PP.prettyList specs
++      PP.vsep ["Multiple data types in", PP.prettyList specs]
+     IllegalSpecifiers s specs ->
+-      "Illegal specifiers, " <+> PP.text s <+> ", in" </> PP.prettyList specs
++      PP.vsep ["Illegal specifiers," <+> fromString s <> ", in", PP.prettyList specs]
+     NoDataTypes specs ->
+-      "No data types in " </> PP.prettyList specs
++      PP.vsep ["No data types in", PP.prettyList specs]
+ 
+ instance PP.Pretty i => PP.Pretty (ParameterDeclaration i) where
+   pretty = PP.pretty . tangleParameterDeclaration
+@@ -542,5 +544,5 @@ instance PP.Pretty i => PP.Pretty (Type i) where
+ ------------------------------------------------------------------------
+ -- Utils
+ 
+-pretty80 :: PP.Doc -> String
+-pretty80 x = PP.displayS (PP.renderPretty 0.8 80 x) ""
++pretty80 :: PP.Doc ann -> String
++pretty80 x = PP.renderString $ PP.layoutSmart (PP.LayoutOptions { PP.layoutPageWidth = PP.AvailablePerLine 80 0.8 }) x
+diff --git a/src/Language/C/Types/Parse.hs b/src/Language/C/Types/Parse.hs
+index e3d39c8..9f59b17 100644
+--- a/src/Language/C/Types/Parse.hs
++++ b/src/Language/C/Types/Parse.hs
+@@ -102,8 +102,8 @@ import           Text.Parser.Combinators
+ import           Text.Parser.LookAhead
+ import           Text.Parser.Token
+ import qualified Text.Parser.Token.Highlight as Highlight
+-import           Text.PrettyPrint.ANSI.Leijen (Pretty(..), (<+>), Doc, hsep)
+-import qualified Text.PrettyPrint.ANSI.Leijen as PP
++import           Prettyprinter (Pretty(..), (<+>), Doc, hsep)
++import qualified Prettyprinter as PP
+ 
+ #if __GLASGOW_HASKELL__ < 710
+ import           Data.Foldable (Foldable)
+@@ -531,7 +531,7 @@ direct_abstract_declarator = do
+ -- Pretty printing
+ 
+ instance Pretty CIdentifier where
+-  pretty = PP.text . unCIdentifier
++  pretty = fromString . unCIdentifier
+ 
+ instance Pretty DeclarationSpecifier where
+   pretty dspec = case dspec of
+@@ -586,7 +586,7 @@ instance Pretty i => Pretty (Declarator i) where
+     [] -> pretty ddecltor
+     _:_ -> prettyPointers ptrs <+> pretty ddecltor
+ 
+-prettyPointers :: [Pointer] -> Doc
++prettyPointers :: [Pointer] -> Doc ann
+ prettyPointers [] = ""
+ prettyPointers (x : xs) = pretty x <> prettyPointers xs
+ 
+@@ -604,7 +604,7 @@ instance Pretty i => Pretty (ArrayOrProto i) where
+     Array x -> "[" <> pretty x <> "]"
+     Proto x -> "(" <> prettyParams x <> ")"
+ 
+-prettyParams :: (Pretty a) => [a] -> Doc
++prettyParams :: (Pretty a) => [a] -> Doc ann
+ prettyParams xs = case xs of
+   [] -> ""
+   [x] -> pretty x
+diff --git a/test/Language/C/Types/ParseSpec.hs b/test/Language/C/Types/ParseSpec.hs
+index b656fde..7834d07 100644
+--- a/test/Language/C/Types/ParseSpec.hs
++++ b/test/Language/C/Types/ParseSpec.hs
+@@ -15,7 +15,8 @@ import qualified Test.Hspec.QuickCheck
+ import qualified Test.QuickCheck as QC
+ import           Text.Parser.Char
+ import           Text.Parser.Combinators
+-import qualified Text.PrettyPrint.ANSI.Leijen as PP
++import qualified Prettyprinter as PP
++import qualified Prettyprinter.Render.String as PP
+ import           Data.Typeable (Typeable)
+ import qualified Data.HashSet as HashSet
+ import           Data.List (intercalate)
+@@ -43,7 +44,7 @@ spec = Test.Hspec.QuickCheck.modifyMaxDiscardRatio (const 20) $ do
+       ParameterDeclarationWithTypeNames typeNames ty <-
+         arbitraryParameterDeclarationWithTypeNames unCIdentifier
+       return $ isGoodType ty QC.==>
+-        let ty' = assertParse (cCParserContext True typeNames) parameter_declaration (prettyOneLine ty)
++        let ty' = assertParse (cCParserContext True typeNames) parameter_declaration (prettyOneLine (PP.pretty ty))
+         in Types.untangleParameterDeclaration ty == Types.untangleParameterDeclaration ty'
+   Hspec.it "parses everything which is pretty-printable (Haskell)" $ do
+ #if MIN_VERSION_QuickCheck(2,9,0)
+@@ -54,7 +55,7 @@ spec = Test.Hspec.QuickCheck.modifyMaxDiscardRatio (const 20) $ do
+       ParameterDeclarationWithTypeNames typeNames ty <-
+         arbitraryParameterDeclarationWithTypeNames unHaskellIdentifier
+       return $ isGoodHaskellIdentifierType typeNames ty QC.==>
+-        let ty' = assertParse (haskellCParserContext True typeNames) parameter_declaration (prettyOneLine ty)
++        let ty' = assertParse (haskellCParserContext True typeNames) parameter_declaration (prettyOneLine (PP.pretty ty))
+         in Types.untangleParameterDeclaration ty == Types.untangleParameterDeclaration ty'
+ 
+ ------------------------------------------------------------------------
+@@ -68,8 +69,8 @@ assertParse ctx p s =
+     Left err -> error $ "Parse error (assertParse): " ++ show err ++ " parsed string " ++ show s ++ " with type names " ++ show (cpcTypeNames ctx)
+     Right x -> x
+ 
+-prettyOneLine :: PP.Pretty a => a -> String
+-prettyOneLine x = PP.displayS (PP.renderCompact (PP.pretty x)) ""
++prettyOneLine :: PP.Doc ann -> String
++prettyOneLine x = PP.renderString $ PP.layoutCompact x
+ 
+ isGoodType :: ParameterDeclaration i -> Bool
+ isGoodType ty =
+-- 
+2.41.0
+
