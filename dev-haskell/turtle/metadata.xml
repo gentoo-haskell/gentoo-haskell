@@ -7,6 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">turtle</remote-id>
-		<remote-id type="github">Gabriella439/Haskell-Turtle-Library</remote-id>
+		<remote-id type="github">Gabriella439/turtle</remote-id>
 	</upstream>
 </pkgmetadata>
