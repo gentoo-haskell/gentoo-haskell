@@ -9,4 +9,8 @@
 		<flag name="charts">Build the modules that provide charting functionality</flag>
 		<flag name="colors">Use pretty printing with colors</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">bench-show</remote-id>
+		<remote-id type="github">composewell/bench-show</remote-id>
+	</upstream>
 </pkgmetadata>
