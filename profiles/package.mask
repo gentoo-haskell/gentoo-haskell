@@ -81,10 +81,6 @@ dev-haskell/hls-class-plugin
 # Many packages still depend on network-uri<2.7
 >=dev-haskell/network-uri-2.7
 
-# hololeap <hololeap@protonmail.com> (2022-11-13)
-# Needs patching to build with current dev-haskell/hnix
-dev-util/dhall-nix
-
 # hololeap <hololeap@protonmail.com> (2022-11-12)
 # Needs extensive patching to be compatible with modern hashable.
 dev-haskell/liquidhaskell
