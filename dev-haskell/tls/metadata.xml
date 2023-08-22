@@ -11,6 +11,6 @@
 	</use>
 	<upstream>
 		<remote-id type="hackage">tls</remote-id>
-		<remote-id type="github">vincenthz/hs-tls</remote-id>
+		<remote-id type="github">haskell-tls/hs-tls</remote-id>
 	</upstream>
 </pkgmetadata>
