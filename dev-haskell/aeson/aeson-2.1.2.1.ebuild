@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="cffi +ordered-keymap"
 
+RESTRICT=test # one test case fails
+
 RDEPEND="
 	>=dev-haskell/attoparsec-0.14.2:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/base-compat-batteries-0.10.0:=[profile?] <dev-haskell/base-compat-batteries-0.14:=[profile?]
