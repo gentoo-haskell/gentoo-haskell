@@ -8,4 +8,8 @@
 	<use>
 		<flag name="tools">Build associated tools (in general you won&#39;t need this)</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hvega</remote-id>
+		<remote-id type="github">DougBurke/hvega</remote-id>
+	</upstream>
 </pkgmetadata>
