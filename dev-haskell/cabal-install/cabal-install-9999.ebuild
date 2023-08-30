@@ -7,7 +7,7 @@ EAPI=7
 #hackport: flags: -monolithic,+network-uri,-debug-tracetree,-debug-expensive-assertions
 
 CABAL_FEATURES="test-suite"
-inherit haskell-cabal bash-completion-r1 eutils git-r3
+inherit haskell-cabal bash-completion-r1 git-r3
 
 LIVE_EBUILD=yes
 
@@ -78,4 +78,4 @@ src_configure() {
 		--flag=network-uri
 
 	dobashcomp "${S}/bash-completion/cabal"
-	}
+}
