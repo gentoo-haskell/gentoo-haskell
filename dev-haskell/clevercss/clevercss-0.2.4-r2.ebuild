@@ -7,7 +7,7 @@ EAPI=7
 #hackport: flags: -parsec2
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit eutils haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="A CSS preprocessor"
 HOMEPAGE="http://sandbox.pocoo.org/clevercss-hs/"
