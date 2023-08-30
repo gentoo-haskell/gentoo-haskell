@@ -4,7 +4,7 @@
 EAPI=7
 VIM_PLUGIN_VIM_VERSION="7.0"
 
-inherit eutils vim-plugin
+inherit vim-plugin
 
 DESCRIPTION="vim plugin: Provides IDE-like features for Haskell development"
 HOMEPAGE="http://projects.haskell.org/haskellmode-vim"
