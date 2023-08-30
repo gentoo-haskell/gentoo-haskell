@@ -7,7 +7,7 @@ EAPI=7
 #hackport: flags: -buildtests
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
-inherit eutils haskell-cabal
+inherit haskell-cabal
 
 DESCRIPTION="Encapsulate multiple web encoding in a single package. (deprecated)"
 HOMEPAGE="https://hackage.haskell.org/package/web-encodings"
