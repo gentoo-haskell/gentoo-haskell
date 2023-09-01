@@ -1,0 +1,52 @@
+From 8e9e9ba9fe4dc13d5e96e58244b098a7d1c5bd1c Mon Sep 17 00:00:00 2001
+From: Giorgio Marinelli <giorgio@marinel.li>
+Date: Thu, 24 Aug 2023 12:25:56 +0200
+Subject: [PATCH] Fix building Servant.Multipart.Client
+
+---
+ servant-multipart-client.cabal  | 1 +
+ src/Servant/Multipart/Client.hs | 5 +++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/servant-multipart-client.cabal b/servant-multipart-client.cabal
+index 7f62bfc..affd274 100644
+--- a/servant-multipart-client.cabal
++++ b/servant-multipart-client.cabal
+@@ -30,6 +30,7 @@ library
+   build-depends:
+       array         >=0.5.1.1  && <0.6
+     , base          >=4.9      && <5
++    , base-compat   >=0.11.2   && <0.14
+     , bytestring    >=0.10.8.1 && <0.12
+     , text          >=1.2.3.0  && <2.1
+     , random        >=0.1.1    && <1.3
+diff --git a/src/Servant/Multipart/Client.hs b/src/Servant/Multipart/Client.hs
+index 6eba689..f69ba68 100644
+--- a/src/Servant/Multipart/Client.hs
++++ b/src/Servant/Multipart/Client.hs
+@@ -27,6 +27,7 @@ import Servant.Multipart.API
+ import Control.Monad (replicateM)
+ import Data.Array (listArray, (!))
+ import Data.List (foldl')
++import Data.List.Compat (singleton)
+ #if !MIN_VERSION_base(4,11,0)
+ import Data.Monoid ((<>))
+ #endif
+@@ -74,7 +75,7 @@ instance MultipartClient Tmp where
+         readHandle hdl = fromActionStep LBS.null (LBS.hGet hdl 4096)
+ 
+ instance MultipartClient Mem where
+-    loadFile _ = source . pure
++    loadFile _ = source . singleton
+ 
+ -- | Generates a boundary to be used to separate parts of the multipart.
+ -- Requires 'IO' because it is randomized.
+@@ -132,7 +133,7 @@ multipartToBody boundary mp = RequestBodySource $ files' <> source ["--", bounda
+     renderInput input = renderPart (lencode . iName $ input)
+                                    "text/plain"
+                                    ""
+-                                   (source . pure . lencode . iValue $ input)
++                                   (source . singleton . lencode . iValue $ input)
+     inputs' = foldl' (\acc x -> acc `mappend'` renderInput x) mempty' (inputs mp)
+     renderFile :: FileData tag -> SourceIO LBS.ByteString
+     renderFile file = renderPart (lencode . fdInputName $ file)
