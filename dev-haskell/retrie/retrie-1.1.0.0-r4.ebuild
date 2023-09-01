@@ -22,17 +22,22 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples executable"
 
+CABAL_CHDEPS=(
+	'ansi-terminal >= 0.10.3 && < 0.12' 'ansi-terminal >= 0.10.3'
+	'optparse-applicative >= 0.15.1 && < 0.18' 'optparse-applicative >= 0.15.1'
+)
+
 PATCHES=(
 	"${FILESDIR}/${PN}-1.1.0.0-modify-flags.patch"
 )
 
 RDEPEND="
-	>=dev-haskell/ansi-terminal-0.10.3:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
+	>=dev-haskell/ansi-terminal-0.10.3:=[profile?]
 	>=dev-haskell/async-2.2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/data-default-0.7.1:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/ghc-exactprint-0.6.2:=[profile?] <dev-haskell/ghc-exactprint-0.7:=[profile?]
 	>=dev-haskell/list-t-1.0.4:=[profile?] <dev-haskell/list-t-1.1:=[profile?]
-	>=dev-haskell/optparse-applicative-0.15.1:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
+	>=dev-haskell/optparse-applicative-0.15.1:=[profile?]
 	>=dev-haskell/random-shuffle-0.0.4:=[profile?] <dev-haskell/random-shuffle-0.1:=[profile?]
 	>=dev-haskell/syb-0.7.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
