@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="bounds-checking-enabled">Enable bmi2 instruction set</flag>
+		<flag name="bounds-checking">Enable bmi2 instruction set</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">hw-prim</remote-id>
