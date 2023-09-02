@@ -21,6 +21,7 @@ GHC_BOOTSTRAP_PACKAGES=(
 
 CABAL_CHDEPS=(
 	'base-compat >= 0.11 && < 0.13' 'base-compat >= 0.11'
+	'doctest >= 0.17 && < 0.22' 'doctest >= 0.17'
 )
 
 RDEPEND="
@@ -36,7 +37,7 @@ DEPEND="${RDEPEND}
 	=dev-haskell/cabal-doctest-1.0*
 	test? (
 		>=dev-haskell/base-compat-0.11
-		>=dev-haskell/doctest-0.17 <dev-haskell/doctest-0.22
+		>=dev-haskell/doctest-0.17
 		>=dev-haskell/hspec-2.6.1 <dev-haskell/hspec-2.11
 		>=dev-haskell/lens-4.17 <dev-haskell/lens-5.3
 	)
