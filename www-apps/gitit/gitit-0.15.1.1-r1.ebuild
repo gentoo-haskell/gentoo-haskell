@@ -42,7 +42,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/recaptcha-0.1:=[profile?]
 	dev-haskell/safe:=[profile?]
 	>dev-haskell/sha-1:=[profile?]
-	>=dev-haskell/skylighting-0.8.2.3:=[profile?] <dev-haskell/skylighting-0.14:=[profile?]
+	>=dev-haskell/skylighting-0.8.2.3:=[profile?] <dev-haskell/skylighting-0.15:=[profile?]
 	dev-haskell/split:=[profile?]
 	dev-haskell/syb:=[profile?]
 	>=dev-haskell/tagsoup-0.13:=[profile?] <dev-haskell/tagsoup-0.15:=[profile?]
@@ -71,3 +71,7 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag plugins plugins)
 }
+
+CABAL_CHDEPS=(
+	'skylighting >= 0.8.2.3 && < 0.14' 'skylighting >= 0.8.2.3'
+)
