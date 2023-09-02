@@ -20,19 +20,26 @@ GHC_BOOTSTRAP_PACKAGES=(
 	cabal-doctest
 )
 
-RDEPEND=">=dev-haskell/ghc-tcplugins-extra-0.3:=[profile?] <dev-haskell/ghc-tcplugins-extra-0.5:=[profile?]
+CABAL_CHDEPS=(
+	'doctest >=0.16.0.1 && <0.22' 'doctest >=0.16.0.1'
+)
+
+RDEPEND="
+	>=dev-haskell/ghc-tcplugins-extra-0.3:=[profile?] <dev-haskell/ghc-tcplugins-extra-0.5:=[profile?]
 	>=dev-haskell/polysemy-1.7:=[profile?]
 	>=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0 <dev-haskell/cabal-3.11
+	>=dev-haskell/cabal-3.2.1.0 <dev-haskell/cabal-3.11
 	>=dev-haskell/cabal-doctest-1.0.6 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.16.0.1 <dev-haskell/doctest-0.22
+	test? (
+		>=dev-haskell/doctest-0.16.0.1
 		>=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-3
 		dev-haskell/hspec-discover
 		>=dev-haskell/inspection-testing-0.4.2 <dev-haskell/inspection-testing-0.6
-		>=dev-haskell/should-not-typecheck-2.1.0 <dev-haskell/should-not-typecheck-3 )
+		>=dev-haskell/should-not-typecheck-2.1.0 <dev-haskell/should-not-typecheck-3
+	)
 "
 
 src_configure() {
