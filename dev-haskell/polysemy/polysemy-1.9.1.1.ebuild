@@ -20,21 +20,24 @@ GHC_BOOTSTRAP_PACKAGES=(
 	cabal-doctest
 )
 
-RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
+RDEPEND="
+	>=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
 	>=dev-haskell/first-class-families-0.5.0.0:=[profile?] <dev-haskell/first-class-families-0.9:=[profile?]
 	>=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/th-abstraction-0.3.1.0:=[profile?] <dev-haskell/th-abstraction-0.6:=[profile?]
 	>=dev-haskell/type-errors-0.2.0.0:=[profile?]
 	>=dev-haskell/unagi-chan-0.4.0.0:=[profile?] <dev-haskell/unagi-chan-0.5:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0 <dev-haskell/cabal-3.11
+	>=dev-haskell/cabal-3.2.1.0 <dev-haskell/cabal-3.11
 	>=dev-haskell/cabal-doctest-1.0.6 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.16.0.1 <dev-haskell/doctest-0.22
+	test? (
+		>=dev-haskell/doctest-0.16.0.1 <dev-haskell/doctest-0.23
 		>=dev-haskell/hspec-2.6.0 <dev-haskell/hspec-3
 		>=dev-haskell/hspec-discover-2.0
-		>=dev-haskell/inspection-testing-0.4.2 <dev-haskell/inspection-testing-0.6 )
+		>=dev-haskell/inspection-testing-0.4.2 <dev-haskell/inspection-testing-0.6
+	)
 "
 
 src_configure() {
