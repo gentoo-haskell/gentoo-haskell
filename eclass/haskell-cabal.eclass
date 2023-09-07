@@ -404,7 +404,7 @@ cabal-mksetup() {
 	local setup_src=${setupdir}/Setup.hs
 
 	rm -vf "${setupdir}"/Setup.{lhs,hs}
-	elog "Creating 'Setup.hs' for 'Simple' build type."
+	einfo "Creating 'Setup.hs' for 'Simple' build type."
 
 	echo 'import Distribution.Simple; main = defaultMain' \
 		> "${setup_src}" || die "failed to create default Setup.hs"
