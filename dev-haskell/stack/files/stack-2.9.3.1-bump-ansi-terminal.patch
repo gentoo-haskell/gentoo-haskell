@@ -1,0 +1,143 @@
+From f4c4d691d280d5fd99a7b3792a292c8f98b9e111 Mon Sep 17 00:00:00 2001
+From: Mike Pilgrem <mpilgrem@users.noreply.github.com>
+Date: Sat, 13 May 2023 20:54:05 +0100
+Subject: [PATCH] Bump ansi-terminal dependency to ansi-terminal-1.0
+
+See: https://github.com/commercialhaskell/stack/commit/5f0ee41763261da718d95f606dcf1712f5286eec
+Signed-off-by: hololeap <hololeap@users.noreply.github.com>
+---
+ src/Stack/Config.hs           |  6 ++----
+ src/Stack/DefaultColorWhen.hs | 22 ++++++++--------------
+ src/Stack/Runners.hs          |  5 ++---
+ stack.cabal                   |  8 ++++----
+ 4 files changed, 16 insertions(+), 25 deletions(-)
+
+diff --git a/src/Stack/Config.hs b/src/Stack/Config.hs
+index fd05f72..5162c05 100644
+--- a/src/Stack/Config.hs
++++ b/src/Stack/Config.hs
+@@ -84,8 +84,7 @@ import           Stack.Types.Version
+                    ( IntersectingVersionRange (..), VersionCheck (..)
+                    , stackVersion, withinRange
+                    )
+-import           System.Console.ANSI
+-                   ( hSupportsANSIWithoutEmulation, setSGRCode )
++import           System.Console.ANSI ( hSupportsANSI, setSGRCode )
+ import           System.Environment
+ import           System.Info.ShortPathName ( getShortPathName )
+ import           System.PosixCompat.Files ( fileOwner, getFileStatus )
+@@ -351,8 +350,7 @@ configFromConfigMonoid
+ 
+      configRunner' <- view runnerL
+ 
+-     useAnsi <- liftIO $ fromMaybe True <$>
+-                         hSupportsANSIWithoutEmulation stderr
++     useAnsi <- liftIO $ hSupportsANSI stderr
+ 
+      let stylesUpdate' = (configRunner' ^. stylesUpdateL) <>
+            configMonoidStyles
+diff --git a/src/Stack/DefaultColorWhen.hs b/src/Stack/DefaultColorWhen.hs
+index 6c21c2e..f9384bb 100644
+--- a/src/Stack/DefaultColorWhen.hs
++++ b/src/Stack/DefaultColorWhen.hs
+@@ -1,26 +1,20 @@
++{-# LANGUAGE LambdaCase #-}
++
+ module Stack.DefaultColorWhen
+   ( defaultColorWhen
+   ) where
+ 
+ import           Stack.Prelude ( stdout )
+ import           Stack.Types.Config ( ColorWhen (ColorAuto, ColorNever) )
+-import           System.Console.ANSI ( hSupportsANSIWithoutEmulation )
++import           System.Console.ANSI ( hSupportsANSI )
+ import           System.Environment ( lookupEnv )
+ 
+ -- | The default adopts the standard proposed at http://no-color.org/, that
+ -- color should not be added by default if the @NO_COLOR@ environment variable
+ -- is present.
+ defaultColorWhen :: IO ColorWhen
+-defaultColorWhen = do
+-  -- On Windows, 'hSupportsANSIWithoutEmulation' has the side effect of enabling
+-  -- ANSI for ANSI-capable native (ConHost) terminals, if not already
+-  -- ANSI-enabled. Consequently, it is actioned even if @NO_COLOR@ might exist,
+-  -- as @NO_COLOR@ might be overridden in a yaml configuration file or at the
+-  -- command line.
+-  supportsANSI <- hSupportsANSIWithoutEmulation stdout
+-  mIsNoColor <- lookupEnv "NO_COLOR"
+-  pure $ case mIsNoColor of
+-    Just _ -> ColorNever
+-    _      -> case supportsANSI of
+-      Just False -> ColorNever
+-      _          -> ColorAuto
++defaultColorWhen = lookupEnv "NO_COLOR" >>= \case
++    Just _ -> pure ColorNever
++    _ -> hSupportsANSI stdout >>= \case
++        False -> pure ColorNever
++        _ -> pure ColorAuto
+diff --git a/src/Stack/Runners.hs b/src/Stack/Runners.hs
+index a1272b2..f3464e4 100644
+--- a/src/Stack/Runners.hs
++++ b/src/Stack/Runners.hs
+@@ -34,7 +34,7 @@ import           Stack.Types.Config
+ import           Stack.Types.Docker ( dockerEnable )
+ import           Stack.Types.Nix ( nixEnable )
+ import           Stack.Types.Version ( stackMinorVersion, minorVersion )
+-import           System.Console.ANSI ( hSupportsANSIWithoutEmulation )
++import           System.Console.ANSI ( hSupportsANSI )
+ import           System.Terminal ( getTerminalWidth )
+ 
+ -- | Type representing exceptions thrown by functions exported by the
+@@ -165,8 +165,7 @@ withRunnerGlobal go inner = do
+   useColor <- case colorWhen of
+     ColorNever -> pure False
+     ColorAlways -> pure True
+-    ColorAuto -> fromMaybe True <$>
+-                          hSupportsANSIWithoutEmulation stderr
++    ColorAuto -> hSupportsANSI stderr
+   termWidth <- clipWidth <$> maybe (fromMaybe defaultTerminalWidth
+                                     <$> getTerminalWidth)
+                                    pure (globalTermWidth go)
+diff --git a/stack.cabal b/stack.cabal
+index 7d51979..5d045bf 100644
+--- a/stack.cabal
++++ b/stack.cabal
+@@ -270,7 +270,7 @@ library
+       Cabal >=3.6.3.0
+     , aeson >=2.0.3.0
+     , annotated-wl-pprint
+-    , ansi-terminal
++    , ansi-terminal >=1.0
+     , array
+     , async
+     , attoparsec
+@@ -395,7 +395,7 @@ executable stack
+       Cabal >=3.6.3.0
+     , aeson >=2.0.3.0
+     , annotated-wl-pprint
+-    , ansi-terminal
++    , ansi-terminal >=1.0
+     , array
+     , async
+     , attoparsec
+@@ -518,7 +518,7 @@ executable stack-integration-test
+       Cabal >=3.6.3.0
+     , aeson >=2.0.3.0
+     , annotated-wl-pprint
+-    , ansi-terminal
++    , ansi-terminal >=1.0
+     , array
+     , async
+     , attoparsec
+@@ -649,7 +649,7 @@ test-suite stack-test
+     , QuickCheck
+     , aeson >=2.0.3.0
+     , annotated-wl-pprint
+-    , ansi-terminal
++    , ansi-terminal >=1.0
+     , array
+     , async
+     , attoparsec
+-- 
+2.41.0
+
