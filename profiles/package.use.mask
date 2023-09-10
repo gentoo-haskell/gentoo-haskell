@@ -1,3 +1,12 @@
+# hololeap <hololeap@protonmail.com> (2023-09-09)
+# dev-haskell/floskell fails to build the executable with
+# >=dev-haskell/optoarse-applicative-0.18
+#
+# Masking 'executable' USE flag until this is fixed
+#
+# Bug: <https://github.com/ennocramer/floskell/issues/77>
+dev-haskell/floskell executable
+
 # hololeap <hololeap@protonmail.com> (2023-03-09)
 # Documentation is causing build failures when using hadrian, and it isn't
 # clear why.
