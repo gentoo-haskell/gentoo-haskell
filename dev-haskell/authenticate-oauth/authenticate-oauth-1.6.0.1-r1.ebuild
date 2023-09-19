@@ -37,5 +37,6 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'base64-bytestring             >= 0.1      && < 1.1' 'base64-bytestring             >= 0.1      && < 1.3'
+		'base64-bytestring             >= 0.1      && < 1.1' 'base64-bytestring             >= 0.1      && < 1.3' \
+		'transformers                  >= 0.1      && < 0.6' 'transformers                  >= 0.1'
 }
