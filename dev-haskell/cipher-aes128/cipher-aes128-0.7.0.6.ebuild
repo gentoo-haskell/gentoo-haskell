@@ -26,7 +26,7 @@ RDEPEND="dev-haskell/cereal:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-3.7
+	>=dev-haskell/cabal-2.2.0.1
 	|| ( dev-lang/ghc >=dev-haskell/process-1.0 )
 "
 
