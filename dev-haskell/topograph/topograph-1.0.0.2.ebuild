@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	>=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.14:=[profile?]
-	>=dev-haskell/base-orphans-0.8:=[profile?] <dev-haskell/base-orphans-0.9:=[profile?]
+	>=dev-haskell/base-orphans-0.8:=[profile?] <dev-haskell/base-orphans-0.10:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
