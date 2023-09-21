@@ -698,11 +698,17 @@ haskell-cabal_src_prepare() {
 
 	if [[ -n "${CABAL_CHBINS}" ]]; then
 		for b in "${CABAL_CHBINS[@]}"; do
-			CABAL_CHDEPS+=( "executable ${b}" )
+			export CABAL_CHDEPS=( "${CABAL_CHDEPS[@]}" "executable ${b}" )
 		done
 	fi
 
-	[[ -n "${CABAL_CHDEPS}" ]] && cabal_chdeps "${CABAL_CHDEPS[@]}"
+	# Clean CABAL_CHDEPS of any blank entries
+	local chdeps=()
+	for d in "${CABAL_CHDEPS[@]}"; do
+		[[ -n "${d}" ]] && export chdeps+=( "${d}" )
+	done
+
+	[[ -n "${chdeps[@]}" ]] && cabal_chdeps "${chdeps[@]}"
 }
 
 haskell-cabal_src_configure() {
@@ -853,8 +859,8 @@ haskell-cabal_pkg_postinst() {
 	ghc-package_pkg_postinst
 
 	if [[ -n "${CABAL_CHBINS}" ]]; then
-		elog "The following example executables installed with this package have been"
-		elog "renamed to help prevent name collisions:"
+		elog "The following executables installed with this package have been renamed to help"
+		elog "prevent name collisions:"
 		elog ""
 
 		local from
