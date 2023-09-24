@@ -17,7 +17,7 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=app-text/pandoc-2.0:=[profile?]
+RDEPEND=">=dev-haskell/pandoc-2.0:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?]
 	>=dev-haskell/persistent-0.9:=[profile?]

@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND=">=app-text/pandoc-1.12:=
+RDEPEND=">=dev-haskell/pandoc-1.12:=
 	dev-haskell/extra:=
 	>=dev-haskell/pandoc-types-1.12:=
 	dev-haskell/text:=

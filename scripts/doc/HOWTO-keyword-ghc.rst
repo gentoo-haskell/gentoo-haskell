@@ -19,7 +19,7 @@ Minimal requirement of keyworded GHC
    - dev-haskell/cabal-install
    - x11-wm/xmonad
    - dev-vcs/darcs
-   - app-text/pandoc
+   - app-text/pandoc-cli
    - app-portage/hackport
 
    Feel free to add more here.

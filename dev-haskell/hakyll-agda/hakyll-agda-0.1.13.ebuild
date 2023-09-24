@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND="app-text/pandoc:=[profile?]
+RDEPEND="dev-haskell/pandoc:=[profile?]
 	>=dev-haskell/hakyll-4.7.2.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/text:=[profile?]

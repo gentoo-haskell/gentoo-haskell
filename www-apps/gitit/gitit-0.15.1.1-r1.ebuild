@@ -59,7 +59,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
-	>=app-text/pandoc-2.9:=[profile?] <app-text/pandoc-3.2:=[profile?]
+	>=dev-haskell/pandoc-2.9:=[profile?] <dev-haskell/pandoc-3.2:=[profile?]
 	plugins? ( dev-haskell/ghc-paths:=[profile?]
 			dev-lang/ghc:=[profile?] )
 "

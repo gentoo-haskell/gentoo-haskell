@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RESTRICT=test # requires network access to fetch .svg
 
-RDEPEND=">=app-text/pandoc-3.1.4:=[profile?] <app-text/pandoc-3.2:=[profile?]
+RDEPEND=">=dev-haskell/pandoc-3.1.4:=[profile?] <dev-haskell/pandoc-3.2:=[profile?]
 	dev-haskell/aeson:=[profile?]
 	>=dev-haskell/citeproc-0.8:=[profile?] <dev-haskell/citeproc-0.9:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]

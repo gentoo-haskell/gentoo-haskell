@@ -15,7 +15,7 @@ LICENSE="GPL-2+"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=app-text/pandoc-3.0:=[profile?]
+RDEPEND=">=dev-haskell/pandoc-3.0:=[profile?]
 	>=dev-haskell/aeson-2.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/base64-0.4:=[profile?] <dev-haskell/base64-0.5:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]

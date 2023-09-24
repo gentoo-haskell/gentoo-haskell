@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+lua nightly +server"
 
-RDEPEND=">=app-text/pandoc-3.0:=
+RDEPEND=">=dev-haskell/pandoc-3.0:=
 	dev-haskell/text:=
 	>=dev-lang/ghc-8.8.1:=
 	lua? ( >=dev-haskell/hslua-cli-1.4.1:= <dev-haskell/hslua-cli-1.5:=

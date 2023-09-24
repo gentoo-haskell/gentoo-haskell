@@ -25,7 +25,7 @@ PATCHES=(
 )
 
 RDEPEND="
-	>=app-text/pandoc-3.0:=[profile?] <app-text/pandoc-3.2:=[profile?]
+	>=dev-haskell/pandoc-3.0:=[profile?] <dev-haskell/pandoc-3.2:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/gitrev-1.3.1:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
 	>=dev-haskell/microlens-0.4.12.0:=[profile?] <dev-haskell/microlens-0.5.0.0:=[profile?]
