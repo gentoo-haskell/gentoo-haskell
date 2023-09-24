@@ -16,28 +16,43 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=app-text/pandoc-3.0:=[profile?] <app-text/pandoc-3.2:=[profile?]
+CABAL_CHDEPS=(
+	'optparse-applicative >=0.13 && <0.18' 'optparse-applicative >=0.13'
+)
+
+PATCHES=(
+	"${FILESDIR}/${PN}-0.3.16.0-disable-latex-tests.patch"
+)
+
+RDEPEND="
+	>=app-text/pandoc-3.0:=[profile?] <app-text/pandoc-3.2:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
 	>=dev-haskell/gitrev-1.3.1:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
 	>=dev-haskell/microlens-0.4.12.0:=[profile?] <dev-haskell/microlens-0.5.0.0:=[profile?]
 	>=dev-haskell/microlens-ghc-0.4.3.10:=[profile?] <dev-haskell/microlens-ghc-0.5.0.0:=[profile?]
 	>=dev-haskell/microlens-mtl-0.2.0.1:=[profile?] <dev-haskell/microlens-mtl-0.3.0.0:=[profile?]
 	>=dev-haskell/microlens-th-0.4.3.10:=[profile?] <dev-haskell/microlens-th-0.5.0.0:=[profile?]
-	>=dev-haskell/open-browser-0.2:=[profile?] <dev-haskell/open-browser-0.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.13:=[profile?] <dev-haskell/optparse-applicative-0.18:=[profile?]
-	>=dev-haskell/pandoc-types-1.23:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
+	=dev-haskell/open-browser-0.2*:=[profile?]
+	>=dev-haskell/optparse-applicative-0.13:=[profile?]
+	=dev-haskell/pandoc-types-1.23*:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/temporary-1.2:=[profile?] <dev-haskell/temporary-1.4:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-2.1:=[profile?]
 	>=dev-haskell/utility-ht-0.0.11:=[profile?] <dev-haskell/utility-ht-0.1.0:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
-DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
-	test? ( >=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-3 )
+DEPEND="
+	${RDEPEND}
+	>=dev-haskell/cabal-3.2.1.0
+	test? (
+		>=dev-haskell/hspec-2.4.4 <dev-haskell/hspec-3
+	)
 "
 
 src_configure() {
-	haskell-cabal_src_configure \
+	local config_args=(
 		--flag=-enable_flaky_tests
+	)
+
+	haskell-cabal_src_configure "${config_args[@]}"
 }
