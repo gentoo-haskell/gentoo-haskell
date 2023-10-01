@@ -8,4 +8,8 @@
 	<use>
 		<flag name="svg">Build the Scalable Vector Graphics (SVG) backend of Cairo.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">gi-cairo-render</remote-id>
+		<remote-id type="github">cohomology/gi-cairo-render</remote-id>
+	</upstream>
 </pkgmetadata>
