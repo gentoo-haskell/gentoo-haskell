@@ -540,6 +540,22 @@ src_prepare() {
 			# linking on it's own (bug #299709)
 			pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
 		fi
+
+		# Replace pre-set toolchain stuff in GHC settings file
+		sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" \
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings" || die
+		sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" \
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings" || die
+		sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCPP)\")/" \
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings" || die
+		sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" \
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings" || die
+		sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" \
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings" || die
+		sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" \
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings" || die
+		sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" \
+			"${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings" || die
 	fi
 
 	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
