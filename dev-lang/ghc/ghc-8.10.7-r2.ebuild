@@ -121,7 +121,7 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="big-endian +doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
+IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp numa profile test"
 IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
