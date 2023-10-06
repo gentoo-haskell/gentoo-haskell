@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Build executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">markdown-unlit</remote-id>
+		<remote-id type="github">sol/markdown-unlit</remote-id>
+	</upstream>
 </pkgmetadata>
