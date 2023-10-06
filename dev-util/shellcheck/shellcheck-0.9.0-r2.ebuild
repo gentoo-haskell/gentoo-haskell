@@ -13,6 +13,9 @@ inherit haskell-cabal
 
 DESCRIPTION="Shell script analysis tool"
 HOMEPAGE="https://www.shellcheck.net/"
+SRC_URI="${SRC_URI}
+	https://github.com/koalaman/shellcheck/commit/b3932dfa10804434fb8c15dc32e428c5a1c3bfa4.patch -> ${P}-ghc9.6.patch"
+PATCHES=( "${DISTDIR}/${P}-ghc9.6.patch" )
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
@@ -23,15 +26,6 @@ KEYWORDS="~amd64"
 # === prop_checkOverwrittenExitCode8 from src/ShellCheck/Analytics.hs:4927 ===
 # *** Failed! Exception: '(Array.!): undefined array element' (after 1 test):
 RESTRICT="test"
-
-CABAL_CHDEPS=(
-
-# hololeap (2023-09-02)
-# This is from the upstream git repo
-# See: <https://github.com/koalaman/shellcheck/pull/2749#issuecomment-1703896093>
-	'fgl                  >= 5.7.0 && < 5.8.1.0'
-		'fgl (>= 5.7.0 && < 5.8.1.0) || (>= 5.8.1.1 && < 5.9)'
-)
 
 RDEPEND="
 	>=dev-haskell/aeson-1.4.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
