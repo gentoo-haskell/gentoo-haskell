@@ -5,37 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A practical incremental and one-pass, pure API to
-		the [SHA-256 cryptographic hash algorithm](https://en.wikipedia.org/wiki/SHA-2) according
-		to [FIPS 180-4](http://dx.doi.org/10.6028/NIST.FIPS.180-4)
-		with performance close to the fastest implementations available in other languages.
-		
-		The core SHA-256 algorithm is implemented in C and is thus expected
-		to be as fast as the standard [sha256sum(1) tool](https://linux.die.net/man/1/sha256sum);
-		for instance, on an /Intel Core i7-3770/ at 3.40GHz this implementation can
-		compute a SHA-256 hash over 230 MiB of data in under one second.
-		(If, instead, you require a pure Haskell implementation and performance is secondary, please refer to the [SHA package](https://hackage.haskell.org/package/SHA).)
-		
-		
-		Additionally, this package provides support for
-		
-		- HMAC-SHA-256: SHA-256-based [Hashed Message Authentication Codes](https://en.wikipedia.org/wiki/HMAC) (HMAC)
-		- HKDF-SHA-256: [HMAC-SHA-256-based Key Derivation Function](https://en.wikipedia.org/wiki/HKDF) (HKDF)
-		
-		conforming to [RFC6234](https://tools.ietf.org/html/rfc6234), [RFC4231](https://tools.ietf.org/html/rfc4231), [RFC5869](https://tools.ietf.org/html/rfc5869), et al..
-		
-		=== Relationship to the @cryptohash@ package and its API
-		
-		This package has been originally a fork of @cryptohash-0.11.7@ because the @cryptohash@
-		package had been deprecated and so this package continues to satisfy the need for a
-		lightweight package providing the SHA-256 hash algorithm without any dependencies on packages
-		other than @base@ and @bytestring@. The API exposed by @cryptohash-sha256-0.11.*@&#39;s
-		&quot;Crypto.Hash.SHA256&quot; module is guaranteed to remain a compatible superset of the API provided
-		by the @cryptohash-0.11.7@&#39;s module of the same name.
-		
-		Consequently, this package is designed to be used as a drop-in replacement for @cryptohash-0.11.7@&#39;s
-		&quot;Crypto.Hash.SHA256&quot; module, though with
-		a [clearly smaller footprint by almost 3 orders of magnitude](https://www.reddit.com/r/haskell/comments/5lxv75/psa_please_use_unique_module_names_when_uploading/dbzegx3/).
-	</longdescription>
+	<use>
+		<flag name="executable">Build the cryptohash-sha256sum executable</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">cryptohash-sha256</remote-id>
+		<remote-id type="github">hvr/cryptohash-sha256</remote-id>
+	</upstream>
 </pkgmetadata>
