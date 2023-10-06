@@ -216,7 +216,7 @@ cross() {
 	fi
 }
 
-append-ghc-cflags() {
+append_ghc_cflags() {
 	local persistent compile assemble link
 	local flag ghcflag
 
@@ -311,18 +311,18 @@ ghc_setup_cflags() {
 			-O*) ;;
 
 			# Arch and ABI flags are what we're really after
-			-m*) append-ghc-cflags compile assemble ${flag};;
+			-m*) append_ghc_cflags compile assemble ${flag};;
 
 			# Sometimes it's handy to see backtrace of RTS
 			# to get an idea what happens there
-			-g*) append-ghc-cflags compile ${flag};;
+			-g*) append_ghc_cflags compile ${flag};;
 
 			# Ignore all other flags, including all -f* flags
 		esac
 	done
 
 	for flag in ${LDFLAGS}; do
-		append-ghc-cflags link ${flag}
+		append_ghc_cflags link ${flag}
 	done
 }
 
@@ -396,7 +396,7 @@ relocate_ghc() {
 	rm "$gp_back"
 }
 
-ghc-check-reqs() {
+ghc_check_reqs() {
 	# These are pessimistic values (slightly bigger than worst-case)
 	# Worst case is UNREG USE=profile ia64. See bug #611866 for some
 	# numbers on various arches.
@@ -417,7 +417,7 @@ llvmize() {
 		| xargs sed -i "s#^exec #PATH=\"$(get_llvm_prefix "${LLVM_MAX_SLOT}")/bin:\${PATH}\" exec #") || die
 }
 
-ghc-check-bootstrap-version () {
+ghc_check_bootstrap_version() {
 	local diemsg version
 	ebegin "Checking for appropriate installed GHC version for bootstrapping"
 	if version=$(ghc-version); then
@@ -438,7 +438,7 @@ ghc-check-bootstrap-version () {
 	die "$diemsg"
 }
 
-ghc-check-bootstrap-mismatch () {
+ghc_check_bootstrap_mismatch() {
 	local diemsg ghc_version cabal_version
 	ebegin "Checking for mismatched GHC and Cabal versions for bootstrapping"
 	if ver_test "$(ghc-version)" -lt "9.4" && ver_test "$(cabal-version)" -gt "3.8"; then
@@ -453,14 +453,14 @@ ghc-check-bootstrap-mismatch () {
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]] && use ghcbootstrap; then
-		ghc-check-bootstrap-version
-		ghc-check-bootstrap-mismatch
+		ghc_check_bootstrap_version
+		ghc_check_bootstrap_mismatch
 	fi
-	ghc-check-reqs check-reqs_pkg_pretend
+	ghc_check_reqs check-reqs_pkg_pretend
 }
 
 pkg_setup() {
-	ghc-check-reqs check-reqs_pkg_setup
+	ghc_check_reqs check-reqs_pkg_setup
 
 	# quiet portage about prebuilt binaries
 	use binary && QA_PREBUILT="*"
