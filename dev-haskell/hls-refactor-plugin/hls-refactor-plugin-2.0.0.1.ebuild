@@ -8,6 +8,8 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
+RESTRICT="test" # Many "getDirectoryContents:openDirStream: does not exist" errors
+
 DESCRIPTION="Exactprint refactorings for Haskell Language Server"
 HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/plugins/hls-refactor-plugin#readme"
 
