@@ -5,4 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="executable">Build the doctest-driver-gen executable</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">doctest-driver-gen</remote-id>
+		<remote-id type="github">Hexirp/doctest-driver-gen</remote-id>
+	</upstream>
 </pkgmetadata>
