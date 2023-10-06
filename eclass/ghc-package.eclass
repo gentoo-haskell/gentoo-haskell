@@ -39,9 +39,8 @@ ghc-getghc() {
 }
 
 # @FUNCTION: ghc-getghcpkg
-# @INTERNAL
 # @DESCRIPTION:
-# Internal function determines returns the name of the ghc-pkg executable
+# returns the name of the ghc-pkg executable
 ghc-getghcpkg() {
 	if ! type -P ${HC_PKG:-ghc-pkg}; then
 		ewarn "ghc-pkg not found"
