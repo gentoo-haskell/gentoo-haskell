@@ -149,12 +149,6 @@ dev-haskell/hi
 # Needs extensive patching in order to build on ghc-9.0.2
 dev-util/hdocs
 
-# hololeap <hololeap@protonmail.com> (2021-05-12)
-# dev-lang/purescript-0.14.1 requires
-# ~dev-haskell/language-javascript-0.7.0.0
-# Mask any versions higher than that until purescript bumps its dependencies.
->=dev-haskell/language-javascript-0.7.0.1
-
 # P.B. Lecavalier <pbl.ltx@gmail.com> (2020-01-01)
 # Various unrelated packages and what causes the conflict with newer version.
 >=dev-haskell/hsemail-2
