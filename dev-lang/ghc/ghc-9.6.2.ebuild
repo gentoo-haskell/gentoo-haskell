@@ -5,13 +5,7 @@ EAPI=7
 
 # to make make a crosscompiler use crossdev and symlink ghc tree into
 # cross overlay. result would look like 'cross-sparc-unknown-linux-gnu/ghc'
-export CBUILD=${CBUILD:-${CHOST}}
-export CTARGET=${CTARGET:-${CHOST}}
-if [[ ${CTARGET} = ${CHOST} ]] ; then
-	if [[ ${CATEGORY/cross-} != ${CATEGORY} ]] ; then
-		export CTARGET=${CATEGORY/cross-}
-	fi
-fi
+inherit crossdev
 
 PYTHON_COMPAT=( python3_{9..11} )
 inherit python-any-r1
@@ -199,15 +193,7 @@ REQUIRED_USE="
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
 
-is_crosscompile() {
-	[[ ${CHOST} != ${CTARGET} ]]
-}
-
-is_native() {
-	[[ ${CHOST} == ${CBUILD} ]] && [[ ${CHOST} == ${CTARGET} ]]
-}
-
-if ! is_crosscompile; then
+if ! is_crosspkg; then
 	PDEPEND="!ghcbootstrap? ( >=app-admin/haskell-updater-1.2 )"
 fi
 
@@ -223,7 +209,7 @@ fi
 #    "${ED}/usr/$(get_libdir)/$(cross)${GHC_P}/package.conf.d"
 
 cross() {
-	if is_crosscompile; then
+	if is_crosspkg; then
 		echo "${CTARGET}-"
 	else
 		echo ""
@@ -293,7 +279,7 @@ bump_libs() {
 
 ghc_setup_cflags() {
 	# TODO: plumb CFLAGS and BUILD_CFLAGS to respective CONF_CC_OPTS_STAGE<N>
-	if ! is_native; then
+	if is_crosspkg; then
 		export CFLAGS=${GHC_CFLAGS-"-O2 -pipe"}
 		export LDFLAGS=${GHC_LDFLAGS-"-Wl,-O1"}
 		einfo "Crosscompiling mode:"
@@ -732,7 +718,7 @@ src_configure() {
 #		fi
 
 
-#		if is_crosscompile; then
+#		if is_crosspkg; then
 #			# Install ghc-stage1 crosscompiler instead of
 #			# ghc-stage2 cross-built compiler.
 #			#echo "Stage1Only=YES" >> mk/build.mk
@@ -809,7 +795,7 @@ src_configure() {
 			echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
 			#echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
 			echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-		elif is_native; then
+		elif ! is_crosspkg; then
 			# using ${GTARGET}'s libffi is not supported yet:
 			# GHC embeds full path for ffi includes without /usr/${CTARGET} account.
 			econf_args+=(--with-system-libffi)
@@ -853,7 +839,7 @@ src_compile() {
 
 		# Any non-native build has to skip as it needs
 		# target haddock binary to be runnabine.
-		if ! is_native; then
+		if is_crosspkg; then
 			# disable docs generation as it requires running stage2
 			# echo "HADDOCK_DOCS=NO" >> mk/build.mk
 			hadrian_vars+=("--docs=no-haddocks")
@@ -905,14 +891,14 @@ src_compile() {
 
 
 #		# Stage1Only crosscompiler does not build stage2
-#		if ! is_crosscompile; then
+#		if ! is_crosspkg; then
 #			# 1. build/pax-mark compiler binary first
 #			#emake ghc/stage2/build/tmp/ghc-stage2
 #			hadrian -j${nproc} --flavour=quickest stage2:exe:ghc-bin || die
 #			# 2. pax-mark (bug #516430)
 #			#pax-mark -m _build/stage1/bin/ghc
 #			# 2. build/pax-mark haddock using ghc-stage2
-#			if is_native; then
+#			if ! is_crosspkg; then
 #				# non-native build does not build haddock
 #				# due to HADDOCK_DOCS=NO, but it could.
 #				#emake utils/haddock/dist/build/tmp/haddock
@@ -972,7 +958,7 @@ src_install() {
 
 		# Skip for cross-targets as they all share target location:
 		# /usr/share/doc/ghc-9999/
-		if ! is_crosscompile; then
+		if ! is_crosspkg; then
 			dodoc "distrib/README" "LICENSE" "VERSION"
 		fi
 
@@ -994,7 +980,7 @@ src_install() {
 		# remove link, but leave 'haddock-${GHC_P}'
 		rm -f "${ED}"/usr/bin/$(cross)haddock
 
-		if ! is_crosscompile; then
+		if ! is_crosspkg; then
 			newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
 			newbashcomp utils/completion/ghc.bash         ghc
 		fi
@@ -1011,7 +997,7 @@ src_install() {
 	cp -p "${PKGCACHE}"{,.shipped} \
 		|| die "failed to copy package.conf.d/package.cache"
 
-	if is_crosscompile; then
+	if is_crosspkg; then
 		# When we build a cross-compiler the layout is the following:
 		#     usr/lib/${CTARGET}-ghc-${VER}/ contains target libraries
 		# but
