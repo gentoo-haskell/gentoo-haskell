@@ -34,6 +34,7 @@ dev-haskell/network-uri test
 dev-haskell/parser-combinators test
 dev-haskell/primitive test
 dev-haskell/scientific test
+dev-haskell/silently test
 dev-haskell/splitmix test
 dev-haskell/tasty-expected-failure test
 
