@@ -35,19 +35,6 @@ dev-haskell/hls-fourmolu-plugin
 dev-haskell/cabal-install-parsers
 dev-haskell/cabal-plan
 
-# Jack Todaro <solpeth@posteo.org> (2023-07-10)
-# No reverse dependencies left. Deprecated upstream.
-# Masked for removal.
-#
-# Removal: 2023-08-09.
-dev-haskell/aeson-compat
-
-# Jack Todaro <solpeth@posteo.org> (2023-06-30)
-# Last rites dead packages for removal within 30 days.
-dev-haskell/conduit-connection
-dev-haskell/simpleirc
-dev-haskell/smtp-mail
-
 # hololeap <hololeap@protonmail.com> (2023-03-01)
 # Not buildable on ghc-9.2
 # Masking until it is
