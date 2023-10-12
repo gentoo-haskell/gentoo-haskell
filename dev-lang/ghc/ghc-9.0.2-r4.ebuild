@@ -13,7 +13,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 	fi
 fi
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..12} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
 inherit multiprocessing pax-utils toolchain-funcs prefix
@@ -32,15 +32,14 @@ BIN_PV=${PV}
 #glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
 glibc_binaries+=" amd64? ( https://eidetic.codes/${PN}-bin-${PVR}-x86_64-pc-linux-gnu.gpkg.tar )"
 #glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
-#glibc_binaries="$glibc_binaries arm64? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tar.gz )"
+glibc_binaries="$glibc_binaries arm64? ( https://github.com/matoro/ghc/releases/download/${PVR}/ghc-bin-${PVR}-aarch64-unknown-linux-gnu.tar.gz )"
 #glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
 #glibc_binaries="$glibc_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? (
-#	big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64-unknown-linux-gnu.tar.gz )
-#	!big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz )
-#)"
-#glibc_binaries="$glibc_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-riscv64-unknown-linux-gnu.tar.gz )"
+glibc_binaries="$glibc_binaries ppc64? (
+	big-endian? ( https://github.com/matoro/ghc/releases/download/${PVR}/ghc-bin-${PVR}-powerpc64-unknown-linux-gnu.tar.gz )
+	!big-endian? ( https://github.com/matoro/ghc/releases/download/${PVR}/ghc-bin-${PVR}-powerpc64le-unknown-linux-gnu.tar.gz )
+)"
+glibc_binaries="$glibc_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PVR}/ghc-bin-${PVR}-riscv64-unknown-linux-gnu.tar.gz )"
 #glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
 glibc_binaries+=" x86? ( https://eidetic.codes/${PN}-bin-${PVR}-i686-pc-linux-gnu.gpkg.tar )"
 
@@ -68,13 +67,13 @@ yet_binary() {
 		glibc)
 			case "${ARCH}" in
 				#alpha) return 0 ;;
-				#arm64) return 0 ;;
+				arm64) return 0 ;;
 				#arm) return 0 ;;
 				amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
-				#ppc64) return 0 ;;
-				#riscv) return 0 ;;
+				ppc64) return 0 ;;
+				riscv) return 0 ;;
 				#sparc) return 0 ;;
 				x86) return 0 ;;
 				*) return 1 ;;
@@ -530,9 +529,6 @@ src_prepare() {
 				# UPDATE ME for ghc-7
 				mkdir "${WORKDIR}"/ghc-bin-installer || die
 				pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
-				use sparc-solaris && unpack ghc-6.10.4-sparc-sun-solaris2.tar.bz2
-				use x86-solaris && unpack ghc-7.0.3-i386-unknown-solaris2.tar.bz2
-				use x86-macos && unpack ghc-7.4.1-i386-apple-darwin.tar.bz2
 				use x64-macos && unpack ghc-7.4.1-x86_64-apple-darwin.tar.bz2
 				popd > /dev/null
 
@@ -610,13 +606,13 @@ src_prepare() {
 		# However, the patch is difficult to apply and our versions of GHC don't
 		# have the update, so we symlink to the system version instead.
 		if use doc; then
-			local rtd_theme_dir="$(dirname $(python -c "import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"))"
+			local python_str="import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"
+			local rtd_theme_dir="$(dirname $("${EPYTHON}" -c "$python_str"))"
 			local orig_rtd_theme_dir="${S}/docs/users_guide/rtd-theme"
 
-			ebegin "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
+			einfo "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
 			rm -r "${orig_rtd_theme_dir}" || die
 			ln -s "${rtd_theme_dir}" "${orig_rtd_theme_dir}" || die
-			eend 0
 		fi
 
 		# mingw32 target
