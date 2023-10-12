@@ -1,3 +1,10 @@
+# hololeap <hololeap@protonmail.com> (2023-10-11)
+# Mask old GHC for removal. These are losing support quickly and have
+# not been tested in a long time.
+#
+# Removal: 2023-11-10
+<dev-lang/ghc-9
+
 # hololeap <hololeap@protonmail.org> (2023-07-21)
 # Package has not been updated on hackage for 10 years. Author has
 # archvied the project on GitHub.
