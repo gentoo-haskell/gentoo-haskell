@@ -5,14 +5,6 @@
 # Removal: 2023-11-10
 <dev-lang/ghc-9
 
-# hololeap <hololeap@protonmail.org> (2023-07-21)
-# Package has not been updated on hackage for 10 years. Author has
-# archvied the project on GitHub.
-# Masked for removal
-#
-# Removal: 2023-08-20
-dev-haskell/opencl
-
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
 # Modern ormolu and fourmolu require >=dev-haskell/text-2 which is
