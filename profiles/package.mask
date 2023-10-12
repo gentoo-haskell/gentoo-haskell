@@ -4,6 +4,8 @@
 #
 # Removal: 2023-11-10
 <dev-lang/ghc-9
+<dev-haskell/ghc-api-compat-9
+<dev-haskell/haddock-api-2.25
 
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
