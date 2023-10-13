@@ -19,6 +19,7 @@ IUSE="+fingertree"
 
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
+	dev-haskell/co-log-core:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/dependent-map:=[profile?]
 	>=dev-haskell/dependent-sum-0.7:=[profile?]
@@ -26,23 +27,26 @@ RDEPEND="
 	dev-haskell/dlist:=[profile?]
 	dev-haskell/extra:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	~dev-haskell/hls-graph-2.0.0.1:=[profile?]
+	~dev-haskell/hls-graph-2.4.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lens-aeson:=[profile?]
-	>=dev-haskell/lsp-1.6.0.0:=[profile?] <dev-haskell/lsp-1.7:=[profile?]
+	>=dev-haskell/lsp-2.2:=[profile?] <dev-haskell/lsp-2.3:=[profile?]
 	>dev-haskell/megaparsec-9:=[profile?]
 	>=dev-haskell/opentelemetry-0.4:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
+	dev-haskell/prettyprinter:=[profile?]
 	>=dev-haskell/regex-tdfa-1.3.1.0:=[profile?]
+	dev-haskell/row-types:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-haskell/unliftio:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 	fingertree? (
 		dev-haskell/hw-fingertree:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
 		dev-haskell/lsp-types
 		dev-haskell/tasty
