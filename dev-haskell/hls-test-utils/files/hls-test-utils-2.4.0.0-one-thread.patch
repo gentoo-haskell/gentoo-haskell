@@ -1,0 +1,43 @@
+From 8b0c10379a173eecd4101bc03305de52381e40c4 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 14 Oct 2023 17:43:02 -0600
+Subject: [PATCH 1/1] Force one thread with an ENV variable
+
+From the README:
+
+> This method currently doesn't work for ingredient options, such as
+> --quiet or --num-threads. You can set them by setting the
+> corresponding environment variable before calling defaultMain.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+---
+ src/Test/Hls.hs | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/Test/Hls.hs b/src/Test/Hls.hs
+index 24a84cd..e03646b 100644
+--- a/src/Test/Hls.hs
++++ b/src/Test/Hls.hs
+@@ -113,7 +113,7 @@ import           Language.LSP.Test
+ import           Prelude                            hiding (log)
+ import           System.Directory                   (getCurrentDirectory,
+                                                      setCurrentDirectory)
+-import           System.Environment                 (lookupEnv)
++import           System.Environment                 (lookupEnv, setEnv)
+ import           System.FilePath
+ import           System.IO.Extra                    (newTempDir, withTempDir)
+ import           System.IO.Unsafe                   (unsafePerformIO)
+@@ -152,7 +152,9 @@ instance Pretty LogTestHarness where
+ 
+ -- | Run 'defaultMainWithRerun', limiting each single test case running at most 10 minutes
+ defaultTestRunner :: TestTree -> IO ()
+-defaultTestRunner = defaultMainWithRerun . adjustOption (const $ NumThreads 1) . adjustOption (const NoTimeout)
++defaultTestRunner t = do
++    setEnv "TASTY_NUM_THREADS" "1"
++    defaultMainWithRerun $ adjustOption (const $ NumThreads 1) $ adjustOption (const NoTimeout) t
+ 
+ gitDiff :: FilePath -> FilePath -> [String]
+ gitDiff fRef fNew = ["git", "-c", "core.fileMode=false", "diff", "--no-index", "--text", "--exit-code", fRef, fNew]
+-- 
+2.41.0
+
