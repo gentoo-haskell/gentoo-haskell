@@ -1,3 +1,23 @@
+# hololeap <hololeap@protonmail.com> (2023-10-15)
+# These packages are no longer supported upstream by
+# haskell-language-server. Mask for removal.
+#
+# Removal: 2023-11-14
+dev-haskell/hls-brittany-plugin
+dev-haskell/hls-haddock-comments-plugin
+dev-haskell/hls-refine-imports-plugin
+dev-haskell/hls-stan-plugin
+dev-haskell/hls-tactics-plugin
+
+# hololeap <hololeap@protonmail.com> (2023-10-15)
+# Plugins using these packages are no longer supported upstream by
+# haskell-language-server and they have had issues keeping up with
+# new GHC versions. Mask for removal.
+#
+# Removal: 2023-11-14
+dev-haskell/brittany
+dev-haskell/stan
+
 # hololeap <hololeap@protonmail.com> (2023-10-11)
 # Mask old GHC for removal. These are losing support quickly and have
 # not been tested in a long time.
@@ -39,9 +59,6 @@ dev-haskell/hls-tactics-plugin
 # These currently depend on an old version of ghc-exactprint, which is
 # incompatible with ghc-9.2
 # See e.g. <https://github.com/lspitzner/brittany/pull/366>
-dev-haskell/brittany
-dev-haskell/hls-brittany-plugin
-dev-haskell/hls-haddock-comments-plugin
 dev-haskell/hls-class-plugin
 
 # hololeap <hololeap@protonmail.com> (2022-12-29)
