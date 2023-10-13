@@ -11,19 +11,6 @@ inherit haskell-cabal
 DESCRIPTION="Retrie integration plugin for Haskell Language Server"
 HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/plugins/hls-retrie-plugin#readme"
 
-GIT_REPO_NAME="haskell-language-server"
-GIT_REPO="https://github.com/haskell/${GIT_REPO_NAME}"
-GIT_COMMIT="783905f211ac63edf982dd1889c671653327e441" # tag 2.0.0.1
-GIT_P="${GIT_REPO_NAME}-${GIT_COMMIT}"
-
-# Assets needed for tests only exist in the git repo
-SRC_URI+="
-	test? (
-		${GIT_REPO}/archive/${GIT_COMMIT}.tar.gz
-			-> ${GIT_P}.tar.gz
-	)
-"
-
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
@@ -31,31 +18,23 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/extra:=[profile?]
-	~dev-haskell/ghcide-2.0.0.1:=[profile?]
+	~dev-haskell/ghcide-2.4.0.0:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	~dev-haskell/hls-plugin-api-2.0.0.1:=[profile?]
+	~dev-haskell/hls-plugin-api-2.4.0.0:=[profile?]
 	dev-haskell/hls-refactor-plugin:=[profile?]
+	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
 	dev-haskell/lsp-types:=[profile?]
 	>=dev-haskell/retrie-0.1.1.0:=[profile?]
 	dev-haskell/safe-exceptions:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
-		~dev-haskell/hls-test-utils-2.0.0.1
+		dev-haskell/hls-plugin-api
+		~dev-haskell/hls-test-utils-2.4.0.0
 	)
 "
-
-src_prepare() {
-	if use test; then
-		# a partial test directory already exists in the hackage release tarball
-		rm -rv "${S}/test/" || die
-		# move the complete test directory from the github snapshot
-		mv -v "${WORKDIR}/${GIT_P}/plugins/${PN}/test/" "${S}" || die
-	fi
-	haskell-cabal_src_prepare
-}
