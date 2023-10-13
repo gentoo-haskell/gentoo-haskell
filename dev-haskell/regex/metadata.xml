@@ -5,13 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A regular expression toolkit for regex-base with
-		compile-time checking of RE syntax, data types for
-		matches and captures, a text replacement toolkit,
-		portable options, high-level AWK-like tools
-		for building text processing apps, regular expression
-		macros with parsers and test bench, omprehensive
-		documentation, tutorials and copious examples.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">regex</remote-id>
+		<remote-id type="github">iconnect/regex</remote-id>
+	</upstream>
 </pkgmetadata>
