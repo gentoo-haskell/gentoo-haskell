@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/plugins
 
 GIT_REPO_NAME="haskell-language-server"
 GIT_REPO="https://github.com/haskell/${GIT_REPO_NAME}"
-GIT_COMMIT="783905f211ac63edf982dd1889c671653327e441" # tag 2.0.0.1
+GIT_COMMIT="362fdd1293efb4b82410b676ab1273479f6d17ee" # tag 2.4.0.0
 GIT_P="${GIT_REPO_NAME}-${GIT_COMMIT}"
 
 # Assets needed for tests only exist in the git repo
@@ -30,17 +30,18 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	~dev-haskell/ghcide-2.0.0.1:=[profile?]
-	~dev-haskell/hls-plugin-api-2.0.0.1:=[profile?]
+	~dev-haskell/ghcide-2.4.0.0:=[profile?]
+	~dev-haskell/hls-plugin-api-2.4.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp-types:=[profile?]
+	dev-haskell/process-extras:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
-		~dev-haskell/hls-test-utils-2.0.0.1
+		~dev-haskell/hls-test-utils-2.4.0.0
 	)
 "
 BDEPEND="test? (
