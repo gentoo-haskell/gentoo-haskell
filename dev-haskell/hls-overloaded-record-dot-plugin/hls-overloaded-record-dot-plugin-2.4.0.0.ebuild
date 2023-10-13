@@ -16,6 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="
+	dev-haskell/aeson:=[profile?]
 	dev-haskell/ghcide:=[profile?]
 	dev-haskell/hls-graph:=[profile?]
 	dev-haskell/hls-plugin-api:=[profile?]
@@ -31,5 +32,7 @@ DEPEND="${RDEPEND}
 	test? (
 		dev-haskell/hls-test-utils
 		dev-haskell/lsp-test
+		dev-haskell/lsp-types
+		dev-haskell/row-types
 	)
 "
