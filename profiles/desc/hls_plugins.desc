@@ -1,6 +1,6 @@
 # hololeap <hololeap@protonmail.com> (2021-01-30)
 # Plugins for dev-util/haskell-language-server
-# (Updated 2023-07-16)
+# (Updated 2023-10-13)
 
 alternate-number-format - Enable Alternate Number Format plugin
 cabal - Enable cabal plugin
@@ -12,15 +12,12 @@ eval - Enable eval plugin
 explicit-fields - Enable explicit-fields plugin
 explicit-fixity - Enable explicit-fixity plugin
 gadt - Enable GADT plugin
-haddock-comments - Enable haddock comments plugin
 hlint - Enable hlint plugin
 import-lens - Enable importLens plugin
 module-name - Enable moduleName plugin
 overloaded-record-dot - Enable overloadedRecordDot plugin
 pragmas - Enable pragmas plugin
 qualify-imported-names - Enable qualifyImportedNames plugin
-refine-imports - Enable refineImports plugin
 rename - Enable rename plugin
 retrie - Enable retrie plugin
 splice - Enable splice plugin
-wingman - Enable wingman plugin

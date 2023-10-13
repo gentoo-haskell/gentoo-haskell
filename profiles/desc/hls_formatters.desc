@@ -1,8 +1,7 @@
 # hololeap <hololeap@protonmail.com> (2021-01-30)
 # Formatters for dev-util/haskell-language-server
-# (Updated 2023-07-16)
+# (Updated 2023-10-13)
 
-brittany - Enable brittany formatter
 cabal-fmt - Enable cabalFmt formatter
 floskell - Enable floskell formatter
 fourmolu - Enable fourmolu formatter 
