@@ -1,4 +1,9 @@
 # hololeap <hololeap@protonmail.com> (2023-10-15)
+# This package currently depends on an outdated version of
+# lsp-test.
+dev-haskell/ghcide-test-utils
+
+# hololeap <hololeap@protonmail.com> (2023-10-15)
 # These packages are no longer supported upstream by
 # haskell-language-server. Mask for removal.
 #
