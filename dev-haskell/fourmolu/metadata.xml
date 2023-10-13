@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="executable">Build the fourmolu executable</flag>
-		<flag name="fixity-th">Parse the default fixity information via Template Haskell</flag>
 		<flag name="internal-bundle-fixities">An internal ad-hoc flag that is enabled by default, Ormolu Live disables
 it due to missing WASM TH support.</flag>
 	</use>

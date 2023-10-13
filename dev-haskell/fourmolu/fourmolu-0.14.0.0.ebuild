@@ -26,6 +26,10 @@ CABAL_CHDEPS=(
 	'text >=2.0 && <3.0' 'text >=1.0 && <3.0'
 )
 
+TEST_REQUIRED_BINS=(
+	"${PN}"
+)
+
 RDEPEND="
 	>=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-3.0:=[profile?]
 	>=dev-haskell/ansi-terminal-0.10:=[profile?] <dev-haskell/ansi-terminal-1.1:=[profile?]
@@ -39,14 +43,14 @@ RDEPEND="
 	>=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-3.0:=[profile?]
 	>=dev-haskell/yaml-0.11.6.0:=[profile?] <dev-haskell/yaml-1:=[profile?]
-	>=dev-lang/ghc-8.10.1:=
+	>=dev-lang/ghc-9.2:=
 	executable? (
 		>=dev-haskell/optparse-applicative-0.14:=[profile?] <dev-haskell/optparse-applicative-0.19:=[profile?]
 		>=dev-haskell/th-env-0.1.1:=[profile?] <dev-haskell/th-env-0.2:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
 		>=dev-haskell/diff-0.3 <dev-haskell/diff-0.5
 		>=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
