@@ -9,21 +9,17 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
+# TODO: Multiple test failures
+# See: <https://github.com/haskell/haskell-language-server/issues/3221>
+#      <https://github.com/haskell/haskell-language-server/issues/3126#issuecomment-1256998713>
+RESTRICT="test" # 1 out of 30 tests failed
+
 DESCRIPTION="Hlint integration plugin with Haskell Language Server"
 HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/plugins/hls-hlint-plugin#readme"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-
-# hololeap (2023-10-06)
-# src/Test/Hls/Util.hs:261: Got unexpected diagnostics for Uri {..
-# Use -p '/.hlint.yaml fixity rules are applied/' to rerun this test only.
-RESTRICT="test" # 1 out of 28 tests failed
-
-CABAL_CHDEPS=(
-	'hlint                 < 3.6' 'hlint'
-)
 
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
@@ -34,10 +30,10 @@ RDEPEND="
 	>=dev-haskell/ghc-exactprint-0.6.3.4:=[profile?]
 	dev-haskell/ghc-lib-parser:=[profile?]
 	dev-haskell/ghc-lib-parser-ex:=[profile?]
-	~dev-haskell/ghcide-2.0.0.1:=[profile?]
+	~dev-haskell/ghcide-2.4.0.0:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	dev-haskell/hlint:=[profile?]
-	~dev-haskell/hls-plugin-api-2.0.0.1:=[profile?]
+	<dev-haskell/hlint-3.7:=[profile?]
+	~dev-haskell/hls-plugin-api-2.4.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
 	dev-haskell/refact:=[profile?]
@@ -45,13 +41,15 @@ RDEPEND="
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
-		~dev-haskell/hls-test-utils-2.0.0.1
+		dev-haskell/hls-plugin-api
+		~dev-haskell/hls-test-utils-2.4.0.0
 		dev-haskell/lsp-types
+		dev-haskell/row-types
 	)
 "
 
