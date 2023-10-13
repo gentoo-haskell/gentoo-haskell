@@ -36,14 +36,14 @@ RDEPEND="
 	>=dev-haskell/memotrie-0.6:=[profile?] <dev-haskell/memotrie-0.7:=[profile?]
 	>=dev-haskell/syb-0.7:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-3.0:=[profile?]
-	>=dev-lang/ghc-8.10.1:=
+	>=dev-lang/ghc-8.10.6:=
 	executable? (
 		>=dev-haskell/optparse-applicative-0.14:=[profile?] <dev-haskell/optparse-applicative-0.19:=[profile?]
 		>=dev-haskell/th-env-0.1.1:=[profile?] <dev-haskell/th-env-0.2:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
 		>=dev-haskell/hspec-2.0 <dev-haskell/hspec-3.0
 		>=dev-haskell/hspec-megaparsec-2.2
