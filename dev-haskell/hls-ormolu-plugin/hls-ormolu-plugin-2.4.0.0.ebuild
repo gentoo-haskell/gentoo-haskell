@@ -15,23 +15,23 @@ LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-CABAL_CHDEPS=(
-	'ormolu          ^>=0.1.2 || ^>= 0.2 || ^>= 0.3 || ^>= 0.5' 'ormolu >=0.1.2'
-)
-
 RDEPEND="
-	~dev-haskell/ghcide-2.0.0.1:=[profile?]
-	~dev-haskell/hls-plugin-api-2.0.0.1:=[profile?]
+	dev-haskell/extra:=[profile?]
+	~dev-haskell/ghcide-2.4.0.0:=[profile?]
+	~dev-haskell/hls-plugin-api-2.4.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
-	>=dev-haskell/ormolu-0.1.2:=[profile?]
+	>=dev-haskell/ormolu-0.1.2:=[profile?] <dev-haskell/ormolu-0.8:=[profile?]
+	>=dev-haskell/process-extras-0.7.1:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
-		~dev-haskell/hls-test-utils-2.0.0.1
+		dev-haskell/aeson
+		dev-haskell/hls-plugin-api
+		~dev-haskell/hls-test-utils-2.4.0.0
 		dev-haskell/lsp-types
 	)
 "
