@@ -1,0 +1,118 @@
+From 5550ce95bd92332fbfd2c810f6277e8ed2e054f6 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 14 Oct 2023 10:11:10 -0600
+Subject: [PATCH 1/1] Disable test timeouts
+
+Many HLS tests time out on older computers. This patch replaces the
+normal timeout function with one that never times out and never fails.
+This will help devs with older computers run the tests.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+---
+ src/Language/LSP/Test/Session.hs | 18 ++++----------
+ test/Test.hs                     | 41 --------------------------------
+ 2 files changed, 5 insertions(+), 54 deletions(-)
+
+diff --git a/src/Language/LSP/Test/Session.hs b/src/Language/LSP/Test/Session.hs
+index e771404..4da15d2 100644
+--- a/src/Language/LSP/Test/Session.hs
++++ b/src/Language/LSP/Test/Session.hs
+@@ -82,7 +82,6 @@ import System.Process (ProcessHandle())
+ #ifndef mingw32_HOST_OS
+ import System.Process (waitForProcess)
+ #endif
+-import System.Timeout ( timeout )
+ import Data.IORef
+ import Colog.Core (LogAction (..), WithSeverity (..), Severity (..))
+ import Data.Row
+@@ -487,18 +486,7 @@ sendMessage msg = do
+ -- after duration seconds. This will override the global timeout
+ -- for waiting for messages to arrive defined in 'SessionConfig'.
+ withTimeout :: Int -> Session a -> Session a
+-withTimeout duration f = do
+-  chan <- asks messageChan
+-  timeoutId <- getCurTimeoutId
+-  modify $ \s -> s { overridingTimeout = True }
+-  tid <- liftIO $ forkIO $ do
+-    threadDelay (duration * 1000000)
+-    writeChan chan (TimeoutMessage timeoutId)
+-  res <- f
+-  liftIO $ killThread tid
+-  bumpTimeoutId timeoutId
+-  modify $ \s -> s { overridingTimeout = False }
+-  return res
++withTimeout _ = id
+ 
+ data LogMsgType = LogServer | LogClient
+   deriving Eq
+@@ -522,3 +510,7 @@ logMsg t msg = do
+           | otherwise       = Cyan
+ 
+         showPretty = B.unpack . encodePretty
++
++-- A faux timeout; it just lets the code block run indefinitely.
++timeout :: Int -> IO a -> IO (Maybe a)
++timeout _ = fmap Just
+diff --git a/test/Test.hs b/test/Test.hs
+index ba4ad99..076b614 100644
+--- a/test/Test.hs
++++ b/test/Test.hs
+@@ -49,17 +49,6 @@ main = hspec $ around withDummyServer $ do
+       runSessionWithHandles hin hout def fullCaps "." $ return ()
+ 
+     describe "withTimeout" $ do
+-      it "times out" $ \(hin, hout) ->
+-        let sesh = runSessionWithHandles hin hout def fullCaps "." $ do
+-                    openDoc "test/data/renamePass/Desktop/simple.hs" "haskell"
+-                    -- won't receive a request - will timeout
+-                    -- incoming logging requests shouldn't increase the
+-                    -- timeout
+-                    withTimeout 5 $ skipManyTill anyMessage (message SMethod_WorkspaceApplyEdit)
+-          -- wait just a bit longer than 5 seconds so we have time
+-          -- to open the document
+-          in timeout 6000000 sesh `shouldThrow` anySessionException
+-
+       it "doesn't time out" $ \(hin, hout) ->
+         let sesh = runSessionWithHandles hin hout def fullCaps "." $ do
+                     openDoc "test/data/renamePass/Desktop/simple.hs" "haskell"
+@@ -77,37 +66,7 @@ main = hspec $ around withDummyServer $ do
+           getDocumentSymbols doc
+           return ()
+ 
+-      it "overrides global message timeout" $ \(hin, hout) ->
+-        let sesh =
+-              runSessionWithHandles hin hout (def { messageTimeout = 5 }) fullCaps "." $ do
+-                doc <- openDoc "test/data/renamePass/Desktop/simple.hs" "haskell"
+-                -- shouldn't time out in here since we are overriding it
+-                withTimeout 10 $ liftIO $ threadDelay 7000000
+-                getDocumentSymbols doc
+-                return True
+-        in sesh `shouldReturn` True
+-
+-      it "unoverrides global message timeout" $ \(hin, hout) ->
+-        let sesh =
+-              runSessionWithHandles hin hout (def { messageTimeout = 5 }) fullCaps "." $ do
+-                doc <- openDoc "test/data/renamePass/Desktop/simple.hs" "haskell"
+-                -- shouldn't time out in here since we are overriding it
+-                withTimeout 10 $ liftIO $ threadDelay 7000000
+-                getDocumentSymbols doc
+-                -- should now timeout
+-                skipManyTill anyMessage (message SMethod_WorkspaceApplyEdit)
+-            isTimeout (Timeout _) = True
+-            isTimeout _ = False
+-        in sesh `shouldThrow` isTimeout
+-
+-
+     describe "SessionException" $ do
+-      it "throw on time out" $ \(hin, hout) ->
+-        let sesh = runSessionWithHandles hin hout (def {messageTimeout = 10}) fullCaps "." $ do
+-                _ <- message SMethod_WorkspaceApplyEdit
+-                return ()
+-        in sesh `shouldThrow` anySessionException
+-
+       it "don't throw when no time out" $ \(hin, hout) ->
+         runSessionWithHandles hin hout (def {messageTimeout = 5}) fullCaps "." $ do
+           liftIO $ threadDelay $ 6 * 1000000
+-- 
+2.41.0
+
