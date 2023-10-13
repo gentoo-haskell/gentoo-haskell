@@ -8,6 +8,11 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
+# TODO: Multiple test failures
+# See: <https://github.com/haskell/haskell-language-server/issues/3221>
+#      <https://github.com/haskell/haskell-language-server/issues/3126#issuecomment-1256998713>
+RESTRICT="test" # 22 out of 87 tests failed
+
 DESCRIPTION="Cabal integration plugin with Haskell Language Server"
 HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/plugins/hls-cabal-plugin#readme"
 
@@ -16,24 +21,27 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-haskell/cabal-3.2:=[profile?] <dev-haskell/cabal-3.11:=[profile?]
+	>=dev-haskell/cabal-syntax-3.7:=[profile?]
 	>=dev-haskell/extra-1.7.4:=[profile?]
-	~dev-haskell/ghcide-2.0.0.1:=[profile?]
+	~dev-haskell/ghcide-2.4.0.0:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	~dev-haskell/hls-graph-2.0.0.1:=[profile?]
-	~dev-haskell/hls-plugin-api-2.0.0.1:=[profile?]
-	>=dev-haskell/lsp-1.6.0.0:=[profile?] <dev-haskell/lsp-1.7:=[profile?]
-	>=dev-haskell/lsp-types-1.6.0.0:=[profile?] <dev-haskell/lsp-types-1.7:=[profile?]
+	~dev-haskell/hls-graph-2.4.0.0:=[profile?]
+	~dev-haskell/hls-plugin-api-2.4.0.0:=[profile?]
+	dev-haskell/lens:=[profile?]
+	>=dev-haskell/lsp-2.2:=[profile?] <dev-haskell/lsp-2.3:=[profile?]
+	>=dev-haskell/lsp-types-2.0.2:=[profile?] <dev-haskell/lsp-types-2.1:=[profile?]
 	>=dev-haskell/regex-tdfa-1.3.1:=[profile?] <dev-haskell/regex-tdfa-1.4:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-haskell/text-rope:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
+	>=dev-haskell/cabal-3.2.1.0
 	test? (
-		~dev-haskell/hls-test-utils-2.0.0.1
-		dev-haskell/lens
+		dev-haskell/ghcide
+		~dev-haskell/hls-test-utils-2.4.0.0
+		dev-haskell/row-types
 		dev-haskell/tasty-hunit
 	)
 "
