@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">regex-pcre-builtin</remote-id>
+		<remote-id type="github">audreyt/regex-pcre-builtin</remote-id>
+	</upstream>
 </pkgmetadata>
