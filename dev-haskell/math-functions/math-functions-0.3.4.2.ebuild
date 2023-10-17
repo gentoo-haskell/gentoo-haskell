@@ -17,6 +17,10 @@ LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.3.4.2-fix-test-suite.patch"
+)
+
 RDEPEND=">=dev-haskell/data-default-class-0.1.2.0:=[profile?]
 	dev-haskell/primitive:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?]
