@@ -63,6 +63,8 @@ def print_edges(source, target, edge):
         return
     if source == 'dev-haskell/parser-combinators':
         return
+    if source == 'dev-haskell/prettyprinter':
+        return
     if source == 'dev-haskell/primitive':
         return
     if source == 'dev-haskell/scientific':
