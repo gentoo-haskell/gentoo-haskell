@@ -23,3 +23,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/doctest-0.9 )
 "
+
+pkg_pretend() {
+	if use test; then
+		ewarn "The \"test\" USE flag for this package creates cycles within the"
+		ewarn "dependency graph. This may give you problems during 'haskell-updater' runs."
+		ewarn "It is recommended to leave it disabled unless explicitly testing the package."
+	fi
+}

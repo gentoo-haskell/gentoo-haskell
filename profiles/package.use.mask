@@ -33,6 +33,7 @@ dev-haskell/nanospec test
 dev-haskell/network-uri test
 dev-haskell/parser-combinators test
 dev-haskell/prettyprinter test
+dev-haskell/prettyprinter-ansi-terminal test
 dev-haskell/primitive test
 dev-haskell/scientific test
 dev-haskell/splitmix test
