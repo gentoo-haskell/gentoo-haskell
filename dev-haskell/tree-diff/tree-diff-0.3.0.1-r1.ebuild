@@ -17,6 +17,11 @@ LICENSE="GPL-2+"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+# See: <https://github.com/haskellari/tree-diff/issues/79>
+PATCHES=(
+	"${FILESDIR}/${PN}-0.3.0.1-disable-flakey-test.patch"
+)
+
 RDEPEND=">=dev-haskell/bytestring-builder-0.10.8.2.0:=[profile?] <dev-haskell/bytestring-builder-0.11:=[profile?]
 	>=dev-haskell/data-array-byte-0.1.0.1:=[profile?] <dev-haskell/data-array-byte-0.2:=[profile?]
 	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
