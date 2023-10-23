@@ -139,4 +139,9 @@ src_install() {
 
 	doicon "${FILESDIR}"/${PN}.xpm
 	make_desktop_entry "${PN} webapp" "git-annex" ${PN}.xpm "Office"
+
+	# Create symlinks that used to be installed by Setup.hs
+	# See: <https://github.com/gentoo-haskell/gentoo-haskell/issues/1491>
+	dosym git-annex /usr/bin/git-annex-shell
+	dosym git-annex /usr/bin/git-remote-tor-annex
 }
