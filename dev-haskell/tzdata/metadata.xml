@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">tzdata</remote-id>
+		<remote-id type="github">ysangkok/haskell-tzdata</remote-id>
+	</upstream>
 </pkgmetadata>
