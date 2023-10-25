@@ -21,4 +21,8 @@
 		with different ideas wrt. scope\/API\/implementation\/etc. All
 		comments are welcome!
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">tz</remote-id>
+		<remote-id type="github">ysangkok/haskell-tz</remote-id>
+	</upstream>
 </pkgmetadata>
