@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/haskell/parsec"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-#keep in sync with ghc-9.6
+#keep in sync with ghc-9.4
 #KEYWORDS="~amd64"
 
 RESTRICT=test # circular dependencies: dev-haskell/base-orphans->cabal->parsec[test]->test-framework-hunit->test-framework->base-orphans
@@ -31,4 +31,4 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 #	)
 
-CABAL_CORE_LIB_GHC_PV="9.6.2"
+CABAL_CORE_LIB_GHC_PV="9.4.7 9.6.2"
