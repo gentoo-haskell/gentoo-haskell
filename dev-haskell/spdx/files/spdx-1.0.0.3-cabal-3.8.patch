@@ -1,15 +1,8 @@
-From 545dc69f433225c837375fba4cbbdb7f9cc7b09b Mon Sep 17 00:00:00 2001
+From https://github.com/phadej/spdx/commit/545dc69f433225c837375fba4cbbdb7f9cc7b09b Mon Sep 17 00:00:00 2001
 From: Oleg Grenrus <oleg.grenrus@iki.fi>
 Date: Tue, 6 Dec 2022 19:08:36 +0200
 Subject: [PATCH] Allow ghc-9.4
 
----
- spdx.cabal          | 9 +++++----
- tests/Generators.hs | 4 +++-
- 2 files changed, 8 insertions(+), 5 deletions(-)
-
-diff --git a/spdx.cabal b/spdx.cabal
-index b2b016f..6225099 100644
 --- a/spdx.cabal
 +++ b/spdx.cabal
 @@ -1,6 +1,6 @@
@@ -41,8 +34,6 @@ index b2b016f..6225099 100644
      , containers    >=0.5.0.0 && <0.7
      , transformers  >=0.3     && <0.6
  
-diff --git a/tests/Generators.hs b/tests/Generators.hs
-index 1a048d3..32620f6 100644
 --- a/tests/Generators.hs
 +++ b/tests/Generators.hs
 @@ -15,7 +15,9 @@ import           Distribution.SPDX
