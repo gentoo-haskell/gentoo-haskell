@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="dev-haskell/syb:=[profile?]
-	>=dev-haskell/th-abstraction-0.4.3:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]
+	>=dev-haskell/th-abstraction-0.4.3:=[profile?] <dev-haskell/th-abstraction-0.7:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
