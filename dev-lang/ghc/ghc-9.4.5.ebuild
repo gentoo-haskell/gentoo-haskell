@@ -540,6 +540,16 @@ src_prepare() {
 			# linking on it's own (bug #299709)
 			pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
 		fi
+
+		# Make GHC's settings file comply with user's settings
+        GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
+        sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+        sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}" || die
+        sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+        sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+        sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+        sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
+        sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
 	fi
 
 	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
