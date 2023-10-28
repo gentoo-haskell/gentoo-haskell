@@ -16,6 +16,10 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-2.91.29-add-gi-cairo-dep.patch"
+)
+
 GHC_BOOTSTRAP_PACKAGES=(
 	haskell-gi
 	gi-atk
@@ -29,6 +33,7 @@ GHC_BOOTSTRAP_PACKAGES=(
 
 RDEPEND="
 	>=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?]
+	>=dev-haskell/gi-cairo-1.0:=[profile?] <dev-haskell/gi-cairo-1.1:=[profile?]
 	>=dev-haskell/gi-gdk-3.0:=[profile?] <dev-haskell/gi-gdk-3.1:=[profile?]
 	>=dev-haskell/gi-gio-2.0:=[profile?] <dev-haskell/gi-gio-2.1:=[profile?]
 	>=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?]
