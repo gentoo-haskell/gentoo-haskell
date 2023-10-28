@@ -18,8 +18,12 @@ KEYWORDS="~amd64"
 
 RESTRICT=test # tests fail
 
+PATCHES=(
+	"${FILESDIR}/${P}-cabal-3.8.patch"
+)
+
 RDEPEND=">=dev-lang/ghc-8.4.3:=
-	>=dev-haskell/cabal-2.4.0.1:=[profile?] <dev-haskell/cabal-3.7:=[profile?]
+	>=dev-haskell/cabal-2.4.0.1:=[profile?] <dev-haskell/cabal-3.9:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
