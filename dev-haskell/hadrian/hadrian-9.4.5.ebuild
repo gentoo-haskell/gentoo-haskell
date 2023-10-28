@@ -11,13 +11,15 @@ inherit haskell-cabal
 
 DESCRIPTION="GHC build system"
 HOMEPAGE="https://gitlab.haskell.org/ghc/ghc/-/tree/master/hadrian#readme"
-SRC_URI="https://eidetic.codes/${P}-src-gentoo.tar.xz"
+SRC_URI="https://downloads.haskell.org/ghc/${PV/_/-}/ghc-${PV}-src.tar.xz"
 
 LICENSE="BSD"
 SLOT="0"
 #KEYWORDS="~amd64"
 IUSE="static test +threaded"
 RESTRICT="!test? ( test )"
+S="${WORKDIR}/ghc-${PV}/hadrian"
+CABAL_FILE="${S}/hadrian.cabal"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-9.4.4-cabal-3_8.patch"
