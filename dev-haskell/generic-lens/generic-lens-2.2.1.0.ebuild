@@ -46,6 +46,9 @@ src_configure() {
 
 	cp -a "$(ghc-libdir)"/{package.conf.d,settings} "${S}" || die
 
+	# Work around base attempting relative access for dynamic libraries
+	ln -s "$(ghc-libdir)" "${WORKDIR}" || die
+
 	"${ghc_pkg[@]}" unregister "${PN}" &>/dev/null
 	"${ghc_pkg[@]}" recache || die
 
