@@ -15,6 +15,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux"
 
+CABAL_CHDEPS=(
+	'base  >= 4.3 && < 4.15' 'base >= 4.3'
+)
+
 RDEPEND="
 	>=dev-lang/ghc-8.10.6:=
 "
