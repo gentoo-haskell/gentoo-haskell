@@ -33,6 +33,7 @@ dev-haskell/stan
 <dev-haskell/haddock-api-2.25
 <dev-haskell/haddock-2.25
 <dev-haskell/cabal-3.3
+<dev-haskell/cabal-install-3.3
 
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
