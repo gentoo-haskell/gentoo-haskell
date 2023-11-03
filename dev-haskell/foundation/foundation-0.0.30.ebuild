@@ -20,8 +20,8 @@ IUSE="experimental"
 RDEPEND=">=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
+	~dev-haskell/basement-0.0.16
 	>=dev-haskell/cabal-3.0.0.0
-	test? ( dev-haskell/basement )
 "
 
 src_configure() {
