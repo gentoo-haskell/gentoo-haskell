@@ -19,7 +19,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux"
 
-RDEPEND=">=dev-lang/ghc-8.4.3:=
+RDEPEND=">=dev-lang/ghc-8.4.3:= <dev-lang/ghc-9.3:=
 "
 DEPEND="${RDEPEND}
 "

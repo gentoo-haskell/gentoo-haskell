@@ -22,7 +22,7 @@ SLOT="0/${PV}"
 RDEPEND="
 	>=dev-haskell/cabal-syntax-3.10:=[profile?] <dev-haskell/cabal-syntax-3.11:=[profile?]
 	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-lang/ghc-8.8.1:=
+	>=dev-lang/ghc-8.8.1:= <dev-lang/ghc-9.7:=
 	|| (
 		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
 		( >=dev-haskell/text-2.0 <dev-haskell/text-2.1 )

@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~amd64-linux"
 
 RDEPEND="
 	|| ( dev-lang/ghc ( >=dev-haskell/process-1.1.0.2[profile?] <dev-haskell/process-1.7[profile?] ) )
-	>=dev-lang/ghc-8.4.3:=
+	>=dev-lang/ghc-8.4.3:= <dev-lang/ghc-9.1:=
 "
 DEPEND="${RDEPEND}
 "
