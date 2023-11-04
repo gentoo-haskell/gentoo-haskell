@@ -1,41 +1,70 @@
-diff -urN foldl-1.4.12/Setup.hs foldl-1.4.12-r1/Setup.hs
---- foldl-1.4.12/Setup.hs	2001-09-08 19:46:40.000000000 -0600
-+++ foldl-1.4.12-r1/Setup.hs	2022-03-23 03:20:48.427151688 -0600
-@@ -1,2 +1,6 @@
--import Distribution.Simple
--main = defaultMain
+From 7dc9bf5a311c56408f5f102c09d36ab127e64b94 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 4 Nov 2023 14:43:01 -0600
+Subject: [PATCH 1/1] Migrate to cabal-doctest
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best current workaround is to migrate to cabal-doctest.
+
+Bug: https://bugs.gentoo.org/916851
+Signed-off-by: hololeap <hololeap@protonmail.com>
+---
+ Setup.hs        | 17 +++++++++++++++++
+ foldl.cabal     | 13 +++++++++++--
+ test/doctest.hs | 29 +++++++++++++++++++++++++++--
+ 3 files changed, 55 insertions(+), 4 deletions(-)
+
+diff --git a/Setup.hs b/Setup.hs
+index 9a994af..f21ad76 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -1,2 +1,19 @@
++{-# LANGUAGE CPP #-}
++
 +module Main (main) where
++
++#if MIN_VERSION_cabal_doctest(1,0,0)
 +
 +import Distribution.Extra.Doctest ( defaultMainWithDoctests )
 +
 +main :: IO ()
 +main = defaultMainWithDoctests "doctest"
-diff -urN foldl-1.4.12/foldl.cabal foldl-1.4.12-r1/foldl.cabal
---- foldl-1.4.12/foldl.cabal	2022-03-23 03:17:07.317151581 -0600
-+++ foldl-1.4.12-r1/foldl.cabal	2022-03-23 03:20:10.187151669 -0600
-@@ -2,7 +2,7 @@
- Version: 1.4.12
- x-revision: 2
++
++#else
++
+ import Distribution.Simple
++
++main :: IO ()
+ main = defaultMain
++
++#endif
+diff --git a/foldl.cabal b/foldl.cabal
+index 08715aa..ec2983e 100644
+--- a/foldl.cabal
++++ b/foldl.cabal
+@@ -1,7 +1,7 @@
+ Name: foldl
+ Version: 1.4.15
  Cabal-Version: >=1.10
 -Build-Type: Simple
 +Build-Type: Custom
  License: BSD3
  License-File: LICENSE
- Copyright: 2013 Gabriel Gonzalez
-@@ -22,6 +22,12 @@
+ Copyright: 2013 Gabriella Gonzalez
+@@ -21,6 +21,12 @@ Source-Repository head
      Type: git
-     Location: https://github.com/Gabriel439/Haskell-Foldl-Library
+     Location: https://github.com/Gabriella439/Haskell-Foldl-Library
  
 +custom-setup
 +    setup-depends:
 +        base
 +      , Cabal
-+      , cabal-doctest
++      , cabal-doctest >= 1.0.0
 +
  Library
      HS-Source-Dirs: src
      Build-Depends:
-@@ -83,6 +89,9 @@
+@@ -83,6 +89,9 @@ Test-Suite doctest
      Main-Is: doctest.hs
      Build-Depends:
          base,
@@ -46,9 +75,10 @@ diff -urN foldl-1.4.12/foldl.cabal foldl-1.4.12-r1/foldl.cabal
 +        base-compat
      GHC-Options: -threaded
      Default-Language: Haskell2010
-diff -urN foldl-1.4.12/test/doctest.hs foldl-1.4.12-r1/test/doctest.hs
---- foldl-1.4.12/test/doctest.hs	2001-09-08 19:46:40.000000000 -0600
-+++ foldl-1.4.12-r1/test/doctest.hs	2022-03-23 03:22:41.077151743 -0600
+diff --git a/test/doctest.hs b/test/doctest.hs
+index 5981eb4..847b897 100644
+--- a/test/doctest.hs
++++ b/test/doctest.hs
 @@ -1,4 +1,29 @@
  import Test.DocTest
 +import GHC.IO.Encoding (setLocaleEncoding)
@@ -81,3 +111,6 @@ diff -urN foldl-1.4.12/test/doctest.hs foldl-1.4.12-r1/test/doctest.hs
 +            ]
 +
 +    doctest $ customFlags ++ pkgs ++ origFlags ++ modules
+-- 
+2.41.0
+
