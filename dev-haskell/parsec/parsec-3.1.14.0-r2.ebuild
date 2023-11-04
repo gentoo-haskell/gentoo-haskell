@@ -16,6 +16,10 @@ inherit haskell-cabal
 DESCRIPTION="Monadic parser combinators"
 HOMEPAGE="https://github.com/haskell/parsec"
 
+CABAL_CHDEPS=(
+	'base       >= 4.5.0   && < 4.16' 'base >= 4.5.0'
+)
+
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc64 ~amd64-linux"
