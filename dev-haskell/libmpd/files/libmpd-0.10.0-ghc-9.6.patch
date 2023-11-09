@@ -1,0 +1,18 @@
+commit 5737096a339edc265a663f51ad9d29baee262694 (HEAD -> master, origin/master, origin/HEAD)
+Author: Peter Simons <simons@cryp.to>
+Date:   Mon Jun 26 14:01:09 2023 +0200
+
+    Import Control.Monad for missing foldM.
+
+diff --git a/src/Network/MPD/Commands/Parse.hs b/src/Network/MPD/Commands/Parse.hs
+index 49f23cb..f53283c 100644
+--- a/src/Network/MPD/Commands/Parse.hs
++++ b/src/Network/MPD/Commands/Parse.hs
+@@ -12,6 +12,7 @@ module Network.MPD.Commands.Parse where
+ 
+ import           Network.MPD.Commands.Types
+ 
++import           Control.Monad
+ import           Control.Monad.Except
+ import           Data.Maybe (fromMaybe)
+ 

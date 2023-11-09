@@ -15,6 +15,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.10.0-ghc-9.6.patch
+)
+
 CABAL_CHDEPS=(
 	'text >= 0.11 && < 2' 'text >= 0.11'
 )
