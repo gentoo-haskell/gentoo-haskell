@@ -28,7 +28,6 @@ dev-haskell/stan
 # not been tested in a long time.
 #
 # Removal: 2023-11-10
-<dev-haskell/haddock-2.25
 <dev-haskell/cabal-3.3
 <dev-haskell/cabal-install-3.3
 
