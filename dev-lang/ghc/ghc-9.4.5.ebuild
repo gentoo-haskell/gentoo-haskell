@@ -168,24 +168,31 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
 	doc? (
+		$(python_gen_any_dep '
+			dev-python/sphinx[${PYTHON_USEDEP}]
+			dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+		')
 		app-text/docbook-xml-dtd:4.2
 		app-text/docbook-xml-dtd:4.5
 		app-text/docbook-xsl-stylesheets
-		dev-python/sphinx
-		dev-python/sphinx-rtd-theme
 		>=dev-libs/libxslt-1.1.2
 	)
 	ghcbootstrap? (
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
 		~dev-haskell/hadrian-${PV}
 	)
-	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )
-	test? ( ${PYTHON_DEPS} )
+	!ghcbootstrap? (
+		${PREBUILT_BINARY_DEPENDS}
+	)
+	test? (
+		${PYTHON_DEPS}
+	)
 "
 
 needs_python() {
 	# test driver is written in python
 	use test && return 0
+	use doc && return 0
 	return 1
 }
 
@@ -198,6 +205,11 @@ REQUIRED_USE="
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
+
+python_check_deps() {
+	python_has_version "dev-python/sphinx[${PYTHON_USEDEP}]" &&
+	python_has_version "dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]"
+}
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
