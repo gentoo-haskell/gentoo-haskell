@@ -28,7 +28,6 @@ dev-haskell/stan
 # not been tested in a long time.
 #
 # Removal: 2023-11-10
-<dev-lang/ghc-9
 <dev-haskell/ghc-api-compat-9
 <dev-haskell/haddock-api-2.25
 <dev-haskell/haddock-2.25
