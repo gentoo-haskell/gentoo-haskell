@@ -6,6 +6,7 @@ Quick-n-dirty start (aka. initial preparation):
 - go to ``dev-lang/ghc/``
 - copy latest ebuild
 - #comment-out all binary ``URIs`` from there (as we don't have them yet)
+  - #comment-out all the options in ``yet_binary()``
 - look at ``CABAL_CORE_LIB_GHC_PV`` variable in ebuilds and check
   what ones you need to update. I usually look at ``ghc/libraries/*/*.cabal``
   in ghc source tarball.

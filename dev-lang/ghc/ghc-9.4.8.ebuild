@@ -77,7 +77,7 @@ yet_binary() {
 				#alpha) return 0 ;;
 				#arm64) return 0 ;;
 				#arm) return 0 ;;
-				amd64) return 0 ;;
+				#amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
 				#ppc64) return 0 ;;
@@ -92,7 +92,7 @@ yet_binary() {
 				#alpha) return 0 ;;
 				#arm64) return 0 ;;
 				#arm) return 0 ;;
-				amd64) return 0 ;;
+				#amd64) return 0 ;;
 				#ia64) return 0 ;;
 				#ppc) return 0 ;;
 				#ppc64)
