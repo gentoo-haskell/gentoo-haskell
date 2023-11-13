@@ -10,6 +10,8 @@ Quick-n-dirty start (aka. initial preparation):
 - look at ``CABAL_CORE_LIB_GHC_PV`` variable in ebuilds and check
   what ones you need to update. I usually look at ``ghc/libraries/*/*.cabal``
   in ghc source tarball.
+  - ``grep -l -r CABAL_CORE_LIB_GHC_PV= */*/*.ebuild | sort``
+  - ``grep -i ^version: */*.cabal Cabal/*/*.cabal | sort``
 
 Done! You can safely try to emerge your shiny new ghc!
 
