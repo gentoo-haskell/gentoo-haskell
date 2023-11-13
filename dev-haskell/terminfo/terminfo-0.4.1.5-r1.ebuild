@@ -24,4 +24,4 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
-CABAL_CORE_LIB_GHC_PV="9.0.2 9.2.4 9.2.5 9.2.6 9.2.7 9.2.8 9.4.4 9.4.5 9.4.7"
+CABAL_CORE_LIB_GHC_PV="9.0.2 9.2.4 9.2.5 9.2.6 9.2.7 9.2.8 9.4.4 9.4.5 9.4.7 9.4.8"
