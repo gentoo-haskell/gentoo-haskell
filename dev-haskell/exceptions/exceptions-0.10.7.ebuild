@@ -33,4 +33,4 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4
 #	)
 
-CABAL_CORE_LIB_GHC_PV="9.6.2"
+CABAL_CORE_LIB_GHC_PV="9.6.2 9.6.3"
