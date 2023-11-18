@@ -23,7 +23,7 @@ IUSE=""
 
 RDEPEND="dev-db/unixODBC
 	>=dev-haskell/concurrent-extra-0.7.0.8:=[profile?]
-	>=dev-haskell/hdbc-2.1.0:2=[profile?]
+	>=dev-haskell/hdbc-2.1.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-7.4.1:=

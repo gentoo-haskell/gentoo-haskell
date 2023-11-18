@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/convertible:=[profile?]
 	dev-haskell/dlist:=[profile?]
-	>=dev-haskell/hdbc-2:2=[profile?]
+	>=dev-haskell/hdbc-2:=[profile?]
 	dev-haskell/hdbc-session:=[profile?]
 	dev-haskell/names-th:=[profile?]
 	>=dev-haskell/persistable-record-0.6:=[profile?]

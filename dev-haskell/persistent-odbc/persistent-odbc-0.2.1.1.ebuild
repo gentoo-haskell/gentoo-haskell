@@ -19,7 +19,7 @@ IUSE="debug tester"
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/conduit:=[profile?]
 	dev-haskell/convertible:=[profile?]
-	>=dev-haskell/hdbc-2.1.0:2=[profile?]
+	>=dev-haskell/hdbc-2.1.0:=[profile?]
 	>=dev-haskell/hdbc-odbc-2.6.0.0:=[profile?]
 	dev-haskell/monad-logger:=[profile?]
 	>=dev-haskell/persistent-2.6.0:=[profile?]

@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:
 	!binary? ( scientific? ( >=dev-haskell/scientific-0.3:=[profile?] )
 			text? ( >=dev-haskell/text-1:=[profile?] )
 			uuid? ( >=dev-haskell/uuid-1.3:=[profile?] ) )
-	hdbc? ( >=dev-haskell/hdbc-2.2:2=[profile?] )
+	hdbc? ( >=dev-haskell/hdbc-2.2:=[profile?] )
 	md5? ( >=dev-haskell/cryptonite-0.5:=[profile?]
 		>=dev-haskell/memory-0.5:=[profile?] )
 	tls? ( dev-haskell/data-default:=[profile?]
