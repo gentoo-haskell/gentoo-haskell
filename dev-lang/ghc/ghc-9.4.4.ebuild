@@ -206,8 +206,10 @@ REQUIRED_USE="
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
 
 python_check_deps() {
-	python_has_version "dev-python/sphinx[${PYTHON_USEDEP}]" &&
-	python_has_version "dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]"
+	if use doc; then
+		python_has_version "dev-python/sphinx[${PYTHON_USEDEP}]" &&
+		python_has_version "dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]"
+	fi
 }
 
 is_crosscompile() {
