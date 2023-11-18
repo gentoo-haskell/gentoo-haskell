@@ -20,7 +20,7 @@ RDEPEND=">=dev-haskell/hspec-2.10:=[profile?] <dev-haskell/hspec-2.11:=[profile?
 	>=dev-haskell/hspec-core-2.10:=[profile?] <dev-haskell/hspec-core-2.11:=[profile?]
 	>=dev-haskell/tasty-smallcheck-0.1:=[profile?] <dev-haskell/tasty-smallcheck-0.9:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
-	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.7:=[profile?] <dev-haskell/quickcheck-2.15:=[profile?]
 	>=dev-haskell/tasty-1.3:=[profile?] <dev-haskell/tasty-1.5:=[profile?]
 	>=dev-haskell/tasty-quickcheck-0.9.1:=[profile?] <dev-haskell/tasty-quickcheck-0.11:=[profile?]
 "

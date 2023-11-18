@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/mtl-2.2.1:=[profile?]
-	>=dev-haskell/quickcheck-2.8.1:2=[profile?]
+	>=dev-haskell/quickcheck-2.8.1:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
 DEPEND="${RDEPEND}

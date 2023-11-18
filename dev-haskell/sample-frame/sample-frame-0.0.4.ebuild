@@ -16,7 +16,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="buildbenchmarks"
 
-RDEPEND=">=dev-haskell/quickcheck-1.0:2=[profile?] <dev-haskell/quickcheck-3.0:2=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-1.0:=[profile?] <dev-haskell/quickcheck-3.0:=[profile?]
 	>=dev-haskell/storable-record-0.0.2:=[profile?] <dev-haskell/storable-record-0.1:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	buildbenchmarks? ( >=dev-haskell/storable-tuple-0.0.1:=[profile?] <dev-haskell/storable-tuple-0.1:=[profile?]

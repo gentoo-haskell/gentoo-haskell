@@ -29,7 +29,7 @@ RDEPEND="
 	>=dev-haskell/generic-lens-2.1:=[profile?] <dev-haskell/generic-lens-3.0
 	>=dev-haskell/generic-lens-core-2.1:=[profile?] <dev-haskell/generic-lens-core-3.0
 	=dev-haskell/named-0.3*
-	>=dev-haskell/quickcheck-2.12.6:2=[profile?] <dev-haskell/quickcheck-2.15
+	>=dev-haskell/quickcheck-2.12.6:=[profile?] <dev-haskell/quickcheck-2.15
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}

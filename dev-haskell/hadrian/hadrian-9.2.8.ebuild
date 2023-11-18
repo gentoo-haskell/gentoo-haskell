@@ -30,7 +30,7 @@ CABAL_CHDEPS=(
 RDEPEND="
 	>=dev-haskell/cabal-3.2:=
 	>=dev-haskell/extra-1.4.7:=
-	>=dev-haskell/quickcheck-2.6:2= <dev-haskell/quickcheck-2.15:2=
+	>=dev-haskell/quickcheck-2.6:= <dev-haskell/quickcheck-2.15:=
 	>=dev-haskell/unordered-containers-0.2.1:= <dev-haskell/unordered-containers-0.3:=
 	>=dev-lang/ghc-8.4.3:=
 	>=dev-util/shake-0.18.3:= <dev-util/shake-0.20:=

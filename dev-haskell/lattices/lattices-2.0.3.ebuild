@@ -22,7 +22,7 @@ RDEPEND=">=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0
 	>=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/integer-logarithms-1.0.3:=[profile?] <dev-haskell/integer-logarithms-1.1:=[profile?]
 	>=dev-haskell/onetuple-0.3:=[profile?] <dev-haskell/onetuple-0.4:=[profile?]
-	>=dev-haskell/quickcheck-2.12.6.1:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.12.6.1:=[profile?] <dev-haskell/quickcheck-2.15:=[profile?]
 	>=dev-haskell/semigroupoids-5.3.2:=[profile?] <dev-haskell/semigroupoids-5.4:=[profile?]
 	>=dev-haskell/tagged-0.8.6:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-haskell/universe-base-1.1:=[profile?] <dev-haskell/universe-base-1.2:=[profile?]

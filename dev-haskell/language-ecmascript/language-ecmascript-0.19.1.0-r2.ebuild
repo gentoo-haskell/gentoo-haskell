@@ -28,7 +28,7 @@ RDEPEND="
 	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-haskell/diff-0.4:=[profile?] <dev-haskell/diff-0.5:=[profile?]
 	>dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-3.2.0:=[profile?]
-	>=dev-haskell/quickcheck-2.5:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
+	>=dev-haskell/quickcheck-2.5:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
 	>=dev-haskell/uniplate-1.6:=[profile?] <dev-haskell/uniplate-1.7:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
 "

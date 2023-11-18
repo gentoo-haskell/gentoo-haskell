@@ -23,7 +23,7 @@ RESTRICT=test # optimization-dependent
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/mtl-1.1:=[profile?]
-	>=dev-haskell/quickcheck-2.4:2=[profile?]
+	>=dev-haskell/quickcheck-2.4:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?]

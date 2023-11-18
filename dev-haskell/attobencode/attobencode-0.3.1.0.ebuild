@@ -27,7 +27,7 @@ RDEPEND="dev-haskell/attoparsec:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
-	test? ( >=dev-haskell/quickcheck-2.4:2
+	test? ( >=dev-haskell/quickcheck-2.4
 		dev-haskell/test-framework
 		dev-haskell/test-framework-quickcheck2 )
 "

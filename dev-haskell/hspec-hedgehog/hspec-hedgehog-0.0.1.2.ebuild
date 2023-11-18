@@ -22,7 +22,7 @@ RDEPEND="
 	>=dev-haskell/hspec-2.5.8:=[profile?] <dev-haskell/hspec-3:=[profile?]
 	>=dev-haskell/hspec-core-2.5.8:=[profile?] <dev-haskell/hspec-core-3:=[profile?]
 	>=dev-haskell/hunit-1.5:=[profile?] <dev-haskell/hunit-2:=[profile?]
-	>=dev-haskell/quickcheck-2.9.2:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
+	>=dev-haskell/quickcheck-2.9.2:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
 	>=dev-haskell/splitmix-0.0.1:=[profile?] <dev-haskell/splitmix-1:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
 "

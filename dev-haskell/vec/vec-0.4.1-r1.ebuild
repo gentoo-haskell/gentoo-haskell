@@ -29,7 +29,7 @@ RDEPEND=">=dev-haskell/boring-0.2:=[profile?] <dev-haskell/boring-0.3:=[profile?
 	>=dev-haskell/fin-0.2.1:=[profile?] <dev-haskell/fin-0.3:=[profile?]
 	>=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/indexed-traversable-0.1.1:=[profile?] <dev-haskell/indexed-traversable-0.2:=[profile?]
-	>=dev-haskell/quickcheck-2.14.2:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.14.2:=[profile?] <dev-haskell/quickcheck-2.15:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	adjunctions? ( >=dev-haskell/adjunctions-4.4:=[profile?] <dev-haskell/adjunctions-4.5:=[profile?] )
 	distributive? ( >=dev-haskell/distributive-0.5.3:=[profile?] <dev-haskell/distributive-0.7:=[profile?] )

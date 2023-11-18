@@ -15,7 +15,7 @@ DESCRIPTION="Automatic testing of Haskell programs"
 HOMEPAGE="https://github.com/nick8325/quickcheck"
 
 LICENSE="BSD"
-SLOT="2/${PV}"
+SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux"
 IUSE="+template-haskell"
 

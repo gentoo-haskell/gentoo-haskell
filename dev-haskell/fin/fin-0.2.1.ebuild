@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/boring-0.2:=[profile?] <dev-haskell/boring-0.3:=[profile?]
 	>=dev-haskell/dec-0.0.4:=[profile?] <dev-haskell/dec-0.1:=[profile?]
 	>=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
-	>=dev-haskell/quickcheck-2.13.2:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.13.2:=[profile?] <dev-haskell/quickcheck-2.15:=[profile?]
 	>=dev-haskell/some-1.0.3:=[profile?] <dev-haskell/some-1.1:=[profile?]
 	>=dev-haskell/universe-base-1.1.2:=[profile?] <dev-haskell/universe-base-1.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=

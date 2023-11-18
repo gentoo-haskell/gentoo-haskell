@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-haskell/hunit:=[profile?]
-	>=dev-haskell/quickcheck-2.4.0.1:2=[profile?]
+	>=dev-haskell/quickcheck-2.4.0.1:=[profile?]
 	dev-haskell/random:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "

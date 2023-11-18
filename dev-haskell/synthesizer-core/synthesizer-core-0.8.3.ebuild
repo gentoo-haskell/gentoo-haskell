@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/event-list-0.1:=[profile?] <dev-haskell/event-list-0.2:=[
 	>=dev-haskell/numeric-prelude-0.4.2:=[profile?] <dev-haskell/numeric-prelude-0.5:=[profile?]
 	>=dev-haskell/numeric-quest-0.1:=[profile?] <dev-haskell/numeric-quest-0.3:=[profile?]
 	|| ( dev-lang/ghc ( >=dev-haskell/process-1.0[profile?] <dev-haskell/process-1.7[profile?] ) )
-	>=dev-haskell/quickcheck-1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
+	>=dev-haskell/quickcheck-1:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
 	>=dev-haskell/random-1.0:=[profile?] <dev-haskell/random-2.0:=[profile?]
 	>=dev-haskell/sample-frame-np-0.0.5:=[profile?] <dev-haskell/sample-frame-np-0.1:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-1.0:=[profile?]

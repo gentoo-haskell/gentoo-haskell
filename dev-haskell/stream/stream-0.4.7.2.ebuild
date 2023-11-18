@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/lazysmallcheck-0.3:=[profile?]
-	>=dev-haskell/quickcheck-2.0:2=[profile?]
+	>=dev-haskell/quickcheck-2.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}

@@ -30,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.4:=[profile?] <dev-haskell/aeson-2.2:=[profile?
 	>=dev-haskell/microlens-0.4.10:=[profile?] <dev-haskell/microlens-0.6:=[profile?]
 	>=dev-haskell/postgresql-simple-0.5.4:=[profile?] <dev-haskell/postgresql-simple-0.7.0.0:=[profile?]
 	>=dev-haskell/pretty-simple-2.2.0:=[profile?] <dev-haskell/pretty-simple-4.2:=[profile?]
-	>=dev-haskell/quickcheck-2.13:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.13:=[profile?] <dev-haskell/quickcheck-2.15:=[profile?]
 	>=dev-haskell/quickcheck-instances-0.3:=[profile?] <dev-haskell/quickcheck-instances-0.4:=[profile?]
 	dev-haskell/resource-pool:=[profile?]
 	>=dev-haskell/scientific-0.3.6:=[profile?] <dev-haskell/scientific-0.5:=[profile?]

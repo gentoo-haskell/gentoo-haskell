@@ -40,7 +40,7 @@ RDEPEND="
 		dev-libs/gmp[static-libs]
 	)
 	test? (
-		>=dev-haskell/quickcheck-2.6:2= <dev-haskell/quickcheck-2.15:2=
+		>=dev-haskell/quickcheck-2.6:= <dev-haskell/quickcheck-2.15:=
 	)
 "
 DEPEND="${RDEPEND}

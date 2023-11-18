@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 IUSE="+cfg intersection"
 
 RDEPEND="
-	>=dev-haskell/quickcheck-2.14.2:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.14.2:=[profile?] <dev-haskell/quickcheck-2.15:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	cfg? (
 		>=dev-haskell/fin-0.2:=[profile?] <dev-haskell/fin-0.3:=[profile?]

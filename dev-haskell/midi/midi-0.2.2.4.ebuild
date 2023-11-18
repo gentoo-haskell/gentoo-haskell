@@ -19,7 +19,7 @@ RDEPEND=">=dev-haskell/event-list-0.0.9:=[profile?] <dev-haskell/event-list-0.2:
 	>=dev-haskell/explicit-exception-0.1:=[profile?] <dev-haskell/explicit-exception-0.3:=[profile?]
 	>=dev-haskell/monoid-transformer-0.0.4:=[profile?] <dev-haskell/monoid-transformer-0.1:=[profile?]
 	>=dev-haskell/non-negative-0.0.1:=[profile?] <dev-haskell/non-negative-0.2:=[profile?]
-	>=dev-haskell/quickcheck-2.1:2=[profile?] <dev-haskell/quickcheck-3:2=[profile?]
+	>=dev-haskell/quickcheck-2.1:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
 	>=dev-haskell/random-1:=[profile?] <dev-haskell/random-2:=[profile?]
 	>=dev-haskell/semigroups-0.1:=[profile?] <dev-haskell/semigroups-1.0:=[profile?]
 	>=dev-haskell/utility-ht-0.0.10:=[profile?] <dev-haskell/utility-ht-0.1:=[profile?]

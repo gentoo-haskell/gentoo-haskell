@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/quickcheck-2.13:2=[profile?]
+RDEPEND=">=dev-haskell/quickcheck-2.13:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/validity-0.12:=[profile?]
 	>=dev-lang/ghc-8.8.1:=

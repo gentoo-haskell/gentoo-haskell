@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/contravariant-1.3:=[profile?] <dev-haskell/contravariant-
 	>=dev-haskell/hashable-1.3:=[profile?] <dev-haskell/hashable-2.0:=[profile?]
 	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-10.0:=[profile?]
 	>=dev-haskell/profunctors-5.2.1:=[profile?] <dev-haskell/profunctors-6.0:=[profile?]
-	>=dev-haskell/quickcheck-2.4:2=[profile?] <dev-haskell/quickcheck-3.0:2=[profile?]
+	>=dev-haskell/quickcheck-2.4:=[profile?] <dev-haskell/quickcheck-3.0:=[profile?]
 	>=dev-haskell/reflection-2.0:=[profile?] <dev-haskell/reflection-3.0:=[profile?]
 	>=dev-haskell/tagged-0.8:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	>=dev-lang/ghc-9.0.2:=

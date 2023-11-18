@@ -33,7 +33,7 @@ RDEPEND="
 	>=dev-haskell/hashable-1.2.1.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/interpolate-0.2:=[profile?] <dev-haskell/interpolate-0.3:=[profile?]
 	>=dev-haskell/lens-4.10:=[profile?] <dev-haskell/lens-5.3:=[profile?]
-	>=dev-haskell/quickcheck-2.7:2=[profile?] <dev-haskell/quickcheck-2.15:2=[profile?]
+	>=dev-haskell/quickcheck-2.7:=[profile?] <dev-haskell/quickcheck-2.15:=[profile?]
 	>=dev-haskell/recursion-schemes-5.1:=[profile?] <dev-haskell/recursion-schemes-5.3:=[profile?]
 	>=dev-haskell/reflection-2:=[profile?] <dev-haskell/reflection-2.2:=[profile?]
 	>=dev-haskell/singletons-2.0:=[profile?] <dev-haskell/singletons-3.1:=[profile?]
