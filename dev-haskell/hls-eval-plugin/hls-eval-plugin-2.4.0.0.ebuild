@@ -38,7 +38,7 @@ RDEPEND="
 	>=dev-haskell/megaparsec-9.0:=[profile?]
 	>=dev-haskell/parser-combinators-1.2:=[profile?]
 	dev-haskell/pretty-simple:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	dev-haskell/safe-exceptions:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unliftio:=[profile?]
