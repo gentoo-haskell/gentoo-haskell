@@ -20,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="dev-haskell/hdbc:2=[profile?]
+RDEPEND="dev-haskell/hdbc:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}

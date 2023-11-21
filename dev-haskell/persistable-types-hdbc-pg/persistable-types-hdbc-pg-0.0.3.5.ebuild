@@ -22,7 +22,7 @@ IUSE=""
 
 RDEPEND="dev-haskell/convertible:=[profile?]
 	dev-haskell/dlist:=[profile?]
-	dev-haskell/hdbc:2=[profile?]
+	dev-haskell/hdbc:=[profile?]
 	>=dev-haskell/persistable-record-0.4:=[profile?]
 	>=dev-haskell/relational-query-0.12:=[profile?]
 	dev-haskell/relational-query-hdbc:=[profile?]
