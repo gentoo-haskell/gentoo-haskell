@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/genvalidity-text-0.5:=[profile?]
 	>=dev-haskell/genvalidity-unordered-containers-0.2:=[profile?]
 	>=dev-haskell/genvalidity-vector-0.2:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	>=dev-haskell/validity-0.5:=[profile?]
 	>=dev-haskell/validity-aeson-0.2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=

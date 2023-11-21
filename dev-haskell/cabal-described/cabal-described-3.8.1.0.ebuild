@@ -29,7 +29,7 @@ SLOT="0/${PV}"
 RDEPEND="
 	>=dev-haskell/cabal-3.8.0.0:=[profile?] <dev-haskell/cabal-3.9:=[profile?]
 	>=dev-haskell/cabal-syntax-3.8.0.0:=[profile?] <dev-haskell/cabal-syntax-3.9:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	>=dev-haskell/rere-0.1:=[profile?] <dev-haskell/rere-0.3:=[profile?]
 	dev-haskell/tasty:=[profile?]
 	dev-haskell/tasty-quickcheck:=[profile?]

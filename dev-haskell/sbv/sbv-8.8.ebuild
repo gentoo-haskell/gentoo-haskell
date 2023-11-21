@@ -23,7 +23,7 @@ RESTRICT=test
 RDEPEND="dev-haskell/async:=[profile?]
 	dev-haskell/cracknum:=[profile?]
 	dev-haskell/mtl:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	dev-haskell/random:=[profile?]
 	dev-haskell/syb:=[profile?]
 	>=dev-lang/ghc-8.4.3:=

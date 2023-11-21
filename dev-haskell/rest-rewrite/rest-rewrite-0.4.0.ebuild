@@ -25,7 +25,7 @@ CABAL_HADDOCK_TARGETS="lib:${CABAL_PN}"
 RDEPEND="
 	>=dev-haskell/hashable-1.3.0:=[profile?]
 	>=dev-haskell/monad-loops-0.4.3:=[profile?] <dev-haskell/monad-loops-0.5:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.13:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-8.8.4:=
 "

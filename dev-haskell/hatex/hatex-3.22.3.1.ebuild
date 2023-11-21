@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/bibtex-0.1:=[profile?] <dev-haskell/bibtex-0.2:=[profile?
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	dev-haskell/matrix:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

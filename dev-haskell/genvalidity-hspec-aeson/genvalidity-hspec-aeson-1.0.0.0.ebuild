@@ -20,7 +20,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/genvalidity-1.0:=[profile?]
 	>=dev-haskell/genvalidity-hspec-0.6:=[profile?]
 	dev-haskell/hspec:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

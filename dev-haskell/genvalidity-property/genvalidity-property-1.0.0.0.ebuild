@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/genvalidity-1.0:=[profile?]
 	>=dev-haskell/hspec-2.1:=[profile?]
 	dev-haskell/pretty-show:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	>=dev-haskell/validity-0.9:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "

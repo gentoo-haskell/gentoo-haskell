@@ -21,7 +21,7 @@ RDEPEND="dev-haskell/cabal:=[profile?]
 	dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-haskell/hint-0.3.1:=[profile?]
 	>dev-haskell/mtl-2:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	>=dev-haskell/show-0.3:=[profile?]
 	dev-haskell/simple-reflect:=[profile?]
 	>=dev-lang/ghc-7.4.1:=

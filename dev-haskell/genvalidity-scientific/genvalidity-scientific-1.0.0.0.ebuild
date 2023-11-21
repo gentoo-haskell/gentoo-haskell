@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/genvalidity-1.0:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	dev-haskell/scientific:=[profile?]
 	>=dev-haskell/validity-0.5:=[profile?]
 	>=dev-haskell/validity-scientific-0.2:=[profile?]

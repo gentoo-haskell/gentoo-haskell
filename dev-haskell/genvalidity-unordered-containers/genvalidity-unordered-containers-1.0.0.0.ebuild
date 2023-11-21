@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/genvalidity-1.0:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	dev-haskell/quickcheck:2=[profile?]
+	dev-haskell/quickcheck:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-haskell/validity-0.5:=[profile?]
 	>=dev-haskell/validity-unordered-containers-0.1:=[profile?]

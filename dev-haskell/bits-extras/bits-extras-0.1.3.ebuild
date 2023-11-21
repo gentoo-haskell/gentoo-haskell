@@ -21,7 +21,7 @@ RESTRICT=test # fails trailingZeros test
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 	test? ( dev-haskell/hunit:=[profile?]
-		dev-haskell/quickcheck:2=[profile?]
+		dev-haskell/quickcheck:=[profile?]
 		dev-haskell/test-framework:=[profile?]
 		dev-haskell/test-framework-hunit:=[profile?]
 		dev-haskell/test-framework-quickcheck2:=[profile?] )

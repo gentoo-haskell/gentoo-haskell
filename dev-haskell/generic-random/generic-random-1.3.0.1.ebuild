@@ -19,7 +19,7 @@ IUSE=""
 
 RESTRICT=test # Test build fails: depends on QC version
 
-RDEPEND="dev-haskell/quickcheck:2=[profile?]
+RDEPEND="dev-haskell/quickcheck:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
