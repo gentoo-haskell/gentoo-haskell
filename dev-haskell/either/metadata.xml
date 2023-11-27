@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
+		<remote-id type="hackage">either</remote-id>
 		<remote-id type="github">ekmett/either</remote-id>
 	</upstream>
 </pkgmetadata>
