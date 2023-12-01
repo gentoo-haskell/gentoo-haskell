@@ -17,6 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-1.6.2.2-support-optparse-0_18.patch"
+)
+
 RDEPEND="dev-haskell/aeson:=
 	>=dev-haskell/cabal-1.18:=
 	>=dev-haskell/conduit-1.3:=
