@@ -16,6 +16,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="compare-benchmarks"
 
+RESTRICT="test" # Error: "This test is taking too long..."
+
 RDEPEND="
 	>=dev-haskell/atomic-primops-0.8:=[profile?]
 	>=dev-haskell/primitive-0.5.3:=[profile?]
