@@ -6,6 +6,18 @@
 # Removal: 2023-12-12
 dev-haskell/terminfo
 
+# Jack Todaro <solpeth@posteo.org> (2023-12-08)
+# Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
+=dev-haskell/irc-core-2.12
+
+# hololeap <hololeap@protonmail.com> (2023-11-12)
+# No reverse dependencies, internal GHC lib that should not be exposed
+# as a Gentoo package. Mask for removal.
+# See: <https://github.com/gentoo-haskell/gentoo-haskell/issues/1386>
+#
+# Removal: 2023-12-12
+dev-haskell/terminfo
+
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of
 # lsp-test.
