@@ -30,6 +30,7 @@ CABAL_CHDEPS=(
 	'bytestring        >= 0.10.6 && < 0.11' 'bytestring >= 0.10.6'
 	'time              >= 1.5.0.1 && < 1.10' 'time >= 1.5.0.1'
 	'unix-compat       >= 0.5 && < 0.6' 'unix-compat >= 0.5'
+	'http-types        >= 0.12.1 && < 0.12.4' 'http-types        >= 0.12.1'
 )
 
 RDEPEND="
@@ -45,7 +46,7 @@ RDEPEND="
 	>=dev-haskell/haskeline-0.7.2:=[profile?] <dev-haskell/haskeline-0.9:=[profile?]
 	>=dev-haskell/html-1.0.1.2:=[profile?] <dev-haskell/html-1.1:=[profile?]
 	>=dev-haskell/http-conduit-2.3:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
-	>=dev-haskell/http-types-0.12.1:=[profile?] <dev-haskell/http-types-0.12.4:=[profile?]
+	>=dev-haskell/http-types-0.12.1:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
 	>=dev-haskell/memory-0.14:=[profile?]
 	>=dev-haskell/mmap-0.5.9:=[profile?] <dev-haskell/mmap-0.6:=[profile?]
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2:=[profile?]
