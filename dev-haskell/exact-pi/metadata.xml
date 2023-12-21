@@ -5,8 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Provides an exact representation for rational multiples of pi alongside an approximate representation of all reals.
-		Useful for storing and computing with conversion factors between physical units.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">exact-pi</remote-id>
+		<remote-id type="github">dmcclean/exact-pi</remote-id>
+	</upstream>
 </pkgmetadata>
