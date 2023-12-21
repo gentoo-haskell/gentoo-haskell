@@ -34,4 +34,8 @@
 		* memoization of functions of several, possibly signed arguments,
 		* efficient memoization of boolean predicates.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">chimera</remote-id>
+		<remote-id type="github">Bodigrim/chimera</remote-id>
+	</upstream>
 </pkgmetadata>
