@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription>
+		A math-inspired programmatic CAD library in haskell.
+		Build objects with constructive solid geometry, bevels,
+		shells and more in 2D &amp; 3D. Then export to SVGs, STLs,
+		or produce gcode directly!
+	</longdescription>
+</pkgmetadata>
