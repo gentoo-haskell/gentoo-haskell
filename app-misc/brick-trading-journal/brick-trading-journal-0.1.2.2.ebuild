@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,9 +19,9 @@ S="${WORKDIR}/${PN}"
 
 RDEPEND=">=dev-haskell/beam-core-0.10.0.0:= <dev-haskell/beam-core-0.11:=
 	>=dev-haskell/beam-sqlite-0.5.2.0:= <dev-haskell/beam-sqlite-0.6:=
-	>=dev-haskell/brick-1.10:= <dev-haskell/brick-2.0:=
-	>=dev-haskell/brick-list-skip-0.1.1.9:= <dev-haskell/brick-list-skip-0.2:=
-	>=dev-haskell/brick-tabular-list-2.2.0.7:= <dev-haskell/brick-tabular-list-2.3:=
+	>=dev-haskell/brick-2.2:= <dev-haskell/brick-2.4:=
+	>=dev-haskell/brick-list-skip-0.1.1.10:= <dev-haskell/brick-list-skip-0.2:=
+	>=dev-haskell/brick-tabular-list-2.2.0.8:= <dev-haskell/brick-tabular-list-2.3:=
 	>=dev-haskell/decimal-0.5.2:= <dev-haskell/decimal-0.6:=
 	>=dev-haskell/megaparsec-9.5.0:= <dev-haskell/megaparsec-9.7:=
 	>=dev-haskell/microlens-0.4.13:= <dev-haskell/microlens-0.5:=
@@ -33,7 +33,8 @@ RDEPEND=">=dev-haskell/beam-core-0.10.0.0:= <dev-haskell/beam-core-0.11:=
 	>=dev-haskell/scientific-0.3.7.0:= <dev-haskell/scientific-0.4:=
 	>=dev-haskell/sqlite-simple-0.4.18.2:= <dev-haskell/sqlite-simple-0.5:=
 	>=dev-haskell/text-1.2.5.0:= <dev-haskell/text-3:=
-	>=dev-haskell/vty-5.39:= <dev-haskell/vty-6.0:=
+	>=dev-haskell/vty-6.1:= <dev-haskell/vty-6.2:=
+	>=dev-haskell/vty-crossplatform-0.4.0.0:= <dev-haskell/vty-crossplatform-0.5:=
 	>=dev-haskell/word-wrap-0.5:= <dev-haskell/word-wrap-0.6:=
 	>=dev-lang/ghc-9.2.5:=
 "
