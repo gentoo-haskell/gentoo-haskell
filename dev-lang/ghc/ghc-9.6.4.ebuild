@@ -639,7 +639,8 @@ src_prepare() {
 		#eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
 
 		# ModUnusable pretty-printing should include the reason
-		eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
+		# broken in 9.6.4
+		#eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
 
 		# Needed for testing with python-3.10
 		#use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
