@@ -638,17 +638,8 @@ src_prepare() {
 		#eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
 		#eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
 
-		# Incompatible with ghc-9.0.2-modorigin-semigroup.patch
-		# Below patch should not be needed by ghc-9.2
-		#eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
-
 		# ModUnusable pretty-printing should include the reason
 		eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
-
-		# Fixes panic when compiling some packages
-		# https://github.com/gentoo-haskell/gentoo-haskell/issues/1250#issuecomment-1044257595
-		# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
-		eapply "${FILESDIR}/${PN}-9.2.7-modorigin-semigroup.patch"
 
 		# Needed for testing with python-3.10
 		#use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
