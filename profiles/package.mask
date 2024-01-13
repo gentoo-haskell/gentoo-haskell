@@ -23,13 +23,6 @@ dev-haskell/terminfo
 # lsp-test.
 dev-haskell/ghcide-test-utils
 
-# hololeap <hololeap@protonmail.com> (2023-10-15)
-# These packages are no longer supported upstream by
-# haskell-language-server. Mask for removal.
-#
-# Removal: 2023-11-14
-dev-haskell/hls-brittany-plugin
-
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
 # Modern ormolu and fourmolu require >=dev-haskell/text-2 which is
