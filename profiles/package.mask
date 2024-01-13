@@ -41,7 +41,6 @@ dev-haskell/hls-tactics-plugin
 #
 # Removal: 2023-11-14
 dev-haskell/brittany
-dev-haskell/stan
 
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
