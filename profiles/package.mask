@@ -34,14 +34,6 @@ dev-haskell/hls-refine-imports-plugin
 dev-haskell/hls-stan-plugin
 dev-haskell/hls-tactics-plugin
 
-# hololeap <hololeap@protonmail.com> (2023-10-15)
-# Plugins using these packages are no longer supported upstream by
-# haskell-language-server and they have had issues keeping up with
-# new GHC versions. Mask for removal.
-#
-# Removal: 2023-11-14
-dev-haskell/brittany
-
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
 # Modern ormolu and fourmolu require >=dev-haskell/text-2 which is
