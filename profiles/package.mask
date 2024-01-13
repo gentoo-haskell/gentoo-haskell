@@ -31,7 +31,6 @@ dev-haskell/ghcide-test-utils
 dev-haskell/hls-brittany-plugin
 dev-haskell/hls-haddock-comments-plugin
 dev-haskell/hls-refine-imports-plugin
-dev-haskell/hls-stan-plugin
 
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
