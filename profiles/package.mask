@@ -30,7 +30,6 @@ dev-haskell/ghcide-test-utils
 # Removal: 2023-11-14
 dev-haskell/hls-brittany-plugin
 dev-haskell/hls-haddock-comments-plugin
-dev-haskell/hls-refine-imports-plugin
 
 # hololeap <hololeap@protonmail.com> (2023-07-14)
 #
