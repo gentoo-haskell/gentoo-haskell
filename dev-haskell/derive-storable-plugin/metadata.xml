@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="sumtypes">Use sumtypes within benchmark and tests.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">derive-storable-plugin</remote-id>
+		<remote-id type="github">mkloczko/derive-storable-plugin</remote-id>
+	</upstream>
+</pkgmetadata>
