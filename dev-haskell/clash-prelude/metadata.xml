@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="workaround-ghc-mmap-crash">Only use this flag when hit by GHC bug #19421. See clash-compiler PR #2444.</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">clash-prelude</remote-id>
 		<remote-id type="github">clash-lang/clash-compiler</remote-id>
