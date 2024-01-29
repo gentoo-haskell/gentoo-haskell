@@ -11,4 +11,8 @@
 		split into smaller, protocol-specific packages in the
 		future.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">HaskellNet</remote-id>
+		<remote-id type="github">qnikst/HaskellNet</remote-id>
+	</upstream>
 </pkgmetadata>
