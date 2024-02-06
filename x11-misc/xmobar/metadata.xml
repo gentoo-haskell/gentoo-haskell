@@ -12,6 +12,7 @@
 		<flag name="mpd">MPD support. Needs libmpd installed.</flag>
 		<flag name="mpris">MPRIS v1, v2 support.</flag>
 		<flag name="rtsopts">Use -with-rtsopts=-V0 to reduce wakeups.</flag>
+		<flag name="shared">Use shared libraries. Required when dependencies are built as shared libraries.</flag>
 		<flag name="uvmeter">UVMeter only useful to australians.</flag>
 		<flag name="weather">Enable weather plugin.</flag>
 		<flag name="wifi">Wireless info support via nl80211. Required for the Wireless plugin on systems running Linux, the kernel.</flag>
