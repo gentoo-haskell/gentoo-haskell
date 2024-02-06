@@ -55,6 +55,26 @@ If things are fine you can unmask it.
 
 Piece of cake!
 
+Finding library versions
+========================
+
+You can use this script to find the versions of all the core packages that ship with GHC:
+
+- ``./scripts/scan-ghc-library-versions.bash``
+
+This is useful when adding core lib version lists in hackport (``src/Portage/GHCCore.hs``).
+It needs to be run in the git directory for GHC.
+
+::
+
+    $ git clone https://gitlab.haskell.org/ghc/ghc.git/
+    $ cd ghc/
+    $ bash ${gentoo_haskell}/scripts/scan-ghc-library-versions.bash 9.4.8
+
+Note that it needs the GHC version you are inspecting as a parameter. The script runs
+``git checkout`` and ``git reset`` internally, so please don't use it where you can't
+afford to lose data.
+
 Random notes
 ============
 
