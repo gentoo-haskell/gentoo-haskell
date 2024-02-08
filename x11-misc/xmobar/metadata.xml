@@ -9,10 +9,10 @@
 		<flag name="alsa">Use alsa-mixer to get the volume from soundcards.</flag>
 		<flag name="datezone">Enables localized date support.</flag>
 		<flag name="dbus">Publish a service on the session bus for controlling xmobar.</flag>
-		<flag name="kraken">Enable Kraken plugin.</flag>
 		<flag name="mpd">MPD support. Needs libmpd installed.</flag>
 		<flag name="mpris">MPRIS v1, v2 support.</flag>
 		<flag name="rtsopts">Use -with-rtsopts=-V0 to reduce wakeups.</flag>
+		<flag name="shared">Use shared libraries. Required when dependencies are built as shared libraries.</flag>
 		<flag name="uvmeter">UVMeter only useful to australians.</flag>
 		<flag name="weather">Enable weather plugin.</flag>
 		<flag name="wifi">Wireless info support via nl80211. Required for the Wireless plugin on systems running Linux, the kernel.</flag>
