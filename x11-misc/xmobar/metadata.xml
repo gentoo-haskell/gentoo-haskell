@@ -21,5 +21,6 @@
 	</use>
 	<upstream>
 		<remote-id type="hackage">xmobar</remote-id>
+		<remote-id type="codeberg">xmobar/xmobar</remote-id>
 	</upstream>
 </pkgmetadata>
