@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,7 +21,7 @@ RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	>=dev-haskell/async-2.0:=[profile?]
 	dev-haskell/extra:=[profile?]
-	dev-haskell/focus:=[profile?]
+	>=dev-haskell/focus-1.0.3.2:=[profile?]
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/js-dgtable:=[profile?]
 	dev-haskell/js-flot:=[profile?]
@@ -31,13 +31,13 @@ RDEPEND="
 	dev-haskell/text:=[profile?]
 	dev-haskell/unliftio:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.10.6:=
+	>=dev-lang/ghc-9.0.2:=
 	embed-files? (
 		>=dev-haskell/file-embed-0.0.11:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.1.0
+	>=dev-haskell/cabal-3.4.1.0
 	test? (
 		dev-haskell/hspec
 		dev-haskell/tasty
