@@ -1,7 +1,7 @@
-# hololeap <hololeap@protonmail.com> (2024-01-21)
+# hololeap <hololeap@protonmail.com> (2024-02-11)
 #
 # No longer needed by HLS ecosystem, masked for removal
-# Removal: 2024-02-20
+# Removal: 2024-03-12
 dev-haskell/implicit-hie-cradle
 
 # Jack Todaro <solpeth@posteo.org> (2023-12-08)
