@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,8 +15,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND="
-	>=dev-haskell/aeson-1.2.2.0:=[profile?] <dev-haskell/aeson-2.2
+RDEPEND=">=dev-haskell/aeson-1.2.2.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/diff-0.2:=[profile?]
 	dev-haskell/dlist:=[profile?]
@@ -30,19 +29,17 @@ RDEPEND="
 	>=dev-haskell/network-uri-2.6:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
 	dev-haskell/regex:=[profile?]
-	dev-haskell/row-types:=[profile?]
+	>=dev-haskell/row-types-1.0:=[profile?]
 	dev-haskell/safe:=[profile?]
 	dev-haskell/some:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.10.6:=
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.1.0
-	test? (
-		>=dev-haskell/aeson-2.0.3.0
+	>=dev-haskell/cabal-3.4.1.0
+	test? ( >=dev-haskell/aeson-2.0.3.0
 		dev-haskell/hspec
 		dev-haskell/quickcheck
-		dev-haskell/quickcheck-instances
-	)
+		dev-haskell/quickcheck-instances )
 "
