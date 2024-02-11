@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,10 +15,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-0.16.0.0-disable-test-timeout.patch"
-)
-
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/aeson-pretty:=[profile?]
@@ -32,16 +28,16 @@ RDEPEND="
 	>=dev-haskell/glob-0.9:=[profile?] <dev-haskell/glob-0.11:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lens-aeson:=[profile?]
-	>=dev-haskell/lsp-2.2:=[profile?] <dev-haskell/lsp-2.3:=[profile?]
-	>=dev-haskell/lsp-types-2.0:=[profile?] <dev-haskell/lsp-types-2.1:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4:=[profile?]
+	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.2:=[profile?]
 	>=dev-haskell/parser-combinators-1.2:=[profile?]
 	dev-haskell/row-types:=[profile?]
 	dev-haskell/some:=[profile?]
 	dev-haskell/text:=[profile?]
-	>=dev-lang/ghc-8.10.6:=
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.1.0
+	>=dev-haskell/cabal-3.4.1.0
 	test? (
 		dev-haskell/hspec
 		dev-haskell/unliftio
