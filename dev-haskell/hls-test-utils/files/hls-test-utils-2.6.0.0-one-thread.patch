@@ -1,6 +1,6 @@
-From 8b0c10379a173eecd4101bc03305de52381e40c4 Mon Sep 17 00:00:00 2001
+From 117ac0756a6e3f7936f7d10a86b9fd0d822f5f67 Mon Sep 17 00:00:00 2001
 From: hololeap <hololeap@protonmail.com>
-Date: Sat, 14 Oct 2023 17:43:02 -0600
+Date: Sun, 11 Feb 2024 11:58:16 -0700
 Subject: [PATCH 1/1] Force one thread with an ENV variable
 
 From the README:
@@ -11,11 +11,11 @@ From the README:
 
 Signed-off-by: hololeap <hololeap@protonmail.com>
 ---
- src/Test/Hls.hs | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ src/Test/Hls.hs | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/src/Test/Hls.hs b/src/Test/Hls.hs
-index 24a84cd..e03646b 100644
+index 9320e3b..77cde8c 100644
 --- a/src/Test/Hls.hs
 +++ b/src/Test/Hls.hs
 @@ -113,7 +113,7 @@ import           Language.LSP.Test
@@ -27,17 +27,19 @@ index 24a84cd..e03646b 100644
  import           System.FilePath
  import           System.IO.Extra                    (newTempDir, withTempDir)
  import           System.IO.Unsafe                   (unsafePerformIO)
-@@ -152,7 +152,9 @@ instance Pretty LogTestHarness where
+@@ -152,7 +152,11 @@ instance Pretty LogTestHarness where
  
  -- | Run 'defaultMainWithRerun', limiting each single test case running at most 10 minutes
  defaultTestRunner :: TestTree -> IO ()
--defaultTestRunner = defaultMainWithRerun . adjustOption (const $ NumThreads 1) . adjustOption (const NoTimeout)
+-defaultTestRunner = defaultMainWithRerun . adjustOption (const $ NumThreads 1) . adjustOption (const $ mkTimeout 600000000)
 +defaultTestRunner t = do
 +    setEnv "TASTY_NUM_THREADS" "1"
-+    defaultMainWithRerun $ adjustOption (const $ NumThreads 1) $ adjustOption (const NoTimeout) t
++    defaultMainWithRerun
++        $ adjustOption (const $ NumThreads 1)
++        $ adjustOption (const $ mkTimeout 600000000) t
  
  gitDiff :: FilePath -> FilePath -> [String]
  gitDiff fRef fNew = ["git", "-c", "core.fileMode=false", "diff", "--no-index", "--text", "--exit-code", fRef, fNew]
 -- 
-2.41.0
+2.43.0
 
