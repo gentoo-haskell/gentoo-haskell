@@ -1,0 +1,73 @@
+From c6287701fee064922fbfd80c0f6b07a0a72e5d35 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Tue, 23 Jan 2024 18:53:40 -0700
+Subject: [PATCH 1/1] Modify expected output on file completer tests
+
+It isn't clear why, but there is a 'dist-newstyle' directory created at
+"${S}/test/testdata/filepath-completions/" which is not expected by the
+tests. This does not appear to be a problem on cabal-v2 builds and may
+be exclusive to Setup.hs (cabal-v1/gentoo) builds.
+
+This patch adds "./dist-newstyle/" to several tests' expected results so
+that they may pass.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/test/Completer.hs
++++ b/test/Completer.hs
+@@ -68,19 +68,19 @@ fileCompleterTests =
+     "File Completer Tests"
+     [ testCase "Current Directory" $ do
+         completions <- completeFilePath "" filePathComplTestDir
+-        completions @?== ["./.hidden", "./Content.hs", "./dir1/", "./dir2/", "./textfile.txt", "./main-is.cabal"],
++        completions @?== ["./.hidden", "./Content.hs", "./dir1/", "./dir2/", "./dist-newstyle/", "./textfile.txt", "./main-is.cabal"],
+       testCase "Current Directory - alternative writing" $ do
+         completions <- completeFilePath "./" filePathComplTestDir
+-        completions @?== ["./.hidden", "./Content.hs", "./dir1/", "./dir2/", "./textfile.txt", "./main-is.cabal"],
++        completions @?== ["./.hidden", "./Content.hs", "./dir1/", "./dir2/", "./dist-newstyle/", "./textfile.txt", "./main-is.cabal"],
+       testCase "Current Directory - hidden file start" $ do
+         completions <- completeFilePath "." filePathComplTestDir
+         completions @?== ["./Content.hs", "./.hidden", "./textfile.txt", "./main-is.cabal"],
+       testCase "Current Directory - incomplete directory path written" $ do
+         completions <- completeFilePath "di" filePathComplTestDir
+-        completions @?== ["./dir1/", "./dir2/"],
++        completions @?== ["./dir1/", "./dir2/", "./dist-newstyle/"],
+       testCase "Current Directory - incomplete filepath written" $ do
+         completions <- completeFilePath "te" filePathComplTestDir
+-        completions @?== ["./Content.hs", "./textfile.txt"],
++        completions @?== ["./Content.hs", "./dist-newstyle/", "./textfile.txt"],
+       testCase "Subdirectory" $ do
+         completions <- completeFilePath "dir1/" filePathComplTestDir
+         completions @?== ["dir1/f1.txt", "dir1/f2.hs"],
+@@ -138,7 +138,7 @@ filePathCompletionContextTests =
+                 queryDirectory = "",
+                 workingDirectory = filePathComplTestDir
+               }
+-        compls @?== [".hidden", "Content.hs", "dir1/", "dir2/", "textfile.txt", "main-is.cabal"],
++        compls @?== [".hidden", "Content.hs", "dir1/", "dir2/", "dist-newstyle/", "textfile.txt", "main-is.cabal"],
+       testCase "In directory" $ do
+         compls <-
+           listFileCompletions
+@@ -167,16 +167,16 @@ directoryCompleterTests =
+     "Directory Completer Tests"
+     [ testCase "Current Directory" $ do
+         completions <- completeDirectory "" filePathComplTestDir
+-        completions @?== ["./dir1/", "./dir2/"],
++        completions @?== ["./dir1/", "./dir2/", "./dist-newstyle/"],
+       testCase "Current Directory - alternative writing" $ do
+         completions <- completeDirectory "./" filePathComplTestDir
+-        completions @?== ["./dir1/", "./dir2/"],
++        completions @?== ["./dir1/", "./dir2/", "./dist-newstyle/"],
+       testCase "Current Directory - incomplete directory path written" $ do
+         completions <- completeDirectory "di" filePathComplTestDir
+-        completions @?== ["./dir1/", "./dir2/"],
++        completions @?== ["./dir1/", "./dir2/", "./dist-newstyle/"],
+       testCase "Current Directory - incomplete filepath written" $ do
+         completions <- completeDirectory "te" filePathComplTestDir
+-        completions @?== [],
++        completions @?== ["./dist-newstyle/"],
+       testCase "Subdirectory - no more directories found" $ do
+         completions <- completeDirectory "dir1/" filePathComplTestDir
+         completions @?== [],
+-- 
+2.43.0
+
