@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -93,7 +93,7 @@ RDEPEND="
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.6.3:=
+	>=dev-lang/ghc-9.0:=
 	hls_formatters_cabal-fmt? ( ~dev-haskell/hls-cabal-fmt-plugin-2.4.0.0:=[profile?] )
 	hls_formatters_floskell? ( ~dev-haskell/hls-floskell-plugin-2.4.0.0:=[profile?] )
 	hls_formatters_refactor? ( ~dev-haskell/hls-refactor-plugin-2.4.0.0:=[profile?] )
