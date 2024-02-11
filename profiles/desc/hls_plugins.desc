@@ -1,6 +1,6 @@
 # hololeap <hololeap@protonmail.com> (2021-01-30)
 # Plugins for dev-util/haskell-language-server
-# (Updated 2023-10-13)
+# (Updated 2024-01-20)
 
 alternate-number-format - Enable Alternate Number Format plugin
 cabal - Enable cabal plugin
@@ -20,4 +20,6 @@ pragmas - Enable pragmas plugin
 qualify-imported-names - Enable qualifyImportedNames plugin
 rename - Enable rename plugin
 retrie - Enable retrie plugin
+semantic-tokens - Enable semanticTokens plugin
 splice - Enable splice plugin
+stan - Enable stan plugin

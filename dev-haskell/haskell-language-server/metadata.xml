@@ -24,7 +24,9 @@
 		<flag name="hls_plugins_qualify-imported-names">Enable qualifyImportedNames plugin</flag>
 		<flag name="hls_plugins_rename">Enable rename plugin</flag>
 		<flag name="hls_plugins_retrie">Enable retrie plugin</flag>
+		<flag name="hls_plugins_semantic-tokens">Enable semanticTokens plugin</flag>
 		<flag name="hls_plugins_splice">Enable splice plugin</flag>
+<!-- 		<flag name="hls_plugins_stan">Enable stan plugin</flag> -->
 		<flag name="hls_formatters_cabal-fmt">Enable cabalfmt formatter</flag>
 		<flag name="hls_formatters_floskell">Enable floskell formatter</flag>
 <!-- 		<flag name="hls_formatters_fourmolu">Enable fourmolu formatter</flag> -->
