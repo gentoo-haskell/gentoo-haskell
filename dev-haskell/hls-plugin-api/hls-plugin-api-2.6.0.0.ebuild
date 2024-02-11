@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -27,11 +27,11 @@ RDEPEND="
 	dev-haskell/dlist:=[profile?]
 	dev-haskell/extra:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	~dev-haskell/hls-graph-2.4.0.0:=[profile?]
+	~dev-haskell/hls-graph-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lens-aeson:=[profile?]
-	>=dev-haskell/lsp-2.2:=[profile?] <dev-haskell/lsp-2.3:=[profile?]
-	>dev-haskell/megaparsec-9:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4:=[profile?]
+	>=dev-haskell/megaparsec-9.0:=[profile?]
 	>=dev-haskell/opentelemetry-0.4:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/prettyprinter:=[profile?]
@@ -40,13 +40,13 @@ RDEPEND="
 	dev-haskell/text:=[profile?]
 	dev-haskell/unliftio:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.10.6:=
+	>=dev-lang/ghc-9.0.2:=
 	fingertree? (
 		dev-haskell/hw-fingertree:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.1.0
+	>=dev-haskell/cabal-3.4.1.0
 	test? (
 		dev-haskell/lsp-types
 		dev-haskell/tasty
