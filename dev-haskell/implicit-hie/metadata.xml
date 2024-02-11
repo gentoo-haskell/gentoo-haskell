@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Build the gen-hie executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">implicit-hie</remote-id>
+		<remote-id type="github">Avi-D-coder/implicit-hie</remote-id>
+	</upstream>
 </pkgmetadata>
