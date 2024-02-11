@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,22 +18,22 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/extra:=[profile?]
-	~dev-haskell/ghcide-2.4.0.0:=[profile?]
+	~dev-haskell/ghcide-2.6.0.0:=[profile?]
 	dev-haskell/hie-compat:=[profile?]
 	dev-haskell/hls-graph:=[profile?]
-	~dev-haskell/hls-plugin-api-2.4.0.0:=[profile?]
+	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
-	>=dev-haskell/lsp-2.2.0.0:=[profile?] <dev-haskell/lsp-2.3:=[profile?]
+	>=dev-haskell/lsp-2.3.0.0:=[profile?] <dev-haskell/lsp-2.4:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	dev-haskell/syb:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
-	>=dev-lang/ghc-8.10.6:=
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.2.1.0
+	>=dev-haskell/cabal-3.4.1.0
 	test? (
-		~dev-haskell/hls-test-utils-2.4.0.0
+		~dev-haskell/hls-test-utils-2.6.0.0
 		dev-haskell/quickcheck
 		dev-haskell/tasty-quickcheck
 	)
