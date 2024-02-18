@@ -21,90 +21,37 @@ inherit check-reqs llvm unpacker
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-BIN_PV=${PV}
-[[ $PR != r0 ]] && BIN_REV=${PR}
-BIN_PVR="${BIN_PV}${BIN_REV:+-${BIN_REV}}"
+BOOTSTRAP_PV="9.4.3"
+SRC_URI="
+	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
+	!ghcbootstrap? (
+		https://downloads.haskell.org/~ghc/${PV}/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${BOOTSTRAP_PV}.tar.gz
+		amd64? ( https://downloads.haskell.org/~ghc/${BOOTSTRAP_PV}/ghc-${BOOTSTRAP_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
+	)
+"
 
-HADRIAN_BIN_PV="${PV}"
-#HADRIAN_BIN_REV=""
-HADRIAN_BIN_PVR="${HADRIAN_BIN_PV}${HADRIAN_BIN_REV:+-${HADRIAN_BIN_REV}}"
-
-DEFAULT_SRC_HOST="https://eidetic.codes"
-
-ghc_binaries() {
-	echo "
-		${DEFAULT_SRC_HOST}/${PN}-bin-${PVR}-${1}.gpkg.tar
-		!binary? ( ${DEFAULT_SRC_HOST}/hadrian-bin-${HADRIAN_BIN_PVR}-${1}.gpkg.tar )
-	"
+yet_binary() {
+	case ${ARCH} in
+		amd64)
+			return 0
+			;;
+		*)
+			return 1
+			;;
+	esac
 }
 
-# Differentiate glibc/musl
-
-#glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#glibc_binaries+=" amd64? ( $(ghc_binaries x86_64-pc-linux-gnu) )"
-#glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
-#glibc_binaries="$glibc_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
-#glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? lib/( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz ) )"
-#glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#glibc_binaries="$glibc_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
-
-#musl_binaries="$musl_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#musl_binaries+=" amd64? ( $(ghc_binaries x86_64-gentoo-linux-musl) )"
-#musl_binaries="$musl_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-musl.tbz2 )"
-#musl_binaries="$musl_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-musl.tbz2 )"
-#musl_binaries="$musl_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
-#musl_binaries="$musl_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
-#musl_binaries="$musl_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#musl_binaries="$musl_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-musl.tar.gz ) )"
-#musl_binaries="$musl_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-riscv64-unknown-linux-musl.tar.gz )"
-#musl_binaries="$musl_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#musl_binaries="$musl_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-musl.tbz2 )"
-
-[[ -n $glibc_binaries ]] && arch_binaries+=" elibc_glibc? ( $glibc_binaries )"
-[[ -n $musl_binaries ]] && arch_binaries+=" elibc_musl? ( $musl_binaries )"
-
-# various ports:
-#arch_binaries="$arch_binaries x86-fbsd? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86-fbsd.tbz2 )"
-
-# 0 - yet
-yet_binary() {
-	case "${ELIBC}" in
-		glibc)
-			case "${ARCH}" in
-				#alpha) return 0 ;;
-				#arm64) return 0 ;;
-				#arm) return 0 ;;
-				#amd64) return 0 ;;
-				#ia64) return 0 ;;
-				#ppc) return 0 ;;
-				#ppc64) return 0 ;;
-				#riscv) return 0 ;;
-				#sparc) return 0 ;;
-				#x86) return 0 ;;
-				*) return 1 ;;
-			esac
+# We are using the upstream static Alpine Linux binaries to bootstrap some
+# archs. These binaries have different properties than the ones we build
+# ourselves, so we need a way to check to see if they are in use.
+upstream_binary() {
+	case ${ARCH} in
+		amd64)
+			return 0
 			;;
-		musl)
-			case "${ARCH}" in
-				#alpha) return 0 ;;
-				#arm64) return 0 ;;
-				#arm) return 0 ;;
-				#amd64) return 0 ;;
-				#ia64) return 0 ;;
-				#ppc) return 0 ;;
-				#ppc64)
-				#	use big-endian || return 0
-				#	;;
-				#riscv) return 0 ;;
-				#sparc) return 0 ;;
-				#x86) return 0 ;;
-				*) return 1 ;;
-			esac
+		*)
+			return 1
 			;;
-		*) return 1 ;;
 	esac
 }
 
@@ -112,13 +59,7 @@ GHC_PV=${PV}
 #GHC_PV=8.10.0.20200123 # uncomment only for -alpha, -beta, -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
-SRC_URI="!binary? (
-	https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-src.tar.xz
-	test? ( https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
-)"
 S="${WORKDIR}"/${GHC_P}
-
-[[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
@@ -128,7 +69,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 #KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
-IUSE+=" binary"
 RESTRICT="!test? ( test )"
 
 LLVM_MAX_SLOT="16"
@@ -148,22 +88,6 @@ RDEPEND="
 	)
 "
 
-# This set of dependencies is needed to run
-# prebuilt ghc. We specifically avoid ncurses
-# dependency with:
-#    utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING
-PREBUILT_BINARY_DEPENDS="
-	!prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) )
-"
-# This set of dependencies is needed to install
-# ghc[binary] in system. terminfo package is linked
-# against ncurses.
-PREBUILT_BINARY_RDEPENDS="${PREBUILT_BINARY_DEPENDS}
-	sys-libs/ncurses:0/6
-"
-
-RDEPEND+="binary? ( ${PREBUILT_BINARY_RDEPENDS} )"
-
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
@@ -181,9 +105,6 @@ BDEPEND="
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
 		~dev-haskell/hadrian-${PV}
 	)
-	!ghcbootstrap? (
-		${PREBUILT_BINARY_DEPENDS}
-	)
 	test? (
 		${PYTHON_DEPS}
 	)
@@ -198,8 +119,6 @@ needs_python() {
 
 # we build binaries without profiling support
 REQUIRED_USE="
-	?? ( ghcbootstrap binary )
-	?? ( profile binary )
 	?? ( llvm unregisterised )
 "
 
@@ -430,8 +349,6 @@ ghc-check-reqs() {
 	# numbers on various arches.
 	CHECKREQS_DISK_BUILD=8G
 	CHECKREQS_DISK_USR=2G
-	# USE=binary roughly takes
-	use binary && CHECKREQS_DISK_BUILD=4G
 
 	"$@"
 }
@@ -490,9 +407,6 @@ pkg_pretend() {
 pkg_setup() {
 	ghc-check-reqs check-reqs_pkg_setup
 
-	# quiet portage about prebuilt binaries
-	use binary && QA_PREBUILT="*"
-
 	[[ ${MERGE_TYPE} == binary ]] && return
 
 	if use ghcbootstrap; then
@@ -517,9 +431,6 @@ pkg_setup() {
 }
 
 src_unpack() {
-	# Create the ${S} dir if we're using the binary version
-	use binary && mkdir "${S}"
-
 	# the Solaris and Darwin binaries from ghc (maeder) need to be
 	# unpacked separately, so prevent them from being unpacked
 	local ONLYA=${A}
@@ -537,35 +448,17 @@ src_prepare() {
 
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap; then
-		# The switch to gpkg binaries means that they are unpacked in the wrong
-		# location. They are now unnpacked in ${PF}/image and need to be
-		# copied so that usr/ is in $WORKDIR.
-		mv -v "${WORKDIR}/${PN}-${BIN_PVR}/image/usr" "${WORKDIR}" || die
-
-		if [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
-			# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
-			# See bug #313635.
-			sed -i -e "s|\"\$libdir\"|\"\$libdir\" ${GHC_PERSISTENT_FLAGS}|" \
-				"${WORKDIR}/usr/bin/ghc-${BIN_PV}"
-
-			# allow hardened users use vanilla binary to bootstrap ghc
-			# ghci uses mmap with rwx protection at it implements dynamic
-			# linking on it's own (bug #299709)
-			pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
-		fi
-
+	if ! use ghcbootstrap && ! upstream_binary; then
 		# Make GHC's settings file comply with user's settings
-		GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
-		sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}"
-		sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}"
-		sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}"
-		sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}"
-		sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}"
-		sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}"
-		sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}"
+	        GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
+	        sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
 	fi
-
 	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
 
 	# binpkg may have been built with FEATURES=splitdebug
@@ -581,373 +474,336 @@ src_prepare() {
 		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
 	done
 
-	if use binary; then
-		if use prefix; then
-			relocate_ghc "${EPREFIX}"
-		fi
-
-		# Move unpacked files to the expected place
-		mv "${WORKDIR}/usr" "${S}"
-		eapply_user
-	else
-		if ! use ghcbootstrap; then
-			case ${CHOST} in
-				*-darwin* | *-solaris*)
-				# UPDATE ME for ghc-7
-				mkdir "${WORKDIR}"/ghc-bin-installer || die
-				pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
-				use x64-macos && unpack ghc-7.4.1-x86_64-apple-darwin.tar.bz2
-				popd > /dev/null
-
-				pushd "${WORKDIR}"/ghc-bin-installer/ghc-[67].?*.? > /dev/null || die
-				# fix the binaries so they run, on Solaris we need an
-				# LD_LIBRARY_PATH which has our prefix libdirs, on
-				# Darwin we need to replace the frameworks with our libs
-				# from the prefix fix before installation, because some
-				# of the tools are actually used during configure/make
-				if [[ ${CHOST} == *-solaris* ]] ; then
-					export LD_LIBRARY_PATH="${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir):${LD_LIBRARY_PATH}"
-				elif [[ ${CHOST} == *-darwin* ]] ; then
-					local readline_framework=GNUreadline.framework/GNUreadline
-					local gmp_framework=/opt/local/lib/libgmp.10.dylib
-					local ncurses_file=/opt/local/lib/libncurses.5.dylib
-					for binary in $(scanmacho -BRE MH_EXECUTE -F '%F' .) ; do
-						install_name_tool -change \
-							${readline_framework} \
-							"${EPREFIX}"/lib/libreadline.dylib \
-							${binary} || die
-						install_name_tool -change \
-							${gmp_framework} \
-							"${EPREFIX}"/usr/lib/libgmp.dylib \
-							${binary} || die
-						install_name_tool -change \
-							${ncurses_file} \
-							"${EPREFIX}"/usr/lib/libncurses.dylib \
-							${binary} || die
-					done
-					# we don't do frameworks!
-					sed -i \
-						-e 's/\(frameworks = \)\["GMP"\]/\1[]/g' \
-						-e 's/\(extraLibraries = \)\["m"\]/\1["m","gmp"]/g' \
-						rts/package.conf.in || die
-				fi
-
-				# it is autoconf, but we really don't want to give it too
-				# many arguments, in fact we do the make in-place anyway
-				./configure --prefix="${WORKDIR}"/usr || die
-				make install || die
-				popd > /dev/null
-				;;
-				*)
-				relocate_ghc "${WORKDIR}"
-				;;
-			esac
-		fi
-
-		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
-			"${S}/ghc/ghc.wrapper"
-
-		cd "${S}" # otherwise eapply will break
-
-		#eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
-		#eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
-
-		# Incompatible with ghc-9.0.2-modorigin-semigroup.patch
-		# Below patch should not be needed by ghc-9.2
-		#eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
-
-		# ModUnusable pretty-printing should include the reason
-		eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
-
-		# Fixes panic when compiling some packages
-		# https://github.com/gentoo-haskell/gentoo-haskell/issues/1250#issuecomment-1044257595
-		# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
-		eapply "${FILESDIR}/${PN}-9.2.7-modorigin-semigroup.patch"
-
-		# Needed for testing with python-3.10
-		#use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
-
-		#needs a port?
-		#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
-		eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
-		#eapply "${FILESDIR}"/${PN}-8.10.3-C99-typo-ac270.patch
-		#eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
-		#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
-		#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
-
-		# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
-		# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
-		eapply "${FILESDIR}"/${PN}-9.4.5-llvm-16.patch
-
-		# Fix issue caused by non-standard "musleabi" target in
-		# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
-		eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
-
-		# a bunch of crosscompiler patches
-		# needs newer version:
-		#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
-
-		# https://gitlab.haskell.org/ghc/ghc/-/issues/22965
-		#eapply "${FILESDIR}/${PN}-9.2.6-fix-alignment-of-capability.patch"
-
-		# FIXME: A hack that allows dev-python/sphinx-7 to build the docs
-		#
-		# GHC has updated the bundled version here:
-		# <https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a>
-		# However, the patch is difficult to apply and our versions of GHC don't
-		# have the update, so we symlink to the system version instead.
-		if use doc; then
-			local python_str="import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"
-			local rtd_theme_dir="$(dirname $("${EPYTHON}" -c "$python_str"))"
-			local orig_rtd_theme_dir="${S}/docs/users_guide/rtd-theme"
-
-			einfo "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
-			rm -r "${orig_rtd_theme_dir}" || die
-			ln -s "${rtd_theme_dir}" "${orig_rtd_theme_dir}" || die
-		fi
-
-		# mingw32 target
-		pushd "${S}/libraries/Win32"
-			eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
-		popd
-
-		bump_libs
-
-		eapply_user
-		# as we have changed the build system
-		eautoreconf
+	if ! use ghcbootstrap && ! upstream_binary; then
+		relocate_ghc "${WORKDIR}"
 	fi
+
+	sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
+		"${S}/ghc/ghc.wrapper"
+
+	cd "${S}" # otherwise eapply will break
+
+	#eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
+	#eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
+
+	# Incompatible with ghc-9.0.2-modorigin-semigroup.patch
+	# Below patch should not be needed by ghc-9.2
+	#eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
+
+	# ModUnusable pretty-printing should include the reason
+	eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
+
+	# Fixes panic when compiling some packages
+	# https://github.com/gentoo-haskell/gentoo-haskell/issues/1250#issuecomment-1044257595
+	# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
+	eapply "${FILESDIR}/${PN}-9.2.7-modorigin-semigroup.patch"
+
+	# Needed for testing with python-3.10
+	#use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
+
+	#needs a port?
+	#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
+	eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
+	#eapply "${FILESDIR}"/${PN}-8.10.3-C99-typo-ac270.patch
+	#eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
+	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
+	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
+
+	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
+	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
+	eapply "${FILESDIR}"/${PN}-9.4.5-llvm-16.patch
+
+	# Fix issue caused by non-standard "musleabi" target in
+	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
+	eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
+
+	# a bunch of crosscompiler patches
+	# needs newer version:
+	#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
+
+	# https://gitlab.haskell.org/ghc/ghc/-/issues/22965
+	#eapply "${FILESDIR}/${PN}-9.2.6-fix-alignment-of-capability.patch"
+
+	# FIXME: A hack that allows dev-python/sphinx-7 to build the docs
+	#
+	# GHC has updated the bundled version here:
+	# <https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a>
+	# However, the patch is difficult to apply and our versions of GHC don't
+	# have the update, so we symlink to the system version instead.
+	if use doc; then
+		local python_str="import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"
+		local rtd_theme_dir="$(dirname $("${EPYTHON}" -c "$python_str"))"
+		local orig_rtd_theme_dir="${S}/docs/users_guide/rtd-theme"
+
+		einfo "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
+		rm -r "${orig_rtd_theme_dir}" || die
+		ln -s "${rtd_theme_dir}" "${orig_rtd_theme_dir}" || die
+	fi
+
+	# mingw32 target
+	pushd "${S}/libraries/Win32"
+		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
+	popd
+
+	bump_libs
+
+	eapply_user
+	# as we have changed the build system
+	eautoreconf
 }
 
 src_configure() {
-	if ! use binary; then
-		# prepare hadrian build settings files
-		mkdir _build
-		touch _build/hadrian.settings
-
-		# We also need to use the GHC_FLAGS flags when building ghc itself
-		#echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
-		echo "*.*.ghc.hs.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
-		#echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
-		# ghc with hadrian is unhappy with these c.opts
-		echo "*.*.ghc.c.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
-		#echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
-#		echo "*.*.ghc.link.opts += ${LDFLAGS}" >> _build/hadrian.settings
-		# Speed up initial Cabal bootstrap
-		#echo "utils/ghc-cabal_dist_EXTRA_HC_OPTS+=$(ghc-make-args)" >> mk/build.mk
-
-#		# not used outside of ghc's test
-#		if [[ -n ${GHC_BUILD_DPH} ]]; then
-#				echo "BUILD_DPH = YES" >> mk/build.mk
-#			else
-#				echo "BUILD_DPH = NO" >> mk/build.mk
-#		fi
-
-
-#		if is_crosscompile; then
-#			# Install ghc-stage1 crosscompiler instead of
-#			# ghc-stage2 cross-built compiler.
-#			#echo "Stage1Only=YES" >> mk/build.mk
-#			sed -i -e 's/finalStage = Stage2/finalStage = Stage1/' \
-#				hadrian/UserSettings.hs
-#		fi
-
-		# Get ghc from the unpacked binary .tbz2
-		# except when bootstrapping we just pick ghc up off the path
-		if ! use ghcbootstrap; then
-			export PATH="${WORKDIR}/usr/bin:${PATH}"
-		fi
-
-		# Allow the user to select their bignum backend (default to gmp):
-		# use gmp || sed -i -e 's/userFlavour = defaultFlavour { name = \"user\"/userFlavour = defaultFlavour { name = \"user\", bignumBackend = \"native\"/'
-		#echo "BIGNUM_BACKEND = $(usex gmp gmp native)" >> mk/build.mk
-
-		# don't strip anything. Very useful when stage2 SIGSEGVs on you
-		#echo "STRIP_CMD = :" >> mk/build.mk
-
-		local econf_args=()
-
-		# GHC embeds toolchain it was built by and uses it later.
-		# Don't allow things like ccache or versioned binary slip.
-		# We use stable thing across gcc upgrades.
-		# User can use EXTRA_ECONF=CC=... to override this default.
-		econf_args+=(
-			AR=${CTARGET}-ar
-			CC=${CTARGET}-gcc
-			# these should be inferred by GHC but ghc defaults
-			# to using bundled tools on windows.
-			Windres=${CTARGET}-windres
-			DllWrap=${CTARGET}-dllwrap
-			# we set the linker explicitly below
-			--disable-ld-override
-
-			# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
-			--docdir="${EPREFIX}/usr/share/doc/$(cross)${PF}"
-		)
-		case ${CTARGET} in
-			arm*)
-				# ld.bfd-2.28 does not work for ghc. Force ld.gold
-				# instead. This should be removed once gentoo gets
-				# a fix for R_ARM_COPY bug: https://sourceware.org/PR16177
-				econf_args+=(LD=${CTARGET}-ld.gold)
-			;;
-			sparc*)
-				# ld.gold-2.28 does not work for ghc. Force ld.bfd
-				# instead. This should be removed once gentoo gets
-				# a fix for missing --no-relax support bug:
-				# https://sourceware.org/ml/binutils/2017-07/msg00183.html
-				econf_args+=(LD=${CTARGET}-ld.bfd)
-			;;
+	if ! use ghcbootstrap; then
+		einfo "Installing bootstrap GHC"
+		local ghc_bin_triple
+		case ${ARCH} in
+			amd64)
+				ghc_bin_triple="x86_64-unknown-linux"
+				;;
 			*)
-				econf_args+=(LD=${CTARGET}-ld)
+				die "Unknown ghc binary triple. The list here should match yet_binary."
+				;;
 		esac
 
-		if [[ ${CBUILD} != ${CHOST} ]]; then
-			# GHC bug: ghc claims not to support cross-building.
-			# It does, but does not distinct --host= value
-			# for stage1 and stage2 compiler.
-			econf_args+=(--host=${CBUILD})
-		fi
+		( cd "${WORKDIR}/ghc-${BOOTSTRAP_PV}-${ghc_bin_triple}" || die
+			./configure \
+				--prefix="" \
+				--libdir="/$(get_libdir)" || die
+			emake DESTDIR="${WORKDIR}/ghc-bin" install
+		)
 
-		if use ghcmakebinary; then
-			# When building booting libary we are trying to
-			# bundle or restrict most of external depends
-			# with unstable ABI:
-			#  - embed libffi (default GHC behaviour)
-			#  - disable ncurses support for ghci (via haskeline)
-			#    https://bugs.gentoo.org/557478
-			#  - disable ncurses support for ghc-pkg
-			#echo "libraries/haskeline_CONFIGURE_OPTS *. += --flag=-terminfo" >> mk/build.mk
-			echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-			#echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
-			echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-		elif is_native; then
-			# using ${GTARGET}'s libffi is not supported yet:
-			# GHC embeds full path for ffi includes without /usr/${CTARGET} account.
-			econf_args+=(--with-system-libffi)
-			econf_args+=(--with-ffi-includes=$($(tc-getPKG_CONFIG) libffi --cflags-only-I | sed -e 's@^-I@@'))
-		fi
+		einfo "Bootstrapping hadrian"
+		( cd "${S}/hadrian/bootstrap" || die
+			./bootstrap.py \
+				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${BOOTSTRAP_PV}/bin/ghc" \
+				-s "${DISTDIR}/hadrian-bootstrap-sources-${BOOTSTRAP_PV}.tar.gz" || die "Hadrian bootstrap failed"
+		)
+	fi
 
-		einfo "Final _build/hadrian.settings:"
-		#cat mk/build.mk || die
-		cat _build/hadrian.settings || die
+	# prepare hadrian build settings files
+	mkdir _build
+	touch _build/hadrian.settings
 
-#			--enable-bootstrap-with-devel-snapshot \
-		econf ${econf_args[@]} \
-			$(use_enable elfutils dwarf-unwind) \
-			$(use_enable numa) \
-			$(use_enable unregisterised)
+	# We also need to use the GHC_FLAGS flags when building ghc itself
+	#echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
+	echo "*.*.ghc.hs.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
+	#echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
+	# ghc with hadrian is unhappy with these c.opts
+	echo "*.*.ghc.c.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
+	#echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
+#	echo "*.*.ghc.link.opts += ${LDFLAGS}" >> _build/hadrian.settings
+	# Speed up initial Cabal bootstrap
+	#echo "utils/ghc-cabal_dist_EXTRA_HC_OPTS+=$(ghc-make-args)" >> mk/build.mk
 
-		if [[ ${PV} == *9999* ]]; then
-			GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
-			GHC_P=${PN}-${GHC_PV}
-		fi
-	fi # ! use binary
+#	# not used outside of ghc's test
+#	if [[ -n ${GHC_BUILD_DPH} ]]; then
+#			echo "BUILD_DPH = YES" >> mk/build.mk
+#		else
+#			echo "BUILD_DPH = NO" >> mk/build.mk
+#	fi
+
+
+#	if is_crosscompile; then
+#		# Install ghc-stage1 crosscompiler instead of
+#		# ghc-stage2 cross-built compiler.
+#		#echo "Stage1Only=YES" >> mk/build.mk
+#		sed -i -e 's/finalStage = Stage2/finalStage = Stage1/' \
+#			hadrian/UserSettings.hs
+#	fi
+
+	# Get ghc from the binary
+	# except when bootstrapping we just pick ghc up off the path
+	if ! use ghcbootstrap; then
+		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${BOOTSTRAP_PV}/bin:${PATH}"
+	fi
+
+	# Allow the user to select their bignum backend (default to gmp):
+	# use gmp || sed -i -e 's/userFlavour = defaultFlavour { name = \"user\"/userFlavour = defaultFlavour { name = \"user\", bignumBackend = \"native\"/'
+	#echo "BIGNUM_BACKEND = $(usex gmp gmp native)" >> mk/build.mk
+
+	# don't strip anything. Very useful when stage2 SIGSEGVs on you
+	#echo "STRIP_CMD = :" >> mk/build.mk
+
+	local econf_args=()
+
+	# GHC embeds toolchain it was built by and uses it later.
+	# Don't allow things like ccache or versioned binary slip.
+	# We use stable thing across gcc upgrades.
+	# User can use EXTRA_ECONF=CC=... to override this default.
+	econf_args+=(
+		AR=${CTARGET}-ar
+		CC=${CTARGET}-gcc
+		# these should be inferred by GHC but ghc defaults
+		# to using bundled tools on windows.
+		Windres=${CTARGET}-windres
+		DllWrap=${CTARGET}-dllwrap
+		# we set the linker explicitly below
+		--disable-ld-override
+
+		# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
+		--docdir="${EPREFIX}/usr/share/doc/$(cross)${PF}"
+	)
+	case ${CTARGET} in
+		arm*)
+			# ld.bfd-2.28 does not work for ghc. Force ld.gold
+			# instead. This should be removed once gentoo gets
+			# a fix for R_ARM_COPY bug: https://sourceware.org/PR16177
+			econf_args+=(LD=${CTARGET}-ld.gold)
+		;;
+		sparc*)
+			# ld.gold-2.28 does not work for ghc. Force ld.bfd
+			# instead. This should be removed once gentoo gets
+			# a fix for missing --no-relax support bug:
+			# https://sourceware.org/ml/binutils/2017-07/msg00183.html
+			econf_args+=(LD=${CTARGET}-ld.bfd)
+		;;
+		*)
+			econf_args+=(LD=${CTARGET}-ld)
+	esac
+
+	if [[ ${CBUILD} != ${CHOST} ]]; then
+		# GHC bug: ghc claims not to support cross-building.
+		# It does, but does not distinct --host= value
+		# for stage1 and stage2 compiler.
+		econf_args+=(--host=${CBUILD})
+	fi
+
+	if use ghcmakebinary; then
+		# When building booting libary we are trying to
+		# bundle or restrict most of external depends
+		# with unstable ABI:
+		#  - embed libffi (default GHC behaviour)
+		#  - disable ncurses support for ghci (via haskeline)
+		#    https://bugs.gentoo.org/557478
+		#  - disable ncurses support for ghc-pkg
+		#echo "libraries/haskeline_CONFIGURE_OPTS *. += --flag=-terminfo" >> mk/build.mk
+		echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
+		#echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
+		echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
+	elif is_native; then
+		# using ${GTARGET}'s libffi is not supported yet:
+		# GHC embeds full path for ffi includes without /usr/${CTARGET} account.
+		econf_args+=(--with-system-libffi)
+		econf_args+=(--with-ffi-includes=$($(tc-getPKG_CONFIG) libffi --cflags-only-I | sed -e 's@^-I@@'))
+	fi
+
+	einfo "Final _build/hadrian.settings:"
+	#cat mk/build.mk || die
+	cat _build/hadrian.settings || die
+
+#		--enable-bootstrap-with-devel-snapshot \
+	econf ${econf_args[@]} \
+		$(use_enable elfutils dwarf-unwind) \
+		$(use_enable numa) \
+		$(use_enable unregisterised)
+
+	if [[ ${PV} == *9999* ]]; then
+		GHC_PV="$(grep 'S\[\"PACKAGE_VERSION\"\]' config.status | sed -e 's@^.*=\"\(.*\)\"@\1@')"
+		GHC_P=${PN}-${GHC_PV}
+	fi
 }
 
 src_compile() {
-	if ! use binary; then
-		# create an array of CLI flags to be passed to hadrian build:
-		local hadrian_vars=()
+	# create an array of CLI flags to be passed to hadrian build:
+	local hadrian_vars=()
 
-		# We can't depend on haddock except when bootstrapping when we
-		# must build docs and include them into the binary .tbz2 package
-		# app-text/dblatex is not in portage, can not build PDF or PS
-		#echo "BUILD_SPHINX_PDF  = NO"  >> mk/build.mk
+	# We can't depend on haddock except when bootstrapping when we
+	# must build docs and include them into the binary .tbz2 package
+	# app-text/dblatex is not in portage, can not build PDF or PS
+	#echo "BUILD_SPHINX_PDF  = NO"  >> mk/build.mk
+	hadrian_vars+=("--docs=no-sphinx-pdfs")
+	#echo "BUILD_SPHINX_HTML = $(usex doc YES NO)" >> mk/build.mk
+	use doc || hadrian_vars+=("--docs=no-sphinx-html")
+	#echo "BUILD_MAN = $(usex doc YES NO)" >> mk/build.mk
+	use doc || hadrian_vars+=("--docs=no-sphinx-man")
+	# this controls presence on 'xhtml' and 'haddock' in final install
+	#echo "HADDOCK_DOCS       = YES" >> mk/build.mk
+	use doc || hadrian_vars+=("--docs=no-haddocks")
+
+	# Any non-native build has to skip as it needs
+	# target haddock binary to be runnabine.
+	if ! is_native; then
+		# disable docs generation as it requires running stage2
+		# echo "HADDOCK_DOCS=NO" >> mk/build.mk
+		hadrian_vars+=("--docs=no-haddocks")
+		# echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
 		hadrian_vars+=("--docs=no-sphinx-pdfs")
-		#echo "BUILD_SPHINX_HTML = $(usex doc YES NO)" >> mk/build.mk
-		use doc || hadrian_vars+=("--docs=no-sphinx-html")
-		#echo "BUILD_MAN = $(usex doc YES NO)" >> mk/build.mk
-		use doc || hadrian_vars+=("--docs=no-sphinx-man")
-		# this controls presence on 'xhtml' and 'haddock' in final install
-		#echo "HADDOCK_DOCS       = YES" >> mk/build.mk
-		use doc || hadrian_vars+=("--docs=no-haddocks")
+		# echo "BUILD_SPHINX_PDF=NO" >> mk/build.mk
+		hadrian_vars+=("--docs=no-sphinx-html")
+	fi
 
-		# Any non-native build has to skip as it needs
-		# target haddock binary to be runnabine.
-		if ! is_native; then
-			# disable docs generation as it requires running stage2
-			# echo "HADDOCK_DOCS=NO" >> mk/build.mk
-			hadrian_vars+=("--docs=no-haddocks")
-			# echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
-			hadrian_vars+=("--docs=no-sphinx-pdfs")
-			# echo "BUILD_SPHINX_PDF=NO" >> mk/build.mk
-			hadrian_vars+=("--docs=no-sphinx-html")
-		fi
+#	# allows overriding build flavours for libraries:
+#	# v   - vanilla (static libs)
+#	# p   - profiled
+#	# dyn - shared libraries
+#	# example: GHC_LIBRARY_WAYS="v dyn"
+#	if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
+#		echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
+#	fi
+#	echo "BUILD_PROF_LIBS = $(usex profile YES NO)" >> mk/build.mk
 
-#		# allows overriding build flavours for libraries:
-#		# v   - vanilla (static libs)
-#		# p   - profiled
-#		# dyn - shared libraries
-#		# example: GHC_LIBRARY_WAYS="v dyn"
-#		if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
-#			echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
+	###
+	# TODO: Move these env vars to a hadrian eclass, for better
+	# documentation and clarity
+	###
+
+	# Control the build flavour
+	if use profile; then
+		: ${HADRIAN_FLAVOUR:="default"}
+	else
+		: ${HADRIAN_FLAVOUR:="default+no_profiled_libs"}
+	fi
+
+	hadrian_vars+=("--flavour=${HADRIAN_FLAVOUR}")
+
+	# Control the verbosity of hadrian. Default is one level of --verbose
+	${HADRIAN_VERBOSITY:=1}
+
+	local n="${HADRIAN_VERBOSITY}"
+	until [[ $n -le 0 ]]; do
+		hadrian_vars+=("--verbose")
+		n=$(($n - 1 ))
+	done
+
+	for i in $MAKEOPTS; do
+		case $i in
+			-j*) hadrian_vars+=("$i") ;;
+			*) true ;;
+		esac
+	done
+
+
+#	# Stage1Only crosscompiler does not build stage2
+#	if ! is_crosscompile; then
+#		# 1. build/pax-mark compiler binary first
+#		#emake ghc/stage2/build/tmp/ghc-stage2
+#		hadrian -j${nproc} --flavour=quickest stage2:exe:ghc-bin || die
+#		# 2. pax-mark (bug #516430)
+#		#pax-mark -m _build/stage1/bin/ghc
+#		# 2. build/pax-mark haddock using ghc-stage2
+#		if is_native; then
+#			# non-native build does not build haddock
+#			# due to HADDOCK_DOCS=NO, but it could.
+#			#emake utils/haddock/dist/build/tmp/haddock
+#			hadrian docs --docs=no-sphinx-pdfs --docs=no-sphinx-html || die
+#			#pax-mark -m utils/haddock/dist/build/tmp/haddock
 #		fi
-#		echo "BUILD_PROF_LIBS = $(usex profile YES NO)" >> mk/build.mk
+#	fi
+#	# 3. and then all the rest
+#	#emake all
 
-		###
-		# TODO: Move these env vars to a hadrian eclass, for better
-		# documentation and clarity
-		###
+	if use ghcbootstrap; then
+		local hadrian=( /usr/bin/hadrian )
+	else
+		local hadrian=( "${S}/hadrian/bootstrap/_build/bin/hadrian" )
+	fi
+	hadrian+=(
+		"${hadrian_vars[@]}"
+		binary-dist-dir
+	)
 
-		# Control the build flavour
-		if use profile; then
-			: ${HADRIAN_FLAVOUR:="default"}
-		else
-			: ${HADRIAN_FLAVOUR:="default+no_profiled_libs"}
-		fi
-
-		hadrian_vars+=("--flavour=${HADRIAN_FLAVOUR}")
-
-		# Control the verbosity of hadrian. Default is one level of --verbose
-		${HADRIAN_VERBOSITY:=1}
-
-		local n="${HADRIAN_VERBOSITY}"
-		until [[ $n -le 0 ]]; do
-			hadrian_vars+=("--verbose")
-			n=$(($n - 1 ))
-		done
-
-		for i in $MAKEOPTS; do
-			case $i in
-				-j*) hadrian_vars+=("$i") ;;
-				*) true ;;
-			esac
-		done
-
-
-#		# Stage1Only crosscompiler does not build stage2
-#		if ! is_crosscompile; then
-#			# 1. build/pax-mark compiler binary first
-#			#emake ghc/stage2/build/tmp/ghc-stage2
-#			hadrian -j${nproc} --flavour=quickest stage2:exe:ghc-bin || die
-#			# 2. pax-mark (bug #516430)
-#			#pax-mark -m _build/stage1/bin/ghc
-#			# 2. build/pax-mark haddock using ghc-stage2
-#			if is_native; then
-#				# non-native build does not build haddock
-#				# due to HADDOCK_DOCS=NO, but it could.
-#				#emake utils/haddock/dist/build/tmp/haddock
-#				hadrian docs --docs=no-sphinx-pdfs --docs=no-sphinx-html || die
-#				#pax-mark -m utils/haddock/dist/build/tmp/haddock
-#			fi
-#		fi
-#		# 3. and then all the rest
-#		#emake all
-
-		if use ghcbootstrap; then
-			local hadrian=( /usr/bin/hadrian )
-		else
-			local hadrian=( "${WORKDIR}/hadrian-${HADRIAN_BIN_PVR}/image/usr/bin/hadrian" )
-		fi
-		hadrian+=(
-			"${hadrian_vars[@]}"
-			binary-dist-dir
-		)
-
-		einfo "Running: ${hadrian[@]}"
-		"${hadrian[@]}" || die
-	fi # ! use binary
+	einfo "Running: ${hadrian[@]}"
+	"${hadrian[@]}" || die
 }
 
 src_test() {
@@ -964,52 +820,47 @@ src_test() {
 src_install() {
 	local package_confdir="${ED}/usr/$(get_libdir)/$(cross)${GHC_P}/lib/package.conf.d"
 
-	if use binary; then
-		use prefix && mkdir -p "${ED}"
-		mv "${S}/usr" "${ED}"
-	else
-		[[ -f VERSION ]] || emake VERSION
+	[[ -f VERSION ]] || emake VERSION
 
-#		einfo "Running: hadrian install ${hadrian_vars}"
-#		hadrian install --prefix="${D}/usr/" ${hadrian_vars} || die
+#	einfo "Running: hadrian install ${hadrian_vars}"
+#	hadrian install --prefix="${D}/usr/" ${hadrian_vars} || die
 
-		pushd "${S}/_build/bindist/${P}-${CHOST}" || die
-		econf
-		emake DESTDIR="${D}" install
-		popd
+	pushd "${S}/_build/bindist/${P}-${CHOST}" || die
+	econf
+	emake DESTDIR="${D}" install
+	popd
 
-		#emake -j1 install DESTDIR="${D}"
+	#emake -j1 install DESTDIR="${D}"
 
-		use llvm && llvmize "${ED}/usr/bin"
+	use llvm && llvmize "${ED}/usr/bin"
 
-		# Skip for cross-targets as they all share target location:
-		# /usr/share/doc/ghc-9999/
-		if ! is_crosscompile; then
-			dodoc "distrib/README" "LICENSE" "VERSION"
-		fi
+	# Skip for cross-targets as they all share target location:
+	# /usr/share/doc/ghc-9999/
+	if ! is_crosscompile; then
+		dodoc "distrib/README" "LICENSE" "VERSION"
+	fi
 
-		# rename ghc-shipped files to avoid collision
-		# of external packages. Motivating example:
-		#  user had installed:
-		#      dev-lang/ghc-7.8.4-r0 (with transformers-0.3.0.0)
-		#      dev-haskell/transformers-0.4.2.0
-		#  then user tried to update to
-		#      dev-lang/ghc-7.8.4-r1 (with transformers-0.4.2.0)
-		#  this will lead to single .conf file collision.
-		local shipped_conf renamed_conf
-		for shipped_conf in "${package_confdir}"/*.conf; do
-			# rename 'pkg-ver-id.conf' to 'pkg-ver-id-gentoo-${PF}.conf'
-			renamed_conf=${shipped_conf%.conf}-gentoo-${PF}.conf
-			mv "${shipped_conf}" "${renamed_conf}" || die
-		done
+	# rename ghc-shipped files to avoid collision
+	# of external packages. Motivating example:
+	#  user had installed:
+	#      dev-lang/ghc-7.8.4-r0 (with transformers-0.3.0.0)
+	#      dev-haskell/transformers-0.4.2.0
+	#  then user tried to update to
+	#      dev-lang/ghc-7.8.4-r1 (with transformers-0.4.2.0)
+	#  this will lead to single .conf file collision.
+	local shipped_conf renamed_conf
+	for shipped_conf in "${package_confdir}"/*.conf; do
+		# rename 'pkg-ver-id.conf' to 'pkg-ver-id-gentoo-${PF}.conf'
+		renamed_conf=${shipped_conf%.conf}-gentoo-${PF}.conf
+		mv "${shipped_conf}" "${renamed_conf}" || die
+	done
 
-		# remove link, but leave 'haddock-${GHC_P}'
-		rm -f "${ED}"/usr/bin/$(cross)haddock
+	# remove link, but leave 'haddock-${GHC_P}'
+	rm -f "${ED}"/usr/bin/$(cross)haddock
 
-		if ! is_crosscompile; then
-			newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
-			newbashcomp utils/completion/ghc.bash         ghc
-		fi
+	if ! is_crosscompile; then
+		newbashcomp "${FILESDIR}"/ghc-bash-completion ghc-pkg
+		newbashcomp utils/completion/ghc.bash         ghc
 	fi
 
 	# path to the package.cache

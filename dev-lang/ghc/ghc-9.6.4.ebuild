@@ -21,90 +21,37 @@ inherit check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-BIN_PV=${PV}
-[[ $PR != r0 ]] && BIN_REV=${PR}
-BIN_PVR="${BIN_PV}${BIN_REV:+-${BIN_REV}}"
+BOOTSTRAP_PV="9.4.3"
+SRC_URI="
+	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
+	!ghcbootstrap? (
+		https://downloads.haskell.org/~ghc/${PV}/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${BOOTSTRAP_PV}.tar.gz
+		amd64? ( https://downloads.haskell.org/~ghc/${BOOTSTRAP_PV}/ghc-${BOOTSTRAP_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
+	)
+"
 
-HADRIAN_BIN_PV="${PV}"
-#HADRIAN_BIN_REV=""
-HADRIAN_BIN_PVR="${HADRIAN_BIN_PV}${HADRIAN_BIN_REV:+-${HADRIAN_BIN_REV}}"
-
-DEFAULT_SRC_HOST="https://eidetic.codes"
-
-ghc_binaries() {
-	echo "
-		${DEFAULT_SRC_HOST}/${PN}-bin-${PVR}-${1}.gpkg.tar
-		${DEFAULT_SRC_HOST}/hadrian-bin-${HADRIAN_BIN_PVR}-${1}.gpkg.tar
-	"
+yet_binary() {
+	case ${ARCH} in
+		amd64)
+			return 0
+			;;
+		*)
+			return 1
+			;;
+	esac
 }
 
-# Differentiate glibc/musl
-
-#glibc_binaries="$glibc_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#glibc_binaries+=" amd64? ( $(ghc_binaries x86_64-pc-linux-gnu) )"
-#glibc_binaries="$glibc_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-gnueabi.tbz2 )"
-#glibc_binaries="$glibc_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-gnu.tbz2 )"
-#glibc_binaries="$glibc_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? lib/( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#glibc_binaries="$glibc_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-gnu.tar.gz ) )"
-#glibc_binaries="$glibc_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#glibc_binaries="$glibc_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-gnu.tbz2 )"
-
-#musl_binaries="$musl_binaries alpha? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-alpha.tbz2 )"
-#musl_binaries+=" amd64? ( $(ghc_binaries x86_64-gentoo-linux-musl) )"
-#musl_binaries="$musl_binaries arm? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-armv7a-hardfloat-linux-musl.tbz2 )"
-#musl_binaries="$musl_binaries arm64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-aarch64-unknown-linux-musl.tbz2 )"
-#musl_binaries="$musl_binaries ia64?  ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ia64-fixed-fiw.tbz2 )"
-#musl_binaries="$musl_binaries ppc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc.tbz2 )"
-#musl_binaries="$musl_binaries ppc64? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-ppc64.tbz2 )"
-#musl_binaries="$musl_binaries ppc64? ( !big-endian? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-powerpc64le-unknown-linux-musl.tar.gz ) )"
-#musl_binaries="$musl_binaries riscv? ( https://github.com/matoro/ghc/releases/download/${PV}/ghc-bin-${PV}-riscv64-unknown-linux-musl.tar.gz )"
-#musl_binaries="$musl_binaries sparc? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-sparc.tbz2 )"
-#musl_binaries="$musl_binaries x86? ( https://eidetic.codes/ghc-bin-${PV}-i686-pc-linux-musl.tbz2 )"
-
-[[ -n $glibc_binaries ]] && arch_binaries+=" elibc_glibc? ( $glibc_binaries )"
-[[ -n $musl_binaries ]] && arch_binaries+=" elibc_musl? ( $musl_binaries )"
-
-# various ports:
-#arch_binaries="$arch_binaries x86-fbsd? ( https://slyfox.uni.cx/~slyfox/distfiles/ghc-bin-${PV}-x86-fbsd.tbz2 )"
-
-# 0 - yet
-yet_binary() {
-	case "${ELIBC}" in
-		glibc)
-			case "${ARCH}" in
-				#alpha) return 0 ;;
-				#arm64) return 0 ;;
-				#arm) return 0 ;;
-				#amd64) return 0 ;;
-				#ia64) return 0 ;;
-				#ppc) return 0 ;;
-				#ppc64) return 0 ;;
-				#riscv) return 0 ;;
-				#sparc) return 0 ;;
-				#x86) return 0 ;;
-				*) return 1 ;;
-			esac
+# We are using the upstream static Alpine Linux binaries to bootstrap some
+# archs. These binaries have different properties than the ones we build
+# ourselves, so we need a way to check to see if they are in use.
+upstream_binary() {
+	case ${ARCH} in
+		amd64)
+			return 0
 			;;
-		musl)
-			case "${ARCH}" in
-				#alpha) return 0 ;;
-				#arm64) return 0 ;;
-				#arm) return 0 ;;
-				#amd64) return 0 ;;
-				#ia64) return 0 ;;
-				#ppc) return 0 ;;
-				#ppc64)
-				#	use big-endian || return 0
-				#	;;
-				#riscv) return 0 ;;
-				#sparc) return 0 ;;
-				#x86) return 0 ;;
-				*) return 1 ;;
-			esac
+		*)
+			return 1
 			;;
-		*) return 1 ;;
 	esac
 }
 
@@ -112,13 +59,7 @@ GHC_PV=${PV}
 #GHC_PV=8.10.0.20200123 # uncomment only for -alpha, -beta, -rc ebuilds
 GHC_P=${PN}-${GHC_PV} # using ${P} is almost never correct
 
-SRC_URI="
-	https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-src.tar.xz
-	test? ( https://downloads.haskell.org/ghc/${PV/_/-}/${GHC_P}-testsuite.tar.xz )
-"
 S="${WORKDIR}"/${GHC_P}
-
-[[ -n $arch_binaries ]] && SRC_URI+=" !ghcbootstrap? ( $arch_binaries )"
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
@@ -147,20 +88,6 @@ RDEPEND="
 	)
 "
 
-# This set of dependencies is needed to run
-# prebuilt ghc. We specifically avoid ncurses
-# dependency with:
-#    utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING
-PREBUILT_BINARY_DEPENDS="
-	!prefix? ( elibc_glibc? ( >=sys-libs/glibc-2.17 ) )
-"
-# This set of dependencies is needed to install
-# ghc[binary] in system. terminfo package is linked
-# against ncurses.
-PREBUILT_BINARY_RDEPENDS="${PREBUILT_BINARY_DEPENDS}
-	sys-libs/ncurses:0/6
-"
-
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
@@ -176,7 +103,6 @@ BDEPEND="
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
 		~dev-haskell/hadrian-${PV}
 	)
-	!ghcbootstrap? ( ${PREBUILT_BINARY_DEPENDS} )
 	test? ( ${PYTHON_DEPS} )
 "
 
@@ -510,35 +436,17 @@ src_prepare() {
 
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap; then
-		# The switch to gpkg binaries means that they are unpacked in the wrong
-		# location. They are now unnpacked in ${PF}/image and need to be
-		# copied so that usr/ is in $WORKDIR.
-		mv -v "${WORKDIR}/${PN}-${BIN_PVR}/image/usr" "${WORKDIR}" || die
-
-		if [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
-			# Modify the wrapper script from the binary tarball to use GHC_PERSISTENT_FLAGS.
-			# See bug #313635.
-			sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
-				"${WORKDIR}/usr/bin/ghc-${BIN_PV}"
-
-			# allow hardened users use vanilla binary to bootstrap ghc
-			# ghci uses mmap with rwx protection at it implements dynamic
-			# linking on it's own (bug #299709)
-			pax-mark -m "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/bin/ghc"
-		fi
-
+	if ! use ghcbootstrap && ! upstream_binary; then
 		# Make GHC's settings file comply with user's settings
-        GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
-        sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
-        sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}" || die
-        sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
-        sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
-        sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
-        sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
-        sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
+	        GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
+	        sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
+	        sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
 	fi
-
 	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
 
 	# binpkg may have been built with FEATURES=splitdebug
@@ -554,58 +462,8 @@ src_prepare() {
 		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
 	done
 
-	if ! use ghcbootstrap; then
-		case ${CHOST} in
-			*-darwin* | *-solaris*)
-			# UPDATE ME for ghc-7
-			mkdir "${WORKDIR}"/ghc-bin-installer || die
-			pushd "${WORKDIR}"/ghc-bin-installer > /dev/null || die
-			use x64-macos && unpack ghc-7.4.1-x86_64-apple-darwin.tar.bz2
-			popd > /dev/null
-
-			pushd "${WORKDIR}"/ghc-bin-installer/ghc-[67].?*.? > /dev/null || die
-			# fix the binaries so they run, on Solaris we need an
-			# LD_LIBRARY_PATH which has our prefix libdirs, on
-			# Darwin we need to replace the frameworks with our libs
-			# from the prefix fix before installation, because some
-			# of the tools are actually used during configure/make
-			if [[ ${CHOST} == *-solaris* ]] ; then
-				export LD_LIBRARY_PATH="${EPREFIX}/$(get_libdir):${EPREFIX}/usr/$(get_libdir):${LD_LIBRARY_PATH}"
-			elif [[ ${CHOST} == *-darwin* ]] ; then
-				local readline_framework=GNUreadline.framework/GNUreadline
-				local gmp_framework=/opt/local/lib/libgmp.10.dylib
-				local ncurses_file=/opt/local/lib/libncurses.5.dylib
-				for binary in $(scanmacho -BRE MH_EXECUTE -F '%F' .) ; do
-					install_name_tool -change \
-						${readline_framework} \
-						"${EPREFIX}"/lib/libreadline.dylib \
-						${binary} || die
-					install_name_tool -change \
-						${gmp_framework} \
-						"${EPREFIX}"/usr/lib/libgmp.dylib \
-						${binary} || die
-					install_name_tool -change \
-						${ncurses_file} \
-						"${EPREFIX}"/usr/lib/libncurses.dylib \
-						${binary} || die
-				done
-				# we don't do frameworks!
-				sed -i \
-					-e 's/\(frameworks = \)\["GMP"\]/\1[]/g' \
-					-e 's/\(extraLibraries = \)\["m"\]/\1["m","gmp"]/g' \
-					rts/package.conf.in || die
-			fi
-
-			# it is autoconf, but we really don't want to give it too
-			# many arguments, in fact we do the make in-place anyway
-			./configure --prefix="${WORKDIR}"/usr || die
-			make install || die
-			popd > /dev/null
-			;;
-			*)
-			relocate_ghc "${WORKDIR}"
-			;;
-		esac
+	if ! use ghcbootstrap && ! upstream_binary; then
+		relocate_ghc "${WORKDIR}"
 	fi
 
 	sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
@@ -672,6 +530,33 @@ src_prepare() {
 }
 
 src_configure() {
+	if ! use ghcbootstrap; then
+		einfo "Installing bootstrap GHC"
+		local ghc_bin_triple
+		case ${ARCH} in
+			amd64)
+				ghc_bin_triple="x86_64-unknown-linux"
+				;;
+			*)
+				die "Unknown ghc binary triple. The list here should match yet_binary."
+				;;
+		esac
+
+		( cd "${WORKDIR}/ghc-${BOOTSTRAP_PV}-${ghc_bin_triple}" || die
+			./configure \
+				--prefix="" \
+				--libdir="/$(get_libdir)" || die
+			emake DESTDIR="${WORKDIR}/ghc-bin" install
+		)
+
+		einfo "Bootstrapping hadrian"
+		( cd "${S}/hadrian/bootstrap" || die
+			./bootstrap.py \
+				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${BOOTSTRAP_PV}/bin/ghc" \
+				-s "${DISTDIR}/hadrian-bootstrap-sources-${BOOTSTRAP_PV}.tar.gz" || die "Hadrian bootstrap failed"
+		)
+	fi
+
 	# prepare hadrian build settings files
 	mkdir _build
 	touch _build/hadrian.settings
@@ -703,10 +588,10 @@ src_configure() {
 #			hadrian/UserSettings.hs
 #	fi
 
-	# Get ghc from the unpacked binary .tbz2
+	# Get ghc from the binary
 	# except when bootstrapping we just pick ghc up off the path
 	if ! use ghcbootstrap; then
-		export PATH="${WORKDIR}/usr/bin:${PATH}"
+		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${BOOTSTRAP_PV}/bin:${PATH}"
 	fi
 
 	# Allow the user to select their bignum backend (default to gmp):
@@ -783,7 +668,7 @@ src_configure() {
 	#cat mk/build.mk || die
 	cat _build/hadrian.settings || die
 
-			--enable-bootstrap-with-devel-snapshot \
+#		--enable-bootstrap-with-devel-snapshot \
 	econf ${econf_args[@]} \
 		$(use_enable elfutils dwarf-unwind) \
 		$(use_enable numa) \
@@ -887,7 +772,7 @@ src_compile() {
 	if use ghcbootstrap; then
 		local hadrian=( /usr/bin/hadrian )
 	else
-		local hadrian=( "${WORKDIR}/hadrian-${HADRIAN_BIN_PVR}/image/usr/bin/hadrian" )
+		local hadrian=( "${S}/hadrian/bootstrap/_build/bin/hadrian" )
 	fi
 	hadrian+=(
 		"${hadrian_vars[@]}"
