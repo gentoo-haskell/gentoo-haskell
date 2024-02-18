@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/extensible-exceptions"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux ~ppc-macos ~sparc-solaris"
+KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
