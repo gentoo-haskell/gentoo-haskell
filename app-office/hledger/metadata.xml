@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="threaded">Build with support for multithreaded execution</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">hledger</remote-id>
 		<remote-id type="github">simonmichael/hledger</remote-id>
