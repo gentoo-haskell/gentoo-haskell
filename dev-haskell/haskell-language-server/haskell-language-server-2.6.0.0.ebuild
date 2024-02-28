@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#hackport: flags: cabalfmt:hls_formatters_cabal-fmt,floskell:hls_formatters_floskell,fourmolu:hls_formatters_fourmolu,ormolu:hls_formatters_ormolu,refactor:hls_formatters_refactor,stylishhaskell:hls_formatters_stylish-haskell,alternateNumberFormat:hls_plugins_alternate-number-format,cabal:hls_plugins_cabal,callHierarchy:hls_plugins_call-hierarchy,changeTypeSignature:hls_plugins_change-type-signature,class:hls_plugins_class,codeRange:hls_plugins_code-range,eval:hls_plugins_eval,explicitFields:hls_plugins_explicit-fields,explicitFixity:hls_plugins_explicit-fixity,gadt:hls_plugins_gadt,hlint:hls_plugins_hlint,importLens:hls_plugins_import-lens,moduleName:hls_plugins_module-name,overloadedRecordDot:hls_plugins_overloaded-record-dot,pragmas:hls_plugins_pragmas,qualifyImportedNames:hls_plugins_qualify-imported-names,rename:hls_plugins_rename,retrie:hls_plugins_retrie,semanticTokens:hls_plugins_semantic-tokens,splice:hls_plugins_splice,stan:hls_plugins_stan,-dynamic,+ignore-plugins-ghc-bounds,-pedantic
+#hackport: flags: alternateNumberFormat:hls_plugins_alternate-number-format,cabal:hls_plugins_cabal,cabalfmt:hls_plugins_cabal-fmt,callHierarchy:hls_plugins_call-hierarchy,changeTypeSignature:hls_plugins_change-type-signature,class:hls_plugins_class,codeRange:hls_plugins_code-range,eval:hls_plugins_eval,explicitFields:hls_plugins_explicit-fields,explicitFixity:hls_plugins_explicit-fixity,floskell:hls_plugins_floskell,fourmolu:hls_plugins_fourmolu,gadt:hls_plugins_gadt,hlint:hls_plugins_hlint,importLens:hls_plugins_import-lens,moduleName:hls_plugins_module-name,ormolu:hls_plugins_ormolu,overloadedRecordDot:hls_plugins_overloaded-record-dot,pragmas:hls_plugins_pragmas,qualifyImportedNames:hls_plugins_qualify-imported-names,refactor:hls_plugins_refactor,rename:hls_plugins_rename,retrie:hls_plugins_retrie,semanticTokens:hls_plugins_semantic-tokens,splice:hls_plugins_splice,stan:hls_plugins_stan,stylishhaskell:hls_plugins_stylish-haskell,-dynamic,+ignore-plugins-ghc-bounds,-pedantic
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite
 inherit haskell-cabal
@@ -19,42 +19,33 @@ KEYWORDS="~amd64"
 
 # Disabled:
 # - hls_plugins_class: Requires ghc-exactprint < 1.1
+# - hls_plugins_fourmolu: Requires masked package fourmolu
+# - hls_plugins_ormolu: Requires masked package ormolu
 # - hls_plugins_stan: Depends on ghc >8.8.1 <=9.2.3 || >=9.4.0 <9.10.0
-IUSE_HLS_PLUGINS="
+IUSE="
 	+hls_plugins_alternate-number-format
 	+hls_plugins_cabal
+	+hls_plugins_cabal-fmt
 	+hls_plugins_call-hierarchy
 	+hls_plugins_change-type-signature
 	+hls_plugins_code-range
 	+hls_plugins_eval
 	+hls_plugins_explicit-fields
 	+hls_plugins_explicit-fixity
+	+hls_plugins_floskell
+	+hls_plugins_gadt
 	+hls_plugins_hlint
 	+hls_plugins_import-lens
-	+hls_plugins_gadt
 	+hls_plugins_module-name
 	+hls_plugins_overloaded-record-dot
 	+hls_plugins_pragmas
 	+hls_plugins_qualify-imported-names
+	+hls_plugins_refactor
 	+hls_plugins_rename
 	+hls_plugins_retrie
 	+hls_plugins_semantic-tokens
 	+hls_plugins_splice
-"
-
-# Disabled:
-# - hls_formatters_fourmolu: Requires masked package fourmolu
-# - hls_formatters_ormolu: Requires masked package ormolu
-IUSE_HLS_FORMATTERS="
-	+hls_formatters_cabal-fmt
-	+hls_formatters_floskell
-	+hls_formatters_refactor
-	+hls_formatters_stylish-haskell
-"
-
-IUSE="
-	${IUSE_HLS_PLUGINS}
-	${IUSE_HLS_FORMATTERS}
+	+hls_plugins_stylish-haskell
 "
 
 CABAL_TEST_REQUIRED_BINS=(
@@ -62,9 +53,9 @@ CABAL_TEST_REQUIRED_BINS=(
 )
 
 # Disabled:
-# hls_formatters_fourmolu? ( ~dev-haskell/hls-fourmolu-plugin-2.6.0.0:=[profile?] )
-# hls_formatters_ormolu? ( ~dev-haskell/hls-ormolu-plugin-2.6.0.0:=[profile?] )
 # hls_plugins_class? ( ~dev-haskell/hls-class-plugin-2.6.0.0:=[profile?] )
+# hls_plugins_fourmolu? ( ~dev-haskell/hls-fourmolu-plugin-2.6.0.0:=[profile?] )
+# hls_plugins_ormolu? ( ~dev-haskell/hls-ormolu-plugin-2.6.0.0:=[profile?] )
 # hls_plugins_stan? ( ~dev-haskell/hls-stan-plugin-2.6.0.0:=[profile?] )
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
@@ -97,18 +88,16 @@ RDEPEND="
 	dev-haskell/unliftio-core:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-lang/ghc-9.2:=
-	hls_formatters_cabal-fmt? ( ~dev-haskell/hls-cabal-fmt-plugin-2.6.0.0:=[profile?] )
-	hls_formatters_floskell? ( ~dev-haskell/hls-floskell-plugin-2.6.0.0:=[profile?] )
-	hls_formatters_refactor? ( ~dev-haskell/hls-refactor-plugin-2.6.0.0:=[profile?] )
-	hls_formatters_stylish-haskell? ( ~dev-haskell/hls-stylish-haskell-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_alternate-number-format? ( ~dev-haskell/hls-alternate-number-format-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_cabal? ( ~dev-haskell/hls-cabal-plugin-2.6.0.0:=[profile?] )
+	hls_plugins_cabal-fmt? ( ~dev-haskell/hls-cabal-fmt-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_call-hierarchy? ( ~dev-haskell/hls-call-hierarchy-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_change-type-signature? ( ~dev-haskell/hls-change-type-signature-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_code-range? ( ~dev-haskell/hls-code-range-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_eval? ( ~dev-haskell/hls-eval-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_explicit-fields? ( ~dev-haskell/hls-explicit-record-fields-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_explicit-fixity? ( ~dev-haskell/hls-explicit-fixity-plugin-2.6.0.0:=[profile?] )
+	hls_plugins_floskell? ( ~dev-haskell/hls-floskell-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_gadt? ( ~dev-haskell/hls-gadt-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_hlint? ( ~dev-haskell/hls-hlint-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_import-lens? ( ~dev-haskell/hls-explicit-imports-plugin-2.6.0.0:=[profile?] )
@@ -116,10 +105,12 @@ RDEPEND="
 	hls_plugins_overloaded-record-dot? ( ~dev-haskell/hls-overloaded-record-dot-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_pragmas? ( ~dev-haskell/hls-pragmas-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_qualify-imported-names? ( ~dev-haskell/hls-qualify-imported-names-plugin-2.6.0.0:=[profile?] )
+	hls_plugins_refactor? ( ~dev-haskell/hls-refactor-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_rename? ( ~dev-haskell/hls-rename-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_retrie? ( ~dev-haskell/hls-retrie-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_semantic-tokens? ( ~dev-haskell/hls-semantic-tokens-plugin-2.6.0.0:=[profile?] )
 	hls_plugins_splice? ( ~dev-haskell/hls-splice-plugin-2.6.0.0:=[profile?] )
+	hls_plugins_stylish-haskell? ( ~dev-haskell/hls-stylish-haskell-plugin-2.6.0.0:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
@@ -137,18 +128,16 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	config_flags=(
-		$(cabal_flag hls_formatters_cabal-fmt cabalfmt)
-		$(cabal_flag hls_formatters_floskell floskell)
-		$(cabal_flag hls_formatters_refactor refactor)
-		$(cabal_flag hls_formatters_stylish-haskell stylishhaskell)
 		$(cabal_flag hls_plugins_alternate-number-format alternateNumberFormat)
 		$(cabal_flag hls_plugins_cabal cabal)
+		$(cabal_flag hls_plugins_cabal-fmt cabalfmt)
 		$(cabal_flag hls_plugins_call-hierarchy callHierarchy)
 		$(cabal_flag hls_plugins_change-type-signature changeTypeSignature)
 		$(cabal_flag hls_plugins_code-range codeRange)
 		$(cabal_flag hls_plugins_eval eval)
 		$(cabal_flag hls_plugins_explicit-fields explicitFields)
 		$(cabal_flag hls_plugins_explicit-fixity explicitFixity)
+		$(cabal_flag hls_plugins_floskell floskell)
 		$(cabal_flag hls_plugins_gadt gadt)
 		$(cabal_flag hls_plugins_hlint hlint)
 		$(cabal_flag hls_plugins_import-lens importLens)
@@ -156,10 +145,12 @@ src_configure() {
 		$(cabal_flag hls_plugins_overloaded-record-dot overloadedRecordDot)
 		$(cabal_flag hls_plugins_pragmas pragmas)
 		$(cabal_flag hls_plugins_qualify-imported-names qualifyImportedNames)
+		$(cabal_flag hls_plugins_refactor refactor)
 		$(cabal_flag hls_plugins_rename rename)
 		$(cabal_flag hls_plugins_retrie retrie)
 		$(cabal_flag hls_plugins_semantic-tokens semanticTokens)
 		$(cabal_flag hls_plugins_splice splice)
+		$(cabal_flag hls_plugins_stylish-haskell stylishhaskell)
 		--flag=-class
 		--flag=-fourmolu
 		--flag=-ormolu

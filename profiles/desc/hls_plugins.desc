@@ -4,6 +4,7 @@
 
 alternate-number-format - Enable Alternate Number Format plugin
 cabal - Enable cabal plugin
+cabal-fmt - Enable cabalFmt plugin
 call-hierarchy - Enable callHierarchy plugin
 change-type-signature - Change a declarations type signature with a Code Action
 class - Enable class plugin
@@ -11,15 +12,20 @@ code-range - Enable codeRange plugin
 eval - Enable eval plugin
 explicit-fields - Enable explicit-fields plugin
 explicit-fixity - Enable explicit-fixity plugin
+floskell - Enable floskell plugin
+fourmolu - Enable fourmolu plugin 
 gadt - Enable GADT plugin
 hlint - Enable hlint plugin
 import-lens - Enable importLens plugin
 module-name - Enable moduleName plugin
+ormolu - Enable ormolu plugin
 overloaded-record-dot - Enable overloadedRecordDot plugin
 pragmas - Enable pragmas plugin
 qualify-imported-names - Enable qualifyImportedNames plugin
+refactor - Enable refactor plugin
 rename - Enable rename plugin
 retrie - Enable retrie plugin
 semantic-tokens - Enable semanticTokens plugin
 splice - Enable splice plugin
 stan - Enable stan plugin
+stylish-haskell - Enable stylishHaskell plugin

@@ -8,6 +8,7 @@
 	<use>
 		<flag name="hls_plugins_alternate-number-format">Enable Alternate Number Format plugin</flag>
 		<flag name="hls_plugins_cabal">Enable cabal plugin</flag>
+		<flag name="hls_plugins_cabal-fmt">Enable cabalfmt plugin</flag>
 		<flag name="hls_plugins_call-hierarchy">Enable callHierarchy plugin</flag>
 		<flag name="hls_plugins_change-type-signature">Change a declarations type signature with a Code Action</flag>
 <!-- 		<flag name="hls_plugins_class">Enable class plugin</flag> -->
@@ -15,24 +16,23 @@
 		<flag name="hls_plugins_eval">Enable eval plugin</flag>
 		<flag name="hls_plugins_explicit-fields">Enable explicit-fields plugin</flag>
 		<flag name="hls_plugins_explicit-fixity">Enable explicit-fixity plugin</flag>
+		<flag name="hls_plugins_floskell">Enable floskell plugin</flag>
+<!-- 		<flag name="hls_plugins_fourmolu">Enable fourmolu plugin</flag> -->
 		<flag name="hls_plugins_gadt">Enable GADT plugin</flag>
 		<flag name="hls_plugins_hlint">Enable hlint plugin</flag>
 		<flag name="hls_plugins_import-lens">Enable importLens plugin</flag>
 		<flag name="hls_plugins_module-name">Enable moduleName plugin</flag>
+<!-- 		<flag name="hls_plugins_ormolu">Enable ormolu plugin</flag> -->
 		<flag name="hls_plugins_overloaded-record-dot">Enable overloadedRecordDot plugin</flag>
 		<flag name="hls_plugins_pragmas">Enable pragmas plugin</flag>
 		<flag name="hls_plugins_qualify-imported-names">Enable qualifyImportedNames plugin</flag>
+		<flag name="hls_plugins_refactor">Enable refactor plugin</flag>
 		<flag name="hls_plugins_rename">Enable rename plugin</flag>
 		<flag name="hls_plugins_retrie">Enable retrie plugin</flag>
 		<flag name="hls_plugins_semantic-tokens">Enable semanticTokens plugin</flag>
 		<flag name="hls_plugins_splice">Enable splice plugin</flag>
 <!-- 		<flag name="hls_plugins_stan">Enable stan plugin</flag> -->
-		<flag name="hls_formatters_cabal-fmt">Enable cabalfmt formatter</flag>
-		<flag name="hls_formatters_floskell">Enable floskell formatter</flag>
-<!-- 		<flag name="hls_formatters_fourmolu">Enable fourmolu formatter</flag> -->
-<!-- 		<flag name="hls_formatters_ormolu">Enable ormolu formatter</flag> -->
-		<flag name="hls_formatters_refactor">Enable refactor formatter</flag>
-		<flag name="hls_formatters_stylish-haskell">Enable stylishHaskell formatter</flag>
+		<flag name="hls_plugins_stylish-haskell">Enable stylishHaskell plugin</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">haskell-language-server</remote-id>
