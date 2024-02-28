@@ -11,7 +11,7 @@
 		<flag name="hls_plugins_cabal-fmt">Enable cabalfmt plugin</flag>
 		<flag name="hls_plugins_call-hierarchy">Enable callHierarchy plugin</flag>
 		<flag name="hls_plugins_change-type-signature">Change a declarations type signature with a Code Action</flag>
-<!-- 		<flag name="hls_plugins_class">Enable class plugin</flag> -->
+		<flag name="hls_plugins_class">Enable class plugin</flag>
 		<flag name="hls_plugins_code-range">Enable codeRange plugin</flag>
 		<flag name="hls_plugins_eval">Enable eval plugin</flag>
 		<flag name="hls_plugins_explicit-fields">Enable explicit-fields plugin</flag>
