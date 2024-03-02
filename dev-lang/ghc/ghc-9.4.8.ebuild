@@ -16,8 +16,7 @@ fi
 PYTHON_COMPAT=( python3_{9..12} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
-inherit multiprocessing pax-utils toolchain-funcs prefix
-inherit check-reqs llvm unpacker
+inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
@@ -602,7 +601,6 @@ src_configure() {
 #			echo "BUILD_DPH = NO" >> mk/build.mk
 #	fi
 
-
 #	if is_crosscompile; then
 #		# Install ghc-stage1 crosscompiler instead of
 #		# ghc-stage2 cross-built compiler.
@@ -771,7 +769,6 @@ src_compile() {
 			*) true ;;
 		esac
 	done
-
 
 #	# Stage1Only crosscompiler does not build stage2
 #	if ! is_crosscompile; then
