@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="hashable">use <pkg>dev-haskell/hashable</pkg></flag>
+		<flag name="hashable">use </flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">vector-instances</remote-id>
+		<remote-id type="github">ekmett/vector-instances</remote-id>
+	</upstream>
 </pkgmetadata>
