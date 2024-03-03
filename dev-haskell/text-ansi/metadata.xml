@@ -7,6 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">text-ansi</remote-id>
-		<remote-id type="github">mitchellwrosen/text-ansi</remote-id>
+		<remote-id type="github">awkward-squad/text-ansi</remote-id>
 	</upstream>
 </pkgmetadata>
