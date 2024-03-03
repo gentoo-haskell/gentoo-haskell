@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">text-ansi</remote-id>
-		<remote-id type="github">awkward-squad/text-ansi</remote-id>
+		<remote-id type="hackage">quote-quot</remote-id>
+		<remote-id type="github">Bodigrim/quote-quot</remote-id>
 	</upstream>
 </pkgmetadata>
