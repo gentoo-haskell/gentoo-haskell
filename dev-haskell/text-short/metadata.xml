@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="debug">Enable runtime-checks via @assert@</flag>
-	</use>
 	<upstream>
 		<remote-id type="hackage">text-short</remote-id>
 		<remote-id type="github">hvr/text-short</remote-id>
