@@ -5,12 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Type level booleans.
-		
-		<pkg>dev-haskell/singletons</pkg> package provides similar functionality,
-		but it has tight dependency constraints.
-	</longdescription>
 	<upstream>
 		<remote-id type="hackage">singleton-bool</remote-id>
 		<remote-id type="github">phadej/singleton-bool</remote-id>
