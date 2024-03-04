@@ -5,14 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A variety of alternative parser combinator libraries, including
-		the original HuttonMeijer set.  The Poly sets have features like
-		good error reporting, arbitrary token type, running state, lazy
-		parsing, and so on.  Finally, Text.Parse is a proposed
-		replacement for the standard Read class, for better
-		deserialisation of Haskell values from Strings.
-	</longdescription>
 	<upstream>
 		<remote-id type="hackage">polyparse</remote-id>
 		<remote-id type="github">hackage-trustees/malcolm-wallace-universe</remote-id>
