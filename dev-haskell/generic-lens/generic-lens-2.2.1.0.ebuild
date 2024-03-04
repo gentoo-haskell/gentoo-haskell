@@ -23,6 +23,10 @@ GHC_BOOTSTRAP_PACKAGES=(
 	cabal-doctest
 )
 
+CABAL_CHDEPS=(
+	'text        >= 1.2 && < 1.3 || >= 2.0 && < 2.1' 'text        >= 1.2'
+)
+
 RDEPEND="~dev-haskell/generic-lens-core-2.2.1.0:=[profile?]
 	dev-haskell/profunctors:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
