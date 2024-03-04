@@ -15,6 +15,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux"
 
+CABAL_CHDEPS=(
+	'deepseq >= 1.1 && < 1.5' 'deepseq >= 1.1'
+)
+
 RDEPEND="
 	>=dev-haskell/th-compat-0.1.1:=[profile?] <dev-haskell/th-compat-1.0:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
