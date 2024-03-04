@@ -26,6 +26,9 @@ PATCHES=(
 
 CABAL_CHDEPS=(
 	'|| >= 3.0     && < 3.7' '|| >= 3.0'
+	'base              >= 4.5     && < 4.19' 'base              >= 4.5'
+	'bytestring        >= 0.9     && < 0.12' 'bytestring        >= 0.9'
+	'template-haskell  >= 2.7     && < 2.21' 'template-haskell  >= 2.7'
 )
 
 RDEPEND="
