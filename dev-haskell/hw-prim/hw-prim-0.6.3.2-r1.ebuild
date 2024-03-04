@@ -22,6 +22,7 @@ IUSE="bounds-checking"
 CABAL_CHDEPS=(
 	'hedgehog                   >= 1.0        && < 1.4' 'hedgehog >= 1.0'
 	'doctest                    >= 0.16.2     && < 0.22' 'doctest >= 0.16.2'
+	'ghc-prim                   >= 0.5        && < 0.11' 'ghc-prim                   >= 0.5'
 )
 
 RDEPEND="
