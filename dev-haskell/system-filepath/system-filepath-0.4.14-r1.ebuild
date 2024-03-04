@@ -18,6 +18,10 @@ KEYWORDS="~amd64"
 
 RESTRICT=test
 
+CABAL_CHDEPS=(
+	'deepseq >= 1.1 && < 1.5' 'deepseq >= 1.1'
+)
+
 RDEPEND=">=dev-haskell/text-0.11.0.6:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
