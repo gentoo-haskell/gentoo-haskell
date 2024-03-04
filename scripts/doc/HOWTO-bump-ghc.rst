@@ -3,6 +3,9 @@ So you say you wanna new ghc in tree? Great!
 Quick-n-dirty start (aka. initial preparation):
 ==============================================
 
+- go to ``dev-haskell/hadrian``
+- copy latest ebuild
+- build hadrian
 - go to ``dev-lang/ghc/``
 - copy latest ebuild
 - #comment-out all binary ``URIs`` from there (as we don't have them yet)
@@ -11,7 +14,7 @@ Quick-n-dirty start (aka. initial preparation):
   what ones you need to update. I usually look at ``ghc/libraries/*/*.cabal``
   in ghc source tarball.
   - ``grep -l -r CABAL_CORE_LIB_GHC_PV= */*/*.ebuild | sort``
-  - ``grep -i ^version: */*.cabal Cabal/*/*.cabal | sort``
+  - ``grep -i '^version:' */*.cabal Cabal/*/*.cabal | sort``
 
 Done! You can safely try to emerge your shiny new ghc!
 
@@ -24,7 +27,6 @@ update**. As of ghc-8.6.1, they are:
 
 - binary
 - Cabal
-- ghc-api (virtual ebuild)
 - haddock
 - haddock-library
 - haddock-api
