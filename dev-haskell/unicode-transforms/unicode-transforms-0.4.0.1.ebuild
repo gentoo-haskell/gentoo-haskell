@@ -18,6 +18,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc64"
 IUSE=""
 
+CABAL_CHDEPS=(
+	'base         >= 4.8 && < 4.19' 'base         >= 4.8'
+	'bytestring   >= 0.9 && < 0.12' 'bytestring   >= 0.9'
+	'ghc-prim     >= 0.2 && < 0.11' 'ghc-prim     >= 0.2'
+	'text         >=1.1.1 && <=1.2.5.0 || >=2.0 && <2.1' 'text         >=1.1.1'
+)
+
 RDEPEND=">=dev-haskell/unicode-data-0.2:=[profile?] <dev-haskell/unicode-data-0.5:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
