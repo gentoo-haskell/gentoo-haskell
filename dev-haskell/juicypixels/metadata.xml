@@ -8,4 +8,9 @@
 	<use>
 		<flag name="mmap">Enable the file loading via mmap (memory map)</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">JuicyPixels</remote-id>
+		<remote-id type="github">Twinside/Juicy.Pixels</remote-id>
+		<remote-id type="github">Twinside/Juicy.Pixels.git</remote-id>
+	</upstream>
 </pkgmetadata>
