@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'bytestring        >= 0.9 && < 0.12' 'bytestring        >= 0.9'
+)
+
 RDEPEND="
 	>=dev-haskell/attoparsec-0.7:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/io-streams-1.3:=[profile?] <dev-haskell/io-streams-1.6:=[profile?]
