@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package reexports the &quot;Network.BSD&quot; module split from the &lt;https://hackage.haskell.org/package/network-2.8.0.0 network-2.8.0.0&gt; package.
-		
-		See newer versions of &lt;https://hackage.haskell.org/package/network-bsd network-bsd&gt; for more information.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">network-bsd</remote-id>
+		<remote-id type="github">haskell/network-bsd</remote-id>
+	</upstream>
 </pkgmetadata>
