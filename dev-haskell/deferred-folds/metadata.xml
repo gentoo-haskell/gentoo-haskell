@@ -8,5 +8,6 @@
 	<upstream>
 		<remote-id type="hackage">deferred-folds</remote-id>
 		<remote-id type="github">metrix-ai/deferred-folds</remote-id>
+		<remote-id type="github">nikita-volkov/deferred-folds</remote-id>
 	</upstream>
 </pkgmetadata>
