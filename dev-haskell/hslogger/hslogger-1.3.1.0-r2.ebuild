@@ -18,6 +18,11 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux"
 
+CABAL_CHDEPS=(
+	'bytestring >= 0.9 && < 0.12' 'bytestring >= 0.9'
+	'deepseq    >= 1.1 && < 1.5' 'deepseq    >= 1.1'
+)
+
 RDEPEND="
 	>=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2
 	>=dev-haskell/network-bsd-2.8.1:=[profile?] <dev-haskell/network-bsd-2.9
