@@ -44,8 +44,11 @@ RDEPEND=">=dev-haskell/data-fix-0.3.2:=[profile?] <dev-haskell/data-fix-0.4:=[pr
 	>=dev-haskell/vector-0.13.0.0:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/witherable-0.4.2:=[profile?] <dev-haskell/witherable-0.5:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	|| (
+		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
+	)
+	dev-haskell/text:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
