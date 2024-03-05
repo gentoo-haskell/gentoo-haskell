@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell-primitive/primitive-unlifted"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+#KEYWORDS="~amd64" # Keep in sync with ghc-9.4
 
 RDEPEND=">=dev-haskell/primitive-0.7:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
 	>=dev-haskell/text-short-0.1.3:=[profile?] <dev-haskell/text-short-0.2:=[profile?]
