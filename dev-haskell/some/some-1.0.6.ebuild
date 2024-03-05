@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 IUSE="+newtype-unsafe"
 
 RDEPEND="
+	>=dev-haskell/base-orphans-0.9.1:=[profile?] <dev-haskell/base-orphans-0.10:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
