@@ -23,17 +23,18 @@ IUSE="executable"
 RDEPEND=">=dev-haskell/hsyaml-0.2.0:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?]
 	>=dev-haskell/scientific-0.3.6.2:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
+	>=dev-haskell/vector-0.12.0.2:=[profile?] <dev-haskell/vector-0.14
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/aeson-1.4.0.0:=[profile?] <dev-haskell/aeson-1.5:=[profile?] )
-		|| ( ( >=dev-haskell/aeson-1.5.0.0:=[profile?] <dev-haskell/aeson-1.6:=[profile?] )
-			|| ( ( >=dev-haskell/aeson-2.0.0.0:=[profile?] <dev-haskell/aeson-2.1:=[profile?] )
-			|| ( ( >=dev-haskell/aeson-2.1.0.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?] )
-				( >=dev-haskell/aeson-2.2.0.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?] ) ) ) ) )
-	|| ( ( >=dev-haskell/text-1.2.3:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		|| ( ( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.1:=[profile?] )
-			( >=dev-haskell/text-2.1:=[profile?] <dev-haskell/text-2.2:=[profile?] ) ) )
-	|| ( ( >=dev-haskell/vector-0.12.0.2:=[profile?] <dev-haskell/vector-0.13:=[profile?] )
-		( >=dev-haskell/vector-0.13.0.0:=[profile?] <dev-haskell/vector-0.14:=[profile?] ) )
+	|| (
+		( >=dev-haskell/aeson-1.4.0.0 <dev-haskell/aeson-1.6 )
+		( >=dev-haskell/aeson-2.0.0.0 <dev-haskell/aeson-2.3 )
+	)
+	dev-haskell/aeson:=[profile?]
+	|| (
+		( >=dev-haskell/text-1.2.3 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
+	)
+	dev-haskell/text:=[profile?]
 	executable? ( dev-haskell/aeson:=[profile?] )
 "
 DEPEND="${RDEPEND}
