@@ -16,8 +16,13 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'aeson        >=0.11    && <2.2' 'aeson >=0.11'
+	'vector-sized >=0.5     && <1.6' 'vector-sized >=0.5'
+)
+
 RDEPEND="
-	>=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-2.2
+	>=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/dlist-0.7.1.2:=[profile?] <dev-haskell/dlist-1.1
 	>=dev-haskell/free-4.12:=[profile?] <dev-haskell/free-5.3
 	>=dev-haskell/hashable-1.2.4.0:=[profile?] <dev-haskell/hashable-1.5
@@ -27,7 +32,7 @@ RDEPEND="
 	=dev-haskell/tagged-0.8*:=[profile?]
 	>=dev-haskell/text-1.2.2.0:=[profile?] <dev-haskell/text-2.1
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.14
-	>=dev-haskell/vector-sized-0.5:=[profile?] <dev-haskell/vector-sized-1.6
+	>=dev-haskell/vector-sized-0.5:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
