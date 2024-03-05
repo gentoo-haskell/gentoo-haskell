@@ -17,20 +17,27 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+boundschecks internalchecks unsafechecks"
 
-RDEPEND=">=dev-haskell/primitive-0.6.4.0:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
+PATCHES=(
+	"${FILESDIR}/${PN}-0.12.3.1-disable-doctests.patch"
+)
+
+RDEPEND="
+	>=dev-haskell/primitive-0.6.4.0:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
 	>=dev-haskell/vector-stream-0.1:=[profile?] <dev-haskell/vector-stream-0.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/base-orphans-0.6
+	test? (
+		>=dev-haskell/base-orphans-0.6
 		dev-haskell/hunit
 		>=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.15
 		dev-haskell/random
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
 		>=dev-haskell/tasty-inspection-testing-0.1
-		dev-haskell/tasty-quickcheck )
+		dev-haskell/tasty-quickcheck
+	)
 "
 
 src_configure() {
