@@ -13,31 +13,32 @@ libraries=(
     exceptions
     filepath
     ghc-bignum
+    ghc-boot
+    ghc-boot-th
     ghc-compact
+    ghc-heap
     ghc-prim
+    ghci
     hpc
     integer-gmp
     mtl
     pretty
     process
     stm
+    template-haskell
     terminfo
     time
     transformers
     unix
 )
 
-libraries_cabal_in=(
-    ghc-boot
-    ghc-boot-th
-    ghc-heap
-    ghci
-    template-haskell
-)
-
 print_version() {
-    echo -n "${1}: "
-    sed -rne 's/^version:\s+(\S+)$/\1/pi' "$2"
+    local regexp='s/^version:\s+(\S+)$/\1/pi'
+    local out="$(sed -rne "$regexp" "$2" 2>/dev/null)"
+    if [[ -n "${out}" ]]; then
+        echo -n "${1}: "
+        echo "$out"
+    fi
 }
 
 
@@ -52,7 +53,7 @@ git submodule update --init --recursive >/dev/null || exit 1
 
 cat \
     <(for l in "${libraries[@]}"; do print_version "$l" "libraries/${l}/${l}.cabal"; done) \
-    <(for l in "${libraries_cabal_in[@]}"; do print_version "$l" "libraries/${l}/${l}.cabal.in"; done) \
+    <(for l in "${libraries[@]}"; do print_version "$l" "libraries/${l}/${l}.cabal.in"; done) \
     <(print_version Cabal "libraries/Cabal/Cabal/Cabal.cabal") \
     <(print_version containers "libraries/containers/containers/containers.cabal") \
     | sort
