@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/text-builder"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+#KEYWORDS="~amd64" # Keep in sync with ghc-9.4
 
 RDEPEND=">=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-3:=[profile?]
 	>=dev-haskell/text-builder-dev-0.3.4.1:=[profile?] <dev-haskell/text-builder-dev-0.4:=[profile?]
