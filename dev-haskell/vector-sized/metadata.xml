@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">vector-sized</remote-id>
+		<remote-id type="github">expipiplus1/vector-sized</remote-id>
+	</upstream>
 </pkgmetadata>
