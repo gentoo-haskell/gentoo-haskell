@@ -22,8 +22,11 @@ RDEPEND=">=dev-haskell/aeson-1.5:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/pandoc-types-1.23:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/text-1.1.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	|| (
+		( >=dev-haskell/text-1.1.1.0 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
+	)
+	dev-haskell/text:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
