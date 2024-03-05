@@ -21,8 +21,11 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/base-orphans-0.8.6:=[profile?] <dev-haskell/base-orphans-0.10:=[profile?]
 	>=dev-haskell/data-array-byte-0.1.0.1:=[profile?] <dev-haskell/data-array-byte-0.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	|| (
+		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
+	)
+	dev-haskell/text:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
