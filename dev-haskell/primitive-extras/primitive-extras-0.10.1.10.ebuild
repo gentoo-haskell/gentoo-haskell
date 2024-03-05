@@ -24,8 +24,11 @@ RDEPEND=">=dev-haskell/cereal-0.5.5:=[profile?] <dev-haskell/cereal-0.6:=[profil
 	>=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/primitive-unlifted-0.1.3.1:=[profile?] <dev-haskell/primitive-unlifted-0.2:=[profile?] )
-		( >=dev-haskell/primitive-unlifted-2.1:=[profile?] <dev-haskell/primitive-unlifted-2.2:=[profile?] ) )
+	|| (
+		( >=dev-haskell/primitive-unlifted-0.1.3.1 <dev-haskell/primitive-unlifted-0.2 )
+		( >=dev-haskell/primitive-unlifted-2.1 <dev-haskell/primitive-unlifted-2.2 )
+	)
+	dev-haskell/primitive-unlifted:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
