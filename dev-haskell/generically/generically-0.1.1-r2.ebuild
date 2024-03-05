@@ -19,6 +19,12 @@ KEYWORDS="~amd64"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
+
+# Apparently needed for ghc-9.4.*
+RDEPEND+="
+	>=dev-haskell/base-orphans-0.8.8:=[profile?] <dev-haskell/base-orphans-0.10
+"
+
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
