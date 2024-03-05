@@ -27,8 +27,11 @@ RDEPEND=">=dev-haskell/cookie-0.4.3:=[profile?] <dev-haskell/cookie-0.5:=[profil
 	>=dev-haskell/unordered-containers-0.2.10.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/uuid-types-1.0.3:=[profile?] <dev-haskell/uuid-types-1.1:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	|| (
+		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
+	)
+	dev-haskell/text:=[profile?]
 	text-show? ( >=dev-haskell/text-show-3.8.2:=[profile?] <dev-haskell/text-show-3.11:=[profile?] )
 "
 DEPEND="${RDEPEND}
