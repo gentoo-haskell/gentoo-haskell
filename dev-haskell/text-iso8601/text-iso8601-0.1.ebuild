@@ -20,8 +20,11 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/integer-conversion-0.1:=[profile?] <dev-haskell/integer-conversion-0.2:=[profile?]
 	>=dev-haskell/time-compat-1.9.4:=[profile?] <dev-haskell/time-compat-1.10:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-1.3.0.0:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	|| (
+		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3.0.0 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
+	)
+	dev-haskell/text:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
