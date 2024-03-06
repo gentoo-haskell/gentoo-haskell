@@ -1,52 +1,63 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit elisp git-r3
+inherit elisp
 
 DESCRIPTION="Mode for editing (and running) Haskell programs in Emacs"
-HOMEPAGE="http://projects.haskell.org/haskellmode-emacs/
-	https://www.haskell.org/haskellwiki/Haskell_mode_for_Emacs"
-EGIT_REPO_URI="https://github.com/haskell/haskell-mode.git"
+HOMEPAGE="https://haskell.github.io/haskell-mode/
+	https://www.haskell.org/haskellwiki/Emacs#Haskell-mode"
+
+if [[ ${PV} == *9999* ]] ; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/haskell/${PN}.git"
+else
+	SRC_URI="https://github.com/haskell/${PN}/archive/v${PV}.tar.gz
+		-> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+fi
 
 LICENSE="GPL-3+ FDL-1.2+"
 SLOT="0"
-#KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
+RESTRICT="!test? ( test )"
 
-RDEPEND="
-	>=app-editors/emacs-23.1:*
-	dev-haskell/hasktags
+DEPEND="test? ( dev-lang/ghc )"
+BDEPEND="sys-apps/texinfo"
+
+ELISP_REMOVE="
+	tests/haskell-cabal-tests.el
+	tests/haskell-customize-tests.el
+	tests/haskell-lexeme-tests.el
 "
-DEPEND="${RDEPEND}"
 
-DOCS="NEWS README.md"
+DOCS=( NEWS README.md )
 ELISP_TEXINFO="doc/${PN}.texi"
 SITEFILE="50${PN}-gentoo.el"
 
 src_prepare() {
-	default
-	# remove '@$(RM) $*.elc' and '@$(RM) haskell-mode.info' from 'make check'
-	sed -e 's/\$(RM) \$\*\.elc/echo gentoo REFUSED to &/' \
-		-e 's/check: clean/check:/' \
-		-i Makefile || die
+	# We install the logo in SITEETC, not in SITELISP
+	# https://github.com/haskell/haskell-mode/issues/102
+	sed -i -e "/defconst haskell-process-logo/{n;" \
+		-e "s:(.*\"\\(.*\\)\".*):\"${SITEETC}/${PN}/\\1\":}" \
+		haskell-process.el || die
+
+	elisp_src_prepare
 }
 
 src_compile() {
 	elisp_src_compile
-	emake haskell-mode-autoloads.el
-	elisp-compile haskell-mode-autoloads.el
+	elisp-make-autoload-file haskell-site-file.el
 }
 
 src_test() {
-	# perform tests in a separate directory #504660
-	mkdir test && cp -R *.el tests Makefile test || die
-	emake -C test check
+	emake check-ert
 }
 
 src_install() {
 	elisp_src_install
-	insinto "${SITEETC}/${PN}"
+
+	insinto "${SITEETC}"/${PN}
 	doins logo.svg
 }
