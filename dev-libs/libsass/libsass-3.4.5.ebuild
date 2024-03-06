@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit eutils autotools libtool
+inherit autotools libtool
 
 DESCRIPTION="A C/C++ implementation of a Sass compiler"
 HOMEPAGE="http://libsass.org"
