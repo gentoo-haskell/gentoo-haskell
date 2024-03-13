@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="threads">Pass -DTHREADED_RTS to the C toolchain</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">ghc-lib-parser</remote-id>
 		<remote-id type="github">digital-asset/ghc-lib</remote-id>
