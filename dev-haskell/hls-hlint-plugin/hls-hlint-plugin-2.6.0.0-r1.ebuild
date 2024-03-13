@@ -18,6 +18,10 @@ LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'hlint                 >= 3.5 && < 3.7' 'hlint >=3.5'
+)
+
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/apply-refact:=[profile?]
@@ -29,7 +33,7 @@ RDEPEND="
 	dev-haskell/ghc-lib-parser-ex:=[profile?]
 	~dev-haskell/ghcide-2.6.0.0:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	>=dev-haskell/hlint-3.5:=[profile?] <dev-haskell/hlint-3.7:=[profile?]
+	>=dev-haskell/hlint-3.5:=[profile?]
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lsp:=[profile?]
