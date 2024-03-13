@@ -35,9 +35,9 @@ import           "process-extras" System.Process.Text
 haskellRepo :: String
 haskellRepo = "haskell"
 
--- How many listings to display at the end
-totalListings :: Int
-totalListings = 50
+-- How many listings to display at the end (Nothing signifies no limit)
+totalListings :: Maybe Int
+totalListings = Nothing
 
 data Atom = Atom 
     { category :: Text
@@ -63,10 +63,15 @@ main = do
     cMap <- evalStateT (foldM addToMap cMap0 atoms) S.empty
     iMap <- runWithNotify "Gathering results" $ pure $
         IM.fromListWith (<>) $ map (\(cp,i) -> (i, S.singleton cp)) (M.toList cMap)
-    let listings = IM.toDescList iMap >>= \(i,s) ->
-            map (\(c,p) -> (c,p,i)) (S.toList s)
-    forM_ (take totalListings listings) $ \(c,p,i) -> do
-        putStrLn $ T.unpack c ++ "/" ++ T.unpack p ++ ": " ++ show i
+    let iMap' = IM.delete 0 iMap -- Remove listings with 0 references
+        listings :: [(Text, Text, Int)] =
+            -- Unfold the data structure into a list of triples
+            [ (c,p,i) | (i,s) <- IM.toDescList iMap', (c,p) <- S.toList s ]
+        -- Limit the number of listings to display by totalListings
+        limit = maybe id take totalListings
+        -- How to display a single listing as a line on the terminal output
+        showListing (c,p,i) = T.unpack c ++ "/" ++ T.unpack p ++ ": " ++ show i
+    mapM_ (putStrLn . showListing) (limit listings)
   where
     addToMap :: CountMap -> Atom -> WithExcludeSet IO CountMap
     addToMap cMap atom = do
