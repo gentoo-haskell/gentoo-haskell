@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 #KEYWORDS="~amd64" # Keep in sync with ghc-9.4
 
+PATCHES=(
+	"${FILESDIR}/${PN}-2.1.0.0-fix-tests.patch"
+)
+
 RDEPEND=">=dev-haskell/primitive-0.7:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
 	>=dev-haskell/text-short-0.1.3:=[profile?] <dev-haskell/text-short-0.2:=[profile?]
 	>=dev-lang/ghc-9.4.5:=
