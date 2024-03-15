@@ -15,6 +15,8 @@ LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+RESTRICT="test" # Flaky tests
+
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/dlist:=[profile?]
