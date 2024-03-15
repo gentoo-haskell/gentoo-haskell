@@ -19,6 +19,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+executable +test-exe"
 
+RESTRICT="test" # Flaky tests
+
 CABAL_TEST_REQUIRED_BINS=(
 	ghcide
 	ghcide-test-preprocessor
