@@ -21,6 +21,7 @@ CABAL_CHDEPS=(
 	'lens              >= 4.15.4  && < 4.20 || >= 5 && <5.2' 'lens >=4.15.4 && <4.20 || >=5'
 	'reflex            >= 0.7.1.0 && < 0.9' 'reflex >=0.7.1.0'
 	'semialign         >= 1       && < 1.3' 'semialign >=1'
+	'semigroupoids     >= 5.2.2   && < 5.4' 'semigroupoids >= 5.2.2'
 	'these             >= 1       && < 1.2' 'these >=1'
 )
 
@@ -33,7 +34,7 @@ RDEPEND="
 	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2
 	>=dev-haskell/reflex-0.7.1.0:=[profile?]
 	>=dev-haskell/semialign-1:=[profile?]
-	>=dev-haskell/semigroupoids-5.2.2:=[profile?] <dev-haskell/semigroupoids-5.4
+	>=dev-haskell/semigroupoids-5.2.2:=[profile?]
 	>=dev-haskell/these-1:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
 	|| (
