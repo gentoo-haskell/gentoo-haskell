@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/awkward-squad/text-ansi"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64" # Keep in sync with ghc-9.4
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-haskell/text-builder-linear-0.1.1:=[profile?] <dev-haskell/text-builder-linear-0.2:=[profile?]

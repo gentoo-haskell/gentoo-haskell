@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/digital-asset/ghc-lib"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64" # Keep in line with ghc-9.4
+KEYWORDS="~amd64"
 IUSE="+threads"
 
 RDEPEND="dev-haskell/parsec:=[profile?]

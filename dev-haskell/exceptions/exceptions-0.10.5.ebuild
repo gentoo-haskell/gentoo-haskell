@@ -18,8 +18,7 @@ HOMEPAGE="https://github.com/ekmett/exceptions/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# Keep in sync with ghc-9.4
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-lang/ghc-8.8.1:=
 "

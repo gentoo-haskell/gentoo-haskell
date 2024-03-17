@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/shayne-fletcher/ghc-lib-parser-ex#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64" # Keep in-line with ghc-9.4
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/ghc-lib-parser-9.8:=[profile?] <dev-haskell/ghc-lib-parser-9.9:=[profile?]
 	>=dev-haskell/uniplate-1.5:=[profile?]

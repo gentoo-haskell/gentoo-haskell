@@ -18,7 +18,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-haskell/cabal-syntax-3.8:=[profile?] <dev-haskell/cabal-syntax-3.9:=[profile?]

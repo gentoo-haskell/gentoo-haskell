@@ -17,9 +17,7 @@ HOMEPAGE="https://github.com/haskell/text"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-# (2023-06-09) hololeap <hololeap@protonmail.com>
-# Keep this unkeyworded for now, many breakages likely
-# KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE="+simdutf"
 
 # break cyclic dependencies:
