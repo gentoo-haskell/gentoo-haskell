@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/ndmitchell/hlint#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64" # Keep in-line with ghc-9.4
+KEYWORDS="~amd64"
 IUSE="emacs +ghc-lib +gpl hsyaml +threads test"
 RESTRICT="!test? ( test )"
 

@@ -24,7 +24,7 @@ CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'tree-diff     ^>=0.1 || ^>=0.2' 'tree-diff >=0.1'

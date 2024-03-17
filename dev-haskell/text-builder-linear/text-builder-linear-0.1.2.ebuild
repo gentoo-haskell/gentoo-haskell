@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/Bodigrim/linear-builder"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64" # Keep in sync with ghc-9.4
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/quote-quot-0.2.1:=[profile?] <dev-haskell/quote-quot-0.3:=[profile?]
 	>=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
