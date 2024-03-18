@@ -3,13 +3,16 @@
 # These package versions depend on a minimum GHC of 9.4, which is still
 # considered experimental.
 #
-# If you need to use GHC-9.4 or any of these package versions, copy
+# If you need to use GHC-9.4 or any of these package versions, copy or symlink
 # scripts/package.unmask/ghc-9.4 to your package.mask directory.
 #
 # You can do so by running:
 #
-# cp -vi $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.4 \
+# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.4 \
 #  /etc/portage/package.unmask/ghc-9.4
+#
+# Please report any bugs to
+# https://github.com/gentoo-haskell/gentoo-haskell/issues
 >=dev-lang/ghc-9.4
 >=dev-haskell/hadrian-9.4
 >=dev-haskell/binary-0.8.9.1
