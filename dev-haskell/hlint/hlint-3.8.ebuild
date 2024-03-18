@@ -55,6 +55,13 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
+BDEPEND="
+	emacs? (
+		app-editors/emacs
+	)
+"
+
+SITEFILE="60${PN}-gentoo.el"
 
 src_configure() {
 	haskell-cabal_src_configure \
