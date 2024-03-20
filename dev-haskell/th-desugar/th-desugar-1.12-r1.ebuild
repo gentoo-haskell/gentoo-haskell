@@ -15,12 +15,17 @@ HOMEPAGE="https://github.com/goldfirere/th-desugar"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
+# Needed by singletons-base-3.0, which is tied to ghc-9.0
 KEYWORDS="~amd64"
+
+CABAL_CHDEPS=(
+	'th-abstraction >= 0.4 && < 0.5' 'th-abstraction >=0.4'
+)
 
 RDEPEND="
 	>=dev-haskell/ordered-containers-0.2.2:=[profile?]
 	>=dev-haskell/syb-0.4:=[profile?]
-	>=dev-haskell/th-abstraction-0.4:=[profile?] <dev-haskell/th-abstraction-0.5:=[profile?]
+	>=dev-haskell/th-abstraction-0.4:=[profile?]
 	>=dev-haskell/th-lift-0.6.1:=[profile?]
 	>=dev-haskell/th-orphans-0.13.7:=[profile?]
 	>=dev-haskell/transformers-compat-0.6.3:=[profile?]
@@ -28,7 +33,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
-	test? ( 
+	test? (
 		>=dev-haskell/hspec-1.3
 		>=dev-haskell/hunit-1.2
 		>=dev-haskell/th-orphans-0.13.9
