@@ -16,8 +16,12 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'aeson                >=0.11 && <2.2' 'aeson >=0.11'
+)
+
 RDEPEND="
-	>=dev-haskell/aeson-0.11:=[profile?] <dev-haskell/aeson-2.2
+	>=dev-haskell/aeson-0.11:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.15
 	=dev-haskell/beam-core-0.10*:=[profile?]
 	=dev-haskell/beam-migrate-0.5*:=[profile?]
