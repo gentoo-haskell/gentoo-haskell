@@ -40,6 +40,7 @@
 >=dev-haskell/ghc-lib-parser-ex-9.8
 >=dev-haskell/stylish-haskell-0.14.6.0
 >=dev-haskell/hlint-3.8
+>=dev-haskell/hoauth2-2.12
 
 # hololeap <hololeap@protonmail.com> (2024-02-11)
 #
