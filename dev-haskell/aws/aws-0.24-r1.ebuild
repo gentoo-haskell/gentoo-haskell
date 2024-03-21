@@ -19,7 +19,7 @@ IUSE="examples"
 
 RESTRICT=test # requires aws account
 
-RDEPEND=">=dev-haskell/aeson-2.0.0.0:=[profile?]
+RDEPEND=">=dev-haskell/aeson-2.0.0.0:=[profile?] <dev-haskell/aeson-2.2
 	>=dev-haskell/attoparsec-0.11:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
