@@ -16,6 +16,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+RESTRICT="test" # Tries to spin up a temporary postgresql server, which fails
+
 CABAL_CHDEPS=(
 	'aeson                >=0.11 && <2.2' 'aeson >=0.11'
 )
