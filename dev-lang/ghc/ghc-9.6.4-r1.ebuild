@@ -184,9 +184,6 @@ bump_lib() {
 
 	einfo "Bumping ${pn} up to ${pv}"
 
-	for f in ghc.mk GNUmakefile; do
-		mv libraries/"${pn}"/$f "${WORKDIR}"/"${p}"/$f || die
-	done
 	mv libraries/"${pn}" "${WORKDIR}"/"${pn}".old || die
 	mv "${WORKDIR}"/"${p}" libraries/"${pn}" || die
 }
