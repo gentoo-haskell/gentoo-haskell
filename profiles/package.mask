@@ -35,6 +35,7 @@
 >=dev-haskell/text-builder-0.6.7.2
 >=dev-haskell/text-builder-dev-0.3.4.2
 >=dev-haskell/text-builder-linear-0.1.2
+>=dev-haskell/base64-1.0
 >=dev-haskell/ghc-lib-parser-9.8
 >=dev-haskell/ghc-lib-parser-ex-9.8
 >=dev-haskell/stylish-haskell-0.14.6.0
