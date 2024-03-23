@@ -14,7 +14,7 @@ HOMEPAGE="https://hackage.haskell.org/package/ghc-exactprint"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-haskell/data-default:=[profile?]

@@ -14,8 +14,7 @@ HOMEPAGE="https://github.com/judah/haskeline"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# keep in sync with ghc-9.6?
-#KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 IUSE="+terminfo"
 
 RESTRICT=test # test requires example executable which does not work correctly

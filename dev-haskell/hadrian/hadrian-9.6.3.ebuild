@@ -15,7 +15,7 @@ SRC_URI="https://downloads.haskell.org/ghc/${PV/_/-}/ghc-${PV}-src.tar.xz"
 
 LICENSE="BSD"
 SLOT="0"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 IUSE="static test +threaded"
 RESTRICT="!test? ( test )"
 S="${WORKDIR}/ghc-${PV}/hadrian"

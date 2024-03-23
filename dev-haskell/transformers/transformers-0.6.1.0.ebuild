@@ -16,8 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/transformers"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# keep in sync with ghc-9.6?
-#KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-lang/ghc-8.10.6:=

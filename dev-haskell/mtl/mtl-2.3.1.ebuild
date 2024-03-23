@@ -16,8 +16,7 @@ HOMEPAGE="https://github.com/haskell/mtl"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-# keep in sync with ghc-9.6?
-#KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-lang/ghc-8.10.6:=
