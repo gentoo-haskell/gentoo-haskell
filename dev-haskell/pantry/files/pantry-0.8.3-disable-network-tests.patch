@@ -1,0 +1,87 @@
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 23 Mar 2024 17:27:52 -0600
+Subject: [PATCH 1/1] Disable network tests
+
+These tests fail when run under Gentoo's network sandbox
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/pantry.cabal
++++ b/pantry.cabal
+@@ -203,14 +203,9 @@ test-suite spec
+   other-modules:
+       Pantry.ArchiveSpec
+       Pantry.BuildPlanSpec
+-      Pantry.CabalSpec
+-      Pantry.CasaSpec
+       Pantry.FileSpec
+-      Pantry.GlobalHintsSpec
+-      Pantry.HackageSpec
+       Pantry.Internal.StaticBytesSpec
+       Pantry.InternalSpec
+-      Pantry.TreeSpec
+       Pantry.TypesSpec
+       Paths_pantry
+   hs-source-dirs:
+--- a/test/Pantry/ArchiveSpec.hs
++++ b/test/Pantry/ArchiveSpec.hs
+@@ -49,13 +49,6 @@ getRawPackageLocationIdent' TestArchive{..} = do
+ parsePackageIdentifier' :: String -> PackageIdentifier
+ parsePackageIdentifier' = fromJust . parsePackageIdentifier
+ 
+-urlToStackCommit :: Text -> TestLocation
+-urlToStackCommit commit = TLUrl $ T.concat
+-  [ "https://github.com/commercialhaskell/stack/archive/"
+-  , commit
+-  , ".tar.gz"
+-  ]
+-
+ treeWithoutCabalFile :: Selector PantryException
+ treeWithoutCabalFile (TreeWithoutCabalFile _) = True
+ treeWithoutCabalFile _ = False
+@@ -86,18 +79,6 @@ spec = do
+       , testSubdir = "."
+       }
+     ident `shouldBe` parsePackageIdentifier' "hpack-0.1.2.3"
+-  it "finds cabal file from tarball with subdir 'subs/pantry/'" $ do
+-    ident <- getRawPackageLocationIdent' TestArchive
+-      { testLocation = urlToStackCommit "2b846ff4fda13a8cd095e7421ce76df0a08b10dc"
+-      , testSubdir = "subs/pantry/"
+-      }
+-    ident `shouldBe` parsePackageIdentifier' "pantry-0.1.0.0"
+-  it "matches whole directory name" $
+-    getRawPackageLocationIdent' TestArchive
+-      { testLocation = urlToStackCommit "2b846ff4fda13a8cd095e7421ce76df0a08b10dc"
+-      , testSubdir = "subs/pant"
+-      }
+-    `shouldThrow` treeWithoutCabalFile
+   it "follows symlinks to directories" $ do
+     ident <- getRawPackageLocationIdent' TestArchive
+       { testLocation = TLFilePath "attic/symlink-to-dir.tar.gz"
+--- a/test/Pantry/TypesSpec.hs
++++ b/test/Pantry/TypesSpec.hs
+@@ -205,22 +205,3 @@ spec = do
+       warnings2 `shouldBe` []
+       pli2 <- resolvePaths Nothing unresolvedPli2
+       pli2 `shouldBe` (pli :: PackageLocationImmutable)
+-
+-  describe "completeSnapshotLocation" $ do
+-    let sameUrl (SLUrl txt _) (RSLUrl txt' _) txt'' =
+-          do
+-          txt `shouldBe` txt'
+-          txt `shouldBe` txt''
+-        sameUrl _ _ _ = liftIO $ error "Snapshot synonym did not complete as expected"
+-
+-    it "default location for nightly-2020-01-01" $ do
+-      let sn = Nightly $ ModifiedJulianDay 58849
+-      loc <- runPantryAppClean $ completeSnapshotLocation $ RSLSynonym sn
+-      sameUrl loc (defaultSnapshotLocation sn)
+-        "https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2020/1/1.yaml"
+-
+-    it "default location for lts-15.1" $ do
+-      let sn = LTS 15 1
+-      loc <- runPantryAppClean $ completeSnapshotLocation $ RSLSynonym sn
+-      sameUrl loc (defaultSnapshotLocation sn)
+-        "https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/15/1.yaml"
+-- 
+2.43.2
+
