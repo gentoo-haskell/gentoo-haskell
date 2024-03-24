@@ -1,0 +1,105 @@
+From 3cf7e4399b2585f1b4a1b586569dfca24e00b790 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 23 Mar 2024 23:01:15 -0600
+Subject: [PATCH 1/1] Disable network tests
+
+These tests fail when run under Gentoo's network sandbox
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+---
+ pantry.cabal               | 4 ----
+ test/Pantry/ArchiveSpec.hs | 4 ++--
+ test/Pantry/CasaSpec.hs    | 6 +++---
+ test/Pantry/TypesSpec.hs   | 4 ++--
+ 4 files changed, 7 insertions(+), 11 deletions(-)
+
+diff --git a/pantry.cabal b/pantry.cabal
+index 10175a0..e9caaec 100644
+--- a/pantry.cabal
++++ b/pantry.cabal
+@@ -276,13 +276,9 @@ test-suite spec
+   other-modules:
+       Pantry.ArchiveSpec
+       Pantry.BuildPlanSpec
+-      Pantry.CabalSpec
+       Pantry.CasaSpec
+       Pantry.FileSpec
+-      Pantry.GlobalHintsSpec
+-      Pantry.HackageSpec
+       Pantry.InternalSpec
+-      Pantry.TreeSpec
+       Pantry.TypesSpec
+       Paths_pantry
+   autogen-modules:
+diff --git a/test/Pantry/ArchiveSpec.hs b/test/Pantry/ArchiveSpec.hs
+index 1aa55ed..b4c9eb0 100644
+--- a/test/Pantry/ArchiveSpec.hs
++++ b/test/Pantry/ArchiveSpec.hs
+@@ -86,13 +86,13 @@ spec = do
+       , testSubdir = "."
+       }
+     ident `shouldBe` parsePackageIdentifier' "hpack-0.1.2.3"
+-  it "finds cabal file from tarball with subdir 'subs/pantry/'" $ do
++  xit "finds cabal file from tarball with subdir 'subs/pantry/'" $ do
+     ident <- getRawPackageLocationIdent' TestArchive
+       { testLocation = urlToStackCommit "2b846ff4fda13a8cd095e7421ce76df0a08b10dc"
+       , testSubdir = "subs/pantry/"
+       }
+     ident `shouldBe` parsePackageIdentifier' "pantry-0.1.0.0"
+-  it "matches whole directory name" $
++  xit "matches whole directory name" $
+     getRawPackageLocationIdent' TestArchive
+       { testLocation = urlToStackCommit "2b846ff4fda13a8cd095e7421ce76df0a08b10dc"
+       , testSubdir = "subs/pant"
+diff --git a/test/Pantry/CasaSpec.hs b/test/Pantry/CasaSpec.hs
+index 284d221..f868665 100644
+--- a/test/Pantry/CasaSpec.hs
++++ b/test/Pantry/CasaSpec.hs
+@@ -31,21 +31,21 @@ completeSpec =
+ 
+ loadHackagePackageSpec :: Spec
+ loadHackagePackageSpec = do
+-  it
++  xit
+     "loadPackageRaw Exact hackage lookup"
+     (shouldReturn
+        (fmap
+           packageTreeKey
+           (runPantryAppClean (loadPackageRaw (argsRlpi unliftio_0_2_12))))
+        (argsTreeKey unliftio_0_2_12))
+-  it
++  xit
+     "loadHackagePackageRaw Exact hackage lookup"
+     (shouldReturn
+        (fmap
+           packageTreeKey
+           (runPantryAppClean (loadPackageRaw (argsRlpi unliftio_0_2_12))))
+        (argsTreeKey unliftio_0_2_12))
+-  it
++  xit
+     "loadHackagePackageRawViaCasa Exact hackage lookup"
+     (shouldReturn
+        (fmap
+diff --git a/test/Pantry/TypesSpec.hs b/test/Pantry/TypesSpec.hs
+index eba8984..9ee9502 100644
+--- a/test/Pantry/TypesSpec.hs
++++ b/test/Pantry/TypesSpec.hs
+@@ -211,13 +211,13 @@ spec = do
+           txt `shouldBe` txt''
+         sameUrl _ _ _ = liftIO $ error "Snapshot synonym did not complete as expected"
+ 
+-    it "default location for nightly-2024-02-04" $ do
++    xit "default location for nightly-2024-02-04" $ do
+       let sn = Nightly $ fromGregorian 2024 2 4
+       loc <- runPantryAppClean $ completeSnapshotLocation $ RSLSynonym sn
+       sameUrl loc (defaultSnapshotLocation sn)
+         "https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2024/2/4.yaml"
+ 
+-    it "default location for lts-22.9" $ do
++    xit "default location for lts-22.9" $ do
+       let sn = LTS 22 9
+       loc <- runPantryAppClean $ completeSnapshotLocation $ RSLSynonym sn
+       sameUrl loc (defaultSnapshotLocation sn)
+-- 
+2.43.2
+
