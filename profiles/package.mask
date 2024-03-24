@@ -74,6 +74,7 @@
 >=dev-haskell/haddock-api-2.27
 >=dev-haskell/hlint-3.8
 >=dev-haskell/hoauth2-2.12
+>=dev-haskell/stack-2.11
 
 # hololeap <hololeap@protonmail.com> (2024-02-11)
 #

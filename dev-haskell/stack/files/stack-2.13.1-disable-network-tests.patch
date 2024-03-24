@@ -1,0 +1,46 @@
+From 72f182ce9ce367bf097efd17912bf086d2182d2d Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Wed, 27 Mar 2024 02:54:28 -0600
+Subject: [PATCH 1/1] Disable network tests
+
+These tests fail when run with network-sandbox
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+---
+ tests/unit/Stack/ConfigSpec.hs | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/tests/unit/Stack/ConfigSpec.hs b/tests/unit/Stack/ConfigSpec.hs
+index 7678e0b..d4c15c2 100644
+--- a/tests/unit/Stack/ConfigSpec.hs
++++ b/tests/unit/Stack/ConfigSpec.hs
+@@ -46,7 +46,7 @@ import           System.Environment ( lookupEnv, setEnv, unsetEnv )
+ import           System.IO ( writeFile )
+ import           Test.Hspec
+                    ( Selector, Spec, anyException, beforeAll, describe, example
+-                   , it, shouldBe, shouldThrow
++                   , it, shouldBe, shouldThrow, xit
+                    )
+ 
+ sampleConfig :: String
+@@ -215,7 +215,7 @@ spec = beforeAll setup $ do
+       boptsReconfigure `shouldBe` True
+       boptsCabalVerbose `shouldBe` CabalVerbosity verbose
+ 
+-    it "finds the config file in a parent directory" $ inTempDir $ do
++    xit "finds the config file in a parent directory" $ inTempDir $ do
+       writeFile "package.yaml" "name: foo"
+       writeFile (toFilePath stackDotYaml) sampleConfig
+       parentDir <- getCurrentDirectory >>= parseAbsDir
+@@ -226,7 +226,7 @@ spec = beforeAll setup $ do
+         bc <- runRIO config $ withBuildConfig ask
+         view projectRootL bc `shouldBe` parentDir
+ 
+-    it "respects the STACK_YAML env variable" $ inTempDir $ do
++    xit "respects the STACK_YAML env variable" $ inTempDir $ do
+       withSystemTempDir "config-is-here" $ \dir -> do
+         let stackYamlFp = toFilePath (dir </> stackDotYaml)
+         writeFile stackYamlFp sampleConfig
+-- 
+2.43.2
+
