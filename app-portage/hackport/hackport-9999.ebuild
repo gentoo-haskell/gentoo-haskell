@@ -54,6 +54,7 @@ RDEPEND="
 	dev-haskell/xml:=[profile?]
 	>=dev-haskell/zlib-0.5.3:=[profile?]
 	>=dev-lang/ghc-8.10.6:=[profile?]
+	>=dev-haskell/data-default-class-0.1.2.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.1.0
