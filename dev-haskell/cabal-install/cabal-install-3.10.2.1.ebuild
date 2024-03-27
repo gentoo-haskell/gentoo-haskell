@@ -18,7 +18,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 IUSE="+lukko +native-dns"
 
 RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]

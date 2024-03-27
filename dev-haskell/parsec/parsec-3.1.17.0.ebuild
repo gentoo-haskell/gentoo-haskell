@@ -16,8 +16,7 @@ HOMEPAGE="https://github.com/haskell/parsec"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-#keep in sync with ghc-9.8
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 
 RESTRICT=test # circular dependencies: dev-haskell/base-orphans->cabal->parsec[test]->test-framework-hunit->test-framework->base-orphans
 
