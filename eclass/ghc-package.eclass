@@ -305,8 +305,13 @@ ghc-install-pkg() {
 # updates 'package.cache' binary cacne for registered '*.conf'
 # packages
 ghc-recache-db() {
-	einfo "Recaching GHC package DB"
-	$(ghc-getghcpkg) recache
+	# No need to call ghc-pkg recache more than once
+	_GHC_RECACHE_CALLED=""
+	if [[ -z "${_GHC_RECACHE_CALLED}" ]]; then
+		einfo "Recaching GHC package DB"
+		$(ghc-getghcpkg) recache
+		_GHC_RECACHE_CALLED=y
+	fi
 }
 
 # @FUNCTION: ghc-register-pkg
