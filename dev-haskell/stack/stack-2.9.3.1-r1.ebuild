@@ -51,7 +51,7 @@ RDEPEND="
 	dev-haskell/http-client:=[profile?]
 	dev-haskell/http-client-tls:=[profile?]
 	dev-haskell/http-conduit:=[profile?]
-	dev-haskell/http-download:=[profile?]
+	<dev-haskell/http-download-0.2.1.0:=[profile?]
 	dev-haskell/http-types:=[profile?]
 	dev-haskell/memory:=[profile?]
 	dev-haskell/microlens:=[profile?]
@@ -63,7 +63,7 @@ RDEPEND="
 	dev-haskell/open-browser:=[profile?]
 	>=dev-haskell/optparse-applicative-0.17.0.0:=[profile?]
 	dev-haskell/optparse-simple:=[profile?]
-	>=dev-haskell/pantry-0.8.1:=[profile?]
+	>=dev-haskell/pantry-0.8.1:=[profile?] <dev-haskell/pantry-0.9
 	dev-haskell/path:=[profile?]
 	dev-haskell/path-io:=[profile?]
 	>=dev-haskell/persistent-2.13.3.5:=[profile?] <dev-haskell/persistent-2.15:=[profile?]
