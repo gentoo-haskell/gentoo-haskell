@@ -7,6 +7,10 @@
 	</maintainer>
 	<use>
 		<flag name="unsafe-checks">Enable all the bounds checks for unsafe functions at the cost of
-significant performance penalty</flag>
+performance penalty</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">massiv</remote-id>
+		<remote-id type="github">lehins/massiv</remote-id>
+	</upstream>
 </pkgmetadata>
