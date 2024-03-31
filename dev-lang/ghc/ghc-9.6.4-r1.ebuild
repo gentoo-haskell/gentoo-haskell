@@ -21,12 +21,12 @@ inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-BOOTSTRAP_PV="9.6.2"
+GHC_BINARY_PV="9.6.2"
 SRC_URI="
 	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
 	!ghcbootstrap? (
-		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${BOOTSTRAP_PV}.tar.gz
-		amd64? ( https://downloads.haskell.org/~ghc/${BOOTSTRAP_PV}/ghc-${BOOTSTRAP_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
+		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
+		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
 	)
 "
 
@@ -53,6 +53,21 @@ upstream_binary() {
 			return 1
 			;;
 	esac
+}
+
+# The location of the unpacked Alpine Linux tarball
+ghc_bin_path() {
+	local ghc_bin_triple
+	case ${ARCH} in
+		amd64)
+			ghc_bin_triple="x86_64-unknown-linux"
+			;;
+		*)
+			die "Unknown ghc binary triple. The list here should match yet_binary."
+			;;
+	esac
+
+	echo "${WORKDIR}/ghc-${GHC_BINARY_PV}-${ghc_bin_triple}"
 }
 
 GHC_PV=${PV}
@@ -340,6 +355,7 @@ ghc-check-reqs() {
 }
 
 llvmize() {
+	einfo "Running llvmize"
 	[[ -z "${1}" ]] && return
 	( find "${1}" -type f \
 		| file -if- \
@@ -445,7 +461,7 @@ src_prepare() {
 	        sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
 	        sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
 	fi
-	use llvm && ! use ghcbootstrap && llvmize "${WORKDIR}/usr/bin"
+	use llvm && ! use ghcbootstrap && llvmize "$(ghc_bin_path)"
 
 	# binpkg may have been built with FEATURES=splitdebug
 	if [[ -d "${WORKDIR}/usr/lib/debug" ]] ; then
@@ -530,17 +546,8 @@ src_prepare() {
 src_configure() {
 	if ! use ghcbootstrap; then
 		einfo "Installing bootstrap GHC"
-		local ghc_bin_triple
-		case ${ARCH} in
-			amd64)
-				ghc_bin_triple="x86_64-unknown-linux"
-				;;
-			*)
-				die "Unknown ghc binary triple. The list here should match yet_binary."
-				;;
-		esac
 
-		( cd "${WORKDIR}/ghc-${BOOTSTRAP_PV}-${ghc_bin_triple}" || die
+		( cd "$(ghc_bin_path)" || die
 			./configure \
 				--prefix="" \
 				--libdir="/$(get_libdir)" || die
@@ -550,8 +557,8 @@ src_configure() {
 		einfo "Bootstrapping hadrian"
 		( cd "${S}/hadrian/bootstrap" || die
 			./bootstrap.py \
-				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${BOOTSTRAP_PV}/bin/ghc" \
-				-s "${DISTDIR}/hadrian-bootstrap-sources-${BOOTSTRAP_PV}.tar.gz" || die "Hadrian bootstrap failed"
+				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin/ghc" \
+				-s "${DISTDIR}/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz" || die "Hadrian bootstrap failed"
 		)
 	fi
 
@@ -588,7 +595,7 @@ src_configure() {
 	# Get ghc from the binary
 	# except when bootstrapping we just pick ghc up off the path
 	if ! use ghcbootstrap; then
-		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${BOOTSTRAP_PV}/bin:${PATH}"
+		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
 	fi
 
 	# Allow the user to select their bignum backend (default to gmp):
