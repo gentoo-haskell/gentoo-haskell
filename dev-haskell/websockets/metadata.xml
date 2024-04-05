@@ -5,6 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-	</use>
+	<upstream>
+		<remote-id type="hackage">websockets</remote-id>
+		<remote-id type="github">jaspervdj/websockets</remote-id>
+	</upstream>
 </pkgmetadata>
