@@ -1,0 +1,11 @@
+diff -urN Agda-2.6.2.1/Agda.cabal Agda-2.6.2.1-r1/Agda.cabal
+--- Agda-2.6.2.1/Agda.cabal	2024-03-06 11:11:28.000000000 +0100
++++ Agda-2.6.2.1-r1/Agda.cabal	2024-06-17 17:26:18.636864078 +0200
+@@ -103,7 +103,6 @@
+     src/data
+
+ data-files:
+-    emacs-mode/*.el
+     html/Agda.css
+     html/highlight-hover.js
+     JS/agda-rts.js
