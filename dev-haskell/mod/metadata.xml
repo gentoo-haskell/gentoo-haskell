@@ -9,4 +9,8 @@
 		<flag name="semirings">Derive semiring instances</flag>
 		<flag name="vector">Derive unboxed and primitive vector instances</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">mod</remote-id>
+		<remote-id type="github">Bodigrim/mod</remote-id>
+	</upstream>
 </pkgmetadata>
