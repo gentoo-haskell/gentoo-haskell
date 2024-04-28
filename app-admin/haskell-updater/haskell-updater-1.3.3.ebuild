@@ -15,8 +15,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~amd64-linux ~ppc-macos ~x64-macos"
 
-SRC_URI="https://github.com/gentoo-haskell/${PN}/releases/download/v${PV}/${P}.tar.gz"
-
 DEPEND=">=dev-lang/ghc-6.12.1"
 
 # Need a lower version for portage to get --keep-going
