@@ -119,12 +119,6 @@ dev-haskell/hit
 >=dev-haskell/hoauth2-2.12
 >=dev-haskell/stack-2.11
 
-# hololeap <hololeap@protonmail.com> (2024-02-11)
-#
-# No longer needed by HLS ecosystem, masked for removal
-# Removal: 2024-03-12
-dev-haskell/implicit-hie-cradle
-
 # Jack Todaro <solpeth@posteo.org> (2023-12-08)
 # Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
 =dev-haskell/irc-core-2.12
