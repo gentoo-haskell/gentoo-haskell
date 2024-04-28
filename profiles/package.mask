@@ -12,7 +12,6 @@ dev-haskell/system-fileio
 #
 # Removal: 2024-04-26
 dev-haskell/git
-dev-haskell/hit
 
 # hololeap <hololeap@protonmail.com> (2024-03-27)
 #
