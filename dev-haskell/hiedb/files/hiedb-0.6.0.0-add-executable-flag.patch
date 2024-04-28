@@ -1,0 +1,28 @@
+From: hololeap <hololeap@protonmail.com>
+Date: Sun, 5 May 2024 09:53:24 -0600
+Subject: [PATCH 1/1] Add executable flag
+
+Flag toggles building the hiedb executable
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/hiedb.cabal
++++ b/hiedb.cabal
+@@ -39,8 +39,15 @@ common common-options
+                        -Wunused-packages
+                        -Wno-name-shadowing
+ 
++flag executable
++  description: Install the hiedb executable
++  default: False
++  manual: True
++
+ executable hiedb
+   import:              common-options
++  if !flag(executable)
++    buildable: False
+   hs-source-dirs:      exe
+   main-is:             Main.hs
+   build-depends:       base
+-- 
+2.43.2
+
