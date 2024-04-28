@@ -7,14 +7,6 @@ dev-haskell/system-fileio
 
 # hololeap <hololeap@protonmail.com> (2024-03-27)
 #
-# dev-haskell/git has no upstream activity for over three years. Mask 
-# it and revdeps for removal.
-#
-# Removal: 2024-04-26
-dev-haskell/git
-
-# hololeap <hololeap@protonmail.com> (2024-03-27)
-#
 # These package versions depend on a minimum GHC of 9.8, which is still
 # considered experimental.
 #
