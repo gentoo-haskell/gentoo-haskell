@@ -20,10 +20,10 @@ RDEPEND="
 	dev-haskell/extra:=[profile?]
 	>=dev-haskell/ghc-exactprint-0.6.4:=[profile?] <dev-haskell/ghc-exactprint-1.1:=[profile?]
 	~dev-haskell/ghcide-2.6.0.0:=[profile?]
-	dev-haskell/hls-graph:=[profile?]
+	>=dev-haskell/hls-graph-2.6:=[profile?] <dev-haskell/hls-graph-2.7
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
-	dev-haskell/lsp:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "

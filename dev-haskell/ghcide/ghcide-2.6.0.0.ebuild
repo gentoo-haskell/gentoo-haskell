@@ -57,7 +57,7 @@ RDEPEND="
 	dev-haskell/lens:=[profile?]
 	dev-haskell/list-t:=[profile?]
 	>=dev-haskell/lsp-2.3.0.0:=[profile?] <dev-haskell/lsp-2.4:=[profile?]
-	>=dev-haskell/lsp-types-2.1.0.0:=[profile?] <dev-haskell/lsp-types-2.2:=[profile?]
+	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.1.1
 	>=dev-haskell/opentelemetry-0.6.1:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/parallel:=[profile?]

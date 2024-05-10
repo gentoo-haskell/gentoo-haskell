@@ -27,10 +27,10 @@ RDEPEND="
 	dev-haskell/ghc-paths:=[profile?]
 	~dev-haskell/ghcide-2.6.0.0:=[profile?]
 	dev-haskell/hashable:=[profile?]
-	dev-haskell/hls-graph:=[profile?]
+	>=dev-haskell/hls-graph-2.6:=[profile?] <dev-haskell/hls-graph-2.7
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
-	dev-haskell/lsp:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4
 	dev-haskell/lsp-types:=[profile?]
 	>=dev-haskell/megaparsec-9.0:=[profile?]
 	>=dev-haskell/parser-combinators-1.2:=[profile?]

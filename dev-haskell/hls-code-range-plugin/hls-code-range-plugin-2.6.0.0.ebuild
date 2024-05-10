@@ -35,7 +35,7 @@ RDEPEND="
 	dev-haskell/hashable:=[profile?]
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
-	dev-haskell/lsp:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4
 	dev-haskell/semigroupoids:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/vector:=[profile?]

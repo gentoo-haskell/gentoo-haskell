@@ -36,7 +36,7 @@ RDEPEND="
 	>=dev-haskell/hlint-3.5:=[profile?]
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
-	dev-haskell/lsp:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4
 	dev-haskell/refact:=[profile?]
 	dev-haskell/regex-tdfa:=[profile?]
 	dev-haskell/temporary:=[profile?]

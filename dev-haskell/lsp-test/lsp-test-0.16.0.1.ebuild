@@ -29,7 +29,7 @@ RDEPEND="
 	dev-haskell/lens:=[profile?]
 	dev-haskell/lens-aeson:=[profile?]
 	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4:=[profile?]
-	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.2:=[profile?]
+	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.1.1
 	>=dev-haskell/parser-combinators-1.2:=[profile?]
 	dev-haskell/row-types:=[profile?]
 	dev-haskell/some:=[profile?]

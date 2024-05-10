@@ -72,11 +72,11 @@ RDEPEND="
 	dev-haskell/hashable:=[profile?]
 	dev-haskell/hie-bios:=[profile?]
 	dev-haskell/hiedb:=[profile?]
-	>dev-haskell/hls-graph-1.7.0.0:=[profile?]
+	>=dev-haskell/hls-graph-2.6:=[profile?] <dev-haskell/hls-graph-2.7
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
-	>=dev-haskell/lsp-2.3.0.0:=[profile?]
-	dev-haskell/lsp-types:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4
+	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.1.1
 	dev-haskell/optparse-applicative:=[profile?]
 	dev-haskell/optparse-simple:=[profile?]
 	>=dev-haskell/prettyprinter-1.7:=[profile?]

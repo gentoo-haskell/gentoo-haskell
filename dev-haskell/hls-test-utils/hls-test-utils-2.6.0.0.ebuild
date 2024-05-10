@@ -27,12 +27,12 @@ RDEPEND="
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/extra:=[profile?]
 	~dev-haskell/ghcide-2.6.0.0:=[profile?]
-	dev-haskell/hls-graph:=[profile?]
+	>=dev-haskell/hls-graph-2.6:=[profile?] <dev-haskell/hls-graph-2.7
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4:=[profile?]
 	>=dev-haskell/lsp-test-0.16:=[profile?] <dev-haskell/lsp-test-0.17:=[profile?]
-	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.2:=[profile?]
+	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.1.1
 	dev-haskell/row-types:=[profile?]
 	dev-haskell/tasty:=[profile?]
 	dev-haskell/tasty-expected-failure:=[profile?]

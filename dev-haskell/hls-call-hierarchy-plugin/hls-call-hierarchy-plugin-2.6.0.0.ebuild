@@ -21,10 +21,10 @@ RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/extra:=[profile?]
 	~dev-haskell/ghcide-2.6.0.0:=[profile?]
-	dev-haskell/hiedb:=[profile?]
+	>=dev-haskell/hiedb-0.5:=[profile?] <dev-haskell/hiedb-0.6
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
-	>=dev-haskell/lsp-2.3:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4
 	dev-haskell/sqlite-simple:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]

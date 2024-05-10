@@ -20,7 +20,7 @@ RESTRICT="test" # All tests fail
 RDEPEND="
 	~dev-haskell/ghcide-2.6.0.0:=[profile?]
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
-	dev-haskell/lsp-types:=[profile?]
+	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.1.1
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 	|| (

@@ -19,11 +19,11 @@ RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/extra:=[profile?]
-	dev-haskell/ghcide:=[profile?]
+	>=dev-haskell/ghcide-2.6:=[profile?] <dev-haskell/ghcide-2.7
 	dev-haskell/hls-plugin-api:=[profile?]
 	dev-haskell/lens:=[profile?]
 	>=dev-haskell/lsp-test-0.14:=[profile?] <dev-haskell/lsp-test-0.15:=[profile?]
-	dev-haskell/lsp-types:=[profile?]
+	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.1.1
 	>=dev-haskell/tasty-hunit-0.10:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-9.0.2:=

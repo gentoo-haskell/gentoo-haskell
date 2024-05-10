@@ -19,7 +19,7 @@ RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	~dev-haskell/ghcide-2.6.0.0:=[profile?]
 	~dev-haskell/hls-plugin-api-2.6.0.0:=[profile?]
-	dev-haskell/lsp:=[profile?]
+	>=dev-haskell/lsp-2.3:=[profile?] <dev-haskell/lsp-2.4
 	dev-haskell/text:=[profile?]
 	dev-haskell/unordered-containers:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
