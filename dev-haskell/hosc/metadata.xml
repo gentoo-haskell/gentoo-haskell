@@ -5,19 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		@hosc@ implements a subset of the /Open Sound Control/
-		byte protocol, &lt;http://opensoundcontrol.org/&gt;.
-		
-		"Sound.OSC.Core" implements the actual protocol.
-		
-		"Sound.OSC.Transport.FD" implements a
-		/file descriptor/ based transport layer for @UDP@
-		and @TCP@.
-		
-		"Sound.OSC.Transport.Monad" implements a
-		monadic interface to the @FD@ transport layer.
-		
-		Composite modules are at "Sound.OSC" and "Sound.OSC.FD".
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">hosc</remote-id>
+		<remote-id type="gitlab">rd--/hosc</remote-id>
+	</upstream>
 </pkgmetadata>
