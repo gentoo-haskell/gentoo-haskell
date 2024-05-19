@@ -23,10 +23,15 @@ HU_SED=(
 	/usr/bin/sed -r 's/(.*):.$/\1/'
 )
 
+haskell_pkgs() {
+    echo dev-lang/ghc
+    "${HASKELL_UPDATER[@]}" | "${HU_SED[@]}"
+}
+
 not_haskell() {
 	comm -2 -3 \
 		<("${EIX[@]}" --world | sort -u) \
-		<("${HASKELL_UPDATER[@]}" | "${HU_SED[@]}" | sort -u)
+		<(haskell_pkgs | sort -u)
 }
 
 $EIX_UPDATE
