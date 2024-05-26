@@ -17,9 +17,13 @@ HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/ghcide#
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="+executable +test-exe"
+IUSE="+executable +test-exe test-lib"
 
 RESTRICT="test" # Flaky tests
+
+PATCHES=(
+	"${FILESDIR}/${PN}-2.7.0.0-add-test-lib-flag.patch"
+)
 
 CABAL_TEST_REQUIRED_BINS=(
 	ghcide
@@ -61,7 +65,6 @@ RDEPEND="
 	dev-haskell/lens:=[profile?]
 	dev-haskell/list-t:=[profile?]
 	>=dev-haskell/lsp-2.4.0.0:=[profile?] <dev-haskell/lsp-2.5:=[profile?]
-	>=dev-haskell/lsp-test-0.17:=[profile?] <dev-haskell/lsp-test-0.18:=[profile?]
 	>=dev-haskell/lsp-types-2.1.0.0:=[profile?] <dev-haskell/lsp-types-2.2:=[profile?]
 	>=dev-haskell/opentelemetry-0.6.1:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
@@ -76,7 +79,6 @@ RDEPEND="
 	dev-haskell/sqlite-simple:=[profile?]
 	dev-haskell/stm-containers:=[profile?]
 	dev-haskell/syb:=[profile?]
-	>=dev-haskell/tasty-hunit-0.10:=[profile?]
 	dev-haskell/text:=[profile?]
 	dev-haskell/text-rope:=[profile?]
 	>=dev-haskell/unliftio-0.2.6:=[profile?]
@@ -86,6 +88,10 @@ RDEPEND="
 	>=dev-lang/ghc-9.2.4:=
 	executable? (
 		dev-haskell/gitrev:=[profile?]
+	)
+	test-lib? (
+		>=dev-haskell/lsp-test-0.17:=[profile?] <dev-haskell/lsp-test-0.18
+		>=dev-haskell/tasty-hunit-0.10:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
@@ -101,6 +107,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/regex-tdfa-1.3.1 <dev-haskell/regex-tdfa-1.4
 		dev-haskell/tasty
 		dev-haskell/tasty-expected-failure
+		>=dev-haskell/tasty-hunit-0.10
 		dev-haskell/tasty-quickcheck
 		dev-haskell/tasty-rerun
 		dev-util/shake
@@ -112,6 +119,7 @@ src_configure() {
 		--flag=-ekg
 		--flag=-ghc-patched-unboxed-bytecode
 		--flag=-pedantic
+		$(cabal_flag test-lib test-lib)
 	)
 
 	if use executable || use test; then
@@ -127,14 +135,4 @@ src_configure() {
 	fi
 
 	haskell-cabal_src_configure "${flags[@]}"
-}
-
-src_install() {
-	local install_components=(
-		lib:$PN
-	)
-	use executable && install_components+=( "exe:ghcide" )
-	use test-exe && install_components+=( "exe:ghcide-test-preprocessor" )
-
-	haskell-cabal_src_install "${install_components[@]}"
 }

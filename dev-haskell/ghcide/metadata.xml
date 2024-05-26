@@ -8,6 +8,7 @@
 	<use>
 		<flag name="executable">Build the ghcide executable</flag>
 		<flag name="test-exe">Build the ghcide-test-preprocessor executable</flag>
+		<flag name="test-lib">Build the ghcide-test-utils library</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">ghcide</remote-id>

@@ -1,0 +1,28 @@
+From: hololeap <hololeap@protonmail.com>
+Date: Sun, 26 May 2024 12:59:34 -0600
+Subject: [PATCH 1/1] Add test-lib flag
+
+Toggles building the ghcide-test-utils library
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/ghcide.cabal
++++ b/ghcide.cabal
+@@ -280,8 +280,15 @@ executable ghcide
+   if !flag(executable)
+     buildable: False
+ 
++flag test-lib
++  description: Build the ghcide-test-utils library
++  default:     False
++  manual:      True
++
+ library ghcide-test-utils
+   import: warnings
++  if !flag(test-lib)
++    buildable: False
+   visibility: public
+   default-language:   GHC2021
+ 
+-- 
+2.44.1
+
