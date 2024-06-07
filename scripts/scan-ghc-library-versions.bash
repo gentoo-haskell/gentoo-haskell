@@ -19,17 +19,21 @@ libraries=(
     ghc-heap
     ghc-prim
     ghci
+    haskeline
     hpc
     integer-gmp
     mtl
+    parsec
     pretty
     process
     stm
     template-haskell
     terminfo
+    text
     time
     transformers
     unix
+    xhtml
 )
 
 print_version() {
@@ -47,7 +51,7 @@ if [[ $# -ne 1 ]]; then
     exit 1
 fi
 
-git checkout "ghc-${1}-release" >/dev/null || exit 1
+git checkout --force "ghc-${1}-release" >/dev/null || exit 1
 git submodule foreach --recursive git reset --hard >/dev/null || exit 1
 git submodule update --init --recursive >/dev/null || exit 1
 
