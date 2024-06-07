@@ -536,6 +536,8 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 	popd
 
+	eapply "${FILESDIR}"/${PN}-9.8.2-force-merge-objects-when-building-dynamic-objects.patch
+
 	bump_libs
 
 	eapply_user
