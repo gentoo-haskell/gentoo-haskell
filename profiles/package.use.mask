@@ -35,6 +35,7 @@ dev-haskell/parser-combinators test
 dev-haskell/prettyprinter test
 dev-haskell/prettyprinter-ansi-terminal test
 dev-haskell/primitive test
+dev-haskell/random test
 dev-haskell/scientific test
 dev-haskell/splitmix test
 dev-haskell/tasty-expected-failure test

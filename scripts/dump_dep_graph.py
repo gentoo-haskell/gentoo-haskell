@@ -69,6 +69,8 @@ def print_edges(source, target, edge):
         return
     if source == 'dev-haskell/primitive':
         return
+    if source == 'dev-haskell/random':
+        return
     if source == 'dev-haskell/scientific':
         return
     if source == 'dev-haskell/splitmix':

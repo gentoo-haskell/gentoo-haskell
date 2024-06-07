@@ -15,9 +15,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
 
-# circular depend: random[test]->mwc-random->math-functions[test]->vector-th-unbox->vector->random
-RESTRICT=test
-
 RDEPEND=">=dev-haskell/splitmix-0.1:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
@@ -30,3 +27,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-inspection-testing
 		>=dev-haskell/tasty-smallcheck-0.8 <dev-haskell/tasty-smallcheck-0.9 )
 "
+
+# circular depend: random[test]->mwc-random->math-functions[test]->vector-th-unbox->vector->random
+pkg_pretend() {
+	if use test; then
+		ewarn "The \"test\" USE flag for this package creates cycles within the"
+		ewarn "dependency graph. This may give you problems during 'haskell-updater' runs."
+		ewarn "It is recommended to leave it disabled unless explicitly testing the package."
+	fi
+}
