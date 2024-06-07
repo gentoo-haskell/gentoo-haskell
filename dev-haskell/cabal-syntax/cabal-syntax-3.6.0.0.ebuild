@@ -8,6 +8,7 @@ EAPI=8
 CABAL_PN="Cabal-syntax"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES+=" nocabaldep" # in case installed Cabal is broken
 inherit haskell-cabal
 
 DESCRIPTION="A library for working with .cabal files"
@@ -17,9 +18,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND="<dev-haskell/cabal-3.7:=[profile?]
+RDEPEND="
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.0.0.0
 "
