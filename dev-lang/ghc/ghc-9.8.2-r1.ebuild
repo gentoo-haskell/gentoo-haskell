@@ -78,6 +78,15 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
+
+	# These libs are a higher version in ghc-9.6.5 than they are in ghc-9.8.2
+	# This could cause problems for hackport when determining minimum ghc
+	# version, so we upgrade them.
+	"Cabal-syntax 3.10.3.0"
+	"Cabal        3.10.3.0"
+	"directory    1.3.8.4"
+	"filepath     1.4.300.1"
+	"process      1.6.19.0"
 )
 
 LICENSE="BSD"
