@@ -95,7 +95,7 @@ KEYWORDS="~amd64"
 IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 RESTRICT="!test? ( test )"
 
-LLVM_MAX_SLOT="16"
+LLVM_MAX_SLOT="17"
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
@@ -108,6 +108,7 @@ RDEPEND="
 		|| (
 			sys-devel/llvm:15
 			sys-devel/llvm:16
+			sys-devel/llvm:17
 		)
 	)
 "
@@ -518,9 +519,9 @@ src_prepare() {
 	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
 	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
 
-		# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
-		# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
-		eapply "${FILESDIR}"/${PN}-9.6.4-llvm-16.patch
+	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
+	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
+	eapply "${FILESDIR}"/${PN}-9.6.4-llvm-17.patch
 
 	# Fix issue caused by non-standard "musleabi" target in
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
