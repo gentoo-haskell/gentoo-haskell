@@ -17,6 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="static test +threaded"
+
 RESTRICT="!test? ( test )"
 S="${WORKDIR}/ghc-${PV}/hadrian"
 CABAL_FILE="${S}/hadrian.cabal"
