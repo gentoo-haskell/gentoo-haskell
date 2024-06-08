@@ -1,0 +1,64 @@
+From 3eb9406844e637f4cdde87604fd69f93143ea21b Mon Sep 17 00:00:00 2001
+From: Matthew Pickering <matthewtpickering@gmail.com>
+Date: Wed, 1 Nov 2023 11:35:30 +0000
+Subject: [PATCH] Compatibility with 9.8.1 as boot compiler
+
+This fixes several compatability issues when using 9.8.1 as the boot
+compiler.
+
+* Some ghc-prim bounds need relaxing
+* ghc is no longer wired in, so we have to remove the -this-unit-id ghc
+  call.
+
+Fixes #24605
+
+(cherry picked from commit ef3d20f83499cf129b1cacac07906b8d6188fc17)
+---
+ hadrian/cabal.project                         | 2 +-
+ hadrian/hadrian.cabal                         | 2 +-
+ hadrian/src/Settings/Packages.hs              | 4 +++-
+ linters/lint-whitespace/lint-whitespace.cabal | 2 +-
+ linters/linters-common/linters-common.cabal   | 2 +-
+ 5 files changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/hadrian/cabal.project b/hadrian/cabal.project
+index fed4aa0540a..61039c09886 100644
+--- a/cabal.project
++++ b/cabal.project
+@@ -1,7 +1,7 @@
+ packages: ./
+ 
+ -- This essentially freezes the build plan for hadrian
+-index-state: 2023-03-30T10:00:00Z
++index-state: 2024-05-01T10:00:00Z
+ 
+ -- N.B. Compile with -O0 since this is not a performance-critical executable
+ -- and the Cabal takes nearly twice as long to build with -O1. See #16817.
+diff --git a/hadrian/src/Settings/Packages.hs b/hadrian/src/Settings/Packages.hs
+index 9840ae9db27..ab1cd8021b1 100644
+--- a/src/Settings/Packages.hs
++++ b/src/Settings/Packages.hs
+@@ -6,6 +6,7 @@ import Oracles.Setting
+ import Oracles.Flag
+ import Packages
+ import Settings
++import Data.Version.Extra
+ 
+ -- | Package-specific command-line arguments.
+ packageArgs :: Args
+@@ -29,6 +30,7 @@ packageArgs = do
+     cursesLibraryDir <- getSetting CursesLibDir
+     ffiIncludeDir  <- getSetting FfiIncludeDir
+     ffiLibraryDir  <- getSetting FfiLibDir
++    stageVersion <- readVersion <$> (expr $ ghcVersionStage stage)
+ 
+     mconcat
+         --------------------------------- base ---------------------------------
+@@ -79,7 +81,7 @@ packageArgs = do
+             -- not being fixed to `ghc`, when building stage0, we must set
+             -- -this-unit-id to `ghc` because the boot compiler expects that.
+             -- We do it through a cabal flag in ghc.cabal
+-            , stage0 ? arg "+hadrian-stage0"
++            , stageVersion < makeVersion [9,8,1] ? arg "+hadrian-stage0"
+             , flag StaticLibzstd `cabalFlag` "static-libzstd"
+             ]
