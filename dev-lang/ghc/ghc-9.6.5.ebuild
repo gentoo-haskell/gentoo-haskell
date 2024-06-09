@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -189,18 +189,19 @@ append-ghc-cflags() {
 	done
 }
 
-# $1 - lib name (under libraries/)
-# $2 - lib version
+# $1 - subdirectory (under libraries/)
+# $2 - lib name (under libraries/)
+# $3 - lib version
 # example: bump_lib "transformers" "0.4.2.0"
 bump_lib() {
-	local pn=$1 pv=$2
+	local subdir="$1" pn=$2 pv=$3
 	local p=${pn}-${pv}
 	local f
 
 	einfo "Bumping ${pn} up to ${pv}"
 
-	mv libraries/"${pn}" "${WORKDIR}"/"${pn}".old || die
-	mv "${WORKDIR}"/"${p}" libraries/"${pn}" || die
+	mv libraries/"${subdir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
+	mv "${WORKDIR}"/"${p}" libraries/"${subdir}"/"${pn}" || die
 }
 
 update_SRC_URI() {
@@ -216,12 +217,18 @@ update_SRC_URI() {
 update_SRC_URI
 
 bump_libs() {
-	local p pn pv
+	local p pn pv subdir
 	for p in "${BUMP_LIBRARIES[@]}"; do
 		set -- $p
 		pn=$1 pv=$2
 
-		bump_lib "${pn}" "${pv}"
+		if [[ "$pn" == "Cabal-syntax" ]] || [[ "$pn" == "Cabal" ]]; then
+			subdir="Cabal"
+		else
+			subdir=""
+		fi
+
+		bump_lib "${subdir}" "${pn}" "${pv}"
 	done
 }
 
@@ -452,14 +459,14 @@ src_prepare() {
 
 	if ! use ghcbootstrap && ! upstream_binary; then
 		# Make GHC's settings file comply with user's settings
-	        GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
-	        sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
-	        sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}" || die
-	        sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
-	        sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
-	        sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
-	        sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
-	        sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
+		GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
+		sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
 	fi
 	use llvm && ! use ghcbootstrap && llvmize "$(ghc_bin_path)"
 
