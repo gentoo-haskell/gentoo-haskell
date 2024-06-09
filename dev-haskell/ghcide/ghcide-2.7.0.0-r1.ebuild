@@ -119,7 +119,6 @@ src_configure() {
 		--flag=-ekg
 		--flag=-ghc-patched-unboxed-bytecode
 		--flag=-pedantic
-		$(cabal_flag test-lib test-lib)
 	)
 
 	if use executable || use test; then
@@ -134,5 +133,22 @@ src_configure() {
 		flags+=( --flag=-test-exe )
 	fi
 
+	if use test-lib || use test; then
+		flags+=( --flag=test-lib )
+	else
+		flags+=( --flag=-test-lib )
+	fi
+
 	haskell-cabal_src_configure "${flags[@]}"
+}
+
+src_install() {
+	local components=( "lib:${CABAL_PN}" )
+
+	# Only install what is indicated by the USE flags chosen
+	use executable && components+=( "exe:${CABAL_PN}" )
+	use test-exe && components+=( "exe:${CABAL_PN}-test-preprocessor" )
+	use test-lib && components+=( "lib:${CABAL_PN}-test-utils" )
+
+	haskell-cabal_src_install "${components[@]}"
 }
