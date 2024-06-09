@@ -562,24 +562,6 @@ src_prepare() {
 }
 
 src_configure() {
-	if ! use ghcbootstrap; then
-		einfo "Installing bootstrap GHC"
-
-		( cd "$(ghc_bin_path)" || die
-			./configure \
-				--prefix="" \
-				--libdir="/$(get_libdir)" || die
-			emake DESTDIR="${WORKDIR}/ghc-bin" install
-		)
-
-		einfo "Bootstrapping hadrian"
-		( cd "${S}/hadrian/bootstrap" || die
-			./bootstrap.py \
-				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin/ghc" \
-				-s "${DISTDIR}/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz" || die "Hadrian bootstrap failed"
-		)
-	fi
-
 	# prepare hadrian build settings files
 	mkdir _build
 	touch _build/hadrian.settings
@@ -689,6 +671,24 @@ src_configure() {
 	einfo "Final _build/hadrian.settings:"
 	#cat mk/build.mk || die
 	cat _build/hadrian.settings || die
+
+	if ! use ghcbootstrap; then
+		einfo "Installing bootstrap GHC"
+
+		( cd "$(ghc_bin_path)" || die
+			econf "${econf_args[@]}" \
+				--prefix="" \
+				--libdir="/$(get_libdir)" || die
+			emake DESTDIR="${WORKDIR}/ghc-bin" install
+		)
+
+		einfo "Bootstrapping hadrian"
+		( cd "${S}/hadrian/bootstrap" || die
+			./bootstrap.py \
+				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin/ghc" \
+				-s "${DISTDIR}/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz" || die "Hadrian bootstrap failed"
+		)
+	fi
 
 #		--enable-bootstrap-with-devel-snapshot \
 	econf ${econf_args[@]} \
