@@ -17,13 +17,14 @@ import qualified Data.ByteString as BS
 import Data.Foldable (toList)
 import Data.Functor.Const (Const(..))
 import Data.Functor.Identity (Identity(..))
--- import Data.List (intercalate)
+import Data.List (intercalate)
+import Data.Maybe (catMaybes)
 import "Cabal-syntax" Distribution.InstalledPackageInfo
     (InstalledPackageInfo, parseInstalledPackageInfo)
 import "Cabal-syntax" Distribution.Package
-    (packageName, packageVersion)
-import "Cabal-syntax" Distribution.Pretty
-    (pretty)
+    (packageName, packageVersion, unPackageName)
+import "Cabal-syntax" Distribution.Types.Version
+    (versionNumbers)
 import Distribution.Simple.Utils (warn)
 import Distribution.Verbosity
 import System.Console.GetOpt
@@ -34,18 +35,18 @@ import System.Exit (ExitCode(..), exitSuccess, die)
 import System.IO (stderr, hPutStr, hPutStrLn, hGetContents)
 import System.Process
 import qualified Text.PrettyPrint as PP
--- import Text.Read (readMaybe)
+import Text.Read (readMaybe)
 
-type Version = String
+type Version = [Int]
 
-data CabalFile
-    = CabalFile FilePath
-    | CabalIn FilePath
+data CabalFileType
+    = CabalFile -- normal .cabal file
+    | CabalIn -- .cabal.in file
 
 data Library f = Lib
     String -- name
     FilePath -- directory
-    (f CabalFile) -- cabal file; not initialized at first
+    (f (CabalFileType, FilePath)) -- cabal file; not initialized at first
 
 type Lib = Library (Const ()) -- No cabal file located yet
 type LibLocated = Library Identity
@@ -92,8 +93,8 @@ libraries =
 
 main :: IO ()
 main = do
-    (v, isV) <- checkArgs
-    let branch = "ghc-" ++ v ++ "-release"
+    (v, isV, isF) <- checkArgs
+    let branch = "ghc-" ++ showVersion v ++ "-release"
         verb = if isV then normal else silent
 
     gitCmd isV ["checkout", "--force", branch]
@@ -101,32 +102,49 @@ main = do
     gitCmd isV ["submodule", "update", "--init", "--recursive"]
     gitCmd isV ["clean", "-d", "-f", "-f"]
 
-    libDocs <- forM libraries $ locateLib >=> \case
+    mLibDocs <- forM libraries $ locateLib >=> \case
         Left w -> do
             warn verb w
-            pure PP.empty
-        Right (Lib name _dir (Identity cabalFile)) -> case cabalFile of
-            -- .cabal.in files should have a fallback if they cannot be parsed
-            CabalIn cabalPath -> do
-                bs <- BS.readFile cabalPath
-                pure $ case parseInstalledPackageInfo bs of
-                    Left _ -> -- fallback
-                        PP.fsep $ PP.punctuate PP.colon
-                            [ PP.text name
-                            , PP.text "@ProjectVersionMunged@" ]
-                    Right (_, ipi) -> printLib ipi
-            CabalFile cabalPath -> do
-                bs <- BS.readFile cabalPath
-                case parseInstalledPackageInfo bs of
-                    Left errs -> die $ unwords
-                        ["Errors when parsing", cabalPath, ":", show (toList errs)]
-                    Right (_, ipi) -> pure (printLib ipi)
+            pure Nothing
+        Right (Lib name _dir (Identity (cabalType, cabalPath))) -> do
+            bs <- BS.readFile cabalPath
+            case (cabalType, parseInstalledPackageInfo bs) of
+                (CabalIn, Left _) -> pure $
+                    -- .cabal.in files should have a fallback if they cannot be parsed
+                    printLib isF name (Left "@ProjectVersionMunged@")
+                (CabalIn, Right (_, ipi)) -> pure $ printIPI isF ipi
+                (CabalFile, Left errs) -> die $ unwords
+                    ["Errors when parsing", cabalPath, ":", show (toList errs)]
+                (CabalFile, Right (_, ipi)) -> pure $ printIPI isF ipi
 
-    putStrLn $ PP.render $ PP.vcat libDocs
+    putStrLn $ PP.render $ printLibs isF (catMaybes mLibDocs)
   where
-    printLib :: InstalledPackageInfo -> PP.Doc
-    printLib ipi = PP.fsep $ PP.punctuate PP.colon
-        [ pretty (packageName ipi), pretty (packageVersion ipi) ]
+    printLibs :: HaskellFormat -> [PP.Doc] -> PP.Doc
+    printLibs True (d:ds) = PP.nest 2 $ PP.vcat $
+        (PP.lbrack PP.<+> PP.text "p" PP.<+> d)
+        : map (\d' -> PP.comma PP.<+> PP.text "p" PP.<+> d') ds
+        ++ [PP.rbrack]
+    printLibs True [] = PP.lbrack <> PP.rbrack
+    printLibs False ds = PP.vcat ds
+
+    printIPI :: HaskellFormat -> InstalledPackageInfo -> Maybe PP.Doc
+    printIPI isF ipi =
+        printLib isF
+            (unPackageName (packageName ipi))
+            (Right (versionNumbers (packageVersion ipi)))
+
+    printLib
+        :: HaskellFormat
+        -> String
+        -> Either String Version
+        -> Maybe PP.Doc
+    printLib isF n e = case (isF, e) of
+        (True, Left _) -> Nothing
+        (True, Right v) -> Just $ PP.text $ unwords [show n, show v]
+        (False, ev) -> Just $
+            let vDoc = PP.text $ either id showVersion ev
+            in PP.fsep $ PP.punctuate PP.colon
+                [ PP.text n, vDoc ]
 
 locateLib :: Lib -> IO (Either String LibLocated)
 locateLib (Lib n d _) = do
@@ -136,8 +154,8 @@ locateLib (Lib n d _) = do
     cnExists <- doesFileExist cn
     cdExists <- doesFileExist cd
     pure $ case (cnExists, cdExists) of
-        (True, _) -> mkLib (CabalFile cn)
-        (_, True) -> mkLib (CabalIn cd)
+        (True, _) -> mkLib (CabalFile, cn)
+        (_, True) -> mkLib (CabalIn, cd)
         _ -> Left $ unwords
             [ "Cannot find", show cn, "or", show cd ]
 
@@ -176,22 +194,24 @@ gitCmd isV args = findExecutable "git" >>= \case
     dumpHandles hs hOut = mapM_ (hPutStr hOut <=< hGetContents) hs
 
 type Verbose = Bool
+type HaskellFormat = Bool
 
 data Mode
     = HelpMode
-    | NormalMode Verbose
+    | NormalMode Verbose HaskellFormat
     deriving (Show, Eq, Ord)
 
 instance Semigroup Mode where
     HelpMode <> _ = HelpMode
     _ <> HelpMode = HelpMode
-    NormalMode b1 <> NormalMode b2 = NormalMode (b1 || b2)
+    NormalMode v1 f1 <> NormalMode v2 f2
+        = NormalMode (v1 || v2) (f1 || f2)
 
 instance Monoid Mode where
-    mempty = NormalMode False
+    mempty = NormalMode False False
 
 -- Parses the version number and any mode info from the command line
-checkArgs :: IO (Version, Verbose)
+checkArgs :: IO (Version, Verbose, HaskellFormat)
 checkArgs = do
     progName <- getProgName
     argv <- getArgs
@@ -205,7 +225,10 @@ checkArgs = do
             (_, []) -> err "GHC version argument required"
             (_,(_:as'@(_:_))) -> err
                 ("Extra command-line arguments given: " ++ show as')
-            (NormalMode isV, [vStr]) -> pure (vStr, isV)
+            (NormalMode isV isF, [vStr]) -> case parseVersion vStr of
+                Just v -> pure (v, isV, isF)
+                Nothing -> err
+                    ("Could not parse as a version [Int]: " ++ show vStr)
   where
     showHelp progName = hPutStrLn stderr (usageInfo (header progName) options)
 
@@ -222,11 +245,17 @@ checkArgs = do
     options :: [OptDescr Mode]
     options =
         [ Option ['h'] ["help"] (NoArg HelpMode) "Show this help text"
-        , Option ['v'] ["verbose"] (NoArg (NormalMode True)) "Show debug output"
+        , Option ['v'] ["verbose"] (NoArg (NormalMode True False))
+            "Show debug output"
+        , Option ['f'] ["hackport-format"] (NoArg (NormalMode False True))
+            "Format output for use in GHCCore.hs (hackport)"
         ]
 
---     parseVersion :: String -> Maybe [Int]
---     parseVersion s = case span (/= '.') s of
---         (iStr, (_:rest)) ->
---             (:) <$> readMaybe iStr <*> parseVersion rest
---         (end, []) -> (:[]) <$> readMaybe end
+parseVersion :: String -> Maybe Version
+parseVersion s = case span (/= '.') s of
+    (iStr, (_:rest)) ->
+        (:) <$> readMaybe iStr <*> parseVersion rest
+    (end, []) -> (:[]) <$> readMaybe end
+
+showVersion :: Version -> String
+showVersion = intercalate "." . fmap show
