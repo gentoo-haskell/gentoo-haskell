@@ -1,8 +1,0 @@
-# hololeap <hololeap@protonmail.com> (2024-06-09)
-#
-# GHC 9.10 now requires that the alex utility (dev-haskell/alex) be available
-# when building GHC.
-#
-# Force ghcbootstrap until bootstrapping alex is implemented for normal
-# installs.
->=dev-lang/ghc-9.10 ghcbootstrap

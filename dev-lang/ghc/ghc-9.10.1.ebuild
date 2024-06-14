@@ -116,7 +116,6 @@ BDEPEND="
 	)
 	ghcbootstrap? (
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
-		dev-haskell/alex
 		~dev-haskell/hadrian-${PV}
 	)
 	test? ( ${PYTHON_DEPS} )
@@ -527,6 +526,10 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 	popd
 
+	pushd "${S}/libraries/Cabal"
+		eapply "${FILESDIR}/${PN}-9.10.1-Cabal-syntax-add-no-alex-flag.patch"
+	popd
+
 	bump_libs
 
 	eapply_user
@@ -549,6 +552,9 @@ src_configure() {
 #	echo "*.*.ghc.link.opts += ${LDFLAGS}" >> _build/hadrian.settings
 	# Speed up initial Cabal bootstrap
 	#echo "utils/ghc-cabal_dist_EXTRA_HC_OPTS+=$(ghc-make-args)" >> mk/build.mk
+
+	# Disable need for alex util when building Cabal-syntax
+	echo '*.Cabal-syntax.cabal.configure.opts += --flag=no-alex' >> _build/hadrian.settings
 
 #	# not used outside of ghc's test
 #	if [[ -n ${GHC_BUILD_DPH} ]]; then
