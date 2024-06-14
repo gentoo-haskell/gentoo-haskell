@@ -15,6 +15,7 @@
 # https://github.com/gentoo-haskell/gentoo-haskell/issues
 >=dev-haskell/ghc-platform-9.10
 >=dev-haskell/ghc-toolchain-9.10
+>=dev-haskell/hadrian-9.10
 >=dev-haskell/cabal-syntax-3.12
 >=dev-haskell/cabal-3.12
 >=dev-haskell/binary-0.8.9.2
