@@ -1,3 +1,20 @@
+# hololeap <hololeap@protonmail.com> (2024-06-09)
+#
+# These package versions depend on a minimum GHC of 9.10, which is still
+# considered experimental.
+#
+# If you need to use GHC-9.8 or any of these package versions, copy or symlink
+# scripts/package.unmask/ghc-9.8 to your package.mask directory.
+#
+# You can do so by running:
+#
+# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.10 \
+#  /etc/portage/package.unmask/ghc-9.10
+#
+# Please report any bugs to
+# https://github.com/gentoo-haskell/gentoo-haskell/issues
+>=dev-haskell/cabal-syntax-3.12
+
 # hololeap <hololeap@protonmail.com> (2024-03-27)
 #
 # These package versions depend on a minimum GHC of 9.8, which is still
