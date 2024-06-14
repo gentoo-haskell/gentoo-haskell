@@ -15,6 +15,7 @@
 # https://github.com/gentoo-haskell/gentoo-haskell/issues
 >=dev-haskell/cabal-syntax-3.12
 >=dev-haskell/cabal-3.12
+>=dev-haskell/binary-0.8.9.2
 
 # hololeap <hololeap@protonmail.com> (2024-03-27)
 #
