@@ -16,6 +16,7 @@
 >=dev-haskell/cabal-syntax-3.12
 >=dev-haskell/cabal-3.12
 >=dev-haskell/binary-0.8.9.2
+>=dev-haskell/stm-2.5.3.1
 
 # hololeap <hololeap@protonmail.com> (2024-03-27)
 #
