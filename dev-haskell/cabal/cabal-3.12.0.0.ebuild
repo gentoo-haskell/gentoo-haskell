@@ -20,14 +20,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-haskell/cabal-syntax-3.10:=[profile?] <dev-haskell/cabal-syntax-3.11:=[profile?]
+	>=dev-haskell/cabal-syntax-3.12:=[profile?] <dev-haskell/cabal-syntax-3.13:=[profile?]
 	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
-	>=dev-lang/ghc-9.0.2:= <dev-lang/ghc-9.9:=
-	|| (
-		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
-		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
-	)
-	dev-haskell/text:=[profile?]
+	>=dev-lang/ghc-9.0.2:= <dev-lang/ghc-9.11:=
 "
 DEPEND="${RDEPEND}
 "
@@ -37,4 +32,4 @@ src_configure() {
 		--flag=-parsec-struct-diff
 }
 
-CABAL_CORE_LIB_GHC_PV="9.6.5 9.8.2"
+CABAL_CORE_LIB_GHC_PV="9.10.1"
