@@ -62,5 +62,4 @@ cat \
     <(print_version Cabal-syntax "libraries/Cabal/Cabal-syntax/Cabal-syntax.cabal") \
     <(print_version Cabal "libraries/Cabal/Cabal/Cabal.cabal") \
     <(print_version containers "libraries/containers/containers/containers.cabal") \
-    <(print_version ghc-toolchain "utils/ghc-toolchain/ghc-toolchain.cabal") \
     | sort
