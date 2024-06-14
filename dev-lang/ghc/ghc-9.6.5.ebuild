@@ -747,7 +747,7 @@ src_compile() {
 	hadrian_vars+=("--flavour=${HADRIAN_FLAVOUR}")
 
 	# Control the verbosity of hadrian. Default is one level of --verbose
-	${HADRIAN_VERBOSITY:=1}
+	: ${HADRIAN_VERBOSITY:=1}
 
 	local n="${HADRIAN_VERBOSITY}"
 	until [[ $n -le 0 ]]; do
