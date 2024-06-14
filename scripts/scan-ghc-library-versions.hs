@@ -69,7 +69,6 @@ libraries =
     , stdlib "ghc-boot-th"
     , stdlib "ghc-compact"
     , stdlib "ghc-heap"
-    , stdlib "ghc-platform"
     , stdlib "ghc-prim"
     , lib "ghc-toolchain" ("utils" </> "ghc-toolchain")
     , stdlib "ghci"

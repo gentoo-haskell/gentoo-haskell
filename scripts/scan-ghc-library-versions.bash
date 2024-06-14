@@ -17,7 +17,6 @@ libraries=(
     ghc-boot-th
     ghc-compact
     ghc-heap
-    ghc-platform
     ghc-prim
     ghci
     haskeline
