@@ -32,4 +32,4 @@ src_configure() {
 		$(cabal_flag terminfo terminfo)
 }
 
-CABAL_CORE_LIB_GHC_PV="9.6.2 9.6.3 9.6.4 9.6.5 9.8.2"
+CABAL_CORE_LIB_GHC_PV="9.6.2 9.6.3 9.6.4 9.6.5 9.8.2 9.10.1"

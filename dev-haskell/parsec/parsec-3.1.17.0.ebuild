@@ -30,4 +30,4 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 #	)
 
-CABAL_CORE_LIB_GHC_PV="9.8.2"
+CABAL_CORE_LIB_GHC_PV="9.8.2 9.10.1"
