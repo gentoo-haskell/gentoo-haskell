@@ -232,6 +232,11 @@ bump_libs() {
 	done
 }
 
+ghc_setup_toolchain() {
+	tc-export CC CXX LD AR RANLIB
+	einfo "ghc_setup_toolchain: CC=${CC} CXX=${CXX} LD=${LD} AR=${AR} RANLIB=${RANLIB}"
+}
+
 ghc_setup_cflags() {
 	# TODO: plumb CFLAGS and BUILD_CFLAGS to respective CONF_CC_OPTS_STAGE<N>
 	if ! is_native; then
@@ -455,20 +460,21 @@ src_prepare() {
 	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1289>
 	export LC_ALL=C.utf8
 
+	ghc_setup_toolchain
 	ghc_setup_cflags
 
 	if ! use ghcbootstrap && ! upstream_binary; then
 		# Make GHC's settings file comply with user's settings
-		GHC_SETTINGS="${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/lib/settings"
-		sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"$(tc-getCXX)\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"$(tc-getCC)\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"$(tc-getLD)\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"$(tc-getAR)\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"$(tc-getRANLIB)\")/" "${GHC_SETTINGS}" || die
+		GHC_SETTINGS="$(ghc_bin_path)/lib/settings"
+
+		sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"${CC}\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"${CXX}\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"${CC}\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"${LD}\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"${LD}\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"${AR}\")/" "${GHC_SETTINGS}" || die
+		sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"${RANLIB}\")/" "${GHC_SETTINGS}" || die
 	fi
-	use llvm && ! use ghcbootstrap && llvmize "$(ghc_bin_path)"
 
 	# binpkg may have been built with FEATURES=splitdebug
 	if [[ -d "${WORKDIR}/usr/lib/debug" ]] ; then
@@ -603,8 +609,6 @@ src_configure() {
 	# We use stable thing across gcc upgrades.
 	# User can use EXTRA_ECONF=CC=... to override this default.
 	econf_args+=(
-		AR=${CTARGET}-ar
-		CC=${CTARGET}-gcc
 		# these should be inferred by GHC but ghc defaults
 		# to using bundled tools on windows.
 		Windres=${CTARGET}-windres
@@ -615,23 +619,6 @@ src_configure() {
 		# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
 		--docdir="${EPREFIX}/usr/share/doc/$(cross)${PF}"
 	)
-	case ${CTARGET} in
-		arm*)
-			# ld.bfd-2.28 does not work for ghc. Force ld.gold
-			# instead. This should be removed once gentoo gets
-			# a fix for R_ARM_COPY bug: https://sourceware.org/PR16177
-			econf_args+=(LD=${CTARGET}-ld.gold)
-		;;
-		sparc*)
-			# ld.gold-2.28 does not work for ghc. Force ld.bfd
-			# instead. This should be removed once gentoo gets
-			# a fix for missing --no-relax support bug:
-			# https://sourceware.org/ml/binutils/2017-07/msg00183.html
-			econf_args+=(LD=${CTARGET}-ld.bfd)
-		;;
-		*)
-			econf_args+=(LD=${CTARGET}-ld)
-	esac
 
 	if [[ ${CBUILD} != ${CHOST} ]]; then
 		# GHC bug: ghc claims not to support cross-building.
@@ -821,8 +808,6 @@ src_install() {
 	popd
 
 	#emake -j1 install DESTDIR="${D}"
-
-	use llvm && llvmize "${ED}/usr/bin"
 
 	# Skip for cross-targets as they all share target location:
 	# /usr/share/doc/ghc-9999/
