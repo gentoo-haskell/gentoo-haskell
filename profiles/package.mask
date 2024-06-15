@@ -3,8 +3,8 @@
 # These package versions depend on a minimum GHC of 9.10, which is still
 # considered experimental.
 #
-# If you need to use GHC-9.8 or any of these package versions, copy or symlink
-# scripts/package.unmask/ghc-9.8 to your package.mask directory.
+# If you need to use GHC-9.10 or any of these package versions, copy or symlink
+# scripts/package.unmask/ghc-9.10 to your package.mask directory.
 #
 # You can do so by running:
 #
