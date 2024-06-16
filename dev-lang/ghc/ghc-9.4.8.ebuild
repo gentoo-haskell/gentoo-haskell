@@ -27,6 +27,9 @@ SRC_URI="
 	!ghcbootstrap? (
 		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
 		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
+		arm64? ( elibc_glibc? (
+			https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-deb10-linux.tar.xz
+		) )
 	)
 "
 
@@ -34,6 +37,16 @@ yet_binary() {
 	case ${ARCH} in
 		amd64)
 			return 0
+			;;
+		arm64)
+			case "${ELIBC}" in
+				glibc)
+					return 0
+					;;
+				*)
+					return 1
+					;;
+			esac
 			;;
 		*)
 			return 1
@@ -49,18 +62,31 @@ upstream_binary() {
 		amd64)
 			return 0
 			;;
+		arm64)
+			case "${ELIBC}" in
+				glibc)
+					return 0
+					;;
+				*)
+					return 1
+					;;
+			esac
+			;;
 		*)
 			return 1
 			;;
 	esac
 }
 
-# The location of the unpacked Alpine Linux tarball
+# The location of the unpacked tarball containing binary GHC for bootstrapping
 ghc_bin_path() {
 	local ghc_bin_triple
 	case ${ARCH} in
 		amd64)
 			ghc_bin_triple="x86_64-unknown-linux"
+			;;
+		arm64)
+			ghc_bin_triple="aarch64-unknown-linux"
 			;;
 		*)
 			die "Unknown ghc binary triple. The list here should match yet_binary."
@@ -82,7 +108,7 @@ BUMP_LIBRARIES=(
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 RESTRICT="!test? ( test )"
 
