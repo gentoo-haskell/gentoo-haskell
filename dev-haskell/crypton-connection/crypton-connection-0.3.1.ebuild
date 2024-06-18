@@ -23,7 +23,7 @@ RDEPEND="dev-haskell/basement:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/network-2.6.3:=[profile?]
 	>=dev-haskell/socks-0.6:=[profile?]
-	>=dev-haskell/tls-1.7:=[profile?]
+	>=dev-haskell/tls-1.7:=[profile?] <dev-haskell/tls-2:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
