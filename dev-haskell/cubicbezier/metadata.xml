@@ -5,14 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This library supports efficient manipulating of 2D cubic bezier curves, for use in graphics or typography.  Supported features are:
-		
-		Evaluating bezier curves and derivatives, affine transformations on bezier curves, arclength and inverse arclength, intersections between two curves, intersection between a curve and a line, curvature and radius of curvature, finding tangents parallel to a vector, finding inflection points and cusps.
-		
-		It also supports polynomial root finding with Bernstein polynomials.
-		
-		The module &quot;Geom2D.CubicBezier&quot; exports all the cubic bezier functions.  The module &quot;Geom2D&quot;
-		contains general 2D geometry functions and transformations.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">cubicbezier</remote-id>
+		<remote-id type="github">kuribas/cubicbezier</remote-id>
+	</upstream>
 </pkgmetadata>
