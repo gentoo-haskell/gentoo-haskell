@@ -78,6 +78,7 @@ dev-haskell/word-trie
 >=dev-haskell/stm-2.5.2
 >=dev-haskell/text-2.1
 >=dev-haskell/singletons-th-3.3
+>=dev-haskell/singletons-base-3.3
 
 # hololeap <hololeap@protonmail.com> (2024-03-23)
 #
