@@ -5,6 +5,7 @@
 alternate-number-format - Enable Alternate Number Format plugin
 cabal - Enable cabal plugin
 cabal-fmt - Enable cabalFmt plugin
+cabal-gild - Enable cabalgild plugin
 call-hierarchy - Enable callHierarchy plugin
 change-type-signature - Change a declarations type signature with a Code Action
 class - Enable class plugin
@@ -18,6 +19,7 @@ gadt - Enable GADT plugin
 hlint - Enable hlint plugin
 import-lens - Enable importLens plugin
 module-name - Enable moduleName plugin
+notes - Enable notes plugin
 ormolu - Enable ormolu plugin
 overloaded-record-dot - Enable overloadedRecordDot plugin
 pragmas - Enable pragmas plugin
