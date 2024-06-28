@@ -5,26 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		An efficient finite map from (byte)strings to values.
-		
-		The implementation is based on big-endian patricia
-		trees, like "Data.IntMap". We first trie on the
-		elements of "Data.ByteString" and then trie on the
-		big-endian bit representation of those elements.
-		Patricia trees have efficient algorithms for union
-		and other merging operations, but they're also quick
-		for lookups and insertions.
-		
-		If you are only interested in being able to associate
-		strings to values, then you may prefer the @hashmap@
-		package which is faster for those only needing a
-		map-like structure. This package is intended for
-		those who need the extra capabilities that a trie-like
-		structure can offer (e.g., structure sharing to
-		reduce memory costs for highly redundant keys,
-		taking the submap of all keys with a given prefix,
-		contextual mapping, extracting the minimum and
-		maximum keys, etc.)
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">bytestring-trie</remote-id>
+		<remote-id type="github">wrengr/bytestring-trie</remote-id>
+	</upstream>
 </pkgmetadata>
