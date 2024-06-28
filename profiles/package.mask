@@ -163,6 +163,7 @@ dev-haskell/word-trie
 >=dev-haskell/stack-2.11
 >=dev-haskell/singletons-th-3.1.1
 >=dev-haskell/singletons-base-3.1.1
+>=dev-haskell/djot-0.1.2
 
 # Jack Todaro <solpeth@posteo.org> (2023-12-08)
 # Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
