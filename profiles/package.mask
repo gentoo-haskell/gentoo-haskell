@@ -165,6 +165,7 @@ dev-haskell/word-trie
 >=dev-haskell/singletons-base-3.1.1
 >=dev-haskell/djot-0.1.2
 >=dev-haskell/pandoc-3.2
+>=app-text/pandoc-cli-3.2
 
 # Jack Todaro <solpeth@posteo.org> (2023-12-08)
 # Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
