@@ -7,6 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="embed-files">Embed data files into the shake library</flag>
+		<flag name="threaded">Build shake with the threaded RTS</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">shake</remote-id>
