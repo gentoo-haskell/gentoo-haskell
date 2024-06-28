@@ -1,0 +1,289 @@
+<<<<<<< HEAD
+# hololeap <hololeap@protonmail.com> (2024-06-28)
+=======
+# hololeap <hololeap@protonmail.com> (2024-06-22)
+>>>>>>> e88b65572390 (profiles: Mask old unused packages)
+#
+# Last-rite old obsolete packages with no revdeps
+# (Removal: 2024-07-22)
+dev-haskell/attojson
+dev-haskell/binary-communicator
+dev-haskell/binary-ieee754
+dev-haskell/binary-shared
+dev-haskell/binary-state
+dev-haskell/buster
+dev-haskell/bytestring-show
+dev-haskell/etherbunny
+dev-haskell/googletranslate
+dev-haskell/hs-java
+dev-haskell/largeword
+dev-haskell/maccatcher
+dev-haskell/network-msg
+dev-haskell/simpleaes
+dev-haskell/system-uuid
+dev-haskell/txt-sushi
+dev-haskell/wire-streams
+dev-haskell/word-trie
+
+# hololeap <hololeap@protonmail.com> (2024-06-09)
+#
+# These package versions depend on a minimum GHC of 9.10, which is still
+# considered experimental.
+#
+# If you need to use GHC-9.10 or any of these package versions, copy or symlink
+# scripts/package.unmask/ghc-9.10 to your package.mask directory.
+#
+# You can do so by running:
+#
+# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.10 \
+#  /etc/portage/package.unmask/ghc-9.10
+#
+# Please report any bugs to
+# https://github.com/gentoo-haskell/gentoo-haskell/issues
+>=dev-lang/ghc-9.10
+>=dev-haskell/ghc-platform-9.10
+>=dev-haskell/ghc-toolchain-9.10
+>=dev-haskell/hadrian-9.10
+>=dev-haskell/cabal-syntax-3.12
+>=dev-haskell/cabal-3.12
+>=dev-haskell/cabal-described-3.12
+>=dev-haskell/cabal-quickcheck-3.12
+>=dev-haskell/cabal-install-solver-3.12
+>=dev-haskell/cabal-install-3.12
+>=dev-haskell/cabal-tree-diff-3.12
+>=dev-haskell/binary-0.8.9.2
+>=dev-haskell/stm-2.5.3.1
+>=dev-haskell/transformers-0.6.1.1
+
+# hololeap <hololeap@protonmail.com> (2024-03-27)
+#
+# These package versions depend on a minimum GHC of 9.8, which is still
+# considered experimental.
+#
+# If you need to use GHC-9.8 or any of these package versions, copy or symlink
+# scripts/package.unmask/ghc-9.8 to your package.mask directory.
+#
+# You can do so by running:
+#
+# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.8 \
+#  /etc/portage/package.unmask/ghc-9.8
+#
+# Please report any bugs to
+# https://github.com/gentoo-haskell/gentoo-haskell/issues
+>=dev-lang/ghc-9.8
+>=dev-haskell/hadrian-9.8
+>=dev-haskell/cabal-3.10.2
+>=dev-haskell/cabal-described-3.10.2
+>=dev-haskell/cabal-quickcheck-3.10.2
+>=dev-haskell/cabal-install-solver-3.10.2
+>=dev-haskell/cabal-install-3.10.2
+>=dev-haskell/cabal-tree-diff-3.10.2
+>=dev-haskell/parsec-3.1.17
+>=dev-haskell/stm-2.5.2
+>=dev-haskell/text-2.1
+>=dev-haskell/singletons-th-3.3
+>=dev-haskell/singletons-base-3.3
+
+# hololeap <hololeap@protonmail.com> (2024-03-23)
+#
+# These package versions depend on a minimum GHC of 9.6, which is still
+# considered experimental.
+#
+# If you need to use GHC-9.6 or any of these package versions, copy or symlink
+# scripts/package.unmask/ghc-9.6 to your package.mask directory.
+#
+# You can do so by running:
+#
+# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.6 \
+#  /etc/portage/package.unmask/ghc-9.6
+#
+# Please report any bugs to
+# https://github.com/gentoo-haskell/gentoo-haskell/issues
+>=dev-lang/ghc-9.6
+>=dev-haskell/hadrian-9.6
+>=dev-haskell/cabal-3.10.1
+>=dev-haskell/cabal-described-3.10.1
+>=dev-haskell/cabal-quickcheck-3.10.1
+>=dev-haskell/cabal-install-solver-3.10.1
+>=dev-haskell/cabal-install-3.10.1
+>=dev-haskell/cabal-tree-diff-3.10.1
+>=dev-haskell/exceptions-0.10.7
+>=dev-haskell/ghc-exactprint-1.7
+>=dev-haskell/haskeline-0.8.2.1
+>=dev-haskell/mtl-2.3.1
+>=dev-haskell/transformers-0.6.1
+>=dev-haskell/haddock-api-2.29
+>=dev-haskell/haddock-2.29
+>=dev-haskell/ghc-lib-parser-9.10
+>=dev-haskell/ghc-lib-parser-ex-9.10
+>=dev-haskell/singletons-th-3.2
+>=dev-haskell/singletons-base-3.2
+
+# hololeap <hololeap@protonmail.com> (2024-03-16)
+#
+# These package versions depend on a minimum GHC of 9.4, which is still
+# considered experimental.
+#
+# If you need to use GHC-9.4 or any of these package versions, copy or symlink
+# scripts/package.unmask/ghc-9.4 to your package.mask directory.
+#
+# You can do so by running:
+#
+# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.4 \
+#  /etc/portage/package.unmask/ghc-9.4
+#
+# Please report any bugs to
+# https://github.com/gentoo-haskell/gentoo-haskell/issues
+>=dev-lang/ghc-9.4
+>=dev-haskell/hadrian-9.4
+>=dev-haskell/binary-0.8.9.1
+>=dev-haskell/cabal-3.8.1.0
+>=dev-haskell/cabal-described-3.8.1.0
+>=dev-haskell/cabal-quickcheck-3.8.1.0
+>=dev-haskell/cabal-install-solver-3.8.1.0
+>=dev-haskell/cabal-install-3.8.1.0
+>=dev-haskell/cabal-tree-diff-3.8.1.0
+>=dev-haskell/exceptions-0.10.5
+>=dev-haskell/ghc-exactprint-1.6.1.3
+>=dev-haskell/parsec-3.1.16.1
+>=dev-haskell/process-1.6.17.0
+>=dev-haskell/stm-2.5.1.0
+>=dev-haskell/text-2.0.2
+>=dev-haskell/haddock-library-1.11.0-r3
+>=dev-haskell/primitive-unlifted-2.1
+>=dev-haskell/req-3.13.2
+>=dev-haskell/text-ansi-0.3.0.1
+>=dev-haskell/text-builder-0.6.7.2
+>=dev-haskell/text-builder-dev-0.3.4.2
+>=dev-haskell/text-builder-linear-0.1.2
+>=dev-haskell/base64-1.0
+>=dev-haskell/ghc-lib-parser-9.8
+>=dev-haskell/ghc-lib-parser-ex-9.8
+>=dev-haskell/stylish-haskell-0.14.6.0
+>=dev-haskell/haddock-2.27
+>=dev-haskell/haddock-api-2.27
+>=dev-haskell/hlint-3.8
+>=dev-haskell/hoauth2-2.12
+>=dev-haskell/stack-2.11
+>=dev-haskell/singletons-th-3.1.1
+>=dev-haskell/singletons-base-3.1.1
+
+# Jack Todaro <solpeth@posteo.org> (2023-12-08)
+# Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
+=dev-haskell/irc-core-2.12
+
+# hololeap <hololeap@protonmail.com> (2023-10-15)
+# This package currently depends on an outdated version of
+# lsp-test.
+dev-haskell/ghcide-test-utils
+
+# hololeap <hololeap@protonmail.com> (2023-07-14)
+#
+# Modern ormolu and fourmolu require >=dev-haskell/text-2 which is
+# unkeyworded. Additionally, only recent versions support newer
+# ghc-lib-parser which means old versions of ormolu/fourmolu will force
+# ghc-lib-parser to downgrade.
+#
+# Since some other HLS plugins require >=ghc-lib-parser-9.6 we will
+# mask ormolu and fourmolu, plus their respective HLS plugins, until
+# >=text-2 is keyworded and the situation improves.
+dev-haskell/ormolu
+dev-haskell/fourmolu
+dev-haskell/hls-ormolu-plugin
+dev-haskell/hls-fourmolu-plugin
+
+# hololeap <hololeap@protonmail.com> (2023-07-13)
+# Cabal-syntax-3.10 could cause trouble on ghc-9.4
+# See: https://github.com/gentoo-haskell/gentoo-haskell/issues/1464
+>=dev-haskell/cabal-syntax-3.10
+dev-haskell/cabal-install-parsers
+dev-haskell/cabal-plan
+
+# hololeap <hololeap@protonmail.com> (2023-03-01)
+# Not buildable on ghc-9.2
+# Masking until it is
+dev-haskell/hls-tactics-plugin
+
+# hololeap <hololeap@protonmail.com> (2023-02-27)
+# These currently depend on an old version of ghc-exactprint, which is
+# incompatible with ghc-9.2
+# See e.g. <https://github.com/lspitzner/brittany/pull/366>
+dev-haskell/hls-class-plugin
+
+# hololeap <hololeap@protonmail.com> (2022-12-29)
+# Many packages still depend on network-uri<2.7
+>=dev-haskell/network-uri-2.7
+
+# hololeap <hololeap@protonmail.com> (2022-11-12)
+# Needs extensive patching to be compatible with modern hashable.
+dev-haskell/liquidhaskell
+
+# hololeap <hololeap@protonmail.com> (2022-11-11)
+# This version breaks the normal version scheme and seems to be a mistake.
+# Hackage doesn't allow for removal of versions that have already been
+# uploaded so it is masked to prevent accidental usage.
+=dev-haskell/liquid-fixpoint-8.10.7
+
+# hololeap <hololeap@protonmail.com> (2022-09-22)
+# dev-haskell/stan does not build on >=ghc-9.0 and needs extensive patching or
+# a rewrite to do so.
+# See: <https://github.com/kowainik/stan/issues/423>
+dev-haskell/stan
+dev-haskell/hls-stan-plugin
+
+# hololeap <hololeap@protonmail.com> (2022-09-01)
+# doctest-parallel does not currently work with Setup.hs (used internally by
+# haskell-cabal.eclass)
+# See: <https://github.com/martijnbastiaan/doctest-parallel/issues/45>
+dev-haskell/doctest-parallel
+
+# Jack Todaro <solpeth@posteo.org> (2020-07-20)
+# Depends on pipes-text, which is masked.
+dev-haskell/zxcvbn-hs
+
+# hololeap <hololeap@protonmail.com> (2022-03-03)
+# >=random-fu-0.3.0.0 is needed to compile on >=base-4.15, but the latest
+# version of lambdabot-core needs <random-fu-0.3
+# Mask lambdabot and related packages until they are updated
+dev-haskell/goa
+dev-haskell/lambdabot-core
+dev-haskell/lambdabot-haskell-plugins
+dev-haskell/lambdabot-irc-plugins
+dev-haskell/lambdabot-misc-plugins
+dev-haskell/lambdabot-novelty-plugins
+dev-haskell/lambdabot-reference-plugins
+dev-haskell/lambdabot-social-plugins
+net-irc/lambdabot
+
+# hololeap <hololeap@protonmail.com> (2022-02-26)
+# Needs patching in order to compile in current ecosystem.
+dev-haskell/pipes-cereal
+dev-haskell/pipes-network
+dev-haskell/pipes-text
+dev-haskell/pipes-zlib
+dev-haskell/ihaskell-diagrams
+
+# hololeap <hololeap@protonmail.com> (2022-02-22)
+# gi-gtk-4 is not currently used and will cause conflicts
+>=dev-haskell/gi-gtk-4
+>=dev-haskell/gi-gdk-4
+>=dev-haskell/gi-gdkx11-4
+dev-haskell/gi-gsk
+
+# hololeap <hololeap@protonmail.com> (2022-02-16)
+# Needs patching to build with ghc-9.0.2
+dev-haskell/beam-automigrate
+
+# hololeap <hololeap@protonmail.com> (2022-02-12)
+# Needs patching to build with current optparse-applicative
+dev-haskell/hi
+
+# hololeap <hololeap@protonmail.com> (2022-01-21)
+# Needs extensive patching in order to build on ghc-9.0.2
+dev-util/hdocs
+
+# P.B. Lecavalier <pbl.ltx@gmail.com> (2020-01-01)
+# Various unrelated packages and what causes the conflict with newer version.
+>=dev-haskell/hsemail-2
+>=dev-haskell/ilist-0.4.0.0
+>=dev-haskell/socket-0.8
