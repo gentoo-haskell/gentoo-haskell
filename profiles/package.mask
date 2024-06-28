@@ -86,6 +86,7 @@
 >=dev-haskell/haddock-api-2.29
 >=dev-haskell/haddock-2.29
 >=dev-haskell/ghc-lib-parser-9.10
+>=dev-haskell/ghc-lib-parser-ex-9.10
 
 # hololeap <hololeap@protonmail.com> (2024-03-16)
 #
