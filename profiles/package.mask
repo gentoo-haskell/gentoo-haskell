@@ -1,7 +1,7 @@
 # hololeap <hololeap@protonmail.com> (2024-06-28)
 #
 # Last-rite old obsolete packages with no revdeps
-# (Removal: 2024-07-22)
+# (Removal: 2024-07-28)
 dev-haskell/attojson
 dev-haskell/binary-communicator
 dev-haskell/binary-ieee754
