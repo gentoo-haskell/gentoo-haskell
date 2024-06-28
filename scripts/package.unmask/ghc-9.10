@@ -16,3 +16,4 @@
 <dev-haskell/djot-0.2
 <dev-haskell/pandoc-4
 <app-text/pandoc-cli-4
+<dev-haskell/pandoc-server-4
