@@ -23,6 +23,7 @@ IUSE="+lukko +native-dns"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-3.8.1.0-fix-unit-test-imports.patch"
+	"${FILESDIR}/${PN}-3.8.1.0-cabal-update-no-dist-newstyle.patch"
 )
 
 RDEPEND="

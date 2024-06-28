@@ -1,0 +1,169 @@
+Pull requests #8358 and #8627 from Cabal upstream. This will keep
+`cabal update` from creating dist-newstyle/ directories in $PWD.
+
+Bug: https://github.com/haskell/cabal/issues/8589
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+From https://github.com/haskell/cabal/pull/8358
+From: Gershom Bazerman <gershom@arista.com>
+Date: Wed, 10 Aug 2022 18:41:07 -0400
+Subject: [PATCH 1/7] only check for compiler when project file has
+ conditionals
+
+--- a/src/Distribution/Client/CmdOutdated.hs
++++ b/src/Distribution/Client/CmdOutdated.hs
+@@ -30,7 +30,7 @@ import Distribution.Client.DistDirLayout
+     , DistDirLayout(distProjectRootDirectory, distProjectFile) )
+ import Distribution.Client.ProjectConfig
+ import Distribution.Client.ProjectConfig.Legacy
+-    ( instantiateProjectConfigSkeleton )
++    ( instantiateProjectConfigSkeletonWithCompiler )
+ import Distribution.Client.ProjectFlags
+     ( projectFlagsOptions, ProjectFlags(..), defaultProjectFlags
+     , removeIgnoreProjectOption )
+@@ -306,7 +306,7 @@ depsFromNewFreezeFile verbosity httpTransport compiler (Platform arch os) mproje
+                       {- TODO: Support dist dir override -} Nothing
+   projectConfig <- runRebuild (distProjectRootDirectory distDirLayout) $ do
+                       pcs <- readProjectLocalFreezeConfig verbosity httpTransport distDirLayout
+-                      pure $ instantiateProjectConfigSkeleton os arch (compilerInfo compiler) mempty pcs
++                      pure $ instantiateProjectConfigSkeletonWithCompiler os arch (compilerInfo compiler) mempty pcs
+   let ucnstrs = map fst . projectConfigConstraints . projectConfigShared
+                 $ projectConfig
+       deps    = userConstraintsToDependencies ucnstrs
+--- a/src/Distribution/Client/ProjectConfig/Legacy.hs
++++ b/src/Distribution/Client/ProjectConfig/Legacy.hs
+@@ -7,7 +7,8 @@ module Distribution.Client.ProjectConfig.Legacy (
+    -- Project config skeletons
+     ProjectConfigSkeleton,
+     parseProjectSkeleton,
+-    instantiateProjectConfigSkeleton,
++    instantiateProjectConfigSkeletonFetchingCompiler,
++    instantiateProjectConfigSkeletonWithCompiler,
+     singletonProjectConfigSkeleton,
+     projectSkeletonImports,
+ 
+@@ -44,7 +45,7 @@ import Distribution.Client.CmdInstall.ClientInstallFlags
+          ( ClientInstallFlags(..), defaultClientInstallFlags
+          , clientInstallOptions )
+ 
+-import Distribution.Compat.Lens (view)
++import Distribution.Compat.Lens (view, toListOf)
+ 
+ import Distribution.Solver.Types.ConstraintSource
+ 
+@@ -52,7 +53,7 @@ import Distribution.FieldGrammar
+ import Distribution.Package
+ import Distribution.Types.SourceRepo (RepoType)
+ import Distribution.Types.CondTree
+-         ( CondTree (..), CondBranch (..), mapTreeConds, traverseCondTreeC )
++         ( CondTree (..), CondBranch (..), mapTreeConds, traverseCondTreeC, traverseCondTreeV, ignoreConditions )
+ import Distribution.PackageDescription
+          ( dispFlagAssignment, Condition (..), ConfVar (..), FlagAssignment )
+ import Distribution.PackageDescription.Configuration (simplifyWithSysParams)
+@@ -135,8 +136,16 @@ type ProjectConfigImport = String
+ singletonProjectConfigSkeleton :: ProjectConfig -> ProjectConfigSkeleton
+ singletonProjectConfigSkeleton x = CondNode x mempty mempty
+ 
+-instantiateProjectConfigSkeleton :: OS -> Arch -> CompilerInfo -> FlagAssignment -> ProjectConfigSkeleton -> ProjectConfig
+-instantiateProjectConfigSkeleton os arch impl _flags skel = go $ mapTreeConds (fst . simplifyWithSysParams os arch impl) skel
++instantiateProjectConfigSkeletonFetchingCompiler :: Monad m =>  m (OS, Arch, CompilerInfo) -> FlagAssignment -> ProjectConfigSkeleton -> m ProjectConfig
++instantiateProjectConfigSkeletonFetchingCompiler fetch flags skel
++   | null (toListOf traverseCondTreeV skel) = pure $ fst (ignoreConditions skel)
++   | otherwise = do
++       (os, arch, impl) <- fetch
++       pure $ instantiateProjectConfigSkeletonWithCompiler os arch impl flags skel
++
++
++instantiateProjectConfigSkeletonWithCompiler :: OS -> Arch -> CompilerInfo -> FlagAssignment -> ProjectConfigSkeleton -> ProjectConfig
++instantiateProjectConfigSkeletonWithCompiler os arch impl _flags skel = go $ mapTreeConds (fst . simplifyWithSysParams os arch impl) skel
+     where
+         go :: CondTree
+                FlagName
+--- a/src/Distribution/Client/ProjectPlanning.hs
++++ b/src/Distribution/Client/ProjectPlanning.hs
+@@ -333,8 +333,11 @@ rebuildProjectConfig verbosity
+           liftIO $ createDirectoryIfMissingVerbose verbosity True distProjectCacheDirectory
+           projectConfigSkeleton <- phaseReadProjectConfig
+           -- have to create the cache directory before configuring the compiler
+-          (compiler, Platform arch os, _) <- configureCompiler verbosity distDirLayout ((fst $ PD.ignoreConditions projectConfigSkeleton) <> cliConfig)
+-          let projectConfig = instantiateProjectConfigSkeleton os arch (compilerInfo compiler) mempty projectConfigSkeleton
++          let fetchCompiler = do
++                 (compiler, Platform arch os, _) <- configureCompiler verbosity distDirLayout ((fst $ PD.ignoreConditions projectConfigSkeleton) <> cliConfig)
++                 pure (os, arch, compilerInfo compiler)
++
++          projectConfig <- instantiateProjectConfigSkeletonFetchingCompiler fetchCompiler mempty projectConfigSkeleton
+           localPackages <- phaseReadLocalPackages (projectConfig <> cliConfig)
+           return (projectConfig, localPackages)
+ 
+--- a/src/Distribution/Client/ScriptUtils.hs
++++ b/src/Distribution/Client/ScriptUtils.hs
+@@ -37,7 +37,7 @@ import Distribution.Client.ProjectConfig
+     , projectConfigHttpTransport )
+ import Distribution.Client.ProjectConfig.Legacy
+     ( ProjectConfigSkeleton
+-    , parseProjectSkeleton, instantiateProjectConfigSkeleton )
++    , parseProjectSkeleton, instantiateProjectConfigSkeletonFetchingCompiler )
+ import Distribution.Client.ProjectFlags
+     ( flagIgnoreProject )
+ import Distribution.Client.RebuildMonad
+@@ -243,9 +243,11 @@ withContextAndSelectors noTargets kind flags@NixStyleFlags {..} targetStrings gl
+ 
+         projectCfgSkeleton <- readProjectBlockFromScript verbosity httpTransport (distDirLayout ctx) (takeFileName script) scriptContents
+ 
+-        (compiler, Platform arch os, _) <- runRebuild (distProjectRootDirectory . distDirLayout $ ctx) $ configureCompiler verbosity (distDirLayout ctx) ((fst $ ignoreConditions projectCfgSkeleton) <> projectConfig ctx)
++        let fetchCompiler = do
++               (compiler, Platform arch os, _) <- runRebuild (distProjectRootDirectory . distDirLayout $ ctx) $ configureCompiler verbosity (distDirLayout ctx) ((fst $ ignoreConditions projectCfgSkeleton) <> projectConfig ctx)
++               pure (os, arch, compilerInfo compiler)
+ 
+-        let projectCfg = instantiateProjectConfigSkeleton os arch (compilerInfo compiler) mempty projectCfgSkeleton :: ProjectConfig
++        projectCfg <- instantiateProjectConfigSkeletonFetchingCompiler fetchCompiler mempty projectCfgSkeleton
+ 
+         let executable' = executable & L.buildInfo . L.defaultLanguage %~ maybe (Just Haskell2010) Just
+             ctx'        = ctx & lProjectConfig %~ (<> projectCfg)
+
+From https://github.com/haskell/cabal/pull/8358
+From: Gershom Bazerman <gershom@arista.com>
+Date: Thu, 11 Aug 2022 16:08:04 -0400
+Subject: [PATCH 2/7] fix sdist options a bit plus test
+
+--- a/src/Distribution/Client/CmdSdist.hs
++++ b/src/Distribution/Client/CmdSdist.hs
+@@ -137,7 +137,7 @@ sdistOptions showOrParseArgs =
+ -------------------------------------------------------------------------------
+ 
+ sdistAction :: (ProjectFlags, SdistFlags) -> [String] -> GlobalFlags -> IO ()
+-sdistAction (ProjectFlags{..}, SdistFlags{..}) targetStrings globalFlags = do
++sdistAction (pf@ProjectFlags{..}, SdistFlags{..}) targetStrings globalFlags = do
+     (baseCtx, distDirLayout) <- withProjectOrGlobalConfig verbosity flagIgnoreProject globalConfigFlag withProject withoutProject
+ 
+     let localPkgs = localPackages baseCtx
+@@ -196,6 +196,7 @@ sdistAction (ProjectFlags{..}, SdistFlags{..}) targetStrings globalFlags = do
+             { configVerbosity = sdistVerbosity
+             , configDistPref = sdistDistDir
+             }
++          , projectFlags = pf
+           }
+         mempty
+ 
+From https://github.com/haskell/cabal/pull/8627
+From: Gershom Bazerman <gershom@arista.com>
+Date: Tue, 6 Dec 2022 13:41:59 -0500
+Subject: [PATCH 1/2] don't create a cache directory when the compiler isn't
+ configured
+
+--- a/src/Distribution/Client/ProjectPlanning.hs
++++ b/src/Distribution/Client/ProjectPlanning.hs
+@@ -332,10 +332,10 @@ rebuildProjectConfig verbosity
+                        fileMonitorProjectConfigKey -- todo check deps too?
+       $ do
+           liftIO $ info verbosity "Project settings changed, reconfiguring..."
+-          liftIO $ createDirectoryIfMissingVerbose verbosity True distProjectCacheDirectory
+           projectConfigSkeleton <- phaseReadProjectConfig
+-          -- have to create the cache directory before configuring the compiler
+           let fetchCompiler = do
++                 -- have to create the cache directory before configuring the compiler
++                 liftIO $ createDirectoryIfMissingVerbose verbosity True distProjectCacheDirectory
+                  (compiler, Platform arch os, _) <- configureCompiler verbosity distDirLayout ((fst $ PD.ignoreConditions projectConfigSkeleton) <> cliConfig)
+                  pure (os, arch, compilerInfo compiler)
+ 
+
