@@ -1,0 +1,41 @@
+From 463f6edc9dc2e8317cb379c3547cecd39f54309a Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 22 Jun 2024 08:04:28 -0600
+Subject: [PATCH 1/1] Add ghcide-bench and ghcide-bench-lib flags
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/haskell-language-server.cabal
++++ b/haskell-language-server.cabal
+@@ -2185,8 +2185,14 @@ test-suite ghcide-tests
+     RecordWildCards
+     ViewPatterns
+ 
++flag ghcide-bench
++    description: Build the ghcide-bench executable
++    default: False
++    manual: True
+ 
+ executable ghcide-bench
++    if !flag(ghcide-bench)
++        buildable: False
+     default-language: GHC2021
+     build-depends:
+         aeson,
+@@ -2218,7 +2224,14 @@ executable ghcide-bench
+         RecordWildCards
+         ViewPatterns
+ 
++flag ghcide-bench-lib
++    description: Build the ghcide-bench-lib library
++    default: False
++    manual: True
++
+ library ghcide-bench-lib
++    if !flag(ghcide-bench-lib)
++        buildable: False
+     default-language: GHC2021
+     hs-source-dirs: ghcide-bench/src
+     ghc-options: -Wall -Wno-name-shadowing
+-- 
+2.44.2
+

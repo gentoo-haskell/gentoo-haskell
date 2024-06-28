@@ -6,6 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="ghcide-bench">Build the ghcide-bench executable</flag>
+		<flag name="ghcide-bench-lib">Build the ghcide-bench-lib library</flag>
 		<flag name="hls_plugins_alternate-number-format">Enable Alternate Number Format plugin</flag>
 		<flag name="hls_plugins_cabal">Enable cabal plugin</flag>
 		<flag name="hls_plugins_cabal-fmt">Enable cabalfmt plugin</flag>
