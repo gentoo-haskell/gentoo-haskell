@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="executable test-exe test-lib"
 
+REQUIRED_USE="test-exe? ( test-lib )"
+
 PATCHES=(
 	"${FILESDIR}/${PN}-2.7.0.0-add-test-lib-flag.patch"
 )

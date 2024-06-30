@@ -17,7 +17,9 @@ HOMEPAGE="https://github.com/haskell/haskell-language-server/tree/master/ghcide#
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="+executable +test-exe test-lib"
+IUSE="executable test-exe test-lib"
+
+REQUIRED_USE="test-exe? ( test-lib )"
 
 RESTRICT="test" # Flaky tests
 
