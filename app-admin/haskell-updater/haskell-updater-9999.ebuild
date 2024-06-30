@@ -16,10 +16,10 @@ EGIT_REPO_URI="https://github.com/gentoo-haskell/haskell-updater.git"
 LICENSE="GPL-3+"
 SLOT="0"
 
-# Need a lower version for portage to get --keep-going
+# Need a lower version for portage to get --reinstall-atoms
 RDEPEND="
 	|| (
-		>=sys-apps/portage-2.1.6
+		>=sys-apps/portage-2.1.10
 		sys-apps/pkgcore
 	)
 "
