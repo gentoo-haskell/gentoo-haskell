@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">GLURaw</remote-id>
-		<remote-id type="github">haskell-opengl/GLURaw</remote-id>
+		<remote-id type="hackage">unicode-show</remote-id>
+		<remote-id type="github">haskell-jp/unicode-show</remote-id>
 	</upstream>
 </pkgmetadata>
