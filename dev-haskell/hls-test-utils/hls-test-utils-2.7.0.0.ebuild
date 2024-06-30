@@ -16,10 +16,6 @@ LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-2.6.0.0-one-thread.patch"
-)
-
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/async:=[profile?]
