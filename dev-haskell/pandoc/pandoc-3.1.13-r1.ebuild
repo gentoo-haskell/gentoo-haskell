@@ -17,6 +17,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="embed-data-files"
 
+CABAL_CHDEPS=(
+	'crypton-connection    >= 0.3.1    && < 0.4' 'crypton-connection >=0.3.1 && <0.5'
+)
+
+PATCHES=(
+	"${FILESDIR}/${PN}-3.1.13-new-commonmark-extensions.patch"
+)
+
 RDEPEND=">=dev-haskell/aeson-2.0.1.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.9:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
@@ -26,12 +34,12 @@ RDEPEND=">=dev-haskell/aeson-2.0.1.0:=[profile?] <dev-haskell/aeson-2.3:=[profil
 	>=dev-haskell/case-insensitive-1.2:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/citeproc-0.8.1:=[profile?] <dev-haskell/citeproc-0.9:=[profile?]
 	>=dev-haskell/commonmark-0.2.6:=[profile?] <dev-haskell/commonmark-0.3:=[profile?]
-	>=dev-haskell/commonmark-extensions-0.2.5.4:=[profile?] <dev-haskell/commonmark-extensions-0.3:=[profile?]
+	>=dev-haskell/commonmark-extensions-0.2.5.5:=[profile?] <dev-haskell/commonmark-extensions-0.3:=[profile?]
 	>=dev-haskell/commonmark-pandoc-0.2.2.1:=[profile?] <dev-haskell/commonmark-pandoc-0.3:=[profile?]
-	>=dev-haskell/crypton-connection-0.3.1:=[profile?] <dev-haskell/crypton-connection-0.4:=[profile?]
+	>=dev-haskell/crypton-connection-0.3.1:=[profile?] <dev-haskell/crypton-connection-0.5:=[profile?]
 	>=dev-haskell/crypton-x509-system-1.6.7:=[profile?] <dev-haskell/crypton-x509-system-1.7:=[profile?]
 	>=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
-	>=dev-haskell/djot-0.1.1.3:=[profile?] <dev-haskell/djot-0.2:=[profile?]
+	~dev-haskell/djot-0.1.1.3:=[profile?]
 	>=dev-haskell/doclayout-0.4.0.1:=[profile?] <dev-haskell/doclayout-0.5:=[profile?]
 	>=dev-haskell/doctemplates-0.11:=[profile?] <dev-haskell/doctemplates-0.12:=[profile?]
 	>=dev-haskell/emojis-0.1:=[profile?] <dev-haskell/emojis-0.2:=[profile?]
