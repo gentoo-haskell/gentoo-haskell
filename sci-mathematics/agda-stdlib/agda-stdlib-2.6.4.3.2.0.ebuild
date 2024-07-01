@@ -1,10 +1,10 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 CABAL_FEATURES="profile"
-inherit haskell-cabal elisp-common
+inherit haskell-cabal
 
 ## shared with sci-mathematics/agda
 # upstream does not maintain version ordering:
@@ -13,7 +13,7 @@ inherit haskell-cabal elisp-common
 # As Agda-stdlib is tied to Agda version we encode
 # both versions in gentoo version.
 ##
-MY_UPSTREAM_AGDA_STDLIB_V="1.7.2"
+MY_UPSTREAM_AGDA_STDLIB_V="2.0"
 MY_GENTOO_AGDA_STDLIB_V="${PV}.${MY_UPSTREAM_AGDA_STDLIB_V}"
 MY_UPSTREAM_AGDA_V="${PV%.${MY_UPSTREAM_AGDA_STDLIB_V}}"
 
@@ -51,11 +51,14 @@ src_compile() {
 	# datadir    = "/usr/share/agda-9999/ghc-7.6.1"
 	# it fails without the --css option like:
 	# /usr/share/agda-9999/ghc-7.4.1/Agda.css: copyFile: does not exist
-	local cssdir=$(egrep 'datadir *=' "${S}/dist/build/autogen/Paths_lib.hs" | sed -e 's@datadir    = \(.*\)@\1@')
-	agda --html -i "${S}" -i "${S}"/src --css="${cssdir}/Agda.css" "${S}"/README.agda || die
+	local paths="${S}/dist/build/GenerateEverything/autogen/Paths_agda_stdlib_utils.hs"
+	local cssdir=$(egrep 'datadir *=' "${paths}" | sed -e 's@datadir    = \(.*\)@\1@')
+	cd "${S}"/doc
+	agda --html -i "${S}" -i "${S}"/src --css="${cssdir}/Agda.css" README.agda || die
 }
 
 src_test() {
+	cd "${S}"/doc
 	agda -i "${S}" -i "${S}"/src README.agda || die
 }
 
@@ -63,6 +66,9 @@ src_install() {
 	insinto usr/share/agda-stdlib
 	insopts --preserve-timestamps
 	doins -r src/*
-	dodoc -r html/*
+	dodoc -r doc/html/*
 	doins "${FILESDIR}/standard-library.agda-lib"
+	mkdir -p usr/share/agda-stdlib/_build/${MY_UPSTREAM_AGDA_V}/agda
+	insinto  usr/share/agda-stdlib/_build/${MY_UPSTREAM_AGDA_V}/agda
+	doins -r _build/${MY_UPSTREAM_AGDA_V}/agda/src/*
 }
