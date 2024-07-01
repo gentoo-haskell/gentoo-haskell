@@ -21,12 +21,14 @@ RDEPEND="
 	dev-haskell/async:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/extra:=[profile?]
-	~dev-haskell/ghcide-2.7.0.0:=[profile?]
-	~dev-haskell/hls-plugin-api-2.7.0.0:=[profile?]
+	~dev-haskell/ghcide-2.9.0.0:=[profile?]
+	~dev-haskell/hls-plugin-api-2.9.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
+	dev-haskell/lsp:=[profile?]
 	>=dev-haskell/lsp-test-0.17:=[profile?] <dev-haskell/lsp-test-0.18:=[profile?]
-	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.2:=[profile?]
-	dev-haskell/row-types:=[profile?]
+	>=dev-haskell/lsp-types-2.3:=[profile?] <dev-haskell/lsp-types-2.4:=[profile?]
+	dev-haskell/neat-interpolation:=[profile?]
+	dev-haskell/safe-exceptions:=[profile?]
 	dev-haskell/tasty:=[profile?]
 	dev-haskell/tasty-expected-failure:=[profile?]
 	dev-haskell/tasty-golden:=[profile?]
@@ -34,6 +36,7 @@ RDEPEND="
 	dev-haskell/tasty-rerun:=[profile?]
 	dev-haskell/temporary:=[profile?]
 	dev-haskell/text:=[profile?]
+	dev-haskell/text-rope:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}

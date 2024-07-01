@@ -16,24 +16,18 @@ LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-<<<<<<< HEAD
-=======
-PATCHES=(
-	"${FILESDIR}/${PN}-2.6.0.0-one-thread.patch"
-)
-
->>>>>>> 537a542ce031 (dev-haskell/hls-test-utils: add 2.7.0.0)
 RDEPEND="
 	dev-haskell/aeson:=[profile?]
 	dev-haskell/async:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	dev-haskell/extra:=[profile?]
-	~dev-haskell/ghcide-2.7.0.0:=[profile?]
-	~dev-haskell/hls-plugin-api-2.7.0.0:=[profile?]
+	~dev-haskell/ghcide-2.8.0.0:=[profile?]
+	~dev-haskell/hls-plugin-api-2.8.0.0:=[profile?]
 	dev-haskell/lens:=[profile?]
 	>=dev-haskell/lsp-test-0.17:=[profile?] <dev-haskell/lsp-test-0.18:=[profile?]
 	>=dev-haskell/lsp-types-2.1:=[profile?] <dev-haskell/lsp-types-2.2:=[profile?]
 	dev-haskell/row-types:=[profile?]
+	dev-haskell/safe-exceptions:=[profile?]
 	dev-haskell/tasty:=[profile?]
 	dev-haskell/tasty-expected-failure:=[profile?]
 	dev-haskell/tasty-golden:=[profile?]

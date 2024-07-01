@@ -1,3 +1,12 @@
+# hololeap <hololeap@protonmail.com> (2024-06-30)
+#
+# Last-rite deprecated crypto-random and revdeps
+# (Removal: 2024-07-30)
+dev-haskell/crypto-random
+dev-haskell/cprng-aes
+dev-haskell/crypto-numbers
+dev-haskell/crypto-pubkey
+
 # hololeap <hololeap@protonmail.com> (2024-06-28)
 #
 # Last-rite old obsolete packages with no revdeps

@@ -10,5 +10,6 @@
 	</use>
 	<upstream>
 		<remote-id type="hackage">libtelnet</remote-id>
+		<remote-id type="sourcehut">~jack/libtelnet-haskell</remote-id>
 	</upstream>
 </pkgmetadata>

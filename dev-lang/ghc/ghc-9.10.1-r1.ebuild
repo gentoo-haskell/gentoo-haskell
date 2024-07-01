@@ -78,6 +78,7 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
+	"directory 1.3.8.4"
 )
 
 LICENSE="BSD"
