@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-RDEPEND=">=dev-haskell/brick-1.5:=[profile?] <dev-haskell/brick-2.4:=[profile?]
+RDEPEND=">=dev-haskell/brick-1.5:=[profile?] <dev-haskell/brick-2.5:=[profile?]
 	>=dev-haskell/microlens-0.4.13:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/vector-0.12.3:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
