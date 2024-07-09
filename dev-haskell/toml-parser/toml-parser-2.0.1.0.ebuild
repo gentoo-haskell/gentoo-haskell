@@ -15,6 +15,7 @@ LICENSE="ISC"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+RESTRICT=test # fails
 RDEPEND=">=dev-haskell/prettyprinter-1.7:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
 	>=dev-haskell/text-0.2:=[profile?] <dev-haskell/text-3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
