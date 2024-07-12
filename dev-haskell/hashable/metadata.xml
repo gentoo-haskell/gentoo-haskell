@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="ghc-9-0">Use dependencies compatible with ghc-9.0</flag>
 		<flag name="random-initial-seed">
 &#9;&#9;Randomly initialize the seed on every executable invocation. This
 &#9;&#9;is not a security feature and is intended only for testing (it
