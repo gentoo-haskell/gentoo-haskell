@@ -1,0 +1,25 @@
+From 5746276e1f403025c6ed3bd9b33b3198cc61b919 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Thu, 18 Jul 2024 18:30:53 -0600
+Subject: [PATCH 1/1] Add examples flag (default off)
+
+Toggles building of test executable
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/tidal-link.cabal
++++ b/tidal-link.cabal
+@@ -65,6 +65,11 @@ source-repository head
+   type:     git
+   location: https://github.com/tidalcycles/Tidal
+ 
++flag examples
++  description: Build tidal-link-test example executable
++  default: False
++  manual: True
++
+ executable linktest
+   ghc-options: -Wall
+   hs-source-dirs:
+-- 
+2.44.2
+
