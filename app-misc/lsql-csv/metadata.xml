@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">tidal</remote-id>
-		<remote-id type="github">tidalcycles/Tidal</remote-id>
+		<remote-id type="hackage">lsql-csv</remote-id>
+		<remote-id type="github">stastnypremysl/lsql-csv</remote-id>
 	</upstream>
 </pkgmetadata>

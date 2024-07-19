@@ -19,9 +19,9 @@ S="${WORKDIR}/${PN}"
 
 RDEPEND=">=dev-haskell/beam-core-0.10.0.0:= <dev-haskell/beam-core-0.11:=
 	>=dev-haskell/beam-sqlite-0.5.2.0:= <dev-haskell/beam-sqlite-0.6:=
-	>=dev-haskell/brick-2.3.1:= <dev-haskell/brick-2.4:=
-	>=dev-haskell/brick-list-skip-0.1.1.12:= <dev-haskell/brick-list-skip-0.2:=
-	>=dev-haskell/brick-tabular-list-2.2.0.10:= <dev-haskell/brick-tabular-list-2.3:=
+	>=dev-haskell/brick-2.3.1:= <dev-haskell/brick-2.5:=
+	>=dev-haskell/brick-list-skip-0.1.1.13:= <dev-haskell/brick-list-skip-0.2:=
+	>=dev-haskell/brick-tabular-list-2.2.0.11:= <dev-haskell/brick-tabular-list-2.3:=
 	>=dev-haskell/decimal-0.5.2:= <dev-haskell/decimal-0.6:=
 	>=dev-haskell/megaparsec-9.5.0:= <dev-haskell/megaparsec-9.7:=
 	>=dev-haskell/microlens-0.4.13:= <dev-haskell/microlens-0.5:=

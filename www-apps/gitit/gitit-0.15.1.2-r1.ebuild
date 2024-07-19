@@ -18,6 +18,7 @@ IUSE="+plugins"
 
 CABAL_CHDEPS=(
 	'hoauth2 >= 2.3.0 && < 2.11' 'hoauth2 >= 2.3.0'
+	'pandoc >= 2.9 && < 2.20 || >= 3.0 && < 3.2' 'pandoc >= 2.9 && < 2.20 || >= 3.0'
 )
 
 RDEPEND="
@@ -65,7 +66,7 @@ RDEPEND="
 	>=dev-lang/ghc-9.0.2:=
 	|| (
 		( >=dev-haskell/pandoc-2.9 <dev-haskell/pandoc-2.20 )
-		( >=dev-haskell/pandoc-3.0 <dev-haskell/pandoc-3.2 )
+		( >=dev-haskell/pandoc-3.0 )
 	)
 	dev-haskell/pandoc:=[profile?]
 	plugins? (
