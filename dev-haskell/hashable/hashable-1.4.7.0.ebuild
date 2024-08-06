@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell-unordered-containers/hashable"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="ghc-9-0 random-initial-seed"
 
 # The random inital seed causes the "64 bit Text" test to fail
