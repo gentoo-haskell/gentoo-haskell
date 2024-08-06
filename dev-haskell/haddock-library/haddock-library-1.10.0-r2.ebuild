@@ -24,6 +24,7 @@ CABAL_CHDEPS=(
 	'tree-diff             ^>= 0.1' 'tree-diff >=0.1'
 	'base-compat  ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >=0.11.0'
 	'base-compat           ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >=0.11.0'
+	'QuickCheck   ^>= 2.11  || ^>= 2.13.2 || ^>= 2.14' 'QuickCheck   >= 2.11 && <2.16'
 )
 
 RDEPEND="
@@ -44,7 +45,3 @@ DEPEND="${RDEPEND}
 BDEPEND="test? (
 	>=dev-haskell/hspec-discover-2.4.4
 )"
-
-CABAL_CHDEPS=(
-	'QuickCheck   ^>= 2.11  || ^>= 2.13.2 || ^>= 2.14' 'QuickCheck   >= 2.11 && <2.16'
-)
