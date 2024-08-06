@@ -32,11 +32,9 @@ DEPEND="${RDEPEND}
 			( >=dev-haskell/tasty-expected-failure-0.12.2 <dev-haskell/tasty-expected-failure-0.13 ) ) )
 "
 
-src_prepare() {
-	default
-	cabal_chdeps \
-		'base >=4.5 && <4.15' 'base >=4.5'
-}
+CABAL_CHDEPS=(
+	'base >=4.5 && <4.20' 'base >=4.5'
+)
 
 src_configure() {
 	haskell-cabal_src_configure \
