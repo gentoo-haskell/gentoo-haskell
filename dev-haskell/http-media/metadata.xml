@@ -12,24 +12,28 @@
 		families, and can be extended to match against other accept headers as well.
 		Selecting the appropriate header value is achieved by comparing a list of
 		server options against the quality-indexed values supplied by the client.
-		
+
 		In the following example, the Accept header is parsed and then matched against
 		a list of server options to serve the appropriate media using
 		'mapAcceptMedia':
-		
+
 		&gt; getHeader &gt;&gt;= maybe send406Error sendResourceWith . mapAcceptMedia
 		&gt;     [ ("text/html",        asHtml)
 		&gt;     , ("application/json", asJson)
 		&gt;     ]
-		
+
 		Similarly, the Content-Type header can be used to produce a parser for request
 		bodies based on the given content type with 'mapContentMedia':
-		
+
 		&gt; getContentType &gt;&gt;= maybe send415Error readRequestBodyWith . mapContentMedia
 		&gt;     [ ("application/json", parseJson)
 		&gt;     , ("text/plain",       parseText)
 		&gt;     ]
-		
+
 		The API is agnostic to your choice of server.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">http-media</remote-id>
+		<remote-id type="github">zmthy/http-media</remote-id>
+	</upstream>
 </pkgmetadata>
