@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,8 +20,10 @@ KEYWORDS="amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 CABAL_CHDEPS=(
 	'base       >= 4 && < 4.19' 'base       >= 4'
+	'containers >= 0.2 && < 0.7' 'containers >= 0.2'
 	'deepseq    >= 1.1 && < 1.5' 'deepseq    >= 1.1'
 	'bytestring >= 0.10 && < 0.12' 'bytestring >= 0.10'
+	'filepath             < 1.5' 'filepath'
 )
 
 RDEPEND="
