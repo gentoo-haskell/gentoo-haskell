@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/UnkindPartition/tasty"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
