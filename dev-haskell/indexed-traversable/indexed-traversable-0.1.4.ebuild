@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/indexed-traversable"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/foldable1-classes-compat-0.1:=[profile?] <dev-haskell/foldable1-classes-compat-0.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
