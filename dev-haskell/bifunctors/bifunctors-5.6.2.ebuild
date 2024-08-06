@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/bifunctors/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+tagged"
 
 RDEPEND=">=dev-haskell/assoc-1.1:=[profile?] <dev-haskell/assoc-1.2:=[profile?]
