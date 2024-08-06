@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/ekmett/semigroupoids"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/base-orphans-0.8.4:=[profile?] <dev-haskell/base-orphans-1:=[profile?]
 	>=dev-haskell/bifunctors-5.6:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.8.4:=[profile?] <dev-haskell/base-orphans-
 	>=dev-haskell/contravariant-1.5.3:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/distributive-0.5.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
 	>=dev-haskell/foldable1-classes-compat-0.1:=[profile?] <dev-haskell/foldable1-classes-compat-0.2:=[profile?]
-	>=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
+	>=dev-haskell/hashable-1.2.7.0:=[profile?] <dev-haskell/hashable-1.6:=[profile?]
 	>=dev-haskell/tagged-0.8.7:=[profile?] <dev-haskell/tagged-1:=[profile?]
 	>=dev-haskell/transformers-compat-0.6:=[profile?] <dev-haskell/transformers-compat-0.8:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.8.0:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
