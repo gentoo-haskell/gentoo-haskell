@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell/primitive"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86 ~amd64-linux"
 
 RDEPEND=">=dev-haskell/data-array-byte-0.1:=[profile?] <dev-haskell/data-array-byte-0.1.1:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
