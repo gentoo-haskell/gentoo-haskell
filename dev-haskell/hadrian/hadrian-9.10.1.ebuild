@@ -49,7 +49,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	default
 	cabal_chdeps \
-		'Cabal                >= 3.10    && < 3.11' 'Cabal >= 3.10'
+		'Cabal                >= 3.10    && < 3.11' 'Cabal >= 3.10' \
+		'containers           >= 0.5     && < 0.7' 'containers           >= 0.5'
 }
 
 src_configure() {
