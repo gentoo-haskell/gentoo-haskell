@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/assoc"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+tagged"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
