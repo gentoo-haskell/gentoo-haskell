@@ -11,10 +11,10 @@
 		resolver service via the standard @libresolv@ system library (whose
 		API is often available directly via the standard @libc@ C library) on
 		Unix systems.
-		
+
 		This package also includes support for decoding message record types
 		as defined in the following RFCs:
-		
+
 		- [RFC 1035](https://tools.ietf.org/html/rfc1035): Domain Names - Implementation And Specification
 		- [RFC 1183](https://tools.ietf.org/html/rfc1183): New DNS RR Definitions
 		- [RFC 2782](https://tools.ietf.org/html/rfc2782): A DNS RR for specifying the location of services (DNS SRV)
@@ -28,4 +28,8 @@
 		- [RFC 6891](https://tools.ietf.org/html/rfc6891): Extension Mechanisms for DNS (EDNS(0))
 		- [RFC 7553](https://tools.ietf.org/html/rfc7553): The Uniform Resource Identifier (URI) DNS Resource Record
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">resolv</remote-id>
+		<remote-id type="github">hvr/resolv</remote-id>
+	</upstream>
 </pkgmetadata>
