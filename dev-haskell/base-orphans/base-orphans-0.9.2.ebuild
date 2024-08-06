@@ -15,15 +15,12 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND="
-	>=dev-lang/ghc-9.0.2:=
+RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? (
-		>=dev-haskell/hspec-2 <dev-haskell/hspec-4
-		dev-haskell/quickcheck
-	)
+	test? ( >=dev-haskell/hspec-2 <dev-haskell/hspec-3
+		dev-haskell/quickcheck )
 "
 
 pkg_pretend() {
