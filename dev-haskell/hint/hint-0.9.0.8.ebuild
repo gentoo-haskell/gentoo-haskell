@@ -33,3 +33,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/typed-process
 	)
 "
+
+CABAL_CHDEPS=(
+	'ghc >= 8.4 && < 9.9' 'ghc >= 8.4'
+)

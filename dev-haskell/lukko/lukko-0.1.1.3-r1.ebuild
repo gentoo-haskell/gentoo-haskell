@@ -32,6 +32,10 @@ DEPEND="${RDEPEND}
 			( >=dev-haskell/tasty-expected-failure-0.12.2 <dev-haskell/tasty-expected-failure-0.13 ) ) )
 "
 
+CABAL_CHDEPS=(
+	'base >=4.5 && <4.20' 'base >=4.5'
+)
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=ofd-locking

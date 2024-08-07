@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/nomeata/inspection-testing"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-lang/ghc-8.0.2:=[profile?] <dev-lang/ghc-9.11:=[profile?]
 	>=dev-lang/ghc-9.0.2:=

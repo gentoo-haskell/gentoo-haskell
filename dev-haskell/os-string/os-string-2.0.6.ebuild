@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell/os-string/blob/master/README.md"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-lang/ghc-9.2.4:=
 "

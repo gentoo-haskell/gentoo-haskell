@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,6 +24,7 @@ CABAL_CHDEPS=(
 	'tree-diff             ^>= 0.1' 'tree-diff >=0.1'
 	'base-compat  ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >=0.11.0'
 	'base-compat           ^>= 0.9.3 || ^>= 0.11.0' 'base-compat >=0.11.0'
+	'QuickCheck   ^>= 2.11  || ^>= 2.13.2 || ^>= 2.14' 'QuickCheck   >= 2.11 && <2.16'
 )
 
 RDEPEND="
@@ -38,10 +39,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-2.4.4
 		>=dev-haskell/optparse-applicative-0.15
 		>=dev-haskell/tree-diff-0.1
-		|| (
-			( >=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.12 )
-			( >=dev-haskell/quickcheck-2.13.2 <dev-haskell/quickcheck-2.15 )
-		)
+		>=dev-haskell/quickcheck-2.11 <dev-haskell/quickcheck-2.16
 	)
 "
 BDEPEND="test? (
