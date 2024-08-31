@@ -538,6 +538,9 @@ src_prepare() {
 		eapply "${FILESDIR}/${PN}-9.10.1-Cabal-syntax-add-no-alex-flag.patch"
 	popd
 
+	# Only applies to the testsuite directory copied from the git snapshot
+	use test && eapply "${FILESDIR}/${PN}-9.8.2-fix-ipe-test.patch"
+
 	bump_libs
 
 	eapply_user

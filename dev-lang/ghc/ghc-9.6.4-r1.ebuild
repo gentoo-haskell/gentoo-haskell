@@ -575,6 +575,9 @@ src_prepare() {
 
 	eapply "${FILESDIR}"/${PN}-9.8.2-force-merge-objects-when-building-dynamic-objects.patch
 
+	# Only applies to the testsuite directory copied from the git snapshot
+	use test && eapply "${FILESDIR}/${PN}-9.6.3-fix-ipe-test.patch"
+
 	bump_libs
 
 	eapply_user
