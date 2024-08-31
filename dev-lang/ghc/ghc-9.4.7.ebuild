@@ -417,6 +417,11 @@ pkg_pretend() {
 		ghc-check-bootstrap-version
 		ghc-check-bootstrap-mismatch
 	fi
+
+	# This version of haddock uses 6-7GB of memory when building the ghc docs.
+	# This could cause issues on anything less than 16GB of memory.
+	use doc && CHECKREQS_MEMORY="16G"
+
 	ghc-check-reqs check-reqs_pkg_pretend
 }
 
