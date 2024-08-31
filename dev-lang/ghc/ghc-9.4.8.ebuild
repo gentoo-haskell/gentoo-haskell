@@ -21,6 +21,8 @@ inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
+GHC_BRANCH_COMMIT="8e9ea0f91305d9e4bb9df3d89f6a9e223ecb4dd3" # ghc-9.4.8-release
+
 GHC_BINARY_PV="9.4.3"
 SRC_URI="
 	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
@@ -30,6 +32,10 @@ SRC_URI="
 		arm64? ( elibc_glibc? (
 			https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-deb10-linux.tar.xz
 		) )
+	)
+	test? (
+		https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz
+			-> ${PN}-${GHC_BRANCH_COMMIT}.tar.gz
 	)
 "
 
@@ -528,6 +534,11 @@ src_prepare() {
 
 	sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
 		"${S}/ghc/ghc.wrapper"
+
+	# Release tarball does not contain needed test data
+	if use test; then
+		cp -a "${WORKDIR}/${PN}-${GHC_BRANCH_COMMIT}/testsuite" "${S}" || die
+	fi
 
 	cd "${S}" # otherwise eapply will break
 
