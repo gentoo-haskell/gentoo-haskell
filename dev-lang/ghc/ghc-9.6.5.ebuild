@@ -376,16 +376,6 @@ ghc-check-reqs() {
 	"$@"
 }
 
-llvmize() {
-	einfo "Running llvmize"
-	[[ -z "${1}" ]] && return
-	( find "${1}" -type f \
-		| file -if- \
-		| grep "text/x-shellscript" \
-		| awk -F: '{print $1}' \
-		| xargs sed -i "s#^exec #PATH=\"$(get_llvm_prefix "${LLVM_MAX_SLOT}")/bin:\${PATH}\" exec #") || die
-}
-
 ghc-check-bootstrap-version () {
 	local diemsg version
 	ebegin "Checking for appropriate installed GHC version for bootstrapping"
