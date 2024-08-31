@@ -503,6 +503,10 @@ src_prepare() {
 	sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
 		"${S}/ghc/ghc.wrapper"
 
+	# Incorrectly assumes modern Alex uses -v as an alias for --version
+	sed -i -e 's/\(fptools_cv_alex_version=`"$AlexCmd" \)-v/\1--version/' \
+		"${S}/m4/fptools_alex.m4" || die
+
 	# Release tarball does not contain needed test data
 	if use test; then
 		cp -a "${WORKDIR}/${PN}-${GHC_BRANCH_COMMIT}/testsuite" "${S}" || die
