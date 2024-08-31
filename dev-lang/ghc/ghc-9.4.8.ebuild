@@ -561,13 +561,6 @@ src_prepare() {
 
 	cd "${S}" # otherwise eapply will break
 
-	#eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
-
-	# Incompatible with ghc-9.0.2-modorigin-semigroup.patch
-	# Below patch should not be needed by ghc-9.2
-	#eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
-
 	# ModUnusable pretty-printing should include the reason
 	eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
 
@@ -576,16 +569,7 @@ src_prepare() {
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
 	eapply "${FILESDIR}/${PN}-9.2.7-modorigin-semigroup.patch"
 
-	# Needed for testing with python-3.10
-	#use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
-
-	#needs a port?
-	#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 	eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
-	#eapply "${FILESDIR}"/${PN}-8.10.3-C99-typo-ac270.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
@@ -594,13 +578,6 @@ src_prepare() {
 	# Fix issue caused by non-standard "musleabi" target in
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
 	eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
-
-	# a bunch of crosscompiler patches
-	# needs newer version:
-	#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
-
-	# https://gitlab.haskell.org/ghc/ghc/-/issues/22965
-	#eapply "${FILESDIR}/${PN}-9.2.6-fix-alignment-of-capability.patch"
 
 	# FIXME: A hack that allows dev-python/sphinx-7 to build the docs
 	#
@@ -670,16 +647,6 @@ src_configure() {
 
 	use doc || _hadrian_args+=( "--docs=no-sphinx-man" )
 
-#	# allows overriding build flavours for libraries:
-#	# v   - vanilla (static libs)
-#	# p   - profiled
-#	# dyn - shared libraries
-#	# example: GHC_LIBRARY_WAYS="v dyn"
-#	if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
-#		echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
-#	fi
-#	echo "BUILD_PROF_LIBS = $(usex profile YES NO)" >> mk/build.mk
-
 	###
 	# TODO: Move these env vars to a hadrian eclass, for better
 	# documentation and clarity
@@ -719,32 +686,8 @@ src_configure() {
 	touch _build/hadrian.settings
 
 	# We also need to use the GHC_FLAGS flags when building ghc itself
-	#echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
 	echo "*.*.ghc.hs.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
-	#echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
-	# ghc with hadrian is unhappy with these c.opts
 	echo "*.*.ghc.c.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
-	#echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
-#	echo "*.*.ghc.link.opts += ${LDFLAGS}" >> _build/hadrian.settings
-	# Speed up initial Cabal bootstrap
-	#echo "utils/ghc-cabal_dist_EXTRA_HC_OPTS+=$(ghc-make-args)" >> mk/build.mk
-
-#	# not used outside of ghc's test
-#	if [[ -n ${GHC_BUILD_DPH} ]]; then
-#			echo "BUILD_DPH = YES" >> mk/build.mk
-#		else
-#			echo "BUILD_DPH = NO" >> mk/build.mk
-#	fi
-
-#	if is_crosscompile; then
-#		# Install ghc-stage1 crosscompiler instead of
-#		# ghc-stage2 cross-built compiler.
-#		#echo "Stage1Only=YES" >> mk/build.mk
-#		sed -i -e 's/finalStage = Stage2/finalStage = Stage1/' \
-#			hadrian/UserSettings.hs
-#	fi
-
-
 
     ### Gather configuration variables for GHC
 
@@ -753,13 +696,6 @@ src_configure() {
 	if ! use ghcbootstrap; then
 		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
 	fi
-
-	# Allow the user to select their bignum backend (default to gmp):
-	# use gmp || sed -i -e 's/userFlavour = defaultFlavour { name = \"user\"/userFlavour = defaultFlavour { name = \"user\", bignumBackend = \"native\"/'
-	#echo "BIGNUM_BACKEND = $(usex gmp gmp native)" >> mk/build.mk
-
-	# don't strip anything. Very useful when stage2 SIGSEGVs on you
-	#echo "STRIP_CMD = :" >> mk/build.mk
 
 	local econf_args=()
 
@@ -794,9 +730,7 @@ src_configure() {
 		#  - disable ncurses support for ghci (via haskeline)
 		#    https://bugs.gentoo.org/557478
 		#  - disable ncurses support for ghc-pkg
-		#echo "libraries/haskeline_CONFIGURE_OPTS *. += --flag=-terminfo" >> mk/build.mk
 		echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-		#echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
 		echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
 	elif is_native; then
 		# using ${GTARGET}'s libffi is not supported yet:
@@ -809,7 +743,6 @@ src_configure() {
 	echo "${HADRIAN_SETTINGS_EXTRA}" >> _build/hadrian.settings
 
 	einfo "Final _build/hadrian.settings:"
-	#cat mk/build.mk || die
 	cat _build/hadrian.settings || die
 
 
@@ -849,25 +782,6 @@ src_configure() {
 
 src_compile() {
 
-#	# Stage1Only crosscompiler does not build stage2
-#	if ! is_crosscompile; then
-#		# 1. build/pax-mark compiler binary first
-#		#emake ghc/stage2/build/tmp/ghc-stage2
-#		hadrian -j${nproc} --flavour=quickest stage2:exe:ghc-bin || die
-#		# 2. pax-mark (bug #516430)
-#		#pax-mark -m _build/stage1/bin/ghc
-#		# 2. build/pax-mark haddock using ghc-stage2
-#		if is_native; then
-#			# non-native build does not build haddock
-#			# due to HADDOCK_DOCS=NO, but it could.
-#			#emake utils/haddock/dist/build/tmp/haddock
-#			hadrian docs --docs=no-sphinx-pdfs --docs=no-sphinx-html || die
-#			#pax-mark -m utils/haddock/dist/build/tmp/haddock
-#		fi
-#	fi
-#	# 3. and then all the rest
-#	#emake all
-
 	run_hadrian binary-dist-dir
 
 	# FIXME: This is failing, but the docs mention it:
@@ -879,13 +793,6 @@ src_compile() {
 }
 
 src_test() {
-	# TODO: deal with:
-	#    - sandbox (pollutes environment)
-	#    - extra packages (to extend testsuite coverage)
-	# bits are taken from 'validate'
-	#local make_test_target='test' # can be fulltest
-	# not 'emake' as testsuite uses '$MAKE' without jobserver available
-	#make $make_test_target stage=2 THREADS=$(makeopts_jobs)
 
 	# Make sure stage 1 libraries are available
 	for d in "${S}/work/${P}/_build/stage1/lib"/*${P}/*/; do
@@ -900,15 +807,10 @@ src_install() {
 
 	[[ -f VERSION ]] || emake VERSION
 
-#	einfo "Running: hadrian install ${hadrian_vars}"
-#	hadrian install --prefix="${D}/usr/" ${hadrian_vars} || die
-
 	pushd "${S}/_build/bindist/${P}-${CHOST}" || die
 	econf
 	emake DESTDIR="${D}" install
 	popd
-
-	#emake -j1 install DESTDIR="${D}"
 
 	# Skip for cross-targets as they all share target location:
 	# /usr/share/doc/ghc-9999/
