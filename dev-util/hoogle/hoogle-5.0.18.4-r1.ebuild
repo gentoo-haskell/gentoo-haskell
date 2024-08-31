@@ -16,6 +16,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="systemd"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-5.0.18.4-accommodate-pkgroot.patch"
+)
+
 RDEPEND="
 	acct-group/hoogle
 	acct-user/hoogle
