@@ -13,6 +13,10 @@
 # Bug: <https://github.com/ennocramer/floskell/issues/77>
 dev-haskell/floskell executable
 
+# hololeap <hololeap@protonmail.com> (2024-08-31)
+# Tests on GHC 9.10 are broken (over 100 failures compared to 0 on GHC 9.8)
+>=dev-lang/ghc-9.10 test
+
 # hololeap <hololeap@protonmail.com> (2023-01-11)
 # Enabling these flags will create cycles in the dependency graph. 
 # Maintainers may want to temporarily unmask these in order to run
