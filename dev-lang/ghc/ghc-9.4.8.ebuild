@@ -444,6 +444,21 @@ ghc-check-bootstrap-mismatch () {
 	fi
 }
 
+# TODO: Break out into hadrian.eclass
+# Uses $_hadrian_args, if set
+run_hadrian() {
+	if use ghcbootstrap; then
+		local cmd=("${BROOT}/usr/bin/hadrian")
+	else
+		local cmd=("${S}/hadrian/bootstrap/_build/bin/hadrian")
+	fi
+
+	cmd+=( "${_hadrian_args[@]}" "$@" )
+
+	einfo "Running: ${cmd[@]}"
+	"${cmd[@]}" || die
+}
+
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]] && use ghcbootstrap; then
 		ghc-check-bootstrap-version
@@ -633,7 +648,73 @@ src_prepare() {
 }
 
 src_configure() {
-	# prepare hadrian build settings files
+	### Gather the arguments we will pass to Hadrian:
+
+	# Create an array of arguments for hadrian, which will be used internally by
+	# run_hadrian() (so don't set this as local)
+	_hadrian_args=()
+
+	# Could be added/tested at some later point
+	_hadrian_args+=("--docs=no-sphinx-pdfs")
+
+	# Any non-native build has to skip as it needs
+	# target haddock binary to be runnable.
+	if ! use doc || ! is_native; then
+		_hadrian_args+=(
+			"--docs=no-sphinx-html"
+			# this controls presence on 'xhtml' and 'haddock' in final install
+			# !is_native: disable docs generation as it requires running stage2
+			"--docs=no-haddocks"
+		)
+	fi
+
+	use doc || _hadrian_args+=( "--docs=no-sphinx-man" )
+
+#	# allows overriding build flavours for libraries:
+#	# v   - vanilla (static libs)
+#	# p   - profiled
+#	# dyn - shared libraries
+#	# example: GHC_LIBRARY_WAYS="v dyn"
+#	if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
+#		echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
+#	fi
+#	echo "BUILD_PROF_LIBS = $(usex profile YES NO)" >> mk/build.mk
+
+	###
+	# TODO: Move these env vars to a hadrian eclass, for better
+	# documentation and clarity
+	###
+
+	# Control the build flavour
+	local hadrian_flavour="default"
+	use profile || hadrian_flavour+="+no_profiled_libs"
+	use llvm && hadrian_flavour+="+llvm"
+
+	: ${HADRIAN_FLAVOUR:="${hadrian_flavour}"}
+
+	_hadrian_args+=("--flavour=${HADRIAN_FLAVOUR}")
+
+	# Control the verbosity of hadrian. Default is one level of --verbose
+	: ${HADRIAN_VERBOSITY:=1}
+
+	local n="${HADRIAN_VERBOSITY}"
+	until [[ $n -le 0 ]]; do
+		_hadrian_args+=("--verbose")
+		n=$(($n - 1 ))
+	done
+
+	# Add any -j* flags passed in via $MAKEOPTS
+	for i in $MAKEOPTS; do
+		case $i in
+			-j*) _hadrian_args+=("$i") ;;
+			*) true ;;
+		esac
+	done
+
+
+
+	### Prepare hadrian build settings files
+
 	mkdir _build
 	touch _build/hadrian.settings
 
@@ -662,6 +743,10 @@ src_configure() {
 #		sed -i -e 's/finalStage = Stage2/finalStage = Stage1/' \
 #			hadrian/UserSettings.hs
 #	fi
+
+
+
+    ### Gather configuration variables for GHC
 
 	# Get ghc from the binary
 	# except when bootstrapping we just pick ghc up off the path
@@ -727,6 +812,11 @@ src_configure() {
 	#cat mk/build.mk || die
 	cat _build/hadrian.settings || die
 
+
+
+
+	### Bootstrap Hadrian, then final configure (should this be here or in src_compile?)
+
 	if ! use ghcbootstrap; then
 		einfo "Installing bootstrap GHC"
 
@@ -758,74 +848,6 @@ src_configure() {
 }
 
 src_compile() {
-	# create an array of CLI flags to be passed to hadrian build:
-	local hadrian_vars=()
-
-	# We can't depend on haddock except when bootstrapping when we
-	# must build docs and include them into the binary .tbz2 package
-	# app-text/dblatex is not in portage, can not build PDF or PS
-	#echo "BUILD_SPHINX_PDF  = NO"  >> mk/build.mk
-	hadrian_vars+=("--docs=no-sphinx-pdfs")
-	#echo "BUILD_SPHINX_HTML = $(usex doc YES NO)" >> mk/build.mk
-	use doc || hadrian_vars+=("--docs=no-sphinx-html")
-	#echo "BUILD_MAN = $(usex doc YES NO)" >> mk/build.mk
-	use doc || hadrian_vars+=("--docs=no-sphinx-man")
-	# this controls presence on 'xhtml' and 'haddock' in final install
-	#echo "HADDOCK_DOCS       = YES" >> mk/build.mk
-	use doc || hadrian_vars+=("--docs=no-haddocks")
-
-	# Any non-native build has to skip as it needs
-	# target haddock binary to be runnabine.
-	if ! is_native; then
-		# disable docs generation as it requires running stage2
-		# echo "HADDOCK_DOCS=NO" >> mk/build.mk
-		hadrian_vars+=("--docs=no-haddocks")
-		# echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
-		hadrian_vars+=("--docs=no-sphinx-pdfs")
-		# echo "BUILD_SPHINX_PDF=NO" >> mk/build.mk
-		hadrian_vars+=("--docs=no-sphinx-html")
-	fi
-
-#	# allows overriding build flavours for libraries:
-#	# v   - vanilla (static libs)
-#	# p   - profiled
-#	# dyn - shared libraries
-#	# example: GHC_LIBRARY_WAYS="v dyn"
-#	if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
-#		echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
-#	fi
-#	echo "BUILD_PROF_LIBS = $(usex profile YES NO)" >> mk/build.mk
-
-	###
-	# TODO: Move these env vars to a hadrian eclass, for better
-	# documentation and clarity
-	###
-
-	# Control the build flavour
-	local hadrian_flavour="default"
-	use profile || hadrian_flavour+="+no_profiled_libs"
-	use llvm && hadrian_flavour+="+llvm"
-
-	: ${HADRIAN_FLAVOUR:="${hadrian_flavour}"}
-
-	hadrian_vars+=("--flavour=${HADRIAN_FLAVOUR}")
-
-	# Control the verbosity of hadrian. Default is one level of --verbose
-	: ${HADRIAN_VERBOSITY:=1}
-
-	local n="${HADRIAN_VERBOSITY}"
-	until [[ $n -le 0 ]]; do
-		hadrian_vars+=("--verbose")
-		n=$(($n - 1 ))
-	done
-
-	# Add any -j* flags passed in via $MAKEOPTS
-	for i in $MAKEOPTS; do
-		case $i in
-			-j*) hadrian_vars+=("$i") ;;
-			*) true ;;
-		esac
-	done
 
 #	# Stage1Only crosscompiler does not build stage2
 #	if ! is_crosscompile; then
@@ -846,18 +868,14 @@ src_compile() {
 #	# 3. and then all the rest
 #	#emake all
 
-	if use ghcbootstrap; then
-		local hadrian=( /usr/bin/hadrian )
-	else
-		local hadrian=( "${S}/hadrian/bootstrap/_build/bin/hadrian" )
-	fi
-	hadrian+=(
-		"${hadrian_vars[@]}"
-		binary-dist-dir
-	)
+	run_hadrian binary-dist-dir
 
-	einfo "Running: ${hadrian[@]}"
-	"${hadrian[@]}" || die
+	# FIXME: This is failing, but the docs mention it:
+	# <https://gitlab.haskell.org/hololeap/ghc/-/blob/master/hadrian/doc/testsuite.md?ref_type=heads#building-just-the-dependencies-needed-for-the-testsuite>
+	# >    Error, file does not exist and no rule available:
+	# >    test:all_deps
+	#
+	#use test && run_hadrian test:all_deps
 }
 
 src_test() {
@@ -868,7 +886,13 @@ src_test() {
 	#local make_test_target='test' # can be fulltest
 	# not 'emake' as testsuite uses '$MAKE' without jobserver available
 	#make $make_test_target stage=2 THREADS=$(makeopts_jobs)
-	hadrian test || die
+
+	# Make sure stage 1 libraries are available
+	for d in "${S}/work/${P}/_build/stage1/lib"/*${P}/*/; do
+		export LD_LIBRARY_PATH="${d}${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"
+	done
+
+	run_hadrian --progress-info=unicorn test # good luck unicorns
 }
 
 src_install() {
