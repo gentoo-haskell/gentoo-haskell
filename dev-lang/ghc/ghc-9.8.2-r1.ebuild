@@ -197,19 +197,19 @@ append-ghc-cflags() {
 	done
 }
 
-# $1 - subdirectory (under libraries/)
-# $2 - lib name (under libraries/)
+# $1 - directory
+# $2 - lib name
 # $3 - lib version
-# example: bump_lib "transformers" "0.4.2.0"
+# example: bump_lib "libraries" "transformers" "0.4.2.0"
 bump_lib() {
-	local subdir="$1" pn=$2 pv=$3
+	local dir="$1" pn=$2 pv=$3
 	local p=${pn}-${pv}
 	local f
 
 	einfo "Bumping ${pn} up to ${pv}"
 
-	mv libraries/"${subdir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
-	mv "${WORKDIR}"/"${p}" libraries/"${subdir}"/"${pn}" || die
+	mv "${dir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
+	mv "${WORKDIR}"/"${p}" "${dir}"/"${pn}" || die
 }
 
 update_SRC_URI() {
@@ -225,18 +225,18 @@ update_SRC_URI() {
 update_SRC_URI
 
 bump_libs() {
-	local p pn pv subdir
+	local p pn pv dir
 	for p in "${BUMP_LIBRARIES[@]}"; do
 		set -- $p
 		pn=$1 pv=$2
 
 		if [[ "$pn" == "Cabal-syntax" ]] || [[ "$pn" == "Cabal" ]]; then
-			subdir="Cabal"
+			dir="libraries/Cabal"
 		else
-			subdir=""
+			dir="libraries"
 		fi
 
-		bump_lib "${subdir}" "${pn}" "${pv}"
+		bump_lib "${dir}" "${pn}" "${pv}"
 	done
 }
 
