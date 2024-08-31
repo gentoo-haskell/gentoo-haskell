@@ -635,6 +635,9 @@ src_configure() {
 		econf_args+=(--with-ffi-includes=$($(tc-getPKG_CONFIG) libffi --cflags-only-I | sed -e 's@^-I@@'))
 	fi
 
+	# User-supplied block to be added to hadrian.settings
+	echo "${HADRIAN_SETTINGS_EXTRA}" >> _build/hadrian.settings
+
 	einfo "Final _build/hadrian.settings:"
 	#cat mk/build.mk || die
 	cat _build/hadrian.settings || die
