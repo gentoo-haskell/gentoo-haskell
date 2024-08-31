@@ -119,7 +119,7 @@ BDEPEND="
 	)
 	ghcbootstrap? (
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
-		~dev-haskell/hadrian-${PV}
+		~dev-haskell/hadrian-9.6.6
 	)
 	test? ( ${PYTHON_DEPS} )
 "
