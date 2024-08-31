@@ -36,6 +36,13 @@ SRC_URI="
 	)
 "
 
+GHC_BUGGY_TESTS=(
+	# Actual stderr output differs from expected:
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+	"recomp015"
+)
+
 yet_binary() {
 	case ${ARCH} in
 		amd64)
@@ -768,7 +775,18 @@ src_test() {
 		export LD_LIBRARY_PATH="${d}${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"
 	done
 
-	run_hadrian --progress-info=unicorn test # good luck unicorns
+	local args=(
+		--progress-info=unicorn # good luck unicorns
+	)
+
+	[[ ${#GHC_BUGGY_TESTS[@]} -gt 0 ]] && einfo "Tests have been marked as buggy and will be skipped:"
+
+	for t in "${GHC_BUGGY_TESTS[@]}"; do
+		args+=( "--broken-test=${t}" )
+		einfo "     * ${t}"
+	done
+
+	run_hadrian "${args[@]}" test
 }
 
 src_install() {
