@@ -93,6 +93,16 @@ IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile 
 RESTRICT="!test? ( test )"
 
 LLVM_MAX_SLOT="18"
+LLVM_DEPS="
+	<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
+	|| (
+		sys-devel/llvm:15
+		sys-devel/llvm:16
+		sys-devel/llvm:17
+		sys-devel/llvm:18
+	)
+"
+
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
@@ -100,15 +110,7 @@ RDEPEND="
 	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
-	llvm? (
-		<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
-		|| (
-			sys-devel/llvm:15
-			sys-devel/llvm:16
-			sys-devel/llvm:17
-			sys-devel/llvm:18
-		)
-	)
+	llvm? ( ${LLVM_DEPS} )
 "
 
 DEPEND="${RDEPEND}"
@@ -128,7 +130,10 @@ BDEPEND="
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
 		~dev-haskell/hadrian-${PV}
 	)
-	test? ( ${PYTHON_DEPS} )
+	test? (
+		${PYTHON_DEPS}
+		${LLVM_DEPS}
+	)
 "
 
 needs_python() {
@@ -573,7 +578,10 @@ src_prepare() {
 	popd
 
 	# Only applies to the testsuite directory copied from the git snapshot
-	use test && eapply "${FILESDIR}/${PN}-9.6.3-fix-ipe-test.patch"
+	if use test; then
+		eapply "${FILESDIR}/${PN}-9.6.3-fix-ipe-test.patch"
+		eapply "${FILESDIR}/${PN}-9.4.8-fix-buggy-tests.patch"
+	fi
 
 	bump_libs
 
