@@ -108,11 +108,13 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
 	doc? (
+		$(python_gen_any_dep '
+			dev-python/sphinx[${PYTHON_USEDEP}]
+			dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+		')
 		app-text/docbook-xml-dtd:4.2
 		app-text/docbook-xml-dtd:4.5
 		app-text/docbook-xsl-stylesheets
-		dev-python/sphinx
-		dev-python/sphinx-rtd-theme
 		>=dev-libs/libxslt-1.1.2
 	)
 	ghcbootstrap? (
@@ -125,6 +127,7 @@ BDEPEND="
 needs_python() {
 	# test driver is written in python
 	use test && return 0
+	use doc && return 0
 	return 1
 }
 
@@ -135,6 +138,13 @@ REQUIRED_USE="
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
+
+python_check_deps() {
+	if use doc; then
+		python_has_version "dev-python/sphinx[${PYTHON_USEDEP}]" &&
+		python_has_version "dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]"
+	fi
+}
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
@@ -536,10 +546,22 @@ src_prepare() {
 	# have the update, so we symlink to the system version instead.
 	if use doc; then
 		local python_str="import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"
-		local rtd_theme_dir="$(dirname $("${EPYTHON}" -c "$python_str"))"
+
+		ebegin "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
+		local rtd_theme_file="$( "${EPYTHON}" -c "${python_str}")"
+		if [[ -z "${rtd_theme_file}" ]]; then
+			eend 1
+			einfo "EPYTHON=\"${EPYTHON}\""
+			einfo "python_str=\"${python_str}\""
+			eerror 'Could not find sphinx-rtd-theme: failed to execute: $EPYTHON -c "${python_str}"'
+			die
+		else
+			eend 0
+		fi
+
+		local rtd_theme_dir="$( dirname "${rtd_theme_file}" )"
 		local orig_rtd_theme_dir="${S}/docs/users_guide/rtd-theme"
 
-		einfo "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
 		rm -r "${orig_rtd_theme_dir}" || die
 		ln -s "${rtd_theme_dir}" "${orig_rtd_theme_dir}" || die
 	fi

@@ -575,10 +575,22 @@ src_prepare() {
 	# have the update, so we symlink to the system version instead.
 	if use doc; then
 		local python_str="import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"
-		local rtd_theme_dir="$(dirname $("${EPYTHON}" -c "$python_str"))"
+
+		ebegin "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
+		local rtd_theme_file="$( "${EPYTHON}" -c "${python_str}")"
+		if [[ -z "${rtd_theme_file}" ]]; then
+			eend 1
+			einfo "EPYTHON=\"${EPYTHON}\""
+			einfo "python_str=\"${python_str}\""
+			eerror 'Could not find sphinx-rtd-theme: failed to execute: $EPYTHON -c "${python_str}"'
+			die
+		else
+			eend 0
+		fi
+
+		local rtd_theme_dir="$( dirname "${rtd_theme_file}" )"
 		local orig_rtd_theme_dir="${S}/docs/users_guide/rtd-theme"
 
-		einfo "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
 		rm -r "${orig_rtd_theme_dir}" || die
 		ln -s "${rtd_theme_dir}" "${orig_rtd_theme_dir}" || die
 	fi
