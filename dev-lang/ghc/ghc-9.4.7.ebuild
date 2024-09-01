@@ -21,6 +21,8 @@ inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
+GHC_BRANCH_COMMIT="00920f176b0235d5bb52a8e054d89a664f8938fe" # ghc-9.4.7-release
+
 GHC_BINARY_PV="9.4.3"
 SRC_URI="
 	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
@@ -28,7 +30,18 @@ SRC_URI="
 		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
 		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
 	)
+	test? (
+		https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz
+			-> ${PN}-${GHC_BRANCH_COMMIT}.tar.gz
+	)
 "
+
+GHC_BUGGY_TESTS=(
+	# Actual stderr output differs from expected:
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+	"recomp015"
+)
 
 yet_binary() {
 	case ${ARCH} in
@@ -86,7 +99,17 @@ KEYWORDS="~amd64"
 IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 RESTRICT="!test? ( test )"
 
-LLVM_MAX_SLOT="17"
+LLVM_MAX_SLOT="18"
+LLVM_DEPS="
+	<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
+	|| (
+		sys-devel/llvm:15
+		sys-devel/llvm:16
+		sys-devel/llvm:17
+		sys-devel/llvm:18
+	)
+"
+
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
@@ -94,14 +117,7 @@ RDEPEND="
 	elfutils? ( dev-libs/elfutils )
 	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
-	llvm? (
-		<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
-		|| (
-			sys-devel/llvm:15
-			sys-devel/llvm:16
-			sys-devel/llvm:17
-		)
-	)
+	llvm? ( ${LLVM_DEPS} )
 "
 
 DEPEND="${RDEPEND}"
@@ -123,6 +139,7 @@ BDEPEND="
 	)
 	test? (
 		${PYTHON_DEPS}
+		${LLVM_DEPS}
 	)
 "
 
@@ -201,19 +218,19 @@ append-ghc-cflags() {
 	done
 }
 
-# $1 - subdirectory (under libraries/)
-# $2 - lib name (under libraries/)
+# $1 - directory
+# $2 - lib name
 # $3 - lib version
-# example: bump_lib "transformers" "0.4.2.0"
+# example: bump_lib "libraries" "transformers" "0.4.2.0"
 bump_lib() {
-	local subdir="$1" pn=$2 pv=$3
+	local dir="$1" pn=$2 pv=$3
 	local p=${pn}-${pv}
 	local f
 
 	einfo "Bumping ${pn} up to ${pv}"
 
-	mv libraries/"${subdir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
-	mv "${WORKDIR}"/"${p}" libraries/"${subdir}"/"${pn}" || die
+	mv "${dir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
+	mv "${WORKDIR}"/"${p}" "${dir}"/"${pn}" || die
 }
 
 update_SRC_URI() {
@@ -229,18 +246,18 @@ update_SRC_URI() {
 update_SRC_URI
 
 bump_libs() {
-	local p pn pv subdir
+	local p pn pv dir
 	for p in "${BUMP_LIBRARIES[@]}"; do
 		set -- $p
 		pn=$1 pv=$2
 
 		if [[ "$pn" == "Cabal-syntax" ]] || [[ "$pn" == "Cabal" ]]; then
-			subdir="Cabal"
+			dir="libraries/Cabal"
 		else
-			subdir=""
+			dir="libraries"
 		fi
 
-		bump_lib "${subdir}" "${pn}" "${pv}"
+		bump_lib "${dir}" "${pn}" "${pv}"
 	done
 }
 
@@ -412,11 +429,31 @@ ghc-check-bootstrap-mismatch () {
 	fi
 }
 
+# TODO: Break out into hadrian.eclass
+# Uses $_hadrian_args, if set
+run_hadrian() {
+	if use ghcbootstrap; then
+		local cmd=("${BROOT}/usr/bin/hadrian")
+	else
+		local cmd=("${S}/hadrian/bootstrap/_build/bin/hadrian")
+	fi
+
+	cmd+=( "${_hadrian_args[@]}" "$@" )
+
+	einfo "Running: ${cmd[@]}"
+	"${cmd[@]}" || die
+}
+
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]] && use ghcbootstrap; then
 		ghc-check-bootstrap-version
 		ghc-check-bootstrap-mismatch
 	fi
+
+	# This version of haddock uses 6-7GB of memory when building the ghc docs.
+	# This could cause issues on anything less than 16GB of memory.
+	use doc && CHECKREQS_MEMORY="16G"
+
 	ghc-check-reqs check-reqs_pkg_pretend
 }
 
@@ -498,14 +535,16 @@ src_prepare() {
 	sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
 		"${S}/ghc/ghc.wrapper"
 
+	# Incorrectly assumes modern Alex uses -v as an alias for --version
+	sed -i -e 's/\(fptools_cv_alex_version=`"$AlexCmd" \)-v/\1--version/' \
+		"${S}/m4/fptools_alex.m4" || die
+
+	# Release tarball does not contain needed test data
+	if use test; then
+		cp -a "${WORKDIR}/${PN}-${GHC_BRANCH_COMMIT}/testsuite" "${S}" || die
+	fi
+
 	cd "${S}" # otherwise eapply will break
-
-	#eapply "${FILESDIR}"/${PN}-9.0.2-CHOST-prefix.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-darwin.patch
-
-	# Incompatible with ghc-9.0.2-modorigin-semigroup.patch
-	# Below patch should not be needed by ghc-9.2
-	#eapply "${FILESDIR}"/${PN}-9.0.2-modorigin.patch
 
 	# ModUnusable pretty-printing should include the reason
 	eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
@@ -515,31 +554,15 @@ src_prepare() {
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
 	eapply "${FILESDIR}/${PN}-9.2.7-modorigin-semigroup.patch"
 
-	# Needed for testing with python-3.10
-	#use test && eapply "${FILESDIR}/${PN}-9.0.2-fix-tests-python310.patch"
-
-	#needs a port?
-	#eapply "${FILESDIR}"/${PN}-8.8.1-revert-CPP.patch
 	eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
-	#eapply "${FILESDIR}"/${PN}-8.10.3-C99-typo-ac270.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-disable-unboxed-arrays.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-13.patch
-	#eapply "${FILESDIR}"/${PN}-9.0.2-llvm-14.patch
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
-	eapply "${FILESDIR}"/${PN}-9.4.8-llvm-17.patch
+	eapply "${FILESDIR}"/${PN}-9.4.8-llvm-18.patch
 
 	# Fix issue caused by non-standard "musleabi" target in
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
 	eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
-
-	# a bunch of crosscompiler patches
-	# needs newer version:
-	#eapply "${FILESDIR}"/${PN}-8.2.1_rc1-hp2ps-cross.patch
-
-	# https://gitlab.haskell.org/ghc/ghc/-/issues/22965
-	#eapply "${FILESDIR}/${PN}-9.2.6-fix-alignment-of-capability.patch"
 
 	# FIXME: A hack that allows dev-python/sphinx-7 to build the docs
 	#
@@ -549,10 +572,22 @@ src_prepare() {
 	# have the update, so we symlink to the system version instead.
 	if use doc; then
 		local python_str="import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"
-		local rtd_theme_dir="$(dirname $("${EPYTHON}" -c "$python_str"))"
+
+		ebegin "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
+		local rtd_theme_file="$( "${EPYTHON}" -c "${python_str}")"
+		if [[ -z "${rtd_theme_file}" ]]; then
+			eend 1
+			einfo "EPYTHON=\"${EPYTHON}\""
+			einfo "python_str=\"${python_str}\""
+			eerror 'Could not find sphinx-rtd-theme: failed to execute: $EPYTHON -c "${python_str}"'
+			die
+		else
+			eend 0
+		fi
+
+		local rtd_theme_dir="$( dirname "${rtd_theme_file}" )"
 		local orig_rtd_theme_dir="${S}/docs/users_guide/rtd-theme"
 
-		einfo "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
 		rm -r "${orig_rtd_theme_dir}" || die
 		ln -s "${rtd_theme_dir}" "${orig_rtd_theme_dir}" || die
 	fi
@@ -564,6 +599,12 @@ src_prepare() {
 
 	eapply "${FILESDIR}"/${PN}-9.4.8-force-merge-objects-when-building-dynamic-objects.patch
 
+	# Only applies to the testsuite directory copied from the git snapshot
+	if use test; then
+		eapply "${FILESDIR}/${PN}-9.4.8-fix-ipe-test.patch"
+		eapply "${FILESDIR}/${PN}-9.4.8-fix-buggy-tests.patch"
+	fi
+
 	bump_libs
 
 	eapply_user
@@ -572,48 +613,77 @@ src_prepare() {
 }
 
 src_configure() {
-	# prepare hadrian build settings files
+	### Gather the arguments we will pass to Hadrian:
+
+	# Create an array of arguments for hadrian, which will be used internally by
+	# run_hadrian() (so don't set this as local)
+	_hadrian_args=()
+
+	# Could be added/tested at some later point
+	_hadrian_args+=("--docs=no-sphinx-pdfs")
+
+	# Any non-native build has to skip as it needs
+	# target haddock binary to be runnable.
+	if ! use doc || ! is_native; then
+		_hadrian_args+=(
+			"--docs=no-sphinx-html"
+			# this controls presence on 'xhtml' and 'haddock' in final install
+			# !is_native: disable docs generation as it requires running stage2
+			"--docs=no-haddocks"
+		)
+	fi
+
+	use doc || _hadrian_args+=( "--docs=no-sphinx-man" )
+
+	###
+	# TODO: Move these env vars to a hadrian eclass, for better
+	# documentation and clarity
+	###
+
+	# Control the build flavour
+	local hadrian_flavour="default"
+	use profile || hadrian_flavour+="+no_profiled_libs"
+	use llvm && hadrian_flavour+="+llvm"
+
+	: ${HADRIAN_FLAVOUR:="${hadrian_flavour}"}
+
+	_hadrian_args+=("--flavour=${HADRIAN_FLAVOUR}")
+
+	# Control the verbosity of hadrian. Default is one level of --verbose
+	: ${HADRIAN_VERBOSITY:=1}
+
+	local n="${HADRIAN_VERBOSITY}"
+	until [[ $n -le 0 ]]; do
+		_hadrian_args+=("--verbose")
+		n=$(($n - 1 ))
+	done
+
+	# Add any -j* flags passed in via $MAKEOPTS
+	for i in $MAKEOPTS; do
+		case $i in
+			-j*) _hadrian_args+=("$i") ;;
+			*) true ;;
+		esac
+	done
+
+
+
+	### Prepare hadrian build settings files
+
 	mkdir _build
 	touch _build/hadrian.settings
 
 	# We also need to use the GHC_FLAGS flags when building ghc itself
-	#echo "SRC_HC_OPTS+=${HCFLAGS} ${GHC_FLAGS}" >> mk/build.mk
 	echo "*.*.ghc.hs.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
-	#echo "SRC_CC_OPTS+=${CFLAGS}" >> mk/build.mk
-	# ghc with hadrian is unhappy with these c.opts
 	echo "*.*.ghc.c.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
-	#echo "SRC_LD_OPTS+=${LDFLAGS}" >> mk/build.mk
-#	echo "*.*.ghc.link.opts += ${LDFLAGS}" >> _build/hadrian.settings
-	# Speed up initial Cabal bootstrap
-	#echo "utils/ghc-cabal_dist_EXTRA_HC_OPTS+=$(ghc-make-args)" >> mk/build.mk
 
-#	# not used outside of ghc's test
-#	if [[ -n ${GHC_BUILD_DPH} ]]; then
-#			echo "BUILD_DPH = YES" >> mk/build.mk
-#		else
-#			echo "BUILD_DPH = NO" >> mk/build.mk
-#	fi
-
-#	if is_crosscompile; then
-#		# Install ghc-stage1 crosscompiler instead of
-#		# ghc-stage2 cross-built compiler.
-#		#echo "Stage1Only=YES" >> mk/build.mk
-#		sed -i -e 's/finalStage = Stage2/finalStage = Stage1/' \
-#			hadrian/UserSettings.hs
-#	fi
+    ### Gather configuration variables for GHC
 
 	# Get ghc from the binary
 	# except when bootstrapping we just pick ghc up off the path
 	if ! use ghcbootstrap; then
 		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
 	fi
-
-	# Allow the user to select their bignum backend (default to gmp):
-	# use gmp || sed -i -e 's/userFlavour = defaultFlavour { name = \"user\"/userFlavour = defaultFlavour { name = \"user\", bignumBackend = \"native\"/'
-	#echo "BIGNUM_BACKEND = $(usex gmp gmp native)" >> mk/build.mk
-
-	# don't strip anything. Very useful when stage2 SIGSEGVs on you
-	#echo "STRIP_CMD = :" >> mk/build.mk
 
 	local econf_args=()
 
@@ -648,9 +718,7 @@ src_configure() {
 		#  - disable ncurses support for ghci (via haskeline)
 		#    https://bugs.gentoo.org/557478
 		#  - disable ncurses support for ghc-pkg
-		#echo "libraries/haskeline_CONFIGURE_OPTS *. += --flag=-terminfo" >> mk/build.mk
 		echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-		#echo "utils/ghc-pkg_HC_OPTS += -DBOOTSTRAPPING" >> mk/build.mk
 		echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
 	elif is_native; then
 		# using ${GTARGET}'s libffi is not supported yet:
@@ -659,9 +727,16 @@ src_configure() {
 		econf_args+=(--with-ffi-includes=$($(tc-getPKG_CONFIG) libffi --cflags-only-I | sed -e 's@^-I@@'))
 	fi
 
+	# User-supplied block to be added to hadrian.settings
+	echo "${HADRIAN_SETTINGS_EXTRA}" >> _build/hadrian.settings
+
 	einfo "Final _build/hadrian.settings:"
-	#cat mk/build.mk || die
 	cat _build/hadrian.settings || die
+
+
+
+
+	### Bootstrap Hadrian, then final configure (should this be here or in src_compile?)
 
 	if ! use ghcbootstrap; then
 		einfo "Installing bootstrap GHC"
@@ -694,117 +769,36 @@ src_configure() {
 }
 
 src_compile() {
-	# create an array of CLI flags to be passed to hadrian build:
-	local hadrian_vars=()
 
-	# We can't depend on haddock except when bootstrapping when we
-	# must build docs and include them into the binary .tbz2 package
-	# app-text/dblatex is not in portage, can not build PDF or PS
-	#echo "BUILD_SPHINX_PDF  = NO"  >> mk/build.mk
-	hadrian_vars+=("--docs=no-sphinx-pdfs")
-	#echo "BUILD_SPHINX_HTML = $(usex doc YES NO)" >> mk/build.mk
-	use doc || hadrian_vars+=("--docs=no-sphinx-html")
-	#echo "BUILD_MAN = $(usex doc YES NO)" >> mk/build.mk
-	use doc || hadrian_vars+=("--docs=no-sphinx-man")
-	# this controls presence on 'xhtml' and 'haddock' in final install
-	#echo "HADDOCK_DOCS       = YES" >> mk/build.mk
-	use doc || hadrian_vars+=("--docs=no-haddocks")
+	run_hadrian binary-dist-dir
 
-	# Any non-native build has to skip as it needs
-	# target haddock binary to be runnabine.
-	if ! is_native; then
-		# disable docs generation as it requires running stage2
-		# echo "HADDOCK_DOCS=NO" >> mk/build.mk
-		hadrian_vars+=("--docs=no-haddocks")
-		# echo "BUILD_SPHINX_HTML=NO" >> mk/build.mk
-		hadrian_vars+=("--docs=no-sphinx-pdfs")
-		# echo "BUILD_SPHINX_PDF=NO" >> mk/build.mk
-		hadrian_vars+=("--docs=no-sphinx-html")
-	fi
-
-#	# allows overriding build flavours for libraries:
-#	# v   - vanilla (static libs)
-#	# p   - profiled
-#	# dyn - shared libraries
-#	# example: GHC_LIBRARY_WAYS="v dyn"
-#	if [[ -n ${GHC_LIBRARY_WAYS} ]]; then
-#		echo "GhcLibWays=${GHC_LIBRARY_WAYS}" >> mk/build.mk
-#	fi
-#	echo "BUILD_PROF_LIBS = $(usex profile YES NO)" >> mk/build.mk
-
-	###
-	# TODO: Move these env vars to a hadrian eclass, for better
-	# documentation and clarity
-	###
-
-	# Control the build flavour
-	local hadrian_flavour="default"
-	use profile || hadrian_flavour+="+no_profiled_libs"
-	use llvm && hadrian_flavour+="+llvm"
-
-	: ${HADRIAN_FLAVOUR:="${hadrian_flavour}"}
-
-	hadrian_vars+=("--flavour=${HADRIAN_FLAVOUR}")
-
-	# Control the verbosity of hadrian. Default is one level of --verbose
-	: ${HADRIAN_VERBOSITY:=1}
-
-	local n="${HADRIAN_VERBOSITY}"
-	until [[ $n -le 0 ]]; do
-		hadrian_vars+=("--verbose")
-		n=$(($n - 1 ))
-	done
-
-	# Add any -j* flags passed in via $MAKEOPTS
-	for i in $MAKEOPTS; do
-		case $i in
-			-j*) hadrian_vars+=("$i") ;;
-			*) true ;;
-		esac
-	done
-
-#	# Stage1Only crosscompiler does not build stage2
-#	if ! is_crosscompile; then
-#		# 1. build/pax-mark compiler binary first
-#		#emake ghc/stage2/build/tmp/ghc-stage2
-#		hadrian -j${nproc} --flavour=quickest stage2:exe:ghc-bin || die
-#		# 2. pax-mark (bug #516430)
-#		#pax-mark -m _build/stage1/bin/ghc
-#		# 2. build/pax-mark haddock using ghc-stage2
-#		if is_native; then
-#			# non-native build does not build haddock
-#			# due to HADDOCK_DOCS=NO, but it could.
-#			#emake utils/haddock/dist/build/tmp/haddock
-#			hadrian docs --docs=no-sphinx-pdfs --docs=no-sphinx-html || die
-#			#pax-mark -m utils/haddock/dist/build/tmp/haddock
-#		fi
-#	fi
-#	# 3. and then all the rest
-#	#emake all
-
-	if use ghcbootstrap; then
-		local hadrian=( /usr/bin/hadrian )
-	else
-		local hadrian=( "${S}/hadrian/bootstrap/_build/bin/hadrian" )
-	fi
-	hadrian+=(
-		"${hadrian_vars[@]}"
-		binary-dist-dir
-	)
-
-	einfo "Running: ${hadrian[@]}"
-	"${hadrian[@]}" || die
+	# FIXME: This is failing, but the docs mention it:
+	# <https://gitlab.haskell.org/hololeap/ghc/-/blob/master/hadrian/doc/testsuite.md?ref_type=heads#building-just-the-dependencies-needed-for-the-testsuite>
+	# >    Error, file does not exist and no rule available:
+	# >    test:all_deps
+	#
+	#use test && run_hadrian test:all_deps
 }
 
 src_test() {
-	# TODO: deal with:
-	#    - sandbox (pollutes environment)
-	#    - extra packages (to extend testsuite coverage)
-	# bits are taken from 'validate'
-	#local make_test_target='test' # can be fulltest
-	# not 'emake' as testsuite uses '$MAKE' without jobserver available
-	#make $make_test_target stage=2 THREADS=$(makeopts_jobs)
-	hadrian test || die
+
+	# Make sure stage 1 libraries are available
+	for d in "${S}/work/${P}/_build/stage1/lib"/*${P}/*/; do
+		export LD_LIBRARY_PATH="${d}${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"
+	done
+
+	local args=(
+		--progress-info=unicorn # good luck unicorns
+	)
+
+	[[ ${#GHC_BUGGY_TESTS[@]} -gt 0 ]] && einfo "Tests have been marked as buggy and will be skipped:"
+
+	for t in "${GHC_BUGGY_TESTS[@]}"; do
+		args+=( "--broken-test=${t}" )
+		einfo "     * ${t}"
+	done
+
+	run_hadrian "${args[@]}" test
 }
 
 src_install() {
@@ -812,15 +806,10 @@ src_install() {
 
 	[[ -f VERSION ]] || emake VERSION
 
-#	einfo "Running: hadrian install ${hadrian_vars}"
-#	hadrian install --prefix="${D}/usr/" ${hadrian_vars} || die
-
 	pushd "${S}/_build/bindist/${P}-${CHOST}" || die
 	econf
 	emake DESTDIR="${D}" install
 	popd
-
-	#emake -j1 install DESTDIR="${D}"
 
 	# Skip for cross-targets as they all share target location:
 	# /usr/share/doc/ghc-9999/

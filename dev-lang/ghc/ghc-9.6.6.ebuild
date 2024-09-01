@@ -21,7 +21,7 @@ inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-GHC_BRANCH_COMMIT="6819b70a7739205a75f0b4fefcfcc9fdab39cab9" # ghc-9.6.3-release
+GHC_BRANCH_COMMIT="3a18c0fa2edcd61b0c3b470661791b09501c4c2b" # ghc-9.6.6-release
 
 GHC_BINARY_PV="9.6.2"
 SRC_URI="
@@ -91,7 +91,6 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
-	"process 1.6.18.0"
 )
 
 LICENSE="BSD"
@@ -125,11 +124,13 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
 	doc? (
+		$(python_gen_any_dep '
+			dev-python/sphinx[${PYTHON_USEDEP}]
+			dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
+		')
 		app-text/docbook-xml-dtd:4.2
 		app-text/docbook-xml-dtd:4.5
 		app-text/docbook-xsl-stylesheets
-		dev-python/sphinx
-		dev-python/sphinx-rtd-theme
 		>=dev-libs/libxslt-1.1.2
 	)
 	ghcbootstrap? (
@@ -145,6 +146,7 @@ BDEPEND="
 needs_python() {
 	# test driver is written in python
 	use test && return 0
+	use doc && return 0
 	return 1
 }
 
@@ -155,6 +157,13 @@ REQUIRED_USE="
 
 # haskell libraries built with cabal in configure mode, #515354
 QA_CONFIGURE_OPTIONS+=" --with-compiler --with-gcc"
+
+python_check_deps() {
+	if use doc; then
+		python_has_version "dev-python/sphinx[${PYTHON_USEDEP}]" &&
+		python_has_version "dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]"
+	fi
+}
 
 is_crosscompile() {
 	[[ ${CHOST} != ${CTARGET} ]]
@@ -532,14 +541,6 @@ src_prepare() {
 
 	cd "${S}" # otherwise eapply will break
 
-	# ModUnusable pretty-printing should include the reason
-	eapply "${FILESDIR}/${PN}-9.0.2-verbose-modunusable.patch"
-
-	# Fixes panic when compiling some packages
-	# https://github.com/gentoo-haskell/gentoo-haskell/issues/1250#issuecomment-1044257595
-	# https://gitlab.haskell.org/ghc/ghc/-/issues/21097
-	eapply "${FILESDIR}/${PN}-9.2.7-modorigin-semigroup.patch"
-
 	eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
@@ -558,10 +559,22 @@ src_prepare() {
 	# have the update, so we symlink to the system version instead.
 	if use doc; then
 		local python_str="import sphinx_rtd_theme; print(sphinx_rtd_theme.__file__)"
-		local rtd_theme_dir="$(dirname $("${EPYTHON}" -c "$python_str"))"
+
+		ebegin "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
+		local rtd_theme_file="$( "${EPYTHON}" -c "${python_str}")"
+		if [[ -z "${rtd_theme_file}" ]]; then
+			eend 1
+			einfo "EPYTHON=\"${EPYTHON}\""
+			einfo "python_str=\"${python_str}\""
+			eerror 'Could not find sphinx-rtd-theme: failed to execute: $EPYTHON -c "${python_str}"'
+			die
+		else
+			eend 0
+		fi
+
+		local rtd_theme_dir="$( dirname "${rtd_theme_file}" )"
 		local orig_rtd_theme_dir="${S}/docs/users_guide/rtd-theme"
 
-		einfo "Replacing bundled rtd-theme with dev-python/sphinx-rtd-theme"
 		rm -r "${orig_rtd_theme_dir}" || die
 		ln -s "${rtd_theme_dir}" "${orig_rtd_theme_dir}" || die
 	fi
@@ -570,8 +583,6 @@ src_prepare() {
 	pushd "${S}/libraries/Win32"
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 	popd
-
-	eapply "${FILESDIR}"/${PN}-9.8.2-force-merge-objects-when-building-dynamic-objects.patch
 
 	# Only applies to the testsuite directory copied from the git snapshot
 	if use test; then

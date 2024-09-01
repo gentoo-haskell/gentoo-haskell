@@ -1,3 +1,9 @@
+# hololeap <hololeap@protonmail.com> (2024-07-26)
+#
+# Fails to build with USE=ghcbootstrap, and the workaround of using
+# hadrian-9.6.6 (which works for ghc-9.6.5) fails as well.
+~dev-lang/ghc-9.6.4 ghcbootstrap
+
 # hololeap <hololeap@protonmail.com> (2023-09-09)
 # dev-haskell/floskell fails to build the executable with
 # >=dev-haskell/optoarse-applicative-0.18
@@ -7,11 +13,9 @@
 # Bug: <https://github.com/ennocramer/floskell/issues/77>
 dev-haskell/floskell executable
 
-# hololeap <hololeap@protonmail.com> (2023-03-09)
-# Documentation is causing build failures when using hadrian, and it isn't
-# clear why.
-# Testing hasn't been set up yet
->=dev-lang/ghc-9.4 doc test
+# hololeap <hololeap@protonmail.com> (2024-08-31)
+# Tests on GHC 9.10 are broken (over 100 failures compared to 0 on GHC 9.8)
+>=dev-lang/ghc-9.10 test
 
 # hololeap <hololeap@protonmail.com> (2023-01-11)
 # Enabling these flags will create cycles in the dependency graph. 
