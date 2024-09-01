@@ -37,4 +37,4 @@ src_configure() {
 		--flag=-parsec-struct-diff
 }
 
-CABAL_CORE_LIB_GHC_PV="9.6.5 9.8.2"
+CABAL_CORE_LIB_GHC_PV="9.6.5 9.6.6 9.8.2"
