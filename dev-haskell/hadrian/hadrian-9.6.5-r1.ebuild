@@ -26,6 +26,10 @@ CABAL_CHDEPS=(
 	'Cabal                >= 3.2     && < 3.9' 'Cabal >= 3.2'
 )
 
+PATCHES=(
+	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
+)
+
 RDEPEND="
 	>=dev-haskell/cabal-3.2:=
 	>=dev-haskell/extra-1.4.7:=
