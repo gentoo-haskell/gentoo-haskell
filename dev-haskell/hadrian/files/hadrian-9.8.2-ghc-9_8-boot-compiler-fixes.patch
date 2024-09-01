@@ -1,4 +1,4 @@
-From 3eb9406844e637f4cdde87604fd69f93143ea21b Mon Sep 17 00:00:00 2001
+From https://gitlab.haskell.org/ghc/ghc/-/merge_requests/12603/diffs?commit_id=3eb9406844e637f4cdde87604fd69f93143ea21b
 From: Matthew Pickering <matthewtpickering@gmail.com>
 Date: Wed, 1 Nov 2023 11:35:30 +0000
 Subject: [PATCH] Compatibility with 9.8.1 as boot compiler
@@ -13,16 +13,6 @@ compiler.
 Fixes #24605
 
 (cherry picked from commit ef3d20f83499cf129b1cacac07906b8d6188fc17)
----
- hadrian/cabal.project                         | 2 +-
- hadrian/hadrian.cabal                         | 2 +-
- hadrian/src/Settings/Packages.hs              | 4 +++-
- linters/lint-whitespace/lint-whitespace.cabal | 2 +-
- linters/linters-common/linters-common.cabal   | 2 +-
- 5 files changed, 7 insertions(+), 5 deletions(-)
-
-diff --git a/hadrian/cabal.project b/hadrian/cabal.project
-index fed4aa0540a..61039c09886 100644
 --- a/cabal.project
 +++ b/cabal.project
 @@ -1,7 +1,7 @@
@@ -34,8 +24,6 @@ index fed4aa0540a..61039c09886 100644
  
  -- N.B. Compile with -O0 since this is not a performance-critical executable
  -- and the Cabal takes nearly twice as long to build with -O1. See #16817.
-diff --git a/hadrian/src/Settings/Packages.hs b/hadrian/src/Settings/Packages.hs
-index 9840ae9db27..ab1cd8021b1 100644
 --- a/src/Settings/Packages.hs
 +++ b/src/Settings/Packages.hs
 @@ -6,6 +6,7 @@ import Oracles.Setting

@@ -42,8 +42,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
 
-PATCHES=( "${FILESDIR}/12603.patch" )
-
 src_prepare() {
 	default
 	cabal_chdeps \
