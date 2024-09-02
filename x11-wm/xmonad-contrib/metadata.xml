@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="pedantic">Be pedantic (-Werror and the like)</flag>
 		<flag name="xft">Use Xft to render text</flag>
 	</use>
 	<upstream>

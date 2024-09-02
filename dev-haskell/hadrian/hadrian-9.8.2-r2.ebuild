@@ -44,7 +44,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
 
-PATCHES=( "${FILESDIR}/12603.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-9.8.2-ghc-9_8-boot-compiler-fixes.patch"
+	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
+)
 
 src_prepare() {
 	default

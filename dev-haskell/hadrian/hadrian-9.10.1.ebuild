@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 S="${WORKDIR}/ghc-${PV}/${CABAL_PN}"
 CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-9.10.1-remove-with-cc-configure-flag.patch"
+)
+
 RDEPEND="
 	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-1.1.0.0:=
 	>=dev-haskell/cabal-3.10:=

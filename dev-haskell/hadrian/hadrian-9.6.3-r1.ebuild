@@ -22,6 +22,10 @@ RESTRICT="!test? ( test )"
 S="${WORKDIR}/ghc-${PV}/hadrian"
 CABAL_FILE="${S}/hadrian.cabal"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
+)
+
 RDEPEND="
 	>=dev-haskell/cabal-3.2:=
 	>=dev-haskell/extra-1.4.7:=
@@ -41,8 +45,6 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
-
-PATCHES=( "${FILESDIR}/12603.patch" )
 
 src_prepare() {
 	default

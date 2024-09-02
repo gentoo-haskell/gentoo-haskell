@@ -635,6 +635,10 @@ src_configure() {
 	echo "*.*.ghc.hs.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
 	echo "*.*.ghc.c.opts += ${GHC_FLAGS}" >> _build/hadrian.settings
 
+	# Don't let it pre-strip the stage 1 bootstrapping libraries (which will be
+	# installed to the system)
+	echo "stage1.*.cabal.configure.opts += --disable-library-stripping" >> _build/hadrian.settings
+
     ### Gather configuration variables for GHC
 
 	# Get ghc from the binary
