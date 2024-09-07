@@ -16,25 +16,13 @@ Find us in ``#gentoo-haskell`` on `libera.chat`_!
 Quickest start
 ==============
 
-First, let's enable the Gentoo Haskell overlay. We can either use the
-eselect-repository method::
+First, let's enable the Gentoo Haskell overlay using the eselect-repository method::
 
     # Install eselect-repository if you don't already have it
     emerge app-eselect/eselect-repository
     # Fetch and output the list of overlays
     eselect repository list
     eselect repository enable haskell
-
-or we can use the layman method::
-  
-    # Add important USE flags for layman to your package.use directory:
-    echo "app-portage/layman sync-plugin-portage git" >> /etc/portage/package.use/layman
-    # Install layman if you don't already have it
-    emerge app-portage/layman
-    # Rebuild layman's repos.conf file:
-    layman-updater -R
-    # Add the Gentoo Haskell overlay:
-    layman -a haskell
 
 Finally, we need to unmask the overlay (this does not apply if your system
 is already running on the ~testing branch)::
