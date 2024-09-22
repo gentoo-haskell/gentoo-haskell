@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="hackage">pathological-bytestrings</remote-id>
+		<remote-id type="github">vmchale/pathological-bytestrings</remote-id>
+	</upstream>
+</pkgmetadata>
