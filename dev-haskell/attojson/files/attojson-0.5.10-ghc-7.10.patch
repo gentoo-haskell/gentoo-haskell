@@ -1,9 +1,0 @@
-diff --git a/Text/JSON/AttoJSON.hs b/Text/JSON/AttoJSON.hs
-index 6b28e14..d120d11 100644
---- a/Text/JSON/AttoJSON.hs
-+++ b/Text/JSON/AttoJSON.hs
-@@ -263,3 +263,3 @@ array  = lexeme (symbol "[" *> (JSArray <$> (value `sepBy` symbol ",")) <* symbo
- isControlChar ch = ('\NUL' <= ch && ch <= '\US') || ch == '\DEL'
--isNotHadaka ch = ch `elem` "\"\\"
-+isNotHadaka ch = ch `elem` ("\"\\" :: String)
- 
