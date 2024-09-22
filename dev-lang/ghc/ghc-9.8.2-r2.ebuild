@@ -21,13 +21,13 @@ inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-GHC_BRANCH_COMMIT="f3225ed4b3f3c4309f9342c5e40643eeb0cc45da" # ghc-9.10.1-release
+GHC_BRANCH_COMMIT="f3225ed4b3f3c4309f9342c5e40643eeb0cc45da" # ghc-9.8.2-release
 
-GHC_BINARY_PV="9.8.1"
+GHC_BINARY_PV="9.6.2"
 SRC_URI="
 	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
 	!ghcbootstrap? (
-		https://downloads.haskell.org/~ghc/${PV}/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
+		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
 		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
 	)
 	test? (
@@ -91,7 +91,15 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
-	"directory 1.3.8.4"
+
+	# These libs are a higher version in ghc-9.6.5 than they are in ghc-9.8.2
+	# This could cause problems for hackport when determining minimum ghc
+	# version, so we upgrade them.
+	"Cabal-syntax 3.10.3.0"
+	"Cabal        3.10.3.0"
+	"directory    1.3.8.5"
+	"filepath     1.4.300.1"
+	"process      1.6.19.0"
 )
 
 LICENSE="BSD"
@@ -535,7 +543,7 @@ src_prepare() {
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
-	eapply "${FILESDIR}"/${PN}-9.10.1-llvm-18.patch
+	eapply "${FILESDIR}"/${PN}-9.6.4-llvm-18.patch
 
 	# Fix issue caused by non-standard "musleabi" target in
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
@@ -547,9 +555,7 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 	popd
 
-	pushd "${S}/libraries/Cabal"
-		eapply "${FILESDIR}/${PN}-9.10.1-Cabal-syntax-add-no-alex-flag.patch"
-	popd
+	eapply "${FILESDIR}"/${PN}-9.8.2-force-merge-objects-when-building-dynamic-objects.patch
 
 	# Only applies to the testsuite directory copied from the git snapshot
 	if use test; then
