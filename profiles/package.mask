@@ -1,34 +1,11 @@
-# hololeap <hololeap@protonmail.com> (2024-06-30)
+# hololeap <hololeap@protonmail.com> (2024-09-22)
 #
-# Last-rite deprecated crypto-random and revdeps
-# (Removal: 2024-07-30)
-dev-haskell/crypto-random
-dev-haskell/cprng-aes
-dev-haskell/crypto-numbers
-dev-haskell/crypto-pubkey
-
-# hololeap <hololeap@protonmail.com> (2024-06-28)
+# Last-rite dev-haskell/binary, which no longer has any
+# reverse-dependencies.
 #
-# Last-rite old obsolete packages with no revdeps
-# (Removal: 2024-07-28)
-dev-haskell/attojson
-dev-haskell/binary-communicator
-dev-haskell/binary-ieee754
-dev-haskell/binary-shared
-dev-haskell/binary-state
-dev-haskell/buster
-dev-haskell/bytestring-show
-dev-haskell/etherbunny
-dev-haskell/googletranslate
-dev-haskell/hs-java
-dev-haskell/largeword
-dev-haskell/maccatcher
-dev-haskell/network-msg
-dev-haskell/simpleaes
-dev-haskell/system-uuid
-dev-haskell/txt-sushi
-dev-haskell/wire-streams
-dev-haskell/word-trie
+# Removal: 2024-10-22
+# See: <https://github.com/gentoo-haskell/gentoo-haskell/issues/1386>
+dev-haskell/binary
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #

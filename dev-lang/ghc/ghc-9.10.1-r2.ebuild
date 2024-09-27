@@ -21,13 +21,13 @@ inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-GHC_BRANCH_COMMIT="f3225ed4b3f3c4309f9342c5e40643eeb0cc45da" # ghc-9.8.2-release
+GHC_BRANCH_COMMIT="f3225ed4b3f3c4309f9342c5e40643eeb0cc45da" # ghc-9.10.1-release
 
-GHC_BINARY_PV="9.6.2"
+GHC_BINARY_PV="9.8.1"
 SRC_URI="
 	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
 	!ghcbootstrap? (
-		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
+		https://downloads.haskell.org/~ghc/${PV}/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
 		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
 	)
 	test? (
@@ -40,7 +40,7 @@ GHC_BUGGY_TESTS=(
 	# Actual stderr output differs from expected:
 	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
 	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
-	"recomp015"
+	"testsuite/tests/driver/recomp015"
 )
 
 yet_binary() {
@@ -91,15 +91,7 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
-
-	# These libs are a higher version in ghc-9.6.5 than they are in ghc-9.8.2
-	# This could cause problems for hackport when determining minimum ghc
-	# version, so we upgrade them.
-	"Cabal-syntax 3.10.3.0"
-	"Cabal        3.10.3.0"
-	"directory    1.3.8.4"
-	"filepath     1.4.300.1"
-	"process      1.6.19.0"
+	"directory 1.3.8.5"
 )
 
 LICENSE="BSD"
@@ -535,6 +527,18 @@ src_prepare() {
 	# Release tarball does not contain needed test data
 	if use test; then
 		cp -a "${WORKDIR}/${PN}-${GHC_BRANCH_COMMIT}/testsuite" "${S}" || die
+
+		[[ ${#GHC_BUGGY_TESTS[@]} -gt 0 ]] && einfo "Tests have been marked as buggy and will be deleted:"
+
+		local t
+
+		for t in "${GHC_BUGGY_TESTS[@]}"; do
+			einfo "     * ${t}"
+		done
+
+		for t in "${GHC_BUGGY_TESTS[@]}"; do
+			rm -r "${S}/${t}" || die
+		done
 	fi
 
 	cd "${S}" # otherwise eapply will break
@@ -543,7 +547,7 @@ src_prepare() {
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
-	eapply "${FILESDIR}"/${PN}-9.6.4-llvm-18.patch
+	eapply "${FILESDIR}"/${PN}-9.10.1-llvm-18.patch
 
 	# Fix issue caused by non-standard "musleabi" target in
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
@@ -555,7 +559,9 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
 	popd
 
-	eapply "${FILESDIR}"/${PN}-9.8.2-force-merge-objects-when-building-dynamic-objects.patch
+	pushd "${S}/libraries/Cabal"
+		eapply "${FILESDIR}/${PN}-9.10.1-Cabal-syntax-add-no-alex-flag.patch"
+	popd
 
 	# Only applies to the testsuite directory copied from the git snapshot
 	if use test; then
@@ -752,13 +758,6 @@ src_test() {
 	local args=(
 		--progress-info=unicorn # good luck unicorns
 	)
-
-	[[ ${#GHC_BUGGY_TESTS[@]} -gt 0 ]] && einfo "Tests have been marked as buggy and will be skipped:"
-
-	for t in "${GHC_BUGGY_TESTS[@]}"; do
-		args+=( "--broken-test=${t}" )
-		einfo "     * ${t}"
-	done
 
 	run_hadrian "${args[@]}" test
 }

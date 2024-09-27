@@ -40,7 +40,7 @@ GHC_BUGGY_TESTS=(
 	# Actual stderr output differs from expected:
 	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
 	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
-	"recomp015"
+	"testsuite/tests/driver/recomp015"
 )
 
 yet_binary() {
@@ -528,6 +528,18 @@ src_prepare() {
 	# Release tarball does not contain needed test data
 	if use test; then
 		cp -a "${WORKDIR}/${PN}-${GHC_BRANCH_COMMIT}/testsuite" "${S}" || die
+
+		[[ ${#GHC_BUGGY_TESTS[@]} -gt 0 ]] && einfo "Tests have been marked as buggy and will be deleted:"
+
+		local t
+
+		for t in "${GHC_BUGGY_TESTS[@]}"; do
+			einfo "     * ${t}"
+		done
+
+		for t in "${GHC_BUGGY_TESTS[@]}"; do
+			rm -r "${S}/${t}" || die
+		done
 	fi
 
 	cd "${S}" # otherwise eapply will break
@@ -768,13 +780,6 @@ src_test() {
 	local args=(
 		--progress-info=unicorn # good luck unicorns
 	)
-
-	[[ ${#GHC_BUGGY_TESTS[@]} -gt 0 ]] && einfo "Tests have been marked as buggy and will be skipped:"
-
-	for t in "${GHC_BUGGY_TESTS[@]}"; do
-		args+=( "--broken-test=${t}" )
-		einfo "     * ${t}"
-	done
 
 	run_hadrian "${args[@]}" test
 }
