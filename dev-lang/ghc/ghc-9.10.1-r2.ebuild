@@ -133,6 +133,7 @@ BDEPEND="
 	)
 	ghcbootstrap? (
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
+		dev-haskell/alex
 		~dev-haskell/hadrian-${PV}
 	)
 	test? (
@@ -557,10 +558,6 @@ src_prepare() {
 	# mingw32 target
 	pushd "${S}/libraries/Win32"
 		eapply "${FILESDIR}"/${PN}-8.2.1_rc1-win32-cross-2-hack.patch # bad workaround
-	popd
-
-	pushd "${S}/libraries/Cabal"
-		eapply "${FILESDIR}/${PN}-9.10.1-Cabal-syntax-add-no-alex-flag.patch"
 	popd
 
 	# Only applies to the testsuite directory copied from the git snapshot
