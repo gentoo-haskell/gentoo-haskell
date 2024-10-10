@@ -14,7 +14,11 @@ HOMEPAGE="https://github.com/facebookincubator/retrie"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="+buildexecutable"
+IUSE="examples executable"
+
+PATCHES=(
+	"${FILESDIR}/${PN}-1.1.0.0-modify-flags.patch"
+)
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.10.3:=[profile?] <dev-haskell/ansi-terminal-1.1:=[profile?]
 	>=dev-haskell/async-2.2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
@@ -28,7 +32,11 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.10.3:=[profile?] <dev-haskell/ansi-termin
 	>=dev-haskell/unordered-containers-0.2.10:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 	>=dev-lang/ghc-9.2:=[profile?] <dev-lang/ghc-9.9:=[profile?]
-	buildexecutable? ( dev-haskell/ghc-paths:=[profile?]
+	examples? (
+		dev-haskell/ghc-paths:=[profile?]
+		>=dev-haskell/haskell-src-exts-1.23.0:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
+	)
+	executable? ( dev-haskell/ghc-paths:=[profile?]
 				>=dev-haskell/haskell-src-exts-1.23.0:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?] )
 "
 DEPEND="${RDEPEND}
@@ -37,11 +45,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty
 		dev-haskell/tasty-hunit
 		dev-haskell/temporary
-		!buildexecutable? ( dev-haskell/ghc-paths
+		!executable? ( dev-haskell/ghc-paths
 					dev-haskell/haskell-src-exts ) )
 "
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag buildexecutable buildexecutable)
+		$(cabal_flag examples examples) \
+		$(cabal_flag executable executable)
 }
