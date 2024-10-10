@@ -10,4 +10,8 @@
 benchmark.</flag>
 		<flag name="threaded">Run benchmarks with threaded backend.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">broadcast-chan</remote-id>
+		<remote-id type="github">merijn/broadcast-chan</remote-id>
+	</upstream>
 </pkgmetadata>
