@@ -88,6 +88,7 @@ dev-haskell/word-trie
 >=dev-haskell/text-2.1
 >=dev-haskell/singletons-th-3.3
 >=dev-haskell/singletons-base-3.3
+>=dev-haskell/ghc-exactprint-1.8
 
 # hololeap <hololeap@protonmail.com> (2024-03-23)
 #
