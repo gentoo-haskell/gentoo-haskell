@@ -562,6 +562,9 @@ src_prepare() {
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
 	eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
 
+	# Fix QA Notice: Found the following implicit function declarations in configure logs
+	eapply "${FILESDIR}/${PN}-9.4.8-fix-configure-implicit-function.patch"
+
 	# Fix QA Notice: Unrecognized configure options: --with-cc
 	pushd "${S}/hadrian" || die
 		eapply "${FILESDIR}/hadrian-9.4.8-remove-with-cc-configure-flag.patch"
