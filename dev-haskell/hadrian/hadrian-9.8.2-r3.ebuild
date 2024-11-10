@@ -48,6 +48,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-9.8.2-ghc-9_8-boot-compiler-fixes.patch"
 	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
 	"${FILESDIR}/${PN}-dont-depend-on-registerPackage.patch"
+	"${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
 )
 
 src_prepare() {

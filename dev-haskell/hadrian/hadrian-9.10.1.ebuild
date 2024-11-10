@@ -24,6 +24,7 @@ CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-9.10.1-remove-with-cc-configure-flag.patch"
+	"${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
 )
 
 RDEPEND="
