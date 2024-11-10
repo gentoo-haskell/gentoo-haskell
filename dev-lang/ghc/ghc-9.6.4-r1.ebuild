@@ -732,11 +732,6 @@ src_configure() {
 		#  - disable ncurses support for ghc-pkg
 		echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
 		echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-	elif is_native; then
-		# using ${GTARGET}'s libffi is not supported yet:
-		# GHC embeds full path for ffi includes without /usr/${CTARGET} account.
-		econf_args+=(--with-system-libffi)
-		econf_args+=(--with-ffi-includes=$($(tc-getPKG_CONFIG) libffi --cflags-only-I | sed -e 's@^-I@@'))
 	fi
 
 	# User-supplied block to be added to hadrian.settings
