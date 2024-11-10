@@ -554,6 +554,10 @@ src_prepare() {
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
 	eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
 
+	# Fix QA Notice: Unrecognized configure options: --with-cc
+	pushd "${S}/hadrian" || die
+		eapply "${FILESDIR}/hadrian-9.10.1-remove-with-cc-configure-flag.patch"
+	popd
 
 	# mingw32 target
 	pushd "${S}/libraries/Win32"
