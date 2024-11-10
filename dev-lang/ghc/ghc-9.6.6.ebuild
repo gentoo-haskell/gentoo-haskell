@@ -566,9 +566,11 @@ src_prepare() {
 	# Fix QA Notice: Found the following implicit function declarations in configure logs
 	eapply "${FILESDIR}/${PN}-9.4.8-fix-configure-implicit-function.patch"
 
-	# Fix QA Notice: Unrecognized configure options: --with-cc
 	pushd "${S}/hadrian" || die
+		# Fix QA Notice: Unrecognized configure options: --with-cc
 		eapply "${FILESDIR}/hadrian-9.4.8-remove-with-cc-configure-flag.patch"
+		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
+		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
 	popd
 
 	# FIXME: A hack that allows dev-python/sphinx-7 to build the docs
