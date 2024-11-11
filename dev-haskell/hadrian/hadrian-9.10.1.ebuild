@@ -22,8 +22,9 @@ RESTRICT="!test? ( test )"
 S="${WORKDIR}/ghc-${PV}/${CABAL_PN}"
 CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-9.10.1-remove-with-cc-configure-flag.patch"
+CABAL_CHDEPS=(
+	'Cabal                >= 3.10    && < 3.11' 'Cabal >= 3.10'
+	'containers           >= 0.5     && < 0.7' 'containers           >= 0.5'
 )
 
 RDEPEND="
@@ -51,10 +52,10 @@ DEPEND="${RDEPEND}
 "
 
 src_prepare() {
-	default
-	cabal_chdeps \
-		'Cabal                >= 3.10    && < 3.11' 'Cabal >= 3.10' \
-		'containers           >= 0.5     && < 0.7' 'containers           >= 0.5'
+	sed -i -e \
+		's/^\(version:.*\)0\.1\.0\.0/\1'"${PV}"'/' \
+		"${CABAL_FILE}" || die
+	haskell-cabal_src_prepare
 }
 
 src_configure() {

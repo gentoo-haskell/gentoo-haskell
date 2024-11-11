@@ -562,6 +562,16 @@ src_prepare() {
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
 	eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
 
+	# Fix QA Notice: Found the following implicit function declarations in configure logs
+	eapply "${FILESDIR}/${PN}-9.4.8-fix-configure-implicit-function.patch"
+
+	pushd "${S}/hadrian" || die
+		# Fix QA Notice: Unrecognized configure options: --with-cc
+		eapply "${FILESDIR}/hadrian-9.4.8-remove-with-cc-configure-flag.patch"
+		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
+		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
+	popd
+
 	# FIXME: A hack that allows dev-python/sphinx-7 to build the docs
 	#
 	# GHC has updated the bundled version here:
@@ -710,11 +720,6 @@ src_configure() {
 		#  - disable ncurses support for ghc-pkg
 		echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
 		echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-	elif is_native; then
-		# using ${GTARGET}'s libffi is not supported yet:
-		# GHC embeds full path for ffi includes without /usr/${CTARGET} account.
-		econf_args+=(--with-system-libffi)
-		econf_args+=(--with-ffi-includes=$($(tc-getPKG_CONFIG) libffi --cflags-only-I | sed -e 's@^-I@@'))
 	fi
 
 	# User-supplied block to be added to hadrian.settings

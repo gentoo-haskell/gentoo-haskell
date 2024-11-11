@@ -1,12 +1,3 @@
-# hololeap <hololeap@protonmail.com> (2024-09-22)
-#
-# Last-rite dev-haskell/binary, which no longer has any
-# reverse-dependencies.
-#
-# Removal: 2024-10-22
-# See: <https://github.com/gentoo-haskell/gentoo-haskell/issues/1386>
-dev-haskell/binary
-
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
 # These package versions depend on a minimum GHC of 9.10, which is still

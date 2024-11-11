@@ -19,8 +19,19 @@ KEYWORDS="~amd64"
 IUSE="static test +threaded"
 
 RESTRICT="!test? ( test )"
-S="${WORKDIR}/ghc-${PV}/hadrian"
-CABAL_FILE="${S}/hadrian.cabal"
+S="${WORKDIR}/ghc-${PV}/${CABAL_PN}"
+CABAL_FILE="${S}/${CABAL_PN}.cabal"
+
+CABAL_CHDEPS=(
+	'Cabal                >= 3.2     && < 3.9' 'Cabal >= 3.2'
+)
+
+PATCHES=(
+	"${FILESDIR}/${PN}-9.8.2-ghc-9_8-boot-compiler-fixes.patch"
+	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
+	"${FILESDIR}/${PN}-dont-depend-on-registerPackage.patch"
+	"${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
+)
 
 RDEPEND="
 	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-1.1.0.0:=
@@ -44,16 +55,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
 
-PATCHES=(
-	"${FILESDIR}/${PN}-9.8.2-ghc-9_8-boot-compiler-fixes.patch"
-	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
-	"${FILESDIR}/${PN}-dont-depend-on-registerPackage.patch"
-)
-
 src_prepare() {
-	default
-	cabal_chdeps \
-		'Cabal                >= 3.2     && < 3.9' 'Cabal                >= 3.2'
+	sed -i -e \
+		's/^\(version:.*\)0\.1\.0\.0/\1'"${PV}"'/' \
+		"${CABAL_FILE}" || die
+	haskell-cabal_src_prepare
 }
 
 src_configure() {
