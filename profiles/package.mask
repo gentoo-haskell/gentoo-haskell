@@ -146,6 +146,7 @@
 >=app-text/pandoc-cli-3.2
 >=dev-haskell/pandoc-server-0.1.0.6
 >=dev-haskell/pandoc-lua-engine-0.3
+>=app-portage/hackport-0.9
 
 # Jack Todaro <solpeth@posteo.org> (2023-12-08)
 # Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
