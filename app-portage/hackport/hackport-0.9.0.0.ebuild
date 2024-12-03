@@ -7,16 +7,14 @@ EAPI=8
 #hackport: flags: +cabal-v1,+doctests,+gentoo-tests,+pedantic
 
 CABAL_FEATURES="test-suite"
-EGIT_REPO_URI="https://github.com/gentoo-haskell/hackport.git"
-
-inherit git-r3 haskell-cabal bash-completion-r1
+inherit haskell-cabal bash-completion-r1
 
 DESCRIPTION="Hackage and Portage integration tool"
 HOMEPAGE="https://github.com/gentoo-haskell/hackport#readme"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="profile +threads"
 REQUIRED_USE="profile? ( threads ) test? ( threads )"
 
@@ -68,11 +66,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.0
 	)
 "
-
-src_prepare() {
-	haskell-cabal_src_prepare
-	sed -e 's/^version:.*/&.9999/' -i ${PN}.cabal || die # just to distinguish from release install
-}
 
 src_configure() {
 	if use test; then
