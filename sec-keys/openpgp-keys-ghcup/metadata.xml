@@ -9,4 +9,5 @@
 		<remote-id type="hackage">ghcup</remote-id>
 		<remote-id type="github">haskell/ghcup-hs</remote-id>
 	</upstream>
+	<stabilize-allarches/>
 </pkgmetadata>
