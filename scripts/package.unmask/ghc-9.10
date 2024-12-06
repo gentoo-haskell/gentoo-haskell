@@ -18,4 +18,4 @@
 <app-text/pandoc-cli-4
 <dev-haskell/pandoc-server-4
 <dev-haskell/pandoc-lua-engine-0.4
-<app-portage/hackport-0.10
+app-portage/hackport
