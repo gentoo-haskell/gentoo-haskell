@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">versions</remote-id>
-		<remote-id type="github">fosskers/versions</remote-id>
+		<remote-id type="hackage">bzlib-conduit</remote-id>
+		<remote-id type="github">snoyberg/bzlib-conduit</remote-id>
 	</upstream>
 </pkgmetadata>
