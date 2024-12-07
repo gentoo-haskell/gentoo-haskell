@@ -21,6 +21,7 @@ IUSE="+xinerama"
 # add +xinerama to IUSE and RDEPEND on libXScrnSaver and libXinerama below
 RDEPEND=">=dev-haskell/data-default-class-0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
+	x11-base/xorg-proto
 	x11-libs/libX11
 	x11-libs/libXext
 	x11-libs/libXrandr
