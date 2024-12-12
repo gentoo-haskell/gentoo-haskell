@@ -154,9 +154,9 @@ RDEPEND="
 	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
 	llvm? (
-		<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
+		<llvm-core/llvm-$((${LLVM_MAX_SLOT} + 1)):=
 		|| (
-			sys-devel/llvm:14
+			llvm-core/llvm:14
 		)
 	)
 "

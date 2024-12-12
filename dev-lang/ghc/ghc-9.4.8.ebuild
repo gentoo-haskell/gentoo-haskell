@@ -127,12 +127,12 @@ RESTRICT="!test? ( test )"
 
 LLVM_MAX_SLOT="18"
 LLVM_DEPS="
-	<sys-devel/llvm-$((${LLVM_MAX_SLOT} + 1)):=
+	<llvm-core/llvm-$((${LLVM_MAX_SLOT} + 1)):=
 	|| (
-		sys-devel/llvm:15
-		sys-devel/llvm:16
-		sys-devel/llvm:17
-		sys-devel/llvm:18
+		llvm-core/llvm:15
+		llvm-core/llvm:16
+		llvm-core/llvm:17
+		llvm-core/llvm:18
 	)
 "
 
