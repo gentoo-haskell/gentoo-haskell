@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/heaps/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
