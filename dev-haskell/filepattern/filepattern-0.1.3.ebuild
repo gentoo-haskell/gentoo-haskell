@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ndmitchell/filepattern#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-haskell/extra-1.6.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
