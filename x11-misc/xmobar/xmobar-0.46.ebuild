@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -32,6 +32,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.7.1:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-haskell/x11-1.6.1:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
+	x11-libs/cairo[X]
 	x11-libs/libXrandr
 	x11-libs/libXrender
 	alsa? (

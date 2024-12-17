@@ -93,61 +93,6 @@
 >=dev-haskell/singletons-th-3.2
 >=dev-haskell/singletons-base-3.2
 
-# hololeap <hololeap@protonmail.com> (2024-03-16)
-#
-# These package versions depend on a minimum GHC of 9.4, which is still
-# considered experimental.
-#
-# If you need to use GHC-9.4 or any of these package versions, copy or symlink
-# scripts/package.unmask/ghc-9.4 to your package.mask directory.
-#
-# You can do so by running:
-#
-# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.4 \
-#  /etc/portage/package.unmask/ghc-9.4
-#
-# Please report any bugs to
-# https://github.com/gentoo-haskell/gentoo-haskell/issues
->=dev-lang/ghc-9.4
->=dev-haskell/hadrian-9.4
->=dev-haskell/binary-0.8.9.1
->=dev-haskell/cabal-3.8.1.0
->=dev-haskell/cabal-described-3.8.1.0
->=dev-haskell/cabal-quickcheck-3.8.1.0
->=dev-haskell/cabal-install-solver-3.8.1.0
->=dev-haskell/cabal-install-3.8.1.0
->=dev-haskell/cabal-tree-diff-3.8.1.0
->=dev-haskell/exceptions-0.10.5
->=dev-haskell/ghc-exactprint-1.6.1.3
->=dev-haskell/parsec-3.1.16.1
->=dev-haskell/process-1.6.17.0
->=dev-haskell/stm-2.5.1.0
->=dev-haskell/text-2.0.2
->=dev-haskell/haddock-library-1.11.0-r3
->=dev-haskell/primitive-unlifted-2.1
->=dev-haskell/req-3.13.2
->=dev-haskell/text-ansi-0.3.0.1
->=dev-haskell/text-builder-0.6.7.2
->=dev-haskell/text-builder-dev-0.3.4.2
->=dev-haskell/text-builder-linear-0.1.2
->=dev-haskell/base64-1.0
->=dev-haskell/ghc-lib-parser-9.8
->=dev-haskell/ghc-lib-parser-ex-9.8
->=dev-haskell/stylish-haskell-0.14.6.0
->=dev-haskell/haddock-2.27
->=dev-haskell/haddock-api-2.27
->=dev-haskell/hlint-3.8
->=dev-haskell/hoauth2-2.12
->=dev-haskell/stack-2.11
->=dev-haskell/singletons-th-3.1.1
->=dev-haskell/singletons-base-3.1.1
->=dev-haskell/djot-0.1.2
->=dev-haskell/pandoc-3.2
->=app-text/pandoc-cli-3.2
->=dev-haskell/pandoc-server-0.1.0.6
->=dev-haskell/pandoc-lua-engine-0.3
->=app-portage/hackport-0.9
-
 # Jack Todaro <solpeth@posteo.org> (2023-12-08)
 # Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
 =dev-haskell/irc-core-2.12

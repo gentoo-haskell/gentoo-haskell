@@ -18,7 +18,7 @@ RESTRICT="test"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="embed-files +threaded"
 
 RDEPEND="
