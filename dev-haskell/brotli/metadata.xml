@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">versions</remote-id>
-		<remote-id type="github">fosskers/versions</remote-id>
+		<remote-id type="hackage">brotli</remote-id>
+		<remote-id type="github">haskell-hvr/brotli</remote-id>
 	</upstream>
 </pkgmetadata>
