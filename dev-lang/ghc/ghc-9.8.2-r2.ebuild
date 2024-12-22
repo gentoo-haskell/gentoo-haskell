@@ -562,7 +562,7 @@ src_prepare() {
 	eapply "${FILESDIR}"/${PN}-9.4.5-musl-target.patch
 
 	# Fix QA Notice: Found the following implicit function declarations in configure logs
-	eapply "${FILESDIR}/${PN}-9.4.8-fix-configure-implicit-function.patch"
+	eapply "${FILESDIR}/${PN}-9.10.1-fix-configure-implicit-function.patch"
 
 	pushd "${S}/hadrian" || die
 		# Fix QA Notice: Unrecognized configure options: --with-cc
