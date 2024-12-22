@@ -64,7 +64,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 BDEPEND="${BDEPEND}
-	sec-keys/openpgp-keys-ghcup
+	verify-sig? (
+		sec-keys/openpgp-keys-ghcup
+	)
 "
 
 ### Export some more variables specific to the local $ARCH, for convenience
