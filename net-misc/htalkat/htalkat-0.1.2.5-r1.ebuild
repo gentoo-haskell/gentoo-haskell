@@ -16,6 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+ncurses"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.1.2.5-tls-2_1-compatibility.patch"
+)
+
 RDEPEND="
 	<dev-haskell/asn1-encoding-0.10:=
 	>=dev-haskell/asn1-types-0.3.4:=
@@ -48,8 +52,8 @@ RDEPEND="
 	<dev-haskell/temporary-1.4:=
 	>=dev-haskell/text-1.1.0.0:=
 	<dev-haskell/text-2.2:=
-	>=dev-haskell/tls-1.5.4:=
-	<dev-haskell/tls-2.1:=
+	>=dev-haskell/tls-2.1:=
+	<dev-haskell/tls-2.2:=
 	>=dev-lang/ghc-9.0.2:=
 	ncurses? (
 		<dev-haskell/hscurses-1.5:=
