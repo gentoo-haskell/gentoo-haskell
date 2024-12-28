@@ -33,7 +33,10 @@ RDEPEND=">=dev-haskell/comonad-4.0:=[profile?] <dev-haskell/comonad-6:=[profile?
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/doctest-0.16 )
+	test? (
+		>=dev-haskell/cabal-doctest-1
+		>=dev-haskell/doctest-0.16
+	)
 "
 
 src_configure() {
