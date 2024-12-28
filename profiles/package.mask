@@ -1,3 +1,10 @@
+# hololeap <hololeap@protonmail.com> (2024-12-28)
+#
+# Ancient package; patch distfile is a 404. Mask for removal.
+#
+# Removal: 2025-01-27
+games-fps/frag
+
 # hololeap <hololeap@protonmail.com> (2024-12-25)
 #
 # HaskellNet-SSL seems abandoned, no uploads since 2021. Mask it and its parent
