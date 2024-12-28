@@ -16,6 +16,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'warp >= 3.0.0.2 && < 3.4' 'warp >= 3.0.0.2'
+)
+
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/attoparsec-aeson-2.1:=[profile?]
@@ -45,7 +49,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/utf8-string
 		>=dev-haskell/wai-3.0 <dev-haskell/wai-3.3
 		dev-haskell/wai-conduit
-		>=dev-haskell/warp-3.0.0.2 <dev-haskell/warp-3.4
+		>=dev-haskell/warp-3.0.0.2
 		dev-haskell/warp-tls
 		|| ( <dev-haskell/tls-1.5
 			>=dev-haskell/tls-1.5.2 ) )
