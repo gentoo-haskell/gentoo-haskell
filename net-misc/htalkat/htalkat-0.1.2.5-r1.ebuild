@@ -16,6 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+ncurses"
 
+CABAL_CHDEPS=(
+	'crypton >=0.26 && <0.35' 'crypton >=0.26'
+)
+
 PATCHES=(
 	"${FILESDIR}/${PN}-0.1.2.5-tls-2_1-compatibility.patch"
 )
@@ -25,7 +29,6 @@ RDEPEND="
 	>=dev-haskell/asn1-types-0.3.4:=
 	<dev-haskell/asn1-types-0.4:=
 	>=dev-haskell/crypton-0.26:=
-	<dev-haskell/crypton-0.35:=
 	>=dev-haskell/crypton-x509-1.7.5:=
 	<dev-haskell/crypton-x509-1.8:=
 	>=dev-haskell/crypton-x509-validation-1.6.11:=
