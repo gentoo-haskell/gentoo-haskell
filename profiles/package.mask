@@ -108,6 +108,7 @@ dev-haskell/haskellnet-ssl
 >=dev-haskell/ghc-lib-parser-ex-9.10
 >=dev-haskell/singletons-th-3.2
 >=dev-haskell/singletons-base-3.2
+>=dev-haskell/ghc-syntax-highlighter-0.0.12
 
 # Jack Todaro <solpeth@posteo.org> (2023-12-08)
 # Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
