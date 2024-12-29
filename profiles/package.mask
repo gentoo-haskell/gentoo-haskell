@@ -1,3 +1,25 @@
+# hololeap <hololeap@protonmail.com> (2024-12-29)
+#
+# GHC 9.0 is outdated at this point and is likely unused. Mask for removal,
+# along with old versions of other packages that were kept for compatibility
+# and packages that require GHC 9.0.
+#
+# Removal: 2025-01-28
+=dev-lang/ghc-9.0*
+=dev-haskell/cabal-install-3.4*
+=dev-haskell/cabal-3.4*
+=dev-haskell/parsec-3.1.14*
+~dev-haskell/stm-2.5.0.0
+~dev-haskell/singletons-base-3.0
+~dev-haskell/singletons-th-3.0
+=dev-haskell/th-desugar-1.12*
+=dev-haskell/ghc-exactprint-0.6*
+=dev-haskell/haddock-2.25*
+=dev-haskell/haddock-api-2.25*
+=dev-haskell/retrie-1.1*
+dev-haskell/constraints-deriving
+dev-haskell/dimensions
+
 # hololeap <hololeap@protonmail.com> (2024-12-28)
 #
 # Ancient package; patch distfile is a 404. Mask for removal.
