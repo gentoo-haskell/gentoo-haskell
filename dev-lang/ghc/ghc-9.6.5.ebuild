@@ -16,16 +16,19 @@ fi
 PYTHON_COMPAT=( python3_{9..12} )
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
-inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal
+inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal verify-sig
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
+
+VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/ghc.asc
 
 GHC_BRANCH_COMMIT="650c34ab4e1cefb521209b143ecd75367ec03ee1" # ghc-9.6.5-release
 
 GHC_BINARY_PV="9.6.2"
 SRC_URI="
 	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
+	verify-sig? ( https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz.sig )
 	!ghcbootstrap? (
 		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
 		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
@@ -140,6 +143,9 @@ BDEPEND="
 	test? (
 		${PYTHON_DEPS}
 		${LLVM_DEPS}
+	)
+	verify-sig? (
+		sec-keys/openpgp-keys-ghc
 	)
 "
 
@@ -485,7 +491,16 @@ src_unpack() {
 	case ${CHOST} in
 		*-darwin* | *-solaris*)  ONLYA=${GHC_P}-src.tar.xz  ;;
 	esac
-	unpacker ${ONLYA}
+	if use verify-sig; then
+		verify-sig_verify_detached "${DISTDIR}"/${P}-src.tar.xz{,.sig}
+	fi
+	# Strip signature files from the list of files to unpack
+	for f in ${ONLYA}; do
+		if [[ ${f} != *.sig ]]; then
+			nosig="${nosig} ${f}"
+		fi
+	done
+	unpacker ${nosig}
 }
 
 src_prepare() {

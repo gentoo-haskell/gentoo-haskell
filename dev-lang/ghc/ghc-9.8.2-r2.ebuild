@@ -21,7 +21,7 @@ inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal verify-sig
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
 
-VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/ghcup.asc
+VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/ghc.asc
 
 GHC_BRANCH_COMMIT="f3225ed4b3f3c4309f9342c5e40643eeb0cc45da" # ghc-9.8.2-release
 
@@ -151,7 +151,7 @@ BDEPEND="
 		${LLVM_DEPS}
 	)
 	verify-sig? (
-		sec-keys/openpgp-keys-ghcup
+		sec-keys/openpgp-keys-ghc
 	)
 "
 
