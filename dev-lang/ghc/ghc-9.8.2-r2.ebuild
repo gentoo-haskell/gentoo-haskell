@@ -125,9 +125,9 @@ LLVM_DEPS="
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
+	dev-libs/libffi:=
 	sys-libs/ncurses:=[unicode(+)]
 	elfutils? ( dev-libs/elfutils )
-	!ghcmakebinary? ( dev-libs/libffi:= )
 	numa? ( sys-process/numactl )
 	llvm? ( ${LLVM_DEPS} )
 "
@@ -699,6 +699,10 @@ src_configure() {
 
 		# Put docs into the right place, ie /usr/share/doc/ghc-${GHC_PV}
 		--docdir="${EPREFIX}/usr/share/doc/$(cross)${PF}"
+
+		# Use system libffi instead of bundled libffi-tarballs
+		--with-system-libffi
+		--with-ffi-includes=$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed 's/-I//g')
 	)
 
 	if [[ ${CBUILD} != ${CHOST} ]]; then
