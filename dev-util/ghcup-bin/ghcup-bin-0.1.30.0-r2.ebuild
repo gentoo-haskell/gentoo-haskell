@@ -7,8 +7,8 @@ CRATES=""
 
 inherit verify-sig
 
-DESCRIPTION="Rust toolchain installer"
-HOMEPAGE="https://rust-lang.github.io/rustup/"
+DESCRIPTION="The GHCup Haskell installer"
+HOMEPAGE="https://www.haskell.org/ghcup/"
 
 VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/ghcup.asc
 
