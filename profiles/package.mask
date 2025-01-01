@@ -1,3 +1,8 @@
+# GdeVolpiano <xavier@wheredoibegin.fr>
+# This package version depends on GHC 9.10
+#
+>=dev-haskell/cabal-fmt-0.1.12
+
 # hololeap <hololeap@protonmail.com> (2024-12-29)
 #
 # GHC 9.0 is outdated at this point and is likely unused. Mask for removal,
