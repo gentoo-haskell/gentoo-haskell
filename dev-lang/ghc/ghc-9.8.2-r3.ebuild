@@ -102,7 +102,10 @@ BUMP_LIBRARIES=(
 	"Cabal        3.10.3.0"
 	"directory    1.3.8.5"
 	"filepath     1.4.300.1"
-	"process      1.6.19.0"
+
+	# Match with ghc-9.8.3 and 9.8.4 to help simplify package.unmask
+	"process      1.6.25.0"
+	"stm          2.5.3.1"
 )
 
 LICENSE="BSD"
