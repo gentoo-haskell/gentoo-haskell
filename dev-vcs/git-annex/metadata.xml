@@ -14,6 +14,7 @@
 		<flag name="magicmime">Use libmagic to determine file MIME types</flag>
 		<flag name="pairing">Enable pairing</flag>
 		<flag name="parallelbuild">Enable production build (slower build; faster binary)</flag>
+		<flag name="servant">Use the servant library, enabling using annex+http urls and git-annex p2phttp</flag>
 		<flag name="torrentparser">Use haskell torrent library to parse torrent files</flag>
 	</use>
 	<upstream>

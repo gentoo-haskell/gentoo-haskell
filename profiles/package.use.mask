@@ -1,6 +1,10 @@
-# hololeap <hololeap@protonmail.com> (2024-08-31)
-# Tests on GHC 9.10 are broken (over 100 failures compared to 0 on GHC 9.8)
->=dev-lang/ghc-9.10 test
+# hololeap <hololeap@protonmail.com> (2024-12-30)
+#
+# This version is signed by Bryan Richter, but the key fails to be imported
+# after being downloaded from keys.openpgp.org, saying "no user ID".
+#
+# See: <https://www.haskell.org/ghc/download_ghc_9_6_3.html#binaries>
+~dev-lang/ghc-9.6.3 verify-sig
 
 # hololeap <hololeap@protonmail.com> (2024-07-26)
 #

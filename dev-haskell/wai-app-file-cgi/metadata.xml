@@ -5,8 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This WAI application library handles static files,
-		executes CGI scripts, and serves as a reverse proxy.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">wai-app-file-cgi</remote-id>
+		<remote-id type="github">kazu-yamamoto/wai-app-file-cgi</remote-id>
+	</upstream>
 </pkgmetadata>

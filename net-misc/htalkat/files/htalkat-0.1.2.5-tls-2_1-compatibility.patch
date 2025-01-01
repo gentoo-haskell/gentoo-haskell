@@ -1,0 +1,35 @@
+From f52e3ef264ec63be3adbd5af6f1b88bb93afa12e Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Fri, 27 Dec 2024 17:12:22 -0700
+Subject: [PATCH] Patch for tls-2.1 compatibility
+
+Fix ambiguous occurrence to defaultHooks. Raise minimum version of tls
+to 2.1.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+
+--- a/TLSTalk.hs
++++ b/TLSTalk.hs
+@@ -26,7 +26,7 @@ import           Data.Default.Class       (def)
+ import           Data.X509.Validation     (FailedReason (..), defaultChecks,
+                                            defaultHooks, validate)
+ import           Network.Simple.TCP       (connectSock, connectSockSOCKS5)
+-import           Network.TLS              as TLS
++import           Network.TLS              as TLS hiding (defaultHooks)
+ import           Network.TLS.Extra.Cipher
+ import           System.Directory         (createDirectoryIfMissing)
+ import           System.Exit              (exitFailure)
+--- a/htalkat.cabal
++++ b/htalkat.cabal
+@@ -81,7 +81,7 @@ executable htalkat
+         temporary >= 1.2 && <1.4,
+         text >=1.1.0.0 && <2.2,
+         time <1.15,
+-        tls >=1.5.4 && <2.1,
++        tls >=2.1 && <2.2,
+         transformers >=0.3.0.0 && <0.7,
+         crypton-x509 >=1.7.5 && <1.8,
+         crypton-x509-validation >=1.6.11 && <1.7
+-- 
+2.45.2
+
