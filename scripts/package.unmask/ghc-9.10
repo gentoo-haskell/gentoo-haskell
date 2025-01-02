@@ -3,6 +3,7 @@
 <dev-haskell/ghc-toolchain-9.11
 <dev-haskell/hadrian-9.11
 <dev-haskell/binary-0.8.9.3
+<dev-haskell/cabal-fmt-0.1.13
 <dev-haskell/cabal-syntax-3.12.1
 <dev-haskell/cabal-3.12.1
 <dev-haskell/exceptions-0.10.8
