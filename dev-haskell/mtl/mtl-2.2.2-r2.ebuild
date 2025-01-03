@@ -16,12 +16,12 @@ HOMEPAGE="https://github.com/haskell/mtl"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
 
 RDEPEND="
-	>=dev-lang/ghc-8.10.6:=
+	>=dev-lang/ghc-8.10.6:= <dev-lang/ghc-9.5
 "
 DEPEND="${RDEPEND}
 "
 
-CABAL_CORE_LIB_GHC_PV="9.6.2 9.6.3 9.6.4 9.6.5 9.6.6 9.8.2 9.8.3 9.8.4 9.10.1"
+CABAL_CORE_LIB_GHC_PV="8.10.6 8.10.7 9.0.2 9.2.4 9.2.5 9.2.6 9.2.7 9.2.8 9.4.4 9.4.5 9.4.7 9.4.8"
