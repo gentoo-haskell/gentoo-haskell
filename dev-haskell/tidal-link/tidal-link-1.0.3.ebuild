@@ -25,7 +25,7 @@ CABAL_CHBINS=(
 )
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
-	|| ( sys-devel/clang
+	|| ( llvm-core/clang
 		sys-devel/gcc[cxx] )
 "
 DEPEND="${RDEPEND}
