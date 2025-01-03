@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-haskell/text-0.11.0.8:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 	dev-libs/double-conversion
-	|| ( sys-devel/clang
+	|| ( llvm-core/clang
 		sys-devel/gcc[cxx] )
 "
 DEPEND="${RDEPEND}
