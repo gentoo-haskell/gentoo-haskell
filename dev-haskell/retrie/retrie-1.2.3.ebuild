@@ -48,6 +48,12 @@ DEPEND="${RDEPEND}
 		!executable? ( dev-haskell/ghc-paths
 					dev-haskell/haskell-src-exts ) )
 "
+BDEPEND="
+	test? (
+		dev-vcs/git
+		dev-vcs/mercurial
+	)
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
