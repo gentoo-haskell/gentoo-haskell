@@ -5,17 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package only exports definitions from the \&quot;mtl\&quot; and \&quot;transformers\&quot;
-		libraries.
-		Unlike every module of \&quot;mtl\&quot; it does not reexport
-		@Control.Monad@ and @Control.Monad.Fix@.
-		
-		In combination with the &lt;http://hackage.haskell.org/package/base-prelude &quot;base-prelude&quot;&gt; library,
-		this should give you a quite rich prelude.
-		
-		The @2.*@ versions are restricted by
-		the feature set of @mtl-2.2@ and @transformers-0.4@,
-		however they provide support for newer versions of those libraries as well.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">mtl-prelude</remote-id>
+		<remote-id type="github">nikita-volkov/mtl-prelude</remote-id>
+	</upstream>
 </pkgmetadata>
