@@ -18,7 +18,7 @@ IUSE="eras trace"
 
 RDEPEND="~dev-haskell/ghc-debug-convention-0.6.0.0:=[profile?]
 	>=dev-lang/ghc-9.2.4:=
-	|| ( sys-devel/clang
+	|| ( llvm-core/clang
 		sys-devel/gcc[cxx] )
 "
 DEPEND="${RDEPEND}
