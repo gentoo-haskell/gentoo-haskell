@@ -5,19 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A library which aims to reexport all the non-conflicting and
-		most general definitions from the \&quot;base\&quot; package.
-		This includes APIs for applicatives, arrows, monoids, foldables, traversables,
-		exceptions, generics, ST, MVars and STM.
-		
-		This package will never have any dependencies other than \&quot;base\&quot;.
-		
-		/Versioning policy/
-		
-		The versioning policy of this package deviates from PVP in the sense
-		that its exports in part are transitively determined by the version of \&quot;base\&quot;.
-		Therefore it&#39;s recommended for the users of \&quot;base-prelude\&quot; to specify
-		the bounds of \&quot;base\&quot; as well.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">base-prelude</remote-id>
+		<remote-id type="github">nikita-volkov/base-prelude</remote-id>
+	</upstream>
 </pkgmetadata>
