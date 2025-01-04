@@ -5,7 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This library leverages existing high-performance libraries (attoparsec, blaze-html, text, and conduit), and should integrate well with existing codebases.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">markdown</remote-id>
+		<remote-id type="github">snoyberg/markdown</remote-id>
+	</upstream>
 </pkgmetadata>
