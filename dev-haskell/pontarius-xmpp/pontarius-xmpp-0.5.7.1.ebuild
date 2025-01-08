@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/l29ah/pontarius-xmpp/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="+th"
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.0.3:=[profile?]
