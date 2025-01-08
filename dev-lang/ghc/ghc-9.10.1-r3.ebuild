@@ -98,6 +98,9 @@ BUMP_LIBRARIES=(
 
 	# Match 9.8.4
 	"process   1.6.25.0"
+
+	# Updated upstream
+	"deepseq   1.5.1.0"
 )
 
 LICENSE="BSD"
@@ -575,6 +578,8 @@ src_prepare() {
 
 	# Fix QA Notice: Found the following implicit function declarations in configure logs
 	eapply "${FILESDIR}/${PN}-9.10.1-fix-configure-implicit-function.patch"
+
+	eapply "${FILESDIR}/${PN}-9.10.1-deepseq-1_5_1_0.patch"
 
 	pushd "${S}/hadrian" || die
 		# Fix QA Notice: Unrecognized configure options: --with-cc

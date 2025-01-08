@@ -1,0 +1,22 @@
+From https://gitlab.haskell.org/ghc/ghc/-/commit/8e462f4d4bdf2a6c34c249e7be8084565600d300
+From: Bodigrim <andrew.lelechenko@gmail.com>
+Date: Mon, 9 Sep 2024 20:38:02 +0100
+Subject: [PATCH] Bump submodule deepseq to 1.5.1.0
+
+--- a/compiler/GHC/Unit/Types.hs
++++ b/compiler/GHC/Unit/Types.hs
+@@ -101,9 +101,9 @@ import GHC.Utils.Fingerprint
+ import GHC.Utils.Misc
+ import GHC.Settings.Config (cProjectUnitId)
+ 
+-import Control.DeepSeq
++import Control.DeepSeq (NFData(..))
+ import Data.Data
+-import Data.List (sortBy )
++import Data.List (sortBy)
+ import Data.Function
+ import Data.Bifunctor
+ import qualified Data.ByteString as BS
+-- 
+GitLab
+
