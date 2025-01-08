@@ -1,6 +1,6 @@
 From: hololeap <hololeap@protonmail.com>
 Date: Fri, 7 Jun 2024 10:15:06 -0700
-Subject: [PATCH 1/1] Patch ghc-9.6 for llvm-17 support
+Subject: [PATCH 1/1] Patch ghc-9.10 for llvm-19 support
 
 This patch was adapted from the original ghc-9.4.5-llvm-16.patch
 
@@ -14,7 +14,7 @@ Signed-off-by: hololeap <hololeap@protonmail.com>
  # 3.5/3.6 release of LLVM.
  LlvmMinVersion=13  # inclusive
 -LlvmMaxVersion=16 # not inclusive
-+LlvmMaxVersion=19 # not inclusive
++LlvmMaxVersion=20 # not inclusive
  AC_SUBST([LlvmMinVersion])
  AC_SUBST([LlvmMaxVersion])
  

@@ -114,7 +114,7 @@ KEYWORDS="~amd64"
 IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 RESTRICT="!test? ( test )"
 
-LLVM_MAX_SLOT="18"
+LLVM_MAX_SLOT="19"
 LLVM_DEPS="
 	<llvm-core/llvm-$((${LLVM_MAX_SLOT} + 1)):=
 	|| (
@@ -122,6 +122,7 @@ LLVM_DEPS="
 		llvm-core/llvm:16
 		llvm-core/llvm:17
 		llvm-core/llvm:18
+		llvm-core/llvm:19
 	)
 "
 
@@ -573,7 +574,7 @@ src_prepare() {
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
-	eapply "${FILESDIR}"/${PN}-9.6.4-llvm-18.patch
+	eapply "${FILESDIR}"/${PN}-9.6.4-llvm-19.patch
 
 	# Fix issue caused by non-standard "musleabi" target in
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
