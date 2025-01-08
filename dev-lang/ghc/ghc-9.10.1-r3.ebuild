@@ -97,6 +97,7 @@ BUMP_LIBRARIES=(
 	"directory 1.3.8.5"
 
 	# Match 9.8.4
+	"array     0.5.8.0"
 	"process   1.6.25.0"
 
 	# Updated upstream
