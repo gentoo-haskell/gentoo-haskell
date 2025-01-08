@@ -396,8 +396,8 @@ ghc-check-reqs() {
 	# These are pessimistic values (slightly bigger than worst-case)
 	# Worst case is UNREG USE=profile ia64. See bug #611866 for some
 	# numbers on various arches.
-	CHECKREQS_DISK_BUILD=8G
-	CHECKREQS_DISK_USR=2G
+	CHECKREQS_DISK_BUILD=20G
+	CHECKREQS_DISK_USR=4G
 
 	"$@"
 }
