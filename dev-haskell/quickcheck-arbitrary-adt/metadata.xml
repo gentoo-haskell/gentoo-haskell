@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">versions</remote-id>
-		<remote-id type="github">fosskers/versions</remote-id>
+		<remote-id type="hackage">quickcheck-arbitrary-adt</remote-id>
+		<remote-id type="github">plow-technologies/quickcheck-arbitrary-adt</remote-id>
 	</upstream>
 </pkgmetadata>

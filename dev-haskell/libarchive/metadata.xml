@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="cross">Set this flag if cross-compiling</flag>
+		<flag name="executable">Install the hs-archive executable</flag>
+		<flag name="low-memory">Run low-memory version of test suite</flag>
+		<flag name="system-libarchive">Use libarchive found with pkg-config rather than the bundled sources</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">libarchive</remote-id>
+		<remote-id type="github">vmchale/libarchive</remote-id>
+	</upstream>
+</pkgmetadata>
