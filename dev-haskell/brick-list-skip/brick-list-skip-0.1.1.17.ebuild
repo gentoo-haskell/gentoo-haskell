@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,11 +17,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-RDEPEND=">=dev-haskell/brick-1.5:=[profile?] <dev-haskell/brick-2.7:=[profile?]
+RDEPEND=">=dev-haskell/brick-1.5:=[profile?] <dev-haskell/brick-3:=[profile?]
 	>=dev-haskell/microlens-0.4.13:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/vector-0.12.3:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	examples? ( >=dev-haskell/vty-5.36:=[profile?] <dev-haskell/vty-6.3:=[profile?] )
+	examples? ( >=dev-haskell/vty-5.36:=[profile?] <dev-haskell/vty-7:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
