@@ -6,6 +6,14 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="extendedbenchmarks">Runs extra benchmarks which can be very slow.</flag>
+		<flag name="pure-haskell">Don&#39;t use text&#39;s standard C routines
+NB: This feature is not fully implemented. Several C routines are still in
+use.
+When this flag is true, text will use pure Haskell variants of the
+routines. This is not recommended except for use with GHC&#39;s JavaScript
+backend.
+This flag also disables simdutf.</flag>
 		<flag name="simdutf">use simdutf library</flag>
 	</use>
 	<upstream>
