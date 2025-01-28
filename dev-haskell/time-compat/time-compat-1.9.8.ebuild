@@ -26,10 +26,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tagged-0.8.9 <dev-haskell/tagged-0.9
 		>=dev-haskell/tasty-1.4 <dev-haskell/tasty-1.6
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/tasty-quickcheck-0.11 <dev-haskell/tasty-quickcheck-0.12
+		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.12
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7 )
 "
 
 CABAL_CHDEPS=(
 	'tasty             >=1.5      && <1.6' 'tasty             >=1.4      && <1.6'
+	'tasty-quickcheck  >=0.11     && <0.12' 'tasty-quickcheck >=0.10 && <0.12'
 )
