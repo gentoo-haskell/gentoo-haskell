@@ -17,7 +17,7 @@ HOMEPAGE="https://github.com/haskell/text"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+simdutf"
 
 # break cyclic dependencies:
