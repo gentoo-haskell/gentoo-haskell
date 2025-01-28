@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/X11-xft"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-haskell/utf8-string-0.1:=[profile?]
 	>=dev-haskell/x11-1.2.1:=[xinerama,profile?]
