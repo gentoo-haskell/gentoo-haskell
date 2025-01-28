@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,15 +19,24 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base              >=4.6      && <4.17' 'base              >=4.6'
+	'bifunctors        >=4.2.1    && <5.6' 'bifunctors        >=4.2.1'
+	'parsers           >=0.12.2.1 && <0.13' 'parsers           >=0.12.2.1'
+	'tasty             >=0.10.1.2 && <1.5' 'tasty             >=0.10.1.2'
+	'template-haskell  >=2.8.0.0  && <2.19' 'template-haskell  >=2.8.0.0'
+	'time              >=1.4.0.1  && <1.13' 'time              >=1.4.0.1'
+)
+
 RDEPEND=">=dev-haskell/parsers-0.12.2.1:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 	test? ( >=dev-haskell/attoparsec-0.12.1.6 <dev-haskell/attoparsec-0.15
-		>=dev-haskell/bifunctors-4.2.1 <dev-haskell/bifunctors-5.6
+		>=dev-haskell/bifunctors-4.2.1
 		>=dev-haskell/parsers-0.12.3 <dev-haskell/parsers-0.13
-		>=dev-haskell/tasty-0.10.1.2 <dev-haskell/tasty-1.5
+		>=dev-haskell/tasty-0.10.1.2
 		>=dev-haskell/tasty-hunit-0.9.2 <dev-haskell/tasty-hunit-0.11 )
 "
 BDEPEND="app-text/dos2unix"
@@ -38,6 +47,8 @@ src_prepare() {
 
 	# Convert to unix line endings
 	dos2unix "${S}/${PN}.cabal" || die
+
+	haskell-cabal_src_prepare
 
 	# Apply patches *after* pulling the revised cabal
 	default
