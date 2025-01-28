@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/bifunctors-5.2:=[profile?] <dev-haskell/bifunctors-6:=[pr
 	>=dev-haskell/profunctors-5.2.1:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-2:=[profile?]
 	>=dev-haskell/tagged-0.7.3:=[profile?] <dev-haskell/tagged-1:=[profile?]
-	>=dev-haskell/th-abstraction-0.4:=[profile?] <dev-haskell/th-abstraction-0.8:=[profile?]
+	>=dev-haskell/th-abstraction-0.5:=[profile?] <dev-haskell/th-abstraction-0.8:=[profile?]
 	>=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.4:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
