@@ -14,7 +14,7 @@ HOMEPAGE="https://xmonad.org"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="no-autorepeat-keys"
 
 RDEPEND="dev-haskell/data-default-class:=[profile?]
