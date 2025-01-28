@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,12 +20,17 @@ KEYWORDS="~amd64"
 CABAL_CHDEPS=(
 	'base >=4.11 && <4.17' 'base >=4.11'
 	'free < 5.2' 'free'
+	'bifunctors <5.6' 'bifunctors'
+	'containers <0.7' 'containers'
+	'mtl <2.3' 'mtl'
+	'transformers <0.6' 'transformers'
+	'extra <1.8' 'extra'
 )
 
 RDEPEND="
-	<dev-haskell/bifunctors-5.6:=[profile?]
+	dev-haskell/bifunctors:=[profile?]
 	>=dev-haskell/deque-0.3:=[profile?] <dev-haskell/deque-0.5
-	<dev-haskell/extra-1.8:=[profile?]
+	dev-haskell/extra:=[profile?]
 	dev-haskell/free:=[profile?]
 	<dev-haskell/microlens-0.5:=[profile?]
 	<dev-haskell/microlens-th-0.5:=[profile?]
