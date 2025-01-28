@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -41,5 +41,7 @@ src_prepare() {
 
 	cabal_chdeps \
 		'base                       >= 4.3 && < 4.15' 'base >=4.3' \
-		'hspec                      >= 2.2.3    && < 2.8' 'hspec >=2.2.3'
+		'hspec                      >= 2.2.3    && < 2.8' 'hspec >=2.2.3' \
+		'containers                 >= 0.3 && < 0.7' 'containers                 >= 0.3' \
+		'mtl                        >= 2.0 && < 2.3' 'mtl                        >= 2.0'
 }
