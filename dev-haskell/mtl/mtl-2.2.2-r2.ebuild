@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/haskell/mtl"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
+KEYWORDS="~amd64 ~arm64 ~amd64-linux ~ppc-macos"
 
 RDEPEND="
 	>=dev-lang/ghc-8.10.6:= <dev-lang/ghc-9.5
