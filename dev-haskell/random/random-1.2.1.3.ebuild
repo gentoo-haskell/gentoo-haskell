@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -13,15 +13,14 @@ HOMEPAGE="https://hackage.haskell.org/package/random"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
 
 RDEPEND=">=dev-haskell/splitmix-0.1:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/doctest-0.15 <dev-haskell/doctest-0.23
-		>=dev-haskell/smallcheck-1.2 <dev-haskell/smallcheck-1.3
+	test? ( >=dev-haskell/smallcheck-1.2 <dev-haskell/smallcheck-1.3
 		>=dev-haskell/tasty-1.0 <dev-haskell/tasty-1.6
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 		dev-haskell/tasty-inspection-testing
