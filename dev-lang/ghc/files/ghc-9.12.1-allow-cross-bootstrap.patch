@@ -1,0 +1,11 @@
+--- a/configure.ac	2024-12-16 06:29:45.000000000 +1100
++++ b/configure.ac	2025-01-26 16:25:24.934578857 +1100
+@@ -292,7 +292,7 @@
+     echo "This GHC (${WithGhc}) does not generate code for the build platform"
+     echo "   GHC target platform    : $bootstrap_target"
+     echo "   Desired build platform : $BuildPlatform"
+-    exit 1
++    #exit 1
+     fi
+ fi
+ 

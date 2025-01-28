@@ -1,0 +1,11 @@
+--- a/m4/fp_js_cpp_cmd_with_args.m4	2024-12-16 06:29:46.000000000 +1100
++++ b/m4/fp_js_cpp_cmd_with_args.m4	2025-01-26 18:16:30.481628554 +1100
+@@ -53,7 +53,7 @@
+   # Emscripten supports -C and -CC options same as GCC and CLang
+   # We have to use -nostdinc to prevent adding copyright headers in gcc output.
+   # This issue is known and discussed here: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=59566
+-  JS_CPP_ARGS="-E -CC -Wno-unicode -nostdinc"
++  JS_CPP_ARGS="-E -x c -CC -Wno-unicode -nostdinc"
+ 
+   AC_MSG_CHECKING([whether $JS_CPP_CMD preprocessor supports flags $JS_CPP_ARGS])
+ 

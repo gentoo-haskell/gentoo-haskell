@@ -1,0 +1,22 @@
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 31 Aug 2024 22:26:34 -0600
+Subject: [PATCH 1/1] Remove --with-cc from configure flags
+
+configure responds with:
+
+    WARNING: unrecognized options: --with-cc
+
+This triggers Gentoo's QA notice, "Unrecognized configure options", when
+building GHC.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/src/Settings/Builders/Cabal.hs	2024-12-16 06:29:46.000000000 +1100
++++ b/src/Settings/Builders/Cabal.hs	2025-01-26 16:56:04.964179069 +1100
+@@ -207,7 +207,6 @@
+         , conf "--with-curses-libraries"  $ arg =<< getSetting CursesLibDir
+         -- ROMES:TODO: how is the Host set to TargetPlatformFull? That would be the target
+         , conf "--host"                   $ arg =<< getSetting TargetPlatformFull
+-        , conf "--with-cc" $ arg =<< getBuilderPath . (Cc CompileC) =<< getStage
+         , ghcVersionH
+         ]
+ 
