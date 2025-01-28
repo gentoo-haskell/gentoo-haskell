@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,6 +18,9 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples"
 
+CABAL_CHDEPS=(
+)
+
 RDEPEND=">=dev-haskell/monad-control-1.0:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/tagged-0.7:=[profile?] <dev-haskell/tagged-0.9:=[profile?]
 	<dev-haskell/transformers-base-0.5:=[profile?]
@@ -32,7 +35,10 @@ src_prepare() {
 	default
 
 	cabal_chdeps \
-		'hspec >=2 && <2.9' 'hspec >=2'
+		'hspec >=2 && <2.9' 'hspec >=2' \
+		'base         >= 4.11  && <4.17' 'base         >= 4.11' \
+		'mtl          >= 2.1   && <2.3' 'mtl          >= 2.1' \
+		'transformers >= 0.3   && <0.6' 'transformers >= 0.3'
 }
 
 src_configure() {
