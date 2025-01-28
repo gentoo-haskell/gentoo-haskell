@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,7 +14,8 @@ HOMEPAGE="https://github.com/judah/haskeline"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+# Keep in sync with relevant ghc versions (CABAL_CORE_LIB_GHC_PV)
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86 ~amd64-linux"
 IUSE="+terminfo"
 
 RESTRICT=test # test requires example executable which does not work correctly
@@ -32,4 +33,4 @@ src_configure() {
 		$(cabal_flag terminfo terminfo)
 }
 
-CABAL_CORE_LIB_GHC_PV="9.6.2 9.6.3 9.6.4 9.6.5 9.6.6 9.8.2 9.10.1"
+CABAL_CORE_LIB_GHC_PV="9.6.2 9.6.3 9.6.4 9.6.5 9.6.6 9.8.2 9.10.1 9.12.1"
