@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,6 +23,7 @@ RDEPEND="
 	>=dev-haskell/comonad-5.0.8:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/contravariant-1.5.3:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/distributive-0.5.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
+	>=dev-haskell/semigroups-0.18.5:=[profile?] <dev-haskell/semigroups-0.21:=[profile?]
 	>=dev-haskell/tagged-0.8.6.1:=[profile?] <dev-haskell/tagged-1:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
