@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -28,6 +28,7 @@ CABAL_CHDEPS=(
 	'|| >= 3.0     && < 3.7' '|| >= 3.0'
 	'base              >= 4.11     && < 4.21' 'base              >= 4.11'
 	'template-haskell  >= 2.13     && < 2.23' 'template-haskell  >= 2.13'
+	'ghc-prim          >= 0.5.2    && < 0.12' 'ghc-prim          >= 0.5.2'
 )
 
 RDEPEND=">=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
