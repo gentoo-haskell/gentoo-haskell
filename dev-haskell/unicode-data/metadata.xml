@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="dev-has-icu">Use ICU for test and benchmark. Intended for development on the repository.</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">unicode-data</remote-id>
 		<remote-id type="github">composewell/unicode-data</remote-id>
