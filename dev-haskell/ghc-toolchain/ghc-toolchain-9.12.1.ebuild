@@ -14,7 +14,7 @@ SRC_URI="https://downloads.haskell.org/ghc/${PV/_/-}/ghc-${PV}-src.tar.xz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 
 S="${WORKDIR}/ghc-${PV}/utils/${CABAL_PN}"
 CABAL_FILE="${S}/${CABAL_PN}.cabal"

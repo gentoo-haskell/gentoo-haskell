@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/transformers"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64 ~amd64-linux"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "

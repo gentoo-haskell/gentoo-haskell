@@ -16,7 +16,7 @@ GHC_BRANCH_COMMIT="daf659b6e3c8f2a84100fbee797cd9d457c00df5" # ghc-9.12.1-releas
 SRC_URI="https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz?path=utils/haddock/haddock-api -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'base             >= 4.16 && < 4.22' 'base             >= 4.16'

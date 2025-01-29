@@ -19,7 +19,7 @@ GHC_BRANCH_COMMIT="daf659b6e3c8f2a84100fbee797cd9d457c00df5" # ghc-9.12.1-releas
 SRC_URI="https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz?path=utils/haddock -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	~dev-haskell/haddock-api-2.29.1:=
