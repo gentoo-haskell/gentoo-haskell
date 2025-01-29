@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -30,4 +30,4 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 #	)
 
-CABAL_CORE_LIB_GHC_PV="9.8.2 9.8.3 9.8.4 9.10.1"
+CABAL_CORE_LIB_GHC_PV="9.8.2 9.8.3 9.8.4 9.10.1 9.12.1"
