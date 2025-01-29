@@ -22,7 +22,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	~dev-haskell/haddock-api-2.29.1:=
+	~dev-haskell/haddock-api-2.30.0:=
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
