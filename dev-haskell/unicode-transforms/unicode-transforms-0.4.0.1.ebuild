@@ -7,7 +7,7 @@ EAPI=8
 #hackport: flags: -dev,-has-icu,-has-llvm,-bench-show,-gauge
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-CABAL_HACKAGE_REVISION="3"
+CABAL_HACKAGE_REVISION="6"
 inherit haskell-cabal
 
 DESCRIPTION="Unicode normalization"
@@ -19,13 +19,13 @@ KEYWORDS="~amd64 ~ppc64"
 IUSE=""
 
 CABAL_CHDEPS=(
-	'base         >= 4.8 && < 4.19' 'base         >= 4.8'
-	'bytestring   >= 0.9 && < 0.12' 'bytestring   >= 0.9'
-	'ghc-prim     >= 0.2 && < 0.11' 'ghc-prim     >= 0.2'
-	'text         >=1.1.1 && <=1.2.5.0 || >=2.0 && <2.1' 'text         >=1.1.1'
+	'base         >= 4.8 && < 4.21' 'base         >= 4.8'
+	'bytestring   >= 0.9 && < 0.13' 'bytestring   >= 0.9'
+	'ghc-prim     >= 0.2 && < 0.12' 'ghc-prim     >= 0.2'
+	'text         >=1.1.1 && <=1.2.5.0 || >=2.0 && <2.2' 'text         >=1.1.1'
 )
 
-RDEPEND=">=dev-haskell/unicode-data-0.2:=[profile?] <dev-haskell/unicode-data-0.5:=[profile?]
+RDEPEND=">=dev-haskell/unicode-data-0.2:=[profile?] <dev-haskell/unicode-data-0.7:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
