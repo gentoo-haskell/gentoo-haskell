@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,6 +24,7 @@ CABAL_CHDEPS=(
 	'deepseq    >= 1.1 && < 1.5' 'deepseq    >= 1.1'
 	'bytestring >= 0.10 && < 0.12' 'bytestring >= 0.10'
 	'filepath             < 1.5' 'filepath'
+	'time < 1.13' 'time'
 )
 
 RDEPEND="
@@ -38,3 +39,9 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/tasty-0.10 <dev-haskell/tasty-1.5
 #		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11
 #	)
+
+src_configure() {
+	haskell-cabal_src_configure \
+		--flag=-old-time \
+		--flag=-old-bytestring
+}
