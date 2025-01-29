@@ -15,6 +15,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.4.0-tests-ignore-srcLocPackage.patch"
+)
+
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
