@@ -5,4 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">ObjectName</remote-id>
+		<remote-id type="github">haskell-opengl/ObjectName</remote-id>
+		<remote-id type="github">svenpanne/ObjectName</remote-id>
+	</upstream>
 </pkgmetadata>
