@@ -19,7 +19,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-lang/ghc-9.6:= <dev-lang/ghc-9.11
+	>=dev-lang/ghc-9.6:= <dev-lang/ghc-9.13
 "
 DEPEND="${RDEPEND}
 "
