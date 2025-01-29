@@ -70,6 +70,8 @@ libraries =
     , stdlib "ghc-compact"
     , stdlib "ghc-heap"
     , stdlib "ghc-prim"
+    , stdlib "ghc-platform"
+    , lib "ghc-toolchain" ("utils" </> "ghc-toolchain")
     , stdlib "ghci"
     , stdlib "haskeline"
     , stdlib "hpc"
