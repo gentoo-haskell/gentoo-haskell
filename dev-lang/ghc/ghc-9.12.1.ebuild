@@ -559,6 +559,9 @@ src_prepare() {
 
 	cd "${S}" # otherwise eapply will break
 
+	# https://github.com/gentoo-haskell/gentoo-haskell/issues/1585
+	eapply "${FILESDIR}/${PN}-9.12.1-cpp-guard-fix.patch"
+
 	eapply "${FILESDIR}"/${PN}-9.12.1-allow-cross-bootstrap.patch
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
