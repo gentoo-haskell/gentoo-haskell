@@ -67,3 +67,7 @@ src_install() {
 		doman doc/happy.1
 	fi
 }
+
+src_test() {
+	happy_datadir="${S}/data" haskell-cabal_src_test
+}
