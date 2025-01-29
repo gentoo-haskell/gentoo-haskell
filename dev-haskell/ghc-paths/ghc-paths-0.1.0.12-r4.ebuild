@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-3.13
+	>=dev-haskell/cabal-2.2.0.1 <dev-haskell/cabal-3.15
 "
 
 src_prepare() {
