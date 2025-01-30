@@ -77,6 +77,7 @@ libraries =
     , stdlib "hpc"
     , stdlib "integer-gmp"
     , stdlib "mtl"
+    , stdlib "os-string"
     , stdlib "parsec"
     , stdlib "pretty"
     , stdlib "process"
