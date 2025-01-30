@@ -94,14 +94,6 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
-	"directory 1.3.9.0"
-
-	# Match 9.8.4
-	"array     0.5.8.0"
-	"process   1.6.25.0"
-
-	# Updated upstream
-	"deepseq   1.5.1.0"
 )
 
 LICENSE="BSD"
