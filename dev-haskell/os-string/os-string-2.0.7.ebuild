@@ -23,4 +23,4 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-classes-base-0.6.2 <dev-haskell/quickcheck-classes-base-0.7 )
 "
 
-CABAL_CORE_LIB_GHC_PV="9.12.1"
+CABAL_CORE_LIB_GHC_PV="9.10.1 9.12.1"

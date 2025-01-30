@@ -102,6 +102,9 @@ BUMP_LIBRARIES=(
 
 	# Updated upstream
 	"deepseq   1.5.1.0"
+
+	# Bundled with 2.0.2, but newer versions are in tree
+	"os-string 2.0.7"
 )
 
 LICENSE="BSD"
