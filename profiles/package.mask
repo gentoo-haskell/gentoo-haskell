@@ -26,7 +26,6 @@
 >=dev-haskell/ghc-toolchain-9.12.1
 >=dev-haskell/haddock-2.30.0
 >=dev-haskell/haddock-api-2.30.0
->=dev-haskell/haddock-library-1.11.0
 >=dev-haskell/hadrian-9.12.1
 >=dev-haskell/text-2.1.2
 >=dev-haskell/transformers-0.6.1.2

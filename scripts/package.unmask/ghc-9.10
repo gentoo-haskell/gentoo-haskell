@@ -12,7 +12,7 @@
 <dev-haskell/parsec-3.1.18
 <dev-haskell/process-1.6.26
 <dev-haskell/stm-2.5.4
-<dev-haskell/text-2.2
+<dev-haskell/text-2.1.2
 <dev-haskell/transformers-0.6.1.2
 <dev-haskell/djot-0.2
 <dev-haskell/pandoc-4

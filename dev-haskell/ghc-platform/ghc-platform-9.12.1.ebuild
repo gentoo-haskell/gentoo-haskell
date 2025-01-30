@@ -26,3 +26,10 @@ DEPEND="${RDEPEND}
 "
 
 CABAL_CORE_LIB_GHC_PV="9.12.1"
+
+src_prepare() {
+	sed -i -e \
+		's/^\(version:.*\)0\.1\.0\.0/\1'"${PV}"'/' \
+		"${CABAL_FILE}" || die
+	haskell-cabal_src_prepare
+}

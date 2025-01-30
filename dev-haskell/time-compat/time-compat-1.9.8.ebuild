@@ -21,7 +21,7 @@ RDEPEND=">=dev-haskell/base-orphans-0.9.2:=[profile?] <dev-haskell/base-orphans-
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/quickcheck-2.15.0.1 <dev-haskell/quickcheck-2.16
+	test? ( >=dev-haskell/quickcheck-2.14 <dev-haskell/quickcheck-2.16
 		>=dev-haskell/random-1.2.1.3 <dev-haskell/random-1.3
 		>=dev-haskell/tagged-0.8.9 <dev-haskell/tagged-0.9
 		>=dev-haskell/tasty-1.4 <dev-haskell/tasty-1.6
@@ -33,4 +33,5 @@ DEPEND="${RDEPEND}
 CABAL_CHDEPS=(
 	'tasty             >=1.5      && <1.6' 'tasty             >=1.4      && <1.6'
 	'tasty-quickcheck  >=0.11     && <0.12' 'tasty-quickcheck >=0.10 && <0.12'
+	'QuickCheck        >=2.15.0.1 && <2.16' 'QuickCheck >=2.14 && <2.16'
 )
