@@ -39,8 +39,11 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/tar-0.5.0.3:=[profile?] <dev-haskell/tar-0.7:=[profile?]
 	>=dev-haskell/zlib-0.5.3:=[profile?] <dev-haskell/zlib-0.8:=[profile?]
 	>=dev-lang/ghc-9.8.4:=
-	|| ( ( >=dev-haskell/text-1.2.3 <dev-haskell/text-1.3 )
-		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 ) )
+	|| (
+		( >=dev-haskell/text-1.2.3 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
+	)
+	dev-haskell/text:=[profile?]
 	lukko? ( >=dev-haskell/lukko-0.1:=[profile?] <dev-haskell/lukko-0.2:=[profile?] )
 	native-dns? ( >=dev-haskell/resolv-0.1.1:=[profile?] <dev-haskell/resolv-0.3:=[profile?] )
 "
@@ -48,7 +51,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.10.3.0
 	test? ( dev-haskell/cabal-described
 		dev-haskell/cabal-quickcheck
-		dev-haskell/cabal-tests
+		~dev-haskell/cabal-tests-${PV}
 		dev-haskell/cabal-tree-diff
 		>=dev-haskell/network-uri-2.6.2.0 <dev-haskell/network-uri-2.7
 		>=dev-haskell/pretty-show-1.6.15
