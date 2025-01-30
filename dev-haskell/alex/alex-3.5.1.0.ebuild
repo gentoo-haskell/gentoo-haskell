@@ -23,7 +23,7 @@ SRC_URI+=" doc? (
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc"
+IUSE="doc static"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
@@ -32,6 +32,10 @@ DEPEND="${RDEPEND}
 	doc? (
 		dev-python/sphinx
 		dev-python/sphinx-rtd-theme
+	)
+	static? (
+		dev-libs/libffi[static-libs]
+		dev-libs/gmp[static-libs]
 	)
 "
 src_prepare() {
@@ -46,10 +50,22 @@ src_prepare() {
 src_configure() {
 	# make sure we don't accidentally use those
 	# installed in system
-	haskell-cabal_src_configure \
-		--with-alex=false \
-		--with-happy=false \
+	local configure_flags=(
+		--with-alex=false
+		--with-happy=false
 		--flag=small_base
+	)
+
+	if use static; then
+		configure_flags+=(
+			--disable-shared
+			--enable-static
+			--disable-executable-dynamic
+			--enable-executable-static
+		)
+	fi
+
+	haskell-cabal_src_configure "${configure_flags[@]}"
 }
 
 src_compile() {
