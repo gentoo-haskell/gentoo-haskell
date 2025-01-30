@@ -13,14 +13,15 @@ DESCRIPTION="GHC build system"
 HOMEPAGE="https://gitlab.haskell.org/ghc/ghc/-/tree/master/hadrian#readme"
 SRC_URI="https://downloads.haskell.org/ghc/${PV/_/-}/ghc-${PV}-src.tar.xz"
 
+S="${WORKDIR}/ghc-${PV}/${CABAL_PN}"
+CABAL_FILE="${S}/${CABAL_PN}.cabal"
+
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 IUSE="static test +threaded"
 
 RESTRICT="!test? ( test )"
-S="${WORKDIR}/ghc-${PV}/${CABAL_PN}"
-CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
 CABAL_CHDEPS=(
 	'Cabal                >= 3.2     && < 3.9' 'Cabal >= 3.2'
