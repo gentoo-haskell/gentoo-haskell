@@ -1,3 +1,5 @@
+<dev-haskell/cabal-syntax-3.15
+<dev-haskell/cabal-3.15
 <dev-haskell/ghc-platform-9.13
 <dev-haskell/ghc-toolchain-9.13
 <dev-haskell/hadrian-9.13
