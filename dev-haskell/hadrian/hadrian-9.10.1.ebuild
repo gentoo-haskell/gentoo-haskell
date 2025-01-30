@@ -29,7 +29,6 @@ CABAL_CHDEPS=(
 
 RDEPEND="
 	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-1.1.0.0:=
-	>=dev-haskell/cabal-3.10:=
 	>=dev-haskell/cryptohash-sha256-0.11:= <dev-haskell/cryptohash-sha256-0.12:=
 	>=dev-haskell/extra-1.4.7:=
 	~dev-haskell/ghc-platform-${PV}
@@ -39,6 +38,11 @@ RDEPEND="
 	>=dev-haskell/unordered-containers-0.2.1:= <dev-haskell/unordered-containers-0.3:=
 	>=dev-lang/ghc-9.0.2:=
 	>=dev-util/shake-0.18.3:= <dev-util/shake-0.20:=
+	|| (
+		( >=dev-haskell/cabal-3.10 <dev-haskell/cabal-3.12 )
+		>=dev-haskell/cabal-3.12.1.0
+	)
+	dev-haskell/cabal:=
 	static? (
 		dev-libs/libffi[static-libs]
 		dev-libs/gmp[static-libs]
