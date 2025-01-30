@@ -105,6 +105,10 @@ BUMP_LIBRARIES=(
 
 	# Bundled with 2.0.2, but newer versions are in tree
 	"os-string 2.0.7"
+
+	# Cabal-3.12.0.0 cannot build hadrian
+	"Cabal-syntax 3.12.1.0"
+	"Cabal        3.12.1.0"
 )
 
 LICENSE="BSD"
