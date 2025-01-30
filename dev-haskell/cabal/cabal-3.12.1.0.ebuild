@@ -31,3 +31,5 @@ src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-parsec-struct-diff
 }
+
+CABAL_CORE_LIB_GHC_PV="9.10.1"
