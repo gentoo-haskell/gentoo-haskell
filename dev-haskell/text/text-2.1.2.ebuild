@@ -25,8 +25,15 @@ IUSE="+simdutf"
 # break cyclic dependencies:
 RESTRICT=test
 
-RDEPEND=">=dev-haskell/data-array-byte-0.1:=[profile?] <dev-haskell/data-array-byte-0.2:=[profile?]
-	>=dev-lang/ghc-9.0.2:=
+RDEPEND="
+	|| (
+		>=dev-lang/ghc-9.4
+		(
+			>=dev-lang/ghc-9.0.2 <dev-lang/ghc-9.4
+			>=dev-haskell/data-array-byte-0.1[profile?] <dev-haskell/data-array-byte-0.2[profile?]
+		)
+	)
+	dev-lang/ghc:=
 	simdutf? (
 		|| (
 			llvm-core/clang
@@ -35,7 +42,6 @@ RDEPEND=">=dev-haskell/data-array-byte-0.1:=[profile?] <dev-haskell/data-array-b
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.4.1.0
 "
 
 #	test? ( >=dev-haskell/quickcheck-2.12.6 <dev-haskell/quickcheck-2.16
