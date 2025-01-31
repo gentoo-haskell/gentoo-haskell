@@ -22,6 +22,7 @@
 >=dev-haskell/cabal-syntax-3.14.1.0
 >=dev-haskell/cabal-test-3.14.1.0
 >=dev-haskell/exceptions-0.10.9
+>=dev-haskell/ghc-exactprint-1.12.0.0
 >=dev-haskell/ghc-platform-9.12.1
 >=dev-haskell/ghc-toolchain-9.12.1
 >=dev-haskell/haddock-2.30.0
