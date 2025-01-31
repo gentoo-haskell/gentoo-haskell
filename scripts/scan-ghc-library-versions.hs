@@ -63,16 +63,21 @@ libraries =
     , stdlib "deepseq"
     , stdlib "directory"
     , stdlib "exceptions"
+    , stdlib "file-io"
     , stdlib "filepath"
     , stdlib "ghc-bignum"
     , stdlib "ghc-boot"
     , stdlib "ghc-boot-th"
     , stdlib "ghc-compact"
+    , stdlib "ghc-experimental"
     , stdlib "ghc-heap"
+    , stdlib "ghc-internal"
     , stdlib "ghc-prim"
     , stdlib "ghc-platform"
     , lib "ghc-toolchain" ("utils" </> "ghc-toolchain")
     , stdlib "ghci"
+    , lib "haddock-api" ("utils" </> "haddock" </> "haddock-api")
+    , lib "haddock-library" ("utils" </> "haddock" </> "haddock-library")
     , stdlib "haskeline"
     , stdlib "hpc"
     , stdlib "integer-gmp"
