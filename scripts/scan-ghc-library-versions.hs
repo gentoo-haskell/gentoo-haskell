@@ -51,8 +51,8 @@ data Library f = Lib
 type Lib = Library (Const ()) -- No cabal file located yet
 type LibLocated = Library Identity
 
-libraries :: [Lib]
-libraries =
+libraries :: Version -> [Lib]
+libraries v =
     [ lib "Cabal-syntax" ("libraries" </> "Cabal" </> "Cabal-syntax")
     , lib "Cabal" ("libraries" </> "Cabal" </> "Cabal")
     , stdlib "array"
@@ -76,9 +76,8 @@ libraries =
     , stdlib "ghc-platform"
     , lib "ghc-toolchain" ("utils" </> "ghc-toolchain")
     , stdlib "ghci"
-    , lib "haddock-api" ("utils" </> "haddock" </> "haddock-api")
-    , lib "haddock-library" ("utils" </> "haddock" </> "haddock-library")
-    , stdlib "haskeline"
+    ] ++ haddock_deps ++
+    [ stdlib "haskeline"
     , stdlib "hpc"
     , stdlib "integer-gmp"
     , stdlib "mtl"
@@ -86,6 +85,7 @@ libraries =
     , stdlib "parsec"
     , stdlib "pretty"
     , stdlib "process"
+    , lib "rts" ("rts")
     , stdlib "semaphore-compat"
     , stdlib "stm"
     , stdlib "template-haskell"
@@ -96,6 +96,14 @@ libraries =
     , stdlib "unix"
     , stdlib "xhtml"
     ]
+  where
+    -- haddock exists in older ghc trees, but it only starts getting installed
+    -- as a part of dev-lang/ghc starting with ghc-9.12.1
+    haddock_deps
+        | v >= [9,12] =
+            [ lib "haddock-api" ("utils" </> "haddock" </> "haddock-api")
+            , lib "haddock-library" ("utils" </> "haddock" </> "haddock-library") ]
+        | otherwise = []
 
 main :: IO ()
 main = do
@@ -108,7 +116,7 @@ main = do
     gitCmd isV ["submodule", "update", "--init", "--recursive"]
     gitCmd isV ["clean", "-d", "-f", "-f"]
 
-    mLibDocs <- forM libraries $ locateLib >=> \case
+    mLibDocs <- forM (libraries v) $ locateLib >=> \case
         Left w -> do
             warn verb w
             pure Nothing
