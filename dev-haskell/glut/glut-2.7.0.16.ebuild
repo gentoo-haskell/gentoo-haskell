@@ -22,6 +22,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples"
 
+CABAL_CHDEPS=(
+				'containers   >= 0.3  && < 0.7' 'containers   >= 0.3  && < 0.8'
+				'transformers >= 0.2  && < 0.6' 'transformers >= 0.2 && < 0.7'
+				)
+
 RDEPEND=">=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
 	>=dev-haskell/statevar-1.1:=[profile?] <dev-haskell/statevar-1.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
