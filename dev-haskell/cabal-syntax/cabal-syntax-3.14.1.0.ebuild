@@ -8,6 +8,7 @@ EAPI=8
 CABAL_PN="Cabal-syntax"
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
+CABAL_FEATURES+=" nocabaldep" # in case installed Cabal is broken
 inherit haskell-cabal
 
 DESCRIPTION="A library for working with .cabal files"
@@ -22,8 +23,6 @@ RDEPEND=">=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[pro
 	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
 "
 DEPEND="${RDEPEND}
-	dev-haskell/alex
-	>=dev-haskell/cabal-3.4.1.0
 "
 
 CABAL_CORE_LIB_GHC_PV="9.12.1"
