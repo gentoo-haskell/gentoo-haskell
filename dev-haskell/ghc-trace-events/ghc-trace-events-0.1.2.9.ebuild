@@ -18,8 +18,8 @@ KEYWORDS="~amd64"
 CABAL_CHDEPS=( 'base >= 4.8 && < 4.21' 'base >= 4.8 && < 4.22' )
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/text-1.0.0:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	|| ( ( >=dev-haskell/text-1.0.0 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
