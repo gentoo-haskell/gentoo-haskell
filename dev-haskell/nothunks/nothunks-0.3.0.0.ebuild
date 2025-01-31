@@ -18,6 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+bytestring +text +vector"
 
+CABAL_CHDEPS=(
+	'hedgehog       >= 1.1 && < 1.5' 'hedgehog >= 1.1 && < 1.6'
+)
+
 RDEPEND="
 	>=dev-lang/ghc-9.0.2:=
 	>=dev-haskell/wherefrom-compat-0.1.1:=[profile?] <dev-haskell/wherefrom-compat-0.2
@@ -35,7 +39,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? (
-		>=dev-haskell/hedgehog-1.1 <dev-haskell/hedgehog-1.5
+		>=dev-haskell/hedgehog-1.1 <dev-haskell/hedgehog-1.6
 		>=dev-haskell/random-1.1 <dev-haskell/random-1.3
 		>=dev-haskell/tasty-1.3 <dev-haskell/tasty-1.6
 		>=dev-haskell/tasty-hedgehog-1.1 <dev-haskell/tasty-hedgehog-1.5
