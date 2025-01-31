@@ -589,6 +589,9 @@ src_prepare() {
 		eapply "${FILESDIR}/${PN}-9.8.2-fix-buggy-tests.patch"
 	fi
 
+	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1579>
+	eapply "${FILESDIR}/${PN}-9.8.4-add-missing-rts-include.patch"
+
 	bump_libs
 
 	eapply_user
