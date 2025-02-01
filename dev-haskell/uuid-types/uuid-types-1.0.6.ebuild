@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell-hvr/uuid"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/hashable-1.4.4.0:=[profile?] <dev-haskell/hashable-1.6:=[profile?]
 	>=dev-haskell/random-1.2.1.2:=[profile?] <dev-haskell/random-1.3:=[profile?]
