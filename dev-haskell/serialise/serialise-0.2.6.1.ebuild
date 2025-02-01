@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=3
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" #test-suite
 inherit haskell-cabal
 
 DESCRIPTION="A binary serialisation library for Haskell values"
@@ -16,6 +16,8 @@ HOMEPAGE="https://github.com/well-typed/cborg"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+
+RESTRICT=test # fails to build with quickcheck-instances-0.3.32
 
 CABAL_CHDEPS=(
 	'base                    >= 4.11    && < 4.21' 'base          >=4.10     && <6'
@@ -34,10 +36,10 @@ RDEPEND=">=dev-haskell/cborg-0.2:=[profile?] <dev-haskell/cborg-0.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.16
-		>=dev-haskell/quickcheck-instances-0.3.12 <dev-haskell/quickcheck-instances-0.4
-		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.6
-		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
-"
+	>=dev-haskell/cabal-3.4.1.0"
+# 	test? ( >=dev-haskell/quickcheck-2.9 <dev-haskell/quickcheck-2.16
+# 		>=dev-haskell/quickcheck-instances-0.3.12 <dev-haskell/quickcheck-instances-0.4
+# 		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.6
+# 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
+# 		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
+# "
