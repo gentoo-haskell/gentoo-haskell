@@ -17,6 +17,8 @@ LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=('containers >= 0.5.7.1 && <0.7' 'containers >= 0.5.7.1 && <0.8')
+
 RDEPEND=">=dev-haskell/constraints-extras-0.2.3.0:=[profile?] <dev-haskell/constraints-extras-0.5
 	>=dev-haskell/dependent-sum-0.6.1:=[profile?] <dev-haskell/dependent-sum-0.8
 	>=dev-lang/ghc-8.8.1:=
