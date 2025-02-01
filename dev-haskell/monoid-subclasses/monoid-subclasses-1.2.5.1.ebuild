@@ -19,8 +19,8 @@ RDEPEND=">=dev-haskell/commutative-semigroups-0.1:=[profile?] <dev-haskell/commu
 	>=dev-haskell/primes-0.2:=[profile?] <dev-haskell/primes-0.3:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| ( ( >=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	|| ( ( >=dev-haskell/text-0.11 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
