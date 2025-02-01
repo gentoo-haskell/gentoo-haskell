@@ -27,11 +27,11 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	>=dev-haskell/uniplate-1.6.13:=[profile?]
 	>=dev-haskell/unix-compat-0.5.2:=[profile?]
 	>=dev-lang/ghc-9.2.4:=
-	|| ( ( >=dev-haskell/ghc-exactprint-1.5.0:=[profile?] <dev-haskell/ghc-exactprint-1.6:=[profile?] )
-		|| ( ( >=dev-haskell/ghc-exactprint-1.6.0:=[profile?] <dev-haskell/ghc-exactprint-1.7:=[profile?] )
-			|| ( ( >=dev-haskell/ghc-exactprint-1.7.0:=[profile?] <dev-haskell/ghc-exactprint-1.8:=[profile?] )
-			|| ( ( >=dev-haskell/ghc-exactprint-1.8.0:=[profile?] <dev-haskell/ghc-exactprint-1.9:=[profile?] )
-				( >=dev-haskell/ghc-exactprint-1.12.0:=[profile?] <dev-haskell/ghc-exactprint-1.13:=[profile?] ) ) ) ) )
+	|| ( ( >=dev-haskell/ghc-exactprint-1.5.0 <dev-haskell/ghc-exactprint-1.6 )
+		|| ( ( >=dev-haskell/ghc-exactprint-1.6.0 <dev-haskell/ghc-exactprint-1.7 )
+			|| ( ( >=dev-haskell/ghc-exactprint-1.7.0 <dev-haskell/ghc-exactprint-1.8 )
+			|| ( ( >=dev-haskell/ghc-exactprint-1.8.0 <dev-haskell/ghc-exactprint-1.9 )
+				( >=dev-haskell/ghc-exactprint-1.12.0 <dev-haskell/ghc-exactprint-1.13 ) ) ) ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0
