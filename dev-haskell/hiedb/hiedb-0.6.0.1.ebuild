@@ -14,13 +14,22 @@ HOMEPAGE="https://hackage.haskell.org/package/hiedb"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+IUSE="executable"
 
 CABAL_CHDEPS=('base >= 4.12 && < 4.21' 'base >= 4.12 && < 4.22' 'ghc >= 8.6 && < 9.11' 'ghc >= 8.6 && < 9.13')
+PATCHES=(
+	"${FILESDIR}/${PN}-0.5.0.1-disable-flaky-tests.patch"
+	"${FILESDIR}/${PN}-0.6.0.0-add-executable-flag.patch"
+)
 
-RDEPEND=">=dev-haskell/algebraic-graphs-0.3:=[profile?]
+CABAL_TEST_REQUIRED_BINS=(
+	hiedb
+)
+
+RDEPEND="
+	>=dev-haskell/algebraic-graphs-0.3:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	dev-haskell/extra:=[profile?]
-	dev-haskell/ghc-paths:=[profile?]
 	>=dev-haskell/hie-compat-0.3:=[profile?] <dev-haskell/hie-compat-0.4:=[profile?]
 	dev-haskell/lucid:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
@@ -28,9 +37,36 @@ RDEPEND=">=dev-haskell/algebraic-graphs-0.3:=[profile?]
 	>=dev-haskell/terminal-size-0.2:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
+	executable? (
+		dev-haskell/ghc-paths:=[profile?]
+	)
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( dev-haskell/hspec
-		dev-haskell/temporary )
+	test? (
+		dev-haskell/ghc-paths
+		dev-haskell/hspec
+		dev-haskell/temporary
+	)
 "
+
+src_configure() {
+	local flags=()
+	# Build the exe if the user wants it _or_ if the tests are enabled
+	if use executable || use test; then
+		flags+=( --flag=executable )
+	else
+		flags+=( --flag=-executable )
+	fi
+	haskell-cabal_src_configure "${flags[@]}"
+}
+
+src_install() {
+	if use executable; then
+		# Install everything
+		haskell-cabal_src_install
+	else
+		# Only install lib (skip exe)
+		haskell-cabal_src_install "lib:${PN}"
+	fi
+}
