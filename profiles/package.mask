@@ -168,6 +168,7 @@ dev-haskell/haskellnet-ssl
 >=dev-haskell/singletons-base-3.3
 >=dev-haskell/ghc-exactprint-1.8
 ~dev-haskell/haddock-2.29.2.9.8
+~dev-haskell/haddock-api-2.29.2.9.8
 
 # hololeap <hololeap@protonmail.com> (2024-03-23)
 #
