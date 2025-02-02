@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="dev">Development build</flag>
+		<flag name="folds">Use folds for elimination everywhere</flag>
+		<flag name="has-llvm">Use llvm backend for code generation</flag>
+		<flag name="limit-build-mem">Limits memory when building</flag>
+		<flag name="opt">off=GHC default, on=-O2</flag>
+		<flag name="unfolds">Use unfolds for generation everywhere</flag>
+		<flag name="unliftio">Use unliftio-core instead of monad-control</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">streamly-core</remote-id>
+		<remote-id type="github">composewell/streamly</remote-id>
+	</upstream>
+</pkgmetadata>

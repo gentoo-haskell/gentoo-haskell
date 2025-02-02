@@ -16,17 +16,10 @@ HOMEPAGE="https://github.com/composewell/unicode-data"
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="dev-has-icu"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-2.12
-		dev-has-icu? ( dev-haskell/icu ) )
+	test? ( >=dev-haskell/hspec-2.0 <dev-haskell/hspec-2.12 )
 "
-
-src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag dev-has-icu dev-has-icu)
-}
