@@ -14,7 +14,6 @@ HOMEPAGE="https://hackage.haskell.org/package/hiedb"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-<<<<<<< HEAD
 IUSE="executable"
 
 CABAL_CHDEPS=('base >= 4.12 && < 4.21' 'base >= 4.12 && < 4.22' 'ghc >= 8.6 && < 9.11' 'ghc >= 8.6 && < 9.13')
@@ -31,13 +30,6 @@ RDEPEND="
 	>=dev-haskell/algebraic-graphs-0.3:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	dev-haskell/extra:=[profile?]
-
-CABAL_CHDEPS=('base >= 4.12 && < 4.21' 'base >= 4.12 && < 4.22' 'ghc >= 8.6 && < 9.11' 'ghc >= 8.6 && < 9.13')
-
-RDEPEND=">=dev-haskell/algebraic-graphs-0.3:=[profile?]
-	>=dev-haskell/ansi-terminal-0.9:=[profile?]
-	dev-haskell/extra:=[profile?]
-	dev-haskell/ghc-paths:=[profile?]
 	>=dev-haskell/hie-compat-0.3:=[profile?] <dev-haskell/hie-compat-0.4:=[profile?]
 	dev-haskell/lucid:=[profile?]
 	dev-haskell/optparse-applicative:=[profile?]
