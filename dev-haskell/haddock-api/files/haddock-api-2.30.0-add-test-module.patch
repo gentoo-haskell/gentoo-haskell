@@ -1,0 +1,30 @@
+From 022d1bbe0b4bb3f2ba49b3bae7995fe07df877f2 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Mon, 3 Feb 2025 13:39:01 -0700
+Subject: [PATCH 1/1] Add Haddock.Compat to test modules list
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/haddock-api.cabal
++++ b/haddock-api.cabal
+@@ -167,8 +167,10 @@ test-suite spec
+   hs-source-dirs:
+       test
+     , src
++    , compat/posix
+ 
+   other-modules:
++    Haddock.Compat
+     Haddock
+     Haddock.Backends.Hoogle
+     Haddock.Backends.Hyperlinker
+@@ -221,6 +223,7 @@ test-suite spec
+   -- the non-reinstallable `ghc` package and hence need no version
+   -- bounds
+   build-depends: base
++               , unix
+                , array
+                , bytestring
+                , containers
+-- 
+2.45.3
+
