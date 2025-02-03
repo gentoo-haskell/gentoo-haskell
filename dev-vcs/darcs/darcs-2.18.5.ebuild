@@ -10,7 +10,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="a distributed, interactive, smart revision control system"
-HOMEPAGE="http://darcs.net/"
+HOMEPAGE="https://darcs.net/"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
