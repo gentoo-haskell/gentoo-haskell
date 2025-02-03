@@ -94,6 +94,9 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
+
+	# Fix for <https://github.com/haskell/cabal/issues/10670>
+	"Cabal                 3.14.1.1"
 )
 
 LICENSE="BSD"
