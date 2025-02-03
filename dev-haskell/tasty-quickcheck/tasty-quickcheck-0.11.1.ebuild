@@ -7,7 +7,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=1
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite requires qc-2.15
 inherit haskell-cabal
 
 DESCRIPTION="QuickCheck support for the Tasty test framework"
@@ -16,6 +16,8 @@ HOMEPAGE="https://github.com/UnkindPartition/tasty"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
+
+RESTRICT=test # requires qc-2.15
 
 RDEPEND="<dev-haskell/optparse-applicative-0.19:=[profile?]
 	>=dev-haskell/quickcheck-2.10:=[profile?] <dev-haskell/quickcheck-2.16:=[profile?]
@@ -26,9 +28,10 @@ RDEPEND="<dev-haskell/optparse-applicative-0.19:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? (
-		>=dev-haskell/regex-tdfa-1.3 <dev-haskell/regex-tdfa-1.4
-		>=dev-haskell/quickcheck-2.15
-		dev-haskell/tasty-hunit
-	)
 "
+# 	test? (
+# 		>=dev-haskell/regex-tdfa-1.3 <dev-haskell/regex-tdfa-1.4
+# 		>=dev-haskell/quickcheck-2.15
+# 		dev-haskell/tasty-hunit
+# 	)
+# "
