@@ -1,4 +1,8 @@
 # Jack Todaro <solpeth@posteo.org> (2025-02-03)
+# Too many packages require <tasty-1.5. Mask until ready.
+>=dev-haskell/tasty-1.5
+
+# Jack Todaro <solpeth@posteo.org> (2025-02-03)
 # Too many packages depend on <0.11. Mask until ready.
 >=dev-haskell/tasty-quickcheck-0.11
 
