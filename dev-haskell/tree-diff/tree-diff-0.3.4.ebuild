@@ -17,6 +17,11 @@ KEYWORDS="~amd64"
 
 RESTRICT=test # tasty, tasty-quickcheck versions too new.
 
+CABAL_CHDEPS=(
+	'base        >=4.12.0.0  && <4.21' 'base >=4.12'
+	'time        ^>=1.8.0.2  || ^>=1.9.3    || ^>=1.10     || ^>=1.11 || ^>=1.12' 'time ^>=1.8.0.2 || >=1.9.3'
+)
+
 RDEPEND="
 	>=dev-haskell/aeson-2.2.0.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/ansi-terminal-1.1:=[profile?] <dev-haskell/ansi-terminal-1.2:=[profile?]
