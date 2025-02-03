@@ -31,6 +31,44 @@
 >=dev-haskell/text-2.1.2
 >=dev-haskell/transformers-0.6.1.2
 
+# Jack Todaro <solpeth@posteo.org> (2025-02-03)
+# Too many packages still depend on <quickcheck-2.15. Mask
+# 2.15 to ease burden on Portage resolver.
+>=dev-haskell/quickcheck-2.15
+
+# Mark Wright <gienah@gentoo.org> (2025-01-29)
+#
+# These package versions depend on a minimum GHC of 9.12, which is still
+# considered experimental.
+#
+# If you need to use GHC-9.12 or any of these package versions, copy or symlink
+# scripts/package.unmask/ghc-9.12 to your package.mask directory.
+#
+# You can do so by running:
+#
+# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.12 \
+#  /etc/portage/package.unmask/ghc-9.12
+#
+# Please report any bugs to
+# https://github.com/gentoo-haskell/gentoo-haskell/issues
+>=dev-lang/ghc-9.12.1
+>=dev-haskell/cabal-3.14.1.0
+>=dev-haskell/cabal-described-3.14.1.0
+>=dev-haskell/cabal-install-3.14.1.1
+>=dev-haskell/cabal-install-solver-3.14.1.1
+>=dev-haskell/cabal-quickcheck-3.14.1.0
+>=dev-haskell/cabal-syntax-3.14.1.0
+>=dev-haskell/cabal-test-3.14.1.0
+>=dev-haskell/exceptions-0.10.9
+>=dev-haskell/ghc-exactprint-1.12.0.0
+>=dev-haskell/ghc-platform-9.12.1
+>=dev-haskell/ghc-toolchain-9.12.1
+>=dev-haskell/haddock-2.30.0
+>=dev-haskell/haddock-api-2.30.0
+>=dev-haskell/hadrian-9.12.1
+>=dev-haskell/text-2.1.2
+>=dev-haskell/transformers-0.6.1.2
+
 # Jack Todaro <solpeth@posteo.org> (2025-02-01)
 # Unmaintained upstream. Depends on older version of shakespeare.
 # No reverse dependencies.
