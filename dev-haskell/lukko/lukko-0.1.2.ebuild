@@ -8,7 +8,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=1
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour " #test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="File locking"
@@ -18,17 +18,20 @@ LICENSE="GPL-2 BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
+RESTRICT=test # requires tasty-1.5
+
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/async-2.2.2 <dev-haskell/async-2.3
-		>=dev-haskell/singleton-bool-0.1.8 <dev-haskell/singleton-bool-0.2
-		>=dev-haskell/tasty-1.5 <dev-haskell/tasty-1.6
-		>=dev-haskell/tasty-expected-failure-0.12.3 <dev-haskell/tasty-expected-failure-0.13
-		>=dev-haskell/tasty-hunit-0.10.0.2 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/temporary-1.3 <dev-haskell/temporary-1.4 )
 "
+# test? ( >=dev-haskell/async-2.2.2 <dev-haskell/async-2.3
+#       >=dev-haskell/singleton-bool-0.1.8 <dev-haskell/singleton-bool-0.2
+# 		>=dev-haskell/tasty-1.5 <dev-haskell/tasty-1.6
+# 		>=dev-haskell/tasty-expected-failure-0.12.3 <dev-haskell/tasty-expected-failure-0.13
+# 		>=dev-haskell/tasty-hunit-0.10.0.2 <dev-haskell/tasty-hunit-0.11
+# 		>=dev-haskell/temporary-1.3 <dev-haskell/temporary-1.4 )
+# "
 
 src_configure() {
 	haskell-cabal_src_configure \
