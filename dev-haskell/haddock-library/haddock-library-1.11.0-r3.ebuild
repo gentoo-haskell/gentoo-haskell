@@ -20,6 +20,8 @@ KEYWORDS="~amd64 ~amd64-linux"
 CABAL_CHDEPS=(
 	'hspec                          >= 2.4.4    && < 2.12' 'hspec >=2.4.4'
 	'hspec-discover:hspec-discover  >= 2.4.4    && < 2.12' 'hspec-discover:hspec-discover >=2.4.4'
+	'base         >= 4.5     && < 4.21' 'base >=4.5'
+	'filepath              ^>= 1.4.1.2' 'filepath >=1.4.1.2'
 )
 
 RDEPEND="
