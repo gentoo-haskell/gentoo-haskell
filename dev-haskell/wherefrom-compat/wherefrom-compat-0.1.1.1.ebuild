@@ -7,7 +7,7 @@ EAPI=8
 
 CABAL_HACKAGE_REVISION=1
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="A compatibility layer for GHC's 'wherefrom' function"
@@ -17,10 +17,13 @@ LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+RESTRICT=test # requires tasty-1.5
+
 RDEPEND=">=dev-lang/ghc-9.2.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0
-	test? ( >=dev-haskell/tasty-1.5 <dev-haskell/tasty-1.6
-		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11 )
 "
+# test? ( >=dev-haskell/tasty-1.5 <dev-haskell/tasty-1.6
+# 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11 )
+# "
