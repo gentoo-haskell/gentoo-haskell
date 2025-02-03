@@ -1,4 +1,8 @@
 # Jack Todaro <solpeth@posteo.org> (2025-02-03)
+# Too many packages depend on <0.11. Mask until ready.
+>=dev-haskell/tasty-quickcheck-0.11
+
+# Jack Todaro <solpeth@posteo.org> (2025-02-03)
 # Too many packages still depend on <quickcheck-2.15. Mask
 # 2.15 to ease burden on Portage resolver.
 >=dev-haskell/quickcheck-2.15
