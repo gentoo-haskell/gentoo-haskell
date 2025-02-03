@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">vector-builder</remote-id>
+		<remote-id type="github">nikita-volkov/vector-builder</remote-id>
+	</upstream>
 </pkgmetadata>
