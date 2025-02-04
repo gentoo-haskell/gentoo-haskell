@@ -79,14 +79,6 @@ dev-haskell/dimensions
 # Removal: 2025-01-27
 games-fps/frag
 
-# hololeap <hololeap@protonmail.com> (2024-12-25)
-#
-# HaskellNet-SSL seems abandoned, no uploads since 2021. Mask it and its parent
-# project for removal.
-#
-# Removal: 2025-01-24
-dev-haskell/haskellnet
-
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
 # These package versions depend on a minimum GHC of 9.10, which is still
