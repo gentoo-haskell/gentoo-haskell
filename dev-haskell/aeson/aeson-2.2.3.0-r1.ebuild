@@ -19,6 +19,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+ordered-keymap"
 
+CABAL_CHDEPS=(
+	'nothunks >=0.1.4 && <0.3' 'nothunks >=0.1.4'
+)
+
 RDEPEND=">=dev-haskell/character-ps-0.1:=[profile?] <dev-haskell/character-ps-0.2:=[profile?]
 	>=dev-haskell/data-fix-0.3.2:=[profile?] <dev-haskell/data-fix-0.4:=[profile?]
 	>=dev-haskell/dlist-1.0:=[profile?] <dev-haskell/dlist-1.1:=[profile?]
@@ -58,6 +62,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/base16-bytestring
 		>=dev-haskell/diff-0.4 <dev-haskell/diff-1.1
 		>=dev-haskell/generic-deriving-1.10 <dev-haskell/generic-deriving-1.15
+		>=dev-haskell/nothunks-0.1.4
 		dev-haskell/primitive
 		>=dev-haskell/quickcheck-2.14.2 <dev-haskell/quickcheck-2.16
 		>=dev-haskell/quickcheck-instances-0.3.29 <dev-haskell/quickcheck-instances-0.4
