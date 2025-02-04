@@ -70,7 +70,6 @@ dev-haskell/country-codes
 =dev-haskell/haddock-api-2.25*
 =dev-haskell/retrie-1.1*
 dev-haskell/constraints-deriving
-dev-haskell/dimensions
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
