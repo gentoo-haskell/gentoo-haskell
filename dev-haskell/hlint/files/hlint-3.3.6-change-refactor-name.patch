@@ -42,7 +42,7 @@ diff -urN hlint-3.3.6/src/Refact.hs hlint-3.3.6-r1/src/Refact.hs
                         , "Tried to find '" ++ excPath ++ "' on the PATH"
 -                       , "'refactor' is provided by the 'apply-refact' package and has to be installed"
 -                       , "<https://github.com/mpickering/apply-refact>"
-+                       , "'apply-refactor' is provided by the 'dev-haskell/apply-refact' package and has to be installed"
++                       , "'apply-refactor' is provided by the 'dev-haskell/apply-refact[executable]' package and has to be installed"
                         ]
  
  runRefactoring :: FilePath -> FilePath -> FilePath -> [Extension] -> [Extension] -> String -> IO ExitCode
