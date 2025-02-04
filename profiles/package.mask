@@ -205,13 +205,6 @@ dev-haskell/liquidhaskell
 # uploaded so it is masked to prevent accidental usage.
 =dev-haskell/liquid-fixpoint-8.10.7
 
-# hololeap <hololeap@protonmail.com> (2022-09-22)
-# dev-haskell/stan does not build on >=ghc-9.0 and needs extensive patching or
-# a rewrite to do so.
-# See: <https://github.com/kowainik/stan/issues/423>
-dev-haskell/stan
-dev-haskell/hls-stan-plugin
-
 # hololeap <hololeap@protonmail.com> (2022-09-01)
 # doctest-parallel does not currently work with Setup.hs (used internally by
 # haskell-cabal.eclass)
