@@ -63,7 +63,6 @@ dev-haskell/country-codes
 =dev-haskell/parsec-3.1.14*
 ~dev-haskell/stm-2.5.0.0
 ~dev-haskell/singletons-base-3.0
-~dev-haskell/singletons-th-3.0
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
