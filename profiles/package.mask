@@ -50,15 +50,6 @@ dev-haskell/country-codes
 >=dev-haskell/text-2.1.2
 >=dev-haskell/transformers-0.6.1.2
 
-# hololeap <hololeap@protonmail.com> (2024-12-29)
-#
-# GHC 9.0 is outdated at this point and is likely unused. Mask for removal,
-# along with old versions of other packages that were kept for compatibility
-# and packages that require GHC 9.0.
-#
-# Removal: 2025-01-28
-=dev-lang/ghc-9.0*
-
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
 # These package versions depend on a minimum GHC of 9.10, which is still
