@@ -59,7 +59,6 @@ dev-haskell/country-codes
 # Removal: 2025-01-28
 =dev-lang/ghc-9.0*
 =dev-haskell/cabal-install-3.4*
-=dev-haskell/cabal-3.4*
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
