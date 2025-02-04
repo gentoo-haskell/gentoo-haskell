@@ -66,7 +66,6 @@ dev-haskell/country-codes
 ~dev-haskell/singletons-th-3.0
 =dev-haskell/th-desugar-1.12*
 =dev-haskell/ghc-exactprint-0.6*
-=dev-haskell/haddock-2.25*
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
