@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="roundtrip">Build roundtripping executables</flag>
-	</use>
 	<upstream>
 		<remote-id type="hackage">ghc-exactprint</remote-id>
 		<remote-id type="github">alanz/ghc-exactprint</remote-id>
