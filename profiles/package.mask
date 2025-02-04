@@ -180,11 +180,6 @@ dev-haskell/hls-fourmolu-plugin
 dev-haskell/cabal-install-parsers
 dev-haskell/cabal-plan
 
-# hololeap <hololeap@protonmail.com> (2023-03-01)
-# Not buildable on ghc-9.2
-# Masking until it is
-dev-haskell/hls-tactics-plugin
-
 # hololeap <hololeap@protonmail.com> (2023-02-27)
 # These currently depend on an old version of ghc-exactprint, which is
 # incompatible with ghc-9.2
