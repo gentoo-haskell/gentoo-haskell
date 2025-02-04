@@ -86,7 +86,6 @@ games-fps/frag
 #
 # Removal: 2025-01-24
 dev-haskell/haskellnet
-dev-haskell/haskellnet-ssl
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
