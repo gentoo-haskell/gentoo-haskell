@@ -718,6 +718,11 @@ src_configure() {
 		# Use system libffi instead of bundled libffi-tarballs
 		--with-system-libffi
 		--with-ffi-includes=$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed 's/-I//g')
+
+		# Work around a stupid configure bug caused due to maybe-stddefs.h having
+		# a comment. The check is completely irrelevant to use because it's specific
+		# to emscripten.
+		--with-js-cpp-flags=""
 	)
 
 	if [[ ${CBUILD} != ${CHOST} ]]; then
