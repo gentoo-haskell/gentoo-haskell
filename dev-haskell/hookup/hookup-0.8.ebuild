@@ -15,13 +15,14 @@ LICENSE="ISC"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-CABAL_CHDEPS=('base                  >=4.11 && <4.20' 'base >=4.11 && <4.22')
+CABAL_CHDEPS=( 'base                  >=4.11 && <4.20' 'base >=4.11 && <4.22'
+			   'network               >=3.0  && <3.2' 'network               >=3.0  && <3.3' )
 
 RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/attoparsec-0.14:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/hsopenssl-0.11.2.3:=[profile?] <dev-haskell/hsopenssl-0.12:=[profile?]
 	>=dev-haskell/hsopenssl-x509-system-0.1:=[profile?] <dev-haskell/hsopenssl-x509-system-0.2:=[profile?]
-	>=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.2:=[profile?]
+	>=dev-haskell/network-3.0:=[profile?] <dev-haskell/network-3.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
