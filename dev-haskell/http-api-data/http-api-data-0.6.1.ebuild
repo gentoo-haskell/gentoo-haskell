@@ -31,7 +31,7 @@ RDEPEND=">=dev-haskell/cookie-0.4.3:=[profile?] <dev-haskell/cookie-0.6:=[profil
 	>=dev-lang/ghc-9.0.2:=
 	|| ( ( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
 		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 ) )
-	dev-haskell/text:=[profile]
+	dev-haskell/text:=[profile?]
 	text-show? ( >=dev-haskell/text-show-3.10.5:=[profile?] <dev-haskell/text-show-3.11:=[profile?] )
 "
 DEPEND="${RDEPEND}
