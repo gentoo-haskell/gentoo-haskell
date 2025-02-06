@@ -11,7 +11,7 @@ CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
 
 DESCRIPTION="Converting to/from HTTP API data like URL pieces, headers and query parameters"
-HOMEPAGE="https://github.com/fizruk/https-api-data"
+HOMEPAGE="https://github.com/fizruk/http-api-data"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
