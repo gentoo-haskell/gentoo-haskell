@@ -831,7 +831,7 @@ src_install() {
 	[[ -f VERSION ]] || emake VERSION
 
 	pushd "${S}/_build/bindist/${P}-${CHOST}" || die
-	econf
+	econf --with-js-cpp-flags=""
 	emake DESTDIR="${D}" install
 	popd
 
