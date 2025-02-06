@@ -692,10 +692,10 @@ src_configure() {
 
 	### Gather configuration variables for GHC
 
-	# Get ghc from the binary
+	# Get ghc/hadrian/alex from the binary
 	# except when bootstrapping we just pick ghc up off the path
 	if ! use ghcbootstrap; then
-		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
+		export PATH="${S}/hadrian/bootstrap/_build/bin:${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
 	fi
 
 	local econf_args=()
