@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,6 +14,8 @@ HOMEPAGE="https://docs.servant.dev/"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+
+CABAL_CHDEPS=('base          >=4.14     && <4.21' 'base >=4.14 && <4.22')
 
 RDEPEND=">=dev-haskell/aeson-1.4.1.0:=[profile?] <dev-haskell/aeson-3:=[profile?]
 	dev-haskell/base-compat:=[profile?]
