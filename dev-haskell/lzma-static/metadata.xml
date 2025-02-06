@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">versions</remote-id>
-		<remote-id type="github">fosskers/versions</remote-id>
+		<remote-id type="hackage">lzma-static</remote-id>
+		<remote-id type="github">hasufell/lzma-static</remote-id>
 	</upstream>
 </pkgmetadata>

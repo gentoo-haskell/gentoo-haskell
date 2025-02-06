@@ -5,8 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="devel">Enables -Werror</flag>
+	</use>
 	<upstream>
-		<remote-id type="hackage">versions</remote-id>
-		<remote-id type="github">fosskers/versions</remote-id>
+		<remote-id type="hackage">os-release</remote-id>
+		<remote-id type="github">yaccz/os-release</remote-id>
 	</upstream>
 </pkgmetadata>

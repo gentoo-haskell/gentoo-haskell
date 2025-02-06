@@ -5,8 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="bzlib">Bench against [bzlib](http://hackage.haskell.org/package/bzlib)</flag>
+		<flag name="cross">Set this flag if cross-compiling</flag>
+	</use>
 	<upstream>
-		<remote-id type="hackage">versions</remote-id>
-		<remote-id type="github">fosskers/versions</remote-id>
+		<remote-id type="hackage">bz2</remote-id>
 	</upstream>
 </pkgmetadata>
