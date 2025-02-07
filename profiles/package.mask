@@ -1,4 +1,12 @@
 # Jack Todaro <solpeth@posteo.org> (2025-02-07)
+# Dead upstream. Mask for removal.
+# Removal on 2025-03-09.
+www-apps/clckwrks
+www-apps/clckwrks-cli
+www-apps/clckwrks-plugin-media
+www-apps/clckwrks-plugin-page
+
+# Jack Todaro <solpeth@posteo.org> (2025-02-07)
 # Some packages still depend on <dev-haskell/network-3.2.
 # Mask until all reverse dependencies are updated or last-rited.
 >=dev-haskell/network-3.2
