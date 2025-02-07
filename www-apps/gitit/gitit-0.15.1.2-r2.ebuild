@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,6 +19,8 @@ IUSE="+plugins"
 CABAL_CHDEPS=(
 	'hoauth2 >= 2.3.0 && < 2.11' 'hoauth2 >= 2.3.0'
 	'pandoc >= 2.9 && < 2.20 || >= 3.0 && < 3.2' 'pandoc >= 2.9 && < 2.20 || >= 3.0'
+	'zlib >= 0.5 && < 0.7' 'zlib >= 0.5'
+	'network >= 2.6 && < 3.2' 'network >= 2.6'
 )
 
 RDEPEND="
@@ -36,7 +38,7 @@ RDEPEND="
 	>=dev-haskell/http-client-tls-0.2.2:=[profile?] <dev-haskell/http-client-tls-0.4:=[profile?]
 	>=dev-haskell/http-conduit-2.1.6:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?]
 	>=dev-haskell/json-0.4:=[profile?] <dev-haskell/json-0.12:=[profile?]
-	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2:=[profile?]
+	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.3:=[profile?]
 	>=dev-haskell/network-bsd-2.8.1:=[profile?] <dev-haskell/network-bsd-2.9:=[profile?]
 	>=dev-haskell/network-uri-2.6:=[profile?]
 	dev-haskell/old-locale:=[profile?]
@@ -62,7 +64,7 @@ RDEPEND="
 	>=dev-haskell/xml-conduit-1.5:=[profile?] <dev-haskell/xml-conduit-1.10:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?]
 	>=dev-haskell/xss-sanitize-0.3:=[profile?] <dev-haskell/xss-sanitize-0.4:=[profile?]
-	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.7:=[profile?]
+	>=dev-haskell/zlib-0.5:=[profile?] <dev-haskell/zlib-0.8:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 	|| (
 		( >=dev-haskell/pandoc-2.9 <dev-haskell/pandoc-2.20 )
