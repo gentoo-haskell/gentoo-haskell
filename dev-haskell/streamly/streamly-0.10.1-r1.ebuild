@@ -22,7 +22,7 @@ RESTRICT+=" !test? ( test )"
 
 CABAL_CHDEPS=(
 				'base              >= 4.12  && < 4.21' 'base              >= 4.12  && < 4.22'
-				'template-haskell  >= 2.14  && < 2.22' 'template-haskell  >= 2.14  && < 2.24'	  
+				'template-haskell  >= 2.14  && < 2.22' 'template-haskell  >= 2.14  && < 2.24'
 			)
 
 RDEPEND=">=dev-haskell/atomic-primops-0.8:=[profile?] <dev-haskell/atomic-primops-0.9:=[profile?]
@@ -39,7 +39,7 @@ RDEPEND=">=dev-haskell/atomic-primops-0.8:=[profile?] <dev-haskell/atomic-primop
 	!minimal? (
 		>=dev-haskell/atomic-primops-0.8:=[profile?] <dev-haskell/atomic-primops-0.9:=[profile?]
 		>=dev-haskell/lockfree-queue-0.2.4:=[profile?] <dev-haskell/lockfree-queue-0.3:=[profile?]
-		>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2:=[profile?]
+		>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.3:=[profile?]
 		>=dev-haskell/unicode-data-0.1:=[profile?] <dev-haskell/unicode-data-0.7:=[profile?]
 	)
 	unliftio? (
@@ -53,7 +53,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.2.0.0
 	test? (
 		>=dev-haskell/hspec-2.0
-		>=dev-haskell/network-3.1 <dev-haskell/network-3.2
+		>=dev-haskell/network-3.1 <dev-haskell/network-3.3
 		>=dev-haskell/quickcheck-2.13 <dev-haskell/quickcheck-2.15
 		>=dev-haskell/random-1.0.0 <dev-haskell/random-1.3
 		>=dev-haskell/temporary-1.3 <dev-haskell/temporary-1.4
