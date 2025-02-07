@@ -9,7 +9,6 @@
 		<flag name="bench">Build a benchmarking program to test vector-algorithms performance</flag>
 		<flag name="boundschecks">Enable bounds checking</flag>
 		<flag name="internalchecks">Enable internal consistency checks at the cost of a significant performance penalty.</flag>
-		<flag name="properties">Enable the quickcheck tests</flag>
 		<flag name="unsafechecks">Enable bounds checking in unsafe operations at the cost of a significant performance penalty.</flag>
 	</use>
 	<upstream>
