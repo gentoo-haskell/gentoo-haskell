@@ -5,25 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Lambdabot is an IRC bot written over several years by
-		those on the #haskell IRC channel.
-		
-		Provided plugins:
-		
-		[check] Quick, check!
-		[djinn] Derive implementations from types intuitinistically.
-		[eval] Run Haskell code.
-		[free] Theorems for free.
-		[haddock] Find modules implementing a function.
-		[hoogle] Search for functions by type using hoogle.
-		[instances] Query instances of type classes.
-		[pl] Produce point-less code.
-		[pointful] Produce point-ful code.
-		[pretty] Print code prettily.
-		[source] Show implementations of standard functions.
-		[type] Query type of expressions.
-		[undo] Unfold do notation.
-		[unmtl] Expand monad transformers stacks.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">lambdabot-haskell-plugins</remote-id>
+		<remote-id type="github">lambdabot/lambdabot</remote-id>
+	</upstream>
 </pkgmetadata>
