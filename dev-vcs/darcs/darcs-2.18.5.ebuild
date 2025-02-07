@@ -30,6 +30,7 @@ RDEPEND=">=dev-haskell/async-2.0.2:=[profile?] <dev-haskell/async-2.3:=[profile?
 	>=dev-haskell/constraints-0.11:=[profile?] <dev-haskell/constraints-0.15:=[profile?]
 	>=dev-haskell/cryptonite-0.24:=[profile?] <dev-haskell/cryptonite-0.31:=[profile?]
 	>=dev-haskell/data-ordlist-0.4:=[profile?] <dev-haskell/data-ordlist-0.5:=[profile?]
+	>=dev-haskell/data-default-0.7.1.3:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/fgl-5.5.2.3:=[profile?] <dev-haskell/fgl-5.9:=[profile?]
 	>=dev-haskell/hashable-1.2.3.3:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/haskeline-0.7.2:=[profile?] <dev-haskell/haskeline-0.9:=[profile?]
