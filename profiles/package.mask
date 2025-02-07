@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2025-02-07)
+# Some packages still depend on <dev-haskell/network-3.2.
+# Mask until all reverse dependencies are updated or last-rited.
+>=dev-haskell/network-3.2
+
 # Jack Todaro <solpeth@posteo.org> (2025-02-03)
 # Too many packages require <tasty-1.5. Mask until ready.
 >=dev-haskell/tasty-1.5
