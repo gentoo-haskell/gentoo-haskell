@@ -1,3 +1,24 @@
+# Jack Todaro <solpeth@posteo.org> (2025-02-08)
+# Packages depend on HSOpenSSL, which does not currently build against
+# openssl-3. Upstream is yet to rectify this matter, and other packages
+# are porting away in the mean time.
+#
+# As the package is broken, let's mask its reverse dependencies until
+# further notice.
+#
+# We hope to unmask these packages again if HSOpenSSL again works cleanly
+# and correctly with openssl-3.
+dev-haskell/hsopenssl
+dev-haskell/hsopenssl-x509-system
+dev-haskell/happstack-server-tls
+dev-haskell/haxr
+dev-haskell/hookup
+dev-haskell/http-client-openssl
+dev-haskell/http-streams
+dev-haskell/openssl-streams
+dev-haskell/tcp-streams-openssl
+net-irc/glirc
+
 # Jack Todaro <solpeth@posteo.org> (2025-02-07)
 # Dead upstream. Mask for removal.
 # Removal on 2025-03-09.
