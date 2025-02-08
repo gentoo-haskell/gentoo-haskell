@@ -1,0 +1,20 @@
+--- a/src/System/FSNotify.hs
++++ b/src/System/FSNotify.hs
+@@ -77,7 +77,7 @@
+ import Control.Exception.Safe as E
+ import Control.Monad
+ import Control.Monad.IO.Class
+-import Data.Text as T
++import qualified Data.Text as T
+ import System.FSNotify.Polling
+ import System.FSNotify.Types
+ import System.FilePath
+@@ -172,7 +172,7 @@
+ 
+   where
+ #ifndef OS_BSD
+-    createManager :: Either Text NativeManager -> IO WatchManager
++    createManager :: Either T.Text NativeManager -> IO WatchManager
+     createManager (Right nativeManager) = WatchManager conf nativeManager <$> cleanupVar <*> globalWatchChan
+     createManager (Left err) = throwIO $ userError $ T.unpack $ "Error: couldn't start native file manager: " <> err
+ #endif
