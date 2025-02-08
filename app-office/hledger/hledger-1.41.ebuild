@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="debug +threaded"
 
+CABAL_CHDEPS=('base >=4.14 && <4.21' 'base >=4.14 && <4.22')
+
 RDEPEND=">=dev-haskell/aeson-1:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	>=dev-haskell/cmdargs-0.10:=[profile?]
