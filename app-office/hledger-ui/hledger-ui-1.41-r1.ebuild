@@ -16,6 +16,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="debug +threaded"
 
+CABAL_CHDEPS=('base >=4.14 && <4.21' 'base >=4.14 && <4.22'
+			'brick >=2.1.1 && <2.3.2 || >2.3.2 && <2.7' 'brick >=2.1.1')
 RDEPEND=">=app-office/hledger-1.41:=[profile?] <app-office/hledger-1.42:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	dev-haskell/async:=[profile?]
@@ -37,11 +39,7 @@ RDEPEND=">=app-office/hledger-1.41:=[profile?] <app-office/hledger-1.42:=[profil
 	>=dev-haskell/vty-6.1:=[profile?] <dev-haskell/vty-6.3:=[profile?]
 	>=dev-haskell/vty-crossplatform-0.4.0.0:=[profile?] <dev-haskell/vty-crossplatform-0.5.0.0:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| (
-		( >=dev-haskell/brick-2.1.1 <dev-haskell/brick-2.3.2 )
-		( >dev-haskell/brick-2.3.2 <dev-haskell/brick-2.7 )
-	)
-	dev-haskell/brick:=[profile?]
+	>=dev-haskell/brick-2.1.1:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
