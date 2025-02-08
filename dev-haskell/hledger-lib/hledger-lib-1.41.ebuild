@@ -19,7 +19,7 @@ IUSE="debug"
 
 CABAL_CHDEPS=(
 	'base-compat >=0.14.0' 'base-compat >=0.13.1'
-)
+    'base >=4.14 && <4.21' 'base >=4.14 && <4.22')
 
 PATCHES=( "${FILESDIR}/${PN}-1.30-disable-doctests.patch" )
 
