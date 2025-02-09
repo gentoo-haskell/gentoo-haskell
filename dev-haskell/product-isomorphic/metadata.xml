@@ -5,9 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Weaken applicative functor which allows only product
-		construction. Product constructions and deconstructions
-		are always isomorphic.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">product-isomorphic</remote-id>
+		<remote-id type="bitbucket">khibino/haskell-product-isomorphic</remote-id>
+		<remote-id type="github">khibino/haskell-product-isomorphic</remote-id>
+	</upstream>
 </pkgmetadata>
