@@ -15,11 +15,13 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=('mtl               >  2.0     && < 2.3' 'mtl > 2.0'
+			'time              >= 1.1     && < 1.10' 'time >= 1.1'
+			'unix            >= 2.2.0.0 && < 2.8' 'unix >= 2.2.0.0')
 
 RDEPEND=">=dev-haskell/directory-tree-0.10:=[profile?] <dev-haskell/directory-tree-0.13:=[profile?]
 	>=dev-haskell/hint-0.3.3.1:=[profile?] <dev-haskell/hint-0.10:=[profile?]
-	>dev-haskell/mtl-2.0:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-haskell/old-time-1.0:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
