@@ -17,7 +17,9 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/brick-2.1:=[profile?] <dev-haskell/brick-2.7:=[profile?]
+CABAL_CHDEPS=('brick >= 2.1 && < 2.7' 'brick >= 2.1 && < 2.9')
+
+RDEPEND=">=dev-haskell/brick-2.1:=[profile?] <dev-haskell/brick-2.9:=[profile?]
 	>=dev-haskell/free-4.12.4:=[profile?]
 	>=dev-haskell/hledger-lib-1.33:=[profile?] <dev-haskell/hledger-lib-1.42:=[profile?]
 	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-9.8:=[profile?]
