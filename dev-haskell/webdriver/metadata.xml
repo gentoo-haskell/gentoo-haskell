@@ -5,16 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A Selenium WebDriver client for Haskell.
-		You can use it to automate browser sessions
-		for testing, system administration, etc.
-		
-		For more information about Selenium itself, see
-		&lt;http://seleniumhq.org/&gt;
-		
-		To find out what&#39;s been changed in this version and others,
-		see the change log at
-		&lt;https://github.com/kallisti-dev/hs-webdriver/blob/master/CHANGELOG.md&gt;
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">webdriver</remote-id>
+		<remote-id type="github">haskell-webdriver/haskell-webdriver</remote-id>
+	</upstream>
 </pkgmetadata>
