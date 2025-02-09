@@ -5,14 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package contiains typeful relation structure and
-		relational-algebraic query building DSL which can
-		translate into SQL query.
-		Supported query features are below:
-		- Type safe query building
-		- Restriction, Join, Aggregation
-		- Modularized relations
-		- Typed placeholders
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">relational-query</remote-id>
+		<remote-id type="bitbucket">khibino/haskell-relational-record</remote-id>
+		<remote-id type="github">khibino/haskell-relational-record</remote-id>
+	</upstream>
 </pkgmetadata>
