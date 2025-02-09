@@ -1,3 +1,18 @@
+# Jack Todaro <solpeth@posteo.org> (2025-02-09)
+# Unmaintained upstream, does not build on newer ghc.
+# Removal on 2025-03-11.
+app-text/pdfsplit
+
+# Jack Todaro <solpeth@posteo.org> (2025-02-09)
+# Unmaintained, does not build on newer ghc.
+# Removal on 2025-03-11.
+dev-haskell/pdfinfo
+
+# Jack Todaro <solpeth@posteo.org> (2025-02-09)
+# Unmaintained since 2016. Does not build with newer ghc.
+# Removal on 2025-03-11.
+dev-haskell/data-lens-template
+
 # Jack Todaro <solpeth@posteo.org> (2025-02-08)
 # No upstream development. Does not work on newer GHC. Mask for
 # removal.
