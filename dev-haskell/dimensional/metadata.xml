@@ -5,13 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Dimensional is a library providing data types for performing arithmetic
-		with physical quantities and units. Information about the physical
-		dimensions of the quantities and units is embedded in their types and the
-		validity of operations is verified by the type checker at compile time.
-		The boxing and unboxing of numerical values as quantities is done by
-		multiplication and division with units. The library is designed to, as
-		far as is practical, enforce/encourage best practices of unit usage.
-	</longdescription>
+	<use>
+		<flag name="binary">Provide instances for use with the binary package.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">dimensional</remote-id>
+		<remote-id type="github">bjornbm/dimensional</remote-id>
+	</upstream>
 </pkgmetadata>
