@@ -1,3 +1,31 @@
+# Jack Todaro <solpeth@posteo.org> (2025-02-08)
+# No upstream development. Does not work on newer GHC. Mask for
+# removal.
+# Removal on 2025-03-10.
+dev-haskell/gpipe
+dev-haskell/gpipe-glfw
+
+# Jack Todaro <solpeth@posteo.org> (2025-02-08)
+# Packages depend on HSOpenSSL, which does not currently build against
+# openssl-3. Upstream is yet to rectify this matter, and other packages
+# are porting away in the mean time.
+#
+# As the package is broken, let's mask its reverse dependencies until
+# further notice.
+#
+# We hope to unmask these packages again if HSOpenSSL again works cleanly
+# and correctly with openssl-3.
+dev-haskell/hsopenssl
+dev-haskell/hsopenssl-x509-system
+dev-haskell/happstack-server-tls
+dev-haskell/haxr
+dev-haskell/hookup
+dev-haskell/http-client-openssl
+dev-haskell/http-streams
+dev-haskell/openssl-streams
+dev-haskell/tcp-streams-openssl
+net-irc/glirc
+
 # Jack Todaro <solpeth@posteo.org> (2025-02-07)
 # Dead upstream. Mask for removal.
 # Removal on 2025-03-09.
@@ -5,11 +33,6 @@ www-apps/clckwrks
 www-apps/clckwrks-cli
 www-apps/clckwrks-plugin-media
 www-apps/clckwrks-plugin-page
-
-# Jack Todaro <solpeth@posteo.org> (2025-02-07)
-# Some packages still depend on <dev-haskell/network-3.2.
-# Mask until all reverse dependencies are updated or last-rited.
->=dev-haskell/network-3.2
 
 # Jack Todaro <solpeth@posteo.org> (2025-02-03)
 # Too many packages require <tasty-1.5. Mask until ready.
@@ -161,10 +184,6 @@ dev-haskell/country-codes
 >=dev-haskell/singletons-th-3.2
 >=dev-haskell/singletons-base-3.2
 >=dev-haskell/ghc-syntax-highlighter-0.0.12
-
-# Jack Todaro <solpeth@posteo.org> (2023-12-08)
-# Mask irc-core-2.12 until glirc-2.40 blockers can be cleared (e.g. vty)
-=dev-haskell/irc-core-2.12
 
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of

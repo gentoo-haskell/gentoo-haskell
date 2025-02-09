@@ -18,7 +18,9 @@ IUSE="examples"
 
 CABAL_CHDEPS=(
 	'base              >= 4.12    && < 4.16' 'base >=4.12'
-	'lens              >= 4.15.4  && < 4.20 || >= 5 && <5.2' 'lens >=4.15.4 && <4.20 || >=5'
+	'bytestring        >= 0.10    && < 0.12' 'bytestring >= 0.10'
+	'lens              >= 4.15.4  && < 4.20 || >= 5 && <5.2' 'lens >=5'
+	'network           >= 2.6     && < 3.2' 'network >= 2.6.2'
 	'reflex            >= 0.7.1.0 && < 0.9' 'reflex >=0.7.1.0'
 	'semialign         >= 1       && < 1.3' 'semialign >=1'
 	'semigroupoids     >= 5.2.2   && < 5.4' 'semigroupoids >= 5.2.2'
@@ -30,17 +32,13 @@ PATCHES=(
 )
 
 RDEPEND="
-	dev-haskell/lens:=[profile?]
-	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.2
+	>=dev-haskell/network-2.6:=[profile?] <dev-haskell/network-3.3
 	>=dev-haskell/reflex-0.7.1.0:=[profile?]
 	>=dev-haskell/semialign-1:=[profile?]
 	>=dev-haskell/semigroupoids-5.2.2:=[profile?]
 	>=dev-haskell/these-1:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
-	|| (
-		( >=dev-haskell/lens-4.15.4 <dev-haskell/lens-4.20 )
-		>=dev-haskell/lens-5
-	)
+	>=dev-haskell/lens-5:=[profile?]
 	dev-haskell/lens:=[profile?]
 	examples? (
 		=dev-haskell/witherable-0.4*:=[profile?]

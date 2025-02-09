@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="openssl">Enable https support using the HsOpenSSL library.</flag>
 		<flag name="pong-server">Build a server that just returns &quot;PONG&quot;. Normally useful only for benchmarks.</flag>
 		<flag name="test-server">Build the blackbox testserver</flag>
 	</use>

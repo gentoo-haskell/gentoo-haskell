@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-quickcheck2-0.2 )
 "
 
-src_configure() {
-	haskell-cabal_src_configure \
-		--flag=_old-network
+src-configure() {
+	haskell_cabal_srce_configure \
+		--flag=-_old-network
 }

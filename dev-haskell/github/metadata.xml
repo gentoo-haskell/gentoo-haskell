@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="openssl">&quot;Use http-client-openssl&quot;</flag>
-	</use>
 	<upstream>
 		<remote-id type="hackage">github</remote-id>
 		<remote-id type="github">haskell-github/github</remote-id>

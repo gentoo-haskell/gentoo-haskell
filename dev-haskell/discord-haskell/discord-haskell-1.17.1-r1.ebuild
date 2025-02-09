@@ -15,6 +15,11 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=('base == 4.14.* || == 4.15.* || == 4.16.* || == 4.17.* || == 4.18.* || == 4.19.*'
+			'base >=4.14 && <4.22'
+			'containers >=0.6 && <0.7' 'containers >=0.6 && <0.8'
+			'network >=3.0.0.0 && <3.2.0.0' 'network >=3.0.0.0 && <3.3.0.0'
+			'time >=1.9 && <1.13' 'time >=1.9 && <1.15')
 RDEPEND=">=dev-haskell/aeson-2.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/base64-bytestring-1.1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
@@ -25,7 +30,7 @@ RDEPEND=">=dev-haskell/aeson-2.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/http-client-0.6:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
 	>=dev-haskell/iso8601-time-0.1:=[profile?] <dev-haskell/iso8601-time-0.2:=[profile?]
 	>=dev-haskell/monadrandom-0.5:=[profile?] <dev-haskell/monadrandom-0.7:=[profile?]
-	>=dev-haskell/network-3.0.0.0:=[profile?] <dev-haskell/network-3.2.0.0:=[profile?]
+	>=dev-haskell/network-3.0.0.0:=[profile?] <dev-haskell/network-3.3.0.0:=[profile?]
 	>=dev-haskell/req-3.9:=[profile?] <dev-haskell/req-3.14:=[profile?]
 	>=dev-haskell/safe-exceptions-0.1:=[profile?] <dev-haskell/safe-exceptions-0.2:=[profile?]
 	>=dev-haskell/scientific-0.3:=[profile?] <dev-haskell/scientific-0.4:=[profile?]

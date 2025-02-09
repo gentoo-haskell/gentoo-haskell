@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'hedgehog >= 1.0 && < 1.3' 'hedgehog >= 1.0'
+	'base >= 4.10.1.0 && < 4.18' 'base >= 4.10.1.0'
 )
 
 RDEPEND="
