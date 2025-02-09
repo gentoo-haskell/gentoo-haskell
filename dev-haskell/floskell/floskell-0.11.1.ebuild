@@ -16,6 +16,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="executable"
 
+CABAL_CHDEPS=('base >=4.9 && <4.20' 'base >=4.9 && <4.22')
+
 PATCHES=(
 	"${FILESDIR}/${PN}-0.10.7-add-executable-flag.patch"
 )
