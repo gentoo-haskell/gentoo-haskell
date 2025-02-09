@@ -22,6 +22,7 @@
 <dev-haskell/haddock-library-1.11.1
 <dev-haskell/primitive-unlifted-2.2
 <dev-haskell/req-3.14
+<dev-haskell/sbv-12
 <dev-haskell/text-ansi-0.4
 <dev-haskell/text-builder-0.7
 <dev-haskell/text-builder-dev-0.4
