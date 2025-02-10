@@ -5,40 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This package consists of several modules, that give a
-		pure specification of functions in the IO monad:
-		
-		* "Test.IOSpec.Fork": a pure specification of
-		'forkIO'.
-		
-		* "Test.IOSpec.IORef": a pure specification of most
-		functions that create and manipulate on 'IORefs'.
-		
-		* "Test.IOSpec.MVar": a pure specification of most
-		functions that create and manipulate and 'MVars'.
-		
-		* "Test.IOSpec.STM": a pure specification of
-		'atomically' and the 'STM' monad.
-		
-		* "Test.IOSpec.Teletype": a pure specification of
-		'getChar', 'putChar', and several related
-		Prelude functions.
-		
-		Besides these modules containing the specifications,
-		there are a few other important modules:
-		
-		* "Test.IOSpec.Types": defines the 'IOSpec' type and
-		several amenities.
-		
-		* "Test.IOSpec.VirtualMachine": defines a virtual
-		machine on which to execute pure specifications.
-		
-		* "Test.IOSpec.Surrogate": a drop-in replacement for
-		the other modules. Import this and recompile your
-		code once you've finished testing and debugging.
-		
-		There are several well-documented examples included
-		with the source distribution.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">IOSpec</remote-id>
+		<remote-id type="github">lambdabot/IOSpec</remote-id>
+	</upstream>
 </pkgmetadata>
