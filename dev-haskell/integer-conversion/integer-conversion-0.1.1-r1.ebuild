@@ -17,7 +17,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/primitive-0.9.0.0:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
+RDEPEND=">=dev-haskell/primitive-0.9.0.0:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 	dev-haskell/text:=[profile?]
 "
