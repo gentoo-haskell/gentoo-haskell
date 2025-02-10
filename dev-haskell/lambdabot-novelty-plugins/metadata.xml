@@ -21,4 +21,8 @@
 		[unlambda] Run Unlambda code.
 		[vixen] Let's chat, honey.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">lambdabot-novelty-plugins</remote-id>
+		<remote-id type="github">lambdabot/lambdabot</remote-id>
+	</upstream>
 </pkgmetadata>
