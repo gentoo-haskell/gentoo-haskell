@@ -17,4 +17,8 @@
 		[seen] Track who was around when.
 		[tell] Leave messages for other users.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">lambdabot-social-plugins</remote-id>
+		<remote-id type="github">lambdabot/lambdabot</remote-id>
+	</upstream>
 </pkgmetadata>
