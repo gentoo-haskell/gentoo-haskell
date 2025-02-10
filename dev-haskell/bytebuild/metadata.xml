@@ -8,4 +8,8 @@
 	<use>
 		<flag name="checked">Add bounds-checking to primitive array operations</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">bytebuild</remote-id>
+		<remote-id type="github">byteverse/bytebuild</remote-id>
+	</upstream>
 </pkgmetadata>
