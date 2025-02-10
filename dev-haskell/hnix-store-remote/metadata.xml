@@ -5,4 +5,12 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="build-derivation">Build build-derivation executable</flag>
+		<flag name="build-readme">Build README.lhs example</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">hnix-store-remote</remote-id>
+		<remote-id type="github">haskell-nix/hnix-store</remote-id>
+	</upstream>
 </pkgmetadata>
