@@ -17,11 +17,12 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'base-compat >= 0.10     && < 0.13' 'base-compat >= 0.10'
+	'text        >= 0.11.0.0 && < 2.1' 'text        >= 0.11.0.0'
 )
 
 RDEPEND="
 	>=dev-haskell/base-compat-0.10:=[profile?]
-	>=dev-haskell/text-0.11.0.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
+	>=dev-haskell/text-0.11.0.0:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
