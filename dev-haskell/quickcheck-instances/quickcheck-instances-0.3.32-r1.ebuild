@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'primitive             >=0.9.0.0  && <0.10' 'primitive >=0.9.0.0'
+	)
+
 RDEPEND=">=dev-haskell/case-insensitive-1.2.0.11:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/data-array-byte-0.1.0.1:=[profile?] <dev-haskell/data-array-byte-0.2:=[profile?]
 	>=dev-haskell/data-fix-0.3:=[profile?] <dev-haskell/data-fix-0.4:=[profile?]
@@ -24,7 +28,7 @@ RDEPEND=">=dev-haskell/case-insensitive-1.2.0.11:=[profile?] <dev-haskell/case-i
 	>=dev-haskell/integer-logarithms-1.0.3.1:=[profile?] <dev-haskell/integer-logarithms-1.1:=[profile?]
 	>=dev-haskell/old-time-1.1.0.0:=[profile?] <dev-haskell/old-time-1.2:=[profile?]
 	>=dev-haskell/onetuple-0.4.2:=[profile?] <dev-haskell/onetuple-0.5:=[profile?]
-	>=dev-haskell/primitive-0.9.0.0:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
+	>=dev-haskell/primitive-0.9.0.0:=[profile?]
 	>=dev-haskell/quickcheck-2.14.2:=[profile?] <dev-haskell/quickcheck-2.15.1:=[profile?]
 	>=dev-haskell/scientific-0.3.8.0:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/splitmix-0.1.0.5:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
