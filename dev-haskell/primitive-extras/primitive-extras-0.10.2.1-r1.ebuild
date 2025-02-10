@@ -15,12 +15,16 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'primitive >=0.7 && <0.10' 'primitive >=0.7'
+	)
+
 RDEPEND=">=dev-haskell/cereal-0.5.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/deferred-folds-0.9:=[profile?] <dev-haskell/deferred-folds-0.10:=[profile?]
 	>=dev-haskell/focus-1:=[profile?] <dev-haskell/focus-1.1:=[profile?]
 	>=dev-haskell/foldl-1:=[profile?] <dev-haskell/foldl-2:=[profile?]
 	>=dev-haskell/list-t-1.0.1:=[profile?] <dev-haskell/list-t-1.1:=[profile?]
-	>=dev-haskell/primitive-0.7:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
+	>=dev-haskell/primitive-0.7:=[profile?]
 	>=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-6:=[profile?]
 	>=dev-haskell/vector-0.12:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
