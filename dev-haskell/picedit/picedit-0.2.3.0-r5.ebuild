@@ -23,13 +23,14 @@ CABAL_CHDEPS=(
 	'hmatrix >= 0.17.0.2 && < 0.19' 'hmatrix >= 0.17.0.2'
 	'JuicyPixels >= 3.2.8 && < 3.3' 'JuicyPixels >= 3.2.8'
 	'cli >= 0.1.2 && < 0.2' 'cli >= 0.1.2'
+	'vector >= 0.11.0.0 && < 0.13' 'vector >= 0.11.0.0'
 )
 
 RDEPEND="
 	>=dev-haskell/cli-0.1.2:=[profile?]
 	>=dev-haskell/hmatrix-0.17.0.2:=[profile?]
 	>=dev-haskell/juicypixels-3.2.8:=[profile?]
-	>=dev-haskell/vector-0.11.0.0:=[profile?] <dev-haskell/vector-0.13:=[profile?]
+	>=dev-haskell/vector-0.11.0.0:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}
