@@ -41,3 +41,8 @@ DEPEND="${RDEPEND}
 		<dev-haskell/tasty-quickcheck-0.12
 		>=dev-haskell/temporary-1.3 <dev-haskell/temporary-1.4 )
 "
+BDEPEND="
+	test? (
+		sys-apps/dbus
+	)
+"
