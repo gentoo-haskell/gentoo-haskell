@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'time < 1.10' 'time'
+)
+
 PATCHES=(
 	"${FILESDIR}/${PN}-0.2.12-time-1_10-fix.patch"
 )
