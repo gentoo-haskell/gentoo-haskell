@@ -1,4 +1,16 @@
 # Jack Todaro <solpeth@posteo.org> (2025-02-11)
+# Depends on or is dev-haskell/hsp, unmaintained since 2013
+# and unbuildable with newer ghc.
+# Removal on 2025-03-13.
+dev-haskell/hsp
+dev-haskell/happstack-authenticate
+dev-haskell/happstack-hsp
+dev-haskell/hjscript
+dev-haskell/hsx-jmacro
+dev-haskell/reform-hsp
+dev-haskell/web-routes-hsp
+
+# Jack Todaro <solpeth@posteo.org> (2025-02-11)
 # No reverse dependencies, doesn't build with newer ghc.
 # Removal on 2025-03-13.
 dev-haskell/monadcryptorandom
