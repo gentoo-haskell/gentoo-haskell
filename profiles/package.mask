@@ -1,3 +1,8 @@
+# Jack Todaro <solpeth@posteo.org> (2025-02-11)
+# No reverse dependencies, doesn't build with newer ghc.
+# Removal on 2025-03-13.
+dev-haskell/monadcryptorandom
+
 # Jack Todaro <solpeth@posteo.org> (2025-02-09)
 # Unmaintained upstream, does not build on newer ghc.
 # Removal on 2025-03-11.
