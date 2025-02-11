@@ -38,6 +38,16 @@ src_prepare() {
 }
 
 src_configure() {
-	haskell-cabal_src_configure \
+	local config_flags=(
 		--flag=pedantic
+	)
+
+	if ghc-supports-threaded-runtime
+	then
+		config_flags+=( --ghc-options=-threaded )
+	else
+		die "GHC must support threaded runtime"
+	fi
+
+	haskell-cabal_src_configure "${config_flags[@]}"
 }
