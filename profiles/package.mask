@@ -217,6 +217,7 @@ dev-haskell/country-codes
 >=dev-haskell/singletons-th-3.2
 >=dev-haskell/singletons-base-3.2
 >=dev-haskell/ghc-syntax-highlighter-0.0.12
+>=dev-haskell/filepath-bytestring-1.5
 
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of

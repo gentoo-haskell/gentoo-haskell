@@ -46,3 +46,4 @@
 app-portage/hackport
 <dev-haskell/ghc-platform-9.13
 <dev-haskell/ghc-toolchain-9.13
+<dev-haskell/filepath-bytestring-1.6
