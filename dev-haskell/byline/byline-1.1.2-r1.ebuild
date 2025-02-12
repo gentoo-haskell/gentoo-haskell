@@ -24,20 +24,28 @@ CABAL_CHBINS=(
 	'shell' 'byline-shell'
 )
 
+PATCHES=(
+	"${FILESDIR}"/byline-1.1.2-optparse-applicative-0.18.patch
+	)
+
 CABAL_CHDEPS=(
-	'optparse-applicative  ^>=0.17' 'optparse-applicative >=0.17'
+	'optparse-applicative  ^>=0.17' 'optparse-applicative >=0.18'
+	'ansi-terminal         >=0.6  && <0.12' 'ansi-terminal >=0.6'
+	'free                  ^>=5.1' 'free >=5.1'
+	'relude                >=0.6  && <1.2' 'relude >=0.6'
+	'text                  >=0.11 && <2.1' 'text >=0.11'
 )
 
 RDEPEND="
-	>=dev-haskell/ansi-terminal-0.6:=[profile?] <dev-haskell/ansi-terminal-0.12:=[profile?]
+	>=dev-haskell/ansi-terminal-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	>=dev-haskell/free-5.1:=[profile?] <dev-haskell/free-5.2:=[profile?]
+	>=dev-haskell/free-5.1:=[profile?]
 	>=dev-haskell/haskeline-0.8:=[profile?] <dev-haskell/haskeline-0.8.3:=[profile?]
-	>=dev-haskell/optparse-applicative-0.17:=[profile?]
-	>=dev-haskell/relude-0.6:=[profile?] <dev-haskell/relude-1.2:=[profile?]
+	>=dev-haskell/optparse-applicative-0.18:=[profile?]
+	>=dev-haskell/relude-0.6:=[profile?]
 	>=dev-haskell/terminfo-hs-0.1:=[profile?] <dev-haskell/terminfo-hs-0.3:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.1:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
 "
 DEPEND="${RDEPEND}

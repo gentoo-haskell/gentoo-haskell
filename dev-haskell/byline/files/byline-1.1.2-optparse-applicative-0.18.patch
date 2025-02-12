@@ -1,0 +1,51 @@
+From https://github.com/pjones/byline/pull/26
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 14 Feb 2025 16:09:28 +0100
+Subject: [PATCH] Optparse-applicative-0.18 support
+
+--- a/byline.cabal
++++ b/byline.cabal
+@@ -95,18 +95,18 @@ common options
+ --------------------------------------------------------------------------------
+ common dependencies
+   build-depends:
+-    , ansi-terminal         >=0.6  && <0.12
++    , ansi-terminal         >=0.6  && <1.2
+     , attoparsec            >=0.13 && <0.15
+     , base                  >=4.9  && <5.0
+     , colour                ^>=2.3
+     , exceptions            >=0.8  && <0.11
+-    , free                  ^>=5.1
++    , free                  >=5.1  && <5.3
+     , haskeline             >=0.8  && <0.8.3
+     , mtl                   >=2.1  && <2.4
+-    , optparse-applicative  ^>=0.17
++    , optparse-applicative  ^>=0.18
+     , relude                >=0.6  && <1.3
+     , terminfo-hs           >=0.1  && <0.3
+-    , text                  >=0.11 && <2.1
++    , text                  >=0.11 && <2.2
+ 
+   mixins:
+     base hiding (Prelude),
+--- a/src/Byline/Shell.hs
++++ b/src/Byline/Shell.hs
+@@ -118,16 +118,12 @@ shellCompletion shell input@(left, _) = do
+       where
+         nameAndFlags opt =
+           case O.optMain opt of
+-            O.CmdReader _ cmds p -> (`map` cmds) $ \cmd ->
+-              ( toText cmd,
+-                maybe
+-                  []
++            O.CmdReader _ cmds -> (`map` cmds) $ bimap
++              toText
+                   ( O.infoParser
+                       >>> O.mapParser (const optnames)
+                       >>> concat
+                   )
+-                  (p cmd)
+-              )
+             _ -> mempty
+         optnames opt =
+           case O.optMain opt of
