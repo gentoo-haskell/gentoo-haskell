@@ -13,7 +13,7 @@ DESCRIPTION="Scan Gentoo repositories for reverse dependencies"
 HOMEPAGE="https://github.com/gentoo-haskell/revdep-scanner"
 EGIT_REPO_URI="https://github.com/gentoo-haskell/${PN}.git"
 
-LICENSE="GPL-3+"
+LICENSE="AGPL-3"
 SLOT="0"
 
 RDEPEND=">=dev-haskell/conduit-1.3.0:= <dev-haskell/conduit-1.4:=
