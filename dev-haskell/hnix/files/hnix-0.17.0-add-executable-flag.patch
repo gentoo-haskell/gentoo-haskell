@@ -1,0 +1,31 @@
+diff -ur a/hnix.cabal b/hnix.cabal
+--- a/hnix.cabal	2001-09-09 03:46:40.000000000 +0200
++++ b/hnix.cabal	2025-02-12 15:06:39.394143435 +0100
+@@ -327,6 +327,10 @@
+   manual: True
+   default: False
+ 
++flag executable
++  description: Build the hnix executable
++  default: False
++
+ common shared
+   default-language: Haskell2010
+   default-extensions:
+@@ -454,6 +458,7 @@
+     , hashing >= 0.1.0 && < 0.2
+     , hnix-store-core >= 0.6.0 && < 0.8
+     , hnix-store-remote >= 0.6.0 && < 0.7
++    , hnix-store-nar >= 0.1.1.0
+     , http-client >= 0.5.14 && < 0.6 || >= 0.6.4 && < 0.8
+     , http-client-tls >= 0.3.5 && < 0.4
+     , http-types >= 0.12.2 && < 0.13
+@@ -494,6 +499,8 @@
+ 
+ executable hnix
+   import: shared
++  if !flag(executable)
++    buildable: False
+   hs-source-dirs:
+     main
+   main-is: Main.hs
