@@ -8,4 +8,8 @@
 	<use>
 		<flag name="maintainer">Enable settings for the package maintainer.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">themoviedb</remote-id>
+		<remote-id type="github">pjones/themoviedb</remote-id>
+	</upstream>
 </pkgmetadata>
