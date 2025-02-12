@@ -21,6 +21,7 @@ IUSE="+ordered-keymap"
 
 CABAL_CHDEPS=(
 	'nothunks >=0.1.4 && <0.3' 'nothunks >=0.1.4'
+	'primitive             ^>=0.8.0.0  || ^>=0.9.0.0' 'primitive >=0.8.0.0'
 )
 
 RDEPEND=">=dev-haskell/character-ps-0.1:=[profile?] <dev-haskell/character-ps-0.2:=[profile?]
@@ -33,7 +34,7 @@ RDEPEND=">=dev-haskell/character-ps-0.1:=[profile?] <dev-haskell/character-ps-0.
 	>=dev-haskell/integer-logarithms-1.0.3.1:=[profile?] <dev-haskell/integer-logarithms-1.1:=[profile?]
 	>=dev-haskell/network-uri-2.6.4.1:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
 	>=dev-haskell/onetuple-0.4.1.1:=[profile?] <dev-haskell/onetuple-0.5:=[profile?]
-	>=dev-haskell/primitive-0.8.0.0:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
+	>=dev-haskell/primitive-0.8.0.0:=[profile?]
 	>=dev-haskell/quickcheck-2.14.3:=[profile?] <dev-haskell/quickcheck-2.16:=[profile?]
 	>=dev-haskell/scientific-0.3.7.0:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
 	>=dev-haskell/semialign-1.3:=[profile?] <dev-haskell/semialign-1.4:=[profile?]
