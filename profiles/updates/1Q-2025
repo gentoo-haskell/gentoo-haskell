@@ -1,1 +1,3 @@
 slotmove dev-haskell/gtk 2 0
+slotmove dev-haskell/gtk-serialized-events 2 0
+slotmove dev-haskell/soegtk 2 0
