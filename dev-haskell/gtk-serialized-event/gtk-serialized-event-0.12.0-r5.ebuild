@@ -13,23 +13,20 @@ HOMEPAGE="https://www.haskell.org/gtk2hs/"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
-SLOT="2/${PV}"
+SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+		'haskell98' 'base' \
+		'glib >= 0.12 && < 0.13' 'glib >= 0.12' \
+		'gtk >= 0.12 && < 0.13' 'gtk >= 0.12'
+	)
+
 RDEPEND=">=dev-haskell/glib-0.12:0=[profile?]
-	>=dev-haskell/gtk-0.12:2=[profile?]
+	>=dev-haskell/gtk-0.12:0=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-6.10.4:=
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 	virtual/pkgconfig"
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'haskell98' 'base' \
-		'glib >= 0.12 && < 0.13' 'glib >= 0.12' \
-		'gtk >= 0.12 && < 0.13' 'gtk >= 0.12'
-}
