@@ -17,6 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+deprecated +fmode-binary +gio"
 
+GHC_BOOTSTRAP_PACKAGES=(
+		gtk2hs-buildtools
+	)
+
 RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/pango-0.13.0.0:=[profile?] <dev-haskell/pango-0.14:=[profile?]
