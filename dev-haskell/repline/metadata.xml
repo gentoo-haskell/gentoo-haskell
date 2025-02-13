@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">repline</remote-id>
+		<remote-id type="github">sdiehl/repline</remote-id>
+	</upstream>
 </pkgmetadata>
