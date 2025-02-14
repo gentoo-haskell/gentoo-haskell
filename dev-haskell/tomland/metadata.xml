@@ -5,9 +5,6 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="examples">Build example exes</flag>
-	</use>
 	<upstream>
 		<remote-id type="hackage">tomland</remote-id>
 		<remote-id type="github">kowainik/tomland</remote-id>
