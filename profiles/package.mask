@@ -1,3 +1,36 @@
+# hololeap <hololeap@protonmail.com> (2025-02-14)
+#
+# Mask hls-*-plugin packages. These are needed because of a bug in musl setups
+# but are polluting attempts to enumerate which packages are holding back GHC
+# bumps. Those that still need them can unmask them.
+<dev-haskell/haskell-language-server-2.7
+dev-haskell/hls-alternate-number-format-plugin
+dev-haskell/hls-cabal-fmt-plugin
+dev-haskell/hls-cabal-plugin
+dev-haskell/hls-call-hierarchy-plugin
+dev-haskell/hls-change-type-signature-plugin
+dev-haskell/hls-class-plugin
+dev-haskell/hls-code-range-plugin
+dev-haskell/hls-eval-plugin
+dev-haskell/hls-explicit-fixity-plugin
+dev-haskell/hls-explicit-imports-plugin
+dev-haskell/hls-explicit-record-fields-plugin
+dev-haskell/hls-floskell-plugin
+dev-haskell/hls-fourmolu-plugin
+dev-haskell/hls-gadt-plugin
+dev-haskell/hls-hlint-plugin
+dev-haskell/hls-module-name-plugin
+dev-haskell/hls-ormolu-plugin
+dev-haskell/hls-overloaded-record-dot-plugin
+dev-haskell/hls-pragmas-plugin
+dev-haskell/hls-qualify-imported-names-plugin
+dev-haskell/hls-refactor-plugin
+dev-haskell/hls-rename-plugin
+dev-haskell/hls-retrie-plugin
+dev-haskell/hls-semantic-tokens-plugin
+dev-haskell/hls-splice-plugin
+dev-haskell/hls-stylish-haskell-plugin
+
 # Jack Todaro <solpeth@posteo.org> (2025-02-11)
 # Depends on or is dev-haskell/hsp, unmaintained since 2013
 # and unbuildable with newer ghc.
