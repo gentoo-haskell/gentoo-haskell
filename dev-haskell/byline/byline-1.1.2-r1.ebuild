@@ -28,14 +28,6 @@ PATCHES=(
 	"${FILESDIR}"/byline-1.1.2-optparse-applicative-0.18.patch
 	)
 
-CABAL_CHDEPS=(
-	'optparse-applicative  ^>=0.17' 'optparse-applicative >=0.18'
-	'ansi-terminal         >=0.6  && <0.12' 'ansi-terminal >=0.6'
-	'free                  ^>=5.1' 'free >=5.1'
-	'relude                >=0.6  && <1.2' 'relude >=0.6'
-	'text                  >=0.11 && <2.1' 'text >=0.11'
-)
-
 RDEPEND="
 	>=dev-haskell/ansi-terminal-0.6:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
