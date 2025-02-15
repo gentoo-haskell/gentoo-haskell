@@ -17,7 +17,13 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?] <dev-haskell/aeson-2.2:=[profile?]
+CABAL_CHDEPS=(
+	'aeson                     >= 1.4.6.0   && < 2.2' 'aeson >= 1.4.6.0'
+	'bytestring                                < 0.12' 'bytestring'
+	'text                      >= 0.11.1.0  && < 2.1' 'text >= 0.11.1.0'
+	)
+
+RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?]
 	>=dev-haskell/aeson-pretty-0.8.5:=[profile?] <dev-haskell/aeson-pretty-0.9:=[profile?]
 	>=dev-haskell/aeson-yaml-1.1.0:=[profile?] <dev-haskell/aeson-yaml-1.2:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-1.2:=[profile?]
@@ -26,7 +32,7 @@ RDEPEND=">=dev-haskell/aeson-1.4.6.0:=[profile?] <dev-haskell/aeson-2.2:=[profil
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?]
 	>=dev-haskell/scientific-0.3.0.0:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
+	>=dev-haskell/text-0.11.1.0:=[profile?]
 	<dev-haskell/unordered-containers-0.3:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/dhall-1.42.0:=[profile?] <dev-lang/dhall-1.43:=[profile?]
