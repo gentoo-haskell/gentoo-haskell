@@ -21,7 +21,8 @@ Subject: [PATCH] Optparse-applicative-0.18 support
      , mtl                   >=2.1  && <2.4
 -    , optparse-applicative  ^>=0.17
 +    , optparse-applicative  ^>=0.18
-     , relude                >=0.6  && <1.3
+-    , relude                >=0.6  && <1.2
++    , relude                >=0.6  && <1.3
      , terminfo-hs           >=0.1  && <0.3
 -    , text                  >=0.11 && <2.1
 +    , text                  >=0.11 && <2.2
