@@ -38,7 +38,7 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-3.13
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.3 <dev-haskell/doctest-0.23
+	test? ( >=dev-haskell/doctest-0.11.3 <dev-haskell/doctest-0.24
 		>=dev-haskell/raw-strings-qq-1.1 <dev-haskell/raw-strings-qq-1.2
 		<dev-haskell/tasty-1.6
 		<dev-haskell/tasty-hunit-1.11 )
