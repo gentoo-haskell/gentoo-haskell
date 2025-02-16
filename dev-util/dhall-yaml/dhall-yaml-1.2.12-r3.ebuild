@@ -17,6 +17,11 @@ LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'bytestring                                < 0.12' 'bytestring'
+	'text                      >= 0.11.1.0  && < 2.1' 'text >= 0.11.1.0'
+	)
+
 RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/ansi-terminal-0.6.3.1:=[profile?] <dev-haskell/ansi-terminal-1.2:=[profile?]
 	>=dev-haskell/hsyaml-0.2:=[profile?] <dev-haskell/hsyaml-0.3:=[profile?]
@@ -24,7 +29,7 @@ RDEPEND=">=dev-haskell/aeson-1.0.0.0:=[profile?] <dev-haskell/aeson-2.3:=[profil
 	>=dev-haskell/optparse-applicative-0.14.0.0:=[profile?] <dev-haskell/optparse-applicative-0.19:=[profile?]
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.1:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?]
-	>=dev-haskell/text-0.11.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
+	>=dev-haskell/text-0.11.1.0:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-lang/dhall-1.31.0:=[profile?] <dev-lang/dhall-1.43:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
