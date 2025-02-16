@@ -16,6 +16,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+closuresignals"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-cabal-3.14.patch
+	)
+
 RDEPEND=">=dev-haskell/cabal-2.0:=[profile?]
 	dev-haskell/hashtables:=[profile?]
 	dev-haskell/random:=[profile?]
