@@ -181,6 +181,8 @@ dev-haskell/country-codes
 >=dev-haskell/stm-2.5.3.1
 >=dev-haskell/transformers-0.6.1.1
 >=dev-haskell/hlint-3.10
+>=dev-haskell/ghc-lib-parser-9.12
+>=dev-haskell/ghc-lib-parser-ex-9.12
 
 # hololeap <hololeap@protonmail.com> (2024-03-27)
 #
