@@ -5,4 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="pkgconfig">Use @pkgconfig@ on unix system to find @liblzma@</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">lzma</remote-id>
+		<remote-id type="github">hvr/lzma</remote-id>
+	</upstream>
 </pkgmetadata>
