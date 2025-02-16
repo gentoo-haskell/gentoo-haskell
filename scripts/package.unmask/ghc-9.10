@@ -26,8 +26,8 @@
 <dev-haskell/text-builder-dev-0.4
 <dev-haskell/text-builder-linear-0.2
 <dev-haskell/base64-1.1
-<dev-haskell/ghc-lib-parser-9.11
-<dev-haskell/ghc-lib-parser-ex-9.11
+<dev-haskell/ghc-lib-parser-9.13
+<dev-haskell/ghc-lib-parser-ex-9.13
 <dev-haskell/stylish-haskell-0.15
 # haddock submodule in ghc-9.10.1-release does not build
 #<dev-haskell/haddock-2.30

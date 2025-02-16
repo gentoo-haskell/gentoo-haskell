@@ -148,7 +148,6 @@ dev-haskell/country-codes
 >=dev-haskell/haddock-2.30.0
 >=dev-haskell/haddock-api-2.30.0
 >=dev-haskell/hadrian-9.12.1
->=dev-haskell/hlint-3.10
 >=dev-haskell/text-2.1.2
 >=dev-haskell/transformers-0.6.1.2
 
@@ -181,6 +180,7 @@ dev-haskell/country-codes
 >=dev-haskell/binary-0.8.9.2
 >=dev-haskell/stm-2.5.3.1
 >=dev-haskell/transformers-0.6.1.1
+>=dev-haskell/hlint-3.10
 
 # hololeap <hololeap@protonmail.com> (2024-03-27)
 #
