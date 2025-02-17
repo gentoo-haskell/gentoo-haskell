@@ -1,3 +1,9 @@
+# GdeVolpiano <xavier@wheredoibegin.fr>
+# Mask doctest >= 0.23, because tests are strongly bound to ghc-versions. Need
+# to be unmasked based on which ghc version is current with them (at this point,
+# only ghc-9.12)
+>=dev-haskell/doctest-0.23
+
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
 # Mask hls-*-plugin packages. These are needed because of a bug in musl setups
