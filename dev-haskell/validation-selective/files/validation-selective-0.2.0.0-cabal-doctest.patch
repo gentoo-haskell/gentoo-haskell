@@ -97,9 +97,9 @@ index 3d75fad..41f2b2b 100644
    type:                exitcode-stdio-1.0
    hs-source-dirs:      test
    main-is:             Doctest.hs
--  build-depends:       doctest >= 0.16 && < 0.22
+-  build-depends:       doctest >= 0.16 && < 1
 +  build-depends:
-+      doctest >= 0.16 && < 0.22
++      doctest >= 0.16 && < 1
 +    , base-compat
    ghc-options:         -threaded
 -- 

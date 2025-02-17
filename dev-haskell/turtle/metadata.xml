@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="new-deps">Use new versions of ansi-wl-pprint and optparse-applicative</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">turtle</remote-id>
 		<remote-id type="github">Gabriella439/turtle</remote-id>

@@ -1,0 +1,26 @@
+From 42ca2cf65f9e52cf727dde5c6b4f537211d9bb6b Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Fri, 14 Feb 2025 17:33:20 -0700
+Subject: [PATCH 1/1] Disable tests that require nix-instantiate
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+---
+ tests/Main.hs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/Main.hs b/tests/Main.hs
+index 809a254f..799bf8a9 100644
+--- a/tests/Main.hs
++++ b/tests/Main.hs
+@@ -106,7 +106,7 @@ main = do
+     , PrettyTests.tests
+     , ReduceExprTests.tests
+     , PrettyParseTests.tests $ fromIntegral $ read @Int $ fromMaybe "0" prettyTestsEnv
+-    , evalComparisonTests
++--    , evalComparisonTests
+     , testCase "Nix language tests present" ensureLangTestsPresent
+     , nixLanguageTests ] <>
+     [ testCase "Nixpkgs parses without errors" ensureNixpkgsCanParse
+-- 
+2.45.3
+
