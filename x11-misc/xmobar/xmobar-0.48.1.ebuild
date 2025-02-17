@@ -17,6 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="alsa datezone dbus mpd mpris +rtsopts shared uvmeter +weather wifi xpm +xrender"
 
+CABAL_CHDEPS=(
+	'base >= 4.11.0 && < 4.20' 'base >= 4.11.0'
+	)
+
 RDEPEND=">=dev-haskell/aeson-1.4.7.1:=[profile?]
 	dev-haskell/async:=[profile?]
 	>=dev-haskell/cairo-0.13:=[profile?]
