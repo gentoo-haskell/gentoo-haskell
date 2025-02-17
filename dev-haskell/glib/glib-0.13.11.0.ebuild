@@ -16,13 +16,17 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+closure-signals"
 
+CABAL_CHDEPS=(
+	'Cabal >= 2.2 && < 3.13' 'Cabal >= 2.2'
+	)
+
 RDEPEND=">=dev-haskell/text-1.0.0.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-haskell/utf8-string-0.2:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 	dev-libs/glib:2
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-3.13
+	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-3.15
 "
 BDEPEND=">=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14
 	virtual/pkgconfig
