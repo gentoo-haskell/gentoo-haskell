@@ -21,6 +21,7 @@ KEYWORDS="~amd64"
 CABAL_CHDEPS=(
 	'base                    >= 4.11    && < 4.21' 'base          >=4.10     && <6'
 	'ghc-prim                >= 0.3.1.0 && < 0.12' 'ghc-prim                >= 0.3.1.0'
+	'tasty-quickcheck        >= 0.8     && < 0.11' 'tasty-quickcheck >= 0.8 && < 0.12'
 )
 
 RDEPEND=">=dev-haskell/half-0.2.2.3:=[profile?] <dev-haskell/half-0.4:=[profile?]
@@ -43,7 +44,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/scientific-0.3 <dev-haskell/scientific-0.4
 		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.6
 		>=dev-haskell/tasty-hunit-0.9 <dev-haskell/tasty-hunit-0.11
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11
+		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.12
 		>=dev-haskell/text-1.1 <dev-haskell/text-2.2
 		>=dev-haskell/vector-0.10 <dev-haskell/vector-0.14 )
 "
