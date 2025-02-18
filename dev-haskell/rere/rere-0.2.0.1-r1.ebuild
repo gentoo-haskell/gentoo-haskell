@@ -21,6 +21,7 @@ IUSE="+cfg intersection"
 
 CABAL_CHDEPS=(
 	'QuickCheck ^>=2.14.2' 'QuickCheck >=2.14.2'
+	'tasty-quickcheck      ^>=0.10.1.1' 'tasty-quickcheck >=0.10.1.1'
 )
 
 RDEPEND="
@@ -37,7 +38,7 @@ DEPEND="${RDEPEND}
 	test? (
 		>=dev-haskell/quickcheck-instances-0.3.30 <dev-haskell/quickcheck-instances-0.4
 		>=dev-haskell/tasty-1.4.0.1 <dev-haskell/tasty-1.6
-		>=dev-haskell/tasty-quickcheck-0.10.1.1 <dev-haskell/tasty-quickcheck-0.11
+		>=dev-haskell/tasty-quickcheck-0.10.1.1
 	)
 "
 
