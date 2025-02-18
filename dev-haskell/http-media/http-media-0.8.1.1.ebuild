@@ -17,6 +17,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'tasty-quickcheck >= 0.8  && < 0.11' 'tasty-quickcheck >= 0.8 && < 0.12'
+	)
+
 RDEPEND=">=dev-haskell/case-insensitive-1.0:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
@@ -25,5 +29,5 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-2.16
 		>=dev-haskell/tasty-0.11 <dev-haskell/tasty-1.6
-		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.11 )
+		>=dev-haskell/tasty-quickcheck-0.8 <dev-haskell/tasty-quickcheck-0.12 )
 "
