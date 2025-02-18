@@ -27,7 +27,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-haskell/cabal-3.14.0.0:=[profile?] <dev-haskell/cabal-3.11:=[profile?]
+	>=dev-haskell/cabal-3.14.0.0:=[profile?] <dev-haskell/cabal-3.15:=[profile?]
 	>=dev-haskell/cabal-syntax-3.14.0.0:=[profile?] <dev-haskell/cabal-syntax-3.15:=[profile?]
 	>=dev-haskell/tree-diff-0.1:=[profile?] <dev-haskell/tree-diff-0.4:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
