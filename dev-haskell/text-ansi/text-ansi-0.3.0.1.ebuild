@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base ^>= 4.16 || ^>= 4.17 || ^>= 4.18 || ^>= 4.19 || ^>= 4.20' 'base >= 4.16'
+	)
+
 RDEPEND=">=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-haskell/text-builder-linear-0.1.1:=[profile?] <dev-haskell/text-builder-linear-0.2:=[profile?]
 	>=dev-lang/ghc-9.2.4:=
