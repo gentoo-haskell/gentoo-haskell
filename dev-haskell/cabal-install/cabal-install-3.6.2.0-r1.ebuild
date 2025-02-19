@@ -19,6 +19,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+lukko +native-dns"
 
+CABAL_CHDEPS=(
+	'zlib       >= 0.5.3    && < 0.7' 'zlib >= 0.5.3 && < 0.8'
+	)
+
 RDEPEND="
 	>=dev-haskell/async-2.0:= <dev-haskell/async-2.3:=
 	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-1.1.0.0:=
@@ -36,7 +40,7 @@ RDEPEND="
 	>=dev-haskell/regex-posix-0.96.0.0:= <dev-haskell/regex-posix-0.97:=
 	>=dev-haskell/stm-2.0:= <dev-haskell/stm-2.6:=
 	>=dev-haskell/tar-0.5.0.3:= <dev-haskell/tar-0.6:=
-	>=dev-haskell/zlib-0.5.3:= <dev-haskell/zlib-0.7:=
+	>=dev-haskell/zlib-0.5.3:= <dev-haskell/zlib-0.8:=
 	>=dev-lang/ghc-8.4.3:=
 	lukko? (
 		>=dev-haskell/lukko-0.1:= <dev-haskell/lukko-0.2:=
