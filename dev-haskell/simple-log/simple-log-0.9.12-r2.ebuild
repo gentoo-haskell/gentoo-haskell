@@ -15,10 +15,9 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-CABAL_CHDEPS=(
-	'hspec >= 2.3 && < 2.8' 'hspec >=2.3'
-	'mmorph >= 1.0 && < 1.2' 'mmorph >= 1.0'
-)
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+	)
 
 RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-3.0:=[profile?]
 	>=dev-haskell/base-unicode-symbols-0.2:=[profile?] <dev-haskell/base-unicode-symbols-0.3:=[profile?]
@@ -26,7 +25,7 @@ RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-3.0:=[profile?]
 	>=dev-haskell/hformat-0.3:=[profile?] <dev-haskell/hformat-0.4:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/microlens-platform-0.3:=[profile?] <dev-haskell/microlens-platform-0.5:=[profile?]
-	>=dev-haskell/mmorph-1.0:=[profile?]
+	>=dev-haskell/mmorph-1.0:=[profile?] <dev-haskell/mmorph-1.3:=[profile?]
 	>=dev-haskell/safesemaphore-0.9.0:=[profile?] <dev-haskell/safesemaphore-1.0.0:=[profile?]
 	>=dev-lang/ghc-8.10.1:=
 "
@@ -36,3 +35,14 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-2.3
 	)
 "
+
+BDEPEND="app-text/dos2unix"
+
+src_prepare() {
+	# Convert to unix line endings
+	dos2unix "${S}/${PN}.cabal" || die
+	dos2unix "${S}/src/System/Log/Simple/Base.hs" || die
+	dos2unix "${S}/src/System/Log/Simple/File.hs" || die
+
+	haskell-cabal_src_prepare
+}
