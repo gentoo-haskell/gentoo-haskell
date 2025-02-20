@@ -1,0 +1,57 @@
+Instances of Lift are defined in Data.Time and automatically imported with the
+import of Data.Time, creating a conflict.
+Only in b: dist-newstyle
+diff -ur a/src/Test/Amazonka/TH.hs b/src/Test/Amazonka/TH.hs
+--- a/src/Test/Amazonka/TH.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/src/Test/Amazonka/TH.hs	2025-02-19 21:13:11.470496646 +0100
+@@ -1,7 +1,7 @@
+-{-# LANGUAGE CPP #-}
+-{-# LANGUAGE DeriveLift #-}
+-{-# LANGUAGE StandaloneDeriving #-}
+-{-# LANGUAGE TemplateHaskell #-}
++{-# LANGUAGE CPP                   #-}
++{-# LANGUAGE DeriveLift            #-}
++{-# LANGUAGE StandaloneDeriving    #-}
++{-# LANGUAGE TemplateHaskellQuotes #-}
+ {-# OPTIONS_GHC -fno-warn-orphans #-}
+ 
+ -- |
+@@ -13,32 +13,16 @@
+ -- Portability : non-portable (GHC extensions)
+ module Test.Amazonka.TH where
+ 
+-import Amazonka.Core.Lens.Internal (view)
+-import Amazonka.Data
+-import Data.Time (Day (..), DiffTime, UTCTime (..))
+-import Language.Haskell.TH
+-import Language.Haskell.TH.Syntax
++import           Amazonka.Core.Lens.Internal (view)
++import           Amazonka.Data
++import           Data.Time                   ()
++import           Language.Haskell.TH
++import           Language.Haskell.TH.Syntax
+ 
+ mkTime :: Text -> Q Exp
+ mkTime x =
+   case fromText x :: Either String ISO8601 of
+-    Left e -> error (show e)
++    Left e  -> error (show e)
+     Right t -> [|view _Time t|]
+ 
+ deriving instance Lift (Time a)
+-
+-deriving instance Lift UTCTime
+-
+-deriving instance Lift Day
+-
+--- DiffTime's constructor is not exported, so use a manual instance.
+---
+--- Note: An entire valid instance must be duplicated inside CPP to
+--- otherwise the ormolu formatter will erroneously rewrite it.
+-#if MIN_VERSION_template_haskell(2,16,0)
+-instance Lift DiffTime where
+-  liftTyped x = [||toEnum $$(liftTyped (fromEnum x))||]
+-#else
+-instance Lift DiffTime where
+-  lift x = [|toEnum $(lift (fromEnum x))|]
+-#endif
