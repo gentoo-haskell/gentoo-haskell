@@ -1,0 +1,9 @@
+diff -ur a/gen/Amazonka/ElastiCache/Types.hs b/gen/Amazonka/ElastiCache/Types.hs
+--- a/gen/Amazonka/ElastiCache/Types.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/gen/Amazonka/ElastiCache/Types.hs	2025-02-20 12:14:40.865077754 +0100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DisambiguateRecordFields #-}
++{-# LANGUAGE DuplicateRecordFields #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE StrictData #-}
+ {-# LANGUAGE NoImplicitPrelude #-}
