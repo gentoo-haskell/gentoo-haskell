@@ -5,20 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The types from this library are intended to be used with
-		&lt;http://hackage.haskell.org/package/amazonka amazonka&gt;, which provides
-		mechanisms for specifying AuthN/AuthZ information, sending requests,
-		and receiving responses.
-		
-		Lenses are used for constructing and manipulating types,
-		due to the depth of nesting of AWS types and transparency regarding
-		de/serialisation into more palatable Haskell values.
-		The provided lenses should be compatible with any of the major lens libraries
-		such as &lt;http://hackage.haskell.org/package/lens lens&gt; or
-		&lt;http://hackage.haskell.org/package/lens-family-core lens-family-core&gt;.
-		
-		See &quot;Network.AWS.ElasticSearch&quot; or &lt;https://aws.amazon.com/documentation/ the AWS documentation&gt;
-		to get started.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">amazonka-elasticsearch</remote-id>
+		<remote-id type="github">brendanhay/amazonka</remote-id>
+	</upstream>
 </pkgmetadata>
