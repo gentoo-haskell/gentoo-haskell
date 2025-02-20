@@ -5,7 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="examples">Install test executables</flag>
-	</use>
+	<upstream>
+		<remote-id type="hackage">data-reify</remote-id>
+		<remote-id type="github">ku-fpg/data-reify</remote-id>
+	</upstream>
 </pkgmetadata>
