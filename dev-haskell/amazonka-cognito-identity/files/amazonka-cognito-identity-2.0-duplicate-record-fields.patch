@@ -1,0 +1,9 @@
+diff -ur a/gen/Amazonka/CognitoIdentity/Types.hs b/gen/Amazonka/CognitoIdentity/Types.hs
+--- a/gen/Amazonka/CognitoIdentity/Types.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/gen/Amazonka/CognitoIdentity/Types.hs	2025-02-20 10:10:57.076349243 +0100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DisambiguateRecordFields #-}
++{-# LANGUAGE DuplicateRecordFields #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE StrictData #-}
+ {-# LANGUAGE NoImplicitPrelude #-}
