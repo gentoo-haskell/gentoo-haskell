@@ -1,0 +1,9 @@
+diff -ur a/gen/Amazonka/DirectConnect/Types.hs b/gen/Amazonka/DirectConnect/Types.hs
+--- a/gen/Amazonka/DirectConnect/Types.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/gen/Amazonka/DirectConnect/Types.hs	2025-02-20 10:49:57.531654564 +0100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DisambiguateRecordFields #-}
++{-# LANGUAGE DuplicateRecordFields #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE StrictData #-}
+ {-# LANGUAGE NoImplicitPrelude #-}
