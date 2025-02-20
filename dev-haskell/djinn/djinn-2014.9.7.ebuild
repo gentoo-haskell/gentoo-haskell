@@ -15,14 +15,12 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-RDEPEND=""
-DEPEND="${RDEPEND}
+DEPEND="
 	>=dev-haskell/cabal-1.8
 	dev-haskell/haskeline
 	dev-haskell/mtl
 	>=dev-lang/ghc-7.4.1
 "
 
-PATCHES=("${FILESDIR}"/${P}-ghc-84.patch)
+PATCHES=("${FILESDIR}"/${P}-ghc98.patch)
