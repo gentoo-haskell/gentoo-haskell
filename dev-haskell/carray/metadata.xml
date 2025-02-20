@@ -5,11 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A C-compatible array library.
-		
-		Provides both an immutable and mutable (in the IO monad) interface.
-		Includes utilities for multi-dimensional arrays, slicing and norms.
-		Memory is 16-byte aligned by default to enable use of vector instructions.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">carray</remote-id>
+	</upstream>
 </pkgmetadata>
