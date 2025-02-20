@@ -1,0 +1,12 @@
+Only in b: dist-newstyle
+diff -ur a/gen/Amazonka/OpsWorks/Types.hs b/gen/Amazonka/OpsWorks/Types.hs
+--- a/gen/Amazonka/OpsWorks/Types.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/gen/Amazonka/OpsWorks/Types.hs	2025-02-19 21:21:17.457036315 +0100
+@@ -2,6 +2,7 @@
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE StrictData #-}
+ {-# LANGUAGE NoImplicitPrelude #-}
++{-# LANGUAGE DuplicateRecordFields #-}
+ {-# OPTIONS_GHC -fno-warn-unused-matches #-}
+ 
+ -- Derived from AWS service descriptions, licensed under Apache 2.0.
