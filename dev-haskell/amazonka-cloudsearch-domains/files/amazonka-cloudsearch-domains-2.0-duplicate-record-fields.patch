@@ -1,0 +1,9 @@
+diff -ur a/gen/Amazonka/CloudSearchDomains/Types.hs b/gen/Amazonka/CloudSearchDomains/Types.hs
+--- a/gen/Amazonka/CloudSearchDomains/Types.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/gen/Amazonka/CloudSearchDomains/Types.hs	2025-02-20 09:38:20.641734725 +0100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DisambiguateRecordFields #-}
++{-# LANGUAGE DuplicateRecordFields #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE StrictData #-}
+ {-# LANGUAGE NoImplicitPrelude #-}
