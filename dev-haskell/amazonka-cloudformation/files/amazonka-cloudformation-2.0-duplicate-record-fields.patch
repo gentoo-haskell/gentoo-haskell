@@ -1,0 +1,13 @@
+diff -ur a/gen/Amazonka/CloudFormation/Types.hs b/gen/Amazonka/CloudFormation/Types.hs
+--- a/gen/Amazonka/CloudFormation/Types.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/gen/Amazonka/CloudFormation/Types.hs	2025-02-19 21:38:31.449638068 +0100
+@@ -1,8 +1,8 @@
+-{-# LANGUAGE DisambiguateRecordFields #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE StrictData #-}
+ {-# LANGUAGE NoImplicitPrelude #-}
+ {-# OPTIONS_GHC -fno-warn-unused-matches #-}
++{-# LANGUAGE DuplicateRecordFields #-}
+ 
+ -- Derived from AWS service descriptions, licensed under Apache 2.0.
+ 
