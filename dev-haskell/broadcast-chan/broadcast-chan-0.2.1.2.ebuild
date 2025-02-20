@@ -18,6 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="sync +threaded"
 
+CABAL_CHDEPS=(
+	'base >= 4.8 && < 4.19' 'base >= 4.8'
+	)
+
 RDEPEND=">=dev-haskell/unliftio-core-0.1.1:=[profile?] <dev-haskell/unliftio-core-0.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
