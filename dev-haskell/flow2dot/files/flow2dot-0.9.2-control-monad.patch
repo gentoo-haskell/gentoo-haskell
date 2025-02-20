@@ -1,0 +1,12 @@
+--- a/Text/FlowDiagram.hs
++++ b/Text/FlowDiagram.hs
+@@ -10,7 +10,8 @@
+                         ) where
+ 
+ import qualified Text.Dot as D
+-import Control.Monad.State (StateT, evalStateT, gets, modify, lift, zipWithM, zipWithM_, foldM, when)
++import Control.Monad (zipWithM, zipWithM_, foldM, when)
++import Control.Monad.State (StateT, evalStateT, gets, modify, lift)
+ import qualified Data.Map as M (Map, empty, lookup, insert, union, fromList)
+ import Data.List (intercalate, unfoldr, splitAt, findIndex, nub, sort)
+ import System.IO (readFile)

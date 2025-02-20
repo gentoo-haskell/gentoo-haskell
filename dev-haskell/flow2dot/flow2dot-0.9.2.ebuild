@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-control-monad.patch
+	)
 
 RDEPEND=">=dev-haskell/dotgen-0.4.3:=[profile?]
 	>=dev-haskell/mtl-1.0:=[profile?]
