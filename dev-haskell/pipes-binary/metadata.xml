@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">pipes-binary</remote-id>
+		<remote-id type="github">k0001/pipes-binary</remote-id>
+	</upstream>
 </pkgmetadata>
