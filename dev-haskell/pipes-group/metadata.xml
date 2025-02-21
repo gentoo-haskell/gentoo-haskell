@@ -5,16 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		@pipes-group@ uses @FreeT@ and lenses to group streams into
-		sub-streams.  Notable features include:
-		
-		* /Perfect Streaming/: Group elements without collecting them into memory
-		
-		* /Lens Support/: Use lenses to simplify many common operations
-		
-		@Pipes.Group@ contains the full documentation for this library.
-		
-		Read @Pipes.Group.Tutorial@ for an extensive tutorial.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">pipes-group</remote-id>
+		<remote-id type="github">Gabriella439/pipes-group</remote-id>
+	</upstream>
 </pkgmetadata>
