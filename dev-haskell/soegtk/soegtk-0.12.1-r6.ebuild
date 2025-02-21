@@ -16,7 +16,7 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-CABA_CHDEPS=(
+CABAL_CHDEPS=(
 		'cairo >= 0.12 && < 0.13' 'cairo >= 0.12' \
 		'gtk   >= 0.12 && < 0.13' 'gtk   >= 0.12'
 	)
