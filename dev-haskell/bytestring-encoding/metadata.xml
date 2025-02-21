@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">bytestring-encoding</remote-id>
+		<remote-id type="github">msakai/bytestring-encoding</remote-id>
+	</upstream>
 </pkgmetadata>
