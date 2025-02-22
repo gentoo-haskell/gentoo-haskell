@@ -16,10 +16,15 @@ DESCRIPTION="Configuration file reading & writing"
 HOMEPAGE="http://software.complete.org/configfile"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 
+S="${WORKDIR}/${MY_P}"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+RESTRICT+="test" #tests are outdated and would need their own patch
+
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+	)
 
 RDEPEND=">=dev-haskell/missingh-1.0.0:=[profile?]
 	dev-haskell/mtl:=[profile?]
@@ -29,8 +34,6 @@ RDEPEND=">=dev-haskell/missingh-1.0.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.2
 "
-
-S="${WORKDIR}/${MY_P}"
 
 src_configure() {
 	haskell-cabal_src_configure \
