@@ -1,0 +1,9 @@
+diff -ur a/gen/Amazonka/StorageGateway/Types.hs b/gen/Amazonka/StorageGateway/Types.hs
+--- a/gen/Amazonka/StorageGateway/Types.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/gen/Amazonka/StorageGateway/Types.hs	2025-02-20 14:10:21.458251495 +0100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DisambiguateRecordFields #-}
++{-# LANGUAGE DuplicateRecordFields #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE StrictData #-}
+ {-# LANGUAGE NoImplicitPrelude #-}
