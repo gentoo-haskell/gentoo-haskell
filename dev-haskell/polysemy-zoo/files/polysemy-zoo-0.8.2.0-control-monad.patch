@@ -1,0 +1,13 @@
+diff -ur a/test/FinalSpec.hs b/test/FinalSpec.hs
+--- a/test/FinalSpec.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/test/FinalSpec.hs	2025-02-22 12:04:22.978184364 +0100
+@@ -1,8 +1,8 @@
+-{-# LANGUAGE RecursiveDo #-}
+ module FinalSpec where
+ 
+ import Test.Hspec
+ 
++import Control.Monad (when)
+ import Control.Monad.State  hiding (MonadState(..), modify)
+ import Control.Monad.Except hiding (MonadError(..))
+ import Control.Monad.Writer hiding (MonadWriter(..), censor)
