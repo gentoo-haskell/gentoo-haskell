@@ -1,5 +1,19 @@
 # hololeap <hololeap@protonmail.com> (2025-02-21)
 #
+# These packages are not building with recent GHC versions and have not been
+# updated in years. Mask for removal in 30 days.
+#
+# Removal: 2025-03-23
+dev-haskell/monadloc
+dev-haskell/control-monad-exception
+dev-haskell/bitsyntax
+dev-haskell/base32-bytestring
+dev-haskell/hssyck
+dev-haskell/yaml-light
+dev-haskell/persistent-relational-record
+
+# hololeap <hololeap@protonmail.com> (2025-02-21)
+#
 # Upstream package has not had an update since 2013. If you try to use it,
 # you get various "undefined reference" linker errors, likely because it was
 # built with a much older version of sys-libs/readline in mind. Mask for
