@@ -1,0 +1,30 @@
+--- a/src/Database/Beam/AutoMigrate/Postgres.hs
++++ b/src/Database/Beam/AutoMigrate/Postgres.hs
+@@ -10,6 +10,7 @@
+   )
+ where
+ 
++import Control.Monad (guard)
+ import Control.Monad.State
+ import Data.Bits (shiftR, (.&.))
+ import Data.ByteString (ByteString)
+--- a/src/Database/Beam/AutoMigrate/Util.hs
++++ b/src/Database/Beam/AutoMigrate/Util.hs
+@@ -3,6 +3,7 @@
+ 
+ module Database.Beam.AutoMigrate.Util where
+ 
++import Control.Monad.Trans.Class (lift)
+ import Control.Applicative.Lift
+ import Control.Monad.Except
+ import Data.Char
+--- a/src/Database/Beam/AutoMigrate.hs
++++ b/src/Database/Beam/AutoMigrate.hs
+@@ -60,6 +60,7 @@
+ where
+ 
+ import Control.Exception
++import Control.Monad (when, forM_)
+ import Control.Monad.Except
+ import Control.Monad.Identity (runIdentity)
+ import Control.Monad.State.Strict

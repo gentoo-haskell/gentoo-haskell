@@ -361,10 +361,6 @@ dev-haskell/ihaskell-diagrams
 >=dev-haskell/gi-gdkx11-4
 dev-haskell/gi-gsk
 
-# hololeap <hololeap@protonmail.com> (2022-02-16)
-# Needs patching to build with ghc-9.0.2
-dev-haskell/beam-automigrate
-
 # hololeap <hololeap@protonmail.com> (2022-02-12)
 # Needs patching to build with current optparse-applicative
 dev-haskell/hi
