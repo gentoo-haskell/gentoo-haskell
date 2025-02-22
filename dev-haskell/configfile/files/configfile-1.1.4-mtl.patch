@@ -1,0 +1,131 @@
+From https://github.com/jgoerzen/configfile/pull/12
+From: Rodney Lorrimar <dev@rodney.id.au>
+Date: Wed, 24 May 2023 09:36:44 +0800
+Subject: [PATCH 01/13] Add compatibility with mtl>=2.3
+
+The module Control.Monad.Error is no longer exported by mtl>=2.3.
+
+Replace these imports with Control.Monad.Error.Class.
+
+Also remove the Error instance of CPError, due to this deprecated
+typeclass having been removed.
+--- a/src/Data/ConfigFile.hs
++++ b/src/Data/ConfigFile.hs
+@@ -106,7 +106,7 @@ import qualified Data.Map as Map
+ import Data.List
+ import System.IO(Handle)
+ import Data.Char
+-import Control.Monad.Error
++import Control.Monad.Error.Class
+ 
+ -- For interpolatingAccess
+ import Text.ParserCombinators.Parsec.Error (errorMessages, Message(..))
+@@ -797,7 +797,7 @@ Error\/IO monad.  That is, you will get an IO result back.  Here is a full
+ standalone example of doing that:
+ 
+ >import Data.ConfigFile
+->import Control.Monad.Error
++>import Control.Monad.Error.Class
+ >
+ >main = do
+ >          rv <- runErrorT $
+--- a/src/Data/ConfigFile/Monadic.hs
++++ b/src/Data/ConfigFile/Monadic.hs
+@@ -10,7 +10,7 @@ module Data.ConfigFile.Monadic (
+   set, setshow, remove_option, add_section, remove_section
+ ) where
+ 
+-import Control.Monad.Error
++import Control.Monad.Error.Class
+ import System.IO(Handle)
+ import Data.ConfigFile as Reexporting (SectionSpec, OptionSpec, ConfigParser(..),
+                                   CPErrorData, CPError, emptyCP, Get_C(..), sections, merge, to_string)
+--- a/src/Data/ConfigFile/Parser.hs
++++ b/src/Data/ConfigFile/Parser.hs
+@@ -33,7 +33,7 @@ module Data.ConfigFile.Parser
+        --main
+ ) where
+ import Text.ParserCombinators.Parsec
+-import Control.Monad.Error(throwError, MonadError)
++import Control.Monad.Error.Class(MonadError(..))
+ import Data.String.Utils
+ import Data.ConfigFile.Lexer
+ import System.IO(Handle, hGetContents)
+--- a/src/Data/ConfigFile/Types.hs
++++ b/src/Data/ConfigFile/Types.hs
+@@ -36,7 +36,7 @@ module Data.ConfigFile.Types (
+                                    ) where
+ import qualified Data.Map as Map
+ import Data.Char
+-import Control.Monad.Error
++import Control.Monad.Error.Class
+ 
+ {- | Internal output from parser -}
+ type ParseOutput = [(String, [(String, String)])]
+@@ -73,10 +73,6 @@ data CPErrorData = ParseError String        -- ^ Parse error
+ of the error. -}
+ type CPError = (CPErrorData, String)
+ 
+-instance Error CPError where
+-    noMsg = (OtherProblem "", "")
+-    strMsg x = (OtherProblem x, "")
+-
+ {- Removed due to Hugs incompatibility.
+ 
+ | Basic ConfigParser error handling.  The Left value indicates
+
+From 46991193f730b4d60422c2e0324ce99ba135ed53 Mon Sep 17 00:00:00 2001
+From: Rodney Lorrimar <dev@rodney.id.au>
+Date: Wed, 24 May 2023 11:17:45 +0800
+Subject: [PATCH 11/13] Remove Makefile
+
+With the .cabal file changes, it probably won't work any more.
+--- a/ConfigFile.cabal
++++ b/ConfigFile.cabal
+@@ -6,7 +6,6 @@ Author: John Goerzen
+ Copyright: Copyright (c) 2004-2014 John Goerzen
+ license-file: COPYRIGHT
+ extra-source-files: README,
+-                    Makefile,
+                     COPYRIGHT, LGPL-2.1, BSD3,
+                     testsrc/ConfigParser/test.cfg
+ Category: Parsing
+--- a/Makefile
++++ /dev/null
+@@ -1,36 +0,0 @@
+-all: setup
+-	@echo "Please use Cabal to build this package; not make."
+-	./setup configure
+-	./setup build
+-
+-setup: Setup.hs
+-	ghc --make -package Cabal -o setup Setup.hs
+-
+-install: setup
+-	./setup install
+-
+-clean:
+-	-runghc Setup.hs clean
+-	-rm -rf html `find . -name "*.o"` `find . -name "*.hi" | grep -v debian` \
+-		`find . -name "*~" | grep -v debian` *.a setup dist testsrc/runtests \
+-		local-pkg doctmp
+-	-rm -rf testtmp/* testtmp*
+-
+-.PHONY: test
+-test: test-ghc test-hugs
+-	@echo ""
+-	@echo "All tests pass."
+-
+-test-hugs: setup
+-	@echo " ****** Running hugs tests"
+-	./setup configure -f buildtests --hugs --extra-include-dirs=/usr/lib/hugs/include
+-	./setup build
+-	runhugs -98 +o -P$(PWD)/dist/scratch:$(PWD)/dist/scratch/programs/runtests: \
+-		dist/scratch/programs/runtests/Main.hs
+-
+-test-ghc: setup
+-	@echo " ****** Building GHC tests"
+-	./setup configure -f buildtests
+-	./setup build
+-	@echo " ****** Running GHC tests"
+-	./dist/build/runtests/runtests
