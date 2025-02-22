@@ -7,6 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">cryptohash-sha512</remote-id>
-		<remote-id type="github">hvr/cryptohash-sha512</remote-id>
+		<remote-id type="github">haskell-hvr/cryptohash-sha512</remote-id>
 	</upstream>
 </pkgmetadata>
