@@ -15,6 +15,10 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-Cabal-3.14.patch
+	)
+
 RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	>=dev-haskell/glib-0.13.0.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/text-0.11.0.6:=[profile?] <dev-haskell/text-2.2:=[profile?]
@@ -24,7 +28,7 @@ RDEPEND=">=dev-haskell/cairo-0.13.0.0:=[profile?] <dev-haskell/cairo-0.14:=[prof
 	x11-libs/pango[introspection]
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-3.13
+	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-3.15
 "
 BDEPEND=">=dev-haskell/gtk2hs-buildtools-0.13.2.0 <dev-haskell/gtk2hs-buildtools-0.14
 	virtual/pkgconfig
