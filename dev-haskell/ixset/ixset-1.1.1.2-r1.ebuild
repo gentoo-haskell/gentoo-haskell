@@ -15,9 +15,13 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-recent-ghc.patch
+	)
+
 RDEPEND="dev-haskell/safecopy:=[profile?]
 	dev-haskell/syb:=[profile?]
-	>=dev-haskell/syb-with-class-0.6.1:=[profile?]
+	>=dev-haskell/syb-with-class-0.6.1.14:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}

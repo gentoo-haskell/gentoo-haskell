@@ -1,0 +1,193 @@
+From https://github.com/Happstack/ixset/pull/7 
+From: Sumit Raja <sumitraja@gmail.com>
+Date: Thu, 2 Jan 2025 18:56:12 +1100
+Subject: [PATCH] Update to use GHC 9.4.8 to 9.12.1
+
+--- a/ixset.cabal
++++ b/ixset.cabal
+@@ -11,7 +11,7 @@ homepage:            http://happstack.com
+ Category:            Data Structures
+ Build-Type:          Simple
+ Cabal-Version:       >= 1.10
+-tested-with:         GHC == 7.8.4, GHC == 7.10.3, GHC == 8.0.2, GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.4, GHC == 8.10.7, GHC == 9.0.2, GHC == 9.2.2
++tested-with:         GHC == 9.4.8, GHC == 9.6.6, GHC == 9.8.2, GHC == 9.8.4, GHC == 9.10.1, GHC == 9.12.1
+ 
+ source-repository head
+     type:     git
+@@ -26,7 +26,7 @@ Library
+   Build-Depends:       containers >=0.5.5.1,
+                        safecopy,
+                        template-haskell,
+-                       syb-with-class >= 0.6.1
++                       syb-with-class >=0.6.1.14
+ 
+   hs-source-dirs:      src
+   Exposed-modules:
+--- a/src/Data/IxSet.hs
++++ b/src/Data/IxSet.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE UndecidableInstances, OverlappingInstances, FlexibleContexts, FlexibleInstances,
++{-# LANGUAGE UndecidableInstances, FlexibleContexts, FlexibleInstances,
+              MultiParamTypeClasses, TemplateHaskell, RankNTypes,
+              FunctionalDependencies, DeriveDataTypeable,
+              GADTs, CPP, ScopedTypeVariables #-}
+@@ -86,7 +86,6 @@ module Data.IxSet
+      -- * Set type
+      IxSet,
+      Indexable(..),
+-     Proxy(..),
+      noCalcs,
+      inferIxSet,
+      ixSet,
+@@ -167,24 +166,33 @@ import qualified Data.List      as List
+ import           Data.Map       (Map)
+ import qualified Data.Map       as Map
+ import           Data.Maybe     (fromMaybe)
+-import           Data.Monoid    (Monoid(mempty, mappend))
+ import           Data.SafeCopy  (SafeCopy(..), contain, safeGet, safePut)
+ import           Data.Set       (Set)
+ import qualified Data.Set       as Set
+-import           Data.Typeable  (Typeable, cast, typeOf)
+-import Language.Haskell.TH      as TH
+-import           Data.Semigroup
+-
+--------------------------------------------------
+--- Type proxies
+-
+-data Proxy a = Proxy
+-
+-mkProxy :: a -> Proxy a
+-mkProxy _ = Proxy
+-
+-asProxyType :: a -> Proxy a -> a
+-asProxyType a _ = a
++import           Data.Typeable  (Typeable, cast, typeOf, Proxy)
++import Language.Haskell.TH as TH
++    ( mkName,
++      varP,
++      varE,
++      conE,
++      appE,
++      listE,
++      sigE,
++      normalB,
++      valD,
++      varT,
++      conT,
++      appT,
++      Q,
++      Dec(TySynD, DataD, NewtypeD),
++      Name,
++      forallT,
++      tySynD,
++      instanceD,
++      reify,
++      Info(VarI, TyConI),
++      Specificity(SpecifiedSpec),
++      TyVarBndr(..) )
+ 
+ -- the core datatypes
+ 
+@@ -345,13 +353,13 @@ inferIxSet ixset typeName calName entryPoints
+              names = map tyVarBndrToName binders
+ 
+              typeCon = List.foldl' appT (conT typeName) (map varT names)
+-#if MIN_VERSION_template_haskell(2,4,0)
+-             mkCtx = classP
+-#else
++#if MIN_VERSION_template_haskell(2,10,0)
+              -- mkType :: Name -> [TypeQ] -> TypeQ
+              mkType con = foldl appT (conT con)
+ 
+              mkCtx = mkType
++#else
++             mkCtx = classP
+ #endif
+              dataCtxConQ = [mkCtx ''Data [varT name] | name <- names]
+              fullContext = do
+@@ -359,16 +367,13 @@ inferIxSet ixset typeName calName entryPoints
+                 return (context ++ dataCtxCon)
+          case calInfo of
+ #if MIN_VERSION_template_haskell(2,11,0)
+-           VarI _ t _ ->
++           VarI _ _ _ ->
+ #else
+            VarI _ t _ _ ->
+ #endif
+-               let calType = getCalType t
+-                   getCalType (ForallT _names _ t') = getCalType t'
+-                   getCalType (AppT (AppT ArrowT _) t') = t'
+-                   getCalType t' = error ("Unexpected type in getCalType: " ++ pprint t')
++               let 
+ #if MIN_VERSION_template_haskell(2,17,0)
+-                   binders' = map (fmap (\() -> SpecifiedSpec)) (binders :: [TyVarBndr ()])
++                   binders' = map (fmap (\_ -> SpecifiedSpec)) binders
+ #else
+                    binders' = binders
+ #endif
+@@ -385,18 +390,7 @@ inferIxSet ixset typeName calName entryPoints
+                      return $ [i, ixType']  -- ++ d
+            _ -> error "IxSet.inferIxSet calInfo unexpected match"
+ 
+--- | Version of 'instanceD' that takes in a Q [Dec] instead of a [Q Dec]
+--- and filters out signatures from the list of declarations.
+-instanceD' :: CxtQ -> TypeQ -> Q [Dec] -> DecQ
+-instanceD' ctxt ty decs =
+-    do decs' <- decs
+-       let decs'' = filter (not . isSigD) decs'
+-       instanceD ctxt ty (map return decs'')
+ 
+--- | Returns true if the Dec matches a SigD constructor.
+-isSigD :: Dec -> Bool
+-isSigD (SigD _ _) = True
+-isSigD _ = False
+ 
+ #if MIN_VERSION_template_haskell(2,17,0)
+ tyVarBndrToName :: TyVarBndr a -> Name
+@@ -809,7 +803,6 @@ instance (Indexable a, Typeable a, Ord a) => Semigroup (IxSet a) where
+     
+ instance (Indexable a, Typeable a, Ord a) => Monoid (IxSet a) where
+     mempty = empty
+-    mappend = union
+ 
+ -- | Statistics about 'IxSet'. This function returns quadruple
+ -- consisting of 1. total number of elements in the set 2. number of
+--- a/src/Data/IxSet/Ix.hs
++++ b/src/Data/IxSet/Ix.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE UndecidableInstances, OverlappingInstances, FlexibleContexts, FlexibleInstances,
++{-# LANGUAGE UndecidableInstances, FlexibleContexts, FlexibleInstances,
+              MultiParamTypeClasses, TemplateHaskell, PolymorphicComponents,
+              DeriveDataTypeable,ExistentialQuantification #-}
+ 
+@@ -21,11 +21,11 @@ module Data.IxSet.Ix
+ 
+ import           Data.Generics hiding (GT)
+ import qualified Data.Generics.SYB.WithClass.Basics as SYBWC
+-import           Data.List  (foldl')
+ import           Data.Map   (Map)
+ import qualified Data.Map.Strict as Map
+ import           Data.Set   (Set)
+ import qualified Data.Set   as Set
++import Data.Foldable (foldl')
+ 
+ -- the core datatypes
+ 
+@@ -52,8 +52,7 @@ ixConstr = SYBWC.mkConstr ixDataType "Ix" [] SYBWC.Prefix
+ ixDataType :: SYBWC.DataType
+ ixDataType = SYBWC.mkDataType "Ix" [ixConstr]
+ 
+-instance (SYBWC.Typeable Ix, SYBWC.Data ctx a, SYBWC.Sat (ctx (Ix a)))
+-       => SYBWC.Data ctx (Ix a) where
++instance (SYBWC.Sat (ctx (Ix a)), Typeable a) => SYBWC.Data ctx (Ix a) where
+     gfoldl _ _ _ _ = error "gfoldl Ix" :: w (Ix a)
+     toConstr _ (Ix _ _)    = ixConstr
+     gunfold _ _ _ _ = error "gunfold Ix" :: c (Ix a)
+--- a/tests/Data/IxSet/Tests.hs
++++ b/tests/Data/IxSet/Tests.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE DeriveDataTypeable, TemplateHaskell, OverlappingInstances, UndecidableInstances, TemplateHaskell, KindSignatures #-}
++{-# LANGUAGE DeriveDataTypeable, TemplateHaskell, UndecidableInstances, TemplateHaskell, KindSignatures #-}
+ 
+ -- Check that the SYBWC Data instance for IxSet works, by testing
+ -- that going to and from XML works.

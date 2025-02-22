@@ -1,0 +1,102 @@
+From https://github.com/mvoidex/simple-log/pull/6
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 19 Feb 2025 15:13:34 +0100
+Subject: [PATCH] Support current versions of mtl and base
+
+---
+ simple-log.cabal              | 22 +++++++++++-----------
+ src/System/Log/Simple/Base.hs |  6 ++++--
+ src/System/Log/Simple/File.hs |  4 ++++
+ 3 files changed, 19 insertions(+), 13 deletions(-)
+
+diff --git a/simple-log.cabal b/simple-log.cabal
+index b0b694b..6422084 100644
+--- a/simple-log.cabal
++++ b/simple-log.cabal
+@@ -21,24 +21,24 @@ library
+     build-depends:
+       semigroups >= 0.18.2 && < 0.19
+   build-depends:
+-    base >= 4.0 && < 6,
++    base >= 4.9 && < 6,
+     async >= 2.0 && < 3.0,
+     base-unicode-symbols >= 0.2 && < 0.3,
+     containers >= 0.5 && < 0.7,
+     data-default >= 0.5 && < 0.8,
+-    deepseq >= 1.4 && < 1.5,
++    deepseq >= 1.4 && < 1.7,
+     directory >= 1.2 && < 1.4,
+     exceptions >= 0.8 && < 0.11,
+     filepath >= 1.4 && < 1.5,
+-    hformat == 0.3.*,
+-    microlens == 0.4.*,
++    hformat >= 0.3 && < 0.4,
++    microlens >= 0.4 && < 0.5,
+     microlens-platform >= 0.3 && < 0.5,
+-    mmorph >= 1.0 && < 1.2,
+-    mtl >= 2.2 && < 2.3,
++    mmorph >= 1.0 && < 1.3,
++    mtl >= 2.2 && < 2.4,
+     SafeSemaphore >= 0.9.0 && < 1.0.0,
+-    text >= 0.11.0 && < 2.0.0,
+-    time >= 1.5 && < 1.10,
+-    transformers >= 0.4 && < 0.6
++    text >= 0.11.0 && < 2.2,
++    time >= 1.5 && < 1.15,
++    transformers >= 0.5 && < 0.7
+   exposed-modules:
+     System.Log.Simple
+     System.Log.Simple.Base
+@@ -62,6 +62,6 @@ test-suite test
+   build-depends:
+     base >= 4.0 && < 6,
+     simple-log,
+-    hspec >= 2.3 && < 2.8,
++    hspec >= 2.3 && < 2.12,
+     microlens-platform >= 0.3 && < 0.5,
+-    text >= 0.11.0 && < 2.0.0
++    text >= 0.11.0 && < 2.2.0
+diff --git a/src/System/Log/Simple/Base.hs b/src/System/Log/Simple/Base.hs
+index 52c97e6..e3ce70b 100644
+--- a/src/System/Log/Simple/Base.hs
++++ b/src/System/Log/Simple/Base.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE OverloadedStrings, TemplateHaskell, RankNTypes, TypeFamilies #-}
++{-# LANGUAGE OverloadedStrings, TemplateHaskell, RankNTypes, TypeFamilies, CPP #-}
+ 
+ module System.Log.Simple.Base (
+ 	Level(..), level, level_,
+@@ -20,13 +20,15 @@ import Control.Concurrent
+ import qualified Control.Concurrent.Async as A
+ import Control.DeepSeq
+ import Control.Monad
++#if MIN_VERSION_mtl(2,3,0)
++import Control.Monad.IO.Class (MonadIO, liftIO)
++#endif
+ import Control.Monad.Cont
+ import Data.Default
+ import Data.Function (fix)
+ import Data.Map (Map)
+ import qualified Data.Map as M
+ import Data.Maybe (fromMaybe)
+-import Data.Semigroup (Semigroup(..))
+ import Data.Text (Text)
+ import qualified Data.Text as T
+ import Data.Time
+diff --git a/src/System/Log/Simple/File.hs b/src/System/Log/Simple/File.hs
+index 419d655..2e1cc26 100644
+--- a/src/System/Log/Simple/File.hs
++++ b/src/System/Log/Simple/File.hs
+@@ -1,8 +1,12 @@
++{-# LANGUAGE CPP #-}
+ module System.Log.Simple.File (
+ 	file
+ 	) where
+ 
+ import Control.Monad.Cont
++#if MIN_VERSION_mtl(2,3,0)
++import Control.Monad.IO.Class (liftIO)
++#endif
+ import Data.Text (Text)
+ import System.Log.Simple.Base
+ import System.FilePath
