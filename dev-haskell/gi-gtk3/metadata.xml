@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">texrunner</remote-id>
-		<remote-id type="github">cchalmers/texrunner</remote-id>
+		<remote-id type="hackage">gi-gtk3</remote-id>
+		<remote-id type="github">haskell-gi/haskell-gi</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -1,0 +1,49 @@
+Only in b: dist-newstyle
+diff -ur a/src/Djinn.hs b/src/Djinn.hs
+--- a/src/Djinn.hs	2014-09-07 17:41:03.000000000 +0200
++++ b/src/Djinn.hs	2025-02-20 15:14:51.153602667 +0100
+@@ -9,7 +9,7 @@
+ import Data.Ratio
+ import Text.ParserCombinators.ReadP
+ import Control.Monad(when)
+-import Control.Monad.Error()
++import Control.Monad.Except()
+ import System.Exit
+ import System.Environment
+ 
+diff -ur a/src/HCheck.hs b/src/HCheck.hs
+--- a/src/HCheck.hs	2014-09-07 17:41:03.000000000 +0200
++++ b/src/HCheck.hs	2025-02-20 15:14:32.457068358 +0100
+@@ -5,7 +5,8 @@
+ module HCheck(htCheckEnv, htCheckType) where
+ import Data.List(union)
+ --import Control.Monad.Trans
+-import Control.Monad.Error()
++import Control.Monad(liftM2)
++import Control.Monad.Except()
+ import Control.Monad.State
+ import Data.IntMap(IntMap, insert, (!), empty)
+ import Data.Graph(stronglyConnComp, SCC(..))
+diff -ur a/src/HTypes.hs b/src/HTypes.hs
+--- a/src/HTypes.hs	2014-09-07 17:41:03.000000000 +0200
++++ b/src/HTypes.hs	2025-02-20 15:13:01.941042468 +0100
+@@ -7,8 +7,9 @@
+         prHSymbolOp,
+         htNot, isHTUnion, getHTVars, substHT,
+         HClause, HPat, HExpr(HEVar), hPrClause, termToHExpr, termToHClause, getBinderVars) where
+-import Text.PrettyPrint.HughesPJ(Doc, renderStyle, style, text, (<>), parens, ($$), vcat, punctuate,
++import Text.PrettyPrint.HughesPJ(Doc, renderStyle, style, text, parens, ($$), vcat, punctuate,
+          sep, fsep, nest, comma, (<+>))
++import qualified Text.PrettyPrint.HughesPJ as TPH ((<>))
+ import Data.Char(isAlphaNum, isAlpha, isUpper)
+ import Data.List(union, (\\))
+ import Control.Monad(zipWithM)
+@@ -218,7 +219,7 @@
+ ppPat _ (HPVar s) = text s
+ ppPat _ (HPCon s) = text s
+ ppPat _ (HPTuple ps) = parens $ fsep $ punctuate comma (map (ppPat 0) ps)
+-ppPat _ (HPAt s p) = text s <> text "@" <> ppPat 10 p
++ppPat _ (HPAt s p) = text s TPH.<> text "@" TPH.<> ppPat 10 p
+ ppPat p (HPApply a b) = pparens (p > 1) $ ppPat 1 a <+> ppPat 2 b
+ 
+ ppExpr :: Int -> HExpr -> Doc

@@ -8,4 +8,8 @@
 	<use>
 		<flag name="dump">Build the executable &quot;dump&quot;</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">ghc-prof</remote-id>
+		<remote-id type="github">maoe/ghc-prof</remote-id>
+	</upstream>
 </pkgmetadata>
