@@ -26,6 +26,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'nothunks >=0.1.1.0 && <0.3' 'nothunks >=0.1.1.0'
+	)
+
 RDEPEND="
 	dev-haskell/cabal:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
@@ -41,7 +45,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/cabal-tree-diff
 		>=dev-haskell/clock-0.8 <dev-haskell/clock-0.9
 		>=dev-haskell/diff-0.4 <dev-haskell/diff-0.6
-		>=dev-haskell/nothunks-0.1.1.0 <dev-haskell/nothunks-0.3
+		>=dev-haskell/nothunks-0.1.1.0
 		>=dev-haskell/optparse-applicative-0.13.2.0 <dev-haskell/optparse-applicative-0.19
 		>=dev-haskell/quickcheck-2.14 <dev-haskell/quickcheck-2.15
 		>=dev-haskell/tar-0.5.0.3 <dev-haskell/tar-0.7

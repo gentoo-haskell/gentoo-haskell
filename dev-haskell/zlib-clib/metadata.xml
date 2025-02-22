@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">hopfli</remote-id>
-		<remote-id type="github">ananthakumaran/hopfli</remote-id>
+		<remote-id type="hackage">zlib-clib</remote-id>
+		<remote-id type="github">haskell/zlib</remote-id>
 	</upstream>
 </pkgmetadata>
