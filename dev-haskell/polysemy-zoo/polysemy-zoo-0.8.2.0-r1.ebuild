@@ -17,7 +17,13 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'constraints >=0.10.1 && <0.14' 'constraints >=0.10.1'
+	'text >=1.1.0 && <2.1' 'text >=1.1.0'
+	'ghc-prim >=0.5.2 && <0.10' 'ghc-prim >=0.5.2'
 )
+
+PATCHES=(
+	"${FILESDIR}"/${P}-control-monad.patch
+	)
 
 RDEPEND="
 	>=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-3:=[profile?]
@@ -27,7 +33,7 @@ RDEPEND="
 	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/reflection-2.1.4:=[profile?] <dev-haskell/reflection-3.0.0:=[profile?]
 	>=dev-haskell/streaming-0.2:=[profile?] <dev-haskell/streaming-0.3:=[profile?]
-	>=dev-haskell/text-1.1.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
+	>=dev-haskell/text-1.1.0:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
