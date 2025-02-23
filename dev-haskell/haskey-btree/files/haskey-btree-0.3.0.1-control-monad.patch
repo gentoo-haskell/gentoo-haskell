@@ -1,0 +1,12 @@
+Control.Monad.State no longer re-exports replicateM
+
+--- a/tests/Integration/WriteOpenRead/Transactions.hs
++++ b/tests/Integration/WriteOpenRead/Transactions.hs
+@@ -4,6 +4,7 @@
+ import Test.QuickCheck
+ 
+ import Control.Applicative ((<$>), (<*>), pure)
++import Control.Monad (replicateM)
+ import Control.Monad.State
+ 
+ import Data.List (inits)
