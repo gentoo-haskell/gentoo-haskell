@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">hspec-smallcheck</remote-id>
+		<remote-id type="github">hspec/hspec-smallcheck</remote-id>
+	</upstream>
 </pkgmetadata>
