@@ -15,22 +15,21 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+		'haskell-gi-base >=0.20 && <0.24' 'haskell-gi-base >=0.20' \
+		'base >=4.13.0.0 && <4.14' 'base >=4.13.0.0'
+		'reactive-banana >=1.2.1.0 && <1.3' 'reactive-banana >=1.2.1.0'
+		'transformers >=0.5.2.0 && <0.6' 'transformers >=0.5.2.0'
+		'text >=1.2.2.1 && <1.3' 'text >= 1.2.2.1'
+	)
 
 RDEPEND=">=dev-haskell/gi-gtk-3.0.1.1:=[profile?] <dev-haskell/gi-gtk-5.0:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.20:=[profile?]
-	>=dev-haskell/reactive-banana-1.2.1.0:=[profile?] <dev-haskell/reactive-banana-1.3:=[profile?]
-	>=dev-haskell/text-1.2.2.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/reactive-banana-1.2.1.0:=[profile?]
+	>=dev-haskell/text-1.2.2.1:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'haskell-gi-base >=0.20 && <0.24' 'haskell-gi-base >=0.20' \
-		'base >=4.13.0.0 && <4.14' 'base >=4.13.0.0'
-}
