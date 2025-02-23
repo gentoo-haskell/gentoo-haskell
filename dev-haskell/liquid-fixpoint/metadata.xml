@@ -7,6 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="executable">Build the fixpoint executable</flag>
+		<flag name="link-z3-as-a-library">link z3 as a library for faster interactions with the SMT solver</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">liquid-fixpoint</remote-id>
