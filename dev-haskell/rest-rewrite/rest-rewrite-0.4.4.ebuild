@@ -41,12 +41,6 @@ BDEPEND="
 
 src_prepare() {
 	haskell-cabal_src_prepare
-
-	if use test; then
-		# Requires the 'graphs' folder to exist for tests but it is not included in
-		# the tarball.
-		mkdir -v "${S}/graphs" || die
-	fi
 }
 
 pkg_postinst() {
