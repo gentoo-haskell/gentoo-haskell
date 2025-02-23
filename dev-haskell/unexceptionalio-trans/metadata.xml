@@ -5,15 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		UnexceptionalIO provides a basic type to witness having caught all
-		exceptions you can safely handle.  This library builds on that with
-		transformers like ExceptT to provide a more ergonomic tool for many
-		cases.
-		
-		It is intended that you use qualified imports with this library.
-		
-		&gt; import UnexceptionalIO.Trans (UIO)
-		&gt; import qualified UnexceptionalIO.Trans as UIO
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">unexceptionalio-trans</remote-id>
+		<remote-id type="github">singpolyma/unexceptionalio-trans</remote-id>
+	</upstream>
 </pkgmetadata>
