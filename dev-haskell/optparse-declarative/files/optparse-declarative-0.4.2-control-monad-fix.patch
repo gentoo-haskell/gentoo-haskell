@@ -1,0 +1,10 @@
+--- a/src/Options/Declarative.hs
++++ b/src/Options/Declarative.hs
+@@ -45,6 +45,7 @@
+ import           Control.Applicative
+ import           Control.Monad
+ import           Control.Monad.Catch
++import Control.Monad.Fix
+ import           Control.Monad.Reader
+ import           Data.List
+ import           Data.Maybe
