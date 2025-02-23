@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">postgresql-binary</remote-id>
+		<remote-id type="github">nikita-volkov/postgresql-binary</remote-id>
+	</upstream>
 </pkgmetadata>
