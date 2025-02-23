@@ -5,4 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="examples">compile (and install) the example programs</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">cgi</remote-id>
+		<remote-id type="github">cheecheeo/haskell-cgi</remote-id>
+	</upstream>
 </pkgmetadata>
