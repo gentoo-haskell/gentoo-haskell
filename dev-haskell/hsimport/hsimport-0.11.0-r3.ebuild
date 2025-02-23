@@ -21,6 +21,9 @@ CABAL_CHDEPS=(
 	'tasty >=0.9.0.1 && <1.3' 'tasty >=0.9.0.1'
 	'attoparsec >=0.10.4.0 && <0.14' 'attoparsec >=0.10.4.0'
 	'dyre ==0.8.*' 'dyre >=0.8'
+	'text >=0.11.3.1 && <1.3' 'text >=0.11.3.1'
+	'bytestring >=0.10.8.2 && <0.11' 'bytestring >=0.10.8.2'
+	'mtl >=2.1.2 && <2.3' 'mtl >=2.1.2'
 )
 
 RDEPEND="
@@ -31,7 +34,7 @@ RDEPEND="
 	>=dev-haskell/ilist-0.1:=[profile?] <dev-haskell/ilist-0.5:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/split-0.2.2:=[profile?] <dev-haskell/split-0.3:=[profile?]
-	>=dev-haskell/text-0.11.3.1:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.11.3.1:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
