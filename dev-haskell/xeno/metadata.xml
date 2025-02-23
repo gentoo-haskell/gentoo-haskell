@@ -7,5 +7,10 @@
 	</maintainer>
 	<use>
 		<flag name="libxml2">Include libxml2 in the benchmarks</flag>
+		<flag name="whitespace-around-equals">Correctly parse whitespace around the = characters in attribute definitions</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">xeno</remote-id>
+		<remote-id type="github">ocramz/xeno</remote-id>
+	</upstream>
 </pkgmetadata>
