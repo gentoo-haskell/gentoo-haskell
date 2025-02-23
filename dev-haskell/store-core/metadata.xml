@@ -8,4 +8,8 @@
 	<use>
 		<flag name="force-alignment">Adds -DALIGNED_MEMORY to cpp-options</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">store-core</remote-id>
+		<remote-id type="github">fpco/store</remote-id>
+	</upstream>
 </pkgmetadata>
