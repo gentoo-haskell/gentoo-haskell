@@ -653,9 +653,17 @@ src_configure() {
 	###
 
 	# Control the build flavour
-	local hadrian_flavour="default"
+	local hadrian_flavour="default" f
 	use profile || hadrian_flavour+="+no_profiled_libs"
 	use llvm && hadrian_flavour+="+llvm"
+
+	# Enable production of native debugging information (via GHC/GCC's `-g3`)
+	# during stage1+ compilations. (Toggled via detecting -g* in CFLAGS)
+	for f in $CFLAGS; do
+		case $f in
+			-g*) hadrian_flavour+="+debug_info"; break ;;
+		esac
+	done
 
 	: ${HADRIAN_FLAVOUR:="${hadrian_flavour}"}
 
