@@ -1,3 +1,6 @@
 slotmove dev-haskell/gtk 2 0
 slotmove dev-haskell/gtk-serialized-events 2 0
 slotmove dev-haskell/soegtk 2 0
+slotmove dev-haskell/wxc 3.0 3.2
+slotmove dev-haskell/wxdirect 3.0 3.2
+slotmove dev-haskell/wxcore 3.0 3.2

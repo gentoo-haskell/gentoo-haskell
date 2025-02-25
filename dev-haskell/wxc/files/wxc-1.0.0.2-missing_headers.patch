@@ -1,0 +1,10 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -141,7 +141,6 @@
+                 include/wxc/textstream.h;
+                 include/wxc/wrapper.h;
+                 include/wxc/wxc.h;
+-                include/wxc/wxc_def.h;
+                 include/wxc/wxc_glue.h;
+                 include/wxc/wxc_types.h;
+ )
