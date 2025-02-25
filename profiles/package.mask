@@ -1,3 +1,10 @@
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
+#
+# dev-haskell/doctest >= 0.23 needs specific versions of ghc to pass tests.
+# Masking globally, and then unmasking by version
+
+>=dev-haskell/doctest-0.23
+
 # hololeap <hololeap@protonmail.com> (2025-02-21)
 #
 # These packages are not building with recent GHC versions and have not been
