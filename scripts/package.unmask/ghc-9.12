@@ -9,6 +9,7 @@
 <dev-haskell/cabal-install-3.15
 <dev-haskell/cabal-tree-diff-3.15
 <dev-haskell/cabal-test-3.15
+<dev-haskell/doctest-0.25
 <dev-haskell/exceptions-0.10.10
 <dev-haskell/ghc-exactprint-1.13.0.0
 <dev-haskell/haddock-2.31.0
