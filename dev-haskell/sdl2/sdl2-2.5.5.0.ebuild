@@ -17,6 +17,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples no-linear"
 
+RESTRICT=test # requires functional audio and video devices (bad for sandboxes)
+
 RDEPEND="
 	>=dev-haskell/statevar-1.1.0.0:=[profile?] <dev-haskell/statevar-1.3
 	>=dev-haskell/text-1.1.0.0:=[profile?] <dev-haskell/text-2.1
