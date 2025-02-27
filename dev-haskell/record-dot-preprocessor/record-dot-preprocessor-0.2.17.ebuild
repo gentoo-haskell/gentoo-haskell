@@ -18,7 +18,7 @@ IUSE="executable"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.2.12-add-executable-flag.patch"
-#	"${FILESDIR}/${PN}-0.2.14-fix-tests.patch"
+	"${FILESDIR}/${PN}-0.2.17-fix-tests.patch"
 )
 
 RDEPEND="

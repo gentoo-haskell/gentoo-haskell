@@ -1,0 +1,47 @@
+From 74586785020016c23da278a7092a31ed301a206f Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Wed, 26 Feb 2025 22:02:16 -0700
+Subject: [PATCH 1/1] Fix tests using PackageImports extension
+
+Tests can fail due to ambiguous module. Use PackageImports extension as
+workaround.
+
+    examples/Both.hs:10:1: error:
+        Ambiguous module name ‘Data.Kind’:
+          it was found in multiple packages: base-4.15.1.0 kinds-0.0.1.5
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/examples/Both.hs
++++ b/examples/Both.hs
+@@ -4,7 +4,7 @@ import Control.Exception
+ import Data.Version
+ import Data.Proxy
+ import Data.Functor.Identity (Identity(..))
+-import qualified Data.Kind as T
++import qualified "base" Data.Kind as T
+ 
+ 
+ main :: IO ()
+--- a/test/PluginExample.hs
++++ b/test/PluginExample.hs
+@@ -1,5 +1,6 @@
+ {-# LANGUAGE CPP #-}
+ {-# LANGUAGE GADTs #-}
++{-# LANGUAGE PackageImports #-}
+ 
+ #if __GLASGOW_HASKELL__ < 806
+ 
+--- a/test/Test.hs
++++ b/test/Test.hs
+@@ -44,7 +44,7 @@ main = do
+                 writeFile inp $ header ++ "\n" ++ "module Main where\n" ++ src
+                 putStrLn $ "# Preprocessor " ++ takeFileName file
+                 withArgs [file,inp,out] Preprocessor.main
+-                system_ $ "runhaskell " ++ out
++                system_ $ "runhaskell -XPackageImports " ++ out
+     putStrLn "Success"
+ 
+ -- Blacklist tests we know aren't compatible
+-- 
+2.45.3
+
