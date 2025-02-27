@@ -15,6 +15,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+RESTRICT="test" # requires running redis server
+
 RDEPEND=">=dev-haskell/hedis-0.15:=[profile?] <dev-haskell/hedis-0.16:=[profile?]
 	dev-haskell/path-pieces:=[profile?]
 	>=dev-haskell/serversession-1.0:=[profile?] <dev-haskell/serversession-1.1:=[profile?]
