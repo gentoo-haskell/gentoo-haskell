@@ -15,7 +15,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RESTRICT="tests" # Usage: hpqtypes-tests <connection info string> [test-framework args]
+RESTRICT="test" # Usage: hpqtypes-tests <connection info string> [test-framework args]
 
 RDEPEND="dev-db/postgresql
 	>=dev-haskell/aeson-1.0:=[profile?]
