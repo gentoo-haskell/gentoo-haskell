@@ -32,6 +32,11 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/hspec-2.1 <dev-haskell/hspec-3
 		>=dev-haskell/quickcheck-2.3 <dev-haskell/quickcheck-2.15 )
 "
+BDEPEND="
+	test? (
+		media-gfx/graphviz
+	)
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
