@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">prolog</remote-id>
+		<remote-id type="github">mfourne/prolog</remote-id>
+	</upstream>
 </pkgmetadata>
