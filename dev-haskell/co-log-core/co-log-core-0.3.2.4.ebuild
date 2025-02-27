@@ -15,6 +15,10 @@ LICENSE="MPL-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.3.2.0-cabal-doctest.patch"
+)
+
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
@@ -22,3 +26,9 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/doctest-0.16.0 <dev-haskell/doctest-0.24
 		>=dev-haskell/glob-0.10.0 <dev-haskell/glob-0.11 )
 "
+
+src_configure() {
+	use test && export GHC_BOOTSTRAP_PACKAGES=(cabal-doctest)
+
+	haskell-cabal_src_configure
+}
