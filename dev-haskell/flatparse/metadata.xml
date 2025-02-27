@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="dump">dump core, stg and cmm to files</flag>
+		<flag name="llvm">use llvm for building</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">flatparse</remote-id>
+		<remote-id type="github">AndrasKovacs/flatparse</remote-id>
+	</upstream>
+</pkgmetadata>
