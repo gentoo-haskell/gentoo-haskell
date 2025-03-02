@@ -5,4 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="attoparsecaeson">Build attoparsec-aeson.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">ede</remote-id>
+		<remote-id type="github">brendanhay/ede</remote-id>
+	</upstream>
 </pkgmetadata>
