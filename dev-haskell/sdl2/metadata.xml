@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="no-linear">Do not depend on 'linear' library</flag>
+		<flag name="no-linear">Do not depend on &#39;linear&#39; library</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">sdl2</remote-id>
