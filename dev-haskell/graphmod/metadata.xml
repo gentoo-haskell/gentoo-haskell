@@ -9,4 +9,8 @@
 		This package contains a program that computes .dot graphs
 		from the dependencies of a number of Haskell modules.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">graphmod</remote-id>
+		<remote-id type="github">yav/graphmod</remote-id>
+	</upstream>
 </pkgmetadata>
