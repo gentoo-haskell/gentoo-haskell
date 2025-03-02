@@ -5,14 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="examples">Build examples</flag>
-	</use>
-	<longdescription>
-		This package provides a simple wrapper around the Linux FIEMAP ioctl.
-		It can be used to retrieve the list of all the extents of any given
-		file, i.e. the area of the disk where the file is actually stored. This is
-		similar to the @filefrag@ command line tool provided by the @e2fsprogs@
-		package.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">linux-file-extents</remote-id>
+		<remote-id type="github">redneb/linux-file-extents</remote-id>
+	</upstream>
 </pkgmetadata>

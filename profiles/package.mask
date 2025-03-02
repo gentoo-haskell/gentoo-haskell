@@ -289,6 +289,7 @@ dev-haskell/country-codes
 >=dev-haskell/wreq-effectful-0.1.0.1
 >=dev-haskell/btrfs-0.2.1.0
 >=dev-haskell/daemons-0.4.0
+>=dev-haskell/linux-file-extents-0.2.0.1
 
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of
