@@ -10,4 +10,8 @@
 		minimum-priority, maximum-priority and custom-ordered
 		heaps.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">heap</remote-id>
+		<remote-id type="github">pruvisto/heap</remote-id>
+	</upstream>
 </pkgmetadata>
