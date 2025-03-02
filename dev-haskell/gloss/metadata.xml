@@ -14,4 +14,8 @@
 		a few display functions. Gloss uses OpenGL under the hood, but you won&#39;t need to
 		worry about any of that. Get something cool on the screen in under 10 minutes.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">gloss</remote-id>
+		<remote-id type="github">benl23x5/gloss</remote-id>
+	</upstream>
 </pkgmetadata>
