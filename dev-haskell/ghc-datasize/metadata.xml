@@ -11,4 +11,8 @@
 		recursive data structures is supported. All sizes are in
 		Bytes.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">ghc-datasize</remote-id>
+		<remote-id type="github">def-/ghc-datasize</remote-id>
+	</upstream>
 </pkgmetadata>
