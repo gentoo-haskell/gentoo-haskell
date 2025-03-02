@@ -13,4 +13,8 @@
 		It contains a highly optimised, FFTW compatible, Fast-Fourier Transform
 		implementation that can execute on NVIDIA GPUs.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">cufft</remote-id>
+		<remote-id type="github">robeverest/cufft</remote-id>
+	</upstream>
 </pkgmetadata>
