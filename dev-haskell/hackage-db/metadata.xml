@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="install-examples">Build and install example programs.</flag>
+		<flag name="examples">Build and install example programs.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hackage-db</remote-id>
+		<remote-id type="github">NixOS/cabal2nix</remote-id>
+	</upstream>
 </pkgmetadata>
