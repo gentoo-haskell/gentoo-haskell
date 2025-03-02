@@ -8,4 +8,8 @@
 	<longdescription>
 		A version of the async package&#39;s &#39;Control.Concurrent.Async.Concurrently&#39; for which the actions may fail with a value.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">conceit</remote-id>
+		<remote-id type="github">danidiaz/conceit</remote-id>
+	</upstream>
 </pkgmetadata>
