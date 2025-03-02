@@ -15,4 +15,8 @@
 		
 		Note that unless you have a commercial license, @libsamplerate@ is GPL licensed.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">conduit-audio-samplerate</remote-id>
+		<remote-id type="github">mtolly/conduit-audio</remote-id>
+	</upstream>
 </pkgmetadata>
