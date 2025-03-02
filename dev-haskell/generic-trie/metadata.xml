@@ -15,4 +15,8 @@
 		so values of types that have support for &#39;Generic&#39; may
 		be automatically used as keys in the map.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">generic-trie</remote-id>
+		<remote-id type="github">glguy/tries</remote-id>
+	</upstream>
 </pkgmetadata>
