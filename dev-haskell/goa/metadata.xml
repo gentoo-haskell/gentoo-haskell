@@ -8,4 +8,7 @@
 	<longdescription>
 		Offers an interface to be able to call Lambdabot commands within GHCi. Now works with recent lambdabots.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">goa</remote-id>
+	</upstream>
 </pkgmetadata>
