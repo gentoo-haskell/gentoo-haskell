@@ -13,4 +13,8 @@
 		&lt;http://okmij.org/ftp/Haskell/extensible/exteff.pdf&gt;.
 		Any help is appreciated!
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">extensible-effects</remote-id>
+		<remote-id type="github">suhailshergill/extensible-effects</remote-id>
+	</upstream>
 </pkgmetadata>
