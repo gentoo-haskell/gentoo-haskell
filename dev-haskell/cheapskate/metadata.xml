@@ -20,4 +20,8 @@
 	<use>
 		<flag name="dingus">Build cheapskate-dingus cgi script</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">cheapskate</remote-id>
+		<remote-id type="github">jgm/cheapskate</remote-id>
+	</upstream>
 </pkgmetadata>
