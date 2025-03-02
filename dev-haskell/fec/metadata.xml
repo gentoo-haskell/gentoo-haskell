@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">fec</remote-id>
+		<remote-id type="github">tahoe-lafs/zfec</remote-id>
+	</upstream>
 </pkgmetadata>
