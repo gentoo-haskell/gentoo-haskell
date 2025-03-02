@@ -5,44 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Prettyprint and compare Data values.
-		
-		*   Size limit for the output
-		
-		*   Time limit for the computation
-		
-		*   Escape exceptions
-		
-		*   Do not escape unicode characters
-		
-		*   Comparison: Highlight the first difference
-		
-		*   Comparison: Yes, No or Maybe results
-		
-		Probably you need only the 'pprint' and '(===)' functions from the "Data.PPrint" module.
-		
-		Usage examples:
-		
-		&gt; pprint [1..]
-		&gt; pprintTo 10000 $ repeat [1..]
-		&gt; pprint $ iterate (*10) 1
-		&gt; pprint $ map length $ replicate 5 [1..] ++ repeat []
-		&gt; pprint [2 `div` 0, error "xxx", 18, 4 `div` 0]
-		&gt; [1..10] === reverse [10,9..1]
-		&gt; [1..10] === reverse [10..1]
-		&gt; reverse [10..] === [1..]
-		&gt; [1..] === [1..99] ++ [101..]
-		&gt; ([1..], [1..]) === ([1..], [1..100])
-		&gt; (error "x", [1..]) === (0 `div` 0, reverse [1..])
-		&gt; error ("xx" ++ show (length [1..])) === 1
-		&gt; error ("xx" ++ error "yy") === 1
-		&gt; (error $ unlines $ replicate 300 "xxxxxxxxxxxxxxxxxxxxxxxxxxx") === 1
-		&gt; pprint ['a'..]
-		&gt; pprint $ "hello" ++ [error "x"] ++ "world!"
-		
-		See also &lt;http://pnyf.inf.elte.hu/fp/Show_en.xml&gt;
-		
-		Changes since 0.1: Refactoring, proper handling of nested errors
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">data-pprint</remote-id>
+	</upstream>
 </pkgmetadata>
