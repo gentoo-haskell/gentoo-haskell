@@ -5,13 +5,18 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="barbies">"define instances for barbies"</flag>
-		<flag name="cassava">"define instances for cassava"</flag>
-	</use>
 	<longdescription>
 		This package provides a powerful framework to combine and manipulate various types of structures.
 		
 		See also &lt;https://www.schoolofhaskell.com/user/fumieval/extensible School of Haskell&gt; for tutorials.
 	</longdescription>
+	<use>
+		<flag name="barbies">&quot;define instances for barbies&quot;</flag>
+		<flag name="cassava">&quot;define instances for cassava&quot;</flag>
+		<flag name="islabel">&quot;export the instance of IsLabel making optics (which could conflict with other packages such as generic-lens)&quot;</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">extensible</remote-id>
+		<remote-id type="github">fumieval/extensible</remote-id>
+	</upstream>
 </pkgmetadata>
