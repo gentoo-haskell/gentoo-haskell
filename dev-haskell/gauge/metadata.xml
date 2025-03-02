@@ -8,4 +8,8 @@
 	<use>
 		<flag name="analysis">Build with statistical analysis support</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">gauge</remote-id>
+		<remote-id type="github">vincenthz/hs-gauge</remote-id>
+	</upstream>
 </pkgmetadata>
