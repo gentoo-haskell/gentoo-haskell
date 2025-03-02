@@ -15,4 +15,8 @@
 		
 		LAME is LGPL licensed, so you may dynamically link to it from a closed-source program.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">conduit-audio-lame</remote-id>
+		<remote-id type="github">mtolly/conduit-audio</remote-id>
+	</upstream>
 </pkgmetadata>
