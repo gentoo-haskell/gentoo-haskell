@@ -1,26 +1,41 @@
+From f3932c4498c1b51849a4c54ddab93f2d571cbf18 Mon Sep 17 00:00:00 2001
 From: hololeap <hololeap@protonmail.com>
-Signed-off-by: hololeap <hololeap@protonmail.com>
-Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+Date: Sun, 2 Mar 2025 11:07:41 -0700
+Subject: [PATCH 1/1] Migrate to cabal-doctest
 
 doctest pulls in the out-of-scope packages if they are installed on the
 system. The best workaround is to use migrate to cabal-doctest.
 
-diff -urN colonnade-1.2.0.2/Setup.hs colonnade-1.2.0.2-r1/Setup.hs
---- colonnade-1.2.0.2/Setup.hs	2001-09-08 19:46:40.000000000 -0600
-+++ colonnade-1.2.0.2-r1/Setup.hs	2022-03-22 20:53:48.777140429 -0600
-@@ -1,2 +1,6 @@
--import Distribution.Simple
--main = defaultMain
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -1,2 +1,22 @@
++{-# LANGUAGE CPP #-}
++{-# OPTIONS_GHC -Wall #-}
 +module Main (main) where
 +
++#ifndef MIN_VERSION_cabal_doctest
++#define MIN_VERSION_cabal_doctest(x,y,z) 0
++#endif
++
++#if MIN_VERSION_cabal_doctest(1,0,0)
++
 +import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++main :: IO ()
++main = defaultMainWithDoctests "doctests"
++
++#else
++
+ import Distribution.Simple
 +
 +main :: IO ()
-+main = defaultMainWithDoctests "test"
-diff -urN colonnade-1.2.0.2/colonnade.cabal colonnade-1.2.0.2-r1/colonnade.cabal
---- colonnade-1.2.0.2/colonnade.cabal	2022-03-22 20:57:13.057140528 -0600
-+++ colonnade-1.2.0.2-r1/colonnade.cabal	2022-03-22 20:59:11.807140586 -0600
-@@ -27,9 +27,15 @@
+ main = defaultMain
++
++#endif
+--- a/colonnade.cabal
++++ b/colonnade.cabal
+@@ -27,9 +27,14 @@ author: Andrew Martin
  maintainer: andrew.thaddeus@gmail.com
  copyright: 2016 Andrew Martin
  category: web
@@ -31,13 +46,19 @@ diff -urN colonnade-1.2.0.2/colonnade.cabal colonnade-1.2.0.2-r1/colonnade.cabal
 +custom-setup
 +  setup-depends:
 +      base
-+    , Cabal
-+    , cabal-doctest
++    , cabal-doctest >=1.0.9 && <1.1
 +
  library
    hs-source-dirs:      src
    exposed-modules:
-@@ -52,12 +58,14 @@
+@@ -46,18 +51,20 @@ library
+   default-language:    Haskell2010
+   ghc-options: -Wall
+ 
+-test-suite test
++test-suite doctests
+   type: exitcode-stdio-1.0
+   hs-source-dirs: test
    main-is: Main.hs
    build-depends:
        base >= 4.7 && <= 5
@@ -53,10 +74,14 @@ diff -urN colonnade-1.2.0.2/colonnade.cabal colonnade-1.2.0.2-r1/colonnade.cabal
    default-language: Haskell2010
  
  source-repository head
-diff -urN colonnade-1.2.0.2/src/Colonnade.hs colonnade-1.2.0.2-r1/src/Colonnade.hs
---- colonnade-1.2.0.2/src/Colonnade.hs	2001-09-08 19:46:40.000000000 -0600
-+++ colonnade-1.2.0.2-r1/src/Colonnade.hs	2022-03-22 21:04:29.957140740 -0600
-@@ -95,7 +95,7 @@
+--- a/src/Colonnade.hs
++++ b/src/Colonnade.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE DataKinds #-}
+ {-# LANGUAGE RankNTypes #-}
+ 
+@@ -95,7 +96,7 @@ import qualified Data.Vector as Vector
  -- >>> let showDollar = (('$':) . show) :: Int -> String
  -- >>> colHouse = mconcat [headed "Color" (show . color), headed "Price" (showDollar . price)]
  -- >>> :t colHouse
@@ -65,7 +90,7 @@ diff -urN colonnade-1.2.0.2/src/Colonnade.hs colonnade-1.2.0.2-r1/src/Colonnade.
  -- >>> let houses = [House Green 170000, House Blue 115000, House Green 150000]
  -- >>> putStr (ascii colHouse houses)
  -- +-------+---------+
-@@ -179,10 +179,10 @@
+@@ -179,10 +180,10 @@ fromMaybe c (E.Colonnade v) = E.Colonnade $ flip Vector.map v $
  -- >>> let allColors = [Red,Green,Blue]
  -- >>> let encColor = columns (\c1 c2 -> if c1 == c2 then "✓" else "") (Headed . show) allColors
  -- >>> :t encColor
@@ -78,25 +103,32 @@ diff -urN colonnade-1.2.0.2/src/Colonnade.hs colonnade-1.2.0.2-r1/src/Colonnade.
  -- >>> putStr (ascii encHouse houses)
  -- +---------+-----+-------+------+
  -- | Price   | Red | Green | Blue |
-@@ -274,7 +274,7 @@
+@@ -272,9 +273,15 @@ replaceWhen = modifyWhen . const
+ --   of prefixing many column headers can become annoying. The solution
+ --   that a 'Cornice' offers is to nest headers:
  --   
++#if __GLASGOW_HASKELL__ >= 961
  --   >>> let cor = mconcat [cap "Person" colPersonFst, cap "House" colHouseSnd]
  --   >>> :t cor
 ---   cor :: Cornice Headed ('Cap 'Base) (Person, House) [Char]
-+--   cor :: Cornice Headed ('Cap 'Base) (Person, House) String
++--   cor :: Cornice Headed (Cap Base) (Person, House) String
++#else
++--   >>> let cor = mconcat [cap "Person" colPersonFst, cap "House" colHouseSnd]
++--   >>> :t cor
++--   cor :: Cornice Headed (Cap' Base') (Person, House) String
++#endif
  --   >>> putStr (asciiCapped cor personHomePairs)
  --   +-------------+-----------------+
  --   | Person      | House           |
-diff -urN colonnade-1.2.0.2/test/Main.hs colonnade-1.2.0.2-r1/test/Main.hs
---- colonnade-1.2.0.2/test/Main.hs	2001-09-08 19:46:40.000000000 -0600
-+++ colonnade-1.2.0.2-r1/test/Main.hs	2022-03-22 20:56:14.257140500 -0600
+--- a/test/Main.hs
++++ b/test/Main.hs
 @@ -1,6 +1,25 @@
++import Build_doctests (flags, pkgs, module_sources)
  import Test.DocTest
 +import GHC.IO.Encoding (setLocaleEncoding)
 +import System.Directory (getCurrentDirectory, makeAbsolute)
 +import System.FilePath.Posix ((</>))
 +import System.IO (utf8)
-+import Build_doctests (pkgs)
  
  main :: IO ()
 -main = doctest
@@ -118,4 +150,7 @@ diff -urN colonnade-1.2.0.2/test/Main.hs colonnade-1.2.0.2-r1/test/Main.hs
 +            [ "src"
 +            ]
 +
-+    doctest $ customFlags ++ pkgs ++ modules
++    doctest $ flags ++ customFlags ++ pkgs ++ module_sources
+-- 
+2.45.3
+
