@@ -8,16 +8,8 @@
 	<use>
 		<flag name="useghctypelits">GHC.TypeLits module</flag>
 	</use>
-	<longdescription>
-		This is an implementation of finite fields.
-		Currently only prime fields are supported.
-		
-		Changes in 0.6.0
-		
-		* add allValues to FiniteField class
-		
-		Changes in 0.5.0
-		
-		* introduce FiniteField class
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">finite-field</remote-id>
+		<remote-id type="github">msakai/finite-field</remote-id>
+	</upstream>
 </pkgmetadata>
