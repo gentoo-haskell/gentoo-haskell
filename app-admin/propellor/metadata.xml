@@ -8,10 +8,7 @@
 	<use>
 		<flag name="type-errors">Build with type-errors library for better error messages and less memory use</flag>
 	</use>
-	<longdescription>
-		Propellor ensures that the system it&#39;s run in satisfies a list of
-		properties, taking action as necessary when a property is not yet met.
-		
-		It is configured using haskell.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">propellor</remote-id>
+	</upstream>
 </pkgmetadata>
