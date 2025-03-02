@@ -5,14 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Clay is a CSS preprocessor like LESS and Sass, but implemented as an embedded
-		domain specific language (EDSL) in Haskell. This means that all CSS selectors
-		and style rules are first class Haskell functions, which makes reuse and
-		composability easy.
-		
-		The project is described on &lt;http://sebastiaanvisser.github.com/clay&gt;.
-		
-		The API documentation can be found in the top level module "Clay".
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">clay</remote-id>
+		<remote-id type="github">sebastiaanvisser/clay</remote-id>
+	</upstream>
 </pkgmetadata>
