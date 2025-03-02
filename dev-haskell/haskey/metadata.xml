@@ -12,4 +12,8 @@
 		For more information on how to use this package, visit
 		&lt;https://github.com/haskell-haskey/haskey&gt;
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">haskey</remote-id>
+		<remote-id type="github">haskell-haskey/haskey</remote-id>
+	</upstream>
 </pkgmetadata>
