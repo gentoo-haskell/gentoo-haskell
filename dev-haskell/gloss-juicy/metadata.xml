@@ -10,4 +10,8 @@
 		
 		Version 0.1.2 just enabled caching (from a frame to the next, and so on) of the images you load, so that they are not recomputed for each frame. Credits go to Jonathan Daugherty for the patch.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">gloss-juicy</remote-id>
+		<remote-id type="github">hpacheco/gloss-juicy</remote-id>
+	</upstream>
 </pkgmetadata>
