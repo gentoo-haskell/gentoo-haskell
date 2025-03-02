@@ -12,4 +12,8 @@
 		C library on which this binding is based, please see:
 		&lt;http://connect.creativelabs.com/openal/Documentation/The%20OpenAL%20Utility%20Toolkit.pdf&gt;.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">ALUT</remote-id>
+		<remote-id type="github">haskell-openal/ALUT</remote-id>
+	</upstream>
 </pkgmetadata>
