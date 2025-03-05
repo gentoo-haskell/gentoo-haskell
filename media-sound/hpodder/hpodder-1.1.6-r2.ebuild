@@ -34,7 +34,8 @@ DEPEND="${RDEPEND}
 PATCHES=(	"${FILESDIR}/${P}-haxml-1.22.patch"
 			"${FILESDIR}/${P}-base-4.patch"
 			"${FILESDIR}/${P}-unix-2.7.patch"
-			"${FILESDIR}/${P}-ghc-7.10.patch" )
+			"${FILESDIR}/${P}-ghc-7.10.patch"
+			"${FILESDIR}/${P}-unix-2.8.patch")
 
 src_prepare() {
 	default
