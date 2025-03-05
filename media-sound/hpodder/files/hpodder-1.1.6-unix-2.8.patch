@@ -1,0 +1,32 @@
+--- a/Commands/Download.hs
++++ b/Commands/Download.hs
+@@ -317,8 +317,13 @@
+          Just (Exited ExitSuccess) -> return ()
+     where runScript =
+               -- Open /dev/null, duplicate it to stdout, and close it.
++#if MIN_VERSION_unix(2,8,0)
++              do bracket (openFd "/dev/null" ReadOnly
++                                 defaultFileFlags)
++#else
+               do bracket (openFd "/dev/null" ReadOnly
+                                  Nothing defaultFileFlags)
++#endif
+                          closeFd
+                          (\devNull ->
+                               do dupTo devNull stdOutput)
+--- a/Download.hs
++++ b/Download.hs
+@@ -97,8 +97,13 @@
+          Just x -> d $ printf "Resuming download of %s at %s" fp (show x)
+          Nothing -> d $ printf "Beginning download of %s" fp
+        
++#if MIN_VERSION_unix(2,8,0)
++       msgfd <- openFd (fp ++ ".msg") WriteOnly
++                (defaultFileFlags {trunc = True})
++#else
+        msgfd <- openFd (fp ++ ".msg") WriteOnly (Just 0o600)
+                 (defaultFileFlags {trunc = True})
++#endif
+        msgfd2 <- dup msgfd
+        pid <- pOpen3Raw Nothing (Just msgfd) (Just msgfd2) 
+                  curl (curlopts ++ curlrcopts ++ [url, "-o", fp])
