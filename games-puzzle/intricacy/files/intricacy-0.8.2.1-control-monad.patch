@@ -1,0 +1,96 @@
+diff -ur a/CursesUI.hs b/CursesUI.hs
+--- a/CursesUI.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/CursesUI.hs	2025-03-05 14:30:18.981318130 +0100
+@@ -12,6 +12,7 @@
+ 
+ import           Control.Applicative
+ import           Control.Concurrent.STM
++import Control.Monad (when, void, forM_, guard)
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Maybe
+ import           Data.Array
+diff -ur a/CursesUIMInstance.hs b/CursesUIMInstance.hs
+--- a/CursesUIMInstance.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/CursesUIMInstance.hs	2025-03-05 14:32:24.387081627 +0100
+@@ -16,6 +16,7 @@
+ import           Control.Applicative
+ import           Control.Concurrent
+ import           Control.Concurrent.STM
++import Control.Monad (void, unless, guard, when, msum)
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Maybe
+ import           Data.Array
+diff -ur a/Interact.hs b/Interact.hs
+--- a/Interact.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Interact.hs	2025-03-05 14:34:48.559376634 +0100
+@@ -16,6 +16,7 @@
+ import           Control.Applicative
+ import           Control.Concurrent
+ import           Control.Concurrent.STM
++import Control.Monad (when, mzero, unless, guard, void, msum, replicateM_, mplus, forever)
+ import           Control.Monad.Catch
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Except
+diff -ur a/InteractUtil.hs b/InteractUtil.hs
+--- a/InteractUtil.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/InteractUtil.hs	2025-03-05 14:33:26.743299205 +0100
+@@ -11,6 +11,7 @@
+ module InteractUtil where
+ 
+ import           Control.Applicative
++import Control.Monad (msum, guard, mzero, when, foldM, void)
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Maybe
+ import           Control.Monad.Writer
+diff -ur a/MainState.hs b/MainState.hs
+--- a/MainState.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/MainState.hs	2025-03-05 14:31:35.074103444 +0100
+@@ -15,6 +15,7 @@
+ import           Control.Applicative
+ import           Control.Concurrent
+ import           Control.Concurrent.STM
++import Control.Monad (void, guard, mplus, filterM, liftM2, msum, unless)
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Maybe
+ import           Control.Monad.Writer
+diff -ur a/Physics.hs b/Physics.hs
+--- a/Physics.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Physics.hs	2025-03-05 14:39:36.823967224 +0100
+@@ -14,6 +14,7 @@
+ import           Control.Monad.Writer
+ import           Data.Foldable        (foldrM)
+ import           Data.List
++import           Data.Monoid          (Any(Any), getAny)
+ import           Data.Set             (Set)
+ import qualified Data.Set             as Set
+ import           Data.Vector          (Vector, (!), (//))
+diff -ur a/SDLUI.hs b/SDLUI.hs
+--- a/SDLUI.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/SDLUI.hs	2025-03-05 14:36:13.852095690 +0100
+@@ -11,13 +11,14 @@
+ {-# LANGUAGE CPP           #-}
+ {-# LANGUAGE LambdaCase    #-}
+ {-# LANGUAGE TupleSections #-}
++{-# LANGUAGE FlexibleContexts #-}
+ 
+ module SDLUI where
+ 
+ import           Control.Applicative
+ import           Control.Arrow
+ import           Control.Concurrent.STM
+-import           Control.Monad              ((<=<))
++import           Control.Monad              ((<=<), void, msum, unless, when, guard)
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Maybe
+ import           Control.Monad.Trans.Reader
+diff -ur a/SDLUIMInstance.hs b/SDLUIMInstance.hs
+--- a/SDLUIMInstance.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/SDLUIMInstance.hs	2025-03-05 14:37:01.425086404 +0100
+@@ -16,6 +16,7 @@
+ import           Control.Applicative
+ import           Control.Concurrent         (threadDelay)
+ import           Control.Concurrent.STM
++import Control.Monad (when, unless, guard, msum, void)
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Maybe
+ import           Control.Monad.Trans.Reader
