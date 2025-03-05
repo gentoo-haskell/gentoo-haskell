@@ -17,6 +17,14 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-wai-extra.patch
+	)
+
+CABAL_CHDEPS=(
+	'wai-extra             >= 3.0.7    && < 3.1.17' 'wai-extra >= 3.0.7'
+	)
+
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/attoparsec-aeson-2.1:=[profile?]
 	dev-haskell/auto-update:=[profile?]
@@ -45,7 +53,7 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/vector-0.9:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/wai-3.2:=[profile?]
-	>=dev-haskell/wai-extra-3.0.7:=[profile?] <dev-haskell/wai-extra-3.1.17:=[profile?]
+	>=dev-haskell/wai-extra-3.0.7:=[profile?]
 	>=dev-haskell/wai-logger-0.2:=[profile?]
 	>=dev-haskell/warp-3.0.2:=[profile?]
 	dev-haskell/word8:=[profile?]
