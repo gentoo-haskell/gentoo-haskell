@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="non-optimised-c">Force use of non-optimised C routines on @x86_64@. Ineffective when @use-system-library@ flag is active.</flag>
+		<flag name="pkg-config">Use @pkg-config(1)@ to discover system-library location &amp; flags.
+
+__NOTE__: This has an effect only when the @use-system-library@ flag is also enabled.</flag>
+		<flag name="system-library">Link against system @libargon2@ library rather than using embedded copy of @libargon2@. See also @pkg-config@ flag.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">argon2</remote-id>
+		<remote-id type="github">hvr/argon2</remote-id>
+	</upstream>
+</pkgmetadata>
