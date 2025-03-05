@@ -1,0 +1,31 @@
+Fixing a couple of changes that occured between ghc-7 and ghc-9
+--- a/src/Bio/Sequence/SFF.hs
++++ b/src/Bio/Sequence/SFF.hs
+@@ -410,12 +410,12 @@
+ -- ----------------------------------------------------------
+ -- | This contains the actual flowgram for a single read.
+ data ReadBlock = ReadBlock {
+-      read_header                :: ! ReadHeader
++      read_header                :: !ReadHeader
+     -- The data block
+-    , flow_data                  :: ! ByteString -- nb! use unpackFlows for this
+-    , flow_index                 :: ! ByteString
+-    , bases                      :: ! SeqData
+-    , quality                    :: ! QualData
++    , flow_data                  :: !ByteString -- nb! use unpackFlows for this
++    , flow_index                 :: !ByteString
++    , bases                      :: !SeqData
++    , quality                    :: !QualData
+     }
+ 
+ -- | Helper function to access the flowgram
+--- a/src/Flower/Main.hs
++++ b/src/Flower/Main.hs
+@@ -23,6 +23,7 @@
+ import Data.Array.Unboxed
+ import Data.Array.Unsafe -- unsafeFreeze is deprecated in D.A.ST
+ import Data.Array.ST hiding (unsafeFreeze)
++import Control.Monad (when)
+ import Control.Monad.ST
+ import Control.Monad.State
+ 
