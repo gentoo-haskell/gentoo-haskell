@@ -23,6 +23,10 @@ IUSE=""
 
 RESTRICT=test # needs running couchdb
 
+CABAL_CHDEPS=(
+	'base >= 4 && < 4.15' 'base >= 4'
+	)
+
 RDEPEND=">=dev-haskell/http-4000.0.4:=[profile?]
 	>=dev-haskell/json-0.4.3:=[profile?]
 	dev-haskell/mtl:=[profile?]
