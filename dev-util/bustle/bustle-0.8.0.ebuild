@@ -18,6 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="interactivetests +threaded"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.8.patch
+	)
+
 RDEPEND="dev-haskell/cairo:=
 	dev-haskell/gio:=
 	dev-haskell/glib:=
