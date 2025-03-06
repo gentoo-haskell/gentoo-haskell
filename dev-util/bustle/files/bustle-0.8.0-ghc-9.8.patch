@@ -1,0 +1,64 @@
+--- a/Bustle/Diagram.hs
++++ b/Bustle/Diagram.hs
+@@ -50,7 +50,7 @@
+ import Data.List (unzip4)
+ import Data.List.NonEmpty (NonEmpty(..), toList)
+ import Control.Arrow ((&&&))
+-
++import Control.Monad (forM_, when)
+ import Control.Monad.Reader
+ 
+ import Graphics.Rendering.Cairo (Operator(..), Render, arc, curveTo, fill, getCurrentPoint, lineTo, moveTo, newPath, paint, rectangle, restore, save, setDash, setLineWidth, setOperator, setSourceRGB, stroke)
+--- a/Bustle/Loader/Pcap.hs
++++ b/Bustle/Loader/Pcap.hs
+@@ -31,6 +31,7 @@
+ import qualified Data.Map as Map
+ import Data.Map (Map)
+ import Control.Exception (try)
++import Control.Monad (guard)
+ import Control.Monad.State
+ import Control.Monad.Trans.Maybe
+ 
+--- a/Bustle/Loader.hs
++++ b/Bustle/Loader.hs
+@@ -25,6 +25,7 @@
+   )
+ where
+ 
++import Control.Monad.IO.Class (MonadIO)
+ import Control.Monad.Except
+ import Control.Arrow (second)
+ 
+--- a/Bustle/UI.hs
++++ b/Bustle/UI.hs
+@@ -23,7 +23,7 @@
+   )
+ where
+ 
+-import Control.Monad (void)
++import Control.Monad (void, forM_, when, unless)
+ import Control.Monad.Reader
+ import Control.Monad.State
+ import Control.Monad.Except
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@
+ DBUS_FLAGS = $(shell pkg-config --cflags --libs dbus-1)
+ GIO_FLAGS := $(shell pkg-config --cflags --libs 'glib-2.0 >= 2.26' gio-2.0 gio-unix-2.0)
+ PCAP_CONFIG ?= pcap-config
+-PCAP_FLAGS := $(shell $(PCAP_CONFIG) --cflags pcap-config --libs)
++PCAP_FLAGS := $(shell $(PCAP_CONFIG) --cflags --libs)
+ DESTDIR =
+ PREFIX = /usr/local
+ BINDIR = $(DESTDIR)$(PREFIX)/bin
+--- a/Test/Renderer.hs
++++ b/Test/Renderer.hs
+@@ -7,7 +7,7 @@
+ 
+ import Test.HUnit
+ 
+-import Control.Monad (when)
++import Control.Monad (when, forM)
+ import Control.Monad.State
+ import qualified Data.Set as Set
+ import Data.Monoid
