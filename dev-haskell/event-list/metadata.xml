@@ -5,14 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		These lists manage events that are associated with times.
-		Times may be given as difference between successive events
-		or as absolute time values.
-		Pauses before the first and after the last event are supported.
-		The underlying data structures are lists of elements of alternating types,
-		that is [b,a,b,...,a,b] or [a,b,a,...,a,b].
-		The data structures can be used to represent
-		MIDI files, OpenSoundControl message streams, music performances etc.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">event-list</remote-id>
+	</upstream>
 </pkgmetadata>
