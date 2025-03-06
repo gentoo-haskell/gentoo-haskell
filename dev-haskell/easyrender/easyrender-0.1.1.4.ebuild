@@ -15,8 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 
+PATCHES=(
+	"${FILESDIR}/${P}-ghc-9.8.patch"
+	)
 RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/zlib-0.5:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
