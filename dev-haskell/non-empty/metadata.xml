@@ -5,49 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		We provide the data type @NonEmpty@ that allows to store a list-like structure
-		with at least or exactly @n@ elements,
-		where @n@ is fixed in the type in a kind of Peano encoding
-		and is usually small.
-		The datatype is intended to increase safety
-		by making functions total that are partial on plain lists.
-		E.g. on a non-empty list, 'head' and 'tail' are always defined.
-		
-		There are more such data types like @Optional@ and @Empty@.
-		Together with @NonEmpty@ you can define a list type
-		for every finite set of admissible list lengths.
-		
-		The datatype can be combined with Lists, Sequences and Sets
-		(from the @containers@ package).
-		
-		The package needs only Haskell 98.
-		
-		Similar packages:
-		
-		* @semigroups@, @semigroupoids@:
-		restricted to lists, minimum number of elements: 1,
-		provides more type classes tailored to the use of non-empty lists.
-		
-		* @NonEmptyList@:
-		restricted to lists, minimum number of elements: 1
-		
-		* @NonEmpty@:
-		restricted to lists, minimum number of elements: 1,
-		designed for unqualified use of identifiers
-		
-		* @Cardinality@:@NeverEmptyList@
-		
-		* &lt;http://www.haskell.org/haskellwiki/Non-empty_list&gt;
-		
-		Related packages:
-		
-		* @Stream@:
-		Lists that contain always infinitely many elements.
-		
-		* @fixed-list@:
-		Uses the same data structure as this package
-		but is intended for fixing the number of elements in a list.
-		Requires multi-parameter type classes with functional dependencies.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">non-empty</remote-id>
+	</upstream>
 </pkgmetadata>
