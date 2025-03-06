@@ -1,0 +1,10 @@
+--- a/Darcs.hs
++++ b/Darcs.hs
+@@ -17,6 +17,7 @@
+ -}
+ module Darcs where
+ 
++import Control.Monad (when)
+ import Control.Monad.Trans
+ import System.Exit
+ import System.IO
