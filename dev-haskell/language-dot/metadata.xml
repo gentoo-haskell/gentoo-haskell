@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="executable">Build the `ppdot' executable</flag>
+		<flag name="executable">Build the `ppdot&#39; executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">language-dot</remote-id>
+		<remote-id type="github">bgamari/language-dot</remote-id>
+	</upstream>
 </pkgmetadata>
