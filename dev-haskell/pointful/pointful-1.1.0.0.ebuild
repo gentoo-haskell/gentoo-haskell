@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND=">=dev-lang/ghc-7.8.2:=
 	>=dev-haskell/haskell-src-exts-simple-1.18:=[profile?]
@@ -26,10 +25,13 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
 "
 
-src_prepare() {
-	default
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.8.patch
+	)
 
-	cabal_chdeps \
-		'haskell-src-exts-simple >= 1.18 && < 1.21' 'haskell-src-exts-simple >= 1.18' \
+CABAL_CHDEPS=(
+		'haskell-src-exts-simple >= 1.18 && < 1.21' 'haskell-src-exts-simple >= 1.18'
 		'base                    >= 4.7  && < 4.13 || ^>= 4.13' 'base                    >= 4.7'
-}
+		'mtl                     >= 2    && < 2.2  || ^>= 2.2' 'mtl >= 2'
+		'transformers            >= 0.2  && < 0.5  || ^>= 0.5' 'transformers >= 0.2'
+	)

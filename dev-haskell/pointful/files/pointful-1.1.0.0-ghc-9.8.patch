@@ -1,0 +1,12 @@
+diff -ur a/Lambdabot/Pointful.hs b/Lambdabot/Pointful.hs
+--- a/Lambdabot/Pointful.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Lambdabot/Pointful.hs	2025-03-06 12:39:54.292177390 +0100
+@@ -8,6 +8,7 @@
+ import Lambdabot.Parser (withParsed)
+ 
+ import Prelude hiding (sum, exp)
++import Control.Monad (replicateM, liftM)
+ import Control.Monad.Reader
+ import Control.Monad.State
+ import Data.Generics
+Only in b: dist-newstyle
