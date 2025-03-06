@@ -5,15 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Shellac is a framework for building read-eval-print style shells.
-		Shells are created by declaratively defining a set of shell commands
-		and an evaluation function.  Shellac supports multiple shell backends,
-		including a 'basic' backend which uses only Haskell IO primitives and
-		a full featured 'readline' backend based on the the Haskell readline
-		bindings found in the standard libraries.
-		This library attempts to allow users to write shells at a high level
-		and still enjoy the advanced features that may be available from a
-		powerful line editing package like readline.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">Shellac</remote-id>
+		<remote-id type="github">robdockins/shellac</remote-id>
+	</upstream>
 </pkgmetadata>

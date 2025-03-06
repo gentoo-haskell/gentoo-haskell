@@ -1,0 +1,24 @@
+Only in b: dist-newstyle
+diff -ur a/src/System/Console/Shell/RunShell.hs b/src/System/Console/Shell/RunShell.hs
+--- a/src/System/Console/Shell/RunShell.hs	2015-10-05 02:18:14.000000000 +0200
++++ b/src/System/Console/Shell/RunShell.hs	2025-03-06 08:22:02.826593977 +0100
+@@ -15,7 +15,7 @@
+ import Data.List                   ( isPrefixOf, find )
+ import Data.IORef                  ( IORef, newIORef, readIORef, writeIORef )
+ import Control.Monad               ( when, MonadPlus(..) )
+-import Control.Monad.Error         ()
++import Control.Monad.Fail          ()
+ import Control.Concurrent          ( ThreadId, threadDelay, killThread, forkIO )
+ import Control.Concurrent.MVar     ( MVar, newEmptyMVar, tryTakeMVar, tryPutMVar, withMVar, takeMVar, putMVar )
+ import System.Directory            ( doesFileExist )
+diff -ur a/src/System/Console/Shell/Types.hs b/src/System/Console/Shell/Types.hs
+--- a/src/System/Console/Shell/Types.hs	2015-10-05 02:19:12.000000000 +0200
++++ b/src/System/Console/Shell/Types.hs	2025-03-06 08:21:12.203624474 +0100
+@@ -8,6 +8,7 @@
+ 
+ import qualified Control.Exception as Ex
+ 
++import Control.Monad.Fix (MonadFix)
+ import Control.Monad.Reader
+ import Control.Monad.State
+ 
