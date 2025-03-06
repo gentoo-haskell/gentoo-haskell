@@ -6,6 +6,10 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="iconv">Enable encoding conversion of the User Comment tag with iconv. It's a nice thing to have but iconv is difficult to install on windows.</flag>
+		<flag name="iconv">Enable encoding conversion of the User Comment tag with iconv. It&#39;s a nice thing to have but iconv is difficult to install on windows.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">hsexif</remote-id>
+		<remote-id type="github">emmanueltouzery/hsexif</remote-id>
+	</upstream>
 </pkgmetadata>
