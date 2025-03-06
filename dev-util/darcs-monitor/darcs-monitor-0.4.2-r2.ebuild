@@ -14,19 +14,18 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
 DEPEND="${RDEPEND}
 		>=dev-haskell/cabal-1.6
 		>=dev-haskell/haxml-1.25
 		dev-haskell/mtl
 		>=dev-lang/ghc-6.10.1"
 
-PATCHES=(	"${FILESDIR}/${P}-haxml-1.22.patch"
-			"${FILESDIR}/${P}-ghc-7.6.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-haxml-1.22.patch"
+	"${FILESDIR}/${P}-ghc-7.6.patch"
+	"${FILESDIR}/${P}-ghc-9.8.patch"
+)
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
+CABAL_CHDEPS=(
 		'HaXml >= 1.22 && < 1.24' 'HaXml >= 1.22'
-}
+	)
