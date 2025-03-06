@@ -1,0 +1,10 @@
+--- a/Graphics/EasyRender/Internal.hs
++++ b/Graphics/EasyRender/Internal.hs
+@@ -36,6 +36,7 @@
+ 
+ import Codec.Compression.Zlib
+ import Control.Monad.State
++import Control.Monad (when)
+ import qualified Data.ByteString.Lazy as ByteString
+ import Data.Char
+ import Data.List
