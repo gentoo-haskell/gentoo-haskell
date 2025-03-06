@@ -5,17 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Various small helper functions for Lists, Maybes, Tuples, Functions.
-		Some of these functions are improved implementations of standard functions.
-		They have the same name as their standard counterparts.
-		
-		All modules are plain Haskell 98.
-		The package depends exclusively on the @base@ package
-		and only that portions of @base@ that are simple to port.
-		Thus you do not risk a dependency avalanche by importing it.
-		However, further splitting the base package might invalidate this statement.
-		
-		Alternative packages: @Useful@, @MissingH@
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">utility-ht</remote-id>
+	</upstream>
 </pkgmetadata>
