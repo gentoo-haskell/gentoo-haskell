@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-unix-2.8.patch
+	)
 
 RDEPEND="dev-haskell/attoparsec:=[profile?]
 	dev-haskell/attoparsec-path:=[profile?]

@@ -1,0 +1,24 @@
+--- a/src/System/File/Follow.hs
++++ b/src/System/File/Follow.hs
+@@ -4,6 +4,7 @@
+   , TupleSections
+   , Rank2Types
+   , FlexibleContexts
++  , CPP
+   #-}
+ 
+ module System.File.Follow where
+@@ -48,8 +49,12 @@
+     if exists
+       then getFileStatus (BS8.fromString file') >>= (newIORef . fileSize)
+       else newIORef 0
++#if MIN_VERSION_unix(2,8,0)
++  let go  = bracket (liftIO $ openFd (BS8.fromString file') ReadOnly defaultFileFlags)
++#else
+   let go  = bracket (liftIO $ openFd (BS8.fromString file') ReadOnly Nothing defaultFileFlags)
+-                    (liftIO . closeFd) $ \fd -> do
++#endif     
++	       (liftIO . closeFd) $ \fd -> do
+               toSeek <- liftIO (readIORef positionRef)
+               idx <- liftIO (fdSeek fd AbsoluteSeek toSeek)
+               liftIO (writeIORef positionRef idx)
