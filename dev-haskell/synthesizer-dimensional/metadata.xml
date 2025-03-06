@@ -5,8 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		High-level functions that use physical units and
-		abstract from the sample rate in a statically type safe way.
-	</longdescription>
+	<use>
+		<flag name="buildexamples">Build example executables</flag>
+		<flag name="optimizeadvanced">Enable advanced optimizations. They slow down compilation considerably.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">synthesizer-dimensional</remote-id>
+	</upstream>
 </pkgmetadata>
