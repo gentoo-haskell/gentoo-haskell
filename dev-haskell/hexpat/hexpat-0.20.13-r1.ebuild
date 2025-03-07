@@ -17,8 +17,13 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'deepseq >= 1.1.0.0 && < 1.5.0.0' 'deepseq >= 1.1.0.0'
+	'text >= 0.5.0.0 && < 1.3.0.0' 'text >= 0.5.0.0'
+	)
+
 RDEPEND=">=dev-haskell/list-0.4.2:=[profile?] <dev-haskell/list-0.7:=[profile?]
-	>=dev-haskell/text-0.5.0.0:=[profile?] <dev-haskell/text-1.3.0.0:=[profile?]
+	>=dev-haskell/text-0.5.0.0:=[profile?]
 	>=dev-haskell/utf8-string-0.3:=[profile?] <dev-haskell/utf8-string-1.1:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	dev-libs/expat
