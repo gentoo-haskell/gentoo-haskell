@@ -1,0 +1,22 @@
+Title: GHC 9.8 is now unmasked
+Author: hololeap <holoeap@protonmail.com>
+Posted: 2025-03-06
+Revision: 1
+News-Item-Format: 2.0
+Display-If-Installed: dev-lang/ghc
+
+The v9.8 branch of dev-lang/ghc is now unmasked as it is considered
+stable enough for general use on this repo. If you wish to stay on an
+earlier version, you may use the new files located in the
+scripts/package.mask/ directory of the repo (only ghc-9.4 and ghc-9.6
+are provided). To use them, simply add a symlink of the desired file
+to your /etc/portage/package.mask/ directory.
+
+For instance, to stay on ghc-9.4, run the following:
+
+    ln -s $(portageq get_repo_path / haskell)/scripts/package.mask/ghc-9.4 \
+        /etc/portage/package.mask/ghc-9.4
+
+As always, report any bugs to the gentoo-haskell bug tracker[1].
+
+[1] https://github.com/gentoo-haskell/gentoo-haskell/issues
