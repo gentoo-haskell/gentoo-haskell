@@ -268,39 +268,6 @@ dev-haskell/country-codes
 >=dev-haskell/ghc-lib-parser-9.12
 >=dev-haskell/ghc-lib-parser-ex-9.12
 
-# hololeap <hololeap@protonmail.com> (2024-03-27)
-#
-# These package versions depend on a minimum GHC of 9.8, which is still
-# considered experimental.
-#
-# If you need to use GHC-9.8 or any of these package versions, copy or symlink
-# scripts/package.unmask/ghc-9.8 to your package.mask directory.
-#
-# You can do so by running:
-#
-# ln -s $(portageq get_repo_path / haskell)/scripts/package.unmask/ghc-9.8 \
-#  /etc/portage/package.unmask/ghc-9.8
-#
-# Please report any bugs to
-# https://github.com/gentoo-haskell/gentoo-haskell/issues
->=dev-lang/ghc-9.8
->=dev-haskell/hadrian-9.8
->=dev-haskell/cabal-3.10.2
->=dev-haskell/cabal-described-3.10.2
->=dev-haskell/cabal-quickcheck-3.10.2
->=dev-haskell/cabal-install-solver-3.10.2
->=dev-haskell/cabal-install-3.10.2
->=dev-haskell/cabal-tree-diff-3.10.2
->=dev-haskell/parsec-3.1.17
->=dev-haskell/sbv-11.0
->=dev-haskell/stm-2.5.2
->=dev-haskell/text-2.1
->=dev-haskell/singletons-th-3.3
->=dev-haskell/singletons-base-3.3
->=dev-haskell/ghc-exactprint-1.8
-~dev-haskell/haddock-2.29.2.9.8
-~dev-haskell/haddock-api-2.29.2.9.8
-
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of
 # lsp-test.
