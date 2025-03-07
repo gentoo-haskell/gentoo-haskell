@@ -18,6 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="glfw +glut"
 
+CABAL_CHDEPS=(
+	'GLFW-b >= 1.4.1.0 && < 2' 'GLFW-b >= 1.4.1.0'
+	)
+
 RDEPEND="
 	>=dev-haskell/bmp-1.2:=[profile?] <dev-haskell/bmp-1.3:=[profile?]
 	>=dev-haskell/gloss-rendering-1.13:=[profile?] <dev-haskell/gloss-rendering-1.14:=[profile?]
@@ -25,7 +29,7 @@ RDEPEND="
 	>=dev-haskell/opengl-2.12:=[profile?] <dev-haskell/opengl-3.1:=[profile?]
 	>=dev-lang/ghc-9.2.4:=
 	glfw? (
-		>=dev-haskell/glfw-b-1.4.1.0:=[profile?] <dev-haskell/glfw-b-2:=[profile?]
+		>=dev-haskell/glfw-b-1.4.1.0:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
