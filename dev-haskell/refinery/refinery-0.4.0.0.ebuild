@@ -16,6 +16,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.6.patch
+	)
+
 RDEPEND=">=dev-haskell/exceptions-0.10:=[profile?]
 	>=dev-haskell/mmorph-1:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?]
