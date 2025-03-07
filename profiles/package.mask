@@ -267,6 +267,8 @@ dev-haskell/country-codes
 >=dev-haskell/hlint-3.10
 >=dev-haskell/ghc-lib-parser-9.12
 >=dev-haskell/ghc-lib-parser-ex-9.12
+>=dev-haskell/cabal-fmt-0.1.12
+>=dev-haskell/cabal-install-parsers-0.6.2
 
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of
@@ -287,14 +289,6 @@ dev-haskell/ormolu
 dev-haskell/fourmolu
 dev-haskell/hls-ormolu-plugin
 dev-haskell/hls-fourmolu-plugin
-
-# hololeap <hololeap@protonmail.com> (2023-07-13)
-# Cabal-syntax-3.10 could cause trouble on ghc-9.4
-# See: https://github.com/gentoo-haskell/gentoo-haskell/issues/1464
->=dev-haskell/cabal-syntax-3.10
->=dev-haskell/cabal-fmt-0.1.7
-dev-haskell/cabal-install-parsers
-dev-haskell/cabal-plan
 
 # hololeap <hololeap@protonmail.com> (2023-02-27)
 # These currently depend on an old version of ghc-exactprint, which is
