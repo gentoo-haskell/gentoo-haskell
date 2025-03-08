@@ -1,0 +1,191 @@
+https://codeberg.org/wxHaskell/wxHaskell/commit/7156b6b78de3b4594d7ea7619b11431e6bbd427a
+From 7156b6b78de3b4594d7ea7619b11431e6bbd427a Mon Sep 17 00:00:00 2001
+From: pranaysashank <ps@pranaysashank.com>
+Date: Mon, 5 Aug 2024 19:30:25 +0530
+Subject: [PATCH] wxc: Add Compatibility from 3.0 to 3.2
+
+---
+ wxc/generate-version-header.sh |  4 ++--
+ wxc/src/cpp/eljaui.cpp         | 29 +++++++++++++++++++++++++----
+ wxc/src/cpp/eljevent.cpp       |  7 +++++++
+ wxc/src/cpp/eljgrid.cpp        | 22 ++++++++++++++++++----
+ wxc/src/cpp/eljvalidator.cpp   | 15 +++++++++++----
+ 5 files changed, 63 insertions(+), 14 deletions(-)
+
+diff --git a/wxc/generate-version-header.sh b/wxc/generate-version-header.sh
+index 9505b6d..27778a5 100755
+--- a/generate-version-header.sh
++++ b/generate-version-header.sh
+@@ -1,10 +1,10 @@
+ #!/bin/bash
+ 
+ # A list of wxWidgets versions that can be handled by this version of wxHaskell, preferred first
+-COMPATIBLE_VERSIONS=("3.2" "3.1")
++COMPATIBLE_VERSIONS=("3.2" "3.1" "3.0")
+ 
+ for V in ${COMPATIBLE_VERSIONS[@]}; do
+-	if [[ $(wx-config --version=$V --version-full) = $V* ]]; then
++	if [[ $(wx-config --version=$V --version-full 2>/dev/null) = $V* ]]; then
+ 		VERSION=$V
+ 		break
+ 	fi
+diff --git a/wxc/src/cpp/eljaui.cpp b/wxc/src/cpp/eljaui.cpp
+index 927e4ab..54dcc87 100644
+--- a/src/cpp/eljaui.cpp
++++ b/src/cpp/eljaui.cpp
+@@ -1331,17 +1331,29 @@ EWXWEXPORT(int,wxAuiTabContainerButton_Location)(wxAuiTabContainerButton* self)
+    return self->location;
+ }
+ 
+-
+-EWXWEXPORT(void,wxAuiTabContainerButton_Bitmap)(wxAuiTabContainerButton* self, wxBitmapBundle* _bmp)
++#if wxCHECK_VERSION(3, 1, 6)
++EWXWEXPORT(void,wxAuiTabContainerButton_Bitmap)(wxAuiTabContainerButton* self, wxBitmapBundle * _bmp)
+ {
+    *_bmp = self->bitmap;
+ }
+ 
+-
+-EWXWEXPORT(void,wxAuiTabContainerButton_DisBitmap)(wxAuiTabContainerButton* self, wxBitmapBundle* _bmp)
++EWXWEXPORT(void,wxAuiTabContainerButton_DisBitmap)(wxAuiTabContainerButton* self, wxBitmapBundle * _bmp)
+ {
+    *_bmp = self->disBitmap;
+ }
++#else
++EWXWEXPORT(void,wxAuiTabContainerButton_Bitmap)(wxAuiTabContainerButton* self, wxBitmap* _bmp)
++{
++   *_bmp = self->bitmap;
++}
++
++EWXWEXPORT(void,wxAuiTabContainerButton_DisBitmap)(wxAuiTabContainerButton* self, wxBitmap* _bmp)
++{
++   *_bmp = self->disBitmap;
++}
++#endif
++
++
+ 
+ EWXWEXPORT(wxRect*,wxAuiTabContainerButton_Rect)(wxAuiTabContainerButton* self)
+ {
+@@ -2978,12 +2990,21 @@ EWXWEXPORT(wxString*,wxAuiNotebookPage_Tooltip)(wxAuiNotebookPage* self)
+   return result;
+ }
+ 
++#if wxCHECK_VERSION(3, 1, 6)
+ EWXWEXPORT(wxBitmapBundle*,wxAuiNotebookPage_Bitmap)(wxAuiNotebookPage* self)
+ {
+   wxBitmapBundle *result = new wxBitmapBundle();
+   *result = self->bitmap;
+   return result;
+ }
++#else
++EWXWEXPORT(wxBitmap*,wxAuiNotebookPage_Bitmap)(wxAuiNotebookPage* self)
++{
++  wxBitmap *result = new wxBitmap();
++  *result = self->bitmap;
++  return result;
++}
++#endif
+ 
+ EWXWEXPORT(wxRect*,wxAuiNotebookPage_Rect)(wxAuiNotebookPage* self)
+ {
+diff --git a/src/cpp/eljevent.cpp b/wxc/src/cpp/eljevent.cpp
+index 564fe9a..fe5bd12 100644
+--- a/src/cpp/eljevent.cpp
++++ b/src/cpp/eljevent.cpp
+@@ -1067,7 +1067,14 @@ EWXWEXPORT(bool,wxPropertyGridEvent_HasProperty)(wxPropertyGridEvent* self)
+ EWXWEXPORT(wxPGProperty*,wxPropertyGridEvent_GetProperty)(wxPropertyGridEvent* self)
+ {
+ #if defined(wxUSE_PROPGRID)
++
++#if wxCHECK_VERSION(3, 1, 3)
+         return self->GetProperty();
++#else
++        wxPGProperty* const prop = self->GetProperty();
++        return prop == 0 ? new wxPGProperty() : prop;
++#endif
++
+ #else
+         return NULL;
+ #endif
+diff --git a/wxc/src/cpp/eljgrid.cpp b/wxc/src/cpp/eljgrid.cpp
+index 8df036d..8356158 100644
+--- a/src/cpp/eljgrid.cpp
++++ b/src/cpp/eljgrid.cpp
+@@ -353,21 +353,35 @@ EWXWEXPORT(bool,wxGrid_DeleteCols)(wxGrid* self,int pos,int numCols,bool updateL
+ 	return self->DeleteCols(pos, numCols, updateLabels);
+ }
+ 	
++#if wxCHECK_VERSION(3, 1, 3)
+ EWXWEXPORT(void,wxGrid_DrawGridSpace)(wxGrid* self,wxDC* dc,wxGridWindow* gridWindow)
+ {
+-	self->DrawGridSpace(*dc, gridWindow);
++        self->DrawGridSpace(*dc, gridWindow);
+ }
+-	
++#else
++EWXWEXPORT(void,wxGrid_DrawGridSpace)(wxGrid* self,wxDC* dc)
++{
++	self->DrawGridSpace(*dc);
++}
++#endif
++
+ EWXWEXPORT(void,wxGrid_DrawCellBorder)(wxGrid* self,wxDC* dc,int _row,int _col)
+ {
+ 	self->DrawCellBorder(*dc, wxGridCellCoords(_row, _col));
+ }
+-	
++
++#if wxCHECK_VERSION(3, 1, 6)
+ EWXWEXPORT(void,wxGrid_DrawAllGridLines)(wxGrid* self)
+ {
+ 	self->DrawAllGridLines();
+ }
+-	
++#else
++EWXWEXPORT(void,wxGrid_DrawAllGridLines)(wxGrid* self,wxDC* dc,void* reg)
++{
++	self->DrawAllGridLines(*dc,*((wxRegion*)reg));
++}
++#endif
++
+ EWXWEXPORT(void,wxGrid_DrawCell)(wxGrid* self,wxDC* dc,int _row,int _col)
+ {
+ 	self->DrawCell(*dc, wxGridCellCoords(_row, _col));
+diff --git a/wxc/src/cpp/eljvalidator.cpp b/wxc/src/cpp/eljvalidator.cpp
+index 3198ed9..349f286 100644
+--- a/src/cpp/eljvalidator.cpp
++++ b/src/cpp/eljvalidator.cpp
+@@ -33,12 +33,19 @@ EWXWEXPORT(void*,wxValidator_GetWindow)(void* self)
+ 	return (void*)((wxValidator*)self)->GetWindow();
+ }
+ 	
++#if wxCHECK_VERSION(3, 1, 1)
+ EWXWEXPORT(void,wxValidator_SetWindow)(void* self,wxWindow* win)
+ {
+ 	((wxValidator*)self)->SetWindow(win);
+ }
+-	
+-#if (wxVERSION_NUMBER < 2800)	
++#else
++EWXWEXPORT(void,wxValidator_SetWindow)(void* self,wxWindowBase* win)
++{
++	((wxValidator*)self)->SetWindow(win);
++}
++#endif
++
++#if (wxVERSION_NUMBER < 2800)
+ EWXWEXPORT(bool,wxValidator_IsSilent)()
+ {
+ 	return wxValidator::IsSilent();
+@@ -66,8 +73,8 @@ EWXWEXPORT(void,wxTextValidator_SetStyle)(void* self,int style)
+ {
+ 	((wxTextValidator*)self)->SetStyle((long) style);
+ }
+-	
+-#if (wxVERSION_NUMBER < 2800)	
++
++#if (wxVERSION_NUMBER < 2800)
+ EWXWEXPORT(void,wxTextValidator_SetIncludeList)(void* self,void* list,int count)
+ {
+ #if (wxVERSION_NUMBER <= 2600)

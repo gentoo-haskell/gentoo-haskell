@@ -1,0 +1,47 @@
+https://codeberg.org/wxHaskell/wxHaskell/commit/cbcb56f1b3d49fbea716902994fe7c73619a5582
+From cbcb56f1b3d49fbea716902994fe7c73619a5582 Mon Sep 17 00:00:00 2001
+From: Francesco Gazzetta <fgaz@fgaz.me>
+Date: Mon, 5 Aug 2024 14:34:20 +0200
+Subject: [PATCH] wxcore: put generated modules in `global-autogen`
+
+Fixes failure in finding the modules when installing from a clean sdist.
+
+`global-autogen` is an implementation detail of autogenPackageModulesDir.
+However, it has been stable since its introduction, and it seems more
+reliable than using the (supposed) hs-source-dir.
+---
+ configure    | 2 +-
+ wxcore.cabal | 7 -------
+ 2 files changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/configure b/configure
+index 1c27e97..dde4ca1 100755
+--- a/configure
++++ b/configure
+@@ -2,7 +2,7 @@
+ 
+ set -eu
+ 
+-wxcoreDirectory=src/haskell/Graphics/UI/WXCore
++wxcoreDirectory=global-autogen/Graphics/UI/WXCore
+ 
+ mkdir -p "$wxcoreDirectory"
+ 
+diff --git a/wxcore.cabal b/wxcore.cabal
+index 5d8af56..7955bc8 100644
+--- a/wxcore.cabal
++++ b/wxcore.cabal
+@@ -23,13 +23,6 @@ cabal-version: 2.0
+ build-type:    Configure
+ extra-source-files: configure
+ 
+-extra-tmp-files:
+-  src/haskell/Graphics/UI/WXCore/WxcClassInfo.hs
+-  src/haskell/Graphics/UI/WXCore/WxcClassTypes.hs
+-  src/haskell/Graphics/UI/WXCore/WxcClasses.hs
+-  src/haskell/Graphics/UI/WXCore/WxcClassesAL.hs
+-  src/haskell/Graphics/UI/WXCore/WxcClassesMZ.hs
+-
+ library
+   default-language:
+     Haskell2010
