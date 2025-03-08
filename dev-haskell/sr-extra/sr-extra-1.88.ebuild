@@ -17,6 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+network-uri omit-data omit-serialize"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.8.patch
+	)
+
 RDEPEND="dev-haskell/base64-bytestring:=[profile?]
 	dev-haskell/bzlib:=[profile?]
 	dev-haskell/cabal:=[profile?]

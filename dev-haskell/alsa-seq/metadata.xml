@@ -8,4 +8,7 @@
 	<use>
 		<flag name="modifyfilter">Use native event filter functions that are provided by newer ALSA versions</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">alsa-seq</remote-id>
+	</upstream>
 </pkgmetadata>

@@ -1,0 +1,41 @@
+fix for recent versions of Template Haskell
+--- a/src-2.11/Data/Accessor/Template.hs
++++ b/src-2.11/Data/Accessor/Template.hs
+@@ -96,7 +96,7 @@
+           ++ "\n nameDeriveAccessors, remember accessors are"
+           ++ "\n only generated for fields ending with an underscore"
+ 
+-    makeAccs :: [TyVarBndr] -> [VarStrictType] -> Q [Dec]
++    makeAccs :: [TyVarBndr BndrVis] -> [VarStrictType] -> Q [Dec]
+     makeAccs params vars =
+         liftM (concat . catMaybes) $
+         mapM (\ (name,_,ftype) -> makeAccFromName name params ftype) vars
+@@ -106,16 +106,16 @@
+         n <- namer (occString occ)
+         return $ Name (mkOccName n) f
+ 
+-    makeAccFromName :: Name -> [TyVarBndr] -> Type -> Q (Maybe [Dec])
++    makeAccFromName :: Name -> [TyVarBndr BndrVis] -> Type -> Q (Maybe [Dec])
+     makeAccFromName name params ftype =
+         Trav.mapM (makeAcc name params ftype) $ transformName name
+ 
+     -- haddock doesn't grok TH
+ #ifndef __HADDOCK__
+ 
+-    makeAcc ::Name -> [TyVarBndr] -> Type -> Name -> Q [Dec]
++    makeAcc ::Name -> [TyVarBndr BndrVis] -> Type -> Name -> Q [Dec]
+     makeAcc name params ftype accName = do
+-        let params' = map (\x -> case x of (PlainTV n) -> n; (KindedTV n _) -> n) params
++        let params' = map (\x -> case x of (PlainTV n _) -> n; (KindedTV n _ _) -> n) params
+         let appliedT = foldl AppT (ConT t) (map VarT params')
+         body <- [|
+                  Accessor.fromSetGet
+@@ -124,7 +124,7 @@
+                     ( $( return $ VarE name ) )
+                 |]
+         return
+-          [ SigD accName (ForallT (map PlainTV params')
++          [ SigD accName (ForallT (map (`PlainTV` SpecifiedSpec) params')
+                [] (AppT (AppT (ConT ''Accessor.T) appliedT) ftype))
+           , ValD (VarP accName) (NormalB body) []
+           ]

@@ -1,0 +1,69 @@
+From https://github.com/TOTBWF/refinery/pull/20
+From: Haisheng W - M <haisheng@mercury.com>
+Date: Fri, 28 Apr 2023 15:09:37 -0700
+Subject: [PATCH 1/6] Refactor the code in order to be compatible with newer
+ GHC
+
+1. fallback return to pure but not other way around
+2. explicit TypeOperators
+3. import Control.Monad to include MonadPlus
+--- a/src/Refinery/ProofState.hs
++++ b/src/Refinery/ProofState.hs
+@@ -11,6 +11,7 @@
+ {-# LANGUAGE RankNTypes             #-}
+ {-# LANGUAGE ScopedTypeVariables    #-}
+ {-# LANGUAGE TypeFamilies           #-}
++{-# LANGUAGE TypeOperators          #-}
+ {-# LANGUAGE UndecidableInstances   #-}
+ {-# LANGUAGE ViewPatterns           #-}
+ 
+@@ -108,7 +109,7 @@ instance (Show goal, Show err, Show ext, Show (m (ProofStateT ext' ext err s m g
+   show (Axiom ext) = "(Axiom " <> show ext <> ")"
+ 
+ instance Functor m => Applicative (ProofStateT ext ext err s m) where
+-    pure = return
++    pure goal = Subgoal goal Axiom
+     (<*>) = ap
+ 
+ instance MFunctor (ProofStateT ext' ext err s) where
+@@ -142,7 +143,7 @@ applyCont k (Handle p h) = Handle (applyCont k p) h
+ applyCont k (Axiom ext) = k ext
+ 
+ instance Functor m => Monad (ProofStateT ext ext err s m) where
+-    return goal = Subgoal goal Axiom
++    return = pure
+     (Subgoal a k)      >>= f = applyCont (f <=< k) (f a)
+     (Effect m)         >>= f = Effect (fmap (>>= f) m)
+     (Stateful s)       >>= f = Stateful $ fmap (>>= f) . s
+--- a/src/Refinery/Tactic/Internal.hs
++++ b/src/Refinery/Tactic/Internal.hs
+@@ -38,8 +38,7 @@ where
+ 
+ import GHC.Generics
+ import Control.Applicative
+-import Control.Monad.Identity
+-import Control.Monad.Except
++import Control.Monad
+ import Control.Monad.Catch
+ import Control.Monad.State.Strict
+ import Control.Monad.Trans ()
+@@ -121,7 +120,7 @@ instance Functor m => Functor (RuleT jdg ext err s m) where
+   fmap f = coerce (mapExtract id f)
+ 
+ instance Monad m => Applicative (RuleT jdg ext err s m) where
+-  pure = return
++  pure = coerce . Axiom
+   (<*>) = ap
+ 
+ instance Monad m => Alternative (RuleT jdg ext err s m) where
+@@ -129,7 +128,7 @@ instance Monad m => Alternative (RuleT jdg ext err s m) where
+     (<|>) = coerce Alt
+ 
+ instance Monad m => Monad (RuleT jdg ext err s m) where
+-  return = coerce . Axiom
++  return = pure
+   RuleT (Subgoal goal k)   >>= f = coerce $ Subgoal goal $ fmap (bindAlaCoerce f) k
+   RuleT (Effect m)         >>= f = coerce $ Effect $ fmap (bindAlaCoerce f) m
+   RuleT (Stateful s)       >>= f = coerce $ Stateful $ fmap (bindAlaCoerce f) . s
+
+    ChangeLog.md

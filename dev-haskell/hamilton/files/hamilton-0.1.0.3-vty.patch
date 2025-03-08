@@ -1,0 +1,32 @@
+diff -ur a/app/Examples.hs b/app/Examples.hs
+--- a/app/Examples.hs	2018-03-21 04:19:44.000000000 +0100
++++ b/app/Examples.hs	2025-03-07 19:25:49.146791785 +0100
+@@ -40,6 +40,7 @@
+ import           Data.Semigroup                      ((<>))
+ import           GHC.TypeLits
+ import           Graphics.Vty hiding                 (Config, (<|>))
++import           Graphics.Vty.CrossPlatform (mkVty)
+ import           Numeric.Hamilton
+ import           Numeric.LinearAlgebra.Static hiding (dim, (<>))
+ import           Options.Applicative
+@@ -316,7 +317,7 @@
+        <> progDescDoc (Just descr)
+         )
+ 
+-    vty <- mkVty =<< standardIOConfig
++    vty <- mkVty defaultConfig
+ 
+     opts <- newIORef $ SO 0.5 1 25
+ 
+Only in b: dist-newstyle
+diff -ur a/hamilton.cabal b/hamilton.cabal
+--- a/hamilton.cabal	2018-03-21 07:16:33.000000000 +0100
++++ b/hamilton.cabal	2025-03-07 19:25:00.793791682 +0100
+@@ -63,6 +63,7 @@
+     , vector
+     , vector-sized >=1.0
+     , vty
++    , vty-crossplatform
+   other-modules:
+       Paths_hamilton
+   default-language: Haskell2010

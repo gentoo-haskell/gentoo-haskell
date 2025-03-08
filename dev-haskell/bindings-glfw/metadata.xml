@@ -6,22 +6,12 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name='exposenative'>Whether or not to use the native access functions.</flag>
+		<flag name="X">Linux only. Determines whether to target the X11 display server.</flag>
+		<flag name="exposenative">Whether or not to use the native access functions.</flag>
 		<flag name="osmesa">Determines whether or not to use the Mesa 3D rendering context.</flag>
 	</use>
-	<longdescription>
-		Low-level bindings to &lt;http://www.glfw.org/ GLFW&gt;, an open source,
-		multi-platform library for creating windows with OpenGL contexts and managing
-		input and events.
-		
-		The binding is to
-		&lt;http://www.glfw.org/Version-3.0.1-released.html GLFW 3.0.1, released 2013-06-17&gt;.
-		
-		/These bindings are too low-level for normal use./ For higher-level bindings,
-		see &lt;http://hackage.haskell.org/package/GLFW-b GLFW-b&gt;.
-		
-		If you've used GLFW before, you were probably using 2.7.x. There are some
-		significant differences in 3.0.x. Please see the
-		&lt;http://www.glfw.org/docs/3.0/moving.html transition guide&gt;.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">bindings-GLFW</remote-id>
+		<remote-id type="github">bsl/bindings-GLFW</remote-id>
+	</upstream>
 </pkgmetadata>

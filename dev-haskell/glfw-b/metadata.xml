@@ -5,20 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Bindings to GLFW, a free, open source, multi-platform library for
-		creating OpenGL contexts and managing input, including keyboard,
-		mouse, joystick and time.
-		
-		GLFW-b works on Windows, Mac OS X, and many Unix-like operating
-		systems.
-		
-		Please see README.md
-		(&lt;http://github.com/bsl/GLFW-b/blob/master/README.md&gt;) for
-		information about how these bindings differ from the ones in the
-		GLFW package (&lt;http://hackage.haskell.org/package/GLFW&gt;).
-		
-		For more information about the library on which these bindings
-		are based, please see &lt;http://glfw.sourceforge.net&gt;.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">GLFW-b</remote-id>
+		<remote-id type="github">bsl/GLFW-b</remote-id>
+	</upstream>
 </pkgmetadata>

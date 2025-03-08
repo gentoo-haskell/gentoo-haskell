@@ -1,0 +1,34 @@
+From https://github.com/monky-hs/monky/pull/51
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 7 Mar 2025 16:57:38 +0100
+Subject: [PATCH] fixing for rencent versions of Template Haskell
+
+--- a/Monky/Template.hs
++++ b/Monky/Template.hs
+@@ -156,7 +156,7 @@ mkGetFun lname name hname funs raw = do
+   ghandle <- mkGetHandle handle lname
+   funStmts <- mapM (getFunQ handle) funs
+   ret <- mkRet hname (map (\(x,_,_) -> x) funs) raw (VarE handle)
+-  let fun = FunD funName [Clause [] (NormalB $ DoE (ghandle:funStmts ++ [ret])) []]
++  let fun = FunD funName [Clause [] (NormalB $ DoE Nothing (ghandle:funStmts ++ [ret])) []]
+   sig <- sigD funName [t| IO $(conT . mkName $ name) |]
+   return [sig,fun]
+ 
+--- a/Monky/VersionTH.hs
++++ b/Monky/VersionTH.hs
+@@ -30,7 +30,6 @@ where
+ 
+ import Data.List (isPrefixOf)
+ import Language.Haskell.TH
+-import Language.Haskell.TH.Syntax
+ import Monky.Utility
+ 
+ #if MIN_VERSION_base(4,8,0)
+@@ -43,6 +42,6 @@ versionTH :: Q Exp
+ versionTH = do
+   content <- lines <$> runIO (readFile "monky.cabal")
+   let parts = map read $ splitAtEvery "." $ getVersionString content
+-  returnQ . TupE $ map (LitE . IntegerL) parts
++  pure . TupE $ map (Just . LitE . IntegerL) parts
+   where getVLine = head . filter ("version:" `isPrefixOf`)
+         getVersionString = flip (!!) 1 . words . getVLine

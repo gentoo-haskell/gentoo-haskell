@@ -1,0 +1,125 @@
+diff -ur a/Extra/ErrorControl.hs b/Extra/ErrorControl.hs
+--- a/Extra/ErrorControl.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/ErrorControl.hs	2025-03-07 10:58:12.896746430 +0100
+@@ -20,8 +20,9 @@
+   , assure
+   ) where
+ 
++import Control.Monad.Trans.Class (lift)
+ import Control.Monad.Except
+-  (catchError, ExceptT(ExceptT), lift, MonadError, runExceptT, throwError, withExceptT)
++  (catchError, ExceptT(ExceptT), MonadError, runExceptT, throwError, withExceptT)
+ import Control.Monad.Identity (Identity(Identity), runIdentity)
+ import Control.Monad.Reader (mapReaderT, ReaderT(ReaderT), runReaderT)
+ import Control.Monad.RWS (mapRWST, runRWST, RWST(RWST))
+diff -ur a/Extra/Errors.hs b/Extra/Errors.hs
+--- a/Extra/Errors.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/Errors.hs	2025-03-07 10:57:49.063583336 +0100
+@@ -64,7 +64,8 @@
+ 
+ import Control.Exception (fromException, IOException, toException)
+ import Control.Lens (Prism', preview, prism', review)
+-import Control.Monad.Except (Except, ExceptT, lift, MonadError, runExcept, runExceptT, throwError, withExceptT)
++import Control.Monad.Trans.Class (lift)
++import Control.Monad.Except (Except, ExceptT, MonadError, runExcept, runExceptT, throwError, withExceptT)
+ --import Extra.Except (mapError)
+ import Data.Type.Bool
+ --import Data.Type.Equality
+diff -ur a/Extra/Except.hs b/Extra/Except.hs
+--- a/Extra/Except.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/Except.hs	2025-03-07 11:14:13.133222802 +0100
+@@ -37,10 +37,10 @@
+ import Control.Applicative
+ import Control.Exception hiding (catch) -- ({-evaluate,-} Exception, IOException, SomeException(..))
+ import Control.Lens (Prism', review)
++import Control.Monad (MonadPlus, mzero, mplus)
+ import Control.Monad.Catch
+-import Control.Monad.Except
+ import Control.Monad.Trans (MonadTrans(lift), liftIO)
+-import Control.Monad.Except (ExceptT, runExceptT)
++import Control.Monad.Except (ExceptT, runExceptT, MonadError, catchError, liftEither, withExceptT, throwError)
+ import Data.Monoid ((<>))
+ import Data.Serialize
+ import Data.Typeable (typeOf)
+diff -ur a/Extra/Lock.hs b/Extra/Lock.hs
+--- a/Extra/Lock.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/Lock.hs	2025-03-07 11:22:49.422868651 +0100
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE ScopedTypeVariables #-}
++{-# LANGUAGE CPP, ScopedTypeVariables #-}
+ module Extra.Lock
+     ( withLock
+     , awaitLock
+@@ -38,7 +38,11 @@
+           -- Try to create the lock file in exclusive mode, if this
+           -- succeeds then we have a lock.  Then write the process ID
+           -- into the lock and close.
++#if MIN_VERSION_unix(2,8,0)
++          openFd path ReadWrite (defaultFileFlags {exclusive = True, trunc = True}) >>=
++#else
+           openFd path ReadWrite (Just 0o600) (defaultFileFlags {exclusive = True, trunc = True}) >>=
++#endif
+           fdToHandle >>= \ h -> processID >>= hPutStrLn h >> hClose h
+       dropLock = removeFile path `catch` checkDrop
+       checkDrop (e :: IOException) | isDoesNotExistError e = return ()
+diff -ur a/Extra/Log.hs b/Extra/Log.hs
+--- a/Extra/Log.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/Log.hs	2025-03-07 11:18:52.724559310 +0100
+@@ -20,7 +20,7 @@
+   ) where
+ 
+ import Control.Lens((.=), ix, Lens', preview, to, use)
+-import Control.Monad.Except (when)
++import Control.Monad (when)
+ import Control.Monad.State (MonadState)
+ import Control.Monad.Trans (liftIO, MonadIO)
+ import Data.Bool (bool)
+diff -ur a/Extra/Monad/Supply.hs b/Extra/Monad/Supply.hs
+--- a/Extra/Monad/Supply.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/Monad/Supply.hs	2025-03-07 11:19:44.877520131 +0100
+@@ -21,6 +21,7 @@
+ ) where
+ 
+ import Control.Exception (throw)
++import Control.Monad (replicateM)
+ import Control.Monad.Catch
+ import Control.Monad.Fix
+ import Control.Monad.Identity
+diff -ur a/Extra/Orphans.hs b/Extra/Orphans.hs
+--- a/Extra/Orphans.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/Orphans.hs	2025-03-07 11:21:08.643588484 +0100
+@@ -42,12 +42,6 @@
+       kind = base
+       errorTypeName _ = "Data.Proxy.Proxy"
+ 
+-#if 1
+-deriving instance Generic Day
+-deriving instance Generic UTCTime
+-#else
+-#endif
+-
+ #if !MIN_VERSION_network_uri(2,6,2)
+ deriving instance Generic URIAuth
+ #endif
+diff -ur a/Extra/Orphans3.hs b/Extra/Orphans3.hs
+--- a/Extra/Orphans3.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/Extra/Orphans3.hs	2025-03-07 12:12:21.844937136 +0100
+@@ -33,7 +33,7 @@
+ import Prelude hiding (foldl1)
+ #if !__GHCJS__
+ import Network.URI
+-import Test.QuickCheck (Arbitrary(arbitrary), elements, Gen, oneof)
++import Test.QuickCheck (Arbitrary(arbitrary), elements, Gen, oneof, choose)
+ #endif
+ 
+ pprPair :: (Ppr a, Ppr b) => (a, b) -> Doc
+@@ -84,7 +84,7 @@
+ instance Arbitrary (Proxy a) where arbitrary = elements [Proxy]
+ instance Arbitrary Name where arbitrary = pure (mkName "aName")
+ instance Arbitrary TyLit where arbitrary = oneof [NumTyLit <$> arbitrary, StrTyLit <$> arbitraryConstructorName]
+-instance Arbitrary TyVarBndr where arbitrary = oneof [PlainTV <$> arbitraryTypeVariableName, KindedTV <$> arbitraryTypeVariableName <*> arbitraryKind]
++instance Arbitrary (TyVarBndr Specificity) where arbitrary = oneof [flip PlainTV SpecifiedSpec <$> arbitraryTypeVariableName, flip KindedTV SpecifiedSpec <$> arbitraryTypeVariableName <*> arbitraryKind]
+ 
+ instance Arbitrary URIAuth where
+     arbitrary =
+Only in b: dist-newstyle

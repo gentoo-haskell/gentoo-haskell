@@ -8,4 +8,8 @@
 	<use>
 		<flag name="microlens">Use microlens instead of lens</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">xlsx</remote-id>
+		<remote-id type="github">qrilka/xlsx</remote-id>
+	</upstream>
 </pkgmetadata>

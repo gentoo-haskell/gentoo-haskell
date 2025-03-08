@@ -1,0 +1,12 @@
+diff -ur a/Data/Text/Punycode/Encode.hs b/Data/Text/Punycode/Encode.hs
+--- a/Data/Text/Punycode/Encode.hs	2013-01-05 21:10:43.000000000 +0100
++++ b/Data/Text/Punycode/Encode.hs	2025-03-07 10:01:13.704486117 +0100
+@@ -2,6 +2,7 @@
+ 
+ module Data.Text.Punycode.Encode (encode) where
+ 
++import           Control.Monad (when)
+ import           Control.Monad.State hiding (state)
+ import           Control.Monad.Writer
+ import qualified Data.ByteString as BS
+Only in b: dist-newstyle
