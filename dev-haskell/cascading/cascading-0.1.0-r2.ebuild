@@ -33,6 +33,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${P}-lens-4.patch
 	"${FILESDIR}"/${P}-ghc84.patch
+	"${FILESDIR}"/${P}-ghc98.patch
 )
 
 src_prepare() {
