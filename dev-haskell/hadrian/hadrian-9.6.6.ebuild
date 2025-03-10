@@ -18,7 +18,7 @@ CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="static test +threaded"
 
 RESTRICT="!test? ( test )"
