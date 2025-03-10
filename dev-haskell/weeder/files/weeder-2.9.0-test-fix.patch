@@ -1,0 +1,18 @@
+From https://github.com/ocharles/weeder/pull/179
+From: ryndubei <114586905+ryndubei@users.noreply.github.com>
+Date: Thu, 12 Sep 2024 13:12:34 +0100
+Subject: [PATCH] Fix test failure for ModuleRoot
+
+---
+ test/Spec/ModuleRoot.stdout | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/test/Spec/ModuleRoot.stdout b/test/Spec/ModuleRoot.stdout
+index 911cd20..47a06e5 100644
+--- a/test/Spec/ModuleRoot.stdout
++++ b/test/Spec/ModuleRoot.stdout
+@@ -1,2 +1,2 @@
+-test/Spec/ModuleRoot/InstanceNotRoot.hs:9: (Instance) :: C T
+-test/Spec/ModuleRoot/M.hs:11: weed
++main: test/Spec/ModuleRoot/InstanceNotRoot.hs:9:1: (Instance) :: C T
++main: test/Spec/ModuleRoot/M.hs:11:1: weed
