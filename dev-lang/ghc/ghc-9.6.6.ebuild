@@ -32,6 +32,9 @@ SRC_URI="
 	!ghcbootstrap? (
 		https://downloads.haskell.org/~ghc/9.8.2/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
 		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
+		arm64? ( elibc_glibc? (
+			https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-deb10-linux.tar.xz
+		) )
 	)
 	test? (
 		https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz
@@ -51,6 +54,16 @@ yet_binary() {
 		amd64)
 			return 0
 			;;
+		arm64)
+			case "${ELIBC}" in
+				glibc)
+					return 0
+					;;
+				*)
+					return 1
+					;;
+			esac
+			;;
 		*)
 			return 1
 			;;
@@ -65,6 +78,16 @@ upstream_binary() {
 		amd64)
 			return 0
 			;;
+		arm64)
+			case "${ELIBC}" in
+				glibc)
+					return 0
+					;;
+				*)
+					return 1
+					;;
+			esac
+			;;
 		*)
 			return 1
 			;;
@@ -77,6 +100,13 @@ ghc_bin_path() {
 	case ${ARCH} in
 		amd64)
 			ghc_bin_triple="x86_64-unknown-linux"
+			;;
+		arm64)
+			if use elibc_musl; then
+				ghc_bin_triple="aarch64-alpine-linux"
+			else
+				ghc_bin_triple="aarch64-unknown-linux"
+			fi
 			;;
 		*)
 			die "Unknown ghc binary triple. The list here should match yet_binary."
