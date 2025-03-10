@@ -1,0 +1,26 @@
+From https://github.com/tov/memoize/pull/18
+From: =?UTF-8?q?Mario=20Bla=C5=BEevi=C4=87?= <blamario@protonmail.com>
+Date: Wed, 10 Jan 2024 23:08:05 -0500
+Subject: [PATCH] Fix the compilation with GHC 9.8.1, issue #17
+
+---
+ src/Data/Function/Memoize/TH.hs | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/src/Data/Function/Memoize/TH.hs b/src/Data/Function/Memoize/TH.hs
+index 802c60a..13fa4e9 100644
+--- a/src/Data/Function/Memoize/TH.hs
++++ b/src/Data/Function/Memoize/TH.hs
+@@ -50,7 +50,11 @@ import Data.Function.Memoize.Class
+ #endif
+ 
+ -- GHC 9 adds a type parameter to the TyVarBndr type:
+-#if __GLASGOW_HASKELL__ >= 900
++#if __GLASGOW_HASKELL__ >= 908
++#  define COMPAT_TY_VAR_BNDR(V)      (TyVarBndr (BndrVis))
++#  define COMPAT_PLAIN_TV(N)         (PlainTV (N) _)
++#  define COMPAT_KINDED_TV(N, K)     (KindedTV (N) _ (K))
++#elif __GLASGOW_HASKELL__ >= 900
+ #  define COMPAT_TY_VAR_BNDR(V)      (TyVarBndr (V))
+ #  define COMPAT_PLAIN_TV(N)         (PlainTV (N) _)
+ #  define COMPAT_KINDED_TV(N, K)     (KindedTV (N) _ (K))
