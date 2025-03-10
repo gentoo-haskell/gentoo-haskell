@@ -1,0 +1,20 @@
+--- a/Data/CSS/Build.hs
++++ b/Data/CSS/Build.hs
+@@ -33,6 +33,7 @@
+ import qualified Data.Set as S
+ import Control.Applicative
+ import Control.Lens hiding (below)
++import Control.Monad ((>=>))
+ import Control.Monad.Reader
+ import Control.Monad.Writer.Class
+ import Data.CSS.Types
+--- a/Data/CSS/Render.hs
++++ b/Data/CSS/Render.hs
+@@ -17,6 +17,7 @@
+ import qualified Data.Set as S
+ import Blaze.ByteString.Builder
+ import Blaze.ByteString.Builder.Char.Utf8
++import Control.Monad (liftM)
+ import Control.Monad.Writer
+ import Data.CSS.Types
+ import Data.CSS.Utils
