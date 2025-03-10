@@ -1,0 +1,17 @@
+diff -ur a/Hidden/RegexPRCore.hs b/Hidden/RegexPRCore.hs
+--- a/Hidden/RegexPRCore.hs	2011-07-06 08:45:23.000000000 +0200
++++ b/Hidden/RegexPRCore.hs	2025-03-10 19:05:09.882872109 +0100
+@@ -31,10 +31,10 @@
+                               beginningOfInput, endOfInput,
+                               MonadPlus(..), (>++>) )
+ import Hidden.ParseRegexStr ( RegexAction(..), parseRegexStr )
+-import Control.Monad.State  ( StateT, runStateT, gets, modify, lift, liftM )
++import Control.Monad.State  ( StateT, runStateT, gets, modify, lift )
+ import Control.Monad.Reader ( ask )
+ import Hidden.Tools         ( guardEqual )
+-import Control.Monad        ( unless )
++import Control.Monad        ( unless, liftM )
+ 
+ matchRegexPRVerbose ::
+   String -> (String, String)
+Only in b: dist-newstyle
