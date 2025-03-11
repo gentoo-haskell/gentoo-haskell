@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+GHC_BOOTSTRAP_PACKAGES=(
+	cabal-doctest
+	)
+
 RDEPEND="<dev-haskell/memory-1:=[profile?]
 	<dev-haskell/text-3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
