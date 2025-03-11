@@ -5,7 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Inflections provides methods for singularization, pluralization, dasherizing, etc. The library is based on Rails' inflections library.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">inflections</remote-id>
+		<remote-id type="github">stackbuilders/inflections-hs</remote-id>
+	</upstream>
 </pkgmetadata>
