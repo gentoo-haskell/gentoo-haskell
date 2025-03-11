@@ -234,6 +234,7 @@ dev-haskell/country-codes
 >=dev-haskell/hadrian-9.12.1
 >=dev-haskell/text-2.1.2
 >=dev-haskell/transformers-0.6.1.2
+>=dev-haskell/extensions-0.1.0.3
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
