@@ -595,6 +595,9 @@ src_prepare() {
 	# Fix QA Notice: Found the following implicit function declarations in configure logs
 	eapply "${FILESDIR}/${PN}-9.10.1-fix-configure-implicit-function.patch"
 
+	# Support building on riscv/musl
+	eapply "${FILESDIR}/${PN}-9.10.1-llvm-targets-riscv64-unknown-linux-musl.patch"
+
 	pushd "${S}/hadrian" || die
 		# Fix QA Notice: Unrecognized configure options: --with-cc
 		eapply "${FILESDIR}/hadrian-9.12.1-remove-with-cc-configure-flag.patch"
