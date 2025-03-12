@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-PATCHES=("${FILESDIR}"/${P}-time-1.6.patch)
+PATCHES=("${FILESDIR}"/${P}-ghc9.8.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
