@@ -1,0 +1,23 @@
+Add "riscv64-unknown-linux-musl" to the list of LLVM targets. Fixes,
+
+  ghc: panic! (the 'impossible' happened)
+    GHC version 9.10.1:
+        Failed to lookup LLVM data layout
+    Target: riscv64-unknown-linux-musl
+    Available targets:
+        i386-unknown-windows
+        i686-unknown-windows
+	...
+
+on riscv/musl systems. We simply copy the "riscv64-unknown-linux" target.
+
+--- a/llvm-targets	2024-05-10 01:05:49.000000000 -0400
++++ b/llvm-targets	2025-03-05 20:56:07.436606663 -0500
+@@ -43,6 +43,7 @@
+ ,("s390x-ibm-linux", ("E-m:e-i1:8:16-i8:8:16-i64:64-f128:64-a:8:16-n32:64", "z10", ""))
+ ,("riscv64-unknown-linux-gnu", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+m +a +f +d +c +relax"))
+ ,("riscv64-unknown-linux", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+m +a +f +d +c +relax"))
++,("riscv64-unknown-linux-musl", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+m +a +f +d +c +relax"))
+ ,("loongarch64-unknown-linux-gnu", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+f +d"))
+ ,("loongarch64-unknown-linux", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+f +d"))
+ ,("i386-apple-darwin", ("e-m:o-p:32:32-p270:32:32-p271:32:32-p272:64:64-f64:32:64-f80:128-n8:16:32-S128", "penryn", ""))
