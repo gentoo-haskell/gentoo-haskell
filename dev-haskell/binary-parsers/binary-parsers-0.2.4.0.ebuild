@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+	'bytestring == 0.10.*' 'bytestring >= 0.10'
+	)
 
 RDEPEND=">=dev-haskell/bytestring-lexing-0.5:=[profile?] <dev-haskell/bytestring-lexing-0.6:=[profile?]
 	>dev-haskell/scientific-0.3:=[profile?]
