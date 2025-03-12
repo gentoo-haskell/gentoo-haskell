@@ -1,0 +1,14 @@
+From https://github.com/mokus0/polynomial/pull/21
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 12 Mar 2025 10:11:25 +0100
+Subject: [PATCH] fixing for recent versions of ghc
+
+--- a/src/Math/Polynomial/Type.hs
++++ b/src/Math/Polynomial/Type.hs
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE ViewPatterns, TypeFamilies, GADTs, UndecidableInstances #-}
++{-# LANGUAGE ViewPatterns, TypeFamilies, GADTs, UndecidableInstances,
++   FlexibleContexts #-}
+ -- |Low-level interface for the 'Poly' type.
+ module Math.Polynomial.Type 
+     ( Endianness(..)
