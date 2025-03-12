@@ -15,7 +15,12 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+		'attoparsec >= 0.10.4.0 && < 0.12' 'attoparsec >= 0.10.4.0'
+		'http-types >= 0.8.0 && < 0.9' 'http-types >= 0.8.0'
+		'bytestring >=0.9.1.5 && <0.11' 'bytestring >= 0.9.1.5'
+	)
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.4.0:=[profile?]
 	>=dev-haskell/http-types-0.8.0:=[profile?]
@@ -26,11 +31,3 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=("${FILESDIR}"/${P}-http.patch)
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'attoparsec >= 0.10.4.0 && < 0.12' 'attoparsec >= 0.10.4.0' \
-		'http-types >= 0.8.0 && < 0.9' 'http-types >= 0.8.0'
-}
