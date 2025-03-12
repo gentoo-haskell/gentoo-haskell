@@ -16,6 +16,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-monad-fix.patch
+	)
+
 RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "

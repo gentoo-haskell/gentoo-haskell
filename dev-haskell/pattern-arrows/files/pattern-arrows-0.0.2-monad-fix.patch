@@ -1,0 +1,21 @@
+From 785512b896b0c20c576cbbd099f705798117801c Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 12 Mar 2025 16:50:44 +0100
+Subject: [PATCH] Import Control.Monad.Fix. Fixes #3
+
+---
+ src/Control/PatternArrows.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/Control/PatternArrows.hs b/src/Control/PatternArrows.hs
+index d382c19..5ee2e52 100644
+--- a/src/Control/PatternArrows.hs
++++ b/src/Control/PatternArrows.hs
+@@ -23,6 +23,7 @@ import qualified Control.Category as C
+ import Control.Category ((>>>))
+ import qualified Control.Arrow as A
+ import Control.Arrow ((***), (<+>))
++import Control.Monad.Fix (fix)
+ 
+ -- |
+ -- A first-order pattern match
