@@ -16,7 +16,7 @@ PATCHES=(
 	)
 
 LICENSE="wxWinLL-3.1"
-SLOT=0
+SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="gstreamer"
 
