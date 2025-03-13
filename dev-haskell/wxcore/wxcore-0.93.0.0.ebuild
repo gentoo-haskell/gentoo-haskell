@@ -16,7 +16,7 @@ SRC_URI="https://codeberg.org/wxHaskell/wxHaskell/archive/wxc-1.0.0.2.tar.gz"
 S="${WORKDIR}/wxhaskell/wxcore"
 
 LICENSE="wxWinLL-3.1"
-SLOT=0
+SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="gstreamer"
 
