@@ -16,7 +16,7 @@ SRC_URI="https://codeberg.org/wxHaskell/wxHaskell/archive/wxc-1.0.0.2.tar.gz"
 S="${WORKDIR}/wxhaskell/wxdirect"
 
 LICENSE="BSD"
-SLOT=0
+SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/parsec-2.1.0:=[profile?] <dev-haskell/parsec-4:=[profile?]
