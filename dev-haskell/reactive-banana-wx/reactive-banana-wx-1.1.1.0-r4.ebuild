@@ -17,7 +17,7 @@ DESCRIPTION="Examples for the reactive-banana library, using wxHaskell"
 HOMEPAGE="http://wiki.haskell.org/Reactive-banana"
 
 LICENSE="BSD"
-SLOT=0
+SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples"
 
