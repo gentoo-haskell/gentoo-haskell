@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -47,6 +47,11 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
+
+# The cabal file for hadrian passes "-with-rtsopts=-I0 -qg" to GHC when
+# USE=threaded is enabled, but that doesn't work with an unregisterised
+# ghc.
+BDEPEND="threaded? ( dev-lang/ghc[-unregisterised] )"
 
 src_configure() {
 	local configure_flags=(

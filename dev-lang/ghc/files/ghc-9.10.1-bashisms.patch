@@ -1,0 +1,17 @@
+Already fixed in the upstream terminfo package, but it breaks the
+build:
+
+  Error: hadrian: Missing dependency on a foreign library:
+  * Missing (or bad) C library: NONE
+
+--- a/libraries/terminfo/configure	2024-05-10 01:08:11.000000000 -0400
++++ b/libraries/terminfo/configure	2025-03-06 07:53:19.099266789 -0500
+@@ -1821,7 +1821,7 @@
+   TERMINFO_LIB_DIRS=$curses_libraries
+ fi
+ 
+-if test "x$curses_library" == "xNONE"; then
++if test "x$curses_library" = "xNONE"; then
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'

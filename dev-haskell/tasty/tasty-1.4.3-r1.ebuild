@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,6 +20,7 @@ RDEPEND="
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	>=dev-haskell/optparse-applicative-0.14:=[profile?]
 	>=dev-haskell/tagged-0.5:=[profile?]
+	>=dev-haskell/unbounded-delays-0.1:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}

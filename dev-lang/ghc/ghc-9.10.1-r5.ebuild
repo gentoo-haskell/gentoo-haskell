@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -589,6 +589,12 @@ src_prepare() {
 
 	eapply "${FILESDIR}/${PN}-9.10.1-deepseq-1_5_1_0.patch"
 
+	# Support building on riscv/musl
+	eapply "${FILESDIR}/${PN}-9.10.1-llvm-targets-riscv64-unknown-linux-musl.patch"
+
+	# Fix the terminfo build with non-bash shells
+	eapply "${FILESDIR}/${PN}-9.10.1-bashisms.patch"
+
 	pushd "${S}/hadrian" || die
 		# Fix QA Notice: Unrecognized configure options: --with-cc
 		eapply "${FILESDIR}/hadrian-9.10.1-remove-with-cc-configure-flag.patch"
@@ -676,8 +682,6 @@ src_configure() {
 		esac
 	done
 
-
-
 	### Prepare hadrian build settings files
 
 	mkdir _build
@@ -691,7 +695,7 @@ src_configure() {
 	# installed to the system)
 	echo "stage1.*.cabal.configure.opts += --disable-library-stripping" >> _build/hadrian.settings
 
-    ### Gather configuration variables for GHC
+	### Gather configuration variables for GHC
 
 	# Get ghc from the binary
 	# except when bootstrapping we just pick ghc up off the path
@@ -745,9 +749,6 @@ src_configure() {
 
 	einfo "Final _build/hadrian.settings:"
 	cat _build/hadrian.settings || die
-
-
-
 
 	### Bootstrap Hadrian, then final configure (should this be here or in src_compile?)
 

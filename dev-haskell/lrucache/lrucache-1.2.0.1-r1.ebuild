@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -8,14 +8,14 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
+HACKAGE_REV="1"
 DESCRIPTION="a simple, pure LRU cache"
 HOMEPAGE="https://github.com/chowells79/lrucache"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
-
+SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz
+	https://hackage.haskell.org/package/${P}/revision/${HACKAGE_REV}.cabal -> ${PF}.cabal"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND=">=dev-haskell/contravariant-0.5:=[profile?] <dev-haskell/contravariant-2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
@@ -23,3 +23,9 @@ RDEPEND=">=dev-haskell/contravariant-0.5:=[profile?] <dev-haskell/contravariant-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
+
+src_prepare() {
+	# pull revised cabal from upstream
+	cp "${DISTDIR}/${PF}.cabal" "${S}/${PN}.cabal" || die
+	default
+}

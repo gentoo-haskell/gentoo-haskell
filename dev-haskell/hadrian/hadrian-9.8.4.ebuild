@@ -54,6 +54,11 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
 
+# The cabal file for hadrian passes "-with-rtsopts=-I0 -qg" to GHC when
+# USE=threaded is enabled, but that doesn't work with an unregisterised
+# ghc.
+BDEPEND="threaded? ( dev-lang/ghc[-unregisterised] )"
+
 src_prepare() {
 	sed -i -e \
 		's/^\(version:.*\)0\.1\.0\.0/\1'"${PV}"'/' \
