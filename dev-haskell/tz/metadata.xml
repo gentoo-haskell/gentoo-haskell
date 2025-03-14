@@ -8,19 +8,6 @@
 	<use>
 		<flag name="template-haskell">Enable the use of and export Template Haskell functionality. (Might need to disable this for cross-compiling.)</flag>
 	</use>
-	<longdescription>
-		The goal of this package is to provide a library that can read time
-		zone info files (aka. Olson files), and does time zone conversions
-		in a /pure/ and /efficient/ way.
-		
-		We also provide platform-independent and/or compiled-in access to
-		the standard Time Zone Dabase by the means of the companion @tzdata@
-		package &lt;http://hackage.haskell.org/package/tzdata&gt;.
-		
-		The package is currently in an alpha phase, I&#39;m still experimenting
-		with different ideas wrt. scope\/API\/implementation\/etc. All
-		comments are welcome!
-	</longdescription>
 	<upstream>
 		<remote-id type="hackage">tz</remote-id>
 		<remote-id type="github">ysangkok/haskell-tz</remote-id>

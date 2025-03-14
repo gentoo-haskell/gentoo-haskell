@@ -1,0 +1,12 @@
+Only in b: dist-newstyle
+diff -ur a/test/Spec.hs b/test/Spec.hs
+--- a/test/Spec.hs	2001-09-09 03:46:40.000000000 +0200
++++ b/test/Spec.hs	2025-03-07 12:32:09.836426856 +0100
+@@ -10,6 +10,7 @@
+ module Main where
+ 
+ import Data.Bifunctor
++import Control.Monad (when)
+ import Control.Monad.Writer (WriterT (..))
+ import Data.Coerce (coerce)
+ import Data.Monoid (Any (..), Ap (..))
