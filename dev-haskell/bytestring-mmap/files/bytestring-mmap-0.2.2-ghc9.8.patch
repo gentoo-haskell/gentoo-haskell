@@ -1,0 +1,37 @@
+diff -ur a/System/IO/Posix/MMap/Lazy.hs b/System/IO/Posix/MMap/Lazy.hs
+--- a/System/IO/Posix/MMap/Lazy.hs	2011-04-29 21:58:05.000000000 +0200
++++ b/System/IO/Posix/MMap/Lazy.hs	2025-03-10 19:14:05.292465714 +0100
+@@ -91,7 +91,11 @@
+ --
+ unsafeMMapFile :: FilePath -> IO ByteString
+ unsafeMMapFile path = do
++#if MIN_VERSION_unix(2,8,0)
++    fd   <- openFd path ReadOnly defaultFileFlags
++#else
+     fd   <- openFd path ReadOnly Nothing defaultFileFlags
++#endif
+     always (closeFd fd) $ do
+         stat <- getFdStatus fd
+         let size = fromIntegral (fileSize stat)
+diff -ur a/System/IO/Posix/MMap.hs b/System/IO/Posix/MMap.hs
+--- a/System/IO/Posix/MMap.hs	2011-04-29 21:58:05.000000000 +0200
++++ b/System/IO/Posix/MMap.hs	2025-03-10 19:13:13.762825682 +0100
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE ForeignFunctionInterface #-}
++{-# LANGUAGE CPP #-}
+ --------------------------------------------------------------------
+ -- |
+ -- Module    :  System.IO.Posix.MMap
+@@ -98,7 +99,11 @@
+ --
+ unsafeMMapFile :: FilePath -> IO ByteString
+ unsafeMMapFile f = do
++#if MIN_VERSION_unix(2,8,0)  
++    fd   <- openFd f ReadOnly defaultFileFlags
++#else
+     fd   <- openFd f ReadOnly Nothing defaultFileFlags
++#endif
+     always (closeFd fd) $ do
+         stat <- getFdStatus fd
+         let size = fromIntegral (fileSize stat)
+Only in b: dist-newstyle

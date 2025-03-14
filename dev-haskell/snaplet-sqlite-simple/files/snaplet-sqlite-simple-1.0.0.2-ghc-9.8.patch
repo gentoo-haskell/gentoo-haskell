@@ -1,0 +1,16 @@
+From https://github.com/nurpax/snaplet-sqlite-simple/pull/19
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Mon, 10 Mar 2025 17:39:38 +0100
+Subject: [PATCH] Importing liftM and when
+
+--- a/src/Snap/Snaplet/SqliteSimple.hs
++++ b/src/Snap/Snaplet/SqliteSimple.hs
+@@ -85,7 +85,7 @@ module Snap.Snaplet.SqliteSimple (
+   ) where
+ 
+ import           Prelude hiding (catch)
+-
++import Control.Monad (when, liftM)
+ import           Control.Concurrent
+ import           Control.Lens
+ import           Control.Monad.Base

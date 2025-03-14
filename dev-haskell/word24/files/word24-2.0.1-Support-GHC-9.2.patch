@@ -1,0 +1,59 @@
+From https://github.com/winterland1989/word24/pull/4
+From: Fumiaki Kinoshita <fumiaki.kinoshita@herp.co.jp>
+Date: Fri, 18 Mar 2022 13:52:20 +0900
+Subject: [PATCH 2/3] Support GHC 9.2
+
+--- a/src/Data/Int/Int24.hs
++++ b/src/Data/Int/Int24.hs
+@@ -37,13 +37,14 @@ import           Foreign.Storable
+ import           GHC.Arr
+ import           GHC.Base
+ import           GHC.Enum
+-import           GHC.Int
+-import           GHC.Num
++import           GHC.Int.Compat
++import           GHC.Integer (smallInteger, integerToInt)
++import           GHC.Num hiding (integerToInt)
+ import           GHC.Ptr
+ import           GHC.Read
+ import           GHC.Real
+ import           GHC.Show
+-import           GHC.Word
++import           GHC.Word.Compat
+ 
+ import           Control.DeepSeq
+ 
+--- a/src/Data/Word/Word24.hs
++++ b/src/Data/Word/Word24.hs
+@@ -42,12 +42,13 @@ import           Foreign.Storable
+ import           GHC.Arr
+ import           GHC.Base
+ import           GHC.Enum
+-import           GHC.Num
++import           GHC.Num hiding (integerToWord)
+ import           GHC.Ptr
+ import           GHC.Read
+ import           GHC.Real
+ import           GHC.Show
+-import           GHC.Word
++import           GHC.Word.Compat
++import           GHC.Integer (smallInteger, integerToWord)
+ 
+ import           Control.DeepSeq
+ 
+--- a/word24.cabal
++++ b/word24.cabal
+@@ -20,7 +20,9 @@ library
+  default-language: Haskell2010
+  hs-source-dirs: src
+ 
+- build-depends: base >= 4.7 && < 4.15, deepseq >= 1.2 && < 2
++ build-depends: base >= 4.7 && < 5, deepseq >= 1.2 && < 2,
++    word-compat                >= 0.0 && <0.1
++
+ 
+  exposed-modules:
+    Data.Int.Int24
+-- 
+2.48.1
+

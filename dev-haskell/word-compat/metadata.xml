@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">sqlite-simple</remote-id>
-		<remote-id type="github">nurpax/sqlite-simple</remote-id>
+		<remote-id type="hackage">word-compat</remote-id>
 	</upstream>
 </pkgmetadata>

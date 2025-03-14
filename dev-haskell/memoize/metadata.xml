@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">memoize</remote-id>
+		<remote-id type="github">tov/memoize</remote-id>
+	</upstream>
 </pkgmetadata>

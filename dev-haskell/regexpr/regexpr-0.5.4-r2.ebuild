@@ -16,6 +16,10 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc9.8.patch
+	)
+
 RDEPEND="dev-haskell/hunit:=[profile?]
 	dev-haskell/mtl:=[profile?]
 	>=dev-haskell/mtlparse-0.1.0:=[profile?]

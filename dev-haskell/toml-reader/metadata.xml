@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">sqlite-simple</remote-id>
-		<remote-id type="github">nurpax/sqlite-simple</remote-id>
+		<remote-id type="hackage">toml-reader</remote-id>
+		<remote-id type="github">brandonchinn178/toml-reader</remote-id>
 	</upstream>
 </pkgmetadata>
