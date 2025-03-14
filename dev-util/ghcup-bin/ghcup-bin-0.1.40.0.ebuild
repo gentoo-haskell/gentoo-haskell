@@ -1,4 +1,4 @@
-# Copyright 2020-2024 Gentoo Authors
+# Copyright 2020-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -69,22 +69,25 @@ BDEPEND="${BDEPEND}
 	)
 "
 
-### Export some more variables specific to the local $ARCH, for convenience
-
-# the binary name prefix
-GHCUP_BIN_PREFIX="$(ghcup_bin_prefix "${ARCH}")"
-
-# name (prefix) for our saved files in $DISTDIR (specific to local $ARCH!)
-GHCUP_DISTDIR_PREFIX="${P}-${GHCUP_BIN_PREFIX}"
-
-# The upstream name of the ghcup binary we will work with (specific to local $ARCH!)
-GHCUP_BIN="${GHCUP_BIN_PREFIX}-ghcup-${PV}"
-
-###
-
 # Print _only_ the relevant line from the sumfile for our $GHCUP_BIN
 ghcup_trim_sumfile() {
 	grep ./${GHCUP_BIN}\$ "${S}/SHA256SUMS"
+}
+
+pkg_setup() {
+	# Export some more variables specific to the local $ARCH, for
+	# convenience
+
+	# the binary name prefix
+	GHCUP_BIN_PREFIX="$(ghcup_bin_prefix "${ARCH}")"
+
+	# name (prefix) for our saved files in $DISTDIR (specific to local
+	# $ARCH!)
+	GHCUP_DISTDIR_PREFIX="${P}-${GHCUP_BIN_PREFIX}"
+
+	# The upstream name of the ghcup binary we will work with (specific
+	# to local $ARCH!)
+	GHCUP_BIN="${GHCUP_BIN_PREFIX}-ghcup-${PV}"
 }
 
 src_unpack() {
