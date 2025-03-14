@@ -1,0 +1,24 @@
+From https://github.com/sydow/ireal/pull/2
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 12 Mar 2025 09:45:40 +0100
+Subject: [PATCH] integerLogBase now lives in GHC.Num
+
+--- a/Data/Number/IReal/Auxiliary.hs
++++ b/Data/Number/IReal/Auxiliary.hs
+@@ -1,6 +1,6 @@
+ module Data.Number.IReal.Auxiliary where
+ 
+-import GHC.Float
++import GHC.Num
+ 
+ infix 1 `atDecimals` 
+ 
+@@ -8,7 +8,7 @@ infix 1 `atDecimals`
+ 
+ -- | Base 2 logarithm of argument, rounded downwards.
+ lg2 :: Integer -> Int
+-lg2 = GHC.Float.integerLogBase 2
++lg2 = fromIntegral . GHC.Num.integerLogBase 2
+ 
+ -- | Converts precisions from decimal to binary.
+ dec2bits ::  Int -> Int

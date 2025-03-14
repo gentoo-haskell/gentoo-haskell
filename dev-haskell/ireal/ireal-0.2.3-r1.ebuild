@@ -12,6 +12,10 @@ DESCRIPTION="Real numbers and intervals with relatively efficient exact arithmet
 HOMEPAGE="https://hackage.haskell.org/package/ireal"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-integerLogBase.patch
+	)
+
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"

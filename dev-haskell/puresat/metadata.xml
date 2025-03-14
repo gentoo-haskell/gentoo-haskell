@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="exe">Build executable</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">puresat</remote-id>
+		<remote-id type="github">phadej/puresat</remote-id>
+	</upstream>
+</pkgmetadata>

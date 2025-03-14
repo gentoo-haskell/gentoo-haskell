@@ -1,0 +1,16 @@
+--- a/TailHandle.hs
++++ b/TailHandle.hs
+@@ -165,8 +165,12 @@
+   get (TailFd fd) = got (Just fd)
+   get (TailPath path) = got =<<
+     catchDoesNotExist (
++#if MIN_VERSION_unix(2,8,0)
++      openFd path ReadOnly OpenFileFlags{
++#else
+       openFd path ReadOnly Nothing OpenFileFlags{
+-	append = False, exclusive = False, noctty = False, nonBlock = True, trunc = False
++#endif
++  append = False, exclusive = False, noctty = False, nonBlock = True, trunc = False
+       })
+   got Nothing = thErrMsg th "No such file or directory" $> th{ thPos = 0 } 
+   got (Just fd) = do

@@ -1,0 +1,36 @@
+From https://github.com/kfish/hogg/pull/3
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 12 Mar 2025 15:30:04 +0100
+Subject: [PATCH] Fixing for recent ghc
+
+--- a/Codec/Container/Ogg/Dump.hs
++++ b/Codec/Container/Ogg/Dump.hs
+@@ -30,7 +30,7 @@ hexDump' o d
+   | L.null d = C.empty
+   | otherwise = lineDump `C.append` hexDump' (o+16) rest
+     where (line, rest) = {-# SCC "LsplitAt" #-} L.splitAt 16 d
+-          lineDump = {-# SCC "Cpack" #-} C.pack $ {-# SCC "lineDump" #-} spaces 4 ++ offset ++ ": " ++ hexLine ++ spaces hexPad ++ ascLine ++ "\n"
++          lineDump = {-# SCC "Cpack" #-} C.pack $ spaces 4 ++ offset ++ ": " ++ hexLine ++ spaces hexPad ++ ascLine ++ "\n"
+           spaces n = {-# SCC "spaces" #-} take n $ repeat ' '
+           offset = {-# SCC "offset" #-} hexOffset o
+ 
+--- a/tools/hogg.hs
++++ b/tools/hogg.hs
+@@ -4,6 +4,7 @@ module Main where
+ import System.Exit
+ import System.IO
+ 
++import Control.Monad (when, foldM)
+ import Control.Monad.Reader
+ import Control.Exception
+ 
+@@ -22,8 +23,7 @@ import qualified Data.ByteString.Lazy.Char8 as C
+ import Data.Char
+ import Data.List hiding (sort)
+ 
+-import System.Locale (defaultTimeLocale)
+-import Data.Time.Format (formatTime)
++import Data.Time.Format (formatTime, defaultTimeLocale)
+ import Data.Time.Clock (getCurrentTime)
+ 
+ import Codec.Container.Ogg.Chain

@@ -16,6 +16,10 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'mtl >= 2.2 && <2.3' 'mtl >= 2.2'
+	)
+
 RDEPEND=">=dev-haskell/gi-cairo-1.0:=[profile?] <dev-haskell/gi-cairo-2:=[profile?]
 	>=dev-haskell/gi-cairo-render-0.1:=[profile?] <dev-haskell/gi-cairo-render-0.2:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.24.0:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?]

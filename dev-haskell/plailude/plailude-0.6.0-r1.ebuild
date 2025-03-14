@@ -23,12 +23,10 @@ RDEPEND=">=dev-haskell/mtl-2.2.1:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'base       >=4.6 && <4.8' 'base       >=4.6' \
-		'time       >=1.4 && <1.5' 'time       >=1.4' \
+CABAL_CHDEPS=(
+		'base       >=4.6 && <4.8' 'base       >=4.6'
+		'time       >=1.4 && <1.5' 'time       >=1.4'
 		'mtl        >=2.2.1 && <2.2.2' 'mtl        >=2.2.1'
-}
+		'unix       >=2.7 && <2.8' 'unix >= 2.7'
+		'bytestring >=0.10 && <0.11' 'bytestring >= 0.10'
+		)

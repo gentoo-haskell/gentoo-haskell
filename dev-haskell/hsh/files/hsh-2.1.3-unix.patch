@@ -1,0 +1,34 @@
+From 0ed8e69436f80f3292f1d782141de3974d6a6ace Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 12 Mar 2025 18:21:53 +0100
+Subject: [PATCH] Compatibility with unix-2.8
+
+---
+ HSH/ShellEquivs.hs | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/HSH/ShellEquivs.hs b/HSH/ShellEquivs.hs
+index f9287e8..4388662 100644
+--- a/HSH/ShellEquivs.hs
++++ b/HSH/ShellEquivs.hs
+@@ -21,8 +21,6 @@ HSH entirely as well.
+ 
+ -}
+ 
+-{-# LANGUAGE ScopedTypeVariables #-}
+-
+ #if !(defined(mingw32_HOST_OS) || defined(mingw32_TARGET_OS) || defined(__MINGW32__))
+ #define __HSH_POSIX__
+ #else
+@@ -225,7 +223,11 @@ catToFIFO fp ichan =
+ fifoOpen :: FilePath -> IO Handle
+ fifoOpen fp = 
+     do fd <- throwErrnoPathIf (< 0) "HSH fifoOpen" fp $ 
++#if MIN_VERSION_unix(2,8,0)
++             openFd fp WriteOnly defaultFileFlags
++#else
+              openFd fp WriteOnly Nothing defaultFileFlags
++#endif
+        fdToHandle fd
+ 
+ #endif

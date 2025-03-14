@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHBINS=(
+	'example' 'haskell-cli-example'
+	)
+
 RDEPEND="
 	dev-haskell/basement:=[profile?]
 	dev-haskell/foundation:=[profile?]
