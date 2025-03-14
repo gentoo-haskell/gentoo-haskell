@@ -1,0 +1,18 @@
+From ca0b61cb7f9109aea85671cf825e41301986e63d Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 14 Mar 2025 17:34:21 +0100
+Subject: [PATCH] b
+
+--- a/Control/Monad/CC.hs
++++ b/Control/Monad/CC.hs
+@@ -44,6 +44,7 @@ module Control.Monad.CC (
+ 
+ import Control.Applicative
+ 
++import Control.Monad (ap)
+ import Control.Monad.Identity
+ import Control.Monad.State
+ import Control.Monad.Reader
+-- 
+2.48.1
+
