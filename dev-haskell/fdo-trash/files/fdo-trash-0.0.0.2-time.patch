@@ -1,0 +1,47 @@
+From https://github.com/ethorsoe/fdo-trash/pull/2
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 14 Mar 2025 18:02:47 +0100
+Subject: [PATCH] fixing for recent time
+dd
+---
+ Freedesktop/Trash.hs | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/Freedesktop/Trash.hs b/Freedesktop/Trash.hs
+index 51b3764..f21f9b9 100644
+--- a/Freedesktop/Trash.hs
++++ b/Freedesktop/Trash.hs
+@@ -21,12 +21,12 @@ import System.Posix.Env(getEnv,getEnvDefault)
+ import System.FilePath.Posix((</>),(<.>),dropExtension,splitExtension)
+ import System.Directory(getDirectoryContents,removeDirectoryRecursive)
+ import Data.Maybe(fromJust,catMaybes)
+-import System.Locale(iso8601DateFormat,defaultTimeLocale)
++import Data.Time.Format (iso8601DateFormat,defaultTimeLocale)
+ import Text.ParserCombinators.Parsec(parse,many,try,(<|>),string,noneOf,oneOf,many)
+-import Data.Time(getCurrentTimeZone,parseTime,localTimeToUTC,UTCTime,formatTime,utcToLocalTime,FormatTime)
++import Data.Time(getCurrentTimeZone,parseTimeM,localTimeToUTC,UTCTime,formatTime,utcToLocalTime,FormatTime)
+ import Data.Either(partitionEithers)
+ import Control.Monad(when)
+-import Data.Algorithm.Diff(getDiff,Diff(..))
++import Data.Algorithm.Diff(getDiff, PolyDiff(..))
+ import Data.List(sort)
+ import System.Posix.Files(fileSize,getSymbolicLinkStatus,isRegularFile,isDirectory,rename,removeLink,fileExist)
+ #if MIN_VERSION_base(4,6,0)
+@@ -38,7 +38,7 @@ import qualified System.IO.Error(try, catch)
+ eCatch = System.IO.Error.catch
+ eTry = System.IO.Error.try
+ #endif
+-
++  
+ 
+ data TrashFile = TrashFile {
+     infoPath   :: FilePath,
+@@ -57,7 +57,7 @@ dateLine = do
+     dateString <- many $ oneOf "0123456789-T:"
+     _ <- many $ noneOf "\n"
+     _ <- string "\n"
+-    return (parseTime defaultTimeLocale (iso8601DateFormat $ Just "%H:%M:%S") dateString) >>=
++    return (parseTimeM True defaultTimeLocale (iso8601DateFormat $ Just "%H:%M:%S") dateString) >>=
+         maybe (fail "Invalid date format") (return.Left)
+ 
+ nameLine = do
