@@ -1,0 +1,560 @@
+From https://github.com/stepcut/plugins/pull/21
+From 062ebf0d8b0626ae0e1bc05ff59f47b4dd9f08b5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?H=C3=A9cate=20Moonlight?= <hecate+github@glitchbra.in>
+Date: Thu, 22 Sep 2022 18:32:20 +0200
+Subject: [PATCH 2/6] Update to support the latest GHC versions
+
+--- a/src/System/Plugins/Consts.hs
++++ b/src/System/Plugins/Consts.hs
+@@ -1,3 +1,4 @@
++{-# OPTIONS_GHC -Wno-type-defaults#-}
+ {-# LANGUAGE CPP #-}
+ --
+ -- Copyright (C) 2004 Don Stewart - http://www.cse.unsw.edu.au/~dons
+@@ -22,23 +23,24 @@ module System.Plugins.Consts where
+ 
+ #include "config.h"
+ 
+-
+-#if __GLASGOW_HASKELL__ >= 604
+ import System.Directory          ( getTemporaryDirectory )
+ import System.IO.Unsafe          ( unsafePerformIO )
+-#endif
+ 
+ 
+ -- | path to *build* dir, used by eval() for testing the examples
++top :: String
+ top             = TOP
+ 
+ -- | what is ghc called?
++ghc :: String
+ ghc             = WITH_GHC
+ 
+ -- | path to standard ghc libraries
++ghcLibraryPath :: String
+ ghcLibraryPath  = GHC_LIB_PATH
+ 
+ -- | name of the system package.conf file
++sysPkgConf :: String
+ sysPkgConf = "package.conf"
+ 
+ -- | This code is from runtime_loader:
+--- a/src/System/Plugins/Env.hs
++++ b/src/System/Plugins/Env.hs
+@@ -73,32 +73,9 @@ import System.IO.Error          ( catch, ioError, isDoesNotExistError )
+ import Control.Concurrent.MVar  ( MVar(), newMVar, withMVar )
+ 
+ import GHC.Paths (libdir)
+-import DynFlags (
+-#if MIN_VERSION_ghc(7,8,0)
+-  Way(WayDyn), dynamicGhc, ways,
+-#endif
+-  defaultDynFlags, initDynFlags)
+-import SysTools ( initSysTools
+-#if MIN_VERSION_ghc(8,10,1)
+-                , lazyInitLlvmConfig
+-#else
+-                , initLlvmConfig
+-#endif
+-  )
+-
+-import Distribution.Package hiding (
+-#if MIN_VERSION_ghc(7,6,0)
+-                                     Module,
+-#endif
+-                                     depends, packageName, PackageName(..)
+-                                   , installedUnitId
+-#if MIN_VERSION_ghc(7,10,0)
+-                                   , installedPackageId
+-#endif
+-  )
+ import Distribution.Text
+ 
+-import Distribution.InstalledPackageInfo
++import Distribution.InstalledPackageInfo (InstalledPackageInfo(..))
+ import Distribution.Simple.Compiler
+ import Distribution.Simple.GHC
+ import Distribution.Simple.PackageIndex
+@@ -110,6 +87,11 @@ import Data.List.Split
+ 
+ import qualified Data.Map as M
+ import qualified Data.Set as S
++import Distribution.Package (packageId, getHSLibraryName, pkgName)
++import GHC.SysTools (initSysTools, lazyInitLlvmConfig)
++import GHC.Plugins (defaultDynFlags, initDynFlags, ways)
++import GHC.Platform.Ways (Way(..), hostIsDynamic)
++import qualified Data.List as List
+ 
+ #if !MIN_VERSION_ghc(8,10,1)
+ lazyInitLlvmConfig = initLlvmConfig
+@@ -399,7 +381,7 @@ isStaticPkg pkg = withStaticPkgEnv env $ \set -> return $ S.member pkg set
+ 
+ rmStaticPkg :: String -> IO Bool
+ rmStaticPkg pkg = do
+-  (willRemove, s) <- withStaticPkgEnv env $ \s -> return (S.member pkg s, s)
++  (willRemove, _) <- withStaticPkgEnv env $ \s -> return (S.member pkg s, s)
+   if not willRemove then return False
+     else do modifyStaticPkgEnv env $ \s' -> return $ S.delete pkg s'
+             return True
+@@ -487,7 +469,7 @@ lookupPkg' p = withPkgEnvs env $ \fms -> go fms p
+             Just pkg -> do
+                 let    hslibs  = hsLibraries pkg
+                        extras' = extraLibraries pkg
+-                       cbits   = filter (\e -> reverse (take (length "_cbits") (reverse e)) == "_cbits") extras'
++                       cbits   = filter (\e -> reverse (take (List.length ("_cbits" :: String)) (reverse e)) == "_cbits") extras'
+                        extras  = filter (flip notElem cbits) extras'
+                        ldopts  = ldOptions pkg
+                        deppkgs = packageDeps pkg
+@@ -502,20 +484,11 @@ lookupPkg' p = withPkgEnvs env $ \fms -> go fms p
+ #endif
+                 -- If we're loading dynamic libs we need the cbits to appear before the
+                 -- real packages.
+-#if MIN_VERSION_ghc(8,8,1)
+                 settings <- initSysTools (libdir)
+                 llvmConfig <- lazyInitLlvmConfig (libdir)
+-#else
+-                settings <- initSysTools (Just libdir)
+-                llvmConfig <- lazyInitLlvmConfig (Just libdir)
+-#endif
+                 dflags <- initDynFlags $ defaultDynFlags settings llvmConfig
+                 libs <- mapM (findHSlib
+-#if MIN_VERSION_ghc(7,8,0)
+-                              (WayDyn `elem` ways dflags || dynamicGhc)
+-#else
+-                              False
+-#endif
++                              (WayDyn `elem` ways dflags || hostIsDynamic)
+                               libdirs)
+                              (cbits ++ hslibs)
+ #if defined(CYGWIN) || defined(__MINGW32__)
+--- a/src/System/Plugins/Load.hs
++++ b/src/System/Plugins/Load.hs
+@@ -70,25 +70,7 @@ import System.Plugins.Consts           ( sysPkgSuffix, hiSuf, prefixUnderscore )
+ import System.Plugins.LoadTypes
+ 
+ -- import Language.Hi.Parser
+-import Encoding (zEncodeString)
+-import BinIface
+-import HscTypes
+-
+-import Module (moduleName, moduleNameString)
+-#if MIN_VERSION_ghc(8,0,0)
+-#if MIN_VERSION_Cabal(2,0,0)
+-import Module (installedUnitIdString)
+-#else
+-import Module (unitIdString)
+-#endif
+-#elif MIN_VERSION_ghc(7,10,0)
+-import Module (packageKeyString)
+-#else
+-import Module (packageIdString)
+-#endif
+ 
+-import HscMain (newHscEnv)
+-import TcRnMonad (initTcRnIf)
+ 
+ import Data.Dynamic          ( fromDynamic, Dynamic )
+ import Data.Typeable         ( Typeable )
+@@ -98,57 +80,31 @@ import Control.Monad            ( when, filterM, liftM )
+ import System.Directory         ( doesFileExist, removeFile )
+ import Foreign.C                ( CInt(..) )
+ import Foreign.C.String         ( CString, withCString, peekCString )
+-
+-#if !MIN_VERSION_ghc(7,2,0)
+-import GHC                      ( defaultCallbacks )
+-#else
+-import DynFlags                 (defaultDynFlags, initDynFlags)
+-import GHC.Paths                (libdir)
+-import SysTools                 ( initSysTools
+-#if MIN_VERSION_ghc(8,10,1)
+-                                , lazyInitLlvmConfig
+-#else
+-                                , initLlvmConfig
+-#endif
+-                                )
+-#endif
+-import GHC.Ptr                  ( Ptr(..), nullPtr )
+-#if !MIN_VERSION_ghc(7,4,1)
+-import GHC.Exts                 ( addrToHValue# )
+-#else
+-import GHC.Exts                 ( addrToAny# )
+-#endif
+-
+-import GHC.Prim                 ( unsafeCoerce# )
+-
+-#if DEBUG
+-import System.IO                ( hFlush, stdout )
+-#endif
+-import System.IO                ( hClose )
+-
+-#if !MIN_VERSION_ghc(8,10,1)
+-lazyInitLlvmConfig = initLlvmConfig
+-#endif
++import GHC (ModIface, ModIface_ (..), moduleName)
++import GHC.Ptr
++import GHC.Plugins (moduleNameString, defaultDynFlags, initDynFlags, GenWithIsBoot (..))
++import GHC.SysTools (initSysTools, lazyInitLlvmConfig)
++import GHC.Paths (libdir)
++import GHC.Driver.Main (newHscEnv)
++import GHC.Tc.Utils.Monad (initTcRnIf)
++import GHC.Iface.Binary (readBinIface, CheckHiWay (..), TraceBinIFace (..))
++import Unsafe.Coerce (unsafeCoerce#)
++import System.IO
++import GHC.Data.FastString (zEncodeFS, mkFastString, zString)
++import Data.Maybe (fromMaybe)
++import GHC.Prim (addrToAny#)
++import GHC.Unit.Module.Deps (Dependencies(..))
++import GHC.Unit (unitIdString)
+ 
+ ifaceModuleName = moduleNameString . moduleName . mi_module
+ 
+ readBinIface' :: FilePath -> IO ModIface
+ readBinIface' hi_path = do
+-    -- kludgy as hell
+-#if MIN_VERSION_ghc(7,2,0)
+-#if MIN_VERSION_ghc(8,8,1)
+     mySettings <- initSysTools (libdir) -- how should we really set the top dir?
+     llvmConfig <- lazyInitLlvmConfig (libdir)
+-#else
+-    mySettings <- initSysTools (Just libdir) -- how should we really set the top dir?
+-    llvmConfig <- lazyInitLlvmConfig (Just libdir)
+-#endif
+     dflags <- initDynFlags (defaultDynFlags mySettings llvmConfig)
+     e <- newHscEnv dflags
+-#else
+-    e <- newHscEnv defaultCallbacks undefined
+-#endif
+-    initTcRnIf 'r' e undefined undefined (readBinIface IgnoreHiWay QuietBinIFaceReading hi_path)
++    initTcRnIf 'r' e undefined undefined (readBinIface IgnoreHiWay QuietBinIFace hi_path)
+ 
+ -- TODO need a loadPackage p package.conf :: IO () primitive
+ 
+@@ -195,7 +151,7 @@ load :: FilePath                -- ^ object file
+      -> IO (LoadStatus a)
+ 
+ load obj incpaths pkgconfs sym = do
+-    initLinker_ $ fromIntegral 0
++    initLinker_ 0
+ 
+     -- load extra package information
+     mapM_ addPkgConf pkgconfs
+@@ -466,7 +422,7 @@ reload m@(Module{path = p, iface = hi}) sym = do
+ -- functions in this module - otherwise you\'ll get unresolved symbols.
+ 
+ initLinker :: IO ()
+-initLinker = initLinker_ $ fromIntegral 0
++initLinker = initLinker_ 0
+ -- our initLinker transparently calls the one in GHC
+ 
+ --
+@@ -489,13 +445,13 @@ loadFunction__ :: Maybe String
+               -> String
+               -> IO (Maybe a)
+ loadFunction__ pkg m valsym
+-   = do let encode = zEncodeString
++   = do let zencode = zString . zEncodeFS . mkFastString
+         p <- case pkg of
+               Just p -> do
+                 prefix <- pkgManglingPrefix p
+-                return $ encode (maybe p id prefix)++"_"
++                pure $ zencode (fromMaybe p prefix) <> "_"
+               Nothing -> return ""
+-        let symbol = prefixUnderscore++p++encode m++"_"++(encode valsym)++"_closure"
++        let symbol = prefixUnderscore <> p <> zencode m <> "_" <> zencode valsym <> "_closure"
+ 
+ #if DEBUG
+         putStrLn $ "Looking for <<"++symbol++">>"
+@@ -730,7 +686,7 @@ loadDepends obj incpaths = do
+                 let ds = mi_deps hiface
+ 
+                 -- remove ones that we've already loaded
+-                ds' <- filterM loaded . map (moduleNameString . fst) . dep_mods $ ds
++                ds' <- filterM loaded . map (moduleNameString . gwib_mod) . dep_mods $ ds
+ 
+                 -- now, try to generate a path to the actual .o file
+                 -- fix up hierachical names
+@@ -750,20 +706,7 @@ loadDepends obj incpaths = do
+ 
+                 -- and find some packages to load, as well.
+                 let ps = dep_pkgs ds
+-#if MIN_VERSION_ghc(8,0,0)
+-#if MIN_VERSION_Cabal(2,0,0)
+-                ps' <- filterM loaded . map installedUnitIdString . nub $ map fst ps
+-#else
+                 ps' <- filterM loaded . map unitIdString . nub $ map fst ps
+-#endif
+-#elif MIN_VERSION_ghc(7,10,0)
+-                ps' <- filterM loaded . map packageKeyString . nub $ map fst ps
+-#elif MIN_VERSION_ghc(7,2,0)
+-                ps' <- filterM loaded . map packageIdString . nub $ map fst ps
+-#else
+-                ps' <- filterM loaded . map packageIdString . nub $ ps
+-#endif
+-
+ #if DEBUG
+                 when (not (null ps')) $
+                         putStr "Loading package" >> hFlush stdout
+@@ -788,7 +731,7 @@ loadDepends obj incpaths = do
+ getImports :: String -> IO [String]
+ getImports m = do
+         hi <- readBinIface' (m ++ hiSuf)
+-        return . map (moduleNameString . fst) . dep_mods . mi_deps $ hi
++        return . map (moduleNameString . gwib_mod) . dep_mods . mi_deps $ hi
+ 
+ -- ---------------------------------------------------------------------
+ -- C interface
+--- a/src/System/Plugins/LoadTypes.hs
++++ b/src/System/Plugins/LoadTypes.hs
+@@ -28,9 +28,7 @@ module System.Plugins.LoadTypes
+     , ObjType (..)
+     ) where
+ 
+--- import Language.Hi.Parser
+-
+-import HscTypes
++import GHC.Unit.Module.ModIface
+ 
+ data Key = Object String | Package String
+ 
+--- a/src/System/Plugins/Parser.hs
++++ b/src/System/Plugins/Parser.hs
+@@ -1,5 +1,6 @@
+ {-# LANGUAGE CPP #-}
+ {-# LANGUAGE PatternGuards #-}
++{-# LANGUAGE PackageImports #-}
+ --
+ -- Copyright (C) 2004-5 Don Stewart - http://www.cse.unsw.edu.au/~dons
+ --
+@@ -31,13 +32,9 @@ import Data.List
+ import Data.Char
+ import Data.Either ( )
+ 
+-#if defined(WITH_HSX)
+-import Language.Haskell.Hsx
+-#else
+-import Language.Haskell.Parser
+-import Language.Haskell.Syntax
+-import Language.Haskell.Pretty
+-#endif
++import "haskell-src" Language.Haskell.Parser
++import "haskell-src" Language.Haskell.Syntax
++import "haskell-src" Language.Haskell.Pretty
+ 
+ --
+ -- | parse a file (as a string) as Haskell src
+--- a/src/System/Plugins/Utils.hs
++++ b/src/System/Plugins/Utils.hs
+@@ -53,8 +53,11 @@ module System.Plugins.Utils (
+     decode,
+     EncodedString,
+ 
+-    panic
+-
++    panic,
++    openBinaryFile,
++    openTempFileWithDefaultPermissions,
++    openBinaryTempFileWithDefaultPermissions,
++    openBinaryTempFile
+   ) where
+ 
+ 
+@@ -63,7 +66,7 @@ module System.Plugins.Utils (
+ import System.Plugins.Env              ( isLoaded )
+ import System.Plugins.Consts           ( objSuf, hiSuf, tmpDir )
+ 
+-import Foreign.C (CInt(..), CString, withCString)
++import Foreign.C (CInt(..))
+ import Foreign.C.Error (Errno, eEXIST, getErrno, errnoToIOError)
+ import System.Posix.Internals
+ import System.Posix.Types (CMode)
+@@ -72,13 +75,13 @@ import Control.Exception               (IOException, catch)
+ import Data.Bits
+ import Data.Char
+ import Data.List
+-import Prelude hiding (catch)
++import Prelude
+ 
+-import System.IO hiding (openBinaryTempFile, openTempFile)
++import System.IO hiding (openTempFileWithDefaultPermissions, openBinaryTempFileWithDefaultPermissions, openBinaryTempFile, openTempFile)
+ import System.Random (randomRIO)
+ 
+ import GHC.IO.Encoding (getLocaleEncoding)
+-import GHC.IO.Handle.FD
++import GHC.IO.Handle.FD (mkHandleFromFD)
+ import qualified GHC.IO.FD as FD
+ import System.Environment           ( getEnv )
+ import System.Directory             ( doesFileExist, getModificationTime, removeFile )
+
+From 24c7bc70b5469ca6fbc48e50cc519c967a9b4628 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?H=C3=A9cate=20Moonlight?= <hecate+github@glitchbra.in>
+Date: Fri, 23 Sep 2022 17:18:54 +0200
+Subject: [PATCH 3/6] Remove redundant bracket
+
+--- /dev/null
++++ b/.hlint.yaml
+@@ -0,0 +1,3 @@
++- ignore: {name: "Eta reduce"}
++- ignore: {name: "Avoid lambda"}
++- ignore: {name: "Use newtype instead of data"}
+--- a/src/System/Plugins/Load.hs
++++ b/src/System/Plugins/Load.hs
+@@ -675,7 +675,7 @@ loadDepends :: FilePath -> [FilePath] -> IO (ModIface,[Module])
+ loadDepends obj incpaths = do
+     let hifile = replaceSuffix obj hiSuf
+     exists <- doesFileExist hifile
+-    if (not exists)
++    if not exists
+         then do
+ #if DEBUG
+                 putStrLn "No .hi file found." >> hFlush stdout
+
+From 5ce06206a29637139ac131e2db0ca5fc71d7d3da Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?H=C3=A9cate=20Moonlight?= <hecate+github@glitchbra.in>
+Date: Fri, 23 Sep 2022 17:42:45 +0200
+Subject: [PATCH 5/6] Explicit imports
+
+--- a/src/System/Plugins/Parser.hs
++++ b/src/System/Plugins/Parser.hs
+@@ -32,9 +32,9 @@ import Data.List
+ import Data.Char
+ import Data.Either ( )
+ 
+-import "haskell-src" Language.Haskell.Parser
+-import "haskell-src" Language.Haskell.Syntax
+-import "haskell-src" Language.Haskell.Pretty
++import "haskell-src" Language.Haskell.Parser (ParseResult (ParseOk, ParseFailed), ParseMode (ParseMode), parseModuleWithMode)
++import "haskell-src" Language.Haskell.Syntax (HsModule(HsModule), HsImportDecl, HsDecl(HsTypeSig, HsFunBind, HsPatBind), HsPat(HsPVar), HsImportDecl(HsImportDecl), srcLine, srcColumn, Module(..))
++import "haskell-src" Language.Haskell.Pretty (PPHsMode (linePragmas), prettyPrintWithMode, defaultMode)
+ 
+ --
+ -- | parse a file (as a string) as Haskell src
+
+From 57c845d8a114f67bad81dae42b8dd0aec081c1ff Mon Sep 17 00:00:00 2001
+From: dupa dup <>
+Date: Wed, 13 Sep 2023 01:14:36 +0200
+Subject: [PATCH 6/6] =?UTF-8?q?=F0=9F=9A=A8probably=20break=20compatibilit?=
+ =?UTF-8?q?y=20with=20anything=20below=209.6.1=F0=9F=9A=A8\nFix=20Evil=20M?=
+ =?UTF-8?q?angler=202.0's=20refactors=20of=20ghc=20api=20(https://hsyl20.f?=
+ =?UTF-8?q?r/home/posts/2022-05-03-modularizing-ghc-paper.html)?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+--- a/plugins.cabal
++++ b/plugins.cabal
+@@ -64,7 +64,8 @@ library
+                           process,
+                           split,
+                           ghc >= 6.10,
+-                          ghc-prim
++                          ghc-prim,
++                          haskell-src
+ 
+     if impl(ghc >= 7.2)
+         build-depends:    ghc-paths
+--- a/src/System/Plugins/Env.hs
++++ b/src/System/Plugins/Env.hs
+@@ -1,4 +1,5 @@
+ {-# LANGUAGE CPP #-}
++{-# LANGUAGE PackageImports #-}
+ --
+ -- Copyright (C) 2004-5 Don Stewart - http://www.cse.unsw.edu.au/~dons
+ --
+@@ -88,14 +89,15 @@ import Data.List.Split
+ import qualified Data.Map as M
+ import qualified Data.Set as S
+ import Distribution.Package (packageId, getHSLibraryName, pkgName)
+-import GHC.SysTools (initSysTools, lazyInitLlvmConfig)
++import "ghc" GHC.SysTools (initSysTools)
++import GHC.CmmToLlvm.Config(initLlvmConfig)
+ import GHC.Plugins (defaultDynFlags, initDynFlags, ways)
+ import GHC.Platform.Ways (Way(..), hostIsDynamic)
+ import qualified Data.List as List
+ 
+-#if !MIN_VERSION_ghc(8,10,1)
++
+ lazyInitLlvmConfig = initLlvmConfig
+-#endif
++
+ 
+ --
+ -- and map Data.Map terms to FiniteMap terms
+@@ -486,7 +488,7 @@ lookupPkg' p = withPkgEnvs env $ \fms -> go fms p
+                 -- real packages.
+                 settings <- initSysTools (libdir)
+                 llvmConfig <- lazyInitLlvmConfig (libdir)
+-                dflags <- initDynFlags $ defaultDynFlags settings llvmConfig
++                dflags <- initDynFlags $ defaultDynFlags settings
+                 libs <- mapM (findHSlib
+                               (WayDyn `elem` ways dflags || hostIsDynamic)
+                               libdirs)
+--- a/src/System/Plugins/Load.hs
++++ b/src/System/Plugins/Load.hs
+@@ -74,7 +74,7 @@ import System.Plugins.LoadTypes
+ 
+ import Data.Dynamic          ( fromDynamic, Dynamic )
+ import Data.Typeable         ( Typeable )
+-
++import qualified Data.Set as Set
+ import Data.List                ( isSuffixOf, nub, nubBy )
+ import Control.Monad            ( when, filterM, liftM )
+ import System.Directory         ( doesFileExist, removeFile )
+@@ -82,8 +82,8 @@ import Foreign.C                ( CInt(..) )
+ import Foreign.C.String         ( CString, withCString, peekCString )
+ import GHC (ModIface, ModIface_ (..), moduleName)
+ import GHC.Ptr
+-import GHC.Plugins (moduleNameString, defaultDynFlags, initDynFlags, GenWithIsBoot (..))
+-import GHC.SysTools (initSysTools, lazyInitLlvmConfig)
++import GHC.Plugins (moduleNameString, defaultDynFlags, initDynFlags, GenWithIsBoot (..),hsc_NC,targetProfile)
++import GHC.SysTools (initSysTools)
+ import GHC.Paths (libdir)
+ import GHC.Driver.Main (newHscEnv)
+ import GHC.Tc.Utils.Monad (initTcRnIf)
+@@ -101,10 +101,12 @@ ifaceModuleName = moduleNameString . moduleName . mi_module
+ readBinIface' :: FilePath -> IO ModIface
+ readBinIface' hi_path = do
+     mySettings <- initSysTools (libdir) -- how should we really set the top dir?
+-    llvmConfig <- lazyInitLlvmConfig (libdir)
+-    dflags <- initDynFlags (defaultDynFlags mySettings llvmConfig)
+-    e <- newHscEnv dflags
+-    initTcRnIf 'r' e undefined undefined (readBinIface IgnoreHiWay QuietBinIFace hi_path)
++--    llvmConfig <- lazyInitLlvmConfig (libdir)
++    dflags <- initDynFlags (defaultDynFlags mySettings)
++    e <- newHscEnv "" dflags
++    let biface = readBinIface (targetProfile dflags) (hsc_NC e) IgnoreHiWay QuietBinIFace hi_path
++    biface
++--    initTcRnIf 'r' e undefined undefined biface
+ 
+ -- TODO need a loadPackage p package.conf :: IO () primitive
+ 
+@@ -686,8 +688,8 @@ loadDepends obj incpaths = do
+                 let ds = mi_deps hiface
+ 
+                 -- remove ones that we've already loaded
+-                ds' <- filterM loaded . map (moduleNameString . gwib_mod) . dep_mods $ ds
+-
++                ds' <- filterM loaded . map (moduleNameString . gwib_mod . snd) . Set.elems . dep_direct_mods $ ds
++                
+                 -- now, try to generate a path to the actual .o file
+                 -- fix up hierachical names
+                 let mods_ = map (\s -> (s, map (\c ->
+@@ -705,8 +707,8 @@ loadDepends obj incpaths = do
+                 let mods'' = nubBy (\v u -> fst v == fst u)  mods'
+ 
+                 -- and find some packages to load, as well.
+-                let ps = dep_pkgs ds
+-                ps' <- filterM loaded . map unitIdString . nub $ map fst ps
++                let ps = dep_direct_pkgs ds
++                ps' <- filterM loaded . map unitIdString . nub $ Set.elems ps
+ #if DEBUG
+                 when (not (null ps')) $
+                         putStr "Loading package" >> hFlush stdout
+@@ -731,7 +733,7 @@ loadDepends obj incpaths = do
+ getImports :: String -> IO [String]
+ getImports m = do
+         hi <- readBinIface' (m ++ hiSuf)
+-        return . map (moduleNameString . gwib_mod) . dep_mods . mi_deps $ hi
++        return . map (moduleNameString . gwib_mod . snd) . Set.elems . dep_direct_mods . mi_deps $ hi
+ 
+ -- ---------------------------------------------------------------------
+ -- C interface
