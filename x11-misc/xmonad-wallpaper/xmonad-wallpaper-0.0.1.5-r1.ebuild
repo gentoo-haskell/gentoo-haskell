@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.2.0.1
 "
 
-src_prepare() {
-	cabal_chdeps \
+CABAL_CHDEPS=(
 		'xmonad >=0.13 && <0.16' 'xmonad >=0.13'
-}
+	)

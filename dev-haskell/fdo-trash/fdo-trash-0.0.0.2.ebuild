@@ -27,8 +27,7 @@ DEPEND="${RDEPEND}
 		sys-apps/help2man"
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-0.0.0.2-ghc-7.10.patch
-	"${FILESDIR}"/${PN}-0.0.0.2-diff-0.4.patch
+	"${FILESDIR}"/${PN}-0.0.0.2-time.patch
 )
 
 src_compile() {

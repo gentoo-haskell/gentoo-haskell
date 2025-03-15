@@ -1,0 +1,30 @@
+From 76512aad3e8fe8f9e8910e2f8e11c0d83b86e89b Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 14 Mar 2025 19:29:33 +0100
+Subject: [PATCH] b
+
+--- a/Math/Sieve/ONeill.hs
++++ b/Math/Sieve/ONeill.hs
+@@ -79,10 +79,10 @@ insertPQ wk wv Lf             = Br wk wv Lf Lf
+ 
+ siftdown :: Ord k => k -> v -> PriorityQ k v -> PriorityQ k v -> PriorityQ k v
+ siftdown wk wv Lf _             = Br wk wv Lf Lf
+-siftdown wk wv (t @ (Br vk vv _ _)) Lf
++siftdown wk wv (t@(Br vk vv _ _)) Lf
+     | wk <= vk                  = Br wk wv t Lf
+     | otherwise                 = Br vk vv (Br wk wv Lf Lf) Lf
+-siftdown wk wv (t1 @ (Br vk1 vv1 p1 q1)) (t2 @ (Br vk2 vv2 p2 q2))
++siftdown wk wv (t1@(Br vk1 vv1 p1 q1)) (t2@(Br vk2 vv2 p2 q2))
+     | wk <= vk1 && wk <= vk2    = Br wk wv t1 t2
+     | vk1 <= vk2                = Br vk1 vv1 (siftdown wk wv p1 q1) t2
+     | otherwise                 = Br vk2 vv2 t1 (siftdown wk wv p2 q2)
+@@ -207,4 +207,4 @@ sieve n wheel@(d:ds) = n : (map (\(p,wheel) -> p) primes1) where
+                 | otherwise = table
+               where
+ 		(m, (p, d:ds)) = minKeyValueHQ table
+-		m' = m + p * d
+\ No newline at end of file
++		m' = m + p * d
+-- 
+2.48.1
+

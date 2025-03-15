@@ -1,0 +1,54 @@
+From https://github.com/haskell-hvr/paths/pull/16
+From: Greg Steuck <greg@nest.cx>
+Date: Fri, 10 Nov 2023 06:57:18 -0800
+Subject: [PATCH 2/2] Change a few Safe to Trustworthy
+
+Our hand is forced by directory:
+
+src/System/Path/Internal.hs:74:1: error: [GHC-44360]
+    System.Directory: Can't be safely imported!
+    The module itself isn't safe.
+   |
+74 | import qualified System.Directory            as Dir
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---
+ src/System/Path/Internal.hs        | 2 +-
+ src/System/Path/Internal/Compat.hs | 2 +-
+ src/System/Path/QQ.hs              | 4 ++--
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/System/Path/Internal.hs b/src/System/Path/Internal.hs
+index d51ff80..714fee1 100644
+--- a/src/System/Path/Internal.hs
++++ b/src/System/Path/Internal.hs
+@@ -1,4 +1,4 @@
+ {-# LANGUAGE ExistentialQuantification #-}
+-{-# LANGUAGE Safe                      #-}
++{-# LANGUAGE Trustworthy               #-}
+ 
+ module System.Path.Internal (
+diff --git a/src/System/Path/Internal/Compat.hs b/src/System/Path/Internal/Compat.hs
+index ca1833c..34defd7 100644
+--- a/src/System/Path/Internal/Compat.hs
++++ b/src/System/Path/Internal/Compat.hs
+@@ -1,5 +1,5 @@
+ {-# LANGUAGE CPP  #-}
+-{-# LANGUAGE Safe #-}
++{-# LANGUAGE Trustworthy #-}
+ 
+ {-# OPTIONS_GHC -fno-warn-unused-imports #-}
+ 
+diff --git a/src/System/Path/QQ.hs b/src/System/Path/QQ.hs
+index 6b024e3..6a3591e 100644
+--- a/src/System/Path/QQ.hs
++++ b/src/System/Path/QQ.hs
+@@ -1,7 +1,7 @@
+ {-# LANGUAGE CPP                   #-}
+ 
+-#if __GLASGOW_HASKELL__ >= 802
+-{-# LANGUAGE Safe                  #-}
++#if (__GLASGOW_HASKELL__ >= 802) && ( __GLASGOW_HASKELL__ <= 806)
++{-# LANGUAGE Safe           #-}
+ #else
+ {-# LANGUAGE Trustworthy           #-}
+ #endif
