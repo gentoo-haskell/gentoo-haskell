@@ -1,0 +1,43 @@
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sun, 16 Mar 2025 16:53:40 +0100
+Subject: [PATCH] b
+Patching for deprecations in mtl-2.3
+--- a/jail.cabal
++++ b/jail.cabal
+@@ -74,7 +74,8 @@ Library
+                       containers >= 0.2,
+                       directory >=1.0,
+                       mtl,
+-                      transformers >= 0.1
++                      transformers >= 0.1,
++                      list-t
+ 
+     GHC-Options:      -Wall
+     HS-Source-Dirs:   src
+--- a/src/System/IO/Jail.hs
++++ b/src/System/IO/Jail.hs
+@@ -148,9 +148,10 @@ where
+ 
+ import Control.Applicative
+ import Control.Monad.Cont
+-import Control.Monad.Error
++import Control.Monad.Except (ExceptT)
+ import Control.Monad.Trans.Identity
+-import Control.Monad.List
++import Control.Monad.Fix (MonadFix)
++import ListT (ListT)
+ import Control.Monad.RWS
+ import Control.Monad.Reader
+ import Control.Monad.State
+@@ -192,7 +193,7 @@ instance JailIO IO where
+   jailIO = id
+ 
+ instance            JailIO m  => JailIO (ContT     r     m) where jailIO = lift . jailIO
+-instance (Error e,  JailIO m) => JailIO (ErrorT    e     m) where jailIO = lift . jailIO
++instance JailIO m => JailIO (ExceptT    e     m) where jailIO = lift . jailIO
+ instance            JailIO m  => JailIO (IdentityT       m) where jailIO = lift . jailIO
+ instance            JailIO m  => JailIO (ListT           m) where jailIO = lift . jailIO
+ instance (Monoid w, JailIO m) => JailIO (RWST      r w s m) where jailIO = lift . jailIO
+-- 
+2.48.1
+
