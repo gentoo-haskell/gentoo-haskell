@@ -32,4 +32,5 @@ PATCHES=("${FILESDIR}/${PN}-0.2.1.0-ghc-9.patch")
 
 CABAL_CHDEPS=(
 	'bytestring == 0.10.*' 'bytestring >= 0.10'
+	'text == 1.*' 'text >= 1.0'
 )
