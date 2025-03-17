@@ -8,13 +8,8 @@
 	<use>
 		<flag name="doctest">doctest</flag>
 	</use>
-	<longdescription>
-		
-		An implementation of the JOSE suite of IETF standards
-		and the closely related JWT (JSON web token) spec
-		(&lt;https://tools.ietf.org/html/rfc7519/&gt;).
-		
-		Both signed and encrypted JWTs are supported, as well as simple
-		JWK keys.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">jose-jwt</remote-id>
+		<remote-id type="github">tekul/jose-jwt</remote-id>
+	</upstream>
 </pkgmetadata>
