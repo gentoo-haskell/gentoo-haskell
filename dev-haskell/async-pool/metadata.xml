@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">async-pool</remote-id>
+		<remote-id type="github">jwiegley/async-pool</remote-id>
+	</upstream>
 </pkgmetadata>
