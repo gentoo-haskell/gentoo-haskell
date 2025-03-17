@@ -1,0 +1,64 @@
+From https://github.com/k-bx/protocol-buffers/commit/f1f80c2ce97ab6dad89941691e8e78413a7eccf5
+From: cydparser <cydparser@gmail.com>
+Date: Thu, 28 Apr 2022 21:50:34 -0700
+Subject: [PATCH] Fix for GHC 9.2
+
+--- a/Text/ProtocolBuffers/Get.hs
++++ b/Text/ProtocolBuffers/Get.hs
+@@ -78,7 +78,7 @@ import Control.Monad(ap)                             -- instead of Functor.fmap;
+ import qualified Control.Monad.Fail as Fail
+ import Data.Bits(Bits((.|.),(.&.)),shiftL)
+ import qualified Data.ByteString as S(concat,length,null,splitAt,findIndex)
+-import qualified Data.ByteString.Internal as S(ByteString(..),toForeignPtr,inlinePerformIO)
++import qualified Data.ByteString.Internal as S(ByteString(..),toForeignPtr,accursedUnutterablePerformIO)
+ import qualified Data.ByteString.Unsafe as S(unsafeIndex,unsafeDrop {-,unsafeTake-})
+ import qualified Data.ByteString.Lazy as L(take,drop,length,span,toChunks,fromChunks,null,findIndex)
+ import qualified Data.ByteString.Lazy.Internal as L(ByteString(..),chunk)
+@@ -91,8 +91,13 @@ import Foreign.Ptr(Ptr,castPtr,plusPtr,minusPtr,nullPtr)
+ import Foreign.Storable(Storable(peek,sizeOf))
+ import System.IO.Unsafe(unsafePerformIO)
+ #if defined(__GLASGOW_HASKELL__) && !defined(__HADDOCK__)
+-import GHC.Base(Int(..),uncheckedShiftL#)
++import GHC.Base(Int(..))
+ import GHC.Word(Word16(..),Word32(..),Word64(..),uncheckedShiftL64#)
++#if MIN_VERSION_base(4,16,0)
++import GHC.Base(uncheckedShiftLWord16#, uncheckedShiftLWord32#)
++#else
++import GHC.Base(uncheckedShiftL#)
++#endif
+ #endif
+ --import Debug.Trace(trace)
+ 
+@@ -839,7 +844,7 @@ splitAtOrDie i (L.Chunk x xs) | i < len = let (pre,post) = S.splitAt (fromIntegr
+ getPtr :: (Storable a) => Int -> Get a
+ getPtr n = do
+     (fp,o,_) <- fmap S.toForeignPtr (getByteString n)
+-    return . S.inlinePerformIO $ withForeignPtr fp $ \p -> peek (castPtr $ p `plusPtr` o)
++    return . S.accursedUnutterablePerformIO $ withForeignPtr fp $ \p -> peek (castPtr $ p `plusPtr` o)
+ {-# INLINE getPtr #-}
+ 
+ -- I pushed the sizeOf into here (uses ScopedTypeVariables)
+@@ -847,7 +852,7 @@ getPtr n = do
+ getStorable :: forall a. (Storable a) => Get a
+ getStorable = do
+     (fp,o,_) <- fmap S.toForeignPtr (getByteString (sizeOf (undefined :: a)))
+-    return . S.inlinePerformIO $ withForeignPtr fp $ \p -> peek (castPtr $ p `plusPtr` o)
++    return . S.accursedUnutterablePerformIO $ withForeignPtr fp $ \p -> peek (castPtr $ p `plusPtr` o)
+ {-# INLINE getStorable #-}
+ 
+ ------------------------------------------------------------------------
+@@ -859,8 +864,14 @@ shiftl_w32 :: Word32 -> Int -> Word32
+ shiftl_w64 :: Word64 -> Int -> Word64
+ 
+ #if defined(__GLASGOW_HASKELL__) && !defined(__HADDOCK__)
++
++#if MIN_VERSION_base(4,16,0)
++shiftl_w16 (W16# w) (I# i) = W16# (w `uncheckedShiftLWord16#` i)
++shiftl_w32 (W32# w) (I# i) = W32# (w `uncheckedShiftLWord32#` i)
++#else
+ shiftl_w16 (W16# w) (I# i) = W16# (w `uncheckedShiftL#`   i)
+ shiftl_w32 (W32# w) (I# i) = W32# (w `uncheckedShiftL#`   i)
++#endif
+ 
+ #if WORD_SIZE_IN_BITS < 64
+ shiftl_w64 (W64# w) (I# i) = W64# (w `uncheckedShiftL64#` i)

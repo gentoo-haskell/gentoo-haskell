@@ -15,7 +15,11 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+	"${FILESDIR}"/${P}-ghc92.patch
+	)
 
 RDEPEND=">=dev-haskell/aeson-1.1.0.0:=[profile?]
 	dev-haskell/base16-bytestring:=[profile?]
