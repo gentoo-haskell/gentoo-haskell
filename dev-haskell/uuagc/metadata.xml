@@ -8,4 +8,8 @@
 	<use>
 		<flag name="loag">Use MiniSat as external SAT-solver to schedule all Linear Ordered AGs</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">uuagc</remote-id>
+		<remote-id type="github">UU-ComputerScience/uuagc</remote-id>
+	</upstream>
 </pkgmetadata>
