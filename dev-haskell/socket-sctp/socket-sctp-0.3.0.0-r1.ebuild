@@ -15,11 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 
 RESTRICT=test # needs sctp support in kernel
 
-RDEPEND=">=dev-haskell/socket-0.7.0.0:=[profile?] <dev-haskell/socket-0.8:=[profile?]
+RDEPEND=">=dev-haskell/socket-0.8.0.0:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 	net-misc/lksctp-tools:=
 "
@@ -28,5 +27,5 @@ DEPEND="${RDEPEND}
 "
 
 PATCHES=(
-	"${FILESDIR}"/${P}-ghc84.patch
+	"${FILESDIR}"/${P}-socket0.8.patch
 )
