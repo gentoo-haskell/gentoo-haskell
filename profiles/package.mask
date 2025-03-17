@@ -1,3 +1,25 @@
+# hololeap <hololeap@protonmail.com> (2025-03-17)
+#
+# Various outdated packages which either fail to build, have been deprecated
+# upstream or depend on other outdated packages. Mask for removal in 30 days.
+#
+# Removal: 2025-04-16
+dev-util/dzen-dhall
+dev-haskell/hakyll-agda
+dev-haskell/aeson-lens
+dev-haskell/persistent-odbc
+dev-haskell/haskell-import-graph
+dev-haskell/syb-with-class-instances-text
+dev-haskell/cipher-des
+dev-haskell/djinn-ghc
+dev-haskell/heckle
+dev-haskell/text-stream-decode
+dev-haskell/generic-lens-labels
+dev-haskell/transformers-free
+dev-haskell/auto
+dev-haskell/enumerator
+dev-haskell/hashable-time
+
 # hololeap <hololeap@protonmail.com> (2025-03-02)
 #
 # Needs patching to be compatible with >=unix-2.8, no upstream activity for 4
