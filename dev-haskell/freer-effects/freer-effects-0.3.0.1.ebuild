@@ -17,6 +17,14 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="pedantic test-hlint"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-non_det.patch
+	)
+
+CABAL_CHBINS=(
+	'freer-examples' 'freer-effects-examples'
+		)
+
 RDEPEND=">=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -32,4 +40,5 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag pedantic pedantic) \
 		$(cabal_flag test-hlint test-hlint)
+	rm ${S}/src/examples/NonDet.hs
 }
