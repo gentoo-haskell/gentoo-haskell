@@ -14,6 +14,7 @@ HOMEPAGE="https://hackage.haskell.org/package/jsaddle-warp"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+RESTRICT="test" #test modules are not in the tarball
 
 RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/foreign-store-0.2:=[profile?] <dev-haskell/foreign-store-0.3:=[profile?]
@@ -28,7 +29,4 @@ RDEPEND=">=dev-haskell/aeson-0.8.0.2:=[profile?] <dev-haskell/aeson-2.3:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/hspec-2 <dev-haskell/hspec-3
-		dev-haskell/lens
-		dev-haskell/text )
 "
