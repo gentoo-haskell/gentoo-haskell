@@ -1,0 +1,36 @@
+From https://github.com/jkff/timeplot/pull/25
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Mon, 17 Mar 2025 17:26:33 +0100
+Subject: [PATCH] fix for recent time
+
+---
+ Tools/TimePlot/Types.hs | 3 ---
+ timeplot.cabal          | 2 +-
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/Tools/TimePlot/Types.hs b/Tools/TimePlot/Types.hs
+index aad419b..5f6cde3 100644
+--- a/Tools/TimePlot/Types.hs
++++ b/Tools/TimePlot/Types.hs
+@@ -86,9 +86,6 @@ diffLocalToSeconds !t2 !t1 = 86400.0*fromIntegral (diffDays d2 d1) + fromIntegra
+     (d1,d2,TimeOfDay h1 m1 s1,TimeOfDay h2 m2 s2) = (localDay t1, localDay t2, localTimeOfDay t1, localTimeOfDay t2)
+ 
+ 
+-instance Read NominalDiffTime where
+-  readsPrec n s = [(fromSeconds i (undefined::LocalTime), s') | (i,s') <- readsPrec n s]
+-
+ data SumSubtrackStyle = SumStacked | SumOverlayed
+ 
+ data ChartKind t = KindEvent
+diff --git a/timeplot.cabal b/timeplot.cabal
+index d8a022a..48e7cba 100644
+--- a/timeplot.cabal
++++ b/timeplot.cabal
+@@ -33,6 +33,6 @@ executable tplot
+     build-depends: Chart >= 1.3, Chart-cairo >= 1.3, base >=3 && <5, bytestring -any,
+                    bytestring-lexing ==0.5.*, cairo -any, colour -any, containers -any,
+                    data-default -any, lens >= 3.9,
+-                   regex-tdfa -any, strptime >=0.1.7, time -any,
++                   regex-tdfa -any, strptime >=0.1.7, time >= 1.11,
+                    transformers -any,
+                    vcs-revision >=0.0.2, template-haskell -any
