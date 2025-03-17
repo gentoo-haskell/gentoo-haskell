@@ -1,0 +1,26 @@
+From https://github.com/gtk2hs/svgcairo/pull/13
+From: Deniz Alp <denizalpd@ogr.iu.edu.tr>
+Date: Wed, 13 Oct 2021 23:40:38 +0300
+Subject: [PATCH] Update svgcairo to work with librsvg version 2.51.0 and
+ greater
+
+librsvg in nixpkgs was updated to version 2.52.0 recently which broke the
+svgcairo build because one of the headers is renamed in version 2.51.0.
+
+This bumps the lower boundry for librsvg and updates the header's path.
+--- a/svgcairo.cabal
++++ b/svgcairo.cabal
+@@ -49,4 +49,4 @@ Library
+ 
+         Include-dirs: .
+         x-c2hs-Header:  svgcairo.h
+-        pkgconfig-depends: librsvg-2.0 >= 2.16.0 && <2.51
++        pkgconfig-depends: librsvg-2.0 >= 2.51.0
+--- a/svgcairo.h
++++ b/svgcairo.h
+@@ -3,4 +3,4 @@
+ #endif
+ #include <librsvg/rsvg.h>
+ #include <librsvg/rsvg-cairo.h>
+-#include <librsvg/librsvg-features.h>
++#include <librsvg/rsvg-features.h>
