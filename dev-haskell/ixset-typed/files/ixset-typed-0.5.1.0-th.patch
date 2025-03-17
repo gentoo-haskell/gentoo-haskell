@@ -1,0 +1,36 @@
+From https://github.com/well-typed/ixset-typed/commit/085cccbaa845bff4255028ed5ff71402e98a953a
+From: Clint Adams <clint@debian.org>
+Date: Mon, 5 Feb 2024 19:41:29 -0500
+Subject: [PATCH] Compatibility with template-haskell 2.21
+
+---
+ ixset-typed.cabal       | 2 +-
+ src/Data/IxSet/Typed.hs | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/ixset-typed.cabal b/ixset-typed.cabal
+index 5df3b3e..2f6dee9 100644
+--- a/ixset-typed.cabal
++++ b/ixset-typed.cabal
+@@ -38,7 +38,7 @@ library
+                      deepseq          >= 1.3 && < 2,
+                      safecopy         >= 0.8 && < 0.11,
+                      syb              >= 0.4 && < 1,
+-                     template-haskell >= 2.8 && < 2.21
++                     template-haskell >= 2.8 && < 2.22
+ 
+   hs-source-dirs:    src
+   exposed-modules:
+diff --git a/src/Data/IxSet/Typed.hs b/src/Data/IxSet/Typed.hs
+index ffaa096..8a25fb4 100644
+--- a/src/Data/IxSet/Typed.hs
++++ b/src/Data/IxSet/Typed.hs
+@@ -607,7 +607,7 @@ inferIxSet ixset typeName calName entryPoints
+            _ -> error "IxSet.inferIxSet calInfo unexpected match"
+ 
+ #if MIN_VERSION_template_haskell(2,17,0)
+-tyVarBndrToName :: TyVarBndr () -> Name
++tyVarBndrToName :: TyVarBndr flag -> Name
+ tyVarBndrToName (PlainTV nm _) = nm
+ tyVarBndrToName (KindedTV nm _ _) = nm
+ #else
