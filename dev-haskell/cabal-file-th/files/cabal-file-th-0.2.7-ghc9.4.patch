@@ -1,0 +1,64 @@
+From https://github.com/kamek-pf/cabal-file-th/commit/0a161404f30d1ac9ab5978c3185ead8fba70e353
+From: Kamek <b.kamek@gmail.com>
+Date: Fri, 6 Jan 2023 17:11:28 -0500
+Subject: [PATCH] GHC 9.4 compat
+
+--- a/Distribution/PackageDescription/TH.hs
++++ b/Distribution/PackageDescription/TH.hs
+@@ -21,7 +21,11 @@ module Distribution.PackageDescription.TH (
+     ) where
+ 
+ import Distribution.PackageDescription 
++#if MIN_VERSION_Cabal(3,4,1)
++import Distribution.Package ()
++#else
+ import Distribution.Package
++#endif
+ import Distribution.Version
+ 
+ -- Distribution.Text is deprecated and Distribution.Compat.ReadP
+@@ -38,10 +42,14 @@ import System.Directory (getCurrentDirectory, getDirectoryContents)
+ import Data.List (isSuffixOf)
+ import Language.Haskell.TH (Q, Exp, stringE, runIO)
+ 
++-- readGenericPackageDescription was moved to a different module in Cabal-3.8.1.0
+ -- readPackageDescription was deprecated by readGenericPackageDescription
+--- which was introduced in Cabal-2.0.0.2.
+--- readPackageDescription was removed in Cabal-2.2.0.0
+-#if MIN_VERSION_Cabal(2,2,0)
++-- which was introduced in Cabal-2.0.0.2
++-- readPackageDescription was removed in Cabal-2.2.0.0.
++#if MIN_VERSION_Cabal(3,8,1)
++import Distribution.Simple.PackageDescription (readGenericPackageDescription)
++readPkgDesc = readGenericPackageDescription
++#elif MIN_VERSION_Cabal(2,2,0)
+ import Distribution.PackageDescription.Parsec (readGenericPackageDescription)
+ readPkgDesc = readGenericPackageDescription
+ #else
+--- a/test/Test.hs
++++ b/test/Test.hs
+@@ -1,8 +1,12 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ module Main where
+ 
+ import Distribution.PackageDescription.TH
+ import Control.Monad (when)
++#if MIN_VERSION_Cabal(3,2,1)
++import Distribution.Utils.ShortText
++#endif
+ 
+ main :: IO ()
+ main = do
+@@ -12,7 +16,11 @@ main = do
+ 
+   putStrLn $ "This package is version " ++ $(packageVariable (pkgVersion . package))
+   let testVersion = $(packageVariableFrom "test/test-version-interp.cabal" (pkgVersion . package))
++#if MIN_VERSION_Cabal(3,2,1)
++      testCopyright = $(packageVariableFrom "test/test-version-interp.cabal" (packageString . fromShortText . copyright))
++#else
+       testCopyright = $(packageVariableFrom "test/test-version-interp.cabal" (packageString . copyright))
++#endif
+   simpleAssert "version" testVersion "5.5.5"
+   simpleAssert "copyright" testCopyright "(c) 1953 Gumby"
+ 
