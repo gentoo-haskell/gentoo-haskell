@@ -1,0 +1,62 @@
+From https://github.com/lpeterse/haskell-socket-sctp/pull/11
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Mon, 17 Mar 2025 18:48:54 +0100
+Subject: [PATCH] bump to socket 0.8
+
+--- a/socket-sctp.cabal
++++ b/socket-sctp.cabal
+@@ -27,8 +27,8 @@ library
+   exposed-modules:     System.Socket.Protocol.SCTP
+   other-modules:       System.Socket.Protocol.SCTP.Internal
+   build-depends:       base >= 4.7 && < 5
+-                     , bytestring < 0.11
+-                     , socket >= 0.7.0.0 && < 0.8
++                     , bytestring
++                     , socket >= 0.8.0.0
+   hs-source-dirs:      src
+   include-dirs:        src/System/Socket/Protocol/SCTP
+   c-sources:           src/System/Socket/Protocol/SCTP/hs_sctp.c
+--- a/src/System/Socket/Protocol/SCTP/Internal.hsc
++++ b/src/System/Socket/Protocol/SCTP/Internal.hsc
+@@ -114,9 +114,11 @@ newtype SendmsgFlags
+       = SendmsgFlags Word32
+       deriving (Eq, Ord, Show, Num, Storable, Bits)
+ 
++instance Semigroup SendmsgFlags where
++  (<>) =(.|.)
++
+ instance Monoid SendmsgFlags where
+   mempty  = SendmsgFlags 0
+-  mappend = (.|.)
+ 
+ newtype PayloadProtocolIdentifier
+       = PayloadProtocolIdentifier Word32
+@@ -221,7 +223,7 @@ receiveMessage sock bufSize flags = do
+             (\bufPtr-> do
+                 bytesReceived <- tryWaitRetryLoop
+                   sock
+-                  unsafeSocketWaitRead
++                  waitRead
+                   (\fd-> c_sctp_recvmsg fd bufPtr (fromIntegral bufSize) addrPtr addrSizePtr sinfoPtr flagsPtr )
+                 addr   <- peek addrPtr
+                 flags' <- peek flagsPtr
+@@ -248,7 +250,7 @@ sendMessage sock msg addr ppid flags sn ttl context = do
+     let finish addrPtr sz = do
+           i <- tryWaitRetryLoop
+             sock
+-            unsafeSocketWaitWrite
++            waitWrite
+               $ \fd-> c_sctp_sendmsg
+                       fd
+                       msgPtr
+@@ -343,7 +345,9 @@ data Events
+ 
+ instance Monoid Events where
+   mempty = let x = False in Events x x x x x x x x x -- x
+-  mappend a b = Events
++
++instance Semigroup Events where
++  a <> b = Events
+     (max (dataIOEvent          a) (dataIOEvent          b))
+     (max (associationEvent     a) (associationEvent     b))
+     (max (addressEvent         a) (addressEvent         b))
