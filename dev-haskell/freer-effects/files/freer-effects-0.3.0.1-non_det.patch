@@ -1,0 +1,20 @@
+From https://github.com/IxpertaSolutions/freer-effects/commit/4b83056f22800581749ba1aff0437d73a62508d6
+From: Tomas Janousek <tomi@nomi.cz>
+Date: Tue, 14 Mar 2017 12:38:55 +0100
+Subject: [PATCH] Remove examples/src/NonDet.hs
+
+The module isn't imported anywhere so `stack build` works fine even
+though ghci fails (forgotten import in #11) and it's a duplicate of
+tests/Tests/NonDet.hs anyway.
+
+Addresses #11
+--- a/freer-effects.cabal
++++ b/freer-effects.cabal
+@@ -101,7 +101,6 @@ executable freer-examples
+     , Coroutine
+     , Cut
+     , Fresh
+-    , NonDet
+     , Trace
+ 
+   default-language:     Haskell2010
