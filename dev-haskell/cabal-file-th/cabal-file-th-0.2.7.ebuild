@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc9.4.patch
+	)
 
 # Reported as: https://github.com/nkpart/cabal-file-th/issues/12
 #test/Test.hs:15:95: error:
