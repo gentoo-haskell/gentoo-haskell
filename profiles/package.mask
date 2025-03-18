@@ -19,6 +19,9 @@ dev-haskell/transformers-free
 dev-haskell/auto
 dev-haskell/enumerator
 dev-haskell/hashable-time
+dev-haskell/attoparsec-enumerator
+dev-haskell/network-enumerator
+dev-haskell/zlib-enum
 
 # hololeap <hololeap@protonmail.com> (2025-03-02)
 #
