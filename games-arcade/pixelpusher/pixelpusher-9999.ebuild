@@ -66,7 +66,6 @@ DEPEND="${RDEPEND}
 BDEPEND="dev-haskell/hpack"
 
 src_prepare() {
-	cd "$S"
 	hpack || die
 
 	haskell-cabal_src_prepare
