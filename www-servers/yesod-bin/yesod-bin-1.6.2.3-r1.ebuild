@@ -15,6 +15,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'tar                >= 0.4          && < 0.6' 'tar >= 0.4'
+	)
+
 RDEPEND="dev-haskell/aeson:=
 	>=dev-haskell/cabal-1.18:=
 	>=dev-haskell/conduit-1.3:=
@@ -32,7 +36,7 @@ RDEPEND="dev-haskell/aeson:=
 	dev-haskell/say:=
 	>=dev-haskell/split-0.2:= <dev-haskell/split-0.3:=
 	dev-haskell/streaming-commons:=
-	>=dev-haskell/tar-0.4:= <dev-haskell/tar-0.6:=
+	>=dev-haskell/tar-0.4:=
 	>=dev-haskell/text-0.11:=
 	dev-haskell/transformers-compat:=
 	dev-haskell/unliftio:=
