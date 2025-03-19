@@ -1,0 +1,108 @@
+From https://github.com/goldfirere/glambda/commit/2a4ee2e4e85cf65bb01f72ad2eb0bc6bc82aaced
+From: jrp2014 <jrp@dial.pipex.com>
+Date: Tue, 12 Mar 2019 19:54:19 +0000
+Subject: [PATCH] Some hlinting
+
+--- a/src/Language/Glambda/Lex.hs
++++ b/src/Language/Glambda/Lex.hs
+@@ -130,5 +130,5 @@ word_token = to_token <$> word
+ 
+ -- | Lex one word
+ word :: Lexer String
+-word = ((:) <$> (letter <|> char '_') <*>
+-                 (many (alphaNum <|> char '_')))
++word = (:) <$> (letter <|> char '_') <*>
++                 many (alphaNum <|> char '_')
+--- a/src/Language/Glambda/Parse.hs
++++ b/src/Language/Glambda/Parse.hs
+@@ -140,7 +140,7 @@ lam = do
+   tok Colon
+   typ <- ty
+   tok Dot
+-  e <- bind bound_var $ expr
++  e <- bind bound_var expr
+   return (ULam typ e)
+ 
+ cond :: Parser UExp
+@@ -175,4 +175,4 @@ mul_op = mk_op <$> arith_op [uTimes, uDivide, uMod]
+ bool_op = mk_op <$> arith_op [uLess, uLessE, uGreater, uGreaterE, uEquals]
+ 
+ mk_op :: UArithOp -> UExp -> UExp -> UExp
+-mk_op op = \e1 e2 -> UArith e1 op e2
++mk_op op e1 e2 = UArith e1 op e2
+--- a/src/Language/Glambda/Pretty.hs
++++ b/src/Language/Glambda/Pretty.hs
+@@ -84,7 +84,7 @@ defaultPretty = nest 2 . prettyExp defaultColoring topPrec
+ 
+ -- | Print a variable
+ prettyVar :: Coloring -> Int -> Doc
+-prettyVar (Coloring _ bound) n = (nthDefault id n bound) (char '#' <> int n)
++prettyVar (Coloring _ bound) n = nthDefault id n bound (char '#' <> int n)
+ 
+ -- | Print a lambda expression
+ prettyLam :: PrettyExp exp => Coloring -> Prec -> Maybe Ty -> exp -> Doc
+--- a/src/Language/Glambda/Repl.hs
++++ b/src/Language/Glambda/Repl.hs
+@@ -103,8 +103,7 @@ runStmts str = reportErrors $ do
+ 
+ -- | Run a sequence of statements, returning the new global variables
+ doStmts :: [Statement] -> GlamE Globals
+-doStmts []     = ask
+-doStmts (s:ss) = doStmt s $ doStmts ss
++doStmts  = foldr doStmt ask
+ 
+ -- | Run a 'Statement' and then run another action with the global
+ -- variables built in the 'Statement'
+@@ -128,7 +127,7 @@ type CommandTable = [(String, String -> Glam ())]
+ dispatchCommand :: CommandTable -> String -> Glam ()
+ dispatchCommand table line
+   = case List.filter ((cmd `List.isPrefixOf`) . fst) table of
+-      []            -> do printLine $ text "Unknown command:" <+> squotes (text cmd)
++      []            -> printLine $ text "Unknown command:" <+> squotes (text cmd)
+       [(_, action)] -> action arg
+       many          -> do printLine $ text "Ambiguous command:" <+> squotes (text cmd)
+                           printLine $ text "Possibilities:" $$
+--- a/tests/Tests/Check.hs
++++ b/tests/Tests/Check.hs
+@@ -52,7 +52,7 @@ checkTestCases = [ ("1", Just ("1", IntTy, "1"))
+ checkTests :: TestTree
+ checkTests = testGroup "Typechecker" $
+   List.map (\(expr_str, m_result) ->
+-               testCase ("`" ++ expr_str ++ "'") $
++               testCase ("`" ++ expr_str ++ "'")
+                (case flip runReader id_globals $ runExceptT $ do
+                        uexp <- hoistEither $ Arrow.left text $ parseExp =<< lex expr_str
+                        check uexp $ \sty exp -> return $
+--- a/tests/Tests/Parse.hs
++++ b/tests/Tests/Parse.hs
+@@ -35,7 +35,7 @@ parseTests :: TestTree
+ parseTests = testGroup "Parser"
+   [ testGroup "Success" $
+     List.map (\(str, out) -> testCase ("`" ++ str ++ "'") $
+-              (render $ plain $ pretty (parseExp =<< lex str)) @?=
++              render (plain $ pretty (parseExp =<< lex str)) @?=
+                 ("Right " ++ out))
+              parseTestCases
+   , testGroup "Failure" $
+--- a/tests/Tests/Util.hs
++++ b/tests/Tests/Util.hs
+@@ -33,8 +33,8 @@ import Language.Haskell.TH
+ import Control.Monad
+ 
+ prettyError :: Pretty a => a -> a -> String
+-prettyError exp act = (render $ text "Expected" <+> squotes (pretty exp) <> semi <+>
+-                                text "got" <+> squotes (pretty act))
++prettyError exp act = render $ text "Expected" <+> squotes (pretty exp) <> semi <+>
++                                text "got" <+> squotes (pretty act)
+ 
+ (@?=) :: (Eq a, Pretty a) => a -> a -> Assertion
+ act @?= exp = (act == exp) @? prettyError exp act
+@@ -45,7 +45,7 @@ exp @=? act = (act == exp) @? prettyError exp act
+ $( do decs <- reifyInstances ''Eq [ConT ''ParseError]
+       case decs of  -- GHC 7.6 eagerly typechecks the instance, sometimes
+                     -- reporting a duplicate. Urgh. So we can't quote it.
+-        [] -> liftM (:[]) $
++        [] -> fmap (:[]) $
+               instanceD (return []) (appT (conT ''Eq) (conT ''ParseError))
+                         [ valD (varP '(==)) (normalB [| (==) `on` show |]) [] ]
+         _  -> return [] )
