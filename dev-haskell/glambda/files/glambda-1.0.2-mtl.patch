@@ -1,0 +1,62 @@
+From https://github.com/goldfirere/glambda/commit/1a97dc889b5b1441b260da215c2746952a1ff22b
+From: Joseph Haugh <jhaugh500@gmail.com>
+Date: Thu, 18 Jul 2024 09:53:21 -0600
+Subject: [PATCH] Restored old bounds for mtl and loosened bounds on
+ ansi-wl-pprint. In order to use a newer version of mtl,  had to be updated to
+ . I also had to import  in a couple more modules in order to get  and  in
+ scope.
+
+--- a/glambda.cabal
++++ b/glambda.cabal
+@@ -26,8 +26,8 @@ source-repository this
+ 
+ library
+   build-depends:      base == 4.*
+-                    , ansi-wl-pprint >= 0.6.7.1
++                    , ansi-wl-pprint <= 0.6.9
+                     , mtl >= 2.2.1
+                     , transformers >= 0.4.0.0
+                     , containers >= 0.5
+                     , parsec >= 3.1
+--- a/src/Language/Glambda/Check.hs
++++ b/src/Language/Glambda/Check.hs
+@@ -33,7 +33,7 @@ import Language.Glambda.Monad ( GlamE )
+ import Text.PrettyPrint.ANSI.Leijen
+ 
+ import Control.Monad.Reader
+-import Control.Monad.Error
++import Control.Monad.Except
+ 
+ -- | Abort with a type error in the given expression
+ typeError :: MonadError Doc m => UExp -> Doc -> m a
+--- a/src/Language/Glambda/Globals.hs
++++ b/src/Language/Glambda/Globals.hs
+@@ -21,7 +21,7 @@ import Language.Glambda.Type
+ 
+ import Text.PrettyPrint.ANSI.Leijen
+ 
+-import Control.Monad.Error
++import Control.Monad.Except
+ 
+ import Data.Map as Map
+ 
+--- a/src/Language/Glambda/Monad.hs
++++ b/src/Language/Glambda/Monad.hs
+@@ -33,6 +33,7 @@ import System.Console.Haskeline
+ 
+ import Text.PrettyPrint.ANSI.Leijen
+ 
++import Control.Monad (mzero)
+ import Control.Monad.Trans.Maybe
+ import Control.Monad.Except
+ import Control.Monad.Reader
+--- a/src/Language/Glambda/Parse.hs
++++ b/src/Language/Glambda/Parse.hs
+@@ -39,6 +39,7 @@ import Data.List as List
+ import Control.Applicative
+ import Control.Arrow as Arrow ( left )
+ import Control.Monad.Reader
++import Control.Monad (guard)
+ 
+ -- | Parse a sequence of semicolon-separated statements, aborting with
+ -- an error upon failure
