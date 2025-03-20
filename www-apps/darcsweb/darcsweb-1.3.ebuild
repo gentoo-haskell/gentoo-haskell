@@ -3,19 +3,21 @@
 
 EAPI=8
 
-inherit webapp
+PYTHON_COMPAT=( python3_{{9..13},13t} )
+inherit webapp python-single-r1
 
 DESCRIPTION="A web interface for darcs"
 HOMEPAGE="https://blitiri.com.ar/p/darcsweb/"
 SRC_URI="https://blitiri.com.ar/p/darcsweb/files/${PV}/${P}.tar.bz2"
 
 LICENSE="public-domain"
+SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
 RDEPEND="dev-vcs/darcs
-	dev-lang/python"
+	${PYTHON_DEPS}"
 
 src_install() {
 	webapp_src_preinst
