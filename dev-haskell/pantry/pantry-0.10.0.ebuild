@@ -18,6 +18,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.9.3.2-disable-network-tests.patch"
+)
+
 RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/aeson-warning-parser-0.1.1:=[profile?]
 	dev-haskell/ansi-terminal:=[profile?]
@@ -70,6 +74,15 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/raw-strings-qq )
 "
+
+src_prepare() {
+	# These modules are full of tests that depend on network access
+	for t in Cabal GlobalHints Hackage Tree; do
+		rm "${S}/test/Pantry/${t}Spec.hs" || die
+	done
+
+	haskell-cabal_src_prepare
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
