@@ -8,3 +8,4 @@ slotmove dev-haskell/wx 3.0-gtk3 0
 slotmove dev-haskell/reactive-banana-wx 3.0-gtk3 0
 slotmove dev-haskell/gtkglext 2 0
 slotmove dev-haskell/haskell-src-exts 1.22 0
+slotmove dev-haskell/haskell-src-exts-simple 1.23 0
