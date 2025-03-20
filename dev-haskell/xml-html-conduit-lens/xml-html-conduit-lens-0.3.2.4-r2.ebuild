@@ -15,13 +15,18 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+		'containers              >= 0.4.0 && < 0.6' 'containers              >= 0.4' \
+		'xml-conduit             >= 1.1   && < 1.9' 'xml-conduit             >= 1.1'
+		'text                    >= 0.11  && < 1.3' 'text >= 0.11'
+)
 
 RESTRICT=test # fails at quoting test
 
 RDEPEND=">=dev-haskell/html-conduit-1.1:=[profile?] <dev-haskell/html-conduit-1.4:=[profile?]
 	>=dev-haskell/lens-4.0.1:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-haskell/xml-conduit-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
@@ -31,11 +36,3 @@ DEPEND="${RDEPEND}
 		dev-haskell/hspec
 		>=dev-haskell/hspec-expectations-lens-0.3 )
 "
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'containers              >= 0.4.0 && < 0.6' 'containers              >= 0.4' \
-		'xml-conduit             >= 1.1   && < 1.9' 'xml-conduit             >= 1.1'
-}
