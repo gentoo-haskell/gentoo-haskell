@@ -15,6 +15,10 @@ CABAL_CHDEPS=(
 	'primitive == 0.7.3.*' 'primitive >= 0.7.3'
 )
 
+PATCHES=(
+	"${FILESDIR}"/${P}-primitive-9.patch
+)
+
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
