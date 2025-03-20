@@ -7,7 +7,6 @@
 	</maintainer>
 	<use>
 		<flag name="disable-stack-upload">For use only during development and debugging. Disable &#39;stack upload&#39; so that it does not make HTTP requests. Stack will output information about the HTTP request(s) that it would have made if the command was enabled.</flag>
-		<flag name="integration-tests">Run the integration test suite.</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">stack</remote-id>
