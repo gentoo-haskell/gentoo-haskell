@@ -5,27 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		The repa-image library adds support for reading and
-		writing images in many formats based on the DevIL
-		open source image library. Image data is represented in Haskell
-		as typed, multi-dimensional repa arrays.
-		
-		Developer\'s Image Library (DevIL) is a library to
-		develop applications with very powerful image
-		loading capabilities, yet with a relatively simple
-		interface. DevIL can load, save, convert,
-		manipulate, filter and display a wide variety of
-		image formats, including:
-		
-		* BMP, ICO, JPG, PNG, PNM, TGA, TIF, GIF, EXIF and many more.
-		
-		/References:/
-		
-		* &lt;http://hackage.haskell.org/package/repa&gt;
-		
-		* &lt;http://openil.sourceforge.net/&gt;
-		
-		* &lt;http://www.haskell.org/haskellwiki/Numeric_Haskell:_A_Repa_Tutorial&gt;
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">repa-devil</remote-id>
+		<remote-id type="github">RaphaelJ/repa-devil</remote-id>
+	</upstream>
 </pkgmetadata>
