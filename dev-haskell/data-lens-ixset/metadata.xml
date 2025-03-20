@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">data-lens-ixset</remote-id>
+		<remote-id type="github">dag/data-lens-ixset</remote-id>
+	</upstream>
 </pkgmetadata>
