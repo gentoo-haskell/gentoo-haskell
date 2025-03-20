@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+)
+
 RDEPEND="<dev-haskell/cairo-0.14:=
 	<dev-haskell/file-embed-0.1:=
 	>=dev-haskell/ghc-events-0.13:= <dev-haskell/ghc-events-0.21:=

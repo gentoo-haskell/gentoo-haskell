@@ -1,0 +1,22 @@
+From https://github.com/haskell/ThreadScope/commit/8846508e9769a8dfd82b3ff66259ba4d58255932
+From: Teo Camarasu <teo.camarasu@tracsis.com>
+Date: Fri, 1 Mar 2024 11:25:47 +0000
+Subject: [PATCH] Adapt to lack of Control.Monad re-exports from
+ Control.Monad.Reader in mtl-2.3
+
+---
+ GUI/EventsView.hs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/GUI/EventsView.hs b/GUI/EventsView.hs
+index 6f79cbbe..74d56d9e 100644
+--- a/GUI/EventsView.hs
++++ b/GUI/EventsView.hs
+@@ -17,6 +17,7 @@ import GHC.RTS.Events
+ import Graphics.UI.Gtk
+ import qualified GUI.GtkExtras as GtkExt
+ 
++import Control.Monad
+ import Control.Monad.Reader
+ import Data.Array
+ import Data.Monoid
