@@ -8,4 +8,8 @@
 	<longdescription>
 		Provides a simple means of reverse-proxying HTTP requests. The raw approach uses the same technique as leveraged by keter, whereas the WAI approach performs full request/response parsing via WAI and http-conduit.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">http-reverse-proxy</remote-id>
+		<remote-id type="github">fpco/http-reverse-proxy</remote-id>
+	</upstream>
 </pkgmetadata>
