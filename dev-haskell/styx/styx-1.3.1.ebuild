@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+)
 
 RDEPEND="dev-haskell/aeson:=
 	dev-haskell/mtl:=
