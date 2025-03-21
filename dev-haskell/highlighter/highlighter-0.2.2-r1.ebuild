@@ -17,7 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="executable"
 
-PATCHES=( "${FILESDIR}/${PN}-0.2.2-fix-blaze.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-0.2.2-fix-blaze.patch"
+	"${FILESDIR}/${PN}-0.2.2-mtl.patch"
+)
 
 RDEPEND="dev-haskell/blaze-html:=[profile?]
 	dev-haskell/blaze-markup:=[profile?]
