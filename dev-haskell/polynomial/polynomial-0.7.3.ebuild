@@ -29,7 +29,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 "
 
-PATCHES=( ${FILESDIR}/${P}-prelude-hiding.patch )
+PATCHES=(
+	${FILESDIR}/${P}-prelude-hiding.patch
+	"${FILESDIR}"/${P}-ghc9.8.patch
+)
 
 src_prepare() {
 	default

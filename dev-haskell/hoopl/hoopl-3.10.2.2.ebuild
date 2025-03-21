@@ -19,6 +19,10 @@ IUSE=""
 
 RESTRICT=test # Could not find module ‘Test’
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc9.patch
+	)
+
 RDEPEND=">=dev-lang/ghc-7.6.1:=
 "
 DEPEND="${RDEPEND}

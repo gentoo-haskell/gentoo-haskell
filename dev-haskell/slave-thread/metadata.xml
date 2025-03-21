@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">slave-thread</remote-id>
+		<remote-id type="github">nikita-volkov/slave-thread</remote-id>
+	</upstream>
 </pkgmetadata>

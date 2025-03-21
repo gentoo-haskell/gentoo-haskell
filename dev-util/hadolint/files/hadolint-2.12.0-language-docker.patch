@@ -1,0 +1,58 @@
+From https://github.com/hadolint/hadolint/pull/902
+From https://github.com/hadolint/hadolint/commit/8c0b7e04a1523f4fdae7252831ff26cbc3282fea
+--- a/src/Hadolint/Rule/DL3010.hs
++++ b/src/Hadolint/Rule/DL3010.hs
+@@ -26,7 +26,7 @@
+     message = "Use `ADD` for extracting archives into an image"
+ 
+     check _ _ (From _) = emptyState Empty
+-    check line st (Copy (CopyArgs srcs tgt) (CopyFlags _ _ _ NoSource)) =
++    check line st (Copy (CopyArgs srcs tgt) (CopyFlags _ _ _ NoSource _)) =
+       st |> modify (rememberArchives line srcs tgt)
+     check _ st (Run (RunArgs args _))
+       | Acc archives _ <- state st,
+--- a/src/Hadolint/Rule/DL3011.hs
++++ b/src/Hadolint/Rule/DL3011.hs
+@@ -10,7 +10,7 @@
+     severity = DLErrorC
+     message = "Valid UNIX ports range from 0 to 65535"
+     check (Expose (Ports ports)) =
+-      and [p <= 65535 | Port p _ <- ports]
+-        && and [l <= 65535 && m <= 65535 | PortRange l m _ <- ports]
++      and [p <= 65535 | PortSpec (Port p _) <- ports]
++        && and [l <= 65535 && m <= 65535 | PortRangeSpec (PortRange (Port l _) (Port m  _)) <- ports]
+     check _ = True
+ {-# INLINEABLE rule #-}
+--- a/src/Hadolint/Rule/DL3022.hs
++++ b/src/Hadolint/Rule/DL3022.hs
+@@ -13,7 +13,7 @@
+     message = "`COPY --from` should reference a previously defined `FROM` alias"
+ 
+     check _ st (From BaseImage {alias = Just (ImageAlias als)}) = st |> modify (Set.insert als)
+-    check line st (Copy (CopyArgs _ _) (CopyFlags _ _ _ (CopySource s)))
++    check line st (Copy (CopyArgs _ _) (CopyFlags _ _ _ (CopySource s) _))
+       | ":" `Text.isInfixOf` dropQuotes s = st
+       | Set.member s (state st) = st
+       | otherwise = st |> addFail CheckFailure {..}
+--- a/src/Hadolint/Rule/DL3023.hs
++++ b/src/Hadolint/Rule/DL3023.hs
+@@ -11,7 +11,7 @@
+     message = "`COPY --from` cannot reference its own `FROM` alias"
+ 
+     check _ st f@(From _) = st |> replaceWith (Just f) -- Remember the last FROM instruction found
+-    check line st@(State _ (Just fromInstr)) (Copy (CopyArgs _ _) (CopyFlags _ _ _ (CopySource stageName)))
++    check line st@(State _ (Just fromInstr)) (Copy (CopyArgs _ _) (CopyFlags _ _ _ (CopySource stageName) _))
+       | aliasMustBe (/= stageName) fromInstr = st
+       | otherwise = st |> addFail CheckFailure {..}
+     -- cannot copy from the same stage!
+--- a/src/Hadolint/Rule/DL3049.hs
++++ b/src/Hadolint/Rule/DL3049.hs
+@@ -36,7 +36,7 @@
+     message = "Label `" <> label <> "` is missing."
+     check line state (From img) =
+       state |> modify (currentStage (StageID img line))
+-    check _ state (Copy (CopyArgs _ _) (CopyFlags _ _ _ (CopySource src))) =
++    check _ state (Copy (CopyArgs _ _) (CopyFlags _ _ _ (CopySource src) _)) =
+       state |> modify (markSilentByAlias src)
+     check _ state (Label pairs)
+       | label `elem` fmap fst pairs =

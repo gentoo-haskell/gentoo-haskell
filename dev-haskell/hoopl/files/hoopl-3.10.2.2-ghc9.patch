@@ -1,0 +1,17 @@
+From https://github.com/haskell/hoopl/commit/5cd0eb284f44450bc57a239e4b8c10508c688348
+From: Theo Giannakopoulos <theo@abstractnonsense.org>
+Date: Sat, 4 Sep 2021 07:51:51 -0400
+Subject: [PATCH] Fix as-pattern to accomodate whitespace-sensitive operator
+ parsing
+
+--- a/src/Compiler/Hoopl/Dataflow.hs
++++ b/src/Compiler/Hoopl/Dataflow.hs
+@@ -291,7 +291,7 @@ arfGraph pass@FwdPass { fp_lattice = lattice,
+ -- We know the results _shouldn't change_, but the transfer
+ -- functions might, for example, generate some debugging traces.
+ joinInFacts :: DataflowLattice f -> FactBase f -> FactBase f
+-joinInFacts (lattice @ DataflowLattice {fact_bot = bot, fact_join = fj}) fb =
++joinInFacts (lattice@DataflowLattice {fact_bot = bot, fact_join = fj}) fb =
+   mkFactBase lattice $ map botJoin $ mapToList fb
+     where botJoin (l, f) = (l, snd $ fj l (OldFact bot) (NewFact f))
+ 

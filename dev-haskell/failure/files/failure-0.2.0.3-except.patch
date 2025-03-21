@@ -1,0 +1,17 @@
+From https://github.com/snoyberg/failure/pull/5
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 12 Mar 2025 10:30:34 +0100
+Subject: [PATCH] moving from Control.Monad.Trans.Error to
+ Control.Monad.Trans.Except
+
+--- a/Control/Failure.hs
++++ b/Control/Failure.hs
+@@ -24,7 +24,7 @@ module Control.Failure
+     ) where
+ 
+ import Control.Exception (throwIO, Exception (toException), SomeException (..))
+-import Control.Monad.Trans.Error ()
++import Control.Monad.Trans.Except ()
+ import Control.Monad.Trans.Class (MonadTrans (lift))
+ 
+ class Monad f => Failure e f where

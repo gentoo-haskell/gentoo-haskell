@@ -18,7 +18,10 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-unix.patch
+	)
 
 RDEPEND="dev-haskell/hslogger:=[profile?]
 	>=dev-haskell/missingh-1.0.0:=[profile?]
