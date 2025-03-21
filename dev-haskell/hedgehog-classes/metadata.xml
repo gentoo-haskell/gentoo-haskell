@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="aeson">You can disable the use of the `aeson` package using `-f-aeson`.
+
+This may be useful for accelerating builds in sandboxes for expert users.</flag>
+		<flag name="comonad">You can disable the use of the `comonad` package using `-f-comonad`.
+
+This may be useful for accelerating builds in sandboxes for expert users.</flag>
+		<flag name="primitive">You can disable the use of the `primitive` package using `-f-primitive`.
+
+This may be useful for accelerating builds in sandboxes for expert users.</flag>
+		<flag name="semirings">You can disable the use of the `semirings` package using `-f-semirings`.
+
+This may be useful for accelerating builds in sandboxes for expert users.</flag>
+		<flag name="vector">You can disable the use of the `vector` package using `-f-vector`.
+
+This may be useful for accelerating builds in sandboxes for expert users.</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">hedgehog-classes</remote-id>
+		<remote-id type="github">hedgehogqa/haskell-hedgehog-classes</remote-id>
+	</upstream>
+</pkgmetadata>
