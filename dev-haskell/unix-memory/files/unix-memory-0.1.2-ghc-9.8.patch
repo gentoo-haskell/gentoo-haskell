@@ -1,0 +1,19 @@
+From ffb532853659edee1813f4008375b9757858ae37 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 19:46:47 +0100
+Subject: [PATCH] b
+
+--- a/tests/Tests.hs
++++ b/tests/Tests.hs
+@@ -31,7 +31,7 @@ withDevZeroMapping f = withOpenFd "/dev/zero" $ \fd ->
+             (\mem -> memoryUnmap mem psz)
+             f
+   where withOpenFd filename g = do 
+-            bracket (openFd filename ReadWrite Nothing defaultFileFlags)
++            bracket (openFd filename ReadWrite defaultFileFlags)
+                     closeFd
+                     g
+ 
+-- 
+2.48.1
+

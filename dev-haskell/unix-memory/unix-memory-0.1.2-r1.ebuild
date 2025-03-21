@@ -16,6 +16,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.8.patch
+)
+
 RDEPEND=">=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
