@@ -25,7 +25,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
 
-PATCHES=( "${FILESDIR}/${P}-ghc-7.10.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-ghc-7.10.patch"
+	"${FILESDIR}/${P}-mtl.patch"
+)
 
 src_configure() {
 	haskell-cabal_src_configure \

@@ -5,12 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		TypeCompose provides some classes &amp; instances for forms of type
-		composition, as well as some modules who haven't yet found a home.
-		
-		Please see the project wiki page: &lt;http://haskell.org/haskellwiki/TypeCompose&gt;
-		
-		&amp;#169; 2007-2010 by Conal Elliott; BSD3 license.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">TypeCompose</remote-id>
+		<remote-id type="github">conal/TypeCompose</remote-id>
+	</upstream>
 </pkgmetadata>

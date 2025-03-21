@@ -11,6 +11,12 @@ inherit haskell-cabal
 DESCRIPTION="dynamic plugin system for web applications"
 HOMEPAGE="https://github.com/clckwrks/web-plugins"
 
+CABAL_CHDEPS=(
+	'bytestring            < 0.12' 'bytestring'
+	'mtl        >= 2.1  && < 2.3' 'mtl >= 2.1'
+	'text       >= 0.11 && < 1.3' 'text >= 0.11'
+	)
+
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"

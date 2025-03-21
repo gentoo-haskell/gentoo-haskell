@@ -1,0 +1,34 @@
+From https://github.com/k-bx/protocol-buffers/commit/f15e1f5c9267ae15520b79ec59a041c1d9f7e9e1
+From: cydparser <cydparser@gmail.com>
+Date: Sun, 29 Jan 2023 15:36:01 -0800
+Subject: [PATCH] Fix for mtl-2.3.1 and transformers-0.6+
+
+--- a/Text/ProtocolBuffers/Get.hs
++++ b/Text/ProtocolBuffers/Get.hs
+@@ -67,7 +67,7 @@ module Text.ProtocolBuffers.Get
+ -- The Get monad is an instance of all of these library classes:
+ import Control.Applicative(Alternative(empty,(<|>)))
+ import Control.Monad(MonadPlus(mzero,mplus),when)
+-import Control.Monad.Error.Class(MonadError(throwError,catchError),Error(strMsg))
++import Control.Monad.Error.Class(MonadError(throwError,catchError))
+ -- It can be a MonadCont, but the semantics are too broken without a ton of work.
+ 
+ -- implementation imports
+@@ -792,7 +792,7 @@ instance Monad Get where
+   {-# INLINE (>>=) #-}
+ 
+ instance Fail.MonadFail Get where
+-  fail = throwError . strMsg
++  fail = throwError
+ 
+ instance MonadError String Get where
+   throwError msg = Get $ \_sc  s pcIn ->
+@@ -808,7 +808,7 @@ instance MonadError String Get where
+     in unGet actionWithCleanup sc s pcWithHandler
+ 
+ instance MonadPlus Get where
+-  mzero = throwError (strMsg "[mzero:no message]")
++  mzero = throwError "[mzero:no message]"
+   mplus m1 m2 = catchError m1 (const m2)
+ 
+ instance Applicative Get where

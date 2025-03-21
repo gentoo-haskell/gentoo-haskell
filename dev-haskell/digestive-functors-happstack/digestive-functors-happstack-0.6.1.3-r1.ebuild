@@ -17,6 +17,8 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'happstack-server      >= 6.0  && < 7.7' 'happstack-server >= 6.0'
+	'bytestring            >= 0.9  && < 0.11' 'bytestring >= 0.9'
+	'text                  >= 0.11 && < 1.3' 'text >= 0.11'
 )
 
 RDEPEND="

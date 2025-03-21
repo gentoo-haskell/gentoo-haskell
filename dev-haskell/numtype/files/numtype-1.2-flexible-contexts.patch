@@ -1,0 +1,61 @@
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sun, 16 Mar 2025 21:30:41 +0100
+Subject: [PATCH] b
+
+--- a/Numeric/NumType.lhs
++++ b/Numeric/NumType.lhs
+@@ -45,6 +45,7 @@ instances (and possibly additional unidentified GHC extensions).
+ >            , EmptyDataDecls
+ >            , FunctionalDependencies
+ >            , MultiParamTypeClasses
++>            , FlexibleContexts
+ >            , FlexibleInstances
+ >            , DeriveDataTypeable
+ > #-}
+@@ -233,14 +234,14 @@ When adding to a non-Zero number our strategy is to "transfer" type
+ constructors from the first type to the second type until the first
+ type is Zero. We use the 'Succ' class to do this.
+ 
+-> instance (PosTypeI a, Succ b c, Add a c d) => Add (Pos a) b d
+-> instance (NegTypeI a, Succ c b, Add a c d) => Add (Neg a) b d
++> instance (NumTypeI b, NumTypeI d, PosTypeI a, Succ b c, Add a c d) => Add (Pos a) b d
++> instance (NumTypeI b, NumTypeI d, NegTypeI a, Succ c b, Add a c d) => Add (Neg a) b d
+ 
+ We define our helper class for subtraction analogously.
+ 
+-> instance (NumType a) => Sub a Zero a
+-> instance (Succ a' a, PosTypeI b, Sub a' b c) => Sub a (Pos b) c
+-> instance (Succ a a', NegTypeI b, Sub a' b c) => Sub a (Neg b) c
++> instance (NumTypeI a) => Sub a Zero a
++> instance (NumTypeI a, NumTypeI c, Succ a' a, PosTypeI b, Sub a' b c) => Sub a (Pos b) c
++> instance (NumTypeI a, NumTypeI c, Succ a a', NegTypeI b, Sub a' b c) => Sub a (Neg b) c
+ 
+ While we cold have defined a single 'Sub' instance using negation and
+ addition.
+@@ -291,7 +292,7 @@ positive. We recursively subtract the denominator from nominator
+ while incrementing the result, until we reach the zero case.
+ 
+ > instance ( Sum n' (Pos n'') (Pos n)
+->          , Div n'' (Pos n') n''', PosTypeI n''')
++>          , Div n'' (Pos n') n''', PosTypeI n, PosTypeI n', PosTypeI n''')
+ >       => Div (Pos n) (Pos n') (Pos n''')
+ 
+ Now we tackle cases with negative numbers involved. We trivially
+@@ -303,12 +304,12 @@ appropriate.
+ >          , Div (Pos p) (Pos p') (Pos p'')
+ >          , PosTypeI p'')
+ >       => Div (Neg n) (Neg n') (Pos p'')
+-> instance ( NegTypeI n, Negate n p'
++> instance ( NegTypeI n, NegType n'', Negate n p'
+ >          , Div (Pos p) (Pos p') (Pos p'')
+ >          , Negate (Pos p'') (Neg n'')
+ >          , PosTypeI p)
+ >       => Div (Pos p) (Neg n) (Neg n'')
+-> instance ( NegTypeI n, Negate n p'
++> instance ( NegTypeI n, NegType n'', Negate n p'
+ >          , Div (Pos p') (Pos p) (Pos p'')
+ >          , Negate (Pos p'') (Neg n'')
+ >          , PosTypeI p)
+-- 
+2.48.1
+

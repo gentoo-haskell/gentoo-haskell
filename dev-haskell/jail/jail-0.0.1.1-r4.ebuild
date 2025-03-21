@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+CABAL_CHDEPS=(
+		'directory >=1.0 && < 1.3' 'directory >=1.0'
+		'containers >= 0.2 && < 0.6' 'containers >= 0.2'
+	)
 
 RDEPEND="dev-haskell/mtl:=[profile?]
 	>=dev-haskell/transformers-0.1:=[profile?]
@@ -23,12 +26,7 @@ RDEPEND="dev-haskell/mtl:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6"
 
-PATCHES=("${FILESDIR}"/${P}-tf-0.3.patch)
-
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'directory >=1.0 && < 1.3' 'directory >=1.0' \
-		'containers >= 0.2 && < 0.6' 'containers >= 0.2'
-}
+PATCHES=(
+	"${FILESDIR}"/${P}-tf-0.3.patch
+	"${FILESDIR}"/${P}-mtl-2.3.patch
+)

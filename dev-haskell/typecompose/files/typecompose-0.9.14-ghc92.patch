@@ -1,0 +1,22 @@
+From https://github.com/conal/TypeCompose/commit/5eb6f629fa8c117c8eefab8f432a62fb0d259e86
+From: Ziyang Liu <unsafeFixIO@gmail.com>
+Date: Fri, 15 Apr 2022 06:28:55 -0700
+Subject: [PATCH] Fix build for GHC 9.2
+
+--- a/src/Data/Pair.hs
++++ b/src/Data/Pair.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE Rank2Types, TypeOperators, UndecidableInstances, CPP #-}
++{-# LANGUAGE FlexibleContexts, Rank2Types, TypeOperators, UndecidableInstances, CPP #-}
+ {-# OPTIONS_GHC -Wall #-}
+ #if __GLASGOW_HASKELL__ < 610
+ {-# OPTIONS_GHC -frewrite-rules #-}
+
+--- a/src/Data/Zip.hs
++++ b/src/Data/Zip.hs
+@@ -1,4 +1,4 @@
+-{-# LANGUAGE Rank2Types, TypeOperators, UndecidableInstances, CPP #-}
++{-# LANGUAGE FlexibleContexts, Rank2Types, TypeOperators, UndecidableInstances, CPP #-}
+ {-# OPTIONS_GHC -Wall #-}
+ #if __GLASGOW_HASKELL__ < 610
+ {-# OPTIONS_GHC -frewrite-rules #-}

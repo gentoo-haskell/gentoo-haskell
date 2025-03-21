@@ -17,6 +17,12 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base >= 4.9 && < 4.19' 'base >= 4.9'
+	'template-haskell >= 2.11 && < 2.21' 'template-haskell >= 2.11'
+	'deepseq == 1.4.*' 'deepseq >= 1.4.0'
+	)
+
 RDEPEND=">=dev-haskell/th-compat-0.1.3:=[profile?] <dev-haskell/th-compat-0.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "

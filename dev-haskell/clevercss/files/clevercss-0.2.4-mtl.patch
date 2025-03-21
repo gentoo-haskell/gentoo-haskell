@@ -1,0 +1,47 @@
+From bb48ae3cdb1ca8157254012c08c7b3d0a10c92bc Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Mon, 17 Mar 2025 13:37:59 +0100
+Subject: [PATCH] b
+
+---
+ Text/CSS/CleverCSS.hs | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/Text/CSS/CleverCSS.hs b/Text/CSS/CleverCSS.hs
+index b3a55a8..fb44061 100644
+--- a/Text/CSS/CleverCSS.hs
++++ b/Text/CSS/CleverCSS.hs
+@@ -15,7 +15,8 @@
+ module Text.CSS.CleverCSS (cleverCSSConvert) where
+ 
+ import Control.Applicative (Applicative(..), (<$>))
+-import Control.Monad.Error
++import Control.Monad (liftM)
++import Control.Monad.Except
+ import Control.Monad.RWS
+ import Data.Char (toUpper, toLower)
+ import Data.List (findIndex)
+@@ -305,10 +306,8 @@ data Env = Env { vars :: Dict Expr, macros :: Dict (Line, [String], [Item]) }
+ --     the State type is the filename of the part of code currently evaluated
+ --     the underlying monad handles errors and eventually does IO
+ --     (which is necessary for including files)
+-type Eval res  = RWST Env (Seq Topl) SourceName (ErrorT EvalError IO) res
++type Eval res  = RWST Env (Seq Topl) SourceName (ExceptT EvalError IO) res
+ 
+-instance Error EvalError where
+-  strMsg s = EvalErr "" 0 s
+ 
+ instance Show EvalError where
+   show (EvalErr f 0 msg) = "(file " ++ show f ++ "): " ++ msg
+@@ -324,7 +323,7 @@ updateMacros f r = r { macros = f (macros r) }
+ translate :: String -> [Topl] -> Dict Expr -> IO (Either EvalError (Seq Topl))
+ translate filename toplevels varmap = do
+   let initialEnv = Env { vars = varmap, macros = Map.empty }
+-  res <- runErrorT $ execRWST (resolveToplevels toplevels) initialEnv filename
++  res <- runExceptT $ execRWST (resolveToplevels toplevels) initialEnv filename
+   return (snd <$> res)
+   where
+   emitBlock = tell . singleton
+-- 
+2.48.1
+

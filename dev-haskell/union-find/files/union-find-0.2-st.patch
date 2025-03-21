@@ -1,0 +1,29 @@
+From 1fe02408eba2a8ca1d2fe2149cf57c4ef3a0266e Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Mon, 17 Mar 2025 15:34:16 +0100
+Subject: [PATCH] ST is not an instance of MonadFail. Fixes #14
+
+---
+ src/Data/UnionFind/ST.hs | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/Data/UnionFind/ST.hs b/src/Data/UnionFind/ST.hs
+index 80241ae..a8f83b2 100644
+--- a/src/Data/UnionFind/ST.hs
++++ b/src/Data/UnionFind/ST.hs
+@@ -130,8 +130,10 @@ union' p1 p2 update = do
+   point2@(Pt link_ref2) <- repr p2
+   -- The precondition ensures that we don't create cyclic structures.
+   when (point1 /= point2) $ do
+-    Info info_ref1 <- readSTRef link_ref1
+-    Info info_ref2 <- readSTRef link_ref2
++    ir1 <- readSTRef link_ref1
++    ir2 <- readSTRef link_ref2
++    let Info info_ref1 = ir1
++        Info info_ref2 = ir2
+     MkInfo w1 d1 <- readSTRef info_ref1 -- d1 is discarded
+     MkInfo w2 d2 <- readSTRef info_ref2
+     d2' <- update d1 d2
+-- 
+2.48.1
+

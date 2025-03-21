@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">union-find</remote-id>
+		<remote-id type="github">nominolo/union-find</remote-id>
+	</upstream>
 </pkgmetadata>
