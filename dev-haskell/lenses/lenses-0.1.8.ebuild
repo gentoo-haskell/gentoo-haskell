@@ -10,12 +10,18 @@ inherit haskell-cabal
 
 DESCRIPTION="Simple Functional Lenses"
 HOMEPAGE="https://github.com/jvranish/Lenses/tree/master"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+SRC_URI+="
+		https://github.com/jvranish/Lenses/pull/4.patch
+			-> lenses-0.1.8-th.patch
+"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${DISTDIR}"/${P}-th.patch
+)
 
 RDEPEND=">=dev-haskell/mtl-1.1:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
