@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Bower is a package manager for the web (see &lt;http://bower.io&gt;).
-		This package provides a data type and ToJSON/FromJSON instances for Bower's
-		package manifest file, bower.json.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">bower-json</remote-id>
+		<remote-id type="github">hdgarrood/bower-json</remote-id>
+	</upstream>
 </pkgmetadata>
