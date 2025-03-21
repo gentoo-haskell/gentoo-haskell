@@ -1,0 +1,48 @@
+From https://github.com/minad/writer-cps-mtl/pull/6
+From: Rebecca Turner <rbt@sent.as>
+Date: Mon, 27 Mar 2023 14:00:38 -0700
+Subject: [PATCH] Move orphan instances behind CPP
+
+These instances were added in `mtl-2.3`.
+--- a/src/Control/Monad/RWS/CPS.hs
++++ b/src/Control/Monad/RWS/CPS.hs
+@@ -1,4 +1,5 @@
+ {-# OPTIONS_GHC -fno-warn-orphans #-}
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE FlexibleInstances #-}
+ {-# LANGUAGE UndecidableInstances #-}
+@@ -54,6 +55,7 @@ import Control.Monad.Error.Class
+ import Control.Monad.Trans.RWS.CPS
+ import qualified Control.Monad.Trans.RWS.CPS as CPS
+ 
++#if !MIN_VERSION_mtl(2,3,0)
+ -- Orphan instances
+ 
+ instance (Monoid w, Monad m) => MonadWriter w (RWST r w s m) where
+@@ -80,3 +82,4 @@ instance MonadError e m => MonadError e (RWST r w s m) where
+ 
+ instance MonadCont m => MonadCont (RWST r w s m) where
+   callCC = CPS.liftCallCC' callCC
++#endif
+--- a/src/Control/Monad/Writer/CPS.hs
++++ b/src/Control/Monad/Writer/CPS.hs
+@@ -1,4 +1,5 @@
+ {-# OPTIONS_GHC -fno-warn-orphans #-}
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE FlexibleInstances #-}
+ {-# LANGUAGE UndecidableInstances #-}
+@@ -51,6 +52,7 @@ import Control.Monad.Error.Class
+ import Control.Monad.Trans.Writer.CPS
+ import qualified Control.Monad.Trans.Writer.CPS as CPS
+ 
++#if !MIN_VERSION_mtl(2,3,0)
+ -- Orphan instances
+ 
+ instance (Monad m, Monoid w) => MonadWriter w (WriterT w m) where
+@@ -75,3 +77,4 @@ instance MonadState s m => MonadState s (WriterT w m) where
+   get = lift get
+   put = lift . put
+   state = lift . state
++#endif
