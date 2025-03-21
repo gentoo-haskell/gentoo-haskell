@@ -1,0 +1,27 @@
+From https://github.com/plow-technologies/quickcheck-arbitrary-template/pull/11
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 09:32:13 +0100
+Subject: [PATCH] porting to recent template-haskell
+
+--- a/src/Test/QuickCheck/TH/Generators/Internal.hs
++++ b/src/Test/QuickCheck/TH/Generators/Internal.hs
+@@ -40,7 +40,7 @@ $(buildArbAny 20)
+ -- type constructor must be either a data type or a newtype. Any other
+ -- value will result in an exception.
+ withType :: Name
+-         -> ([TyVarBndr] -> [Con] -> Q a)
++         -> ([TyVarBndr BndrVis] -> [Con] -> Q a)
+          -- ^ Function that generates the actual code. Will be applied
+          -- to the type variable binders and constructors extracted
+          -- from the given 'Name'.
+--- a/src/Test/QuickCheck/TH/Generators/Internal/BuildArbitrary.hs
++++ b/src/Test/QuickCheck/TH/Generators/Internal/BuildArbitrary.hs
+@@ -51,7 +51,7 @@ buildArbAny l
+       Nothing -> return []
+       Just (firstArbParameterName,restArbParameterNames,arbitraryTypeName,genTypeName,fmapName,apName,arbitraryValue) -> do
+         -- all of the variables in the function to be created, input and output
+-        let plainTVs = PlainTV <$> (arbParameterNames ++ [bName])
++        let plainTVs = flip PlainTV SpecifiedSpec <$> (arbParameterNames ++ [bName])
+             -- Arbitrary type instance required for all vars in arbParameterNames
+             typeClassRequirements = (AppT (ConT arbitraryTypeName) ) <$> (VarT <$> arbParameterNames)
+             genB     = AppT (ConT genTypeName) (VarT bName)
