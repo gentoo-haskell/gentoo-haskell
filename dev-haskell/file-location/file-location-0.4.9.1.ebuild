@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+	'transformers     >= 0.2 && < 0.6' 'transformers >= 0.2'
+)
 
 RESTRICT=test # error stack changed from ghc-7.10
 
