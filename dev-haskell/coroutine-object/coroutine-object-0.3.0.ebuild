@@ -15,7 +15,6 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND=">=dev-haskell/either-3.1:=[profile?]
 	>=dev-haskell/free-4.0:=[profile?]
@@ -29,4 +28,5 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${P}-either-5.patch
+	"${FILESDIR}"/${P}-ghc-9.8.patch
 )
