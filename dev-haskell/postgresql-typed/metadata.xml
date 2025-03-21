@@ -8,6 +8,7 @@
 	<use>
 		<flag name="aeson">Support decoding json via aeson.</flag>
 		<flag name="binary">Use binary protocol encoding via postgresql-binary. This may put additional restrictions on supported PostgreSQL server versions.</flag>
+		<flag name="crypton">Use crypton rather than cryptonite.</flag>
 		<flag name="hdbc">Provide an HDBC driver backend using the raw PostgreSQL protocol.</flag>
 		<flag name="md5">Enable md5 password authentication method.</flag>
 		<flag name="scientific">Support decoding numeric via scientific (implied by binary).</flag>
@@ -15,4 +16,8 @@
 		<flag name="tls">Enable TLS (SSL) support in PostgreSQL server connections.</flag>
 		<flag name="uuid">Support the UUID type via uuid (implied by binary).</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">postgresql-typed</remote-id>
+		<remote-id type="github">dylex/postgresql-typed</remote-id>
+	</upstream>
 </pkgmetadata>
