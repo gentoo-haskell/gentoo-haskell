@@ -1,0 +1,18 @@
+From b915d8bf2a209724e709a5b944249d5518b9a397 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 15:23:57 +0100
+Subject: [PATCH] b
+
+--- a/Main.hs
++++ b/Main.hs
+@@ -5,6 +5,7 @@
+ 
+ module Main where
+ import System.Process
++import Control.Monad (forM_)
+ import Control.Monad.Identity
+ #if MIN_VERSION_optparse_applicative(0,13,0)
+ import Data.Monoid ((<>))
+-- 
+2.48.1
+
