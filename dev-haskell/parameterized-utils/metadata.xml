@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="unsafe-operations">Use unsafe operations (e.g. coercions) to improve performance</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">parameterized-utils</remote-id>
+		<remote-id type="github">GaloisInc/parameterized-utils</remote-id>
+	</upstream>
+</pkgmetadata>
