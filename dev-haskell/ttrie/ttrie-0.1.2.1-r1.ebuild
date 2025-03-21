@@ -16,6 +16,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-primitive.patch
+	)
+
 RDEPEND=">=dev-haskell/atomic-primops-0.6:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?]
 	>=dev-haskell/primitive-0.5:=[profile?]
