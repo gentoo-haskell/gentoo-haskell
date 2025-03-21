@@ -16,6 +16,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'containers >= 0.5 && < 0.6.5' 'containers >= 0.5'
+)
+
 RDEPEND=">=dev-haskell/base-unicode-symbols-0.1.1:=[profile?] <dev-haskell/base-unicode-symbols-0.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
