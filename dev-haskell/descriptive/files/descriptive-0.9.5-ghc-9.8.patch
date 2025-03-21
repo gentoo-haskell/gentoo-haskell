@@ -1,0 +1,164 @@
+From 450630be3494f97cfc587a3ae91e5c0ac0b7f169 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 13:38:03 +0100
+Subject: [PATCH] b
+
+--- a/src/Descriptive.hs
++++ b/src/Descriptive.hs
+@@ -30,6 +30,7 @@ module Descriptive
+ import Control.Applicative
+ import Control.Monad.Identity
+ import Control.Monad.State.Strict
++import Control.Monad.Fix (fix)
+ import Data.Bifunctor
+ #if __GLASGOW_HASKELL__ < 804
+ import Data.Semigroup
+@@ -104,6 +105,13 @@ data Result e a
+   | Continued e -- ^ There were errors but we continued to collect all the errors.
+   deriving (Show,Eq,Ord)
+ 
++instance Functor (Result e) where
++  fmap f r =
++    case r of
++      Succeeded a -> Succeeded (f a)
++      Failed e -> Failed e
++      Continued e -> Continued e
++
+ instance Bifunctor Result where
+   second f r =
+     case r of
+@@ -201,7 +209,7 @@ instance Monad m => Alternative (Consumer s d m) where
+ -- regular Alternative, and is strict, not lazy.
+ sequenceHelper :: Monad m => Integer -> Consumer t d m a -> Consumer t d m [a]
+ sequenceHelper minb =
+-  wrap (liftM redescribe)
++  wrap (fmap redescribe)
+        (\_ p ->
+           fix (\go !i as ->
+                  do s <- get
+--- a/src/Descriptive/Char.hs
++++ b/src/Descriptive/Char.hs
+@@ -30,7 +30,7 @@ anyChar =
+ -- | A character consumer.
+ char :: Monad m => Char -> Consumer [Char] Text m Char
+ char c =
+-  wrap (liftM (const d))
++  wrap (fmap (const d))
+        (\_ p ->
+           do r <- p
+              return (case r of
+@@ -46,7 +46,7 @@ char c =
+ -- | A string consumer.
+ string :: Monad m => [Char] -> Consumer [Char] Text m [Char]
+ string =
+-  wrap (liftM (Sequence . flattenAnds))
++  wrap (fmap (Sequence . flattenAnds))
+        (\_ p -> p) .
+   sequenceA . map char
+   where flattenAnds (And x y) = flattenAnds x ++ flattenAnds y
+--- a/src/Descriptive/Form.hs
++++ b/src/Descriptive/Form.hs
+@@ -43,7 +43,7 @@ validate :: Monad m
+          -> Consumer s (Form d) m a     -- ^ Consumer to add validation to.
+          -> Consumer s (Form d) m b     -- ^ A new validating consumer.
+ validate d' check =
+-  wrap (liftM wrapper)
++  wrap (fmap wrapper)
+        (\d p ->
+           do s <- get
+              r <- p
+--- a/src/Descriptive/Internal.hs
++++ b/src/Descriptive/Internal.hs
+@@ -9,5 +9,5 @@ runSubStateT :: Monad m
+              => (s -> s') -> (s' -> s) -> StateT s' m a -> StateT s m a
+ runSubStateT to from m =
+   StateT (\s ->
+-            liftM (\(a,s') -> (a,from s'))
++            fmap (\(a,s') -> (a,from s'))
+                   (runStateT m (to s)))
+--- a/src/Descriptive/JSON.hs
++++ b/src/Descriptive/JSON.hs
+@@ -38,6 +38,7 @@ import           Data.Function
+ import           Data.Aeson hiding (Value(Object,Null,Array),object)
+ import           Data.Aeson.Types (Value,parseMaybe)
+ import qualified Data.Aeson.Types as Aeson
++import Data.Aeson.Key (fromText)
+ import           Data.Bifunctor
+ import           Data.Data
+ import           Data.Monoid
+@@ -70,7 +71,7 @@ object desc =
+           do s <- get
+              runSubStateT (const mempty)
+                           (const s)
+-                          (liftM (Wrap doc) d))
++                          (fmap (Wrap doc) d))
+        (\_ p ->
+           do v <- get
+              case fromJSON v of
+@@ -101,10 +102,10 @@ key k =
+           do s <- get
+              runSubStateT toJSON
+                           (const s)
+-                          (liftM (Wrap doc) d))
++                          (fmap (Wrap doc) d))
+        (\_ p ->
+           do s <- get
+-             case parseMaybe (const (s .: k))
++             case parseMaybe (const (s .: fromText k))
+                              () of
+                Nothing ->
+                  return (Continued (Unit doc))
+@@ -127,10 +128,10 @@ keyMaybe k =
+           do s <- get
+              runSubStateT toJSON
+                           (const s)
+-                          (liftM (Wrap doc) d))
++                          (fmap (Wrap doc) d))
+        (\_ p ->
+           do s <- get
+-             case parseMaybe (const (s .: k))
++             case parseMaybe (const (s .: fromText k))
+                              () of
+                Nothing ->
+                  return (Succeeded Nothing)
+@@ -148,7 +149,7 @@ array :: Monad m
+       -> Consumer Value (Doc d) m a -- ^ Consumer for each element in the array.
+       -> Consumer Value (Doc d) m (Vector a)
+ array desc =
+-  wrap (\d -> liftM (Wrap doc) d)
++  wrap (\d -> fmap (Wrap doc) d)
+        (\_ p ->
+           do s <- get
+              case fromJSON s of
+@@ -246,7 +247,7 @@ label :: Monad m
+       -> Consumer s (Doc d) m a -- ^ A value consumer.
+       -> Consumer s (Doc d) m a
+ label desc =
+-  wrap (liftM (Wrap doc))
++  wrap (fmap (Wrap doc))
+        (\_ p ->
+           do r <- p
+              case r of
+@@ -264,7 +265,7 @@ parse :: Monad m
+       -> Consumer s d m a            -- ^ Consumer to add validation to.
+       -> Consumer s d m b            -- ^ A new validating consumer.
+ parse d' check =
+-  wrap (liftM wrapper)
++  wrap (fmap wrapper)
+        (\d p ->
+           do s <- get
+              r <- p
+--- a/src/Descriptive/Options.hs
++++ b/src/Descriptive/Options.hs
+@@ -54,7 +54,7 @@ stop :: Monad m
+      -- ^ A parser which, when it succeeds, causes the whole parser to stop.
+      -> Consumer [Text] (Option a) m ()
+ stop =
+-  wrap (liftM (Wrap Stops))
++  wrap (fmap (Wrap Stops))
+        (\d p ->
+           do r <- p
+              s <- get
+-- 
+2.48.1
+
