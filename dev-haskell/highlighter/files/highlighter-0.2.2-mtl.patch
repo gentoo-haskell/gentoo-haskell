@@ -1,0 +1,50 @@
+From 15841e824347979bd02dbfc350777981e498e0ab Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 14:49:46 +0100
+Subject: [PATCH] b
+
+--- a/src/Text/Highlighter/Lexer.hs
++++ b/src/Text/Highlighter/Lexer.hs
+@@ -1,6 +1,7 @@
+ module Text.Highlighter.Lexer where
+ 
+-import Control.Monad.Error
++import Control.Monad (zipWithM)
++import Control.Monad.Except
+ import Control.Monad.State
+ import Prelude hiding (lex)
+ import Text.Regex.PCRE.Light hiding (compile)
+@@ -19,19 +20,15 @@ data LexerState =
+         }
+     deriving Show
+ 
+-type LexerM = ErrorT LexerError (State LexerState)
++type LexerM = ExceptT LexerError (State LexerState)
+ 
+ data LexerError
+     = NoMatchFor BS.ByteString
+     | OtherLexerError String
+     deriving Show
+ 
+-instance Error LexerError where
+-    noMsg = OtherLexerError "unknown"
+-    strMsg = OtherLexerError
+-
+ runLexer :: Lexer -> BS.ByteString -> Either LexerError [Token]
+-runLexer l s = evalState (runErrorT lex) (LexerState l s [lStart l] [])
++runLexer l s = evalState (runExceptT lex) (LexerState l s [lStart l] [])
+ 
+ lex :: LexerM [Token]
+ lex = do
+@@ -126,7 +123,7 @@ toTokens :: [BS.ByteString] -> TokenType -> LexerM [Token]
+ toTokens (s:_) (Using l) = do
+     either throwError return (runLexer l s)
+ toTokens (_:ss) (ByGroups ts) =
+-    liftM concat $ zipWithM (\s t -> toTokens [s] t) ss ts
++    concat <$> zipWithM (\s t -> toTokens [s] t) ss ts
+ toTokens (s:_) t = return [Token t s]
+ toTokens [] _ = return []
+ 
+-- 
+2.48.1
+
