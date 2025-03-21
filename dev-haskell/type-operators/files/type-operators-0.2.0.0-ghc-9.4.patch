@@ -1,0 +1,25 @@
+From https://github.com/Shou/type-operators/pull/3
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 10:23:29 +0100
+Subject: [PATCH] fix type instance conflict
+
+--- a/Control/Type/Operator.hs
++++ b/Control/Type/Operator.hs
+@@ -37,7 +37,7 @@ infixr 5 ^>
+ type (<^) a b = (^>) b a
+ infixr 5 <^
+ 
+--- | Infix application.
++-- | Infix application.5
+ --
+ -- @
+ -- f :: Either String $ Maybe Int
+@@ -94,7 +94,7 @@ infixl 9 <=>
+ -- @
+ type family (<+>) (a :: k1) (b :: k2) :: Constraint
+ type instance (<+>) _ [] = (() :: Constraint)
+-type instance (<+>) [] _ = (() :: Constraint)
++-- type instance (<+>) [] _ = (() :: Constraint)
+ type instance (<+>) (c ': cs) (a :: Type) = (c a, a <+> cs)
+ type instance (<+>) c (a ': as) = (c a, c <+> as)
+ infixl 9 <+>
