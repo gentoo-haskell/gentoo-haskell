@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.8.patch
+)
 
 RDEPEND=">=dev-haskell/aeson-0.7.0.5:=[profile?]
 	dev-haskell/bifunctors:=[profile?]
