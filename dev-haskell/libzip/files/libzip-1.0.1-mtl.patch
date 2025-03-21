@@ -1,0 +1,73 @@
+From e1f7303b03547073afd14510f8d549ea1cdeb0b2 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 17:57:46 +0100
+Subject: [PATCH] b
+
+--- a/Codec/Archive/LibZip.hs
++++ b/Codec/Archive/LibZip.hs
+@@ -105,7 +105,7 @@ import Data.Time.Clock.POSIX (utcTimeToPOSIXSeconds)
+ import Data.Word (Word8)
+ import Control.Monad (when)
+ import Control.Monad.State.Strict
+-    (StateT(..), MonadState(..), MonadTrans(..), lift, liftM)
++    (StateT(..), MonadState(..), MonadTrans(..), lift)
+ import Foreign.C.Error (Errno(..), eINVAL)
+ import Foreign.C.String (withCString, peekCString)
+ import Foreign.C.Types (CInt, CULLong)
+@@ -176,7 +176,7 @@ withEncryptedArchive flags password path action =
+ 
+ withOpenArchive :: Zip -> Archive a -> IO a
+ withOpenArchive z action = do
+-      r <- fst `liftM` runStateT action z
++      r <- fst `fmap` runStateT action z
+       e <- c'zip_close z
+       if e /= 0
+         then get_error z >>= E.throwIO
+@@ -189,7 +189,7 @@ numFiles :: [FileFlag]  -- ^ 'FileUNCHANGED' can be used to return
+          -> Archive Integer
+ numFiles flags  = do
+   z <- getZip
+-  lift $ fromIntegral `liftM` c'zip_get_num_entries z (combine flags)
++  lift $ fromIntegral `fmap` c'zip_get_num_entries z (combine flags)
+ 
+ -- | Get name of an entry in the archive by its index.
+ fileName :: [FileFlag]  -- ^ 'FileUNCHANGED' flag can be used to
+@@ -222,7 +222,7 @@ nameLocate flags name = do
+   z <- getZip
+   lift $
+     withCString name $ \name' -> do
+-    i <- fromIntegral `liftM` c'zip_name_locate z name' (combine flags)
++    i <- fromIntegral `fmap` c'zip_name_locate z name' (combine flags)
+     if i < 0
+        then return Nothing
+        else return (Just i)
+@@ -562,7 +562,7 @@ getFileComment flags name = do
+             (\i -> do
+                  mbs <- getFileCommentIx comment_flags i
+                  -- 'FileENC_GUESS' is default => mbs is UTF-8 encoded
+-                 return $ liftM UTF8.toString mbs
++                 return $ fmap UTF8.toString mbs
+             ) mbi
+ 
+ -- | Get comment for a file in the archive (referenced by position index).
+@@ -698,7 +698,7 @@ fromFile flags name action = do
+       if zf == nullPtr
+         then lift $ get_error z >>= E.throwIO
+         else do
+-          r <- fst `liftM` runStateT action (zf,i,flags)
++          r <- fst `fmap` runStateT action (zf,i,flags)
+           e <- lift $ c'zip_fclose zf
+           if e /= 0
+             then lift $ E.throwIO $ (toEnum . fromIntegral $ e :: ZipError)
+@@ -718,7 +718,7 @@ fromFileIx flags i action = do
+   if zf == nullPtr
+      then lift $ get_error z >>= E.throwIO
+      else do
+-       r <- fst `liftM` runStateT action (zf,i,flags)
++       r <- fst `fmap` runStateT action (zf,i,flags)
+        e <- lift $ c'zip_fclose zf
+        if e /= 0
+           then lift $ E.throwIO $ (toEnum . fromIntegral $ e :: ZipError)
+-- 
+2.48.1
+
