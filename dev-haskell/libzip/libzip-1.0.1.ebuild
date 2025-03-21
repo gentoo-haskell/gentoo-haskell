@@ -18,7 +18,10 @@ SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+)
 
 RESTRICT=test # ### Error in:   0:Monadic API:18:set file compression method
 
