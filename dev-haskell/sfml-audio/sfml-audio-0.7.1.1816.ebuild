@@ -16,6 +16,10 @@ LICENSE="ZLIB"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'bytestring == 0.9.* || == 0.10.*' 'bytestring >= 0.9'
+)
+
 CABAL_EXTRA_CONFIGURE_FLAGS="--extra-include-dirs="${EPREFIX}"/usr/include/AL"
 
 RDEPEND=">=dev-lang/ghc-6.10.4:=
