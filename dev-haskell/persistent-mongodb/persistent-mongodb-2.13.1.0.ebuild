@@ -7,7 +7,7 @@ EAPI=8
 
 CABAL_PN="persistent-mongoDB"
 
-CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
+CABAL_FEATURES="lib profile haddock hoogle hscolour" #test-suite needs running database
 inherit haskell-cabal
 
 DESCRIPTION="Backend for the persistent library using mongoDB"
@@ -17,6 +17,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="high-precision-date"
+
+RESTRICT="test" #needs running database
 
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/bson-0.3.2:=[profile?] <dev-haskell/bson-0.5:=[profile?]
@@ -35,12 +37,6 @@ RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( dev-haskell/blaze-html
-		>=dev-haskell/hspec-2.4.0
-		dev-haskell/hunit
-		dev-haskell/persistent-qq
-		dev-haskell/persistent-test
-		dev-haskell/quickcheck )
 "
 
 src_configure() {
