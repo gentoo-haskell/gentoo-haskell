@@ -6,6 +6,11 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="relocatable">Don't use the Cabal-provided data directory for looking up Cryptol libraries.</flag>
+		<flag name="ffi">Enable the foreign function interface</flag>
+		<flag name="relocatable">Don&#39;t use the Cabal-provided data directory for looking up Cryptol libraries.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">cryptol</remote-id>
+		<remote-id type="github">GaloisInc/cryptol</remote-id>
+	</upstream>
 </pkgmetadata>
