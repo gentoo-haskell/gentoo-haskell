@@ -15,4 +15,8 @@
 		<flag name="tls">Enable TLS (SSL) support in PostgreSQL server connections.</flag>
 		<flag name="uuid">Support the UUID type via uuid (implied by binary).</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">postgresql-typed</remote-id>
+		<remote-id type="github">dylex/postgresql-typed</remote-id>
+	</upstream>
 </pkgmetadata>
