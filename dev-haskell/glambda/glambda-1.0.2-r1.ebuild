@@ -15,8 +15,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 SRC_URI+="
-		https://github.com/goldfirere/glambda/pull/11.patch
-			-> ${P}-pretty-printer.patch"
+	https://github.com/goldfirere/glambda/pull/11.patch
+		-> ${P}-pretty-printer.patch"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-mtl.patch
