@@ -23,7 +23,7 @@ PATCHES=(
 )
 
 CABAL_CHDEPS=(
-		'Cabal ^>= 3.8' 'Cabal >= 3.8'
+	'Cabal ^>= 3.8' 'Cabal >= 3.8'
 )
 
 RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
