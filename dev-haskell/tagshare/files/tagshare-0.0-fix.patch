@@ -1,0 +1,18 @@
+From b96ade568b5bd0a028908f1cf97c0dc000616f50 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 15:07:52 +0100
+Subject: [PATCH] b
+
+--- a/Control/Monad/TagShare.hs
++++ b/Control/Monad/TagShare.hs
+@@ -17,6 +17,7 @@ import Control.Monad.State
+ import Data.Typeable
+ import Data.Dynamic(Dynamic, fromDynamic, toDyn)
+ import Data.Map as M
++import Control.Monad.Fix (mfix)
+ 
+ -- |  A dynamic map with type safe
+ -- insertion and lookup.
+-- 
+2.48.1
+

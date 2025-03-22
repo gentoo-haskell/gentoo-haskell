@@ -1,0 +1,48 @@
+From https://github.com/jamesdabbs/keenser/pull/3
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 14:08:46 +0100
+Subject: [PATCH] Porting to recent versions of aeson
+
+---
+ keenser.cabal                   | 1 +
+ src/Keenser.hs                  | 1 +
+ src/Keenser/Middleware/Retry.hs | 2 +-
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/keenser.cabal b/keenser.cabal
+index e3e5384..23fb451 100644
+--- a/keenser.cabal
++++ b/keenser.cabal
+@@ -26,6 +26,7 @@ library
+   build-depends:       base >= 4.7 && < 5
+                      , aeson
+                      , attoparsec
++                     , attoparsec-aeson
+                      , bytestring
+                      , containers
+                      , hedis
+diff --git a/src/Keenser.hs b/src/Keenser.hs
+index 5779258..29f6620 100644
+--- a/src/Keenser.hs
++++ b/src/Keenser.hs
+@@ -31,6 +31,7 @@ import           Control.Concurrent.STM.TVar (newTVarIO, swapTVar, readTVarIO, w
+ import           Control.Monad.Logger
+ import           Control.Monad.Trans.State
+ import           Data.Aeson
++import Data.Aeson.Parser (json)
+ import qualified Data.ByteString             as BS
+ import qualified Data.ByteString.Char8       as BSC
+ import qualified Data.ByteString.Lazy        as LBS
+diff --git a/src/Keenser/Middleware/Retry.hs b/src/Keenser/Middleware/Retry.hs
+index 8d66b7e..16db0b9 100644
+--- a/src/Keenser/Middleware/Retry.hs
++++ b/src/Keenser/Middleware/Retry.hs
+@@ -8,7 +8,7 @@ import           Control.Exception.Lifted    (SomeException, catch)
+ import           Control.Monad.Logger
+ import           Data.Aeson
+ import qualified Data.ByteString.Lazy        as LBS
+-import qualified Data.HashMap.Strict         as HM
++import qualified Data.Aeson.KeyMap         as HM
+ import           Database.Redis
+ 
+ import Keenser.Import

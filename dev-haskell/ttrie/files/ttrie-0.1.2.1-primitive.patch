@@ -1,0 +1,62 @@
+From b814696e612888800428e906b5d37f9ebf3d37fb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michael=20Schr=C3=B6der?= <mc.schroeder@gmail.com>
+Date: Sat, 30 Oct 2021 23:57:15 +0100
+Subject: [PATCH] Hide clashing `emptyArray` import from primitive
+
+---
+ changelog.md            | 17 ++++++++++++-----
+ src/Data/SparseArray.hs |  2 +-
+ ttrie.cabal             |  2 +-
+ 3 files changed, 14 insertions(+), 7 deletions(-)
+
+diff --git a/changelog.md b/changelog.md
+index b0d68b0..bd85b3f 100644
+--- a/changelog.md
++++ b/changelog.md
+@@ -1,10 +1,17 @@
++# 0.1.2.2 (October 2021)
++
++* Fix clashing import from `primitive-0.7.3.0`
++
+ # 0.1.2.1 (November 2015)
+-	* Eliminate a redundant import warning on GHC 7.10
+-	* Loosen test-suite dependency bounds
++  
++* Eliminate a redundant import warning on GHC 7.10
++* Loosen test-suite dependency bounds
+ 
+ # 0.1.2  (May 2015)
+-    * Add a 'member' convenience function
++  
++* Add a `member` convenience function
+ 
+ # 0.1.1  (April 2015)
+-	* Add 'fromList' and 'unsafeToList' functions
+-	* Add basic tests
++
++* Add `fromList` and `unsafeToList` functions
++* Add basic tests
+diff --git a/src/Data/SparseArray.hs b/src/Data/SparseArray.hs
+index 2320f3c..e309f05 100644
+--- a/src/Data/SparseArray.hs
++++ b/src/Data/SparseArray.hs
+@@ -14,7 +14,7 @@ import Control.Monad.ST
+ import Data.Bits
+ import Data.Hashable (Hashable)
+ import qualified Data.Hashable as H
+-import Data.Primitive.Array
++import Data.Primitive.Array hiding (emptyArray)
+ import Data.Word
+ import Prelude hiding (lookup, mapM)
+ 
+diff --git a/ttrie.cabal b/ttrie.cabal
+index 3d5e3bb..750c98a 100644
+--- a/ttrie.cabal
++++ b/ttrie.cabal
+@@ -1,5 +1,5 @@
+ name:                ttrie
+-version:             0.1.2.1
++version:             0.1.2.2
+ synopsis:            Contention-free STM hash map
+ description:
+   A contention-free STM hash map.

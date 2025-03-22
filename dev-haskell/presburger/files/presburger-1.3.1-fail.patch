@@ -1,0 +1,77 @@
+From https://github.com/yav/presburger/commit/6f52dd4ceeadd55110872d6e3079ac9614a55686
+From: Oleg Grenrus <oleg.grenrus@iki.fi>
+Date: Sat, 8 Aug 2020 23:40:30 +0300
+Subject: [PATCH] Cleanups. Make compile with GHC-7.2..GHC-8.10
+
+The used approaches are best practicies.
+- `fail` package provides compat definition of `MonadFail` type-class
+- Hackage requires at least `cabal-version: >=1.10` now.
+  - Thus added `default-language`
+  - But also `other-extensions: Trustworthy`, which acts as lower
+    bound for supported GHCs (GHC-7.0 doesn't have Safe Haskell)
+---
+ presburger.cabal        |  7 ++++++-
+ src/Data/Integer/SAT.hs | 15 +++++++++++++--
+ 2 files changed, 19 insertions(+), 3 deletions(-)
+
+diff --git a/presburger.cabal b/presburger.cabal
+index cd57ee1..0bcba27 100644
+--- a/presburger.cabal
++++ b/presburger.cabal
+@@ -10,15 +10,20 @@ Synopsis:       A decision procedure for quantifier-free linear arithmetic.
+ Description:    The decision procedure is based on the algorithm used in
+                 CVC4, which is itself based on the Omega test.
+ Build-type:     Simple
+-Cabal-version:  >= 1.8
++Cabal-version:  >= 1.10
+ 
+ library
++  Default-Language: Haskell2010
+   Build-Depends:  base < 10, containers, pretty
+   hs-source-dirs: src
+   Exposed-modules:
+     Data.Integer.SAT
+ 
+   GHC-options:    -O2 -Wall
++  Other-Extensions: Trustworthy
++
++  if !impl(ghc >=8.0)
++    Build-Depends: fail ==4.9.0.0
+ 
+ source-repository head
+   type: git
+diff --git a/src/Data/Integer/SAT.hs b/src/Data/Integer/SAT.hs
+index 01079b4..eb62634 100644
+--- a/src/Data/Integer/SAT.hs
++++ b/src/Data/Integer/SAT.hs
+@@ -52,9 +52,16 @@ import qualified Data.Map            as Map
+ import qualified Data.Map.Strict     as MapStrict
+ #endif
+ import           Data.Maybe          (fromMaybe, mapMaybe, maybeToList)
+-import           Prelude             hiding ((<>))
+ import           Text.PrettyPrint
+ 
++#if MIN_VERSION_base(4,9,0)
++import           Prelude hiding ((<>))
++#else
++import           Prelude
++#endif
++
++import qualified Control.Monad.Fail as Fail
++
+ infixr 2 :||
+ infixr 3 :&&
+ infix  4 :==, :/=, :<, :<=, :>, :>=
+@@ -713,7 +720,11 @@ instance Monad Answer where
+   One a >>= k        = k a
+   Choice m1 m2 >>= k = mplus (m1 >>= k) (m2 >>= k)
+ 
+-instance MonadFail Answer where
++#if !(MIN_VERSION_base(4,13,0))
++  fail = Fail.fail
++#endif
++
++instance Fail.MonadFail Answer where
+   fail _             = None
+ 
+ instance Alternative Answer where

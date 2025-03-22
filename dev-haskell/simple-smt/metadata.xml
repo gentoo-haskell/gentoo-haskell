@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">simple-smt</remote-id>
+		<remote-id type="github">yav/simple-smt</remote-id>
+	</upstream>
 </pkgmetadata>

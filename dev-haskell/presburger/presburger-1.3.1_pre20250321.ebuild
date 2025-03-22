@@ -10,12 +10,17 @@ inherit haskell-cabal
 
 DESCRIPTION="A decision procedure for quantifier-free linear arithmetic"
 HOMEPAGE="https://github.com/yav/presburger"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+GIT_REPO="https://github.com/yav/${PN}"
+GIT_COMMIT="e38e61ccd1004d03ab28a1a3691d8a3c451d0164"
+GIT_P="${PN}-${GIT_COMMIT}"
 
-LICENSE="BSD"
+SRC_URI="${GIT_REPO}/archive/${GIT_COMMIT}.tar.gz -> ${GIT_P}.tar.gz"
+S="${WORKDIR}/${GIT_P}"
+CABAL_FILE="${S}/${PN}.cabal"
+
+LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 RESTRICT="test" # require previous version
 
 RDEPEND=">=dev-lang/ghc-7.4.1:=
@@ -24,5 +29,3 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.8
 	test? ( dev-haskell/quickcheck )
 "
-
-PATCHES=( ${FILESDIR}/${P}-prelude-hiding.patch )

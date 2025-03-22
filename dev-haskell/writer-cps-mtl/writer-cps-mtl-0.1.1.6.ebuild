@@ -15,7 +15,14 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+	'transformers >=0.4 && <0.6' 'transformers >= 0.4'
+)
+
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+)
 
 RDEPEND=">=dev-haskell/mtl-2.2:=[profile?] <dev-haskell/mtl-2.4:=[profile?]
 	>=dev-haskell/writer-cps-transformers-0.1.1.1:=[profile?] <dev-haskell/writer-cps-transformers-0.6:=[profile?]

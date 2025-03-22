@@ -1,0 +1,22 @@
+From 10e0422fbb796c55b557f645f618cefdbeb2efe9 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Fri, 21 Mar 2025 09:52:40 +0100
+Subject: [PATCH] b
+
+--- a/src/Control/Monad/Trans/Crtn/Driver.hs
++++ b/src/Control/Monad/Trans/Crtn/Driver.hs
+@@ -31,8 +31,9 @@ type DrvClient e m r = CObjT (DrvOp e) m r
+ 
+ -- | 
+ dispatch :: (Monad m) => e -> DrvClient e m (Maybe (ActionOrder e)) 
+-dispatch ev = do Res Dispatch r <- request (Arg Dispatch ev) 
+-                 return r
++dispatch ev = do r <- request (Arg Dispatch ev)
++                 let Res Dispatch r' = r 
++                 return r'
+               
+ -- | basic driver 
+ driver :: forall m e. (Monad m, MonadLog m, MonadIO m) => 
+-- 
+2.48.1
+

@@ -5,7 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="examples">Build example executables</flag>
-	</use>
+	<upstream>
+		<remote-id type="hackage">synthesizer-alsa</remote-id>
+	</upstream>
 </pkgmetadata>
