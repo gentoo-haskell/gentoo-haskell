@@ -20,11 +20,11 @@ KEYWORDS="~amd64"
 CABAL_CHDEPS=(
 	'aeson >=0.7 && <1.6 || >=2.0 && <2.1' 'aeson >= 0.7'
 	'mtl <2.3' 'mtl'
-	)
+)
 
 PATCHES=(
 	"${FILESDIR}"/${P}-mtl.patch
-		)
+)
 
 RDEPEND="dev-haskell/dlist:=[profile?]
 	dev-haskell/scientific:=[profile?]
