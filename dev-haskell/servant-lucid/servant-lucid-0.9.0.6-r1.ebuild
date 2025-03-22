@@ -19,16 +19,19 @@ RDEPEND=">=dev-haskell/http-media-0.6.4:=[profile?] <dev-haskell/http-media-0.9:
 	>=dev-haskell/lucid-2.9.8:=[profile?] <dev-haskell/lucid-2.12:=[profile?]
 	>=dev-haskell/servant-0.17:=[profile?] <dev-haskell/servant-0.21:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
-	>=dev-haskell/text-1.2.3.0:=[profile?] <dev-haskell/text-2.1:=[profile?]
+	>=dev-haskell/text-1.2.3.0:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	test? ( >=dev-haskell/servant-server-0.14 <dev-haskell/servant-server-0.21
-		>=dev-haskell/wai-3.0.3.0 <dev-haskell/wai-3.3
-		>=dev-haskell/warp-3.0.13.1 <dev-haskell/warp-3.4 )
+		>=dev-haskell/wai-3.0.3.0
+		>=dev-haskell/warp-3.0.13.1 )
 "
 
 CABAL_CHDEPS=(
 	'servant    >=0.17    && <0.20' 'servant    >=0.17'
 	'servant-server >=0.14     && <0.20' 'servant-server >=0.14'
+	'text       >=1.2.3.0 && <1.3 || >= 2 && < 2.1' 'text >=1.2.3.0'
+	'warp           >=3.0.13.1 && <3.4' 'warp >= 3.0.13.1'
+	'wai            >=3.0.3.0  && <3.3' 'wai >=3.0.3.0'
 )

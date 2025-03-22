@@ -15,12 +15,15 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+	'text         >= 0.11 && < 1.3' 'text >= 0.11'
+)
 
 RDEPEND=">dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-haskell/reform-0.2:=[profile?] <dev-haskell/reform-0.3:=[profile?]
 	>=dev-haskell/shakespeare-2.0:=[profile?] <dev-haskell/shakespeare-2.1:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}

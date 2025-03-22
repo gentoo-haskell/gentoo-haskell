@@ -18,6 +18,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base              >= 4.3       && < 4.19' 'base >= 4.3'
+)
+
 RDEPEND=">=dev-haskell/double-conversion-0.2.0.0:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/text-0.11.0.8:=[profile?]

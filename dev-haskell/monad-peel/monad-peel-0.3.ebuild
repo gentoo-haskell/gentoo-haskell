@@ -15,6 +15,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-tests.patch
+)
+
 RDEPEND="dev-haskell/extensible-exceptions:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
 "

@@ -7,6 +7,5 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">kmonad</remote-id>
-		<remote-id type="github">kmonad/kmonad</remote-id>
 	</upstream>
 </pkgmetadata>

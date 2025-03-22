@@ -1,0 +1,26 @@
+From https://github.com/haskell-primitive/primitive-checked/pull/8
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Thu, 20 Mar 2025 16:00:31 +0100
+Subject: [PATCH] compatibility with recent primitive
+
+--- a/src/Data/Primitive/Array.hs
++++ b/src/Data/Primitive/Array.hs
+@@ -27,8 +27,8 @@ module Data.Primitive.Array
+   , A.sizeofArray
+   , A.sizeofMutableArray
+   , A.emptyArray
+-  , A.fromListN
+-  , A.fromList
++  , G.fromListN
++  , G.fromList
+   , A.arrayFromListN
+   , A.arrayFromList
+   , A.mapArray'
+@@ -42,6 +42,7 @@ import qualified Data.List as L
+ import "primitive" Data.Primitive.Array (Array, MutableArray)
+ import qualified "primitive" Data.Primitive.Array as A
+ import GHC.Exts (raise#)
++import GHC.IsList as G (fromListN, fromList)
+ import GHC.Stack
+ 
+ check :: HasCallStack => String -> Bool -> a -> a

@@ -22,9 +22,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6.0.3
 "
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'bytestring == 0.9.1.*' 'bytestring >= 0.9.1 && < 0.11'
-}
+CABAL_CHDEPS=(
+		'bytestring == 0.9.1.*' 'bytestring >= 0.9.1'
+)

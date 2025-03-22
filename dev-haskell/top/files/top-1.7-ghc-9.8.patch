@@ -1,0 +1,252 @@
+From 7408c04c40ed51747e29313a3cbfce9ed869c5df Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Thu, 20 Mar 2025 17:57:42 +0100
+Subject: [PATCH] b
+
+--- a/src/Top/Implementation/Basic.hs
++++ b/src/Top/Implementation/Basic.hs
+@@ -1,5 +1,5 @@
+ {-# LANGUAGE UndecidableInstances, OverlappingInstances,
+-            FlexibleInstances, MultiParamTypeClasses#-}
++            FlexibleInstances, MultiParamTypeClasses, FlexibleContexts #-}
+ -----------------------------------------------------------------------------
+ -- | License      :  GPL
+ -- 
+@@ -16,6 +16,7 @@
+ 
+ module Top.Implementation.Basic where
+ 
++import Control.Monad (when)
+ import Control.Arrow
+ import Top.Constraint
+ import Top.Util.Option
+@@ -24,7 +25,6 @@ import Top.Interface.Basic
+ import Top.Monad.Select
+ -- import Control.Monad.State
+ import Top.Util.Embedding
+-import Top.Util.Empty
+ 
+ ------------------------------------------------------------------------
+ -- (I)  Algebraic data type
+@@ -122,4 +122,4 @@ instance ( MonadState s m
+       gets (map (first selectFix) . conditions)
+ 
+    stopAfterFirstError = useOption optionStop  (\x s -> s { optionStop  = x })
+-   checkConditions     = useOption optionCheck (\x s -> s { optionCheck = x })
+\ No newline at end of file
++   checkConditions     = useOption optionCheck (\x s -> s { optionCheck = x })
+--- a/src/Top/Implementation/FastSubstitution.hs
++++ b/src/Top/Implementation/FastSubstitution.hs
+@@ -1,5 +1,5 @@
+ {-# LANGUAGE UndecidableInstances, OverlappingInstances,
+-            FlexibleInstances, MultiParamTypeClasses #-}
++            FlexibleInstances, MultiParamTypeClasses, FlexibleContexts #-}
+ -----------------------------------------------------------------------------
+ -- | License      :  GPL
+ -- 
+@@ -125,4 +125,4 @@ writeExpandedType synonyms = writeTypeType where
+                                               writeIntType i atp (FixpointSubstitution (M.insert i utp' fm))
+                                            Nothing ->
+                                                internalError "Top.Solvers.GreedySubst" "writeIntType" ("inconsistent types(1)" ++ show (i, utp, atp))
+-               _                -> internalError "Top.Solvers.GreedySubst" "writeIntType" "inconsistent types(2)"
+\ No newline at end of file
++               _                -> internalError "Top.Solvers.GreedySubst" "writeIntType" "inconsistent types(2)"
+--- a/src/Top/Implementation/SimpleSubstitution.hs
++++ b/src/Top/Implementation/SimpleSubstitution.hs
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE UndecidableInstances, FlexibleInstances, MultiParamTypeClasses  #-}
++{-# LANGUAGE UndecidableInstances, FlexibleInstances, MultiParamTypeClasses,
++   FlexibleContexts  #-}
+ -----------------------------------------------------------------------------
+ -- | License      :  GPL
+ -- 
+@@ -67,4 +68,4 @@ instance ( MonadState s m
+        gets (lookupInt i . unSS)
+ 
+     fixpointSubst = 
+-        gets (FixpointSubstitution . unSS)
+\ No newline at end of file
++        gets (FixpointSubstitution . unSS)
+--- a/src/Top/Implementation/TypeGraph/ApplyHeuristics.hs
++++ b/src/Top/Implementation/TypeGraph/ApplyHeuristics.hs
+@@ -23,6 +23,7 @@ import Top.Interface.Qualification hiding (contextReduction)
+ import Top.Interface.TypeInference
+ import Top.Solver
+ import Top.Types 
++import Control.Monad (foldM)
+ import Utils (internalError)
+ 
+ type ErrorInfo info = ([EdgeId], info)
+--- a/src/Top/Implementation/TypeGraph/DefaultHeuristics.hs
++++ b/src/Top/Implementation/TypeGraph/DefaultHeuristics.hs
+@@ -92,4 +92,4 @@ inPredicatePath =
+           let cnrs = nub [ c | (EdgeId _ _ c, _) <- steps path ]
+               p (EdgeId _ _ cnr, _) = cnr `elem` cnrs
+               ys = filter p xs
+-          return (if null ys then xs else ys)
+\ No newline at end of file
++          return (if null ys then xs else ys)
+--- a/src/Top/Implementation/TypeGraph/Heuristic.hs
++++ b/src/Top/Implementation/TypeGraph/Heuristic.hs
+@@ -14,6 +14,7 @@ import Top.Implementation.TypeGraph.Basics
+ import Top.Implementation.TypeGraph.Path
+ import Top.Types
+ import Top.Solver
++import Control.Monad (filterM)
+ import Utils (internalError)
+ 
+ -----------------------------------------------------------------------------
+--- a/src/Top/Implementation/TypeGraphSubstitution.hs
++++ b/src/Top/Implementation/TypeGraphSubstitution.hs
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE UndecidableInstances, FlexibleInstances, MultiParamTypeClasses #-}
++{-# LANGUAGE UndecidableInstances, FlexibleInstances, MultiParamTypeClasses,
++   FlexibleContexts #-}
+ -----------------------------------------------------------------------------
+ -- | License      :  GPL
+ -- 
+@@ -100,4 +101,4 @@ removeInconsistencies hs =
+                unmarkPossibleErrors
+         else -- Bug patch 3 february 2004
+                  -- safety first: check whether *everything* is really removed. 
+-              removeInconsistencies hs
+\ No newline at end of file
++              removeInconsistencies hs
+--- a/src/Top/Implementation/TypeInference.hs
++++ b/src/Top/Implementation/TypeInference.hs
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE UndecidableInstances, FlexibleInstances, MultiParamTypeClasses #-}
++{-# LANGUAGE UndecidableInstances, FlexibleInstances, MultiParamTypeClasses,
++   FlexibleContexts #-}
+ -----------------------------------------------------------------------------
+ -- | License      :  GPL
+ -- 
+@@ -87,4 +88,4 @@ instance ( MonadState s m
+ 
+    storeTypeScheme sv scheme = 
+       let f s = s { schemeMap = M.insert sv scheme (schemeMap s) }
+-      in modify f
+\ No newline at end of file
++      in modify f
+--- a/src/Top/Interface/Basic.hs
++++ b/src/Top/Interface/Basic.hs
+@@ -10,6 +10,7 @@
+ 
+ module Top.Interface.Basic where
+ 
++import Control.Monad (when, filterM, unless)
+ import Top.Constraint
+ import Top.Util.Option
+ import Top.Monad.Select
+@@ -63,7 +64,7 @@ instance ( Monad m
+    -- constraints
+    pushConstraint        = deBasic . pushConstraint . mapConstraint selectFix
+    pushConstraints       = deBasic . pushConstraints . map (mapConstraint selectFix)
+-   popConstraint         = deBasic $ liftM (fmap (mapConstraint deBasic)) popConstraint
++   popConstraint         = deBasic $ fmap (fmap (mapConstraint deBasic)) popConstraint
+    discardConstraints    = deBasic discardConstraints
+    -- errors
+    addLabeledError label = deBasic . addLabeledError label
+@@ -89,12 +90,12 @@ addError :: HasBasic m info => info -> m ()
+ addError = addLabeledError NoErrorLabel
+ 
+ getErrors :: HasBasic m info => m [info]  
+-getErrors = liftM (map fst) getLabeledErrors
++getErrors = fmap (map fst) getLabeledErrors
+ 
+ doChecks :: HasBasic m info => m ()
+ doChecks = 
+    do ms <- getChecks
+-      bs <- filterM (liftM not . fst) ms
++      bs <- filterM (fmap not . fst) ms
+       unless (null bs) $ 
+          let err = "\n\n  The following constraints were violated:\n" 
+                    ++ unlines (map (("  - "++) . snd) bs)
+@@ -120,4 +121,4 @@ data ErrorLabel = ErrorLabel String
+    
+ stopOption, checkOption :: Option Bool
+ stopOption  = option False "Stop solving constraints after the first error"
+-checkOption = option False "Check constraint satisfaction afterwards"
+\ No newline at end of file
++checkOption = option False "Check constraint satisfaction afterwards"
+--- a/src/Top/Interface/TypeInference.hs
++++ b/src/Top/Interface/TypeInference.hs
+@@ -16,6 +16,7 @@ import Top.Monad.StateFix
+ import Top.Interface.Basic
+ import Top.Interface.Substitution
+ import Top.Constraint.Information
++import Control.Monad (foldM)
+ import Data.Function
+ import Data.List (intersect, sortBy, partition, groupBy)
+ import qualified Data.Map as M
+@@ -268,4 +269,4 @@ instance Substitutable qs => Substitutable (GlobalQM qs info) where
+           bs' = [ (sub |-> b, info) | (b, info) <- bs ]
+           cs' = [ (sub |-> c, info) | (c, info) <- cs ]
+       in GlobalQM as' bs' cs'
+-   ftv (GlobalQM as bs cs) = ftv (map fst $ as ++ bs ++ cs) -}
+\ No newline at end of file
++   ftv (GlobalQM as bs cs) = ftv (map fst $ as ++ bs ++ cs) -}
+--- a/src/Top/Monad/Select.hs
++++ b/src/Top/Monad/Select.hs
+@@ -31,7 +31,6 @@ instance Monad m => Applicative (Select t m) where
+     (<*>) = ap  -- defined in Control.Monad
+ 
+ instance Monad m => Monad (Select t m) where
+-   return a       = Select (return a) 
+    Select f >>= g = Select (do x <- f
+                                let Select h = g x
+                                h)
+@@ -59,7 +58,6 @@ instance Monad m => Applicative (SelectFix t m) where
+     (<*>) = ap  -- defined in Control.Monad
+ 
+ instance Monad m => Monad (SelectFix t m) where
+-   return a          = SelectFix (return a)
+    SelectFix f >>= g = SelectFix (do x <- f
+                                      let SelectFix h = g x
+                                      h)
+@@ -99,4 +97,4 @@ deselectFix :: SelectFix t m a -> m a
+ deselectFix (SelectFix m) = m
+ 
+ deselectFixFor :: (Embedded label s (t m), MonadState s m) => label -> SelectFix t m a -> m a
+-deselectFixFor _ = deselectFix 
+\ No newline at end of file
++deselectFixFor _ = deselectFix 
+--- a/src/Top/Monad/StateFix.hs
++++ b/src/Top/Monad/StateFix.hs
+@@ -65,4 +65,4 @@ evalStateFix :: StateFix s a -> s (StateFix s) -> a
+ evalStateFix m = runIdentity . evalStateFixT m
+ 
+ execStateFix :: StateFix s a -> s (StateFix s) -> s (StateFix s)
+-execStateFix m = runIdentity . execStateFixT m
+\ No newline at end of file
++execStateFix m = runIdentity . execStateFixT m
+--- a/src/Top/Solver.hs
++++ b/src/Top/Solver.hs
+@@ -174,7 +174,6 @@ instance S.Semigroup LogEntries where
+ 
+ instance Monoid LogEntries where
+    mempty = LogEntries id
+-   mappend (LogEntries f) (LogEntries g) = LogEntries (f . g)
+ 
+ instance Show LogEntry where
+    show = msg
+@@ -199,4 +198,4 @@ logState =
+           options      = "Solver options:\n" ++ indent (unlines ys)
+           f i (name,s) = show i ++ ". " ++ name ++ "\n" ++ indent s
+           indent       = unlines . map ("      "++) . lines
+-      logMsg (unlines $ hline : options : zipWith f [1::Int ..] xs ++ [hline])
+\ No newline at end of file
++      logMsg (unlines $ hline : options : zipWith f [1::Int ..] xs ++ [hline])
+--- a/src/TopSolver.hs
++++ b/src/TopSolver.hs
+@@ -23,6 +23,7 @@ import Top.Solver
+ import Top.Solver.TypeGraph
+ import Utils (internalError)
+ import Data.Char (isDigit, isLower)
++import Control.Monad (liftM, void)
+ import Data.List (intercalate, intersperse)
+ import Data.Maybe
+ import qualified Data.Map as M
+-- 
+2.48.1
+

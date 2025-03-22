@@ -1,0 +1,66 @@
+From https://github.com/l29ah/monad-peel/commit/fe5361fd5d659634b2ddcef475a37b2af0499556
+From: Sergey Alirzaev <l29ah@riseup.net>
+Date: Sun, 7 Jan 2024 16:24:19 +0100
+Subject: [PATCH] fix tests
+
+--- a/monad-peel.cabal
++++ b/monad-peel.cabal
+@@ -50,5 +50,5 @@ test-suite test
+                        HUnit,
+                        test-framework,
+                        test-framework-hunit,
+-                       transformers >= 0.2 && < 0.6,
++                       transformers,
+                        extensible-exceptions
+--- a/test.hs
++++ b/test.hs
+@@ -13,32 +13,25 @@ import Data.Maybe
+ import Data.Typeable (Typeable)
+ 
+ import Control.Monad.Trans.Identity
+-import Control.Monad.Trans.List
+ import Control.Monad.Trans.Maybe
+ import Control.Monad.Trans.Reader
+ import Control.Monad.Trans.Writer
+-import Control.Monad.Trans.Error
+ import Control.Monad.Trans.State
+ import qualified Control.Monad.Trans.RWS as RWS
+ 
+ main :: IO ()
+ main = defaultMain
+     [ testSuite "IdentityT" runIdentityT
+-    , testSuite "ListT" $ fmap head . runListT
+     , testSuite "MaybeT" $ fmap fromJust . runMaybeT
+     , testSuite "ReaderT" $ flip runReaderT "reader state"
+     , testSuite "WriterT" runWriterT'
+-    , testSuite "ErrorT" runErrorT'
+     , testSuite "StateT" $ flip evalStateT "state state"
+     , testSuite "RWST" $ \m -> runRWST' m "RWS in" "RWS state"
+-    , testCase "ErrorT throwError" case_throwError
+     , testCase "WriterT tell" case_tell
+     ]
+   where
+     runWriterT' :: Functor m => WriterT [Int] m a -> m a
+     runWriterT' = fmap fst . runWriterT
+-    runErrorT' :: Functor m => ErrorT String m () -> m ()
+-    runErrorT' = fmap (either (const ()) id) . runErrorT
+     runRWST' :: (Monad m, Functor m) => RWS.RWST r [Int] s m a -> r -> s -> m a
+     runRWST' m r s = fmap fst $ RWS.evalRWST m r s
+ 
+@@ -118,16 +111,6 @@ case_onException run = do
+     k <- readIORef i
+     k @?= 4
+ 
+-case_throwError :: Assertion
+-case_throwError = do
+-    i <- newIORef one
+-    Left "throwError" <- runErrorT $
+-        (liftIO (writeIORef i 2) >> throwError "throwError")
+-        `finally`
+-        (liftIO $ writeIORef i 3)
+-    j <- readIORef i
+-    j @?= 3
+-
+ case_tell :: Assertion
+ case_tell = do
+     i <- newIORef one

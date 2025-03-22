@@ -1,0 +1,40 @@
+From 1615a4d737fab83138e40bb6ae2ce379b7aaea1e Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Thu, 20 Mar 2025 18:29:31 +0100
+Subject: [PATCH] b
+
+--- a/src/Control/Monad/Unify.hs
++++ b/src/Control/Monad/Unify.hs
+@@ -29,6 +29,7 @@ import Data.Monoid
+ import Control.Applicative
+ import Control.Monad.State
+ import Control.Monad.Error.Class
++import Control.Monad (MonadPlus, when)
+ 
+ import Data.HashMap.Strict as M
+ import qualified Data.Semigroup as S
+@@ -118,7 +119,7 @@ substituteOne u t = Substitution $ M.singleton u t
+ -- |
+ -- Replace a unification variable with the specified value in the current substitution
+ --
+-(=:=) :: (Error e, Monad m, MonadError e m, Unifiable m t) => Unknown -> t -> UnifyT t m ()
++(=:=) :: (Monad m, MonadError String m, Unifiable m t) => Unknown -> t -> UnifyT t m ()
+ (=:=) u t' = do
+   st <- UnifyT get
+   let sub = unifyCurrentSubstitution st
+@@ -133,10 +134,10 @@ substituteOne u t = Substitution $ M.singleton u t
+ -- |
+ -- Perform the occurs check, to make sure a unification variable does not occur inside a value
+ --
+-occursCheck :: (Error e, Monad m, MonadError e m, Partial t) => Unknown -> t -> UnifyT t m ()
++occursCheck :: (Monad m, MonadError String m, Partial t) => Unknown -> t -> UnifyT t m ()
+ occursCheck u t =
+   case isUnknown t of
+-    Nothing -> when (u `elem` unknowns t) $ UnifyT . lift . throwError . strMsg $ "Occurs check fails"
++    Nothing -> when (u `elem` unknowns t) $ UnifyT . lift . throwError $ "Occurs check fails"
+     _ -> return ()
+ 
+ -- |
+-- 
+2.48.1
+

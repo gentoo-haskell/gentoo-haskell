@@ -17,7 +17,11 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+profunctors"
 
-RDEPEND=">=dev-haskell/semigroupoids-5:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
+CABAL_CHDEPS=(
+	'semigroupoids >= 5 && < 6' 'semigroupoids >= 5'
+)
+
+RDEPEND=">=dev-haskell/semigroupoids-5:=[profile?]
 	>=dev-lang/ghc-7.6.2:=
 	profunctors? ( >=dev-haskell/profunctors-5:=[profile?] <dev-haskell/profunctors-6:=[profile?] )
 "
