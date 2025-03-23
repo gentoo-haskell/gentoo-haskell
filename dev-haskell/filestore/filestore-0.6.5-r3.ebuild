@@ -20,8 +20,12 @@ IUSE="+maxcount"
 
 RESTRICT=test # requires mercurial to run the tests
 
+CABAL_CHDEPS=(
+	'Diff >= 0.4 && < 0.6' 'Diff >=0.4'
+)
+
 RDEPEND="
-	>=dev-haskell/diff-0.4:=[profile?] <dev-haskell/diff-0.6:=[profile?]
+	>=dev-haskell/diff-0.4:=[profile?]
 	>=dev-haskell/old-locale-1.0:=[profile?] <dev-haskell/old-locale-1.1:=[profile?]
 	>=dev-haskell/parsec-2:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/split-0.1:=[profile?] <dev-haskell/split-0.3:=[profile?]
