@@ -25,8 +25,8 @@ CABAL_HADDOCK_TARGETS="lib:${CABAL_PN}"
 
 RDEPEND="
 	>=dev-haskell/aeson-2:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
-	>=dev-haskell/data-default-0.7:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
-	>=dev-haskell/diff-0.4:=[profile?] <dev-haskell/diff-0.6:=[profile?]
+	>=dev-haskell/data-default-0.7:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
+	>=dev-haskell/diff-0.4:=[profile?] <dev-haskell/diff-1.1:=[profile?]
 	>=dev-haskell/dlist-1.0:=[profile?] <dev-haskell/dlist-1.1:=[profile?]
 	>=dev-haskell/file-embed-0.0.15:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
 	dev-haskell/generic-arbitrary:=[profile?]
