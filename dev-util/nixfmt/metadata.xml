@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="hackage">nixfmt</remote-id>
+		<remote-id type="github">NixOS/nixfmt</remote-id>
+	</upstream>
+	<longdescription>
+		nixfmt is the official, but not yet stable, formatter for Nix code.
+		It formats Nix code to a consistent style to increase code readability
+		and reduce the cognitive overhead for both reading and writing code.
+	</longdescription>
+</pkgmetadata>
