@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<use>
-		<flag name="derivedatatypeable">Use the DeriveDataTypeable extension.
-		This makes lens compile with old compilers. Users need not worry about
-		it.</flag>
-	</use>
+	<upstream>
+		<remote-id type="hackage">data-lens</remote-id>
+		<remote-id type="github">roconnor/data-lens</remote-id>
+	</upstream>
 </pkgmetadata>

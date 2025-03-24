@@ -11,4 +11,8 @@
 		
 		See README.md for further information and compatibility considerations.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">haskell-src-exts-simple</remote-id>
+		<remote-id type="github">int-e/haskell-src-exts-simple</remote-id>
+	</upstream>
 </pkgmetadata>

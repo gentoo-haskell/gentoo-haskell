@@ -11,4 +11,8 @@
 		support pasting not just image files but any files so with
 		some engines the program can be used as a file sharing client.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">imagepaste</remote-id>
+		<remote-id type="bitbucket">balta2ar/imagepaste</remote-id>
+	</upstream>
 </pkgmetadata>

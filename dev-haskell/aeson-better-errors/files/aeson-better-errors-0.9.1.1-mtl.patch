@@ -1,0 +1,19 @@
+From https://github.com/hdgarrood/aeson-better-errors/pull/25
+From: Vekhir <134215107+Vekhir@users.noreply.github.com>
+Date: Wed, 13 Dec 2023 19:50:32 +0100
+Subject: [PATCH] Support mtl-2.3
+
+mtl 2.3 doesn't export various Control.Monad functions. Explicitly import forM.
+--- a/src/Data/Aeson/BetterErrors/Internal.hs
++++ b/src/Data/Aeson/BetterErrors/Internal.hs
+@@ -10,6 +10,10 @@ module Data.Aeson.BetterErrors.Internal where
+ import Control.Applicative (Applicative, pure, (<$>), (<*>))
+ import Data.Foldable (foldMap)
+ #endif
++#if MIN_VERSION_mtl(2, 3, 0)
++import Control.Monad (forM)
++#else
++#endif
+ 
+ import Control.Arrow (left)
+ import Control.Monad.Identity

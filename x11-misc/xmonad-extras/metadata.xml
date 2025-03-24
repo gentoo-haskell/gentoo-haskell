@@ -8,7 +8,12 @@
 	<use>
 		<flag name="alsa">Build modules depending on the alsa-mixer package</flag>
 		<flag name="brightness">Build module for brightness control.</flag>
+		<flag name="dbus">Build modules depending on dbus.</flag>
 		<flag name="eval">Build modules depending on hint(for evaluating Haskell expressions at runtime).</flag>
 		<flag name="mpd">Build modules depending on libmpd.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">xmonad-extras</remote-id>
+		<remote-id type="github">xmonad/xmonad-extras</remote-id>
+	</upstream>
 </pkgmetadata>

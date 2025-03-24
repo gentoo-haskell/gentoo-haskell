@@ -5,35 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Features:
-		
-		* Quasiquotation syntax for external commands:
-		
-		&gt; [sh| echo hello world! |]
-		
-		* Easy way to define custom quasiquoters (see @examples/CustomQQ.hs@)
-		
-		&gt; ghci = QQ.quoter $ QQ.callCommand "ghc" ["-ignore-dot-ghci", "-e"]
-		
-		* Can embed Haskell variables in scripts
-		
-		&gt; class Embed a where
-		&gt;   embed :: a -&gt; String
-		&gt;
-		&gt; instance Embed String
-		&gt;   embed = id
-		&gt;
-		&gt; main :: IO ()
-		&gt; main = let excl = replicate 3 '!' in -- I'd love to show an example but haddock markup fails here
-		
-		* Can embed quasiquoters in DSLs (see @examples/CommandT.hs@)
-		
-		&gt; class Eval r where
-		&gt;   eval :: String -&gt; [String] -&gt; r
-		&gt;
-		&gt; instance Eval (IO ExitCode) where
-		&gt;   eval command args = System.Process.rawSystem command args
-		
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">command-qq</remote-id>
+		<remote-id type="github">biegunka/command-qq</remote-id>
+	</upstream>
 </pkgmetadata>

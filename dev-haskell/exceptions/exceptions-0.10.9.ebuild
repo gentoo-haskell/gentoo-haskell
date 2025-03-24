@@ -28,4 +28,4 @@ DEPEND="${RDEPEND}
 #		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 #		>=dev-haskell/test-framework-quickcheck2-0.3 <dev-haskell/test-framework-quickcheck2-0.4 )
 
-CABAL_CORE_LIB_GHC_PV="9.12.1"
+CABAL_CORE_LIB_GHC_PV="9.12.1 9.12.2"

@@ -12,4 +12,8 @@
 		for searching within bounded and unbounded intervals of
 		both 'Integer' and bounded integral types.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">binary-search</remote-id>
+		<remote-id type="github">riskbook/binary-search</remote-id>
+	</upstream>
 </pkgmetadata>

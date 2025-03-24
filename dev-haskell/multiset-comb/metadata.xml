@@ -5,11 +5,7 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Various combinatorial algorithms over multisets,
-		including generating all permutations,
-		partitions, size-2 partitions, size-k subsets,
-		and Sawada's algorithm for generating all
-		necklaces with elements from a multiset.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">multiset-comb</remote-id>
+	</upstream>
 </pkgmetadata>

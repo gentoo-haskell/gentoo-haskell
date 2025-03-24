@@ -50,3 +50,4 @@ app-portage/hackport
 <dev-haskell/btrfs-0.3
 <dev-haskell/daemons-0.5
 <dev-haskell/linux-file-extents-0.3
+<dev-haskell/ghc-syntax-highlighter-0.0.13

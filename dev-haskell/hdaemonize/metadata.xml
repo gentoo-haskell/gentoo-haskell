@@ -5,11 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		Provides two functions that help writing better UNIX daemons,
-		daemonize and serviced: daemonize does what a daemon should do
-		(forking and closing descriptors), while serviced does that and
-		more (syslog interface, PID file writing, start-stop-restart
-		command line handling, dropping privileges).
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">hdaemonize</remote-id>
+		<remote-id type="github">unprolix/hdaemonize</remote-id>
+	</upstream>
 </pkgmetadata>

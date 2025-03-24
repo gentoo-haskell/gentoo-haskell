@@ -15,7 +15,7 @@
 <dev-haskell/haddock-2.31.0
 <dev-haskell/haddock-api-2.31.0
 <dev-haskell/mtl-2.3.2
-<dev-haskell/parsec-3.1.18
+<dev-haskell/parsec-3.1.19
 <dev-haskell/process-1.6.26
 <dev-haskell/stm-2.5.4
 <dev-haskell/text-2.1.3
@@ -53,3 +53,4 @@ app-portage/hackport
 <dev-haskell/daemons-0.5
 <dev-haskell/linux-file-extents-0.3
 <dev-haskell/extensions-0.1.0.4
+<dev-haskell/ghc-syntax-highlighter-0.0.13

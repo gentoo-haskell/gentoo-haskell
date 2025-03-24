@@ -17,6 +17,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE=""
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc9.8.patch
+	)
+
 RDEPEND=">=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}

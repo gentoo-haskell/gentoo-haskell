@@ -1,3 +1,28 @@
+# hololeap <hololeap@protonmail.com> (2025-03-17)
+#
+# Various outdated packages which either fail to build, have been deprecated
+# upstream or depend on other outdated packages. Mask for removal in 30 days.
+#
+# Removal: 2025-04-16
+dev-util/dzen-dhall
+dev-haskell/hakyll-agda
+dev-haskell/aeson-lens
+dev-haskell/persistent-odbc
+dev-haskell/haskell-import-graph
+dev-haskell/syb-with-class-instances-text
+dev-haskell/cipher-des
+dev-haskell/djinn-ghc
+dev-haskell/heckle
+dev-haskell/text-stream-decode
+dev-haskell/generic-lens-labels
+dev-haskell/transformers-free
+dev-haskell/auto
+dev-haskell/enumerator
+dev-haskell/hashable-time
+dev-haskell/attoparsec-enumerator
+dev-haskell/network-enumerator
+dev-haskell/zlib-enum
+
 # hololeap <hololeap@protonmail.com> (2025-03-02)
 #
 # Needs patching to be compatible with >=unix-2.8, no upstream activity for 4
@@ -235,6 +260,7 @@ dev-haskell/country-codes
 >=dev-haskell/text-2.1.2
 >=dev-haskell/transformers-0.6.1.2
 >=dev-haskell/extensions-0.1.0.3
+>=dev-haskell/parsec-3.1.18.0
 
 # hololeap <hololeap@protonmail.com> (2024-06-09)
 #
@@ -270,6 +296,7 @@ dev-haskell/country-codes
 >=dev-haskell/ghc-lib-parser-ex-9.12
 >=dev-haskell/cabal-fmt-0.1.12
 >=dev-haskell/cabal-install-parsers-0.6.2
+>=dev-haskell/ghc-syntax-highlighter-0.0.12
 
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of

@@ -5,9 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		A small package which gives you the tools to build parsers to decode JSON
-		values, and gives good error messages when parsing fails.
-		See also &lt;http://harry.garrood.me/blog/aeson-better-errors/&gt;.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">aeson-better-errors</remote-id>
+		<remote-id type="github">hdgarrood/aeson-better-errors</remote-id>
+	</upstream>
 </pkgmetadata>
