@@ -6,6 +6,16 @@
 >=dev-haskell/ghc-lib-parser-ex-9.10
 >=dev-haskell/ghc-syntax-highlighter-0.0.12
 
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-03-24)
+#
+# Outdated vim plugins. With the rise of vim plugin managers there are no
+# such things as releases anymore. Interested users should just clone upstream
+# git repositories in vim/pack. Mask for removal in 30 days
+#
+# Removal: 2025-04-23
+app-vim/haskellindent
+app-vim/haskellmode
+
 # hololeap <hololeap@protonmail.com> (2025-03-17)
 #
 # Various outdated packages which either fail to build, have been deprecated
