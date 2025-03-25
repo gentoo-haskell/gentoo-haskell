@@ -1,3 +1,11 @@
+# hololeap <hololeap@protonmail.com> (2025-03-25)
+#
+# stylish-haskell still requires <ghc-lib-parser-9.9. Mask 9.10 until it
+# catches up.
+>=dev-haskell/ghc-lib-parser-9.10
+>=dev-haskell/ghc-lib-parser-ex-9.10
+>=dev-haskell/ghc-syntax-highlighter-0.0.12
+
 # hololeap <hololeap@protonmail.com> (2025-03-17)
 #
 # Various outdated packages which either fail to build, have been deprecated
