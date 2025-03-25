@@ -19,6 +19,7 @@ IUSE="+network-uri omit-data omit-serialize"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-ghc-9.8.patch
+	"${FILESDIR}"/${P}-diff.patch
 	)
 
 RDEPEND="dev-haskell/base64-bytestring:=[profile?]

@@ -1,0 +1,38 @@
+From b5da4952b320fcdacc3b2f7cfa27cdbdc28a5d8d Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Tue, 25 Mar 2025 23:36:21 +0100
+Subject: [PATCH] diff
+
+--- a/Extra/Text.hs
++++ b/Extra/Text.hs
+@@ -14,7 +14,11 @@ module Extra.Text
+ #endif
+     ) where
+ 
++#if MIN_VERSION_Diff(1,0,0)
++import Data.Algorithm.DiffContext (getContextDiff, prettyContextDiff, unnumber)
++#else
+ import Data.Algorithm.DiffContext (getContextDiff, prettyContextDiff)
++#endif
+ import Data.Char (isUpper, toUpper)
+ import Data.ListLike (groupBy)
+ import Data.String (IsString)
+@@ -57,9 +61,13 @@ diffText (nameA, textA) (nameB, textB) =
+     show (prettyContextDiff
+           (HPJ.text nameA)
+           (HPJ.text nameB)
+-          (HPJ.text . unpack)
++#if MIN_VERSION_Diff(1,0,0)
++          (HPJ.text . unpack . unnumber )
++          (getContextDiff (Just 2) (split (== '\n') textA) (split (== '\n') textB)))
++#else
++          (HPJ.text . unpack )
+           (getContextDiff 2 (split (== '\n') textA) (split (== '\n') textB)))
+-
++#endif
+ -- | Convert a camel case string (no whitespace) into a natural
+ -- language looking phrase:
+ --   camelWords "aCamelCaseFOObar123" -> "A Camel Case FOObar123"
+-- 
+2.48.1
+
