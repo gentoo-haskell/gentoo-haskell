@@ -289,7 +289,6 @@ dev-haskell/country-codes
 >=dev-haskell/cabal-install-3.12
 >=dev-haskell/cabal-tree-diff-3.12
 >=dev-haskell/binary-0.8.9.2
->=dev-haskell/stm-2.5.3.1
 >=dev-haskell/transformers-0.6.1.1
 >=dev-haskell/hlint-3.10
 >=dev-haskell/ghc-lib-parser-9.12
