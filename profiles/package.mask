@@ -421,4 +421,3 @@ dev-util/hdocs
 # P.B. Lecavalier <pbl.ltx@gmail.com> (2020-01-01)
 # Various unrelated packages and what causes the conflict with newer version.
 >=dev-haskell/hsemail-2
->=dev-haskell/ilist-0.4.0.0
