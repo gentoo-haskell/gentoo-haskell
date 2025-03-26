@@ -1,3 +1,23 @@
+# GdeVolpiano <xavier@wheredoibegin.fr>
+#
+# Various outdated packages which either fail to build, have been deprecated
+# upstream or depend on other outdated packages. Mask for removal in 30 days.
+#
+# Removal: 2025-04-25
+
+dev-haskell/random-source
+dev-haskell/monadcatchio-mtl
+dev-haskell/jupyter
+dev-haskell/bitsatomic
+dev-haskell/superdoc
+dev-haskell/uuagc-bootstrap
+dev-haskell/hasmin
+dev-haskell/json-bytes-builder
+dev-haskell/monadcatchio-transformers
+dev-haskell/spago
+dev-lang/hugs98
+dev-haskell/qrimager
+
 # hololeap <hololeap@protonmail.com> (2025-03-25)
 #
 # stylish-haskell still requires <ghc-lib-parser-9.9. Mask 9.10 until it
