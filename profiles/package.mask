@@ -5,6 +5,8 @@
 #
 # Removal: 2025-04-25
 
+dev-haskell/sbvplugin
+dev-haskell/binary-strict
 dev-haskell/random-source
 dev-haskell/monadcatchio-mtl
 dev-haskell/jupyter
