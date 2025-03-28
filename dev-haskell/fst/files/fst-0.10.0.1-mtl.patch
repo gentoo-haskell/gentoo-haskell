@@ -1,0 +1,241 @@
+From https://github.com/johnjcamilleri/fst/pull/3
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sat, 22 Mar 2025 11:07:04 +0100
+Subject: [PATCH] allow to build with mtl-2.3
+
+--- a/FST/TransducerInterface.hs
++++ b/FST/TransducerInterface.hs
+@@ -127,7 +127,7 @@ import qualified FST.LBFT as L
+ import FST.ReversalT
+ 
+ import Control.Exception (IOException, catch, try)
+-import Control.Monad.Error
++import Control.Monad.Except
+ 
+ -- | Construct a deterministic, epsilon-free, minimal transducer
+ compile :: Ord a => RReg a -> Sigma a -> Transducer a
+@@ -156,23 +156,23 @@ numberOfTransitions transducer = sum [ length (transitionList transducer s)
+                                      | s <- states transducer]
+ 
+ -- | Load a transducer from file
+-load :: FilePath -> ErrorT String IO (Transducer String)
++load :: FilePath -> ExceptT String IO (Transducer String)
+ load = fmap read . open
+ 
+ -- | Save a transducer from file
+-save :: FilePath -> Transducer String -> ErrorT String IO ()
++save :: FilePath -> Transducer String -> ExceptT String IO ()
+ save file auto = saveToFile file (show auto)
+ 
+ -- | Open a file and return contents as string
+-open :: FilePath -> ErrorT String IO String
+-open file = ErrorT $ catch 
+-  (Right `liftM` readFile file) 
++open :: FilePath -> ExceptT String IO String
++open file = ExceptT $ catch 
++  (Right `fmap` readFile file) 
+   (\(e :: IOException) -> return $ throwError $ "Error: Unable to open \"" ++ file ++ "\"")
+ 
+ -- | Save contents (as string) to a file
+-saveToFile :: FilePath -> String -> ErrorT String IO ()
+-saveToFile file str = ErrorT $ catch 
+-  (Right `liftM` writeFile file str) 
++saveToFile :: FilePath -> String -> ExceptT String IO ()
++saveToFile file str = ExceptT $ catch 
++  (Right `fmap` writeFile file str) 
+   (\(e :: IOException) -> return $ throwError $ "Error: Unable to save to \"" ++ file ++ "\"")
+ 
+ -- | The empty transucer
+--- a/Main.hs
++++ b/Main.hs
+@@ -209,9 +209,9 @@ import FST.Info
+ 
+ import Text.Printf
+ 
+-import Control.Monad (liftM)
++import Control.Monad (liftM, when, unless)
+ import Control.Monad.State
+-import Control.Monad.Error
++import Control.Monad.Except
+ import Control.Monad.IO.Class (liftIO)
+ import System.Environment (getArgs)
+ import System.Console.Haskeline
+@@ -225,7 +225,7 @@ main = do
+       welcome
+       runInputT defaultSettings (evalStateT loop emptyInfo)
+     as -> do
+-      ret <- runErrorT (batchMode as)
++      ret <- runExceptT (batchMode as)
+       case ret of
+         Left err -> putStrLn err
+         Right _  -> return ()
+@@ -246,9 +246,9 @@ welcome = putStr $ unlines [
+   ]
+ 
+ -- | Run in batch mode with given arguments
+-batchMode :: [String] -> ErrorT String IO ()
++batchMode :: [String] -> ExceptT String IO ()
+ batchMode cmdopt = do
+-  (file, cmd) <- (ErrorT . return . parseBatch) cmdopt
++  (file, cmd) <- (ExceptT . return . parseBatch) cmdopt
+ 
+   -- Only accept .NET or .FST files
+   when (not (isNET file) && not (isFST file)) $ 
+@@ -256,7 +256,7 @@ batchMode cmdopt = do
+ 
+   transducer <- if isFST file
+       then do str <- open file
+-              fmap (flip compile []) $ ErrorT $ return $ parseProgram str
++              fmap (flip compile []) $ ExceptT $ return $ parseProgram str
+       
+       -- Load transducer directly from .NET files
+       else load file
+@@ -319,14 +319,14 @@ loop = do
+     Just Quit -> lift $ outputStrLn "Session ended."
+     Just cmd  -> do
+       -- Run a single command entered at the prompt
+-      result <- runErrorT $ runCmd cmd
++      result <- runExceptT $ runCmd cmd
+ 
+       -- Print the resulting output or error message
+       lift (either outputStrLn outputStrLn result)
+       loop 
+ 
+ -- | Called for each user command
+-runCmd :: InteractiveCommand -> ErrorT String (StateT Info (InputT IO)) String
++runCmd :: InteractiveCommand -> ExceptT String (StateT Info (InputT IO)) String
+ runCmd  BuildTransducer = do
+   info <- get
+   unless (expressionRead info) $ throwError noExpression
+@@ -372,19 +372,19 @@ runCmd ViewTransducer = do
+ 
+ runCmd (Load file)
+   | isFST file = do
+-    res <- liftIO $ runErrorT $ open file
+-    str <- ErrorT $ return res
+-    reg <- ErrorT $ return $ parseProgram str
++    res <- liftIO $ runExceptT $ open file
++    str <- ExceptT $ return res
++    reg <- ExceptT $ return $ parseProgram str
+     modify (updateExpression reg)
+     return (printf "Loaded a regular relation from %s." file)
+   | isNET file = do
+-    res    <- liftIO $ runErrorT $ load file
+-    transd <- ErrorT $ return res
++    res    <- liftIO $ runExceptT $ load file
++    transd <- ExceptT $ return res
+     modify (updateTransducer transd)
+     return (printf "Loaded transducer from file %s." file)
+   | isDAT file = do
+-    res <- liftIO $ runErrorT $ open file
+-    str <- ErrorT $ return res
++    res <- liftIO $ runExceptT $ open file
++    str <- ExceptT $ return res
+     modify $ updateInput $ words str
+     return $ printf "Read input from file %s." file
+   | otherwise =
+@@ -392,10 +392,10 @@ runCmd (Load file)
+   
+ runCmd (LUnion file1 file2)
+   | isNET file1 && isNET file2 = do
+-    res1 <- liftIO $ runErrorT $ load file1
+-    res2 <- liftIO $ runErrorT $ load file2
+-    t1 <- ErrorT $ return res1
+-    t2 <- ErrorT $ return res2
++    res1 <- liftIO $ runExceptT $ load file1
++    res2 <- liftIO $ runExceptT $ load file2
++    t1 <- ExceptT $ return res1
++    t2 <- ExceptT $ return res2
+     modify $ updateTransducer (unionT t1 t2)
+     return "Loaded and unified two transducers."
+                                           
+@@ -404,18 +404,18 @@ runCmd (LUnion file1 file2)
+   | otherwise = return $ printf "Unable to union %s and %s." file1 file2 where
+   unionWith file = do
+     info <- get
+-    res <- liftIO $ runErrorT $ load file
++    res <- liftIO $ runExceptT $ load file
+     unless (transducerBuilt info) $ throwError "No interior transducer built."
+-    r1 <- ErrorT $ return res
++    r1 <- ExceptT $ return res
+     modify $ \info -> updateTransducer (unionT r1 (getTransducer info)) info
+     return "Loaded a transducer, and unified it with the interior transducer."                
+ 
+ runCmd (LProduct file1 file2)
+   | isNET file1  && isNET file2 = do
+-    res1 <- liftIO $ runErrorT $ load file1
+-    res2 <- liftIO $ runErrorT $ load file2
+-    t1 <- ErrorT (return res1)
+-    t2 <- ErrorT (return res2)
++    res1 <- liftIO $ runExceptT $ load file1
++    res2 <- liftIO $ runExceptT $ load file2
++    t1 <- ExceptT (return res1)
++    t2 <- ExceptT (return res2)
+     modify (updateTransducer (productT t1 t2))
+     return "Loaded and concatenated two transducers."
+   | isNET file1 && isTHIS file2 = productWith file1
+@@ -423,16 +423,16 @@ runCmd (LProduct file1 file2)
+   | otherwise = return $ printf "Unable to concatenate %s and %s." file1 file2 where
+   productWith file = do
+     info <- get
+-    res <- liftIO $ runErrorT $ load file
++    res <- liftIO $ runExceptT $ load file
+     unless (transducerBuilt info) $ throwError "No interior transducer built."
+-    t1 <- ErrorT $ return res
++    t1 <- ExceptT $ return res
+     modify $ \info -> updateTransducer (productT t1 (getTransducer info)) info
+     return "Loaded a transducer, and concatenated it with the interior transducer."
+ 
+ runCmd (LStar file)
+   | isNET file = do
+-    res <- liftIO $ runErrorT $ load file
+-    t1 <- ErrorT (return res)
++    res <- liftIO $ runExceptT $ load file
++    t1 <- ExceptT (return res)
+     modify $ updateTransducer (starT t1)
+     return "Loaded a transducer, and applied Kleene's star."
+   | isTHIS file = do
+@@ -444,10 +444,10 @@ runCmd (LStar file)
+ 
+ runCmd (LComposition file1 file2)
+   | isNET file1  && isNET file2 = do
+-    res1 <- liftIO $ runErrorT $ load file1
+-    res2 <- liftIO $ runErrorT $ load file2
+-    t1 <- ErrorT (return res1)
+-    t2 <- ErrorT (return res2)
++    res1 <- liftIO $ runExceptT $ load file1
++    res2 <- liftIO $ runExceptT $ load file2
++    t1 <- ExceptT (return res1)
++    t2 <- ExceptT (return res2)
+     modify $ updateTransducer (compositionT t1 t2)
+     return "Loaded and composed two transducers."
+   | isNET file1  && isTHIS file2 = composeWith file1
+@@ -455,9 +455,9 @@ runCmd (LComposition file1 file2)
+   | otherwise = return $ printf "Unable to compose %s and %s." file1 file2 where
+   composeWith file = do
+     info <- get
+-    res <- liftIO $ runErrorT $ load file
++    res <- liftIO $ runExceptT $ load file
+     unless (transducerBuilt info) $ throwError "No interior transducer built."
+-    t1 <- ErrorT (return res)
++    t1 <- ExceptT (return res)
+     modify $ \info -> updateTransducer (compositionT t1 (getTransducer info)) info
+     return "Loaded a transducer, and composed it with the interior transducer."
+ 
+@@ -465,12 +465,12 @@ runCmd (Save file) = do
+   info <- get
+   case () of
+     _ | isNET file -> do
+-        res <- liftIO $ runErrorT $ save file $ getTransducer info
+-        _ <- ErrorT (return res)
++        res <- liftIO $ runExceptT $ save file $ getTransducer info
++        _ <- ExceptT (return res)
+         return $ printf "Saved transducer to file %s." file
+       | outputsRead info -> do
+-        res <- liftIO $ runErrorT $ saveToFile file $ unlines $ getOutputs info
+-        _ <- ErrorT (return res)
++        res <- liftIO $ runExceptT $ saveToFile file $ unlines $ getOutputs info
++        _ <- ExceptT (return res)
+         return $ printf "Saved outputs to file %s." file
+       | otherwise -> return noOutputs
+ 
