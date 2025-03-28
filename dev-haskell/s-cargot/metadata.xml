@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="build-example">Build example application</flag>
+		<flag name="example">Build example application</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">s-cargot</remote-id>
