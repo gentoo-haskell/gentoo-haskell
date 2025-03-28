@@ -1,0 +1,80 @@
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1270
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+Date: Sat, 22 Mar 2025 10:18:26 +0100
+Subject: [PATCH] b
+
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -1,2 +1,8 @@
+-import Distribution.Simple
+-main = defaultMain
++module Main
++  ( main
++  ) where
++
++import           Distribution.Extra.Doctest (defaultMainWithDoctests)
++
++main :: IO ()
++main = defaultMainWithDoctests "doctests"
+--- a/doctests.hs
++++ b/doctests.hs
+@@ -1,4 +1,18 @@
+ import Test.DocTest
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.Directory (getCurrentDirectory, makeAbsolute)
++import System.FilePath.Posix ((</>))
++import System.IO (utf8)
++import Build_doctests (flags, pkgs)
+ 
+ main :: IO ()
+-main = doctest ["-isrc", "src"]
++main = do
++  setLocaleEncoding utf8
++  pwd <- getCurrentDirectory
++  prefix <- makeAbsolute pwd
++
++  let modules = ["-isrc", "src"]
++
++  let args = flags ++ pkgs ++ modules
++  
++  doctest args
+--- a/jwt.cabal
++++ b/jwt.cabal
+@@ -11,7 +11,7 @@ maintainer:          brian@brianmckenna.org
+ homepage:            https://bitbucket.org/puffnfresh/haskell-jwt
+ bug-reports:         https://bitbucket.org/puffnfresh/haskell-jwt/issues
+ category:            Web
+-build-type:          Simple
++build-type:          Custom 
+ cabal-version:       >=1.16
+ description:
+ 
+@@ -29,6 +29,11 @@ source-repository head
+     type: git
+     location: https://bitbucket.org/puffnfresh/haskell-jwt.git
+ 
++custom-setup
++    setup-depends:
++        base
++      , Cabal
++      , cabal-doctest
+ library
+   exposed-modules:     Web.JWT
+   other-modules:       Data.Text.Extended, Data.ByteString.Extended
+@@ -106,5 +111,8 @@ test-suite doctests
+   main-is:             doctests.hs
+   ghc-options:         -threaded
+   build-depends:       base < 5 && >= 4.8
++                     , directory
++                     , filepath
++                     , base-compat
+                      , jwt
+                      , doctest     >= 0.20
+-- 
+2.48.1
+

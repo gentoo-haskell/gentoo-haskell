@@ -17,9 +17,14 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+GHC_BOOTSTRAP_PACKAGES=(
+	cabal-doctest
+	)
+
 PATCHES=(
 	"${FILESDIR}/${PN}-0.11.0-fix-tests-aeson-2.patch"
 	"${FILESDIR}/${PN}-0.11.0-fix-doctests.patch"
+	"${FILESDIR}/${PN}-0.11.0-cabal-doctest.patch"
 )
 
 RDEPEND="
@@ -49,5 +54,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-hunit-0.4
 		>=dev-haskell/tasty-quickcheck-0.3
 		>=dev-haskell/tasty-th-0.1
+		dev-haskell/cabal-doctest
+		dev-haskell/base-compat
 	)
 "
