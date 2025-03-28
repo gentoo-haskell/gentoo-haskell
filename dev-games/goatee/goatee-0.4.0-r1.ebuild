@@ -16,7 +16,12 @@ LICENSE="AGPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+CABAL_CHDEPS=(
+	'mtl >= 2.1 && < 2.3' 'mtl >= 2.1'
+	'template-haskell >= 2.7 && < 2.17' 'template-haskell >= 2.7'
+	)
+
+RDEPEND=">=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-lang/ghc-8.6.3:=
 "
