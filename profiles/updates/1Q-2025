@@ -11,3 +11,4 @@ slotmove dev-haskell/haskell-src-exts 1.22 0
 slotmove dev-haskell/haskell-src-exts-simple 1.23 0
 slotmove dev-haskell/hdbc-odbc 2 0
 slotmove www-apps/darcsweb 1.1 0
+move dev-haskell/fix-agda-whitespace dev-haskell/fix-whitespace
