@@ -16,11 +16,15 @@ LICENSE="AGPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'mtl >= 2.1 && < 2.3' 'mtl >= 2.1'
+)
+
 RDEPEND=">=dev-games/goatee-0.4:=[profile?] <dev-games/goatee-0.5:=[profile?]
 	>=dev-haskell/cairo-0.13:=[profile?] <dev-haskell/cairo-0.14:=[profile?]
 	>=dev-haskell/glib-0.13:=[profile?] <dev-haskell/glib-0.14:=[profile?]
 	>=dev-haskell/gtk-0.13:=[profile?] <dev-haskell/gtk-0.16:=[profile?]
-	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+	>=dev-haskell/mtl-2.1:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
