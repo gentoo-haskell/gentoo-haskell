@@ -17,6 +17,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'bytestring                    >= 0.10 && < 0.12' 'bytestring >= 0.10'
+	'vector                        >= 0.11 && < 0.13' 'vector >= 0.11'
+	)
+
 RDEPEND=">=dev-haskell/bmp-1.2:= <dev-haskell/bmp-1.3:=
 	>=dev-haskell/gloss-1.13:= <dev-haskell/gloss-1.14:=
 	>=dev-haskell/gloss-algorithms-1.13:= <dev-haskell/gloss-algorithms-1.14:=
@@ -25,7 +30,7 @@ RDEPEND=">=dev-haskell/bmp-1.2:= <dev-haskell/bmp-1.3:=
 	>=dev-haskell/repa-3.4:= <dev-haskell/repa-3.5:=
 	>=dev-haskell/repa-algorithms-3.4:= <dev-haskell/repa-algorithms-3.5:=
 	>=dev-haskell/repa-io-3.4:= <dev-haskell/repa-io-3.5:=
-	>=dev-haskell/vector-0.11:= <dev-haskell/vector-0.13:=
+	>=dev-haskell/vector-0.11:=
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
