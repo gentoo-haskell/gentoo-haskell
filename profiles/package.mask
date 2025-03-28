@@ -400,7 +400,6 @@ dev-haskell/zxcvbn-hs
 dev-haskell/pipes-cereal
 dev-haskell/pipes-network
 dev-haskell/pipes-text
-dev-haskell/pipes-zlib
 dev-haskell/ihaskell-diagrams
 
 # hololeap <hololeap@protonmail.com> (2022-02-22)
