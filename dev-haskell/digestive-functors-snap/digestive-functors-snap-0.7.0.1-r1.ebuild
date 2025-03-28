@@ -15,12 +15,15 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 
+CABAL_CHDEPS=(
+	'bytestring            >= 0.9  && < 0.11' 'bytestring >= 0.9'
+	'text                  >= 0.11 && < 1.3' 'text >= 0.11'
+)
 RDEPEND=">=dev-haskell/digestive-functors-0.8:=[profile?] <dev-haskell/digestive-functors-0.9:=[profile?]
 	>=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-3:=[profile?]
 	>=dev-haskell/snap-core-1.0:=[profile?] <dev-haskell/snap-core-1.1:=[profile?]
-	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-0.11:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
