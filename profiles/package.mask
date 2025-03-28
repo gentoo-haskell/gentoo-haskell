@@ -216,11 +216,6 @@ app-text/pdfsplit
 # Removal on 2025-03-11.
 dev-haskell/pdfinfo
 
-# Jack Todaro <solpeth@posteo.org> (2025-02-09)
-# Unmaintained since 2016. Does not build with newer ghc.
-# Removal on 2025-03-11.
-dev-haskell/data-lens-template
-
 # Jack Todaro <solpeth@posteo.org> (2025-02-08)
 # Packages depend on HSOpenSSL, which does not currently build against
 # openssl-3. Upstream is yet to rectify this matter, and other packages
