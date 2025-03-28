@@ -17,20 +17,22 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+optimize"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.8.patch
+	)
+
 RDEPEND=">=dev-haskell/stm-2.1:=[profile?]
-	>=dev-haskell/transformers-0.2.2.0:=[profile?] <dev-haskell/transformers-0.6:=[profile?]
+	>=dev-haskell/transformers-0.2.2.0:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.6
 "
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
+CABAL_CHDEPS=(
 		'stm >= 2.1 && < 2.5' 'stm >= 2.1'
-}
+		'transformers >= 0.2.2.0 && < 0.6' 'transformers >= 0.2.2.0'
+)
 
 src_configure() {
 	haskell-cabal_src_configure \

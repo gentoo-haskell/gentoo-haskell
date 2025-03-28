@@ -1,0 +1,16 @@
+From https://github.com/ekmett/speculation/pull/5
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sun, 23 Mar 2025 18:26:41 +0100
+Subject: [PATCH] compatibility with recent ghc
+
+--- a/src/Control/Concurrent/Speculation/Foldable.hs
++++ b/src/Control/Concurrent/Speculation/Foldable.hs
+@@ -75,7 +75,7 @@ import qualified Data.Foldable as Foldable
+ import Control.Concurrent.STM
+ import Control.Concurrent.Speculation
+ import Control.Concurrent.Speculation.Internal
+-import Control.Applicative
++import Control.Applicative hiding (asum)
+ import Control.Monad hiding (mapM_, msum, forM_, sequence_)
+ 
+ -- | Given a valid estimator @g@, @'fold' g f xs@ yields the same answer as @'fold' f xs@.
