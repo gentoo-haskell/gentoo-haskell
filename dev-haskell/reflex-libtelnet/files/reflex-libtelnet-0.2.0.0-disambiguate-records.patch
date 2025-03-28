@@ -1,0 +1,32 @@
+From 794bc95d247a3128a56302ffe694afde0249331e Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Tue, 25 Mar 2025 19:37:24 +0100
+Subject: [PATCH] disambiguate records
+
+--- a/src/Reflex/LibTelnet.hs
++++ b/src/Reflex/LibTelnet.hs
+@@ -6,6 +6,7 @@
+ {-# LANGUAGE RankNTypes            #-}
+ {-# LANGUAGE ScopedTypeVariables   #-}
+ {-# LANGUAGE TemplateHaskell       #-}
++{-# LANGUAGE RecordWildCards       #-}
+ 
+ {-|
+ Module      : Reflex.LibTelnet
+@@ -233,10 +234,10 @@ telnet config = do
+         fireTelnetExcE ex
+ 
+   perform Telnet.telnetRecv recv
+-  perform Telnet.telnetSend send
+-  perform Telnet.telnetIac iac
++  perform Telnet.telnetSend (\ TelnetConfig {..} -> send)
++  perform Telnet.telnetIac (\ TelnetConfig {..} -> iac)
+   perform (uncurry . Telnet.telnetNegotiate) negotiate
+-  perform (uncurry . Telnet.telnetSubnegotiation) subnegotiation
++  perform (uncurry . Telnet.telnetSubnegotiation) (\ TelnetConfig {..} -> subnegotiation)
+   perform (const . Telnet.telnetBeginCompress2) beginCompress2
+   perform Telnet.telnetNewEnvironSend newEnvironSend
+   perform (uncurry . Telnet.telnetNewEnviron) newEnviron
+-- 
+2.48.1
+

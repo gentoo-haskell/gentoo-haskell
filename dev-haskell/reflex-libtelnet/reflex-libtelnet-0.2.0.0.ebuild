@@ -19,6 +19,11 @@ CABAL_CHDEPS=(
 	'base                    >=4.11     && <4.16' 'base >=4.11'
 	'dependent-sum-template  ^>=0.1' 'dependent-sum-template >=0.1'
 	'reflex                  >=0.5      && <0.9' 'reflex >=0.5'
+	'bytestring              >=0.10.8.2 && <0.12' 'bytestring >= 0.10.8.2'
+)
+
+PATCHES=(
+	"${FILESDIR}"/${P}-disambiguate-records.patch
 )
 
 RDEPEND="
