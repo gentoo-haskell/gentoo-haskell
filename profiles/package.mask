@@ -1,4 +1,4 @@
-# GdeVolpiano <xavier@wheredoibegin.fr>
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-03-28)
 #
 # The current upstream version of dev-haskell/cuda is not compatible with the
 # gentoo's current version of nvidia-cuda-toolkit. Also, nvidia-cuda-toolkit is
@@ -7,12 +7,12 @@
 dev-haskell/cuda
 dev-haskell/cufft
 
-# GdeVolpiano <xavier@wheredoibegin.fr>
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-03-28)
 #
 # Various outdated packages which either fail to build, have been deprecated
 # upstream or depend on other outdated packages. Mask for removal in 30 days.
 #
-# Removal: 2025-04-25
+# Removal: 2025-04-27
 
 dev-haskell/sbvplugin
 dev-haskell/binary-strict
