@@ -16,8 +16,13 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="sumtypes"
 
+CABAL_CHDEPS=(
+	'ghc >= 8.2 && < 9.7' 'ghc >= 8.2'
+	'ghci >= 8.2 && < 9.7' 'ghci >= 8.2'
+)
+
 RDEPEND=">=dev-haskell/derive-storable-0.3:=[profile?] <dev-haskell/derive-storable-0.4:=[profile?]
-	>=dev-lang/ghc-8.2:=[profile?] <dev-lang/ghc-9.7:=[profile?]
+	>=dev-lang/ghc-8.2:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
 DEPEND="${RDEPEND}
