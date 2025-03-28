@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/dylex/postgresql-typed"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="+aeson +binary +crypton +hdbc +md5 +scientific +text +tls +uuid"
+IUSE="+aeson +binary +hdbc +md5 +scientific +text +tls +uuid"
 RESTRICT=test # needs database access at compile time
 
 RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
@@ -33,25 +33,17 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?] <dev-haskell/attoparsec-0.15:
 			uuid? ( >=dev-haskell/uuid-1.3:=[profile?] ) )
 	hdbc? ( >=dev-haskell/hdbc-2.2:=[profile?] )
 	md5? ( >=dev-haskell/memory-0.5:=[profile?]
-		crypton? ( dev-haskell/crypton:=[profile?] )
-		!crypton? ( >=dev-haskell/cryptonite-0.5:=[profile?] )
-		tls? ( crypton? ( dev-haskell/crypton-x509:=[profile?]
+		dev-haskell/crypton:=[profile?]
+		>=dev-haskell/cryptonite-0.5:=[profile?]
+		tls? ( dev-haskell/crypton-x509:=[profile?]
 					dev-haskell/crypton-x509-store:=[profile?]
 					dev-haskell/crypton-x509-validation:=[profile?]
-					>=dev-haskell/tls-1.7:=[profile?] )
-			!crypton? ( <dev-haskell/tls-1.7:=[profile?]
-					dev-haskell/x509:=[profile?]
-					dev-haskell/x509-store:=[profile?]
-					dev-haskell/x509-validation:=[profile?] ) ) )
-	tls? ( dev-haskell/data-default:=[profile?]
-		crypton? ( dev-haskell/crypton-x509:=[profile?]
-				dev-haskell/crypton-x509-store:=[profile?]
-				dev-haskell/crypton-x509-validation:=[profile?]
-				>=dev-haskell/tls-1.7:=[profile?] )
-		!crypton? ( <dev-haskell/tls-1.7:=[profile?]
-				dev-haskell/x509:=[profile?]
-				dev-haskell/x509-store:=[profile?]
-				dev-haskell/x509-validation:=[profile?] ) )
+					>=dev-haskell/tls-1.7:=[profile?] ) )
+	tls? ( 	dev-haskell/data-default:=[profile?]
+		   	dev-haskell/crypton-x509:=[profile?]
+			dev-haskell/crypton-x509-store:=[profile?]
+			dev-haskell/crypton-x509-validation:=[profile?]
+			>=dev-haskell/tls-1.7:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
@@ -61,7 +53,7 @@ src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag aeson aeson) \
 		$(cabal_flag binary binary) \
-		$(cabal_flag crypton crypton) \
+		--flags=crypton \
 		$(cabal_flag hdbc hdbc) \
 		$(cabal_flag md5 md5) \
 		$(cabal_flag scientific scientific) \
