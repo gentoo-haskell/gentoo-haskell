@@ -130,14 +130,6 @@ app-text/haskell-awk
 
 >=dev-haskell/doctest-0.23
 
-# hololeap <hololeap@protonmail.com> (2025-02-21)
-#
-# These packages are not building with recent GHC versions and have not been
-# updated in years. Mask for removal in 30 days.
-#
-# Removal: 2025-03-23
-dev-haskell/monadloc
-
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
 # Mask hls-*-plugin packages. These are needed because of a bug in musl setups
