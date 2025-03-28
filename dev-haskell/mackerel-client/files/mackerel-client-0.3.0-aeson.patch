@@ -1,0 +1,159 @@
+From https://github.com/itchyny/mackerel-client-hs/pull/2
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sat, 22 Mar 2025 19:19:27 +0100
+Subject: [PATCH] porting to Aeson 2.0
+
+---
+ test/Types/AlertSpec.hs           | 2 +-
+ test/Types/ChannelSpec.hs         | 2 +-
+ test/Types/DashboardSpec.hs       | 2 +-
+ test/Types/GraphAnnotationSpec.hs | 2 +-
+ test/Types/HostSpec.hs            | 5 +++--
+ test/Types/InvitationSpec.hs      | 2 +-
+ test/Types/MetadataSpec.hs        | 2 +-
+ test/Types/RoleSpec.hs            | 2 +-
+ test/Types/ServiceSpec.hs         | 2 +-
+ test/Types/UserSpec.hs            | 2 +-
+ 10 files changed, 12 insertions(+), 11 deletions(-)
+
+diff --git a/test/Types/AlertSpec.hs b/test/Types/AlertSpec.hs
+index 525e33e..d2a76fb 100644
+--- a/test/Types/AlertSpec.hs
++++ b/test/Types/AlertSpec.hs
+@@ -4,7 +4,7 @@ module Types.AlertSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Alert
+diff --git a/test/Types/ChannelSpec.hs b/test/Types/ChannelSpec.hs
+index 6fa11f5..4eec195 100644
+--- a/test/Types/ChannelSpec.hs
++++ b/test/Types/ChannelSpec.hs
+@@ -4,7 +4,7 @@ module Types.ChannelSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Channel
+diff --git a/test/Types/DashboardSpec.hs b/test/Types/DashboardSpec.hs
+index a147c32..ed04201 100644
+--- a/test/Types/DashboardSpec.hs
++++ b/test/Types/DashboardSpec.hs
+@@ -4,7 +4,7 @@ module Types.DashboardSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Dashboard
+diff --git a/test/Types/GraphAnnotationSpec.hs b/test/Types/GraphAnnotationSpec.hs
+index c88612c..a8cf6c2 100644
+--- a/test/Types/GraphAnnotationSpec.hs
++++ b/test/Types/GraphAnnotationSpec.hs
+@@ -4,7 +4,7 @@ module Types.GraphAnnotationSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.GraphAnnotation
+diff --git a/test/Types/HostSpec.hs b/test/Types/HostSpec.hs
+index aa37c34..0492685 100644
+--- a/test/Types/HostSpec.hs
++++ b/test/Types/HostSpec.hs
+@@ -5,6 +5,7 @@ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+ import Data.Default
++import qualified Data.Aeson.KeyMap as KM
+ import qualified Data.HashMap.Lazy as HM
+ import Test.Hspec
+ 
+@@ -212,9 +213,9 @@ spec = do
+       decode "{}" `shouldBe` (Nothing :: Maybe Host)
+       let (Object hm) = json1
+       forM_ ["id", "name", "status", "memo", "roles", "isRetired", "createdAt", "meta", "interfaces"] $ \key ->
+-        decode (encode (Object (HM.delete key hm))) `shouldBe` (Nothing :: Maybe Host)
++        decode (encode (Object (KM.delete key hm))) `shouldBe` (Nothing :: Maybe Host)
+       forM_ ["status", "roles", "isRetired", "createdAt", "meta", "interfaces"] $ \key ->
+-        decode (encode (Object (HM.insert key "invalid" hm))) `shouldBe` (Nothing :: Maybe Host)
++        decode (encode (Object (KM.insert key "invalid" hm))) `shouldBe` (Nothing :: Maybe Host)
+ 
+   describe "Host ToJSON" $
+     it "should encode into a json" $
+diff --git a/test/Types/InvitationSpec.hs b/test/Types/InvitationSpec.hs
+index 1b298e1..16fc4ff 100644
+--- a/test/Types/InvitationSpec.hs
++++ b/test/Types/InvitationSpec.hs
+@@ -4,7 +4,7 @@ module Types.InvitationSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Authority
+diff --git a/test/Types/MetadataSpec.hs b/test/Types/MetadataSpec.hs
+index 2e11bcb..9b8d70a 100644
+--- a/test/Types/MetadataSpec.hs
++++ b/test/Types/MetadataSpec.hs
+@@ -4,7 +4,7 @@ module Types.MetadataSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Metadata
+diff --git a/test/Types/RoleSpec.hs b/test/Types/RoleSpec.hs
+index fca3337..42b94aa 100644
+--- a/test/Types/RoleSpec.hs
++++ b/test/Types/RoleSpec.hs
+@@ -4,7 +4,7 @@ module Types.RoleSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Role
+diff --git a/test/Types/ServiceSpec.hs b/test/Types/ServiceSpec.hs
+index 26df45c..444bb5b 100644
+--- a/test/Types/ServiceSpec.hs
++++ b/test/Types/ServiceSpec.hs
+@@ -4,7 +4,7 @@ module Types.ServiceSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Service
+diff --git a/test/Types/UserSpec.hs b/test/Types/UserSpec.hs
+index 0389f95..8858906 100644
+--- a/test/Types/UserSpec.hs
++++ b/test/Types/UserSpec.hs
+@@ -4,7 +4,7 @@ module Types.UserSpec where
+ import Control.Monad (forM_)
+ import Data.Aeson (decode, encode, Value(..))
+ import Data.Aeson.QQ
+-import qualified Data.HashMap.Lazy as HM
++import qualified Data.Aeson.KeyMap as HM
+ import Test.Hspec
+ 
+ import Web.Mackerel.Types.Authority
