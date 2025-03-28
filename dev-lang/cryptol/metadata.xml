@@ -7,7 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="ffi">Enable the foreign function interface</flag>
-		<flag name="relocatable">Don&#39;t use the Cabal-provided data directory for looking up Cryptol libraries.</flag>
+		<flag name="relocatable">Don't use the Cabal-provided data directory for looking up Cryptol libraries.</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">cryptol</remote-id>
