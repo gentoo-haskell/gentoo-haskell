@@ -254,7 +254,6 @@ net-irc/glirc
 # Removal on 2025-03-09.
 www-apps/clckwrks
 www-apps/clckwrks-cli
-www-apps/clckwrks-plugin-media
 
 # Jack Todaro <solpeth@posteo.org> (2025-02-03)
 # Too many packages require <tasty-1.5. Mask until ready.
