@@ -1,0 +1,19 @@
+From 074642f0d79e6977f2b8ee49377d21076555c965 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sat, 22 Mar 2025 12:29:58 +0100
+Subject: [PATCH] mtl 
+
+--- a/Crypto/Random/DRBG.hs
++++ b/Crypto/Random/DRBG.hs
+@@ -95,7 +95,7 @@ import System.Entropy
+ import qualified Data.ByteString as B
+ import Data.Tagged
+ import Control.Parallel
+-import Control.Monad.Error () -- Either instance
++import Control.Monad.Except () -- Either instance
+ import Data.Word
+ 
+ instance H.SeedLength SHA512 where
+-- 
+2.48.1
+
