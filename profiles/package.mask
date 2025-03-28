@@ -139,7 +139,6 @@ app-text/haskell-awk
 dev-haskell/monadloc
 dev-haskell/control-monad-exception
 dev-haskell/bitsyntax
-dev-haskell/base32-bytestring
 
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
