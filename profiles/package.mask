@@ -141,7 +141,6 @@ dev-haskell/control-monad-exception
 dev-haskell/bitsyntax
 dev-haskell/base32-bytestring
 dev-haskell/hssyck
-dev-haskell/yaml-light
 
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
