@@ -23,7 +23,12 @@ CABAL_CHDEPS=(
 	'base-compat >= 0.11 && < 0.13' 'base-compat >= 0.11'
 	'doctest >= 0.17 && < 0.22' 'doctest >= 0.17'
 	'hspec >= 2.6.1 && < 2.11' 'hspec >= 2.6.1'
+	'lens >= 4.17 && < 5.3' 'lens >= 4.17'
 )
+
+PATCHES=(
+	"${FILESDIR}"/${P}-disable-doctests.patch
+	)
 
 RDEPEND="
 	=dev-haskell/barbies-2.0*:=[profile?]
@@ -40,6 +45,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/base-compat-0.11
 		>=dev-haskell/doctest-0.17
 		>=dev-haskell/hspec-2.6.1
-		>=dev-haskell/lens-4.17 <dev-haskell/lens-5.3
+		>=dev-haskell/lens-4.17
 	)
 "
