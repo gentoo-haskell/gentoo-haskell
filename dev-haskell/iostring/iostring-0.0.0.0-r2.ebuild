@@ -18,15 +18,15 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND=">=dev-haskell/path-0.5:=[profile?]
-	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
 
-src_prepare() {
-	default
-	cabal_chdeps \
+CABAL_CHDEPS=(
 		'path >=0.5 && <0.6' 'path >=0.5'
-}
+		'text >=1.2 && <1.3' 'text >=1.2'
+		'bytestring >=0.10 && <0.11' 'bytestring >=0.10'
+)
