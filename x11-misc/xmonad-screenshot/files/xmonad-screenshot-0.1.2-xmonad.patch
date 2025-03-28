@@ -1,0 +1,45 @@
+From https://github.com/supki/xmonad-screenshot/pull/10
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sat, 22 Mar 2025 16:17:28 +0100
+Subject: [PATCH] fixing for recent xmonad
+
+--- a/src/XMonad/Util/WorkspaceScreenshot/Internal.hs
++++ b/src/XMonad/Util/WorkspaceScreenshot/Internal.hs
+@@ -19,7 +19,7 @@ module XMonad.Util.WorkspaceScreenshot.Internal
+ 
+ import Control.Applicative ((<$>))
+ import Control.Concurrent (threadDelay)
+-import Control.Monad (filterM, foldM_, (>=>))
++import Control.Monad (filterM, foldM_, (>=>), void)
+ import Data.Maybe (catMaybes)
+ import Data.String (fromString)
+ 
+@@ -48,7 +48,8 @@ captureWorkspacesWhenId p hook mode = do
+   c <- gets $ S.currentTag . windowset
+   ps <- catMaybes <$> (mapM (\t -> windows (S.view t) >> captureScreen) =<< filterM p =<< asks (workspaces . config))
+   windows $ S.view c
+-  xfork $ merge mode ps >>= hook
++  fp <- merge mode ps
++  void . xfork $ hook fp
+   return ()
+ 
+ 
+@@ -116,12 +117,12 @@ vertically = CapturingLayout
+ 
+ 
+ -- Contruct final image from the list of pixbufs.
+-merge :: CapturingLayout -> [Pixbuf] -> IO FilePath
++merge :: CapturingLayout -> [Pixbuf] -> X FilePath
+ merge layout ps = do
+-  (h, w) <- dimensions layout ps
+-  p <- pixbufNew ColorspaceRgb False 8 w h
+-  fill layout ps p
+-  dir <- getXMonadDir
++  (h, w) <- liftIO $ dimensions layout ps
++  p <- liftIO $ pixbufNew ColorspaceRgb False 8 w h
++  liftIO $ fill layout ps p
++  dir <- asks (cfgDir .directories) 
+   let filepath = (dir ++ "/screenshot.png")
+-  pixbufSave p filepath (fromString "png") ([] :: [(String,String)])
++  liftIO $ pixbufSave p filepath (fromString "png") ([] :: [(String,String)])
+   return filepath

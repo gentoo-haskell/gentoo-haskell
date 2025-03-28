@@ -16,6 +16,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-xmonad.patch
+)
+
 RDEPEND=">=dev-haskell/gtk-0.12.3:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 	>=x11-wm/xmonad-0.9:=[profile?]
