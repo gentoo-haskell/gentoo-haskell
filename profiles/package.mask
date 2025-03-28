@@ -25,7 +25,7 @@ dev-haskell/uuagc-bootstrap
 dev-haskell/hasmin
 dev-haskell/json-bytes-builder
 dev-haskell/monadcatchio-transformers
-dev-haskell/spago
+dev-util/spago
 dev-lang/hugs98
 dev-haskell/qrimager
 
