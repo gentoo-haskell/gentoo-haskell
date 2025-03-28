@@ -15,8 +15,17 @@ LICENSE="MPL-2.0"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base >= 4.10 && < 4.18' 'base >= 4.10'
+	'deepseq ^>= 1.4' 'deepseq >= 1.4'
+	'ghc-prim >= 0.5.1.1 && < 0.10' 'ghc-prim >= 0.5.1.1'
+	'hedgehog >= 1.0 && < 1.3' 'hedgehog >= 1.0'
+	'hspec >= 2.7.1 && < 2.11' 'hspec >= 2.7.1'
+	'primitive ^>= 0.7.0' 'primitive >= 0.7.0'
+)
+
 RDEPEND="
-	>=dev-haskell/primitive-0.7.0:=[profile?] <dev-haskell/primitive-0.8:=[profile?]
+	>=dev-haskell/primitive-0.7.0:=[profile?]
 	>=dev-haskell/vector-0.12.0.1:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
 "
@@ -24,8 +33,8 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.0.0.0
 	test? (
 		>=dev-haskell/ghc-typelits-knownnat-0.4.2 <dev-haskell/ghc-typelits-knownnat-0.8
-		>=dev-haskell/hedgehog-1.0 <dev-haskell/hedgehog-1.3
-		>=dev-haskell/hspec-2.7.1 <dev-haskell/hspec-2.11
+		>=dev-haskell/hedgehog-1.0
+		>=dev-haskell/hspec-2.7.1
 		>=dev-haskell/hspec-hedgehog-0.0.1 <dev-haskell/hspec-hedgehog-0.1
 	)
 "
