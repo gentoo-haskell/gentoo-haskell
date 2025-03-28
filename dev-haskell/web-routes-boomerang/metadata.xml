@@ -5,7 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This module add support for creating url parsers/printers using a single unified grammar specification
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">web-routes-boomerang</remote-id>
+		<remote-id type="github">Happstack/web-routes-boomerang</remote-id>
+		<remote-id type="github">happstack/web-routes-boomerang</remote-id>
+	</upstream>
 </pkgmetadata>
