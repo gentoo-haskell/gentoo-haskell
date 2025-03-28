@@ -138,7 +138,6 @@ app-text/haskell-awk
 # Removal: 2025-03-23
 dev-haskell/monadloc
 dev-haskell/control-monad-exception
-dev-haskell/bitsyntax
 
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
