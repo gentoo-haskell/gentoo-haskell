@@ -5,6 +5,15 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="argon2">Compile with Argon2 support?</flag>
+		<flag name="bcrypt">Compile with bcrypt support?</flag>
+		<flag name="crypton">Use the [crypton] library as the cryptographic backend.
+(Does nothing since version 3.1.0.0; might be removed in a future major version)</flag>
+		<flag name="cryptonite">Use the [cryptonite] library as the cryptographic backend.</flag>
+		<flag name="pbkdf2">Compile with PBKDF2 support?</flag>
+		<flag name="scrypt">Compile with scrypt support?</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">password</remote-id>
 		<remote-id type="github">cdepillabout/password</remote-id>
