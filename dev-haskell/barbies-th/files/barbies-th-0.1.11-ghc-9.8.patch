@@ -1,0 +1,25 @@
+From https://github.com/fumieval/barbies-th/commit/14d55965e2061e177fa6b8ba1bcb142861d8dbf9
+From: kamoii <>
+Date: Thu, 25 Apr 2024 04:52:35 +0900
+Subject: [PATCH] support GHC 9.8.2
+
+---
+ barbies-th.cabal  | 4 ++--
+ src/Barbies/TH.hs | 4 +++-
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/src/Barbies/TH.hs b/src/Barbies/TH.hs
+index b1b4622..7f9bc10 100644
+--- a/src/Barbies/TH.hs
++++ b/src/Barbies/TH.hs
+@@ -257,7 +257,9 @@ declareBareBWith DeclareBareBConfig{..} decsQ = do
+         standaloneDerivWithStrategyD strat (pure []) [t|$(cls) $(pure bareType)|])
+         [ (strat, pure t) | (_, DerivClause strat preds) <- classes', t <- preds ]
+       return $ DataD [] dataName
+-#if MIN_VERSION_template_haskell(2,17,0)
++#if MIN_VERSION_template_haskell(2,21,0)
++        (tvbs ++ [PlainTV nSwitch BndrReq, KindedTV nWrap BndrReq (AppT (AppT ArrowT StarT) StarT)])
++#elif MIN_VERSION_template_haskell(2,17,0)
+         (tvbs ++ [PlainTV nSwitch (), KindedTV nWrap () (AppT (AppT ArrowT StarT) StarT)])
+ #else
+         (tvbs ++ [PlainTV nSwitch, KindedTV nWrap (AppT (AppT ArrowT StarT) StarT)])
