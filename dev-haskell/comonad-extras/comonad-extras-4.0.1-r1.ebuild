@@ -15,11 +15,15 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+	'semigroupoids        >= 4     && < 6' 'semigroupoids >= 4'
+	'transformers         >= 0.2   && < 0.6' 'transformers >= 0.2'
+)
 
 RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/distributive-0.3.2:=[profile?] <dev-haskell/distributive-1:=[profile?]
-	>=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
+	>=dev-haskell/semigroupoids-4:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
