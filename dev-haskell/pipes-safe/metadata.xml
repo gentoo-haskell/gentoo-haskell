@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">pipes-safe</remote-id>
+		<remote-id type="github">Gabriella439/Haskell-Pipes-Safe-Library</remote-id>
+	</upstream>
 </pkgmetadata>
