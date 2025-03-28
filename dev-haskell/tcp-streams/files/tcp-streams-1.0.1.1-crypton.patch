@@ -1,0 +1,67 @@
+From https://github.com/didi-FP/tcp-streams/pull/10
+From: Imants Cekusins <imantc@gmail.com>
+Date: Sat, 28 Dec 2024 14:46:03 +0200
+Subject: [PATCH] issue #9 : fix X509 dependencies
+
+--- a/Data/TLSSetting.hs
++++ b/Data/TLSSetting.hs
+@@ -65,7 +65,7 @@ makeClientParams :: TrustedCAStore          -- ^ trusted certificates.
+ makeClientParams tca = do
+     caStore <- makeCAStore tca
+     return (TLS.defaultParamsClient "" B.empty)
+-        {   TLS.clientSupported = def { TLS.supportedCiphers = TLS.ciphersuite_all }
++        {   TLS.clientSupported = def { TLS.supportedCiphers = TLS.ciphersuite_default }
+         ,   TLS.clientShared    = def
+             {   TLS.sharedCAStore         = caStore
+             ,   TLS.sharedValidationCache = def
+--- a/System/IO/Streams/TCP.hs
++++ b/System/IO/Streams/TCP.hs
+@@ -28,7 +28,7 @@ module System.IO.Streams.TCP
+ 
+ import qualified Control.Exception         as E
+ import           Control.Monad
+-import           Data.Connection
++import           Data.Connection           hiding (send)
+ import qualified Data.ByteString           as B
+ import qualified Data.ByteString.Lazy.Internal as L
+ import qualified Network.Socket            as N
+@@ -81,10 +81,10 @@ connectSocket host port = do
+                                   return (sock, addr)
+                      )
+   where
+-    resolveAddrInfo host port = do
++    resolveAddrInfo host1 port1 = do
+         -- Partial function here OK, network will throw an exception rather than
+         -- return the empty list here.
+-        (addrInfo:_) <- N.getAddrInfo (Just hints) (Just host) (Just $ show port)
++        (addrInfo:_) <- N.getAddrInfo (Just hints) (Just host1) (Just $ show port1)
+         let family     = N.addrFamily addrInfo
+         let socketType = N.addrSocketType addrInfo
+         let protocol   = N.addrProtocol addrInfo
+@@ -110,8 +110,8 @@ socketToConnection bufsiz (sock, addr) = do
+     return (Connection is (send sock) (N.close sock) (sock, addr))
+   where
+     send _    (L.Empty) = return ()
+-    send sock (L.Chunk bs L.Empty) = unless (B.null bs) (NB.sendAll sock bs)
+-    send sock lbs = NL.sendAll sock lbs
++    send sock1 (L.Chunk bs L.Empty) = unless (B.null bs) (NB.sendAll sock1 bs)
++    send sock1 lbs = NL.sendAll sock1 lbs
+ 
+ -- | Connect to server using 'defaultChunkSize'.
+ --
+--- a/tcp-streams.cabal
++++ b/tcp-streams.cabal
+@@ -37,10 +37,10 @@ library
+                     ,   bytestring     >= 0.10.2.0
+                     ,   io-streams     >= 1.2 && < 2.0
+                     ,   tls            >= 1.3 && < 2.0
++                    ,   crypton-x509   >= 1.7
++                    ,   crypton-x509-store >= 1.6.9
++                    ,   crypton-x509-system >= 1.6.7
+                     ,   data-default-class
+-                    ,   x509           >= 1.5 && < 2.0
+-                    ,   x509-system    >= 1.5 && < 2.0
+-                    ,   x509-store     >= 1.5 && < 2.0
+                     ,   pem           
+ 
+   ghc-options:    -Wall

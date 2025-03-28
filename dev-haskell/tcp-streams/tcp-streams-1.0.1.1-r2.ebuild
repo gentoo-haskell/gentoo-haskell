@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,14 +21,18 @@ CABAL_CHDEPS=(
 	'tls            >= 1.3 && < 2.0' 'tls >= 1.3'
 )
 
-RDEPEND="dev-haskell/data-default-class:=[profile?]
+PATCHES=(
+	"${FILESDIR}"/${P}-crypton.patch
+)
+
+RDEPEND=">=dev-haskell/crypton-x509-1.7:=[profile?]
+	>=dev-haskell/crypton-x509-store-1.6.9:=[profile?]
+	>=dev-haskell/crypton-x509-system-1.6.7:=[profile?]
+	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/io-streams-1.2:=[profile?] <dev-haskell/io-streams-2.0:=[profile?]
 	>=dev-haskell/network-2.3:=[profile?] <dev-haskell/network-4.0:=[profile?]
 	dev-haskell/pem:=[profile?]
-	>=dev-haskell/tls-1.3:=[profile?] <dev-haskell/tls-2.0:=[profile?]
-	>=dev-haskell/x509-1.5:=[profile?] <dev-haskell/x509-2.0:=[profile?]
-	>=dev-haskell/x509-store-1.5:=[profile?] <dev-haskell/x509-store-2.0:=[profile?]
-	>=dev-haskell/x509-system-1.5:=[profile?] <dev-haskell/x509-system-2.0:=[profile?]
+	>=dev-haskell/tls-1.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
