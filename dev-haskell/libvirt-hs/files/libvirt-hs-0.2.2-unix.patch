@@ -1,0 +1,26 @@
+From https://github.com/portnov/libvirt-hs/pull/7 
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Tue, 25 Mar 2025 06:31:25 +0100
+Subject: [PATCH] Compatibility with recent unix
+
+--- a/System/LibVirt/Foreign.chs
++++ b/System/LibVirt/Foreign.chs
+@@ -1,4 +1,5 @@
+-{-# LANGUAGE ForeignFunctionInterface, StandaloneDeriving, DeriveDataTypeable, EmptyDataDecls #-}
++{-# LANGUAGE ForeignFunctionInterface, StandaloneDeriving, DeriveDataTypeable,
++EmptyDataDecls, CPP #-}
+ 
+ {# context lib="virt" prefix="vir" #}
+ 
+@@ -684,7 +685,11 @@ uploadStorageVolPartial path vol off len = do
+   st <- newStream conn []
+   {# call virStorageVolUpload #}
+     (storageVolToPtr vol) (streamToPtr st) off len 0 >>= exceptionOnMinusOne
++#ifdef MIN_VERSION_unix(2,8,0)
++  fd <- openFd path ReadOnly defaultFileFlags
++#else
+   fd <- openFd path ReadOnly Nothing defaultFileFlags
++#endif
+   alloca $ \fdptr -> do
+     poke fdptr fd
+     {# call virStreamSendAll #}

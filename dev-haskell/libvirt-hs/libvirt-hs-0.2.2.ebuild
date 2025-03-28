@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-unix.patch
+)
 
 RDEPEND="app-emulation/libvirt
 	>=dev-haskell/syb-0.1.0.2:=[profile?]
