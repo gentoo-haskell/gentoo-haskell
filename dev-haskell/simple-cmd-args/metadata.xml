@@ -5,10 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
-	<longdescription>
-		This is a small wrapper over optparse-applicative which
-		allows combining args parsers directly with IO commands.
-		For subcommands this can avoid type boilerplate.
-		It also provides some compact aliases for options with their Mod&#39;s.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">simple-cmd-args</remote-id>
+		<remote-id type="github">juhp/simple-cmd-args</remote-id>
+	</upstream>
 </pkgmetadata>
