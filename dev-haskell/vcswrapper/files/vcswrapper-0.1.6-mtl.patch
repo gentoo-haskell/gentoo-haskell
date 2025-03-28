@@ -1,0 +1,26 @@
+From https://github.com/forste/haskellVCSWrapper/pull/12
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sun, 23 Mar 2025 16:27:28 +0100
+Subject: [PATCH] fixing for mtl-2.3+
+
+--- a/src/VCSWrapper/Common/Process.hs
++++ b/src/VCSWrapper/Common/Process.hs
+@@ -25,7 +25,8 @@ import System.Environment (getEnvironment)
+ import System.Exit
+ import System.IO (Handle, hFlush, hClose, hGetContents, hPutStr)
+ import Control.Concurrent
+-import Control.Monad.Reader (ask, liftIO, when)
++import Control.Monad.IO.Class (liftIO)
++import Control.Monad.Reader (ask)
+ import qualified Control.Exception as Exc
+ import VCSWrapper.Common.Types
+ import Data.Maybe
+@@ -33,7 +34,7 @@ import Data.Monoid (mconcat)
+ import Data.Text (Text)
+ import qualified Data.Text as T (null, unpack, pack)
+ import qualified Data.Map.Strict as Map
+-import Control.Monad (unless)
++import Control.Monad (unless, when)
+ import Control.Exception (IOException, try)
+ 
+ -- | Internal function to execute a VCS command. Throws an exception if the command fails.
