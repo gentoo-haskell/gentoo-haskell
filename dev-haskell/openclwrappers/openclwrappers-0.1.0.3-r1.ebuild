@@ -20,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="link"
 
-RDEPEND=">=dev-haskell/mtl-2:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
+RDEPEND=">=dev-haskell/mtl-2:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 	virtual/opencl
 "
@@ -30,12 +30,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
+CABAL_CHDEPS=(
 		'base < 4.8' 'base'
-}
+		'mtl >= 2 && < 2.3' 'mtl >= 2'
+)
 
 src_configure() {
 	haskell-cabal_src_configure \
