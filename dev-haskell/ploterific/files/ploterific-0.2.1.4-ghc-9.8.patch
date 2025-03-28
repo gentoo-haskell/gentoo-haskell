@@ -1,0 +1,32 @@
+From 042259170367ee90d6d49810343e92f6ca4dffa8 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Mon, 24 Mar 2025 14:45:33 +0100
+Subject: [PATCH] Porting to recent base
+
+---
+ src/Ploterific/Plot/Plot.hs | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/Ploterific/Plot/Plot.hs b/src/Ploterific/Plot/Plot.hs
+index b7eaaf7..11be669 100644
+--- a/src/Ploterific/Plot/Plot.hs
++++ b/src/Ploterific/Plot/Plot.hs
+@@ -22,7 +22,7 @@ import Data.Colour.SRGB (sRGB24show)
+ import Data.Either (rights)
+ import Data.List (foldl')
+ import Data.Maybe (fromMaybe, isJust)
+-import GHC.Natural (intToNatural)
++import GHC.Natural (naturalFromInteger, Natural)
+ import qualified Control.Lens as L
+ import qualified Data.ByteString.Lazy.Char8 as BL
+ import qualified Data.ByteString.Char8 as B
+@@ -40,6 +40,9 @@ import qualified Graphics.Vega.VegaLite.Theme as VL
+ -- Local
+ import Ploterific.Plot.Types
+ 
++intToNatural :: Int -> Natural
++intToNatural = naturalFromInteger . fromIntegral
++
+ -- | Split the measurement of a feature.
+ splitColMeasure :: T.Text -> Either T.Text (T.Text, VL.Measurement)
+ splitColMeasure feature = splitOrNot . T.breakOnEnd ":" $ feature

@@ -15,6 +15,10 @@ LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc-9.8.patch
+)
+
 RDEPEND="
 	dev-haskell/cassava:=[profile?]
 	dev-haskell/colour:=[profile?]
