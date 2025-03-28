@@ -15,12 +15,15 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+CABAL_CHDEPS=(
+	'text                   >= 1.0    && < 2' 'text >= 1.0'
+	)
 
 RDEPEND=">=dev-haskell/aeson-0.8:=[profile?]
 	dev-haskell/old-locale:=[profile?]
 	>=dev-haskell/parsec-3.1.2:=[profile?] <dev-haskell/parsec-4:=[profile?]
-	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2:=[profile?]
+	>=dev-haskell/text-1.0:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.6.1:=
@@ -33,4 +36,7 @@ DEPEND="${RDEPEND}
 		dev-haskell/tasty-hunit )
 "
 
-PATCHES=("${FILESDIR}"/${P}-tasty-hspec-1.1.7.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-tasty-hspec-1.1.7.patch
+	"${FILESDIR}"/${P}-aeson.patch
+)
