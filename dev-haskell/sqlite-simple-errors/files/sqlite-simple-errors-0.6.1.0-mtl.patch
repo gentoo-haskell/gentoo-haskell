@@ -1,0 +1,26 @@
+From https://github.com/caneroj1/sqlite-simple-errors/pull/8
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sun, 23 Mar 2025 09:31:18 +0100
+Subject: [PATCH] fix tests for recent mtl
+
+--- a/test/Spec.hs
++++ b/test/Spec.hs
+@@ -46,7 +46,7 @@ checkUniqueConstraint = Test "Unique Constraint - Name"
+ 
+ checkCheckConstraint :: Test (DatabaseResponse ())
+ checkCheckConstraint = Test "Check Constraint - Age"
+-                            (Left $ SQLConstraintError Check "Test")
++                            (Left $ SQLConstraintError Check "age > 0")
+                             test
+   where
+     test conn = runDBAction $ execute conn insertSQL sqlData
+--- a/test/Utils.hs
++++ b/test/Utils.hs
+@@ -8,6 +8,7 @@ module Utils
+ , executeTestRunner
+ )where
+ 
++import Control.Monad (when, unless)
+ import Control.Monad.State
+ import Database.SQLite.Simple (open, close, execute_, Connection)
+ import SQLUtils

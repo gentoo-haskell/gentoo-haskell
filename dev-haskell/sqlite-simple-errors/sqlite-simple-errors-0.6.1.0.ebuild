@@ -15,7 +15,10 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-mtl.patch
+	)
 
 RDEPEND=">=dev-haskell/parsec-3.1.9:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/sqlite-simple-0.4.9:=[profile?] <dev-haskell/sqlite-simple-0.5.0:=[profile?]
@@ -24,12 +27,10 @@ RDEPEND=">=dev-haskell/parsec-3.1.9:=[profile?] <dev-haskell/parsec-3.2:=[profil
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/mtl-2.1 <dev-haskell/mtl-2.3 )
+	test? ( >=dev-haskell/mtl-2.1 )
 "
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
+CABAL_CHDEPS=(
 		'text          >= 1.2   && < 1.2.4' 'text          >= 1.2'
-}
+		'mtl           >= 2.1   && < 2.3' 'mtl >= 2.1'
+)
