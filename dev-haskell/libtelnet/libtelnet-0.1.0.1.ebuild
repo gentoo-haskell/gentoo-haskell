@@ -21,6 +21,7 @@ IUSE="examples"
 
 CABAL_CHDEPS=(
 	'base >= 4.9 && < 4.17' 'base >=4.9'
+	'bytestring >= 0.10.6.0 && < 0.12' 'bytestring >= 0.10.6.0'
 )
 
 RDEPEND="
