@@ -255,7 +255,6 @@ net-irc/glirc
 www-apps/clckwrks
 www-apps/clckwrks-cli
 www-apps/clckwrks-plugin-media
-www-apps/clckwrks-plugin-page
 
 # Jack Todaro <solpeth@posteo.org> (2025-02-03)
 # Too many packages require <tasty-1.5. Mask until ready.
