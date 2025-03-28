@@ -10,13 +10,16 @@ inherit haskell-cabal
 
 DESCRIPTION="Monad products"
 HOMEPAGE="https://github.com/ekmett/monad-products"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/semigroupoids-4:=[profile?] <dev-haskell/semigroupoids-6:=[profile?]
+CABAL_CHDEPS=(
+	'semigroupoids >= 4 && < 6' 'semigroupoids >= 4'
+	)
+
+RDEPEND=">=dev-haskell/semigroupoids-4:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
