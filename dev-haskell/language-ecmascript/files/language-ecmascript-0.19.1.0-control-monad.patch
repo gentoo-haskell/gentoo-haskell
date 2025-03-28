@@ -1,0 +1,17 @@
+From https://github.com/jswebtools/language-ecmascript/commit/419df9dd1e9c80b63b664ab40e4228737f79e48e
+From: Ganesh Sittampalam <hsenag@github.com>
+Date: Sat, 7 Oct 2023 20:17:09 +0100
+Subject: [PATCH] import Control.Monad to get liftM
+
+I'm not sure where it was being found from before or what changed,
+but this seems to be needed in base 4.18/GHC 9.6
+--- a/src/Language/ECMAScript3/Syntax.hs
++++ b/src/Language/ECMAScript3/Syntax.hs
+@@ -46,6 +46,7 @@ import Data.Traversable (Traversable)
+ import Data.Default.Class
+ import Data.Generics.Uniplate.Data
+ import Data.Char
++import Control.Monad
+ import Control.Monad.State
+ import Control.Arrow
+ 

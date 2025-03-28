@@ -1,0 +1,30 @@
+From https://github.com/jswebtools/language-ecmascript/commit/089a6b0ea90f6eb5a428829fa1ee944f97258ac5
+From: Ganesh Sittampalam <hsenag@github.com>
+Date: Sat, 7 Oct 2023 20:18:08 +0100
+Subject: [PATCH] stop using the Error class
+
+It was removed in transformers 0.6/mtl 2.3, and in practice just
+using `String` is fine.
+---
+ src/Language/ECMAScript3/Parser.hs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/Language/ECMAScript3/Parser.hs b/src/Language/ECMAScript3/Parser.hs
+index c78cd650..78100d84 100644
+--- a/src/Language/ECMAScript3/Parser.hs
++++ b/src/Language/ECMAScript3/Parser.hs
+@@ -780,12 +780,12 @@ parseFromString = parse program ""
+ -- | A convenience function that takes a filename and tries to parse
+ -- the file contents an ECMAScript program, it fails with an error
+ -- message if it can't.
+-parseFromFile :: (Error e, MonadIO m, MonadError e m) => String -- ^ file name
++parseFromFile :: (MonadIO m, MonadError String m) => String -- ^ file name
+                 -> m (JavaScript SourcePos)
+ parseFromFile fname =
+   liftIO (readFile fname) >>= \source ->
+   case parse program fname source of
+-    Left err -> throwError $ strMsg $ show err
++    Left err -> throwError $ show err
+     Right js -> return js
+ 
+ -- | Read a JavaScript program from file an parse it into a list of
