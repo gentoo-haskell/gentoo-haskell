@@ -10,4 +10,7 @@
 		<flag name="nix">Are we building this package from nix</flag>
 		<flag name="unittests">You can disable testing with unittests using `-f-unittests`.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">clash-cores</remote-id>
+	</upstream>
 </pkgmetadata>
