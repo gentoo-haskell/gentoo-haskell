@@ -142,7 +142,6 @@ dev-haskell/bitsyntax
 dev-haskell/base32-bytestring
 dev-haskell/hssyck
 dev-haskell/yaml-light
-dev-haskell/persistent-relational-record
 
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
