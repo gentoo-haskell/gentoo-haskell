@@ -249,11 +249,6 @@ dev-haskell/openssl-streams
 dev-haskell/tcp-streams-openssl
 net-irc/glirc
 
-# Jack Todaro <solpeth@posteo.org> (2025-02-07)
-# Dead upstream. Mask for removal.
-# Removal on 2025-03-09.
-www-apps/clckwrks
-
 # Jack Todaro <solpeth@posteo.org> (2025-02-03)
 # Too many packages require <tasty-1.5. Mask until ready.
 >=dev-haskell/tasty-1.5
