@@ -15,10 +15,9 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND=">=dev-haskell/data-binary-ieee754-0.4:=[profile?] <dev-haskell/data-binary-ieee754-0.5:=[profile?]
-	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-1.3:=[profile?]
+	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-7.10.1:=
 "
@@ -30,11 +29,10 @@ PATCHES=(
 	"${FILESDIR}"/${P}-ghc84.patch
 )
 
-src_prepare() {
-	default
-
-	cabal_chdeps \
-		'vector                   >=0.10 && <0.12' 'vector                   >=0.10' \
-		'base                     >=4.8  && <4.10' 'base                     >=4.8' \
+CABAL_CHDEPS=(
+		'vector                   >=0.10 && <0.12' 'vector                   >=0.10'
+		'base                     >=4.8  && <4.10' 'base                     >=4.8'
 		'containers               >=0.5  && <0.6'  'containers               >=0.5'
-}
+		'bytestring               >=0.10 && <0.11' 'bytestring >=0.10'
+		'text                     >=1.2  && <1.3' 'text >=1.2'
+)
