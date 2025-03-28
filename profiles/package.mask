@@ -153,7 +153,6 @@ dev-haskell/persistent-relational-record
 #
 # Removal: 2025-03-23
 dev-haskell/readline
-dev-haskell/shellac-readline
 
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
