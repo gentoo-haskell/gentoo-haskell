@@ -5,4 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">log-domain</remote-id>
+		<remote-id type="github">analytics/log-domain</remote-id>
+		<remote-id type="github">ekmett/log-domain</remote-id>
+	</upstream>
 </pkgmetadata>
