@@ -6,6 +6,8 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
+		<flag name="dhall">Support Dhall</flag>
+		<flag name="quic">Support HTTP over QUIC (HTTP/3).</flag>
 		<flag name="tls">HTTPS support.</flag>
 	</use>
 	<upstream>
