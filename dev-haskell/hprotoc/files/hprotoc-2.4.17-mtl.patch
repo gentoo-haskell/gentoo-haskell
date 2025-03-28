@@ -1,0 +1,47 @@
+From https://github.com/k-bx/protocol-buffers/commit/34d7903b113f5ed39bebb4e23694907b4f7133ab
+From: cydparser <cydparser@gmail.com>
+Date: Fri, 28 Jun 2024 14:56:52 -0700
+Subject: [PATCH] Enable building with mtl-2.3+
+
+--- a/Text/ProtocolBuffers/ProtoCompile/Lexer.x
++++ b/Text/ProtocolBuffers/ProtoCompile/Lexer.x
+@@ -2,7 +2,6 @@
+ {-# OPTIONS_GHC -Wwarn #-}
+ module Text.ProtocolBuffers.ProtoCompile.Lexer (Lexed(..), alexScanTokens,getLinePos)  where
+ 
+-import Control.Monad.Error()
+ import Codec.Binary.UTF8.String(encode)
+ import qualified Data.ByteString.Lazy as DBL
+ import Data.Char(ord,isHexDigit,isOctDigit,toLower)
+--- a/Text/ProtocolBuffers/ProtoCompile/Resolve.hs
++++ b/Text/ProtocolBuffers/ProtoCompile/Resolve.hs
+@@ -149,10 +149,11 @@ import Text.ProtocolBuffers.ProtoCompile.Parser
+ 
+ import Control.Applicative
+ import qualified Control.Monad.Fail as Fail
++import Control.Monad ((>=>), liftM, when)
+ import Control.Monad.Identity
+ import Control.Monad.State
+ import Control.Monad.Reader
+-import Control.Monad.Error
++import Control.Monad.Error.Class (MonadError(..))
+ import Control.Monad.Writer
+ import Data.Char
+ import Data.Ratio
+@@ -188,13 +189,13 @@ errMsg s = "Text.ProtocolBuffers.ProtoCompile.Resolve fatal error encountered, m
+ err :: forall b. String -> b
+ err = error . errMsg
+ 
+-throw :: (Error e, MonadError e m) =>  String -> m a
+-throw s = throwError (strMsg (errMsg s))
++throw :: (MonadError String m) =>  String -> m a
++throw s = throwError (errMsg s)
+ 
+ annErr :: (MonadError String m) => String -> m a -> m a
+ annErr s act = catchError act (\e -> throwError ("Text.ProtocolBuffers.ProtoCompile.Resolve annErr: "++s++'\n':indent e))
+ 
+-getJust :: (Error e,MonadError e m, Typeable a) => String -> Maybe a -> m a
++getJust :: (MonadError String m, Typeable a) => String -> Maybe a -> m a
+ {-#  INLINE getJust #-}
+ getJust s ma@Nothing = throw $ "Impossible? Expected Just of type "++show (typeOf ma)++" but got nothing:\n"++indent s
+ getJust _s (Just a) = return a

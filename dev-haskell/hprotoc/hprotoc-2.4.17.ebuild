@@ -19,6 +19,7 @@ KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.4.17-fix-setup-hs.patch"
+	"${FILESDIR}/${PN}-2.4.17-mtl.patch"
 )
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.18:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
