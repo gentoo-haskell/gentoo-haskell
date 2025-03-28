@@ -1,0 +1,77 @@
+From https://github.com/sebastiaanvisser/fclabels/pull/47
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Mon, 24 Mar 2025 19:44:37 +0100
+Subject: [PATCH] support for ghc9.6 and 9.8. Fixes #46. Fixes #45
+
+--- a/src/Data/Label/Derive.hs
++++ b/src/Data/Label/Derive.hs
+@@ -416,7 +416,7 @@ generateLabel
+   :: Bool
+   -> Bool
+   -> Name
+-  -> [TyVarBndr ()]
++  -> [TyVarBndr BndrVis]
+   -> [Con]
+   -> Field ([Context], Subst)
+   -> Q Label
+@@ -556,7 +556,7 @@ freshNames = map pure ['a'..'z'] ++ map (('a':) . show) [0 :: Integer ..]
+ 
+ -------------------------------------------------------------------------------
+ 
+-computeTypes :: Bool -> Type -> Name -> [TyVarBndr ()] -> Subst -> Q Typing
++computeTypes :: Bool -> Type -> Name -> [TyVarBndr BndrVis] -> Subst -> Q Typing
+ computeTypes forcedMono fieldtype datatype dtVars_ subst =
+ 
+   do let fieldVars = typeVariables fieldtype
+--- a/test/TestSuite.hs
++++ b/test/TestSuite.hs
+@@ -8,6 +8,7 @@
+   , TypeOperators
+   , RankNTypes
+   , FlexibleContexts
++  , FlexibleInstances
+   , StandaloneDeriving
+   , CPP #-}
+ 
+@@ -21,10 +22,13 @@ module Main where
+ import Control.Arrow
+ import Control.Applicative
+ import Control.Category
+-#if MIN_VERSION_transformers(0,5,0) && MIN_VERSION_base(4,9,0)
++#if MIN_VERSION_transformers(0,5,0) && MIN_VERSION_base(4,9,0) && !MIN_VERSION_mtl(2,3,0)
+ import Control.Monad (MonadPlus (..))
+ import Control.Monad.Trans.Error (Error (noMsg))
+ #endif
++#if MIN_VERSION_mtl(2,3,0)
++import Control.Monad(MonadPlus (..))
++#endif
+ import Prelude hiding ((.), id)
+ import Test.HUnit
+ import Data.Label
+@@ -153,7 +157,7 @@ _Gi = lGi; _Gj = lGj;
+ -- this ifdef after GHC 8 rc3 is released, which will include
+ -- transformers-0.5.2.0.
+ 
+-#if MIN_VERSION_transformers(0,5,0) && !MIN_VERSION_transformers(0,5,2) && MIN_VERSION_base(4,9,0)
++#if MIN_VERSION_transformers(0,5,0) && !MIN_VERSION_transformers(0,5,2) && MIN_VERSION_base(4,9,0) && !MIN_VERSION_mtl(2,3,0)
+ instance (Error e) => Alternative (Either e) where
+     empty        = Left noMsg
+     Left _ <|> n = n
+@@ -164,7 +168,16 @@ instance Error e => MonadPlus (Either e) where
+     Left _ `mplus` n = n
+     m      `mplus` _ = m
+ #endif
+-
++#if MIN_VERSION_mtl(2,3,0)
++instance Alternative (Either String) where
++    empty        = Left empty
++    Left _ <|> n = n
++    m      <|> _ = m
++instance MonadPlus (Either String) where
++    mzero            = Left mzero
++    Left _ `mplus` n = n
++    m      `mplus` _ = m
++#endif
+ -------------------------------------------------------------------------------
+ 
+ embed_fB :: Record :~> Newtype Bool
