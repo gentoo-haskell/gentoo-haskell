@@ -144,16 +144,6 @@ dev-haskell/hssyck
 dev-haskell/yaml-light
 dev-haskell/persistent-relational-record
 
-# hololeap <hololeap@protonmail.com> (2025-02-21)
-#
-# Upstream package has not had an update since 2013. If you try to use it,
-# you get various "undefined reference" linker errors, likely because it was
-# built with a much older version of sys-libs/readline in mind. Mask for
-# removal in 30 days.
-#
-# Removal: 2025-03-23
-dev-haskell/readline
-
 # hololeap <hololeap@protonmail.com> (2025-02-14)
 #
 # Mask hls-*-plugin packages. These are needed because of a bug in musl setups
