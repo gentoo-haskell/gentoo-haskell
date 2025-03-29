@@ -1,0 +1,18 @@
+From https://github.com/kazu-yamamoto/crypton/commit/20609c42fc3cee329d271156b7be42d4a491ffb2
+From: Kazu Yamamoto <kazu@iij.ad.jp>
+Date: Sat, 29 Mar 2025 14:45:04 +0900
+Subject: [PATCH] fix broken literal (#40)
+
+"\xaachars after" is a misuse of literal.
+On some platform "\xaac" (instead of "\xaa") is interpreted as HEX.
+--- a/tests/BCrypt.hs
++++ b/tests/BCrypt.hs
+@@ -31,7 +31,7 @@ expected =
+             \\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\
+             \\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\
+             \\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\
+-            \chars after 72 are ignored as usual")
++            \\x00\x01\x02\x03\x04\x05") -- chars after 72 are ignored as usual
+     , ("$2a$05$/OK.fbVrR/bpIqNJ5ianF.R9xrDjiycxMbQE2bp.vgqlYpW5wx2yy",
+             "\xaa\x55\xaa\x55\xaa\x55\xaa\x55\xaa\x55\xaa\x55\
+             \\xaa\x55\xaa\x55\xaa\x55\xaa\x55\xaa\x55\xaa\x55\
