@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base >=4.8 && <4.17' 'base >= 4.8'
+)
+
 RDEPEND=">=dev-haskell/syb-0.6:=[profile?] <dev-haskell/syb-0.8:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
