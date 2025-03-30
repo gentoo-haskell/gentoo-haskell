@@ -11,7 +11,8 @@ HOMEPAGE="https://blitiri.com.ar/p/darcsweb/"
 SRC_URI="https://blitiri.com.ar/p/darcsweb/files/${PV}/${P}.tar.bz2"
 
 LICENSE="public-domain"
-SLOT="0"
+WEBAPP_MANUAL_SLOT="yes"
+SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -33,4 +34,8 @@ src_install() {
 	cp config.py.sample "${D}${MY_HTDOCSDIR}"
 	webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
 	webapp_src_install
+}
+
+pkg_setup() {
+	webapp_pkg_setup
 }
