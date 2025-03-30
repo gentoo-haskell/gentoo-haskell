@@ -15,6 +15,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-fixing-tests.patch
+)
+
 RDEPEND=">=dev-haskell/text-0.7:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
 	>=dev-lang/ghc-9.0.2:=

@@ -1,0 +1,18 @@
+From 1567bb41fbfe998763bc5bf656e8d0b5be9f5093 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sun, 30 Mar 2025 11:04:37 +0200
+Subject: [PATCH] fixing tests
+
+--- a/tests/Tests.hs
++++ b/tests/Tests.hs
+@@ -150,6 +150,7 @@ test_Content = test_Chunks "content"
+ 	   ])
+ 	, (" text &ref; <",
+ 	   [ X.EventContent (X.ContentText " text ")
++	   , X.EventContent (X.ContentText "some reference")
+ 	   , X.EventContent (X.ContentEntity "ref")
+ 	   , X.EventContent (X.ContentText " ")
+ 	   ])
+-- 
+2.49.0
+
