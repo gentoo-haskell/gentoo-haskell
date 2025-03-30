@@ -37,6 +37,7 @@
 		<flag name="hls_plugins_splice">Enable splice plugin</flag>
 <!-- 		<flag name="hls_plugins_stan">Enable stan plugin</flag> -->
 		<flag name="hls_plugins_stylish-haskell">Enable stylishHaskell plugin</flag>
+		<flag name="ghcide-test-exe">Build the ghcide-test-preprocessor executable</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">haskell-language-server</remote-id>

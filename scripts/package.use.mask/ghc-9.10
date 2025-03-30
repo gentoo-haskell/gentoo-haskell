@@ -1,0 +1,8 @@
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-02)
+# Some plugins are not yet compatible  with ghc-9.10
+~dev-haskell/haskell-language-server-2.10.0.0 hls_plugins_retrie hls_plugins_splice hls_plugins_gadt hls_plugins_hlint
+
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-03)
+# There is an issue in the ebuild process with the tests for these packages
+~dev-haskell/generic-lens-2.2.2.0 test
+~dev-haskell/lsp-types-2.3.0.1-r1 test #https://github.com/haskell/cabal/issues/10046

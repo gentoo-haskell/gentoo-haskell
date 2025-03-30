@@ -1,0 +1,637 @@
+From https://github.com/haskell/haskell-language-server/commit/7d5a8e47e5f9506812fdd57138228c1f6bc76c0d
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Thu, 3 Apr 2025 17:52:18 +0200
+Subject: [PATCH] porting hls-refactor to ghc-9.12
+
+--- a/haskell-language-server.cabal
++++ b/haskell-language-server.cabal
+@@ -580,13 +580,13 @@ flag rename
+   manual:      True
+ 
+ common rename
+-  if flag(rename) && (impl(ghc < 9.11) || flag(ignore-plugins-ghc-bounds))
++  if flag(rename)
+     build-depends: haskell-language-server:hls-rename-plugin
+     cpp-options: -Dhls_rename
+ 
+ library hls-rename-plugin
+   import:           defaults, pedantic, warnings
+-  if !flag(rename) || (impl(ghc > 9.11) && !flag(ignore-plugins-ghc-bounds))
++  if !flag(rename)
+     buildable: False
+   exposed-modules:  Ide.Plugin.Rename
+   hs-source-dirs:   plugins/hls-rename-plugin/src
+@@ -610,7 +610,7 @@ library hls-rename-plugin
+ 
+ test-suite hls-rename-plugin-tests
+   import:           defaults, pedantic, test-defaults, warnings
+-  if !flag(rename) || (impl(ghc > 9.11) && !flag(ignore-plugins-ghc-bounds))
++  if !flag(rename)
+     buildable: False
+   type:             exitcode-stdio-1.0
+   hs-source-dirs:   plugins/hls-rename-plugin/test
+@@ -1596,13 +1596,13 @@ flag refactor
+   manual:      True
+ 
+ common refactor
+-  if flag(refactor) && (impl(ghc < 9.11) || flag(ignore-plugins-ghc-bounds))
++  if flag(refactor) 
+     build-depends: haskell-language-server:hls-refactor-plugin
+     cpp-options: -Dhls_refactor
+ 
+ library hls-refactor-plugin
+   import:           defaults, pedantic, warnings
+-  if !flag(refactor) || (impl(ghc > 9.11) && !flag(ignore-plugins-ghc-bounds))
++  if !flag(refactor)
+     buildable: False
+   exposed-modules:  Development.IDE.GHC.ExactPrint
+                     Development.IDE.GHC.Compat.ExactPrint
+@@ -1661,7 +1661,7 @@ library hls-refactor-plugin
+ 
+ test-suite hls-refactor-plugin-tests
+   import:           defaults, pedantic, test-defaults, warnings
+-  if !flag(refactor) || (impl(ghc > 9.11) && !flag(ignore-plugins-ghc-bounds))
++  if !flag(refactor)
+     buildable: False
+   type:             exitcode-stdio-1.0
+   hs-source-dirs:   plugins/hls-refactor-plugin/test
+--- a/plugins/hls-refactor-plugin/src/Development/IDE/GHC/ExactPrint.hs
++++ b/plugins/hls-refactor-plugin/src/Development/IDE/GHC/ExactPrint.hs
+@@ -106,6 +106,9 @@ import           GHC.Parser.Annotation                   (AnnContext (..),
+                                                           deltaPos)
+ import           GHC.Types.SrcLoc                        (generatedSrcSpan)
+ #endif
++#if MIN_VERSION_ghc(9,11,0)
++import           GHC.Types.SrcLoc (UnhelpfulSpanReason(..))
++#endif
+ 
+ #if MIN_VERSION_ghc(9,9,0)
+ import           GHC                                     (
+@@ -116,6 +119,9 @@ import           GHC                                     (
+                                                           EpAnn (..),
+                                                           EpaLocation,
+                                                           EpaLocation' (..),
++#if MIN_VERSION_ghc(9,11,0)
++                                                          EpToken (..),
++#endif
+                                                           NameAdornment (..),
+                                                           NameAnn (..),
+                                                           SrcSpanAnnA,
+@@ -124,7 +130,6 @@ import           GHC                                     (
+                                                           emptyComments,
+                                                           spanAsAnchor)
+ #endif
+-
+ setPrecedingLines ::
+ #if !MIN_VERSION_ghc(9,9,0)
+      Default t =>
+@@ -168,6 +173,10 @@ annotateParsedSource (ParsedModule _ ps _) =
+     (makeDeltaAst ps)
+ #endif
+ 
++#if MIN_VERSION_ghc(9,11,0)
++type Anchor = EpaLocation
++#endif
++
+ ------------------------------------------------------------------------------
+ 
+ {- | A transformation for grafting source trees together. Use the semigroup
+@@ -466,7 +475,10 @@ modifySmallestDeclWithM validSpan f a = do
+             False -> first (DL.singleton ldecl <>) <$> modifyMatchingDecl rest
+   modifyDeclsT' (fmap (first DL.toList) . modifyMatchingDecl) a
+ 
+-#if MIN_VERSION_ghc(9,9,0)
++#if MIN_VERSION_ghc(9,11,0)
++generatedAnchor :: DeltaPos -> Anchor
++generatedAnchor dp = EpaDelta (UnhelpfulSpan UnhelpfulNoLocationInfo) dp []
++#elif MIN_VERSION_ghc(9,9,0)
+ generatedAnchor :: DeltaPos -> Anchor
+ generatedAnchor dp = EpaDelta dp []
+ #else
+@@ -766,15 +778,28 @@ eqSrcSpan l r = leftmost_smallest l r == EQ
+ addParensToCtxt :: Maybe EpaLocation -> AnnContext -> AnnContext
+ addParensToCtxt close_dp = addOpen . addClose
+   where
++#if MIN_VERSION_ghc(9,11,0)
++      addOpen it@AnnContext{ac_open = []} = it{ac_open = [EpTok (epl 0)]}
++#else
+       addOpen it@AnnContext{ac_open = []} = it{ac_open = [epl 0]}
++#endif
+       addOpen other                       = other
+       addClose it
++#if MIN_VERSION_ghc(9,11,0)
++        | Just c <- close_dp = it{ac_close = [EpTok c]}
++        | AnnContext{ac_close = []} <- it = it{ac_close = [EpTok (epl 0)]}
++#else
+         | Just c <- close_dp = it{ac_close = [c]}
+         | AnnContext{ac_close = []} <- it = it{ac_close = [epl 0]}
++#endif
+         | otherwise = it
+ 
+ epl :: Int -> EpaLocation
++#if MIN_VERSION_ghc(9,11,0)
++epl n = EpaDelta (UnhelpfulSpan UnhelpfulNoLocationInfo) (SameLine n) []
++#else
+ epl n = EpaDelta (SameLine n) []
++#endif
+ 
+ epAnn :: SrcSpan -> ann -> EpAnn ann
+ epAnn srcSpan anns = EpAnn (spanAsAnchor srcSpan) anns emptyComments
+@@ -803,14 +828,25 @@ removeComma (SrcSpanAnn (EpAnn anc (AnnListItem as) cs) l)
+ #endif
+ 
+ addParens :: Bool -> GHC.NameAnn -> GHC.NameAnn
++#if MIN_VERSION_ghc(9,11,0)
+ addParens True it@NameAnn{} =
+-        it{nann_adornment = NameParens, nann_open = epl 0, nann_close = epl 0 }
++        it{nann_adornment = NameParens (EpTok (epl 0)) (EpTok (epl 0)) }
+ addParens True it@NameAnnCommas{} =
+-        it{nann_adornment = NameParens, nann_open = epl 0, nann_close = epl 0 }
++        it{nann_adornment = NameParens (EpTok (epl 0)) (EpTok (epl 0)) }
+ addParens True it@NameAnnOnly{} =
+-        it{nann_adornment = NameParens, nann_open = epl 0, nann_close = epl 0 }
++        it{nann_adornment = NameParens (EpTok (epl 0)) (EpTok (epl 0)) }
++addParens True it@NameAnnTrailing{} =
++  NameAnn{nann_adornment = NameParens (EpTok (epl 0)) (EpTok (epl 0)), nann_name = epl 0, nann_trailing = nann_trailing it}
++#else
++addParens True it@NameAnn{} =
++        it{nann_adornment = NameParens, nann_open=epl 0, nann_close=epl 0 }
++addParens True it@NameAnnCommas{} =
++        it{nann_adornment = NameParens, nann_open=epl 0, nann_close=epl 0 }
++addParens True it@NameAnnOnly{} =
++        it{nann_adornment = NameParens, nann_open=epl 0, nann_close=epl 0 }
+ addParens True NameAnnTrailing{..} =
+-        NameAnn{nann_adornment = NameParens, nann_open = epl 0, nann_close = epl 0, nann_name = epl 0, ..}
++        NameAnn{nann_adornment = NameParens, nann_open=epl 0, nann_close=epl 0, nann_name = epl 0, ..}
++#endif
+ addParens _ it = it
+ 
+ removeTrailingComma :: GenLocated SrcSpanAnnA ast -> GenLocated SrcSpanAnnA ast
+--- a/plugins/hls-refactor-plugin/src/Development/IDE/Plugin/CodeAction.hs
++++ b/plugins/hls-refactor-plugin/src/Development/IDE/Plugin/CodeAction.hs
+@@ -50,7 +50,9 @@ import           Development.IDE.Core.Service
+ import           Development.IDE.Core.Shake                        hiding (Log)
+ import           Development.IDE.GHC.Compat                        hiding
+                                                                    (ImplicitPrelude)
++#if !MIN_VERSION_ghc(9,11,0)
+ import           Development.IDE.GHC.Compat.Util
++#endif
+ import           Development.IDE.GHC.Error
+ import           Development.IDE.GHC.ExactPrint
+ import qualified Development.IDE.GHC.ExactPrint                    as E
+@@ -71,8 +73,7 @@ import           Development.IDE.Types.Diagnostics
+ import           Development.IDE.Types.Exports
+ import           Development.IDE.Types.Location
+ import           Development.IDE.Types.Options
+-import           GHC                                               (AddEpAnn (AddEpAnn),
+-                                                                    AnnsModule (am_main),
++import           GHC                                               (
+                                                                     DeltaPos (..),
+                                                                     EpAnn (..),
+                                                                     LEpaComment)
+@@ -107,17 +108,30 @@ import           Text.Regex.TDFA                                   ((=~), (=~~))
+ 
+ #if !MIN_VERSION_ghc(9,9,0)
+ import           Development.IDE.GHC.Compat.ExactPrint             (makeDeltaAst)
+-import           GHC                                               (Anchor (anchor_op),
++import           GHC                                               (AddEpAnn (AddEpAnn),
++                                                                    AnnsModule (am_main),
++                                                                    Anchor (anchor_op),
+                                                                     AnchorOperation (..),
+                                                                     EpaLocation (..))
+ #endif
+ 
+-#if MIN_VERSION_ghc(9,9,0)
+-import           GHC                                               (EpaLocation,
++#if MIN_VERSION_ghc(9,9,0) && !MIN_VERSION_ghc(9,11,0)
++import           GHC                                               (AddEpAnn (AddEpAnn),
++                                                                    AnnsModule (am_main),
++                                                                    EpaLocation,
+                                                                     EpaLocation' (..),
+                                                                     HasLoc (..))
+ import           GHC.Types.SrcLoc                                  (srcSpanToRealSrcSpan)
+ #endif
++#if MIN_VERSION_ghc(9,11,0)
++import           GHC                                               (EpaLocation,
++                                                                    AnnsModule (am_where),
++                                                                    EpaLocation' (..),
++                                                                    HasLoc (..),
++                                                                    EpToken (..))
++import           GHC.Types.SrcLoc                                  (srcSpanToRealSrcSpan)
++#endif
++
+ 
+ -------------------------------------------------------------------------------------------------
+ 
+@@ -341,7 +355,11 @@ findSigOfBinds range = go
+         case unLoc <$> findDeclContainingLoc (_start range) lsigs of
+           Just sig' -> Just sig'
+           Nothing -> do
++#if MIN_VERSION_ghc(9,11,0)
++            lHsBindLR <- findDeclContainingLoc (_start range) binds
++#else
+             lHsBindLR <- findDeclContainingLoc (_start range) (bagToList binds)
++#endif
+             findSigOfBind range (unLoc lHsBindLR)
+     go _ = Nothing
+ 
+@@ -422,7 +440,11 @@ isUnusedImportedId
+   modName
+   importSpan
+     | occ <- mkVarOcc identifier,
++#if MIN_VERSION_ghc(9,11,0)
++      impModsVals <- importedByUser . concat $ M.elems imp_mods,
++#else
+       impModsVals <- importedByUser . concat $ moduleEnvElts imp_mods,
++#endif
+       Just rdrEnv <-
+         listToMaybe
+           [ imv_all_exports
+@@ -661,7 +683,11 @@ suggestDeleteUnusedBinding
+         name
+         (L _ Match{m_grhss=GRHSs{grhssLocalBinds}}) = do
+         let go bag lsigs =
++#if MIN_VERSION_ghc(9,11,0)
++                if null bag
++#else
+                 if isEmptyBag bag
++#endif
+                 then []
+                 else concatMap (findRelatedSpanForHsBind indexedContent name lsigs) bag
+         case grhssLocalBinds of
+@@ -1723,13 +1749,22 @@ findPositionAfterModuleName ps _hsmodName' = do
+ #endif
+         EpAnn _ annsModule _ -> do
+             -- Find the first 'where'
++#if MIN_VERSION_ghc(9,11,0)
++            whereLocation <- filterWhere $ am_where annsModule
++#else
+             whereLocation <- listToMaybe . mapMaybe filterWhere $ am_main annsModule
++#endif
+             epaLocationToLine whereLocation
+ #if !MIN_VERSION_ghc(9,9,0)
+         EpAnnNotUsed -> Nothing
+ #endif
++#if MIN_VERSION_ghc(9,11,0)
++    filterWhere (EpTok loc) = Just loc
++    filterWhere _ = Nothing
++#else
+     filterWhere (AddEpAnn AnnWhere loc) = Just loc
+     filterWhere _                       = Nothing
++#endif
+ 
+     epaLocationToLine :: EpaLocation -> Maybe Int
+ #if MIN_VERSION_ghc(9,9,0)
+@@ -1742,12 +1777,19 @@ findPositionAfterModuleName ps _hsmodName' = do
+     epaLocationToLine (EpaSpan sp)
+       = Just . srcLocLine . realSrcSpanEnd $ sp
+ #endif
++#if MIN_VERSION_ghc(9,11,0)
++    epaLocationToLine (EpaDelta _ (SameLine _) priorComments) = Just $ sumCommentsOffset priorComments
++    -- 'priorComments' contains the comments right before the current EpaLocation
++    -- Summing line offset of priorComments is necessary, as 'line' is the gap between the last comment and
++    -- the current AST node
++    epaLocationToLine (EpaDelta _ (DifferentLine line _) priorComments) = Just (line + sumCommentsOffset priorComments)
++#else
+     epaLocationToLine (EpaDelta (SameLine _) priorComments) = Just $ sumCommentsOffset priorComments
+     -- 'priorComments' contains the comments right before the current EpaLocation
+     -- Summing line offset of priorComments is necessary, as 'line' is the gap between the last comment and
+     -- the current AST node
+     epaLocationToLine (EpaDelta (DifferentLine line _) priorComments) = Just (line + sumCommentsOffset priorComments)
+-
++#endif
+     sumCommentsOffset :: [LEpaComment] -> Int
+ #if MIN_VERSION_ghc(9,9,0)
+     sumCommentsOffset = sum . fmap (\(L anchor _) -> anchorOpLine anchor)
+@@ -1755,7 +1797,12 @@ findPositionAfterModuleName ps _hsmodName' = do
+     sumCommentsOffset = sum . fmap (\(L anchor _) -> anchorOpLine (anchor_op anchor))
+ #endif
+ 
+-#if MIN_VERSION_ghc(9,9,0)
++#if MIN_VERSION_ghc(9,11,0)
++    anchorOpLine :: EpaLocation' a -> Int
++    anchorOpLine EpaSpan{}                           = 0
++    anchorOpLine (EpaDelta _ (SameLine _) _)           = 0
++    anchorOpLine (EpaDelta _ (DifferentLine line _) _) = line
++#elif MIN_VERSION_ghc(9,9,0)
+     anchorOpLine :: EpaLocation' a -> Int
+     anchorOpLine EpaSpan{}                           = 0
+     anchorOpLine (EpaDelta (SameLine _) _)           = 0
+@@ -1936,14 +1983,11 @@ extractQualifiedModuleName x
+ --         ‘Data.Functor’ nor ‘Data.Text’ exports ‘putStrLn’.
+ extractDoesNotExportModuleName :: T.Text -> Maybe T.Text
+ extractDoesNotExportModuleName x
+-  | Just [m] <-
+-#if MIN_VERSION_ghc(9,4,0)
+-    matchRegexUnifySpaces x "the module ‘([^’]*)’ does not export"
+-      <|> matchRegexUnifySpaces x "nor ‘([^’]*)’ export"
+-#else
+-    matchRegexUnifySpaces x "Module ‘([^’]*)’ does not export"
+-      <|> matchRegexUnifySpaces x "nor ‘([^’]*)’ exports"
+-#endif
++  | Just [m] <- case ghcVersion of
++                  GHC912 -> matchRegexUnifySpaces x "The module ‘([^’]*)’ does not export"
++                            <|> matchRegexUnifySpaces x "nor ‘([^’]*)’ export"
++                  _ ->      matchRegexUnifySpaces x "the module ‘([^’]*)’ does not export"
++                            <|> matchRegexUnifySpaces x "nor ‘([^’]*)’ export"
+   = Just m
+   | otherwise
+   = Nothing
+--- a/plugins/hls-refactor-plugin/src/Development/IDE/Plugin/CodeAction/ExactPrint.hs
++++ b/plugins/hls-refactor-plugin/src/Development/IDE/Plugin/CodeAction/ExactPrint.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE GADTs        #-}
+ {-# LANGUAGE TypeFamilies #-}
+ module Development.IDE.Plugin.CodeAction.ExactPrint (
+@@ -35,10 +36,8 @@ import           Control.Lens                           (_head, _last, over)
+ import           Data.Bifunctor                         (first)
+ import           Data.Maybe                             (fromMaybe, mapMaybe)
+ import           Development.IDE.Plugin.CodeAction.Util
+-import           GHC                                    (AddEpAnn (..),
+-                                                         AnnContext (..),
++import           GHC                                    (AnnContext (..),
+                                                          AnnList (..),
+-                                                         AnnParen (..),
+                                                          DeltaPos (SameLine),
+                                                          EpAnn (..),
+                                                          IsUnicodeSyntax (NormalSyntax),
+@@ -46,8 +45,17 @@ import           GHC                                    (AddEpAnn (..),
+                                                          TrailingAnn (AddCommaAnn),
+                                                          emptyComments, reAnnL)
+ 
++
+ -- See Note [Guidelines For Using CPP In GHCIDE Import Statements]
+ 
++#if MIN_VERSION_ghc(9,11,0)
++import GHC (EpToken (..)
++           , AnnListBrackets (..)
++           , EpUniToken (..))
++#else
++import GHC (AddEpAnn (..),
++                                                         AnnParen (..))
++#endif
+ #if !MIN_VERSION_ghc(9,9,0)
+ import           Data.Default                           (Default (..))
+ import           GHC                                    (addAnns, ann)
+@@ -179,7 +187,9 @@ appendConstraint constraintT = go . traceAst "appendConstraint"
+     -- For singleton constraints, the close Paren DP is attached to an HsPar wrapping the constraint
+     -- we have to reposition it manually into the AnnContext
+         close_dp = case ctxt of
+-#if MIN_VERSION_ghc(9,9,0)
++#if MIN_VERSION_ghc(9,11,0)
++            [L _ (HsParTy (_, (EpTok ap_close)) _)] -> Just ap_close
++#elif MIN_VERSION_ghc(9,9,0)
+             [L _ (HsParTy AnnParen{ap_close} _)] -> Just ap_close
+ #else
+             [L _ (HsParTy EpAnn{anns=AnnParen{ap_close}} _)] -> Just ap_close
+@@ -203,7 +213,11 @@ appendConstraint constraintT = go . traceAst "appendConstraint"
+ #else
+     let context = Just $ reAnnL annCtxt emptyComments $ L lContext [resetEntryDP constraint]
+ #endif
++#if MIN_VERSION_ghc(9,11,0)
++        annCtxt = AnnContext (Just (EpUniTok (epl 1) NormalSyntax)) [EpTok (epl 0) | needsParens] [EpTok (epl 0) | needsParens]
++#else
+         annCtxt = AnnContext (Just (NormalSyntax, epl 1)) [epl 0 | needsParens] [epl 0 | needsParens]
++#endif
+         needsParens = hsTypeNeedsParens sigPrec $ unLoc constraint
+     ast <- pure $ setEntryDP (makeDeltaAst ast) (SameLine 1)
+ 
+@@ -346,7 +360,9 @@ extendImportViaParent df parent child (L l it@ImportDecl{..})
+ #endif
+                                              childRdr
+           x :: LIE GhcPs = L ll' $ IEThingWith
+-#if MIN_VERSION_ghc(9,9,0)
++#if MIN_VERSION_ghc(9,11,0)
++                                     (Nothing, (EpTok d1, NoEpTok, NoEpTok, EpTok noAnn))
++#elif MIN_VERSION_ghc(9,9,0)
+                                      (Nothing, [AddEpAnn AnnOpenP d1, AddEpAnn AnnCloseP noAnn])
+ #elif MIN_VERSION_ghc(9,7,0)
+                                      (Nothing, addAnns mempty [AddEpAnn AnnOpenP d1, AddEpAnn AnnCloseP def] emptyComments)
+@@ -384,6 +400,8 @@ extendImportViaParent df parent child (L l it@ImportDecl{..})
+ #endif
+ #if MIN_VERSION_ghc(9,7,0) && !MIN_VERSION_ghc(9,9,0)
+             newl = fmap (\ann -> ann ++ [AddEpAnn AnnDotdot d0]) <$> l'''
++#elif MIN_VERSION_ghc(9,11,0)
++            newl = (\(open, _, comma, close)  -> (open, EpTok d0, comma, close)) <$> l'''
+ #else
+             newl = (\ann -> ann ++ [AddEpAnn AnnDotdot d0]) <$> l'''
+ #endif
+@@ -427,21 +445,31 @@ extendImportViaParent df parent child (L l it@ImportDecl{..})
+       parentRdr <- liftParseAST df parent
+       let childRdr = reLocA $ L srcChild $ mkRdrUnqual $ mkVarOcc child
+           isParentOperator = hasParen parent
++#if MIN_VERSION_ghc(9,11,0)
++      let parentLIE = reLocA $ L srcParent $ if isParentOperator then IEType (EpTok (epl 0)) parentRdr'
++#else
+       let parentLIE = reLocA $ L srcParent $ if isParentOperator then IEType (epl 0) parentRdr'
++#endif
+                                                else IEName
+ #if MIN_VERSION_ghc(9,5,0)
+                                                       noExtField
+ #endif
+                                                       parentRdr'
+           parentRdr' = modifyAnns parentRdr $ \case
++#if MIN_VERSION_ghc(9,11,0)
++              it@NameAnn{nann_adornment = NameParens _ _} -> it{nann_adornment=NameParens (EpTok (epl 1)) (EpTok (epl 0))}
++#else
+               it@NameAnn{nann_adornment = NameParens} -> it{nann_open = epl 1, nann_close = epl 0}
++#endif
+               other -> other
+           childLIE = reLocA $ L srcChild $ IEName
+ #if MIN_VERSION_ghc(9,5,0)
+                                              noExtField
+ #endif
+                                              childRdr
+-#if MIN_VERSION_ghc(9,9,0)
++#if MIN_VERSION_ghc(9,11,0)
++          listAnn = (Nothing, (EpTok (epl 1), NoEpTok, NoEpTok, EpTok (epl 0)))
++#elif MIN_VERSION_ghc(9,9,0)
+           listAnn = (Nothing, [AddEpAnn AnnOpenP (epl 1), AddEpAnn AnnCloseP (epl 0)])
+ #elif MIN_VERSION_ghc(9,7,0)
+           listAnn = (Nothing, epAnn srcParent [AddEpAnn AnnOpenP (epl 1), AddEpAnn AnnCloseP (epl 0)])
+@@ -538,7 +566,10 @@ extendHiding ::
+ extendHiding symbol (L l idecls) mlies df = do
+   L l' lies <- case mlies of
+     Nothing -> do
+-#if MIN_VERSION_ghc(9,9,0)
++#if MIN_VERSION_ghc(9,11,0)
++        let ann :: EpAnn (AnnList (EpToken "hiding", [EpToken ","]))
++            ann = noAnnSrcSpanDP0 
++#elif MIN_VERSION_ghc(9,9,0)
+         let ann = noAnnSrcSpanDP0
+ #else
+         src <- uniqueSrcSpanT
+@@ -549,9 +580,14 @@ extendHiding symbol (L l idecls) mlies df = do
+ #else
+             ann' = flip (fmap.fmap) ann $ \x -> x
+ #endif
++#if MIN_VERSION_ghc(9,11,0)
++                {al_rest = (EpTok (epl 1), [NoEpTok])
++                ,al_brackets=ListParens (EpTok (epl 1)) (EpTok (epl 0))
++#else
+                 {al_rest = [AddEpAnn AnnHiding (epl 1)]
+                 ,al_open = Just $ AddEpAnn AnnOpenP (epl 1)
+                 ,al_close = Just $ AddEpAnn AnnCloseP (epl 0)
++#endif
+                 }
+         return $ L ann' []
+     Just pr -> pure pr
+--- a/plugins/hls-refactor-plugin/src/Development/IDE/Plugin/Plugins/AddArgument.hs
++++ b/plugins/hls-refactor-plugin/src/Development/IDE/Plugin/Plugins/AddArgument.hs
+@@ -50,7 +50,9 @@ import           GHC                                       (DeltaPos (..),
+                                                             IsUnicodeSyntax (NormalSyntax))
+ import           Language.Haskell.GHC.ExactPrint           (d1, setEntryDP)
+ #endif
+-
++#if MIN_VERSION_ghc(9,11,0)
++import GHC.Parser.Annotation (EpToken(..))
++#endif
+ 
+ -- When GHC tells us that a variable is not bound, it will tell us either:
+ --  - there is an unbound variable with a given type
+@@ -77,19 +79,28 @@ plugin parsedModule Diagnostic {_message, _range}
+ --      addArgToMatch "foo" `bar arg1 arg2 = ...`
+ --   => (`bar arg1 arg2 foo = ...`, 2)
+ addArgToMatch :: T.Text -> GenLocated l (Match GhcPs (LocatedA (HsExpr GhcPs))) -> (GenLocated l (Match GhcPs (LocatedA (HsExpr GhcPs))), Int)
++#if MIN_VERSION_ghc(9,11,0)
++addArgToMatch name (L locMatch (Match xMatch ctxMatch (L l pats) rhs)) =
++#else
+ addArgToMatch name (L locMatch (Match xMatch ctxMatch pats rhs)) =
+-  let unqualName = mkRdrUnqual $ mkVarOcc $ T.unpack name
++#endif
+ #if MIN_VERSION_ghc(9,9,0)
++  let unqualName = mkRdrUnqual $ mkVarOcc $ T.unpack name
+       newPat = L noAnnSrcSpanDP1 $ VarPat NoExtField $ L noAnn unqualName
+       -- The intention is to move `= ...` (right-hand side with equals) to the right so there's 1 space between
+       -- the newly added pattern and the rest
+       indentRhs :: GRHSs GhcPs (LocatedA (HsExpr GhcPs)) -> GRHSs GhcPs (LocatedA (HsExpr GhcPs))
+       indentRhs rhs@GRHSs{grhssGRHSs} = rhs {grhssGRHSs = fmap (`setEntryDP` (SameLine 1)) grhssGRHSs }
+ #else
++  let unqualName = mkRdrUnqual $ mkVarOcc $ T.unpack name
+       newPat = L (noAnnSrcSpanDP1 generatedSrcSpan) $ VarPat NoExtField (noLocA unqualName)
+       indentRhs = id
+ #endif
++#if MIN_VERSION_ghc(9,11,0)
++  in (L locMatch (Match xMatch ctxMatch (L l (pats <> [newPat])) (indentRhs rhs)), Prelude.length pats)
++#else
+   in (L locMatch (Match xMatch ctxMatch (pats <> [newPat]) (indentRhs rhs)), Prelude.length pats)
++#endif
+ 
+ -- Attempt to insert a binding pattern into each match for the given LHsDecl; succeeds only if the function is a FunBind.
+ -- Also return:
+@@ -171,7 +182,11 @@ addTyHoleToTySigArg loc (L annHsSig (HsSig xHsSig tyVarBndrs lsigTy)) =
+           ( noAnn
+           , noExtField
+           , HsUnrestrictedArrow (EpUniTok d1 NormalSyntax)
++#if MIN_VERSION_ghc(9,11,0)
++          , L wildCardAnn $ HsWildCardTy NoEpTok
++#else
+           , L wildCardAnn $ HsWildCardTy noExtField
++#endif 
+           )
+ #elif MIN_VERSION_ghc(9,4,0)
+         wildCardAnn = SrcSpanAnn (EpAnn genAnchor1 (AnnListItem []) emptyComments) generatedSrcSpan
+--- a/plugins/hls-refactor-plugin/test/Main.hs
++++ b/plugins/hls-refactor-plugin/test/Main.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP                   #-}
+ {-# LANGUAGE AllowAmbiguousTypes   #-}
+ {-# LANGUAGE DataKinds             #-}
+ {-# LANGUAGE DuplicateRecordFields #-}
+@@ -2687,14 +2688,14 @@ addTypeAnnotationsToLiteralsTest = testGroup "add type annotations to literals t
+           [ (DiagnosticSeverity_Warning, (6, 8), "Defaulting the following constraint", Nothing)
+           , (DiagnosticSeverity_Warning, (6, 16), "Defaulting the following constraint", Nothing)
+           ])
+-      "Add type annotation ‘String’ to ‘\"debug\"’"
++      ("Add type annotation ‘" <> stringLit <> "’ to ‘\"debug\"’")
+       [ "{-# OPTIONS_GHC -Wtype-defaults #-}"
+       , "{-# LANGUAGE OverloadedStrings #-}"
+       , "module A (f) where"
+       , ""
+       , "import Debug.Trace"
+       , ""
+-      , "f = seq (\"debug\" :: String) traceShow \"debug\""
++      , "f = seq (\"debug\" :: "<> stringLit <> ") traceShow \"debug\""
+       ]
+   , testSession "add default type to satisfy two constraints" $
+     testFor
+@@ -2709,14 +2710,14 @@ addTypeAnnotationsToLiteralsTest = testGroup "add type annotations to literals t
+       (if ghcVersion >= GHC94
+         then [ (DiagnosticSeverity_Warning, (6, 6), "Defaulting the type variable", Nothing) ]
+         else [ (DiagnosticSeverity_Warning, (6, 6), "Defaulting the following constraint", Nothing) ])
+-      "Add type annotation ‘String’ to ‘\"debug\"’"
++      ("Add type annotation ‘" <> stringLit <> "’ to ‘\"debug\"’")
+       [ "{-# OPTIONS_GHC -Wtype-defaults #-}"
+       , "{-# LANGUAGE OverloadedStrings #-}"
+       , "module A (f) where"
+       , ""
+       , "import Debug.Trace"
+       , ""
+-      , "f a = traceShow (\"debug\" :: String) a"
++      , "f a = traceShow (\"debug\" :: " <> stringLit <> ") a"
+       ]
+   , testSession "add default type to satisfy two constraints with duplicate literals" $
+     testFor
+@@ -2731,17 +2732,18 @@ addTypeAnnotationsToLiteralsTest = testGroup "add type annotations to literals t
+       (if ghcVersion >= GHC94
+         then [ (DiagnosticSeverity_Warning, (6, 54), "Defaulting the type variable", Nothing) ]
+         else [ (DiagnosticSeverity_Warning, (6, 54), "Defaulting the following constraint", Nothing) ])
+-      "Add type annotation ‘String’ to ‘\"debug\"’"
++      ("Add type annotation ‘"<> stringLit <>"’ to ‘\"debug\"’")
+       [ "{-# OPTIONS_GHC -Wtype-defaults #-}"
+       , "{-# LANGUAGE OverloadedStrings #-}"
+       , "module A (f) where"
+       , ""
+       , "import Debug.Trace"
+       , ""
+-      , "f = seq (\"debug\" :: [Char]) (seq (\"debug\" :: [Char]) (traceShow (\"debug\" :: String)))"
++      , "f = seq (\"debug\" :: [Char]) (seq (\"debug\" :: [Char]) (traceShow (\"debug\" :: "<> stringLit <> ")))"
+       ]
+   ]
+   where
++    stringLit = if ghcVersion >= GHC912 then "[Char]" else "String"
+     testFor sourceLines diag expectedTitle expectedLines = do
+       docId <- createDoc "A.hs" "haskell" $ T.unlines sourceLines
+       expectDiagnostics [ ("A.hs", diag) ]
+@@ -3357,6 +3359,10 @@ addSigActionTests = let
+     executeCodeAction chosenAction
+     modifiedCode <- documentContents doc
+     liftIO $ expectedCode @=? modifiedCode
++  issue806 = if ghcVersion >= GHC912 then
++                  "hello = print"           >:: "hello :: GHC.Types.ZonkAny 0 -> IO ()" -- GHC now returns ZonkAny 0 instead of Any. https://gitlab.haskell.org/ghc/ghc/-/issues/25895
++                else
++                  "hello = print"           >:: "hello :: GHC.Types.Any -> IO ()" -- Documents current behavior outlined in #806
+   in
+   testGroup "add signature"
+     [ "abc = True"              >:: "abc :: Bool"
+@@ -3365,7 +3371,7 @@ addSigActionTests = let
+     , "(!!!) a b = a > b"       >:: "(!!!) :: Ord a => a -> a -> Bool"
+     , "a >>>> b = a + b"        >:: "(>>>>) :: Num a => a -> a -> a"
+     , "a `haha` b = a b"        >:: "haha :: (t1 -> t2) -> t1 -> t2"
+-    , "hello = print"           >:: "hello :: GHC.Types.Any -> IO ()" -- Documents current behavior outlined in #806
++    , issue806
+     , "pattern Some a = Just a" >:: "pattern Some :: a -> Maybe a"
+     , "pattern Some a <- Just a" >:: "pattern Some :: a -> Maybe a"
+     , "pattern Some a <- Just a\n  where Some a = Just a" >:: "pattern Some :: a -> Maybe a"
+@@ -4042,8 +4048,7 @@ pattern R x y x' y' = Range (Position x y) (Position x' y')
+ -- Which we need to do on macOS since the $TMPDIR can be in @/private/var@ or
+ -- @/var@
+ withTempDir :: (FilePath -> IO a) -> IO a
+-withTempDir f = System.IO.Extra.withTempDir $ \dir ->
+-  canonicalizePath dir >>= f
++withTempDir f = System.IO.Extra.withTempDir $ (canonicalizePath >=> f)
+ 
+ brokenForGHC94 :: String -> TestTree -> TestTree
+ brokenForGHC94 = knownBrokenForGhcVersions [GHC94]
+--- a/plugins/hls-refactor-plugin/test/Test/AddArgument.hs
++++ b/plugins/hls-refactor-plugin/test/Test/AddArgument.hs
+@@ -35,7 +35,7 @@ tests =
+       mkGoldenAddArgTest "AddArgFromLet" (r 2 0 2 50),
+       mkGoldenAddArgTest "AddArgFromWhere" (r 3 0 3 50),
+       -- TODO can we make this work for GHC 9.10?
+-      knownBrokenForGhcVersions [GHC910] "In GHC 9.10 end-of-line comment annotation is in different place" $
++      knownBrokenForGhcVersions [GHC910, GHC912] "In GHC 9.10 and 9.12 end-of-line comment annotation is in different place" $
+           mkGoldenAddArgTest "AddArgFromWhereComments" (r 3 0 3 50),
+       mkGoldenAddArgTest "AddArgWithTypeSynSig" (r 2 0 2 50),
+       mkGoldenAddArgTest "AddArgWithTypeSynSigContravariant" (r 2 0 2 50),
