@@ -1,0 +1,28 @@
+From b4bd2bf03709a287bf7beaebf4ad576e7f396d34 Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Wed, 9 Apr 2025 11:39:29 +0200
+Subject: [PATCH] compatibility with stylish-haskell-0.14.7.0
+
+---
+ .../src/Ide/Plugin/StylishHaskell.hs                          | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/plugins/hls-stylish-haskell-plugin/src/Ide/Plugin/StylishHaskell.hs b/plugins/hls-stylish-haskell-plugin/src/Ide/Plugin/StylishHaskell.hs
+index a862e57f..7571d39c 100644
+--- a/plugins/hls-stylish-haskell-plugin/src/Ide/Plugin/StylishHaskell.hs
++++ b/plugins/hls-stylish-haskell-plugin/src/Ide/Plugin/StylishHaskell.hs
+@@ -81,7 +81,11 @@ loadConfigFrom :: FilePath -> IO Config
+ loadConfigFrom file = do
+   currDir <- getCurrentDirectory
+   setCurrentDirectory (takeDirectory file)
++#if MIN_VERSION_stylish_haskell(0,14,7)
++  config <- loadConfig (makeVerbose False) SearchFromCurrentDirectory
++#else
+   config <- loadConfig (makeVerbose False) Nothing
++#endif
+   setCurrentDirectory currDir
+   pure config
+ 
+-- 
+2.49.0
+
