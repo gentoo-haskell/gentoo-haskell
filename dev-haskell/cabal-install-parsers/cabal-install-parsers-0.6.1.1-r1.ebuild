@@ -18,6 +18,7 @@ RESTRICT="test" #files not in tarball
 
 CABAL_CHDEPS=(
 	'ansi-terminal  >=1.0      && <1.1' 'ansi-terminal >=1.0'
+	'filepath      ^>=1.4.1.1' 'filepath >= 1.4.1.1'
 	)
 
 RDEPEND=">=dev-haskell/base16-bytestring-1.0.0.0:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
