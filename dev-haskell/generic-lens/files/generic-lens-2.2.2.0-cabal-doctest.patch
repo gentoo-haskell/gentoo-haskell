@@ -1,17 +1,13 @@
-From: hololeap <hololeap@protonmail.com>
-Signed-off-by: hololeap <hololeap@protonmail.com>
-Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
-Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1270
+From 9d4485ebe7d17828a2b43c5de00403973304720e Mon Sep 17 00:00:00 2001
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 31 Mar 2025 18:16:33 +0200
+Subject: [PATCH] cabal-doctest
 
 doctest pulls in the out-of-scope packages if they are installed on the
 system. The best workaround is to use migrate to cabal-doctest.
 
-The temporary package database at "${S}/package.conf.d" is used to avoid GHC
-panics.
-
-diff -urN generic-lens-2.2.1.0/Setup.hs generic-lens-2.2.1.0-r1/Setup.hs
---- generic-lens-2.2.1.0/Setup.hs	2001-09-08 19:46:40.000000000 -0600
-+++ generic-lens-2.2.1.0-r1/Setup.hs	2022-03-31 13:32:46.128447775 -0600
+--- a/Setup.hs
++++ b/Setup.hs
 @@ -1,2 +1,6 @@
 -import Distribution.Simple
 -main = defaultMain
@@ -21,9 +17,8 @@ diff -urN generic-lens-2.2.1.0/Setup.hs generic-lens-2.2.1.0-r1/Setup.hs
 +
 +main :: IO ()
 +main = defaultMainWithDoctests "doctests"
-diff -urN generic-lens-2.2.1.0/examples/doctest.hs generic-lens-2.2.1.0-r1/examples/doctest.hs
---- generic-lens-2.2.1.0/examples/doctest.hs	2001-09-08 19:46:40.000000000 -0600
-+++ generic-lens-2.2.1.0-r1/examples/doctest.hs	2022-03-31 15:38:38.738358107 -0600
+--- a/examples/doctest.hs
++++ b/examples/doctest.hs
 @@ -1,6 +1,31 @@
  import Test.DocTest
 -main
@@ -61,19 +56,18 @@ diff -urN generic-lens-2.2.1.0/examples/doctest.hs generic-lens-2.2.1.0-r1/examp
 +    let args = customFlags ++ pkgs ++ modules
 +
 +    doctest args
-diff -urN generic-lens-2.2.1.0/generic-lens.cabal generic-lens-2.2.1.0-r1/generic-lens.cabal
---- generic-lens-2.2.1.0/generic-lens.cabal	2022-03-31 13:20:12.958456717 -0600
-+++ generic-lens-2.2.1.0-r1/generic-lens.cabal	2022-03-31 14:52:42.858390826 -0600
-@@ -12,7 +12,7 @@
+--- a/generic-lens.cabal
++++ b/generic-lens.cabal
+@@ -12,7 +12,7 @@ license-file:         LICENSE
  author:               Csongor Kiss
  maintainer:           kiss.csongor.kiss@gmail.com
  category:             Generics, Records, Lens
 -build-type:           Simple
 +build-type:           Custom
- cabal-version:        >= 1.10
- Tested-With:          GHC == 8.4.1, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.4, GHC == 8.10.3, GHC == 9.0.1, GHC == 9.2.1
+
+ tested-with:
  
-@@ -20,6 +20,12 @@
+@@ -20,6 +20,12 @@ extra-source-files:   examples/StarWars.hs
                      , examples/Examples.hs
                      , ChangeLog.md
  
@@ -86,12 +80,15 @@ diff -urN generic-lens-2.2.1.0/generic-lens.cabal generic-lens-2.2.1.0-r1/generi
  library
    exposed-modules:    Data.Generics.Wrapped
                      , Data.Generics.Product
-@@ -102,4 +108,8 @@
-   ghc-options:        -threaded
+@@ -103,5 +109,8 @@ test-suite doctests
    main-is:            doctest.hs
-   build-depends:      base >4 && <5, doctest
+   build-depends:      base >4 && <5
+                     , doctest
 +                    , directory
 +                    , filepath
 +                    , base-compat
-+                    , lens
+                     , lens
    hs-source-dirs:     examples
+-- 
+2.49.0
+
