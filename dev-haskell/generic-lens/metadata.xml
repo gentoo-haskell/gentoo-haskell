@@ -7,5 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">generic-lens</remote-id>
+		<remote-id type="github">kcsongor/generic-lens</remote-id>
 	</upstream>
 </pkgmetadata>
