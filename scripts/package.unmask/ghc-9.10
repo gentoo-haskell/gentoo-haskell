@@ -32,7 +32,7 @@
 # haddock submodule in ghc-9.10.1-release does not build
 #<dev-haskell/haddock-2.30
 #<dev-haskell/haddock-api-2.30
-<dev-haskell/hlint-3.9
+<dev-haskell/hlint-3.11
 <dev-haskell/hoauth2-2.14
 <dev-haskell/stack-2.14
 <dev-haskell/singletons-th-3.4
