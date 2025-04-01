@@ -50,3 +50,5 @@ app-portage/hackport
 <dev-haskell/btrfs-0.3
 <dev-haskell/daemons-0.5
 <dev-haskell/linux-file-extents-0.3
+<dev-haskell/cabal-install-parsers-0.6.3
+<dev-haskell/doctest-0.23

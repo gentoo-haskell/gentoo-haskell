@@ -351,6 +351,7 @@ dev-haskell/country-codes
 >=dev-haskell/cabal-install-solver-3.12
 >=dev-haskell/cabal-install-3.12
 >=dev-haskell/cabal-tree-diff-3.12
+>=dev-haskell/doctest-0.22.10
 >=dev-haskell/binary-0.8.9.2
 >=dev-haskell/transformers-0.6.1.1
 >=dev-haskell/hlint-3.10
