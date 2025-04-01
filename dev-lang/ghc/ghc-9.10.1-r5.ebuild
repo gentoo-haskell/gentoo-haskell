@@ -595,6 +595,9 @@ src_prepare() {
 	# Fix the terminfo build with non-bash shells
 	eapply "${FILESDIR}/${PN}-9.10.1-bashisms.patch"
 
+	# https://gitlab.haskell.org/ghc/ghc/-/issues/25576
+	eapply "${FILESDIR}/${PN}-9.10.1-fix-ghc-unique-counter64.patch"
+
 	pushd "${S}/hadrian" || die
 		# Fix QA Notice: Unrecognized configure options: --with-cc
 		eapply "${FILESDIR}/hadrian-9.10.1-remove-with-cc-configure-flag.patch"
