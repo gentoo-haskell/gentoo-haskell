@@ -152,6 +152,7 @@ RDEPEND="
 		|| (
 			llvm-core/llvm:14
 		)
+		llvm-core/clang
 	)
 "
 
