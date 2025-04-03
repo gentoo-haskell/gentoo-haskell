@@ -62,6 +62,7 @@ RESTRICT="test" # Depends on masked ghcide-test-utils
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.10.0.0-ignore-plugins-ghc-bounds.patch"
+	"${FILESDIR}/${PN}-2.10.0.0-refactor.patch"
 	"${FILESDIR}/${PN}-2.10.0.0-add-bench-flags.patch"
 )
 
