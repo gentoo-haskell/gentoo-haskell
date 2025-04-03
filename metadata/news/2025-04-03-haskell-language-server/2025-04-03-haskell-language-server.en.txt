@@ -1,0 +1,24 @@
+Title: Haskell language server now supports ghc-9.10 and 9.12
+Author: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Posted: 2025-04-03
+Revision: 1
+News-Item-Format: 2.0
+Display-If-Installed: dev-haskell/haskell-language-server
+
+The v2.10.0.0 of dev-haskell/language-server now mostly supports 
+ghc-9.10 and ghc-9.12. Some plugins though are still incompatible.
+If you wish to use haskell-language-server with ghc-9.10 or ghc-9.12,
+you may use the new files located in the scripts/package.use.mask/ 
+directory of the repo. To use them, simply add a symlink of the 
+desired file to your /etc/portage/profiles/package.use.mask/ 
+directory.
+
+For instance, to use haskell-language-server with ghc-9.12, run the
+following:
+	
+  ln -s $(portageq get_repo_path / haskell)/scripts/package.use.mask/ghc-9.12 \
+  	/etc/portage/profiles/package.use.mask/ghc-9.12
+
+As always, report any bugs to the gentoo-haskell bug tracker[1].
+
+[1] https://github.com/gentoo-haskell/gentoo-haskell/issues
