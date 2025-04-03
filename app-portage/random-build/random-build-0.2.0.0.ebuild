@@ -16,8 +16,10 @@ SRC_URI="https://github.com/gentoo-haskell/random-build/releases/download/${P}/$
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+IUSE="profile +threads"
 
-RDEPEND=">=dev-haskell/conduit-1.3.6:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
+RDEPEND=">=dev-haskell/async-2.2.5:=[profile?] <dev-haskell/async-2.3:=[profile?]
+	>=dev-haskell/conduit-1.3.6:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
 	>=dev-haskell/conduit-extra-1.3.7:=[profile?] <dev-haskell/conduit-extra-1.4:=[profile?]
 	>=dev-haskell/effectful-2.5.1.0:=[profile?] <dev-haskell/effectful-2.6:=[profile?]
 	>=dev-haskell/effectful-core-2.5.0:=[profile?] <dev-haskell/effectful-core-2.6:=[profile?]
@@ -28,8 +30,10 @@ RDEPEND=">=dev-haskell/conduit-1.3.6:=[profile?] <dev-haskell/conduit-1.4:=[prof
 	>=dev-haskell/portage-hs-0.1.0.0:=[profile?] <dev-haskell/portage-hs-0.2:=[profile?]
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
 	>=dev-haskell/prettyprinter-ansi-terminal-1.1.3:=[profile?] <dev-haskell/prettyprinter-ansi-terminal-1.2:=[profile?]
+	>=dev-haskell/streaming-commons-0.2.3.0:=[profile?] <dev-haskell/streaming-commons-0.3:=[profile?]
 	>=dev-haskell/text-1.2.5.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-haskell/time-compat-1.9.8:=[profile?] <dev-haskell/time-compat-1.10:=[profile?]
+	>=dev-haskell/unliftio-core-0.2.1.0:=[profile?] <dev-haskell/unliftio-core-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.20:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
@@ -39,5 +43,7 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		--flag=pedantic
+		--flag=pedantic \
+		$(cabal_flag profile profile) \
+		$(cabal_flag threads threads)
 }

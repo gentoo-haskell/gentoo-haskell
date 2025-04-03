@@ -5,6 +5,10 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="profile">Enable profiling flags</flag>
+		<flag name="threads">Enable threading and rtsopts</flag>
+	</use>
 	<upstream>
 		<remote-id type="github">gentoo-haskell/random-build</remote-id>
 	</upstream>
