@@ -351,7 +351,6 @@ dev-haskell/country-codes
 >=dev-haskell/cabal-install-solver-3.12
 >=dev-haskell/cabal-install-3.12
 >=dev-haskell/cabal-tree-diff-3.12
->=dev-haskell/doctest-0.22.10
 >=dev-haskell/binary-0.8.9.2
 >=dev-haskell/transformers-0.6.1.1
 >=dev-haskell/hlint-3.10
@@ -359,6 +358,7 @@ dev-haskell/country-codes
 >=dev-haskell/ghc-lib-parser-ex-9.12
 >=dev-haskell/cabal-fmt-0.1.12
 >=dev-haskell/cabal-install-parsers-0.6.2
+>=dev-haskell/stylish-haskell-0.15.0.0
 
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of

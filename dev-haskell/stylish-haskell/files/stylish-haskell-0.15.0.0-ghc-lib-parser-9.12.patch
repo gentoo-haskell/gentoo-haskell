@@ -1,0 +1,254 @@
+From https://github.com/haskell/stylish-haskell/pull/491
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Sun, 13 Apr 2025 12:32:20 +0200
+Subject: [PATCH] Upgrade to ghc 9.12
+
+--- a/lib/Language/Haskell/Stylish/Comments.hs
++++ b/lib/Language/Haskell/Stylish/Comments.hs
+@@ -61,7 +61,7 @@ commentGroups getSpan allItems allComments =
+     commentsWithLines :: [(LineBlock, GHC.LEpaComment)]
+     commentsWithLines = do
+         comment <- allComments
+-        let s = GHC.anchor $ GHC.getLoc comment
++        let s = GHC.epaLocationRealSrcSpan $ GHC.getLoc comment
+         pure (realSrcSpanToLineBlock s, comment)
+ 
+     work
+--- a/lib/Language/Haskell/Stylish/GHC.hs
++++ b/lib/Language/Haskell/Stylish/GHC.hs
+@@ -86,6 +86,6 @@ deepAnnComments :: (Data a, Typeable a) => a -> [GHC.LEpaComment]
+ deepAnnComments = everything (++) (mkQ [] priorAndFollowing)
+ 
+ priorAndFollowing :: GHC.EpAnnComments -> [GHC.LEpaComment]
+-priorAndFollowing = sortOn (GHC.anchor . GHC.getLoc) . \case
++priorAndFollowing = sortOn (GHC.epaLocationRealSrcSpan . GHC.getLoc) . \case
+     GHC.EpaComments         {..} -> priorComments
+     GHC.EpaCommentsBalanced {..} -> priorComments ++ followingComments
+--- a/lib/Language/Haskell/Stylish/Module.hs
++++ b/lib/Language/Haskell/Stylish/Module.hs
+@@ -141,7 +141,7 @@ moduleLanguagePragmas =
+     prag comment = case GHC.ac_tok (GHC.unLoc comment) of
+         GHC.EpaBlockComment str
+             | lang : p1 : ps <- tokenize str, map toLower lang == "language" ->
+-                pure (GHC.anchor (GHC.getLoc comment), p1 :| ps)
++                pure (GHC.epaLocationRealSrcSpan (GHC.getLoc comment), p1 :| ps)
+         _ -> Nothing
+ 
+     tokenize = words .
+--- a/lib/Language/Haskell/Stylish/Printer.hs
++++ b/lib/Language/Haskell/Stylish/Printer.hs
+@@ -53,6 +53,7 @@ import           GHC.Hs.Extension                (GhcPs)
+ import           GHC.Types.Name.Reader           (RdrName (..))
+ import           GHC.Types.SrcLoc                (GenLocated (..))
+ import qualified GHC.Types.SrcLoc                as GHC
++import           GHC.TypeLits                    (symbolVal)
+ import           GHC.Utils.Outputable            (Outputable)
+ 
+ --------------------------------------------------------------------------------
+@@ -160,18 +161,19 @@ putRdrName rdrName = case GHC.unLoc rdrName of
+ 
+ nameAnnAdornment :: GHC.NameAnn -> (String, String)
+ nameAnnAdornment = \case
+-    GHC.NameAnn {..}       -> fromAdornment nann_adornment
+-    GHC.NameAnnCommas {..} -> fromAdornment nann_adornment
+-    GHC.NameAnnBars {..}   -> fromAdornment nann_adornment
+-    GHC.NameAnnOnly {..}   -> fromAdornment nann_adornment
++    GHC.NameAnn {GHC.nann_adornment = na}       -> fromAdornment na
++    GHC.NameAnnCommas {GHC.nann_adornment = na}       -> fromAdornment na
++    GHC.NameAnnBars {GHC.nann_parensh = (o, c)}       -> fromAdornment (GHC.NameParensHash o c)
++    GHC.NameAnnOnly {GHC.nann_adornment = na}       -> fromAdornment na
+     GHC.NameAnnRArrow {}   -> (mempty, mempty)
+     GHC.NameAnnQuote {}    -> ("'", mempty)
+     GHC.NameAnnTrailing {} -> (mempty, mempty)
+   where
+-    fromAdornment GHC.NameParens     = ("(", ")")
+-    fromAdornment GHC.NameBackquotes = ("`", "`")
+-    fromAdornment GHC.NameParensHash = ("#(", "#)")
+-    fromAdornment GHC.NameSquare     = ("[", "]")
++    fromAdornment (GHC.NameParens l r)     = (symbolVal l, symbolVal r)
++    fromAdornment (GHC.NameBackquotes l r) = (symbolVal l, symbolVal r)
++    fromAdornment (GHC.NameParensHash l r) = (symbolVal l, symbolVal r)
++    fromAdornment (GHC.NameSquare l r)     = (symbolVal l, symbolVal r)
++    fromAdornment GHC.NameNoAdornment      = (mempty, mempty)
+ 
+ -- | Print module name
+ putModuleName :: GHC.ModuleName -> P ()
+@@ -197,7 +199,7 @@ putType ltp = case GHC.unLoc ltp of
+       (comma >> space)
+       (fmap putType xs)
+     putText "]"
+-  GHC.HsExplicitTupleTy _ xs -> do
++  GHC.HsExplicitTupleTy _ _ xs -> do
+     putText "'("
+     sep
+       (comma >> space)
+--- a/lib/Language/Haskell/Stylish/Step/Data.hs
++++ b/lib/Language/Haskell/Stylish/Step/Data.hs
+@@ -103,6 +103,8 @@ step cfg = makeStep "Data" \ls m -> Editor.apply (changes m) ls
+         isAfterStart :: GHC.LEpaComment -> Bool
+         isAfterStart (GHC.L (GHC.EpaSpan (GHC.RealSrcSpan commentSpan _)) _) =
+                GHC.srcSpanStartLine commentSpan >= GHC.srcSpanStartLine declSpan
++        isAfterStart (GHC.L (GHC.EpaDelta (GHC.RealSrcSpan commentSpan _) _ _) _) =
++               GHC.srcSpanStartLine commentSpan >= GHC.srcSpanStartLine declSpan
+         isAfterStart _ = False
+ 
+     dataDecls :: Module -> [DataDecl]
+--- a/lib/Language/Haskell/Stylish/Step/Imports.hs
++++ b/lib/Language/Haskell/Stylish/Step/Imports.hs
+@@ -638,7 +638,7 @@ prepareImportList =
+   prepareInner :: GHC.IE GHC.GhcPs -> GHC.IE GHC.GhcPs
+   prepareInner = \case
+     -- Simplify `A ()` to `A`.
+-    GHC.IEThingWith x n GHC.NoIEWildcard [] md -> GHC.IEThingAbs x n md
++    GHC.IEThingWith x n GHC.NoIEWildcard [] md -> GHC.IEThingAbs (fst x) n md
+     GHC.IEThingWith x n w ns md ->
+       GHC.IEThingWith x n w (sortBy (compareWrappedName `on` GHC.unLoc) ns) md
+     ie -> ie
+--- a/lib/Language/Haskell/Stylish/Step/LanguagePragmas.hs
++++ b/lib/Language/Haskell/Stylish/Step/LanguagePragmas.hs
+@@ -198,5 +198,5 @@ isRedundantBangPatterns modul =
+ 
+     getMatchStrict :: GHC.Match GHC.GhcPs (GHC.LHsExpr GHC.GhcPs) -> [()]
+     getMatchStrict (GHC.Match _ ctx _ _) = case ctx of
+-      GHC.FunRhs _ _ GHC.SrcStrict -> [()]
+-      _                            -> []
++      GHC.FunRhs _ _ GHC.SrcStrict _ -> [()]
++      _                              -> []
+--- a/lib/Language/Haskell/Stylish/Step/ModuleHeader.hs
++++ b/lib/Language/Haskell/Stylish/Step/ModuleHeader.hs
+@@ -81,18 +81,18 @@ printModuleHeader maxCols conf ls lmodul =
+                 loc <- GHC.getLocA <$> GHC.hsmodExports modul
+                 GHC.srcSpanEndLine <$> GHC.srcSpanToRealSrcSpan loc)
+ 
+-        keywordLine kw = listToMaybe $ do
++        keywordLine kw = do
+             GHC.EpAnn {..} <- pure $ GHC.hsmodAnn $ GHC.hsmodExt modul
+-            GHC.AddEpAnn kw' (GHC.EpaSpan (GHC.RealSrcSpan s _)) <- GHC.am_main anns
+-            guard $ kw == kw'
+-            pure $ GHC.srcSpanEndLine s
++            case kw anns of
++              GHC.EpTok (GHC.EpaSpan (GHC.RealSrcSpan s _)) -> Just . GHC.srcSpanEndLine $ s
++              _ -> Nothing
+ 
+-        moduleLine = keywordLine GHC.AnnModule
+-        whereLine = keywordLine GHC.AnnWhere
++        moduleLine = keywordLine GHC.am_mod
++        whereLine = keywordLine GHC.am_where
+ 
+         commentOnLine l = listToMaybe $ do
+             comment <- epAnnComments $ GHC.hsmodAnn $ GHC.hsmodExt modul
+-            guard $ GHC.srcSpanStartLine (GHC.anchor $ GHC.getLoc comment) == l
++            guard $ GHC.srcSpanStartLine (GHC.epaLocationRealSrcSpan $ GHC.getLoc comment) == l
+             pure comment
+ 
+         moduleComment = moduleLine >>= commentOnLine
+@@ -152,7 +152,7 @@ printHeader conf mbName mbDeprec mbExps mbModuleComment mbWhereComment = do
+                 attachModuleComment
+             Single  | [egroup] <- exports
+                     , not (commentGroupHasComments egroup)
+-                    , [(export, _)] <- (cgItems egroup) -> do
++                    , [(export, _)] <- cgItems egroup -> do
+                 printSingleLineExportList conf [export]
+                 attachModuleComment
+             Inline  | [] <- exports -> do
+--- a/lib/Language/Haskell/Stylish/Step/SimpleAlign.hs
++++ b/lib/Language/Haskell/Stylish/Step/SimpleAlign.hs
+@@ -112,7 +112,7 @@ matchGroupToAlignable conf mg = cases' ++ patterns'
+ matchToAlignable
+     :: GHC.LocatedA (Hs.Match Hs.GhcPs (Hs.LHsExpr Hs.GhcPs))
+     -> Maybe (Either (Alignable GHC.RealSrcSpan) (Alignable GHC.RealSrcSpan))
+-matchToAlignable (GHC.L matchLoc m@(Hs.Match _ Hs.CaseAlt pats@(_ : _) grhss)) = do
++matchToAlignable (GHC.L matchLoc m@(Hs.Match _ Hs.CaseAlt (GHC.L _ pats@(_ : _)) grhss)) = do
+   let patsLocs   = map GHC.getLocA pats
+       pat        = last patsLocs
+       guards     = getGuards m
+@@ -128,7 +128,7 @@ matchToAlignable (GHC.L matchLoc m@(Hs.Match _ Hs.CaseAlt pats@(_ : _) grhss)) =
+     , aRight     = rightPos
+     , aRightLead = length "-> "
+     }
+-matchToAlignable (GHC.L matchLoc (Hs.Match _ (Hs.FunRhs name _ _) pats@(_ : _) grhss)) = do
++matchToAlignable (GHC.L matchLoc (Hs.Match _ (Hs.FunRhs name _ _ _) (GHC.L _ pats@(_ : _)) grhss)) = do
+   body <- unguardedRhsBody grhss
+   let patsLocs = map GHC.getLocA pats
+       nameLoc  = GHC.getLocA name
+--- a/lib/Language/Haskell/Stylish/Step/Squash.hs
++++ b/lib/Language/Haskell/Stylish/Step/Squash.hs
+@@ -1,4 +1,5 @@
+ --------------------------------------------------------------------------------
++{-# LANGUAGE DataKinds             #-}
+ {-# LANGUAGE PartialTypeSignatures #-}
+ {-# LANGUAGE PatternGuards         #-}
+ {-# LANGUAGE RecordWildCards       #-}
+@@ -9,7 +10,6 @@ module Language.Haskell.Stylish.Step.Squash
+ 
+ 
+ --------------------------------------------------------------------------------
+-import           Data.Maybe                      (listToMaybe)
+ import qualified GHC.Hs                          as GHC
+ import qualified GHC.Types.SrcLoc                as GHC
+ 
+@@ -45,10 +45,9 @@ squashFieldDecl _ = mempty
+ 
+ 
+ --------------------------------------------------------------------------------
+-fieldDeclSeparator :: [GHC.AddEpAnn]-> Maybe GHC.RealSrcSpan
+-fieldDeclSeparator anns = listToMaybe $ do
+-    GHC.AddEpAnn GHC.AnnDcolon (GHC.EpaSpan (GHC.RealSrcSpan s _)) <- anns
+-    pure s
++fieldDeclSeparator :: GHC.EpUniToken "::" "\8759" -> Maybe GHC.RealSrcSpan
++fieldDeclSeparator (GHC.EpUniTok (GHC.EpaSpan (GHC.RealSrcSpan s _)) _) = Just s
++fieldDeclSeparator _ = Nothing
+ 
+ 
+ --------------------------------------------------------------------------------
+@@ -65,23 +64,23 @@ squashMatch lmatch = case GHC.m_grhss match of
+   where
+     match = GHC.unLoc lmatch
+     mbLeft = case match of
+-        GHC.Match _ (GHC.FunRhs name _ _) [] _ ->
++        GHC.Match _ (GHC.FunRhs name _ _ _ ) (GHC.L _ []) _ ->
+             GHC.srcSpanToRealSrcSpan $ GHC.getLocA name
+-        GHC.Match _ _ pats@(_ : _) _ ->
++        GHC.Match _ _ (GHC.L _ pats@(_ : _)) _ ->
+             GHC.srcSpanToRealSrcSpan . GHC.getLocA $ last pats
+         _ -> Nothing
+ 
+ 
+ --------------------------------------------------------------------------------
+ matchSeparator :: GHC.EpAnn GHC.GrhsAnn -> Maybe GHC.RealSrcSpan
+-matchSeparator GHC.EpAnn {..}
+-    | GHC.AddEpAnn _ (GHC.EpaSpan (GHC.RealSrcSpan s _)) <- GHC.ga_sep anns = Just s
+-matchSeparator _ = Nothing
+-
++matchSeparator GHC.EpAnn {..} = case GHC.ga_sep anns of
++                                  Left (GHC.EpTok (GHC.EpaSpan (GHC.RealSrcSpan s _))) -> Just s
++                                  Right (GHC.EpUniTok (GHC.EpaSpan (GHC.RealSrcSpan s _)) _) -> Just s
++                                  _ -> Nothing
+ 
+ --------------------------------------------------------------------------------
+ step :: Step
+-step = makeStep "Squash" $ \ls (module') ->
++step = makeStep "Squash" $ \ls module' ->
+     let changes =
+             foldMap squashFieldDecl (everything module') <>
+             foldMap squashMatch (everything module') in
+--- a/lib/Language/Haskell/Stylish/Step/UnicodeSyntax.hs
++++ b/lib/Language/Haskell/Stylish/Step/UnicodeSyntax.hs
+@@ -24,7 +24,7 @@ hsTyReplacements (GHC.HsFunTy _ arr _ _)
+         Editor.replaceRealSrcSpan (GHC.epaLocationRealSrcSpan epaLoc) "→"
+ hsTyReplacements (GHC.HsQualTy _ ctx _)
+     | Just arrow <- GHC.ac_darrow . GHC.anns $ GHC.getLoc ctx
+-    , (GHC.NormalSyntax, GHC.EpaSpan (GHC.RealSrcSpan loc _)) <- arrow =
++    , (GHC.EpUniTok (GHC.EpaSpan (GHC.RealSrcSpan loc _)) GHC.NormalSyntax) <- arrow =
+         Editor.replaceRealSrcSpan loc "⇒"
+ hsTyReplacements _ = mempty
+ 
+@@ -32,7 +32,7 @@ hsTyReplacements _ = mempty
+ --------------------------------------------------------------------------------
+ hsSigReplacements :: GHC.Sig GHC.GhcPs -> Editor.Edits
+ hsSigReplacements (GHC.TypeSig ann _ _)
+-    | GHC.AddEpAnn GHC.AnnDcolon epaLoc <- GHC.asDcolon ann
++    | GHC.EpUniTok epaLoc _ <- GHC.asDcolon ann
+     , GHC.EpaSpan (GHC.RealSrcSpan loc _) <- epaLoc =
+         Editor.replaceRealSrcSpan loc "∷"
+ hsSigReplacements _ = mempty
