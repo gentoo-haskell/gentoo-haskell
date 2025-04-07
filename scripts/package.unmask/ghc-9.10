@@ -28,7 +28,7 @@
 <dev-haskell/base64-1.1
 <dev-haskell/ghc-lib-parser-9.13
 <dev-haskell/ghc-lib-parser-ex-9.13
-<dev-haskell/stylish-haskell-0.15
+<dev-haskell/stylish-haskell-0.16
 # haddock submodule in ghc-9.10.1-release does not build
 #<dev-haskell/haddock-2.30
 #<dev-haskell/haddock-api-2.30
