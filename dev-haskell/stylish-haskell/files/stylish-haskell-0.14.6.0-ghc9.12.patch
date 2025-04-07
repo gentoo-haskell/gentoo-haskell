@@ -1,0 +1,815 @@
+From https://github.com/haskell/stylish-haskell/pull/491
+From: GdeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 7 Apr 2025 19:14:56 +0200
+Subject: [PATCH] ghc-9.12
+
+--- a/lib/Language/Haskell/Stylish/Comments.hs
++++ b/lib/Language/Haskell/Stylish/Comments.hs
+@@ -1,5 +1,6 @@
+ --------------------------------------------------------------------------------
+ -- | Utilities for assocgating comments with things in a list.
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE RecordWildCards     #-}
+ {-# LANGUAGE ScopedTypeVariables #-}
+ module Language.Haskell.Stylish.Comments
+@@ -61,7 +62,11 @@ commentGroups getSpan allItems allComments =
+     commentsWithLines :: [(LineBlock, GHC.LEpaComment)]
+     commentsWithLines = do
+         comment <- allComments
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++        let s = GHC.epaLocationRealSrcSpan $ GHC.getLoc comment
++#else
+         let s = GHC.anchor $ GHC.getLoc comment
++#endif
+         pure (realSrcSpanToLineBlock s, comment)
+ 
+     work
+--- a/lib/Language/Haskell/Stylish/Config.hs
++++ b/lib/Language/Haskell/Stylish/Config.hs
+@@ -3,6 +3,7 @@
+ {-# LANGUAGE LambdaCase        #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE TemplateHaskell   #-}
++{-# LANGUAGE CPP #-}
+ module Language.Haskell.Stylish.Config
+     ( Extensions
+     , Config (..)
+@@ -127,7 +128,11 @@ loadConfig verbose configSearchStrategy = do
+         Left (pos, err)     -> error $ prettyPosWithSource pos (fromStrict bytes) ("Language.Haskell.Stylish.Config.loadConfig: " ++ err)
+         Right config -> do
+           cabalLanguageExtensions <- if configCabal config
++#if MIN_VERSION_Cabal(3,14,0)
+             then map toStr <$> Cabal.findLanguageExtensions verbose configSearchStrategy
++#else
++            then map toStr <$> Cabal.findLanguageExtensions verbose
++#endif
+             else pure []
+ 
+           return $ config
+--- a/lib/Language/Haskell/Stylish/Config/Cabal.hs
++++ b/lib/Language/Haskell/Stylish/Config/Cabal.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ --------------------------------------------------------------------------------
+ module Language.Haskell.Stylish.Config.Cabal
+     ( findLanguageExtensions
+@@ -14,7 +15,9 @@ import qualified Distribution.PackageDescription          as Cabal
+ import qualified Distribution.PackageDescription.Parsec   as Cabal
+ import qualified Distribution.Parsec                      as Cabal
+ import qualified Distribution.Simple.Utils                as Cabal
++#if MIN_VERSION_Cabal(3,14,0)
+ import qualified Distribution.Utils.Path                  as Cabal
++#endif
+ import qualified Distribution.Verbosity                   as Cabal
+ import           GHC.Data.Maybe                           (mapMaybe)
+ import qualified Language.Haskell.Extension               as Language
+@@ -26,14 +29,21 @@ import           System.Directory                         (doesFileExist,
+ 
+ --------------------------------------------------------------------------------
+ findLanguageExtensions
++#if MIN_VERSION_Cabal(3,14,0)
+     :: Verbose -> ConfigSearchStrategy -> IO [(Language.KnownExtension, Bool)]
+ findLanguageExtensions verbose configSearchStrategy =
+     findCabalFile verbose configSearchStrategy >>=
++#else
++    :: Verbose -> IO [(Language.KnownExtension, Bool)]
++findLanguageExtensions verbose =
++    findCabalFile verbose >>=
++#endif
+     maybe (pure []) (readDefaultLanguageExtensions verbose)
+ 
+ 
+ --------------------------------------------------------------------------------
+ -- | Find the closest .cabal file, possibly going up the directory structure.
++#if MIN_VERSION_Cabal(3,14,0)
+ findCabalFile :: Verbose -> ConfigSearchStrategy -> IO (Maybe FilePath)
+ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
+   -- If the invocation pointed us to a specific config file, it doesn't make
+@@ -42,6 +52,12 @@ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
+   UseConfig _                -> pure Nothing
+   SearchFromDirectory path   -> go [] $ ancestors path
+   SearchFromCurrentDirectory -> getCurrentDirectory >>= go [] . ancestors
++#else
++findCabalFile :: Verbose -> IO (Maybe FilePath)
++findCabalFile verbose = do
++  cwd <- getCurrentDirectory
++  go [] $ ancestors cwd
++#endif
+  where
+   go :: [FilePath] -> [FilePath] -> IO (Maybe FilePath)
+   go searched [] = do
+@@ -50,14 +66,21 @@ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
+     verbose $ "Stylish Haskell will work basing on LANGUAGE pragmas in source files."
+     return Nothing
+   go searched (p : ps) = do
++#if MIN_VERSION_Cabal(3,14,0)
+     let projectRoot = Just $ Cabal.makeSymbolicPath p
++#else
++    let projectRoot = p
++#endif
+     potentialCabalFile <- Cabal.findPackageDesc projectRoot
+     case potentialCabalFile of
+       Right cabalFile -> pure $ Just $
++#if MIN_VERSION_Cabal(3,14,0)
+         Cabal.interpretSymbolicPath projectRoot cabalFile
++#else
++        cabalFile
++#endif
+       _ -> go (p : searched) ps
+ 
+-
+ --------------------------------------------------------------------------------
+ -- | Extract @default-extensions@ fields from a @.cabal@ file
+ readDefaultLanguageExtensions :: Verbose -> FilePath -> IO [(Language.KnownExtension, Bool)]
+--- a/lib/Language/Haskell/Stylish/GHC.hs
++++ b/lib/Language/Haskell/Stylish/GHC.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE LambdaCase      #-}
+ {-# LANGUAGE RecordWildCards #-}
+ {-# OPTIONS_GHC -Wno-missing-fields #-}
+@@ -80,13 +81,19 @@ showOutputable :: GHC.Outputable a => a -> String
+ showOutputable = GHC.showPpr baseDynFlags
+ 
+ epAnnComments :: GHC.EpAnn a -> [GHC.LEpaComment]
++#if !MIN_VERSION_ghc_lib_parser(9,10,0)
+ epAnnComments GHC.EpAnnNotUsed = []
++#endif
+ epAnnComments GHC.EpAnn {..}   = priorAndFollowing comments
+ 
+ deepAnnComments :: (Data a, Typeable a) => a -> [GHC.LEpaComment]
+ deepAnnComments = everything (++) (mkQ [] priorAndFollowing)
+ 
+ priorAndFollowing :: GHC.EpAnnComments -> [GHC.LEpaComment]
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++priorAndFollowing = sortOn (GHC.epaLocationRealSrcSpan . GHC.getLoc) . \case
++#else
+ priorAndFollowing = sortOn (GHC.anchor . GHC.getLoc) . \case
++#endif
+     GHC.EpaComments         {..} -> priorComments
+     GHC.EpaCommentsBalanced {..} -> priorComments ++ followingComments
+--- a/lib/Language/Haskell/Stylish/Module.hs
++++ b/lib/Language/Haskell/Stylish/Module.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE BlockArguments             #-}
+ {-# LANGUAGE DerivingStrategies         #-}
+ {-# LANGUAGE GeneralizedNewtypeDeriving #-}
+@@ -141,7 +142,11 @@ moduleLanguagePragmas =
+     prag comment = case GHC.ac_tok (GHC.unLoc comment) of
+         GHC.EpaBlockComment str
+             | lang : p1 : ps <- tokenize str, map toLower lang == "language" ->
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++                pure (GHC.epaLocationRealSrcSpan (GHC.getLoc comment), p1 :| ps)
++#else
+                 pure (GHC.anchor (GHC.getLoc comment), p1 :| ps)
++#endif
+         _ -> Nothing
+ 
+     tokenize = words .
+--- a/lib/Language/Haskell/Stylish/Ordering.hs
++++ b/lib/Language/Haskell/Stylish/Ordering.hs
+@@ -3,6 +3,7 @@
+ -- and maybe more in the future.  This module provides consistent sorting
+ -- utilities.
+ {-# LANGUAGE LambdaCase #-}
++{-# LANGUAGE CPP #-}
+ module Language.Haskell.Stylish.Ordering
+     ( compareImports
+     , compareLIE
+@@ -45,13 +46,21 @@ compareLIE = comparing $ ieKey . unLoc
+     -- constructors first, followed by functions, and then operators.
+     ieKey :: IE GhcPs -> (Int, String)
+     ieKey = \case
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++        IEVar _ n _           -> nameKey n
++        IEThingAbs _ n _      -> nameKey n
++        IEThingAll _ n _      -> nameKey n
++        IEThingWith _ n _ _ _ -> nameKey n
++        IEModuleContents _ n  -> nameKey n
++        _                     -> (2, "")
++#else
+         IEVar _ n            -> nameKey n
+         IEThingAbs _ n       -> nameKey n
+         IEThingAll _ n       -> nameKey n
+         IEThingWith _ n _ _  -> nameKey n
+         IEModuleContents _ n -> nameKey n
+         _                    -> (2, "")
+-
++#endif
+ 
+ --------------------------------------------------------------------------------
+ compareWrappedName :: IEWrappedName GhcPs -> IEWrappedName GhcPs -> Ordering
+--- a/lib/Language/Haskell/Stylish/Printer.hs
++++ b/lib/Language/Haskell/Stylish/Printer.hs
+@@ -5,6 +5,7 @@
+ {-# LANGUAGE GeneralizedNewtypeDeriving #-}
+ {-# LANGUAGE LambdaCase                 #-}
+ {-# LANGUAGE RecordWildCards            #-}
++{-# LANGUAGE CPP #-}
+ module Language.Haskell.Stylish.Printer
+   ( Printer(..)
+   , PrinterConfig(..)
+@@ -138,7 +139,9 @@ putComment epaComment = case GHC.ac_tok epaComment of
+   GHC.EpaLineComment s  -> putText s
+   GHC.EpaDocOptions s   -> putText s
+   GHC.EpaBlockComment s -> putText s
++#if !MIN_VERSION_ghc_lib_parser(9,10,0)
+   GHC.EpaEofComment     -> pure ()
++#endif
+ 
+ putMaybeLineComment :: Maybe GHC.EpaComment -> P ()
+ putMaybeLineComment = \case
+@@ -149,8 +152,12 @@ putMaybeLineComment = \case
+ putRdrName :: GenLocated GHC.SrcSpanAnnN RdrName -> P ()
+ putRdrName rdrName = case GHC.unLoc rdrName of
+     Unqual name -> do
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++      let (pre, post) = nameAnnAdornment $ GHC.anns $ GHC.getLoc rdrName
++#else
+       let (pre, post) = nameAnnAdornments $
+             GHC.epAnnAnnsL $ GHC.ann $ GHC.getLoc rdrName
++#endif
+       putText pre
+       putText (showOutputable name)
+       putText post
+@@ -161,14 +168,30 @@ putRdrName rdrName = case GHC.unLoc rdrName of
+     Exact name ->
+       putText (showOutputable name)
+ 
++#if !MIN_VERSION_ghc_lib_parser(9,10,0)
+ nameAnnAdornments :: [GHC.NameAnn] -> (String, String)
+ nameAnnAdornments = foldl'
+     (\(accl, accr) nameAnn ->
+         let (l, r) = nameAnnAdornment nameAnn in (accl ++ l, r ++ accr))
+     (mempty, mempty)
++#endif
+ 
+ nameAnnAdornment :: GHC.NameAnn -> (String, String)
+ nameAnnAdornment = \case
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++    GHC.NameAnn {GHC.nann_adornment = na}       -> fromAdornment na
++    GHC.NameAnnCommas {GHC.nann_adornment = na}       -> fromAdornment na
++    GHC.NameAnnBars {GHC.nann_parensh = (o, c)}       -> fromAdornment (GHC.NameParensHash o c)
++    GHC.NameAnnOnly {GHC.nann_adornment = na}       -> fromAdornment na
++    GHC.NameAnnRArrow {}   -> (mempty, mempty)
++    GHC.NameAnnQuote {}    -> ("'", mempty)
++    GHC.NameAnnTrailing {} -> (mempty, mempty)
++  where
++    fromAdornment (GHC.NameParens _ _)     = ("(", ")")
++    fromAdornment (GHC.NameBackquotes _ _) = ("`", "`")
++    fromAdornment (GHC.NameParensHash _ _) = ("#(", "#)")
++    fromAdornment (GHC.NameSquare _ _)     = ("[", "]")
++#else
+     GHC.NameAnn {..}       -> fromAdornment nann_adornment
+     GHC.NameAnnCommas {..} -> fromAdornment nann_adornment
+     GHC.NameAnnBars {..}   -> fromAdornment nann_adornment
+@@ -179,8 +202,9 @@ nameAnnAdornment = \case
+   where
+     fromAdornment GHC.NameParens     = ("(", ")")
+     fromAdornment GHC.NameBackquotes = ("`", "`")
+-    fromAdornment GHC.NameParensHash = ("#(", "#)")
++    fromAdornment GHC.NameParensHash = ("(#", "#)")
+     fromAdornment GHC.NameSquare     = ("[", "]")
++#endif
+ 
+ -- | Print module name
+ putModuleName :: GHC.ModuleName -> P ()
+@@ -206,7 +230,11 @@ putType ltp = case GHC.unLoc ltp of
+       (comma >> space)
+       (fmap putType xs)
+     putText "]"
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++  GHC.HsExplicitTupleTy _ _ xs -> do
++#else
+   GHC.HsExplicitTupleTy _ xs -> do
++#endif
+     putText "'("
+     sep
+       (comma >> space)
+@@ -239,7 +267,11 @@ putType ltp = case GHC.unLoc ltp of
+     putOutputable ltp
+   GHC.HsQualTy {} ->
+     putOutputable ltp
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++  GHC.HsAppKindTy _ _ _ ->
++#else
+   GHC.HsAppKindTy _ _ _ _ ->
++#endif
+     putOutputable ltp
+   GHC.HsListTy _ _ ->
+     putOutputable ltp
+--- a/lib/Language/Haskell/Stylish/Step/Data.hs
++++ b/lib/Language/Haskell/Stylish/Step/Data.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE BlockArguments   #-}
+ {-# LANGUAGE DataKinds        #-}
+ {-# LANGUAGE DoAndIfThenElse  #-}
+@@ -93,15 +94,33 @@ step cfg = makeStep "Data" \ls m -> Editor.apply (changes m) ls
+     changes :: Module -> Editor.Edits
+     changes = foldMap (formatDataDecl cfg) . dataDecls
+ 
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++    getComments :: GHC.RealSrcSpan -> GHC.SrcSpanAnnA -> [GHC.LEpaComment]
++    getComments declSpan declAnnos = 
++        filter isAfterStart $ epAnnComments declAnnos
++          where
++            isAfterStart (GHC.L (GHC.EpaSpan (GHC.RealSrcSpan commentSpan _)) _) = GHC.srcSpanStartLine commentSpan >= GHC.srcSpanStartLine declSpan
++#endif
++
+     dataDecls :: Module -> [DataDecl]
+     dataDecls m = do
+         ldecl <- GHC.hsmodDecls $ GHC.unLoc m
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++        (GHC.L declAnnos (GHC.TyClD _ tycld)) <- pure ldecl
++        declSpan <- maybeToList $ GHC.srcSpanToRealSrcSpan $ GHC.getLocA ldecl
++#else
+         GHC.TyClD _ tycld <- pure $ GHC.unLoc ldecl
+         loc <- maybeToList $ GHC.srcSpanToRealSrcSpan $ GHC.getLocA ldecl
++#endif
+         case tycld of
+             GHC.DataDecl {..} -> pure $ MkDataDecl
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++                { dataComments = getComments declSpan declAnnos 
++                , dataLoc      = declSpan
++#else
+                 { dataComments = epAnnComments tcdDExt
+                 , dataLoc      = loc
++#endif
+                 , dataDeclName = tcdLName
+                 , dataTypeVars = tcdTyVars
+                 , dataDefn     = tcdDataDefn
+@@ -330,7 +349,11 @@ putConstructor cfg consIndent lcons = case GHC.unLoc lcons of
+   GHC.ConDeclGADT {..} -> do
+     -- Put argument to constructor first:
+     case con_g_args of
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++      GHC.PrefixConGADT _ _ -> sep (comma >> space) $ fmap putRdrName $ toList con_names
++#else
+       GHC.PrefixConGADT _ -> sep (comma >> space) $ fmap putRdrName $ toList con_names
++#endif
+       GHC.RecConGADT _ _ -> error . mconcat $
+           [ "Language.Haskell.Stylish.Step.Data.putConstructor: "
+           , "encountered a GADT with record constructors, not supported yet"
+@@ -350,7 +373,11 @@ putConstructor cfg consIndent lcons = case GHC.unLoc lcons of
+             GHC.HsOuterExplicit {..} -> hso_bndrs)
+     forM_ con_mb_cxt $ putContext cfg
+     case con_g_args of
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++        GHC.PrefixConGADT _ scaledTys -> forM_ scaledTys $ \scaledTy -> do
++#else
+         GHC.PrefixConGADT scaledTys -> forM_ scaledTys $ \scaledTy -> do
++#endif
+             putType $ GHC.hsScaledThing scaledTy
+             space >> putText "->" >> space
+         GHC.RecConGADT _ _ -> error . mconcat $
+@@ -384,7 +411,11 @@ putConstructor cfg consIndent lcons = case GHC.unLoc lcons of
+         let commented = commentGroups
+                 (GHC.srcSpanToRealSrcSpan . GHC.getLocA)
+                 (GHC.unLoc largs)
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++                (epAnnComments $ GHC.getLoc largs)
++#else
+                 (epAnnComments . GHC.ann $ GHC.getLoc largs)
++#endif
+ 
+         forM_ (flagEnds commented) $ \(CommentGroup {..}, firstCommentGroup, _) -> do
+ 
+--- a/lib/Language/Haskell/Stylish/Step/Imports.hs
++++ b/lib/Language/Haskell/Stylish/Step/Imports.hs
+@@ -5,6 +5,7 @@
+ {-# LANGUAGE NamedFieldPuns    #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ {-# LANGUAGE RecordWildCards   #-}
++{-# LANGUAGE CPP #-}
+ module Language.Haskell.Stylish.Step.Imports
+   ( Options (..)
+   , defaultOptions
+@@ -23,6 +24,9 @@ module Language.Haskell.Stylish.Step.Imports
+   ) where
+ 
+ --------------------------------------------------------------------------------
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++import Control.Applicative ((<|>))
++#endif
+ import           Control.Monad                     (forM_, void, when)
+ import qualified Data.Aeson                        as A
+ import           Data.Foldable                     (toList)
+@@ -507,11 +511,23 @@ printQualified Options{..} padNames stats ldecl = do
+ 
+ --------------------------------------------------------------------------------
+ printImport :: Bool -> GHC.IE GHC.GhcPs -> P ()
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++printImport _ (GHC.IEVar _ name _) = do
++#else
+ printImport _ (GHC.IEVar _ name) = do
++#endif
+     printIeWrappedName name
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++printImport _ (GHC.IEThingAbs _ name _) = do
++#else
+ printImport _ (GHC.IEThingAbs _ name) = do
++#endif
+     printIeWrappedName name
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++printImport separateLists (GHC.IEThingAll _ name _) = do
++#else
+ printImport separateLists (GHC.IEThingAll _ name) = do
++#endif
+     printIeWrappedName name
+     when separateLists space
+     putText "(..)"
+@@ -519,7 +535,11 @@ printImport _ (GHC.IEModuleContents _ modu) = do
+     putText "module"
+     space
+     putText . GHC.moduleNameString $ GHC.unLoc modu
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++printImport separateLists (GHC.IEThingWith _ name wildcard imps _) = do
++#else
+ printImport separateLists (GHC.IEThingWith _ name wildcard imps) = do
++#endif
+     printIeWrappedName name
+     when separateLists space
+     let ellipsis = case wildcard of
+@@ -637,13 +657,32 @@ prepareImportList =
+   prepareInner :: GHC.IE GHC.GhcPs -> GHC.IE GHC.GhcPs
+   prepareInner = \case
+     -- Simplify `A ()` to `A`.
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++    GHC.IEThingWith x n GHC.NoIEWildcard [] md -> GHC.IEThingAbs (fst x) n md
++#else
++    GHC.IEThingWith x n GHC.NoIEWildcard [] md -> GHC.IEThingAbs x n md
++#endif
++    GHC.IEThingWith x n w ns md ->
++      GHC.IEThingWith x n w (sortBy (compareWrappedName `on` GHC.unLoc) ns) md
++#else
+     GHC.IEThingWith x n GHC.NoIEWildcard [] -> GHC.IEThingAbs x n
+     GHC.IEThingWith x n w ns ->
+       GHC.IEThingWith x n w (sortBy (compareWrappedName `on` GHC.unLoc) ns)
++#endif
+     ie -> ie
+ 
+   -- Merge two import items, assuming they have the same name.
+   ieMerge :: GHC.IE GHC.GhcPs -> GHC.IE GHC.GhcPs -> Maybe (GHC.IE GHC.GhcPs)
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++  ieMerge l@(GHC.IEVar _ _ _)      _                  = Just l
++  ieMerge _                  r@(GHC.IEVar _ _ _)      = Just r
++  ieMerge (GHC.IEThingAbs _ _ _)   r                  = Just r
++  ieMerge l                  (GHC.IEThingAbs _ _ _)   = Just l
++  ieMerge l@(GHC.IEThingAll _ _ _) _                  = Just l
++  ieMerge _                  r@(GHC.IEThingAll _ _ _) = Just r
++  ieMerge (GHC.IEThingWith x0 n0 w0 ns0 me0) (GHC.IEThingWith _ _ w1 ns1 me1)
++#else
+   ieMerge l@(GHC.IEVar _ _)      _                  = Just l
+   ieMerge _                  r@(GHC.IEVar _ _)      = Just r
+   ieMerge (GHC.IEThingAbs _ _)   r                  = Just r
+@@ -651,10 +690,15 @@ prepareImportList =
+   ieMerge l@(GHC.IEThingAll _ _) _                  = Just l
+   ieMerge _                  r@(GHC.IEThingAll _ _) = Just r
+   ieMerge (GHC.IEThingWith x0 n0 w0 ns0) (GHC.IEThingWith _ _ w1 ns1)
++#endif
+     | w0 /= w1  = Nothing
+     | otherwise = Just $
+         -- TODO: sort the `ns0 ++ ns1`?
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++        GHC.IEThingWith x0 n0 w0 (nubOn GHC.lieWrappedName $ ns0 ++ ns1) (me0 <|> me1)
++#else
+         GHC.IEThingWith x0 n0 w0 (nubOn GHC.lieWrappedName $ ns0 ++ ns1)
++#endif
+   ieMerge _ _ = Nothing
+ 
+ 
+--- a/lib/Language/Haskell/Stylish/Step/LanguagePragmas.hs
++++ b/lib/Language/Haskell/Stylish/Step/LanguagePragmas.hs
+@@ -1,6 +1,7 @@
+ --------------------------------------------------------------------------------
+ {-# LANGUAGE BlockArguments    #-}
+ {-# LANGUAGE LambdaCase        #-}
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE OverloadedStrings #-}
+ module Language.Haskell.Stylish.Step.LanguagePragmas
+     ( Style (..)
+@@ -198,5 +199,10 @@ isRedundantBangPatterns modul =
+ 
+     getMatchStrict :: GHC.Match GHC.GhcPs (GHC.LHsExpr GHC.GhcPs) -> [()]
+     getMatchStrict (GHC.Match _ ctx _ _) = case ctx of
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++      GHC.FunRhs _ _ GHC.SrcStrict _ -> [()]
++      _                              -> []
++#else
+       GHC.FunRhs _ _ GHC.SrcStrict -> [()]
+       _                            -> []
++#endif
+--- a/lib/Language/Haskell/Stylish/Step/ModuleHeader.hs
++++ b/lib/Language/Haskell/Stylish/Step/ModuleHeader.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE BlockArguments  #-}
+ {-# LANGUAGE LambdaCase      #-}
+ {-# LANGUAGE RecordWildCards #-}
+@@ -81,6 +82,16 @@ printModuleHeader maxCols conf ls lmodul =
+                 loc <- GHC.getLocA <$> GHC.hsmodExports modul
+                 GHC.srcSpanEndLine <$> GHC.srcSpanToRealSrcSpan loc)
+ 
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++        keywordLine kw = do
++            GHC.EpAnn {..} <- pure $ GHC.hsmodAnn $ GHC.hsmodExt modul
++            case kw anns of
++              GHC.EpTok (GHC.EpaSpan (GHC.RealSrcSpan s _)) -> Just . GHC.srcSpanEndLine $ s
++              _ -> Nothing
++
++        moduleLine = keywordLine GHC.am_mod
++        whereLine = keywordLine GHC.am_where
++#else
+         keywordLine kw = listToMaybe $ do
+             GHC.EpAnn {..} <- pure $ GHC.hsmodAnn $ GHC.hsmodExt modul
+             GHC.AddEpAnn kw' (GHC.EpaSpan s _) <- GHC.am_main anns
+@@ -89,10 +100,15 @@ printModuleHeader maxCols conf ls lmodul =
+ 
+         moduleLine = keywordLine GHC.AnnModule
+         whereLine = keywordLine GHC.AnnWhere
++#endif
+ 
+         commentOnLine l = listToMaybe $ do
+             comment <- epAnnComments $ GHC.hsmodAnn $ GHC.hsmodExt modul
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++            guard $ GHC.srcSpanStartLine (GHC.epaLocationRealSrcSpan $ GHC.getLoc comment) == l
++#else
+             guard $ GHC.srcSpanStartLine (GHC.anchor $ GHC.getLoc comment) == l
++#endif
+             pure comment
+ 
+         moduleComment = moduleLine >>= commentOnLine
+@@ -104,7 +120,11 @@ printModuleHeader maxCols conf ls lmodul =
+             Just lexports -> Just $ doSort $ commentGroups
+                 (GHC.srcSpanToRealSrcSpan . GHC.getLocA)
+                 (GHC.unLoc lexports)
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++                (epAnnComments . GHC.getLoc $ lexports)
++#else
+                 (epAnnComments . GHC.ann $ GHC.getLoc lexports)
++#endif
+ 
+         printedModuleHeader = runPrinter_
+             (PrinterConfig maxCols)
+--- a/lib/Language/Haskell/Stylish/Step/SimpleAlign.hs
++++ b/lib/Language/Haskell/Stylish/Step/SimpleAlign.hs
+@@ -1,6 +1,7 @@
+ --------------------------------------------------------------------------------
+ {-# LANGUAGE RecordWildCards #-}
+ {-# LANGUAGE TypeFamilies    #-}
++{-# LANGUAGE CPP #-}
+ module Language.Haskell.Stylish.Step.SimpleAlign
+     ( Config (..)
+     , Align (..)
+@@ -12,7 +13,11 @@ module Language.Haskell.Stylish.Step.SimpleAlign
+ --------------------------------------------------------------------------------
+ import           Data.Either                     (partitionEithers)
+ import           Data.Foldable                   (toList)
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++import           Data.List                       (foldl1', sortOn)
++#else
+ import           Data.List                       (foldl', foldl1', sortOn)
++#endif
+ import           Data.Maybe                      (fromMaybe)
+ import qualified GHC.Hs                          as Hs
+ import qualified GHC.Parser.Annotation           as GHC
+@@ -112,7 +117,11 @@ matchGroupToAlignable conf mg = cases' ++ patterns'
+ matchToAlignable
+     :: GHC.LocatedA (Hs.Match Hs.GhcPs (Hs.LHsExpr Hs.GhcPs))
+     -> Maybe (Either (Alignable GHC.RealSrcSpan) (Alignable GHC.RealSrcSpan))
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++matchToAlignable (GHC.L matchLoc m@(Hs.Match _ Hs.CaseAlt (GHC.L _ pats@(_ : _)) grhss)) = do
++#else
+ matchToAlignable (GHC.L matchLoc m@(Hs.Match _ Hs.CaseAlt pats@(_ : _) grhss)) = do
++#endif
+   let patsLocs   = map GHC.getLocA pats
+       pat        = last patsLocs
+       guards     = getGuards m
+@@ -128,7 +137,11 @@ matchToAlignable (GHC.L matchLoc m@(Hs.Match _ Hs.CaseAlt pats@(_ : _) grhss)) =
+     , aRight     = rightPos
+     , aRightLead = length "-> "
+     }
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++matchToAlignable (GHC.L matchLoc (Hs.Match _ (Hs.FunRhs name _ _ _) (GHC.L _ pats@(_ : _)) grhss)) = do
++#else
+ matchToAlignable (GHC.L matchLoc (Hs.Match _ (Hs.FunRhs name _ _) pats@(_ : _) grhss)) = do
++#endif
+   body <- unguardedRhsBody grhss
+   let patsLocs = map GHC.getLocA pats
+       nameLoc  = GHC.getLocA name
+@@ -160,9 +173,15 @@ multiWayIfToAlignable _conf _ = []
+ 
+ --------------------------------------------------------------------------------
+ grhsToAlignable
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++    :: GHC.GenLocated GHC.EpAnnCO (Hs.GRHS Hs.GhcPs (Hs.LHsExpr Hs.GhcPs))
++    -> Maybe (Alignable GHC.RealSrcSpan)
++grhsToAlignable (GHC.L (GHC.EpAnn (GHC.EpaSpan grhsloc) _ _) (Hs.GRHS _ guards@(_ : _) body)) = do
++#else
+     :: GHC.GenLocated (GHC.SrcSpanAnn' a) (Hs.GRHS Hs.GhcPs (Hs.LHsExpr Hs.GhcPs))
+     -> Maybe (Alignable GHC.RealSrcSpan)
+ grhsToAlignable (GHC.L (GHC.SrcSpanAnn _ grhsloc) (Hs.GRHS _ guards@(_ : _) body)) = do
++#endif
+     let guardsLocs = map GHC.getLocA guards
+         bodyLoc    = GHC.getLocA $ body
+         left       = foldl1' GHC.combineSrcSpans guardsLocs
+--- a/lib/Language/Haskell/Stylish/Step/Squash.hs
++++ b/lib/Language/Haskell/Stylish/Step/Squash.hs
+@@ -1,15 +1,21 @@
+ --------------------------------------------------------------------------------
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE PartialTypeSignatures #-}
+ {-# LANGUAGE PatternGuards         #-}
+ {-# LANGUAGE RecordWildCards       #-}
+ {-# LANGUAGE TypeFamilies          #-}
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++{-# LANGUAGE DataKinds #-}
++#endif
+ module Language.Haskell.Stylish.Step.Squash
+     ( step
+     ) where
+ 
+ 
+ --------------------------------------------------------------------------------
++#if !MIN_VERSION_ghc_lib_parser(9,12,0)
+ import           Data.Maybe                      (listToMaybe)
++#endif
+ import qualified GHC.Hs                          as GHC
+ import qualified GHC.Types.SrcLoc                as GHC
+ 
+@@ -45,10 +51,20 @@ squashFieldDecl _ = mempty
+ 
+ 
+ --------------------------------------------------------------------------------
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++fieldDeclSeparator :: GHC.EpUniToken "::" "\8759" -> Maybe GHC.RealSrcSpan
++fieldDeclSeparator (GHC.EpUniTok (GHC.EpaSpan (GHC.RealSrcSpan s _)) _) = Just s
++#elif MIN_VERSION_ghc_lib_parser(9,10,0)
++fieldDeclSeparator :: [GHC.AddEpAnn]-> Maybe GHC.RealSrcSpan
++fieldDeclSeparator anns = listToMaybe $ do
++    GHC.AddEpAnn GHC.AnnDcolon (GHC.EpaSpan (GHC.RealSrcSpan _)) <- anns
++    pure s
++#else
+ fieldDeclSeparator :: GHC.EpAnn [GHC.AddEpAnn]-> Maybe GHC.RealSrcSpan
+ fieldDeclSeparator GHC.EpAnn {..} = listToMaybe $ do
+     GHC.AddEpAnn GHC.AnnDcolon (GHC.EpaSpan s _) <- anns
+     pure s
++#endif
+ fieldDeclSeparator _ = Nothing
+ 
+ 
+@@ -66,18 +82,35 @@ squashMatch lmatch = case GHC.m_grhss match of
+   where
+     match = GHC.unLoc lmatch
+     mbLeft = case match of
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++        GHC.Match _ (GHC.FunRhs name _ _ _) (GHC.L _ []) _ ->
++            GHC.srcSpanToRealSrcSpan $ GHC.getLocA name
++        GHC.Match _ _ (GHC.L _ pats@(_ : _)) _ ->
++#else
+         GHC.Match _ (GHC.FunRhs name _ _) [] _ ->
+             GHC.srcSpanToRealSrcSpan $ GHC.getLocA name
+         GHC.Match _ _ pats@(_ : _) _ ->
++#endif
+             GHC.srcSpanToRealSrcSpan . GHC.getLocA $ last pats
+         _ -> Nothing
+ 
+ 
+ --------------------------------------------------------------------------------
+ matchSeparator :: GHC.EpAnn GHC.GrhsAnn -> Maybe GHC.RealSrcSpan
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++matchSeparator GHC.EpAnn {..} = case GHC.ga_sep anns of
++                                      Left (GHC.EpTok (GHC.EpaSpan (GHC.RealSrcSpan s _))) -> Just s
++                                      Right (GHC.EpUniTok (GHC.EpaSpan (GHC.RealSrcSpan s _)) _) -> Just s
++                                      _ -> Nothing
++#elif MIN_VERSION_ghc_lib_parser(9,10,0)
++matchSeparator GHC.EpAnn {..}
++    | GHC.AddEpAnn _ (GHC.EpaSpan (GHC.RealSrcSpan s _)) <- GHC.ga_sep anns = Just s
++matchSeparator _ = Nothing
++#else
+ matchSeparator GHC.EpAnn {..}
+     | GHC.AddEpAnn _ (GHC.EpaSpan s _) <- GHC.ga_sep anns = Just s
+ matchSeparator _ = Nothing
++#endif
+ 
+ 
+ --------------------------------------------------------------------------------
+--- a/lib/Language/Haskell/Stylish/Step/UnicodeSyntax.hs
++++ b/lib/Language/Haskell/Stylish/Step/UnicodeSyntax.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ --------------------------------------------------------------------------------
+ module Language.Haskell.Stylish.Step.UnicodeSyntax
+     ( step
+@@ -20,19 +21,39 @@ import           Language.Haskell.Stylish.Util                 (everything)
+ --------------------------------------------------------------------------------
+ hsTyReplacements :: GHC.HsType GHC.GhcPs -> Editor.Edits
+ hsTyReplacements (GHC.HsFunTy _ arr _ _)
++#if MIN_VERSION_ghc_lib_parser(9,10,0)
++    | GHC.HsUnrestrictedArrow (GHC.EpUniTok epaLoc GHC.NormalSyntax) <- arr=
++#else
+     | GHC.HsUnrestrictedArrow (GHC.L (GHC.TokenLoc epaLoc) GHC.HsNormalTok) <- arr=
++#endif
+         Editor.replaceRealSrcSpan (GHC.epaLocationRealSrcSpan epaLoc) "→"
+ hsTyReplacements (GHC.HsQualTy _ ctx _)
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++    | Just arrow <- GHC.ac_darrow . GHC.anns $ GHC.getLoc ctx
++    , (GHC.EpUniTok (GHC.EpaSpan (GHC.RealSrcSpan loc _)) GHC.NormalSyntax) <- arrow =
++#elif MIN_VERSION_ghc_lib_parser(9,10,0)
++    | Just arrow <- GHC.ac_darrow . GHC.anns $ GHC.getLoc ctx
++    , (GHC.NormalSyntax, GHC.EpaSpan (GHC.RealSrcSpan loc _)) <- arrow =
++#else
+     | Just arrow <- GHC.ac_darrow . GHC.anns . GHC.ann $ GHC.getLoc ctx
+     , (GHC.NormalSyntax, GHC.EpaSpan loc _) <- arrow =
++#endif
+         Editor.replaceRealSrcSpan loc "⇒"
+ hsTyReplacements _ = mempty
+ 
+ --------------------------------------------------------------------------------
+ hsSigReplacements :: GHC.Sig GHC.GhcPs -> Editor.Edits
+ hsSigReplacements (GHC.TypeSig ann _ _)
++#if MIN_VERSION_ghc_lib_parser(9,12,0)
++    | GHC.EpUniTok epaLoc _ <- GHC.asDcolon ann
++    , GHC.EpaSpan (GHC.RealSrcSpan loc _) <- epaLoc =
++#elif MIN_VERSION_ghc_lib_parser(9,10,0)
++    | GHC.AddEpan GHC.AddDColon epaLoc <- GHC.asDcolon ann
++    , GHC.EpaSpan (GHC.RealSrcSpan loc _) <- epaLoc =
++#else
+     | GHC.AddEpAnn GHC.AnnDcolon epaLoc <- GHC.asDcolon $ GHC.anns ann
+     , GHC.EpaSpan loc _ <- epaLoc =
++#endif
+         Editor.replaceRealSrcSpan loc "∷"
+ hsSigReplacements _ = mempty
+ 
+--- a/stylish-haskell.cabal
++++ b/stylish-haskell.cabal
+@@ -1,6 +1,6 @@
+ Cabal-version: 2.4
+ Name:          stylish-haskell
+-Version:       0.14.6.0
++Version:       0.14.7.0
+ Synopsis:      Haskell code prettifier
+ Homepage:      https://github.com/haskell/stylish-haskell
+ License:       BSD-3-Clause
+@@ -23,12 +23,6 @@ Extra-source-files:
+   README.markdown,
+   data/stylish-haskell.yaml
+ 
+-Flag ghc-lib
+-  Default: True
+-  Manual:  True
+-  Description:
+-    Force dependency on ghc-lib-parser even if GHC API in the ghc package is supported
+-
+ Common depends
+   Ghc-options:      -Wall
+   Default-language: Haskell2010
+@@ -37,10 +31,10 @@ Common depends
+     aeson             >= 0.6    && < 2.3,
+     base              >= 4.8    && < 5,
+     bytestring        >= 0.9    && < 0.13,
+-    Cabal             >= 3.14   && < 4.0,
+-    containers        >= 0.3    && < 0.7,
++    Cabal             >= 3.8    && < 4.0,
++    containers        >= 0.3    && < 0.8,
+     directory         >= 1.2.3  && < 1.4,
+-    filepath          >= 1.1    && < 1.5,
++    filepath          >= 1.1    && < 1.6,
+     file-embed        >= 0.0.10 && < 0.1,
+     mtl               >= 2.0    && < 2.4,
+     regex-tdfa        >= 1.3    && < 1.4,
+@@ -48,26 +42,12 @@ Common depends
+     text              >= 1.2    && < 2.2,
+     HsYAML-aeson      >=0.2.0   && < 0.3,
+     HsYAML            >=0.2.0   && < 0.3,
+-
+-  if impl(ghc < 8.0)
+-    Build-depends:
+-      semigroups >= 0.18 && < 0.20
+-
+   -- Use GHC if the ghc-lib flag is not set
+   -- and we have a new enough GHC. Note that 
+   -- this will only work if the user's 
+   -- compiler is of the matching major version!
+-  if !flag(ghc-lib) && impl(ghc >= 9.8) && impl(ghc < 9.9)
+-    Build-depends:
+-      ghc >= 9.8 && < 9.9,
+-      ghc-boot,
+-      ghc-boot-th
+-  else
+-    Build-depends:
+-      ghc-lib-parser >= 9.8 && < 9.9
+-
+-  Build-depends:
+-    ghc-lib-parser-ex >= 9.8 && < 9.9
++    ghc-lib-parser    >= 9.8 && < 9.13,
++    ghc-lib-parser-ex >= 9.8 && < 9.13
+ 
+ Library
+   Import:         depends
+-- 
+2.49.0
+
