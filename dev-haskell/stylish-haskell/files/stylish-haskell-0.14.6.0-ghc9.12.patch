@@ -34,18 +34,6 @@ Subject: [PATCH] ghc-9.12
  module Language.Haskell.Stylish.Config
      ( Extensions
      , Config (..)
-@@ -127,7 +128,11 @@ loadConfig verbose configSearchStrategy = do
-         Left (pos, err)     -> error $ prettyPosWithSource pos (fromStrict bytes) ("Language.Haskell.Stylish.Config.loadConfig: " ++ err)
-         Right config -> do
-           cabalLanguageExtensions <- if configCabal config
-+#if MIN_VERSION_Cabal(3,14,0)
-             then map toStr <$> Cabal.findLanguageExtensions verbose configSearchStrategy
-+#else
-+            then map toStr <$> Cabal.findLanguageExtensions verbose
-+#endif
-             else pure []
- 
-           return $ config
 --- a/lib/Language/Haskell/Stylish/Config/Cabal.hs
 +++ b/lib/Language/Haskell/Stylish/Config/Cabal.hs
 @@ -1,3 +1,4 @@
@@ -63,42 +51,27 @@ Subject: [PATCH] ghc-9.12
  import qualified Distribution.Verbosity                   as Cabal
  import           GHC.Data.Maybe                           (mapMaybe)
  import qualified Language.Haskell.Extension               as Language
-@@ -26,14 +29,21 @@ import           System.Directory                         (doesFileExist,
- 
- --------------------------------------------------------------------------------
- findLanguageExtensions
-+#if MIN_VERSION_Cabal(3,14,0)
-     :: Verbose -> ConfigSearchStrategy -> IO [(Language.KnownExtension, Bool)]
- findLanguageExtensions verbose configSearchStrategy =
-     findCabalFile verbose configSearchStrategy >>=
-+#else
-+    :: Verbose -> IO [(Language.KnownExtension, Bool)]
-+findLanguageExtensions verbose =
-+    findCabalFile verbose >>=
-+#endif
-     maybe (pure []) (readDefaultLanguageExtensions verbose)
- 
- 
+@@ -35,6 +38,7 @@ findLanguageExtensions verbose configSearchStrategy =
  --------------------------------------------------------------------------------
  -- | Find the closest .cabal file, possibly going up the directory structure.
-+#if MIN_VERSION_Cabal(3,14,0)
  findCabalFile :: Verbose -> ConfigSearchStrategy -> IO (Maybe FilePath)
++#if MIN_VERSION_Cabal(3,14,0)
  findCabalFile verbose configSearchStrategy = case configSearchStrategy of
    -- If the invocation pointed us to a specific config file, it doesn't make
-@@ -42,6 +52,12 @@ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
+   -- much sense to search for cabal files manually (the config file could be
+@@ -42,6 +46,11 @@ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
    UseConfig _                -> pure Nothing
    SearchFromDirectory path   -> go [] $ ancestors path
    SearchFromCurrentDirectory -> getCurrentDirectory >>= go [] . ancestors
 +#else
-+findCabalFile :: Verbose -> IO (Maybe FilePath)
-+findCabalFile verbose = do
++findCabalFile verbose _ = do
 +  cwd <- getCurrentDirectory
 +  go [] $ ancestors cwd
 +#endif
   where
    go :: [FilePath] -> [FilePath] -> IO (Maybe FilePath)
    go searched [] = do
-@@ -50,14 +66,21 @@ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
+@@ -50,14 +59,21 @@ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
      verbose $ "Stylish Haskell will work basing on LANGUAGE pragmas in source files."
      return Nothing
    go searched (p : ps) = do

@@ -26,14 +26,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+ghc-lib"
 
-CABAL_CHDEPS=(
-	'containers        >= 0.3    && < 0.7' 'containers >= 0.3'
-	'filepath          >= 1.1    && < 1.5' 'filepath >= 1.1'
-	'ghc-lib-parser >= 9.8 && < 9.9' 'ghc-lib-parser >= 9.8 && < 9.13'
-	'ghc-lib-parser-ex >= 9.8 && < 9.9' 'ghc-lib-parser-ex >= 9.8 && < 9.13'
-	'Cabal             >= 3.14   && < 4.0' 'Cabal >= 3.4'
-)
-
 RDEPEND=">=dev-haskell/aeson-0.6:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/cabal-3.4:=[profile?] <dev-haskell/cabal-4.0:=[profile?]
 	>=dev-haskell/file-embed-0.0.10:=[profile?] <dev-haskell/file-embed-0.1:=[profile?]
