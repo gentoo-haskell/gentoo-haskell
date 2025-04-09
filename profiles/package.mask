@@ -1,3 +1,9 @@
+# GdeVolpiano <xavier@zherdoibegin.fr> (2025-09-14)
+#
+# Too many packages depend on <dev-haskell/data-default-0.8. Masking for now
+
+>=dev-haskell/data-default-0.8
+
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-03-28)
 #
 # The current upstream version of dev-haskell/cuda is not compatible with the
