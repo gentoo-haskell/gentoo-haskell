@@ -19,7 +19,7 @@ RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?
 	>=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:=[profile?]
 	>=dev-haskell/cereal-0.4.1.1:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
 	>=dev-haskell/colour-2.3.2:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-	>=dev-haskell/data-default-0.8:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
+	>=dev-haskell/data-default-0.7:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/diagrams-core-1.4:=[profile?] <dev-haskell/diagrams-core-1.6:=[profile?]
 	>=dev-haskell/diagrams-solve-0.1:=[profile?] <dev-haskell/diagrams-solve-0.2:=[profile?]
 	>=dev-haskell/distributive-0.2.2:=[profile?] <dev-haskell/distributive-1.0:=[profile?]
@@ -52,4 +52,5 @@ DEPEND="${RDEPEND}
 
 CABAL_CHDEPS=(
 	'base >= 4.9 && < 4.21' 'base >= 4.9'
+	'data-default >= 0.8 && < 0.9' 'data-default >= 0.7 && < 0.9'
 )
