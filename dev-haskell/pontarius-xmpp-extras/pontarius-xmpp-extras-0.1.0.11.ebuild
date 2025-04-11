@@ -15,7 +15,11 @@ LICENSE="WTFPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/data-default-0.7.1.1:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
+CABAL_CHDEPS=(
+	'data-default >= 0.7.1.1 && < 0.8' 'data-default >= 0.7.1.1 && < 0.9'
+)
+
+RDEPEND=">=dev-haskell/data-default-0.7.1.1:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/pontarius-xmpp-0.5:=[profile?] <dev-haskell/pontarius-xmpp-0.6:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-haskell/xml-types-0.3:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
