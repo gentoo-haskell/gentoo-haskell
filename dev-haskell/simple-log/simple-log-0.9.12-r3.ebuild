@@ -19,9 +19,13 @@ PATCHES=(
 	"${FILESDIR}"/${P}-mtl.patch
 	)
 
+CABAL_CHDEPS=(
+	'data-default >= 0.5 && < 0.8' 'data-default >= 0.5 && < 0.9'
+)
+
 RDEPEND=">=dev-haskell/async-2.0:=[profile?] <dev-haskell/async-3.0:=[profile?]
 	>=dev-haskell/base-unicode-symbols-0.2:=[profile?] <dev-haskell/base-unicode-symbols-0.3:=[profile?]
-	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
+	>=dev-haskell/data-default-0.5:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/hformat-0.3:=[profile?] <dev-haskell/hformat-0.4:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?] <dev-haskell/microlens-0.5:=[profile?]
 	>=dev-haskell/microlens-platform-0.3:=[profile?] <dev-haskell/microlens-platform-0.5:=[profile?]
