@@ -16,7 +16,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="executable"
 
-CABAL_CHDEPS=('base >=4.9 && <4.20' 'base >=4.9 && <4.22')
+CABAL_CHDEPS=(
+	'base >=4.9 && <4.20' 'base >=4.9 && <4.22'
+	'data-default >=0.7.1.1 && <0.8' 'data-default >=0.7.1.1 && <0.9'
+)
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.10.7-add-executable-flag.patch"
@@ -26,7 +29,7 @@ RDEPEND="
 	>=dev-haskell/aeson-0.11.3.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/attoparsec-0.13.1.0:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/attoparsec-aeson-2.1.0.0:=[profile?] <dev-haskell/attoparsec-aeson-2.3:=[profile?]
-	>=dev-haskell/data-default-0.7.1.1:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
+	>=dev-haskell/data-default-0.7.1.1:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/haskell-src-exts-1.19:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 	>=dev-haskell/monad-dijkstra-0.1.1:=[profile?] <dev-haskell/monad-dijkstra-0.2:=[profile?]
 	>=dev-haskell/text-1.2.2.2:=[profile?] <dev-haskell/text-2.2:=[profile?]
