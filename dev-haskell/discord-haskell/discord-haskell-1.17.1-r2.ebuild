@@ -15,15 +15,18 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-CABAL_CHDEPS=('base == 4.14.* || == 4.15.* || == 4.16.* || == 4.17.* || == 4.18.* || == 4.19.*'
-			'base >=4.14 && <4.22'
-			'containers >=0.6 && <0.7' 'containers >=0.6 && <0.8'
-			'network >=3.0.0.0 && <3.2.0.0' 'network >=3.0.0.0 && <3.3.0.0'
-			'time >=1.9 && <1.13' 'time >=1.9 && <1.15')
+CABAL_CHDEPS=(
+	'base == 4.14.* || == 4.15.* || == 4.16.* || == 4.17.* || == 4.18.* || == 4.19.*'
+		'base >=4.14 && <4.22'
+	'containers >=0.6 && <0.7' 'containers >=0.6 && <0.8'
+	'network >=3.0.0.0 && <3.2.0.0' 'network >=3.0.0.0 && <3.3.0.0'
+	'time >=1.9 && <1.13' 'time >=1.9 && <1.15'
+	'data-default >=0.7 && <0.8' 'data-default >=0.7 && <0.9'
+)
 RDEPEND=">=dev-haskell/aeson-2.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/base64-bytestring-1.1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
-	>=dev-haskell/data-default-0.7:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
+	>=dev-haskell/data-default-0.7:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/emojis-0.1.3:=[profile?] <dev-haskell/emojis-0.2:=[profile?]
 	>=dev-haskell/hashable-1.4.0.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/http-api-data-0.4:=[profile?] <dev-haskell/http-api-data-0.7:=[profile?]
