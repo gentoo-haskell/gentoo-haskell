@@ -18,6 +18,7 @@ IUSE="examples executable"
 
 CABAL_CHDEPS=(
 	'ansi-terminal >= 0.10.3 && < 1.1' 'ansi-terminal >= 0.10.3'
+	'data-default >= 0.7.1 && < 0.8' 'data-default >= 0.7.1 && < 0.9'
 )
 
 PATCHES=(
@@ -26,7 +27,7 @@ PATCHES=(
 
 RDEPEND=">=dev-haskell/ansi-terminal-0.10.3:=[profile?]
 	>=dev-haskell/async-2.2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
-	>=dev-haskell/data-default-0.7.1:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
+	>=dev-haskell/data-default-0.7.1:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/ghc-exactprint-1.5.0:=[profile?] <dev-haskell/ghc-exactprint-1.9:=[profile?]
 	>=dev-haskell/list-t-1.0.4:=[profile?] <dev-haskell/list-t-1.1:=[profile?]
 	>=dev-haskell/optparse-applicative-0.15.1:=[profile?] <dev-haskell/optparse-applicative-0.19:=[profile?]
