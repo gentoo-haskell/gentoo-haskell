@@ -16,7 +16,11 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.8:=[profile?]
+CABAL_CHDEPS=(
+	'data-default >=0.4 && <0.8' 'data-default >=0.4 && <0.9'
+)
+
+RDEPEND=">=dev-haskell/data-default-0.4:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/gitrev-1.3.1:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
 	>=dev-haskell/microlens-0.4.12.0:=[profile?] <dev-haskell/microlens-0.5.0.0:=[profile?]
 	>=dev-haskell/microlens-ghc-0.4.3.10:=[profile?] <dev-haskell/microlens-ghc-0.5.0.0:=[profile?]
