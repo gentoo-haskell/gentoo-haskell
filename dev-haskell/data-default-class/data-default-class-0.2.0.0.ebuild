@@ -8,14 +8,15 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A class for types with a default value"
+DESCRIPTION="A class for types with a default value (compatibility shim)"
 HOMEPAGE="https://hackage.haskell.org/package/data-default-class"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64 ~amd64-linux ~ppc-macos"
+KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
 
-RDEPEND=">=dev-lang/ghc-9.0.2:=
+RDEPEND=">=dev-haskell/data-default-0.8:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
+	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
