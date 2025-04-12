@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,11 +15,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND="dev-haskell/basement:=[profile?]
-	>=dev-haskell/crypton-x509-1.5:=[profile?]
-	>=dev-haskell/crypton-x509-store-1.5:=[profile?]
+RDEPEND=">=dev-haskell/crypton-x509-store-1.5:=[profile?]
 	>=dev-haskell/crypton-x509-system-1.5:=[profile?]
-	>=dev-haskell/crypton-x509-validation-1.5:=[profile?]
 	dev-haskell/data-default:=[profile?]
 	>=dev-haskell/network-2.6.3:=[profile?]
 	>=dev-haskell/socks-0.6:=[profile?]
