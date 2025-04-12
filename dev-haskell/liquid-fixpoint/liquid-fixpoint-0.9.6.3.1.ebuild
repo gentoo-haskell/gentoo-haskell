@@ -72,4 +72,6 @@ src_configure() {
 
 pkg_postinst() {
 	optfeature "Required SMTLIB2 compatible solver" sci-mathematics/z3 sci-mathematics/cvc4
+
+	ghc-pkg_pkg_postinst
 }
