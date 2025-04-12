@@ -661,6 +661,17 @@ cabal-is-dummy-lib() {
 	return 1
 }
 
+cabal-check-cache() {
+	if $(ghc-getghcpkg) check 2>&1 \
+		| grep -q 'WARNING: cache is out of date'
+	then
+		ewarn 'GHC cache is out of date!'
+		return 1
+	else
+		return 0
+	fi
+}
+
 # exported function: check if cabal is correctly installed for
 # the currently active ghc (we cannot guarantee this with portage)
 haskell-cabal_pkg_setup() {
@@ -672,6 +683,13 @@ haskell-cabal_pkg_setup() {
 	fi
 	if cabal-is-dummy-lib; then
 		einfo "${P} is included in ghc-${CABAL_CORE_LIB_GHC_PV}, nothing to install."
+	else
+		# bug 916785
+		if ! cabal-check-cache; then
+			# avoid running ghc-recache-db so as not to set _GHC_RECACHE_CALLED
+			einfo "Recaching GHC package DB"
+			$(ghc-getghcpkg) recache
+		fi
 	fi
 }
 
