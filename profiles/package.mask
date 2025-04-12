@@ -1,3 +1,14 @@
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2025-04-12)
+#
+# data-default-instances have been integrated in data-default-0.8
+#
+# Removal 2025-05-11
+
+dev-haskell/data-default-instances-base
+dev-haskell/data-default-instances-containers
+dev-haskell/data-default-instances-dlist
+dev-haskell/data-default-instances-old-locale
+
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-03-28)
 #
 # The current upstream version of dev-haskell/cuda is not compatible with the
