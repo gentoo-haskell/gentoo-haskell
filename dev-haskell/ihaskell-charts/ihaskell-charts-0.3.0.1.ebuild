@@ -17,7 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 PATCHES=(
-	$"{FILESDIR}"/${P}-temporary.patch
+	"${FILESDIR}"/${P}-temporary.patch
 )
 
 RDEPEND="dev-haskell/chart:=[profile?]

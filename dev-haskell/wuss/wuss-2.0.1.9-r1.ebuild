@@ -20,11 +20,12 @@ CABAL_CHDEPS=(
 	'base ^>=4.18.0.0 || ^>=4.19.0.0 || ^>=4.20.0.0' 'base'
 	'bytestring ^>=0.11.4.0 || ^>=0.12.0.2' 'bytestring'
 	'exceptions ^>=0.10.7' 'exceptions'
+	'data-default ^>=0.7.1.1' 'data-default >= 0.7.1.1 && <0.9'
 )
 
 RDEPEND="
 	>=dev-haskell/crypton-connection-0.3.2:=[profile?] <dev-haskell/crypton-connection-0.5
-	>=dev-haskell/data-default-0.7.1.1:=[profile?] <dev-haskell/data-default-0.8
+	>=dev-haskell/data-default-0.7.1.1:=[profile?] <dev-haskell/data-default-0.9
 	>=dev-haskell/network-3.1.4.0:=[profile?] <dev-haskell/network-3.3
 	>=dev-haskell/websockets-0.12.7.3:=[profile?] <dev-haskell/websockets-0.14
 	>=dev-lang/ghc-9.2.4:=
