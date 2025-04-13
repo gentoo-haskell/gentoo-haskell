@@ -21,6 +21,7 @@ CABAL_CHDEPS=(
 	'base >= 4 && < 4.14' 'base >= 4'
 	'ansi-wl-pprint >= 0.6 && < 1' 'ansi-wl-pprint >= 0.6'
 	'Diff == 0.4.*' 'Diff >= 0.4.0'
+	'data-default-class >= 0.0.1 && < 0.2' 'data-default-class >= 0.0.1 && < 0.3'
 )
 
 PATCHES=(
@@ -31,7 +32,7 @@ PATCHES=(
 RDEPEND="
 	>=dev-haskell/ansi-wl-pprint-0.6:=[profile?]
 	>=dev-haskell/charset-0.3:=[profile?]
-	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.2:=[profile?]
+	>=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.3:=[profile?]
 	>=dev-haskell/diff-0.4:=[profile?]
 	>dev-haskell/parsec-3:=[profile?] <dev-haskell/parsec-3.2.0:=[profile?]
 	>=dev-haskell/quickcheck-2.5:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
