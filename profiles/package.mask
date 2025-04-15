@@ -1,5 +1,13 @@
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
 #
+# no activity upstream for 6 years. Doesn't compile
+#
+# Removal: 2025-05-14
+
+dev-haskell/hs-duktape
+
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
+#
 # deprecated
 #
 # Removal: 2025-05-14
