@@ -27,6 +27,7 @@ CABAL_CHDEPS=(
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.13.2.0-gtk.patch"
+	"${FILESDIR}/${PN}-0.13.2.0-glib.patch"
 )
 
 RDEPEND=">=dev-haskell/glib-0.13.3.0:=[profile?] <dev-haskell/glib-0.14:=[profile?]

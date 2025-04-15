@@ -1,0 +1,24 @@
+From https://github.com/gtk2hs/gtkglext/commit/57af428eb3661ca15eadbc0a30528bc6bce8f568
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Tue, 15 Apr 2025 10:37:56 +0200
+Subject: [PATCH] b
+
+--- a/gtkglext.cabal
++++ b/gtkglext.cabal
+@@ -50,11 +50,12 @@ Library
+                         glib  >= 0.13.3.0 && < 0.14,
+                         pango >= 0.13.2.0 && < 0.14,
+                         gtk   >= 0.14.3 && < 0.15
++        cpp-options: -U__BLOCKS__ -DGLIB_DISABLE_DEPRECATION_WARNINGS
+         if flag(have-quartz-gtk)
+           cpp-options: -DHAVE_QUARTZ_GTK
+         if flag(use-deprecated)
+           cpp-options:  -DUSE_DEPRECATED_PANGO
+-        cpp-options: -U__BLOCKS__ -D__attribute__(A)= -D_Nullable= -D_Nonnull=
++        cpp-options: -D_Nullable= -D_Nonnull=
+ 
+         build-tools:    gtk2hsC2hs >= 0.13.9,
+                         gtk2hsHookGenerator, gtk2hsTypeGen
+-- 
+2.49.0
+
