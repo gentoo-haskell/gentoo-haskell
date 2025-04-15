@@ -1,5 +1,13 @@
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
 #
+# no activity upstream for 4 years. Fails tests
+#
+# Removal: 2025-05-14
+
+dev-haskell/type-errors-pretty
+
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
+#
 # no activity upstream for 6 years. Doesn't compile
 #
 # Removal: 2025-05-14
