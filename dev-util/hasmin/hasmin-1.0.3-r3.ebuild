@@ -22,7 +22,27 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+RESTRICT=test #Spec testsuite is unreliable
+
 PATCHES=( "${FILESDIR}/${PN}-1.0.3-cabal-doctest.patch" )
+
+GHC_BOOTSTRAP_PACKAGES=(
+	cabal-doctest
+)
+
+CABAL_CHDEPS=(
+	'text                 >=1.2        && <1.3' 'text >= 1.2'
+	'text                 >=1.2     && <1.3' 'text >= 1.2'
+	'text             >=1.2     && <1.3' 'text >= 1.2'
+	'text            >=1.2        && <1.3' 'text >= 1.2'
+	'bytestring           >=0.10.2.0   && <0.11' 'bytestring >=0.10.2.0'
+	'mtl             >=2.2.1      && <2.3' 'mtl >=2.2.1'
+	'mtl                  >=2.2.1   && <2.3' 'mtl >=2.2.1'
+	'attoparsec      >=0.12       && <0.14' 'attoparsec >=0.12'
+	'attoparsec           >=0.12    && <0.14' 'attoparsec'
+	'doctest          >=0.11    && <0.17' 'doctest >=0.11'
+	'optparse-applicative >=0.11       && <0.16' 'optparse-applicative >=0.11'
+	)
 
 RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
 	>=dev-haskell/gitrev-1.0.0:=[profile?] <dev-haskell/gitrev-1.4:=[profile?]
@@ -31,6 +51,7 @@ RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
 	>=dev-haskell/numbers-3000.2.0.0:=[profile?] <dev-haskell/numbers-3000.3:=[profile?]
 	>=dev-haskell/optparse-applicative-0.11:=[profile?]
 	>=dev-haskell/parsers-0.12.3:=[profile?] <dev-haskell/parsers-0.13:=[profile?]
+	>=dev-haskell/text-1.2:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
 "
 DEPEND="${RDEPEND}
@@ -43,21 +64,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.8 <dev-haskell/quickcheck-3.0
 		>=dev-haskell/quickcheck-instances-0.3.16 <dev-haskell/quickcheck-instances-0.4 )
 "
-BDEPEND="app-text/dos2unix"
-
-src_prepare() {
-	# pull revised cabal from upstream
-	cp "${DISTDIR}/${CABAL_DISTFILE}" "${CABAL_FILE}" || die
-
-	# Convert to unix line endings
-	dos2unix "${CABAL_FILE}" || die
-
-	# Apply patches *after* pulling the revised cabal
-	default
-
-	cabal_chdeps \
-		'attoparsec      >=0.12       && <0.14' 'attoparsec >=0.12' \
-		'attoparsec           >=0.12    && <0.14' 'attoparsec' \
-		'doctest          >=0.11    && <0.17' 'doctest >=0.11' \
-		'optparse-applicative >=0.11       && <0.16' 'optparse-applicative >=0.11'
-}
