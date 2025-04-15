@@ -1,3 +1,13 @@
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
+#
+# depends on dev-haskell/haskell-mode, which has been pruned.
+# Also, as for vim, package managers are not the modern way
+# to install emacs modes
+#
+# Removal: 2025-05-14
+
+app-emacs/idris-mode
+
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2025-04-12)
 #
 # data-default-instances have been integrated in data-default-0.8
