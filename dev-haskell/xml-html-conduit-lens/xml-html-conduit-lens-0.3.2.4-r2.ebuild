@@ -22,6 +22,10 @@ CABAL_CHDEPS=(
 		'text                    >= 0.11  && < 1.3' 'text >= 0.11'
 )
 
+PATCHES=(
+	"${FILESDIR}"/${P}-data-default-0.8.patch
+)
+
 RESTRICT=test # fails at quoting test
 
 RDEPEND=">=dev-haskell/html-conduit-1.1:=[profile?] <dev-haskell/html-conduit-1.4:=[profile?]
