@@ -1,0 +1,136 @@
+From fde80955397d31c7bbbcf0f76126f8b4515ae97b Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Tue, 15 Apr 2025 12:11:08 +0200
+Subject: [PATCH] b
+
+---
+ JuicyPixels-blurhash.cabal                   | 13 +++++++--
+ Setup.hs                                     | 18 ++++++++++++
+ doctest/Main.hs                              | 29 ++++++++++++++++++--
+ src/Codec/Picture/Blurhash/Internal/DList.hs |  2 +-
+ 4 files changed, 57 insertions(+), 5 deletions(-)
+
+diff --git a/JuicyPixels-blurhash.cabal b/JuicyPixels-blurhash.cabal
+index 587f149..0379ad0 100644
+--- a/JuicyPixels-blurhash.cabal
++++ b/JuicyPixels-blurhash.cabal
+@@ -19,7 +19,7 @@ maintainer:     sam.protas@gmail.com
+ copyright:      2020 Sam Protas
+ license:        BSD3
+ license-file:   LICENSE
+-build-type:     Simple
++build-type:     Custom
+ extra-source-files:
+     README.md
+     ChangeLog.md
+@@ -34,6 +34,12 @@ source-repository head
+   type: git
+   location: https://github.com/SamProtas/JuicyPixels-blurhash
+ 
++custom-setup
++  setup-depends:
++      base
++    , Cabal
++    , cabal-doctest
++
+ library
+   exposed-modules:
+       Codec.Picture.Blurhash
+@@ -80,7 +86,7 @@ executable JuicyPixels-blurhash-exe
+     , vector >=0.10 && <0.13
+   default-language: Haskell2010
+ 
+-test-suite JuicyPixels-blurhash-doctests
++test-suite doctests
+   type: exitcode-stdio-1.0
+   main-is: Main.hs
+   other-modules:
+@@ -98,6 +104,9 @@ test-suite JuicyPixels-blurhash-doctests
+     , doctest >=0.16.2 && <0.20
+     , filepath >=1.4.1.1 && <1.5
+     , vector >=0.10 && <0.13
++    , directory
++    , base-compat
++    , cabal-doctest >= 1.0.0
+   default-language: Haskell2010
+ 
+ test-suite JuicyPixels-blurhash-test
+diff --git a/Setup.hs b/Setup.hs
+index 9a994af..ec0be70 100644
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -1,2 +1,20 @@
++{-# LANGUAGE CPP #-}
++
++module Main
++  ( main
++  ) where
++#ifndef MIN_VERSION_cabal_doctest
++#define MIN_VERSION_cabal_doctest(x,y,z) 0
++#endif
++
++#if MIN_VERSION_cabal_doctest(1,0,0)
++import Distribution.Extra.Doctest (defaultMainWithDoctests)
++
++main :: IO ()
++main = defaultMainWithDoctests "doctests"
++#else
+ import Distribution.Simple
++
++main :: IO ()
+ main = defaultMain
++#endif
+diff --git a/doctest/Main.hs b/doctest/Main.hs
+index cfccc9b..f793db0 100644
+--- a/doctest/Main.hs
++++ b/doctest/Main.hs
+@@ -2,6 +2,31 @@ module Main where
+ 
+ import System.FilePath.Glob (glob)
+ import Test.DocTest (doctest)
+-
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.Directory (getCurrentDirectory, makeAbsolute)
++import System.FilePath.Posix ((</>))
++import System.IO (utf8)
++import Build_doctests (pkgs)
++ 
+ main :: IO ()
+-main = glob "src/**/*.hs" >>= doctest
++main = do
++  sourceFiles <- glob "src/**/*.hs"
++  let ghcExtensions =
++            [ "-XDerivingStrategies"
++            , "-XInstanceSigs"
++            , "-XScopedTypeVariables"
++            , "-XViewPatterns"
++            ]
++
++  setLocaleEncoding utf8
++  pwd    <- getCurrentDirectory
++  prefix <- makeAbsolute pwd
++  let customFlags =
++          [ "-package-env=-"
++          , "-hide-all-packages"
++          , "-no-user-package-db"
++          , "-package-db=" ++ prefix </> "dist/package.conf.inplace"
++          ]
++
++  doctest $ customFlags ++ pkgs ++ sourceFiles ++ ghcExtensions
++      
+diff --git a/src/Codec/Picture/Blurhash/Internal/DList.hs b/src/Codec/Picture/Blurhash/Internal/DList.hs
+index acd67f5..1148293 100644
+--- a/src/Codec/Picture/Blurhash/Internal/DList.hs
++++ b/src/Codec/Picture/Blurhash/Internal/DList.hs
+@@ -20,7 +20,7 @@ toDList l = \l' -> l ++ l'
+ 
+ -- | Convert a difference list to a list
+ dListToList :: DList a -> [a]
+-dListToList = ($[])
++dListToList = ($ [])
+ 
+ -- | Append an item to the end of a difference list
+ dListSnoc :: DList a -> a -> DList a
+-- 
+2.49.0
+

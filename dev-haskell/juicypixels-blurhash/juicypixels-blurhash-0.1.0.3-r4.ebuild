@@ -24,15 +24,23 @@ CABAL_CHDEPS=(
 	'tasty-hedgehog >=1.0.0.2 && <1.2' 'tasty-hedgehog >=1.0.0.2'
 	'hedgehog >=1.0.2 && <1.2' 'hedgehog >=1.0.2'
 	'optparse-applicative >=0.14.3 && <0.18' 'optparse-applicative >=0.14.3'
+	'bytestring >=0.9 && <0.11' 'bytestring >=0.9'
+	'vector >=0.10 && <0.13' 'vector >=0.10'
+)
+
+GHC_BOOTSTRAP_PACKAGES=(
+	cabal-doctest
 )
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.1.0.3-add-executable-flag.patch"
+	"${FILESDIR}/${PN}-0.1.0.3-bytestring.patch"
+	"${FILESDIR}/${PN}-0.1.0.3-cabal-doctest.patch"
 )
 
 RDEPEND="
 	>=dev-haskell/juicypixels-3.2.8:=[profile?] <dev-haskell/juicypixels-3.4:=[profile?]
-	>=dev-haskell/vector-0.10:=[profile?] <dev-haskell/vector-0.13:=[profile?]
+	>=dev-haskell/vector-0.10:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
 	executable? (
 		>=dev-haskell/optparse-applicative-0.14.3:=[profile?]

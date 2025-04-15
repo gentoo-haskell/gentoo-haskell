@@ -1,0 +1,27 @@
+From https://github.com/SamProtas/JuicyPixels-blurhash/pull/13
+From: Garrison Jensen <garrison.jensen@gmail.com>
+Date: Sat, 19 Nov 2022 14:37:33 -0800
+Subject: [PATCH] Upgrade bytestring
+
+--- a/src/Codec/Picture/Blurhash/Internal/Base83.hs
++++ b/src/Codec/Picture/Blurhash/Internal/Base83.hs
+@@ -17,7 +17,7 @@ import Data.Foldable (foldlM)
+ import Data.Word (Word8)
+ 
+ import qualified Data.ByteString.Lazy as BS
+-import qualified Data.ByteString.Lazy.Builder as BS
++import qualified Data.ByteString.Builder as BS
+ import qualified Data.Map as Map
+ import qualified Data.Vector as V
+ 
+--- a/src/Codec/Picture/Blurhash/Internal/Encode.hs
++++ b/src/Codec/Picture/Blurhash/Internal/Encode.hs
+@@ -18,7 +18,7 @@ import Data.Foldable (foldl')
+ import GHC.Generics (Generic)
+ 
+ import qualified Data.ByteString.Lazy as BS
+-import qualified Data.ByteString.Lazy.Builder as BS
++import qualified Data.ByteString.Builder as BS
+ import Codec.Picture (DynamicImage, Image(..), PixelRGB8(..), PixelRGBF(..), convertRGB8, colorMap)
+ import Codec.Picture.Types (pixelFold, ColorConvertible(..)) -- ColorConvertible imported for haddocks
+ 
