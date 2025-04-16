@@ -1,0 +1,57 @@
+From 83293ed7cb3f728bf6db1a788f83e5d9f0dce524 Mon Sep 17 00:00:00 2001
+From: GdeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 14 Apr 2025 11:24:55 +0200
+Subject: [PATCH] Cabal-3.12 compat
+
+--- a/lib/Language/Haskell/Stylish/Config/Cabal.hs
++++ b/lib/Language/Haskell/Stylish/Config/Cabal.hs
+@@ -1,3 +1,4 @@
++{-# LANGUAGE CPP #-}
+ --------------------------------------------------------------------------------
+ module Language.Haskell.Stylish.Config.Cabal
+     ( findLanguageExtensions
+@@ -14,7 +15,9 @@ import qualified Distribution.PackageDescription          as Cabal
+ import qualified Distribution.PackageDescription.Parsec   as Cabal
+ import qualified Distribution.Parsec                      as Cabal
+ import qualified Distribution.Simple.Utils                as Cabal
++#if MIN_VERSION_Cabal(3,14,0)
+ import qualified Distribution.Utils.Path                  as Cabal
++#endif
+ import qualified Distribution.Verbosity                   as Cabal
+ import           GHC.Data.Maybe                           (mapMaybe)
+ import qualified Language.Haskell.Extension               as Language
+@@ -50,12 +53,20 @@ findCabalFile verbose configSearchStrategy = case configSearchStrategy of
+     verbose $ "Stylish Haskell will work basing on LANGUAGE pragmas in source files."
+     return Nothing
+   go searched (p : ps) = do
++#if MIN_VERSION_Cabal(3,14,0)
+     let projectRoot = Just $ Cabal.makeSymbolicPath p
+     potentialCabalFile <- Cabal.findPackageDesc projectRoot
+     case potentialCabalFile of
+       Right cabalFile -> pure $ Just $
+         Cabal.interpretSymbolicPath projectRoot cabalFile
+       _ -> go (p : searched) ps
++#else
++    let projectRoot = p
++    potentialCabalFile <- Cabal.findPackageDesc projectRoot
++    case potentialCabalFile of
++      Right cabalFile -> pure $ Just cabalFile
++      _ -> go (p : searched) ps
++#endif
+ 
+ 
+ --------------------------------------------------------------------------------
+--- a/stylish-haskell.cabal
++++ b/stylish-haskell.cabal
+@@ -39,7 +39,7 @@ Common depends
+     aeson             >= 0.6    && < 2.3,
+     base              >= 4.19    && < 5,
+     bytestring        >= 0.9    && < 0.13,
+-    Cabal             >= 3.14   && < 4.0,
++    Cabal             >= 3.12   && < 4.0,
+     containers        >= 0.3    && < 0.9,
+     directory         >= 1.2.3  && < 1.4,
+     filepath          >= 1.1    && < 1.6,
+-- 
+2.49.0
+

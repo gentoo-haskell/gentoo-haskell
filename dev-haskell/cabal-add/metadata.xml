@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="hackage">generic-lens</remote-id>
-		<remote-id type="github">kcsongor/generic-lens</remote-id>
+		<remote-id type="hackage">cabal-add</remote-id>
+		<remote-id type="github">Bodigrim/cabal-add</remote-id>
 	</upstream>
 </pkgmetadata>

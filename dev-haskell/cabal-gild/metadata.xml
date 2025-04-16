@@ -5,8 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="pedantic"></flag>
+	</use>
 	<upstream>
-		<remote-id type="hackage">generic-lens</remote-id>
-		<remote-id type="github">kcsongor/generic-lens</remote-id>
+		<remote-id type="hackage">cabal-gild</remote-id>
+		<remote-id type="github">tfausak/cabal-gild</remote-id>
 	</upstream>
 </pkgmetadata>
