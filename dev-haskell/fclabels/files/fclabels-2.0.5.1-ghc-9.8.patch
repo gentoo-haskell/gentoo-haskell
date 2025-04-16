@@ -5,21 +5,27 @@ Subject: [PATCH] support for ghc9.6 and 9.8. Fixes #46. Fixes #45
 
 --- a/src/Data/Label/Derive.hs
 +++ b/src/Data/Label/Derive.hs
-@@ -416,7 +416,7 @@ generateLabel
+@@ -416,7 +416,11 @@ generateLabel
    :: Bool
    -> Bool
    -> Name
--  -> [TyVarBndr ()]
++#if MIN_VERSION_template_haskell(2,21,0)
 +  -> [TyVarBndr BndrVis]
++#else
+   -> [TyVarBndr ()]
++#endif
    -> [Con]
    -> Field ([Context], Subst)
    -> Q Label
-@@ -556,7 +556,7 @@ freshNames = map pure ['a'..'z'] ++ map (('a':) . show) [0 :: Integer ..]
+@@ -556,7 +560,11 @@ freshNames = map pure ['a'..'z'] ++ map (('a':) . show) [0 :: Integer ..]
  
  -------------------------------------------------------------------------------
  
--computeTypes :: Bool -> Type -> Name -> [TyVarBndr ()] -> Subst -> Q Typing
++#if MIN_VERSION_template_haskell(2,21,0)
 +computeTypes :: Bool -> Type -> Name -> [TyVarBndr BndrVis] -> Subst -> Q Typing
++#else
+ computeTypes :: Bool -> Type -> Name -> [TyVarBndr ()] -> Subst -> Q Typing
++#endif
  computeTypes forcedMono fieldtype datatype dtVars_ subst =
  
    do let fieldVars = typeVariables fieldtype
