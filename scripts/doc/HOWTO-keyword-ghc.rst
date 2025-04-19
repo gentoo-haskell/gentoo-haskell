@@ -21,6 +21,7 @@ Minimal requirement of keyworded GHC
    - dev-vcs/darcs
    - app-text/pandoc-cli
    - app-portage/hackport
+   - dev-haskell/haskell-language-server
 
    Feel free to add more here.
 
@@ -35,25 +36,8 @@ Minimal requirement of keyworded GHC
    that will never be ported to the newer GHC. It is better to mask such
    packages to schedule for eventual deletion.
 
-   I usually run ``more_to_install.sh`` script from https://github.com/trofi/gentoo-qa/blob/master/more_to_install.sh
-   to attempt to install most packages:
-
-   ::
-
-       $ for p in $(/bound/gentoo-qa/more_to_install.sh); do echo $p; emerge -uv1 $p; done
-
-   And then check how many of them succeeded:
-
-   ::
-
-       # How many are currently broken:
-       $ /bound/gentoo-qa/more_to_install.sh | wc -l
-       493
-       # How many are installed successfully:
-       ghc-pkg list --simple-output | wc -w
-       1670
-
-   Looks like we are at ``1670 / (493 + 1670) * 100 = 77%``! Ready to go!
+   app-portage/random-build will try to install all unmasked packages in
+   haskell and output friendly statistics.
 
 3. ghc must have a gentoo prebuilt binary for a given architecture.
 
