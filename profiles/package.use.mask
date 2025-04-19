@@ -1,3 +1,9 @@
+# gdeVolpiano <xavier@wheredoibegin.fr> (2025-04-19)
+#
+# doctest 0.22.1.0 tests are only compatible with ghc-9.12
+
+~dev-haskell/doctest-0.22.10 test
+
 # hololeap <hololeap@protonmail.com> (2024-12-30)
 #
 # This version is signed by Bryan Richter, but the key fails to be imported
