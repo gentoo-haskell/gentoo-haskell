@@ -15,7 +15,14 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/cabal-syntax-3.12.0.0:= <dev-haskell/cabal-syntax-3.13:=
+CABAL_CHDEPS=(
+	'base          ^>=4.11.1.0 || ^>=4.12.0.0 || ^>=4.13.0.0 || ^>=4.14.0.0 || ^>=4.15.0.0 || ^>=4.16.0.0 || ^>=4.17.0.0 || ^>=4.18.0.0 || ^>=4.19.0.0' 'base >=4.11.1.0'
+	'filepath      ^>=1.4.2' 'filepath >=1.4.2'
+	'containers    ^>=0.5.11.0 || ^>=0.6.0.1' 'containers >=0.5.11.0'
+	'Cabal-syntax  ^>=3.12.0.0' 'Cabal-syntax >=3.12.0.0'
+)
+
+RDEPEND=">=dev-haskell/cabal-syntax-3.12.0.0:=
 	>=dev-haskell/optparse-applicative-0.14.3.0:= <dev-haskell/optparse-applicative-0.19:=
 	>=dev-haskell/parsec-3.1.13.0:= <dev-haskell/parsec-3.2:=
 	>=dev-lang/ghc-9.0.2:=
