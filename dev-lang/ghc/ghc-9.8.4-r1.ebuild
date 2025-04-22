@@ -124,6 +124,9 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
+	#Match 9.6.7
+	"directory 1.3.9.0"
+	"file-io 0.1.5"
 )
 
 LICENSE="BSD"
@@ -255,7 +258,10 @@ bump_lib() {
 
 	einfo "Bumping ${pn} up to ${pv}"
 
-	mv "${dir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
+	if [[ -d "${dir}"/"${pn}" ]] #if the library exists already, move it out of the way
+	then
+		mv "${dir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
+	fi
 	mv "${WORKDIR}"/"${p}" "${dir}"/"${pn}" || die
 }
 
@@ -606,6 +612,8 @@ src_prepare() {
 		eapply "${FILESDIR}/hadrian-9.4.8-remove-with-cc-configure-flag.patch"
 		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
 		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
+		# Add support for os-string/file-io
+		eapply "${FILESDIR}/hadrian-9.8.4-add-packages.patch"
 	popd
 
 	# mingw32 target
