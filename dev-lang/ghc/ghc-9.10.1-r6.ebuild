@@ -94,7 +94,9 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
-	"directory 1.3.8.5"
+	# Match 9.6.7
+	"directory 1.3.9.0"
+	"file-io   0.1.5"
 
 	# Match 9.8.4
 	"array     0.5.8.0"
@@ -241,7 +243,10 @@ bump_lib() {
 
 	einfo "Bumping ${pn} up to ${pv}"
 
-	mv "${dir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
+	if [[ -d "${dir}"/"${pn}" ]] #if the library exists already, move it out of the way
+	then
+		mv "${dir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
+	fi
 	mv "${WORKDIR}"/"${p}" "${dir}"/"${pn}" || die
 }
 
@@ -601,8 +606,12 @@ src_prepare() {
 	pushd "${S}/hadrian" || die
 		# Fix QA Notice: Unrecognized configure options: --with-cc
 		eapply "${FILESDIR}/hadrian-9.10.1-remove-with-cc-configure-flag.patch"
+		# Fix missing alex binary
+		eapply "${FILESDIR}/hadrian-9.10.1-ignore-build-tool-depends.patch"
 		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
 		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
+		# Add support for os-string/file-io
+		eapply "${FILESDIR}/hadrian-9.10.1-add-packages.patch"
 	popd
 
 	# mingw32 target
@@ -700,10 +709,10 @@ src_configure() {
 
 	### Gather configuration variables for GHC
 
-	# Get ghc from the binary
+	# Get ghc/hadrian/alex from the binary
 	# except when bootstrapping we just pick ghc up off the path
 	if ! use ghcbootstrap; then
-		export PATH="${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
+		export PATH="${S}/hadrian/bootstrap/_build/bin:${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
 	fi
 
 	local econf_args=()
