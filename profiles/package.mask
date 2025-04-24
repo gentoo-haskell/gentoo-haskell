@@ -354,6 +354,7 @@ dev-haskell/country-codes
 >=dev-haskell/binary-0.8.9.2
 >=dev-haskell/transformers-0.6.1.1
 >=dev-haskell/hlint-3.10
+>=dev-haskell/ghc-exactprint-1.10.0.0
 >=dev-haskell/ghc-lib-parser-9.12
 >=dev-haskell/ghc-lib-parser-ex-9.12
 >=dev-haskell/cabal-fmt-0.1.12
