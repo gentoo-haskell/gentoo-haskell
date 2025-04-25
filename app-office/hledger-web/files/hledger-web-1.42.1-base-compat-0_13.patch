@@ -1,6 +1,6 @@
-From d5b53c5c9dd4e5900fe2855cd04646984b511f80 Mon Sep 17 00:00:00 2001
+From 98e6211d71ffae951ce4fc06309e8347420374a0 Mon Sep 17 00:00:00 2001
 From: hololeap <hololeap@protonmail.com>
-Date: Fri, 27 Dec 2024 23:05:45 -0700
+Date: Thu, 24 Apr 2025 19:33:51 -0600
 Subject: [PATCH 1/1] Fix compatibility with base-compat-0.13
 
 Many major packages still depend on base-compat-0.13, making v0.14
@@ -22,39 +22,39 @@ Signed-off-by: hololeap <hololeap@protonmail.com>
  import Text.Hamlet (hamletFile)
 --- a/hledger-web.cabal
 +++ b/hledger-web.cabal
-@@ -160,8 +160,8 @@ library
+@@ -161,8 +161,8 @@ library
    build-depends:
        Decimal >=0.5.1
      , aeson >=1 && <2.3
--    , base >=4.14 && <4.21
+-    , base >=4.14 && <4.22
 -    , base-compat >=0.14.0
-+    , base >=4.16 && <4.21
++    , base >=4.16 && <4.22
 +    , base-compat >=0.13
      , base64
      , blaze-html
      , blaze-markup
-@@ -224,8 +224,8 @@ executable hledger-web
-   ghc-options: -Wall -Wredundant-constraints -Wincomplete-record-updates -Wincomplete-uni-patterns
-   cpp-options: -DVERSION="1.41"
+@@ -227,8 +227,8 @@ executable hledger-web
+   ghc-options: -Wall -Wredundant-constraints -Wincomplete-record-updates -Wincomplete-uni-patterns -with-rtsopts=-T
+   cpp-options: -DVERSION="1.42.1"
    build-depends:
--      base >=4.14 && <4.21
+-      base >=4.14 && <4.22
 -    , base-compat >=0.14.0
-+      base >=4.16 && <4.21
++      base >=4.16 && <4.22
 +    , base-compat >=0.13
      , hledger-web
    default-language: Haskell2010
-   if (flag(dev)) || (flag(library-only))
-@@ -247,8 +247,8 @@ test-suite test
+   if flag(threaded)
+@@ -250,8 +250,8 @@ test-suite test
    ghc-options: -Wall -Wredundant-constraints -Wincomplete-record-updates -Wincomplete-uni-patterns
-   cpp-options: -DVERSION="1.41"
+   cpp-options: -DVERSION="1.42.1"
    build-depends:
--      base >=4.14 && <4.21
+-      base >=4.14 && <4.22
 -    , base-compat >=0.14.0
-+      base >=4.16 && <4.21
++      base >=4.16 && <4.22
 +    , base-compat >=0.13
      , hledger-web
    default-language: Haskell2010
-   if (flag(dev)) || (flag(library-only))
+   if flag(threaded)
 -- 
-2.45.2
+2.49.0
 

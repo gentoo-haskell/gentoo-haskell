@@ -20,7 +20,7 @@ KEYWORDS="~amd64"
 IUSE="debug library-only +threaded"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-1.41-base-compat-0_13.patch"
+	"${FILESDIR}/${PN}-1.42.1-base-compat-0_13.patch"
 )
 
 RDEPEND=">=app-office/hledger-1.42.1:=[profile?] <app-office/hledger-1.43:=[profile?]
