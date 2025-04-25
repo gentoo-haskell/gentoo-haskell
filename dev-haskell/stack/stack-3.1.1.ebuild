@@ -19,6 +19,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="disable-stack-upload"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-2.13.1-disable-network-tests.patch"
+)
+
 RDEPEND=">=dev-haskell/aeson-2.0.3.0:=[profile?]
 	>=dev-haskell/aeson-warning-parser-0.1.1:=[profile?]
 	>=dev-haskell/ansi-terminal-1.0.2:=[profile?]
