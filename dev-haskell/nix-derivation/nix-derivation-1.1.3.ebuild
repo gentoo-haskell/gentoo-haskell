@@ -17,6 +17,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'filepath                       < 1.5' 'filepath'
+)
+
 RDEPEND=">=dev-haskell/attoparsec-0.12.0.0:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/pretty-show-1.6.11:=[profile?] <dev-haskell/pretty-show-1.11:=[profile?]
 	>=dev-haskell/text-0.8.0.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
