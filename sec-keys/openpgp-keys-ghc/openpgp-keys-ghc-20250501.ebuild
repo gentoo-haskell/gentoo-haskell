@@ -11,11 +11,23 @@ HOMEPAGE="https://www.haskell.org/ghc"
 #
 # NOTE: The installation page for 9.6.3 says it was signed by Bryan Richter,
 # but the key has no user ID (33C3A599DB85EA9B8BAA1866B202264020068BFB).
-SRC_URI="
+
+# Ben Gamari <ben@well-typed.com>
+SRC_URI+="
 	https://keys.openpgp.org/vks/v1/by-fingerprint/FFEB7CE81E16A36B3E2DED6F2DE04D4E97DB64AD
-		-> FFEB7CE81E16A36B3E2DED6F2DE04D4E97DB64AD.asc
+		-> ${PN}-bgamari-FFEB7CE81E16A36B3E2DED6F2DE04D4E97DB64AD.asc
+"
+
+# Zubin Duggal <zubin@well-typed.com>
+SRC_URI+="
 	https://keys.openpgp.org/vks/v1/by-fingerprint/88B57FCF7DB53B4DB3BFA4B1588764FBE22D19C4
-		-> 88B57FCF7DB53B4DB3BFA4B1588764FBE22D19C4.asc
+		-> ${PN}-zduggal-88B57FCF7DB53B4DB3BFA4B1588764FBE22D19C4.asc
+"
+
+# Luite Stegeman <stegeman@gmail.com>
+SRC_URI+="
+	https://keys.openpgp.org/vks/v1/by-fingerprint/8C961469C8FDC968718D6245AC7DE836C5DF907D
+		-> ${PN}-lstegeman-8C961469C8FDC968718D6245AC7DE836C5DF907D.asc
 "
 S="${WORKDIR}"
 
