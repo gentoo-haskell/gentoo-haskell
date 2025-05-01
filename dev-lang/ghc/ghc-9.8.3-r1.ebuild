@@ -95,10 +95,13 @@ S="${WORKDIR}"/${GHC_P}
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
 
-	# These libs are a higher version in ghc-9.6.5 than they are in ghc-9.8.3
+	# These libs are a higher version in ghc-9.6.7 than they are in ghc-9.8.3
 	# This could cause problems for hackport when determining minimum ghc
 	# version, so we upgrade them.
-	"filepath     1.4.300.1"
+	"directory    1.3.9.0"
+	"file-io      0.1.5" # added via hadrian patch/BUMP_LIBRARIES in ghc-9.6.7
+	"filepath     1.4.301.0"
+	"unix         2.8.6.0"
 )
 
 LICENSE="BSD"
@@ -584,6 +587,8 @@ src_prepare() {
 		eapply "${FILESDIR}/hadrian-9.4.8-remove-with-cc-configure-flag.patch"
 		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
 		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
+		# Add support for file-io
+		eapply "${FILESDIR}/hadrian-9.8.2-add-packages.patch"
 	popd
 
 	# mingw32 target
