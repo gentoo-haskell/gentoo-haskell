@@ -610,7 +610,7 @@ src_prepare() {
 		eapply "${FILESDIR}/hadrian-9.10.1-ignore-build-tool-depends.patch"
 		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
 		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
-		# Add support for os-string/file-io
+		# Add support for file-io
 		eapply "${FILESDIR}/hadrian-9.10.1-add-packages.patch"
 	popd
 
