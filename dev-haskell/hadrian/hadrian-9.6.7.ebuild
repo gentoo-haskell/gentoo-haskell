@@ -26,6 +26,7 @@ RESTRICT="!test? ( test )"
 PATCHES=(
 	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
 	"${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
+	"${FILESDIR}/${PN}-9.6.7-add-packages.patch"
 )
 
 RDEPEND="
