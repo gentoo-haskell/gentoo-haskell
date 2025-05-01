@@ -18,6 +18,15 @@ Signed-off-by: hololeap <hololeap@protonmail.com>
      ghcCompact, ghcConfig, ghcExperimental, ghcHeap, ghcInternal, ghci, ghciWrapper, ghcPkg, ghcPrim,
      ghcToolchain, ghcToolchainBin, haddock, haskeline,
      hsc2hs, hp2ps, hpc, hpcBin, integerGmp, integerSimple, iserv, iservProxy,
+@@ -42,7 +42,7 @@ ghcPackages =
+     , ghcToolchain, ghcToolchainBin, haddock, haskeline, hsc2hs
+     , hp2ps, hpc, hpcBin, integerGmp, integerSimple, iserv, libffi, mtl, osString
+     , parsec, pretty, process, rts, runGhc, stm, semaphoreCompat, templateHaskell
+-    , terminfo, text, time, transformers, unlit, unix, win32, xhtml
++    , terminfo, text, time, transformers, unlit, unix, win32, xhtml, fileio
+     , timeout
+     , lintersCommon
+     , lintNotes, lintCodes, lintCommitMsg, lintSubmoduleRefs, lintWhitespace ]
 @@ -81,6 +81,7 @@ directory           = lib  "directory"
  dumpDecls           = util "dump-decls"
  exceptions          = lib  "exceptions"
