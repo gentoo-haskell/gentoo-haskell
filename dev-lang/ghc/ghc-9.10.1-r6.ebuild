@@ -243,7 +243,7 @@ bump_lib() {
 
 	einfo "Bumping ${pn} up to ${pv}"
 
-	if [[ -d "${dir}"/"${pn}" ]] #if the library exists already, move it out of the way
+	if [[ -d "${dir}"/"${pn}" ]] # if the library exists already, move it out of the way
 	then
 		mv "${dir}"/"${pn}" "${WORKDIR}"/"${pn}".old || die
 	fi
