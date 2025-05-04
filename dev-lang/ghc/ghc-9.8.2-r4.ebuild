@@ -100,8 +100,13 @@ BUMP_LIBRARIES=(
 	# version, so we upgrade them.
 	"Cabal-syntax 3.10.3.0"
 	"Cabal        3.10.3.0"
-	"directory    1.3.8.5"
-	"filepath     1.4.300.1"
+
+	# Same as above, but versions are shipped in ghc-9.6.7
+	"array        0.5.8.0"
+	"directory    1.3.9.0"
+	"file-io      0.1.5" # added via hadrian patch/BUMP_LIBRARIES in ghc-9.6.7
+	"filepath     1.4.301.0"
+	"unix         2.8.6.0"
 
 	# Match with ghc-9.8.3 and 9.8.4 to help simplify package.unmask
 	"process      1.6.25.0"
@@ -591,6 +596,8 @@ src_prepare() {
 		eapply "${FILESDIR}/hadrian-9.4.8-remove-with-cc-configure-flag.patch"
 		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
 		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
+		# Add support for file-io
+		eapply "${FILESDIR}/hadrian-9.8.2-add-packages.patch"
 	popd
 
 	# mingw32 target
