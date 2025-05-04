@@ -1,0 +1,70 @@
+From 09d1c596991be3034c68c6e778837b0e2eb17e4e Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Fri, 25 Apr 2025 15:08:09 -0600
+Subject: [PATCH 1/1] Add hadrian file-io support
+
+Newer 'directory' requires 'file-io'; hadrian needs to be instructed to
+build it. Lines were swiped from the 'ghc-9.12.2-release' branch of ghc.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/src/Packages.hs
++++ b/src/Packages.hs
+@@ -4,7 +4,7 @@ module Packages (
+     array, base, binary, bytestring, cabal, cabalSyntax, checkPpr,
+     checkExact, countDeps,
+     compareSizes, compiler, containers, deepseq, deriveConstants, directory, dumpDecls,
+-    exceptions, filepath, genapply, genprimopcode, ghc, ghcBignum, ghcBoot, ghcBootTh, ghcPlatform,
++    exceptions, filepath, fileio, genapply, genprimopcode, ghc, ghcBignum, ghcBoot, ghcBootTh, ghcPlatform,
+     ghcCompact, ghcConfig, ghcExperimental, ghcHeap, ghcInternal, ghci, ghciWrapper, ghcPkg, ghcPrim,
+     ghcToolchain, ghcToolchainBin, haddock, haskeline,
+     hsc2hs, hp2ps, hpc, hpcBin, integerGmp, integerSimple, iserv, iservProxy,
+@@ -42,7 +42,7 @@ ghcPackages =
+     , ghcToolchain, ghcToolchainBin, haddock, haskeline, hsc2hs
+     , hp2ps, hpc, hpcBin, integerGmp, integerSimple, iserv, libffi, mtl, osString
+     , parsec, pretty, process, rts, runGhc, stm, semaphoreCompat, templateHaskell
+-    , terminfo, text, time, transformers, unlit, unix, win32, xhtml
++    , terminfo, text, time, transformers, unlit, unix, win32, xhtml, fileio
+     , timeout
+     , lintersCommon
+     , lintNotes, lintCodes, lintCommitMsg, lintSubmoduleRefs, lintWhitespace ]
+@@ -81,6 +81,7 @@ directory           = lib  "directory"
+ dumpDecls           = util "dump-decls"
+ exceptions          = lib  "exceptions"
+ filepath            = lib  "filepath"
++fileio              = lib  "file-io"
+ genapply            = util "genapply"
+ genprimopcode       = util "genprimopcode"
+ ghc                 = prg  "ghc-bin"         `setPath` "ghc"
+--- a/src/Rules/ToolArgs.hs
++++ b/src/Rules/ToolArgs.hs
+@@ -154,6 +154,7 @@ toolTargets = [ binary
+               , process
+               , exceptions
+               , filepath
++              , fileio
+               , osString
+               -- , ghc     -- # depends on ghc library
+               -- , runGhc  -- # depends on ghc library
+--- a/src/Settings/Default.hs
++++ b/src/Settings/Default.hs
+@@ -90,6 +90,7 @@ stage0Packages = do
+              , process
+              , exceptions
+              , filepath
++             , fileio
+              , ghc
+              , runGhc
+              , ghcBoot
+--- a/src/Settings/Warnings.hs
++++ b/src/Settings/Warnings.hs
+@@ -39,6 +39,7 @@ ghcWarningsArgs = do
+         , package directory    ? pure [ "-Wno-unused-imports"
+                                       , "-Wno-deprecations" -- https://gitlab.haskell.org/ghc/ghc/-/issues/24240
+                                       ]
++        , package fileio       ? pure [ "-Wno-unused-imports" ] -- https://github.com/haskell/file-io/issues/30
+         , package ghc          ? pure [ "-Wcpp-undef"
+                                       , "-Wincomplete-uni-patterns"
+                                       , "-Wincomplete-record-updates"
+-- 
+2.49.0
+

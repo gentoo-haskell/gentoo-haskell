@@ -22,7 +22,7 @@ Fixes #25576.
 +#elif !MIN_VERSION_GLASGOW_HASKELL(9,9,0,0) && MIN_VERSION_GLASGOW_HASKELL(9,8,4,0)
 +// Unique64 patch was backported to 9.8.4
 +#define HAVE_UNIQUE64 1
-+#elif !MIN_VERSION_GLASGOW_HASKELL(9,9,0,0) && MIN_VERSION_GLASGOW_HASKELL(9,6,7,0)
++#elif !MIN_VERSION_GLASGOW_HASKELL(9,8,0,0) && MIN_VERSION_GLASGOW_HASKELL(9,6,7,0)
 +// Unique64 patch was backported to 9.6.7
 +#define HAVE_UNIQUE64 1
 +#endif

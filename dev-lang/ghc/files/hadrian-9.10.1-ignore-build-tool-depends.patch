@@ -1,0 +1,60 @@
+From   https://gitlab.haskell.org/ghc/ghc/-/commit/4ecf778286417b9b503585c61f7348062e7bbd7d
+From: Andrea Bedini <andrea@andreabedini.com>
+Date: Mon, 1 Jul 2024 17:12:26 +0800
+Subject: [PATCH] hadrian: Ignore build-tool-depends fields in cabal files
+
+hadrian does not utilise the build-tool-depends fields in cabal files
+and their presence can cause issues when building source distribution
+(see #24826)
+
+Ideally Cabal would support building "full" source distributions which
+would remove the need for workarounds in hadrian but for now we can
+patch the build-tool-depends out of the cabal files.
+
+Fixes #24826
+
+(cherry picked from commit aba2c9d4728262cd9a2d711eded9050ac131c6c1)
+--- a/src/Hadrian/Haskell/Cabal/Parse.hs
++++ b/src/Hadrian/Haskell/Cabal/Parse.hs
+@@ -19,6 +19,7 @@ import Data.Bifunctor
+ import Data.List.Extra
+ import Development.Shake
+ import qualified Distribution.Compat.Graph                     as Graph
++import qualified Distribution.Compat.Lens                      as CL
+ import qualified Distribution.ModuleName                       as C
+ import qualified Distribution.Package                          as C
+ import qualified Distribution.PackageDescription               as C
+@@ -37,6 +38,7 @@ import qualified Distribution.Simple.Utils                     as C
+ import qualified Distribution.Simple.Program.Types             as C
+ import qualified Distribution.Simple.Configure                 as C (getPersistBuildConfig)
+ import qualified Distribution.Simple.Build                     as C
++import qualified Distribution.Types.BuildInfo.Lens             as CL (HasBuildInfo(..), traverseBuildInfos)
+ import qualified Distribution.Types.ComponentLocalBuildInfo    as C
+ import qualified Distribution.InstalledPackageInfo             as Installed
+ import qualified Distribution.Simple.PackageIndex              as C
+@@ -193,10 +195,21 @@ configurePackage context@Context {..} = do
+     verbosity <- getVerbosity
+     let v = shakeVerbosityToCabalFlag verbosity
+         argList' = argList ++ ["--flags=" ++ unwords flagList, v]
++
+     when (verbosity >= Verbose) $
+         putProgressInfo $ "| Package " ++ quote (pkgName package) ++ " configuration flags: " ++ unwords argList'
++
++    -- See #24826 for why this workaround exists
++    -- In future `Cabal` versions we should pass the `--ignore-build-tools` flag when
++    -- calling configure.
++    -- See https://github.com/haskell/cabal/pull/10128
++    let gpdWithoutBuildTools =
++            CL.set (CL.traverseBuildInfos . CL.buildToolDepends) []
++          . CL.set (CL.traverseBuildInfos . CL.buildTools) []
++          $ gpd
++
+     traced "cabal-configure" $
+-        C.defaultMainWithHooksNoReadArgs hooks gpd argList'
++        C.defaultMainWithHooksNoReadArgs hooks gpdWithoutBuildTools argList'
+ 
+     dir <- Context.buildPath context
+     files <- liftIO $ getDirectoryFilesIO "." [ dir -/- "include" -/- "**"
+-- 
+GitLab
+
