@@ -24,13 +24,17 @@ RDEPEND="dev-haskell/data-default:=[profile?]
 	dev-haskell/data-default-class:=[profile?]
 	>=dev-haskell/extra-1.7.3:=[profile?]
 	>=dev-haskell/filemanip-0.3.6.3:=[profile?] <dev-haskell/filemanip-0.4:=[profile?]
+	|| (
+		( >=dev-haskell/ghc-exactprint-1.5.0 <dev-haskell/ghc-exactprint-1.10 )
+		( >=dev-haskell/ghc-exactprint-1.12 <dev-haskell/ghc-exactprint-1.13 )
+	)
+	dev-haskell/ghc-exactprint:=[profile?]
 	>=dev-haskell/refact-0.2:=[profile?]
 	>=dev-haskell/syb-0.7.1:=[profile?]
 	>=dev-haskell/uniplate-1.6.13:=[profile?]
 	>=dev-haskell/unix-compat-0.5.2:=[profile?]
 	>=dev-lang/ghc-9.2.4:=
 	executable? (
-		>=dev-haskell/ghc-exactprint-1.5.0:=[profile?]  <dev-haskell/ghc-exactprint-1.13:=[profile?]
 		dev-haskell/ghc-paths:=[profile?]
 		>=dev-haskell/optparse-applicative-0.15.1.0:=[profile?]
 	)
