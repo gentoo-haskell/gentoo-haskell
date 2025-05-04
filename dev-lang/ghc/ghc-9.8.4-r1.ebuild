@@ -124,6 +124,9 @@ S="${WORKDIR}"/${GHC_P}
 
 BUMP_LIBRARIES=(
 	# "hackage-name          hackage-version"
+	#Match 9.6.7
+	"directory 1.3.9.0"
+	"file-io 0.1.5"
 )
 
 LICENSE="BSD"
@@ -166,7 +169,7 @@ BDEPEND="
 	)
 	ghcbootstrap? (
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
-		=dev-haskell/hadrian-${PVR}
+		>=dev-haskell/hadrian-9.8.4-r1 <dev-haskell/hadrian-9.8.4-r9999
 	)
 	test? (
 		${PYTHON_DEPS}
@@ -609,6 +612,8 @@ src_prepare() {
 		eapply "${FILESDIR}/hadrian-9.4.8-remove-with-cc-configure-flag.patch"
 		# Fix QA Notice: One or more compressed files were found in docompress-ed directories
 		eapply "${FILESDIR}/hadrian-9.4.8-disable-doc-archives.patch"
+		# Add support for file-io
+		eapply "${FILESDIR}/hadrian-9.8.4-add-packages.patch"
 	popd
 
 	# mingw32 target
