@@ -1,0 +1,40 @@
+From 24d9b29c2631a56b2dd7b4e08afba1905f5155ea Mon Sep 17 00:00:00 2001
+From: Xavier Dectot <xavier@wheredoibegin.fr>
+Date: Sun, 30 Mar 2025 19:35:38 +0200
+Subject: [PATCH] add bench flags
+
+--- a/haskell-language-server.cabal
++++ b/haskell-language-server.cabal
+@@ -2174,8 +2174,14 @@ test-suite ghcide-tests
+     RecordWildCards
+     ViewPatterns
+ 
++flag ghcide-bench
++  description: Build the ghcide bench executable
++  default: False
++  manual: True
+ 
+ executable ghcide-bench
++    if !flag(ghcide-bench)
++      buildable:False
+     import: defaults
+     build-depends:
+         aeson,
+@@ -2206,7 +2212,14 @@ executable ghcide-bench
+         RecordWildCards
+         ViewPatterns
+ 
++flag ghcide-bench-lib
++    description: Build the ghcide-bench-lib library
++    default: False
++    manual: True
++
+ library ghcide-bench-lib
++    if !flag(ghcide-bench-lib)
++      buildable: False
+     import: defaults
+     hs-source-dirs: ghcide-bench/src
+     ghc-options: -Wall -Wno-name-shadowing
+-- 
+2.49.0
+
