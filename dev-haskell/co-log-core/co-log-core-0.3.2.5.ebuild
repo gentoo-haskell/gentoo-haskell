@@ -23,7 +23,7 @@ RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/doctest-0.16.0 <dev-haskell/doctest-0.24
+	test? ( >=dev-haskell/doctest-0.16.0 <dev-haskell/doctest-0.25
 		>=dev-haskell/glob-0.10.0 <dev-haskell/glob-0.11 )
 "
 
