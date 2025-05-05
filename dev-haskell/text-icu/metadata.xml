@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="homebrew">Assume homebrew on macOS. Automatically add /usr/local/opt/ and /usr/homebrew/opt/ paths to extra-lib-dirs and include-dirs.</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">text-icu</remote-id>
 		<remote-id type="github">haskell/text-icu</remote-id>
