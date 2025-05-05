@@ -21,8 +21,9 @@ RESTRICT=test # QuickCheck occasionally finds counterexamples
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 	dev-libs/icu
-	|| ( ( >=dev-haskell/text-0.9.1.0:=[profile?] <dev-haskell/text-1.3:=[profile?] )
-		( >=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.2:=[profile?] ) )
+	dev-haskell/text:=[profile?]
+	|| ( ( >=dev-haskell/text-0.9.1.0 <dev-haskell/text-1.3 )
+		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 ) )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
