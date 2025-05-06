@@ -13,10 +13,6 @@ inherit haskell-cabal
 DESCRIPTION="Non-empty vectors"
 HOMEPAGE="https://github.com/emilypi/nonempty-vector"
 
-GHC_BOOTSTRAP_PACKAGES=(
-	cabal-doctest
-)
-
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
