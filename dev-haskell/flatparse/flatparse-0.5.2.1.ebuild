@@ -26,6 +26,9 @@ DEPEND="${RDEPEND}
 		dev-haskell/quickcheck
 		dev-haskell/quickcheck-instances )
 "
+BDEPEND="
+	llvm? ( llvm-core/llvm )
+"
 
 src_configure() {
 	haskell-cabal_src_configure \
