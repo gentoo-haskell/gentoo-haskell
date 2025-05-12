@@ -58,4 +58,4 @@ src_configure() {
 		$(cabal_flag simdutf simdutf)
 }
 
-CABAL_CORE_LIB_GHC_PV="9.12.1 9.12.2"
+CABAL_CORE_LIB_GHC_PV="9.10.2 9.12.1 9.12.2"
