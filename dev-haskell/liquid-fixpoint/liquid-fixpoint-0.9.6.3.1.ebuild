@@ -66,7 +66,7 @@ DEPEND="${RDEPEND}
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-devel \
-		$(cabal_flag link-z3-as-a-library link-z3-as-a-library)
+		$(cabal_flag link-z3-as-a-library link-z3-as-a-library) \
 		$(cabal_flag executable executable)
 }
 
