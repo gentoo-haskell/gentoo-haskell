@@ -19,11 +19,6 @@ KEYWORDS="~amd64"
 
 PATCHES=( "${FILESDIR}/${PN}-2.2.2.0-cabal-doctest.patch" )
 
-GHC_BOOTSTRAP_PACKAGES=(
-	cabal-doctest
-)
-
-
 RDEPEND="~dev-haskell/generic-lens-core-2.2.1.0:=[profile?]
 	dev-haskell/profunctors:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
@@ -32,6 +27,7 @@ RDEPEND="~dev-haskell/generic-lens-core-2.2.1.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( dev-haskell/doctest
+		>=dev-haskell/cabal-doctest-1.0.0
 		dev-haskell/hunit
 		>=dev-haskell/inspection-testing-0.2
 		dev-haskell/lens )
@@ -40,6 +36,12 @@ DEPEND="${RDEPEND}
 # Workaround for GHC panics when installing over a previous version of the same
 # package. See: <https://github.com/gentoo-haskell/gentoo-haskell/issues/1270>
 src_configure() {
+	if use test; then
+		export GHC_BOOTSTRAP_PACKAGES=(
+				cabal-doctest
+		)
+	fi
+
 	local local_pkgdb="${S}/package.conf.d"
 
 	local ghc_pkg=( "/usr/bin/ghc-pkg" "--global-package-db=${local_pkgdb}" )
