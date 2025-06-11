@@ -26,6 +26,7 @@ RDEPEND="~dev-haskell/parsable-9999:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( <dev-haskell/conduit-1.4
+		dev-haskell/flatparse
 		<dev-haskell/list-t-1.1
 		~dev-haskell/parsable-test-9999
 		dev-haskell/pretty-simple
@@ -33,6 +34,7 @@ DEPEND="${RDEPEND}
 		<dev-haskell/tasty-1.6
 		<dev-haskell/tasty-hunit-0.11 )
 "
+BDEPEND="test? ( sys-apps/pkgcore )"
 
 src_prepare() {
 	haskell-cabal_src_prepare
