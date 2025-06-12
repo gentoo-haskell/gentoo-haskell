@@ -129,6 +129,7 @@ LLVM_DEPS="
 		llvm-core/llvm:18
 		llvm-core/llvm:19
 	)
+	llvm-core/clang
 "
 
 RDEPEND="
