@@ -23,13 +23,15 @@ IUSE="static test +threaded"
 
 RESTRICT="!test? ( test )"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-9.10.1-add-packages.patch"
-)
-
 CABAL_CHDEPS=(
 	'Cabal                >= 3.10    && < 3.11' 'Cabal >= 3.10'
 	'containers           >= 0.5     && < 0.7' 'containers           >= 0.5'
+)
+
+PATCHES=(
+	"${FILESDIR}/${PN}-9.10.1-remove-with-cc-configure-flag.patch"
+	"${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
+	"${FILESDIR}/${PN}-9.10.1-add-packages.patch"
 )
 
 RDEPEND="

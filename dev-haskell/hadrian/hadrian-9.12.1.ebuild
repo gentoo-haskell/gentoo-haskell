@@ -29,6 +29,11 @@ CABAL_CHDEPS=(
 	'directory            >= 1.3.9.0 && < 1.4' 'directory            >= 1.3.8.5 && < 1.4'
 )
 
+PATCHES=(
+	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
+	"${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
+)
+
 RDEPEND="
 	>=dev-haskell/base16-bytestring-0.1.1:= <dev-haskell/base16-bytestring-1.1.0.0:=
 	>=dev-haskell/cabal-3.13:=
