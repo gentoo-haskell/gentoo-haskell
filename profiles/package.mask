@@ -3,6 +3,7 @@
 # net-libs/webkit-gtk:4 has been masked. Masking these until they (are
 # confirmed to) work with net-libs/webkit-gtk:4.1
 dev-haskell/gi-javascriptcore4
+dev-haskell/gi-webkit2
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
 #
