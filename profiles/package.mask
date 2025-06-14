@@ -1,3 +1,9 @@
+# hololeap <hololeap@protonmail.com> (2025-06-14)
+#
+# net-libs/webkit-gtk:4 has been masked. Masking these until they (are
+# confirmed to) work with net-libs/webkit-gtk:4.1
+dev-haskell/gi-javascriptcore4
+
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
 #
 # no activity upstream for 8 years. Depends on deprecated
