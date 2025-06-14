@@ -630,6 +630,10 @@ src_prepare() {
 	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1579>
 	eapply "${FILESDIR}/${PN}-9.8.4-add-missing-rts-include.patch"
 
+	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1775>
+	# <https://gitlab.haskell.org/ghc/ghc/-/issues/25662>
+	eapply "${FILESDIR}/${PN}-9.12.2-hp2ps-c23-compat.patch"
+
 	bump_libs
 
 	eapply_user

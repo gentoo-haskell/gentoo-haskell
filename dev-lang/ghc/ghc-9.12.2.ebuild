@@ -620,6 +620,10 @@ src_prepare() {
 		eapply "${FILESDIR}/${PN}-9.8.2-fix-buggy-tests.patch"
 	fi
 
+	# <https://github.com/gentoo-haskell/gentoo-haskell/issues/1775>
+	# <https://gitlab.haskell.org/ghc/ghc/-/issues/25662>
+	eapply "${FILESDIR}/${PN}-9.12.2-hp2ps-c23-compat.patch"
+
 	bump_libs
 
 	# Loosen base depends
