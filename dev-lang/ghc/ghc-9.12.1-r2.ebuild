@@ -14,7 +14,7 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 PYTHON_COMPAT=( python3_{9..13} )
-LLVM_COMPAT=( {15..19} )
+LLVM_COMPAT=( {15..20} )
 
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
@@ -588,7 +588,7 @@ src_prepare() {
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/21936
-	eapply "${FILESDIR}"/${PN}-9.12.1-llvm-19.patch
+	eapply "${FILESDIR}"/${PN}-9.12.1-llvm-20.patch
 
 	# Fix issue caused by non-standard "musleabi" target in
 	# https://gitlab.haskell.org/ghc/ghc/-/blob/ghc-9.4.5-release/m4/ghc_llvm_target.m4#L39
@@ -652,6 +652,9 @@ src_prepare() {
 }
 
 src_configure() {
+	# Run eautoreconf first thing to e.g. enshrine changes made to configure.ac
+	eautoreconf
+
 	### Gather the arguments we will pass to Hadrian:
 
 	# Create an array of arguments for hadrian, which will be used internally by
