@@ -14,9 +14,11 @@ if [[ ${CTARGET} = ${CHOST} ]] ; then
 fi
 
 PYTHON_COMPAT=( python3_{9..13} )
+LLVM_COMPAT=( {15..19} )
+
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
-inherit toolchain-funcs prefix check-reqs llvm unpacker haskell-cabal verify-sig
+inherit toolchain-funcs prefix check-reqs llvm-r2 unpacker haskell-cabal verify-sig
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
@@ -110,19 +112,6 @@ KEYWORDS="~amd64"
 IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 RESTRICT="!test? ( test )"
 
-LLVM_MAX_SLOT="19"
-LLVM_DEPS="
-	<llvm-core/llvm-$((${LLVM_MAX_SLOT} + 1)):=
-	|| (
-		llvm-core/llvm:15
-		llvm-core/llvm:16
-		llvm-core/llvm:17
-		llvm-core/llvm:18
-		llvm-core/llvm:19
-	)
-	llvm-core/clang
-"
-
 RDEPEND="
 	>=dev-lang/perl-5.6.1
 	dev-libs/gmp:0=
@@ -130,7 +119,12 @@ RDEPEND="
 	sys-libs/ncurses:=[unicode(+)]
 	elfutils? ( dev-libs/elfutils )
 	numa? ( sys-process/numactl )
-	llvm? ( ${LLVM_DEPS} )
+	llvm? (
+		$(llvm_gen_dep '
+			llvm-core/clang:${LLVM_SLOT}=
+			llvm-core/llvm:${LLVM_SLOT}=
+		')
+	)
 "
 
 DEPEND="${RDEPEND}"
@@ -483,7 +477,7 @@ pkg_setup() {
 		python-any-r1_pkg_setup
 	fi
 
-	use llvm && llvm_pkg_setup
+	use llvm && llvm-r2_pkg_setup
 }
 
 src_unpack() {
