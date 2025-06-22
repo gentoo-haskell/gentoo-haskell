@@ -8,7 +8,7 @@
 	<use>
 		<flag name="binary">Install the binary version directly, rather than using it to build the source version.</flag>
 		<flag name="elfutils">Enable DWARF-based backtraces using <pkg>dev-libs/elfutils</pkg>.</flag>
-		<flag name="ghcbootstrap">Internal: Bootstrap GHC from an existing GHC installation.</flag>
+		<flag name="ghcbootstrap">Bootstrap GHC from an existing GHC installation.</flag>
 		<flag name="ghcmakebinary">Internal: Build binary friendly for redistribution.</flag>
 		<flag name="gmp">Use <pkg>dev-libs/gmp</pkg> for integer operations (works faster, but an external depend).</flag>
 		<flag name="llvm">Pull in dependencies for the <pkg>llvm-core/llvm</pkg> codegen backend.</flag>
