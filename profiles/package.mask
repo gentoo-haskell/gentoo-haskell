@@ -22,8 +22,6 @@ dev-haskell/cufft
 #
 # Removal: 2025-04-27
 
-dev-haskell/hasmin
-dev-haskell/json-bytes-builder
 dev-haskell/monadcatchio-transformers
 dev-util/spago
 dev-lang/hugs98
