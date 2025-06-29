@@ -8,14 +8,6 @@ dev-haskell/gi-javascriptcore
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
 #
-# deprecated
-#
-# Removal: 2025-05-14
-
-dev-haskell/qr-imager
-
-# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
-#
 # dead upstream
 #
 # Removal: 2025-05-14
