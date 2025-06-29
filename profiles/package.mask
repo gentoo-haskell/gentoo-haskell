@@ -15,15 +15,6 @@ dev-haskell/gi-javascriptcore
 dev-haskell/cuda
 dev-haskell/cufft
 
-# GdeVolpiano <xavier@wheredoibegin.fr> (2025-03-28)
-#
-# Various outdated packages which either fail to build, have been deprecated
-# upstream or depend on other outdated packages. Mask for removal in 30 days.
-#
-# Removal: 2025-04-27
-
-dev-haskell/qrimager
-
 # hololeap <hololeap@protonmail.com> (2025-03-25)
 #
 # stylish-haskell still requires <ghc-lib-parser-9.9. Mask 9.10 until it
@@ -39,7 +30,6 @@ dev-haskell/qrimager
 # git repositories in vim/pack. Mask for removal in 30 days
 #
 # Removal: 2025-04-23
-app-vim/haskellindent
 app-vim/haskellmode
 
 # hololeap <hololeap@protonmail.com> (2025-03-17)
