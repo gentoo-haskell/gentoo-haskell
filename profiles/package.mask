@@ -6,24 +6,6 @@ dev-haskell/gi-javascriptcore4
 dev-haskell/gi-webkit2
 dev-haskell/gi-javascriptcore
 
-# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
-#
-# no activity upstream for 5 years. Fails tests
-#
-# Removal: 2025-05-14
-
-dev-haskell/semver-range
-
-# GdeVolpiano <xavier@wheredoibegin.fr> (2025-04-15)
-#
-# depends on dev-haskell/haskell-mode, which has been pruned.
-# Also, as for vim, package managers are not the modern way
-# to install emacs modes
-#
-# Removal: 2025-05-14
-
-app-emacs/idris-mode
-
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2025-04-12)
 #
 # data-default-instances have been integrated in data-default-0.8
