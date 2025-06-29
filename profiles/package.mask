@@ -12,7 +12,6 @@ dev-haskell/gi-javascriptcore
 #
 # Removal 2025-05-11
 
-dev-haskell/data-default-instances-base
 dev-haskell/data-default-instances-containers
 dev-haskell/data-default-instances-dlist
 dev-haskell/data-default-instances-old-locale
