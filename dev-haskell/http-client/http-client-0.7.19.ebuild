@@ -16,6 +16,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.7.16-disable-net-tests.patch"
+)
+
 RDEPEND=">=dev-haskell/async-2.0:=[profile?]
 	>=dev-haskell/base64-bytestring-1.0:=[profile?]
 	>=dev-haskell/blaze-builder-0.3:=[profile?]
