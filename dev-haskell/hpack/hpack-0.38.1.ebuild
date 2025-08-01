@@ -11,6 +11,15 @@ inherit haskell-cabal
 DESCRIPTION="A modern format for Haskell packages"
 HOMEPAGE="https://github.com/sol/hpack#readme"
 
+GIT_REPO="https://github.com/sol/hpack"
+GIT_COMMIT="2dabd673cd21019a14e4014cbca86acb06696c97" # tag 0.38.1
+GIT_P="${PN}-${GIT_COMMIT}"
+
+# distribution tarball is missing ./test/fixtures
+SRC_URI+="
+	test? ( ${GIT_REPO}/archive/${GIT_COMMIT}.tar.gz -> ${GIT_P}.tar.gz )
+"
+
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
@@ -41,3 +50,12 @@ DEPEND="${RDEPEND}
 		dev-haskell/temporary
 		dev-haskell/vcr )
 "
+
+src_prepare() {
+	haskell-cabal_src_prepare
+
+	if use test; then
+		rm -r "${S}/test/" || die
+		mv "${WORKDIR}/${GIT_P}/test/" "${S}" || die
+	fi
+}
