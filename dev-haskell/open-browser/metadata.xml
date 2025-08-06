@@ -5,8 +5,11 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="example">Build the example application</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">open-browser</remote-id>
-		<remote-id type="github">rightfold/open-browser</remote-id>
+		<remote-id type="github">mpilgrem/open-browser</remote-id>
 	</upstream>
 </pkgmetadata>
