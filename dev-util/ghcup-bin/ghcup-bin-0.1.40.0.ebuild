@@ -60,8 +60,7 @@ S="${WORKDIR}"
 LICENSE="LGPL-3"
 SLOT="0"
 
-# Only keyword an arch if someone has done (extensive) testing with it
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 BDEPEND="${BDEPEND}
 	verify-sig? (
