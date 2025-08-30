@@ -23,6 +23,12 @@ SRC_URI+="
 		-> ${PN}-hecate-EAF2A9A722C0C96F2B431CA511AAD8CEDEE0CAEF.asc
 "
 
+# Julian Ospald <hasufell@posteo.de>
+SRC_URI+="
+	https://keys.openpgp.org/vks/v1/by-fingerprint/7D1E8AFD1D4A16D71FADA2F2CCC85C0E40C06A8C
+		-> ${PN}-jospald-7D1E8AFD1D4A16D71FADA2F2CCC85C0E40C06A8C.asc
+"
+
 S="${WORKDIR}"
 
 LICENSE="public-domain"
