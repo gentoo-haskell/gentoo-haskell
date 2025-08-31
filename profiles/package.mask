@@ -1,3 +1,13 @@
+# GdeVolpiano <xavier@wheredoibegin.fr> (2025-08-31)
+#
+# x11-libs/gtkglext has been marked for removal, making dev-haskell/gtkglext
+# obsolete. Bug #698950
+#
+# Remova: 2025-09-30
+
+dev-haskell/gtkglext 
+
+#
 # hololeap <hololeap@protonmail.com> (2025-06-14)
 #
 # net-libs/webkit-gtk:4 has been masked. Masking these until they (are
