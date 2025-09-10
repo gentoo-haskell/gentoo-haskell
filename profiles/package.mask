@@ -48,7 +48,6 @@ dev-haskell/syb-with-class-instances-text
 dev-haskell/cipher-des
 dev-haskell/djinn-ghc
 dev-haskell/heckle
-dev-haskell/text-stream-decode
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
