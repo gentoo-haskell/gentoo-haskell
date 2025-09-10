@@ -52,7 +52,6 @@ dev-haskell/text-stream-decode
 dev-haskell/generic-lens-labels
 dev-haskell/transformers-free
 dev-haskell/auto
-dev-haskell/enumerator
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
