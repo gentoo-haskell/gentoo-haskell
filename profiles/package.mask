@@ -46,7 +46,6 @@ dev-haskell/persistent-odbc
 dev-haskell/haskell-import-graph
 dev-haskell/syb-with-class-instances-text
 dev-haskell/cipher-des
-dev-haskell/djinn-ghc
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
