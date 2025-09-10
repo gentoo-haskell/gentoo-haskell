@@ -155,7 +155,6 @@ dev-haskell/hls-stylish-haskell-plugin
 # Removal on 2025-03-13.
 dev-haskell/hsp
 dev-haskell/happstack-authenticate
-dev-haskell/happstack-hsp
 
 # Jack Todaro <solpeth@posteo.org> (2025-02-08)
 # Packages depend on HSOpenSSL, which does not currently build against
