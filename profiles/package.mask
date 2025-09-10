@@ -51,7 +51,6 @@ dev-haskell/heckle
 dev-haskell/text-stream-decode
 dev-haskell/generic-lens-labels
 dev-haskell/transformers-free
-dev-haskell/auto
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
