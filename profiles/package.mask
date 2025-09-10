@@ -50,7 +50,6 @@ dev-haskell/djinn-ghc
 dev-haskell/heckle
 dev-haskell/text-stream-decode
 dev-haskell/generic-lens-labels
-dev-haskell/transformers-free
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
