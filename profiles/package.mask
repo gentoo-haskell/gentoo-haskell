@@ -43,7 +43,6 @@ dev-util/dzen-dhall
 dev-haskell/hakyll-agda
 dev-haskell/aeson-lens
 dev-haskell/persistent-odbc
-dev-haskell/haskell-import-graph
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
