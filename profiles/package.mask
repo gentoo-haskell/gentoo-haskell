@@ -101,14 +101,6 @@ dev-haskell/groundhog-th
 # Removal: 2025-04-01
 dev-haskell/egison
 
-# hololeap <hololeap@protonmail.com> (2025-03-02)
-#
-# Does not build on >=ghc-9.2, multiple open PRs to patch for ghc-9.2 on
-# upstream. Mask for removal in 30 days.
-#
-# Removal: 2025-04-01
-app-text/haskell-awk
-
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
 # dev-haskell/doctest >= 0.23 needs specific versions of ghc to pass tests.
