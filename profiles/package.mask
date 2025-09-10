@@ -55,7 +55,6 @@ dev-haskell/auto
 dev-haskell/enumerator
 dev-haskell/hashable-time
 dev-haskell/attoparsec-enumerator
-dev-haskell/network-enumerator
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
