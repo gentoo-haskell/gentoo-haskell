@@ -41,7 +41,6 @@ dev-haskell/cufft
 # Removal: 2025-04-16
 dev-util/dzen-dhall
 dev-haskell/hakyll-agda
-dev-haskell/aeson-lens
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
