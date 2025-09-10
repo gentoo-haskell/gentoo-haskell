@@ -74,14 +74,6 @@ dev-haskell/haskey
 # Removal: 2025-04-01
 dev-haskell/cheapskate
 
-# hololeap <hololeap@protonmail.com> (2025-03-02)
-#
-# Requires old version of text, no upstream activity for 2 years. Mask for
-# removal in 30 days.
-#
-# Removal: 2025-04-01
-dev-haskell/amqp-worker
-
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
 # dev-haskell/doctest >= 0.23 needs specific versions of ghc to pass tests.
