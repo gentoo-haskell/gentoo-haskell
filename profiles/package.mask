@@ -91,7 +91,6 @@ dev-haskell/amqp-worker
 dev-haskell/groundhog
 dev-haskell/groundhog-postgresql
 dev-haskell/groundhog-sqlite
-dev-haskell/groundhog-th
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
