@@ -33,14 +33,6 @@ dev-haskell/cufft
 >=dev-haskell/ghc-lib-parser-ex-9.10
 >=dev-haskell/ghc-syntax-highlighter-0.0.12
 
-# hololeap <hololeap@protonmail.com> (2025-03-17)
-#
-# Various outdated packages which either fail to build, have been deprecated
-# upstream or depend on other outdated packages. Mask for removal in 30 days.
-#
-# Removal: 2025-04-16
-dev-util/dzen-dhall
-
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
 # dev-haskell/doctest >= 0.23 needs specific versions of ghc to pass tests.
