@@ -158,7 +158,6 @@ dev-haskell/happstack-authenticate
 dev-haskell/happstack-hsp
 dev-haskell/hjscript
 dev-haskell/hsx-jmacro
-dev-haskell/reform-hsp
 
 # Jack Todaro <solpeth@posteo.org> (2025-02-08)
 # Packages depend on HSOpenSSL, which does not currently build against
