@@ -49,7 +49,6 @@ dev-haskell/cipher-des
 dev-haskell/djinn-ghc
 dev-haskell/heckle
 dev-haskell/text-stream-decode
-dev-haskell/generic-lens-labels
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
