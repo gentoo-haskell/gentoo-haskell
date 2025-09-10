@@ -93,14 +93,6 @@ dev-haskell/groundhog-postgresql
 dev-haskell/groundhog-sqlite
 dev-haskell/groundhog-th
 
-# hololeap <hololeap@protonmail.com> (2025-03-02)
-#
-# Does not build on >=ghc-9.0, no upstream activity since 2021. Mask for
-# removal in 30 days.
-#
-# Removal: 2025-04-01
-dev-haskell/egison
-
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
 # dev-haskell/doctest >= 0.23 needs specific versions of ghc to pass tests.
