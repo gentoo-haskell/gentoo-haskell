@@ -90,7 +90,6 @@ dev-haskell/amqp-worker
 # Removal: 2025-04-01
 dev-haskell/groundhog
 dev-haskell/groundhog-postgresql
-dev-haskell/groundhog-sqlite
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
