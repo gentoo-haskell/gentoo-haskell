@@ -53,7 +53,6 @@ dev-haskell/generic-lens-labels
 dev-haskell/transformers-free
 dev-haskell/auto
 dev-haskell/enumerator
-dev-haskell/hashable-time
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
