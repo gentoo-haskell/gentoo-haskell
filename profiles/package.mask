@@ -47,7 +47,6 @@ dev-haskell/haskell-import-graph
 dev-haskell/syb-with-class-instances-text
 dev-haskell/cipher-des
 dev-haskell/djinn-ghc
-dev-haskell/heckle
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
