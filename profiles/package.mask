@@ -42,7 +42,6 @@ dev-haskell/cufft
 dev-util/dzen-dhall
 dev-haskell/hakyll-agda
 dev-haskell/aeson-lens
-dev-haskell/persistent-odbc
 
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
