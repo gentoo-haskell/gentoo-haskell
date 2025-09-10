@@ -58,14 +58,6 @@ dev-haskell/attoparsec-enumerator
 dev-haskell/network-enumerator
 dev-haskell/zlib-enum
 
-# hololeap <hololeap@protonmail.com> (2025-03-02)
-#
-# Needs patching to be compatible with >=unix-2.8, no upstream activity for 4
-# years. Mask for removal in 30 days.
-#
-# Removal: 2025-04-01
-dev-haskell/haskey
-
 # GdeVolpiano <xavier@wheredoibegin.fr> (2025-02-25)
 #
 # dev-haskell/doctest >= 0.23 needs specific versions of ghc to pass tests.
