@@ -1,19 +1,3 @@
-From bdbe6b8ff69e5551ecaff9229e80880b7cc2c925 Mon Sep 17 00:00:00 2001
-From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
-Date: Mon, 2 Jun 2025 16:55:03 +0200
-Subject: [PATCH] cabal-doctest
-
-doctest pulls in the out-of-scope packages if they are installed on the
-system. The best workaround is to use migrate to cabal-doctest.
-
----
- Setup.hs            | 20 ++++++++++++++++++++
- examples/doctest.hs | 35 ++++++++++++++++++++++++++++++-----
- generic-lens.cabal  | 11 ++++++++++-
- 3 files changed, 60 insertions(+), 6 deletions(-)
-
-diff --git a/Setup.hs b/Setup.hs
-index 9a994af..e112a6d 100644
 --- a/Setup.hs
 +++ b/Setup.hs
 @@ -1,2 +1,22 @@
@@ -39,8 +23,6 @@ index 9a994af..e112a6d 100644
  main = defaultMain
 +
 +#endif
-diff --git a/examples/doctest.hs b/examples/doctest.hs
-index 5c50730..0298732 100644
 --- a/examples/doctest.hs
 +++ b/examples/doctest.hs
 @@ -1,6 +1,31 @@
@@ -80,8 +62,6 @@ index 5c50730..0298732 100644
 +    let args = customFlags ++ pkgs ++ modules
 +
 +    doctest args
-diff --git a/generic-lens.cabal b/generic-lens.cabal
-index 9dbdd73..217fcb2 100644
 --- a/generic-lens.cabal
 +++ b/generic-lens.cabal
 @@ -13,7 +13,7 @@ license-file:         LICENSE
@@ -90,12 +70,12 @@ index 9dbdd73..217fcb2 100644
  category:             Generics, Records, Lens
 -build-type:           Simple
 +build-type:           Custom
-
- tested-with:
  
-@@ -20,6 +20,12 @@ extra-source-files:   examples/StarWars.hs
-                     , examples/Examples.hs
-                     , ChangeLog.md
+ tested-with:
+   GHC == 9.14.1
+@@ -35,6 +35,12 @@ extra-source-files:   examples/StarWars.hs
+ 
+ extra-doc-files:      ChangeLog.md
  
 +custom-setup
 +    setup-depends:
@@ -106,15 +86,12 @@ index 9dbdd73..217fcb2 100644
  library
    exposed-modules:    Data.Generics.Wrapped
                      , Data.Generics.Product
-@@ -103,5 +109,8 @@ test-suite doctests
+@@ -117,4 +123,8 @@ test-suite doctests
    main-is:            doctest.hs
-   build-depends:      base >4 && <5
+   build-depends:      base >= 4 && <5
                      , doctest
 +                    , directory
 +                    , filepath
 +                    , base-compat
-                     , lens
++                    , lens
    hs-source-dirs:     examples
--- 
-2.49.0
-
