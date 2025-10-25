@@ -1,0 +1,31 @@
+From 17449774adcc693300802923f625b84fc3ae3284 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 25 Oct 2025 09:09:09 -0600
+Subject: [PATCH 1/1] Add emacs flag
+
+Makes building agda-mode optional
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/Agda.cabal
++++ b/Agda.cabal
+@@ -979,9 +979,17 @@ executable agda
+ -- agda-mode executable
+ ---------------------------------------------------------------------------
+ 
++flag emacs
++  description: Build agda-mode
++  manual: True
++  default: False
++
+ executable agda-mode
+   import:           language
+ 
++  if !flag(emacs)
++    buildable: False
++
+   hs-source-dirs:   src/agda-mode src/setup
+   main-is:          Main.hs
+   autogen-modules:
+-- 
+2.51.0
+

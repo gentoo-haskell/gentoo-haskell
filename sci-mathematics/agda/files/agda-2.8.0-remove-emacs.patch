@@ -1,0 +1,27 @@
+From fa864fd566f1a8c3ef3f74f8f49a4732ff6ec6e2 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Fri, 24 Oct 2025 08:07:38 -0600
+Subject: [PATCH 1/1] Remove emacs .el files from Agda.cabal
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/Agda.cabal
++++ b/Agda.cabal
+@@ -101,15 +101,6 @@ extra-source-files:
+     stack-8.8.4.yaml
+     -- Agda's data files, embedded by module Agda.Setup.
+     -- Keep in sync with the list in Agda.Setup.DataFiles and below.
+-    src/data/emacs-mode/agda-input.el
+-    src/data/emacs-mode/agda2-abbrevs.el
+-    src/data/emacs-mode/agda2-highlight.el
+-    src/data/emacs-mode/agda2-mode-pkg.el
+-    src/data/emacs-mode/agda2-mode.el
+-    src/data/emacs-mode/agda2-queue.el
+-    src/data/emacs-mode/agda2.el
+-    src/data/emacs-mode/annotation.el
+-    src/data/emacs-mode/eri.el
+     src/data/html/Agda.css
+     src/data/html/highlight-hover.js
+     src/data/JS/agda-rts.mjs
+-- 
+2.51.0
+

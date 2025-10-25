@@ -7,10 +7,14 @@
 	</maintainer>
 	<use>
 		<flag name="cpphs">Use cpphs instead of cpp.</flag>
+		<flag name="dump-core">Write GHC core output.</flag>
 		<flag name="enable-cluster-counting">Enable the --count-clusters flag. (If enable-cluster-counting is
 False, then the --count-clusters flag triggers an error message.)</flag>
 		<flag name="optimise-heavily">Enable some expensive optimisations when compiling Agda.</flag>
 		<flag name="stdlib">Install the standard library.</flag>
+		<flag name="xdg-data-home">Install data files under $XDG_DATA_HOME\/agda\/$AGDA_VERSION by default
+instead of the installation location defined by Cabal.
+This should not be enabled in declarative build environments like Nix or Guix.</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">Agda</remote-id>
