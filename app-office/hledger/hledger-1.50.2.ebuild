@@ -7,7 +7,7 @@ EAPI=8
 #hackport: flags: -double,+terminfo
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit haskell-cabal shell-completion
 
 DESCRIPTION="Command-line interface for the hledger accounting system"
 HOMEPAGE="https://hledger.org"
@@ -70,4 +70,6 @@ src_install() {
 		doman embeddedfiles/*.1
 #		doman embeddedfiles/*.5 # doman:embeddedfiles/*.5 does not exist
 		doinfo embeddedfiles/*.info
+
+		newbashcomp shell-completion/hledger-completion.bash ${PN}
 }
