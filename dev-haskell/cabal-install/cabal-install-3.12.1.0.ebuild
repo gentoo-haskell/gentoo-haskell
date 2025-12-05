@@ -32,7 +32,7 @@ RDEPEND="
 	>=dev-haskell/hashable-1.0:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
 	>=dev-haskell/http-4000.1.5:=[profile?] <dev-haskell/http-4000.5:=[profile?]
 	>=dev-haskell/network-uri-2.6.0.2:=[profile?] <dev-haskell/network-uri-2.7:=[profile?]
-	>=dev-haskell/open-browser-0.2.1.0:=[profile?] <dev-haskell/open-browser-0.3:=[profile?]
+	>=dev-haskell/open-browser-0.2.1.0:=[profile?] <dev-haskell/open-browser-0.5:=[profile?]
 	>=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/random-1.2:=[profile?] <dev-haskell/random-1.3:=[profile?]
 	>=dev-haskell/regex-base-0.94.0.0:=[profile?] <dev-haskell/regex-base-0.95:=[profile?]
