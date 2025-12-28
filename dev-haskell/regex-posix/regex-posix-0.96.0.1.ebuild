@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/regex-posix"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux ~ppc-macos"
+KEYWORDS="~amd64 ~ppc-macos"
 
 RDEPEND=">=dev-haskell/regex-base-0.94:=[profile?] <dev-haskell/regex-base-0.95:=[profile?]
 	>=dev-lang/ghc-9.0.2:=

@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/bos/bloomfilter"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.0.1.0-ghc-9_2-fix.patch"

@@ -16,7 +16,7 @@ HOMEPAGE="https://www.haskell.org/haddock/"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	~dev-haskell/haddock-api-2.26.0:=

@@ -17,7 +17,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-lang/ghc-8.4.3:= <dev-lang/ghc-9.3:=
 "

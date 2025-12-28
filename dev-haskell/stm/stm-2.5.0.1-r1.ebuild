@@ -13,7 +13,7 @@ HOMEPAGE="https://wiki.haskell.org/Software_transactional_memory"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'base  >= 4.3 && < 4.15' 'base >= 4.3'
