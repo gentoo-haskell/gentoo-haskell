@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell/base16-bytestring"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "

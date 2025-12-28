@@ -17,7 +17,7 @@ HOMEPAGE="https://github.com/haskell/text"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 # break cyclic dependencies, test suite requires porting to >=QC-2.11
 RESTRICT=test

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/basvandijk/lifted-base"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~amd64-linux"
+KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.2.3.12-remove-trans-list-test.patch"
