@@ -8,6 +8,5 @@
 	<upstream>
 		<remote-id type="hackage">hie-bios</remote-id>
 		<remote-id type="github">haskell/hie-bios</remote-id>
-		<remote-id type="github">mpickering/hie-bios</remote-id>
 	</upstream>
 </pkgmetadata>
