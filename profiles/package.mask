@@ -183,6 +183,7 @@ dev-haskell/country-codes
 >=dev-haskell/cabal-fmt-0.1.12
 >=dev-haskell/cabal-install-parsers-0.6.2
 >=dev-haskell/stylish-haskell-0.15.0.0
+>=dev-haskell/process-1.6.26
 
 # hololeap <hololeap@protonmail.com> (2023-10-15)
 # This package currently depends on an outdated version of
