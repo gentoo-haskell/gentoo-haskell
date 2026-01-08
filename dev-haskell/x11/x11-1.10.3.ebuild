@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/xmonad/X11"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64 ~ppc-macos"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+xinerama"
 
 CABAL_CHDEPS=(
