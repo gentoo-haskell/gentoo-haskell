@@ -15,7 +15,7 @@ HOMEPAGE="https://wiki.haskell.org/Regular_expressions"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~ppc-macos"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 	dev-haskell/text:=[profile?]

@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/spl/dlist"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~ppc-macos"
+KEYWORDS="~amd64"
 IUSE="werror"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=

@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/data-default-class"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~ppc-macos"
+KEYWORDS="~amd64"
 
 RDEPEND=">=dev-haskell/data-default-0.8:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
