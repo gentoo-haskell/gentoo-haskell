@@ -17,7 +17,8 @@ HOMEPAGE="https://github.com/haskell/text"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+# Keep in sync with relevant ghc versions (CABAL_CORE_LIB_GHC_PV)
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 # break cyclic dependencies:
 RESTRICT=test
