@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/informatikr/aeson-pretty"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+executable"
 
 RDEPEND=">=dev-haskell/base-compat-0.9:=[profile?]
