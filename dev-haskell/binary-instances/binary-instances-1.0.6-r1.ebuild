@@ -18,6 +18,7 @@ KEYWORDS="~amd64"
 CABAL_CHDEPS=(
 	'tasty                 ^>=1.5' 'tasty >=1.4'
 	'tasty-quickcheck      ^>=0.10.3 || ^>=0.11' 'tasty-quickcheck      >=0.10.2'
+    'tagged            >=0.8.8   && <0.8.10' 'tagged >=0.8.8'
 	)
 
 RDEPEND=">=dev-haskell/aeson-2.2.2.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
@@ -25,7 +26,7 @@ RDEPEND=">=dev-haskell/aeson-2.2.2.0:=[profile?] <dev-haskell/aeson-2.3:=[profil
 	>=dev-haskell/case-insensitive-1.2.1.0:=[profile?] <dev-haskell/case-insensitive-1.2.2:=[profile?]
 	>=dev-haskell/primitive-0.9.0.0:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
 	>=dev-haskell/scientific-0.3.8.0:=[profile?] <dev-haskell/scientific-0.4:=[profile?]
-	>=dev-haskell/tagged-0.8.8:=[profile?] <dev-haskell/tagged-0.8.10:=[profile?]
+	>=dev-haskell/tagged-0.8.8:=[profile?]
 	>=dev-haskell/time-compat-1.9.7:=[profile?] <dev-haskell/time-compat-1.10:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.20:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
 	>=dev-haskell/vector-0.13.1.0:=[profile?] <dev-haskell/vector-0.14:=[profile?]
