@@ -12,8 +12,8 @@
 <dev-haskell/doctest-0.25
 <dev-haskell/exceptions-0.10.10
 <dev-haskell/ghc-exactprint-1.13.0.0
-<dev-haskell/haddock-2.31.0
-<dev-haskell/haddock-api-2.31.0
+<dev-haskell/haddock-2.33.0
+<dev-haskell/haddock-api-2.33.0
 <dev-haskell/mtl-2.3.2
 <dev-haskell/parsec-3.1.19
 <dev-haskell/process-1.6.27
@@ -32,8 +32,6 @@
 <dev-haskell/ghc-lib-parser-9.13
 <dev-haskell/ghc-lib-parser-ex-9.13
 <dev-haskell/stylish-haskell-0.16
-<dev-haskell/haddock-2.30
-<dev-haskell/haddock-api-2.30
 <dev-haskell/hlint-3.11
 <dev-haskell/hoauth2-2.14
 <dev-haskell/stack-2.14
