@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,6 +24,12 @@ RDEPEND=">=dev-lang/ghc-9.0.2:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
+
+src_prepare() {
+	default
+
+	cabal-mksetup
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
