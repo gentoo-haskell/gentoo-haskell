@@ -12,7 +12,7 @@ inherit haskell-cabal
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="https://www.haskell.org/haddock/"
 
-GHC_BRANCH_COMMIT="daf659b6e3c8f2a84100fbee797cd9d457c00df5" # ghc-9.12.1-release
+GHC_BRANCH_COMMIT="8b63dfe0a81d08fef5b4acba6e60d80067daa5d7" # ghc-9.12.3-release
 
 SRC_URI="https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz?path=utils/haddock/haddock-api -> ${P}.tar.gz"
 LICENSE="BSD-2"
@@ -60,4 +60,4 @@ src_configure() {
 		--flag=-in-ghc-tree
 }
 
-CABAL_CORE_LIB_GHC_PV="9.12.1 9.12.2"
+CABAL_CORE_LIB_GHC_PV="9.12.3"
