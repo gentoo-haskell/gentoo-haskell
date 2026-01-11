@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,6 +7,7 @@ EAPI=8
 #hackport: flags: +base4,-base3,-old-random,templatehaskell:template-haskell
 
 CABAL_PN="QuickCheck"
+CABAL_HACKAGE_REVISION=1
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
 inherit haskell-cabal
@@ -19,7 +20,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+template-haskell"
 
-RDEPEND=">=dev-haskell/random-1.2.0:=[profile?] <dev-haskell/random-1.3:=[profile?]
+RDEPEND=">=dev-haskell/random-1.2.0:=[profile?] <dev-haskell/random-1.4:=[profile?]
 	>=dev-haskell/splitmix-0.1.0.2:=[profile?] <dev-haskell/splitmix-0.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
