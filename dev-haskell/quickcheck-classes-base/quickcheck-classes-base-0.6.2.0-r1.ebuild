@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/andrewthad/quickcheck-classes#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+binary-laws +unary-laws"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
@@ -26,6 +26,8 @@ RDEPEND=">=dev-lang/ghc-9.0.2:=
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
+
+PATCHES=("${FILESDIR}"/${P}-laws.patch)
 
 src_configure() {
 	haskell-cabal_src_configure \
