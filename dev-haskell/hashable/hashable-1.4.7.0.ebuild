@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -31,10 +31,7 @@ RDEPEND="
 	>=dev-haskell/data-array-byte-0.1.0.1:=[profile?] <dev-haskell/data-array-byte-0.2:=[profile?]
 	>=dev-haskell/os-string-2.0.2:=[profile?]
 	>=dev-lang/ghc-9.2.4:=
-	|| (
-		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
-		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
-	)
+	>=dev-haskell/text-1.2.3.0 <dev-haskell/text-2.2
 	dev-haskell/text:=[profile?]
 "
 DEPEND="${RDEPEND}
