@@ -342,7 +342,7 @@ cabal-bootstrap() {
 	elif [[ -f "${S}/Setup.hs" ]]; then
 		setupmodule="${S}/Setup.hs"
 	else
-		eqawarn "No Setup.lhs or Setup.hs found. Either add Setup.hs to package or call cabal-mksetup from ebuild"
+		ewarn "No Setup.lhs or Setup.hs found"
 		cabal-mksetup
 		setupmodule="${S}/Setup.hs"
 	fi
