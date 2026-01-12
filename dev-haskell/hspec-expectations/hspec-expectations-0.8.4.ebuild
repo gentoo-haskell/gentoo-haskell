@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/hspec/hspec-expectations#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/call-stack:=[profile?]
 	>=dev-haskell/hunit-1.5.0.0:=[profile?]
