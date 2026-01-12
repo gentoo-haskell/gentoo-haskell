@@ -9,4 +9,8 @@
 		regex-applicative is a Haskell library for parsing using regular expressions.
 		Parsers can be built using Applicative interface.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">regex-applicative</remote-id>
+		<remote-id type="github">feuerbach/regex-applicative</remote-id>
+	</upstream>
 </pkgmetadata>
