@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,6 +21,10 @@ CABAL_CHDEPS=(
 	'pandoc >= 2.9 && < 2.20 || >= 3.0 && < 3.2' 'pandoc >= 2.9 && < 2.20 || >= 3.0'
 	'zlib >= 0.5 && < 0.7' 'zlib >= 0.5'
 	'network >= 2.6 && < 3.2' 'network >= 2.6'
+)
+
+PATCHES=(
+	"${FILESDIR}/${PN}-0.15.1.2-pandoc-3_8.patch"
 )
 
 RDEPEND="
