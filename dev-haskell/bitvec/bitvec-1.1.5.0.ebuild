@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/Bodigrim/bitvec"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+simd"
 
 RDEPEND=">=dev-haskell/primitive-0.5:=[profile?]
@@ -30,6 +30,12 @@ DEPEND="${RDEPEND}
 		<dev-haskell/tasty-1.6
 		<dev-haskell/tasty-quickcheck-0.12 )
 "
+
+src_prepare() {
+	default
+
+	cabal-mksetup
+}
 
 src_configure() {
 	haskell-cabal_src_configure \
