@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">test-framework-leancheck</remote-id>
+		<remote-id type="github">rudymatela/test-framework-leancheck</remote-id>
+	</upstream>
 </pkgmetadata>
