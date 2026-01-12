@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Copyright 2022 hololeap
 # Distributed under the terms of the GNU General Public License v2
 
