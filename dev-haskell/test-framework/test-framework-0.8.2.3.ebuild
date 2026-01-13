@@ -29,8 +29,3 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/quickcheck-2.9.2 <dev-haskell/quickcheck-3 )
 "
 
-src_prepare() {
-	default
-
-	cabal-mksetup
-}
