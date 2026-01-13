@@ -28,8 +28,3 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.6.2:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
-
-src_prepare() {
-	haskell-cabal_src_prepare
-	cabal-mksetup
-}
