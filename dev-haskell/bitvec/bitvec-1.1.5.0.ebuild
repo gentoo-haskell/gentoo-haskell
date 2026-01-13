@@ -31,12 +31,6 @@ DEPEND="${RDEPEND}
 		<dev-haskell/tasty-quickcheck-0.12 )
 "
 
-src_prepare() {
-	default
-
-	cabal-mksetup
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag simd simd)
