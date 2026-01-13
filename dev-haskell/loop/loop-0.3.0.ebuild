@@ -23,9 +23,3 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/hspec-1.3.0.1
 		>=dev-haskell/mtl-2.1.2 )
 "
-
-src_prepare() {
-	default
-
-	cabal-mksetup
-}
