@@ -24,12 +24,6 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.12 )
 "
 
-src_prepare() {
-	default
-
-	cabal-mksetup
-}
-
 pkg_pretend() {
 	if use test; then
 		ewarn "The \"test\" USE flag for this package creates cycles within the"
