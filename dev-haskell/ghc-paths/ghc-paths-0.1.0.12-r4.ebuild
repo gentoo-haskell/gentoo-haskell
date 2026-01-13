@@ -26,10 +26,6 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	haskell-cabal_src_prepare
 
-	# ghc-patch it has awfully unportable (across cabal versions) ghc detection code
-	# but in gentoo we install it to fixed patch, so remove Setup.hs detection code
-	cabal-mksetup
-
 	# and use gentoo's hardcoded one:
 	# a few things we need to replace, and example values
 	# GHC_PATHS_LIBDIR /usr/lib64/ghc-6.12.0.20091010
