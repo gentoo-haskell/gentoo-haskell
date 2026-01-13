@@ -17,10 +17,6 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="check-alignment cpu_flags_x86_aes cpu_flags_x86_pclmul cpu_flags_x86_rdrand cpu_flags_x86_sse2 +integer-gmp old-toolchain-inliner +target-attributes"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-1.0.1-fix-tests.patch"
-)
-
 RDEPEND=">=dev-haskell/basement-0.0.6:=[profile?]
 	>=dev-haskell/memory-0.14.18:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
