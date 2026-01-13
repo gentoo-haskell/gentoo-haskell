@@ -23,12 +23,6 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
 
-src_prepare() {
-	default
-
-	cabal-mksetup
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-_regex-posix-clib \
