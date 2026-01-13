@@ -30,12 +30,6 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-haskell/utf8-string-1.0.1 <dev-haskell/utf8-string-1.1 )
 "
 
-src_prepare() {
-	default
-
-	cabal-mksetup
-}
-
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=base4 \
