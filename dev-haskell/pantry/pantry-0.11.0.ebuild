@@ -73,6 +73,15 @@ DEPEND="${RDEPEND}
 		dev-haskell/raw-strings-qq )
 "
 
+src_prepare() {
+	# These modules are full of tests that depend on network access
+	for t in Cabal GlobalHints Hackage Tree; do
+		rm "${S}/test/Pantry/${t}Spec.hs" || die
+	done
+
+	haskell-cabal_src_prepare
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		--flag=-test-pretty-exceptions
