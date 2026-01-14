@@ -19,6 +19,10 @@ IUSE="examples no-linear"
 
 RESTRICT=test # requires functional audio and video devices (bad for sandboxes)
 
+PATCHES=(
+	"${FILESDIR}/${PN}-2.5.5.1-fix-example.patch"
+)
+
 RDEPEND="media-libs/libsdl2
 	>=dev-haskell/statevar-1.1.0.0:=[profile?] <dev-haskell/statevar-1.3:=[profile?]
 	>=dev-haskell/text-1.1.0.0:=[profile?] <dev-haskell/text-2.2:=[profile?]

@@ -1,0 +1,20 @@
+From https://github.com/haskell-game/sdl2/pull/323
+From: hololeap <hololeap@protonmail.com>
+Date: Wed, 14 Jan 2026 03:16:51 -0700
+Subject: [PATCH 1/1] examples/EventWatch: Fix indentation
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/examples/EventWatch.hs
++++ b/examples/EventWatch.hs
+@@ -59,7 +59,7 @@ appLoop = waitEvent >>= go
+       MouseButtonEvent mouseButtonEvent
+         -> print mouseButtonEvent >> waitEvent >>= go
+       MouseWheelEvent mouseWheelEvent
+-      -> print mouseWheelEvent >> waitEvent >>= go
++        -> print mouseWheelEvent >> waitEvent >>= go
+       QuitEvent
+         -> return ()
+       _ -> waitEvent >>= go
+-- 
+2.52.0
+
