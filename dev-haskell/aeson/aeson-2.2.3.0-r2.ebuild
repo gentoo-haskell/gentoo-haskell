@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/haskell/aeson"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+ordered-keymap"
 
 CABAL_CHDEPS=(
@@ -50,10 +50,7 @@ RDEPEND=">=dev-haskell/character-ps-0.1:=[profile?] <dev-haskell/character-ps-0.
 	>=dev-haskell/vector-0.13.0.0:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-haskell/witherable-0.4.2:=[profile?] <dev-haskell/witherable-0.6:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| (
-		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
-		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
-	)
+	>=dev-haskell/text-1.2.3.0 <dev-haskell/text-2.2
 	dev-haskell/text:=[profile?]
 "
 DEPEND="${RDEPEND}
