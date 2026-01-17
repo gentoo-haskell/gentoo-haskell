@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/file-embed"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
