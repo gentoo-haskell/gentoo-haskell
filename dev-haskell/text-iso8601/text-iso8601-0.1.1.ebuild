@@ -15,15 +15,12 @@ HOMEPAGE="https://github.com/haskell/aeson"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/integer-conversion-0.1:=[profile?] <dev-haskell/integer-conversion-0.2:=[profile?]
 	>=dev-haskell/time-compat-1.9.4:=[profile?] <dev-haskell/time-compat-1.10:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| (
-		( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3.0.0 )
-		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
-	)
+	>=dev-haskell/text-1.2.3.0 <dev-haskell/text-2.2
 	dev-haskell/text:=[profile?]
 "
 DEPEND="${RDEPEND}
