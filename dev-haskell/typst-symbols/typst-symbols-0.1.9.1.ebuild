@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jgm/typst-symbols"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
