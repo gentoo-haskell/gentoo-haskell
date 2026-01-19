@@ -18,7 +18,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="text-show"
 
-CABAL_CHDEPS=( 'base                  >= 4.12.0.0 && < 4.21' 'base >= 4.12.0.0 && < 4.22')
+CABAL_CHDEPS=( 
+	'base                  >= 4.12.0.0 && < 4.21' 'base >= 4.12.0.0 && < 4.22'
+	'text-show        >= 3.10.5 && <3.11' 'text-show        >= 3.10.5'
+)
 
 RDEPEND=">=dev-haskell/cookie-0.4.3:=[profile?] <dev-haskell/cookie-0.6:=[profile?]
 	>=dev-haskell/hashable-1.4.4.0:=[profile?] <dev-haskell/hashable-1.6:=[profile?]
@@ -32,7 +35,7 @@ RDEPEND=">=dev-haskell/cookie-0.4.3:=[profile?] <dev-haskell/cookie-0.6:=[profil
 	|| ( ( >=dev-haskell/text-1.2.3.0 <dev-haskell/text-1.3 )
 		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 ) )
 	dev-haskell/text:=[profile?]
-	text-show? ( >=dev-haskell/text-show-3.10.5:=[profile?] <dev-haskell/text-show-3.11:=[profile?] )
+	text-show? ( >=dev-haskell/text-show-3.10.5:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
