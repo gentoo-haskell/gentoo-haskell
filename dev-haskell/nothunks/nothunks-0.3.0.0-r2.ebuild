@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 IUSE="+bytestring +text +vector"
 
 CABAL_CHDEPS=(
-	'hedgehog       >= 1.1 && < 1.5' 'hedgehog >= 1.1 && < 1.6'
+	'hedgehog       >= 1.1 && < 1.5' 'hedgehog >= 1.1'
 	'random         >= 1.1 && < 1.3' 'random >= 1.1'
 )
 
@@ -40,7 +40,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? (
-		>=dev-haskell/hedgehog-1.1 <dev-haskell/hedgehog-1.6
+		>=dev-haskell/hedgehog-1.1
 		>=dev-haskell/random-1.1
 		>=dev-haskell/tasty-1.3 <dev-haskell/tasty-1.6
 		>=dev-haskell/tasty-hedgehog-1.1 <dev-haskell/tasty-hedgehog-1.5
