@@ -16,8 +16,8 @@ LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/ghc-tcplugins-extra-0.5:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?] <dev-lang/ghc-9.13:=[profile?]
+RDEPEND=">=dev-haskell/ghc-tcplugin-api-0.18.0:=[profile?] <dev-haskell/ghc-tcplugin-api-0.19:=[profile?]
+	>=dev-lang/ghc-8.8.1:=[profile?] <dev-lang/ghc-9.15:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
