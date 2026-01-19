@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/maoe/lifted-async"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/async-2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/constraints-0.2:=[profile?] <dev-haskell/constraints-0.15:=[profile?]
