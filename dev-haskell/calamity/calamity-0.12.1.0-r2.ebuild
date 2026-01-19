@@ -17,6 +17,8 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'data-default-class    >=0.1     && <0.2' 'data-default-class    >=0.1     && <0.3'
+	'random                >=1.2     && <1.3' 'random >= 1.2'
+	'typerep-map           >=0.5     && <0.7' 'typerep-map >=0.5'
 )
 
 RDEPEND=">=dev-haskell/aeson-2.1:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
@@ -44,7 +46,7 @@ RDEPEND=">=dev-haskell/aeson-2.1:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/optics-0.4.1:=[profile?] <dev-haskell/optics-0.5:=[profile?]
 	>=dev-haskell/polysemy-1.5:=[profile?] <dev-haskell/polysemy-2:=[profile?]
 	>=dev-haskell/polysemy-plugin-0.3:=[profile?] <dev-haskell/polysemy-plugin-0.5:=[profile?]
-	>=dev-haskell/random-1.2:=[profile?] <dev-haskell/random-1.3:=[profile?]
+	>=dev-haskell/random-1.2:=[profile?]
 	>=dev-haskell/reflection-2.1:=[profile?] <dev-haskell/reflection-3:=[profile?]
 	>=dev-haskell/req-3.9.2:=[profile?] <dev-haskell/req-3.14:=[profile?]
 	>=dev-haskell/safe-exceptions-0.1:=[profile?] <dev-haskell/safe-exceptions-2:=[profile?]
@@ -54,7 +56,7 @@ RDEPEND=">=dev-haskell/aeson-2.1:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-haskell/text-show-3.8:=[profile?] <dev-haskell/text-show-4:=[profile?]
 	>=dev-haskell/tls-1.7:=[profile?] <dev-haskell/tls-3:=[profile?]
-	>=dev-haskell/typerep-map-0.5:=[profile?] <dev-haskell/typerep-map-0.7:=[profile?]
+	>=dev-haskell/typerep-map-0.5:=[profile?]
 	>=dev-haskell/unagi-chan-0.4:=[profile?] <dev-haskell/unagi-chan-0.5:=[profile?]
 	>=dev-haskell/unboxing-vector-0.2:=[profile?] <dev-haskell/unboxing-vector-0.3:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
