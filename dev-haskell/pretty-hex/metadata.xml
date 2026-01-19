@@ -9,4 +9,8 @@
 		This library generates pretty hex dumps of ByteStrings in the
 		style of other common *nix hex dump tools.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">pretty-hex</remote-id>
+		<remote-id type="github">GaloisInc/hexdump</remote-id>
+	</upstream>
 </pkgmetadata>
