@@ -1,11 +1,22 @@
-# GdeVolpiano <xavier@wheredoibegin.fr> (2025-08-31)
+# GdeVolpiano <xavier@wheredoibegin.fr> (2026-01-19)
 #
-# x11-libs/gtkglext has been marked for removal, making dev-haskell/gtkglext
-# obsolete. Bug #698950
-#
-# Remova: 2025-09-30
+# dev-haskell/random-fu is abandonned upstream
+# https://github.com/haskell-numerics/random-fu/issues/100
+# Remove 2026-03-19
 
-dev-haskell/gtkglext 
+dev-haskell/random-fu
+dev-haskell/rvar
+dev-haskell/dice
+dev-haskell/goa
+dev-haskell/lambdabot-core
+dev-haskell/lambdabot-haskell-plugins
+dev-haskell/lambdabot-irc-plugins
+dev-haskell/lambdabot-misc-plugins
+dev-haskell/lambdabot-novelty-plugins
+dev-haskell/lambdabot-reference-plugins
+dev-haskell/lambdabot-social-plugins
+dev-haskell/misfortune
+net-irc/lambdabot
 
 #
 # hololeap <hololeap@protonmail.com> (2025-06-14)
