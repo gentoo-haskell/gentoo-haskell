@@ -15,6 +15,13 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
+CABAL_CHDEPS=(
+	'tasty             >=1.5      && <1.6' 'tasty             >=1.4      && <1.6'
+	'tasty-quickcheck  >=0.11     && <0.12' 'tasty-quickcheck >=0.10 && <0.12'
+	'QuickCheck        >=2.15.0.1 && <2.16' 'QuickCheck >=2.14 && <2.16'
+	'random            >=1.2.1.3  && <1.3' 'random >=1.2.1.3'
+)
+
 RDEPEND=">=dev-haskell/base-orphans-0.9.2:=[profile?] <dev-haskell/base-orphans-0.10:=[profile?]
 	>=dev-haskell/hashable-1.4.4.0:=[profile?] <dev-haskell/hashable-1.6:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
@@ -22,16 +29,10 @@ RDEPEND=">=dev-haskell/base-orphans-0.9.2:=[profile?] <dev-haskell/base-orphans-
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/quickcheck-2.14 <dev-haskell/quickcheck-2.16
-		>=dev-haskell/random-1.2.1.3 <dev-haskell/random-1.3
+		>=dev-haskell/random-1.2.1.3
 		>=dev-haskell/tagged-0.8.9 <dev-haskell/tagged-0.9
 		>=dev-haskell/tasty-1.4 <dev-haskell/tasty-1.6
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.12
 		>=dev-haskell/hunit-1.6.0.0 <dev-haskell/hunit-1.7 )
 "
-
-CABAL_CHDEPS=(
-	'tasty             >=1.5      && <1.6' 'tasty             >=1.4      && <1.6'
-	'tasty-quickcheck  >=0.11     && <0.12' 'tasty-quickcheck >=0.10 && <0.12'
-	'QuickCheck        >=2.15.0.1 && <2.16' 'QuickCheck >=2.14 && <2.16'
-)
