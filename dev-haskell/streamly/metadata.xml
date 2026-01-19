@@ -8,6 +8,8 @@
 	<use>
 		<flag name="c-malloc">Use C malloc instead of GHC malloc</flag>
 		<flag name="fusion-plugin">Use fusion plugin for benchmarks and executables</flag>
+		<flag name="internal-dev">DO NOT USE, ONLY FOR INTERNAL USE.</flag>
+		<flag name="internal-use-unliftio">DO NOT USE, ONLY FOR INTERNAL USE.</flag>
 		<flag name="limit-build-mem">Limits memory when building</flag>
 		<flag name="minimal">Build only the core modules</flag>
 		<flag name="no-fusion">Disable rewrite rules for stream fusion</flag>
