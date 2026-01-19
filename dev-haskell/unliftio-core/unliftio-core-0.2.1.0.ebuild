@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/fpco/unliftio/tree/master/unliftio-core#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
