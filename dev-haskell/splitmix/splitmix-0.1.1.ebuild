@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/splitmix"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="optimised-mixer"
 
 RESTRICT=test # circular deps in test suite
