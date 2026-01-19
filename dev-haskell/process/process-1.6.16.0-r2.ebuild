@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/process"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-lang/ghc-8.10.6:=
