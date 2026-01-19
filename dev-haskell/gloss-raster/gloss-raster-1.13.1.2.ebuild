@@ -16,7 +16,9 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+CABAL_CHDEPS=(
+	'containers                    >= 0.5 && < 0.7' 'containers >= 0.5'
+)
 
 RDEPEND=">=dev-haskell/gloss-1.13:=[profile?] <dev-haskell/gloss-1.14:=[profile?]
 	>=dev-haskell/gloss-rendering-1.13:=[profile?] <dev-haskell/gloss-rendering-1.14:=[profile?]
