@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="deverror">Enables `-Werror` for development mode and TravisCI</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">ghc-tcplugins-extra</remote-id>
 		<remote-id type="github">clash-lang/ghc-tcplugins-extra</remote-id>
