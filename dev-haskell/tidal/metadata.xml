@@ -7,6 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">tidal</remote-id>
-		<remote-id type="github">tidalcycles/Tidal</remote-id>
+		<remote-id type="codeberg">uzu/tidal</remote-id>
 	</upstream>
 </pkgmetadata>
