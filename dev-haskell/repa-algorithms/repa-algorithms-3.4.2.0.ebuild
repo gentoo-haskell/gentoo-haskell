@@ -16,6 +16,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base                 >= 4.8 && < 4.21' 'base >= 4.8'
+)
+
 RDEPEND=">=dev-haskell/repa-3.4:=[profile?] <dev-haskell/repa-3.5:=[profile?]
 	>=dev-haskell/vector-0.11:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
