@@ -36,8 +36,8 @@ RDEPEND="
 	dev-lang/ghc:=
 	simdutf? (
 		|| (
-			llvm-core/clang
-			sys-devel/gcc[cxx]
+			llvm-core/clang:*
+			sys-devel/gcc:*[cxx]
 		)
 	)
 "
