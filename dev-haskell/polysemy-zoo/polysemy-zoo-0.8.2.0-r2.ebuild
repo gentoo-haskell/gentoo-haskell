@@ -19,6 +19,8 @@ CABAL_CHDEPS=(
 	'constraints >=0.10.1 && <0.14' 'constraints >=0.10.1'
 	'text >=1.1.0 && <2.1' 'text >=1.1.0'
 	'ghc-prim >=0.5.2 && <0.10' 'ghc-prim >=0.5.2'
+	'containers >=0.5 && <0.7' 'containers >= 0.5'
+	'random >=1.1 && <1.3' 'random >=1.1'
 )
 
 PATCHES=(
@@ -30,7 +32,7 @@ RDEPEND="
 	>=dev-haskell/constraints-0.10.1:=[profile?]
 	<dev-haskell/contravariant-2:=[profile?]
 	>=dev-haskell/polysemy-1.4.0.0:=[profile?]
-	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
+	>=dev-haskell/random-1.1:=[profile?]
 	>=dev-haskell/reflection-2.1.4:=[profile?] <dev-haskell/reflection-3.0.0:=[profile?]
 	>=dev-haskell/streaming-0.2:=[profile?] <dev-haskell/streaming-0.3:=[profile?]
 	>=dev-haskell/text-1.1.0:=[profile?]
