@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/sol/doctest#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cabal-doctest"
 
 RDEPEND=">=dev-haskell/code-page-0.1:=[profile?]
