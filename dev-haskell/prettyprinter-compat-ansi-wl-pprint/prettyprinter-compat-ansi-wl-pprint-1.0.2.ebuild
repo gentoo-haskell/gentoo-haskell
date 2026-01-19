@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/quchen/prettyprinter"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/prettyprinter-1.7.0:=[profile?]
