@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell/math-functions"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/data-default-class-0.1.2.0:=[profile?]
