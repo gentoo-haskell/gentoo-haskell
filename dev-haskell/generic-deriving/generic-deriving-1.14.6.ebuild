@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/dreixel/generic-deriving"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/th-abstraction-0.4:=[profile?] <dev-haskell/th-abstraction-0.8:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
