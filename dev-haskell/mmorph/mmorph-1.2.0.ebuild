@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/mmorph"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/transformers-compat-0.3:=[profile?] <dev-haskell/transformers-compat-0.8:=[profile?]
 	>=dev-lang/ghc-8.4.3:=
