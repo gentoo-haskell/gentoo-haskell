@@ -1,0 +1,28 @@
+From 651a55644313d016a494d969822db56ba561cf93 Mon Sep 17 00:00:00 2001
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 19 Jan 2026 10:47:42 +0100
+Subject: [PATCH 1/1] Add examples flag (default off)
+
+---
+ tidal-link.cabal | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/tidal-link.cabal b/tidal-link.cabal
+index 4c3c519..6fc4c0e 100644
+--- a/tidal-link.cabal
++++ b/tidal-link.cabal
+@@ -68,6 +68,11 @@ library
+ source-repository head
+   type:     git
+   location: https://github.com/tidalcycles/Tidal
++  
++flag examples
++  description: Build tidal-link-test example executable
++  default: False
++  manual: True
+ 
+ executable tidal-linktest
+   ghc-options: -Wall
+-- 
+2.52.0
+
