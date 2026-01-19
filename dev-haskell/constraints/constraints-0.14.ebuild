@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/constraints/"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/boring-0.2:=[profile?] <dev-haskell/boring-0.3:=[profile?]
 	>=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
