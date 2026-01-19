@@ -13,7 +13,7 @@ HOMEPAGE="https://wiki.haskell.org/Software_transactional_memory"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
