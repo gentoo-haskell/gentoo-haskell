@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="directory-ospath-streaming">Whether to use directory-ospath-streaming. Should be false with 9.6 &gt; ghc.</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">stan</remote-id>
 		<remote-id type="github">kowainik/stan</remote-id>
