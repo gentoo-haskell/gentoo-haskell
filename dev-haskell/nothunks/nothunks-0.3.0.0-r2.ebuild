@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/nothunks"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+bytestring +text +vector"
 
 CABAL_CHDEPS=(
