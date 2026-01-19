@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell/network-uri"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/th-compat-0.1.1:=[profile?] <dev-haskell/th-compat-1.0:=[profile?]
