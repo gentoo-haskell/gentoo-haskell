@@ -21,6 +21,7 @@ CABAL_CHDEPS=(
 	'hlint (<2.1 || >=2.2.2) && <3.5' 'hlint >= 2.2.2'
 	'hlint >=3.5 && <3.6' 'hlint >=3.5'
 	'lens >=4.7 && <5.4' 'lens >= 4.7'
+	'hedgehog <1.6' 'hedgehog'
 )
 
 RDEPEND="
