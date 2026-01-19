@@ -17,7 +17,7 @@ HOMEPAGE="https://hackage.haskell.org/package/ChasingBottoms"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/quickcheck-2.10:=[profile?] <dev-haskell/quickcheck-2.16:=[profile?]
