@@ -11,4 +11,8 @@
 		the version number match the upstream jquery.dgtable version. The package is designed
 		to meet the redistribution requirements of downstream users (e.g. Debian).
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">js-dgtable</remote-id>
+		<remote-id type="github">ndmitchell/js-dgtable</remote-id>
+	</upstream>
 </pkgmetadata>
