@@ -17,11 +17,13 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'extra       >=1.7  && <1.8' 'extra >=1.7'
+	'random      >=1.1  && <1.3' 'random >=1.1'
+	'random                >=1.1  && <1.3' 'random >= 1.1'
 )
 
 RDEPEND=">=dev-haskell/criterion-1.1:=[profile?] <dev-haskell/criterion-1.7:=[profile?]
 	>=dev-haskell/extra-1.7:=[profile?]
-	>=dev-haskell/random-1.1:=[profile?] <dev-haskell/random-1.3:=[profile?]
+	>=dev-haskell/random-1.1:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
