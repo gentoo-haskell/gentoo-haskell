@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/httpd-shed"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="buildexamples"
 
 RDEPEND=">=dev-haskell/network-2.7:=[profile?] <dev-haskell/network-3.3:=[profile?]
