@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/text-short"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="debug"
 
 RDEPEND=">=dev-haskell/hashable-1.4.4.0:=[profile?] <dev-haskell/hashable-1.6:=[profile?]
