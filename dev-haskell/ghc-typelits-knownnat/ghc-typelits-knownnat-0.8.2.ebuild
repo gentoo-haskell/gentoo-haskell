@@ -16,14 +16,15 @@ LICENSE="BSD-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=">=dev-haskell/ghc-tcplugins-extra-0.3.1:=[profile?]
-	>=dev-haskell/ghc-typelits-natnormalise-0.7.1:=[profile?] <dev-haskell/ghc-typelits-natnormalise-0.8:=[profile?]
-	>=dev-lang/ghc-8.0.1:=[profile?] <dev-lang/ghc-9.13:=[profile?]
+RDEPEND=">=dev-haskell/ghc-tcplugin-api-0.18.1.0:=[profile?] <dev-haskell/ghc-tcplugin-api-0.19:=[profile?]
+	>=dev-haskell/ghc-typelits-natnormalise-0.9.0:=[profile?] <dev-haskell/ghc-typelits-natnormalise-0.10:=[profile?]
+	>=dev-lang/ghc-8.0.1:=[profile?] <dev-lang/ghc-9.17:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? ( >=dev-haskell/tasty-0.10
+	test? ( >=dev-haskell/quickcheck-2.10
+		>=dev-haskell/tasty-0.10
 		>=dev-haskell/tasty-hunit-0.9
 		>=dev-haskell/tasty-quickcheck-0.8 )
 "
