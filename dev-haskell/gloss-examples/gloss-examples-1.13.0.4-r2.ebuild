@@ -20,13 +20,15 @@ KEYWORDS="~amd64"
 CABAL_CHDEPS=(
 	'bytestring                    >= 0.10 && < 0.12' 'bytestring >= 0.10'
 	'vector                        >= 0.11 && < 0.13' 'vector >= 0.11'
+	'containers                    >= 0.5 && < 0.7' 'containers >=0.5'
+	'random                        == 1.2.*' 'random >=1.2'
 	)
 
 RDEPEND=">=dev-haskell/bmp-1.2:= <dev-haskell/bmp-1.3:=
 	>=dev-haskell/gloss-1.13:= <dev-haskell/gloss-1.14:=
 	>=dev-haskell/gloss-algorithms-1.13:= <dev-haskell/gloss-algorithms-1.14:=
 	>=dev-haskell/gloss-raster-1.13:= <dev-haskell/gloss-raster-1.14:=
-	>=dev-haskell/random-1.2:= <dev-haskell/random-1.3:=
+	>=dev-haskell/random-1.2:=
 	>=dev-haskell/repa-3.4:= <dev-haskell/repa-3.5:=
 	>=dev-haskell/repa-algorithms-3.4:= <dev-haskell/repa-algorithms-3.5:=
 	>=dev-haskell/repa-io-3.4:= <dev-haskell/repa-io-3.5:=
