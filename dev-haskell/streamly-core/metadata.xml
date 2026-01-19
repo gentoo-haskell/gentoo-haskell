@@ -8,7 +8,10 @@
 	<use>
 		<flag name="dev">Development build</flag>
 		<flag name="folds">Use folds for elimination everywhere</flag>
+		<flag name="force-lstat-readdir">Use lstat instead of checking for dtype in ReadDir</flag>
 		<flag name="has-llvm">Use llvm backend for code generation</flag>
+		<flag name="internal-dev">DO NOT USE, ONLY FOR INTERNAL USE.</flag>
+		<flag name="internal-use-unliftio">DO NOT USE, ONLY FOR INTERNAL USE.</flag>
 		<flag name="limit-build-mem">Limits memory when building</flag>
 		<flag name="opt">off=GHC default, on=-O2</flag>
 		<flag name="unfolds">Use unfolds for generation everywhere</flag>
