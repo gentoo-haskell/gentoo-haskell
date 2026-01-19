@@ -17,6 +17,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base          >=4.10     && <4.20' 'base >= 4.10'
+)
+
 RDEPEND=">=dev-haskell/aeson-2.0.3.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/optics-core-0.4.1:=[profile?] <dev-haskell/optics-core-0.5:=[profile?]
 	>=dev-haskell/optics-extra-0.4.1:=[profile?] <dev-haskell/optics-extra-0.5:=[profile?]
