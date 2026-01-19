@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/fpco/typed-process"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.2.11.1-parallel-tests.patch"
