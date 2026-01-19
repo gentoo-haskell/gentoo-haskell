@@ -17,9 +17,16 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+	'base ^>= 4.14 || ^>= 4.15 || ^>= 4.16 || ^>= 4.17 || ^>= 4.18 || ^>= 4.19' 'base >=4.14'
+	'containers ^>= 0.6' 'containers >= 0.6'
+	'random ^>= 1.2' 'random >= 1.2'
+	'time ^>= 1.9 || ^>= 1.10 || ^>= 1.11 || ^>= 1.12' 'time >= 1.9'
+)
+
 RDEPEND=">=dev-haskell/glut-2.7:= <dev-haskell/glut-2.8:=
 	>=dev-haskell/opengl-3.0:= <dev-haskell/opengl-3.1:=
-	>=dev-haskell/random-1.2:= <dev-haskell/random-1.3:=
+	>=dev-haskell/random-1.2:=
 	>=dev-haskell/sdl2-2.5:= <dev-haskell/sdl2-2.6:=
 	>=dev-haskell/sdl2-image-2.1:= <dev-haskell/sdl2-image-2.2:=
 	>=dev-haskell/sdl2-mixer-1.2:= <dev-haskell/sdl2-mixer-1.3:=
