@@ -21,7 +21,7 @@ IUSE=""
 RDEPEND=">=dev-haskell/seqloc-0.3.1:=[profile?]
 	>=dev-haskell/vector-0.7:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
-	sys-libs/zlib
+	virtual/zlib
 "
 DEPEND="${RDEPEND}
 	dev-haskell/c2hs
