@@ -13,5 +13,7 @@ which can be problematic when bootstrapping.</flag>
 performance. Users with bootstrap compilers
 which don&#39;t support the threaded runtime should
 disable this flag.</flag>
+		<flag name="vanilla">Disable ALL patches. Only to be used for
+building non-Gentoo GHC.</flag>
 	</use>
 </pkgmetadata>

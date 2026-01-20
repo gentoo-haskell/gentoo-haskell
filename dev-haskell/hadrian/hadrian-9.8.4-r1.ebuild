@@ -19,18 +19,12 @@ CABAL_FILE="${S}/${CABAL_PN}.cabal"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
-IUSE="static test +threaded"
+IUSE="static test +threaded vanilla"
 
 RESTRICT="!test? ( test )"
 
 CABAL_CHDEPS=(
 	'Cabal                >= 3.2     && < 3.11' 'Cabal >= 3.2'
-)
-
-PATCHES=(
-	"${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
-	"${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
-	"${FILESDIR}/${PN}-9.8.4-add-packages.patch"
 )
 
 RDEPEND="
@@ -81,6 +75,15 @@ src_prepare() {
 	sed -i -e \
 		's/^\(version:.*\)0\.1\.0\.0/\1'"${PV}"'/' \
 		"${CABAL_FILE}" || die
+
+	# If USE=vanilla is enabled, skip patches. This allows users to build
+	# non-Gentoo GHC with this hadrian binary.
+	if ! use vanilla; then
+		eapply "${FILESDIR}/${PN}-9.4.8-remove-with-cc-configure-flag.patch"
+		eapply "${FILESDIR}/${PN}-9.4.8-disable-doc-archives.patch"
+		eapply "${FILESDIR}/${PN}-9.8.4-add-packages.patch"
+	fi
+
 	haskell-cabal_src_prepare
 }
 
