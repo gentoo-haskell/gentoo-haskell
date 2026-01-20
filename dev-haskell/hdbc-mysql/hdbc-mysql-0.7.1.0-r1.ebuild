@@ -24,7 +24,7 @@ RDEPEND=">=dev-haskell/hdbc-2.1.0:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
 	>=dev-lang/ghc-8.0.1:=
 	dev-libs/openssl:0=
-	virtual/zlib
+	virtual/zlib:=
 	dev-db/mysql-connector-c:0=
 "
 DEPEND="${RDEPEND}

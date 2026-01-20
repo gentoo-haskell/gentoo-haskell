@@ -21,7 +21,7 @@ IUSE="bundled-c-zlib non-blocking-ffi"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 	bundled-c-zlib? ( <dev-haskell/zlib-clib-2:=[profile?] )
-	!bundled-c-zlib? ( virtual/zlib )
+	!bundled-c-zlib? ( virtual/zlib:= )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0

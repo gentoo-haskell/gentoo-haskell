@@ -15,7 +15,7 @@ IUSE="symlink"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	virtual/zlib
+	virtual/zlib:=
 	dev-libs/gmp:0
 "
 RDEPEND+=" symlink? ( !dev-haskell/stack )"
