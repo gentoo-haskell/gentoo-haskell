@@ -168,7 +168,7 @@ BDEPEND="
 	)
 	ghcbootstrap? (
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
-		~dev-haskell/hadrian-${PV}
+		~dev-haskell/hadrian-${PV}[-vanilla(-)]
 	)
 	test? (
 		${PYTHON_DEPS}
