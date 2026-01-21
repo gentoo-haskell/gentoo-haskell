@@ -15,6 +15,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
+RESTRICT=test # needs network access
+
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
