@@ -17,6 +17,10 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-1.2.2.2-cabal-doctest.patch"
+)
+
 RDEPEND=">=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.6:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-haskell/unordered-containers-0.2.7:=[profile?] <dev-haskell/unordered-containers-0.3:=[profile?]
@@ -25,6 +29,13 @@ RDEPEND=">=dev-haskell/hashable-1.2:=[profile?] <dev-haskell/hashable-1.6:=[prof
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/doctest-0.20 <dev-haskell/doctest-0.25
+		>=dev-haskell/cabal-doctest-1.0.9
 		dev-haskell/glob
 		>=dev-haskell/hedgehog-1.0  <dev-haskell/hedgehog-1.8 )
 "
+
+src_configure() {
+	use test && export GHC_BOOTSTRAP_PACKAGES+=( cabal-doctest )
+
+	haskell-cabal_src_configure
+}

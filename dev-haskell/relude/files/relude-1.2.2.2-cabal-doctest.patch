@@ -1,0 +1,105 @@
+From a15b32eaf9552dd695744cecf5841f24efa8b64d Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Wed, 21 Jan 2026 14:17:12 -0700
+Subject: [PATCH 1/1] Migrate to cabal-doctest
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- /dev/null
++++ b/Setup.hs
+@@ -0,0 +1,23 @@
++{-# LANGUAGE CPP #-}
++
++module Main (main) where
++
++#ifndef MIN_VERSION_cabal_doctest
++#define MIN_VERSION_cabal_doctest(x,y,z) 0
++#endif
++
++#if MIN_VERSION_cabal_doctest(1,0,0)
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "relude-doctest"
++
++#else
++
++import Distribution.Simple
++
++main :: IO ()
++main = defaultMain
++
++#endif
+--- a/relude.cabal
++++ b/relude.cabal
+@@ -89,7 +89,7 @@ maintainer:          Kowainik <xrom.xkov@gmail.com>
+ copyright:           2016 Stephen Diehl, 2016-2018 Serokell, 2018-2023 Kowainik
+ category:            Prelude
+ stability:           stable
+-build-type:          Simple
++build-type:          Custom
+ extra-doc-files:     CHANGELOG.md
+                      README.md
+ tested-with:         GHC == 8.4.4
+@@ -145,6 +145,11 @@ common common-options
+                        ScopedTypeVariables
+                        TypeApplications
+ 
++custom-setup
++  setup-depends:
++      base
++    , cabal-doctest >=1.0.9 && <1.1
++
+ library
+   import:              common-options
+   hs-source-dirs:      src
+@@ -275,7 +280,7 @@ test-suite relude-doctest
+ 
+   build-depends:       relude
+                      , doctest >= 0.20 && < 0.25
+-                     , Glob
++                     , base
+ 
+   ghc-options:         -threaded
+ 
+--- a/test/Doctest.hs
++++ b/test/Doctest.hs
+@@ -2,17 +2,21 @@ module Main (main) where
+ 
+ import Relude
+ 
+-import System.FilePath.Glob (glob)
++import Build_doctests (flags, pkgs, module_sources)
+ import Test.DocTest (doctest)
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.IO (utf8)
+ 
+ main :: IO ()
+ main = do
+-    sourceFiles <- glob "src/**/*.hs"
+-    doctest
+-        $ "-XHaskell2010"
+-        : "-XInstanceSigs"
+-        : "-XNoImplicitPrelude"
+-        : "-XOverloadedStrings"
+-        : "-XScopedTypeVariables"
+-        : "-XTypeApplications"
+-        : sourceFiles
++    setLocaleEncoding utf8
++
++    let oldFlags =
++            [ "-XHaskell2010"
++            , "-XInstanceSigs"
++            , "-XNoImplicitPrelude"
++            , "-XOverloadedStrings"
++            , "-XScopedTypeVariables"
++            , "-XTypeApplications" ]
++
++    doctest $ flags ++ oldFlags ++ pkgs ++ module_sources
+-- 
+2.52.0
+
