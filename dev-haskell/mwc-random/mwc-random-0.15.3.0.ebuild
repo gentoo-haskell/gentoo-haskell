@@ -20,6 +20,10 @@ CABAL_CHDEPS=(
 	'doctest    >=0.15 && <0.24' 'doctest >=0.15'
 )
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.15.3.0-cabal-doctest.patch"
+)
+
 RDEPEND=">=dev-haskell/math-functions-0.2.1.0:=[profile?]
 	>=dev-haskell/primitive-0.6.2:=[profile?]
 	>=dev-haskell/random-1.2:=[profile?]
@@ -29,6 +33,7 @@ RDEPEND=">=dev-haskell/math-functions-0.2.1.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/doctest-0.15
+		>=dev-haskell/cabal-doctest-1.0.9
 		>=dev-haskell/math-functions-0.3.4
 		>=dev-haskell/quickcheck-2.2
 		>=dev-haskell/tasty-1.3.1
@@ -38,6 +43,8 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	use test && export GHC_BOOTSTRAP_PACKAGES+=( cabal-doctest )
+
 	haskell-cabal_src_configure \
 		$(cabal_flag benchpapi benchpapi)
 }
