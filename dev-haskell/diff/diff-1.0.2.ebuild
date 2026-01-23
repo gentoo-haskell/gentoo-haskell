@@ -15,7 +15,7 @@ HOMEPAGE="https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.4.6927"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
