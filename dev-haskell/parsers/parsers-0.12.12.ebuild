@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/parsers/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+attoparsec +binary +parsec"
 
 RDEPEND=">=dev-haskell/charset-0.3:=[profile?] <dev-haskell/charset-1:=[profile?]
