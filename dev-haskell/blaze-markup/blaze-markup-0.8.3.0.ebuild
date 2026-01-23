@@ -15,7 +15,7 @@ HOMEPAGE="https://jaspervdj.be/blaze"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/text-0.10:=[profile?] <dev-haskell/text-2.2:=[profile?]
