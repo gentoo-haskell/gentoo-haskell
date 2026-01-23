@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ulidtko/cabal-doctest"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/cabal-1.24:=[profile?] <dev-haskell/cabal-3.16:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
