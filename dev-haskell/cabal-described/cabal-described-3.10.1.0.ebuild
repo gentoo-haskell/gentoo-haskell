@@ -24,7 +24,7 @@ CABAL_FILE="${S}/${CABAL_PN}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-haskell/cabal-3.10.0.0:=[profile?] <dev-haskell/cabal-3.11:=[profile?]
