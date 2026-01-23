@@ -16,7 +16,7 @@ HOMEPAGE="https://www.haskell.org/cabal/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+lukko +native-dns"
 
 RESTRICT="test" # Test suite has a lot of failures, probably needs some expected environment
