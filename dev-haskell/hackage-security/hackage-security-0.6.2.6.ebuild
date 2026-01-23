@@ -17,7 +17,7 @@ HOMEPAGE="https://github.com/haskell/hackage-security"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+lukko"
 
 PATCHES=(
