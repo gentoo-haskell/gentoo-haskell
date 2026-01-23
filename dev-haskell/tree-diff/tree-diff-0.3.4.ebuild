@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/phadej/tree-diff"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RESTRICT=test # tasty, tasty-quickcheck versions too new.
 
