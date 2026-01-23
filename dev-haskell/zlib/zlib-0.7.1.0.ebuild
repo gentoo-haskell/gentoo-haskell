@@ -16,7 +16,7 @@ HOMEPAGE="https://hackage.haskell.org/package/zlib"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="bundled-c-zlib non-blocking-ffi"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
