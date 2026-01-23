@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/ekmett/reducers/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/fingertree-0.1:=[profile?] <dev-haskell/fingertree-0.2:=[profile?]
 	>=dev-haskell/hashable-1.1.2.1:=[profile?] <dev-haskell/hashable-1.5:=[profile?]
