@@ -22,7 +22,7 @@ SRC_URI+=" doc? (
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="doc static"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
