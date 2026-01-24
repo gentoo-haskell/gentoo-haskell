@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/monoid-extras"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="<dev-haskell/groups-0.6:=[profile?]
 	>=dev-haskell/semigroupoids-4.0:=[profile?] <dev-haskell/semigroupoids-6.1:=[profile?]
