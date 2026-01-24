@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/andrewthad/quickcheck-classes#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+aeson +binary-laws +semigroupoids +semirings +unary-laws +vector"
 
 RDEPEND=">=dev-haskell/primitive-0.6.4:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
