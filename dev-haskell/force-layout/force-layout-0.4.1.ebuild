@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/force-layout"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/data-default-0.8:=[profile?] <dev-haskell/data-default-0.9:=[profile?]
 	>=dev-haskell/lens-3.0:=[profile?] <dev-haskell/lens-5.4:=[profile?]
