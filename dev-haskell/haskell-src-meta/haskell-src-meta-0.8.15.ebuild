@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/haskell-src-meta"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/haskell-src-exts-1.21:=[profile?] <dev-haskell/haskell-src-exts-1.24:=[profile?]
 	>=dev-haskell/syb-0.1:=[profile?] <dev-haskell/syb-0.8:=[profile?]
