@@ -18,7 +18,7 @@ SRC_URI+=" test? ( https://hackage.haskell.org/package/${TEST_P}/${TEST_P}.tar.g
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="test"
 RESTRICT+=" !test? ( test )"
 
