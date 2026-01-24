@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/yaml#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+unicode system-libyaml"
 
 RDEPEND=">=dev-haskell/conduit-1.2.8:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
