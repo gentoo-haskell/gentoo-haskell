@@ -14,7 +14,7 @@ HOMEPAGE="https://hackage.haskell.org/package/vty-crossplatform"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/vty-6.1:=[profile?]
 	dev-haskell/vty-unix:=[profile?]
