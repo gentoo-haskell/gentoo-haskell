@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/vincenthz/hs-hourglass"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 CABAL_CHDEPS=(
 	'time < 1.10' 'time'
