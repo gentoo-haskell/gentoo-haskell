@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/MonadRandom"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/primitive-0.6:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
 	>=dev-haskell/random-1.0.1:=[profile?] <dev-haskell/random-1.4:=[profile?]
