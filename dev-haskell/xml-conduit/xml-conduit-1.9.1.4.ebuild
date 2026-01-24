@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/snoyberg/xml"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/attoparsec-0.10:=[profile?]
 	>=dev-haskell/blaze-html-0.5:=[profile?]
