@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/conduit"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/mono-traversable-1.0.7:=[profile?]
 	dev-haskell/primitive:=[profile?]
