@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jtdaugherty/vty"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3.3.2:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	<dev-haskell/microlens-0.4.14:=[profile?]
