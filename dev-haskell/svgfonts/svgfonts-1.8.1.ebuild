@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/SVGFonts"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/attoparsec:=[profile?]
 	>=dev-haskell/blaze-markup-0.5:=[profile?]
