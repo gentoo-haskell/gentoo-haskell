@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/binary-orphans"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/data-array-byte-0.1.0.1:=[profile?] <dev-haskell/data-array-byte-0.2:=[profile?]
 	>=dev-haskell/onetuple-0.4.2:=[profile?] <dev-haskell/onetuple-0.5:=[profile?]
