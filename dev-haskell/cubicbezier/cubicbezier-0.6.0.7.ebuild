@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/cubicbezier"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="debug"
 
 RDEPEND=">=dev-haskell/fast-math-1.0.0:=[profile?]
