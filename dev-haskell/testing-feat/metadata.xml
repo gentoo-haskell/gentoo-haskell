@@ -20,4 +20,8 @@
 		are some small and large example in the tar
 		ball.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">testing-feat</remote-id>
+		<remote-id type="github">size-based/testing-feat</remote-id>
+	</upstream>
 </pkgmetadata>
