@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">dictionary-sharing</remote-id>
+		<remote-id type="github">JonasDuregard/dictionary-sharing</remote-id>
+	</upstream>
 </pkgmetadata>
