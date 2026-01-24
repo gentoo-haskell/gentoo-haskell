@@ -25,6 +25,7 @@ CABAL_CHDEPS=(
 	'semialign         >= 1       && < 1.3' 'semialign >=1'
 	'semigroupoids     >= 5.2.2   && < 5.4' 'semigroupoids >= 5.2.2'
 	'these             >= 1       && < 1.2' 'these >=1'
+	'witherable        >= 0.4     && < 0.5' 'witherable >=0.4'
 )
 
 PATCHES=(
@@ -41,7 +42,7 @@ RDEPEND="
 	>=dev-haskell/lens-5:=[profile?]
 	dev-haskell/lens:=[profile?]
 	examples? (
-		=dev-haskell/witherable-0.4*:=[profile?]
+		>=dev-haskell/witherable-0.4:=[profile?]
 	)
 "
 DEPEND="
