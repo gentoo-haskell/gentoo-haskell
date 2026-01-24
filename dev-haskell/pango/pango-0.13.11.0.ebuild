@@ -13,7 +13,7 @@ HOMEPAGE="https://projects.haskell.org/gtk2hs/"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-Cabal-3.14.patch
