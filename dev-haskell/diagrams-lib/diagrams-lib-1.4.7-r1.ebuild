@@ -13,7 +13,7 @@ HOMEPAGE="https://diagrams.github.io"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/active-0.2:=[profile?] <dev-haskell/active-0.3:=[profile?]
 	>=dev-haskell/adjunctions-4.0:=[profile?] <dev-haskell/adjunctions-5.0:=[profile?]
