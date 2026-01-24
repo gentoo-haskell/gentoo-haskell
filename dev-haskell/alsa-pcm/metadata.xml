@@ -11,5 +11,6 @@
 	</longdescription>
 	<use>
 		<flag name="buildexamples">Build example executables</flag>
+		<flag name="executable">Build synthesizer executables (needs alsa-seq, too)</flag>
 	</use>
 </pkgmetadata>
