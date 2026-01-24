@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell/text-icu"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 RESTRICT=test # QuickCheck occasionally finds counterexamples
 # and fails to build: Duplicate instance declarations: instance NFData Ordering
 
