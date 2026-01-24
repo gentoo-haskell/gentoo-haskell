@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/active"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/lens-4.0:=[profile?] <dev-haskell/lens-5.4:=[profile?]
 	>=dev-haskell/linear-1.14:=[profile?] <dev-haskell/linear-1.24:=[profile?]
