@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/yesodweb/wai"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-8.8.1:=
