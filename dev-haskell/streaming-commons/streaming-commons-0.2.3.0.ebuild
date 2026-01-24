@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/fpco/streaming-commons"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/network-2.4.0.0:=[profile?]
