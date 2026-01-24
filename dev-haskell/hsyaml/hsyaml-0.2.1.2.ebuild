@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell-hvr/HsYAML"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="exe"
 
 RDEPEND=">=dev-haskell/parsec-3.1.13.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
