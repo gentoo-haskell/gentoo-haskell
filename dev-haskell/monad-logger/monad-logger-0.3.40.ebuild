@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/monad-logger#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+template-haskell"
 
 RDEPEND=">=dev-haskell/conduit-1.0:=[profile?] <dev-haskell/conduit-1.4:=[profile?]
