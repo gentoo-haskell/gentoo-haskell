@@ -26,7 +26,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/mwc-random-0.8 <dev-haskell/mwc-random-0.16
 		>=dev-haskell/quickcheck-2.9
-		>=dev-haskell/tasty-1.4 <=dev-haskell/tasty-1.6
+		>=dev-haskell/tasty-1.4 <dev-haskell/tasty-1.6
 		>=dev-haskell/tasty-hunit-0.10 <dev-haskell/tasty-hunit-0.11
 		>=dev-haskell/tasty-quickcheck-0.10 <dev-haskell/tasty-quickcheck-0.12 )
 "
