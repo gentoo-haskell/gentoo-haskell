@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/mfsolve"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/hashable-0.1.2:=[profile?]
 	>=dev-haskell/mtl-compat-0.2.1:=[profile?]
