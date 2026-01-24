@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/chessai/semirings"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/hashable-1.1:=[profile?]
 	>=dev-haskell/unordered-containers-0.2:=[profile?]
