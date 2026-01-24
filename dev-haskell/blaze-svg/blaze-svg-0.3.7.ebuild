@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/diagrams/blaze-svg"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/blaze-markup-0.5:=[profile?] <dev-haskell/blaze-markup-0.9:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
