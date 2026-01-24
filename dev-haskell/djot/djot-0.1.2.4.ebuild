@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/djot"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="dev-haskell/doclayout:=[profile?]
 	dev-haskell/text:=[profile?]
