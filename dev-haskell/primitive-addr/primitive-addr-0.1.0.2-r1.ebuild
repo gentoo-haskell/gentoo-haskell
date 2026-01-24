@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/andrewthad/primitive-addr"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/primitive-0.6.4:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
