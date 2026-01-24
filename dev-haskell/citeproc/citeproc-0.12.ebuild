@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/citeproc"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="executable icu"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
