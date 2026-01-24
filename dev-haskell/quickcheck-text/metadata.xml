@@ -14,4 +14,8 @@
 		character. This package has generators for one-, two- and three-byte
 		UTF-8 characters (all that are currently in use).
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">quickcheck-text</remote-id>
+		<remote-id type="github">olorin/quickcheck-text</remote-id>
+	</upstream>
 </pkgmetadata>
