@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/jgm/unicode-collation"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="doctests executable"
 
 RDEPEND="dev-haskell/parsec:=[profile?]
