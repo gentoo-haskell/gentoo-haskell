@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jgm/commonmark-hs"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/parsec:=[profile?]
 	dev-haskell/text:=[profile?]
