@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/size-based/testing-feat"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 CABAL_CHDEPS=(
 	'QuickCheck > 2 && < 3' 'QuickCheck >= 2 && < 3'
