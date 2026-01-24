@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/hashable-0.1.2:=[profile?]
 	>=dev-haskell/mtl-compat-0.2.1:=[profile?]
-	>dev-haskell/unordered-containers-0.2:=[profile?]
+	>dev-haskell/unordered-containers-0.2-r9999:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
