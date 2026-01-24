@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/aisamanra/config-ini"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/megaparsec-7:=[profile?] <dev-haskell/megaparsec-10:=[profile?]
 	>=dev-haskell/text-1.2.2:=[profile?] <dev-haskell/text-3:=[profile?]
