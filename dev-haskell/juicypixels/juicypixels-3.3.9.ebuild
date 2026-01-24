@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/Twinside/Juicy.Pixels"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="mmap"
 
 RDEPEND=">=dev-haskell/primitive-0.4:=[profile?]
