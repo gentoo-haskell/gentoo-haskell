@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jgm/commonmark-hs"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/commonmark-0.2.4.1:=[profile?] <dev-haskell/commonmark-0.3:=[profile?]
 	>=dev-haskell/emojis-0.1.4.1:=[profile?] <dev-haskell/emojis-0.2:=[profile?]
