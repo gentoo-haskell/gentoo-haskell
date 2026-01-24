@@ -15,4 +15,8 @@
 		IEEE-754 regulations and may subtly change the results of your numeric computations.
 		See the &lt;http://github.com/liyang/fast-math/ README&gt; on github for more details.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">fast-math</remote-id>
+		<remote-id type="github">liyang/fast-math</remote-id>
+	</upstream>
 </pkgmetadata>
