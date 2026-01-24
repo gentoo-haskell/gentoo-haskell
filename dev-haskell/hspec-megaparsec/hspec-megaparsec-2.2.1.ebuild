@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/mrkkrp/hspec-megaparsec"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/hspec-expectations-0.8:=[profile?] <dev-haskell/hspec-expectations-0.9:=[profile?]
 	>=dev-haskell/megaparsec-9:=[profile?] <dev-haskell/megaparsec-10:=[profile?]
