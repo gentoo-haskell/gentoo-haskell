@@ -13,7 +13,7 @@ HOMEPAGE="https://codedownio.github.io/sandwich"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	dev-haskell/ansi-terminal:=[profile?]
