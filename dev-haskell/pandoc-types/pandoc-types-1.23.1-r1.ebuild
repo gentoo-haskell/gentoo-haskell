@@ -15,7 +15,7 @@ HOMEPAGE="https://pandoc.org/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/aeson-0.6.2:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/quickcheck-2.10:=[profile?] <dev-haskell/quickcheck-2.16:=[profile?]
