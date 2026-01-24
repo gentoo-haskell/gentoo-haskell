@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/dual-tree"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/monoid-extras-0.6:=[profile?] <dev-haskell/monoid-extras-0.7:=[profile?]
 	>=dev-haskell/semigroups-0.8:=[profile?] <dev-haskell/semigroups-0.21:=[profile?]
