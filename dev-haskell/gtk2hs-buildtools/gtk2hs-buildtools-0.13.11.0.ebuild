@@ -13,7 +13,7 @@ HOMEPAGE="https://projects.haskell.org/gtk2hs/"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+closuresignals"
 
 PATCHES=(
