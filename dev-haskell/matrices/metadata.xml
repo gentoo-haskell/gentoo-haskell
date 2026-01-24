@@ -11,4 +11,8 @@
 		sparse representations. The underling data
 		structure is vector.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">matrices</remote-id>
+		<remote-id type="github">kaizhang/matrices</remote-id>
+	</upstream>
 </pkgmetadata>
