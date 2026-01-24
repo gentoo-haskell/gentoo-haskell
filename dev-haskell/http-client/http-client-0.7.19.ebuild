@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/snoyberg/http-client"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.7.16-disable-net-tests.patch"
