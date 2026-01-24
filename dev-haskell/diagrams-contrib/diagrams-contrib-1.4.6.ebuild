@@ -15,7 +15,7 @@ HOMEPAGE="https://diagrams.github.io/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 CABAL_CHDEPS=(
 	'data-default >= 0.8 && < 0.9' 'data-default >= 0.7'
