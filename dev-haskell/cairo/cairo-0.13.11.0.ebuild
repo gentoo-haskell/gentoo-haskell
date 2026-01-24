@@ -14,7 +14,7 @@ HOMEPAGE="https://projects.haskell.org/gtk2hs/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+svg"
 
 CABAL_CHDEPS=(
