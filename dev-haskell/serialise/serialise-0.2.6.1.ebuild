@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/well-typed/cborg"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RESTRICT=test # fails to build with quickcheck-instances-0.3.32
 
