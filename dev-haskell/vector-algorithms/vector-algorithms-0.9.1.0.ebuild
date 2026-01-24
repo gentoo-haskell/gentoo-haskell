@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/erikd/vector-algorithms/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+bench +boundschecks internalchecks unsafechecks"
 
 RDEPEND=">=dev-haskell/bitvec-1.0:=[profile?] <dev-haskell/bitvec-1.2:=[profile?]
