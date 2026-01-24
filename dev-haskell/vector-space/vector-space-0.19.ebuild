@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/vector-space"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-haskell/boolean-0.1.0:=[profile?]
 	>=dev-haskell/memotrie-0.5:=[profile?]
