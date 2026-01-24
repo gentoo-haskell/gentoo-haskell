@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/jgm/skylighting"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="executable"
 
 RDEPEND="~dev-haskell/skylighting-core-0.14.7:=[profile?]
