@@ -21,4 +21,8 @@
 		prop_tail_length2 = (&gt; 0) . length . nonEmpty
 		@
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">testing-type-modifiers</remote-id>
+		<remote-id type="github">JonasDuregard/testing-type-modifiers</remote-id>
+	</upstream>
 </pkgmetadata>
