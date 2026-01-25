@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/RyanGlScott/text-show"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/base-compat-batteries-0.11:=[profile?] <dev-haskell/base-compat-batteries-0.16:=[profile?]
 	>=dev-haskell/bifunctors-5.1:=[profile?] <dev-haskell/bifunctors-6:=[profile?]
