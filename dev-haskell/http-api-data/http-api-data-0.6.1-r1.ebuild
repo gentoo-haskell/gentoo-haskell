@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/fizruk/http-api-data"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="text-show"
 
 CABAL_CHDEPS=( 
