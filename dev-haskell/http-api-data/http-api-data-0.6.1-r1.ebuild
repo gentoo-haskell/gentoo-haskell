@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="text-show"
 
-CABAL_CHDEPS=( 
+CABAL_CHDEPS=(
 	'base                  >= 4.12.0.0 && < 4.21' 'base >= 4.12.0.0 && < 4.22'
 	'text-show        >= 3.10.5 && <3.11' 'text-show        >= 3.10.5'
 )
