@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell/aeson"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/attoparsec-0.14.2:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/integer-conversion-0.1:=[profile?] <dev-haskell/integer-conversion-0.2:=[profile?]
