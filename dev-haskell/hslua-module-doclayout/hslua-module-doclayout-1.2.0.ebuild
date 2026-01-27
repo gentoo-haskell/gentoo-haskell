@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/hslua/hslua-module-doclayout"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/doclayout-0.5:=[profile?] <dev-haskell/doclayout-0.6:=[profile?]
 	>=dev-haskell/hslua-2.3:=[profile?] <dev-haskell/hslua-2.4:=[profile?]
