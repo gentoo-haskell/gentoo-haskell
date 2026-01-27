@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/zmthy/http-media"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 CABAL_CHDEPS=(
 	'tasty-quickcheck >= 0.8  && < 0.11' 'tasty-quickcheck >= 0.8 && < 0.12'
