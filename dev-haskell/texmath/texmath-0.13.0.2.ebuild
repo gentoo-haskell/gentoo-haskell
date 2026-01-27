@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/jgm/texmath"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="executable server"
 
 RDEPEND=">=dev-haskell/pandoc-types-1.20:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
