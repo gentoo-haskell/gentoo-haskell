@@ -10,4 +10,8 @@
 		of different string types
 		into values of other string types.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">string-conversions</remote-id>
+		<remote-id type="github">soenkehahn/string-conversions</remote-id>
+	</upstream>
 </pkgmetadata>
