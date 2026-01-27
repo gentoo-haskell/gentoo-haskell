@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/kazu-yamamoto/http-semantics"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/case-insensitive:=[profile?]
 	>=dev-haskell/http-types-0.12:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
