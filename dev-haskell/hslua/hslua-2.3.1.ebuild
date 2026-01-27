@@ -14,7 +14,7 @@ HOMEPAGE="https://hslua.org/"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/hslua-aeson-2.3.1:=[profile?] <dev-haskell/hslua-aeson-2.4:=[profile?]
 	>=dev-haskell/hslua-classes-2.2.1:=[profile?] <dev-haskell/hslua-classes-2.4:=[profile?]
