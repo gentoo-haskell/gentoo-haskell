@@ -13,7 +13,7 @@ HOMEPAGE="https://www.yesodweb.com/book/web-application-interface"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+crypton print"
 
 RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?]
