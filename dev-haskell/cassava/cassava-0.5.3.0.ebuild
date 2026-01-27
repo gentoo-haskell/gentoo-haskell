@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell-hvr/cassava"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/attoparsec-0.11.3.0:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	<dev-haskell/hashable-1.5:=[profile?]
