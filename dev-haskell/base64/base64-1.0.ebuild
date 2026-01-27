@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/emilypi/base64"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-haskell/text-2.0:=[profile?] <dev-haskell/text-2.3:=[profile?]
 	>=dev-haskell/text-short-0.1:=[profile?] <dev-haskell/text-short-0.2:=[profile?]
