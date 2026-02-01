@@ -15,7 +15,7 @@ HOMEPAGE="https://hackage.haskell.org/package/tls-session-manager"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/auto-update-0.2.2:=[profile?] <dev-haskell/auto-update-0.3:=[profile?]
 	>=dev-haskell/basement-0.0.16:=[profile?] <dev-haskell/basement-0.1:=[profile?]
