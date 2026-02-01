@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/crypto-token"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/crypton:=[profile?]
 	dev-haskell/memory:=[profile?]
