@@ -11,4 +11,8 @@
 		&lt;http://hackage.haskell.org/package/wai Wai&gt;
 		that aims to be compliant with &lt;http://www.w3.org/TR/cors&gt;.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">wai-cors</remote-id>
+		<remote-id type="github">larskuhtz/wai-cors</remote-id>
+	</upstream>
 </pkgmetadata>
