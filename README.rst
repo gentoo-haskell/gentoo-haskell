@@ -13,38 +13,23 @@ Find us in ``#gentoo-haskell`` on `libera.chat`_!
 
 .. _libera.chat: https://libera.chat
 
-Quickest start
-==============
 
-First, let's enable the Gentoo Haskell overlay using the eselect-repository method::
+----
 
-    # Install eselect-repository if you don't already have it
-    emerge app-eselect/eselect-repository
-    # Fetch and output the list of overlays
-    eselect repository list
-    eselect repository enable haskell
+Quick start
+===========
 
-Finally, we need to unmask the overlay (this does not apply if your system
-is already running on the ~testing branch)::
-    # Unmask ~testing versions for your arch:
-    echo "*/*::haskell" >> /etc/portage/package.accept_keywords
+Enable the ``haskell`` repository in the normal manner explained here::
 
-And here is the trick to speed up metadata resolution a bit.
-If you happen to use ``eix-sync`` for rsyncs you might
-like the following ``/etc/eix-sync.conf``::
+https://wiki.gentoo.org/wiki/Eselect/Repository
 
-    *
-    @egencache --jobs="$(($(nproc) + 1))" --repo=haskell --update --update-use-local-desc
+Optionally, enable a sync hook to automatically generate metadata for you::
 
-It basically means:
+https://wiki.gentoo.org/wiki//etc/portage/repo.postsync.d#Pkgcore_example
 
-- sync overlays in layman list before the main tree sync
-
-- generate metadata for haskell repo after main
-  tree sync is done, using N+1 cores
 
 Overlay Priority
-================
+----------------
 
 Gentoo has a mechanism to define which ebuild is selected in the event
 a package has the same version number in two different
@@ -76,6 +61,8 @@ In the haskell section of
 The value in the haskell section needs to be higher than in the
 ``gentoo.conf`` file - if it isn't, then modify one or both so it is.
 
+----
+
 Developer's corner
 ==================
 
@@ -91,24 +78,7 @@ Alternatively if you really don't want to share any ebuilds (want to keep
 outdated package versions, highly experimental things, publicly unavailable
 stuff, other reasons) that's also fine.
 
-You can keep such ebuilds in your local overlay.
+You can keep such ebuilds in a local repository. See "`Creating an ebuild
+repository`_" for instructions on how to set one up.
 
-Here is a complete example of creating minimal overlay with a
-single haskell ebuild from hackage::
-
-    # create overlay and populate it (gentoo-generic):
-    $ mkdir my-ovl
-    $ cd    my-ovl
-    $ mkdir metadata
-    $ echo 'masters = gentoo' > metadata/layout.conf
-    # register an overlay in /etc/portage/repos.conf:
-    $ echo '[my-ovl]' >> /etc/portage/repos.conf
-    $ echo "location = $(pwd)" >> /etc/portage/repos.conf
-    
-    # haskell-specific stuff
-    $ hackport -p . update
-    # DONE!
-    
-    # adding an example ebuild
-    $ hackport merge hichi
-    $ emerge -av1 hichi
+.. _Creating an ebuild repository: https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository
