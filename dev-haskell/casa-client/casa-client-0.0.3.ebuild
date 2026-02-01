@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/commercialhaskell/casa#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/aeson-1.5.6.0:=[profile?]
 	>=dev-haskell/attoparsec-0.13.2.5:=[profile?]
