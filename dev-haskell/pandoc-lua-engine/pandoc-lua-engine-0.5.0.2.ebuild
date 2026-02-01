@@ -13,7 +13,7 @@ HOMEPAGE="https://pandoc.org"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/citeproc-0.8:=[profile?] <dev-haskell/citeproc-0.13:=[profile?]
