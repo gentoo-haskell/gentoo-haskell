@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell-pkg-janitors/filelock"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
