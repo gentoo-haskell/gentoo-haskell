@@ -5,4 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">filemanip</remote-id>
+		<remote-id type="bitbucket">bos/filemanip</remote-id>
+		<remote-id type="github">bos/filemanip</remote-id>
+	</upstream>
 </pkgmetadata>
