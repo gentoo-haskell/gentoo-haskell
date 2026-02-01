@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/pandoc/pandoc-lua-marshal"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/aeson-1.5:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/hslua-2.2:=[profile?] <dev-haskell/hslua-2.4:=[profile?]
