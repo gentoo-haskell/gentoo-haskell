@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/snoyberg/http-client"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 CABAL_CHDEPS=(
 	'warp >= 3.0.0.2 && < 3.4' 'warp >= 3.0.0.2'
