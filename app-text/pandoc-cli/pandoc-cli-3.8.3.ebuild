@@ -13,7 +13,7 @@ HOMEPAGE="https://pandoc.org"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+lua nightly +server"
 
 RDEPEND="~dev-haskell/pandoc-3.8.3:=
