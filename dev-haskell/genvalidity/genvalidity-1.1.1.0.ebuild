@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/NorfairKing/validity#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/quickcheck-2.13:=[profile?]
 	>=dev-haskell/random-1.1:=[profile?]
