@@ -5,4 +5,8 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">infer-license</remote-id>
+		<remote-id type="github">sol/infer-license</remote-id>
+	</upstream>
 </pkgmetadata>
