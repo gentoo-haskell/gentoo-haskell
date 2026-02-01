@@ -16,7 +16,7 @@ HOMEPAGE="https://www.shellcheck.net/"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/aeson-1.4.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
