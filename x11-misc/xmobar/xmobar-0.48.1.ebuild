@@ -14,7 +14,7 @@ HOMEPAGE="https://codeberg.org/xmobar/xmobar"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="alsa datezone dbus mpd mpris +rtsopts shared uvmeter +weather wifi xpm +xrender"
 
 CABAL_CHDEPS=(
