@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/gentoo-haskell/hackport#readme"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="profile +threads"
 REQUIRED_USE="profile? ( threads ) test? ( threads )"
 
