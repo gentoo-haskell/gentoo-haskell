@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/yesodweb/wai"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/network-2.2.1:=[profile?]
 	>=dev-haskell/recv-0.1.0:=[profile?] <dev-haskell/recv-0.2.0:=[profile?]
