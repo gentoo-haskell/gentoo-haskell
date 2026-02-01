@@ -7,5 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">casa-client</remote-id>
+		<remote-id type="github">commercialhaskell/casa</remote-id>
 	</upstream>
 </pkgmetadata>
