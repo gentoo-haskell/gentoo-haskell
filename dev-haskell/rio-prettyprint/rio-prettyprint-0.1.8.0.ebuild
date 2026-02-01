@@ -20,7 +20,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	dev-haskell/cabal:=[profile?]
 	dev-haskell/colour:=[profile?]
-	>dev-haskell/path-0.9.1:=[profile?]
+	>dev-haskell/path-0.9.1-r9999:=[profile?]
 	dev-haskell/rio:=[profile?]
 	dev-haskell/text:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
