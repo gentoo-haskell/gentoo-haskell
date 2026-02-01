@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/NorfairKing/validity#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/genvalidity-1.0:=[profile?]
 	>=dev-haskell/hspec-2.1:=[profile?]
