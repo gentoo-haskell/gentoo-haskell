@@ -9,4 +9,8 @@
 		Catching all exceptions raised within an enclosed computation,
 		while remaining responsive to (external) asynchronous exceptions.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">enclosed-exceptions</remote-id>
+		<remote-id type="github">jcristovao/enclosed-exceptions</remote-id>
+	</upstream>
 </pkgmetadata>
