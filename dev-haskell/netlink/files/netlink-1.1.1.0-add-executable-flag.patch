@@ -1,0 +1,46 @@
+From 8c35948194e991e83318d53f96f9954968a3e245 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Tue, 27 Jan 2026 20:36:10 -0700
+Subject: [PATCH 1/1] Add executable flag
+
+Toggles building optional executables. Disabled by default.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/netlink.cabal
++++ b/netlink.cabal
+@@ -22,7 +22,14 @@ Flag Generators
+   default: False
+   manual: True
+ 
++flag executable
++  description: Build utility executables
++  default: False
++  manual: True
++
+ executable dump_nl80211
++  if !flag(executable)
++    buildable: False
+   hs-source-dirs: Utils
+   main-is: DumpNL80211.hs
+   build-depends: base >=4.6 && <5,
+@@ -31,6 +38,8 @@ executable dump_nl80211
+   ghc-options: -Wall
+ 
+ executable genlinfo
++  if !flag(executable)
++    buildable: False
+   hs-source-dirs: Utils
+   main-is: GenlInfo.hs
+   build-depends: base >=4.6 && <5,
+@@ -39,6 +48,8 @@ executable genlinfo
+   ghc-options: -Wall
+ 
+ executable dump_rtnetlink
++  if !flag(executable)
++    buildable: False
+   hs-source-dirs: Utils
+   main-is: DumpRTNL.hs
+   build-depends: base >=4.6 && <5,
+-- 
+2.52.0
+
