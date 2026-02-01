@@ -8,7 +8,7 @@ EAPI=8
 CABAL_FEATURES=""
 inherit haskell-cabal
 
-DESCRIPTION="repairs a damaged git repository"
+DESCRIPTION="A tool to repair damaged git repositories"
 HOMEPAGE="https://git-repair.branchable.com/"
 
 LICENSE="AGPL-3"
@@ -44,7 +44,7 @@ RDEPEND="
 "
 DEPEND="
 	${RDEPEND}
-	>=dev-haskell/cabal-3.2.1.0 <dev-haskell/cabal-4.0
+	>=dev-haskell/cabal-3.2.1.0
 "
 
 src_install() {
