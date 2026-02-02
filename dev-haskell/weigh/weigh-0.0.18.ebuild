@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/fpco/weigh#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/criterion-measurement:=[profile?]
 	dev-haskell/split:=[profile?]
