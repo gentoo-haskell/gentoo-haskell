@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/ekmett/pointed/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+comonad +kan-extensions +semigroupoids +stm +tagged +transformers +unordered-containers"
 
 RDEPEND=">=dev-haskell/data-default-class-0.0.1:=[profile?] <dev-haskell/data-default-class-0.3:=[profile?]
