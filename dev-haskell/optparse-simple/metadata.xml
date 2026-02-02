@@ -8,4 +8,8 @@
 	<use>
 		<flag name="build-example">Build the example executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">optparse-simple</remote-id>
+		<remote-id type="github">fpco/optparse-simple</remote-id>
+	</upstream>
 </pkgmetadata>
