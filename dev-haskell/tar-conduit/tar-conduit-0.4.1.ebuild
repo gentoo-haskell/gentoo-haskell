@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/tar-conduit#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/conduit:=[profile?]
 	>=dev-haskell/conduit-combinators-1.0.8.1:=[profile?]
