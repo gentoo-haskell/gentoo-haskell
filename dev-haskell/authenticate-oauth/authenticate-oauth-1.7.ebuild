@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/yesodweb/authenticate"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1:=[profile?] <dev-haskell/base64-bytestring-1.3:=[profile?]
 	dev-haskell/blaze-builder:=[profile?]
