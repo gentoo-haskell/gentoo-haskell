@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ekmett/keys/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/comonad-4:=[profile?] <dev-haskell/comonad-6:=[profile?]
 	>=dev-haskell/free-4:=[profile?] <dev-haskell/free-6:=[profile?]
