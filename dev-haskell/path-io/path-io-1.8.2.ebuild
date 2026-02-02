@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/mrkkrp/path-io"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/dlist-0.8:=[profile?] <dev-haskell/dlist-2:=[profile?]
 	>=dev-haskell/path-0.7.1:=[profile?] <dev-haskell/path-0.10:=[profile?]
