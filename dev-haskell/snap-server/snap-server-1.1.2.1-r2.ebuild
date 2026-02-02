@@ -16,7 +16,7 @@ HOMEPAGE="https://snapframework.com/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="debug pong-server test-server"
 
 RESTRICT=test # depends on broken hsopenssl
