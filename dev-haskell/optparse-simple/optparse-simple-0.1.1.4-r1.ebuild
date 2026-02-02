@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/fpco/optparse-simple#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="build-example"
 
 RDEPEND=">=dev-haskell/githash-0.1.3.0:=[profile?]
