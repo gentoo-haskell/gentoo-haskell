@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/psibi/crypton-conduit"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/conduit:=[profile?]
 	dev-haskell/conduit-extra:=[profile?]
