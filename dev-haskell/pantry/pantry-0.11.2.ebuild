@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/commercialhaskell/pantry#readme"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.9.3.2-disable-network-tests.patch"
