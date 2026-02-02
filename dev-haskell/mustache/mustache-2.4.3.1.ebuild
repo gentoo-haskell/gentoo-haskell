@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/JustusAdam/mustache"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.3.2-disable-langspec-tests.patch"
