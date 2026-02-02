@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/mightybyte/readable"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
