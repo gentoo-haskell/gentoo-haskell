@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/rerebase "
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="~dev-haskell/rebase-1.22:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
