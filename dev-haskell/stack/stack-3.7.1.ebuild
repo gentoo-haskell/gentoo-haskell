@@ -14,7 +14,7 @@ HOMEPAGE="https://haskellstack.org"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="disable-stack-upload"
 
 PATCHES=(
