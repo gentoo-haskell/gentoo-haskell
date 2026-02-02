@@ -5,6 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<use>
+		<flag name="executable">Build the hpack executable</flag>
+	</use>
 	<upstream>
 		<remote-id type="hackage">hpack</remote-id>
 		<remote-id type="github">sol/hpack</remote-id>

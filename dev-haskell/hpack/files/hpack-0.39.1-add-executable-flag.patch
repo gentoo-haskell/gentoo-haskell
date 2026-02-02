@@ -1,0 +1,31 @@
+From ea25f64c9ddb9900ecdace47548feee6ecda1825 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Mon, 2 Feb 2026 01:16:19 -0700
+Subject: [PATCH 1/1] Add executable flag
+
+Toggles building the 'hpack' executable
+
+This is set to "off" by default, because stack uses the hpack library
+internally, and most users will not need this.
+
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- a/hpack.cabal
++++ b/hpack.cabal
+@@ -92,7 +92,14 @@ library
+     build-depends:
+         network >=3.1.2.9
+ 
++flag executable
++  description: Build the hpack executable
++  default: False
++  manual: False
++
+ executable hpack
++  if !flag(executable)
++    buildable: False
+   main-is: Main.hs
+   hs-source-dirs:
+       driver
+-- 
+2.52.0
+
