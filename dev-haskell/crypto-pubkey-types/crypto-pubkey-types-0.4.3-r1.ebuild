@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/vincenthz/hs-crypto-pubkey-types"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/asn1-encoding:=[profile?]
 	>=dev-haskell/asn1-types-0.1:=[profile?] <dev-haskell/asn1-types-0.4:=[profile?]
