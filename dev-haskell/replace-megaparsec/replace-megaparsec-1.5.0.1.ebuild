@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jamesdbrock/replace-megaparsec"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/megaparsec-7.0.0:=[profile?] <dev-haskell/megaparsec-10.0.0:=[profile?]
 	>=dev-haskell/parser-combinators-1.2.0:=[profile?] <dev-haskell/parser-combinators-2.0.0:=[profile?]
