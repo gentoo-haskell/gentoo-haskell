@@ -15,7 +15,7 @@ HOMEPAGE="https://snapframework.com/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/attoparsec-0.7:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/io-streams-1.3:=[profile?] <dev-haskell/io-streams-1.6:=[profile?]
