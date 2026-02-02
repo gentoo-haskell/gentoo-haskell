@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="example">Build the example application</flag>
+		<flag name="examples">Build the example application</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">open-browser</remote-id>
