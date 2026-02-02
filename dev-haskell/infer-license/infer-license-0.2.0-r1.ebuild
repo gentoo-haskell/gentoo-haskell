@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/infer-license"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/text:=[profile?]
 	>=dev-haskell/text-metrics-0.3.0:=[profile?] <dev-haskell/text-metrics-0.4:=[profile?]
