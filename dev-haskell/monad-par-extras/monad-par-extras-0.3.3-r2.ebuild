@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/simonmar/monad-par"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/abstract-par-0.3:=[profile?] <dev-haskell/abstract-par-0.4:=[profile?]
 	>=dev-haskell/cereal-0.3:=[profile?]
