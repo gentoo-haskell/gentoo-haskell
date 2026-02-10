@@ -28,4 +28,8 @@
 		This package also includes a simple reference implementation based
 		on &#39;IORef&#39; and &quot;Data.Sequence&quot;.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">abstract-deque</remote-id>
+		<remote-id type="github">rrnewton/haskell-lockfree</remote-id>
+	</upstream>
 </pkgmetadata>
