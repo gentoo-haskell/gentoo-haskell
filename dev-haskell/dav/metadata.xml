@@ -13,4 +13,7 @@
 		In addition, there is an executable, hdav, which can be used for
 		command-line operation.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">DAV</remote-id>
+	</upstream>
 </pkgmetadata>
