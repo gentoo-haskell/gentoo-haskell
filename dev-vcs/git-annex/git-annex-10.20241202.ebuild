@@ -14,7 +14,7 @@ HOMEPAGE="https://git-annex.branchable.com/"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+assistant +benchmark +crypton +dbus debug +magicmime +pairing parallelbuild +servant +torrentparser"
 
 GHC_BOOTSTRAP_PACKAGES=(
