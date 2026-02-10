@@ -12,4 +12,8 @@
 		* Finish These
 		* Module Descriptions
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">monad-par-extras</remote-id>
+		<remote-id type="github">simonmar/monad-par</remote-id>
+	</upstream>
 </pkgmetadata>
