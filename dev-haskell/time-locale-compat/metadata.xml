@@ -5,4 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">time-locale-compat</remote-id>
+		<remote-id type="bitbucket">khibino/haskell-time-locale-compat</remote-id>
+		<remote-id type="github">khibino/haskell-time-locale-compat</remote-id>
+	</upstream>
 </pkgmetadata>
