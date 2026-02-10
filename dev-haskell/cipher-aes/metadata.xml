@@ -22,4 +22,8 @@
 		implementation.
 		
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">cipher-aes</remote-id>
+		<remote-id type="github">vincenthz/hs-cipher-aes</remote-id>
+	</upstream>
 </pkgmetadata>
