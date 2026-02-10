@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/vincenthz/hs-crypto-cipher"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/byteable-0.1.1:=[profile?]
 	>=dev-haskell/securemem-0.1.1:=[profile?]
