@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/rrnewton/haskell-lockfree/wiki"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="debug"
 
 RDEPEND="dev-haskell/primitive:=[profile?]
