@@ -8,4 +8,8 @@
 	<use>
 		<flag name="conduit">Build with conduit</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">sandi</remote-id>
+		<remote-id type="github">magthe/sandi</remote-id>
+	</upstream>
 </pkgmetadata>
