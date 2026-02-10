@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/haskell/statistics"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="benchpapi"
 
 RDEPEND=">=dev-haskell/aeson-0.6.0.0:=[profile?]
