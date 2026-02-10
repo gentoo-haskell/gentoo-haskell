@@ -16,7 +16,7 @@ HOMEPAGE="https://floss.scru.org/hDAV"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/case-insensitive-0.4:=[profile?]
 	dev-haskell/data-default:=[profile?]
