@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/finnsson/test-generator"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/haskell-src-exts:=[profile?]
 	>=dev-haskell/language-haskell-extract-0.2:=[profile?]
