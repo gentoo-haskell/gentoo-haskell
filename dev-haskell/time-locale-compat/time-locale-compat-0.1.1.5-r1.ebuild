@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/khibino/haskell-time-locale-compat"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
