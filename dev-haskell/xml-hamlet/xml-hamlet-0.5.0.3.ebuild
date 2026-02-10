@@ -13,7 +13,7 @@ HOMEPAGE="https://www.yesodweb.com/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/parsec-2.0:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/shakespeare-1.0:=[profile?] <dev-haskell/shakespeare-2.3:=[profile?]
