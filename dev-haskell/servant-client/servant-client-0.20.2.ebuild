@@ -15,7 +15,7 @@ HOMEPAGE="https://docs.servant.dev/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/base-compat-0.10.5:=[profile?] <dev-haskell/base-compat-0.15:=[profile?]
 	>=dev-haskell/http-client-0.5.13.1:=[profile?] <dev-haskell/http-client-0.8:=[profile?]
