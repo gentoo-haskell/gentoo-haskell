@@ -13,7 +13,7 @@ HOMEPAGE="https://bitbucket.org/taejo/fdo-notify/"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/dbus-0.10.7:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
