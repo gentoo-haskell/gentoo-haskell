@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/yesodweb/css-text.git#readme"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/attoparsec-0.10.2.0:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
