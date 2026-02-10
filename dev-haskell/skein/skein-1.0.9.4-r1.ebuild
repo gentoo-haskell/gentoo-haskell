@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/meteficha/skein"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="big-endian force-endianness reference"
 
 RDEPEND=">=dev-haskell/cereal-0.3:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
