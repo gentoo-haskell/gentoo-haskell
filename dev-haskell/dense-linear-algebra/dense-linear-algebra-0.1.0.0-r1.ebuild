@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/dense-linear-algebra"
 
 LICENSE="BSD-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/math-functions-0.1.7:=[profile?]
 	>=dev-haskell/primitive-0.3:=[profile?]
