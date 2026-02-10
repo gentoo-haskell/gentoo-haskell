@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell-party/feed"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-1.3.2.1-disable-doctest.patch"
