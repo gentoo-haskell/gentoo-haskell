@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/haskell/vector-binary-instances"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/vector-0.6:=[profile?] <dev-haskell/vector-0.14:=[profile?]
 	>=dev-lang/ghc-8.10.6:=
