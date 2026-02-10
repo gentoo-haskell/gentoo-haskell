@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/network-multicast"
 
 LICENSE="public-domain"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/network:=[profile?]
 	dev-haskell/network-bsd:=[profile?]
