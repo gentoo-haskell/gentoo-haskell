@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/http-client-restricted"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND=">=dev-haskell/crypton-connection-0.3.1:=[profile?]
 	dev-haskell/data-default:=[profile?]
