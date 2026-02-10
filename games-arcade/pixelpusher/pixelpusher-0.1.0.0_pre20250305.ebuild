@@ -71,7 +71,7 @@ DEPEND="${RDEPEND}
 	test? ( dev-haskell/hspec
 		dev-haskell/quickcheck )
 "
-BDEPEND="dev-haskell/hpack"
+BDEPEND="dev-haskell/hpack[executable(+)]"
 
 src_prepare() {
 	cd "$S"
