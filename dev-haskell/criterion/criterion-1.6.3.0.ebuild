@@ -14,7 +14,7 @@ HOMEPAGE="https://www.serpentine.com/criterion"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="embed-data-files"
 
 RDEPEND="
