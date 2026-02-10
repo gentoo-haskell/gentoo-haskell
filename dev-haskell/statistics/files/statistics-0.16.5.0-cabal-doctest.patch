@@ -1,0 +1,83 @@
+From 684f13f83b1a3cba86797ff241cf92958a1fb5c0 Mon Sep 17 00:00:00 2001
+From: hololeap <hololeap@protonmail.com>
+Date: Sat, 7 Feb 2026 14:05:29 -0700
+Subject: [PATCH 1/1] Migrate to cabal-doctest
+
+doctest pulls in the out-of-scope packages if they are installed on the
+system. The best workaround is to use migrate to cabal-doctest.
+
+Bug: https://github.com/gentoo-haskell/gentoo-haskell/issues/1231
+Signed-off-by: hololeap <hololeap@protonmail.com>
+--- /dev/null
++++ b/Setup.hs
+@@ -0,0 +1,23 @@
++{-# LANGUAGE CPP #-}
++
++module Main (main) where
++
++#ifndef MIN_VERSION_cabal_doctest
++#define MIN_VERSION_cabal_doctest(x,y,z) 0
++#endif
++
++#if MIN_VERSION_cabal_doctest(1,0,9)
++
++import Distribution.Extra.Doctest ( defaultMainWithDoctests )
++
++main :: IO ()
++main = defaultMainWithDoctests "statistics-doctests"
++
++#else
++
++import Distribution.Simple
++
++main :: IO ()
++main = defaultMain
++
++#endif
+--- a/statistics.cabal
++++ b/statistics.cabal
+@@ -1,5 +1,5 @@
+ cabal-version:  3.0
+-build-type:     Simple
++build-type:     Custom
+ 
+ name:           statistics
+ version:        0.16.5.0
+@@ -34,6 +34,11 @@ maintainer:     Alexey Khudaykov <alexey.skladnoy@gmail.com>
+ copyright:      2009-2014 Bryan O'Sullivan
+ category:       Math, Statistics
+ 
++custom-setup
++  setup-depends:
++    , base
++    , cabal-doctest >=1.0.9 && <1.1
++
+ extra-source-files:
+   README.markdown
+   examples/kde/KDE.hs
+@@ -207,7 +212,6 @@ test-suite statistics-doctests
+     buildable: False
+   build-depends:
+             base       -any
+-          , statistics -any
+           , doctest    >=0.15 && <0.25
+ 
+ -- We want to be able to build benchmarks using both tasty-bench and tasty-papi.
+--- a/tests/doctest.hs
++++ b/tests/doctest.hs
+@@ -1,5 +1,11 @@
+ import Test.DocTest (doctest)
++import Build_doctests (flags, pkgs, module_sources)
++import GHC.IO.Encoding (setLocaleEncoding)
++import System.IO (utf8)
+ 
+ main :: IO ()
+-main = doctest ["-XHaskell2010", "Statistics"]
++main = do
++    setLocaleEncoding utf8
++    let oldFlags = ["-XHaskell2010"]
++    doctest $ flags ++ oldFlags ++ pkgs ++ module_sources
+ 
+-- 
+2.52.0
+

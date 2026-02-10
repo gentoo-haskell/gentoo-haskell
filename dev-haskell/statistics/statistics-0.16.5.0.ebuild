@@ -16,6 +16,10 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="benchpapi"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.16.5.0-cabal-doctest.patch"
+)
+
 RDEPEND=">=dev-haskell/aeson-0.6.0.0:=[profile?]
 	>=dev-haskell/async-2.2.2:=[profile?] <dev-haskell/async-2.3:=[profile?]
 	>=dev-haskell/data-default-class-0.1.2:=[profile?]
@@ -34,6 +38,7 @@ RDEPEND=">=dev-haskell/aeson-0.6.0.0:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 	test? ( >=dev-haskell/doctest-0.15 <dev-haskell/doctest-0.25
+		>=dev-haskell/cabal-doctest-1.0.9 <dev-haskell/cabal-doctest-1.1
 		dev-haskell/erf
 		>=dev-haskell/ieee754-0.7.3
 		>=dev-haskell/quickcheck-2.7.5
@@ -44,6 +49,8 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	use test && export GHC_BOOTSTRAP_PACKAGES+=( cabal-doctest )
+
 	haskell-cabal_src_configure \
 		$(cabal_flag benchpapi benchpapi)
 }
