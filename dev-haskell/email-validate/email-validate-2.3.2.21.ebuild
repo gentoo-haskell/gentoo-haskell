@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/Porges/email-validate-hs"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/attoparsec-0.10.0:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
