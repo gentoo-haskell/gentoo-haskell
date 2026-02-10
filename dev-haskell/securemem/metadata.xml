@@ -9,4 +9,8 @@
 		SecureMem is similar to ByteString, except that it provides a memory chunk that
 		will be auto-scrubbed after it run out of scope.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">securemem</remote-id>
+		<remote-id type="github">vincenthz/hs-securemem</remote-id>
+	</upstream>
 </pkgmetadata>
