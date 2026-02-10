@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/yesodweb/clientsession/tree/master"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="test"
 
 RDEPEND=">=dev-haskell/base64-bytestring-0.1.1.1:=[profile?]
