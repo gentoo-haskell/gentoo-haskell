@@ -7,7 +7,7 @@ EAPI=8
 #hackport: flags: build-examples:examples
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour test-suite"
-inherit haskell-cabal
+inherit ghc-package haskell-cabal
 
 DESCRIPTION="shell-like (systems) programming in Haskell"
 HOMEPAGE="https://github.com/gregwebs/Shelly.hs"
@@ -16,12 +16,6 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="examples lifted"
-
-CABAL_CHBINS=(
-	'drain' "${PN}-examples-drain"
-	'run-handles' "${PN}-examples-run-handles"
-	'Color' "${PN}-examples-Color"
-)
 
 RDEPEND=">=dev-haskell/async-2.2.3:=[profile?]
 	>=dev-haskell/enclosed-exceptions-1.0.1:=[profile?]
@@ -40,8 +34,40 @@ DEPEND="${RDEPEND}
 		dev-haskell/lifted-async )
 "
 
+example_exes=(
+	"drain"
+	"run-handles"
+	"Color"
+)
+
+src_prepare() {
+	for e in "${example_exes[@]}"; do
+		export CABAL_CHDEPS=(
+			"${CABAL_CHDEPS[@]}"
+			"Executable ${e}"
+			"executable ${PN}-examples-${e}"
+		)
+	done
+
+	haskell-cabal_src_prepare
+}
+
 src_configure() {
 	haskell-cabal_src_configure \
 		$(cabal_flag examples build-examples) \
 		$(cabal_flag lifted lifted)
+}
+
+pkg_postinst() {
+	ghc-package_pkg_postinst
+
+	if use examples; then
+		elog "The following example executables installed with this package have been"
+		elog "renamed to help prevent name collisions:"
+		elog ""
+
+		for e in "${example_exes[@]}"; do
+			elog "${e} -> ${PN}-examples-${e}"
+		done
+	fi
 }
