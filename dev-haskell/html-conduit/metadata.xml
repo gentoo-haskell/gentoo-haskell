@@ -8,4 +8,9 @@
 	<longdescription>
 		This package uses tagstream-conduit for its parser. It automatically balances mismatched tags, so that there shouldn't be any parse failures. It does not handle a full HTML document rendering, such as adding missing html and head tags.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">html-conduit</remote-id>
+		<remote-id type="github">snoyberg/xml</remote-id>
+		<remote-id type="github">snoyberg/xml.conduit</remote-id>
+	</upstream>
 </pkgmetadata>
