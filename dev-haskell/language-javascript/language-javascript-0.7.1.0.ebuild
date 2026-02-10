@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/erikd/language-javascript"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="
 	>=dev-haskell/blaze-builder-0.2:=[profile?]
