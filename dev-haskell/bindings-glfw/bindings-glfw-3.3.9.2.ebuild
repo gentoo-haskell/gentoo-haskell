@@ -26,7 +26,7 @@ CABAL_CHDEPS=(
 
 RDEPEND=">=dev-haskell/bindings-dsl-1.0:=[profile?] <dev-haskell/bindings-dsl-1.1:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	>=media-libs/glfw-3.3
+	=media-libs/glfw-3.3*
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
