@@ -629,6 +629,9 @@ src_prepare() {
 	# <https://gitlab.haskell.org/ghc/ghc/-/issues/25662>
 	eapply "${FILESDIR}/${PN}-9.12.2-hp2ps-c23-compat.patch"
 
+	# <https://gitlab.haskell.org/ghc/ghc/-/issues/26810>
+	eapply "${FILESDIR}/${PN}-9.8.4-fix-sphinx-9.patch"
+
 	bump_libs
 
 	eapply_user
