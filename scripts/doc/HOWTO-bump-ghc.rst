@@ -4,20 +4,20 @@ Quick-n-dirty start (aka. initial preparation):
 ==============================================
 
 - go to ``dev-haskell/hadrian``
-- copy latest ebuild
+  - copy the latest ebuild, ``pkgdev manifest --if-modified``
 - bump hadrian deps: ``ghc-toolchain`` and ``ghc-platform`` (mind CABAL_CORE_LIB_GHC_PV (``diff -urN ghc-9.12.{2,3}/utils/ghc-toolchain`` etc))
 - build hadrian
 - go to ``dev-lang/ghc/``
-- copy latest ebuild
-- #comment-out all binary ``URIs`` from there (as we don't have them yet)
-  - #comment-out all the options in ``yet_binary()``
-- adjust ``GHC_BRANCH_COMMIT``
-- when major-bumping: adjust ``GHC_BINARY_PV``
+  - copy latest ebuild
+  - #comment-out the Gentoo-made binary ``URIs`` from there (as we don't have them yet)
+    - #comment-out the relevant options in ``yet_binary()``
+  - adjust ``GHC_BRANCH_COMMIT``
+  - when major-bumping: adjust ``GHC_BINARY_PV``
 - look at ``CABAL_CORE_LIB_GHC_PV`` variable in ebuilds and check
   what ones you need to update. I usually look at ``ghc/libraries/*/*.cabal``
   in ghc source tarball.
   - ``grep -l -r CABAL_CORE_LIB_GHC_PV= */*/*.ebuild | sort``
-  - ``grep -i '^version:' **/*.cabal | sort``
+  - ``grep -i '^version:' **/*.cabal | grep -v tests | sort``
 
 Done! You can safely try to emerge your shiny new ghc, ideally with FEATURES=test!
 
