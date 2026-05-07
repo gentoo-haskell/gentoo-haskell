@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="debug +threaded"
 
-RDEPEND=">=app-office/hledger-1.50.2:=[profile?] <app-office/hledger-1.51:=[profile?]
+RDEPEND=">=app-office/hledger-1.52.1:=[profile?] <app-office/hledger-1.53:=[profile?]
 	>=dev-haskell/ansi-terminal-0.9:=[profile?]
 	dev-haskell/async:=[profile?]
 	>=dev-haskell/cmdargs-0.8:=[profile?]
@@ -27,7 +27,7 @@ RDEPEND=">=app-office/hledger-1.50.2:=[profile?] <app-office/hledger-1.51:=[prof
 	>=dev-haskell/extra-1.7.11:=[profile?]
 	>=dev-haskell/fsnotify-0.4.2.0:=[profile?] <dev-haskell/fsnotify-0.5:=[profile?]
 	>=dev-haskell/githash-0.1.6.2:=[profile?]
-	>=dev-haskell/hledger-lib-1.50.2:=[profile?] <dev-haskell/hledger-lib-1.51:=[profile?]
+	>=dev-haskell/hledger-lib-1.52.1:=[profile?] <dev-haskell/hledger-lib-1.53:=[profile?]
 	>=dev-haskell/megaparsec-7.0.0:=[profile?] <dev-haskell/megaparsec-9.8:=[profile?]
 	>=dev-haskell/microlens-0.4:=[profile?]
 	>=dev-haskell/microlens-platform-0.2.3.1:=[profile?]
@@ -37,9 +37,9 @@ RDEPEND=">=app-office/hledger-1.50.2:=[profile?] <app-office/hledger-1.51:=[prof
 	>=dev-haskell/text-zipper-0.4:=[profile?]
 	dev-haskell/vector:=[profile?]
 	>=dev-haskell/vty-6.1:=[profile?] <dev-haskell/vty-6.6:=[profile?]
-	>=dev-haskell/vty-crossplatform-0.4.0.0:=[profile?] <dev-haskell/vty-crossplatform-0.5.0.0:=[profile?]
+	>=dev-haskell/vty-crossplatform-0.4.0.0:=[profile?] <dev-haskell/vty-crossplatform-0.6.0.0:=[profile?]
 	>=dev-lang/ghc-9.6.2:=
-	>=dev-haskell/brick-2.1.1:=[profile?] <dev-haskell/brick-2.11:=[profile?]
+	>=dev-haskell/brick-2.1.1:=[profile?] <dev-haskell/brick-3:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.10.1.0
