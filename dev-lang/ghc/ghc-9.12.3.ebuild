@@ -15,6 +15,7 @@ fi
 
 PYTHON_COMPAT=( python3_{9..14} )
 LLVM_COMPAT=( {15..20} )
+LLVM_OPTIONAL=1
 
 inherit python-any-r1
 inherit autotools bash-completion-r1 flag-o-matic ghc-package
@@ -169,6 +170,7 @@ needs_python() {
 # we build binaries without profiling support
 REQUIRED_USE="
 	?? ( llvm unregisterised )
+	llvm? ( ${LLVM_REQUIRED_USE} )
 "
 
 # haskell libraries built with cabal in configure mode, #515354
