@@ -298,6 +298,11 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.4.0.1
 "
+BDEPEND="
+	~dev-haskell/hls-test-utils-2.12.0.0
+	dev-haskell/lsp-test
+	dev-util/shake
+"
 #	test? (
 #		# Test deps must be rewritten
 #	)
