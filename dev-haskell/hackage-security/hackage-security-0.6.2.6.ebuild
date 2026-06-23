@@ -10,7 +10,6 @@ CABAL_HACKAGE_REVISION=3
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite
 inherit haskell-cabal
-RESTRICT="test" # Requires Cabal-3.8 or newer
 
 DESCRIPTION="Hackage security library"
 HOMEPAGE="https://github.com/haskell/hackage-security"
@@ -19,6 +18,8 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 IUSE="+lukko"
+
+RESTRICT="test" # Requires Cabal-3.8 or newer
 
 PATCHES=(
 	"${FILESDIR}/${PN}-0.6.2.6-change-cabal-syntax-dep.patch"
