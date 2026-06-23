@@ -15,6 +15,8 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
+RESTRICT=test # requires network access
+
 RDEPEND=">=dev-haskell/aeson-1.0:=[profile?]
 	>=dev-haskell/attoparsec-aeson-2.1:=[profile?]
 	dev-haskell/auto-update:=[profile?]
