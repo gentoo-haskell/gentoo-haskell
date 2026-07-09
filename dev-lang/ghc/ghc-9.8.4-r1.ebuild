@@ -589,6 +589,9 @@ src_prepare() {
 
 	cd "${S}" # otherwise eapply will break
 
+	# https://bugs.gentoo.org/978912
+	eapply "${FILESDIR}/ghc-9.8.4-fix-terminfo-build.patch"
+
 	eapply "${FILESDIR}"/${PN}-8.10.1-allow-cross-bootstrap.patch
 
 	# https://gitlab.haskell.org/ghc/ghc/-/issues/22954
