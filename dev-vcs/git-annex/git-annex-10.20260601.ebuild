@@ -150,4 +150,5 @@ src_install() {
 	# See: <https://github.com/gentoo-haskell/gentoo-haskell/issues/1491>
 	dosym git-annex /usr/bin/git-annex-shell
 	dosym git-annex /usr/bin/git-remote-tor-annex
+	dosym git-annex /usr/bin/git-remote-annex
 }
