@@ -18,6 +18,7 @@ Quick-n-dirty start (aka. initial preparation):
   in ghc source tarball.
   - ``grep -l -r CABAL_CORE_LIB_GHC_PV= */*/*.ebuild | sort``
   - ``grep -i '^version:' **/*.cabal | grep -v tests | sort``
+- write/update the corresponding scripts/package.unmask/* file with the new bundled library versions
 
 Done! You can safely try to emerge your shiny new ghc, ideally with FEATURES=test!
 
