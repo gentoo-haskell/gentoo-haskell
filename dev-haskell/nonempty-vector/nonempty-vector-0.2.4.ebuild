@@ -25,6 +25,7 @@ RDEPEND=">=dev-haskell/primitive-0.6:=[profile?] <dev-haskell/primitive-0.10:=[p
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0
+	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
 	test? ( dev-haskell/quickcheck
 		dev-haskell/tasty
 		dev-haskell/tasty-quickcheck )
