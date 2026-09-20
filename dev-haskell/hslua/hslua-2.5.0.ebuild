@@ -25,7 +25,7 @@ RDEPEND=">=dev-haskell/hslua-aeson-2.3.1:=[profile?] <dev-haskell/hslua-aeson-2.
 	>=dev-haskell/hslua-packaging-2.4:=[profile?] <dev-haskell/hslua-packaging-2.5:=[profile?]
 	>=dev-haskell/hslua-typing-0.2:=[profile?] <dev-haskell/hslua-typing-0.3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	executable? ( dev-haskell/hslua-cli:=[profile?]
+	executable? ( dev-haskell/hslua-cli:=[-executable,profile?]
 			dev-haskell/hslua-module-path:=[profile?]
 			dev-haskell/hslua-module-system:=[profile?]
 			dev-haskell/hslua-module-text:=[profile?]
