@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
 RDEPEND="dev-haskell/case-insensitive:=[profile?]
 	>=dev-haskell/http-types-0.12:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
-	dev-haskell/network:=[profile?]
+	>=dev-haskell/network-3.2.10:=[profile?]
 	dev-haskell/network-byte-order:=[profile?]
 	>=dev-haskell/time-manager-0.2.4:=[profile?]
 	dev-haskell/utf8-string:=[profile?]
