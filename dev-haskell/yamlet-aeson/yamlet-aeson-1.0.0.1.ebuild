@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/yamlet-aeson"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-haskell/aeson-2.2.5.1:=[profile?] <dev-haskell/aeson-2.4:=[profile?]
 	>=dev-haskell/scientific-0.3.9:=[profile?]
