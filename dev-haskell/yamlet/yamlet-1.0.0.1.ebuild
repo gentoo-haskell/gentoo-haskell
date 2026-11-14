@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/yamlet"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-haskell/integer-logarithms-1.0.3.1:=[profile?]
 	>=dev-haskell/scientific-0.3.9:=[profile?]
