@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nikita-volkov/text-builder-core"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-haskell/quickcheck-2.14:=[profile?] <dev-haskell/quickcheck-3:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-3:=[profile?]
