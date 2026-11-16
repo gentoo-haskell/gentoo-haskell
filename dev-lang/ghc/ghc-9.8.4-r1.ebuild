@@ -37,6 +37,9 @@ SRC_URI="
 		arm64? ( elibc_glibc? (
 			https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-deb10-linux.tar.xz
 		) )
+		x86? ( elibc_glibc? (
+			https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-i386-deb9-linux.tar.xz
+		) )
 	)
 	test? (
 		https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz
@@ -57,6 +60,16 @@ yet_binary() {
 			return 0
 			;;
 		arm64)
+			case "${ELIBC}" in
+				glibc)
+					return 0
+					;;
+				*)
+					return 1
+					;;
+			esac
+			;;
+		x86)
 			case "${ELIBC}" in
 				glibc)
 					return 0
@@ -90,6 +103,16 @@ upstream_binary() {
 					;;
 			esac
 			;;
+		x86)
+			case "${ELIBC}" in
+				glibc)
+					return 0
+					;;
+				*)
+					return 1
+					;;
+			esac
+			;;
 		*)
 			return 1
 			;;
@@ -109,6 +132,9 @@ ghc_bin_path() {
 			else
 				ghc_bin_triple="aarch64-unknown-linux"
 			fi
+			;;
+		x86)
+			ghc_bin_triple="i386-unknown-linux"
 			;;
 		*)
 			die "Unknown ghc binary triple. The list here should match yet_binary."
@@ -133,7 +159,7 @@ BUMP_LIBRARIES=(
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
 RESTRICT="!test? ( test )"
 
@@ -161,6 +187,9 @@ BDEPEND="
 		app-text/docbook-xsl-stylesheets
 		dev-python/sphinx
 		>=dev-libs/libxslt-1.1.2
+	)
+	!ghcbootstrap? (
+		x86? ( elibc_glibc? ( sys-libs/ncurses-compat:5[tinfo] ) )
 	)
 	ghcbootstrap? (
 		ghcmakebinary? ( dev-haskell/hadrian[static] )
