@@ -13,7 +13,7 @@ HOMEPAGE="https://pandoc.org"
 
 LICENSE="GPL-2+"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+repl"
 CABAL_CHDEPS=(
 	'crypton               >= 0.30    && < 2.1' 'crypton               >= 0.30'
