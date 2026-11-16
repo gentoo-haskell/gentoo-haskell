@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/haskell-pkg-janitors/aws"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="examples"
 
 RESTRICT=test # requires aws account
