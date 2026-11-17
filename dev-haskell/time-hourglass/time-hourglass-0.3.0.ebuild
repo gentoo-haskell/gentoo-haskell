@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/mpilgrem/time-hourglass"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
