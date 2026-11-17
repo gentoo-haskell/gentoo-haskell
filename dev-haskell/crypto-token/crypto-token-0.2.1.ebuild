@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/crypto-token"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=dev-haskell/crypton-1.1.0:=[profile?]
 	>=dev-haskell/network-byte-order-0.1.6:=[profile?] <dev-haskell/network-byte-order-0.2:=[profile?]
