@@ -17,8 +17,8 @@ PYTHON_COMPAT=( python3_{9..14} )
 LLVM_COMPAT=( {15..20} )
 
 inherit python-any-r1
-inherit autotools bash-completion-r1 flag-o-matic ghc-package
-inherit toolchain-funcs prefix check-reqs llvm-r2 unpacker haskell-cabal verify-sig
+inherit autotools shell-completion flag-o-matic ghc-package toolchain-funcs
+inherit check-reqs llvm-r2 unpacker haskell-cabal verify-sig
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"
@@ -27,13 +27,16 @@ VERIFY_SIG_OPENPGP_KEY_PATH=/usr/share/openpgp-keys/ghc.asc
 
 GHC_BRANCH_COMMIT="f3225ed4b3f3c4309f9342c5e40643eeb0cc45da" # ghc-9.10.1-release
 
-GHC_BINARY_PV="9.8.1"
+GHC_BOOTSTRAP_VER="9.8.1"
 SRC_URI="
 	https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz
 	verify-sig? ( https://downloads.haskell.org/~ghc/${PV}/${P}-src.tar.xz.sig )
 	!ghcbootstrap? (
-		https://downloads.haskell.org/~ghc/${PV}/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
-		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
+		https://downloads.haskell.org/~ghc/${PV}/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BOOTSTRAP_VER}.tar.gz
+		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BOOTSTRAP_VER}/ghc-${GHC_BOOTSTRAP_VER}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
+		arm64? ( elibc_glibc? (
+			https://downloads.haskell.org/~ghc/${GHC_BOOTSTRAP_VER}/ghc-${GHC_BOOTSTRAP_VER}-aarch64-deb10-linux.tar.xz
+		) )
 	)
 	test? (
 		https://gitlab.haskell.org/ghc/ghc/-/archive/${GHC_BRANCH_COMMIT}.tar.gz
@@ -43,49 +46,23 @@ SRC_URI="
 
 GHC_BUGGY_TESTS=(
 	# Actual stderr output differs from expected:
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o:
+	# missing .note.GNU-stack section implies executable stack
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is
+	# deprecated and will be removed in a future version of the linker
 	"testsuite/tests/driver/recomp015"
 )
 
-yet_binary() {
-	case ${ARCH} in
-		amd64)
-			return 0
-			;;
-		*)
-			return 1
-			;;
-	esac
-}
-
-# We are using the upstream static Alpine Linux binaries to bootstrap some
-# archs. These binaries have different properties than the ones we build
-# ourselves, so we need a way to check to see if they are in use.
-upstream_binary() {
-	case ${ARCH} in
-		amd64)
-			return 0
-			;;
-		*)
-			return 1
-			;;
-	esac
-}
-
 # The location of the unpacked Alpine Linux tarball
-ghc_bin_path() {
-	local ghc_bin_triple
+ghc_bootstrap_triple() {
 	case ${ARCH} in
 		amd64)
-			ghc_bin_triple="x86_64-unknown-linux"
+			echo "x86_64-unknown-linux"
 			;;
-		*)
-			die "Unknown ghc binary triple. The list here should match yet_binary."
+		arm64)
+			use elibc_glibc && echo "aarch64-unknown-linux"
 			;;
 	esac
-
-	echo "${WORKDIR}/ghc-${GHC_BINARY_PV}-${ghc_bin_triple}"
 }
 
 GHC_PV=${PV}
@@ -110,7 +87,7 @@ BUMP_LIBRARIES=(
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="big-endian doc elfutils ghcbootstrap ghcmakebinary +gmp llvm numa profile test unregisterised"
+IUSE="big-endian doc elfutils ghcbootstrap +gmp llvm numa profile test unregisterised"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
@@ -139,7 +116,6 @@ BDEPEND="
 		>=dev-libs/libxslt-1.1.2
 	)
 	ghcbootstrap? (
-		ghcmakebinary? ( dev-haskell/hadrian[static] )
 		dev-haskell/alex
 		~dev-haskell/hadrian-${PV}
 	)
@@ -319,76 +295,6 @@ ghc_setup_cflags() {
 	done
 }
 
-# substitutes string $1 to $2 in files $3 $4 ...
-relocate_path() {
-	local from=$1
-	local   to=$2
-	shift 2
-	local file=
-	for file in "$@"
-	do
-		sed -i -e "s|$from|$to|g" \
-			"$file" || die "path relocation failed for '$file'"
-	done
-}
-
-# changes hardcoded ghc paths and updates package index
-# $1 - new absolute root path
-relocate_ghc() {
-	local to=$1 ghc_v=${BIN_PV}
-
-	# libdir for prebuilt binary and for current system may mismatch
-	# It does for prefix installation for example: bug #476998
-	local bin_ghc_prefix=${WORKDIR}/usr
-	local bin_libpath=$(echo "${bin_ghc_prefix}"/lib*)
-	local bin_libdir=${bin_libpath#${bin_ghc_prefix}/}
-
-	# backup original script to use it later after relocation
-	local gp_back="${T}/ghc-pkg-${ghc_v}-orig"
-	cp "${WORKDIR}/usr/bin/ghc-pkg-${ghc_v}" "$gp_back" || die "unable to backup ghc-pkg wrapper"
-
-	if [[ ${bin_libdir} != $(get_libdir) ]]; then
-		einfo "Relocating '${bin_libdir}' to '$(get_libdir)' (bug #476998)"
-		# moving the dir itself is not strictly needed
-		# but then USE=binary would result in installing
-		# in '${bin_libdir}'
-		mv "${bin_ghc_prefix}/${bin_libdir}" "${bin_ghc_prefix}/$(get_libdir)" || die
-
-		relocate_path "/usr/${bin_libdir}" "/usr/$(get_libdir)" \
-			"${WORKDIR}/usr/bin/ghc-${ghc_v}" \
-			"${WORKDIR}/usr/bin/ghci-${ghc_v}" \
-			"${WORKDIR}/usr/bin/ghc-pkg-${ghc_v}" \
-			"${WORKDIR}/usr/bin/hsc2hs" \
-			"${WORKDIR}/usr/bin/runghc-${ghc_v}" \
-			"$gp_back" \
-			"${WORKDIR}/usr/$(get_libdir)/${PN}-${ghc_v}/lib/package.conf.d/"*
-	fi
-
-	# Relocate from /usr to ${EPREFIX}/usr
-	relocate_path "/usr" "${to}/usr" \
-		"${WORKDIR}/usr/bin/ghc-${ghc_v}" \
-		"${WORKDIR}/usr/bin/ghci-${ghc_v}" \
-		"${WORKDIR}/usr/bin/ghc-pkg-${ghc_v}" \
-		"${WORKDIR}/usr/bin/haddock-ghc-${ghc_v}" \
-		"${WORKDIR}/usr/bin/hp2ps" \
-		"${WORKDIR}/usr/bin/hpc" \
-		"${WORKDIR}/usr/bin/hsc2hs" \
-		"${WORKDIR}/usr/bin/runghc-${ghc_v}" \
-		"${WORKDIR}/usr/$(get_libdir)/${PN}-${ghc_v}/lib/package.conf.d/"*
-
-	# this one we will use to regenerate cache
-	# so it should point to current tree location
-	relocate_path "/usr" "${WORKDIR}/usr" "$gp_back"
-
-	if use prefix; then
-		hprefixify "${bin_libpath}"/${PN}*/settings
-	fi
-
-	# regenerate the binary package cache
-	"$gp_back" recache || die "failed to update cache after relocation"
-	rm "$gp_back"
-}
-
 ghc-check-reqs() {
 	# These are pessimistic values (slightly bigger than worst-case)
 	# Worst case is UNREG USE=profile ia64. See bug #611866 for some
@@ -462,13 +368,10 @@ pkg_setup() {
 	[[ ${MERGE_TYPE} == binary ]] && return
 
 	if use ghcbootstrap; then
-		ewarn "You requested ghc bootstrapping, this is usually only used"
-		ewarn "by Gentoo developers to make binary .tbz2 packages."
-
 		[[ -z $(type -P ghc) ]] && \
 			die "Could not find a ghc to bootstrap with."
 	else
-		if ! yet_binary; then
+		if [[ -z "$(ghc_bootstrap_triple)" ]]; then
 			eerror "Please try emerging with USE=ghcbootstrap and report build"
 			eerror "success or failure to the haskell team (haskell@gentoo.org)"
 			die "No binary available for '${ARCH}' arch yet, USE=ghcbootstrap"
@@ -510,19 +413,6 @@ src_prepare() {
 	ghc_setup_toolchain
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap && ! upstream_binary; then
-		# Make GHC's settings file comply with user's settings
-		GHC_SETTINGS="$(ghc_bin_path)/lib/settings"
-
-		sed -i "s/,(\"C compiler command\", \".*\")/,(\"C compiler command\", \"${CC}\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"C++ compiler command\", \".*\")/,(\"C++ compiler command\", \"${CXX}\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"Haskell CPP command\", \".*\")/,(\"Haskell CPP command\", \"${CC}\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"ld command\", \".*\")/,(\"ld command\", \"${LD}\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"Merge objects command\", \".*\")/,(\"Merge objects command\", \"${LD}\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"ar command\", \".*\")/,(\"ar command\", \"${AR}\")/" "${GHC_SETTINGS}" || die
-		sed -i "s/,(\"ranlib command\", \".*\")/,(\"ranlib command\", \"${RANLIB}\")/" "${GHC_SETTINGS}" || die
-	fi
-
 	# binpkg may have been built with FEATURES=splitdebug
 	if [[ -d "${WORKDIR}/usr/lib/debug" ]] ; then
 		rm -rf "${WORKDIR}/usr/lib/debug" || die
@@ -533,12 +423,9 @@ src_prepare() {
 	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/include/"{ffi.h,ffitarget.h}
 	do
 		mkdir -p "$(dirname "${f}")"
-		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
+		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi |
+			sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
 	done
-
-	if ! use ghcbootstrap && ! upstream_binary; then
-		relocate_ghc "${WORKDIR}"
-	fi
 
 	sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_PERSISTENT_FLAGS}|" \
 		"${S}/ghc/ghc.wrapper"
@@ -689,7 +576,7 @@ src_configure() {
 	# Get ghc/hadrian/alex from the binary
 	# except when bootstrapping we just pick ghc up off the path
 	if ! use ghcbootstrap; then
-		export PATH="${S}/hadrian/bootstrap/_build/bin:${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin:${PATH}"
+		export PATH="${S}/hadrian/bootstrap/_build/bin:${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BOOTSTRAP_VER}/bin:${PATH}"
 	fi
 
 	local econf_args=()
@@ -721,18 +608,6 @@ src_configure() {
 		econf_args+=(--host=${CBUILD})
 	fi
 
-	if use ghcmakebinary; then
-		# When building booting libary we are trying to
-		# bundle or restrict most of external depends
-		# with unstable ABI:
-		#  - embed libffi (default GHC behaviour)
-		#  - disable ncurses support for ghci (via haskeline)
-		#    https://bugs.gentoo.org/557478
-		#  - disable ncurses support for ghc-pkg
-		echo "*.haskeline.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-		echo "*.ghc-pkg.cabal.configure.opts += --flag=-terminfo" >> _build/hadrian.settings
-	fi
-
 	# User-supplied block to be added to hadrian.settings
 	echo "${HADRIAN_SETTINGS_EXTRA}" >> _build/hadrian.settings
 
@@ -744,7 +619,7 @@ src_configure() {
 	if ! use ghcbootstrap; then
 		einfo "Installing bootstrap GHC"
 
-		( cd "$(ghc_bin_path)" || die
+		( cd "${WORKDIR}/ghc-${GHC_BOOTSTRAP_VER}-$(ghc_bootstrap_triple)" || die
 			econf "${econf_args[@]}" \
 				--prefix="" \
 				--libdir="/$(get_libdir)" || die
@@ -754,8 +629,8 @@ src_configure() {
 		einfo "Bootstrapping hadrian"
 		( cd "${S}/hadrian/bootstrap" || die
 			./bootstrap.py \
-				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BINARY_PV}/bin/ghc" \
-				-s "${DISTDIR}/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz" || die "Hadrian bootstrap failed"
+				-w "${WORKDIR}/ghc-bin/$(get_libdir)/ghc-${GHC_BOOTSTRAP_VER}/bin/ghc" \
+				-s "${DISTDIR}/hadrian-bootstrap-sources-${GHC_BOOTSTRAP_VER}.tar.gz" || die "Hadrian bootstrap failed"
 		)
 	fi
 
