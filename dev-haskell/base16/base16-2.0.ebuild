@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/emilypi/base16"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="simd"
 
 RDEPEND=">=dev-haskell/primitive-0.6:=[profile?] <dev-haskell/primitive-0.10:=[profile?]
