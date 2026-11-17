@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/kazu-yamamoto/crypton-connection"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=dev-haskell/crypton-socks-0.6:=[profile?]
 	>=dev-haskell/crypton-x509-store-1.9.0:=[profile?] <dev-haskell/crypton-x509-store-1.11:=[profile?]
