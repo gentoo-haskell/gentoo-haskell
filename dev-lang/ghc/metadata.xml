@@ -6,7 +6,6 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="binary">Install the binary version directly, rather than using it to build the source version.</flag>
 		<flag name="elfutils">Enable DWARF-based backtraces using <pkg>dev-libs/elfutils</pkg>.</flag>
 		<flag name="ghcbootstrap">Bootstrap GHC from an existing GHC installation.</flag>
 		<flag name="ghcmakebinary">Internal: Build binary friendly for redistribution.</flag>
