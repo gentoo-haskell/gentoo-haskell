@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/hpke"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=dev-haskell/base16-bytestring-1.0:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
 	>=dev-haskell/crypton-2.1.8:=[profile?] <dev-haskell/crypton-2.3:=[profile?]
