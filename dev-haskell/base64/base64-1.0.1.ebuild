@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/emilypi/base64"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 CABAL_CHDEPS=(
 	'base           >=4.18     && <4.23' 'base           >=4.14'
