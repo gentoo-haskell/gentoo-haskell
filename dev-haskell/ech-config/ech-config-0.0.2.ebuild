@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/ech-config"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="devel"
 
 RDEPEND="dev-haskell/base16-bytestring:=[profile?]
