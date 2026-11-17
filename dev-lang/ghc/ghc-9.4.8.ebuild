@@ -17,8 +17,8 @@ PYTHON_COMPAT=( python3_{9..14} )
 LLVM_COMPAT=( {15..20} )
 
 inherit python-any-r1
-inherit autotools bash-completion-r1 flag-o-matic ghc-package
-inherit toolchain-funcs prefix check-reqs llvm-r2 unpacker haskell-cabal verify-sig
+inherit autotools shell-completion flag-o-matic ghc-package toolchain-funcs
+inherit prefix check-reqs llvm-r2 unpacker haskell-cabal verify-sig
 
 DESCRIPTION="The Glasgow Haskell Compiler"
 HOMEPAGE="https://www.haskell.org/ghc/"

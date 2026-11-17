@@ -18,7 +18,7 @@ LLVM_COMPAT=( {15..20} )
 LLVM_OPTIONAL=1
 
 inherit python-any-r1
-inherit autotools bash-completion-r1 flag-o-matic ghc-package
+inherit autotools shell-completion flag-o-matic ghc-package
 inherit toolchain-funcs prefix check-reqs llvm-r2 unpacker haskell-cabal verify-sig
 
 DESCRIPTION="The Glasgow Haskell Compiler"
