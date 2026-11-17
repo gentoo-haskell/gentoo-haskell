@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/kazu-yamamoto/crypton-certificate"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=dev-haskell/crypton-1.1.0:=[profile?] <dev-haskell/crypton-2.3:=[profile?]
 	>=dev-haskell/crypton-asn1-encoding-0.10.0:=[profile?] <dev-haskell/crypton-asn1-encoding-0.11:=[profile?]
