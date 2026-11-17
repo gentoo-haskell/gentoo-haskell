@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/mpilgrem/crypton-pem"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=dev-haskell/base64-0.4.2.2:=[profile?]
 	dev-haskell/text:=[profile?]
