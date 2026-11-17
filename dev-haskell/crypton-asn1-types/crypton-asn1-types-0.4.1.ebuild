@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/mpilgrem/crypton-asn1"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="dev-haskell/base16:=[profile?]
 	<dev-haskell/time-hourglass-0.4:=[profile?]
