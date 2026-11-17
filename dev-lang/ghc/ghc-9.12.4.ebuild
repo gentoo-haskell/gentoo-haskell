@@ -36,8 +36,12 @@ SRC_URI="
 		https://downloads.haskell.org/~ghc/${PV}/hadrian-bootstrap-sources/hadrian-bootstrap-sources-${GHC_BINARY_PV}.tar.gz
 		amd64? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-x86_64-alpine3_12-linux-static-int_native.tar.xz )
 		arm64? (
-			elibc_glibc? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-deb11-linux.tar.xz )
-			elibc_musl? ( https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-alpine3_18-linux.tar.xz )
+			elibc_glibc? (
+				https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-deb11-linux.tar.xz
+			)
+			elibc_musl? (
+				https://downloads.haskell.org/~ghc/${GHC_BINARY_PV}/ghc-${GHC_BINARY_PV}-aarch64-alpine3_18-linux.tar.xz
+			)
 		)
 	)
 	test? (
@@ -48,8 +52,10 @@ SRC_URI="
 
 GHC_BUGGY_TESTS=(
 	# Actual stderr output differs from expected:
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o:
+	# missing .note.GNU-stack section implies executable stack
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is
+	# deprecated and will be removed in a future version of the linker
 	"testsuite/tests/driver/recomp015"
 )
 
@@ -543,7 +549,8 @@ src_prepare() {
 	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/include/"{ffi.h,ffitarget.h}
 	do
 		mkdir -p "$(dirname "${f}")"
-		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
+		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi |
+			sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
 	done
 
 	if ! use ghcbootstrap && ! upstream_binary; then

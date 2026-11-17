@@ -46,8 +46,10 @@ SRC_URI="
 
 GHC_BUGGY_TESTS=(
 	# Actual stderr output differs from expected:
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o:
+	# missing .note.GNU-stack section implies executable stack
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is
+	# deprecated and will be removed in a future version of the linker
 	"testsuite/tests/driver/recomp015"
 )
 
@@ -556,7 +558,8 @@ src_prepare() {
 	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/include/"{ffi.h,ffitarget.h}
 	do
 		mkdir -p "$(dirname "${f}")"
-		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
+		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi |
+			sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
 	done
 
 	if ! use ghcbootstrap && ! upstream_binary; then
@@ -710,8 +713,6 @@ src_configure() {
 		esac
 	done
 
-
-
 	### Prepare hadrian build settings files
 
 	mkdir _build
@@ -725,7 +726,7 @@ src_configure() {
 	# installed to the system)
 	echo "stage1.*.cabal.configure.opts += --disable-library-stripping" >> _build/hadrian.settings
 
-    ### Gather configuration variables for GHC
+	### Gather configuration variables for GHC
 
 	# Get ghc from the binary
 	# except when bootstrapping we just pick ghc up off the path
@@ -775,9 +776,6 @@ src_configure() {
 
 	einfo "Final _build/hadrian.settings:"
 	cat _build/hadrian.settings || die
-
-
-
 
 	### Bootstrap Hadrian, then final configure (should this be here or in src_compile?)
 

@@ -43,8 +43,10 @@ SRC_URI="
 
 GHC_BUGGY_TESTS=(
 	# Actual stderr output differs from expected:
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o: missing .note.GNU-stack section implies executable stack
-	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: warning: ManySections.o:
+	# missing .note.GNU-stack section implies executable stack
+	# +/usr/libexec/gcc/x86_64-pc-linux-gnu/ld: NOTE: This behaviour is
+	# deprecated and will be removed in a future version of the linker
 	"testsuite/tests/driver/recomp015"
 )
 
@@ -533,7 +535,8 @@ src_prepare() {
 	for f in "${WORKDIR}/usr/$(get_libdir)/${PN}-${BIN_PV}/include/"{ffi.h,ffitarget.h}
 	do
 		mkdir -p "$(dirname "${f}")"
-		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi | sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
+		[[ -e "${f}" ]] || ln -sf "$($(tc-getPKG_CONFIG) --cflags-only-I libffi |
+			sed "s/-I//g" | tr -d " ")/$(basename "${f}")" "${f}" || die
 	done
 
 	if ! use ghcbootstrap && ! upstream_binary; then
