@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/kazu-yamamoto/crypton"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="check-alignment cpu_flags_x86_aes cpu_flags_x86_pclmul cpu_flags_x86_sse2 +integer-gmp old-toolchain-inliner +support-s2n-bignum +target-attributes"
 CABAL_CHDEPS=(
 	'base16 >=1.0 && <1.1,' 'base16 >=1.0,'
