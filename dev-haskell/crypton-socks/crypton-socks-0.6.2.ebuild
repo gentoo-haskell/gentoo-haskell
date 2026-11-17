@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/mpilgrem/crypton-socks"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="example +network-3-0-0-0"
 
 RDEPEND=">=dev-haskell/cereal-0.3.1:=[profile?]
