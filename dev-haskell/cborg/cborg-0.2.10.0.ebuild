@@ -18,6 +18,10 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 
+PATCHES=(
+	"${FILESDIR}/${P}-fix-32bit.patch"
+)
+
 CABAL_CHDEPS=(
 	'base                    >= 4.11    && < 4.21' 'base          >=4.10     && <6'
 	'ghc-prim                >= 0.3.1.0 && < 0.12' 'ghc-prim                >= 0.3.1.0'
