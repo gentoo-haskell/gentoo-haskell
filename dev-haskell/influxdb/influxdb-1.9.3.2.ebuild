@@ -16,6 +16,12 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="examples"
 RESTRICT+="test" #requires a running influxdb instance
+CABAL_CHDEPS=(
+	'base >= 4.11 && < 4.21' 'base >= 4.11'
+	'Cabal >= 1.24 && < 3.13' 'Cabal >= 1.24'
+	'doctest >= 0.11.3 && < 0.23' 'doctest >= 0.11.3'
+	'template-haskell < 2.23' 'template-haskell'
+	)
 
 RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	<dev-haskell/attoparsec-0.15:=[profile?]
@@ -37,9 +43,9 @@ RDEPEND=">=dev-haskell/aeson-0.7:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	!examples? ( <dev-haskell/foldl-1.5:=[profile?] )
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-3.13
+	>=dev-haskell/cabal-3.4.1.0
 	>=dev-haskell/cabal-doctest-1 <dev-haskell/cabal-doctest-1.1
-	test? ( >=dev-haskell/doctest-0.11.3 <dev-haskell/doctest-0.24
+	test? ( >=dev-haskell/doctest-0.11.3
 		>=dev-haskell/raw-strings-qq-1.1 <dev-haskell/raw-strings-qq-1.2
 		<dev-haskell/tasty-1.6
 		<dev-haskell/tasty-hunit-1.11 )
