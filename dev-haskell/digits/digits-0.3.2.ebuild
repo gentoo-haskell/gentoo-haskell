@@ -13,7 +13,7 @@ HOMEPAGE="https://hackage.haskell.org/package/digits"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="<dev-haskell/quickcheck-3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
