@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snoyberg/http-client"
 
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RESTRICT=test # requires network acess
 
