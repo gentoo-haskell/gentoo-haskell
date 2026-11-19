@@ -1,0 +1,5 @@
+amd64 haskell/ghc-9.4 exp
+amd64 haskell/ghc-9.6 exp
+amd64 haskell/ghc-9.8 exp
+amd64 haskell/ghc-9.10 exp
+amd64 haskell/ghc-9.12 exp
