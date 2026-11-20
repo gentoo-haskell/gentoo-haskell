@@ -1,0 +1,78 @@
+From https://github.com/yesodweb/yesod/pull/1916
+From: =?UTF-8?q?Justus=20Sagem=C3=BCller?= <justussa@kth.se>
+Date: Mon, 20 Apr 2026 12:14:37 +0200
+Subject: [PATCH 1/5] Compatibility with crypton-1.1.
+
+That package has switched from `memory` to the fork `ram`
+(https://github.com/kazu-yamamoto/crypton/commit/7912865682ad497edc04dae00ed215d8948ada30).
+`yesod-static` still imported `Data.ByteArray` from `memory` though, leading
+to a confusing error about a missing instance of `ByteArrayAccess (Digest MD5)`, because
+`ByteArrayAccess` comes from `memory` but `crypton` only defines an instance of the
+`ram` version of `ByteArrayAccess`.
+--- a/Yesod/Static.hs
++++ b/Yesod/Static.hs
+@@ -7,6 +7,7 @@
+ {-# LANGUAGE RecordWildCards #-}
+ {-# LANGUAGE TemplateHaskell #-}
+ {-# LANGUAGE TypeFamilies #-}
++{-# LANGUAGE PackageImports #-}
+ ---------------------------------------------------------
+ --
+ -- | Serve static files from a Yesod app.
+@@ -79,7 +80,11 @@ import Crypto.Hash.Conduit (hashFile, sinkHash)
+ import Crypto.Hash (MD5, Digest)
+ import Control.Monad.Trans.State
+ 
+-import qualified Data.ByteArray as ByteArray
++#if MIN_VERSION_crypton(1,1,0)
++import qualified "ram" Data.ByteArray as ByteArray
++#else
++import qualified "memory" Data.ByteArray as ByteArray
++#endif
+ import qualified Data.ByteString.Base64
+ import qualified Data.ByteString.Char8 as S8
+ import qualified Data.ByteString.Lazy as L
+--- a/yesod-static.cabal
++++ b/yesod-static.cabal
+@@ -46,6 +46,7 @@ library
+                    , hjsmin
+                    , http-types            >= 0.7
+                    , memory
++                   , ram                   >= 0.21 && < 0.22
+                    , mime-types            >= 0.1
+                    , process
+                    , template-haskell
+
+From 58c9fb76c34a34633c480758640a9c844ab4fbdd Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Justus=20Sagem=C3=BCller?= <justussa@kth.se>
+Date: Mon, 22 Jun 2026 13:08:36 +0200
+Subject: [PATCH 2/5] Relax `ram` dependency.
+
+--- a/yesod-static.cabal
++++ b/yesod-static.cabal
+@@ -46,7 +46,7 @@ library
+                    , hjsmin
+                    , http-types            >= 0.7
+                    , memory
+-                   , ram                   >= 0.21 && < 0.22
++                   , ram                   >= 0.21 && < 0.23
+                    , mime-types            >= 0.1
+                    , process
+                    , template-haskell
+
+From 23f8d636842023c7cde36109ea24258df0d5ecd6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Justus=20Sagem=C3=BCller?= <justussa@kth.se>
+Date: Mon, 29 Jun 2026 14:29:40 +0200
+Subject: [PATCH 5/5] Ensure the `ram` package is also in scope when compiling
+ the test suite.
+
+--- a/yesod-static.cabal
++++ b/yesod-static.cabal
+@@ -108,6 +108,7 @@ test-suite tests
+                    , hjsmin
+                    , http-types
+                    , memory
++                   , ram
+                    , mime-types
+                    , process
+                    , template-haskell

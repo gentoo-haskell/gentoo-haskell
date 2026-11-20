@@ -14,6 +14,9 @@ HOMEPAGE="https://www.yesodweb.com/"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
+PATCHES=(
+	"${FILESDIR}/${P}-ram.patch"
+)
 
 RDEPEND="dev-haskell/async:=[profile?]
 	>=dev-haskell/attoparsec-0.10:=[profile?]
