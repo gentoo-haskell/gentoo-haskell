@@ -1,0 +1,38 @@
+From https://github.com/solidsnack/bytestring-nums/pull/2
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Fri, 20 Nov 2026 15:32:04 +0100
+Subject: [PATCH] compatibility with recent Prelude
+
+--- a/Data/ByteString/Nums/Careless/Float.hs
++++ b/Data/ByteString/Nums/Careless/Float.hs
+@@ -9,7 +9,7 @@
+ module Data.ByteString.Nums.Careless.Float where
+ 
+ 
+-import Prelude hiding (break, length, null, drop, tail, head)
++import Prelude hiding (break, length, null, drop, tail, head, foldl')
+ import Data.ByteString hiding (head, break, pack)
+ import Data.ByteString.Char8 hiding (inits, elem, last, foldl')
+ import qualified Data.ByteString.Lazy.Internal as Lazy
+--- a/Data/ByteString/Nums/Careless/Hex.hs
++++ b/Data/ByteString/Nums/Careless/Hex.hs
+@@ -9,7 +9,7 @@
+ module Data.ByteString.Nums.Careless.Hex where
+ 
+ 
+-import Prelude hiding (head, tail, drop)
++import Prelude hiding (head, tail, drop, foldl')
+ import Data.Word
+ import Data.Int
+ import Data.ByteString hiding (head, pack)
+--- a/Data/ByteString/Nums/Careless/Int.hs
++++ b/Data/ByteString/Nums/Careless/Int.hs
+@@ -9,7 +9,7 @@
+ module Data.ByteString.Nums.Careless.Int where
+ 
+ 
+-import Prelude hiding (head, tail, null)
++import Prelude hiding (head, tail, null, foldl')
+ import Data.Word
+ import Data.Int
+ import Data.ByteString hiding (head, pack)

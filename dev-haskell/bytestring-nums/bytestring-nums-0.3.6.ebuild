@@ -11,6 +11,9 @@ inherit haskell-cabal
 DESCRIPTION="Parse numeric literals from ByteStrings"
 HOMEPAGE="https://github.com/solidsnack/bytestring-nums"
 SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
+PATCHES=(
+	"${FILESDIR}/${P}-prelude.patch"
+)
 
 LICENSE="BSD"
 SLOT="0/${PV}"
