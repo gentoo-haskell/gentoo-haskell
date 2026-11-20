@@ -9,8 +9,13 @@
 		<flag name="cairo">Enable the cairo backend</flag>
 		<flag name="canvas">Enable the Haskell-native Canvas backend</flag>
 		<flag name="gtk">Enable the GTK backend</flag>
+		<flag name="pgf">Enable the Haskell-native PGF backend</flag>
 		<flag name="postscript">Enable the Haskell-native PostScript backend</flag>
 		<flag name="rasterific">Enable the Haskell-native Rasterific backend</flag>
 		<flag name="svg">Enable the Haskell-native SVG backend</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">diagrams</remote-id>
+		<remote-id type="github">diagrams/diagrams</remote-id>
+	</upstream>
 </pkgmetadata>
