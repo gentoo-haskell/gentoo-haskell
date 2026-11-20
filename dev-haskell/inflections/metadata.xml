@@ -7,6 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">inflections</remote-id>
-		<remote-id type="github">stackbuilders/inflections-hs</remote-id>
+		<remote-id type="github">mpscholten/inflections-hs</remote-id>
 	</upstream>
 </pkgmetadata>
