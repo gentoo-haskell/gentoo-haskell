@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'base             >= 4.7.0.2 && < 4.18' 'base >=4.7.0.2'
+	'containers       >= 0.4.2.1 && < 0.7' 'containers       >= 0.4.2.1'
 )
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
