@@ -14,6 +14,9 @@ HOMEPAGE="https://github.com/stastnypremysl/curly-expander"
 LICENSE="LGPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'base >= 4.14 && <4.20,' 'base >= 4.14,'
+)
 
 RDEPEND=">=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-2.2:=[profile?]
