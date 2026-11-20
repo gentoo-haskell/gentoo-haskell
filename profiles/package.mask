@@ -1,22 +1,9 @@
-# GdeVolpiano <xavier@wheredoibegin.fr> (2026-01-19)
+# GdeVolpiano <xavier@wheredoibegin.fr> (2026-11-20)
 #
-# dev-haskell/random-fu is abandonned upstream
-# https://github.com/haskell-numerics/random-fu/issues/100
-# Remove 2026-03-19
+# dev-haskell/base-noprelude is not compatible with ghc 9.* versions
+# Remove 2027-01-19
 
-dev-haskell/random-fu
-dev-haskell/rvar
-dev-haskell/dice
-dev-haskell/goa
-dev-haskell/lambdabot-core
-dev-haskell/lambdabot-haskell-plugins
-dev-haskell/lambdabot-irc-plugins
-dev-haskell/lambdabot-misc-plugins
-dev-haskell/lambdabot-novelty-plugins
-dev-haskell/lambdabot-reference-plugins
-dev-haskell/lambdabot-social-plugins
-dev-haskell/misfortune
-net-irc/lambdabot
+dev-haskell/base-noprelude
 
 #
 # hololeap <hololeap@protonmail.com> (2025-06-14)
