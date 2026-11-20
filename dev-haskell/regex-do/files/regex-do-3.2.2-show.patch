@@ -1,0 +1,27 @@
+From https://github.com/ciez/regex-do/pull/4
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Fri, 20 Nov 2026 15:48:40 +0100
+Subject: [PATCH] updating for recent Text
+
+--- a/src/Text/Regex/Do/Replace/Template.hs
++++ b/src/Text/Regex/Do/Replace/Template.hs
+@@ -35,7 +35,7 @@ import Prelude as P hiding ((<),(>))
+ import Text.Regex.Do.Replace.Fast as S (replace)
+ import Text.Regex.Do.Type.Convert
+ import Data.ByteString as B
+-import Data.Text as T
++import Data.Text as T hiding (show)
+ 
+ 
+ type Formatable a = (Template a [a], Template a [(a,a)])
+--- a/test/TestRegex/TestFormat.hs
++++ b/test/TestRegex/TestFormat.hs
+@@ -6,7 +6,7 @@ import Text.Regex.Do.Pad
+ import Data.String
+ import Text.Regex.Do.Type.Convert
+ import Data.ByteString
+-import Data.Text as T
++import Data.Text as T hiding (show)
+ import Prelude hiding ((<),(>))
+ 
+ 

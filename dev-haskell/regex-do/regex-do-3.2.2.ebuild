@@ -15,7 +15,9 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+PATCHES=(
+	"${FILESDIR}/${P}-show.patch"
+)
 
 RDEPEND=">=dev-haskell/regex-base-0.93.0:=[profile?]
 	>=dev-haskell/regex-pcre-0.94.0:=[profile?]
