@@ -16,6 +16,9 @@ SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+PATCHES=(
+	"${FILESDIR}/${P}-setup.patch"
+	)
 
 RESTRICT=test # needs local mysql
 

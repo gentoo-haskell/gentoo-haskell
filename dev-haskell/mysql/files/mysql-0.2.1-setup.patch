@@ -1,0 +1,46 @@
+From https://github.com/paul-rouse/mysql/pull/49
+From: parsonsmatt <parsonsmatt@gmail.com>
+Date: Mon, 17 Mar 2025 15:18:13 -0600
+Subject: [PATCH] Fix build for new GHC
+
+--- a/Setup.hs
++++ b/Setup.hs
+@@ -5,7 +5,7 @@
+ {- OPTIONS_GHC -Wall #-}
+ 
+ #ifndef MIN_VERSION_Cabal
+-#define MIN_VERSION_Cabal(x,y,z) 0 
++#define MIN_VERSION_Cabal(x,y,z) 0
+ #endif
+ 
+ import Control.Exception (IOException, catch)
+@@ -17,6 +17,13 @@ import Distribution.Simple.LocalBuildInfo
+ import Distribution.Simple.Program
+ import Distribution.Verbosity
+ 
++#if MIN_VERSION_Cabal(3,14,0)
++import Distribution.Utils.Path (makeSymbolicPath)
++#else
++makeSymbolicPath :: String -> String
++makeSymbolicPath = id
++#endif
++
+ -- A Cabal 1.16 vs 1.18 compatibility hack, as in 1.18
+ -- findProgramLocation has a new (unused in this case) parameter.
+ -- ConstOrId adds this parameter when types say it is mandatory.
+@@ -79,13 +86,13 @@ mysqlBuildInfo lbi = do
+                 else []
+ 
+   return emptyBuildInfo {
+-    extraLibDirs = map (drop 2) . filter ("-L" `isPrefixOf`) $
++    extraLibDirs = map (makeSymbolicPath . drop 2) . filter ("-L" `isPrefixOf`) $
+                    nub (libsSys ++ libs)
+   , extraLibs = map (drop 2) . filter ("-l" `isPrefixOf`) .
+                 filter (/= "-lmygcc") $
+                 filter (/= "-lmysqlclient_r") $
+                 nub (libsSys ++ libs ++ libsR)
+-  , includeDirs = map (drop 2) include
++  , includeDirs = map (makeSymbolicPath . drop 2) include
+   }
+   where
+     -- Recover from an error by returning an empty list.
