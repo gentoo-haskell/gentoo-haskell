@@ -3,6 +3,26 @@
 # Removal on 2026-12-21.
 dev-util/nixfmt
 
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Depends on cipher-aes128 which is lastrited
+# Removal on 2026-12-21.
+dev-haskell/drbg
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Deprecated
+# Removal on 2026-12-21.
+dev-util/nixfmt
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Upstream archived in 2023. Doesn't compile anymore.
+# Removal on 2026-12-21.
+dev-haskell/cipher-aes128
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Deprecated
+# Removal on 2026-12-21.
+dev-util/nixfmt
+
 # GdeVolpiano <xavier@wheredoibegin.fr> (2026-11-20)
 #
 # dev-haskell/base-noprelude is not compatible with ghc 9.* versions
