@@ -19,6 +19,7 @@ CABAL_CHDEPS=(
 	'base >= 4.0 && < 4.17' 'base >=4.0'
 	'mtl >= 2.0 && < 2.3' 'mtl >=2.0'
 	'deepseq >= 1.1 && < 1.5' 'deepseq >=1.1'
+	'time >= 1.2 && < 1.14,' 'time >= 1.2,'
 )
 
 RDEPEND=">=dev-haskell/parallel-3.1:=[profile?] <dev-haskell/parallel-3.3:=[profile?]
