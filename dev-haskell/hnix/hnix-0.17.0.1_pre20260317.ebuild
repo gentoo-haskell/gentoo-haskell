@@ -34,6 +34,9 @@ PATCHES+=(
 	"${FILESDIR}/${PN}-0.17.0.1_pre20240218-add-executable-flag.patch"
 	"${FILESDIR}/${PN}-0.17.0.1_pre20260317-hnix-store-0.9.patch"
 )
+CABAL_CHDEPS=(
+	'megaparsec >= 7.0 && < 9.6' 'megaparsec >= 7.0'
+)
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/base16-bytestring-0.1.1:=[profile?] <dev-haskell/base16-bytestring-1.1:=[profile?]
@@ -58,7 +61,7 @@ RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/lens-family-1.2.2:=[profile?] <dev-haskell/lens-family-2.2:=[profile?]
 	>=dev-haskell/lens-family-core-1.2.2:=[profile?] <dev-haskell/lens-family-core-2.2:=[profile?]
 	>=dev-haskell/lens-family-th-0.5.0:=[profile?] <dev-haskell/lens-family-th-0.6:=[profile?]
-	>=dev-haskell/megaparsec-7.0:=[profile?] <dev-haskell/megaparsec-9.6:=[profile?]
+	>=dev-haskell/megaparsec-7.0:=[profile?]
 	dev-haskell/memory:=[profile?]
 	>=dev-haskell/monad-control-1.0.2:=[profile?] <dev-haskell/monad-control-1.1:=[profile?]
 	>=dev-haskell/monadlist-0.0.2:=[profile?] <dev-haskell/monadlist-0.1:=[profile?]
