@@ -5,6 +5,10 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">gifcurry</remote-id>
+		<remote-id type="github">lettier/gifcurry</remote-id>
+	</upstream>
 	<use>
 		<flag name="gtk">Build the gifcurry_gui executable</flag>
 	</use>

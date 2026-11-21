@@ -10,11 +10,11 @@ inherit haskell-cabal
 
 MY_PN="Gifcurry"
 MY_P="${MY_PN}-${PV}"
-S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="GIF creation utility"
 HOMEPAGE="https://github.com/lettier/gifcurry"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
