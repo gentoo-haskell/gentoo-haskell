@@ -16,6 +16,10 @@ HOMEPAGE="https://github.com/fumieval/barbies-th"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'base >= 4.12 && <4.20' 'base >= 4.12'
+	'template-haskell >= 2.14 && <2.22' 'template-haskell >= 2.14'
+)
 
 PATCHES=(
 	"${FILESDIR}"/${P}-ghc-9.8.patch
