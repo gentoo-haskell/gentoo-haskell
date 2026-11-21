@@ -28,6 +28,7 @@ CABAL_CHDEPS=(
 	'optparse-applicative >= 0.11 && < 0.15' 'optparse-applicative >=0.11'
 	'regex-posix          >= 0.95 && < 0.96' 'regex-posix >=0.95'
 	'SVGFonts             >= 1.5  && < 1.7' 'SVGFonts >=1.5'
+	'diagrams-cairo       >= 1.3  && < 1.5,' 'diagrams-cairo       >= 1.3,'
 )
 
 PATCHES=(
@@ -39,7 +40,7 @@ RDEPEND=">=dev-haskell/bifunctors-4.2:=[profile?]
 	>=dev-haskell/json-0.9:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 	executable? ( >=dev-haskell/colour-2.3:=[profile?] <dev-haskell/colour-2.4:=[profile?]
-			>=dev-haskell/diagrams-cairo-1.3:=[profile?] <dev-haskell/diagrams-cairo-1.5:=[profile?]
+			>=dev-haskell/diagrams-cairo-1.3:=[profile?]
 			>=dev-haskell/diagrams-contrib-1.3:=[profile?] <dev-haskell/diagrams-contrib-1.5:=[profile?]
 			>=dev-haskell/diagrams-lib-1.3:=[profile?] <dev-haskell/diagrams-lib-1.5:=[profile?]
 			>=dev-haskell/optparse-applicative-0.11:=[profile?]
