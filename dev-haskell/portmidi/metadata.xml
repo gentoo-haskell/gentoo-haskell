@@ -5,4 +5,9 @@
 		<email>haskell@gentoo.org</email>
 		<name>Gentoo Haskell</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="hackage">PortMidi</remote-id>
+		<remote-id type="github">PortMidi/PortMidi</remote-id>
+		<remote-id type="github">PortMidi/PortMidi-haskell</remote-id>
+	</upstream>
 </pkgmetadata>
