@@ -33,7 +33,10 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
+	# language-c cannot parse C23 yet.
 	haskell-cabal_src_configure \
+		--c2hs-option=--cppopts=-std=gnu17 \
+		--c2hs-option=--cppopts=-Dbool=NCURSES_BOOL \
 		--flag=-force-c2hs-newtype-pointer-hooks \
 		--flag=-force-narrow-library \
 		--flag=use-pkgconfig
