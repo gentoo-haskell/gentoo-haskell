@@ -4,6 +4,16 @@
 dev-util/nixfmt
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Not compatible with ghc 9.*
+# Removal on 2026-12-21.
+dev-haskell/glfw
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Deprecated
+# Removal on 2026-12-21.
+dev-util/nixfmt
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
 # Depends on cipher-aes128 which is lastrited
 # Removal on 2026-12-21.
 dev-haskell/drbg
