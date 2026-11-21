@@ -1,0 +1,35 @@
+From https://github.com/scotty-web/scotty/pull/432
+From: Janus Troelsen <ysangkok@gmail.com>
+Date: Tue, 12 May 2026 09:15:24 -0600
+Subject: [PATCH 1/2] Bump lower bounds, allow GHC 9.14 (reduced to http-api-data >= 0.7)
+
+--- a/Web/Scotty/Action.hs
++++ b/Web/Scotty/Action.hs
+@@ -80,7 +80,6 @@ import qualified Data.ByteString.Lazy.Char8 as BL
+ import qualified Data.CaseInsensitive       as CI
+ import           Data.Traversable (for)
+ import qualified Data.Map.Strict            as Map
+-import qualified Data.HashMap.Strict        as HM
+ import           Data.Int
+ import           Data.List (foldl')
+ import           Data.Maybe                 (maybeToList)
+@@ -456,7 +455,7 @@ formData = do
+     -- It's equivalent to using HashMap.insertWith (++) which does have
+     -- quadratic complexity due to appending at the end of list.
+     paramListToForm :: [Param] -> Form
+-    paramListToForm = Form . fmap reverse . foldl' (\f (k, v) -> HM.alter (prependValue v) k f) HM.empty
++    paramListToForm = Form . fmap reverse . foldl' (\f (k, v) -> Map.alter (prependValue v) k f) Map.empty
+ 
+     prependValue :: a -> Maybe [a] -> Maybe [a]
+     prependValue v = Just . maybe [v] (v :)
+--- a/scotty.cabal
++++ b/scotty.cabal
+@@ -79,7 +79,7 @@
+                        containers            >= 0.5      && < 0.8,
+                        cookie                >= 0.4,
+                        exceptions            >= 0.7      && < 0.11,
+-                       http-api-data         < 0.7,
++                       http-api-data         >= 0.7,
+                        http-types            >= 0.9.1    && < 0.13,
+                        monad-control         >= 1.0.0.3  && < 1.1,
+                        mtl                   >= 2.1.2    && < 2.4,

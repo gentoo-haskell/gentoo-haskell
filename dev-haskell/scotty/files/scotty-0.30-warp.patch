@@ -1,0 +1,12 @@
+--- a/test/Web/ScottySpec.hs
++++ b/test/Web/ScottySpec.hs
+@@ -736,9 +736,9 @@
+       withServer (Scotty.get "/scotty" $ html "") .
+         E.bracket (socket AF_UNIX Stream 0) close $ \sock -> do
+           connect sock $ SockAddrUnix socketPath
+-          _ <- send sock "GET /scotty HTTP/1.1\r\n\n"
++          _ <- send sock "GET /scotty HTTP/1.1\r\nHost: localhost\r\n\r\n"
+           r1 <- recv sock 1024
+-          _ <- send sock "GET /four-oh-four HTTP/1.1\r\n\n"
++          _ <- send sock "GET /four-oh-four HTTP/1.1\r\nHost: localhost\r\n\r\n"
+           r2 <- recv sock 1024
