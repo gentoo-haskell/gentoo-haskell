@@ -4,6 +4,16 @@
 dev-util/nixfmt
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Depends on glfw, which is last-rited
+# Removal on 2026-12-21.
+games-puzzle/bloxorz
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Deprecated
+# Removal on 2026-12-21.
+dev-util/nixfmt
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
 # Not compatible with ghc 9.*
 # Removal on 2026-12-21.
 dev-haskell/glfw
