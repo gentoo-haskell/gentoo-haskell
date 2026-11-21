@@ -16,6 +16,9 @@ HOMEPAGE="https://github.com/GaloisInc/lumberjack"
 LICENSE="ISC"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'base          >= 4.11 && < 4.21' 'base >= 4.11'
+)
 
 RDEPEND=">=dev-haskell/contravariant-1.5:=[profile?] <dev-haskell/contravariant-1.6:=[profile?]
 	>=dev-haskell/prettyprinter-1.6:=[profile?] <dev-haskell/prettyprinter-1.8:=[profile?]
