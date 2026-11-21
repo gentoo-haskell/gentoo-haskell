@@ -1,11 +1,20 @@
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Deprecated
+# Removal on 2026-12-21.
+dev-util/nixfmt
+
+# GdeVolpiano <xavier@wheredoibegin.fr> (2026-11-20)
+#
+# dev-haskell/base-noprelude is not compatible with ghc 9.* versions
+# Remove 2026-12-20
+dev-haskell/base-noprelude
+
 # GdeVolpiano <xavier@wheredoibegin.fr> (2026-11-20)
 #
 # dev-haskell/base-noprelude is not compatible with ghc 9.* versions
 # Remove 2027-01-19
-
 dev-haskell/base-noprelude
 
-#
 # hololeap <hololeap@protonmail.com> (2025-06-14)
 #
 # net-libs/webkit-gtk:4 has been masked. Masking these until they (are
@@ -19,7 +28,6 @@ dev-haskell/gi-javascriptcore
 # The current upstream version of dev-haskell/cuda is not compatible with the
 # gentoo's current version of nvidia-cuda-toolkit. Also, nvidia-cuda-toolkit is
 # not available on musl. dev-haskell/cufft depends on dev-haskell/cuda.
-
 dev-haskell/cuda
 dev-haskell/cufft
 
@@ -35,7 +43,6 @@ dev-haskell/cufft
 #
 # dev-haskell/doctest >= 0.23 needs specific versions of ghc to pass tests.
 # Masking globally, and then unmasking by version
-
 >=dev-haskell/doctest-0.23
 
 # hololeap <hololeap@protonmail.com> (2025-02-14)
