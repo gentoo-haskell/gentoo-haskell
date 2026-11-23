@@ -14,6 +14,7 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="MySQL driver for HDBC"
 HOMEPAGE="https://github.com/ryantm/hdbc-mysql"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
@@ -31,9 +32,10 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.24.0.0
 "
 
-S="${WORKDIR}/${MY_P}"
-
-PATCHES=("${FILESDIR}"/${P}-cabal-3.patch)
+PATCHES=(
+	"${FILESDIR}"/${P}-cabal-3.patch
+	"${FILESDIR}"/${P}-path.patch
+)
 
 src_configure() {
 	haskell-cabal_src_configure \

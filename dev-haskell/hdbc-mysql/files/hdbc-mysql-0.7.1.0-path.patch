@@ -1,0 +1,48 @@
+From 6e9cb5818901e6dfa4ca7a070a9cf9c99ff8f495 Mon Sep 17 00:00:00 2001
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 23 Nov 2026 17:50:48 +0100
+Subject: [PATCH] b
+
+---
+ Setup.lhs | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/Setup.lhs b/Setup.lhs
+index a364966..add3878 100644
+--- a/Setup.lhs
++++ b/Setup.lhs
+@@ -1,6 +1,7 @@
+ #!/usr/bin/env runhaskell
+ 
+ \begin{code}
++{-# LANGUAGE CPP #-}
+ import Distribution.Simple
+ import Distribution.PackageDescription
+ import Distribution.Version
+@@ -9,6 +10,10 @@ import Distribution.Simple.LocalBuildInfo
+ import Distribution.Simple.Program
+ import Distribution.Verbosity
+ 
++#if MIN_VERSION_Cabal(3,14,0)
++import Distribution.Utils.Path (makeSymbolicPath)
++#endif
++
+ import Data.Char (isSpace)
+ import Data.List (dropWhile,span)
+ 
+@@ -43,7 +48,11 @@ mysqlBuildInfo lbi = do
+ 
+   return emptyBuildInfo {
+     ldOptions   = ldOptions,
+-    includeDirs = includeDirs
++#if MIN_VERSION_Cabal(3,14,0)
++		includeDirs = map makeSymbolicPath includeDirs
++#else
++    	includeDirs = includeDirs
++#endif
+   }
+   where
+     verbosity = normal -- honestly, this is a hack
+-- 
+2.56.1
+
