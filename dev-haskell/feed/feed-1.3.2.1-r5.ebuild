@@ -16,9 +16,13 @@ HOMEPAGE="https://github.com/haskell-party/feed"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
+CABAL_CHDEPS=(
+	'xml-conduit < 1.10' 'xml-conduit >= 1.10'
+)
 
 PATCHES=(
 	"${FILESDIR}/${PN}-1.3.2.1-disable-doctest.patch"
+	"${FILESDIR}/${P}-xml-conduit.patch"
 )
 
 RDEPEND=">=dev-haskell/base-compat-0.9:=[profile?] <dev-haskell/base-compat-0.15:=[profile?]
@@ -27,14 +31,10 @@ RDEPEND=">=dev-haskell/base-compat-0.9:=[profile?] <dev-haskell/base-compat-0.15
 	>=dev-haskell/safe-0.3:=[profile?] <dev-haskell/safe-0.4:=[profile?]
 	>=dev-haskell/time-locale-compat-0.1:=[profile?] <dev-haskell/time-locale-compat-0.2:=[profile?]
 	<dev-haskell/utf8-string-1.1:=[profile?]
-	>=dev-haskell/xml-conduit-1.3:=[profile?] <dev-haskell/xml-conduit-1.11:=[profile?]
+	>=dev-haskell/xml-conduit-1.10:=[profile?]
 	>=dev-haskell/xml-types-0.3.6:=[profile?] <dev-haskell/xml-types-0.4:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	|| (
-		<dev-haskell/text-1.3
-		( >=dev-haskell/text-2.0 <dev-haskell/text-2.2 )
-	)
-	dev-haskell/text:=[profile?]
+	<dev-haskell/text-2.2:=[profile?]
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
@@ -45,7 +45,7 @@ DEPEND="${RDEPEND}
 		>=dev-haskell/test-framework-0.8 <dev-haskell/test-framework-0.9
 		>=dev-haskell/test-framework-hunit-0.3 <dev-haskell/test-framework-hunit-0.4
 		dev-haskell/text
-		<dev-haskell/xml-conduit-1.10 )
+		dev-haskell/xml-conduit )
 "
 BDEPEND="test? (
 	dev-haskell/doctest-driver-gen[executable(+)]

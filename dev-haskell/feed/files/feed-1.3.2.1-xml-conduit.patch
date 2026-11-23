@@ -1,0 +1,26 @@
+From 0d22a2b52ec3bdadee517051f53b754ff9457a62 Mon Sep 17 00:00:00 2001
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 23 Nov 2026 14:12:10 +0100
+Subject: [PATCH] b
+
+---
+ README.lhs | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/README.lhs b/README.lhs
+index febfe5d..beb4616 100644
+--- a/README.lhs
++++ b/README.lhs
+@@ -45,7 +45,8 @@ import Data.XML.Types as XML
+ import qualified Data.Text.Lazy as Lazy
+ import Text.Feed.Types
+ 
+-import Text.XML (def, rsPretty)
++import Text.XML (def)
++import Text.XML.Stream.Render.Internal (rsPretty)
+ import qualified Text.Atom.Feed as Atom
+ import qualified Text.Feed.Export as Export (textFeedWith)
+ 
+-- 
+2.56.1
+
