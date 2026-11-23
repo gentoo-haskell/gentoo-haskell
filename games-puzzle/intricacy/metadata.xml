@@ -7,7 +7,9 @@
 	</maintainer>
 	<use>
 		<flag name="curses">Enables curses user interface</flag>
-		<flag name="sdl">Enables SDL user interface</flag>
+		<flag name="embed">Embed font into executable (with Template Haskell) when using sdl2</flag>
+		<flag name="sdl1">Enable SDL1 UI (deprecated)</flag>
+		<flag name="sdl2">Enable SDL2 UI</flag>
 		<flag name="sendmail">Include support for sending mail</flag>
 		<flag name="server">Build server</flag>
 		<flag name="sound">Enables sound in SDL user interface</flag>

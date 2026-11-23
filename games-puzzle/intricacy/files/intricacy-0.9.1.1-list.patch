@@ -1,0 +1,19 @@
+From f9ba05b3550ecc4b5a53fecc5be713e913a09162 Mon Sep 17 00:00:00 2001
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 23 Nov 2026 14:58:59 +0100
+Subject: [PATCH] b
+
+--- a/SDL2UI.hs
++++ b/SDL2UI.hs
+@@ -21,7 +21,7 @@ import           Control.Monad
+ import           Control.Monad.Catch       (handleAll)
+ import           Control.Monad.State
+ import           Control.Monad.Trans.Maybe
+-import           Data.List
++import           Data.List                 hiding ((!?))
+ import           Data.Map                  (Map, (!?))
+ import qualified Data.Map                  as Map
+ import           Data.Maybe
+-- 
+2.56.1
+
