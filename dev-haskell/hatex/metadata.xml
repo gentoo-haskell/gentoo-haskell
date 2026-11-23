@@ -7,6 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">HaTeX</remote-id>
-		<remote-id type="gitlab">daniel-casanueva/haskell</remote-id>
+		<remote-id type="codeberg">daniel-casanueva/HaTeX</remote-id>
 	</upstream>
 </pkgmetadata>
