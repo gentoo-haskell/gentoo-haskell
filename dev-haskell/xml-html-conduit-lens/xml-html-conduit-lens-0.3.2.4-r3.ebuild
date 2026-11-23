@@ -18,12 +18,13 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 		'containers              >= 0.4.0 && < 0.6' 'containers              >= 0.4' \
-		'xml-conduit             >= 1.1   && < 1.9' 'xml-conduit             >= 1.1'
+		'xml-conduit             >= 1.1   && < 1.9' 'xml-conduit             >= 1.10'
 		'text                    >= 0.11  && < 1.3' 'text >= 0.11'
 )
 
 PATCHES=(
 	"${FILESDIR}"/${P}-data-default-0.8.patch
+	"${FILESDIR}"/${P}-xml-conduit.patch
 )
 
 RESTRICT=test # fails at quoting test
@@ -31,7 +32,7 @@ RESTRICT=test # fails at quoting test
 RDEPEND=">=dev-haskell/html-conduit-1.1:=[profile?] <dev-haskell/html-conduit-1.4:=[profile?]
 	>=dev-haskell/lens-4.0.1:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?]
-	>=dev-haskell/xml-conduit-1.1:=[profile?]
+	>=dev-haskell/xml-conduit-1.10:=[profile?]
 	>=dev-lang/ghc-7.4.1:=
 "
 DEPEND="${RDEPEND}

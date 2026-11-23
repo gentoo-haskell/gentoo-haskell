@@ -1,0 +1,27 @@
+From https://github.com/supki/xml-html-conduit-lens/pull/9
+From: GuillaumedeVolpiano <xavier@wheredoibegin.fr>
+Date: Mon, 23 Nov 2026 11:04:58 +0100
+Subject: [PATCH] compatibility with recent xml-conduit
+
+--- a/src/Text/Xml/Lens/LowLevel.hs
++++ b/src/Text/Xml/Lens/LowLevel.hs
+@@ -11,6 +11,7 @@ import           Text.XML
+   )
+ import           Text.XML.Stream.Parse (DecodeEntities)
+ import qualified Text.XML as XML
++import qualified Text.XML.Stream.Render.Internal as XMLI (rsPretty)
+ 
+ -- | A Lens into 'XML.psDecodeEntities'
+ psDecodeEntities :: Lens' ParseSettings DecodeEntities
+@@ -19,7 +20,7 @@ psDecodeEntities f ps = f (XML.psDecodeEntities ps) <&> \p -> ps { XML.psDecodeE
+ 
+ -- | A Lens into 'XML.rsPretty'
+ rsPretty :: Lens' RenderSettings Bool
+-rsPretty f rs = f (XML.rsPretty rs) <&> \p -> rs { XML.rsPretty = p }
++rsPretty f rs = f (XMLI.rsPretty rs) <&> \p -> rs { XMLI.rsPretty = p }
+ {-# INLINE rsPretty #-}
+ 
+ -- | A Lens into 'XML.rsNamespaces'
+-- 
+2.56.1
+
