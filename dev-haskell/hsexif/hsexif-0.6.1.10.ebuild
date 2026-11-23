@@ -19,6 +19,8 @@ RESTRICT="test" #files are missing from the tarball
 
 CABAL_CHDEPS=(
 	'bytestring >=0.10 && <0.12' 'bytestring >= 0.10'
+	'containers >= 0.5 && <0.7,' 'containers >= 0.5,'
+	'time >= 1.4 && <1.13,' 'time >= 1.4,'
 	)
 
 RDEPEND=">=dev-haskell/text-0.9:=[profile?]
