@@ -44,7 +44,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 	>=dev-haskell/aeson-1.0:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/text-0.11:=[profile?] <dev-haskell/text-2.2:=[profile?]
 	buildwebsite? ( >=dev-haskell/pandoc-types-1.22:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
-			>=dev-haskell/pandoc-2.11:=[profile?] <dev-haskell/pandoc-3.11:=[profile?] )
+			>=dev-haskell/pandoc-2.11:=[profile?] <dev-haskell/pandoc-3.15:=[profile?] )
 	checkexternal? ( >=dev-haskell/http-conduit-2.2:=[profile?] <dev-haskell/http-conduit-2.4:=[profile?] )
 	previewserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.5:=[profile?]
 				>=dev-haskell/http-types-0.9:=[profile?] <dev-haskell/http-types-0.13:=[profile?]
@@ -53,7 +53,7 @@ RDEPEND=">=dev-haskell/blaze-html-0.5:=[profile?] <dev-haskell/blaze-html-0.10:=
 	!previewserver? ( checkexternal? ( >=dev-haskell/http-types-0.7:=[profile?] <dev-haskell/http-types-0.13:=[profile?] )
 				watchserver? ( >=dev-haskell/fsnotify-0.2:=[profile?] <dev-haskell/fsnotify-0.5:=[profile?] ) )
 	usepandoc? ( >=dev-haskell/pandoc-types-1.22:=[profile?] <dev-haskell/pandoc-types-1.24:=[profile?]
-			>=dev-haskell/pandoc-2.11:=[profile?] <dev-haskell/pandoc-3.11:=[profile?] )
+			>=dev-haskell/pandoc-2.11:=[profile?] <dev-haskell/pandoc-3.15:=[profile?] )
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
