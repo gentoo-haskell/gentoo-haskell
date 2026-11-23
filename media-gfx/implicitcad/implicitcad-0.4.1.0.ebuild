@@ -12,8 +12,8 @@ DESCRIPTION="A math-inspired programmatic 2D & 3D CAD system"
 HOMEPAGE="https://implicitcad.org/"
 MY_PN=implicit
 MY_P=$MY_PN-$PV
-S="${WORKDIR}/${MY_P}"
 SRC_URI="https://hackage.haskell.org/package/${MY_P}/${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="AGPL-3+"
 SLOT="0/${PV}"
@@ -53,4 +53,10 @@ src_configure() {
 		$(cabal_flag docgen docgen) \
 		$(cabal_flag extopenscad extopenscad) \
 		$(cabal_flag implicitsnap implicitsnap)
+}
+
+src_test() {
+	# Corrupted heap in parallel runtime with ghc 9.12 (evacuate: strange
+	# closure type)
+	haskell-cabal_src_test --test-options="+RTS -N1 -RTS"
 }

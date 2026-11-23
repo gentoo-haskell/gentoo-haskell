@@ -7,4 +7,17 @@
 		shells and more in 2D &amp; 3D. Then export to SVGs, STLs,
 		or produce gcode directly!
 	</longdescription>
+	<maintainer type="project">
+		<email>haskell@gentoo.org</email>
+		<name>Gentoo Haskell</name>
+	</maintainer>
+	<use>
+		<flag name="docgen">Builds docgen program</flag>
+		<flag name="extopenscad">Builds extopenscad program</flag>
+		<flag name="implicitsnap">Builds implicitsnap program</flag>
+	</use>
+	<upstream>
+		<remote-id type="hackage">implicit</remote-id>
+		<remote-id type="github">Haskell-Things/ImplicitCAD</remote-id>
+	</upstream>
 </pkgmetadata>
