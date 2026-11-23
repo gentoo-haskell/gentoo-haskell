@@ -22,7 +22,7 @@ start_pre() {
 
 generate() {
 	ebegin "Generating hoogle database"
-	"${HOOGLE_GENERATE_ARGS:=--local +RTS -N}"
+	: "${HOOGLE_GENERATE_ARGS:=--local +RTS -N}"
 	"$su" -c "/usr/libexec/hoogle-generate.bash ${HOOGLE_GENERATE_ARGS}" -s "$shell" - hoogle
 	eend $?
 }
