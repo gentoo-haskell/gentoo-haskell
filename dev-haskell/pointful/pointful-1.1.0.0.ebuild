@@ -32,6 +32,7 @@ PATCHES=(
 CABAL_CHDEPS=(
 		'haskell-src-exts-simple >= 1.18 && < 1.21' 'haskell-src-exts-simple >= 1.18'
 		'base                    >= 4.7  && < 4.13 || ^>= 4.13' 'base                    >= 4.7'
+		'containers              >= 0.4  && < 0.6  || ^>= 0.6,' 'containers >= 0.4,'
 		'mtl                     >= 2    && < 2.2  || ^>= 2.2' 'mtl >= 2'
 		'transformers            >= 0.2  && < 0.5  || ^>= 0.5' 'transformers >= 0.2'
 	)
