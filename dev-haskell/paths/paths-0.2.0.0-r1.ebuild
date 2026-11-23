@@ -21,8 +21,10 @@ CABAL_CHDEPS=(
 	'base             >=4.5    && <4.18' 'base >= 4.5'
 	'bytestring       >=0.9.2  && <0.12' 'bytestring >= 0.9.2'
 	'deepseq          >=1.3    && <1.5' 'deepseq >= 1.3'
+	'filepath         >=1.3    && <1.5' 'filepath >=1.3'
 	'template-haskell >=2.7    && <2.20' 'template-haskell >= 2.7'
 	'text             >=0.11   && <1.3  || >=2.0 && <2.1' 'text >= 0.11'
+	'time             >=1.4    && <1.13' 'time >=1.4'
 	)
 
 PATCHES=(
