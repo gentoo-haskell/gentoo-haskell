@@ -16,6 +16,9 @@ HOMEPAGE="https://snapframework.com/"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'filepath            >= 1.1     && < 1.5,' 'filepath >= 1.1,'
+	)
 
 RDEPEND=">=dev-haskell/directory-tree-0.11:= <dev-haskell/directory-tree-0.13:=
 	>=dev-haskell/hashable-1.1:= <dev-haskell/hashable-2:=
