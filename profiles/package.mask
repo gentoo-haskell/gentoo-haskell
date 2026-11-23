@@ -3,6 +3,16 @@
 # Removal on 2026-12-21.
 dev-util/nixfmt
 
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-23)
+# Deprecated in favour of criterion, tasty-bench
+# Removal on 2026-12-23.
+dev-haskell/gauge
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Deprecated
+# Removal on 2026-12-21.
+dev-util/nixfmt
+
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
 # Depends on glfw, which is last-rited
 # Removal on 2026-12-21.
