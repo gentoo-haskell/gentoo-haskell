@@ -1,37 +1,25 @@
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
+# Package masks for the ::haskell overlay.
+# Keep this header followed by an empty line (needed by pkgdev mask).
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-24)
+# Depends on plugins-auto ; dead upstream
+# Removal on 2026-12-24.
+dev-haskell/happstack-plugins
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-24)
 # Dead upstream, depends on plugins which is also dead
 # Removal on 2026-12-24.
 dev-haskell/plugins-auto
 
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
-
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-24)
 # Dead upstream, not compatible with recent packages
 # Removal on 2026-12-24.
 dev-haskell/plugins
 
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
-
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-23)
 # Deprecated
 # Removal on 2026-12-23.
 dev-haskell/haddock-test
-
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-23)
 # Deprecated in favour of criterion, tasty-bench
@@ -39,19 +27,9 @@ dev-util/nixfmt
 dev-haskell/gauge
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
-
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
 # Depends on glfw, which is last-rited
 # Removal on 2026-12-21.
 games-puzzle/bloxorz
-
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
 # Not compatible with ghc 9.*
@@ -59,19 +37,9 @@ dev-util/nixfmt
 dev-haskell/glfw
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
-
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
 # Depends on cipher-aes128 which is lastrited
 # Removal on 2026-12-21.
 dev-haskell/drbg
-
-# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
-# Deprecated
-# Removal on 2026-12-21.
-dev-util/nixfmt
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
 # Upstream archived in 2023. Doesn't compile anymore.
@@ -87,12 +55,6 @@ dev-util/nixfmt
 #
 # dev-haskell/base-noprelude is not compatible with ghc 9.* versions
 # Remove 2026-12-20
-dev-haskell/base-noprelude
-
-# GdeVolpiano <xavier@wheredoibegin.fr> (2026-11-20)
-#
-# dev-haskell/base-noprelude is not compatible with ghc 9.* versions
-# Remove 2027-01-19
 dev-haskell/base-noprelude
 
 # hololeap <hololeap@protonmail.com> (2025-06-14)
