@@ -18,6 +18,7 @@ KEYWORDS="~amd64"
 IUSE="cairo canvas gtk pgf postscript rasterific +svg"
 CABAL_CHDEPS=(
 	'diagrams-cairo >= 1.4 && < 1.5' 'diagrams-cairo >= 1.4'
+	'diagrams-pgf >= 1.4 && < 1.5' 'diagrams-pgf >= 1.4'
 	)
 
 RDEPEND=">=dev-haskell/diagrams-contrib-1.4:=[profile?] <dev-haskell/diagrams-contrib-1.5:=[profile?]
@@ -27,7 +28,7 @@ RDEPEND=">=dev-haskell/diagrams-contrib-1.4:=[profile?] <dev-haskell/diagrams-co
 	cairo? ( >=dev-haskell/diagrams-cairo-1.4:=[profile?] )
 	canvas? ( >=dev-haskell/diagrams-canvas-1.4:=[profile?] <dev-haskell/diagrams-canvas-1.5:=[profile?] )
 	gtk? ( >=dev-haskell/diagrams-gtk-1.4:=[profile?] <dev-haskell/diagrams-gtk-1.5:=[profile?] )
-	pgf? ( >=dev-haskell/diagrams-pgf-1.4:=[profile?] <dev-haskell/diagrams-pgf-1.5:=[profile?] )
+	pgf? ( >=dev-haskell/diagrams-pgf-1.4:=[profile?] )
 	postscript? ( >=dev-haskell/diagrams-postscript-1.4:=[profile?] <dev-haskell/diagrams-postscript-1.6:=[profile?] )
 	rasterific? ( >=dev-haskell/diagrams-rasterific-1.4:=[profile?] <dev-haskell/diagrams-rasterific-1.5:=[profile?] )
 	svg? ( >=dev-haskell/diagrams-svg-1.4:=[profile?] <dev-haskell/diagrams-svg-1.6:=[profile?] )
