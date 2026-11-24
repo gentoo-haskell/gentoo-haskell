@@ -9,6 +9,8 @@ EAPI=8
 CABAL_FEATURES="test-suite"
 inherit haskell-cabal
 
+RESTRICT="test" # Requires deprecated/buggy haddock-test package
+
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="https://www.haskell.org/haddock/"
 
@@ -41,10 +43,11 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
-	test? (
-		~dev-haskell/haddock-test-9.8
-	)
 "
+#	test? (
+#		~dev-haskell/haddock-test-9.8
+#	)
+
 
 # Workaround to get haddock for ghc-9.8 and ghc-9.10 to fit into the
 # gentoo-haskell versioning scheme
