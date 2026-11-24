@@ -16,10 +16,20 @@ LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 CABAL_CHDEPS=(
+	'base                  >=4.20.1   && <5' 'base'
+	'base                  >=4.20.1    && <5' 'base'
+	'bytestring            >=0.12.2   && <0.13' 'bytestring'
 	'Cabal                 >=3.12.1   && <3.13' 'Cabal >=3.10.3'
+	'containers            >=0.7      && <0.8' 'containers'
+	'containers            >=0.7       && <0.8' 'containers'
+	'filepath              >=1.5.4    && <1.6' 'filepath'
 	'megaparsec            >=9.0.0    && <9.8' 'megaparsec >=9.7.0'
 	'megaparsec            >=9.7.0     && <9.8' 'megaparsec >=9.7.0'
+	'parsec                >=3.1.18   && <3.2' 'parsec'
 	'optparse-applicative  >=0.19.0    && <0.20' 'optparse-applicative >=0.18.0'
+	'text                  >=2.1.2    && <2.2' 'text'
+	'text                  >=2.1.2     && <2.2' 'text'
+	'time                  >=1.14     && <1.15' 'time'
 )
 
 RDEPEND=">=dev-haskell/aeson-2.2.3:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
