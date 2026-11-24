@@ -4,6 +4,16 @@
 dev-util/nixfmt
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-24)
+# Dead upstream, depends on plugins which is also dead
+# Removal on 2026-12-24.
+dev-haskell/plugins-auto
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-21)
+# Deprecated
+# Removal on 2026-12-21.
+dev-util/nixfmt
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-24)
 # Dead upstream, not compatible with recent packages
 # Removal on 2026-12-24.
 dev-haskell/plugins
