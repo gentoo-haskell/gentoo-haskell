@@ -14,6 +14,10 @@ HOMEPAGE="https://github.com/fpco/http-reverse-proxy"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+PATCHES=(
+	"${FILESDIR}"/${P}-threaded.patch
+	"${FILESDIR}"/${P}-warp-3.4.patch
+)
 
 RDEPEND=">=dev-haskell/blaze-builder-0.3:=[profile?] <dev-haskell/blaze-builder-0.5:=[profile?]
 	>=dev-haskell/case-insensitive-0.4:=[profile?] <dev-haskell/case-insensitive-1.3:=[profile?]

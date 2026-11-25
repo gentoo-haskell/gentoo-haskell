@@ -1,0 +1,14 @@
+Add the Host header to the request of the "upgrade to raw" test
+for compatibility with warp 3.4
+
+--- a/test/main.hs
++++ b/test/main.hs
+@@ -163,7 +163,7 @@
+                 withWApp app $ \port1 ->
+                 withWApp (waiProxyTo (const $ return $ WPRProxyDest $ ProxyDest "127.0.0.1" port1) defaultOnExc manager) $ \port2 ->
+                     runTCPClient (clientSettings port2 "127.0.0.1") $ \ad -> do
+-                        runConduit $ yield "GET / HTTP/1.1\r\nUpgrade: websockET\r\n\r\n" .| appSink ad
++                        runConduit $ yield "GET / HTTP/1.1\r\nHost: 127.0.0.1\r\nUpgrade: websockET\r\n\r\n" .| appSink ad
+                         runConduit $ yield "hello" .| appSink ad
+                         (runConduit $ appSource ad .| CB.take 5) >>= (`shouldBe` "HELLO")
+         it "get real ip" $

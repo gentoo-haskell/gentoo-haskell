@@ -1,0 +1,15 @@
+From https://github.com/fpco/http-reverse-proxy/pull/53
+From: Alexandre Esteves <alexfmpe@proton.me>
+Date: Wed, 1 Jul 2026 00:48:30 +0100
+Subject: [PATCH] Link test suite against threaded runtime
+
+--- a/http-reverse-proxy.cabal
++++ b/http-reverse-proxy.cabal
+@@ -51,6 +51,7 @@ test-suite test
+   type:             exitcode-stdio-1.0
+   main-is:          main.hs
+   hs-source-dirs:   test
++  ghc-options:      -threaded
+   build-depends:
+       base                <10
+     , blaze-builder
