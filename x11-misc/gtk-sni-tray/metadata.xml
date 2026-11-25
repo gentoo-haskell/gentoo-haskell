@@ -8,4 +8,8 @@
 	<use>
 		<flag name="executable">Build the gtk-sni-tray-standalone executable</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">gtk-sni-tray</remote-id>
+		<remote-id type="github">taffybar/gtk-sni-tray</remote-id>
+	</upstream>
 </pkgmetadata>
