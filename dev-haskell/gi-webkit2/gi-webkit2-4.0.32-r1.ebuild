@@ -24,7 +24,7 @@ GHC_BOOTSTRAP_PACKAGES=(
 	'gi-gdk3'
 	'gi-gio'
 	'gi-gtk3'
-	'gi-javascriptcore4'
+	'gi-javascriptcore6'
 	'gi-soup2'
 	'gi-cairo'
 )
@@ -36,14 +36,14 @@ RDEPEND=">=dev-haskell/gi-atk-2.0:=[profile?] <dev-haskell/gi-atk-2.1:=[profile?
 	>=dev-haskell/gi-glib-2.0:=[profile?] <dev-haskell/gi-glib-2.1:=[profile?]
 	>=dev-haskell/gi-gobject-2.0:=[profile?] <dev-haskell/gi-gobject-2.1:=[profile?]
 	dev-haskell/gi-gtk3:=[profile?]
-	dev-haskell/gi-javascriptcore4:=[profile?]
+	dev-haskell/gi-javascriptcore6:=[profile?]
 	dev-haskell/gi-soup2:=[profile?]
 	>=dev-haskell/haskell-gi-0.26.14:=[profile?] <dev-haskell/haskell-gi-0.27:=[profile?]
 	>=dev-haskell/haskell-gi-base-0.26:=[profile?] <dev-haskell/haskell-gi-base-0.27:=[profile?]
 	<dev-haskell/haskell-gi-overloading-1.1:=[profile?]
 	>=dev-haskell/text-1.0:=[profile?] <dev-haskell/text-3:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
-	net-libs/webkit-gtk:4
+	net-libs/webkit-gtk:6
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-4
