@@ -23,7 +23,6 @@ IUSE="gstreamer"
 DEPEND="${RDEPEND}"
 RDEPEND="x11-libs/wxGTK:${WX_GTK_VER}=[X,gstreamer?,opengl]"
 
-
 src_compile() {
 		sh "${S}"/generate-version-header.sh
 		default

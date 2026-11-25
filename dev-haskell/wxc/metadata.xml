@@ -15,4 +15,7 @@
 		exception allowing binary distribution of proprietary software.
 		This is the same license as wxWidgets itself uses.
 	</longdescription>
+	<upstream>
+		<remote-id type="codeberg">wxHaskell/wxHaskell</remote-id>
+	</upstream>
 </pkgmetadata>
