@@ -14,10 +14,14 @@ DESCRIPTION="helper tool for building wxHaskell"
 HOMEPAGE="https://wiki.haskell.org/WxHaskell"
 SRC_URI="https://codeberg.org/wxHaskell/wxHaskell/archive/wxc-1.0.0.2.tar.gz"
 S="${WORKDIR}/wxhaskell/wxdirect"
+CABAL_FILE="${S}/${PN}.cabal"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'containers >= 0.2   && < 0.7' 'containers >= 0.2'
+)
 
 RDEPEND=">=dev-haskell/parsec-2.1.0:=[profile?] <dev-haskell/parsec-4:=[profile?]
 	dev-haskell/strict:=[profile?]
@@ -27,7 +31,7 @@ DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0
 "
 src_prepare() {
-	default
+	haskell-cabal_src_prepare
 
 	sed -e "s@executable wxdirect@executable wxdirect-${WX_GTK_VER}@" \
 		-i "${S}/${PN}.cabal" \
