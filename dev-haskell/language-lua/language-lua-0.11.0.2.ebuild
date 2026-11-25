@@ -14,6 +14,10 @@ HOMEPAGE="https://github.com/glguy/language-lua"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'base        >=4.5  && <4.21' 'base >=4.5'
+	'base              >=4.5 && <4.20' 'base >=4.5'
+)
 
 RDEPEND=">=dev-haskell/alex-tools-0.6:=[profile?] <dev-haskell/alex-tools-0.7:=[profile?]
 	>=dev-haskell/text-1.2:=[profile?] <dev-haskell/text-2.2:=[profile?]
