@@ -26,7 +26,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.6.3.0 <dev-haskell/cabal-3.7
-	test? ( 
+	test? (
 		>=dev-haskell/tasty-1.2
 		>=dev-haskell/tasty-golden-2.2
 		>=dev-haskell/turtle-1.5
