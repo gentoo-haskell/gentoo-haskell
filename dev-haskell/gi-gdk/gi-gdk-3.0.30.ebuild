@@ -22,10 +22,10 @@ GHC_BOOTSTRAP_PACKAGES=(
 	gi-gdk3
 	)
 
-RDEPEND=">=dev-haskell/gi-gdk3-3.0.30:=[profile?] <dev-haskell/gi-gdk3-3.1:=[profile?]
+RDEPEND=">=dev-haskell/gi-gdk3-3.0.30:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-4
-	>=dev-haskell/haskell-gi-0.26.14 <dev-haskell/haskell-gi-0.27
+	>=dev-haskell/haskell-gi-0.26.14
 "
