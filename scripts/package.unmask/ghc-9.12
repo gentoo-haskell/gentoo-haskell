@@ -37,6 +37,7 @@
 <dev-haskell/stack-2.14
 <dev-haskell/singletons-th-3.5.1
 <dev-haskell/singletons-base-3.5.1
+<dev-haskell/singletons-base-code-generator-0.2
 <dev-haskell/djot-0.2
 <dev-haskell/pandoc-4
 <app-text/pandoc-cli-4
