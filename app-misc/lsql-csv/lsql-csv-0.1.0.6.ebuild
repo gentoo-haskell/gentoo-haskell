@@ -8,12 +8,15 @@ EAPI=8
 CABAL_FEATURES="lib profile haddock hoogle hscolour"
 inherit haskell-cabal
 
-DESCRIPTION="A tool for CSV files data querying from the shell with short queries. "
+DESCRIPTION="A tool for CSV files data querying from the shell with short queries"
 HOMEPAGE="https://github.com/stastnypremysl/lsql-csv/"
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'base >=4.9 && <4.20' 'base >=4.9'
+)
 
 RDEPEND=">=dev-haskell/glob-0.10:=[profile?] <dev-haskell/glob-0.11:=[profile?]
 	>=dev-haskell/parsec-3.1:=[profile?] <dev-haskell/parsec-3.2:=[profile?]
