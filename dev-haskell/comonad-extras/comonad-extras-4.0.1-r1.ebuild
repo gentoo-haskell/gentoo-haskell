@@ -17,6 +17,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
+	'containers           >= 0.4   && < 0.7,' 'containers >= 0.4,'
 	'semigroupoids        >= 4     && < 6' 'semigroupoids >= 4'
 	'transformers         >= 0.2   && < 0.6' 'transformers >= 0.2'
 )
