@@ -15,10 +15,6 @@ LICENSE="LGPL-2.1"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-0.26.17-optional-cabal-doctest.patch"
-)
-
 RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?]
 	>=dev-haskell/attoparsec-0.13:=[profile?]
 	>=dev-haskell/cabal-1.24:=[profile?]
@@ -36,9 +32,8 @@ RDEPEND=">=dev-haskell/ansi-terminal-0.10:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-3.4.1.0 <dev-haskell/cabal-4
 	>=dev-haskell/cabal-doctest-1
+	virtual/pkgconfig
 	test? ( >=dev-haskell/doctest-0.8 )
-"
-BDEPEND="virtual/pkgconfig
 "
 
 src_prepare() {
