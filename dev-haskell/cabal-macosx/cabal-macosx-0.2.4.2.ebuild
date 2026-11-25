@@ -10,12 +10,13 @@ inherit haskell-cabal
 
 DESCRIPTION="Cabal support for creating Mac OSX application bundles"
 HOMEPAGE="https://github.com/danfran/cabal-macosx"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+PATCHES=(
+	"${FILESDIR}"/${P}-ghc9.12.patch
+)
 
 RDEPEND=">=dev-haskell/cabal-1.6:=[profile?]
 	dev-haskell/fgl:=[profile?]

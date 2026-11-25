@@ -1,0 +1,196 @@
+From https://github.com/danfran/cabal-macosx/pull/19
+From: Alexandre Esteves <alexfmpe@proton.me>
+Date: Sat, 11 Oct 2025 01:29:31 +0100
+Subject: [PATCH] Support GHC 9.12
+
+--- a/Distribution/MacOSX.hs
++++ b/Distribution/MacOSX.hs
+@@ -40,7 +40,7 @@ import qualified Data.Text.IO as T
+ import Distribution.PackageDescription (PackageDescription(..))
+ import Distribution.Simple
+ import Distribution.Simple.InstallDirs (bindir, prefix, CopyDest(NoCopyDest))
+-import Distribution.Simple.LocalBuildInfo (absoluteInstallDirs, LocalBuildInfo(..))
++import Distribution.Simple.LocalBuildInfo (absoluteInstallDirs, LocalBuildInfo(..), buildDir)
+ import Distribution.Simple.Setup (BuildFlags, InstallFlags, CopyFlags, fromFlagOrDefault, installVerbosity, copyVerbosity)
+ import Distribution.Simple.Utils (installDirectoryContents, installExecutableFile)
+ #if MIN_VERSION_Cabal(1,18,0)
+@@ -71,7 +71,7 @@ appBundleBuildHook apps _ _ pkg localb =
+ #else
+   if isMacOS
+ #endif
+-     then do let buildDirLbi = buildDir localb
++     then do let buildDirLbi = getSymbolicPathCompat $ buildDir localb
+              let macApps = getMacAppsForBuildableExecutors apps (executables pkg)
+              forM_ macApps (makeAppBundle . createAppBuildInfo buildDirLbi)
+      else putStrLn "Not OS X, so not building an application bundle."
+@@ -138,7 +138,7 @@ appBundleInstallOrCopyHook apps verbosity pkg localb = when isMacOS $ do
+     let script = if standardPrefix
+                     then bundleScriptLibraryHaskell localb app
+                     else bundleScriptElsewhere      localb app
+-        scriptFileSrc = buildDir localb   </> "_" ++ appName app <.> "sh"
++        scriptFileSrc = getSymbolicPathCompat (buildDir localb) </> "_" ++ appName app <.> "sh"
+         scriptFileTgt = bindir installDir </> appName app
+     writeFile scriptFileSrc script
+     installExecutableFile verbosity scriptFileSrc scriptFileTgt
+@@ -155,7 +155,7 @@ bundleScriptLibraryHaskell localb app = unlines
+   where
+     appInfo    = toAppBuildInfo localb app
+     appPathSrc = abAppPath appInfo
+- 
++
+ bundleScriptElsewhere :: LocalBuildInfo -> MacApp -> String
+ bundleScriptElsewhere localb app = unlines
+   [ "#!/bin/bash"
+@@ -272,4 +272,4 @@ maybeCopyIcon appPath app =
+       do putStrLn $ "Copying " ++ icPath ++ " to app's icon"
+          copyFile icPath $
+                   appPath </> "Contents/Resources" </> takeFileName icPath
+-    Nothing -> return ()
+\ No newline at end of file
++    Nothing -> return ()
+--- a/Distribution/MacOSX/AppBuildInfo.hs
++++ b/Distribution/MacOSX/AppBuildInfo.hs
+@@ -1,7 +1,11 @@
++{-# LANGUAGE CPP #-}
+ -- | Information used to help create an application bundle
+ module Distribution.MacOSX.AppBuildInfo where
+ 
+-import Distribution.Simple.LocalBuildInfo (LocalBuildInfo(..))
++import Distribution.Simple.LocalBuildInfo (LocalBuildInfo(..), buildDir)
++#if MIN_VERSION_Cabal(3,14,0)
++import Distribution.Utils.Path (SymbolicPathX, getSymbolicPath)
++#endif
+ import System.FilePath
+ 
+ import Distribution.MacOSX.Common
+@@ -20,10 +24,18 @@ data AppBuildInfo = AppBuildInfo
+   , abApp        :: MacApp
+   }
+ 
++#if MIN_VERSION_Cabal(3,14,0)
++getSymbolicPathCompat :: SymbolicPathX allowAbsolute from to -> FilePath
++getSymbolicPathCompat = getSymbolicPath
++#else
++getSymbolicPathCompat :: FilePath -> FilePath
++getSymbolicPathCompat = id
++#endif
++
+ -- | @toAppBuildInfo l m@ returns information for an application bundle
+ --   within the @l@ build directory
+ toAppBuildInfo :: LocalBuildInfo -> MacApp -> AppBuildInfo
+-toAppBuildInfo localb app = createAppBuildInfo (buildDir localb) app
++toAppBuildInfo localb app = createAppBuildInfo (getSymbolicPathCompat $ buildDir localb) app
+ 
+ -- | @createAppBuildInfo d m@ returns information for an application bundle
+ --   within the @d@ build directory from LocalBuildInfo
+@@ -32,4 +44,4 @@ createAppBuildInfo buildDirLocalBuildInfo app = AppBuildInfo
+   { abAppPath    = buildDirLocalBuildInfo </> appName app <.> "app"
+   , abAppOrigExe = buildDirLocalBuildInfo </> appName app </> appName app
+   , abApp        = app
+-  }
+\ No newline at end of file
++  }
+--- a/cabal-macosx.cabal
++++ b/cabal-macosx.cabal
+@@ -25,7 +25,7 @@ Maintainer:             Daniele Francesconi <dfrancesconi12@gmail.com>
+ Homepage:               http://github.com/danfran/cabal-macosx
+ Build-Type:             Simple
+ Cabal-Version:          >=1.8
+-Tested-With:            GHC == 7.4.2, GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.1, GHC == 7.10.2, GHC == 7.10.3, GHC == 8.0.1, GHC == 8.0.2
++Tested-With:            GHC == 7.4.2, GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.1, GHC == 7.10.2, GHC == 7.10.3, GHC == 8.0.1, GHC == 8.0.2, GHC == 8.10.7, GHC == 9.8.4, GHC == 9.12.2
+ 
+ Source-Repository head
+     Type:         git
+@@ -33,7 +33,7 @@ Source-Repository head
+ 
+ Library
+   Build-Depends:    base == 4.*
+-                    , Cabal >= 1.6, directory
++                    , Cabal >= 1.6 && < 3.16, directory
+                     , hscolour
+                     , fgl
+                     , filepath
+@@ -80,4 +80,4 @@ test-suite tests
+                     , process
+                     , text
+                     , containers
+-                    , directory
+\ No newline at end of file
++                    , directory
+--- a/tests/Distribution/MacOSX/Internal/Tests.hs
++++ b/tests/Distribution/MacOSX/Internal/Tests.hs
+@@ -10,6 +10,9 @@ import Test.Framework.Providers.HUnit (testCase)
+ #if MIN_VERSION_Cabal(2,0,0)
+ import Distribution.Types.ExecutableScope
+ #endif
++#if MIN_VERSION_Cabal(3,14,0)
++import Distribution.Utils.Path(SymbolicPathX, unsafeMakeSymbolicPath)
++#endif
+ import Distribution.PackageDescription (BuildInfo(..), Executable(..), emptyBuildInfo, emptyExecutable)
+ 
+ import Distribution.MacOSX.Internal (getMacAppsForBuildableExecutors)
+@@ -45,14 +48,23 @@ testBuildMacApp_noExecutables = do
+     let expected = []
+     assertEqual "nothing should be built" expected actual
+ 
++#if MIN_VERSION_Cabal(3,14,0)
++tmp :: SymbolicPathX allowAbs from to
++tmp = unsafeMakeSymbolicPath
++#else
++tmp :: FilePath
++tmp =
++#endif
++  "/tmp"
++
+ testBuildMacApp_twoBuildableExecutables :: Assertion
+ testBuildMacApp_twoBuildableExecutables = do
+ #if MIN_VERSION_Cabal(2,0,0)
+-    let execs = [ Executable "Dummy One" "/tmp" getExecutableScopeUnknown emptyBuildInfo
+-                  , Executable "Dummy Two" "/tmp" getExecutableScopeUnknown emptyBuildInfo ]
++    let execs = [ Executable "Dummy One" tmp getExecutableScopeUnknown emptyBuildInfo
++                  , Executable "Dummy Two" tmp getExecutableScopeUnknown emptyBuildInfo ]
+ #else
+-    let execs = [ Executable "Dummy One" "/tmp" emptyBuildInfo
+-                  , Executable "Dummy Two" "/tmp" emptyBuildInfo ]
++    let execs = [ Executable "Dummy One" tmp emptyBuildInfo
++                  , Executable "Dummy Two" tmp emptyBuildInfo ]
+ #endif
+     let actual = getMacAppsForBuildableExecutors [] execs
+     let expected = [ MacApp "Dummy One" Nothing Nothing [] [] DoNotChase
+@@ -62,11 +74,11 @@ testBuildMacApp_twoBuildableExecutables = do
+ testBuildMacApp_twoExcetuablesOneBuildableAndOneNot :: Assertion
+ testBuildMacApp_twoExcetuablesOneBuildableAndOneNot = do
+ #if MIN_VERSION_Cabal(2,0,0)
+-    let execs = [ Executable "Dummy One" "/tmp" getExecutableScopeUnknown (emptyBuildInfo { buildable = False })
+-                  , Executable "Dummy Two" "/tmp" getExecutableScopeUnknown  emptyBuildInfo ]
++    let execs = [ Executable "Dummy One" tmp getExecutableScopeUnknown (emptyBuildInfo { buildable = False })
++                  , Executable "Dummy Two" tmp getExecutableScopeUnknown  emptyBuildInfo ]
+ #else
+-    let execs = [ Executable "Dummy One" "/tmp" (emptyBuildInfo { buildable = False })
+-                  , Executable "Dummy Two" "/tmp" emptyBuildInfo ]
++    let execs = [ Executable "Dummy One" tmp (emptyBuildInfo { buildable = False })
++                  , Executable "Dummy Two" tmp emptyBuildInfo ]
+ #endif
+     let actual = getMacAppsForBuildableExecutors [] execs
+     let expected = [ MacApp "Dummy Two" Nothing Nothing [] [] DoNotChase ]
+@@ -75,14 +87,14 @@ testBuildMacApp_twoExcetuablesOneBuildableAndOneNot = do
+ testBuildMacApp_twoAppsAndTwoExecutablesOneBuildableOneNot :: Assertion
+ testBuildMacApp_twoAppsAndTwoExecutablesOneBuildableOneNot = do
+ #if MIN_VERSION_Cabal(2,0,0)
+-    let execs = [ Executable "Dummy One" "/tmp" getExecutableScopeUnknown (emptyBuildInfo { buildable = False })
+-                  , Executable "Dummy Two" "/tmp" getExecutableScopeUnknown  emptyBuildInfo ]
++    let execs = [ Executable "Dummy One" tmp getExecutableScopeUnknown (emptyBuildInfo { buildable = False })
++                  , Executable "Dummy Two" tmp getExecutableScopeUnknown  emptyBuildInfo ]
+ #else
+-    let execs = [ Executable "Dummy One" "/tmp" (emptyBuildInfo { buildable = False })
+-                  , Executable "Dummy Two" "/tmp" emptyBuildInfo ]
++    let execs = [ Executable "Dummy One" tmp (emptyBuildInfo { buildable = False })
++                  , Executable "Dummy Two" tmp emptyBuildInfo ]
+ #endif
+     let apps = [ MacApp "Dummy One" Nothing Nothing [] [] DoNotChase
+                  , MacApp "Dummy Two" Nothing Nothing [] [] DoNotChase ]
+     let actual = getMacAppsForBuildableExecutors apps execs
+     let expected = [ MacApp "Dummy Two" Nothing Nothing [] [] DoNotChase ]
+-    assertEqual "one mac-app should be built" expected actual
+\ No newline at end of file
++    assertEqual "one mac-app should be built" expected actual
