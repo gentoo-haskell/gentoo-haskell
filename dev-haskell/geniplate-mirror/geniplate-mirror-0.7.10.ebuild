@@ -14,6 +14,9 @@ HOMEPAGE="https://github.com/danr/geniplate"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'template-haskell < 2.22' 'template-haskell'
+	)
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
 "
