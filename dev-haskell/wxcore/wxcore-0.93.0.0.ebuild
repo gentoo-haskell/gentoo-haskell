@@ -14,6 +14,7 @@ DESCRIPTION="wxHaskell core"
 HOMEPAGE="https://wiki.haskell.org/WxHaskell"
 SRC_URI="https://codeberg.org/wxHaskell/wxHaskell/archive/wxc-1.0.0.2.tar.gz"
 S="${WORKDIR}/wxhaskell/wxcore"
+CABAL_FILE="${S}/${PN}.cabal"
 
 LICENSE="wxWinLL-3.1"
 SLOT="0/${PV}"
@@ -23,6 +24,9 @@ IUSE="gstreamer"
 PATCHES=(
 	"${FILESDIR}"/${P}-fix-configure.patch
 	)
+CABAL_CHDEPS=(
+		'containers >= 0.2 && < 0.7' 'containers >= 0.2'
+)
 
 RDEPEND="dev-haskell/parsec:=[profile?]
 	>=dev-lang/ghc-9.0.2:=
@@ -34,7 +38,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 src_prepare() {
-	default
+	haskell-cabal_src_prepare
 
 	sed -e "s@wxdirect@wxdirect-${WX_GTK_VER}@g" \
 		-i "${S}/Setup.hs" \

@@ -6,6 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<upstream>
+		<remote-id type="codeberg">wxHaskell/wxHaskell</remote-id>
 		<remote-id type="hackage">wxcore</remote-id>
 	</upstream>
 </pkgmetadata>
