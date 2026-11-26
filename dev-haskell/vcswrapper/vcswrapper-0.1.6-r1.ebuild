@@ -16,6 +16,14 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
+CABAL_CHDEPS=(
+		'base >=4.0.0.0 && <4.11' 'base >=4.0.0.0'
+		'containers >=0.5.5.1 && <0.6' 'containers >=0.5.5.1'
+		'filepath >=1.2.0.0 && <1.5' 'filepath >=1.2.0.0'
+		'text >=0.11.1.5 && <1.3' 'text >=0.11.1.5'
+		'mtl >=2.0.1.0 && <2.3' 'mtl >=2.0.1.0'
+)
+
 PATCHES=(
 	"${FILESDIR}"/${P}-mtl.patch
 )
@@ -30,10 +38,3 @@ RDEPEND=">=dev-haskell/hxt-9.1.2:=[profile?] <dev-haskell/hxt-9.4:=[profile?]
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.18.1.3
 "
-
-CABAL_CHDEPS=(
-		'base >=4.0.0.0 && <4.11' 'base >=4.0.0.0'
-		'containers >=0.5.5.1 && <0.6' 'containers >=0.5.5.1'
-		'text >=0.11.1.5 && <1.3' 'text >=0.11.1.5'
-		'mtl >=2.0.1.0 && <2.3' 'mtl >=2.0.1.0'
-)

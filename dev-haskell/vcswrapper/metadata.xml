@@ -9,4 +9,8 @@
 		Provides simple haskell functions to call external source code management systems.
 		Currently git and SVN are supported.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">vcswrapper</remote-id>
+		<remote-id type="github">forste/haskellVCSWrapper</remote-id>
+	</upstream>
 </pkgmetadata>
