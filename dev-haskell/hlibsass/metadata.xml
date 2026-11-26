@@ -9,11 +9,8 @@
 		<flag name="externallibsass">Use LibSass that is installed in the system</flag>
 		<flag name="sharedlibsass">Build LibSass as a shared library (only if external_libsass = False)</flag>
 	</use>
-	<longdescription>
-		This package provides (very) low level bindings to LibSass. By default, it
-		uses LibSass compiled as a static library, so if you use this in your project,
-		you have to link your project with C++ runtime (which hLibsass does
-		automatically - links with /libstdc++/).
-		For documentation visit &lt;https://github.com/sass/libsass&gt;.
-	</longdescription>
+	<upstream>
+		<remote-id type="hackage">hlibsass</remote-id>
+		<remote-id type="github">jakubfijalkowski/hlibsass</remote-id>
+	</upstream>
 </pkgmetadata>
