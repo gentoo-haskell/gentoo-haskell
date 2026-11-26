@@ -8,4 +8,8 @@
 	<use>
 		<flag name="withquickcheck">Build with QuickCheck test. Note that Show instances will be different.</flag>
 	</use>
+	<upstream>
+		<remote-id type="hackage">bitstring</remote-id>
+		<remote-id type="github">bkomuves/bitstring</remote-id>
+	</upstream>
 </pkgmetadata>
