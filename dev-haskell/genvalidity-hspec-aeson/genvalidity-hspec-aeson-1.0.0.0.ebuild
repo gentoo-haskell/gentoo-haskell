@@ -31,3 +31,10 @@ DEPEND="${RDEPEND}
 		dev-haskell/text
 		>=dev-haskell/validity-0.9 )
 "
+
+src_test() {
+	# Round-tripping a Scientific whose exponent is minBound :: Int overflows
+	# in the JSON parser (coefficient 10, exponent maxBound); random failure.
+	haskell-cabal_src_test --test-option=--skip \
+		--test-option='encode and decode are inverses for "valid Value"'
+}
