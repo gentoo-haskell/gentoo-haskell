@@ -1,0 +1,37 @@
+Adapt Setup.lhs to Cabal 3.14.
+
+Since Cabal 3.14, the extraLibDirs and includeDirs fields of BuildInfo hold
+SymbolicPath values instead of plain FilePath ones. Convert the directories
+returned by pkg-config with makeSymbolicPath. Applies on top of
+hsql-sqlite3-1.8.2-cabal22.patch, which enables CPP.
+
+--- a/Setup.lhs
++++ b/Setup.lhs
+@@ -22,6 +22,9 @@
+ import Distribution.Simple.LocalBuildInfo(LocalBuildInfo)
+ import Distribution.Simple.Setup(ConfigFlags(configVerbosity),Flag)
+ import Distribution.Verbosity(Verbosity)
++#if MIN_VERSION_Cabal(3,14,0)
++import Distribution.Utils.Path(makeSymbolicPath)
++#endif
+ 
+ main:: IO ()
+ main = defaultMainWithHooks simpleUserHooks{ preConf=preConf
+@@ -103,9 +106,17 @@
+                                   [pkgName, "--cflags-only-other"]
+        let cc_opts = words res
+        let bi = emptyBuildInfo{ extraLibs=libs
++#if MIN_VERSION_Cabal(3,14,0)
++                              , extraLibDirs=map makeSymbolicPath lib_dirs
++#else
+                               , extraLibDirs=lib_dirs
++#endif
+                               , ldOptions=ld_opts
++#if MIN_VERSION_Cabal(3,14,0)
++                              , includeDirs=map makeSymbolicPath inc_dirs
++#else
+                               , includeDirs=inc_dirs
++#endif
+                               , ccOptions=cc_opts}
+        return (Just bi)
+     Nothing -> do
