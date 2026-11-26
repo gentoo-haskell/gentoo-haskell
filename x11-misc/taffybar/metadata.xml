@@ -6,7 +6,7 @@
 		<name>Gentoo Haskell</name>
 	</maintainer>
 	<use>
-		<flag name="cryptocurrency">Enable crypto assets widget.</flag>
+		<flag name="deprecated-pager-hints">Enables the deprecated System.Taffybar.Support.PagerHints module, which has been moved to xmonad-contrib.</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">taffybar</remote-id>
