@@ -10,4 +10,8 @@
 		Show won&#39;t Read. This is particularly intended for exception types,
 		which can appear unexpectedly and be difficult to track down.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">show-please</remote-id>
+		<remote-id type="github">ddssff/show-please</remote-id>
+	</upstream>
 </pkgmetadata>

@@ -10,12 +10,13 @@ inherit haskell-cabal
 
 DESCRIPTION="A wrapper type V with improved Show instances"
 HOMEPAGE="https://github.com/ddssff/show-please"
-SRC_URI="https://hackage.haskell.org/package/${P}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE=""
+PATCHES=(
+	"${FILESDIR}"/${P}-no-werror.patch
+	)
 
 RDEPEND="dev-haskell/mtl:=[profile?]
 	dev-haskell/parsec:=[profile?]

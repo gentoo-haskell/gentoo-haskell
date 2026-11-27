@@ -1,0 +1,13 @@
+Do not build with -Werror.
+
+--- a/Debug/Show.hs
++++ b/Debug/Show.hs
+@@ -2,7 +2,7 @@
+ -- correct haskell code, especially for exception types.
+ 
+ {-# LANGUAGE CPP, DeriveDataTypeable, FlexibleInstances #-}
+-{-# OPTIONS -Wall -Werror #-}
++{-# OPTIONS -Wall #-}
+ 
+ module Debug.Show (V(V)) where
+ import Control.Exception
