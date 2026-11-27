@@ -15,6 +15,7 @@ CABAL_CHDEPS=(
 	'bytestring            < 0.12' 'bytestring'
 	'mtl        >= 2.1  && < 2.3' 'mtl >= 2.1'
 	'text       >= 0.11 && < 1.3' 'text >= 0.11'
+	'containers >= 0.4  && < 0.7' 'containers >= 0.4'
 	)
 
 LICENSE="BSD"
