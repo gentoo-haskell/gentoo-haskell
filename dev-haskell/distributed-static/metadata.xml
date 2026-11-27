@@ -7,6 +7,6 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="hackage">distributed-static</remote-id>
-		<remote-id type="github">haskell-distributed/distributed-static</remote-id>
+		<remote-id type="github">haskell-distributed/distributed-process</remote-id>
 	</upstream>
 </pkgmetadata>
