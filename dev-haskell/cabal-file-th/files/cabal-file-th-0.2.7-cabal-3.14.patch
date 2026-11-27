@@ -1,0 +1,37 @@
+From https://github.com/nkpart/cabal-file-th/commit/bbf161db588326288c3e2a00723eb935513dde8e
+From: dacto <1351348+dacto@users.noreply.github.com>
+Date: Sun, 2 Nov 2025 13:12:41 -0800
+Subject: [PATCH] Support Cabal 3.14.0
+
+---
+ Distribution/PackageDescription/TH.hs | 9 ++++++++-
+ cabal-file-th.cabal                   | 5 ++---
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/Distribution/PackageDescription/TH.hs b/Distribution/PackageDescription/TH.hs
+index 63f116c..14aeffd 100644
+--- a/Distribution/PackageDescription/TH.hs
++++ b/Distribution/PackageDescription/TH.hs
+@@ -36,6 +36,9 @@ import Distribution.Pretty
+ import Distribution.Text
+ import Distribution.Compat.ReadP
+ #endif
++#if MIN_VERSION_Cabal(3,14,0)
++import Distribution.Utils.Path (makeSymbolicPath)
++#endif
+ import Distribution.Verbosity (Verbosity, silent)
+ import Text.PrettyPrint
+ import System.Directory (getCurrentDirectory, getDirectoryContents)
+@@ -48,7 +51,11 @@ import Language.Haskell.TH (Q, Exp, stringE, runIO)
+ -- readPackageDescription was removed in Cabal-2.2.0.0.
+ #if MIN_VERSION_Cabal(3,8,1)
+ import Distribution.Simple.PackageDescription (readGenericPackageDescription)
+-readPkgDesc = readGenericPackageDescription
++readPkgDesc verbosity filepath = readGenericPackageDescription verbosity
++#if MIN_VERSION_Cabal(3,14,0)
++  Nothing $ makeSymbolicPath
++#endif
++  filepath
+ #elif MIN_VERSION_Cabal(2,2,0)
+ import Distribution.PackageDescription.Parsec (readGenericPackageDescription)
+ readPkgDesc = readGenericPackageDescription

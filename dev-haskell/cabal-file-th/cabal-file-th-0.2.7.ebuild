@@ -18,6 +18,7 @@ KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-ghc9.4.patch
+	"${FILESDIR}"/${P}-cabal-3.14.patch
 	)
 
 # Reported as: https://github.com/nkpart/cabal-file-th/issues/12
