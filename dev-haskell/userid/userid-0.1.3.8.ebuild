@@ -14,6 +14,9 @@ HOMEPAGE="https://www.github.com/Happstack/userid"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+CABAL_CHDEPS=(
+	'base          >= 4.6  && < 4.21' 'base >= 4.6'
+)
 
 RDEPEND=">=dev-haskell/aeson-0.9:=[profile?] <dev-haskell/aeson-2.3:=[profile?]
 	>=dev-haskell/boomerang-1.4:=[profile?] <dev-haskell/boomerang-1.5:=[profile?]
