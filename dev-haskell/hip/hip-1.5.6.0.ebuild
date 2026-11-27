@@ -37,5 +37,6 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	haskell-cabal_src_configure \
-		$(cabal_flag disable-chart disable-chart)
+		$(cabal_flag disable-chart disable-chart) \
+		--ghc-option=-fsimpl-tick-factor=200
 }

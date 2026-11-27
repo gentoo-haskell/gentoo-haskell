@@ -16,4 +16,8 @@
 		
 		It is capable of reading and writing a number of popular image formats by using &lt;https://hackage.haskell.org/package/JuicyPixels JuciyPixels&gt; and &lt;https://hackage.haskell.org/package/netpbm netpbm&gt; packages. Being a pure Haskell library it does not require any external programs, although it can display images using a program of your choice.
 	</longdescription>
+	<upstream>
+		<remote-id type="hackage">hip</remote-id>
+		<remote-id type="github">lehins/hip</remote-id>
+	</upstream>
 </pkgmetadata>
