@@ -1,0 +1,70 @@
+From https://github.com/yav/graphmod/pull/52
+From: Alexandre Esteves <alexfmpe@proton.me>
+Date: Sun, 8 Nov 2026 20:51:21 +0000
+Subject: [PATCH 1/2] Support cabal 3.14
+
+--- a/src/Graphmod/CabalSupport.hs
++++ b/src/Graphmod/CabalSupport.hs
+@@ -1,4 +1,5 @@
+ {-# language CPP #-}
++{-# language DataKinds #-}
+ 
+ module Graphmod.CabalSupport (parseCabalFile,Unit(..),UnitName(..)) where
+ 
+@@ -15,7 +16,9 @@ import Distribution.PackageDescription
+ import Distribution.PackageDescription.Configuration (flattenPackageDescription)
+ import Distribution.ModuleName(ModuleName,components)
+ 
+-#if MIN_VERSION_Cabal(3,6,0)
++#if MIN_VERSION_Cabal(3,14,0)
++import Distribution.Utils.Path (SymbolicPathX, getSymbolicPath, makeSymbolicPath)
++#elif MIN_VERSION_Cabal(3,6,0)
+ import Distribution.Utils.Path (SymbolicPath, PackageDir, SourceDir, getSymbolicPath)
+ #endif
+ 
+@@ -59,7 +62,10 @@ pretty = id
+ -- Note that this isn't nested under the above #if because we need
+ -- the backwards-compatible version to be available for all Cabal
+ -- versions prior to 3.6
+-#if MIN_VERSION_Cabal(3,6,0)
++#if MIN_VERSION_Cabal(3,14,0)
++sourceDirToFilePath :: SymbolicPathX allowAbsolute pkg src -> FilePath
++sourceDirToFilePath = getSymbolicPath
++#elif MIN_VERSION_Cabal(3,6,0)
+ sourceDirToFilePath :: SymbolicPath PackageDir SourceDir -> FilePath
+ sourceDirToFilePath = getSymbolicPath
+ #else
+@@ -68,8 +74,12 @@ sourceDirToFilePath = id
+ #endif
+ 
+ parseCabalFile :: FilePath -> IO [Unit]
+-parseCabalFile f = fmap findUnits (readGenericPackageDescription silent f)
+-
++parseCabalFile f = fmap findUnits $
++#if MIN_VERSION_Cabal(3,14,0)
++  readGenericPackageDescription silent Nothing $ makeSymbolicPath f
++#else
++  readGenericPackageDescription silent f
++#endif
+ 
+ -- | This is our abstraction for something in a cabal file.
+ data Unit = Unit
+@@ -95,9 +105,15 @@ exeUnit :: Executable -> Unit
+ exeUnit exe = Unit { unitName    = UnitExecutable (pretty $ exeName exe)
+                    , unitPaths   = sourceDirToFilePath <$> hsSourceDirs (buildInfo exe)
+                    , unitModules = [] -- other modules?
+-                   , unitFiles   = case hsSourceDirs (buildInfo exe) of
+-                                     [] -> [ modulePath exe ]
+-                                     ds -> [ sourceDirToFilePath d </> modulePath exe | d <- ds ]
++                   , unitFiles   =
++#if MIN_VERSION_Cabal(3,14,0)
++                    let p = sourceDirToFilePath $ modulePath exe
++#else
++                    let p = modulePath exe
++#endif
++                    in case hsSourceDirs (buildInfo exe) of
++                      [] -> [ p ]
++                      ds -> [ sourceDirToFilePath d </> p | d <- ds ]
+                    }
+ 
+ toMod :: ModuleName -> ModName

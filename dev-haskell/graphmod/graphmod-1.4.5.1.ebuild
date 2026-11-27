@@ -14,6 +14,9 @@ HOMEPAGE="https://github.com/yav/graphmod/wiki"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+PATCHES=(
+	"${FILESDIR}"/${P}-cabal-3.14.patch
+)
 
 RDEPEND="dev-haskell/cabal:=[profile?]
 	>=dev-haskell/dotgen-0.2:=[profile?] <dev-haskell/dotgen-0.5:=[profile?]
