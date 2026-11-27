@@ -1,6 +1,11 @@
 # Package masks for the ::haskell overlay.
 # Keep this header followed by an empty line (needed by pkgdev mask).
 
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-27)
+# Deprecated in favour of call-stack
+# Removal on 2026-12-27.
+dev-haskell/with-location
+
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-24)
 # Depends on plugins-auto ; dead upstream
 # Removal on 2026-12-24.
