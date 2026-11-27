@@ -1,0 +1,44 @@
+From https://github.com/dhall-lang/dhall-haskell/commit/8c0fc3e34a145220c379f0eaa84c206d52802dfe
+From: Felix Yan <felixonmars@archlinux.org>
+Date: Wed, 9 Sep 2026 22:43:39 +0300
+Subject: [PATCH] Fix compatibility with mmark 0.1 (#2822)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+diff --git a/dhall-docs/src/Dhall/Docs/Markdown.hs b/dhall-docs/src/Dhall/Docs/Markdown.hs
+index 170f0bfaa..96a0dd6a3 100644
+--- a/src/Dhall/Docs/Markdown.hs
++++ b/src/Dhall/Docs/Markdown.hs
+@@ -1,11 +1,13 @@
+ {-| Contains all utilities related to markdown processing
+ -}
++{-# LANGUAGE CPP #-}
++
+ module Dhall.Docs.Markdown
+     ( MarkdownParseError(..)
+     , MMark
+     , parseMarkdown
+     , markdownToHtml
+-    , MMark.render
++    , render
+     ) where
+ 
+ import Data.Text       (Text)
+@@ -30,7 +32,15 @@ markdownToHtml
+     -> Text          -- ^ Text to parse
+     -> Either MarkdownParseError (Html ())
+ markdownToHtml relFile contents =
+-    MMark.render <$> parseMarkdown relFile contents
++    render <$> parseMarkdown relFile contents
++
++-- | Render markdown without extensions across supported MMark versions.
++render :: MMark -> Html ()
++#if MIN_VERSION_mmark(0,1,0)
++render = MMark.render mempty
++#else
++render = MMark.render
++#endif
+ 
+ {-| Takes a text that could contain markdown and returns either the parsed
+     markdown or, if parsing fails, the error information.

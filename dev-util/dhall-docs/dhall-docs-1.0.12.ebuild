@@ -19,6 +19,7 @@ KEYWORDS="~amd64"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-1.0.12-cabal-doctest.patch"
+	"${FILESDIR}/${PN}-1.0.12-mmark.patch"
 )
 
 RDEPEND=">=dev-haskell/base16-bytestring-1.0.0.0:=[profile?]
