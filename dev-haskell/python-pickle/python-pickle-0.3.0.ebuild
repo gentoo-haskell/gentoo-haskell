@@ -9,7 +9,6 @@ CABAL_HACKAGE_REVISION=1
 
 CABAL_FEATURES="lib profile haddock hoogle hscolour" # test-suite
 inherit haskell-cabal
-RESTRICT=test # missing test files: tests/pickle-dump.py
 
 DESCRIPTION="Serialization/deserialization using Python Pickle format"
 HOMEPAGE="https://github.com/noteed/python-pickle"
@@ -17,6 +16,11 @@ HOMEPAGE="https://github.com/noteed/python-pickle"
 LICENSE="BSD"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+RESTRICT=test # missing test files: tests/pickle-dump.py
+CABAL_CHDEPS=(
+	'base >= 4.12 && < 4.20' 'base >= 4.12'
+	'containers >= 0.6 && < 0.7' 'containers >= 0.6'
+)
 
 RDEPEND=">=dev-haskell/attoparsec-0.14:=[profile?] <dev-haskell/attoparsec-0.15:=[profile?]
 	>=dev-haskell/cereal-0.5:=[profile?] <dev-haskell/cereal-0.6:=[profile?]
