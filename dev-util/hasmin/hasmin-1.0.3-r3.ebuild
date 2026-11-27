@@ -42,6 +42,7 @@ CABAL_CHDEPS=(
 	'attoparsec           >=0.12    && <0.14' 'attoparsec'
 	'doctest          >=0.11    && <0.17' 'doctest >=0.11'
 	'optparse-applicative >=0.11       && <0.16' 'optparse-applicative >=0.11'
+	'containers      >=0.5        && <0.7' 'containers >=0.5'
 	)
 
 RDEPEND=">=dev-haskell/attoparsec-0.12:=[profile?]
