@@ -14,6 +14,9 @@ HOMEPAGE="https://github.com/paul-rouse/yesod-auth-hashdb"
 LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
+PATCHES=(
+	"${FILESDIR}"/${P}-text.patch
+)
 
 RDEPEND="dev-haskell/aeson:=[profile?]
 	>=dev-haskell/persistent-2.1:=[profile?]
@@ -38,6 +41,5 @@ DEPEND="${RDEPEND}
 		dev-haskell/wai-extra
 		dev-haskell/yesod
 		>=dev-haskell/yesod-test-1.5.0.1
-		|| ( ( >=dev-haskell/yesod-auth-1.4.18 <dev-haskell/yesod-auth-1.5 )
-			( >=dev-haskell/yesod-auth-1.6.1 <dev-haskell/yesod-auth-1.7 ) ) )
+		>=dev-haskell/yesod-auth-1.4.18 <dev-haskell/yesod-auth-1.7 )
 "

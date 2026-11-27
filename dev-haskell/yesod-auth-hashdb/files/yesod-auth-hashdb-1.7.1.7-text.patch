@@ -1,0 +1,16 @@
+From https://github.com/paul-rouse/yesod-auth-hashdb/pull/10
+From: maurges <morj@morj.men>
+Date: Sat, 8 Nov 2025 15:18:11 +0100
+Subject: [PATCH] Fix test breakage with text-2.1.2
+
+--- a/test/TestSite.hs
++++ b/test/TestSite.hs
+@@ -26,7 +26,7 @@ module TestSite (
+ ) where
+ 
+ import Control.Monad                (when)
+-import Data.Text
++import Data.Text                    (Text)
+ import Database.Persist.Sqlite
+ import Network.HTTP.Client.Conduit  (Manager)
+ import Yesod
