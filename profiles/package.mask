@@ -2,6 +2,11 @@
 # Keep this header followed by an empty line (needed by pkgdev mask).
 
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-28)
+# Dead upstream, superseded by effectful, polysemy, etc
+# Removal on 2026-12-28.
+dev-haskell/extensible-effects
+
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-28)
 # Depends on deprecated filepath-bytestring
 # Removal on 2026-12-28.
 dev-vcs/git-annex
