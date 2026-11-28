@@ -1,0 +1,17 @@
+Only expose the library dependencies to doctest.
+
+--- a/test/Doctests.hs
++++ b/test/Doctests.hs
+@@ -15,7 +15,11 @@
+ 
+ exts :: [String]
+ exts =
+-  [ "-XBangPatterns"
++  [ "-hide-all-packages"
++  , "-package=base"
++  , "-package=primitive"
++  , "-package=deepseq"
++  , "-XBangPatterns"
+   , "-XConstraintKinds"
+   , "-XDataKinds"
+   , "-XDeriveDataTypeable"
