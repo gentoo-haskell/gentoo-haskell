@@ -20,6 +20,7 @@ KEYWORDS="~amd64"
 
 CABAL_CHDEPS=(
 	'bytestring >= 0.9, bytestring < 0.11' 'bytestring >= 0.9'
+	'filepath >= 1.2, filepath < 1.5' 'filepath >= 1.2'
 )
 
 RDEPEND=">=dev-lang/ghc-9.0.2:=
