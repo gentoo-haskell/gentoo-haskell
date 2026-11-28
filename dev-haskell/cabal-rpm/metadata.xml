@@ -7,6 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="curl">Use curl library to query Stackage instead of http-client</flag>
+		<flag name="html-entities">Use html-entities library to decode descriptions</flag>
 	</use>
 	<upstream>
 		<remote-id type="hackage">cabal-rpm</remote-id>
