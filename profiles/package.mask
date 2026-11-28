@@ -1,6 +1,11 @@
 # Package masks for the ::haskell overlay.
 # Keep this header followed by an empty line (needed by pkgdev mask).
 
+# GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-28)
+# Deprecated upstream
+# Removal on 2026-12-28.
+dev-haskell/clash-ffi
+
 # GuillaumedeVolpiano <xavier@wheredoibegin.fr> (2026-11-27)
 # Deprecated in favour of call-stack
 # Removal on 2026-12-27.
